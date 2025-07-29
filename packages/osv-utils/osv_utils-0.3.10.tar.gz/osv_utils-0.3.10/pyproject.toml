@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+repository = "https://github.com/epicosy/osvutils"
+homepage = "https://github.com/epicosy/osvutils"
+
+[project]
+name="osv-utils"
+version = "0.3.10"
+description = "A package for parsing, representing, and filtering OSV data."
+readme = "README.md"
+authors = [
+    {name = "Eduard Pinconschi", email="eduard.pinconschi@tecnico.ulisboa.pt"},
+]
+keywords = ["package", "osv", "utils"]
+license = { file = "LICENSE" }
+
+requires-python = ">=3.9"
+classifiers = [
+    "Topic :: Software Development",
+    "Programming Language :: Python",
+    "Environment :: Console",
+    "Intended Audience :: Developers"
+]
+dependencies = [
+    "tqdm>=4.66.4",
+    "pydantic>=2.9.2",
+    "google-cloud-storage>=2.18.2",
+    "giturlparse>=0.12.0",
+    "cvss==3.2"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    "coverage",
+    "twine>=1.11.0",
+    "setuptools>=38.6.0",
+    "wheel>=0.31.0"
+]
+
+
+[tool.setuptools.packages.find]
+exclude = ["ez_setup", "tests*"]
+
+
+[tool.setuptools]
+include-package-data = false
