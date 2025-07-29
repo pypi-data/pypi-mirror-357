@@ -1,0 +1,11 @@
+setup.py
+amount_extractor/__init__.py
+amount_extractor/amount_extractor_app.py
+amount_extractor/gui_launcher.py
+amount_extractor/assets/gui_image.ico
+amount_extractor/assets/gui_logo.png
+amount_extractor_app.egg-info/PKG-INFO
+amount_extractor_app.egg-info/SOURCES.txt
+amount_extractor_app.egg-info/dependency_links.txt
+amount_extractor_app.egg-info/entry_points.txt
+amount_extractor_app.egg-info/top_level.txt
