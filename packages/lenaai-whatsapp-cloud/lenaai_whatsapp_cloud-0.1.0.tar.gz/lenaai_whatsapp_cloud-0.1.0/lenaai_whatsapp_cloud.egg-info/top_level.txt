@@ -1,0 +1,4 @@
+discard_files
+src
+temp_images
+tests
