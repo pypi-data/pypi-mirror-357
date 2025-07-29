@@ -1,0 +1,2 @@
+[console_scripts]
+fru-parser = fru_parser.cli:main
