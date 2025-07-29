@@ -1,0 +1,15 @@
+cognicore/__init__.py,sha256=vc4TaRycAKS2SpLVyvWC4fcdgPiCpn_FLKQRvfG88xs,936
+cognicore/__version__.py,sha256=iB5DfB5V6YB5Wo4JmvS-txT42QtmGaWcWp3udRT7zCI,511
+cognicore/image_classifier_utils.py,sha256=lbaghtzDsl8fxgkH-U9hjdfozHejaASUY0Wbh_3wQBI,4896
+cognicore/internet_searcher_utils.py,sha256=AqG0BhT7BTORuxQ8Iq4i0BLIyqiLGl3yP_ZkA2pjncg,4372
+cognicore/language_model.py,sha256=iW8XCYmN-zEfSBFh9wKTTk5MpXMRcgBlu9AxrfOOSRo,11247
+cognicore/text_classifier_utils.py,sha256=wzEXoqQNWqtA9E18ezlrbM8N37pd4eYxDxxFcXJbxtY,5056
+cognicore/vision_utils.py,sha256=RLfQUUOKe0Lg8DiDdYoSO08qKPBvjA-LWse2Qm6M_3s,21920
+cognicore/prompts/llm_image_classification_index.txt,sha256=-zPJPqOZDD7NmWf2K3fx9MtvcXPQRjUu-6Qz_7O2q_A,295
+cognicore/prompts/llm_image_classification_name.txt,sha256=RvyL1-uAtDgTptmrfkSM9HSuVmmVtvRxq5sKXG6xucg,297
+cognicore/prompts/llm_text_classification_index.txt,sha256=3j24Gvwz4H95DQQjJqDJOB0dmFXy0V3IlXuB2DK6FsA,345
+cognicore/prompts/llm_text_classification_name.txt,sha256=qOwDnBuOuhAk7swlS2OMW7_P-fTY-lfSoRdXAgWA2sE,347
+cognicore-0.2.0.dist-info/METADATA,sha256=5xfZrLmoTuFNpb8g1OA-vMGASM7iBHgMLXz_-p2OLlA,17304
+cognicore-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+cognicore-0.2.0.dist-info/licenses/LICENSE,sha256=IdkONaB_giVh7AflFRLEk8p1QjLSCjEH3-BlIoJP0nc,1061
+cognicore-0.2.0.dist-info/RECORD,,
