@@ -1,0 +1,3 @@
+[console_scripts]
+htty = htty.cli:cli
+htty-ht = htty.ht:main
