@@ -1,0 +1,16 @@
+setup.py,sha256=YkVvHv1GgUgDvSwd_PKwyuVTXs1jQm7yb6P3TbVb8-Y,2978
+path_comment/__about__.py,sha256=Yd_VblLKguvWGD6iVSZCHf6A5HIIhQ4BM02eOSlXZH8,797
+path_comment/__init__.py,sha256=mwsm_3E_bDeEQeVeyZtkJlPgsaH_sZR8vDA2bi-_qxE,122
+path_comment/cli.py,sha256=ZUth094YEo3Q7zUnXcroXNIknpbs2N8nSf2AIpLkzag,13808
+path_comment/config.py,sha256=qQxeQ75KaN889bYLA6xP-X5W_Vdd6mIQPS2fJPvshR0,7761
+path_comment/detectors.py,sha256=ykgU8eGDhleX-_gNomhCMRgfxSN4D-YaogrZfd8WpEc,2097
+path_comment/file_handler.py,sha256=tURoj-Q_RhrOXiQY3s0cdbso_AcOSK76CeOqq66-RTA,9391
+path_comment/injector.py,sha256=JwBfzHU7makhnI7ABLuynNGynCEmMngR3BcACMN_Jl4,7984
+path_comment/processor.py,sha256=ppHxv1gqmcGGzJoEnhkaIsd8BxWQtFy-rMgQdOOCD_c,8771
+path_comment/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+path_comment/welcome.py,sha256=_K_XDAS6s8DQf-ZyXOXbsHTw4KqfCKOubZ5zo6kx7Ug,2132
+path_comment_hook-0.1.0.dist-info/LICENSE,sha256=29w5EwB6aCPDEABnspMPl5CYQLtQcC_z7YB8Tb22koU,1083
+path_comment_hook-0.1.0.dist-info/METADATA,sha256=YM-KRJx9fld4akU0b30GV8eUNvPhkNxXdt-_gWq6u8o,11991
+path_comment_hook-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+path_comment_hook-0.1.0.dist-info/entry_points.txt,sha256=pMMcYi7sc_KKUwVeTnKtuHdiYFbFCEujepT1LGt0X20,140
+path_comment_hook-0.1.0.dist-info/RECORD,,

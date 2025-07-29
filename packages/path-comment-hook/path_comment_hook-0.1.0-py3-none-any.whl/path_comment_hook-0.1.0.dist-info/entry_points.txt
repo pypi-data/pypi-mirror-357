@@ -1,0 +1,5 @@
+[console_scripts]
+path-comment-hook=path_comment.cli:main
+path-comment-welcome=path_comment.welcome:show_welcome
+pch=path_comment.cli:main
+
