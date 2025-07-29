@@ -1,0 +1,15 @@
+pany/__init__.py,sha256=vOms82Sh_e1_DpBEE66n0_eQZ8E_yWLrJ_7gxw1W1n0,457
+pany/client.py,sha256=59-wK7gS0ArHNFb5lzSaxiZUEQbPob5Y87rIvacsh4w,3212
+pany/config.py,sha256=1sNU-r3JpN1j_D7YHpb2Z3ncgVDNHPa8WFTO9QwAr6M,1154
+pany/main.py,sha256=a6D2rrj_URfB8TjSa8_065EpP_widNZ_1PhnAGpcWn8,68836
+pany/models.py,sha256=TgqM3O6KjRV7NkOm6mYjRjVXS2hxL0m9Y_E2Ads_Nl0,2442
+pany/services/__init__.py,sha256=x658g72ascDuS_g3a-KWB9WQCyuISDPc74AvIrLMNcU,125
+pany/services/database.py,sha256=241EHH1yyPIHB82Ml-FnsJm0KSO6GsO9d-SPakpygfg,6230
+pany/services/embedding.py,sha256=E0EYBfJrQGfrof53M9b7pfZo3Ei8DtwlXX_CG_RH0dw,7321
+pany/services/file_processor.py,sha256=QjHzH5hveo_UHyA68d4oXlmGqiYif9XVHFhPXpWPEn4,10351
+pany-0.1.0.dist-info/licenses/LICENSE,sha256=cNg-Q2IOFUAdW9r8Duu-V1hBUUcBuEdmxiyZQ72GF8o,1082
+pany-0.1.0.dist-info/METADATA,sha256=lBUCdsXUYe11ctssRTaQzxZUT23dknQlx4tsxB_4vXk,12608
+pany-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pany-0.1.0.dist-info/entry_points.txt,sha256=mqFdEkF8u5a5ZlmnrU901-DD5WJ4zDjqU25AGTpkk94,69
+pany-0.1.0.dist-info/top_level.txt,sha256=MhgOhehE64Hh8M5C7UosbYooKcDzB3SiiXdj4KgSjGQ,14
+pany-0.1.0.dist-info/RECORD,,

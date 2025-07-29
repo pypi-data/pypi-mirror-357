@@ -1,0 +1,3 @@
+[console_scripts]
+pany = pany.main:main
+pany-server = pany.main:main
