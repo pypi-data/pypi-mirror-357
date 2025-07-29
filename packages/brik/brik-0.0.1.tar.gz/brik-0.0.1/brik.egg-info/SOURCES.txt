@@ -1,0 +1,7 @@
+pyproject.toml
+setup.cfg
+brik/__init__.py
+brik.egg-info/PKG-INFO
+brik.egg-info/SOURCES.txt
+brik.egg-info/dependency_links.txt
+brik.egg-info/top_level.txt
