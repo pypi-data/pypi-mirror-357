@@ -1,0 +1,5 @@
+feedparser
+requests
+readability-lxml
+rich
+html2text
