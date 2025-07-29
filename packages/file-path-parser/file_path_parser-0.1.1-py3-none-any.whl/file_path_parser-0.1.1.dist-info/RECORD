@@ -1,0 +1,9 @@
+file_path_parser/__init__.py,sha256=BU2uzeEbmVbnMTQelZoFFATwy2t2X5JCHj9eOX634zM,33
+file_path_parser/cli.py,sha256=2Swc2zy68BM3aGMQsxS6EC4bU9BipDStcG1KCVGjYZc,1852
+file_path_parser/file_path_parser.py,sha256=PZhbvvX1C9luP4GzGOoFXAozjOYRPliM_3T3MooH0KM,10568
+file_path_parser/pattern_matcher.py,sha256=NTW8DPG6sMS4WiyZsG2Ea1EKszO_g5WZXg-9buLVLyU,3063
+file_path_parser-0.1.1.dist-info/entry_points.txt,sha256=zX0RDx1uaVZsjodFVg1LROXLW8jHgNw8uXxyDCyJ5Yc,62
+file_path_parser-0.1.1.dist-info/LICENSE,sha256=tn6P3jLcSJWZJaOLBFMGC2Sj9clgOdM9Sf3W_AQT1FA,1087
+file_path_parser-0.1.1.dist-info/METADATA,sha256=TclSeyHvc_ZarE2sVsE8zSdom4mOHHQPzQWxYWjalY4,9091
+file_path_parser-0.1.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+file_path_parser-0.1.1.dist-info/RECORD,,
