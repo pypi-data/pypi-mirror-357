@@ -1,0 +1,10 @@
+hkopenai/hk_climate_mcp_server/__init__.py,sha256=nJyrwz2k8WCam-VVqVAJTS4VqznFmlWW4-T9kdvl4k8,1155
+hkopenai/hk_climate_mcp_server/__main__.py,sha256=2rpUSwIvU59qepKyDNMz6AtDrbsRVVIZZP0hL5LoZbs,91
+hkopenai/hk_climate_mcp_server/app.py,sha256=hXfnjbwW-0PoAfsstIedwRqNKyDKBR-gdD2FljWs5VA,7574
+hkopenai/hk_climate_mcp_server/tool_weather.py,sha256=0fzUFP7nuKeH4H-1ajLCiRB6Qvr4f_ZjA2GCXZGJrpI,18876
+hkopenai_hk_climate_mcp_server-0.3.0.dist-info/licenses/LICENSE,sha256=RzryYGol65qd1yszjiy-hSUsX9EJJkpwEpNXnIs_Bv8,1070
+hkopenai_hk_climate_mcp_server-0.3.0.dist-info/METADATA,sha256=bUAs5zVGVD18xr8TmB9l5MndnPaaq0q2plCecAzcJjs,6825
+hkopenai_hk_climate_mcp_server-0.3.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+hkopenai_hk_climate_mcp_server-0.3.0.dist-info/entry_points.txt,sha256=2pPEyDw5KdrNNZIGQsSrY-5IRMgWaWvEQT_BQJhKPMQ,82
+hkopenai_hk_climate_mcp_server-0.3.0.dist-info/top_level.txt,sha256=6PRVKRM9BiU5vzKKGnsq2t0-Bi0TrJvSY35llo4nLFA,9
+hkopenai_hk_climate_mcp_server-0.3.0.dist-info/RECORD,,
