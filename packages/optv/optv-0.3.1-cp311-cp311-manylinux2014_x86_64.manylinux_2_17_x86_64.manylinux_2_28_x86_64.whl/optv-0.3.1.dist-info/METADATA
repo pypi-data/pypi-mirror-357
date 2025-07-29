@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: optv
+Version: 0.3.1
+Summary: OpenPTV Python bindings
+Author-email: OpenPTV Community <openptv@googlegroups.com>
+License: LGPL-3.0-or-later
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy==1.26.4
+Requires-Dist: pyyaml
+
+# OpenPTV Python Bindings
+
+Python bindings for the OpenPTV library.
+
+## Installation
+
+Simple installation via pip:
+
+```bash
+pip install openptv
+```
+
+## Building from Source
+
+1. Install dependencies:
+```bash
+pip install numpy cython setuptools
+```
+
+2. Build the package:
+```bash
+python setup.py prepare
+python setup.py build
+python setup.py install
+```
+
+## Testing
+
+Run the test suite:
+```bash
+pytest test/
+```
+
+## License
+
+LGPL-3.0-or-later
