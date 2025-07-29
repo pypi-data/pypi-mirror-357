@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/gcc_slycooper50/fontconfig-2.16.0.tar.xz
+src/gcc_slycooper50/freetype-2.13.3.tar.gz
+src/gcc_slycooper50/mesa-25.1.4.tar.xz
+src/gcc_slycooper50.egg-info/PKG-INFO
+src/gcc_slycooper50.egg-info/SOURCES.txt
+src/gcc_slycooper50.egg-info/dependency_links.txt
+src/gcc_slycooper50.egg-info/top_level.txt
