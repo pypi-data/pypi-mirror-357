@@ -1,0 +1,11 @@
+24ur_api-0.2.1.dist-info/licenses/LICENSE,sha256=c2_k0nKqYmNSwrvt1eipIz8bYmzrDgewmDFX9O40Tt0,1072
+api_24ur/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+api_24ur/client.py,sha256=ErQX51qiYR-wpCJSNWlJoA9O6LMm0l5MnvWOrSGTl0Q,6057
+api_24ur/downloader.py,sha256=3cwS1c1Cs9eKXD_XinheWU_hNLAe5oUxQNmADgEZ-vo,1499
+api_24ur/exceptions.py,sha256=hQB4TjeG-IysQclpE13DIiIsEBxJ0g5hLNG967sbbq4,138
+api_24ur/schemas.py,sha256=YkeXbfbNcUPhpCLTMh7KBPMqfIHIJ0LTr8jKDGl91hg,11018
+api_24ur/types.py,sha256=3S3lr2R63pARYo4gRttO1gtuQLgkwBRRjzVjlSJbP54,1312
+24ur_api-0.2.1.dist-info/METADATA,sha256=vz1PWqp0QuXZyrDJK3fQbIadma_zzj19WvIUPnFE7iw,1803
+24ur_api-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+24ur_api-0.2.1.dist-info/top_level.txt,sha256=2NnAximSb_diMGYUMUyCwco3MhkIrLVVcKbnFd2acnU,9
+24ur_api-0.2.1.dist-info/RECORD,,
