@@ -1,0 +1,2 @@
+[console_scripts]
+bitmark = bitmark.main:main

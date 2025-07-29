@@ -1,0 +1,159 @@
+Metadata-Version: 2.1
+Name: bitmark
+Version: 1.0.1
+Summary: bitmark is a simple yet powerful utility to manage and parse bitflags represented as hexadecimal values, with support for user-defined flag sets stored in YAML files.
+Author: AleirJDawn
+Author-email: 
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# bitmark
+
+`bitmark` is a simple yet powerful utility to manage and parse bitflags represented as hexadecimal values, with support for user-defined flag sets stored in YAML files.
+
+---
+
+## Features
+
+- Parse hexadecimal flags and display corresponding bit positions and names.
+- Create custom YAML flag definition files.
+- List available flag types.
+- Open the directory where flag definitions are stored.
+- Supports cross-platform usage (Windows, macOS, Linux).
+
+---
+
+## Installation
+
+Install `bitmark` via pip:
+
+```bash
+pip install bitmark
+```
+
+## Usage
+
+You can run bitmark directly from the command line.
+
+## Commands
+### parse
+
+Parse a hexadecimal number to display its set bits and optionally use a flag type to show flag names.
+
+```bash
+bitmark parse <hex_number> [type_name]
+```
+
+- hex_number: The hexadecimal number to parse (e.g., 0x1F).
+- type_name (optional): Name of the flag type YAML file (without .yml) to interpret flag names. (possibly a name of flags structure)
+
+
+If no command is provided, bitmark assumes parse as default.
+
+Example:
+```bash
+bitmark 0x1F myflags
+```
+
+or explicitly:
+```bash
+bitmark parse 0x1F myflags
+```
+
+---
+
+### create
+
+Create a new YAML flag definition file under ~/.bitmark (or .bitmark in current directory if home not found).
+
+```bash
+bitmark create <type_name> NAME1=VALUE1 NAME2=VALUE2 ...
+```
+
+- type_name: Name of the new flag type.
+- Flags must be provided as NAME=VALUE pairs.
+- Values can be decimal or hex (e.g., 0x01).
+
+Example:
+
+```bash
+bitmark create myflags READ=0x01 WRITE=0x02 EXECUTE=0x04
+```
+
+---
+
+### types
+
+List all available flag types (names of .yml files in bitflags directory).
+
+```bash
+bitmark types
+```
+
+---
+
+### db
+
+Open the bitflags directory in your file explorer.
+
+```bash
+bitmark db
+```
+
+
+## Configuration Directory
+
+bitmark stores YAML flag definition files in a .bitmark directory:
+
+- Primary location: ~/.bitmark
+- If home directory not found, uses .bitmark in the current working directory.
+
+
+## Examples
+
+Parse flags without a type:
+
+```bash
+bitmark 0x05
+```
+
+Output:
+
+```
+bit 0: 0x1
+bit 2: 0x4
+
+0x1 | 0x4
+```
+
+Create type:
+
+```bash
+bitmark create myflags READ=0x01 WRITE=0x02 EXECUTE=0x04
+```
+
+Parse flags with a type:
+
+```bash
+bitmark parse 0x05 myflags
+```
+
+Output:
+
+```
+bit 0: [READ] 0x1
+bit 2: [EXECUTE] 0x4
+
+READ | EXECUTE
+```
+
+.bitmark/myflags.yml structure:
+
+```yaml
+READ: '0x1'
+WRITE: '0x2'
+EXECUTE: '0x4'
+```

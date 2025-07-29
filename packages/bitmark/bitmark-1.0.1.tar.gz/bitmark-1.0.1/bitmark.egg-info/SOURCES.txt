@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+bitmark/__init__.py
+bitmark/main.py
+bitmark.egg-info/PKG-INFO
+bitmark.egg-info/SOURCES.txt
+bitmark.egg-info/dependency_links.txt
+bitmark.egg-info/entry_points.txt
+bitmark.egg-info/requires.txt
+bitmark.egg-info/top_level.txt
