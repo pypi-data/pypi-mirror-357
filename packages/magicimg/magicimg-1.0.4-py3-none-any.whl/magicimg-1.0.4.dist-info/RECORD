@@ -1,0 +1,10 @@
+magicimg/__init__.py,sha256=kvcv_YmO2pJXzesdN06sD0QynJEUB4Sb9epP5zYAe3w,13680
+magicimg/cli.py,sha256=Hu-FvO9XcU-4rDFNkk4aDfEjGOOd7flhndB5R7V0IBM,8415
+magicimg/core.py,sha256=V2xlkPYQxRv6Jye8pV5sT31F5W6hYEtsrT7IHxpUIMA,73428
+magicimg/utils.py,sha256=ry1U0b9EoFZSTVEpDfUol1QWWtvwH9l-Whwww0w7y0E,27253
+magicimg-1.0.4.dist-info/LICENSE,sha256=Mtvycu_ply4ywU0Cmt7HKoyILzNKTimrAuiIE85KyGI,1087
+magicimg-1.0.4.dist-info/METADATA,sha256=pVZfF4NnBkig6rgzZAH83Vob0Z9V2Cs7f5YhIN36mwM,16512
+magicimg-1.0.4.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+magicimg-1.0.4.dist-info/entry_points.txt,sha256=FyQ-q73ktEgGwy1o7DhpTsXHWznng1xqaPfVApo3N-o,47
+magicimg-1.0.4.dist-info/top_level.txt,sha256=Ks3Z7oz1eTw5H9aTlBYnooCeoOdDvsZArE0sSTEYrgY,9
+magicimg-1.0.4.dist-info/RECORD,,
