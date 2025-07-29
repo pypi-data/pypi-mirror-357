@@ -1,0 +1,13 @@
+simple_aiogram/__init__.py,sha256=aSOYWMajpEbAEebyxxpcMbAXBj4h1e_XrGzHiHWdYoc,231
+simple_aiogram/bot_temp.py,sha256=geZaYTNzlM92OZL0UEDv34Fh69Iy5ALiaJCdMIgJ5SI,3271
+simple_aiogram/cache.py,sha256=Aqcqj4LL5sK2f8kwCOy8DoUQDiM2T-Ji3UVLQVUNYI4,2427
+simple_aiogram/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+simple_aiogram/models/files.py,sha256=kRjsYlkAsmKQPPbY0yeaYxjsPJFk5rwEf8A_evsjoCk,1744
+simple_aiogram/models/keyboard_builder.py,sha256=awTd-4BtcTp6gBc8vIg8L4G7nvXqzCKSGfiflqgYhpA,7089
+simple_aiogram/models/message.py,sha256=TiM_hlLejpQYwK7_fVhuR_6IqjpqwDBsI1XWHeGIY3s,35618
+simple_aiogram/models/telegram_window.py,sha256=DjYr9DjxlRqZXStXYU88mdQaKLd3O1h9D4unQVI-DBg,112
+simple_aiogram/models/text.py,sha256=AHUDgw2Arxs2QFfYYAnh5yXywRUyNq41nWF4N6319YU,484
+simple_aiogram-0.1.0b1.dist-info/LICENSE,sha256=8OJAIA1xNQqkAPqJQnMUkO9rLOoo2xj1DN_gZ3rSf2g,1088
+simple_aiogram-0.1.0b1.dist-info/METADATA,sha256=vKShncMHZfZVefRXE8FNhhGWPJaNu9aiI5FMaNcxu3o,4604
+simple_aiogram-0.1.0b1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+simple_aiogram-0.1.0b1.dist-info/RECORD,,
