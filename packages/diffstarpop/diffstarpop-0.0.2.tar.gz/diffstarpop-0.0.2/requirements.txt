@@ -1,0 +1,5 @@
+diffmah>=0.7.2
+diffstar>=0.3.3
+numpy
+jax
+dsps
