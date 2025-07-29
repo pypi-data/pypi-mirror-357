@@ -1,0 +1,12 @@
+zeroglyph/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zeroglyph/client.py,sha256=j1E9_TwK9-CF5nmtHJvKkEFQddcL7bTEOYjEV4hPlvE,1411
+zeroglyph/framer.py,sha256=a53iqU7hTQfwo25VmJ7vg5sXIeNXq3WvRxd6LBpPPyg,1686
+zeroglyph/pipeline.py,sha256=POIBPsIPjHnMO1YrRXtA8pBf1AHkg2cqji9xBK6BJBY,1182
+zeroglyph/utils.py,sha256=dAUNMg0HMbuG1xlPaKg_tesikyinH8S6R6JHJ9PC2_w,865
+zeroglyph/plugins/dict_plugin.py,sha256=EaJmLrjs2BHp-Ap7aZT_V-mJDBPcZM-UKzxvIUYG744,742
+zeroglyph/plugins/huffman_plugin.py,sha256=qSGS-toowu4jUFfOe2Vupl1rPWgToR-2TK0aeIbjGME,3540
+zeroglyph/plugins/zstd_plugin.py,sha256=tTYhWUnkprlNUnIykQckX8-YXEQfB8jWt2M2pw3kYoU,1316
+zeroglyph-1.0.0.dist-info/METADATA,sha256=LeNBsr6sd_x4KmWs1o1hA-BTJc9Pfng7w9HrUx5e91c,3996
+zeroglyph-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+zeroglyph-1.0.0.dist-info/top_level.txt,sha256=nTEJAzxaYP7T8akcjvX5cIn-c61G8eERMu3DNSpVe70,10
+zeroglyph-1.0.0.dist-info/RECORD,,
