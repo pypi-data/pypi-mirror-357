@@ -1,0 +1,8 @@
+livekit/plugins/tencent/__init__.py,sha256=O2Je0xNUochnRHn_eReZo0kAC55XbYHALo__lyJYSNU,483
+livekit/plugins/tencent/log.py,sha256=WnNrW5kzxSgv90LP0pPhPeVgfwOpPRG37Llo6WBPKeo,77
+livekit/plugins/tencent/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+livekit/plugins/tencent/stt.py,sha256=k1gnAvtvJ9Kwp0WXddNzfeuFt3Px8lDEKfsY_RP5TiE,15099
+livekit/plugins/tencent/version.py,sha256=FAnEVWb_FOZ6Lzfanq-uPkscJT60wY8diToK5AMK7Es,27
+livekit_plugins_tencent-1.1.2.post6.dist-info/METADATA,sha256=Ecqs_ao4vWEVNooEwBy9-9Si0RfjATyQ0VgFL6U5wRY,1863
+livekit_plugins_tencent-1.1.2.post6.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+livekit_plugins_tencent-1.1.2.post6.dist-info/RECORD,,
