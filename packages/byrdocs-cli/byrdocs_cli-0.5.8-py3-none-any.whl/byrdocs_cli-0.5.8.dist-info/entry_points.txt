@@ -1,0 +1,2 @@
+[console_scripts]
+byrdocs = byrdocs:main

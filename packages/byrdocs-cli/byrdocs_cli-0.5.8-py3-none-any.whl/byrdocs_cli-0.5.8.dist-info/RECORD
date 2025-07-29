@@ -1,0 +1,12 @@
+byrdocs/__init__.py,sha256=rEhjbjL38lr83jo0AiPtKFid4mAjbtnC8YCsbe6bI3o,12758
+byrdocs/custom_prompt.py,sha256=GqltShvX9DzDw-VHjC4pdSJwFxJnzKucA4G6gvJAKAs,3563
+byrdocs/history_manager.py,sha256=D8MXq2EQM2XBcDraySDDWzOoV_Rf1srY5DbsQ8gYglQ,6469
+byrdocs/main_menu.py,sha256=DPSGSKZqGf_VNjjEmzXwzApYsfpgBBKmXqk-Zw0ViBg,1861
+byrdocs/resources.py,sha256=sZmrFZTGW7xlPAFvnbZtWc1ei9kqYyfdzYvsTk1Jx-I,334
+byrdocs/yaml_init.py,sha256=OaFlNrljtMllm4oY0yUvdXsDrkephaWWi55bWOT5t5Q,20793
+byrdocs_cli-0.5.8.dist-info/licenses/LICENSE,sha256=mOMS878LPNFfzA9sQb8m-fMqloSt4MiLHUkoEHz-3C8,1069
+byrdocs_cli-0.5.8.dist-info/METADATA,sha256=ee9J0vZJIIA3OfhPtnx9bxKWpgYNQ1JJWqrfTnA8QkI,2458
+byrdocs_cli-0.5.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+byrdocs_cli-0.5.8.dist-info/entry_points.txt,sha256=tvsnw2o4eml5UpJh-VLqiWILQwAkUCRgtYy7RfJ45uE,41
+byrdocs_cli-0.5.8.dist-info/top_level.txt,sha256=D485SSx_qRb_0joPTqsglAJNxbd_UbJzzNBMqda1geg,8
+byrdocs_cli-0.5.8.dist-info/RECORD,,
