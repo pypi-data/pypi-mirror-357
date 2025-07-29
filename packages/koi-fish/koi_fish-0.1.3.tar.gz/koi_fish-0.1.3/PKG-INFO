@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: koi-fish
+Version: 0.1.3
+Summary: CLI automation tool
+Keywords: task automation,cli tool,command line runner
+Author-Email: kaliv0 <kaloyan.ivanov88@gmail.com>
+License-File: LICENSE
+Project-URL: repository, https://github.com/kaliv0/koi_fish.git
+Requires-Python: >=3.13
+Requires-Dist: pyyaml>=6.0.2
+Description-Content-Type: text/markdown
+
+# koi_fish
