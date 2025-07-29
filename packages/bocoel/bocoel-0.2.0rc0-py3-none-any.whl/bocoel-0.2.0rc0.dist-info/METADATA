@@ -1,0 +1,209 @@
+Metadata-Version: 2.4
+Name: bocoel
+Version: 0.2.0rc0
+Summary: Bayesian Optimization as a Coverage Tool for Evaluating Large Language Models
+Author-email: RenChu Wang <patrick1031wang@gmail.com>
+License: BSD-3
+Requires-Python: <3.13,>=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: alive-progress>=3.1.5
+Requires-Dist: ax-platform<1
+Requires-Dist: botorch>=0.12.0
+Requires-Dist: gpytorch>=1.11
+Requires-Dist: fire>=0.5.0
+Requires-Dist: networkx>=3.2.1
+Requires-Dist: numpy<2
+Requires-Dist: pandas>=2.1.4
+Requires-Dist: parse>=1.20.1
+Requires-Dist: pyyaml>=6.0.1
+Requires-Dist: scikit-learn>=1.3.2
+Requires-Dist: scipy>=1.11.4
+Requires-Dist: structlog>=24.1.0
+Requires-Dist: torch>=2.1.2
+Requires-Dist: typeguard>=4.4.0
+Requires-Dist: typing-extensions>=4.9.0
+Provides-Extra: tests
+Requires-Dist: pytest>=8.4.1; extra == "tests"
+Requires-Dist: pytest-cov>=6.2.1; extra == "tests"
+Requires-Dist: pytest-xdist>=3.7.0; extra == "tests"
+Requires-Dist: pytest-sugar>=1.0.0; extra == "tests"
+Requires-Dist: better-exceptions>=0.3.3; extra == "tests"
+Provides-Extra: visual
+Requires-Dist: dash>=2.14.2; extra == "visual"
+Requires-Dist: flask>=3.0.0; extra == "visual"
+Requires-Dist: hiplot>=0.1.33; extra == "visual"
+Requires-Dist: plotly>=5.18.0; extra == "visual"
+Provides-Extra: all
+Requires-Dist: dash>=2.14.2; extra == "all"
+Requires-Dist: flask>=3.0.0; extra == "all"
+Requires-Dist: hiplot>=0.1.33; extra == "all"
+Requires-Dist: plotly>=5.18.0; extra == "all"
+Requires-Dist: rouge>=1.0.1; extra == "all"
+Requires-Dist: rouge-score>=0.1.2; extra == "all"
+Requires-Dist: nltk>=3.8.1; extra == "all"
+Requires-Dist: sacrebleu>=2.4.0; extra == "all"
+Requires-Dist: scikit-learn-extra>=0.3.0; extra == "all"
+Requires-Dist: matplotlib>=3.8.2; extra == "all"
+Requires-Dist: seaborn>=0.13.2; extra == "all"
+Requires-Dist: cma>=4.0.0; extra == "all"
+Requires-Dist: datasets>=2.16.1; extra == "all"
+Requires-Dist: faiss-cpu>=1.7.4; extra == "all"
+Requires-Dist: hnswlib>=0.8.0; extra == "all"
+Provides-Extra: transformers
+Requires-Dist: transformers>=4.36.2; extra == "transformers"
+Requires-Dist: sentence-transformers>=2.2.2; extra == "transformers"
+Provides-Extra: metrics
+Requires-Dist: rouge>=1.0.1; extra == "metrics"
+Requires-Dist: rouge-score>=0.1.2; extra == "metrics"
+Requires-Dist: nltk>=3.8.1; extra == "metrics"
+Requires-Dist: sacrebleu>=2.4.0; extra == "metrics"
+Provides-Extra: sklearn-extra
+Requires-Dist: scikit-learn-extra>=0.3.0; extra == "sklearn-extra"
+Provides-Extra: plots
+Requires-Dist: matplotlib>=3.8.2; extra == "plots"
+Requires-Dist: seaborn>=0.13.2; extra == "plots"
+Provides-Extra: website
+Requires-Dist: jupyter>=1.1.1; extra == "website"
+Requires-Dist: jupyter-book>=1.0.3; extra == "website"
+Requires-Dist: myst-parser>=2.0.0; extra == "website"
+Requires-Dist: sphinxcontrib-mermaid>=0.9.2; extra == "website"
+Provides-Extra: cma
+Requires-Dist: cma>=4.0.0; extra == "cma"
+Provides-Extra: datasets
+Requires-Dist: datasets>=2.16.1; extra == "datasets"
+Provides-Extra: checks
+Requires-Dist: autoflake>=2.3.1; extra == "checks"
+Requires-Dist: black>=25.1.0; extra == "checks"
+Requires-Dist: isort>=6.0.1; extra == "checks"
+Requires-Dist: mypy>=1.16.1; extra == "checks"
+Requires-Dist: pre-commit>=4.2.0; extra == "checks"
+Requires-Dist: pip>=25.1.1; extra == "checks"
+Requires-Dist: rich>=14.0.0; extra == "checks"
+Provides-Extra: index
+Requires-Dist: faiss-cpu>=1.7.4; extra == "index"
+Requires-Dist: hnswlib>=0.8.0; extra == "index"
+Dynamic: license-file
+
+# ☂️ BoCoEL
+
+## Bayesian Optimization as a Coverage Tool for Evaluating Large Language Models
+
+![Logo](assets/logo-full.svg)
+
+[![Publish](https://github.com/rentruewang/bocoel/actions/workflows/release.yaml/badge.svg)](https://github.com/rentruewang/bocoel/actions/workflows/release.yaml)
+[![Build Pages](https://github.com/rentruewang/bocoel/actions/workflows/build.yaml/badge.svg)](https://github.com/rentruewang/bocoel/actions/workflows/build.yaml)
+[![Formatting](https://github.com/rentruewang/bocoel/actions/workflows/format.yaml/badge.svg)](https://github.com/rentruewang/bocoel/actions/workflows/format.yaml)
+[![Type Checking](https://github.com/rentruewang/bocoel/actions/workflows/typecheck.yaml/badge.svg)](https://github.com/rentruewang/bocoel/actions/workflows/typecheck.yaml)
+[![Unit Testing](https://github.com/rentruewang/bocoel/actions/workflows/unittest.yaml/badge.svg)](https://github.com/rentruewang/bocoel/actions/workflows/unittest.yaml)
+
+
+![GitHub License](https://img.shields.io/github/license/rentruewang/bocoel)
+![Python 3.12](https://img.shields.io/badge/python-3.12-blue)
+
+
+## 🤔 Why BoCoEL?
+
+Large language models are expensive and slow behemoths, and evaluating them on gigantic modern datasets only makes it worse.
+
+If only there is a way to just select a meaningful (_and small_) subset of the corpus and obtain a highly accurate evaluation.....
+
+Wait, sounds like Bayesian Optimization!
+
+Bocoel works in the following steps:
+
+1. Encode individual entry into embeddings (way cheaper / faster than LLM and reusable).
+2. Use Bayesian optimization to select queries to evaluate.
+3. Use the queries to retrieve from our corpus (with the encoded embeddings).
+4. Profit.
+
+The evaluations generated are easily managed by the provided manager utility.
+
+To our knowledge, this is the first work aiming to reduce computation costs during evaluation (benchmarking) with a (possibly dynamic) budget.
+
+
+## 🚀 Features
+
+- 🎯 Accurately evaluate large language models with just tens of samples from your selected corpus.
+- 💂‍♂️ Uses the power of Bayesian optimization to select an optimal subset of samples for the language model to evaluate.
+- 💯 Evaluate the corpus on the model in addition to evaluating the model on the corpus.
+- 🤗 Support for `GPT2`, `Pythia`, `LLAMA` and more through integration with huggingface [transformers](https://huggingface.co/docs/transformers/en/index) and [datasets](https://huggingface.co/docs/datasets/en/index)
+- 🧩 Modular design.
+- 🔎 Efficient representation of the corpus / dataset such as N-sphere representation or whitening of the latent space to augment evaluation quality.
+
+
+## ⭐ Give us a star!
+
+Like what you see? Please consider giving this a star (★)!
+
+
+## ♾️ Bayesian Optimization
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/02/GpParBayesAnimationSmall.gif" width="30%" align="right"/>
+
+Simply put, Bayesian optimization aims to optimize either the exploration objective (the purple area in the image) or the exploitation object (the height of the black dots). It uses Gaussian processes as a backbone for inference, and uses an **acquisition function** to decide where to sample next. See [here](https://distill.pub/2019/visual-exploration-gaussian-processes/) for an a more in-depth introduction.
+
+Since _Bayesian optimization works well with an expensive-to-evaluate black-box model (paraphrase: LLM)_, it is perfect for this particular use case. Bocoel uses Bayesian optimization as a backbone for exploring the embedding space given by our corpus, which allows it to select a good subset acting as a mini snapshot of the corpus.
+
+
+## 🏎️ Performance Implications
+
+LLMs are painfully slow, especially generative ones (which is what is usually referred to as LLM), since sequence generation is sequential by nature.
+
+Despite `bocoel`'s requirement to use an embedder to encode the entire corpus, embedders are faster than LLMs by orders of magnitude and the time is gained back by practically any savings in evaluating LLMs.
+
+
+## ⬇️ Installation
+
+I don't want optional dependencies:
+
+```
+pip install bocoel
+```
+
+Give me the full experience (all optional dependencies):
+
+```
+pip install "bocoel[all]"
+```
+
+
+## 🔬 Usage
+
+See the folder [examples/getting_started](https://github.com/rentruewang/bocoel/tree/main/examples/getting_started) for a simplistic usage of the library to get started with just a few lines of code.
+
+
+## ✍️ Develop with BoCoEL
+
+Usage examples are under the folder [`examples`](https://github.com/rentruewang/bocoel/tree/main/examples). API reference can be found [here](https://bocoel.rentruewang.com/references/overview.html).
+
+
+## 🥰 Contributing
+
+Contributors wanted! Don't be shy. Feel free to file issues and PRs. For PRs, please follow the guide on [contributing](./CONTRIBUTING.md) and the [code of conduct](./CODE_OF_CONDUCT.md). Openness and inclusiveness are taken very seriously.
+
+
+## 🗺️ Roadmap: work in progress
+
+- 🪑 Simpler usage. I should provide a high-level wrapper for the entire library s.t. evaluations can be run in one line.
+- 📊 Visualization module of the evaluation.
+- 🎲 Integration of alternative methods (random, kmedoids...) with Gaussian process.
+- 🥨 Integration with more backends such as [VLLM](https://github.com/vllm-project/vllm) and [OpenAI's API](https://github.com/openai/openai-python).
+- 🆕 Support for Python 3.12+
+
+
+## 🏷️ License and Citation
+
+The code is available under [BSD-3 License](./LICENSE.md).
+
+If you find this project helpful in your research, please cite this work at
+
+```
+@misc{bocoel2024,
+    title = {BoCoEL: Bayesian Optimization as a Coverage Tool for Evaluating Large Language Models},
+    url = {https://bocoel.rentruewang.com/research/},
+    author = {Wang, RenChu},
+    month = {January},
+    year = {2024}
+}
+```
