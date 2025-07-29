@@ -1,0 +1,206 @@
+Metadata-Version: 2.1
+Name: contextdict
+Version: 0.1.1
+Summary: A context-aware in-memory dictionary with Redis support, TTLs, and versioning.
+Author: Yerram Mahendra Reddy
+Author-email: yerram.mahi@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: redis >=4.0.0
+
+# ContextDict — The Smartest Drop-in Dict for Python
+
+```bash
+pip install contextdict
+```
+
+## Overview
+`ContextDict` is a powerful in-memory dictionary enhanced with:
+- **Redis support** (optional backend)
+- **TTL (Time-to-Live)** per key
+- **Versioning** with timestamped history
+- **Thread-safe operations**
+- **Async-ready** via `asyncio.to_thread`
+
+## Features
+- Supports complex keys (tuples, dicts, lists)
+- Remembers all versions per key
+- TTL-based auto-expiry
+- Thread-safe with `threading.Lock`
+- Async API: `aset`, `aget`, `afilter`
+- Optional Redis backend for persistence and scaling
+- Filter with custom logic
+- Drop-in usage: `dict[key] = value`
+
+## Installation
+```bash
+pip install contextdict
+```
+
+## Quick Example
+```python
+from contextdict import ContextDict
+
+hd = ContextDict()
+
+hd.set(('user', 1), {'name': 'Alice'}, ttl=60)
+print(hd.get(('user', 1)))
+
+# Later...
+print(hd.versions(('user', 1)))
+```
+
+### Redis-Enabled:
+```python
+hd = ContextDict(use_redis=True, redis_config={"host": "localhost", "port": 6379})
+hd.set("token", "abc123", ttl=10)
+print(hd.get("token"))
+```
+
+## Why `filter()` Matters
+
+Modern applications often store **fast-changing or contextual data** in memory — such as:
+- Active user sessions
+- In-progress background jobs
+- Temporary tokens or flags
+- Ephemeral configuration changes
+
+When querying this type of in-memory data, you often need to:
+- Filter for a specific condition (e.g., active users, jobs with errors)
+- Skip expired or invalid keys (TTL aware)
+- Perform quick in-memory lookups like a smart cache
+
+ContextDict provides a built-in `filter()` method to handle this elegantly:
+
+### Example:
+```python
+hd.set("user:1", {"status": "active"})
+hd.set("user:2", {"status": "inactive"})
+
+active_users = hd.filter(lambda k, v: v["status"] == "active")
+print(active_users)  # {'user:1': {'status': 'active'}}
+```
+
+---
+
+### More Real-World Examples
+
+#### 1. **Filter keys with values greater than a threshold**
+```python
+hd.set("a", 10)
+hd.set("b", 50)
+hd.set("c", 5)
+
+high_values = hd.filter(lambda k, v: v > 10)
+# Result: {'b': 50}
+```
+
+#### 2. **Filter only tuple-based keys**
+```python
+hd.set(("user", 1), {"age": 30})
+hd.set("admin", {"age": 50})
+
+only_tuples = hd.filter(lambda k, v: isinstance(k, tuple))
+# Result: {('user', 1): {'age': 30}}
+```
+
+#### 3. **Filter expired-safe tokens**
+```python
+hd.set("t1", "token1", ttl=1)
+hd.set("t2", "token2", ttl=10)
+
+# After a delay, only non-expired tokens will be returned
+valid_tokens = hd.filter(lambda k, v: True)
+```
+
+#### 4. **Filter with key prefix**
+```python
+hd.set("config:theme", "dark")
+hd.set("config:lang", "en")
+hd.set("session:token", "abc")
+
+configs = hd.filter(lambda k, v: str(k).startswith("config:"))
+# Result: {'config:theme': 'dark', 'config:lang': 'en'}
+```
+
+#### 5. **Filter values of a specific type**
+```python
+hd.set("x", [1, 2, 3])
+hd.set("y", "hello")
+hd.set("z", {"nested": True})
+
+lists_only = hd.filter(lambda k, v: isinstance(v, list))
+# Result: {'x': [1, 2, 3]}
+```
+
+---
+
+### Benefits:
+- Skips expired entries automatically (TTL-safe)
+- Works with complex keys like tuples or lists
+- Returns only the subset you care about
+- Makes ContextDict a functional alternative to Redis/SQLite for in-memory filtering
+- Enables expressive, one-liner queries for cached or ephemeral data
+
+This enables use cases like:
+- Fetching only recent successful tasks
+- Getting all configuration keys with a specific prefix
+- Querying memory like a lightweight database
+
+Modern applications often store **fast-changing or contextual data** in memory — such as:
+- Active user sessions
+- In-progress background jobs
+- Temporary tokens or flags
+- Ephemeral configuration changes
+
+When querying this type of in-memory data, you often need to:
+- Filter for a specific condition (e.g., active users, jobs with errors)
+- Skip expired or invalid keys (TTL aware)
+- Perform quick in-memory lookups like a smart cache
+
+ContextDict provides a built-in `filter()` method to handle this elegantly:
+
+### Example:
+```python
+hd.set("user:1", {"status": "active"})
+hd.set("user:2", {"status": "inactive"})
+
+active_users = hd.filter(lambda k, v: v["status"] == "active")
+print(active_users)  # {'user:1': {'status': 'active'}}
+```
+
+### Benefits:
+- Skips expired entries automatically (TTL-safe)
+- Works with complex keys like tuples or lists
+- Returns only the subset you care about
+- Makes ContextDict a functional alternative to Redis/SQLite for in-memory filtering
+
+This enables use cases like:
+- Fetching only recent successful tasks
+- Getting all configuration keys with a specific prefix
+- Querying memory like a lightweight database
+
+## Async Usage
+```python
+import asyncio
+
+async def run():
+    await hd.aset("k1", "v1", ttl=5)
+    value = await hd.aget("k1")
+    print(value)
+
+asyncio.run(run())
+```
+
+## Coming Soon
+- Eviction policy (LRU)
+- Namespacing
+- Cache stats & metrics
+- Schema-aware validation
+
+## License
+MIT — use it, improve it, share it.  
+©️ 2025 Yerram Mahendra Reddy
