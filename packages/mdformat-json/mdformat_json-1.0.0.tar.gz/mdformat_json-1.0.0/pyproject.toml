@@ -1,0 +1,58 @@
+[project]
+name = "mdformat-json"
+dynamic = ["version"]
+description = "Mdformat plugin to format json code blocks."
+readme = "README.md"
+authors = [{ name = "Bagard Hoel", email = "hoel.bagard@gmail.com" }]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.entry-points."mdformat.codeformatter"]
+"json" = "mdformat_json:format_json"
+
+[tool.uv]
+dev-dependencies = [
+  "pyright>=1.1.387",
+  "ruff>=0.8.4",
+  "codespell>=2.3.0; python_version >= '3.8'",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mdformat_json"]
+
+[tool.hatch.version]
+path = "src/mdformat_json/__init__.py"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+preview = true
+select = ["ALL"]
+ignore = [
+  "COM812", # conflict with formatter
+  "CPY",    # Copyright rules
+  "D1",     # Missing docstring
+  "ISC001", # conflict with formatter
+  "S",      # Security related stuff.
+]
+
+[tool.ruff.lint.isort]
+order-by-type = false
+known-first-party = ["mdformat_json"]
+
+[tool.ruff.lint.flake8-quotes]
+docstring-quotes = "double"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pyright]
+include = ["src/mdformat_json"]
+pythonVersion = "3.8"
+pythonPlatform = "Linux"
+typeCheckingMode = "strict"
