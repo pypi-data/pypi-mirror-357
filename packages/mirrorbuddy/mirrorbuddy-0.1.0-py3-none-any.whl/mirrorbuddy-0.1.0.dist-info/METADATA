@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: mirrorbuddy
+Version: 0.1.0
+Summary: A cool and fun library to clone your body in realtime and it can also detect handshake between you and your clone using Mediapipe
+Home-page: https://github.com/yourusername/yourlibname
+Author: GM
+Author-email: rox639@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: opencv-python
+Requires-Dist: mediapipe
+Requires-Dist: pyttsx3
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 🤝mirrorbuddy
+
+Detect. Mirror. Interact.
+
+**mirrorbuddy** is a lightweight Python library that uses your webcam to detect your body pose in real-time, simulate a mirrored clone, and trigger voice-based responses when a gesture — like a handshake — is detected.
+
+---
+
+## 🔍 Features
+
+- 🔄 Real-time pose detection using MediaPipe
+- 🧍 Clone visualization (mirrored pose on screen)
+- ✋ Detects proximity-based gestures (e.g., handshakes)
+- 🗣️ Voice interaction using `pyttsx3` TTS engine
+- 🎯 Easy to integrate and modify
+
+---
+
+## 🚀 Installation
+
+```bash
+pip install mirrorbuddy
+
+# Or, if you have multiple Python versions installed:
+
+python -m pip install mirrorbuddy
