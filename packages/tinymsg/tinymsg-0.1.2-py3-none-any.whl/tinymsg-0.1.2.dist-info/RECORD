@@ -1,0 +1,16 @@
+./.gitignore,sha256=XlxrXLJVG8Zulh7yhwvg0JE1ytqao3QK6OTed3WLirU,697
+./.pre-commit-config.yaml,sha256=0h__EIOi9ySG8BttSGcpRKZa3-MUxDl1rqYV1y8BaRo,468
+./.python-version,sha256=v8KwrVavnox0GgQ6jiCu1KShtucITz83Y08gcAMAeNU,4
+./PKG-INFO,sha256=hJns4IffEvYOhDpZaWA8yaFCqLKwVWPswmTUkpXF8GI,2793
+./README.md,sha256=BpQgsUImcDmdA05qwI85HyC8OxBIIGVoiitbC122VX4,2392
+./py.typed,sha256=Nqnn8clbgv-5l0PgxcTOldg8mkMKrFn4TvPL-rYUUGg,1
+./pyproject.toml,sha256=SMmIe9WIUqVcxjIZNg4bGbSNrsu3LitXruuL5js_iI8,976
+./tinymsg.py,sha256=yz09S7tTxvlubZUELE0l40PGMGnhsfqktAjbms0YhuM,1142
+./tinymsg.pyi,sha256=1R_KexkZPgTB70Nnthwn_4XwSL8rF5tBaDiDgS8oZ0Q,820
+./uv.lock,sha256=pgP9N-noGoYuUZJ4oNIE4aYj-jlSh9dojHa8FjRGT_M,85839
+./scripts/deploy.sh,sha256=CjxHiVLTdW-iW7vuEjFqmCT4D0mHRdmnuMNBg3zo6Es,109
+./tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+./tests/test_tinymsg.py,sha256=cLqLRWkleAYmg0QScpBfV7J8rY9vE7yb3Raa5IsuVhU,8356
+tinymsg-0.1.2.dist-info/METADATA,sha256=hJns4IffEvYOhDpZaWA8yaFCqLKwVWPswmTUkpXF8GI,2793
+tinymsg-0.1.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+tinymsg-0.1.2.dist-info/RECORD,,
