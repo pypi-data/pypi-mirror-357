@@ -1,0 +1,14 @@
+[project]
+name = "nautobot-bulk-connect"
+version = "1.0.3"
+description = "A Nautobot plugin for bulk connections"
+authors = [{name = "Gesellschaft für wissenschaftliche Datenverarbeitung mbH Göttingen", email = "netzadmin@gwdg.de"},]
+repository = "https://gitlab-ce.gwdg.de/gwdg-netz/nautobot-plugins/nautobot-bulk-connect"
+license = "Apache-2.0"
+readme = "README.md"
+dependencies = ["nautobot>=2.0.0,<3.0.0"]
+requires-python = ">=3.9,<3.13"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
