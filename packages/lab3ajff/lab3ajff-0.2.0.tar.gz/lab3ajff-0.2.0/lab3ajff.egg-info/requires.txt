@@ -1,0 +1,7 @@
+numpy
+
+[all]
+lab3ajff[extra]
+
+[extra]
+pandas

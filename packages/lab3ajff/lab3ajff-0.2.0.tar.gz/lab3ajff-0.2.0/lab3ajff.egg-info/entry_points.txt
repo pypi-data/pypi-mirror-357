@@ -1,0 +1,2 @@
+[console_scripts]
+lab3ajff = lab3ajff.cli:main
