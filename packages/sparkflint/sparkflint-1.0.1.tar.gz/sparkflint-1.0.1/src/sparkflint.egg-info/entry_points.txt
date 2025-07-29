@@ -1,0 +1,2 @@
+[console_scripts]
+sparkflint = sparkflintcli.main:app
