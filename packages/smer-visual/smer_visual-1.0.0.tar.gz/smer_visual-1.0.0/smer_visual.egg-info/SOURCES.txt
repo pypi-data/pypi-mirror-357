@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+smer_visual/__init__.py
+smer_visual/bounding_boxes.py
+smer_visual/smer_visual.py
+smer_visual/utils.py
+smer_visual.egg-info/PKG-INFO
+smer_visual.egg-info/SOURCES.txt
+smer_visual.egg-info/dependency_links.txt
+smer_visual.egg-info/requires.txt
+smer_visual.egg-info/top_level.txt
+test/test.py
