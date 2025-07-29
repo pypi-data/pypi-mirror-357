@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/aem/__init__.py
+src/aem/cnvironment_class.py
+src/awesome_environment_manager.egg-info/PKG-INFO
+src/awesome_environment_manager.egg-info/SOURCES.txt
+src/awesome_environment_manager.egg-info/dependency_links.txt
+src/awesome_environment_manager.egg-info/requires.txt
+src/awesome_environment_manager.egg-info/top_level.txt
+tests/test_environment_class.py
