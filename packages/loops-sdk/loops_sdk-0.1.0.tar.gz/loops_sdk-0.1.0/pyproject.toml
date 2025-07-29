@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loops-sdk"
+version = "0.1.0"
+description = "Loops SDK for Python"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+  {name = "Loops", email = "support@loops.so"}
+]
+dependencies = [
+  "requests==2.31.0",
+  "build==1.2.2.post1",
+  "twine==6.1.0"
+]
+
+[project.optional-dependencies]
+# Development and testing extras
+# Install with: `uv pip install -e .[test]`
+
+test = [
+  "pytest==7.4.4",
+  "pytest-mock==3.14.0",
+  "coverage==7.4.4"
+]
+
+[project.urls]
+Homepage = "https://github.com/loops-so/loops-python"
+Issues = "https://github.com/loops-so/loops-python/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["loops_sdk"]
