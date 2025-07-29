@@ -1,0 +1,7 @@
+ai_assistant/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ai_assistant/ai_assistant.py,sha256=5IrvR5E2TXyI1gqAikGxSt-cedbL9EQ9Cva010lq-Vw,3484
+ai_assistant/piper_helper.py,sha256=AEp1Ip9h2g0bTpV3vY0EsN6diApESkNNxUBW1NFhYhg,880
+ai_assistant_sm-0.0.1.dist-info/METADATA,sha256=4YBvVu8hGLPKHMwI2S_hUgRkUeCui-xWq8D8m_zO0R8,555
+ai_assistant_sm-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ai_assistant_sm-0.0.1.dist-info/top_level.txt,sha256=cku4SQUKbOoo2i9p097tL9H87BtVGMhBYvg9ZG7Fg5E,13
+ai_assistant_sm-0.0.1.dist-info/RECORD,,
