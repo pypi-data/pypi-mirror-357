@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+oscer_shopify/__init__.py
+oscer_shopify/core.py
+oscer_shopify.egg-info/PKG-INFO
+oscer_shopify.egg-info/SOURCES.txt
+oscer_shopify.egg-info/dependency_links.txt
+oscer_shopify.egg-info/requires.txt
+oscer_shopify.egg-info/top_level.txt
