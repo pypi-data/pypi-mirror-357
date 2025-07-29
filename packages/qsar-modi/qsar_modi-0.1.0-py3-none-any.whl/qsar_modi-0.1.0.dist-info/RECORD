@@ -1,0 +1,11 @@
+qsar_modi/__init__.py,sha256=22IsRMEJKS3D3-ha9GsydyGsfC3YpK2lfGT8EXfOf-I,99
+qsar_modi/chem_utils.py,sha256=ddg3PHtpZvE6uQLGH8-gNYJjFeN27GBCueoiR9GwhWY,5538
+qsar_modi/modi.py,sha256=VMa8ONjdKJ2J-zI4RG84h1doUMpg9NtfQffqRujhZrI,7216
+qsar_modi/modi_cli.py,sha256=z_8lKsuyiwmvoAPcdeuEk3MFdnspv-VD7yddpY3LMOU,9604
+qsar_modi/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+qsar_modi-0.1.0.dist-info/AUTHORS.md,sha256=F9mc3O9fpXvugyBGDz702a97cYINyo5hj677G1G80qM,95
+qsar_modi-0.1.0.dist-info/entry_points.txt,sha256=KBFH9Gr0UcH98gQkjBDN2lNIDVk0Hsq7H1928sKMm0w,52
+qsar_modi-0.1.0.dist-info/LICENSE,sha256=GTw6oIfYX9sAPeYnPCui0hj-PdKqD0LUfshfgu4XBrk,1091
+qsar_modi-0.1.0.dist-info/METADATA,sha256=iDmjcg2jk8zf6DU52uxliDYlgm--CsePFLi3niQCiMA,4881
+qsar_modi-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+qsar_modi-0.1.0.dist-info/RECORD,,

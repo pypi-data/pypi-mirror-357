@@ -1,0 +1,3 @@
+[console_scripts]
+modi=qsar_modi.modi_cli:modi_cli
+
