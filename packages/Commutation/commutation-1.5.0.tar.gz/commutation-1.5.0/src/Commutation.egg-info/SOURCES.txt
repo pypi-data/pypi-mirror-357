@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/Commutation.egg-info/PKG-INFO
+src/Commutation.egg-info/SOURCES.txt
+src/Commutation.egg-info/dependency_links.txt
+src/Commutation.egg-info/requires.txt
+src/Commutation.egg-info/top_level.txt
+src/commutation/__init__.py
+src/commutation/commutatoralgebra.py
+src/commutation/expression.py
+src/commutation/style.py
