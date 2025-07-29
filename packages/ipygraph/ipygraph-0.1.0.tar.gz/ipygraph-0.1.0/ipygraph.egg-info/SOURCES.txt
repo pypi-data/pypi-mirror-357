@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+ipygraph/__init__.py
+ipygraph/__main__.py
+ipygraph/app.py
+ipygraph.egg-info/PKG-INFO
+ipygraph.egg-info/SOURCES.txt
+ipygraph.egg-info/dependency_links.txt
+ipygraph.egg-info/entry_points.txt
+ipygraph.egg-info/requires.txt
+ipygraph.egg-info/top_level.txt
+ipygraph/static/index.html
+ipygraph/static/vendor/particles.min.js
