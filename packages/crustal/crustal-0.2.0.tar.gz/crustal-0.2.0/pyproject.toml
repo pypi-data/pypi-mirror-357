@@ -1,0 +1,24 @@
+[project]
+name = "crustal"
+version = "0.2.0"
+authors = [
+  { name="Odysseus Galanis",email="ogalanis@geo.auth.gr" }
+]
+description = "Crude Rough Unfinished Seismological Toolbox And Library"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "GPL-3.0-or-later"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/ogalanis/crustal"
+Issues = "https://github.com/ogalanis/crustal/issues"
+[build-system]
+requires = [
+    "setuptools>=46.4.0"
+]
+build-backend = "setuptools.build_meta"
