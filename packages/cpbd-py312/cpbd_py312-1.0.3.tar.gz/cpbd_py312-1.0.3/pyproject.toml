@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cpbd-py312"
+version = "1.0.3"
+description = "Calculate the sharpness of an image with the CPBD metric (Python 3.12+ compatible)"
+readme = "README.md"
+authors = [
+    {name = "nawta", email = "nawta@g.ecc.u-tokyo.ac.jp"}
+]
+license = {text = "Proprietary"}
+keywords = [
+    "sharpness",
+    "metric",
+    "blur",
+    "cumulative probability",
+    "no-reference",
+    "objective",
+    "perceptual",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "matplotlib>=3.5.0",
+    "numpy>=1.21.0",
+    "scikit-image>=0.19.0",
+    "scipy>=1.7.0",
+    "imageio>=2.9.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/nawta/python-cpbd-py312"
+
+[project.optional-dependencies]
+dev = [
+    "pandas>=1.3.0",
+    "pytest>=6.0.0",
+    "scikit-learn>=1.0.0",
+    "tox>=3.24.0",
+]
+
+[tool.setuptools]
+packages = ["cpbd"]
+license-files = ["LICENSE.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
