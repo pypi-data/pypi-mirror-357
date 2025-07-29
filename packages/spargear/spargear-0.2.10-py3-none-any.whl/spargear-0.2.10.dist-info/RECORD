@@ -1,0 +1,13 @@
+spargear/__init__.py,sha256=7RFTEZFErkhplYRX3r7TTl48CRgSSr4lkzp6s_8XyCQ,657
+spargear/_typing.py,sha256=kiVHl0iAAGOeYQb5SCIa927MpgpvKCeIENvVpi9lHCU,1763
+spargear/argument_spec.py,sha256=uB-AOCwQEQE6YOgwDGYsJNbWEFu7LBASKehbFz2WP9U,3615
+spargear/argument_spec_type.py,sha256=RWQV20wxd-1eSbA7KiUoMWyMkFbfTadzuO6QmnTh0lY,3268
+spargear/arguments.py,sha256=QWBsEeu37dymPfVsxv7lTuGvfW_GP7Eacfo_36DF3Lo,933
+spargear/base_arguments.py,sha256=T3vLKvJpfbrl4WWl2tX15gyqEsI5XZFCqpqBwc0X7y0,24402
+spargear/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spargear/subcommand_spec.py,sha256=cKBXWQQW6pSi7XYZJzZ_RDBrqK5t5_lhHwA76s1M5tI,6771
+spargear/type_helper.py,sha256=r9qNIIlP9IklgabxGI8hbdZ0KkHTvimXwO2ALx3yV1E,5767
+spargear-0.2.10.dist-info/METADATA,sha256=uHIYW9LO7ZJ5TyDhdlEMy6MC-wPDT-TtjSFxjweOI0w,9466
+spargear-0.2.10.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+spargear-0.2.10.dist-info/top_level.txt,sha256=CuIXrNRneidBZxuUcMblCWz_Pju5lgA3XoScvj1BPJk,9
+spargear-0.2.10.dist-info/RECORD,,
