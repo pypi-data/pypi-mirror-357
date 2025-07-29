@@ -1,0 +1,8 @@
+whois_mcp/__init__.py,sha256=Ik-rPWLdsl2ysc98nNJvUhJfYxn6XOocE1sNjmuN_rc,298
+whois_mcp/__main__.py,sha256=PsMFFaACxkfj886MyObSF9UGkmxlB2Sx-xDwFAdS0Ow,2065
+whois_mcp/test_query.py,sha256=xwRNQfTj0Te_N7jjnQ3gQNnQFEWrr9p0bSK9WRkb0_A,128
+whois_mcp_server-0.1.1.dist-info/METADATA,sha256=8A1Gq6rnDZ80fHXaWlwy-l9pzN81xuiKmNy45oWu60s,4524
+whois_mcp_server-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+whois_mcp_server-0.1.1.dist-info/entry_points.txt,sha256=VGG6mFLi1-slJGWTp-Yut6Z8DcOTvdvpoQNP7CD05co,61
+whois_mcp_server-0.1.1.dist-info/top_level.txt,sha256=84oSuHxfH2i4MdrtgLRPCoQzaAxVomdG4Xwl7a-8euE,10
+whois_mcp_server-0.1.1.dist-info/RECORD,,
