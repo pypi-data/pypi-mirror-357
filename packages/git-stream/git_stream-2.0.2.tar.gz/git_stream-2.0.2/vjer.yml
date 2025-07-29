@@ -1,0 +1,42 @@
+schema: 3
+project:
+  name: git-stream
+  version_service:
+    type: bumpver
+test:
+  steps:
+    - type: flake8
+      targets:
+        - git_stream
+    - type: pylint
+      targets:
+        - git_stream
+    - type: mypy
+      targets:
+        - git_stream
+    - type: python_unittest
+build:
+  steps:
+    - type: setuptools
+release:
+  steps:
+    - type: pypi
+      test_pypi: true
+      username: __token__
+      password: "{var:PYPI_TOKEN}"
+      pre_release_only: true
+    - type: bumpver
+    - type: setuptools_build
+      release_only: true
+    - type: github
+      release_only: true
+    - type: bumpver
+      release_only: true
+      args:
+        patch: True
+        tag: rc
+        tag-num: True
+    - type: pypi
+      username: __token__
+      password: "{var:PYPI_TOKEN}"
+      release_only: true

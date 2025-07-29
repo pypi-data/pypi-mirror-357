@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools >= 77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "git-stream"
+description = "Git Stream Implementation"
+authors = [{ name = "Jeffery G. Smith", email = "web@pobox.com" }]
+readme = "DOCUMENTATION.md"
+license-files = ["LICENSE"]
+dynamic = ["version"]
+
+requires-python = "~=3.12"
+keywords = ["git", "programming", "utilities"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.12",
+
+    "Intended Audience :: Developers",
+    "Topic :: Software Development",
+    "Natural Language :: English",
+]
+
+dependencies = ["BatCave"]
+
+[project.optional-dependencies]
+dev = ["bumpver", "vjer"]
+test = []
+# doc = []
+
+[project.scripts]
+git-stream = "git_stream.__main__:main"
+
+[project.urls]
+homepage = "https://github.com/arisilon/git-stream/"
+documentation = "https://git-stream.readthedocs.io"
+repository = "https://github.com/arisilon/git-stream/"
+changelog = "https://github.com/arisilon/git-stream/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+packages = ["git_stream"]
+
+[tool.setuptools.dynamic]
+version = { attr = "git_stream.__version__" }
+
+[tool.flake8]
+max-line-length = 200
+ignore = ["ANN002", "ANN003", "ANN101", "ANN204", "ANN401"]
+
+[tool.pylint.format]
+max-line-length = 200
+
+[tool.pylint.design]
+max-attributes = 10
+max-args = 10
+
+[tool.pylint.messages_control]
+disable = ["duplicate-code", "fixme"]
+
+[[tool.mypy.overrides]]
+module = "bumpver.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "docker.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "dotmap.*"
+ignore_missing_imports = true
+
+[tool.bumpver]
+current_version = "2.0.2"
+version_pattern = "MAJOR.MINOR.PATCH[PYTAGNUM]"
+commit_message = "bump version {old_version} -> {new_version} [skip ci]"
+commit = true
+tag = false
+push = true
+
+[tool.bumpver.file_patterns]
+"git_stream/__init__.py" = ["__version__ = '{pep440_version}'"]
+
+# cSpell:ignore pyproject pytagnum
