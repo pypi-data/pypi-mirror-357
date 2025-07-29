@@ -1,0 +1,15 @@
+ecdev/crossplatform.mk,sha256=XUbRNuHW-aqEmWXcX1o9LQp81LqfPGTWeX-CF44yVsY,29357
+ecdev/default.cf,sha256=P82bAH-Nk6neE4OmvvjGbXeaJd6Qn3jMq1AFiolIkpc,4903
+ecdev/bin/ear,sha256=MuTscwKm90xYhwJd6JjTBWg6J42rmwrYGuJUe6rxfSY,37124
+ecdev/bin/ecc,sha256=t2KYJl6_MxSaCBV_lLM06dN_WmhYXwxtozdE8D8bnBg,33822
+ecdev/bin/ecp,sha256=Q3b_Qb0B_Iy0IXaDsiwGYAyBEG0s4Iyf2rEXZ4NW_6Y,45559
+ecdev/bin/ecs,sha256=ev-OlDOy_Yo_RyNDvjxjym1QS6j1nrzLnx7wGgX9SBc,61256
+ecdev/include/cffi-ecrt.h,sha256=j4LyHGuf33fxi8idmKzD0ezpvZUtxIf-DtZ8eajy1yU,108934
+ecdev/include/ecrt.h,sha256=yBK-F44HOaUCnZlASLHWQagjXnazuN_jv35pHVDquWs,220492
+ecdev/lib/libecrt.so,sha256=_o-3pvmSNN1Le3CWcje7BkTdCf8t6pwFNuI_MiM8Fuc,802012
+ecdev/lib/libecrtStatic.a,sha256=vOX5w6wpRy5F7X2fVYAoN1F9PD_xv_vMmVTxsHQJApo,1290422
+ecdev/lib/libectp.so,sha256=BkNK-Xz2cE5g_PkDOL3vcyUJwryj-aBqn8XOHOAWe5M,1333997
+ecdev-0.0.3.dist-info/METADATA,sha256=jLtO70dSVk92KYxE6eVWcfAtM-NWYDV1v4hD-_9lEVE,7098
+ecdev-0.0.3.dist-info/WHEEL,sha256=kYfKDXmBSqO5I_1miHghLP6UVj0B2mDF_tuIjjs71hk,237
+ecdev-0.0.3.dist-info/top_level.txt,sha256=z940rZ5dgnxvZ0Tm4EvDtNNvZMnGQsn05kVz_FN50po,6
+ecdev-0.0.3.dist-info/RECORD,,
