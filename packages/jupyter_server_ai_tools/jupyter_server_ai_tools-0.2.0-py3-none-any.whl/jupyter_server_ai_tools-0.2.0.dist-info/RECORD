@@ -1,0 +1,9 @@
+jupyter_server_ai_tools/__init__.py,sha256=LCKokDuDks4uYYGeR3CO1ukkYhMjuH0FRlesk4u9aY8,224
+jupyter_server_ai_tools/app.py,sha256=ZdfyiM4Pd8DOnr10s9NNqbXQliQWsmBxKZt6NrpybUs,958
+jupyter_server_ai_tools/handlers.py,sha256=mA30ZX7aqr3s4VLVuA1Jzb4jIY_hEnrk06zmECOUUKY,429
+jupyter_server_ai_tools/models.py,sha256=r8s8Ys5sbztRVhhF3kPOydIAaUgAoIZb4dqhByhIJHo,4192
+jupyter_server_ai_tools-0.2.0.data/data/etc/jupyter/jupyter_server_config.d/jupyter_server_ai_tools.json,sha256=99ohFaukm0q7bwvN6NDkZIKYXLzaScIWnMwTgJSnG0c,98
+jupyter_server_ai_tools-0.2.0.dist-info/METADATA,sha256=DM7pJboLXqgihvpWSRz3VLDikgPU1wW6cawebtQHG40,6140
+jupyter_server_ai_tools-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+jupyter_server_ai_tools-0.2.0.dist-info/licenses/LICENSE,sha256=1omDwXs8YNmInWwjD8ZJFrD377ZHzjyKMAEBSxljKtw,1523
+jupyter_server_ai_tools-0.2.0.dist-info/RECORD,,
