@@ -1,0 +1,2 @@
+[console_scripts]
+supervisord-mcp = supervisord_mcp.main:main

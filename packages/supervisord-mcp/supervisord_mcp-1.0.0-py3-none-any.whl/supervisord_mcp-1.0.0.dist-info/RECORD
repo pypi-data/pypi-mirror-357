@@ -1,0 +1,11 @@
+supervisord_mcp/__init__.py,sha256=k8KZTCn99yauBG1mp1eB_SdouKUWHAlDQ9SuROrycBs,304
+supervisord_mcp/cli.py,sha256=JYUsr_RSu7mIsuCrwGg8I3ghf9f-GVsjH3tUQ0LFSqk,9360
+supervisord_mcp/main.py,sha256=w1s5AJ16LT0YO7z7qC7ZzwzmyVS8FEBEBip_OpGRM4c,392
+supervisord_mcp/manager.py,sha256=Q3a3vaNgwwjmzXXR-8xabCVow32vm8iMSiq9bTUfEnA,10607
+supervisord_mcp/mcp_server.py,sha256=bTv-h5BSHhq4vOJrN3Y0jQIZ5WBxoRB4kQ1cLUX1gUE,11346
+supervisord_mcp-1.0.0.dist-info/licenses/LICENSE,sha256=eiTEinWOsn6tdVqghQVA8nq9Efml6lyR93_ji-1h180,1070
+supervisord_mcp-1.0.0.dist-info/METADATA,sha256=46Z6CpznUwGi32WJWDxSi5RSR3H58_rXJHXDsBVDYfs,12880
+supervisord_mcp-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+supervisord_mcp-1.0.0.dist-info/entry_points.txt,sha256=688WYvNssUyQV5orr7yevIAVuR2xPH7Iu8_0LtSjuSY,62
+supervisord_mcp-1.0.0.dist-info/top_level.txt,sha256=ar907hcZMBTdYsX1GuSXt-TX4bClTcFFYEfeUrlLMCM,16
+supervisord_mcp-1.0.0.dist-info/RECORD,,
