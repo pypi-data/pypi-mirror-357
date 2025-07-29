@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "pynvtt"
+version = "0.0.1"
+description = "Python bindings for NVTT (NVIDIA Texture Tools)"
+authors = ["MrVicho13 <vicho0202@gmail.com>"]
+license = "CC0-1.0"
+readme = "README.md"
+homepage = "https://github.com/Hancapo/pynvtt"
+repository = "https://github.com/MrVicho13/pyNVTT"
+
+packages = [
+    { include = "nvtt", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
