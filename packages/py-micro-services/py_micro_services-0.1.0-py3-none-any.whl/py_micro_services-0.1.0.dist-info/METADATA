@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: py-micro-services
+Version: 0.1.0
+Summary: Simple toolset for implementing microservices architecture with Fast API
+Author-email: Jakub Stastny <xstastnyj@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/StastnyJ/pyMicroServices
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: httpx
+
+# INSTALLATION
+
+```sh
+pip3 install -r requirements.txt
+```
