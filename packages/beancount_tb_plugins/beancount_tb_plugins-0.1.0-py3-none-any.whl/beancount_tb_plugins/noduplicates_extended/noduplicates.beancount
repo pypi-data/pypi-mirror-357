@@ -1,0 +1,35 @@
+; Options
+option "title" "Test Noduplicates Plugin"
+
+option "operating_currency" "GBP"
+
+option "insert_pythonpath" "True"
+
+
+; plugin "beancount.plugins.noduplicates"
+plugin "noduplicatesv2" "{
+  'include_meta': ['paid_by']
+}"
+
+1974-09-06 open Equity:Opening-Balances
+2023-01-01 open Assets:UK:Joint GBP
+2023-01-01 open Assets:UK:Buses GBP
+
+2023-10-01 * "" ""
+  Equity:Opening-Balances                   -5000.00 GBP
+  Assets:UK:Joint
+
+2023-10-02 * "" ""
+  paid_by: "Manuela"
+  Assets:UK:Buses                               2.00 GBP
+  Assets:UK:Joint
+
+; 2023-10-02 * "" ""
+;   paid_by: "Manuela"
+;   Assets:UK:Buses                               2.00 GBP
+;   Assets:UK:Joint
+;
+; 2023-10-02 * "" ""
+;   paid_by: "Angelo"
+;   Assets:UK:Buses                               2.00 GBP
+;   Assets:UK:Joint
