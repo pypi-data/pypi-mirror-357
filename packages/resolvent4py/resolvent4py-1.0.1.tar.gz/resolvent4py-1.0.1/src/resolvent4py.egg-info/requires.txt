@@ -1,0 +1,9 @@
+numpy
+scipy
+matplotlib
+
+[docs]
+sphinx
+sphinx-rtd-theme
+sphinx-gallery
+sphinxcontrib-bibtex
