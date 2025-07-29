@@ -1,0 +1,8 @@
+
+[async]
+anyio
+
+[dev]
+anyio
+pytest
+trio
