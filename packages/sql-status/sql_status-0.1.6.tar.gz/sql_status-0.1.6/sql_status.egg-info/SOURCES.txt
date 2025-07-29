@@ -1,0 +1,11 @@
+MANIFEST.in
+pyproject.toml
+setup.py
+sql_status/__init__.py
+sql_status/__main__.py
+sql_status/unpack.py
+sql_status.egg-info/PKG-INFO
+sql_status.egg-info/SOURCES.txt
+sql_status.egg-info/dependency_links.txt
+sql_status.egg-info/entry_points.txt
+sql_status.egg-info/top_level.txt
