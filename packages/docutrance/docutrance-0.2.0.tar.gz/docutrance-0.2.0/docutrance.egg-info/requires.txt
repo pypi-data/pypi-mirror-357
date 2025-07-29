@@ -1,0 +1,15 @@
+streamlit
+opensearch-py
+spacy
+pymupdf4llm
+pypandoc
+tqdm
+sentence-transformers
+wandb
+optuna
+datasets
+openpyxl
+pandas
+matplotlib
+transformers
+transformers[torch]
