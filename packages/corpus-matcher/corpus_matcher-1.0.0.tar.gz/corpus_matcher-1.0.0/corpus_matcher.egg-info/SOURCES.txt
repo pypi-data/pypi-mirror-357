@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+corpus_matcher/__init__.py
+corpus_matcher/corpus_matcher.py
+corpus_matcher.egg-info/PKG-INFO
+corpus_matcher.egg-info/SOURCES.txt
+corpus_matcher.egg-info/dependency_links.txt
+corpus_matcher.egg-info/requires.txt
+corpus_matcher.egg-info/top_level.txt
+test/test_corpus_matcher.py
