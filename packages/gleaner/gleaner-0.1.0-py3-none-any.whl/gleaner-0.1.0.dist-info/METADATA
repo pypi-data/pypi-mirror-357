@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: gleaner
+Version: 0.1.0
+Summary: Web scraper that finds all pages on a domain
+License-Expression: MIT
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4

@@ -1,0 +1,9 @@
+gleaner/__init__.py,sha256=kUR5RAFc7HCeiqdlX36dZOHkUI5wI6V_43RpEcD8b-0,22
+gleaner/cli.py,sha256=uSei7zgee-wB5qoNCco8zTLeGT778ht3RHMxsd1u7vs,665
+gleaner/scraper.py,sha256=2IeMHH6-9szzRBtEhUDKlVi9cUXVl2EkFWhT5stnaeU,2588
+gleaner/test.py,sha256=q025zCQXAN7Qf605hCuYzpMDDvHpPj5xA4x4wlkk7As,268
+gleaner-0.1.0.dist-info/METADATA,sha256=rdl0VLlQW5ErpfPrYLeTCiHOIe6KpAw7K5AVEEEm5tI,183
+gleaner-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gleaner-0.1.0.dist-info/entry_points.txt,sha256=PE2xWUT502Ip9NUUyN-QRE7b6dLrevVGdoJRSAtvhw0,43
+gleaner-0.1.0.dist-info/top_level.txt,sha256=i686gsdD8o968F3XcCC6w9xCbfg6GuW6G1TZgB2G0nQ,8
+gleaner-0.1.0.dist-info/RECORD,,
