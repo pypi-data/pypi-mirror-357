@@ -1,0 +1,12 @@
+accounts_api_client/__init__.py,sha256=Evgu-q7gKdruw_X_acU3u_zc6uFNMnlJSV7YeR2XS7k,203
+accounts_api_client/cli.py,sha256=-tzZYSX1yH5ndZ0SnXIDsa4fkwoa793Tfa5YqhGTI94,753
+accounts_api_client/client.py,sha256=Y1XjYkqY1CZSutPsGDTBRQj0vlcVRnhiyuOGoSWiPBs,8712
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/conftest.py,sha256=9TeG0ejIXhyPiGTR6Ae6634W5v8YstrGlEuyTAe30s4,2032
+tests/test_api_client.py,sha256=lMIRUHhXyRaODpF1ycN8II5id6pV6H5zfN55AHev3z4,8237
+tests/test_cli.py,sha256=wigKI5cX-JT2N56EkVVifU_QoOgRklGLgSZ12ao9mc4,252
+teklia_accounts_client-0.1.6.dist-info/METADATA,sha256=X9DJhoabGDAU_20uD8mR-DaqjOqM49KfPt9vu-2dxA4,1427
+teklia_accounts_client-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+teklia_accounts_client-0.1.6.dist-info/entry_points.txt,sha256=R6PNwRN2b-JUYKdZXjrIEbzwB-_oNM28IR9f589yzxw,77
+teklia_accounts_client-0.1.6.dist-info/top_level.txt,sha256=3YFcng18kgOQzkwWyTCBiaRKlqOOJljY1DpRO-70hIY,26
+teklia_accounts_client-0.1.6.dist-info/RECORD,,
