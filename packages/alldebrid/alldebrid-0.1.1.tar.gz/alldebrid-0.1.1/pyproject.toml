@@ -1,0 +1,14 @@
+[project]
+name = "alldebrid"
+version = "0.1.1"
+description = "Lightweight async wrapper for AllDebrid API"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "attrs>=25.3.0",
+    "cattrs>=25.1.1",
+    "httpx>=0.28.1",
+]
+
+[dependency-groups]
+dev = ["mypy>=1.16.1", "pyright>=1.1.402", "ruff>=0.12.0"]
