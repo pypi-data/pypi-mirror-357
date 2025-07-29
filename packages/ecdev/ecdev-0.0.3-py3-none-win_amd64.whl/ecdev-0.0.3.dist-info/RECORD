@@ -1,0 +1,15 @@
+ecdev/crossplatform.mk,sha256=xg-6wGFSgSNz5MinpWFtxsv6_livF2qxipoNZO0y1GQ,30067
+ecdev/default.cf,sha256=_R36YgAy1axqH8QN6uRVB0X7zX_QKqY74wXEU8fZk8Y,5036
+ecdev/bin/ear.exe,sha256=GAKHfpe3ESAlbDHgaAwe6WwlmVVt9Ta3R48yJw2dUb0,44170
+ecdev/bin/ecc.exe,sha256=ShkQ7cS4a-17-9AY2wOdymip0BCrcA8tRSG8CVx5ER0,40469
+ecdev/bin/ecp.exe,sha256=pQsoYedPUjE9hhTJGC9vPzGLWs5AlUVeiQu_yk9CW7Q,51559
+ecdev/bin/ecrt.dll,sha256=neJ3DWBgKQDLw8_D0flbQYtPKmbVBUm9S0NUL-yqZ7Q,765809
+ecdev/bin/ecs.exe,sha256=TXwO3i-gGCC8lcIlj9wx3_oay9cR4bgQdvcb7P_ZwVw,62329
+ecdev/bin/ectp.dll,sha256=Xyqp_GdDeT6bxVpK57U_0S3xCEFMvtYgd55slCWH78g,1092234
+ecdev/include/cffi-ecrt.h,sha256=vzRG7Fppg_GvaeCT-NRmj3dkwdDWFIuI2k6K7iG4afY,111847
+ecdev/include/ecrt.h,sha256=pR6Z90ptDZvt61Ph9mc-r9ZcN-4dkRtJm_Oulhte-mI,224754
+ecdev/lib/libecrtStatic.a,sha256=yzoihiM83CtZnKHUDlVH8k0LeEAz25q14N2XqeGvGP0,1216058
+ecdev-0.0.3.dist-info/METADATA,sha256=bR1VPbzccM8Ue6kgSiPd1X_6MhF_H4eze8FI2sROJbE,7200
+ecdev-0.0.3.dist-info/WHEEL,sha256=at4xwl6JdXdkZHxdo5ixTwJ7ENtVftSy2wqmsdmo_4U,98
+ecdev-0.0.3.dist-info/top_level.txt,sha256=z940rZ5dgnxvZ0Tm4EvDtNNvZMnGQsn05kVz_FN50po,6
+ecdev-0.0.3.dist-info/RECORD,,
