@@ -1,0 +1,12 @@
+HelpingAI/__init__.py,sha256=ChR-bLKCQzQLCwtbL4QFDGf1uYmp2Dy8L3oL3lqJaNc,1218
+HelpingAI/base_models.py,sha256=lSoQFaa0ooH11zXMmiFkvIZrLvbwFywj7LnTnoHgvIM,3070
+HelpingAI/client.py,sha256=XVI9UxKSIh4ILK8ylwmufOMMrxGtKENLYT3UZmYsL7I,27180
+HelpingAI/error.py,sha256=eUeGhteb2rY_bjQDqKezSSTPgHoaneBHwoKj9UCI0VY,8213
+HelpingAI/models.py,sha256=w2RSM4nfFoGOX2nEd5Cw4qqq-vZNdeXvWEjG4r735Cw,3793
+HelpingAI/py.typed,sha256=D2avgXhxsnxrfI5ecMVJKMot5EwMGYsC8okpqvTd1lg,45
+HelpingAI/version.py,sha256=Z5ojij5x2eHb8A4a6R5-T2mEws0ecZldHT0C3QfjaaQ,45
+helpingai-1.1.0.dist-info/licenses/LICENSE,sha256=HrhfyXIkWY2tGFK11kg7vPCqhgh5DcxleloqdhrpyMY,11558
+helpingai-1.1.0.dist-info/METADATA,sha256=SC55g_haMGAPEsb-HAPLSQd5uSi3pXxweb4fLwIQ_OM,9094
+helpingai-1.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+helpingai-1.1.0.dist-info/top_level.txt,sha256=46ZHnuqb3EFv0iuMWv92tTMXKxKNn6GHQ7uj8zEznOU,10
+helpingai-1.1.0.dist-info/RECORD,,
