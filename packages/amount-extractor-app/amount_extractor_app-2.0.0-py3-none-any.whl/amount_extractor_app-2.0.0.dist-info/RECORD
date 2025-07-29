@@ -1,0 +1,10 @@
+amount_extractor/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+amount_extractor/amount_extractor_app.py,sha256=0Pdip_HsC2he9Hed88amNSSgsliOWFSWbtBTtetTnJ4,5067
+amount_extractor/gui_launcher.py,sha256=BKpoviGbUFTHv_07jij-1MDQ1gglVliBitborfnjLtY,57
+amount_extractor/assets/gui_image.ico,sha256=C6t0G4UBTu6KD4hMlBsz2S22ua7Oth1YcV4nhfakCfI,49569
+amount_extractor/assets/gui_logo.png,sha256=oYDZCqlzrFM5W9obIFAJ2STiH5DKRbP3dtVXlZniF_A,50141
+amount_extractor_app-2.0.0.dist-info/METADATA,sha256=rTZNtXyhjIYeNeqUvyJSgIQhkuicnSEv67ozwD3fSds,215
+amount_extractor_app-2.0.0.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+amount_extractor_app-2.0.0.dist-info/entry_points.txt,sha256=7TaAieIakEGmxSdxEt-r-m3pTR5WNH3-XF-KgUvRjdw,75
+amount_extractor_app-2.0.0.dist-info/top_level.txt,sha256=WppaLZUC6w06i7-McB0K39W0-EoHlAENyeyguMZm0As,17
+amount_extractor_app-2.0.0.dist-info/RECORD,,
