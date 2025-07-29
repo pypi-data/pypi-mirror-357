@@ -1,0 +1,15 @@
+fastremap/ska_flat_hash_map.hpp,sha256=eny2nkM5ME8SxYobjFgoypKjchpP1gLq8zI-S3EFYDw,61579
+fastremap/fastremap.pyi,sha256=BtOaLT8CMKu9dljUB_WnhZs97_e-NVZlExdOLrLcEaI,14897
+fastremap/fastremap.pyx,sha256=12Ys8lgn_RHRwipHyrvbvR__qLJgse5X1IhFlkd_zjs,45047
+fastremap/__init__.py,sha256=hB8qCFtoI0dJgCziFURiIjHLjuTjA2lU-HNNzcM0W-g,782
+fastremap/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastremap/ipt.hpp,sha256=aTS5-ftA8r0vGhJ1T5lE2xZwKCE1oCzgTbbNgIfehhM,7907
+fastremap/fastremap.cpython-312-aarch64-linux-gnu.so,sha256=OZh3PpMaRoIIYRpemMSyhedfGnvSj9RAYM25qjYxPIg,28961320
+fastremap/fastremap.pxd,sha256=lHTRtJC_SuDBuOGFtEx3zf7WTCAWuQ0oumwC9IdiuLk,3966
+fastremap-1.17.0.dist-info/WHEEL,sha256=29GglsfgOKni3MnvXwDNoeBjBZY4LOjl_HH3QTWETk4,153
+fastremap-1.17.0.dist-info/top_level.txt,sha256=D-q4-YJbbk7QpuU8fxH9rFQEjV_W6wpdruzTTDV4N5s,10
+fastremap-1.17.0.dist-info/RECORD,,
+fastremap-1.17.0.dist-info/pbr.json,sha256=dR1UpQuiiTyrZ7Y1PMguAEXlAjPBXmHM_DXmzrK1gbY,47
+fastremap-1.17.0.dist-info/METADATA,sha256=P86CEeEBDSz3Dj-at8iRQ4wies_I0m6FNlQKTyXJxpU,10294
+fastremap-1.17.0.dist-info/licenses/AUTHORS,sha256=fp7K3Hh22cRdHzMj837IAKImGxut2SRouzHe8pNphus,62
+fastremap-1.17.0.dist-info/licenses/LICENSE,sha256=46mU2C5kSwOnkqkw9XQAJlhBL2JAf1_uCD8lVcXyMRg,7652
