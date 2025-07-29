@@ -1,0 +1,62 @@
+[build-system]
+requires = [
+  "setuptools>=61.0.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytest-fmu-filter"
+description = "A pytest plugin to filter fmus"
+version = "0.1.2"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "coder", email = "coder@timeintegral.ai" },
+]
+maintainers = [
+    { name = "coder", email = "coder@timeintegral.ai" },
+]
+license = {file = "LICENSE"}
+classifiers = [
+    "Framework :: Pytest",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Testing",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "pytest>=7.0.0",
+]
+
+[project.urls]
+Repository = "https://github.com/time-integral/pytest-fmu-filter"
+
+[project.entry-points.pytest11]
+fmu-filter = "pytest_fmu_filter.plugin"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "bump-my-version>=1.1.4",
+    "pre-commit>=4.2.0",
+    "pyright>=1.1.401",
+    "ruff>=0.11.10",
+]
+
+[tool.uv]
+default-groups = ["dev"]
+package = true
+
+[tool.pyright]
+include = [
+    "src",
+]
