@@ -1,0 +1,6 @@
+include LICENSE
+include README.rst
+recursive-include docs *
+recursive-include drf_standardized_responses/static *
+recursive-include drf_standardized_responses/templates *
+recursive-include drf_standardized_responses/locale *
