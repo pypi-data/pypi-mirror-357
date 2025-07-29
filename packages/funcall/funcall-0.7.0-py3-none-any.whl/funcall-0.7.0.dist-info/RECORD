@@ -1,0 +1,10 @@
+funcall/__init__.py,sha256=xbPLhFyB5l0zQ1uFg2dPR5ExPFMY3KuHq-KBMAHpYXo,220
+funcall/decorators.py,sha256=KRB4hQYnmEqb3z2T3LcBlZwe11xprwaEJONejd6anYI,1872
+funcall/funcall.py,sha256=aah1qqe-QHfIVpP5m-ziVHR7Tdy6tdNMZxz0Uq2G5DU,14072
+funcall/metadata.py,sha256=rubOIPcHuupz7pk9b8CVOnFTYQHq_4RZuNY2i0-u06w,6672
+funcall/params_to_schema.py,sha256=x2erISk6U96mMl5GS0LqAUR6PYDGEC3T30Xi96Awa0o,7434
+funcall/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+funcall/types.py,sha256=HmJlPsfiZb79ddhC4aflZGo8CPx2q1uNAbQ-Hz58Ajg,1210
+funcall-0.7.0.dist-info/METADATA,sha256=HmID3PXhvrP7oIhcy0evIx2Qq9t9Gz4aEYLLDeYuKbw,3720
+funcall-0.7.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+funcall-0.7.0.dist-info/RECORD,,
