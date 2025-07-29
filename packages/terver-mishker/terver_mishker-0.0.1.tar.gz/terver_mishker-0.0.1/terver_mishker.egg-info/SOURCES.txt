@@ -1,0 +1,13 @@
+setup.cfg
+setup.py
+terver_mishker.egg-info/PKG-INFO
+terver_mishker.egg-info/SOURCES.txt
+terver_mishker.egg-info/dependency_links.txt
+terver_mishker.egg-info/top_level.txt
+terverlib/__init__.py
+terverlib/task1.py
+terverlib/task2.py
+terverlib/task3.py
+terverlib/task4.py
+terverlib/task5.py
+terverlib/task6.py
