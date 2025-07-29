@@ -1,0 +1,9 @@
+synapseconvert/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+synapseconvert/downconvert.py,sha256=lpIXU4w1nYKYyBbvyhIypRVJTPD44GPKxOmSJdITAds,1451
+synapseconvert/upconvert.py,sha256=6xWLzgdjHBUi2a4qP4jr9WO0zpDWFhWLY4ZxhXqlnvk,1714
+synapseconvert-0.1.5.dist-info/LICENSE,sha256=uMeAuzgSVu21sZMMDBvSOAkBW-RzNOalV1FXyJFIe-g,1077
+synapseconvert-0.1.5.dist-info/METADATA,sha256=cz_zqTdRd2LtJaE4XYHTDF-SfzLnapbT9-MXniXn6fY,2579
+synapseconvert-0.1.5.dist-info/WHEEL,sha256=y4mX-SOX4fYIkonsAGA5N0Oy-8_gI4FXw5HNI1xqvWg,91
+synapseconvert-0.1.5.dist-info/entry_points.txt,sha256=Y5XABHy3iK-uqIhP4bZuFAbNiMlu1Hf5R27hlhsCmT8,122
+synapseconvert-0.1.5.dist-info/top_level.txt,sha256=ozzbf_Lz_cZrdfQ8f0lGwDWiAK4a1TQrIy5rKHaf1oU,15
+synapseconvert-0.1.5.dist-info/RECORD,,
