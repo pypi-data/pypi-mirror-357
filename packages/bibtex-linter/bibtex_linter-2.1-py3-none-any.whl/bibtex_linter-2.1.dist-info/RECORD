@@ -1,0 +1,14 @@
+bibtex_linter/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bibtex_linter/ieeetr_rules.py,sha256=F78pIvbJ7RWqOsEGoYxUIa7xRFqIDqD4jkztX7C0SLw,8787
+bibtex_linter/ieeetran_rules.py,sha256=x3cS7n8nfUlh-FMUuj7q8cybD4XzpQdjpc9FRo9R_ts,9954
+bibtex_linter/main.py,sha256=G5BHI3gBOKrPW-kGZGwUK-l3jljGVKfM5Dj1i4ld6B0,3011
+bibtex_linter/parser.py,sha256=tOAbcrxu0clY3velf5mHNaO0TucXHM83LEHCeT41JpE,6514
+bibtex_linter/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bibtex_linter/verification.py,sha256=6H5O5unAPmY5c5N7vrtHLWloESsXciByhik1LctdukQ,4188
+bibtex_linter/version.py,sha256=OPERQJ69GInGuTyEmY49TdSVva9TJYHMAmp19FkZ8hc,506
+bibtex_linter-2.1.dist-info/licenses/LICENSE,sha256=QKX93DJp4sFg8paJhZeoBjhJdnjqCWvRO-vX5C124VU,1066
+bibtex_linter-2.1.dist-info/METADATA,sha256=aOvR4_r4lVleEooGD66PfGjL3GMC3ARc8PEo7ntiPMo,6479
+bibtex_linter-2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+bibtex_linter-2.1.dist-info/entry_points.txt,sha256=D9V5-0FBnHnfrKcw7DQqq_TacbKSPbMDmpJugENvbD8,58
+bibtex_linter-2.1.dist-info/top_level.txt,sha256=pkpJg9Ml2E7ISw_fzJ8SYstSo-8F3T6CY-mi6nq0BDE,14
+bibtex_linter-2.1.dist-info/RECORD,,
