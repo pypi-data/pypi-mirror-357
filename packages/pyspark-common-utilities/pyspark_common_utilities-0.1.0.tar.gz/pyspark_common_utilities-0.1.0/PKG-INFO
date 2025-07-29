@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: pyspark_common_utilities
+Version: 0.1.0
+Summary: Reusable PySpark utility functions for data pipelines
+Home-page: https://github.com/nearform/pyspark_common_utilities
+Author: Hakim Pocketwalla
+Author-email: Hakim Pocketwalla <hakim.pocketwalla@nearform.com>
+License: MIT
+Project-URL: Homepage, https://github.com/nearform/pyspark_common_utilities
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pyspark>=3.0.0
+Requires-Dist: pytest
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# PYSPARK-UTILITIES
+
+### PYSPARK-UTILITIES are reusable components which are small functionalities that are commonly part of data pipelines. We are creating functions for these that can be used when required.
+
+&nbsp;
+
+[![banner](https://raw.githubusercontent.com/nearform/.github/refs/heads/master/assets/os-banner-green.svg)](https://www.nearform.com/contact/?utm_source=open-source&utm_medium=banner&utm_campaign=os-project-pages)
