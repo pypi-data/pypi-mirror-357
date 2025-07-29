@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+cloudflare_stream_downloader/__init__.py
+cloudflare_stream_downloader/main.py
+cloudflare_stream_downloader.egg-info/PKG-INFO
+cloudflare_stream_downloader.egg-info/SOURCES.txt
+cloudflare_stream_downloader.egg-info/dependency_links.txt
+cloudflare_stream_downloader.egg-info/entry_points.txt
+cloudflare_stream_downloader.egg-info/requires.txt
+cloudflare_stream_downloader.egg-info/top_level.txt
