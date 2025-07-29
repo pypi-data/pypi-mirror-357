@@ -1,0 +1,9 @@
+cryptography
+argon2-cffi
+pyyaml
+boto3
+dropbox
+google-api-python-client
+google-auth
+google-auth-oauthlib
+minio
