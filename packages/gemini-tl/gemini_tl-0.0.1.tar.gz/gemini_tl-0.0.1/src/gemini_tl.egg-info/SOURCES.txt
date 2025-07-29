@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/gemini_tl/__init__.py
+src/gemini_tl/config.py
+src/gemini_tl/gemini.py
+src/gemini_tl/main.py
+src/gemini_tl/models.py
+src/gemini_tl/video.py
+src/gemini_tl.egg-info/PKG-INFO
+src/gemini_tl.egg-info/SOURCES.txt
+src/gemini_tl.egg-info/dependency_links.txt
+src/gemini_tl.egg-info/entry_points.txt
+src/gemini_tl.egg-info/requires.txt
+src/gemini_tl.egg-info/top_level.txt
