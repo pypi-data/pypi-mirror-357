@@ -1,0 +1,6 @@
+cryptography>=37.0.4
+multipart>=1.2.1
+
+[dev]
+pre-commit>=2.20.0
+pytest>=7.1.3

@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+https/HTTPSServer.py
+https/__init__.py
+https/server.py
+quick_https.egg-info/PKG-INFO
+quick_https.egg-info/SOURCES.txt
+quick_https.egg-info/dependency_links.txt
+quick_https.egg-info/requires.txt
+quick_https.egg-info/top_level.txt
+tests/test_httpsserver_functions.py
+tests/test_httpsserver_object.py
+tests/test_server.py
