@@ -1,0 +1,9 @@
+bpeasy-0.1.6.dist-info/METADATA,sha256=uxCbSnz1ijoq4XPtUeFVF1CDJnO9asJ3xQCvm6bZmYY,7911
+bpeasy-0.1.6.dist-info/WHEEL,sha256=2RBsINiMWdrwJ76RTOH_w2k-EJ7BbKKMZD3UqFoVXc4,127
+bpeasy-0.1.6.dist-info/licenses/LICENSE,sha256=TKv8h1wGJzWM0XAr6W9gU2IgN4tzijN-HGBsjrIKmrU,1070
+bpeasy/__init__.py,sha256=lbX8JhYXzQ7pYdT2zVTbFgMIp4bMHjAaULrdmck9jx4,2018
+bpeasy/bpeasy.cpython-38-arm-linux-gnueabihf.so,sha256=LaCr6CQgDBHEqb2EiltUrGGJuV8-h8_Kp2Rd12llRB4,2289548
+bpeasy/bpeasy.pyi,sha256=4AJU5j9ozQ1hZyP7V77xAvCHi5ZyZw-gnWhjFaQofVU,199
+bpeasy/convert.py,sha256=9cXrwnrsb5xPdQHK05Mt4-pXGKmRDxxfIv5tShk65WM,5051
+bpeasy/tokenizer.py,sha256=y1uuIg9r1Pw9OAVVCGmYO4lyJnSZL8mgdJ55pzmcgDs,3992
+bpeasy-0.1.6.dist-info/RECORD,,
