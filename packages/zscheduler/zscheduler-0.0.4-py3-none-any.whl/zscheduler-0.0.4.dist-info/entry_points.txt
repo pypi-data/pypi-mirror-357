@@ -1,0 +1,4 @@
+[console_scripts]
+zscheduler = zscheduler_app.main:main
+zscheduler-app = zscheduler_app.main:main
+zscheduler-cli = zscheduler_app.cli.cli:main
