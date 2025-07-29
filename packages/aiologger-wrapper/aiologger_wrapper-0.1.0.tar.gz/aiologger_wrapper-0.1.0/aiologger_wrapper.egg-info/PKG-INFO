@@ -1,0 +1,73 @@
+Metadata-Version: 2.4
+Name: aiologger-wrapper
+Version: 0.1.0
+Summary: High-level wrapper for aiologger. Asynchronous logging with automatic log directory management and daily file rotation.
+Author-email: Sam <svsposobin@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/svsposobin/AsyncLoggerWrapper
+Keywords: async,logging,logger
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: System :: Logging
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiofiles>=24.1.0
+Requires-Dist: aiologger>=0.7.0
+Dynamic: license-file
+
+# Asynchronous high-level logging wrapper (via aiologger)
+
+---
+
+## Main function:
+
+> 🔶 **Asynchronous logging of messages with the specified level. Automatically creates the logs/ folder (if it does not
+exist), at the required level of the service structure by changing the LOGGER_PATH constant and writes messages to files
+of the DD.MM.YYYY.log format with grouping by days**
+
+---
+
+### 🔹How to use?:🧩
+
+Install the wrapper:
+
+```shell
+pip install aiologger-wrapper
+```
+
+> Attention! This module will not work without the libraries: aiofiles, aiologger
+
+### Import the required dependencies:
+
+```
+from aiologger-wrapper import logger, Levels
+
+# Where Levels:
+class Levels(Enum):
+    DEBUG = "DEBUG"
+    INFO = "INFO"
+    WARNING = "WARNING"
+    ERROR = "ERROR"
+    CRITICAL = "CRITICAL"
+```
+
+### Use the function where you need it:
+
+#### The function has the form:
+```
+await logger(
+        # Required
+        level: Levels,  # Registered logging level via enums -> Levels (Exapmle: Levels.INFO)
+        message: str,  # Any message in str format
+        # Optional:
+        directory_path: Path | str = Path(__file__).parent,  # Path where the log folder will be created
+        directory_name: Path | str = Path("logs"),  # Name of the folder for logs
+        logger_name: str = "SERVICE"  # Logger name in logs
+)
+```
+
+#### Basically used as::
+```
+await logger(level=Levels.INFO, message="Hello world")
+```
