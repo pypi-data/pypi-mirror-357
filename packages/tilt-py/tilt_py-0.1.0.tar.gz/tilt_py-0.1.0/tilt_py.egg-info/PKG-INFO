@@ -1,0 +1,122 @@
+Metadata-Version: 2.4
+Name: tilt_py
+Version: 0.1.0
+Summary: Python client for processing and sending data to Tilt's distributed computing platform
+Author-email: Paulo Moreira <paulo@tilt.technology>
+License: MIT License
+        
+        Copyright (c) 2025 Tilt Technology
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in
+        all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.
+        
+        
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp>=3.8
+Dynamic: license-file
+
+# Tilt Python Client
+
+This is the official Python client for submitting and processing data in the [Tilt](https://tilt.network) distributed computing platform.
+
+## 🚀 Overview
+
+Tilt enables distributed data processing by orchestrating multiple devices connected to a network.  
+This client is responsible for reading input files, batching the content, and sending it to the Tilt API asynchronously.
+
+## 📁 Project Structure
+
+```bash
+.
+├── README.md
+├── init.py
+├── connection.py
+├── options.py
+├── pyproject.toml
+├── requirements.txt
+├── tilt.py
+└── utils.py
+```
+
+- `tilt.py`: Main interface class (`Tilt`) used to run jobs.
+- `connection.py`: Handles file reading and async communication with the API.
+- `options.py`: Manages client configuration and local validation logic.
+- `utils.py`: Utility functions such as logging.
+- `__init__.py`: Exposes the public API (`Tilt`, `Options`).
+
+## 📦 Installation
+
+You can install the library directly from Git using SSH:
+
+```bash
+pip install "git+ssh://git@github.com:tilt-network/tilt_py.git@dev"
+```
+
+⚠️ Make sure your SSH key is added to your GitHub account.
+
+🧑‍💻 Usage
+
+```py
+from tilt import Tilt, Options
+
+program_id = ''
+data_src = ''
+options = Options('your_api_key')
+"""
+Instantiate Tilt object and run it
+"""
+tilt = Tilt(data_src, program_id, options)
+tilt.run()
+
+"""
+Poll API to check task status
+"""
+poll = TaskStatusPolling(program_id, interval=15)
+poll.start()
+while poll.is_running:
+    poll_status = poll.check_status()  # will keep checking the API every <interval> seconds (default is 15 seconds)
+    print(poll_status)
+
+poll.stop()
+
+"""
+Check status via data streaming
+"""
+stream = TaskStatusStreaming(program_id)
+result = stream.start()  # will keep a connection open and await a response
+
+"""
+Fetch processed data after process
+"""
+data = ProcessedData(program_id, "/tmp/output.bin")
+data.download()  # Automatically writes to file
+
+data = ProcessedData(program_id)
+content = data.download()  # Returns bytes
+```
+
+The client will read from the configured data source, batch the input, and send it to the configured Tilt API endpoint.
+
+✅ Requirements
+
+- Python 3.8+
+- A file-based dataset as input (must be a valid UTF-8 text file)
+- Valid API key (can be passed via Options or via TILT_API_KEY environment variable)
+- SQLite database at ~/tilt/tilt.db with a programs(name TEXT, program_id TEXT) table for validation
