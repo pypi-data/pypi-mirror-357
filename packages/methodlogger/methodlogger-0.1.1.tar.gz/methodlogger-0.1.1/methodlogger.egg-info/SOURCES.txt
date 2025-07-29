@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+methodlogger/__init__.py
+methodlogger/decorators.py
+methodlogger/log_config.py
+methodlogger.egg-info/PKG-INFO
+methodlogger.egg-info/SOURCES.txt
+methodlogger.egg-info/dependency_links.txt
+methodlogger.egg-info/top_level.txt
+tests/test_decorator.py
