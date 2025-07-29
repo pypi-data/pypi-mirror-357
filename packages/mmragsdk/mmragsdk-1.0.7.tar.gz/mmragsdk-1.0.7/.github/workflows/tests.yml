@@ -1,0 +1,36 @@
+name: tests.yml
+on:
+  - push
+  - workflow_call
+
+env:
+  TOKEN_PAT: ${{ secrets.TOKEN_PAT }}
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - name: SetUp Python 3.12
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12
+      - name: Install uv(Linux & Mac)
+        if: runner.os != 'Windows'
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      - name: Install uv(Windows)
+        if: runner.os == 'Windows'
+        run: powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+      - name: Install dependencies
+        run: |
+          uv sync
+          uv add tox-gh-actions
+
+      - name: Test with pytest
+        run: |
+          uv run pytest
