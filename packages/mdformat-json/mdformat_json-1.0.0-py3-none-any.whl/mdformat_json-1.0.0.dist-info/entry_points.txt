@@ -1,0 +1,2 @@
+[mdformat.codeformatter]
+json = mdformat_json:format_json

@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: mdformat-json
+Version: 1.0.0
+Summary: Mdformat plugin to format json code blocks.
+Author-email: Bagard Hoel <hoel.bagard@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# Mdformat JSON
+
+Mdformat plugin to format json code blocks.
+
+## Installation
+
+The package is available on pypi [here](https://pypi.org/project/mdformat-json/), you can install it with:
+
+```bash
+pip install mdformat-json
+```
