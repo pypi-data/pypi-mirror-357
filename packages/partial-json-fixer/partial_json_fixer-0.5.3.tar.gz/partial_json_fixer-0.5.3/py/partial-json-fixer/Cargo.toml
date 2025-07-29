@@ -1,0 +1,13 @@
+[package]
+name = "partial-json-fixer-py"
+version = "0.5.3"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "partial_json_fixer"
+crate-type = ["cdylib"]
+
+[dependencies]
+original_partial_json_fixer = { package = "partial-json-fixer",  path = "../../crates/partial-json-fixer" }
+pyo3 = "0.25.1"
