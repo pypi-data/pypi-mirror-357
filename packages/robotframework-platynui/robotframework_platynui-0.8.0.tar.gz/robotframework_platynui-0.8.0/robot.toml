@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Daniel Biehl <daniel.biehl@imbus.de>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+paths = ["tests/robot"]
+
+log-level = "TRACE"
+
+[env]
+PYTHONNET_RUNTIME = "coreclr"

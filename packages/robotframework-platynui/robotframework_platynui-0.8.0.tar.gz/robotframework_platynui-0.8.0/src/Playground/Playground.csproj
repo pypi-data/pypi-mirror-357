@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>PlatynUI Playground</Description>
+    <OutputType>Exe</OutputType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- <NeedsPlatynUIExtensions>true</NeedsPlatynUIExtensions> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PlatynUI.JsonRpc.Endpoints\PlatynUI.JsonRpc.Endpoints.csproj" />
+  </ItemGroup>
+
+</Project>

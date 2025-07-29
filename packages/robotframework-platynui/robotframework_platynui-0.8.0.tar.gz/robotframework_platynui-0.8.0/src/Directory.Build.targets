@@ -1,0 +1,27 @@
+<Project>
+    <Import Project="..\Directory.Build.targets" />
+
+    <ItemGroup Condition="'$(NeedsPlatynUIExtensions)' == 'true'">
+        <ProjectReference
+            Include="..\PlatynUI.Extension.Provider.Client\PlatynUI.Extension.Provider.Client.csproj" />
+    </ItemGroup>
+
+    <ItemGroup
+        Condition="'$(NeedsPlatynUIExtensions)' == 'true' and '$(IncludeWindowsPlatform)' == 'true'">
+        <ProjectReference Include="..\PlatynUI.Platform.Win32\PlatynUI.Platform.Win32.csproj" />
+        <ProjectReference
+            Include="..\PlatynUI.Extension.Win32.UiAutomation\PlatynUI.Extension.Win32.UiAutomation.csproj" />
+    </ItemGroup>
+
+    <ItemGroup
+        Condition="'$(NeedsPlatynUIExtensions)' == 'true' and '$(IncludeLinuxPlatform)' == 'true'">
+        <ProjectReference Include="..\PlatynUI.Platform.X11\PlatynUI.Platform.X11.csproj" />
+        <ProjectReference
+            Include="..\PlatynUI.Extension.Linux.AtSpi2\PlatynUI.Extension.Linux.AtSpi2.csproj" />
+    </ItemGroup>
+
+    <ItemGroup
+        Condition=" '$(NeedsPlatynUIExtensions)' == 'true' and '$(IncludeMacOSPlatform)' == 'true' ">
+        <ProjectReference Include="..\PlatynUI.Platform.MacOS\PlatynUI.Platform.MacOS.csproj" />
+    </ItemGroup>
+</Project>

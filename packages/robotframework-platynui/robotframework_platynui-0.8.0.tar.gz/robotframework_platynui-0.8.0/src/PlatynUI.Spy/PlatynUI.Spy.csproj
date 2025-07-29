@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RuntimeIdentifiers>win-x64;win-arm64;linux-x64;linux-arm;osx-arm64</RuntimeIdentifiers>
+
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <UseAppHost>true</UseAppHost>
+    <NeedsPlatynUIExtensions>true</NeedsPlatynUIExtensions>
+  </PropertyGroup>
+
+  <!-- macOS -->
+  <!-- <PropertyGroup
+    Condition=" '$(OS)' == 'Unix' And '$(DOTNET_RUNNING_IN_CONTAINER)' != 'true' And '$(IsLinux)' !=
+  'true' ">
+    <TargetFramework>net8.0-macos</TargetFramework>
+    <RuntimeIdentifiers>osx-arm64</RuntimeIdentifiers>
+    <ApplicationId>org.platynui.spy</ApplicationId>
+  </PropertyGroup> -->
+
+  <!-- Linux -->
+  <!-- <PropertyGroup Condition=" '$(OS)' == 'Unix' And '$(IsLinux)' == 'true' ">
+    <TargetFramework>net8.0-linux</TargetFramework>
+  </PropertyGroup> -->
+
+  <!-- Windows -->
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <OutputType>WinExe</OutputType>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" />
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="Avalonia.Themes.Simple" />
+    <PackageReference Include="Avalonia.Fonts.Inter" />
+    <!--Condition
+    below is needed to remove Avalonia.Diagnostics package from build output in Release
+    configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" />
+    <PackageReference Include="Avalonia.ReactiveUI" />
+    <PackageReference Include="FluentAvaloniaUI" />
+    <PackageReference Include="System.CodeDom" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PlatynUI.Runtime\PlatynUI.Runtime.csproj" />
+  </ItemGroup>
+</Project>

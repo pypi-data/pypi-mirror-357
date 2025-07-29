@@ -1,0 +1,86 @@
+name: test package
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - ".github/**"
+      - "!.github/workflows/**"
+      - "docs/**"
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+        robot-version: ["6.0", "6.1", "7.0", "7.1", "7.2", "7.3"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup python ${{ matrix.python-version }} environment
+        id: setup-python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Setup Swift
+        if: matrix.os == 'macos-latest'
+        uses: swift-actions/setup-swift@v2
+
+      - name: Get swift version
+        if: matrix.os == 'macos-latest'
+        run: swift --version
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            9.0.x
+            8.0.x
+
+      - name: Install Hatch
+        uses: pypa/hatch@install
+
+      - name: Run Python Tests
+        run: hatch test -i py=${{ matrix.python-version }} -i rf=${{ matrix.robot-version }} -- -m "not wip"
+
+      - name: Run Robot Framework Tests
+        run: hatch run +py=${{ matrix.python-version }} +rf=${{ matrix.robot-version }} robot:test -e wip -- --outputdir test-results/os-${{ matrix.os }}-py-${{ matrix.python-version }}-rf-${{ matrix.robot-version }}
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-os-${{ matrix.os }}-py-${{ matrix.python-version }}-robotframework-${{ matrix.robot-version }}
+          path: test-results
+
+  publish-test-results:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Download Test Results
+        uses: actions/download-artifact@v4
+
+      - name: Install Robot Framework
+        run: pip install robotframework
+
+      - name: Merge Test Results
+        run: rebot --name Robotframework_Tests --outputdir merged-results test-os-*/os-*/output.xml
+
+      - name: Upload Merged Test Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged-test-results
+          path: merged-results

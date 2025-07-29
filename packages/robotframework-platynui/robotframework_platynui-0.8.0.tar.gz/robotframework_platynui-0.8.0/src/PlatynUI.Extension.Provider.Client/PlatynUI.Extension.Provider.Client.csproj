@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>PlatynUI Extension for Generic JSONRPC2 Provider Client</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StreamJsonRpc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PlatynUI.Runtime\PlatynUI.Runtime.csproj" />
+    <ProjectReference Include="..\PlatynUI.Provider.Core\PlatynUI.Provider.Core.csproj" />
+  </ItemGroup>
+
+</Project>

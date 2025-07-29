@@ -1,0 +1,40 @@
+using PlatynUI.Runtime;
+
+var r = DisplayDevice.GetBoundingRectangle();
+Console.WriteLine($"Bounding Rectangle: {r}");
+var rectWidth = 200;
+var rectHeight = 200;
+
+DisplayDevice.HighlightRect(0, 0, rectWidth, rectHeight);
+Thread.Sleep(3000);
+
+for (var i = r.X; i < r.X + r.Width - rectWidth; i++)
+{
+    DisplayDevice.HighlightRect(i, r.Y, rectWidth, rectHeight);
+
+    Thread.Sleep(1);
+}
+
+for (var i = r.Y; i < r.Y + r.Height - rectHeight; i++)
+{
+    DisplayDevice.HighlightRect(r.X + r.Width - rectWidth, i, rectWidth, rectHeight);
+
+    Thread.Sleep(1);
+}
+
+for (var i = r.X + r.Width - rectWidth; i > r.X; i--)
+{
+    DisplayDevice.HighlightRect(i, r.Y + r.Height - rectHeight, rectWidth, rectHeight);
+
+    Thread.Sleep(1);
+}
+
+for (var i = r.Y + r.Height - rectHeight; i > r.Y; i--)
+{
+    DisplayDevice.HighlightRect(r.X, i, rectWidth, rectHeight);
+
+    Thread.Sleep(1);
+}
+
+Thread.Sleep(5000);
+Console.WriteLine("Fertig");

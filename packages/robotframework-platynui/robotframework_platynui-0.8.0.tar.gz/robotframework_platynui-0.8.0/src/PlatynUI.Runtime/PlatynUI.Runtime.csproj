@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>PlatynUI .NET Runtime</Description>
+    
+    <RootNamespace>PlatynUI.Runtime</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Composition" />
+  </ItemGroup>
+
+</Project>
