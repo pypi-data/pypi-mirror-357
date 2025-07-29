@@ -1,0 +1,2 @@
+[console_scripts]
+gemini-tl = gemini_tl.main:main
