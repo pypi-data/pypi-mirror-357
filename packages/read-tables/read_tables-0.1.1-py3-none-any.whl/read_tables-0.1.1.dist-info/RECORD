@@ -1,0 +1,5 @@
+tools_tables/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tools_tables/modulo.py,sha256=b5mptScdPwD-8zVoIqOg2I5aHB_uIQZHqqG4LghC2UA,4320
+read_tables-0.1.1.dist-info/METADATA,sha256=LZSZx8hLK4ZlznJGhWwJAKuzubjiLRU37rSfoVEkdKU,497
+read_tables-0.1.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+read_tables-0.1.1.dist-info/RECORD,,

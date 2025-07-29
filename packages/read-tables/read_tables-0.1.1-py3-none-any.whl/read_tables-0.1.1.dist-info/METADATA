@@ -1,0 +1,18 @@
+Metadata-Version: 2.3
+Name: read_tables
+Version: 0.1.1
+Summary: Una librería de ejemplo
+License: MIT
+Author: Pablo Ramirez A
+Author-email: pramireza@payutic.pro
+Requires-Python: >=3.11.7,<4.0.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+
+# mitestinglibrary
+
+Una librería de ejemplo para saludar.
+
