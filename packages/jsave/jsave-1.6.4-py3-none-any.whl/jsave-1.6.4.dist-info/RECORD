@@ -1,0 +1,14 @@
+jsave/__init__.py,sha256=9UWnoQdggIv-Ww-zsdKUyqgRxsIbyeHZi2JBtikfQwU,120
+jsave/cmd/json/read.py,sha256=UH907X34Sein3sBgl47AU-wDgS9nz4XclR1mDpPr2RM,770
+jsave/cmd/json/save.py,sha256=Lvc9FGWVu21eudBJO9_wtJVuALNiwwq0ngDCl06_Puo,766
+jsave/cmd/json/update.py,sha256=W4x7YfL7VAq-CB5mcp_8iN2ESTisjH9yOtBFcvbxv3g,404
+jsave/cmd/pickle/read.py,sha256=wwbUvJCbwAFazo_MXuLeEv3YbT692_IGuxC7038Kwl4,289
+jsave/cmd/pickle/save.py,sha256=ibFGfg7ZB_6qepJUKPSl4oRCAdvbhG34nmFdl-78SlE,358
+jsave/error.py,sha256=DuNLkJc0kNw1h2ndlhAJ9SOb3RZOEEmLqP0j8pTXrT4,385
+jsave/jsave.py,sha256=fbW3Y57DybCWh-TggYhC47CR_2qCKs6nOS4xh0zRDcM,8038
+jsave/pickle.py,sha256=38F8sBheVbfdBgF_-v7JDEezoWCiHjyZXLPo8s9-OTc,791
+jsave/utils.py,sha256=_6-W954r1uFfjitCtgMPGVaPAA5R7m6VYM5JNl64EmQ,196
+jsave-1.6.4.dist-info/LICENSE,sha256=a23-mjmor7o3tJB_PStSla5IAtSmUdJyEWhqkdEIKQo,1075
+jsave-1.6.4.dist-info/METADATA,sha256=aX7tr0QnqcM6WB1Ck4F_jh8mRWLTb7xHzy60ITP__S4,3955
+jsave-1.6.4.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+jsave-1.6.4.dist-info/RECORD,,
