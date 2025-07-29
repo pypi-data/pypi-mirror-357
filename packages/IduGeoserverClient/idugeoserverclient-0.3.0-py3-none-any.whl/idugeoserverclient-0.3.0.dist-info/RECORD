@@ -1,0 +1,12 @@
+idugeoserverclient/__init__.py,sha256=c8ttaJSD-l1MDwvD6w4aU3J89NnMN2ocP_rOa5TZJ8E,109
+idugeoserverclient/_version.py,sha256=yMQmJtdBifY0OMrzyGEcrmWcsusPN_uEcFi3Sg_wQDY,19
+idugeoserverclient/client/__init__.py,sha256=x6PoyfRK2xKJePl4mytGHu5iwVnSYZbvYRByxgYMW10,100
+idugeoserverclient/client/client_interface.py,sha256=zyYXxIkoo3b5_B_h3RHBrfSgQxanjV52Sz8sHmy7y-Y,5434
+idugeoserverclient/client/implementations/__init__.py,sha256=OAtlLt6F63IRsuSPwLdDX9s9NsRYcMsCP6QV9VgbK1Q,40
+idugeoserverclient/client/implementations/client.py,sha256=xU-3gG29nkdGrVcjwmznf0fqf-KFwD-cWcoLPCpkKoI,14496
+idugeoserverclient/models/__init__.py,sha256=cML7Oso4EUqhxBncTQHM521R6rMwakZPaqLUtCqizH4,82
+idugeoserverclient/models/datastore_model.py,sha256=3lUf5qTBNly62AKQnE5jt_ggIGKQLe9ht7UoPXc1q_s,106
+idugeoserverclient/models/layer_model.py,sha256=d-c9fpnvzvqDTMX_Xh6TA2YD_BmSb__B2lssrNh1svc,102
+idugeoserverclient-0.3.0.dist-info/METADATA,sha256=lSdipCn8yZGXqlSlgHboVaDSmVi6m2Q1eHtV1kmyepo,614
+idugeoserverclient-0.3.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+idugeoserverclient-0.3.0.dist-info/RECORD,,
