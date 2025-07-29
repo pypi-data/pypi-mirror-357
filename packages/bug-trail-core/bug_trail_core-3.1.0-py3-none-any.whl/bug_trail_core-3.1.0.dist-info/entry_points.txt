@@ -1,0 +1,2 @@
+[console_scripts]
+bug_trail_core = bug_trail_core.__main__:main
