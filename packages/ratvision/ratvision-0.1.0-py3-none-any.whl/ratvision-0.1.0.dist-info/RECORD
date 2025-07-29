@@ -1,0 +1,17 @@
+ratvision/__init__.py,sha256=3VofVYx1AbuxVU7626kPiwCJG3LCYUEUrbjjS2fkP-4,31
+ratvision/blender_script.py,sha256=-BzmExl6qDtEe1EQHWMsoD6i4dMk1dJmt5_ABvoeJqg,2227
+ratvision/renderer.py,sha256=fX91B0yMRl-XaMWzjpPZDAXe1tDEUoPkHQ0YgoWM3CA,11127
+ratvision/environments/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ratvision/environments/box_messy.blend,sha256=hKHRprie7O274Q3heYFMdBQUGXg4ofrqkLoPHf8D-2c,1705780
+ratvision/environments/circle.png,sha256=8lV8V97er1L2wssWolXaK1qCqTE3mnnK7a82svyBOSA,7895
+ratvision/environments/floor_texture.webp,sha256=PdZDc0Lt42TH_tHamWhHV8hQiR8dRws09df3h0ixa9w,600956
+ratvision/environments/triangle.webp,sha256=_rAGOUdYJM6rzWF4IR7y-wr_oxbw-IBtQdHbCzOzi6Q,12978
+ratvision/environments/wall_concrete1.jpg,sha256=AG-kxCsEdIbyakgseCtl8Fq3vxTMulYUnPU8Me3Ozsk,151321
+ratvision/environments/wall_concrete2.jpg,sha256=y7GSxCRlf9EEY8TcCO4bDG2i-afsbc5m85ycHSb1q8U,11830726
+ratvision/environments/wall_concrete3.webp,sha256=GXmEWbl0TpnwEFQZS1VdXlmOVpzvJwlWfaP5j31q3VA,722784
+ratvision/environments/wall_texture.jpg,sha256=L40Onavc23xYrwQZ615-I47cjWx8UU6T9wCkStau6V0,2402514
+ratvision-0.1.0.dist-info/licenses/LICENSE,sha256=A4EoHLXAz2rz3b8iSnA3pqJktJiQXljE1568KHtmqe4,1076
+ratvision-0.1.0.dist-info/METADATA,sha256=JZUJ3VmcSuoRQ6xsLZHmpmBm0HQkApQ59CqFJmEH9Bw,3707
+ratvision-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ratvision-0.1.0.dist-info/top_level.txt,sha256=OIkshZuzu7BlwHHBpo8gXLX5hEfqskhryuIYdYyHDKg,10
+ratvision-0.1.0.dist-info/RECORD,,
