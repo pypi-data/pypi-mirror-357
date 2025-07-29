@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/idlealign/__init__.py
+src/idlealign/extension.py
+src/idlealign/py.typed
+src/idlealign/utils.py
+src/idlealign.egg-info/PKG-INFO
+src/idlealign.egg-info/SOURCES.txt
+src/idlealign.egg-info/dependency_links.txt
+src/idlealign.egg-info/entry_points.txt
+src/idlealign.egg-info/requires.txt
+src/idlealign.egg-info/top_level.txt
+tests/test_init.py
+tests/test_utils.py
