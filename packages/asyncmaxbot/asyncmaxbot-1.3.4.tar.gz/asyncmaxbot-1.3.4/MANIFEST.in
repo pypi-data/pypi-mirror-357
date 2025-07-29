@@ -1,0 +1,15 @@
+include README.md
+include LICENSE
+include API_DOCUMENTATION.md
+include ROADMAP.md
+include pyproject.toml
+recursive-include examples *.py
+recursive-include tests *.py
+recursive-include maxbot *.py
+exclude *.pyc
+exclude __pycache__
+exclude .git*
+exclude .pytest_cache
+exclude build
+exclude dist
+exclude *.egg-info 

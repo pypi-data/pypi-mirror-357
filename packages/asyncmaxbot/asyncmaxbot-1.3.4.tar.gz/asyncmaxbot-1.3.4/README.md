@@ -1,0 +1,188 @@
+# AsyncMaxBot SDK
+
+Python SDK для работы с Max API - платформой для создания ботов в Max Messenger.
+
+## Возможности
+
+- ✅ **Полная поддержка Max API** - все методы и типы данных
+- ✅ **Асинхронная архитектура** - быстрая и эффективная работа
+- ✅ **Универсальная работа с вложениями** - поддержка всех типов файлов
+- ✅ **Удобные фильтры** - легкая обработка сообщений и команд
+- ✅ **Middleware система** - расширяемость и гибкость
+- ✅ **Строгая типизация** - Pydantic модели для надежности
+- ✅ **Подробная документация** - примеры и API спецификация
+
+## Установка
+
+```bash
+pip install asyncmaxbot
+```
+
+## Быстрый старт
+
+```python
+import asyncio
+from maxbot import Bot
+from maxbot.dispatcher import Dispatcher
+from maxbot.filters import command, has_attachment
+
+async def main():
+    bot = Bot("YOUR_TOKEN")
+    dispatcher = Dispatcher(bot)
+    
+    @dispatcher.message_handler(command("start"))
+    async def start_command(ctx):
+        await ctx.reply("Привет! Я бот для Max Messenger.")
+    
+    @dispatcher.message_handler(has_attachment())
+    async def handle_attachments(ctx):
+        await ctx.reply(f"Получил {len(ctx.attachments)} вложений!")
+    
+    @dispatcher.message_handler()
+    async def echo_handler(ctx):
+        if ctx.text:
+            await ctx.reply(f"Вы сказали: {ctx.text}")
+    
+    async with bot:
+        await bot.polling(dispatcher=dispatcher)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+## Основные возможности
+
+### Работа с вложениями
+
+```python
+@dispatcher.message_handler(Attachment("image"))
+async def handle_images(ctx):
+    for attachment in ctx.attachments:
+        photo_id = attachment.payload.photo_id
+        await ctx.reply(f"Получил изображение! ID: {photo_id}")
+
+@dispatcher.message_handler(Attachment("file"))
+async def handle_files(ctx):
+    for attachment in ctx.attachments:
+        filename = attachment.filename or "Без названия"
+        size = attachment.size or 0
+        await ctx.reply(f"Файл: {filename} ({size} байт)")
+
+@dispatcher.message_handler(Attachment("location"))
+async def handle_location(ctx):
+    for attachment in ctx.attachments:
+        lat = attachment.latitude
+        lon = attachment.longitude
+        await ctx.reply(f"📍 Координаты: {lat}, {lon}")
+```
+
+### Управление чатом
+
+```python
+@dispatcher.message_handler(command("members"))
+async def get_members(ctx):
+    members = await ctx.get_members()
+    member_list = "\n".join([f"- {member.name}" for member in members])
+    await ctx.reply(f"Участники чата:\n{member_list}")
+
+@dispatcher.message_handler(command("typing"))
+async def send_typing(ctx):
+    await ctx.send_action("typing")
+    await asyncio.sleep(3)
+    await ctx.reply("Печатаю...")
+
+@dispatcher.message_handler(command("pin"))
+async def pin_message(ctx):
+    if ctx.message and ctx.message.body and ctx.message.body.mid:
+        await ctx.pin_message(ctx.message.body.mid)
+        await ctx.reply("Сообщение закреплено!")
+```
+
+### Универсальная отправка вложений
+
+```python
+@dispatcher.message_handler(HasAttachment())
+async def forward_attachment(ctx):
+    if ctx.attachments:
+        # Пересылаем вложение обратно
+        original_attachment = ctx.attachments[0]
+        await ctx.bot.send_attachment(
+            original_attachment.model_dump(),
+            chat_id=ctx.chat_id,
+            caption="Пересланное вложение"
+        )
+```
+
+## Поддерживаемые типы вложений
+
+- **`image`** - изображения (фото)
+- **`video`** - видео файлы
+- **`audio`** - аудио файлы  
+- **`file`** - документы и файлы
+- **`sticker`** - стикеры
+- **`location`** - геолокация
+- **`share`** - ссылки
+
+## Фильтры
+
+```python
+from maxbot.filters import command, text, regex, Attachment, HasAttachment
+
+# Команды
+@dispatcher.message_handler(command("start"))
+async def start_handler(ctx): ...
+
+# Текст
+@dispatcher.message_handler(text("привет"))
+async def hello_handler(ctx): ...
+
+# Регулярные выражения
+@dispatcher.message_handler(regex(r"^\d+$"))
+async def number_handler(ctx): ...
+
+# Вложения
+@dispatcher.message_handler(Attachment("image"))
+async def image_handler(ctx): ...
+
+@dispatcher.message_handler(HasAttachment())
+async def any_attachment_handler(ctx): ...
+```
+
+## Документация
+
+📖 **[Полная документация](API_DOCUMENTATION.md)** - подробное описание всех возможностей
+
+📚 **[Примеры](examples/)** - готовые примеры ботов
+
+🧪 **[Тесты](tests/)** - тесты для проверки функциональности
+
+## Требования
+
+- Python 3.8+
+- aiohttp >= 3.8.0
+- pydantic >= 2.0.0
+- loguru >= 0.7.0
+
+## Лицензия
+
+MIT License - см. файл [LICENSE](LICENSE)
+
+## Поддержка
+
+- 📧 Создайте Issue в GitHub
+- 📖 Изучите [документацию](API_DOCUMENTATION.md)
+- 🧪 Запустите [тесты](tests/) для проверки
+
+## Изменения в версии 1.2+
+
+### Новые возможности:
+
+1. **Универсальный метод `send_attachment()`** - отправка любого типа вложения
+2. **Улучшенная обработка вложений** - поддержка всех типов (image, video, audio, file, location, sticker)
+3. **Методы управления чатом** - получение участников, закрепление сообщений, действия
+4. **Улучшенная валидация** - поддержка числовых и строковых ID в payload
+5. **Расширенная документация** - подробные примеры и API спецификация
+
+### Обратная совместимость:
+
+Код, написанный для предыдущих версий, работает без изменений. Новые возможности являются дополнительными.
