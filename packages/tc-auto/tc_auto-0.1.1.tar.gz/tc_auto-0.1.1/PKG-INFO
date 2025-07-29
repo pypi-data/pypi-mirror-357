@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: tc-auto
+Version: 0.1.1
+Summary: tencentcloud api自动化封装
+Home-page: https://github.com/wanderingYee/TC-Auto
+Author: wanderingYee
+Author-email: yehongjiang2012@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests==2.32.4
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+TencentCloud Api for Python
