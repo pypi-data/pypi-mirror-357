@@ -1,0 +1,12 @@
+comet_maths
+netcdf4
+xarray
+
+[dev]
+pre-commit
+tox
+sphinx
+sphinx_design
+sphinx_book_theme
+ipython
+sphinx_autosummary_accessors
