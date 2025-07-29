@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: imgrit
+Version: 0.1.0
+Summary: A tiny image processing library with k-means and Voronoi diagram.
+License-File: LICENSE
+Requires-Python: >=3.9
+Requires-Dist: numpy>=2.3.1
+Requires-Dist: pillow>=11.2.1
+Requires-Dist: scipy>=1.15.3
