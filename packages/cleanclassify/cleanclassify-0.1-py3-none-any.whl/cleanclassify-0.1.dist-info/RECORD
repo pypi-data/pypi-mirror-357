@@ -1,0 +1,11 @@
+cleanclassify/__init__.py,sha256=qaBrMiNI5OGvyQLpAgA1IIVEs08rWY-KRbViy6-dQcc,121
+cleanclassify/__main__.py,sha256=HNaRcPDApAAnT07R3w5Rc7VoXhQhmmRF8MYhwHpjsQo,77
+cleanclassify/classify.py,sha256=uYVXZV-0WzPXmMvOQz7gpa89IJnlwQ2KcTY4GeHmjIY,2149
+cleanclassify/cleaner.py,sha256=cRYCi1IJW9eTJk8iK86GFl97s9oEx5qI1utcGBPs1Iw,2075
+cleanclassify/gui.py,sha256=xX86vWtFoAVjtX6_wtVE8MRiBi8mkvxXnv6YPFKuHXs,5761
+cleanclassify-0.1.dist-info/licenses/LICENSE,sha256=DLUpw7JwoJ8mpCemCnMdqsTl6FWMY6qewuZyWa8nBtY,1098
+cleanclassify-0.1.dist-info/METADATA,sha256=lYGL2xhQEXTVMR-6m35q6fdG6dvYd8pPOvk0gaZT7L0,3300
+cleanclassify-0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cleanclassify-0.1.dist-info/entry_points.txt,sha256=7HxUoN9FicFBWOqgISBcR7RndbryVvqc-GnkjTuid6c,68
+cleanclassify-0.1.dist-info/top_level.txt,sha256=lv9nyXTvLitCXDBHYz5SLDsDcs9V6IqkmBiXMO7FOvE,14
+cleanclassify-0.1.dist-info/RECORD,,
