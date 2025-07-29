@@ -1,0 +1,8 @@
+
+[lz4]
+lz4
+
+[lzo]
+
+[lzo:platform_system != "Windows" or platform_python_implementation != "PyPy"]
+python-lzo
