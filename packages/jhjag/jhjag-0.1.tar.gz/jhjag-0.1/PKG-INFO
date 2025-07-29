@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: jhjag
+Version: 0.1
+Summary: Autograder for JupyterHub environments
+Project-URL: Homepage, https://github.com/jpowerj/jag
+Project-URL: Issues, https://github.com/jpowerj/jag/issues
+Author-email: Jeff Jacobs <jj1088@georgetown.edu>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+## `jhjag`: Jeff's Autograder for JupyterHub
+
+Autograder for DSAN 5650: Causal Inference for Computational Social Science
+
