@@ -1,0 +1,2 @@
+[console_scripts]
+dot-layered-transform = dot_analyzer.cli:main
