@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: yieldflow
+Version: 0.1.1
+Summary: Simple library for building multi-threaded data processing pipelines, streaming results between steps.
+Author-email: Freddy Snijder <freddy@visionscapers.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.bak
+Requires-Dist: visionscaper-pybase
+Dynamic: license-file
+
+# Yieldflow
+Simple library for building multi-threaded data processing pipelines, streaming results between steps.
+
+The implementation applies pipeline parallelism: per step processing is parallelized (using ThreadPools) over the input items. 
