@@ -1,0 +1,2 @@
+[console_scripts]
+leon-mediacrawler = main:cli_main
