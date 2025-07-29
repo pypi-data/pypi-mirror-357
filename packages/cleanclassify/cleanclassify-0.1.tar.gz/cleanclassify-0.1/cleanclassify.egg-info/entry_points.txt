@@ -1,0 +1,2 @@
+[console_scripts]
+cleanclassify = cleanclassify.__main__:launch_gui

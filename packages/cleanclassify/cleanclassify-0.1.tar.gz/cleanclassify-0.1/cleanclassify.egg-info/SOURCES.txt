@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+cleanclassify/__init__.py
+cleanclassify/__main__.py
+cleanclassify/classify.py
+cleanclassify/cleaner.py
+cleanclassify/gui.py
+cleanclassify.egg-info/PKG-INFO
+cleanclassify.egg-info/SOURCES.txt
+cleanclassify.egg-info/dependency_links.txt
+cleanclassify.egg-info/entry_points.txt
+cleanclassify.egg-info/requires.txt
+cleanclassify.egg-info/top_level.txt
