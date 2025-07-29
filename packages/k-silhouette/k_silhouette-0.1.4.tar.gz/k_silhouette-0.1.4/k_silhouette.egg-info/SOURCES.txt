@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+k_silhouette.egg-info/PKG-INFO
+k_silhouette.egg-info/SOURCES.txt
+k_silhouette.egg-info/dependency_links.txt
+k_silhouette.egg-info/requires.txt
+k_silhouette.egg-info/top_level.txt
+ksil/__init__.py
+ksil/ksil.py
