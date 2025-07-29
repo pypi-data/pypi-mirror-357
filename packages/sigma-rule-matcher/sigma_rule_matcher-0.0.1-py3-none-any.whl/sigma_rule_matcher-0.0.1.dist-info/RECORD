@@ -1,0 +1,12 @@
+sigma_rule_matcher/__about__.py,sha256=Uwwf-EU5ySXtEgiPJmF_qXHFPsA0LjKY2kf9w7xP17o,123
+sigma_rule_matcher/__init__.py,sha256=JtqRKOz6vpuoBfoqENEpUP1rFQmghE5K66CQhjiRgu8,78
+sigma_rule_matcher/condition.py,sha256=MuYJgt6JBfau_eQyCWw0Jy__-3FZIPeMGMfj1_yUQAI,5437
+sigma_rule_matcher/condition_evaluator.py,sha256=q7Winlw6fb23Ft9OQAhmp7qATayOz48wa6aywbBopfs,4704
+sigma_rule_matcher/detection_evaluator.py,sha256=UlALDrg1yJzuHn6vqbcn9AKLptGSyuE3u0ea1cXAAqo,9085
+sigma_rule_matcher/matcher.py,sha256=oYTyBMdN6-lwP0B7kPeoO13NSwChgeeIepth1TwUH4w,3952
+sigma_rule_matcher/missing_field.py,sha256=Bs8S91U2gZjdYzlM7fNBEGVdyn47ZpRFiC8G9Ynfpvc,31
+sigma_rule_matcher/utils.py,sha256=e0Dz83JhmsGPZsuLcVD4nQEMExApG8jkQEaTmqLjoWA,204
+sigma_rule_matcher-0.0.1.dist-info/METADATA,sha256=maFa2dh-08Hu3QmvR0qxE8EIuaDSUcukb8I3Kflw24A,1914
+sigma_rule_matcher-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+sigma_rule_matcher-0.0.1.dist-info/licenses/LICENSE,sha256=jTwEAC_x8551tnYig6ksKaFoQQfATM45bjufPFOjsEM,1093
+sigma_rule_matcher-0.0.1.dist-info/RECORD,,

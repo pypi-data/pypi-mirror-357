@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: sigma-rule-matcher
+Version: 0.0.1
+Project-URL: Homepage, https://github.com/nsmithuk/sigma-rule-matcher
+Project-URL: Documentation, https://github.com/nsmithuk/sigma-rule-matcher#readme
+Project-URL: Issues, https://github.com/nsmithuk/sigma-rule-matcher/issues
+Project-URL: Source, https://github.com/nsmithuk/sigma-rule-matcher
+Author-email: Neil Smith <neil@nsmith.net>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.10
+Requires-Dist: boolean-py<6.0,>=5.0
+Requires-Dist: pysigma<0.12.0,>=0.11.23
+Description-Content-Type: text/markdown
+
+# sigma-rule-matcher
+Here's a revised version of the high-level explanation for your README:
+
+---
+
+## What is this?
+
+**`sigma-rule-matcher`** is a Python package for evaluating [Sigma detection rules](https://github.com/SigmaHQ/sigma) against structured event data. Built on top of [PySigma](https://github.com/SigmaHQ/pySigma), it parses and applies Sigma rule logic—including condition expressions and most common modifiers—to incoming events to determine whether they match.
+
+The project is primarily a learning tool, hacked together to better understand how Sigma rules operate under the hood.
+
+---
+
+### License
+
+This project is licensed under the [MIT License](LICENSE).
+
+It uses the [pySigma](https://github.com/SigmaHQ/pySigma) library, which is licensed under the **GNU Lesser General Public License v2.1 (LGPL-2.1)**. A copy of the [LGPL-2.1 license](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) is here.
+
+We use pySigma without modification.
