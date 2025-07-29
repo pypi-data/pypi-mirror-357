@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "jama-client-certic"
+version = "0.0.34"
+description = "Jama client for Python"
+authors = ["Mickaël Desfrênes <mickael.desfrenes@unicaen.fr>"]
+license = "CeCILL-C"
+readme = "README.md"
+packages = [{include = "jama_client"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9.4"
+argh = "^0.29.4"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
