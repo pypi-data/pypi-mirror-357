@@ -1,0 +1,12 @@
+[project]
+name = "methodlogger"
+version = "0.1.0"
+description = "Log entry and exit of methods with a decorator"
+authors = [{name = "Piyush Chauhan", email = "piyush23321@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = []
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

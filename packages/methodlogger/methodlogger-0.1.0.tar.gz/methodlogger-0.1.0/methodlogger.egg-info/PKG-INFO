@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: methodlogger
+Version: 0.1.0
+Summary: Log entry and exit of methods with a decorator
+Author-email: Piyush Chauhan <piyush23321@gmail.com>
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# methodlogger
+
+A simple Python decorator to log method entry and exit using config flags.
