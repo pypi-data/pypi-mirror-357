@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+telegram_notifier_server.py
+telegram_notifier_mcp_ac.egg-info/PKG-INFO
+telegram_notifier_mcp_ac.egg-info/SOURCES.txt
+telegram_notifier_mcp_ac.egg-info/dependency_links.txt
+telegram_notifier_mcp_ac.egg-info/requires.txt
+telegram_notifier_mcp_ac.egg-info/top_level.txt
