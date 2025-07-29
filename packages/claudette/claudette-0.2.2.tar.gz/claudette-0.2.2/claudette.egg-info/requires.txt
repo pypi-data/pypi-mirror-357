@@ -1,0 +1,7 @@
+fastcore>=1.8.4
+msglm>=0.0.8
+anthropic>=0.52
+toolslm>=0.2.3
+
+[dev]
+google-auth
