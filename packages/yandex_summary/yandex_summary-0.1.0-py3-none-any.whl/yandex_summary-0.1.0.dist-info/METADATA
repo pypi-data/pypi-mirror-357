@@ -1,0 +1,82 @@
+Metadata-Version: 2.4
+Name: yandex_summary
+Version: 0.1.0
+Summary: Add your description here
+Author-email: Herman Guilliman <hermanguilliman@proton.me>
+License-File: LICENSE
+Requires-Python: >=3.13
+Requires-Dist: aiohttp>=3.12.13
+Requires-Dist: bs4>=0.0.2
+Description-Content-Type: text/markdown
+
+# Yandex Summary API Client
+
+A Python client for interacting with the Yandex 300 Summary API to generate detailed or short summaries of articles.
+
+## Installation
+
+Install the package using pip:
+
+```bash
+pip install yandex-summary
+```
+
+## Prerequisites
+
+- Python 3.8 or higher
+- A valid Yandex API key (set as the `YANDEX_API_KEY` environment variable or passed to the client)
+
+## Usage
+
+Here's an example of how to use the `yandex-summary` library to summarize an article:
+
+```python
+import asyncio
+import logging
+from yandex_summary import YandexSummaryAPI
+
+async def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    )
+    
+    api = YandexSummaryAPI(api_key="your-api-key-here")
+    result = await api.get_summary(
+        "https://example.com/article",
+        summary_type="detailed",
+    )
+    
+    if result.error:
+        print(f"Error: {result.error}")
+    else:
+        # Output in plain text
+        with open("summary.txt", mode="w", encoding="UTF-8") as file:
+            file.write(result.to_plain_text())
+
+        # Output in Markdown
+        with open("summary.md", mode="w", encoding="UTF-8") as file:
+            file.write(result.to_markdown())
+
+        # Output in HTML
+        with open("summary.html", mode="w", encoding="UTF-8") as file:
+            file.write(result.to_html())
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+## Features
+
+- Supports both detailed and short summary types.
+- Outputs summaries in plain text, Markdown, or HTML formats.
+- Handles retries and errors gracefully with configurable parameters.
+
+## Requirements
+
+- `aiohttp>=3.8.0`
+- `beautifulsoup4>=4.9.0`
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
