@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+VersaTool.egg-info/PKG-INFO
+VersaTool.egg-info/SOURCES.txt
+VersaTool.egg-info/dependency_links.txt
+VersaTool.egg-info/requires.txt
+VersaTool.egg-info/top_level.txt
+versatool/__init__.py
+versatool/webkit.py
