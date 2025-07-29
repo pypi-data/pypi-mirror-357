@@ -1,0 +1,10 @@
+click
+pyyaml
+pydantic
+python-dotenv
+aiohttp
+requests
+fastapi
+uvicorn
+ulid
+gradio
