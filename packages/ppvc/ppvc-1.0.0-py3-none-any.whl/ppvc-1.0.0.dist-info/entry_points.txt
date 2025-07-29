@@ -1,0 +1,2 @@
+[console_scripts]
+ppvc = ppvc.ppvc:main
