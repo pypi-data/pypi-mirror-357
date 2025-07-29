@@ -1,0 +1,12 @@
+esri_converter/__init__.py,sha256=UqZ4lWcGga0g0Ba6ICTVdh5PGVMaSr3QT6uDlWJrhYE,2182
+esri_converter/api.py,sha256=yHrf7x2RG9FSGcCXpVfRNU91ozjAlPcvjYtqUsJ0rWo,10985
+esri_converter/exceptions.py,sha256=q0UYfghULqFDzD8cgxcyeS_1RDOpXD-XB6SQ87zdcG0,3275
+esri_converter/converters/__init__.py,sha256=FTYeW6z_b2Dwz5j70TLhYH-ORsVWOARUKPVH-6gfh78,259
+esri_converter/converters/geoparquet_converter.py,sha256=Zr3bVl4KiCAfwt_UCTagoM3kPU8I7H_8PaB4U2jHWrM,18968
+esri_converter/utils/__init__.py,sha256=vtr7jdMz7VhTKRH_jrD9AnCpRDKRmEhT2ms8I9qt1eM,378
+esri_converter/utils/formats.py,sha256=vvejojUapKmBYD669MZb-QHjuN9Dp6u5qoTfo8Pk3JE,6058
+esri_converter/utils/validation.py,sha256=KFJgCr47K-kL8n0rLiY6DWiDn1y0SEhul3_rKh45VQo,8002
+esri_converter-0.1.1.dist-info/METADATA,sha256=Ntrdw-pvZL_fZO13WfgwQ8NccRAGc5gHCdyhkPALtHE,14315
+esri_converter-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+esri_converter-0.1.1.dist-info/licenses/LICENSE,sha256=ZJz5cbVPx82K70MAb86JXRawm3YvLMQQklN42Dqb-3c,1069
+esri_converter-0.1.1.dist-info/RECORD,,
