@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Base VPL4IP</title>
+    <!-- Load Blockly core -->
+    <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+    <!-- Load the default blocks -->
+    <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+    <!-- Load a generator -->
+    <script src="https://unpkg.com/blockly/python_compressed.js"></script>
+    <!-- Load a message file -->
+    <script src="https://unpkg.com/blockly/msg/en.js"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      #blocklyDiv {
+        flex: 3; /* Take up all remaining space */
+        min-width: 400px; /* Minimum width of Blockly area */
+      }
+      #codeArea {
+        flex: 1; /* Takes up one-fourth of the space */
+        background-color: #f8f9fa;
+        border-left: 1px solid #ccc;
+        overflow: auto;
+        font-family: monospace;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    </style>
+    <style>
+      #Control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px;
+      }
+
+      #Control label {
+        margin-right: 5px;
+      }
+      #scaleInput {
+        padding: 8px;
+        width: auto;
+      }
+      button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+      .separator {
+        display: inline-block;
+        height: 30px;
+        width: 2px;
+        background-color: #ccc;
+        margin: 0 10px;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Control">
+      <button id="loadUseCase" onclick="loadWorkspace()">load Use Case</button>
+      <button id="logWorkspace" onclick="logWorkspace()">
+        console.log(current workspace)
+      </button>
+      <span class="separator"></span>
+      <button onclick="downloadWorkspaceSVG()">
+        download workspace as SVG
+      </button>
+    </div>
+    <div id="blocklyDiv"></div>
+    <pre id="codeArea"></pre>
+    
+    <script>
+      Blockly.defineBlocksWithJsonArray([
+        {
+          type: "read_image",
+          message0: "read image ",
+          args0: [],
+          message1: "%1 path",
+          args1: [
+            {
+              type: "field_input",
+              name: "IMAGE_PATH",
+              text: "image.tif",
+            },
+          ],
+          message2: "%1 as gray? ",
+          args2: [
+            {
+              type: "field_checkbox",
+              name: "AS_GRAY",
+              checked: true,
+            },
+          ],
+          output: "NUMPY",
+          colour: 260,
+          tooltip: "Provides an image as output.",
+          helpUrl: "",
+        },
+        {
+          type: "gaussian_blur",
+          message0: "gaussian blur %1",
+          args0: [
+            {
+              type: "input_value",
+              name: "IMAGE",
+              check: "NUMPY",
+            },
+          ],
+          message1: "%1 sigma",
+          args1: [
+            {
+              type: "field_number",
+              name: "SIGMA",
+              value: 0.5,
+              min: 0.0,
+              precision: 0.1,
+            },
+          ],
+          inputsInline: false,
+          output: "NUMPY",
+          colour: 260,
+          tooltip: "Applies a Gaussian filter to the image.",
+          helpUrl: "",
+        },
+
+        {
+          type: "float64(0to1)_float32(0to1)",
+          message0: "float64(0to1)_float32(0to1) %1",
+          args0: [
+            {
+              type: "input_value",
+              name: "IMAGE",
+              check: "NUMPY",
+            },
+          ],
+          inputsInline: false,
+          output: "NUMPY",
+          colour: 260,
+          helpUrl: "",
+        },
+        {
+          type: "numpy_to_torch",
+          message0: "numpy.ndarray %1",
+          args0: [
+            {
+              type: "input_value",
+              name: "ARRAY",
+              check: "NUMPY",
+            },
+          ],
+          message1: "to torch.Tensor %1",
+          args1: [
+            {
+              type: "field_label",
+              text: "", // Empty placeholder for alignment, if needed
+            },
+          ],
+
+
+          inputsInline: false,
+          output: "TORCH",
+          colour: 120,
+          tooltip:
+            "numpy.ndarray (H x W x C) in the range [0, 255] to  torch.FloatTensor of shape (C x H x W) in the range [0.0, 1.0]  dtype = np.uint8",
+          helpUrl: "",
+        },
+        {
+          type: "unsqueeze",
+          message0: "unsqueeze %1",
+          args0: [
+            {
+              type: "input_value",
+              name: "IMAGE",
+              check: "TORCH",
+            },
+          ],
+          message1: "%1 dimension",
+          args1: [
+            {
+              type: "field_number",
+              name: "DIM",
+              value: 0, // Default value for the dimension index
+              min: 0, // Optional minimum value
+              precision: 1, // Step changes
+            },
+          ],
+          inputsInline: false,
+          output: "TORCH",
+          colour: 120,
+          tooltip:
+            "Adds a new dimension to the image at the specified dimension index.",
+          helpUrl: "",
+        },
+        {
+          type: "to_device",
+          message0: "move to %1 %2",
+          args0: [
+            {
+              type: "input_value",
+              name: "IMAGE",
+              check: "TORCH",
+            },
+            {
+              type: "field_dropdown",
+              name: "DEVICE",
+              options: [
+                ["cpu", "CPU"],
+                ["gpu", "GPU"],
+              ],
+            },
+          ],
+          inputsInline: false,
+          output: "TORCH",
+          colour: 120,
+          tooltip:
+            "Moves the image to a specified computation device, either CPU or GPU.",
+          helpUrl: "",
+        },
+        {
+          type: "super_resolution",
+          message0: "super resolution %1",
+          args0: [
+            {
+              type: "input_value",
+              name: "IMAGE",
+              // check: "TORCH",
+            },
+          ],
+          message1: "%1 scale factor",
+          args1: [
+            {
+              type: "field_number",
+              name: "scale",
+              value: 2,
+              min: 1,
+              max: 10,
+              precision: 1
+            },
+          ],
+          inputsInline: false,
+          output: null,
+          colour: 120,
+          tooltip: "",
+          helpUrl: "",
+        },
+        {
+          type: "torch_to_numpy",
+          message0: "torch.Tensor %1",
+          args0: [
+            {
+              type: "input_value",
+              name: "ARRAY",
+              check: "TORCH",
+            },
+          ],
+          message1: "to numpy.ndarray %1",
+          args1: [
+            {
+              type: "field_label",
+              text: "", // Empty placeholder for alignment, if needed
+            },
+          ],
+          inputsInline: false,
+          output: "NUMPY",
+          colour: 120,
+          tooltip: "Converts a Pytorch tensor to an NumPy array .",
+          helpUrl: "",
+        },
+        {
+          type: "squeeze",
+          message0: "squeeze %1",
+          args0: [
+            {
+              type: "input_value",
+              name: "IMAGE",
+              check: "NUMPY",
+            },
+          ],
+          message1: "%1 dimension",
+          args1: [
+            {
+              type: "field_input",
+              name: "DIM",
+              text: "None",
+             
+            },
+          ],
+          inputsInline: false,
+          output: "NUMPY",
+          colour: 260,
+          tooltip:
+            "Removes a single-dimensional entry from the shape of the image at the specified dimension index.",
+          helpUrl: "",
+        },
+        {
+          type: "local_contrast_enhancement",
+          message0: "contrast enhance %1",
+          args0: [
+            {
+              type: "input_value",
+              name: "IMAGE",
+              check: "NUMPY",
+            },
+          ],
+          inputsInline: false,
+          output: "NUMPY",
+          colour: 260,
+          tooltip: "local_contrast_enhancement",
+          helpUrl: "",
+        },
+      ]);
+
+      var requiredImports = new Set();
+
+      Blockly.Python.forBlock["read_image"] = function (block) {
+        requiredImports.add("from skimage.io import imread");
+        var imageUrl = Blockly.Python.quote_(block.getFieldValue("IMAGE_PATH"));
+        var asGray =
+          block.getFieldValue("AS_GRAY") === "TRUE";
+        if (asGray) {
+          var code = "imread(" + imageUrl + ", as_gray=True)";
+        } else {
+          var code = "imread(" + imageUrl + ")";
+        }
+        var resultVar = Blockly.Python.nameDB_.getDistinctName(
+          "raw_image",
+          Blockly.VARIABLE_CATEGORY_NAME
+        );
+        var code = `${resultVar} = ${code}`;
+        Blockly.Python.definitions_["define_" + resultVar] = code;
+
+        return [`${resultVar}`, Blockly.Python.ORDER_NONE];
+      };
+
+      Blockly.Python.forBlock['gaussian_blur'] = function (block) {
+        requiredImports.add("from skimage.filters import gaussian");
+        var image =
+          Blockly.Python.valueToCode(
+            block,
+            "IMAGE",
+            Blockly.Python.ORDER_NONE
+          ) || "None";
+        var sigma = block.getFieldValue("SIGMA") || "0.5";
+        var resultVar = Blockly.Python.nameDB_.getDistinctName(
+          "gaussian_filtered",
+          Blockly.VARIABLE_CATEGORY_NAME
+        );
+        var code = `${resultVar} = gaussian(${image}, sigma=${sigma})`;
+        Blockly.Python.definitions_["define_" + resultVar] = code;
+        return [`${resultVar}`, Blockly.Python.ORDER_NONE];
+      };
+
+      Blockly.Python.forBlock["float64(0to1)_float32(0to1)"] = function (block) {
+        requiredImports.add("import numpy as np");
+        var image =
+          Blockly.Python.valueToCode(
+            block,
+            "IMAGE",
+            Blockly.Python.ORDER_NONE
+          ) || "None";
+        
+        var code = `${image}.astype(np.float32)`;
+        return [code, Blockly.Python.ORDER_NONE];
+      };
+
+      Blockly.Python.forBlock["numpy_to_torch"] = function (block) {
+        requiredImports.add("import torch");
+        var array =
+          Blockly.Python.valueToCode(
+            block,
+            "ARRAY",
+            Blockly.Python.ORDER_NONE
+          ) || "None";
+
+        var code = `torch.from_numpy(${array})`;
+        return [code, Blockly.Python.ORDER_NONE];
+      };
+
+      Blockly.Python.forBlock["unsqueeze"] = function (block) {
+        requiredImports.add("import torch");
+        var image =
+          Blockly.Python.valueToCode(
+            block,
+            "IMAGE",
+            Blockly.Python.ORDER_NONE
+          ) || "None";
+        var dim = block.getFieldValue("DIM") || "0";
+
+        var code = `torch.unsqueeze(${image}, ${dim})`;
+        return [code, Blockly.Python.ORDER_NONE];
+      };
+
+      Blockly.Python.forBlock["to_device"] = function (block) {
+        requiredImports.add("import torch");
+        var image =
+          Blockly.Python.valueToCode(
+            block,
+            "IMAGE",
+            Blockly.Python.ORDER_NONE
+          ) || "None";
+        var device = block.getFieldValue("DEVICE");
+
+        if (device === "GPU") {
+          var resultVar = Blockly.Python.nameDB_.getDistinctName(
+            "image",
+            Blockly.VARIABLE_CATEGORY_NAME
+          );
+          code =
+            `if torch.cuda.is_available():\n` +
+            `    ${resultVar} = ${image}.cuda()`;
+          Blockly.Python.definitions_["define_" + resultVar] = code;
+          return [`${resultVar}`, Blockly.Python.ORDER_NONE];
+        } else {
+          return [`${image}.cpu()`, Blockly.Python.ORDER_NONE];
+        }
+      };
+
+      Blockly.Python.forBlock["super_resolution"] = function (block) {
+        requiredImports.add("from api import super_resolution");
+        var image =
+          Blockly.Python.valueToCode(
+            block,
+            "IMAGE",
+            Blockly.Python.ORDER_NONE
+          ) || "None";
+        var scale = block.getFieldValue("scale");
+        var resultVar = Blockly.Python.nameDB_.getDistinctName(
+          "super_res_image",
+          Blockly.VARIABLE_CATEGORY_NAME
+        );
+        var code =
+          `${resultVar} = super_resolution(${image}, ${scale})`;
+        Blockly.Python.definitions_["define_" + resultVar] = code;
+        return [`${resultVar}`, Blockly.Python.ORDER_NONE];
+      };
+
+      Blockly.Python.forBlock["torch_to_numpy"] = function (block) {
+        requiredImports.add("import numpy as np");
+        var array =
+          Blockly.Python.valueToCode(
+            block,
+            "ARRAY",
+            Blockly.Python.ORDER_NONE
+          ) || "None";
+        var code = `${array}.detach().numpy()`;
+        return [code, Blockly.Python.ORDER_NONE];
+      };
+
+      Blockly.Python.forBlock["squeeze"] = function (block) {
+        requiredImports.add("import numpy as np");
+        var image =
+          Blockly.Python.valueToCode(
+            block,
+            "IMAGE",
+            Blockly.Python.ORDER_NONE
+          ) || "None";
+        var dim = block.getFieldValue("DIM");
+        var code = `np.squeeze(${image})`;
+        if (dim != "None")
+          code = `np.squeeze(${image}, axis=${dim})`;
+        return [code, Blockly.Python.ORDER_NONE];
+      };
+      
+      Blockly.Python.forBlock["local_contrast_enhancement"] = function (block) {
+        var imports = "from skimage.exposure import equalize_adapthist";
+        requiredImports.add(imports);
+        var image =
+          Blockly.Python.valueToCode(
+            block,
+            "IMAGE",
+            Blockly.Python.ORDER_NONE
+          ) || "None";
+        
+        inputVar = Blockly.Python.nameDB_.getDistinctName(
+          "contrast_enhanced",
+          Blockly.VARIABLE_CATEGORY_NAME
+        );
+        var code = `${inputVar} = equalize_adapthist(${image})`;
+        Blockly.Python.definitions_["define_" + inputVar] = code;
+        return [`${inputVar}`, Blockly.Python.ORDER_NONE];
+      };
+
+      function generateImports() {
+        var imports = "";
+        requiredImports.forEach(function (importStatement) {
+          imports += importStatement + "\n";
+        });
+        return imports;
+      }
+
+      var workspace = Blockly.inject("blocklyDiv", {
+        toolbox:
+          '<xml id="toolbox" style="display: none">' +
+          '<block type="read_image"></block>' +
+          '<block type="gaussian_blur"></block>' +
+          '<block type="float64(0to1)_float32(0to1)"></block>' +
+          '<block type="numpy_to_torch"></block>' +
+          '<block type="unsqueeze"></block>' +
+          '<block type="to_device"></block>' +
+          '<block type="super_resolution"></block>' +
+          '<block type="torch_to_numpy"></block>' +
+          '<block type="squeeze"></block>' +     
+          '<block type="local_contrast_enhancement"></block>' +
+          "</xml>",
+        zoom: {
+          controls: true,
+          wheel: true,
+          startScale: 1.0,
+          maxScale: 3,
+          minScale: 0.3,
+          scaleSpeed: 1.2,
+          pinch: true,
+        },
+        scrollbars: true,
+        trashcan: true,
+        rtl: true,
+      });
+
+      function updateCode() {
+        var imports = generateImports();
+        var code = Blockly.Python.workspaceToCode(workspace);
+        document.getElementById("codeArea").textContent = imports + "\n" + code;
+      }
+
+      workspace.addChangeListener(updateCode);
+
+      updateCode();
+    </script>
+    <script>
+      function loadWorkspace(state) {
+        var workspace = Blockly.getMainWorkspace();
+        var savedState =
+          '{"blocks":{"languageVersion":0,"blocks":[{"type":"local_contrast_enhancement","id":"R_S*Aw|6cOyfd|qD3=}1","x":199,"y":157,"inputs":{"IMAGE":{"block":{"type":"squeeze","id":"-G@A8eo5oSG[9-F:IWPz","fields":{"DIM":"None"},"inputs":{"IMAGE":{"block":{"type":"torch_to_numpy","id":"x4bA[B;MWb}2Sm.)]bYv","inputs":{"ARRAY":{"block":{"type":"to_device","id":"cO^Y:It`d)STqEPnr-D{","fields":{"DEVICE":"CPU"},"inputs":{"IMAGE":{"block":{"type":"super_resolution","id":"$`%)K6G6:2.O8h}7s%P","fields":{"scale":2},"inputs":{"IMAGE":{"block":{"type":"to_device","id":"-J.x?g=y:YvtTG[,IX}U","fields":{"DEVICE":"GPU"},"inputs":{"IMAGE":{"block":{"type":"unsqueeze","id":"!NzoR(ZqgGyqP)L}dIvt","fields":{"DIM":0},"inputs":{"IMAGE":{"block":{"type":"unsqueeze","id":"#waqD5HnERGA0Yjza_uS","fields":{"DIM":0},"inputs":{"IMAGE":{"block":{"type":"numpy_to_torch","id":"ZmsKU_`r-W$QebOy;90@","inputs":{"ARRAY":{"block":{"type":"float64(0to1)_float32(0to1)","id":"`zFr)0lZ_5ahM|7;.n=.","inputs":{"IMAGE":{"block":{"type":"gaussian_blur","id":"wBzO;2]zv7#~GIt7UVyK","fields":{"SIGMA":0.5},"inputs":{"IMAGE":{"block":{"type":"read_image","id":"lJK(N}.~?Hsf5!Z5,C$c","fields":{"IMAGE_PATH":"image.tif","AS_GRAY":true}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}]}}';
+        Blockly.serialization.workspaces.load(
+          JSON.parse(savedState),
+          workspace
+        );
+        workspace.zoomToFit();
+      }
+
+      function logWorkspace() {
+        var workspace = Blockly.getMainWorkspace();
+        const state = Blockly.serialization.workspaces.save(workspace);
+        console.log(JSON.stringify(state));
+      }
+
+      function downloadWorkspaceSVG() {
+        var svg = document.getElementsByClassName("blocklySvg")[0]; // Get the SVG element
+        var styleElement = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "style"
+        );
+        styleElement.textContent = `.blocklyText { fill: #fff; }
+                                  .blocklyEditableText>text { fill: #000; }
+                                  .blocklyText.blocklyDropdownText { fill: #000; }
+                                  .blocklyEditableText > rect {
+                                      fill: #fff;
+                                      fill-opacity: 0.6;
+                                      stroke: none;
+                                  }
+                                  .blocklyPathLight {    
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-width: 1;
+                                  }`;
+        svg.appendChild(styleElement);
+
+        var serializer = new XMLSerializer();
+        var source = serializer.serializeToString(svg);
+
+        //add name spaces.
+        if (
+          !source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)
+        ) {
+          source = source.replace(
+            /^<svg/,
+            '<svg xmlns="http://www.w3.org/2000/svg"'
+          );
+        }
+        if (!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)) {
+          source = source.replace(
+            /^<svg/,
+            '<svg xmlns:xlink="http://www.w3.org/1999/xlink"'
+          );
+        }
+
+        // Add xml declaration
+        source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+
+        // Convert SVG source to URI data scheme.
+        var url =
+          "data:image/svg+xml;charset=utf-8," + encodeURIComponent(source);
+
+        // Set up download link
+        var link = document.createElement("a");
+        link.href = url;
+        link.download = "blockly_workspace.svg";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      function updateCode() {
+        var imports = generateImports();
+        var code = Blockly.Python.workspaceToCode(workspace);
+        document.getElementById("codeArea").textContent = imports + "\n" + code;
+      }
+
+      workspace.addChangeListener(updateCode);
+      
+      window.onload = function () {
+        loadWorkspace();
+        updateCode();
+      };
+    </script>
+  </body>
+</html>

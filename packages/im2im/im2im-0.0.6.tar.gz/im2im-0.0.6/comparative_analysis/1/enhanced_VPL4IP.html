@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced VPL4IP</title>
+  <!-- Load Blockly core -->
+  <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+  <!-- Load the default blocks -->
+  <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+  <!-- Load a generator -->
+  <script src="https://unpkg.com/blockly/python_compressed.js"></script>
+  <!-- Load a message file -->
+  <script src="https://unpkg.com/blockly/msg/en.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #blocklyDiv {
+      flex: 3;
+      /* Take up all remaining space */
+      min-width: 400px;
+      /* Minimum width of Blockly area */
+    }
+
+    #codeArea {
+      flex: 1;
+      /* Takes up one-fourth of the space */
+      background-color: #f8f9fa;
+      border-left: 1px solid #ccc;
+      overflow: auto;
+      font-family: monospace;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    #Control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px;
+    }
+
+    #Control label {
+      margin-right: 5px;
+    }
+
+    #scaleInput {
+      padding: 8px;
+      width: auto;
+    }
+
+    button {
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .separator {
+      display: inline-block;
+      height: 30px;
+      width: 2px;
+      background-color: #ccc;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="Control">
+    <button id="loadUseCase" onclick="loadWorkspace()">load Use Case</button>
+    <button id="logWorkspace" onclick="logWorkspace()">
+      console.log(current workspace)
+    </button>
+    <span class="separator"></span>
+    <button onclick="downloadWorkspaceSVG()">
+      download workspace in SVG
+    </button>
+  </div>
+  <div id="blocklyDiv"></div>
+  <h2>Python Code Generated from the workflow above</h5>
+    <pre id="codeArea"></pre>
+
+    <script>
+      Blockly.defineBlocksWithJsonArray([
+        {
+          type: "read_image",
+          message0: "read image ",
+          args0: [],
+          message1: "%1 path",
+          args1: [
+            {
+              type: "field_input",
+              name: "IMAGE_PATH",
+              text: "retinal.jpg",
+            },
+          ],
+          message2: "%1 as gray? ",
+          args2: [
+            {
+              type: "field_checkbox",
+              name: "AS_GRAY",
+              checked: false,
+            },
+          ],
+          output: "Image",
+          colour: 330,
+          tooltip: "Provides an image as output.",
+          helpUrl: "",
+        },
+        {
+          type: "fastNlMeansDenoisingColored",
+          message0: "non-local means denoise %1 ",
+          args0: [
+            {
+              type: "input_value",
+              name: "SRC",
+              check: "Image",
+            },
+          ],
+          message1: "%1 filter strength (luminance)",
+          args1: [
+            {
+              type: "field_number",
+              name: "H",
+              value: 10,
+              min: 0,
+              precision: 0.1,
+            },
+          ],
+          message2: "%1 filter strength (color)",
+          args2: [
+            {
+              type: "field_number",
+              name: "HCOLOR",
+              value: 10,
+              min: 0,
+              precision: 0.1,
+            },
+          ],
+
+          inputsInline: false,
+          output: "Image",
+          colour: 330,
+          tooltip:
+            "Denoises a colored image by modifying its luminance and color components. Adjust filter strengths and window sizes.",
+          helpUrl:
+            "https://docs.opencv.org/4.x/d1/d79/group__photo__denoise.html#ga03aa4189fc3e31dafd638d90de335617",
+        },
+        {
+          type: "sato_filter",
+          message0: "sato filter %1",
+          args0: [
+            {
+              type: "input_value",
+              name: "IMAGE",
+              check: "Image",
+            },
+          ],
+          message1: "%1 sigmas",
+          args1: [
+            {
+              type: "field_input",
+              name: "SIGMAS",
+              text: "range(1, 10, 2)",
+            },
+          ],
+          message2: "%1 highlight black ridges",
+          args2: [
+            {
+              type: "field_checkbox",
+              name: "BLACK_RIDGES",
+              checked: true,
+            },
+          ],
+
+          inputsInline: false,
+          output: "Image",
+          colour: 260,
+          tooltip:
+            "Enhances tubular structures in an image using the Sato filter. Enter sigmas as a range or list.",
+          helpUrl:
+            "http://scikit-image.org/docs/dev/api/skimage.filters.html#sato",
+        },
+        {
+          type: "optic_disc_annotation",
+          message0: "optic disc annotation %1",
+          args0: [
+            {
+              type: "input_value",
+              name: "IMAGE",
+              check: "Image",
+            },
+          ],
+          message1: "%2 Y: %1 X:",
+          args1: [
+            {
+              type: "field_number",
+              name: "X",
+              value: 210,
+              min: 0,
+              precision: 1,
+            },
+            {
+              type: "field_number",
+              name: "Y",
+              value: 650,
+              min: 0,
+              precision: 1,
+            },
+          ],
+          message2: "%1 radius %2 width",
+          args2: [
+            {
+              type: "field_number",
+              name: "radius",
+              value: 160,
+              min: 1,
+            },
+            {
+              type: "field_number",
+              name: "width",
+              value: 10,
+              min: 1,
+            },
+          ],
+          inputsInline: false,
+          output: "Image",
+          colour: 20,
+          tooltip:
+            "Draw a circle on an image at the given coordinates with specified radius and color.",
+          helpUrl: "",
+        },
+      ]);
+
+      var requiredImports = new Set();
+
+      Blockly.Python.forBlock["read_image"] = function (block) {
+        requiredImports.add("from im2im import Image, im2im");
+        requiredImports.add("import cv2");
+        var imageUrl = Blockly.Python.quote_(block.getFieldValue("IMAGE_PATH"));
+        var asGray = block.getFieldValue("AS_GRAY") === "TRUE";
+        if (asGray) {
+          var code = "Image(cv2.imread(" + imageUrl + ", cv.IMREAD_GRAYSCALE), 'opencv.gray')";
+        } else {
+          var code = "Image(cv2.imread(" + imageUrl + "), 'opencv.bgr')";
+        }
+        var resultVar = Blockly.Python.nameDB_.getDistinctName(
+          "out_im",
+          Blockly.VARIABLE_CATEGORY_NAME
+        );
+        var code = `${resultVar} = ${code}`;
+        Blockly.Python.definitions_["define_" + resultVar] = code;
+
+        return [`${resultVar}`, Blockly.Python.ORDER_NONE];
+      };
+
+      Blockly.Python.forBlock["fastNlMeansDenoisingColored"] = function (block) {
+        requiredImports.add("from im2im import Image, im2im");
+        requiredImports.add("import cv2");
+        var src =
+          Blockly.Python.valueToCode(block, "SRC", Blockly.Python.ORDER_NONE) ||
+          "None";
+        var templateWindowSize =
+          block.getFieldValue("TEMPLATEWINDOWSIZE") || "7";
+        var searchWindowSize = block.getFieldValue("SEARCHWINDOWSIZE") || "21";
+        var h = block.getFieldValue("H") || "10";
+        var hColor = block.getFieldValue("HCOLOR") || "10";
+
+        var resultVar = Blockly.Python.nameDB_.getDistinctName(
+          "out_im",
+          Blockly.VARIABLE_CATEGORY_NAME
+        );
+        var convert_to = `in_im1 = im2im(${src}, 'opencv.bgr')`;
+        var operation = `e_denoised = cv2.fastNlMeansDenoisingColored(in_im1.raw_image, None, ${h}, ${hColor}, ${templateWindowSize}, ${searchWindowSize})`;
+        var convert_back = `${resultVar} = Image(e_denoised, in_im1.metadata)`;
+        var code = `${convert_to}\n${operation}\n${convert_back}`;
+
+        Blockly.Python.definitions_["define_" + resultVar] = code;
+        return [`${resultVar}`, Blockly.Python.ORDER_NONE];
+      };
+
+      Blockly.Python.forBlock["sato_filter"] = function (block) {
+        requiredImports.add("from skimage.filters import sato");
+        var image = Blockly.Python.valueToCode(
+          block,
+          "IMAGE",
+          Blockly.Python.ORDER_NONE
+        );
+        var sigmas = block.getFieldValue("SIGMAS") || "range(1, 10, 2)";
+        var blackRidges =
+          block.getFieldValue("BLACK_RIDGES") == "TRUE" ? "True" : "False";
+        var resultVar = Blockly.Python.nameDB_.getDistinctName(
+          "out_im",
+          Blockly.VARIABLE_CATEGORY_NAME
+        );
+
+        var convert_to = `in_im2 = im2im(${image}, 'skimage.gray')`;
+        var operation = `e_sato_filtered = sato(in_im2.raw_image, sigmas=${sigmas}, black_ridges=${blackRidges})`;
+        var convert_back = `${resultVar} = Image(e_sato_filtered, {**in_im2.metadata, 'image_data_type': 'float64'})`;
+        var code = `${convert_to}\n${operation}\n${convert_back}`;
+
+        Blockly.Python.definitions_["define_" + resultVar] = code;
+        return [`${resultVar}`, Blockly.Python.ORDER_NONE];
+      };
+
+      Blockly.Python.forBlock["optic_disc_annotation"] = function (block) {
+        var image =
+          Blockly.Python.valueToCode(
+            block,
+            "IMAGE",
+            Blockly.Python.ORDER_NONE
+          ) || "None";
+
+        var posX = block.getFieldValue("X");
+        var posY = block.getFieldValue("Y");
+        var radius = block.getFieldValue("radius") || "10";
+        var width = block.getFieldValue("width") || "3";
+        requiredImports.add("from PIL import ImageDraw");
+        var resultVar = Blockly.Python.nameDB_.getDistinctName(
+          "out_im",
+          Blockly.VARIABLE_CATEGORY_NAME
+        );
+        var convert_to = `in_im3 = im2im(${image}, 'pil.rgb_uint8')`;
+        var operation =
+          `e_drawn_image = in_im3.raw_image\n` +
+          `draw = ImageDraw.Draw(e_drawn_image)\n` +
+          `draw.ellipse([(${posX - radius}, ${posY - radius}), (${posX + radius}, ${posY + radius})], outline='red', width=${width})\n`;
+        var convert_back = `${resultVar} = Image(e_drawn_image, in_im3.metadata)`;
+        var code = `${convert_to}\n${operation}\n${convert_back}`;
+
+        Blockly.Python.definitions_["define_" + resultVar] = code;
+        return [`${resultVar}`, Blockly.Python.ORDER_COMMA];
+      };
+
+      function generateImports() {
+        var imports = "";
+        requiredImports.forEach(function (importStatement) {
+          imports += importStatement + "\n";
+        });
+        return imports;
+      }
+
+      var workspace = Blockly.inject("blocklyDiv", {
+        toolbox:
+          '<xml id="toolbox" style="display: none">' +
+          '<block type="read_image"></block>' +
+          '<block type="fastNlMeansDenoisingColored"></block>' +
+          '<block type="sato_filter"></block>' +
+          '<block type="optic_disc_annotation"></block>' +
+          "</xml>",
+        zoom: {
+          controls: true,
+          wheel: true,
+          startScale: 1.0,
+          maxScale: 3,
+          minScale: 0.3,
+          scaleSpeed: 1.2,
+          pinch: true,
+        },
+        scrollbars: true,
+        trashcan: true,
+        rtl: true,
+      });
+    </script>
+    <script>
+      function loadWorkspace(state) {
+        var workspace = Blockly.getMainWorkspace();
+        var savedState =
+          '{"blocks":{"languageVersion":0,"blocks":[{"type":"optic_disc_annotation","id":"=]CGR9h{)hoNkU..3%Yr","x":128,"y":140,"fields":{"Y":650,"X":210,"radius":160,"width":10},"inputs":{"IMAGE":{"block":{"type":"sato_filter","id":"CMP1;Wnojc$zS=0R;C.(","fields":{"SIGMAS":"range(1, 10, 2)","BLACK_RIDGES":true},"inputs":{"IMAGE":{"block":{"type":"fastNlMeansDenoisingColored","id":"dsa2!lI{!{4y}Rbzazc=","fields":{"H":10,"HCOLOR":10},"inputs":{"SRC":{"block":{"type":"read_image","id":"4`@t?phRs(Z_+SOSmPih","fields":{"IMAGE_PATH":"retinal.jpg","AS_GRAY":false}}}}}}}}}}}]}}';
+        Blockly.serialization.workspaces.load(
+          JSON.parse(savedState),
+          workspace
+        );
+        workspace.zoomToFit();
+      }
+
+      function logWorkspace() {
+        var workspace = Blockly.getMainWorkspace();
+        const state = Blockly.serialization.workspaces.save(workspace);
+        console.log(JSON.stringify(state));
+      }
+
+      function downloadWorkspaceSVG() {
+        var svg = document.getElementsByClassName("blocklySvg")[0]; // Get the SVG element
+        var styleElement = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "style"
+        );
+        styleElement.textContent = `.blocklyText { fill: #fff; }
+                                  .blocklyEditableText>text { fill: #000; }
+                                  .blocklyText.blocklyDropdownText { fill: #000; }
+                                  .blocklyEditableText > rect {
+                                      fill: #fff;
+                                      fill-opacity: 0.6;
+                                      stroke: none;
+                                  }
+                                  .blocklyPathLight {    
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-width: 1;
+                                  }`;
+        svg.appendChild(styleElement);
+
+        var serializer = new XMLSerializer();
+        var source = serializer.serializeToString(svg);
+
+        //add name spaces.
+        if (
+          !source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)
+        ) {
+          source = source.replace(
+            /^<svg/,
+            '<svg xmlns="http://www.w3.org/2000/svg"'
+          );
+        }
+        if (!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)) {
+          source = source.replace(
+            /^<svg/,
+            '<svg xmlns:xlink="http://www.w3.org/1999/xlink"'
+          );
+        }
+
+        // Add xml declaration
+        source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+
+        // Convert SVG source to URI data scheme.
+        var url =
+          "data:image/svg+xml;charset=utf-8," + encodeURIComponent(source);
+
+        // Set up download link
+        var link = document.createElement("a");
+        link.href = url;
+        link.download = "blockly_workspace.svg";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      function updateCode() {
+        var imports = generateImports();
+        var code = Blockly.Python.workspaceToCode(workspace);
+        document.getElementById("codeArea").textContent = imports + "\n" + code;
+      }
+
+      workspace.addChangeListener(updateCode);
+
+      window.onload = function () {
+        loadWorkspace();
+        updateCode();
+      };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+importlib-metadata
+networkx==3.2.1
+
+[testing]
+setuptools
+pytest
+pytest-cov
