@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+pre_commit_fluent_hook/__init__.py
+pre_commit_fluent_hook/check_fluent.py
+pre_commit_fluent_hook.egg-info/PKG-INFO
+pre_commit_fluent_hook.egg-info/SOURCES.txt
+pre_commit_fluent_hook.egg-info/dependency_links.txt
+pre_commit_fluent_hook.egg-info/entry_points.txt
+pre_commit_fluent_hook.egg-info/top_level.txt

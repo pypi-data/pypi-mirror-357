@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pre-commit-fluent-hook"
+version = "0.0.1"
+description = "A pre-commit hook for validating Fluent (FTL) files"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "uutils Contributors"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "License :: OSI Approved :: MIT License",
+]
+requires-python = ">=3.9"
+
+[project.scripts]
+check-fluent = "pre_commit_fluent_hook.check_fluent:main"
+
+[project.urls]
+Homepage = "https://github.com/uutils/pre-commit-fluent-hook"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pre_commit_fluent_hook*"]
