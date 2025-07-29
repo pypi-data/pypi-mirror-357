@@ -1,0 +1,7 @@
+bs4
+fake-useragent
+requests
+selenium
+pandas
+python-dotenv
+pyyaml
