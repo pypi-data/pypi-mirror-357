@@ -1,0 +1,10 @@
+{% extends "allianceauth/base.html" %}
+{% block title %}Greenlight{% endblock %}
+{% block content %}
+<h2>Greenlight Control</h2>
+<form method="post">{% csrf_token %}
+    <button name="color" value="green">🟢 Green</button>
+    <button name="color" value="yellow">🟡 Yellow</button>
+    <button name="color" value="red">🔴 Red</button>
+</form>
+{% endblock %}
