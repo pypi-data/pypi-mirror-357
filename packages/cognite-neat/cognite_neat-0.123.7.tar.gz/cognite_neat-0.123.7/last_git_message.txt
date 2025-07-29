@@ -1,0 +1,25 @@
+🐛Workaround Coupled Views (#1207)
+
+# Description
+
+This is a bug in the DMS API which is already reported. This PR
+implements a temporary workaround.
+ 
+## Risk Reviewer
+Note the same workaround has already been through risk-review for
+Toolkit: https://github.com/cognitedata/toolkit/pull/1490
+
+This is a 191 line PR, the rest is YAML - test data.
+
+## Bump
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## Changelog
+### Fixed
+
+- The `neat.to.cdf.data_model()` no longer fails for larger models
+coupled views through reverse direct relations and implements.
+
