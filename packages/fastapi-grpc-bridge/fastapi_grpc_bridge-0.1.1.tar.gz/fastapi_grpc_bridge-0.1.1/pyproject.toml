@@ -1,0 +1,35 @@
+[project]
+name = "fastapi-grpc-bridge"
+version = "0.1.1"
+description = "Adds gRPC support to FastAPI apps using decorators and Pydantic auto-generation"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+
+authors = [
+  {name = "Abhishek Mishra", email = "abhishek17569@gmail.com"}
+]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License"
+]
+
+dependencies = [
+  "fastapi",
+  "grpcio",
+  "grpcio-tools",
+  "pydantic",
+  "protobuf",
+  "uvicorn"
+]
+
+[project.urls]
+Homepage = "https://github.com/abhishek17569/fastapi-grpc-bridge"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["fastapi_grpc_bridge"]

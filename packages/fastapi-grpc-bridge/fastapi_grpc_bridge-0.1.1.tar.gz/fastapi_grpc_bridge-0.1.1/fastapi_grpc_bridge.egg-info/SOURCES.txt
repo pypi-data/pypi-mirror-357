@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+fastapi_grpc_bridge/__init__.py
+fastapi_grpc_bridge/decorators.py
+fastapi_grpc_bridge/generator.py
+fastapi_grpc_bridge/grpc_server.py
+fastapi_grpc_bridge/utils.py
+fastapi_grpc_bridge.egg-info/PKG-INFO
+fastapi_grpc_bridge.egg-info/SOURCES.txt
+fastapi_grpc_bridge.egg-info/dependency_links.txt
+fastapi_grpc_bridge.egg-info/requires.txt
+fastapi_grpc_bridge.egg-info/top_level.txt
