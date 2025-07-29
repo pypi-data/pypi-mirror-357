@@ -1,0 +1,2 @@
+[console_scripts]
+smart-api-integrations = smart_api_integrations.cli.main:main
