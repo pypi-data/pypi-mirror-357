@@ -1,0 +1,7 @@
+simple_smtp_sender-0.2.3.dist-info/METADATA,sha256=POi6TJZDG8c1Op9D2Le9jYz5475I7aTEzoDDP6_wgmw,5474
+simple_smtp_sender-0.2.3.dist-info/WHEEL,sha256=t7-G5jw4CAveXKKilThQD1KOTpI0M-QXOwY8n0LWt4k,128
+simple_smtp_sender/__init__.py,sha256=9XJRJ4Zas6syeJSUxdGcLQvvkIXz_BL0rkYQZFZb7DQ,155
+simple_smtp_sender/__init__.pyi,sha256=udX5N1epmjt1RGmQgcSf-CTz_qXWo43gx5NBGCChXQ0,2030
+simple_smtp_sender/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+simple_smtp_sender/simple_smtp_sender.abi3.so,sha256=2Bxk828DROO8ZqWrh_seTnFGb_YL4ssN3M8rLkmyPnw,5786460
+simple_smtp_sender-0.2.3.dist-info/RECORD,,
