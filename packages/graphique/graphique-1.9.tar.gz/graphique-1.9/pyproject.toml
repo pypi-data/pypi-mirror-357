@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graphique"
+version = "1.9"
+dynamic = ["dependencies"]
+description = "GraphQL service for arrow tables and parquet data sets."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Aric Coady", email = "aric.coady@gmail.com"}]
+keywords = ["graphql", "arrow", "parquet"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Database :: Database Engines/Servers",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/coady/graphique"
+Documentation = "https://coady.github.io/graphique"
+Changelog = "https://github.com/coady/graphique/blob/main/CHANGELOG.md"
+Issues = "https://github.com/coady/graphique/issues"
+
+[project.optional-dependencies]
+server = ["uvicorn[standard]"]
+cli = ["tqdm"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.in"}
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.format]
+quote-style = "preserve"
+
+[[tool.mypy.overrides]]
+module = ["numpy.*", "pyarrow.*", "strawberry.*", "starlette.*", "isodate.*"]
+ignore_missing_imports = true
+
+[tool.coverage.run]
+source = ["graphique"]
+branch = true
+omit = ["graphique/shell.py"]

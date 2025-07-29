@@ -1,0 +1,10 @@
+pyarrow>=20
+strawberry-graphql[asgi,cli]>=0.236
+numpy
+isodate>=0.7
+
+[cli]
+tqdm
+
+[server]
+uvicorn[standard]
