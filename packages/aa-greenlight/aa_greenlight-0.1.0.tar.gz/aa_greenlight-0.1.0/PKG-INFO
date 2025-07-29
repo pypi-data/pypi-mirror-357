@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: aa-greenlight
+Version: 0.1.0
+Summary: AllianceAuth plugin for fleet pings via Discord
+Home-page: https://github.com/gornik265/aa-greenlight
+Author: gornik265
+Author-email: piotrekcz94@gmail.com.com
+License: MIT
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+# aa-greenlight
+A plugin for AllianceAuth that lets users send Discord alerts using buttons.

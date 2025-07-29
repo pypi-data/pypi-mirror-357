@@ -1,0 +1,8 @@
+MANIFEST.in
+README.md
+setup.py
+aa_greenlight.egg-info/PKG-INFO
+aa_greenlight.egg-info/SOURCES.txt
+aa_greenlight.egg-info/dependency_links.txt
+aa_greenlight.egg-info/requires.txt
+aa_greenlight.egg-info/top_level.txt
