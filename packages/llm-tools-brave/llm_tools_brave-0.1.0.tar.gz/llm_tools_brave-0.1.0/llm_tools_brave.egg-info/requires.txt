@@ -1,0 +1,6 @@
+httpx>=0.24.0
+llm>=0.26
+pytest>=8.3.5
+
+[test]
+pytest>=8.3.5

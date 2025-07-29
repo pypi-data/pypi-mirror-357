@@ -1,0 +1,23 @@
+[project]
+name = "llm-tools-brave"
+version = "0.1.0"
+description = "A tool plugin for LLM to enable web search with Brave Search API"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Ian Langworth", email = "ian@langworth.com" }]
+requires-python = ">=3.9"
+dependencies = [
+    "httpx>=0.24.0",
+ "llm>=0.26",
+ "pytest>=8.3.5",
+]
+
+[project.entry-points.llm]
+llm_tools_brave = "llm_tools_brave"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project.optional-dependencies]
+test = ["pytest>=8.3.5"]
