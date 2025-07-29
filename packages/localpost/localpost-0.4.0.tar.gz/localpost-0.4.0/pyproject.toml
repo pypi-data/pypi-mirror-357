@@ -1,0 +1,188 @@
+[build-system]
+requires = [
+    "pdm-backend",
+    "pdm-build-locked",
+]
+build-backend = "pdm.backend"
+
+[project]
+name = "localpost"
+description = "Consumers framework for different message brokers & simple in-process task scheduler"
+requires-python = ">=3.10"
+dynamic = []
+readme = "pypi_readme.md"
+license = "MIT"
+authors = [
+    { name = "Alexey Shokov" },
+]
+keywords = [
+    "scheduler",
+    "cron",
+    "message brokers",
+    "sqs",
+    "kafka",
+    "nats",
+    "rabbitmq",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Typing :: Typed",
+    "Framework :: AsyncIO",
+    "Framework :: AnyIO",
+    "Framework :: Trio",
+    "Topic :: System",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Office/Business :: Scheduling",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+]
+dependencies = [
+    "typing_extensions ~=4.10",
+    "anyio >=3.6,<5.0",
+]
+version = "0.4.0"
+
+[project.urls]
+Homepage = "https://github.com/alexeyshockov/localpost.py"
+Changelog = "https://github.com/alexeyshockov/localpost.py/blob/main/CHANGELOG.md"
+Docs = "https://alexeyshockov.github.io/localpost.py/"
+
+[project.optional-dependencies]
+http = [
+    "uvicorn ~=0.30",
+]
+grpc = [
+    "grpcio ~=1.68",
+]
+cron = [
+    "croniter >=2.0,<4.0",
+]
+scheduler = [
+    "humanize >=3.0,<5.0",
+    "pytimeparse2 ~=1.6",
+]
+sqs = [
+    "aiobotocore ~=2.15",
+]
+kafka = [
+    "confluent-kafka ~=2.4",
+]
+nats = [
+    "nats-py ~=2.8",
+]
+rabbitmq = [
+    "aio-pika >=9.1,<10.0",
+]
+
+[dependency-groups]
+dev = [
+    "icecream ~=2.1",
+    "structlog ~=25.0",
+]
+dev-consumers = [
+    "aws-lambda-powertools",
+    "confluent-kafka[schemaregistry,protobuf]",
+    "grpcio-tools ~=1.68",
+    "protobuf ~=5.0",
+]
+dev-otel = [
+    "opentelemetry-exporter-otlp",
+    "opentelemetry-instrumentation-confluent-kafka >=0.50b0",
+]
+dev-types = [
+    "types-croniter",
+    "types-protobuf",
+    "types-boto3[sqs]",
+    "types-aiobotocore[sqs] ~=2.15",
+]
+examples = [
+    "fast-depends ~=2.4",
+    "fastapi-slim ~=0.111",
+    "psycopg[binary,pool] ~=3.2",
+]
+tests = [
+    "pytest ~=8.1",
+    "anyio[test]",
+    "pytest-xdist",
+]
+unit-tests = [
+    "pytest-mock ~=3.14",
+    "pytest-cov ~=6.0",
+    "coverage[toml] ~=7.6",
+]
+integration-tests = [
+    "boto3 ~=1.38",
+    "testcontainers[kafka,localstack,nats] ~=4.8",
+]
+
+[tool.coverage.run]
+omit = [
+    "tests/*",
+]
+
+[tool.pyright]
+include = [
+    "localpost",
+]
+
+[[tool.mypy.overrides]]
+module = [
+    "grpc.*",
+    "pytimeparse2.*",
+    "confluent_kafka.*",
+]
+follow_untyped_imports = true
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "W",
+    "F",
+    "I",
+    "C",
+    "B",
+    "Q",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.version]
+source = "scm"
+write_to = "localpost/__meta__.py"
+write_template = "version = '{}'"
+
+[tool.pdm.build]
+excludes = [
+    "./**/.git",
+    "tests",
+    "examples",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = [
+    "tests",
+]
+python_files = [
+    "*.py",
+]
+markers = [
+    "integration: Consumers (SQS, Kafka, NATS, RabbitMQ) integration tests",
+]

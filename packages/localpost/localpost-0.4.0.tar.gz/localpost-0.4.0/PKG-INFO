@@ -1,0 +1,64 @@
+Metadata-Version: 2.4
+Name: localpost
+Version: 0.4.0
+Summary: Consumers framework for different message brokers & simple in-process task scheduler
+Keywords: scheduler,cron,message brokers,sqs,kafka,nats,rabbitmq
+Author: Alexey Shokov
+License-Expression: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Typing :: Typed
+Classifier: Framework :: AsyncIO
+Classifier: Framework :: AnyIO
+Classifier: Framework :: Trio
+Classifier: Topic :: System
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Office/Business :: Scheduling
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Project-URL: Homepage, https://github.com/alexeyshockov/localpost.py
+Project-URL: Changelog, https://github.com/alexeyshockov/localpost.py/blob/main/CHANGELOG.md
+Project-URL: Docs, https://alexeyshockov.github.io/localpost.py/
+Requires-Python: >=3.10
+Requires-Dist: typing_extensions~=4.10
+Requires-Dist: anyio<5.0,>=3.6
+Provides-Extra: http
+Requires-Dist: uvicorn~=0.30; extra == "http"
+Provides-Extra: grpc
+Requires-Dist: grpcio~=1.68; extra == "grpc"
+Provides-Extra: cron
+Requires-Dist: croniter<4.0,>=2.0; extra == "cron"
+Provides-Extra: scheduler
+Requires-Dist: humanize<5.0,>=3.0; extra == "scheduler"
+Requires-Dist: pytimeparse2~=1.6; extra == "scheduler"
+Provides-Extra: sqs
+Requires-Dist: aiobotocore~=2.15; extra == "sqs"
+Provides-Extra: kafka
+Requires-Dist: confluent-kafka~=2.4; extra == "kafka"
+Provides-Extra: nats
+Requires-Dist: nats-py~=2.8; extra == "nats"
+Provides-Extra: rabbitmq
+Requires-Dist: aio-pika<10.0,>=9.1; extra == "rabbitmq"
+Description-Content-Type: text/markdown
+
+# localpost
+
+Simple in-process task scheduler & consumers framework for different message brokers.
+
+## Scheduler
+
+TBD
+
+## Consumers
+
+TBD
+
+## Hosting
+
+TBD
