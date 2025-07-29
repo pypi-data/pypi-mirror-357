@@ -1,0 +1,160 @@
+[project]
+name = "fastapi-mvp"
+version = "0.2.2"
+description = "Create FastAPI MVP in 5-10 minutes"
+requires-python = ">=3.12"
+
+[tool.poetry]
+authors = ["siberianbearofficial"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "fastapi_mvp" }]
+
+[tool.poetry.dependencies]
+python = "~3.12"
+fastapi = "^0.115.11"
+uvicorn = "^0.34.0"
+pydantic-settings = "^2.8.1"
+pydantic = { extras = ["email"], version = "^2.11.2" }
+tenacity = "^9.1.2"
+prometheus-fastapi-instrumentator = "^7.1.0"
+prometheus-client = "^0.21.1"
+boto3 = "1.35.93"
+aiobotocore = "2.17.0"
+aiocache = "^0.12.3"
+aiofiles = "^24.1.0"
+motor = "^3.7.1"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.15.0"
+pylint = "^3.3.5"
+pytest = "^8.3.5"
+pytest-cov = "^6.0.0"
+pytest-deadfixtures = "^2.2.1"
+pytest-mock = "^3.14.0"
+ruff = "^0.11.0"
+httpx = "^0.28.1"
+pytest-asyncio = "^0.25.3"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+plugins = ['pydantic.mypy']
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+no_implicit_optional = true
+follow_imports = "silent"
+warn_redundant_casts = true
+warn_unused_ignores = true
+no_implicit_reexport = true
+disallow_untyped_calls = true
+
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+[tool.coverage.run]
+omit = ["tests/*", "**/__main__.py", "**/.venv/*", "**/site-packages/*"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+fail_under = 0
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers --showlocals --verbosity 2"
+log_level = "DEBUG"
+markers = [
+    "e2e: e2e tests",
+]
+
+[tool.ruff]
+line-length = 88
+lint.select = [
+    "F",
+    "E",
+    "W",
+    "C90",
+    "I",
+    "N",
+    "YTT",
+    "S",
+    "BLE",
+    "B",
+    "A",
+    "COM",
+    "C4",
+    "DTZ",
+    "T10",
+    "EM",
+    "EXE",
+    "ISC",
+    "ICN",
+    "G",
+    "INP",
+    "PIE",
+    "T20",
+    "PT",
+    "Q",
+    "RET",
+    "SIM",
+    "TID",
+    "TCH",
+    "ARG",
+    "PTH",
+    "ERA",
+    "PD",
+    "PL",
+    "TRY",
+    "RSE",
+    "RUF",
+]
+lint.ignore = [
+    "S101",
+    "S311",
+    "TRY003",
+    "PLR0913",
+    "RUF003", # Comment contains ambiguous letter
+]
+exclude = []
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = [
+    "S101",
+    "S105",
+    "S106",
+]
+
+[tool.pylint]
+good-names = ["i", "j", "k", "e", "x", "_", "pk", "id"]
+max-args = 5
+max-attributes = 10
+max-bool-expr = 5
+max-module-lines = 300
+max-nested-blocks = 2
+max-public-methods = 30
+max-returns = 5
+max-statements = 30
+output-format = "colorized"
+ignored-classes = ["contextlib.closing"]
+ignore = "tests"
+disable = [
+    "C0111", # Missing module docstring (missing-docstring)
+    "R0901", # Too many ancestors (m/n) (too-many-ancestors)
+    "R0903", # Too few public methods (m/n) (too-few-public-methods)
+    "R0913", # Too many arguments (m/n) (too-many-arguments)
+    "W0223", # abstract method
+    "W0718", # Except Exception
+    "R0801", # Duplicate code
+    "W0511", # TODOfixme
+    "R0917", # Too many positional arguments (7/5) (too-many-positional-arguments)
+    "E1136", # Value '%s' is unsubscriptable (unsubscriptable-object)
+]
+extension-pkg-allow-list = ["pydantic"]
