@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Pandora_Common_Package"
+version = "0.3.0"
+description = "Common utils for different projects"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "pytest",
+    "requests",
+    "PyYAML",
+    "pytest-html",
+    "allure-pytest",
+    "pytest-xdist",
+    "jmespath",
+    "webdriver-manager",
+    "selenium",
+    "PyJWT",
+    "loguru",
+    "pyautogui",
+    "jsonschema",
+    "deepdiff",
+    "responses",
+    "test-soft-assertion-tool",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

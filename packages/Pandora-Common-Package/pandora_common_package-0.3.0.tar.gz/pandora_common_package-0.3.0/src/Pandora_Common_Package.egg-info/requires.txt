@@ -1,0 +1,16 @@
+pytest
+requests
+PyYAML
+pytest-html
+allure-pytest
+pytest-xdist
+jmespath
+webdriver-manager
+selenium
+PyJWT
+loguru
+pyautogui
+jsonschema
+deepdiff
+responses
+test-soft-assertion-tool
