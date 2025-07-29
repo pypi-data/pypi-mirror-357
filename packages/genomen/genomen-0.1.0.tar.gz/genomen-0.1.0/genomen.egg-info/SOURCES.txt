@@ -1,0 +1,6 @@
+README.md
+pyproject.toml
+genomen.egg-info/PKG-INFO
+genomen.egg-info/SOURCES.txt
+genomen.egg-info/dependency_links.txt
+genomen.egg-info/top_level.txt
