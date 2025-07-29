@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+mmkv/__init__.py
+mmkv/core.py
+mmkv/helper.py
+mmkv/libs/darwin_x86_64/mmkv.cpython-313-darwin.so
+mmkv/libs/linux_x86_64/mmkv.cpython-312-x86_64-linux-gnu.so
+mmkv/libs/win_amd64/mmkv.cp39-win_amd64.pyd
+sb_tencent_mmkv.egg-info/PKG-INFO
+sb_tencent_mmkv.egg-info/SOURCES.txt
+sb_tencent_mmkv.egg-info/dependency_links.txt
+sb_tencent_mmkv.egg-info/not-zip-safe
+sb_tencent_mmkv.egg-info/top_level.txt
