@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "simplejrpc_gbox"
+version = "0.0.1"
+description = "GM tools box"
+authors = ["yao <1125564921@qq.com>"]
+license =  "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.32.3"
+psutil = "^7.0.0"
+
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
