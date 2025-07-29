@@ -1,0 +1,5 @@
+[console_scripts]
+labd=bulb.cli.main:main
+labd-manager=bulb.scripts.manager:main
+labd-runner=bulb.scripts.runner:main
+
