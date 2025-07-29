@@ -1,0 +1,86 @@
+[build-system]
+requires = ["hatchling>=1.5"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jupyter_server_ai_tools"
+dynamic = ["version"]
+authors = [{name = "Abigayle Mercer", email = "abigaylemercer@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["Jupyter", "Extension"]
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Framework :: Jupyter",
+]
+dependencies = ["jupyter_server>=1.6,<3", "pydantic>=1.10"]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=7.0",
+  "pytest-jupyter[server]>=0.6",
+  "pytest-asyncio>=0.21"
+]
+lint = [
+  "black>=22.6.0",
+  "ruff>=0.0.156",
+  "mypy>=0.990",
+  "mdformat>=0.7.16",
+  "mdformat-gfm>=0.3.5",    
+  "types-jsonschema",
+  "pydantic>=1.10"
+]
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+Home = "https://github.com/Abigayle-Mercer/jupyter-server-ai-tools"
+
+[tool.hatch.version]
+path = "jupyter_server_ai_tools/__init__.py"
+
+[tool.hatch.build.targets.wheel.shared-data]
+"jupyter-config" = "etc/jupyter"
+
+[tool.pytest.ini_options]
+addopts = "--disable-warnings"
+filterwarnings = [
+  "error",
+  "ignore:There is no current event loop:DeprecationWarning",
+  "ignore:.*coroutine.*was never awaited:RuntimeWarning",
+  "ignore:.*Event loop is closed.*",
+  "ignore:.*unclosed.*ResourceWarning",
+  "ignore:.*unraisable.*PytestUnraisableExceptionWarning",
+  "ignore:.*Jupyter is migrating.*:DeprecationWarning",
+  "module:make_current is deprecated:DeprecationWarning",
+  "module:clear_current is deprecated:DeprecationWarning",
+]
+
+[tool.mypy]
+check_untyped_defs = true
+pretty = true
+show_error_codes = true
+ignore_missing_imports = true
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+skip-string-normalization = true
+
+[tool.ruff]
+target-version = "py38"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["C901"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]

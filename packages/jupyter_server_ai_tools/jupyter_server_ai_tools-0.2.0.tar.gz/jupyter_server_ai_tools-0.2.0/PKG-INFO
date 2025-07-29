@@ -1,0 +1,184 @@
+Metadata-Version: 2.4
+Name: jupyter_server_ai_tools
+Version: 0.2.0
+Project-URL: Home, https://github.com/Abigayle-Mercer/jupyter-server-ai-tools
+Author-email: Abigayle Mercer <abigaylemercer@gmail.com>
+License: BSD 3-Clause License
+        
+        Copyright (c) 2025, Abigayle Mercer
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+License-File: LICENSE
+Keywords: Extension,Jupyter
+Classifier: Framework :: Jupyter
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Requires-Dist: jupyter-server<3,>=1.6
+Requires-Dist: pydantic>=1.10
+Provides-Extra: lint
+Requires-Dist: black>=22.6.0; extra == 'lint'
+Requires-Dist: mdformat-gfm>=0.3.5; extra == 'lint'
+Requires-Dist: mdformat>=0.7.16; extra == 'lint'
+Requires-Dist: mypy>=0.990; extra == 'lint'
+Requires-Dist: pydantic>=1.10; extra == 'lint'
+Requires-Dist: ruff>=0.0.156; extra == 'lint'
+Requires-Dist: types-jsonschema; extra == 'lint'
+Provides-Extra: test
+Requires-Dist: pytest-asyncio>=0.21; extra == 'test'
+Requires-Dist: pytest-jupyter[server]>=0.6; extra == 'test'
+Requires-Dist: pytest>=7.0; extra == 'test'
+Description-Content-Type: text/markdown
+
+# 🧠 jupyter-server-ai-tools
+
+[![CI](https://github.com/Abigayle-Mercer/jupyter-server-ai-tools/actions/workflows/ci.yml/badge.svg)](https://github.com/Abigayle-Mercer/jupyter-server-ai-tools/actions/workflows/ci.yml)
+
+A Jupyter Server extension for discovering and aggregating callable tools from other extensions.
+
+This project provides a structured way for extensions to declare tools using `Tool` objects, and for agents or other consumers to retrieve those tools.
+
+______________________________________________________________________
+
+## ✨ Features
+
+- ✅ Simple, declarative `Toolkit` API for registering callable tools
+- ✅ Toolkit registration with unique names
+- ✅ Retrieve toolkits by name and capabilities
+- ✅ Clean separation between tool metadata and callable execution
+- ✅ Optional tool capability filtering (read, write, execute, delete)
+
+______________________________________________________________________
+
+## 📦 Install
+
+```bash
+pip install jupyter_server_ai_tools
+```
+
+To install for development:
+
+```bash
+git clone https://github.com/Abigayle-Mercer/jupyter-server-ai-tools.git
+cd jupyter-server-ai-tools
+pip install -e ".[lint,test]"
+```
+
+## Usage
+
+#### Expose tools in your own extensions:
+
+```python
+from jupyter_server_ai_tools.models import Tool, Toolkit
+
+def greet(name: str):
+    """Say hello to someone."""
+    return f"Hello, {name}!"
+
+```
+
+##### For configurable extension apps
+
+```python
+class MyExtensionApp(ExtensionApp)
+
+    # Get the tookit registry from settings
+    @property
+    def toolkit_registry(self):
+        return self.settings["toolkit_registry"]
+
+    async def _start_jupyter_server_extension(self):
+        # Create a tool
+        greet_tool = Tool(callable=greet, read=True)
+        
+        # Create a toolkit
+        greeting_toolkit = Toolkit(name="GreetingToolkit")
+        greeting_toolkit.add_tool(greet_tool)
+        
+        # Register the toolkit
+        self.toolkit_registry.register_toolkit(greeting_toolkit)
+
+```
+
+##### For basic extensions
+```python
+async def _start_jupyter_server_extension(serverapp):
+    toolkit_registry = serverapp.web_app.settings["toolkit_registry"]
+    
+    # Create a tool
+    greet_tool = Tool(callable=greet, read=True)
+    
+    # Create a toolkit
+    greeting_toolkit = Toolkit(name="GreetingToolkit")
+    greeting_toolkit.add_tool(greet_tool)
+    
+    # Register the toolkit
+    self.toolkit_registry.register_toolkit(greeting_toolkit)
+
+```
+
+#### Retrieve Toolkits:
+
+```python
+# Get a specific toolkit
+greeting_toolkit = registry.get_toolkit("GreetingToolkit")
+
+# Get toolkit with specific tool capabilities
+read_toolkits = registry.get_toolkit("GreetingToolkit", read=True)
+```
+
+## 🧪 Running Tests
+
+```bash
+pip install -e ".[test]"
+pytest
+```
+
+## 🧼 Linting and Formatting
+
+```bash
+pip install -e ".[lint]"
+bash .github/workflows/lint.sh
+```
+
+## Impact
+
+This system enables:
+
+- Extension authors to register tools with minimal effort
+- Flexible tool discovery and retrieval
+- Capability-based tool filtering
+
+## 🧹 Uninstall
+
+```bash
+pip uninstall jupyter_server_ai_tools
