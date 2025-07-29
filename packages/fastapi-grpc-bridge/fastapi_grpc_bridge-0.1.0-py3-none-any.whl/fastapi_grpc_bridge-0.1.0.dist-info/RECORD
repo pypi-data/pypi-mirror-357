@@ -1,0 +1,9 @@
+fastapi_grpc_bridge/__init__.py,sha256=io0vZ7XtZ2UeCR3n3qP9tT6_iubszCVO_zuhi-8mmB4,292
+fastapi_grpc_bridge/decorators.py,sha256=bZw0cwdS0qV0sx5C5pZkfeJ4Vns8M_X8J6A1AvwmQR4,1752
+fastapi_grpc_bridge/generator.py,sha256=Ay1ZUqHKIE8bCgpxtQ2B6980a9XU1nqiKN-XtNCoVnU,2409
+fastapi_grpc_bridge/grpc_server.py,sha256=9lxyP0kKsQYqxBkKjywU089wHkxwgbOBNpRHT8R88WM,3200
+fastapi_grpc_bridge/utils.py,sha256=5u_N_xITjxqERIxF4jDoQGJrAVfUtYE-S6W6zbU05jQ,2577
+fastapi_grpc_bridge-0.1.0.dist-info/METADATA,sha256=RQY4W1dWe7OhPn3nQXQgtzkWmQUm52Z10AOhLxQEIqc,6871
+fastapi_grpc_bridge-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fastapi_grpc_bridge-0.1.0.dist-info/top_level.txt,sha256=4-PGHyeRNQapRWl05sFXM3zL3ltKF9Kw0pA7Chotx3w,20
+fastapi_grpc_bridge-0.1.0.dist-info/RECORD,,
