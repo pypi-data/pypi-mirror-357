@@ -1,0 +1,5 @@
+ase
+mdanalysis
+numba>=0.55
+numpy>=1.18
+pandas>=2.2
