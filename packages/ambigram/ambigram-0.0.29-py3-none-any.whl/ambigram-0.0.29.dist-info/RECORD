@@ -1,0 +1,11 @@
+ambigram/__init__.py,sha256=3DZoyWyJvOPYBLzBrY1PjvEUxP9Xfv3fWDVJaNxV3eQ,151
+ambigram/_version.py,sha256=x-mEbDNfu7r2SKAGR0A7P0FwPyhhSxJRlutHkucLsHk,23
+ambigram/ambigram.py,sha256=YHoohtMUOjttEicc4DSSYSi84EmumDy7m5pz2J7Ocas,21558
+ambigram/utils.py,sha256=qbCdz2Xy6McCzkjjZexmn233Oui-f6V04sp-o_0UKs0,6373
+ambigram-0.0.29.dist-info/licenses/COPYING,sha256=-JHhLXXB2RRUeojKiRRTDHyJ1QiOCtrDfwbahUOb6Yc,35150
+ambigram-0.0.29.dist-info/licenses/LICENSE,sha256=6jd0nfIH31nLq88wyZI38Y4DzIqzVkF7Vl8Av55b64k,693
+ambigram-0.0.29.dist-info/METADATA,sha256=yzQmFCDeWKhIvjcXK8Zm9yZEexkiAdqiHN1aXujSWw8,5919
+ambigram-0.0.29.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ambigram-0.0.29.dist-info/entry_points.txt,sha256=IURQacPY_2bXLyPuO1whcBMQrnQamDcoC4rQAdOpEYg,52
+ambigram-0.0.29.dist-info/top_level.txt,sha256=lbxq9LSv_SOVzDrxczmCYIDvCFCcpf43FEQes2hu-_s,9
+ambigram-0.0.29.dist-info/RECORD,,
