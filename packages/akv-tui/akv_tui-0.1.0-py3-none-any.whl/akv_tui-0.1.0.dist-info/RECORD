@@ -1,0 +1,10 @@
+akv_tui/__init__.py,sha256=bcFbqA4HoUOfBjCNV8aPWDxvbQTkVEmxhKB89NXGmh4,97
+akv_tui/_version.py,sha256=aOHawL1zuHMfBWKXqwUkXcW96oXLNCY-CXdHDqkz4g4,18
+akv_tui/app.py,sha256=dhGLSbR6yQiVpdSaGW8xzMDRwD10vw67XVnHGs9iSls,5150
+akv_tui/helpers.py,sha256=doLOlGWpab0z22By9b2gBNhhq9_NC0xgVNJhVpmvWSE,1355
+akv_tui/services.py,sha256=7xK1IJDu0RclP6Y8lvPO_OuUlSSlSmmJCeKJNvSnR9I,3853
+akv_tui-0.1.0.dist-info/METADATA,sha256=q6hsuU-BIDkqDDqThnI4LK1k1hpN7LtXrTq0gZ8E2N0,3448
+akv_tui-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+akv_tui-0.1.0.dist-info/entry_points.txt,sha256=OIcmRzj-POxm9Yz_w1ucAOlb70xyV9T-NQsac935T0U,45
+akv_tui-0.1.0.dist-info/licenses/LICENSE,sha256=-JwZ0i-XzG3fQ05B_7ueh8WAHa1I9tka-kYfoNeHkMA,1074
+akv_tui-0.1.0.dist-info/RECORD,,
