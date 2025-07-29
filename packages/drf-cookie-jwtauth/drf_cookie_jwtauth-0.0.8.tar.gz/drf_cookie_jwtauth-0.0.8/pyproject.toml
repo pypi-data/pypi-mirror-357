@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "drf-cookie-jwtauth"
+version = "0.0.8"
+description = "JWT-based authentication for Django REST Framework"
+authors = ["LorenzoCelli <lorenzo.celli00@gmail.com>"]
+license = "MIT License"
+readme = "README.md"
+packages = [
+    { include = "jwtauth", from="src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^5.2.3"
+PyJWT = ">=2.8.0"
+djangorestframework = "^3.15.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest-django = "^4.9.0"
+pytest = "^8.4.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[tool.ruff]
+line-length = 120
