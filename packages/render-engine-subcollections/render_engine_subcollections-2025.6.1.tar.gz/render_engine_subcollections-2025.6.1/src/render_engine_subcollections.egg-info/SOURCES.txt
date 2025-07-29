@@ -1,0 +1,15 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+.github/workflows/publish.yml
+.github/workflows/test.yml
+src/render_engine_subcollections.egg-info/PKG-INFO
+src/render_engine_subcollections.egg-info/SOURCES.txt
+src/render_engine_subcollections.egg-info/dependency_links.txt
+src/render_engine_subcollections.egg-info/requires.txt
+src/render_engine_subcollections.egg-info/top_level.txt
+src/subcollections/.gitignore
+src/subcollections/__init__.py
+src/subcollections/plugin.py
+tests/test_subcollection.py
