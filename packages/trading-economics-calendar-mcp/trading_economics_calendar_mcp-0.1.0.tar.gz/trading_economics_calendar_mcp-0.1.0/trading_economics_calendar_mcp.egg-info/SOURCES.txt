@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+tests/test_client.py
+trading_economics_calendar/__init__.py
+trading_economics_calendar/client.py
+trading_economics_calendar/server.py
+trading_economics_calendar_mcp.egg-info/PKG-INFO
+trading_economics_calendar_mcp.egg-info/SOURCES.txt
+trading_economics_calendar_mcp.egg-info/dependency_links.txt
+trading_economics_calendar_mcp.egg-info/entry_points.txt
+trading_economics_calendar_mcp.egg-info/requires.txt
+trading_economics_calendar_mcp.egg-info/top_level.txt
