@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mensajes-emimartinha"
+version = "3.2"
+description = "Un paquete para saludar y despedir"
+authors = [{name = "Emiliano", email = "emimartinha@gmail.com"}]
+requires-python = ">=3.8"
+readme= 'README.md'
+license = {file = 'LICENSE'}
+dependencies = [
+  "numpy>=1.26,<2.0"
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+

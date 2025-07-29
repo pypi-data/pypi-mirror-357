@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+mensajes/__init__.py
+mensajes/adios/__init__.py
+mensajes/adios/despedida.py
+mensajes/hola/__init__.py
+mensajes/hola/saludo.py
+mensajes_emimartinha.egg-info/PKG-INFO
+mensajes_emimartinha.egg-info/SOURCES.txt
+mensajes_emimartinha.egg-info/dependency_links.txt
+mensajes_emimartinha.egg-info/requires.txt
+mensajes_emimartinha.egg-info/top_level.txt
+tests/test_saludo.py
