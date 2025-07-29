@@ -1,0 +1,8 @@
+setup.py
+cities_of_turkiye/__init__.py
+cities_of_turkiye/main.py
+cities_of_turkiye/veriler.py
+cities_of_turkiye.egg-info/PKG-INFO
+cities_of_turkiye.egg-info/SOURCES.txt
+cities_of_turkiye.egg-info/dependency_links.txt
+cities_of_turkiye.egg-info/top_level.txt
