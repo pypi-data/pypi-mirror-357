@@ -1,0 +1,2 @@
+crc~=7.1
+deprecation~=2.1
