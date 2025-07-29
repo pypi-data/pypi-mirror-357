@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: torchdire
+Version: 0.1.18
+Summary: A PyTorch-based library with YAML automation
+Home-page: https://github.com/rajboopathiking/TorchDire
+Author-email: Boopathi Raj <rajboopathiking@gmail.com>
+Keywords: pytorch,deep learning,automation,yaml
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch<2.3.0,>=2.0.0
+Requires-Dist: tqdm
+Requires-Dist: numpy<2
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: pandas
+Requires-Dist: torchvision>=0.15.0
+Requires-Dist: onnx
+Requires-Dist: onnxruntime
+Requires-Dist: onnxruntime-tools
+Requires-Dist: timm
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: black; extra == "dev"
+
+# TorchDire
+Feature Rich Library for Building AI Models...
+
+There are many Models and Utils included ,
+
+
