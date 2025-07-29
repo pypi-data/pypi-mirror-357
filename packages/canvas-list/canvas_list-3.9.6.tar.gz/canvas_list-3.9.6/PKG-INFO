@@ -1,0 +1,69 @@
+Metadata-Version: 2.4
+Name: canvas_list
+Version: 3.9.6
+Summary: A Canvas component that displays a view of data instances
+Home-page: https://github.com/satishlokkoju/deepview
+Author: Satish Lokkoju
+Author-email: satish.lokkoju@gmail.com
+License: Apache 2.0
+Keywords: Jupyter,Widgets,IPython
+Platform: Linux
+Platform: Mac OS X
+Platform: Windows
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Framework :: Jupyter
+Classifier: Framework :: Jupyter :: JupyterLab
+Classifier: Framework :: Jupyter :: JupyterLab :: 3
+Classifier: Framework :: Jupyter :: JupyterLab :: 4
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions :: Prebuilt
+Requires-Python: >3.9
+Description-Content-Type: text/markdown
+Requires-Dist: ipywidgets>=7.0.0
+Requires-Dist: canvas_ux>=3.9.6
+Provides-Extra: examples
+Requires-Dist: gitpython; extra == "examples"
+Provides-Extra: docs
+Requires-Dist: jupyter_sphinx; extra == "docs"
+Requires-Dist: nbsphinx; extra == "docs"
+Requires-Dist: nbsphinx-link; extra == "docs"
+Requires-Dist: pytest_check_links; extra == "docs"
+Requires-Dist: pypandoc; extra == "docs"
+Requires-Dist: recommonmark; extra == "docs"
+Requires-Dist: sphinx>=1.5; extra == "docs"
+Requires-Dist: sphinx_book_theme; extra == "docs"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: platform
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# CanvasList
+
+A list view that displays all data instances, which is useful for exploring data with Canvas's built in filters and grouping interactions.
+
+## Installation
+
+```bash
+pip install canvas_list
+```
+
+
+## Usage
+
+To learn how to use Canvas, see the [documentation](https://satishlokkoju.github.io/deepview/).
