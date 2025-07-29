@@ -1,0 +1,53 @@
+Metadata-Version: 2.4
+Name: amazon-description-scraper
+Version: 0.0.3
+Summary: Webscrape project to get Amazon products' descriptions
+Author-email: Ryzan Bui <ryzan.b@zendom.co.uk>
+Project-URL: Source, https://github.com/ryzanbui02/amazon-description-scraper
+Keywords: amazon,scraping
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+Requires-Dist: bs4
+Requires-Dist: fake-useragent
+Requires-Dist: requests
+Requires-Dist: selenium
+Requires-Dist: pandas
+Requires-Dist: python-dotenv
+
+Amazon Description Scraper
+==========================
+
+.. image:: https://img.shields.io/pypi/v/amazon-description-scraper.svg?logo=python&logoColor=white
+   :target: https://pypi.org/project/amazon-description-scraper/
+
+Webscrape project to get suppliers' catalogs.
+
+
+Features
+--------
+
+- Uses Selenium and BeautifulSoup
+- Modular scraping system
+
+
+Installation
+------------
+Module can be installed from `PyPI <https://pypi.org/project/amazon-description-scraper>`_ with:
+
+.. code::
+
+  pip install amazon-description-scraper
+
+
+Brief Example
+-------------
+
+.. code:: python
+
+  from amzsc import AmazonScraper
+  
+  proxy_key = "XXXXXXXXXXX" # enter real proxy key here
+  client = AmazonScraper(proxy_key=proxy_key, jsonl_output_path="data/output.jsonl")
+  asins = ["B07WC4TDJJ"]
+  results = client.scrape(asins=asins, marketplace="US")
+  print(results)
