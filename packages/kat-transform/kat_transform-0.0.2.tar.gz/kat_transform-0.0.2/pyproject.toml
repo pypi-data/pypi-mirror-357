@@ -1,0 +1,36 @@
+[project]
+name = "kat-transform"
+version = "0.0.2"
+description = "Transform python data using declarative schemas"
+readme = "README.md"
+authors = [
+    { name = "kuyugama", email = "mail.kuyugama@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "fundi>=1.2.2",
+]
+license-files = ["LICENSE.md"]
+classifiers = [
+  "Programming Language :: Python :: 3"
+]
+
+[project.urls]
+homepage = "https://github.com/KuyuCode/kat-transform"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pyright]
+reportAny = false
+reportImportCycles = false
+ignore = ["tests"]
+
+[tool.black]
+line-length=100
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+]
