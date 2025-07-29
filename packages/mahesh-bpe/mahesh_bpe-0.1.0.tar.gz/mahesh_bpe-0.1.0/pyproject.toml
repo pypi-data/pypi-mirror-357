@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mahesh-bpe"
+version = "0.1.0"
+description = "Mahesh's Byte Pair Encoding tokenizer"
+readme = "README.md"
+authors = [{ name = "Manoj Nayak", email = "manojvnayak@outlook.in" }]
+license = { text = "MIT" }
+requires-python = ">=3.7"
+dependencies = ["numpy"]  
+
+[tool.setuptools]
+packages = ["mahesh_bpe"]

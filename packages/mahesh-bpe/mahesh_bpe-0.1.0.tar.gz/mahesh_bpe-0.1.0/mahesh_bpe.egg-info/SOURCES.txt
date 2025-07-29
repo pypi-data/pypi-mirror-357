@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+mahesh_bpe/BPE.py
+mahesh_bpe/__init__.py
+mahesh_bpe.egg-info/PKG-INFO
+mahesh_bpe.egg-info/SOURCES.txt
+mahesh_bpe.egg-info/dependency_links.txt
+mahesh_bpe.egg-info/requires.txt
+mahesh_bpe.egg-info/top_level.txt
