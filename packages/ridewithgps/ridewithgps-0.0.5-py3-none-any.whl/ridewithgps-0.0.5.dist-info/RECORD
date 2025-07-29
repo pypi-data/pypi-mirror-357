@@ -1,0 +1,8 @@
+ridewithgps/__init__.py,sha256=N7OkElpR5oAYtT8tgpDDjSGmJUZ1aVow7FKGVG1iArM,126
+ridewithgps/apiclient.py,sha256=Xg_D4H3LVcgbP6mPAiJzOaL7bPpiBxYHwuWPedbLk74,4898
+ridewithgps/ratelimiter.py,sha256=hY7L1Lklk3LK-pKpEL_MTv0-a5HqGpd_-SvEDT15j6w,2252
+ridewithgps/ridewithgps.py,sha256=58q5gUl0WaOKW0UMlSRthZ2qct3XzUV6nySQvAImMlA,4279
+ridewithgps-0.0.5.dist-info/METADATA,sha256=FEjRGsiLyWrrSHu_jNoSU7UMbt5lDBE0eVkF7MXtBaU,8149
+ridewithgps-0.0.5.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ridewithgps-0.0.5.dist-info/licenses/LICENSE.txt,sha256=W-1EH6VQ1PCrpPEqmhu4-QMRZ8MlvM2ew66SedJfueo,1223
+ridewithgps-0.0.5.dist-info/RECORD,,
