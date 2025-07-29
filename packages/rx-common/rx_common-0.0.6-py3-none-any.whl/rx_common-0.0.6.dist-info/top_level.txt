@@ -1,0 +1,5 @@
+rx_common
+rx_common_scripts
+rx_config
+rx_kernel
+rx_tests

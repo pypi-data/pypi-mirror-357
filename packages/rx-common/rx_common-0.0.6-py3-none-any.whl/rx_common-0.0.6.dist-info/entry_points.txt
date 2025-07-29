@@ -1,0 +1,4 @@
+[console_scripts]
+ap_lfn_to_yaml = rx_common_scripts.ap_lfn_to_yaml:main
+make_run3_yaml = rx_common_scripts.make_run3_yaml:main
+pap_lfn_to_yaml = rx_common_scripts.pap_lfn_to_yaml:main
