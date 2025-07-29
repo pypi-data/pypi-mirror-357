@@ -1,0 +1,7 @@
+denet-0.4.1.dist-info/METADATA,sha256=UGZy0OLf85coPZK3wp07S7SIHnk1j9Nv1tvWCs7OB1Y,9931
+denet-0.4.1.dist-info/WHEEL,sha256=gzt-5vue_7eKPs3lJK5QXBaD3_YckFhZq_AMbrvy1E4,108
+denet-0.4.1.dist-info/licenses/LICENSE,sha256=5X8cMguM-HmKfS_4Om-eBqM6A1hfbgZf6pfx2G24QFI,35150
+denet/__init__.py,sha256=pTiiiVjfw8XhpYpFEhqatjwt9amkG1_E3h4gEk3tVtM,6581
+denet/_denet.cpython-312-x86_64-linux-gnu.so,sha256=PsPjQsatkWvF937jXmLBLrdLSZVTu7cj0mBYTkl8Rr8,1041264
+denet/analysis.py,sha256=mR3oQaeU5tuP5HQRBLVp7L6dYRjT3gHA6LSz0F6CJE4,13863
+denet-0.4.1.dist-info/RECORD,,
