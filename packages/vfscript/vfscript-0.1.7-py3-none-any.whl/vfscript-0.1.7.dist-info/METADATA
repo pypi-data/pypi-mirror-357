@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: vfscript
+Version: 0.1.7
+Summary: Vacancy Finder Script
+Home-page: https://github.com/TiagoBe0/VFScript-CDScanner
+Author: SantiBS
+Author-email: santiagobergamin@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: ovito
+Requires-Dist: xgboost
+Requires-Dist: scikit-learn
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+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
