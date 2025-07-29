@@ -1,0 +1,3 @@
+[console_scripts]
+timberlake=timberlake.cli:cli_main
+
