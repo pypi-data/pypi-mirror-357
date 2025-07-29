@@ -1,0 +1,2 @@
+[console_scripts]
+dkdc = dkdc.cli.main:app
