@@ -1,0 +1,5038 @@
+{
+    "1": {
+        "credentials": {
+            "password": "cQMASIrZnsBSTKOtTO1s3F9thBUZ4AEG",
+            "username": "BfqpewhFJh8sqRYXkobWnE2HFQedWsCm"
+        },
+        "metrics": {
+            "keyboard": {
+                "keydowns": [
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:33.784Z"
+                    },
+                    {
+                        "key": "f",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:33.920Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.113Z"
+                    },
+                    {
+                        "key": "p",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.285Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.480Z"
+                    },
+                    {
+                        "key": "w",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.678Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.794Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:34.953Z"
+                    },
+                    {
+                        "key": "J",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:35.121Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.052Z"
+                    },
+                    {
+                        "key": "8",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.193Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.601Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.819Z"
+                    },
+                    {
+                        "key": "R",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:36.999Z"
+                    },
+                    {
+                        "key": "Y",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:38.386Z"
+                    },
+                    {
+                        "key": "X",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.101Z"
+                    },
+                    {
+                        "key": "k",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.174Z"
+                    },
+                    {
+                        "key": "o",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.187Z"
+                    },
+                    {
+                        "key": "b",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.200Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.203Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.217Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.220Z"
+                    },
+                    {
+                        "key": "2",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.233Z"
+                    },
+                    {
+                        "key": "H",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.244Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.248Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.251Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.255Z"
+                    },
+                    {
+                        "key": "d",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.259Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.263Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.266Z"
+                    },
+                    {
+                        "key": "C",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.269Z"
+                    },
+                    {
+                        "key": "m",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.277Z"
+                    },
+                    {
+                        "key": "c",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:40.509Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:40.645Z"
+                    },
+                    {
+                        "key": "M",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:40.844Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.019Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.214Z"
+                    },
+                    {
+                        "key": "I",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.410Z"
+                    },
+                    {
+                        "key": "r",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:41.525Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.684Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:41.849Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:42.776Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:42.920Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:43.325Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:43.542Z"
+                    },
+                    {
+                        "key": "K",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:43.724Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.109Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.824Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.895Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.902Z"
+                    },
+                    {
+                        "key": "1",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.915Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.918Z"
+                    },
+                    {
+                        "key": "3",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.932Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.935Z"
+                    },
+                    {
+                        "key": "9",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.944Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.946Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.949Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.952Z"
+                    },
+                    {
+                        "key": "U",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.965Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.968Z"
+                    },
+                    {
+                        "key": "4",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.982Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.987Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:46.000Z"
+                    },
+                    {
+                        "key": "G",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:46.005Z"
+                    }
+                ],
+                "keypresses": [
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:33.784Z"
+                    },
+                    {
+                        "key": "f",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:33.920Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.113Z"
+                    },
+                    {
+                        "key": "p",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.285Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.480Z"
+                    },
+                    {
+                        "key": "w",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.678Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.794Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:34.953Z"
+                    },
+                    {
+                        "key": "J",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:35.121Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.052Z"
+                    },
+                    {
+                        "key": "8",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.193Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.601Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.819Z"
+                    },
+                    {
+                        "key": "R",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:36.999Z"
+                    },
+                    {
+                        "key": "Y",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:38.386Z"
+                    },
+                    {
+                        "key": "X",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.101Z"
+                    },
+                    {
+                        "key": "k",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.174Z"
+                    },
+                    {
+                        "key": "o",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.187Z"
+                    },
+                    {
+                        "key": "b",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.200Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.203Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.217Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.220Z"
+                    },
+                    {
+                        "key": "2",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.233Z"
+                    },
+                    {
+                        "key": "H",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.244Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.248Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.251Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.255Z"
+                    },
+                    {
+                        "key": "d",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.259Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.263Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.266Z"
+                    },
+                    {
+                        "key": "C",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.269Z"
+                    },
+                    {
+                        "key": "m",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.277Z"
+                    },
+                    {
+                        "key": "c",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:40.509Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:40.645Z"
+                    },
+                    {
+                        "key": "M",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:40.844Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.020Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.214Z"
+                    },
+                    {
+                        "key": "I",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.410Z"
+                    },
+                    {
+                        "key": "r",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:41.526Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.684Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:41.849Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:42.776Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:42.920Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:43.325Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:43.542Z"
+                    },
+                    {
+                        "key": "K",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:43.725Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.109Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.824Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.895Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.903Z"
+                    },
+                    {
+                        "key": "1",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.916Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.918Z"
+                    },
+                    {
+                        "key": "3",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.932Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.935Z"
+                    },
+                    {
+                        "key": "9",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.944Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.946Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.949Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.952Z"
+                    },
+                    {
+                        "key": "U",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.965Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.968Z"
+                    },
+                    {
+                        "key": "4",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.982Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.987Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:46.000Z"
+                    },
+                    {
+                        "key": "G",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:46.005Z"
+                    }
+                ],
+                "keyups": [
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:33.788Z"
+                    },
+                    {
+                        "key": "f",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:33.927Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.116Z"
+                    },
+                    {
+                        "key": "p",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.293Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.487Z"
+                    },
+                    {
+                        "key": "w",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.685Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:34.807Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:34.960Z"
+                    },
+                    {
+                        "key": "J",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:35.820Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.059Z"
+                    },
+                    {
+                        "key": "8",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.483Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.760Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:36.963Z"
+                    },
+                    {
+                        "key": "R",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:38.238Z"
+                    },
+                    {
+                        "key": "Y",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:38.978Z"
+                    },
+                    {
+                        "key": "X",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.169Z"
+                    },
+                    {
+                        "key": "k",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.181Z"
+                    },
+                    {
+                        "key": "o",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.194Z"
+                    },
+                    {
+                        "key": "b",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.202Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.211Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.219Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.227Z"
+                    },
+                    {
+                        "key": "2",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.238Z"
+                    },
+                    {
+                        "key": "H",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.246Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.250Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.254Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.258Z"
+                    },
+                    {
+                        "key": "d",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.261Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.265Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.268Z"
+                    },
+                    {
+                        "key": "C",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:39.272Z"
+                    },
+                    {
+                        "key": "m",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:39.279Z"
+                    },
+                    {
+                        "key": "c",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:40.516Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:40.652Z"
+                    },
+                    {
+                        "key": "M",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:40.851Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.027Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.221Z"
+                    },
+                    {
+                        "key": "I",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.417Z"
+                    },
+                    {
+                        "key": "r",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:41.538Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:41.692Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:42.547Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:42.783Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:43.207Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:43.483Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:43.689Z"
+                    },
+                    {
+                        "key": "K",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:44.961Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.698Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.889Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.897Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.910Z"
+                    },
+                    {
+                        "key": "1",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.917Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.926Z"
+                    },
+                    {
+                        "key": "3",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.934Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.938Z"
+                    },
+                    {
+                        "key": "9",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.946Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.948Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.951Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.959Z"
+                    },
+                    {
+                        "key": "U",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.967Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.976Z"
+                    },
+                    {
+                        "key": "4",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:34:45.985Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:45.994Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:46.003Z"
+                    },
+                    {
+                        "key": "G",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:34:46.007Z"
+                    }
+                ],
+                "specificKeyEvents": []
+            },
+            "mouse": {
+                "clicks": [
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:28.165Z",
+                        "x": 337,
+                        "y": 637
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:29.331Z",
+                        "x": 983,
+                        "y": 610
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:30.349Z",
+                        "x": 883,
+                        "y": 62
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:31.183Z",
+                        "x": 1263,
+                        "y": 260
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:32.613Z",
+                        "x": 435,
+                        "y": 321
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:33.496Z",
+                        "x": 560,
+                        "y": 482
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:40.300Z",
+                        "x": 713,
+                        "y": 553
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:47.908Z",
+                        "x": 873,
+                        "y": 622
+                    }
+                ],
+                "mouseDowns": [
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:28.158Z",
+                        "type": "mousedown",
+                        "x": 337,
+                        "y": 637
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:29.325Z",
+                        "type": "mousedown",
+                        "x": 983,
+                        "y": 610
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:30.344Z",
+                        "type": "mousedown",
+                        "x": 883,
+                        "y": 62
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:31.181Z",
+                        "type": "mousedown",
+                        "x": 1263,
+                        "y": 260
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:32.607Z",
+                        "type": "mousedown",
+                        "x": 435,
+                        "y": 321
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:33.488Z",
+                        "type": "mousedown",
+                        "x": 560,
+                        "y": 482
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:40.293Z",
+                        "type": "mousedown",
+                        "x": 713,
+                        "y": 553
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:47.906Z",
+                        "type": "mousedown",
+                        "x": 873,
+                        "y": 622
+                    }
+                ],
+                "mouseUps": [
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:28.165Z",
+                        "type": "mouseup",
+                        "x": 337,
+                        "y": 637
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:29.331Z",
+                        "type": "mouseup",
+                        "x": 983,
+                        "y": 610
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:30.349Z",
+                        "type": "mouseup",
+                        "x": 883,
+                        "y": 62
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:31.183Z",
+                        "type": "mouseup",
+                        "x": 1263,
+                        "y": 260
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:32.613Z",
+                        "type": "mouseup",
+                        "x": 435,
+                        "y": 321
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:33.495Z",
+                        "type": "mouseup",
+                        "x": 560,
+                        "y": 482
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:40.300Z",
+                        "type": "mouseup",
+                        "x": 713,
+                        "y": 553
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:47.907Z",
+                        "type": "mouseup",
+                        "x": 873,
+                        "y": 622
+                    }
+                ],
+                "movements": [
+                    {
+                        "timestamp": "2025-06-19T11:34:27.252Z",
+                        "x": 29,
+                        "y": 44
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.266Z",
+                        "x": 55,
+                        "y": 85
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.272Z",
+                        "x": 78,
+                        "y": 123
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.290Z",
+                        "x": 98,
+                        "y": 161
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.309Z",
+                        "x": 115,
+                        "y": 196
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.325Z",
+                        "x": 129,
+                        "y": 229
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.344Z",
+                        "x": 142,
+                        "y": 259
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.356Z",
+                        "x": 153,
+                        "y": 286
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.378Z",
+                        "x": 162,
+                        "y": 314
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.390Z",
+                        "x": 170,
+                        "y": 340
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.408Z",
+                        "x": 176,
+                        "y": 363
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.430Z",
+                        "x": 182,
+                        "y": 384
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.444Z",
+                        "x": 187,
+                        "y": 407
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.456Z",
+                        "x": 192,
+                        "y": 426
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.475Z",
+                        "x": 196,
+                        "y": 445
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.492Z",
+                        "x": 199,
+                        "y": 461
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.510Z",
+                        "x": 203,
+                        "y": 480
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.527Z",
+                        "x": 206,
+                        "y": 489
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.538Z",
+                        "x": 209,
+                        "y": 506
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.555Z",
+                        "x": 212,
+                        "y": 517
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.573Z",
+                        "x": 215,
+                        "y": 533
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.590Z",
+                        "x": 218,
+                        "y": 541
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.606Z",
+                        "x": 222,
+                        "y": 550
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.624Z",
+                        "x": 225,
+                        "y": 559
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.641Z",
+                        "x": 229,
+                        "y": 570
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.658Z",
+                        "x": 233,
+                        "y": 578
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.674Z",
+                        "x": 237,
+                        "y": 582
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.691Z",
+                        "x": 241,
+                        "y": 587
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.708Z",
+                        "x": 246,
+                        "y": 593
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.725Z",
+                        "x": 250,
+                        "y": 598
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.742Z",
+                        "x": 255,
+                        "y": 606
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.758Z",
+                        "x": 260,
+                        "y": 609
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.771Z",
+                        "x": 264,
+                        "y": 613
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.793Z",
+                        "x": 269,
+                        "y": 617
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.809Z",
+                        "x": 275,
+                        "y": 619
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.825Z",
+                        "x": 280,
+                        "y": 621
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.844Z",
+                        "x": 284,
+                        "y": 623
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.856Z",
+                        "x": 290,
+                        "y": 627
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.872Z",
+                        "x": 294,
+                        "y": 627
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.889Z",
+                        "x": 299,
+                        "y": 629
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.905Z",
+                        "x": 304,
+                        "y": 630
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.921Z",
+                        "x": 308,
+                        "y": 633
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.938Z",
+                        "x": 312,
+                        "y": 635
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.959Z",
+                        "x": 316,
+                        "y": 634
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.975Z",
+                        "x": 320,
+                        "y": 633
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:27.991Z",
+                        "x": 323,
+                        "y": 637
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.008Z",
+                        "x": 326,
+                        "y": 634
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.024Z",
+                        "x": 329,
+                        "y": 637
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.041Z",
+                        "x": 331,
+                        "y": 637
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.059Z",
+                        "x": 333,
+                        "y": 637
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.075Z",
+                        "x": 335,
+                        "y": 637
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.093Z",
+                        "x": 336,
+                        "y": 638
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.105Z",
+                        "x": 336,
+                        "y": 638
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.124Z",
+                        "x": 337,
+                        "y": 637
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.507Z",
+                        "x": 366,
+                        "y": 634
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.529Z",
+                        "x": 393,
+                        "y": 632
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.540Z",
+                        "x": 417,
+                        "y": 625
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.557Z",
+                        "x": 438,
+                        "y": 624
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.573Z",
+                        "x": 457,
+                        "y": 626
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.589Z",
+                        "x": 474,
+                        "y": 626
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.606Z",
+                        "x": 489,
+                        "y": 625
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.623Z",
+                        "x": 504,
+                        "y": 629
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.640Z",
+                        "x": 518,
+                        "y": 630
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.656Z",
+                        "x": 530,
+                        "y": 631
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.672Z",
+                        "x": 543,
+                        "y": 634
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.689Z",
+                        "x": 556,
+                        "y": 638
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.706Z",
+                        "x": 568,
+                        "y": 640
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.722Z",
+                        "x": 580,
+                        "y": 638
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.739Z",
+                        "x": 593,
+                        "y": 643
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.756Z",
+                        "x": 606,
+                        "y": 641
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.773Z",
+                        "x": 618,
+                        "y": 643
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.789Z",
+                        "x": 632,
+                        "y": 647
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.807Z",
+                        "x": 646,
+                        "y": 648
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.824Z",
+                        "x": 660,
+                        "y": 646
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.841Z",
+                        "x": 674,
+                        "y": 647
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.858Z",
+                        "x": 689,
+                        "y": 648
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.876Z",
+                        "x": 705,
+                        "y": 646
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.893Z",
+                        "x": 720,
+                        "y": 648
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.910Z",
+                        "x": 735,
+                        "y": 648
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.922Z",
+                        "x": 751,
+                        "y": 645
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.939Z",
+                        "x": 767,
+                        "y": 642
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.956Z",
+                        "x": 784,
+                        "y": 643
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.973Z",
+                        "x": 798,
+                        "y": 639
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:28.990Z",
+                        "x": 815,
+                        "y": 636
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.007Z",
+                        "x": 830,
+                        "y": 636
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.023Z",
+                        "x": 845,
+                        "y": 635
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.040Z",
+                        "x": 860,
+                        "y": 632
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.058Z",
+                        "x": 874,
+                        "y": 631
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.075Z",
+                        "x": 887,
+                        "y": 629
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.092Z",
+                        "x": 900,
+                        "y": 625
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.110Z",
+                        "x": 913,
+                        "y": 623
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.122Z",
+                        "x": 925,
+                        "y": 620
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.141Z",
+                        "x": 934,
+                        "y": 619
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.158Z",
+                        "x": 945,
+                        "y": 617
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.176Z",
+                        "x": 953,
+                        "y": 616
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.192Z",
+                        "x": 959,
+                        "y": 615
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.209Z",
+                        "x": 967,
+                        "y": 614
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.225Z",
+                        "x": 972,
+                        "y": 614
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.245Z",
+                        "x": 976,
+                        "y": 612
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.257Z",
+                        "x": 978,
+                        "y": 613
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.274Z",
+                        "x": 980,
+                        "y": 610
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.291Z",
+                        "x": 983,
+                        "y": 610
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.643Z",
+                        "x": 969,
+                        "y": 576
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.660Z",
+                        "x": 957,
+                        "y": 542
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.672Z",
+                        "x": 946,
+                        "y": 518
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.688Z",
+                        "x": 938,
+                        "y": 497
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.705Z",
+                        "x": 930,
+                        "y": 481
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.721Z",
+                        "x": 924,
+                        "y": 467
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.738Z",
+                        "x": 918,
+                        "y": 457
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.755Z",
+                        "x": 913,
+                        "y": 445
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.777Z",
+                        "x": 910,
+                        "y": 435
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.793Z",
+                        "x": 906,
+                        "y": 426
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.805Z",
+                        "x": 903,
+                        "y": 416
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.822Z",
+                        "x": 901,
+                        "y": 409
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.838Z",
+                        "x": 899,
+                        "y": 402
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.855Z",
+                        "x": 897,
+                        "y": 391
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.872Z",
+                        "x": 896,
+                        "y": 381
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.888Z",
+                        "x": 895,
+                        "y": 370
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.905Z",
+                        "x": 894,
+                        "y": 359
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.922Z",
+                        "x": 893,
+                        "y": 346
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.938Z",
+                        "x": 892,
+                        "y": 332
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.958Z",
+                        "x": 891,
+                        "y": 319
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.975Z",
+                        "x": 891,
+                        "y": 303
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:29.992Z",
+                        "x": 890,
+                        "y": 288
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.008Z",
+                        "x": 890,
+                        "y": 275
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.026Z",
+                        "x": 889,
+                        "y": 255
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.043Z",
+                        "x": 888,
+                        "y": 237
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.060Z",
+                        "x": 888,
+                        "y": 222
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.073Z",
+                        "x": 887,
+                        "y": 206
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.090Z",
+                        "x": 887,
+                        "y": 187
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.108Z",
+                        "x": 886,
+                        "y": 172
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.124Z",
+                        "x": 886,
+                        "y": 159
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.143Z",
+                        "x": 885,
+                        "y": 141
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.155Z",
+                        "x": 885,
+                        "y": 129
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.172Z",
+                        "x": 884,
+                        "y": 115
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.189Z",
+                        "x": 884,
+                        "y": 106
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.206Z",
+                        "x": 884,
+                        "y": 92
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.223Z",
+                        "x": 883,
+                        "y": 85
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.239Z",
+                        "x": 883,
+                        "y": 80
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.256Z",
+                        "x": 883,
+                        "y": 70
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.272Z",
+                        "x": 883,
+                        "y": 69
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.289Z",
+                        "x": 883,
+                        "y": 66
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.309Z",
+                        "x": 883,
+                        "y": 62
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.645Z",
+                        "x": 887,
+                        "y": 75
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.658Z",
+                        "x": 891,
+                        "y": 88
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.675Z",
+                        "x": 897,
+                        "y": 97
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.692Z",
+                        "x": 905,
+                        "y": 103
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.708Z",
+                        "x": 913,
+                        "y": 110
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.725Z",
+                        "x": 923,
+                        "y": 116
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.742Z",
+                        "x": 934,
+                        "y": 121
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.758Z",
+                        "x": 947,
+                        "y": 127
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.775Z",
+                        "x": 961,
+                        "y": 134
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.792Z",
+                        "x": 977,
+                        "y": 138
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.809Z",
+                        "x": 993,
+                        "y": 141
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.825Z",
+                        "x": 1009,
+                        "y": 150
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.838Z",
+                        "x": 1027,
+                        "y": 155
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.855Z",
+                        "x": 1046,
+                        "y": 163
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.872Z",
+                        "x": 1065,
+                        "y": 172
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.888Z",
+                        "x": 1083,
+                        "y": 177
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.906Z",
+                        "x": 1101,
+                        "y": 186
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.922Z",
+                        "x": 1120,
+                        "y": 194
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.939Z",
+                        "x": 1139,
+                        "y": 201
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.956Z",
+                        "x": 1156,
+                        "y": 210
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.973Z",
+                        "x": 1172,
+                        "y": 217
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:30.996Z",
+                        "x": 1189,
+                        "y": 226
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.008Z",
+                        "x": 1202,
+                        "y": 233
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.025Z",
+                        "x": 1215,
+                        "y": 236
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.042Z",
+                        "x": 1227,
+                        "y": 241
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.059Z",
+                        "x": 1238,
+                        "y": 249
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.076Z",
+                        "x": 1245,
+                        "y": 253
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.087Z",
+                        "x": 1253,
+                        "y": 256
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.109Z",
+                        "x": 1258,
+                        "y": 259
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.126Z",
+                        "x": 1260,
+                        "y": 259
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.143Z",
+                        "x": 1263,
+                        "y": 260
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.572Z",
+                        "x": 1219,
+                        "y": 262
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.578Z",
+                        "x": 1176,
+                        "y": 264
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.590Z",
+                        "x": 1136,
+                        "y": 266
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.606Z",
+                        "x": 1098,
+                        "y": 269
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.623Z",
+                        "x": 1061,
+                        "y": 267
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.640Z",
+                        "x": 1027,
+                        "y": 270
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.659Z",
+                        "x": 995,
+                        "y": 273
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.671Z",
+                        "x": 964,
+                        "y": 274
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.688Z",
+                        "x": 935,
+                        "y": 272
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.704Z",
+                        "x": 907,
+                        "y": 275
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.721Z",
+                        "x": 880,
+                        "y": 276
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.746Z",
+                        "x": 855,
+                        "y": 275
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.758Z",
+                        "x": 832,
+                        "y": 276
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.774Z",
+                        "x": 809,
+                        "y": 275
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.791Z",
+                        "x": 788,
+                        "y": 278
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.808Z",
+                        "x": 767,
+                        "y": 276
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.824Z",
+                        "x": 748,
+                        "y": 277
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.841Z",
+                        "x": 730,
+                        "y": 276
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.858Z",
+                        "x": 712,
+                        "y": 278
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.876Z",
+                        "x": 696,
+                        "y": 281
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.893Z",
+                        "x": 680,
+                        "y": 279
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.905Z",
+                        "x": 665,
+                        "y": 280
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.922Z",
+                        "x": 651,
+                        "y": 283
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.938Z",
+                        "x": 637,
+                        "y": 281
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.955Z",
+                        "x": 624,
+                        "y": 285
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.977Z",
+                        "x": 612,
+                        "y": 287
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:31.988Z",
+                        "x": 601,
+                        "y": 286
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.005Z",
+                        "x": 589,
+                        "y": 287
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.022Z",
+                        "x": 579,
+                        "y": 288
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.039Z",
+                        "x": 569,
+                        "y": 287
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.056Z",
+                        "x": 560,
+                        "y": 290
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.072Z",
+                        "x": 551,
+                        "y": 291
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.089Z",
+                        "x": 542,
+                        "y": 291
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.106Z",
+                        "x": 534,
+                        "y": 294
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.124Z",
+                        "x": 526,
+                        "y": 297
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.140Z",
+                        "x": 519,
+                        "y": 298
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.157Z",
+                        "x": 512,
+                        "y": 300
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.174Z",
+                        "x": 505,
+                        "y": 301
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.191Z",
+                        "x": 499,
+                        "y": 301
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.208Z",
+                        "x": 494,
+                        "y": 304
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.224Z",
+                        "x": 488,
+                        "y": 303
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.241Z",
+                        "x": 483,
+                        "y": 306
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.258Z",
+                        "x": 478,
+                        "y": 307
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.274Z",
+                        "x": 473,
+                        "y": 307
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.291Z",
+                        "x": 469,
+                        "y": 307
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.310Z",
+                        "x": 465,
+                        "y": 309
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.321Z",
+                        "x": 461,
+                        "y": 309
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.338Z",
+                        "x": 458,
+                        "y": 311
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.355Z",
+                        "x": 455,
+                        "y": 315
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.372Z",
+                        "x": 451,
+                        "y": 316
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.389Z",
+                        "x": 449,
+                        "y": 315
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.405Z",
+                        "x": 446,
+                        "y": 317
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.422Z",
+                        "x": 444,
+                        "y": 318
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.439Z",
+                        "x": 442,
+                        "y": 318
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.456Z",
+                        "x": 440,
+                        "y": 319
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.473Z",
+                        "x": 439,
+                        "y": 320
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.489Z",
+                        "x": 438,
+                        "y": 319
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.506Z",
+                        "x": 437,
+                        "y": 319
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.523Z",
+                        "x": 436,
+                        "y": 322
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.539Z",
+                        "x": 435,
+                        "y": 318
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.556Z",
+                        "x": 435,
+                        "y": 318
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:32.573Z",
+                        "x": 435,
+                        "y": 321
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.244Z",
+                        "x": 473,
+                        "y": 353
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.255Z",
+                        "x": 497,
+                        "y": 372
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.272Z",
+                        "x": 511,
+                        "y": 380
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.288Z",
+                        "x": 519,
+                        "y": 392
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.305Z",
+                        "x": 525,
+                        "y": 397
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.322Z",
+                        "x": 529,
+                        "y": 406
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.338Z",
+                        "x": 534,
+                        "y": 418
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.355Z",
+                        "x": 538,
+                        "y": 428
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.372Z",
+                        "x": 543,
+                        "y": 442
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.392Z",
+                        "x": 548,
+                        "y": 454
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.408Z",
+                        "x": 552,
+                        "y": 466
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.425Z",
+                        "x": 556,
+                        "y": 475
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.442Z",
+                        "x": 559,
+                        "y": 481
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:33.454Z",
+                        "x": 560,
+                        "y": 482
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:40.103Z",
+                        "x": 586,
+                        "y": 541
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:40.110Z",
+                        "x": 623,
+                        "y": 573
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:40.121Z",
+                        "x": 659,
+                        "y": 586
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:40.138Z",
+                        "x": 689,
+                        "y": 587
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:40.155Z",
+                        "x": 708,
+                        "y": 583
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:40.172Z",
+                        "x": 719,
+                        "y": 575
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:40.190Z",
+                        "x": 723,
+                        "y": 569
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:40.207Z",
+                        "x": 721,
+                        "y": 563
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:40.224Z",
+                        "x": 718,
+                        "y": 558
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:40.241Z",
+                        "x": 715,
+                        "y": 554
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:40.258Z",
+                        "x": 713,
+                        "y": 553
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.704Z",
+                        "x": 797,
+                        "y": 540
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.710Z",
+                        "x": 840,
+                        "y": 544
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.721Z",
+                        "x": 858,
+                        "y": 561
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.738Z",
+                        "x": 862,
+                        "y": 582
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.755Z",
+                        "x": 862,
+                        "y": 598
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.772Z",
+                        "x": 860,
+                        "y": 612
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.788Z",
+                        "x": 860,
+                        "y": 620
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.805Z",
+                        "x": 862,
+                        "y": 624
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.822Z",
+                        "x": 866,
+                        "y": 627
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.838Z",
+                        "x": 869,
+                        "y": 623
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.855Z",
+                        "x": 871,
+                        "y": 625
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:47.872Z",
+                        "x": 873,
+                        "y": 622
+                    }
+                ]
+            },
+            "signInButton": {
+                "hoverToClickTime": 102,
+                "mouseLeaveCount": 3
+            }
+        },
+        "project_id": "Ro5Lb6sJMXMSSlX8LRgfAsmzxqkMekGr",
+        "user_id": "BfqpewhFJh8sqRYXkobWnE2HFQedWsCm"
+    },
+    "2": {
+        "credentials": {
+            "password": "cQMASIrZnsBSTKOtTO1s3F9thBUZ4AEG",
+            "username": "BfqpewhFJh8sqRYXkobWnE2HFQedWsCm"
+        },
+        "metrics": {
+            "keyboard": {
+                "keydowns": [
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:03.851Z"
+                    },
+                    {
+                        "key": "f",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:03.991Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.185Z"
+                    },
+                    {
+                        "key": "p",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.363Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.558Z"
+                    },
+                    {
+                        "key": "w",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.754Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.869Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:05.030Z"
+                    },
+                    {
+                        "key": "J",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:05.195Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:06.124Z"
+                    },
+                    {
+                        "key": "8",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:06.264Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:06.671Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:06.883Z"
+                    },
+                    {
+                        "key": "R",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:07.066Z"
+                    },
+                    {
+                        "key": "Y",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:08.454Z"
+                    },
+                    {
+                        "key": "X",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.171Z"
+                    },
+                    {
+                        "key": "k",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.242Z"
+                    },
+                    {
+                        "key": "o",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.254Z"
+                    },
+                    {
+                        "key": "b",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.267Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.280Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.285Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.304Z"
+                    },
+                    {
+                        "key": "2",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.312Z"
+                    },
+                    {
+                        "key": "H",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.315Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.317Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.321Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.325Z"
+                    },
+                    {
+                        "key": "d",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.328Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.334Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.343Z"
+                    },
+                    {
+                        "key": "C",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.347Z"
+                    },
+                    {
+                        "key": "m",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.350Z"
+                    },
+                    {
+                        "key": "c",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:10.608Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:10.750Z"
+                    },
+                    {
+                        "key": "M",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:10.942Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.115Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.310Z"
+                    },
+                    {
+                        "key": "I",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.510Z"
+                    },
+                    {
+                        "key": "r",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:11.624Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.785Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:11.945Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:12.876Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:13.013Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:13.417Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:13.628Z"
+                    },
+                    {
+                        "key": "K",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:13.810Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:15.197Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:15.912Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:15.986Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:15.999Z"
+                    },
+                    {
+                        "key": "1",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.002Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.015Z"
+                    },
+                    {
+                        "key": "3",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.018Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.026Z"
+                    },
+                    {
+                        "key": "9",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.030Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.032Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.035Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.042Z"
+                    },
+                    {
+                        "key": "U",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.046Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.049Z"
+                    },
+                    {
+                        "key": "4",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.052Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.060Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.063Z"
+                    },
+                    {
+                        "key": "G",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.065Z"
+                    }
+                ],
+                "keypresses": [
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:03.852Z"
+                    },
+                    {
+                        "key": "f",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:03.992Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.186Z"
+                    },
+                    {
+                        "key": "p",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.364Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.558Z"
+                    },
+                    {
+                        "key": "w",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.754Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.869Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:05.030Z"
+                    },
+                    {
+                        "key": "J",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:05.195Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:06.124Z"
+                    },
+                    {
+                        "key": "8",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:06.264Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:06.671Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:06.883Z"
+                    },
+                    {
+                        "key": "R",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:07.066Z"
+                    },
+                    {
+                        "key": "Y",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:08.454Z"
+                    },
+                    {
+                        "key": "X",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.171Z"
+                    },
+                    {
+                        "key": "k",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.242Z"
+                    },
+                    {
+                        "key": "o",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.254Z"
+                    },
+                    {
+                        "key": "b",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.267Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.280Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.285Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.304Z"
+                    },
+                    {
+                        "key": "2",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.312Z"
+                    },
+                    {
+                        "key": "H",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.315Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.317Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.321Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.325Z"
+                    },
+                    {
+                        "key": "d",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.328Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.335Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.343Z"
+                    },
+                    {
+                        "key": "C",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.347Z"
+                    },
+                    {
+                        "key": "m",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.350Z"
+                    },
+                    {
+                        "key": "c",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:10.608Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:10.750Z"
+                    },
+                    {
+                        "key": "M",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:10.942Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.115Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.310Z"
+                    },
+                    {
+                        "key": "I",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.510Z"
+                    },
+                    {
+                        "key": "r",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:11.624Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.785Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:11.945Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:12.876Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:13.013Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:13.417Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:13.628Z"
+                    },
+                    {
+                        "key": "K",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:13.810Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:15.197Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:15.913Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:15.986Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:15.999Z"
+                    },
+                    {
+                        "key": "1",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.002Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.015Z"
+                    },
+                    {
+                        "key": "3",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.018Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.026Z"
+                    },
+                    {
+                        "key": "9",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.030Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.032Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.035Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.042Z"
+                    },
+                    {
+                        "key": "U",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.046Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.049Z"
+                    },
+                    {
+                        "key": "4",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.052Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.060Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.063Z"
+                    },
+                    {
+                        "key": "G",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.065Z"
+                    }
+                ],
+                "keyups": [
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:03.860Z"
+                    },
+                    {
+                        "key": "f",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:03.999Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.193Z"
+                    },
+                    {
+                        "key": "p",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.371Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.566Z"
+                    },
+                    {
+                        "key": "w",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.762Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:04.882Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:05.037Z"
+                    },
+                    {
+                        "key": "J",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:05.892Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:06.131Z"
+                    },
+                    {
+                        "key": "8",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:06.554Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:06.827Z"
+                    },
+                    {
+                        "key": "q",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:07.030Z"
+                    },
+                    {
+                        "key": "R",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:08.306Z"
+                    },
+                    {
+                        "key": "Y",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.045Z"
+                    },
+                    {
+                        "key": "X",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.236Z"
+                    },
+                    {
+                        "key": "k",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.249Z"
+                    },
+                    {
+                        "key": "o",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.261Z"
+                    },
+                    {
+                        "key": "b",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.275Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.283Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.298Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.306Z"
+                    },
+                    {
+                        "key": "2",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.313Z"
+                    },
+                    {
+                        "key": "H",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.317Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.319Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.324Z"
+                    },
+                    {
+                        "key": "e",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.327Z"
+                    },
+                    {
+                        "key": "d",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.333Z"
+                    },
+                    {
+                        "key": "W",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.337Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.345Z"
+                    },
+                    {
+                        "key": "C",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:09.349Z"
+                    },
+                    {
+                        "key": "m",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:09.352Z"
+                    },
+                    {
+                        "key": "c",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:10.615Z"
+                    },
+                    {
+                        "key": "Q",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:10.753Z"
+                    },
+                    {
+                        "key": "M",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:10.945Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.123Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.317Z"
+                    },
+                    {
+                        "key": "I",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.517Z"
+                    },
+                    {
+                        "key": "r",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:11.637Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:11.787Z"
+                    },
+                    {
+                        "key": "n",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:12.641Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:12.879Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:13.299Z"
+                    },
+                    {
+                        "key": "S",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:13.572Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:13.774Z"
+                    },
+                    {
+                        "key": "K",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:15.049Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:15.789Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:15.980Z"
+                    },
+                    {
+                        "key": "T",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:15.993Z"
+                    },
+                    {
+                        "key": "O",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.001Z"
+                    },
+                    {
+                        "key": "1",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.009Z"
+                    },
+                    {
+                        "key": "s",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.017Z"
+                    },
+                    {
+                        "key": "3",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.021Z"
+                    },
+                    {
+                        "key": "F",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.029Z"
+                    },
+                    {
+                        "key": "9",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.031Z"
+                    },
+                    {
+                        "key": "t",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.034Z"
+                    },
+                    {
+                        "key": "h",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.037Z"
+                    },
+                    {
+                        "key": "B",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.045Z"
+                    },
+                    {
+                        "key": "U",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.048Z"
+                    },
+                    {
+                        "key": "Z",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.051Z"
+                    },
+                    {
+                        "key": "4",
+                        "modifiers": "",
+                        "timestamp": "2025-06-19T11:35:16.054Z"
+                    },
+                    {
+                        "key": "A",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.062Z"
+                    },
+                    {
+                        "key": "E",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.064Z"
+                    },
+                    {
+                        "key": "G",
+                        "modifiers": "Shift",
+                        "timestamp": "2025-06-19T11:35:16.067Z"
+                    }
+                ],
+                "specificKeyEvents": []
+            },
+            "mouse": {
+                "clicks": [
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:58.394Z",
+                        "x": 337,
+                        "y": 637
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:59.480Z",
+                        "x": 983,
+                        "y": 610
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:00.507Z",
+                        "x": 883,
+                        "y": 62
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:01.362Z",
+                        "x": 1263,
+                        "y": 260
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:02.731Z",
+                        "x": 435,
+                        "y": 321
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:03.612Z",
+                        "x": 560,
+                        "y": 482
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:10.392Z",
+                        "x": 713,
+                        "y": 553
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:17.999Z",
+                        "x": 873,
+                        "y": 622
+                    }
+                ],
+                "mouseDowns": [
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:58.392Z",
+                        "type": "mousedown",
+                        "x": 337,
+                        "y": 637
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:59.477Z",
+                        "type": "mousedown",
+                        "x": 983,
+                        "y": 610
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:00.506Z",
+                        "type": "mousedown",
+                        "x": 883,
+                        "y": 62
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:01.359Z",
+                        "type": "mousedown",
+                        "x": 1263,
+                        "y": 260
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:02.730Z",
+                        "type": "mousedown",
+                        "x": 435,
+                        "y": 321
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:03.605Z",
+                        "type": "mousedown",
+                        "x": 560,
+                        "y": 482
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:10.390Z",
+                        "type": "mousedown",
+                        "x": 713,
+                        "y": 553
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:17.997Z",
+                        "type": "mousedown",
+                        "x": 873,
+                        "y": 622
+                    }
+                ],
+                "mouseUps": [
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:58.394Z",
+                        "type": "mouseup",
+                        "x": 337,
+                        "y": 637
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:34:59.480Z",
+                        "type": "mouseup",
+                        "x": 983,
+                        "y": 610
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:00.507Z",
+                        "type": "mouseup",
+                        "x": 883,
+                        "y": 62
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:01.362Z",
+                        "type": "mouseup",
+                        "x": 1263,
+                        "y": 260
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:02.731Z",
+                        "type": "mouseup",
+                        "x": 435,
+                        "y": 321
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:03.612Z",
+                        "type": "mouseup",
+                        "x": 560,
+                        "y": 482
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:10.392Z",
+                        "type": "mouseup",
+                        "x": 713,
+                        "y": 553
+                    },
+                    {
+                        "button": 0,
+                        "timestamp": "2025-06-19T11:35:17.999Z",
+                        "type": "mouseup",
+                        "x": 873,
+                        "y": 622
+                    }
+                ],
+                "movements": [
+                    {
+                        "timestamp": "2025-06-19T11:34:57.474Z",
+                        "x": 12,
+                        "y": 2
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.489Z",
+                        "x": 23,
+                        "y": 2
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.512Z",
+                        "x": 32,
+                        "y": 8
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.526Z",
+                        "x": 40,
+                        "y": 15
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.540Z",
+                        "x": 48,
+                        "y": 23
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.573Z",
+                        "x": 54,
+                        "y": 31
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.580Z",
+                        "x": 60,
+                        "y": 42
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.598Z",
+                        "x": 65,
+                        "y": 52
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.614Z",
+                        "x": 69,
+                        "y": 66
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.624Z",
+                        "x": 74,
+                        "y": 81
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.642Z",
+                        "x": 78,
+                        "y": 94
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.655Z",
+                        "x": 82,
+                        "y": 107
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.672Z",
+                        "x": 87,
+                        "y": 125
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.691Z",
+                        "x": 91,
+                        "y": 141
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.709Z",
+                        "x": 96,
+                        "y": 158
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.723Z",
+                        "x": 101,
+                        "y": 177
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.740Z",
+                        "x": 106,
+                        "y": 191
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.757Z",
+                        "x": 111,
+                        "y": 210
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.771Z",
+                        "x": 116,
+                        "y": 228
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.789Z",
+                        "x": 122,
+                        "y": 245
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.806Z",
+                        "x": 129,
+                        "y": 264
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.822Z",
+                        "x": 135,
+                        "y": 284
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.841Z",
+                        "x": 142,
+                        "y": 302
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.857Z",
+                        "x": 149,
+                        "y": 318
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.874Z",
+                        "x": 157,
+                        "y": 334
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.892Z",
+                        "x": 165,
+                        "y": 356
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.906Z",
+                        "x": 173,
+                        "y": 373
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.924Z",
+                        "x": 181,
+                        "y": 389
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.941Z",
+                        "x": 189,
+                        "y": 405
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.961Z",
+                        "x": 197,
+                        "y": 423
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.973Z",
+                        "x": 206,
+                        "y": 439
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:57.989Z",
+                        "x": 214,
+                        "y": 455
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.006Z",
+                        "x": 223,
+                        "y": 469
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.023Z",
+                        "x": 231,
+                        "y": 482
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.040Z",
+                        "x": 240,
+                        "y": 500
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.058Z",
+                        "x": 249,
+                        "y": 512
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.071Z",
+                        "x": 256,
+                        "y": 524
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.088Z",
+                        "x": 265,
+                        "y": 535
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.108Z",
+                        "x": 272,
+                        "y": 548
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.125Z",
+                        "x": 280,
+                        "y": 559
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.142Z",
+                        "x": 287,
+                        "y": 570
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.155Z",
+                        "x": 294,
+                        "y": 580
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.173Z",
+                        "x": 300,
+                        "y": 588
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.190Z",
+                        "x": 306,
+                        "y": 600
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.206Z",
+                        "x": 312,
+                        "y": 607
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.223Z",
+                        "x": 317,
+                        "y": 612
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.239Z",
+                        "x": 321,
+                        "y": 617
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.257Z",
+                        "x": 325,
+                        "y": 622
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.270Z",
+                        "x": 328,
+                        "y": 627
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.288Z",
+                        "x": 331,
+                        "y": 630
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.305Z",
+                        "x": 334,
+                        "y": 633
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.324Z",
+                        "x": 335,
+                        "y": 636
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.341Z",
+                        "x": 335,
+                        "y": 636
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.358Z",
+                        "x": 337,
+                        "y": 637
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.643Z",
+                        "x": 386,
+                        "y": 637
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.656Z",
+                        "x": 427,
+                        "y": 633
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.677Z",
+                        "x": 461,
+                        "y": 631
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.702Z",
+                        "x": 486,
+                        "y": 629
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.722Z",
+                        "x": 505,
+                        "y": 626
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.743Z",
+                        "x": 520,
+                        "y": 624
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.758Z",
+                        "x": 531,
+                        "y": 621
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.784Z",
+                        "x": 539,
+                        "y": 614
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.791Z",
+                        "x": 545,
+                        "y": 615
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.815Z",
+                        "x": 548,
+                        "y": 613
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.824Z",
+                        "x": 551,
+                        "y": 608
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.844Z",
+                        "x": 554,
+                        "y": 607
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.856Z",
+                        "x": 556,
+                        "y": 605
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.875Z",
+                        "x": 558,
+                        "y": 605
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.889Z",
+                        "x": 562,
+                        "y": 599
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.909Z",
+                        "x": 565,
+                        "y": 600
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.921Z",
+                        "x": 570,
+                        "y": 598
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.937Z",
+                        "x": 577,
+                        "y": 596
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.954Z",
+                        "x": 584,
+                        "y": 596
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.971Z",
+                        "x": 593,
+                        "y": 597
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:58.991Z",
+                        "x": 603,
+                        "y": 595
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.008Z",
+                        "x": 614,
+                        "y": 596
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.020Z",
+                        "x": 628,
+                        "y": 596
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.038Z",
+                        "x": 641,
+                        "y": 596
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.057Z",
+                        "x": 656,
+                        "y": 593
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.074Z",
+                        "x": 673,
+                        "y": 596
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.091Z",
+                        "x": 690,
+                        "y": 599
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.109Z",
+                        "x": 709,
+                        "y": 595
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.136Z",
+                        "x": 726,
+                        "y": 596
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.143Z",
+                        "x": 747,
+                        "y": 597
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.155Z",
+                        "x": 766,
+                        "y": 599
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.173Z",
+                        "x": 786,
+                        "y": 600
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.190Z",
+                        "x": 806,
+                        "y": 601
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.208Z",
+                        "x": 825,
+                        "y": 602
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.225Z",
+                        "x": 842,
+                        "y": 604
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.237Z",
+                        "x": 860,
+                        "y": 605
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.255Z",
+                        "x": 879,
+                        "y": 604
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.276Z",
+                        "x": 896,
+                        "y": 606
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.290Z",
+                        "x": 910,
+                        "y": 604
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.307Z",
+                        "x": 925,
+                        "y": 607
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.321Z",
+                        "x": 938,
+                        "y": 610
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.341Z",
+                        "x": 947,
+                        "y": 606
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.357Z",
+                        "x": 960,
+                        "y": 609
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.370Z",
+                        "x": 966,
+                        "y": 609
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.387Z",
+                        "x": 973,
+                        "y": 610
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.410Z",
+                        "x": 976,
+                        "y": 609
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.422Z",
+                        "x": 979,
+                        "y": 611
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.440Z",
+                        "x": 983,
+                        "y": 610
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.808Z",
+                        "x": 971,
+                        "y": 597
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.824Z",
+                        "x": 961,
+                        "y": 583
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.838Z",
+                        "x": 953,
+                        "y": 567
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.858Z",
+                        "x": 945,
+                        "y": 552
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.873Z",
+                        "x": 939,
+                        "y": 533
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.902Z",
+                        "x": 934,
+                        "y": 515
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.913Z",
+                        "x": 929,
+                        "y": 497
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.921Z",
+                        "x": 925,
+                        "y": 475
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.939Z",
+                        "x": 922,
+                        "y": 457
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.955Z",
+                        "x": 919,
+                        "y": 436
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.972Z",
+                        "x": 917,
+                        "y": 414
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:34:59.989Z",
+                        "x": 915,
+                        "y": 393
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.006Z",
+                        "x": 913,
+                        "y": 373
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.025Z",
+                        "x": 911,
+                        "y": 353
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.042Z",
+                        "x": 909,
+                        "y": 334
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.054Z",
+                        "x": 908,
+                        "y": 313
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.076Z",
+                        "x": 906,
+                        "y": 295
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.088Z",
+                        "x": 905,
+                        "y": 279
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.104Z",
+                        "x": 904,
+                        "y": 258
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.121Z",
+                        "x": 902,
+                        "y": 244
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.138Z",
+                        "x": 901,
+                        "y": 226
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.155Z",
+                        "x": 900,
+                        "y": 210
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.172Z",
+                        "x": 899,
+                        "y": 196
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.189Z",
+                        "x": 897,
+                        "y": 182
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.205Z",
+                        "x": 896,
+                        "y": 169
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.222Z",
+                        "x": 895,
+                        "y": 157
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.239Z",
+                        "x": 893,
+                        "y": 145
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.256Z",
+                        "x": 892,
+                        "y": 132
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.273Z",
+                        "x": 891,
+                        "y": 121
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.295Z",
+                        "x": 890,
+                        "y": 113
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.307Z",
+                        "x": 889,
+                        "y": 104
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.325Z",
+                        "x": 888,
+                        "y": 97
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.339Z",
+                        "x": 887,
+                        "y": 89
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.358Z",
+                        "x": 886,
+                        "y": 85
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.376Z",
+                        "x": 885,
+                        "y": 76
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.388Z",
+                        "x": 884,
+                        "y": 75
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.405Z",
+                        "x": 884,
+                        "y": 70
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.423Z",
+                        "x": 883,
+                        "y": 68
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.441Z",
+                        "x": 883,
+                        "y": 64
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.458Z",
+                        "x": 883,
+                        "y": 65
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.475Z",
+                        "x": 883,
+                        "y": 62
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.825Z",
+                        "x": 906,
+                        "y": 68
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.837Z",
+                        "x": 926,
+                        "y": 73
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.858Z",
+                        "x": 942,
+                        "y": 80
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.881Z",
+                        "x": 958,
+                        "y": 92
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.888Z",
+                        "x": 971,
+                        "y": 104
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.904Z",
+                        "x": 984,
+                        "y": 115
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.922Z",
+                        "x": 996,
+                        "y": 131
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.939Z",
+                        "x": 1008,
+                        "y": 140
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.956Z",
+                        "x": 1020,
+                        "y": 152
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.974Z",
+                        "x": 1032,
+                        "y": 164
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:00.992Z",
+                        "x": 1045,
+                        "y": 175
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.004Z",
+                        "x": 1058,
+                        "y": 183
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.021Z",
+                        "x": 1072,
+                        "y": 195
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.038Z",
+                        "x": 1086,
+                        "y": 207
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.055Z",
+                        "x": 1101,
+                        "y": 214
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.073Z",
+                        "x": 1115,
+                        "y": 220
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.089Z",
+                        "x": 1129,
+                        "y": 228
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.106Z",
+                        "x": 1144,
+                        "y": 233
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.122Z",
+                        "x": 1159,
+                        "y": 239
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.139Z",
+                        "x": 1173,
+                        "y": 243
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.157Z",
+                        "x": 1186,
+                        "y": 246
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.174Z",
+                        "x": 1200,
+                        "y": 250
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.191Z",
+                        "x": 1211,
+                        "y": 249
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.208Z",
+                        "x": 1222,
+                        "y": 253
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.235Z",
+                        "x": 1232,
+                        "y": 254
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.242Z",
+                        "x": 1242,
+                        "y": 260
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.258Z",
+                        "x": 1248,
+                        "y": 258
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.271Z",
+                        "x": 1254,
+                        "y": 258
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.304Z",
+                        "x": 1258,
+                        "y": 263
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.311Z",
+                        "x": 1260,
+                        "y": 260
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.323Z",
+                        "x": 1263,
+                        "y": 260
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.676Z",
+                        "x": 1250,
+                        "y": 263
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.689Z",
+                        "x": 1239,
+                        "y": 265
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.707Z",
+                        "x": 1228,
+                        "y": 270
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.724Z",
+                        "x": 1217,
+                        "y": 271
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.742Z",
+                        "x": 1206,
+                        "y": 273
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.760Z",
+                        "x": 1196,
+                        "y": 278
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.772Z",
+                        "x": 1185,
+                        "y": 278
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.790Z",
+                        "x": 1175,
+                        "y": 281
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.808Z",
+                        "x": 1164,
+                        "y": 281
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.826Z",
+                        "x": 1152,
+                        "y": 285
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.839Z",
+                        "x": 1141,
+                        "y": 289
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.856Z",
+                        "x": 1129,
+                        "y": 287
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.874Z",
+                        "x": 1117,
+                        "y": 290
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.891Z",
+                        "x": 1105,
+                        "y": 292
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.904Z",
+                        "x": 1092,
+                        "y": 293
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.921Z",
+                        "x": 1078,
+                        "y": 295
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.939Z",
+                        "x": 1064,
+                        "y": 296
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.957Z",
+                        "x": 1050,
+                        "y": 297
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.974Z",
+                        "x": 1034,
+                        "y": 299
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:01.991Z",
+                        "x": 1019,
+                        "y": 298
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.003Z",
+                        "x": 1003,
+                        "y": 300
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.021Z",
+                        "x": 987,
+                        "y": 304
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.039Z",
+                        "x": 970,
+                        "y": 304
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.057Z",
+                        "x": 953,
+                        "y": 304
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.077Z",
+                        "x": 935,
+                        "y": 307
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.115Z",
+                        "x": 917,
+                        "y": 307
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.123Z",
+                        "x": 899,
+                        "y": 310
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.132Z",
+                        "x": 881,
+                        "y": 309
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.139Z",
+                        "x": 862,
+                        "y": 307
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.158Z",
+                        "x": 844,
+                        "y": 311
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.171Z",
+                        "x": 824,
+                        "y": 312
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.189Z",
+                        "x": 805,
+                        "y": 313
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.208Z",
+                        "x": 786,
+                        "y": 313
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.220Z",
+                        "x": 767,
+                        "y": 313
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.237Z",
+                        "x": 748,
+                        "y": 315
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.254Z",
+                        "x": 729,
+                        "y": 314
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.276Z",
+                        "x": 711,
+                        "y": 317
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.288Z",
+                        "x": 692,
+                        "y": 315
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.306Z",
+                        "x": 674,
+                        "y": 317
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.327Z",
+                        "x": 657,
+                        "y": 315
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.341Z",
+                        "x": 638,
+                        "y": 319
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.358Z",
+                        "x": 623,
+                        "y": 318
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.374Z",
+                        "x": 605,
+                        "y": 317
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.392Z",
+                        "x": 589,
+                        "y": 317
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.404Z",
+                        "x": 575,
+                        "y": 317
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.421Z",
+                        "x": 560,
+                        "y": 319
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.443Z",
+                        "x": 545,
+                        "y": 319
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.460Z",
+                        "x": 532,
+                        "y": 318
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.477Z",
+                        "x": 519,
+                        "y": 320
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.493Z",
+                        "x": 506,
+                        "y": 320
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.505Z",
+                        "x": 497,
+                        "y": 321
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.525Z",
+                        "x": 486,
+                        "y": 320
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.542Z",
+                        "x": 477,
+                        "y": 320
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.554Z",
+                        "x": 467,
+                        "y": 319
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.576Z",
+                        "x": 460,
+                        "y": 322
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.588Z",
+                        "x": 453,
+                        "y": 324
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.605Z",
+                        "x": 449,
+                        "y": 322
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.622Z",
+                        "x": 444,
+                        "y": 323
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.639Z",
+                        "x": 439,
+                        "y": 321
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.656Z",
+                        "x": 437,
+                        "y": 324
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.673Z",
+                        "x": 437,
+                        "y": 324
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:02.689Z",
+                        "x": 435,
+                        "y": 321
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.363Z",
+                        "x": 440,
+                        "y": 342
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.371Z",
+                        "x": 450,
+                        "y": 350
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.388Z",
+                        "x": 464,
+                        "y": 350
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.405Z",
+                        "x": 479,
+                        "y": 353
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.426Z",
+                        "x": 493,
+                        "y": 355
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.440Z",
+                        "x": 507,
+                        "y": 365
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.458Z",
+                        "x": 520,
+                        "y": 381
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.470Z",
+                        "x": 530,
+                        "y": 396
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.488Z",
+                        "x": 540,
+                        "y": 418
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.505Z",
+                        "x": 546,
+                        "y": 435
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.522Z",
+                        "x": 552,
+                        "y": 455
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.546Z",
+                        "x": 556,
+                        "y": 466
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.558Z",
+                        "x": 559,
+                        "y": 479
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:03.570Z",
+                        "x": 560,
+                        "y": 482
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:10.193Z",
+                        "x": 630,
+                        "y": 517
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:10.205Z",
+                        "x": 650,
+                        "y": 534
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:10.222Z",
+                        "x": 646,
+                        "y": 542
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:10.240Z",
+                        "x": 639,
+                        "y": 543
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:10.257Z",
+                        "x": 637,
+                        "y": 544
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:10.271Z",
+                        "x": 644,
+                        "y": 546
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:10.288Z",
+                        "x": 658,
+                        "y": 546
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:10.305Z",
+                        "x": 677,
+                        "y": 549
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:10.322Z",
+                        "x": 693,
+                        "y": 551
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:10.340Z",
+                        "x": 705,
+                        "y": 554
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:10.357Z",
+                        "x": 713,
+                        "y": 553
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.774Z",
+                        "x": 797,
+                        "y": 595
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.790Z",
+                        "x": 838,
+                        "y": 625
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.808Z",
+                        "x": 852,
+                        "y": 643
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.820Z",
+                        "x": 854,
+                        "y": 651
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.836Z",
+                        "x": 853,
+                        "y": 653
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.858Z",
+                        "x": 851,
+                        "y": 649
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.870Z",
+                        "x": 853,
+                        "y": 644
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.887Z",
+                        "x": 856,
+                        "y": 637
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.904Z",
+                        "x": 862,
+                        "y": 630
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.921Z",
+                        "x": 867,
+                        "y": 626
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.944Z",
+                        "x": 870,
+                        "y": 626
+                    },
+                    {
+                        "timestamp": "2025-06-19T11:35:17.956Z",
+                        "x": 873,
+                        "y": 622
+                    }
+                ]
+            },
+            "signInButton": {
+                "hoverToClickTime": 86,
+                "mouseLeaveCount": 2
+            }
+        },
+        "project_id": "wDcE6ilhc5q0PBn1lOjItTwCO9o259wO",
+        "user_id": "BfqpewhFJh8sqRYXkobWnE2HFQedWsCm"
+    }
+}
