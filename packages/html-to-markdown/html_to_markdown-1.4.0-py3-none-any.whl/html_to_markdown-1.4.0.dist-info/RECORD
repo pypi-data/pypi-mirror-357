@@ -1,0 +1,14 @@
+html_to_markdown/__init__.py,sha256=95S7_7mR_g88uTnFI0FaRNykrtAaSKb6sJbwSea2zjk,145
+html_to_markdown/__main__.py,sha256=DJyJX7NIK0BVPNS2r3BYJ0Ci_lKHhgVOpw7ZEqACH3c,323
+html_to_markdown/cli.py,sha256=Kfh2sF_ySE_fQ0qdwvUZ5Rqx-P4Y12uTpG8xF60gAq0,4789
+html_to_markdown/constants.py,sha256=Usk67k18tuRovJpKDsiEXdgH20KgqI9KOnK4Fbx-M5c,547
+html_to_markdown/converters.py,sha256=SHRAV1qIFQQdXSD_TToR_F_t8hw3-amz8rIs2Q84YbQ,12276
+html_to_markdown/processing.py,sha256=mzF6YNqhj2VoRN6_TafnZ4ZndOyFglsZXTNnOl4uvWM,10564
+html_to_markdown/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+html_to_markdown/utils.py,sha256=HJUDej5HSpXRtYv-OkCyD0hwnPnVfQCwY6rBRlIOt9s,1989
+html_to_markdown-1.4.0.dist-info/licenses/LICENSE,sha256=3J_HR5BWvUM1mlIrlkF32-uC1FM64gy8JfG17LBuheQ,1122
+html_to_markdown-1.4.0.dist-info/METADATA,sha256=LmjDer-QQkH6kSlkua1NBhnaKpIu4sVvyJZPPX5PgLk,8229
+html_to_markdown-1.4.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+html_to_markdown-1.4.0.dist-info/entry_points.txt,sha256=xmFijrTfgYW7lOrZxZGRPciicQHa5KiXKkUhBCmICtQ,116
+html_to_markdown-1.4.0.dist-info/top_level.txt,sha256=Ev6djb1c4dSKr_-n4K-FpEGDkzBigXY6LuZ5onqS7AE,17
+html_to_markdown-1.4.0.dist-info/RECORD,,
