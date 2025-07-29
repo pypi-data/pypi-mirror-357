@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "geviewer.__version__"}
+
+[project]
+dynamic = ["version"]
+name = "geviewer"
+description = "A convenient, Python-based visualization tool for Geant4."
+authors = [{ name = "Clarke Hardy", email = "cahardy@stanford.edu" }]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["PyQt6",
+                "pyvistaqt",
+                "lxml",
+                "tqdm"]
+keywords = ["geant4",
+            "viewer",
+            "visualizer",
+            "display",
+            "event",
+            "simulation",
+            "hep",
+            "physics",
+            "particle",
+            "track",
+            "detector",
+            "geometry",
+            "vrml",
+            "heprep"]
+
+[project.scripts]
+geviewer = "geviewer.geviewer:main"
+gev-converter = "geviewer.converter:main"
+
+[project.urls]
+repository = "https://github.com/clarkehardy/geviewer.git"
+documentation = "https://geviewer.readthedocs.io/"
