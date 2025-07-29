@@ -1,0 +1,5 @@
+setup.py
+cloudx_base.egg-info/PKG-INFO
+cloudx_base.egg-info/SOURCES.txt
+cloudx_base.egg-info/dependency_links.txt
+cloudx_base.egg-info/top_level.txt
