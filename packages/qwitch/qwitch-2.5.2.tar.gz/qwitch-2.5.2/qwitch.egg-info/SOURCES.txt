@@ -1,0 +1,13 @@
+LICENCE
+README.md
+pyproject.toml
+qwitch/__init__.py
+qwitch/api.py
+qwitch/config.py
+qwitch/qwitch.py
+qwitch.egg-info/PKG-INFO
+qwitch.egg-info/SOURCES.txt
+qwitch.egg-info/dependency_links.txt
+qwitch.egg-info/entry_points.txt
+qwitch.egg-info/requires.txt
+qwitch.egg-info/top_level.txt
