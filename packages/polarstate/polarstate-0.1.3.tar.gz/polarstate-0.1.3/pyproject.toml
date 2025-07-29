@@ -1,0 +1,45 @@
+[project]
+name = "polarstate"
+version = "0.1.3"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Uriah Finkel", email = "Ufinkel@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "polars>=1.30.0",
+]
+
+[project.scripts]
+polarstate = "polarstate:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "lifelines>=0.30.0",
+    "nbclient>=0.10.2",
+    "nbformat>=5.10.4",
+    "pandas>=2.2.3",
+    "polars>=1.30.0",
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "quartodoc>=0.10.0",
+    "ruff>=0.11.11",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+
+[tool.hatch.build]
+packages = ["polarstate"]
+sources = { polarstate = "src/polarstate" }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/polarstate"]
