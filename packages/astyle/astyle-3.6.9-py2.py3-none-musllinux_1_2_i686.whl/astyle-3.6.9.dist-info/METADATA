@@ -1,0 +1,49 @@
+Metadata-Version: 2.2
+Name: astyle
+Version: 3.6.9
+Summary: Artistic Style is a source code indenter, formatter, and beautifier for the C, C++, C++/CLI, Objective‑C, C# and Java programming languages
+Keywords: formatter
+Author: Tal Davidson
+Author-Email: Andre Simon <as@andre-simon.de>, Jim Pattee <jimp03@1fe3c263-5997-42ff-936f-87a7378ef0cd>
+License: GPL v3
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Project-URL: Homepage, http://astyle.sourceforge.net
+Project-URL: Download, https://github.com/Freed-Wu/astyle-wheel/releases
+Project-URL: Bug Report, https://github.com/Freed-Wu/astyle-wheel/issues
+Project-URL: Source, https://github.com/Freed-Wu/astyle-wheel
+Requires-Python: >=3.10
+Provides-Extra: dev
+Requires-Dist: pytest-cov; extra == "dev"
+Description-Content-Type: text/markdown
+
+# Astyle
+
+This project packages the [astyle](https://gitlab.com/saalen/astyle) utility as
+a Python package.
+
+```shell
+pip install astyle
+astyle --help
+```
+
+### Alternatives
+
+- [clang-format](https://github.com/ssciwr/clang-format-wheel)
+
+### Python Wheels
+
+Refer [wiki](https://github.com/xmake-io/xmake-wheel/wiki).
