@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+book_management_system/__init__.py
+book_management_system/__main__.py
+book_management_system_001.egg-info/PKG-INFO
+book_management_system_001.egg-info/SOURCES.txt
+book_management_system_001.egg-info/dependency_links.txt
+book_management_system_001.egg-info/top_level.txt
