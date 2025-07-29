@@ -1,0 +1,10 @@
+README.md
+setup.py
+src/ai_assistant/__init__.py
+src/ai_assistant/ai_assistant.py
+src/ai_assistant/piper_helper.py
+src/ai_assistant_sm.egg-info/PKG-INFO
+src/ai_assistant_sm.egg-info/SOURCES.txt
+src/ai_assistant_sm.egg-info/dependency_links.txt
+src/ai_assistant_sm.egg-info/requires.txt
+src/ai_assistant_sm.egg-info/top_level.txt
