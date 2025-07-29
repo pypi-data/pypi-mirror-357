@@ -1,0 +1,17 @@
+Copyright 2025 @thejcannon
+
+- You have the right to remain silent
+- You have the right to deal in the Software without restriction
+- You have the right to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software
+- You have the right to permit persons to whom the Software is furnished to do so
+- If you cannot afford these rights, they will be appointed to you free of charge
+- Anything you import can and will be broken in a production environment
+- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software
+
+Do you understand these rights as they have been read to you?
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES THAT YOUR IMPORTS WILL
+EVER WORK THE SAME WAY TWICE. By using this software, you acknowledge that
+you are about to do terrible things to Python's runtime and you're
+not even sorry.
