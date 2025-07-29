@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gestao-alunos"
+version = "0.1.1"
+description = "Sistema de gestão de alunos, docentes, turmas e disciplinas"
+authors = [
+    { name = "Grupo 2 MADS 2ano", email = "teu@email.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.7"
+dependencies = ["tabulate"]
+
+[tool.setuptools.packages.find]
+where = ["gestao_alunos"]
