@@ -1,0 +1,299 @@
+Metadata-Version: 2.4
+Name: geo-mcp-server
+Version: 0.1.0
+Summary: A Model Context Protocol (MCP) server for accessing GEO (Gene Expression Omnibus) data through NCBI E-Utils API
+Project-URL: Homepage, https://github.com/yourusername/geo-mcp-server
+Project-URL: Repository, https://github.com/yourusername/geo-mcp-server
+Project-URL: Documentation, https://github.com/yourusername/geo-mcp-server#readme
+Project-URL: Bug Tracker, https://github.com/yourusername/geo-mcp-server/issues
+Author-email: GEO MCP Contributors <your.email@example.com>
+License: MIT
+License-File: LICENSE
+Keywords: bioinformatics,e-utils,gene-expression,geo,mcp,ncbi
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Requires-Dist: aiofiles>=23.0.0
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: fastapi>=0.100.0
+Requires-Dist: mcp[cli]>=1.9.4
+Requires-Dist: requests>=2.31.0
+Requires-Dist: uvicorn>=0.20.0
+Provides-Extra: dev
+Requires-Dist: black>=23.0.0; extra == 'dev'
+Requires-Dist: mypy>=1.0.0; extra == 'dev'
+Requires-Dist: pytest-asyncio>=0.21.0; extra == 'dev'
+Requires-Dist: pytest>=7.0.0; extra == 'dev'
+Requires-Dist: ruff>=0.1.0; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: pytest-asyncio>=0.21.0; extra == 'test'
+Requires-Dist: pytest>=7.0.0; extra == 'test'
+Description-Content-Type: text/markdown
+
+# Gene Expression Omnibus (GEO) MCP
+
+<div align="center">
+  <img src="https://www.ncbi.nlm.nih.gov/geo/images/geo_logo.gif" alt="GEO Logo" width="200"/>
+  <br/>
+  <em>Gene Expression Omnibus (GEO) - A public functional genomics data repository</em>
+</div>
+
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MCP](https://img.shields.io/badge/MCP-Protocol-blue.svg)](https://modelcontextprotocol.io/)
+[![GEO](https://img.shields.io/badge/GEO-NCBI-orange.svg)](https://www.ncbi.nlm.nih.gov/geo/)
+
+> ⚠️ **Development Warning** ⚠️
+> 
+> **This project is currently in active development and is not yet production-ready.**
+> 
+> - The MCP stdio server is functional but may have bugs or incomplete features
+> - The HTTP server is in early development phase and has **not been properly tested**
+> - API endpoints and functionality may change without notice
+> - Use at your own risk and report any issues you encounter
+> 
+> We recommend testing thoroughly in a development environment before using in production.
+
+A Model Context Protocol (MCP) server for accessing [GEO (Gene Expression Omnibus)](https://www.ncbi.nlm.nih.gov/geo/) data through NCBI E-Utils API.
+
+## Use Cases
+
+This MCP server is designed for researchers, bioinformaticians, and developers who need to:
+
+- **Search gene expression data** across multiple GEO databases
+- **Integrate GEO data** into AI/ML workflows through MCP
+- **Build applications** that require real-time access to gene expression data
+- **Automate data retrieval** from GEO for research projects
+- **Create data pipelines** that combine GEO data with other bioinformatics resources
+
+### Common Applications
+
+- **Research Projects**: Quickly search for relevant gene expression studies
+- **Data Analysis**: Retrieve datasets for downstream analysis
+- **Literature Review**: Find gene expression data related to specific genes or conditions
+- **Tool Development**: Build applications that leverage GEO data
+- **Educational Purposes**: Learn about gene expression data and bioinformatics
+
+## About GEO
+
+[**Gene Expression Omnibus (GEO)**](https://www.ncbi.nlm.nih.gov/geo/) is a public functional genomics data repository supporting MIAME-compliant data submissions. GEO serves as a comprehensive resource for gene expression data, supporting both array- and sequence-based data.
+
+### What is GEO?
+
+GEO is a public repository that archives and freely distributes microarray, next-generation sequencing, and other forms of high-throughput functional genomics data submitted by the research community. The database supports MIAME (Minimum Information About a Microarray Experiment) compliant data submissions.
+
+### Key GEO Resources
+
+- **[GEO Profiles](https://www.ncbi.nlm.nih.gov/geo/info/profiles.html)** - Gene expression profiles across different biological contexts
+- **[GEO DataSets](https://www.ncbi.nlm.nih.gov/geo/info/datasets.html)** - Curated gene expression datasets
+- **[GEO Series](https://www.ncbi.nlm.nih.gov/geo/info/series.html)** - Original submitter-supplied records
+- **[GEO Samples](https://www.ncbi.nlm.nih.gov/geo/info/samples.html)** - Individual sample records
+- **[GEO Platforms](https://www.ncbi.nlm.nih.gov/geo/info/platforms.html)** - Microarray platform definitions
+
+### Why Use GEO?
+
+GEO provides access to:
+- **Over 5 million samples** from more than 200,000 studies
+- **Gene expression data** from various organisms and experimental conditions
+- **Standardized data formats** for easy analysis and comparison
+- **Comprehensive metadata** for reproducible research
+- **Free access** to all data and tools
+
+For more information, visit the [official GEO website](https://www.ncbi.nlm.nih.gov/geo/) or read the [GEO documentation](https://www.ncbi.nlm.nih.gov/geo/info/).
+
+## About NCBI E-Utils API
+
+This MCP server uses the [NCBI E-Utilities (E-Utils)](https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/) API to access GEO data. E-Utils is a suite of server-side programs that provide a stable interface into the NCBI databases for retrieving records, performing searches, and accessing data.
+
+### E-Utils Features
+- **RESTful API** - Simple HTTP requests for data access
+- **Multiple databases** - Access to GEO, PubMed, GenBank, and more
+- **Rate limiting** - Respectful API usage with configurable limits
+- **Free access** - No cost for basic usage (with rate limits)
+
+### Rate Limits
+- **Without API key**: 3 requests per second
+- **With API key**: 10 requests per second
+- **Best practices**: Implement delays between requests to avoid hitting limits
+
+For more information about E-Utils, visit the [official documentation](https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/).
+
+## Features
+
+- Search [GEO Profiles](https://www.ncbi.nlm.nih.gov/geo/info/profiles.html) database for gene expression profiles
+- Search [GEO DataSets](https://www.ncbi.nlm.nih.gov/geo/info/datasets.html) database for gene expression datasets  
+- Search [GEO Series](https://www.ncbi.nlm.nih.gov/geo/info/series.html) database for gene expression series
+- Search [GEO Samples](https://www.ncbi.nlm.nih.gov/geo/info/samples.html) database for gene expression samples
+- Search [GEO Platforms](https://www.ncbi.nlm.nih.gov/geo/info/platforms.html) database for microarray platforms
+- Support for both MCP stdio protocol and HTTP API
+- Direct integration with NCBI E-Utils API for real-time data access
+
+## Setup
+
+### Option 1: Using conda (recommended)
+```bash
+conda create -n geo-mcp-server python=3.10
+conda activate geo-mcp-server
+cd geo_mcp_server
+pip install -e .
+```
+
+### Option 2: Using pip directly
+```bash
+cd geo_mcp_server
+pip install -e .
+```
+
+## Configuration
+
+Create a `config.json` file in the `geo_mcp_server` folder with the following format:
+
+```json
+{
+    "base_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+    "email": "your_email@example.com",
+    "api_key": "YOUR_API_KEY"
+}
+```
+
+### Configuration Options
+
+- **`base_url`** (required): The NCBI E-Utils API base URL
+- **`email`** (required): Your email address for NCBI tracking and support
+- **`api_key`** (optional): Your NCBI API key for higher rate limits
+
+### Getting an NCBI API Key
+
+1. Visit the [NCBI API Key Registration](https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/) page
+2. Sign in with your NCBI account (or create one)
+3. Request a free API key
+4. Add the key to your `config.json` file
+
+**Note:** The `api_key` is optional but highly recommended for higher rate limits (10 requests/second vs 3 requests/second without a key). You can get a free API key from [NCBI](https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/).
+
+## Usage
+
+### MCP Server (stdio mode)
+For use with MCP clients like Claude Desktop:
+
+```bash
+cd geo_mcp_server
+python main.py --mode stdio
+```
+
+### HTTP Server (localhost:8000)
+For HTTP API access:
+
+```bash
+# Option 1: Using the main script
+cd geo_mcp_server
+python main.py --mode http --host localhost --port 8000
+
+# Option 2: Using the convenience script
+python run_server.py
+```
+
+### HTTP API Endpoints
+
+Once the HTTP server is running on localhost:8000, you can access:
+
+- **Root**: `GET /` - Server status
+- **Health Check**: `GET /health` - Health check endpoint
+- **List Tools**: `GET /tools` - List all available tools
+- **Call Tool**: `POST /tools/call` - Execute a tool with arguments
+- **API Documentation**: `GET /docs` - Interactive API documentation (Swagger UI)
+
+### Example HTTP API Usage
+
+```bash
+# List available tools
+curl http://localhost:8000/tools
+
+# Search GEO Profiles
+curl -X POST http://localhost:8000/tools/call \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "search_geo_profiles",
+    "arguments": {
+      "term": "cancer",
+      "retmax": 5
+    }
+  }'
+
+# Search GEO Datasets
+curl -X POST http://localhost:8000/tools/call \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "search_geo_datasets", 
+    "arguments": {
+      "term": "breast cancer",
+      "retmax": 10
+    }
+  }'
+```
+
+## Available Tools
+
+This MCP server provides access to all major GEO databases through the following tools:
+
+### Search Tools
+
+- **`search_geo_profiles`** - Search gene expression profiles across different biological contexts
+  - *Example searches*: "cancer", "breast cancer", "p53", "apoptosis"
+  
+- **`search_geo_datasets`** - Search curated gene expression datasets
+  - *Example searches*: "diabetes", "Alzheimer's disease", "drug response", "tissue specific"
+  
+- **`search_geo_series`** - Search original submitter-supplied gene expression series
+  - *Example searches*: "GSE12345", "microarray", "RNA-seq", "time course"
+  
+- **`search_geo_samples`** - Search individual gene expression samples
+  - *Example searches*: "GSM123456", "human", "mouse", "tumor", "normal"
+  
+- **`search_geo_platforms`** - Search microarray platform definitions
+  - *Example searches*: "Affymetrix", "Illumina", "Agilent", "GPL96"
+
+### Search Parameters
+
+Each tool accepts:
+- **`term`** (required): Search term or query string
+- **`retmax`** (optional, default: 20): Maximum number of results to return
+
+### Example Search Terms
+
+Here are some example search terms you can use with each tool:
+
+#### GEO Profiles
+- Disease terms: "cancer", "diabetes", "Alzheimer's"
+- Gene names: "p53", "BRCA1", "EGFR"
+- Biological processes: "apoptosis", "cell cycle", "metabolism"
+
+#### GEO Datasets
+- Disease studies: "breast cancer", "lung cancer", "diabetes mellitus"
+- Experimental conditions: "drug treatment", "time course", "dose response"
+- Organisms: "human", "mouse", "rat", "drosophila"
+
+#### GEO Series
+- Series IDs: "GSE12345", "GSE67890"
+- Technology: "microarray", "RNA-seq", "ChIP-seq"
+- Study types: "case-control", "longitudinal", "intervention"
+
+#### GEO Samples
+- Sample IDs: "GSM123456", "GSM789012"
+- Sample types: "tumor", "normal", "control", "treated"
+- Tissues: "brain", "liver", "blood", "tumor"
+
+#### GEO Platforms
+- Platform IDs: "GPL96", "GPL570"
+- Manufacturers: "Affymetrix", "Illumina", "Agilent"
+- Technology: "microarray", "sequencing", "bead array"
+
+Each tool accepts a `term` parameter (required) and an optional `retmax` parameter (default: 20) to limit the number of results.
