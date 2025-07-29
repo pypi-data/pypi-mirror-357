@@ -1,0 +1,2 @@
+https://download.pytorch.org/whl/cu121
+https://miropsota.github.io/torch_packages_builder
