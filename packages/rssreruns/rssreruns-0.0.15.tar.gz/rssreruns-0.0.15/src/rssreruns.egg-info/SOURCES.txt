@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+pyproject.toml
+requirements-dev.txt
+requirements.txt
+src/rssreruns/__init__.py
+src/rssreruns/elementwrapper.py
+src/rssreruns/feedmodifier.py
+src/rssreruns.egg-info/PKG-INFO
+src/rssreruns.egg-info/SOURCES.txt
+src/rssreruns.egg-info/dependency_links.txt
+src/rssreruns.egg-info/requires.txt
+src/rssreruns.egg-info/top_level.txt
+test/test_elementwrapper.py
+test/test_feedmodifier.py
