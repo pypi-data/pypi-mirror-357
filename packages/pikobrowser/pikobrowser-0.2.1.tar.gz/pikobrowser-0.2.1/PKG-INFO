@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pikobrowser
+Version: 0.2.1
+Summary: Piko browser.
+Home-page: https://github.com/Jaggler3/term
+Author: Martin Darazs
+Author-email: martin.protostar@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6.0
+License-File: LICENSE
