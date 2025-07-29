@@ -1,0 +1,14 @@
+ollama_mcp_bridge/__init__.py,sha256=lRbbekQMnWQe5FovExAS8Hx5U9Fs2AtLA25D4PiRspg,180
+ollama_mcp_bridge/_version.py,sha256=l5eo51MdCumDFCp44TFT1JH8yCDo1krag-GJubLxnVo,511
+ollama_mcp_bridge/api.py,sha256=oepOkJBjxanQneV54xdzqCKq5ftTU6eiID3dMgkRX_c,3709
+ollama_mcp_bridge/lifecycle.py,sha256=QA_x2MnCpzXU7NieKnV9eVUiW5BpKGWb_1IfodZ_a14,2604
+ollama_mcp_bridge/main.py,sha256=L1KIiHQsNtetmAjpinZ9KMabLxVo_B4UfEVmeB7dmtw,2535
+ollama_mcp_bridge/mcp_manager.py,sha256=YYhAuB2rZZowGfH09zjTe38QpWiXGnJmubApgXnktaY,3117
+ollama_mcp_bridge/proxy_service.py,sha256=6V5s5DIXyudJob4W8wzWqNyYbqggM0x5tWLwTJTsU2A,8020
+ollama_mcp_bridge/schemas.py,sha256=X3pJL2uPxsiF64F62GH1SfjNFdNHxcx8iQ-lxniog3Y,406
+ollama_mcp_bridge/utils.py,sha256=WfBsHJUBsxiPDVebS9NU300PKN7unc3_iWkUblnSJeg,4750
+ollama_mcp_bridge-0.4.0.dist-info/METADATA,sha256=GPWwmmzz7_dDAkt6U2TQLwloAaVANkiqIUtkTfEHaj0,11260
+ollama_mcp_bridge-0.4.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ollama_mcp_bridge-0.4.0.dist-info/entry_points.txt,sha256=-HCZi2k-cr3B7BMOnKWGBfcXaCdyfCDXIjFTvGtV-rk,66
+ollama_mcp_bridge-0.4.0.dist-info/licenses/LICENSE,sha256=XMSQtkV3Daikt4U487STctT_cR21xHcdHPiOAQz-u84,1085
+ollama_mcp_bridge-0.4.0.dist-info/RECORD,,
