@@ -1,0 +1,9 @@
+cx_libtranslate/__init__.py,sha256=d7SUigLdv-obR8KM4I8OObX-UXUiimhDLlUVCrZEPKE,244
+cx_libtranslate/languages.py,sha256=qEYFO4c4h3yocrFHbRG1b2WqzCaplpXid7f6GmAgijU,7371
+cx_libtranslate/loader.py,sha256=kL2mltUH1V7nhQjJ-15eYdfvgcOSWT1CyPLeXMm2zbw,2882
+cx_libtranslate/phrasebook.py,sha256=8VmJ2DFlcGiE-4-cWsCw4ODAXZ1euFup8_ZH_0B19Qs,5478
+cx_libtranslate/translation.py,sha256=i-XllODet-w1THoruVYh8B9nwkL1H4IRmi20wIU_1xI,2857
+cx_libtranslate-1.0.1.dist-info/licenses/LICENSE,sha256=N_P49FIWYbLj2p-z3A0Z35ker2xIef-lxsfx9XIeeoE,1077
+cx_libtranslate-1.0.1.dist-info/WHEEL,sha256=Dyt6SBfaasWElUrURkknVFAZDHSTwxg3PaTza7RSbkY,100
+cx_libtranslate-1.0.1.dist-info/METADATA,sha256=JTY2EjFSwa18yGjrUoPKzCunscGN13koXcSnMn3XQtE,639
+cx_libtranslate-1.0.1.dist-info/RECORD,,
