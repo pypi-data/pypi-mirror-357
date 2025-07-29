@@ -1,0 +1,14 @@
+tensorviz/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tensorviz/cli.py,sha256=w0HSRpJcyyD-jxYAkciyEJaWmi4khFKhLI7hLqsYitM,1011
+tensorviz/graph.py,sha256=wRceR4KIA0_mN0If-sUWwF0aURkdnRWK1fFUubdDB14,704
+tensorviz/hook.py,sha256=fcSjN03LzTYFG6Q7fofe_f25GNt6lnAwGEpeJ0qGWAo,521
+tensorviz/html.py,sha256=c3RT-A5_ZzFYEQ04XO93kfacRkH0L2jkb_emvJMlO0M,472
+tensorviz/logger.py,sha256=24FWszxhZxGwxr6W4Q5Q-2g1fVF9ev7B7TRVZAr1Fsg,1867
+tensorviz/reporter.py,sha256=sEHsHe4_dCpnvW7oVosaiwYqLU9JEuIfonccY2_HLdw,1817
+tensorviz/utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tensorviz/templates/report.html.j2,sha256=YY5xGJKKoa1f_UiWRepuSUv-NBecKYBNavB5J2S-vFk,1797
+tensorviz-0.1.6.dist-info/METADATA,sha256=i0MtiLG-cUxNA95EfYxiMYeGZY8sTgKq68X4j9hiswQ,5509
+tensorviz-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tensorviz-0.1.6.dist-info/entry_points.txt,sha256=BqiI4DoQBBTGpsnlnRjhPu5XSGsxcpdDshgmZ4NC8VQ,48
+tensorviz-0.1.6.dist-info/top_level.txt,sha256=DqHPeZcNkKEwaGOQxHj7xwFbuDKF4nNSVg9o3c5f2fI,10
+tensorviz-0.1.6.dist-info/RECORD,,
