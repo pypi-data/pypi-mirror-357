@@ -1,0 +1,78 @@
+Metadata-Version: 2.4
+Name: rajgolepu
+Version: 0.1.2
+Summary: Raj Golepu's personal Python package and CLI tool.
+Author-email: Raj Golepu <raj@example.com>
+License: MIT License
+        
+        Copyright (c) 2025 Raj Golepu
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy...
+        
+Project-URL: Homepage, https://github.com/rajgolepu
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# rajgolepu
+
+```
+     ___       _       _                 
+    | _ \_ _ _(_)___ __| |_  ___ _ _ ___  
+    |  _/ '_| '_/ -_|_-< ' \/ -_) '_/ -_) 
+    |_| |_| |_| \___/__/_||_\___|_| \___| 
+```
+
+📦 A personal Python package and CLI tool by **Raj Golepu**, showcasing portfolio links and handy utilities.
+
+## 🚀 Usage
+
+### 🔹 In Python
+
+```python
+import rajgolepu
+
+rajgolepu.info()
+rajgolepu.help()
+
+print(rajgolepu.format_title_case("hello world"))
+print(rajgolepu.reverse_string("python"))
+print("Vowels:", rajgolepu.count_vowels("encyclopedia"))
+
+@rajgolepu.timer
+def test(): sum(range(10**6))
+test()
+```
+
+### 🔹 From the CLI
+
+```bash
+rajgolepu --info
+rajgolepu --format "hello world"
+rajgolepu --reverse "python"
+rajgolepu --vowels "encyclopedia"
+rajgolepu --time
+rajgolepu --help
+```
+
+## 🧰 Features
+
+- Portfolio CLI
+- Title Case formatter
+- String reverser
+- Vowel counter
+- Timer decorator
+- ASCII banner printer
+- Help menu
+
+## 📇 Author
+
+Raj Golepu  
+🔗 [GitHub](https://github.com/rajgolepu)  
+💼 [LinkedIn](https://linkedin.com/in/rajgolepu)
