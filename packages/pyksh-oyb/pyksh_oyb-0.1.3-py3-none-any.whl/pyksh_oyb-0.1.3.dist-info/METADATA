@@ -1,0 +1,64 @@
+Metadata-Version: 2.4
+Name: pyksh_oyb
+Version: 0.1.3
+Summary: 将多个Python脚本文件内容以对象属性方式集中管理，便于查看和引用
+Home-page: 
+Author: sakimi
+Author-email: w9293846@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# pyksh
+
+将多个Python脚本文件内容以对象属性或关键词方式集中管理，便于查看和引用。
+
+## 用法说明
+- `!pip install pyksh-oyb` 安装依赖    显示版本为 0.1.3 就不需要使用 更新依赖 的代码
+
+- `!pip install --upgrade pyksh-oyb` 更新依赖  电脑上安装过 环境没有重置 就需要使用  （看坐的位置的电脑之前试过没） 
+
+- `scda.all`：按文件分段输出全部代码文本。
+- `scda.t1` ~ `scda.t7`：分别输出7个文件的代码文本。
+- `scda["关键词"]`：支持用中英文关键词或编号索引获取对应代码片段（区分大小写，仅支持预设关键词）。
+
+### 支持的关键词示例
+
+| 代码编号 | 中文关键词             | 其它关键词     | 文件名   |
+| -------- | ---------------------- | -------------- | -------- |
+| t1       | 图书                   | 堆积柱形图     | 4.2.3.py |
+| t2       | 销售额                 | 多子图、组合图 | 5.1.2.py |
+| t3       | 气温、天气、降水、蒸发 |                | 5.3.3.py |
+| t4       | 股票                   | 折线图         | 6(1).py  |
+| t5       | 星星                   | 散点图         | 7.2.2.py |
+| t6       | 汽车                   | 棉棒图         | 8(1).py  |
+| t7       | 小兰                   | 桑基图         | 8(2).py  |
+
+### 示例代码
+
+```python
+from pyksh.pyksh.scda import scda
+
+# 方式一：属性访问
+print(scda.t1)
+
+# 方式二：关键词索引访问
+print(scda["图书"])
+print(scda["桑基图"])
+print(scda["t3"])
+```
+
+> 注意：关键词区分大小写，仅支持上表中的关键词。 
