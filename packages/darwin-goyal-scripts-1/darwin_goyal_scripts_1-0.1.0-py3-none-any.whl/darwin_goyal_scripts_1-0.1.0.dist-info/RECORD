@@ -1,0 +1,11 @@
+basic_concepts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+basic_concepts/conditional_statements_module_1.py,sha256=RHAbQiol1rySH1hMJkLSVJUBnEl5f20car9JhW4LStI,298
+basic_concepts/for_loop_module_1.py,sha256=bPQyHXk13dwHVVkcmRW2eEIvG6gnwRtnZclbJ55bO7Q,112
+modules/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+modules/first_module.py,sha256=kXavroF-1JQMvPVXXxwVFZ9YwMOrfEeVQhwUNJ31ji4,412
+modules/second_module_imports_first_module.py,sha256=aLv9IhdNm_ozXkQOHtSBj1M82jSkM1SS3dG4ZC72CjA,440
+modules/third_module_with_import_from_another_package.py,sha256=k5rzINEvEDQr7z78_YZgKOrnI8OkJDoKAM2T8psgyS8,284
+darwin_goyal_scripts_1-0.1.0.dist-info/METADATA,sha256=U330DSFGaebw42YSK2mPEtw9vnTdpqI_voLm1GFmC88,228
+darwin_goyal_scripts_1-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+darwin_goyal_scripts_1-0.1.0.dist-info/top_level.txt,sha256=3VS234XSsjd5GOOyOiZ8nZV_g6KSl40QpWkOtRKFRqM,23
+darwin_goyal_scripts_1-0.1.0.dist-info/RECORD,,
