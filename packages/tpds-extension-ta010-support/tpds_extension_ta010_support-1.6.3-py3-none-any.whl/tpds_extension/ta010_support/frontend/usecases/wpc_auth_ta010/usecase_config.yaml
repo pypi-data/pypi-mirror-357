@@ -1,0 +1,41 @@
+---
+info: info_wpc_auth_ta010.md
+help: readme.pdf
+trainingVideos:
+  - https://www.youtube.com/embed/TdexOLD33bs?si=Lw9NFE5Jpjojc4uU
+assetList:
+  - Slot: 0x00
+    Description: Primary Private Key
+  - Slot: 0x01
+    Description: WPC Product Unit Certificate(PUC)
+  - Slot: 0x02
+    Description: WPC Slot 0 Digest
+firmware: 
+  - wpc_auth_ta010.X
+transactionDiagram: td_wpc_auth_ta010.png
+userInputs:
+  - input:
+      name: ptmc_code
+      description: PTMC Code
+      inputType: text
+      tooltip: "PTMC Code, default: 0x004E"
+  - input:
+      name: qi_id
+      description: Qi ID
+      inputType: text
+      tooltip: "Qi ID, default: 11430"
+  - input:
+      name: ca_seqid
+      description: CA Sequence ID
+      inputType: text
+      tooltip: "CA Sequence ID, default: 0x01"
+  - keys:
+      - name: root_key
+        description: Root Key
+      - name: mfg_key
+        description: Manufacturer Key
+
+supportedBoards:
+  - DM320118
+API: ta010/wpc_auth_ta010
+configurator: ta010_tflxwpc_config

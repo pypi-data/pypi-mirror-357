@@ -1,0 +1,41 @@
+---
+info: info_asymm_auth_ta010.md
+help: readme.pdf
+trainingVideos:
+  - https://www.youtube.com/embed/TdexOLD33bs?si=Lw9NFE5Jpjojc4uU
+assetList:
+  - Slot: 0x00
+    Description: Primary Private Key
+  - Slot: 0x01
+    Description: Compressed Signer and Device Certificates
+firmware: 
+  - asymm_auth_ta010.X
+transactionDiagram: td_asymm_auth_ta010.png
+userInputs:
+  - input:
+      name: interface
+      description: Device Interface
+      inputType: radio
+      options:
+        - I2C
+        - SWI
+  - certificates:
+      - name: Root
+        description: Root certificate
+        tooltip: Validity for Root Certificate
+      - name: Signer
+        description: Signer certificate
+        tooltip: Validity for Signer Certificate
+      - name: Device
+        description: Device certificate
+        tooltip: Validity for Device Certificate
+  - keys:
+      - name: root_key
+        description: Root Private Key
+      - name: signer_key
+        description: Signer Private Key
+
+supportedBoards:
+  - DM320118
+API: ta010/asymm_auth_ta010
+configurator: ta010_tflxauth_config

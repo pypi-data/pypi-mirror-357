@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: tpds-extension-ta010-support
+Version: 1.6.3
+Summary: Microchip(SPG) Trust Platform - TA010 Device Support
+Home-page: https://www.microchip.com/TrustPlatform
+Author: Microchip Technology
+Author-email: SPG.Tools@microchip.com
+Classifier: License :: Other/Proprietary License
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: tpds-core>=2.3.4
+Requires-Dist: tpds-helper>=2.3.6
+Requires-Dist: tpds-extension-ecc204-support
+
+# Trust Platform Design Suite - TA010 Connect Extension
+
+This module contains the frontend and backend services and resources required for the extension.
+
+## Release Notes
+
+### 1.6.3
+    - Asymmetric Auth, Symmetric Auth and WPC Usecases updated to improve UI format
+    - Configurator updates for Slot Write controls correction, Slot properties for consistency
+    - Bug fix for broken link on the configurators
+
+### 1.6.2
+    - Updated MoQ and Certificate details for Secure Exchange Process
+    - Bug fix for slot3 encrypted write and firmware projects update
+    - Added Provisioning XML generation support
+    - Various other incremental updates since 1.0.0 release
+
+### 1.0.0
+    - Initial version with options to generate provisioning files and Proto Provisioning Device.

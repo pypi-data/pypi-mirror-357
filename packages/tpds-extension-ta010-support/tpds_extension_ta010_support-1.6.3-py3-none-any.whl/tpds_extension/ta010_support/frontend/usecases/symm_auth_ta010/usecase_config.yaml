@@ -1,0 +1,32 @@
+---
+info: info_symm_auth_ta010.md
+help: readme.pdf
+trainingVideos:
+  - https://www.youtube.com/embed/TdexOLD33bs?si=Lw9NFE5Jpjojc4uU
+assetList:
+  - Slot: 0x05
+    Description: Master symmetric key stored in the Host Secure Element ATECC608.
+  - Slot: 0x03
+    Description: Derived key(derived from a root symmetric key and the Accessory Secure Element serial number) is stored in the Accessory Secure Element TA010.
+firmware: 
+  - symm_auth_ta010.X
+transactionDiagram: td_symm_auth_ta010.png
+userInputs:
+  - input:
+      name: interface
+      description: Device Interface
+      inputType: radio
+      options:
+        - I2C
+        - SWI
+  - keys:
+      - name: master_symm_key
+        description: Master Symmetric Key
+        allowedFileExtensions:
+          - .pem
+          - .bin
+
+supportedBoards:
+  - DM320118
+API: ta010/symm_auth_ta010
+configurator: ta010_tflxauth_config
