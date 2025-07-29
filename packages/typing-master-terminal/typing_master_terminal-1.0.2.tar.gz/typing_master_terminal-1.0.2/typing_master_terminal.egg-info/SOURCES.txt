@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+typing_master_terminal.egg-info/PKG-INFO
+typing_master_terminal.egg-info/SOURCES.txt
+typing_master_terminal.egg-info/dependency_links.txt
+typing_master_terminal.egg-info/entry_points.txt
+typing_master_terminal.egg-info/requires.txt
+typing_master_terminal.egg-info/top_level.txt
+typing_test/__init__.py
+typing_test/main.py
+typing_test/words.py
