@@ -1,0 +1,8 @@
+click==8.1.*
+colorama==0.4.*
+packaging==25.*
+pathspec==0.12.*
+typing_extensions==4.13.*
+
+[jinja]
+Jinja2>=3.0.0
