@@ -1,0 +1,12 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "pigguf"
+version = "0.0.2"
+description = "gguf tool"
+authors = ["gguf <info@gguf.us>"]
+readme = "README.md"
+homepage = "https://gguf.org"
+classifiers = ["License :: OSI Approved :: MIT License"]
