@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/idlereload/__init__.py
+src/idlereload/py.typed
+src/idlereload.egg-info/PKG-INFO
+src/idlereload.egg-info/SOURCES.txt
+src/idlereload.egg-info/dependency_links.txt
+src/idlereload.egg-info/entry_points.txt
+src/idlereload.egg-info/requires.txt
+src/idlereload.egg-info/top_level.txt
+tests/test_init.py
