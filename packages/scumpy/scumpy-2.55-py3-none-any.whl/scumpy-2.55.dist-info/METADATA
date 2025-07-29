@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: scumpy
+Version: 2.55
+Requires-Dist: sympy>=1.13.1
+Dynamic: requires-dist
