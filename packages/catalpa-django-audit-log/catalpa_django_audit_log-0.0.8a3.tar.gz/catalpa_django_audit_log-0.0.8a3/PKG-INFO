@@ -1,0 +1,211 @@
+Metadata-Version: 2.4
+Name: catalpa-django-audit-log
+Version: 0.0.8a3
+Summary: Add your description here
+Author-email: Josh Brooks <josh.vdbroek@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.11
+Requires-Dist: django>=4
+Description-Content-Type: text/markdown
+
+# django-audit-log
+
+A Django application for logging HTTP requests and responses.
+
+## Installation
+
+```bash
+pip install django-audit-log
+```
+
+Add `django_audit_log` to your `INSTALLED_APPS` setting:
+
+```python
+INSTALLED_APPS = [
+    # ...
+    'django_audit_log',
+    # ...
+]
+```
+
+Add "django_audit_log.middleware.AuditLogMiddleware" to your `MIDDLEWARE` setting
+```python
+MIDDLEWARE = [
+    # ...
+    "django_audit_log.middleware.AuditLogMiddleware",
+    # ...
+]
+```
+
+
+## Features
+
+- Logs HTTP requests and responses
+- Tracks user, session, IP, and user agent information
+- Normalizes and categorizes user agent data
+- Configurable sampling to reduce database usage
+- Includes sampling metadata for audit trail completeness
+
+## Configuration
+
+### IP Address Exclusion
+
+You can configure certain IP addresses to be excluded from logging entirely:
+
+```python
+# IP addresses that will never be logged (default: ["127.0.0.1"])
+AUDIT_LOG_EXCLUDED_IPS = [
+    "127.0.0.1",      # Local development
+    "10.0.0.5",       # Internal monitoring service
+    "192.168.1.100",  # Load balancer health checks
+]
+```
+
+Requests from these IP addresses will be completely ignored by the audit log system. This is useful for:
+- Excluding local development traffic
+- Ignoring health check requests
+- Preventing monitoring service requests from being logged
+
+### Logging Configuration
+
+The system now uses database-based exclusion for fine-grained control over what gets logged:
+
+```python
+# Set the sampling rate for reference (default: 1.0 = 100%)
+AUDIT_LOG_SAMPLE_RATE = 1.0
+
+# URLs that will be EXCLUDED from logging (regex patterns)
+AUDIT_LOG_EXCLUDED_URLS = [
+    r'^/health/.*',      # Health check endpoints
+    r'^/static/.*',      # Static file requests
+    r'^/media/.*',       # Media file requests
+]
+```
+
+The logging behavior follows these rules:
+
+1. **Database-based exclusion**: URLs with `exclude_path=True` in the `LogPath` model are never logged
+2. **User agent exclusion**: Requests from user agents with `exclude_agent=True` in the `LogUserAgent` model are never logged
+3. **Settings-based URL exclusion**: URLs matching patterns in `AUDIT_LOG_EXCLUDED_URLS` are never logged
+4. **Default behavior**: All other requests are logged
+
+### Database-Based Control
+
+You can control logging through the Django admin interface:
+
+- **LogPath**: Set `exclude_path=True` to stop logging specific URLs
+- **LogUserAgent**: Set `exclude_agent=True` to stop logging from specific user agents (useful for bots, monitoring tools, etc.)
+
+This provides much more granular control than settings-based configuration and can be adjusted without code deployments.
+
+### Metadata Fields
+
+Each `AccessLog` entry includes:
+
+- `sample_rate`: The value of `AUDIT_LOG_SAMPLE_RATE` at the time the log was created (for reference)
+
+### Example Configurations
+
+#### High-Volume Production Site
+
+For high-traffic websites wanting to minimize database usage:
+
+```python
+# Standard exclusions for high-volume sites
+AUDIT_LOG_EXCLUDED_URLS = [
+    r'^/health/.*',            # Health checks
+    r'^/static/.*',            # Static files
+    r'^/media/.*',             # Media files
+    r'^/favicon\.ico$',        # Favicon requests
+    r'^/robots\.txt$',         # Robots.txt
+]
+
+# Exclude specific user agents via database
+# Use Django admin to set exclude_agent=True for:
+# - Monitoring bots
+# - Load balancer health checks
+# - Internal testing tools
+```
+
+#### Security-Focused Configuration
+
+For applications where security auditing is a priority:
+
+```python
+# Minimal exclusions for security monitoring
+AUDIT_LOG_EXCLUDED_URLS = [
+    r'^/static/.*',            # Only exclude static files
+    r'^/media/.*',             # Only exclude media files
+]
+
+# Use database exclusion sparingly
+# Only exclude clearly non-security-relevant user agents
+```
+
+#### Development Environment
+
+For development environments, you might want comprehensive logging:
+
+```python
+# No URL exclusions in development
+AUDIT_LOG_EXCLUDED_URLS = []
+
+# Log everything for debugging and testing
+# Use database exclusion only for obvious noise (like IDE requests)
+```
+
+## Usage
+
+The simplest way to use django-audit-log is to include the AccessLogMiddleware in your middleware settings:
+
+```python
+MIDDLEWARE = [
+    # ...
+    'django_audit_log.middleware.AccessLogMiddleware',
+    # ...
+]
+```
+
+## Management Commands
+
+### reimport_user_agents
+
+This command reprocesses all user agents in the database using the current parsing logic. This is useful when you've updated the user agent parsing rules and want to apply them to existing records.
+
+```bash
+# Reprocess all user agents with default batch size (1000)
+python manage.py reimport_user_agents
+
+# Specify a custom batch size
+python manage.py reimport_user_agents --batch-size 500
+```
+
+The command will display progress and provide a summary of the results, including:
+- Total number of user agents processed
+- Number of user agents that were updated
+- Number of user agents that remained unchanged
+
+## Using in Views
+
+You can use the AccessLogMixin in your views:
+
+```python
+from django_audit_log.mixins import AccessLogMixin
+from django.views.generic import DetailView
+
+class MyView(AccessLogMixin, DetailView):
+    # Your view code here
+    pass
+```
+
+Or manually log requests:
+
+```python
+from django_audit_log.models import AccessLog
+
+def my_view(request):
+    # Your view code here
+    response = HttpResponse('Hello, world!')
+    AccessLog.from_request(request, response)
+    return response
+```
