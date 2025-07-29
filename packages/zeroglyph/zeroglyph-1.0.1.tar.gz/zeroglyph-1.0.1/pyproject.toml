@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zeroglyph"
+version = "1.0.1"
+description = "Ultra-compact text compression for AI APIs"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Goodzy", email = "goodzemcee@gmail.com" }
+]
+dependencies = [
+  "zstandard",
+  "pyyaml",
+  "huffman"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0,<8.0",
+  "flake8>=5.0,<6.0",
+  "mypy>=1.0,<2.0",
+  "black>=23.0,<24.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--maxfail=1 -q"
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203"]
+
+[tool.mypy]
+strict = true
