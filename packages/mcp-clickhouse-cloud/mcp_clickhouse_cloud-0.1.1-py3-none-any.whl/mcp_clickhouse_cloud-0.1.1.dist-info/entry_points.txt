@@ -1,0 +1,5 @@
+[console_scripts]
+mcp-clickhouse-cloud = mcp_clickhouse_cloud.main:main
+
+[mcp.servers]
+clickhouse = mcp_clickhouse_cloud.main:main

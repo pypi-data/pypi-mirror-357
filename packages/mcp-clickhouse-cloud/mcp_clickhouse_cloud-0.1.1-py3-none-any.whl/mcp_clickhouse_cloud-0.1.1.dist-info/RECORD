@@ -1,0 +1,12 @@
+mcp_clickhouse_cloud/__init__.py,sha256=9fgjAOIzj4Cd-ZEERHH0MzeTJU1bYluxH5f7RT6AZ-8,832
+mcp_clickhouse_cloud/cloud_client.py,sha256=urbMPR_kbaHyVD2Q9nCBMrxJkORP4O0W4wUJbNhUkqI,6851
+mcp_clickhouse_cloud/cloud_config.py,sha256=g1ymCIkok33LrOjBRQZsTOH4E4pElPMfZls_7I8kePY,4410
+mcp_clickhouse_cloud/cloud_tools.py,sha256=N4ggIBgqmI3doL_9AT5IZ3eGPYysubunj2lJeR_BKXk,22609
+mcp_clickhouse_cloud/main.py,sha256=t45XaQQ4GKbwOPvlZC7iddhpy4R_ZVF6Vot11ivKeBY,1056
+mcp_clickhouse_cloud/mcp_env.py,sha256=PK1h1DjHIDkb9jbQt1xDMXSFs3EuR4BVOsOUKqXSGP4,6937
+mcp_clickhouse_cloud/mcp_server.py,sha256=cfffifY_OFuoyd8d3KxB7Fdd-qAVdp-RzyykvIF0BS8,11736
+mcp_clickhouse_cloud-0.1.1.dist-info/METADATA,sha256=6zYZwhrd1jReu5nWE46LpIjPp-7aVl-SKvnSeFozAiA,16561
+mcp_clickhouse_cloud-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_clickhouse_cloud-0.1.1.dist-info/entry_points.txt,sha256=8KlY9O8DS-PtL_y7xLZoKs-HXT8-zGEDoRIlwpS7XWs,131
+mcp_clickhouse_cloud-0.1.1.dist-info/licenses/LICENSE,sha256=QwcOLU5TJoTeUhuIXzhdCEEDDvorGiC6-3YTOl4TecE,11356
+mcp_clickhouse_cloud-0.1.1.dist-info/RECORD,,
