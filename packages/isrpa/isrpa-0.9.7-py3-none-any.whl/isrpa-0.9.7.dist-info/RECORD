@@ -1,0 +1,12 @@
+isrpa/OCR.py,sha256=nSDmVLo_z9GV7GUY57xBh2kumERG5_xtpUPxeF6ziQE,2509
+isrpa/Template.py,sha256=UP1uovLvJzXEPGo_hzLrIYOu3vZP8Cf6m3G2hGzQ6XA,1958
+isrpa/Template_Exception.py,sha256=an6eQ1NMB8a9R-J0yyMdwHIZcZeDtdV5f7fWKZQsZ3s,819
+isrpa/__init__.py,sha256=pG-YPVG0gJIJ6s4xcAz9S_CnUxpUcz33wl9eNUSgxGk,20
+isrpa/credentials.py,sha256=Qgitrm2pKgA1E_iGPg12Qq2Ka52pgTQCBHnT2U62ZHs,3999
+isrpa/llm_chat.py,sha256=lrufXl2JnnezXPF3FOMmmQFbqMTLjhCy7ujJTWeu460,863
+isrpa/message.py,sha256=N0s6hMaC5S-Pi4EhwcSp-ngfBTBQyW6ymU9sI9dUSeE,11329
+isrpa/utils.py,sha256=uPCb1A1vDB0nTlII2BJz9kS0amk7mvzVA7ilI-UYA8Q,51439
+isrpa-0.9.7.dist-info/METADATA,sha256=Y_yaHUXMpR5uicuMfDZ1Mh88aQF_ol7-yiDl-lOdHn0,511
+isrpa-0.9.7.dist-info/WHEEL,sha256=R06PA3UVYHThwHvxuRWMqaGcr-PuniXahwjmQRFMEkY,91
+isrpa-0.9.7.dist-info/top_level.txt,sha256=J5HJbtR2WAeKnW1rrpkiuapwnlswv3RgM-riyZD87o0,6
+isrpa-0.9.7.dist-info/RECORD,,
