@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/settings_loader.py
+src/SettingsLoaderTypeSafe.egg-info/PKG-INFO
+src/SettingsLoaderTypeSafe.egg-info/SOURCES.txt
+src/SettingsLoaderTypeSafe.egg-info/dependency_links.txt
+src/SettingsLoaderTypeSafe.egg-info/requires.txt
+src/SettingsLoaderTypeSafe.egg-info/top_level.txt
+tests/test_settings_loader.py
