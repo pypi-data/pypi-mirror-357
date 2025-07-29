@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "volleyball_prediction"
+version = "0.1.4"
+description = "Python package to predict women's volleyball match results."
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    { name = "İlayda & Selinay & İrem & Merve", email = "selinydeniz@gmail.com" }
+]
+requires-python = ">=3.8"
+
+dependencies = [
+    "pandas",
+    "scikit-learn",
+    "fastapi",
+    "uvicorn[standard]",
+    "joblib"
+]
+
+[project.urls]
+Homepage = "https://github.com/selinydeniz/volleyball_prediction"
+
+[tool.setuptools]
+include-package-data = true
