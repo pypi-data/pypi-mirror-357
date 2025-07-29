@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "docr-cli"
+version = "0.1.66"
+description = "AI Solutions Document Review CLI tools for development workflows"
+authors = ["Christopher David Mann <cmann@umd.edu>"]
+packages = [
+    { include = "utils" },
+    { include = "oidc" },
+    { include = "commands" },
+    { include = "doctor" },
+    { include = "installer" },
+    { include = "main.py" },
+    { include = "frontend_deploy.py" },
+    { include = "frontend_build.py" },
+    { include = "verify_clients.py" },
+    { include = "lambda_config.py" },
+    { include = "backend_config.py" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = "^0.15.4"
+rich = "^14.0.0"
+boto3 = "^1.35.60"
+requests = "^2.32.3"
+python-dotenv = "^1.0.1"
+pyyaml = "^6.0.1"
+loguru = "^0.7.2"
+pyjwt = "^2.9.0"
+pydantic = "^2.0.0"
+tomli-w = "^1.0.0"
+packaging = "^24.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+types-boto3 = "^1.0.2"
+types-requests = "^2.32.0.20241016"
+twine = "^5.0.0"
+poethepoet = "^0.29.0"
+
+[tool.poetry.scripts]
+# Main CLI entry point
+docr = "main:app"
+
+[tool.poe.tasks]
+publish = { shell = "rm -rf dist/* && poetry version patch && poetry build && python -m twine upload --verbose --skip-existing --repository codeartifact dist/*" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
