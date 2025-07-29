@@ -1,0 +1,13 @@
+bconsole/__init__.py,sha256=qaCiqrMiApIpO7R53wUAfnRXkCiceFZn3byOpgLtnaM,1603
+bconsole/console.py,sha256=chp87pwmP_ODsTIJq1--z2mtTTiNaGdScjTNDODoAew,14380
+bconsole/core.py,sha256=OQfA8E4JBJ8HmFY6zabze1Z8KK1mnuYXJyjh12SA14c,12028
+bconsole/examples/console.py,sha256=E9qPrwZ9JbRjn9Cm9kHPLjc4mN2v_9_vz3eALF90QtA,1268
+bconsole/examples/logger.py,sha256=WV-snItYooreX6O9mf02qRvJVRXmFjNqiGsZSTFBj-M,728
+bconsole/extras.py,sha256=-qxwDH4RbpyXURGN-RGndttq70jo1qCVtr8tkNXvVl8,6754
+bconsole/logger.py,sha256=GqPksBqJzi9rDThxCE1YNVg73WTWlEjfcS6nnzCd0O4,8253
+bconsole/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bconsole/utils.py,sha256=pRJcB8Go7CuwDq57QSlmx2fhznCWba5zMOCLIxziXUw,5978
+bconsole-0.0.16.dist-info/LICENSE,sha256=eFXcu9nShk-xjMwh-lqOKUWuK8E2PmjTEvbVAZ1Pteo,1084
+bconsole-0.0.16.dist-info/METADATA,sha256=KKh9HOeiDYHvm7RMzGx6ePVCFwUns_OeKO09AteJrT4,1514
+bconsole-0.0.16.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+bconsole-0.0.16.dist-info/RECORD,,
