@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+BASICALCULATOR/__init__.py
+BASICALCULATOR/main.py
+nandhubasicscalculator.egg-info/PKG-INFO
+nandhubasicscalculator.egg-info/SOURCES.txt
+nandhubasicscalculator.egg-info/dependency_links.txt
+nandhubasicscalculator.egg-info/top_level.txt
