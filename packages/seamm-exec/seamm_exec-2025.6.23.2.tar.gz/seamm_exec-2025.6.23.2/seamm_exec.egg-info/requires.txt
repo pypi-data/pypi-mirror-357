@@ -1,0 +1,15 @@
+docker
+fasteners
+humanize
+molsystem
+psutil
+py-cpuinfo
+pyuca
+reference-handler
+seamm
+seamm-datastore
+seamm-util
+
+[test]
+pytest>=6.1.2
+pytest-runner

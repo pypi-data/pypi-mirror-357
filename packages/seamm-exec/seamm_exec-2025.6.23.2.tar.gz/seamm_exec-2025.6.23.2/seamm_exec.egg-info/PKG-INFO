@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: seamm_exec
+Version: 2025.6.23.2
+Summary: Classes to execute background codes for SEAMM
+Author-email: Paul Saxe <psaxe@molssi.org>
+License: MIT
+Project-URL: Source, https://github.com/molssi-seamm/seamm_exec/
+Project-URL: Documentation, https://molssi-seamm.github.io/
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: docker
+Requires-Dist: fasteners
+Requires-Dist: humanize
+Requires-Dist: molsystem
+Requires-Dist: psutil
+Requires-Dist: py-cpuinfo
+Requires-Dist: pyuca
+Requires-Dist: reference-handler
+Requires-Dist: seamm
+Requires-Dist: seamm-datastore
+Requires-Dist: seamm-util
+Provides-Extra: test
+Requires-Dist: pytest>=6.1.2; extra == "test"
+Requires-Dist: pytest-runner; extra == "test"
+Dynamic: license-file
+
+SEAMM exec
+==============================
+[//]: # (Badges)
+[![GitHub Actions Build Status](https://github.com/molssi-seamm/seamm_exec/workflows/CI/badge.svg)](https://github.com/molssi-seamm/seamm_exec/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/molssi-seamm/SEAMM exec/branch/main/graph/badge.svg)](https://codecov.io/gh/molssi-seamm/SEAMM exec/branch/main)
+
+
+Classes to execute background codes for SEAMM
+
+### Copyright
+
+Copyright (c) 2023, Paul Saxe
+
+
+#### Acknowledgements
+ 
+Project based on the 
+[Computational Molecular Science Python Cookiecutter](https://github.com/molssi/cookiecutter-cms) version 1.1.
