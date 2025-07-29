@@ -1,0 +1,12 @@
+dodo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dodo/checker.py,sha256=PldWPOx1dIOz_9nt2nlEQpoYAg53RpulMRshf47tUZU,831
+dodo/commands.py,sha256=kMQHNaTskvEgv-wuXeK9TpTdHhPOMfTqJndEWOILGmU,2636
+dodo/exporter.py,sha256=HdeOE36WKnwPZ0mX6sdUJy1Ku9kwI52Sq5R3pfutZms,1102
+dodo/main.py,sha256=BclX7Nm-xTBUXjHYk9CywolSSXwDW8kUKq1vXG-2wOw,116
+dodo/tlds.txt,sha256=42jEWwtRVGz6ioGJO-f18E-YiUzkRS9P2XftERg1GPI,83
+dodo/utils.py,sha256=2XExXrc2bTJfAfi1R7C14SGLpPVe591tKBY2dM3weRs,300
+dodo_lookup-0.2.4.dist-info/METADATA,sha256=tnAiFDcFVW31sJ_zJlvJjn8D4jZRwE0JkL4aOcPc4OM,2878
+dodo_lookup-0.2.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dodo_lookup-0.2.4.dist-info/entry_points.txt,sha256=b5E5Rsg3hn4FNsVfSmFCG-th821UPNG7zDRtllfFauk,40
+dodo_lookup-0.2.4.dist-info/top_level.txt,sha256=bCrMefNSFJmDiLl4Are8tsdIdI1RZ_-Q13MbYOzHlZs,5
+dodo_lookup-0.2.4.dist-info/RECORD,,
