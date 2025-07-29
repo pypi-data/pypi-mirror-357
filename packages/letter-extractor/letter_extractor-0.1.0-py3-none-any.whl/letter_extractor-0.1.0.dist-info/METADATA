@@ -1,0 +1,80 @@
+Metadata-Version: 2.4
+Name: letter_extractor
+Version: 0.1.0
+Summary: Library to extract only letters from text using Unicode-safe regular expressions
+Author: Olha Yukhnenko
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: build; extra == "dev"
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: twine; extra == "dev"
+Provides-Extra: keywords
+Requires-Dist: text; extra == "keywords"
+Requires-Dist: letters; extra == "keywords"
+Requires-Dist: regex; extra == "keywords"
+Requires-Dist: unicode; extra == "keywords"
+Requires-Dist: extractor; extra == "keywords"
+Requires-Dist: NLP; extra == "keywords"
+Dynamic: license-file
+
+# Створи віртуальне оточення
+python -m venv venv
+source venv/bin/activate      # для Mac/Linux
+.\venv\Scripts\activate       # для Windows
+
+# .gitignore
+не забудь додати віртуальне оточення до файлу .gitignore
+
+#Extractor
+
+📌 Python-бібліотека обробляє 2 випадки:
+1. виділення лише літер з тексту(працює з латиницею, кирилицею та іншими Unicode-символами).
+Гнучкість: зібрати в рядок, порахувати частоту, згрупувати тощо.
+Підходить для unit-тестів та NLP задач.
+2. Працює у звʼязці з першою функцією та повертає рядок, який складається лише з літер.
+
+
+# Встанови build та twine пакети
+команда python -m pip install build
+build - збирає твою бібліотеку у форматах .tar.gz та .whl
+
+команда pip install twine
+twine - Завантажує зібрані пакети на PyPI або TestPyPI
+
+або встанови одночасно за допомогою pip install build twine
+
+# Встанови пайтест
+командою pip install pytest
+та запусти командою pytest тести.
+Якщо видає помилку E ModuleNotFoundError: No module named <name>
+Встанови з кореня проєкту "пакет у поточній версії, 
+але з посиланням на локальні файли" командою pip install -e ..
+Тепер pytest з будь-якої точки буде бачити <твій пакет>.
+
+
+
+## Example
+
+```python
+from extractor import extract_letters_list
+
+text = "Привіт! Hello, world123!!!"
+print(extract_letters_list(text))
+# ["П", "р", "и", "в", "і", "т", "H", "e", "l", "l", "o", "w", "o", "r", "l", "d"]
+
+
+from extractor import extract_letters
+text = "Привіт! Hello, world123!!!"
+return "".join(extract_letters_list(text))
+"ПривітHelloworld"
+
+
