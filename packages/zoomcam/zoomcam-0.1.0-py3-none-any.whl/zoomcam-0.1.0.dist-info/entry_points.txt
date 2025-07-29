@@ -1,0 +1,5 @@
+[console_scripts]
+zoomcam=zoomcam.main:main
+zoomcam-config=zoomcam.cli:config_command
+zoomcam-setup=zoomcam.cli:setup_command
+

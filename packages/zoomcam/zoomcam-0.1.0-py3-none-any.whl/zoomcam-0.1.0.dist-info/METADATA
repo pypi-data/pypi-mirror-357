@@ -1,0 +1,46 @@
+Metadata-Version: 2.3
+Name: zoomcam
+Version: 0.1.0
+Summary: Intelligent adaptive camera monitoring system for Raspberry Pi
+License: MIT
+Keywords: camera,monitoring,raspberry-pi,opencv,streaming
+Author: ZoomCam Team
+Author-email: team@zoomcam.dev
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Multimedia :: Video :: Capture
+Classifier: Topic :: Security
+Classifier: Topic :: System :: Monitoring
+Provides-Extra: all
+Provides-Extra: metrics
+Provides-Extra: mqtt
+Requires-Dist: aiofiles (>=23.2.0,<24.0.0)
+Requires-Dist: asyncio-mqtt (>=0.16.1,<0.17.0) ; extra == "mqtt" or extra == "all"
+Requires-Dist: fastapi (>=0.104.1,<0.105.0)
+Requires-Dist: gitpython (>=3.1.40,<4.0.0)
+Requires-Dist: jinja2 (>=3.1.2,<4.0.0)
+Requires-Dist: numpy (>=1.24.0,<2.0.0)
+Requires-Dist: opencv-python (>=4.8.0,<5.0.0)
+Requires-Dist: pillow (>=10.1.0,<11.0.0)
+Requires-Dist: prometheus-client (>=0.19.0,<0.20.0) ; extra == "metrics" or extra == "all"
+Requires-Dist: psutil (>=5.9.6,<6.0.0)
+Requires-Dist: pydantic (>=2.5.0,<3.0.0)
+Requires-Dist: pydantic-settings (>=2.1.0,<3.0.0)
+Requires-Dist: python-multipart (>=0.0.6,<0.0.7)
+Requires-Dist: pyyaml (>=6.0.1,<7.0.0)
+Requires-Dist: uvicorn[standard] (>=0.24.0,<0.25.0)
+Project-URL: Documentation, https://zoomcam.readthedocs.io
+Project-URL: Homepage, https://github.com/zoomcam/zoomcam
+Project-URL: Repository, https://github.com/zoomcam/zoomcam
+Description-Content-Type: text/markdown
+
+# zoomcam
