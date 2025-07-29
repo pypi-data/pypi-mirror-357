@@ -1,0 +1,14 @@
+plutoprint/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+plutoprint/_plutoprint.cp38-win_amd64.dll.a,sha256=PA_6ank4OLSHqFniwIoFyKRSRb1acD2lrlsV1aTO0BE,1774
+plutoprint/_plutoprint.cp38-win_amd64.pyd,sha256=xeNntTazWHYhkjieZecq0r9ytos-TpDQ3AnJ5fwBH-4,102309
+plutoprint/__init__.py,sha256=IrZBBktIcCwj-Uc5Fplf4-T6msymIbYTmE0EgA2U3bk,2880
+plutoprint/__init__.pyi,sha256=_dFcCavYNnoELL-UPH1jUfWyNmgqdz7GXjql900UbKc,27487
+plutoprint/__main__.py,sha256=B2w3kw2kCyxLl075GL2rpjuN2QcAKsmQOmCpokiNe-Y,5548
+plutoprint-0.2.0.dist-info/DELVEWHEEL,sha256=39dC4vLG7CDf-_xboFIp6wym0EVf2jrd2lgXrtEpR2o,474
+plutoprint-0.2.0.dist-info/entry_points.txt,sha256=0TXwU-bV8efZTU9aim7lovntYla6nazB04DtXYR6F-E,57
+plutoprint-0.2.0.dist-info/LICENSE,sha256=ZvpGkHJbiWmxKSB53K2yszzZdb7wmQ-FlV-df7Ux8GM,1125
+plutoprint-0.2.0.dist-info/METADATA,sha256=_B5ElcOyYxccnYnS-CTaQx7KiNmjpvg6y2s9a8GM2wo,5177
+plutoprint-0.2.0.dist-info/RECORD,,
+plutoprint-0.2.0.dist-info/WHEEL,sha256=vIXzP6jLUy4sdmrQppnovVBqmdfNCkEM0I7EHxeJ-zs,83
+plutoprint.libs/.load-order-plutoprint-0.2.0,sha256=OQQwnn0oPBmGgcRd0SXJyLWgLaELqcHG-axOOdn7jrc,52
+plutoprint.libs/libplutobook-0-0285735a49a7617117472c0439affb36.dll,sha256=JfP6p-9CRXLeHiqfO3CpwuMMsVWz9JTlPPHhxWl3148,45181952
