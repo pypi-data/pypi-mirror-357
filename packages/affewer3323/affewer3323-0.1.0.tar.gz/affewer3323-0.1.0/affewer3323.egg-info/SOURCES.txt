@@ -1,0 +1,7 @@
+setup.py
+affewer3323/__init__.py
+affewer3323/calculations.py
+affewer3323.egg-info/PKG-INFO
+affewer3323.egg-info/SOURCES.txt
+affewer3323.egg-info/dependency_links.txt
+affewer3323.egg-info/top_level.txt
