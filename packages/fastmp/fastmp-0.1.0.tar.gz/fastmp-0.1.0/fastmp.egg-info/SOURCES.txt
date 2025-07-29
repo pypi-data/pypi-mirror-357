@@ -1,0 +1,7 @@
+README.md
+main.py
+pyproject.toml
+fastmp.egg-info/PKG-INFO
+fastmp.egg-info/SOURCES.txt
+fastmp.egg-info/dependency_links.txt
+fastmp.egg-info/top_level.txt
