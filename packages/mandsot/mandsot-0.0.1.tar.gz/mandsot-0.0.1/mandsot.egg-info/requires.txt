@@ -1,0 +1,9 @@
+torch
+numpy
+pandas
+librosa
+noisereduce
+matplotlib
+scikit-learn
+tqdm
+praat-parselmouth
