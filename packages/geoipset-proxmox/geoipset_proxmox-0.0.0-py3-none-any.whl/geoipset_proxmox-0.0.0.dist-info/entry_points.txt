@@ -1,0 +1,2 @@
+[console_scripts]
+geoipset-proxmox = geoipset_proxmox:main
