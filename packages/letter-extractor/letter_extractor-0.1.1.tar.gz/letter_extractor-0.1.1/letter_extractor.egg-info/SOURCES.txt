@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+extractor/__init__.py
+extractor/core.py
+letter_extractor.egg-info/PKG-INFO
+letter_extractor.egg-info/SOURCES.txt
+letter_extractor.egg-info/dependency_links.txt
+letter_extractor.egg-info/requires.txt
+letter_extractor.egg-info/top_level.txt
+tests/test_core.py

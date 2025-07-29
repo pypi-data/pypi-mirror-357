@@ -1,0 +1,30 @@
+[project]
+name = "letter_extractor"
+version = "0.1.1"
+description = "Library to extract only letters from text using Unicode-safe regular expressions"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+  {name = "Olha Yukhnenko"}
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+
+[project.optional-dependencies]
+dev = [
+  "build",
+  "pytest>=8.0",
+  "twine",
+]
+
+keywords = ["text", "letters", "regex", "unicode", "extractor", "NLP"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
