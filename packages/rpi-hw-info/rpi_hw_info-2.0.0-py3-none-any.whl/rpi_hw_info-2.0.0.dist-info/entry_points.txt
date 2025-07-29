@@ -1,0 +1,3 @@
+[console_scripts]
+rpi-hw-info=rpi_hw_info.__main__:main
+
