@@ -1,0 +1,2 @@
+[console_scripts]
+treels = treels.main:main
