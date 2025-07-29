@@ -1,0 +1,2 @@
+[console_scripts]
+commonplace = commonplace.__main__:app

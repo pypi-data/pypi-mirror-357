@@ -1,0 +1,12 @@
+commonplace/__init__.py,sha256=t0LNVBibCUF0-X_7w8UIT9pG5Pnqy7GmuXgBkzwEoDQ,327
+commonplace/__main__.py,sha256=Sp9djNBz6u-qCm3W6fXWkVJN_EWBkGT5Wcrnx7SPKDw,1763
+commonplace/_claude.py,sha256=58Hg7MtKVqFF6SHavYDjWdVjhWZLz4TOkvqFLiC4RZA,2559
+commonplace/_config.py,sha256=UOse7jqUOaDpqBZob4jGE-unM0w1nLjEFOYlspyL68w,449
+commonplace/_gemini.py,sha256=UjZgY53v7YHKL9X7r5h8cHASbOLlWg97Eaa8-foGt88,5515
+commonplace/_store.py,sha256=UfSWXWQfaInpTwLFMjkBO81UNJRB59V8NcpKXiygfWQ,5744
+commonplace/_types.py,sha256=_-AMvx2_7RZFDq2em1OcTAkOi64Up4wlslW08D-6Zg4,2239
+commonplace/_utils.py,sha256=0-3AgPcTHDtf7bMZh-df3J335c8akhPDkTRzCLh0LmY,358
+commonplace-0.0.2.dist-info/METADATA,sha256=BOLCf85Jl9qyHwjr4cIsqEX1aW1likxKcXS1uJGeRvI,858
+commonplace-0.0.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+commonplace-0.0.2.dist-info/entry_points.txt,sha256=U61A6Az83L38fPrMGpy_JWo77rD9aE30YyHlt-M_ICI,57
+commonplace-0.0.2.dist-info/RECORD,,
