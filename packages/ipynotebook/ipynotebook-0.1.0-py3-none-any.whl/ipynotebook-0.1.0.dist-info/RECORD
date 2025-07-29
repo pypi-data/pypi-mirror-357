@@ -1,0 +1,11 @@
+ipynotebook/__init__.py,sha256=kgpIC9_4T0FtvMJyBIKFChR4Z3iqHnlzpbTiSncmowE,593
+ipynotebook/__main__.py,sha256=K98BO7GszyT6TPeQmNevXJtJh8StR-HG0rr8GnOIaSc,28
+ipynotebook/app.py,sha256=0Z7yb2W0gDWsHSqxXRyeIALaIbxMz0bAGssHy5nlgHQ,2255
+ipynotebook/static/index.html,sha256=-JP5KLvfNSfsay0HVNSy00grJSp_McFyP9Nlt0SGnRY,3838
+ipynotebook/static/vendor/particles.min.js,sha256=4CVKTLmrkrCVvcp7cJhhBq7-PUdDjbXA3x3HI_cudR0,23016
+ipynotebook-0.1.0.dist-info/licenses/LICENSE,sha256=0nREAATvEwX4XIpy15VxlZ1qYR3glHMn4Qbe1HU2kMY,6742
+ipynotebook-0.1.0.dist-info/METADATA,sha256=1CdV1QYNFQNETJ0_JvJLs8Izx6C_qxnfgJz1HnxykBA,1440
+ipynotebook-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ipynotebook-0.1.0.dist-info/entry_points.txt,sha256=-mGNJ5fShLUVac6n-e1xpErzCCJCu6eF-POmazpS59U,52
+ipynotebook-0.1.0.dist-info/top_level.txt,sha256=f8s6GdfJkpQEIzD3-LAq_8tqXyoOVj3jyfaNQ7FHZmk,12
+ipynotebook-0.1.0.dist-info/RECORD,,
