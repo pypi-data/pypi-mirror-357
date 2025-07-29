@@ -1,0 +1,67 @@
+# Include the readme and license
+include README.md
+include LICENSE
+include .env.template
+
+# Include requirements
+include requirements.txt
+include pyproject.toml
+
+# Include documentation
+recursive-include docs *.md *.rst *.txt
+include *.md
+
+# Include templates and data files
+recursive-include benchmarks/templates *.json *.txt *.yaml *.yml
+recursive-include cli/templates *.json *.txt *.yaml *.yml
+recursive-include datasets/core *.json *.txt *.yaml *.yml
+recursive-include formatters *.json *.txt *.yaml *.yml
+
+# Include configuration files
+include *.json
+include *.yaml
+include *.yml
+include *.toml
+
+# Include shell scripts and setup files  
+include *.sh
+include demo_k8s_setup.sh
+include Dockerfile*
+
+# Include Python files from all packages
+recursive-include cli *.py
+recursive-include cli/commands *.py
+recursive-include cli/commands/benchmark *.py
+recursive-include benchmarks *.py
+recursive-include tools *.py
+recursive-include utils *.py
+recursive-include datasets *.py
+recursive-include tests *.py
+recursive-include training *.py
+
+# Exclude unwanted files
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *~
+global-exclude *.DS_Store
+global-exclude __pycache__
+
+# Exclude test data and build artifacts
+exclude jailbreaking_prompts.json
+exclude jailbreak_test.py
+recursive-exclude custom_dataset_results_* *
+recursive-exclude benchmark_* *
+recursive-exclude data *
+recursive-exclude logs *
+recursive-exclude exports *
+recursive-exclude k8s_venv *
+recursive-exclude model_profiles *
+exclude ollama_*_results.json
+exclude *_results_*.json
+exclude *.log
+
+# Exclude git and other development files
+exclude .gitignore
+exclude .python-version
+recursive-exclude .git *
+recursive-exclude __pycache__ * 

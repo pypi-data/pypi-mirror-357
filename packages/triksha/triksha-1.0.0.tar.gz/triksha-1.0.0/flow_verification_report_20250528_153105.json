@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-05-28T15:30:09.859145",
+  "tests": [
+    {
+      "test_name": "Flow Components Check",
+      "status": "PASS",
+      "details": [
+        "\u2713 Benchmark Command: Found",
+        "\u2713 UI Module: Found",
+        "\u2713 Markov Generator: Found",
+        "\u2713 Gemini Augmentation: Found",
+        "\u2713 Demo Script: Found"
+      ]
+    },
+    {
+      "test_name": "Prompt Generation",
+      "status": "PASS",
+      "details": [
+        "\u2713 Found 10 individual techniques",
+        "  - DAN",
+        "  - ENCODING",
+        "  - LIKERT",
+        "  - CRESCENDO",
+        "  - DECEPTION",
+        "  ... and 5 more"
+      ]
+    },
+    {
+      "test_name": "Markov Chain",
+      "status": "PASS",
+      "details": [
+        "\u2713 Markov generation method found",
+        "? Duplicate reduction logic unclear"
+      ]
+    },
+    {
+      "test_name": "Gemini Augmentation",
+      "status": "PASS",
+      "details": [
+        "\u2713 Gemini augmentation method found",
+        "\u2713 Target model context parameter found",
+        "\u2713 Context integration logic found"
+      ]
+    },
+    {
+      "test_name": "Target Model Protection",
+      "status": "PASS",
+      "details": [
+        "\u2713 Only validated/augmented prompts used in final dataset",
+        "\u2713 Raw prompts are processed through validation",
+        "\u2713 Gemini improvement is called in the flow"
+      ]
+    }
+  ],
+  "overall_status": "PASS"
+}

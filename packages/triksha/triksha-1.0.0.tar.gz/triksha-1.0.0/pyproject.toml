@@ -1,0 +1,105 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "triksha"
+version = "1.0.0"
+description = "Advanced LLM Security Testing Framework"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Triksha Team", email = "team@triksha.ai"}
+]
+keywords = ["llm", "security", "testing", "jailbreak", "red-team", "ai-safety"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Security",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "inquirer>=2.9.0",
+    "rich>=12.0.0",
+    "psutil>=5.9.0",
+    "python-daemon>=2.3.0",
+    "torch>=1.10.0",
+    "transformers>=4.37.0",
+    "datasets>=2.0.0",
+    "accelerate>=0.20.0",
+    "peft>=0.7.0",
+    "bitsandbytes>=0.41.0",
+    "evaluate>=0.4.0",
+    "sentencepiece>=0.1.99",
+    "tiktoken>=0.5.0",
+    "llama-cpp-python",
+    "sqlalchemy>=1.4.0",
+    "lancedb>=0.3.0",
+    "tqdm>=4.62.0",
+    "pydantic>=1.9.0",
+    "matplotlib>=3.5.0",
+    "openai>=1.0.0",
+    "tenacity>=8.0.0",
+    "google-generativeai>=0.3.0",
+    "backoff>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "pytest>=7.0.0",
+    "pandas>=1.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.991",
+]
+kubernetes = [
+    "kubernetes>=24.0.0",
+]
+web = [
+    "django>=4.0.0",
+    "django-rest-framework>=3.14.0",
+]
+all = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0", 
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.991",
+    "kubernetes>=24.0.0",
+    "django>=4.0.0",
+    "django-rest-framework>=3.14.0",
+]
+
+[project.scripts]
+triksha = "cli.core:main_cli"
+triksha-cli = "cli.dravik_cli:main"
+triksha-deps = "cli.dependency_cli:main"
+triksha-dataset = "tools.format_dataset:main"
+triksha-train = "tools.train_model:main"
+triksha-verify = "verify_env:main"
+
+[project.urls]
+Homepage = "https://github.com/triksha-ai/triksha"
+Documentation = "https://triksha.readthedocs.io/"
+Repository = "https://github.com/triksha-ai/triksha"
+"Bug Tracker" = "https://github.com/triksha-ai/triksha/issues"
+
+[tool.setuptools]
+packages = ["cli", "benchmarks", "tools", "utils", "datasets", "tests", "training"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.txt", "*.md", "*.yml", "*.yaml"]
+"cli" = ["templates/*"]
+"benchmarks" = ["templates/*"]
