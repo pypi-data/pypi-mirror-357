@@ -1,0 +1,16 @@
+popgames/__init__.py,sha256=fw2Zt9Pbd5fmLwwzL5nOu9-3p8qz2kWnSsPHrCdZ2ew,400
+popgames/alarm_clock.py,sha256=YZFI0BX7qf7n0nI7_IWN4r-7_zISPi-P0q2q4LVJh-E,2009
+popgames/payoff_mechanism.py,sha256=wjkVdVOQR6pdejwIC8Phld_e7vm3jU2bBHYjZj34BI4,7420
+popgames/population_game.py,sha256=p13WIF_Q_o4JyrRwIvlNkhpuncdXqp5cqj2jbDsjl7Y,8875
+popgames/revision_process.py,sha256=G5yOLb44EHpZhNIiEiWlUjSXR_AMvGmUvbLsKesVqnU,6066
+popgames/revision_protocol.py,sha256=3XG5bAhcNwEb837Bpyj4t9_6pn9gdOKHMst4d5LxOjs,5578
+popgames/simulator.py,sha256=JGQReI103-c63NEE68XJrlkECtTViYqBZTIsRUUHOnY,19140
+popgames/utilities/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+popgames/utilities/gnep_solvers.py,sha256=xX9AeetIgbPoQh9mKNg42UbGqzfMQAcmqWqQLXiAoIk,2411
+popgames/utilities/input_validators.py,sha256=pnfkpgeWmXSg_LA7B2D5oCY24qIkZyTNY42_vG_rD9g,3785
+popgames/utilities/plotters.py,sha256=pZ9H4PknwEaUbNe6xteNFUeXc1A4q2cvgxFMjV5FUcA,13691
+popgames/utilities/polyhedron.py,sha256=fafyZxuhKAPLcxBWgwMelBP9k2-XsxtYYkE3f_HQ7K4,4496
+popgames-0.1.0.dist-info/LICENSE,sha256=kRUsSkEFx3Emx1vU4mfc7MlTWSk3M8Zk2Wj6_LZLDto,1082
+popgames-0.1.0.dist-info/METADATA,sha256=Fzl1U2eml5SonN9o8aLrw1oovr-kplrd51O3cI-pfvE,934
+popgames-0.1.0.dist-info/WHEEL,sha256=XbeZDeTWKc1w7CSIyre5aMDU_-PohRwTQceYnisIYYY,88
+popgames-0.1.0.dist-info/RECORD,,
