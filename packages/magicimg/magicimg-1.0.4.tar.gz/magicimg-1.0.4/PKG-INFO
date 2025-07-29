@@ -1,0 +1,501 @@
+Metadata-Version: 2.1
+Name: magicimg
+Version: 1.0.4
+Summary: Thư viện xử lý ảnh thông minh với hỗ trợ GPU tự động
+Home-page: https://github.com/magicimg/magicimg
+Author: MagicImg Team
+Author-email: contact@magicimg.com
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: gpu
+License-File: LICENSE
+
+# MagicImg - Thư viện xử lý ảnh Python thông minh
+
+[![PyPI version](https://badge.fury.io/py/magicimg.svg)](https://badge.fury.io/py/magicimg)
+[![Python](https://img.shields.io/pypi/pyversions/magicimg.svg)](https://pypi.org/project/magicimg/)
+[![License](https://img.shields.io/github/license/yourusername/magicimg.svg)](LICENSE)
+
+MagicImg là thư viện Python mạnh mẽ để xử lý và tối ưu hóa ảnh cho OCR (Optical Character Recognition). Thư viện tự động phát hiện và cải thiện chất lượng ảnh, xoay ảnh nghiêng, và tối ưu hóa cho các engine OCR khác nhau.
+
+## ✨ Tính năng chính
+
+- 🔍 **Phân tích chất lượng ảnh tự động** - Đánh giá độ mờ, độ sáng, tương phản
+- 🎯 **Tăng cường chất lượng thông minh** - Cải thiện ảnh một cách nhẹ nhàng, tránh over-processing
+- 🔄 **Phát hiện và sửa góc nghiêng** - Tự động xoay ảnh về đúng hướng
+- 🚀 **Hỗ trợ GPU** - Tăng tốc xử lý với CUDA (tùy chọn)
+- 📊 **So sánh trước/sau** - Theo dõi các thay đổi chất lượng ảnh
+- 🛠️ **API đơn giản** - Dễ sử dụng và tích hợp
+- 🔧 **Tùy chỉnh linh hoạt** - Cấu hình chi tiết cho từng use case
+
+## 📦 Cài đặt
+
+### Cài đặt cơ bản
+```bash
+pip install magicimg
+```
+
+### Cài đặt với hỗ trợ GPU (tùy chọn)
+```bash
+pip install magicimg[gpu]
+# hoặc
+pip install -r requirements-gpu.txt
+```
+
+### Cài đặt Tesseract OCR (khuyến nghị)
+Tesseract cần thiết cho một số tính năng nâng cao:
+
+**Windows:**
+```bash
+# Sử dụng winget
+winget install UB-Mannheim.TesseractOCR
+
+# Hoặc download từ: https://github.com/UB-Mannheim/tesseract/wiki
+```
+
+**Ubuntu/Debian:**
+```bash
+sudo apt update
+sudo apt install tesseract-ocr tesseract-ocr-vie
+```
+
+**macOS:**
+```bash
+brew install tesseract
+```
+
+> 📖 Xem [INSTALL_TESSERACT.md](INSTALL_TESSERACT.md) để biết hướng dẫn chi tiết.
+
+## 🚀 Sử dụng nhanh
+
+### Ví dụ cơ bản
+
+```python
+import magicimg
+
+# 1. Kiểm tra thông tin ảnh
+info = magicimg.get_image_info("input.jpg")
+print(f"Kích thước: {info['width']}x{info['height']}")
+print(f"Dung lượng: {info['file_size_mb']:.2f} MB")
+
+# 2. Kiểm tra chất lượng ảnh
+is_good, quality_info, enhanced = magicimg.check_image_quality("input.jpg")
+print(f"Chất lượng tốt: {is_good}")
+print(f"Điểm số: {quality_info.quality_score:.2f}")
+
+# 3. Tăng cường chất lượng
+enhanced_image = magicimg.enhance_image("input.jpg", output_path="enhanced.jpg")
+
+# 4. Phát hiện và sửa góc nghiêng
+angle = magicimg.detect_skew("input.jpg")
+if abs(angle) > 0.5:
+    corrected = magicimg.correct_skew("input.jpg", output_path="rotated.jpg")
+
+# 5. Xử lý hoàn chỉnh - GIỮ CHẤT LƯỢNG ẢNH
+result = magicimg.process_image("input.jpg", output_path="processed.jpg", preserve_color=True)
+if result.success:
+    print(f"Các bước đã thực hiện: {', '.join(result.processing_steps)}")
+    print(f"Góc xoay: {result.rotation_angle:.1f}°")
+    print(f"Chất lượng cuối: {result.quality_metrics.quality_score:.2f}")
+
+# 6. Tối ưu riêng cho OCR (chuyển binary)
+ocr_result = magicimg.preprocess_for_ocr("input.jpg", output_path="ocr_ready.jpg", preserve_color=False)
+print(f"OCR steps: {', '.join(ocr_result.processing_steps)}")
+```
+
+### Sử dụng nâng cao với cấu hình tùy chỉnh
+
+```python
+from magicimg import ImageProcessor
+
+# Cấu hình tùy chỉnh
+config = {
+    "min_blur_index": 60.0,      # Ngưỡng độ nét tối thiểu
+    "min_brightness": 150.0,     # Ngưỡng độ sáng tối thiểu  
+    "min_contrast": 30.0,        # Ngưỡng tương phản tối thiểu
+    "min_quality_score": 0.5,    # Điểm chất lượng tối thiểu
+    "skip_rotation": False,      # Có bỏ qua xoay ảnh không
+    "use_gpu": True              # Sử dụng GPU nếu có
+}
+
+# Tạo processor với cấu hình tùy chỉnh
+processor = ImageProcessor(config=config, debug_dir="debug_output")
+
+# Xử lý ảnh
+result = processor.process_image("input.jpg", "output.jpg")
+print(f"GPU available: {processor.has_gpu}")
+```
+
+## 📚 API Reference
+
+### Hàm tiện ích chính
+
+#### `get_image_info(image_path)`
+Lấy thông tin cơ bản về ảnh.
+
+**Tham số:**
+- `image_path` (str): Đường dẫn đến ảnh
+
+**Trả về:**
+```python
+{
+    'width': int,           # Chiều rộng (pixels)
+    'height': int,          # Chiều cao (pixels) 
+    'channels': int,        # Số kênh màu
+    'file_size_mb': float,  # Dung lượng file (MB)
+    'aspect_ratio': float   # Tỷ lệ khung hình
+}
+```
+
+#### `check_image_quality(image_path, **kwargs)`
+Kiểm tra và đánh giá chất lượng ảnh.
+
+**Tham số:**
+- `image_path` (str): Đường dẫn đến ảnh
+- `**kwargs`: Tham số tùy chỉnh cho ImageProcessor
+
+**Trả về:**
+- `is_good` (bool): Ảnh có chất lượng tốt không
+- `quality_info` (ImageQualityMetrics): Thông tin chi tiết về chất lượng
+- `enhanced_image` (np.ndarray): Ảnh đã được tăng cường (nếu cần)
+
+#### `enhance_image(image_path, output_path=None, **kwargs)`
+Tăng cường chất lượng ảnh một cách nhẹ nhàng.
+
+**Tham số:**
+- `image_path` (str): Đường dẫn ảnh đầu vào
+- `output_path` (str, optional): Đường dẫn lưu ảnh kết quả
+- `**kwargs`: Tham số tùy chỉnh
+
+**Trả về:**
+- `np.ndarray`: Ảnh đã tăng cường (hoặc None nếu không cần)
+
+#### `detect_skew(image_path)`
+Phát hiện góc nghiêng của ảnh.
+
+**Tham số:**
+- `image_path` (str): Đường dẫn đến ảnh
+
+**Trả về:**
+- `float`: Góc nghiêng (độ), âm = nghiêng trái, dương = nghiêng phải
+
+#### `correct_skew(image_path, output_path=None, angle=None)`
+Sửa góc nghiêng của ảnh.
+
+**Tham số:**
+- `image_path` (str): Đường dẫn ảnh đầu vào
+- `output_path` (str, optional): Đường dẫn lưu ảnh kết quả
+- `angle` (float, optional): Góc xoay cụ thể (nếu không cung cấp sẽ tự phát hiện)
+
+**Trả về:**
+- `np.ndarray`: Ảnh đã được xoay
+
+#### `process_image(image_path, output_path=None, auto_rotate=True, preserve_color=True, **kwargs)`
+Xử lý ảnh hoàn chỉnh với tùy chọn giữ chất lượng.
+
+**Tham số:**
+- `image_path` (str): Đường dẫn ảnh đầu vào
+- `output_path` (str, optional): Đường dẫn lưu ảnh kết quả
+- `auto_rotate` (bool): Có tự động xoay ảnh không (mặc định True)
+- `preserve_color` (bool): Có giữ nguyên màu sắc không (mặc định True)
+- `**kwargs`: Tham số tùy chỉnh cho ImageProcessor
+
+**Trả về:**
+- `ProcessingResult`: Kết quả xử lý chi tiết
+
+#### `preprocess_for_ocr(image_path, output_path=None, preserve_color=False, **kwargs)`
+Tiền xử lý ảnh tối ưu cho OCR.
+
+**Tham số:**
+- `image_path` (str): Đường dẫn ảnh đầu vào
+- `output_path` (str, optional): Đường dẫn lưu ảnh kết quả
+- `preserve_color` (bool): Có giữ nguyên màu sắc không (mặc định False để tối ưu OCR)
+- `**kwargs`: Tham số tùy chỉnh cho ImageProcessor
+
+**Trả về:**
+- `ProcessingResult`: Kết quả xử lý chi tiết
+
+### Class ImageProcessor
+
+Lớp chính để xử lý ảnh với cấu hình tùy chỉnh.
+
+```python
+processor = ImageProcessor(
+    debug_dir="debug",      # Thư mục lưu ảnh debug
+    config={               # Cấu hình tùy chỉnh
+        "min_blur_index": 60.0,
+        "min_brightness": 150.0,
+        "min_contrast": 30.0,
+        "min_quality_score": 0.5,
+        "skip_rotation": False,
+        "use_gpu": True
+    }
+)
+```
+
+**Phương thức chính:**
+- `process_image(input_path, output_path)`: Xử lý ảnh hoàn chỉnh
+- `check_quality(image)`: Kiểm tra chất lượng ảnh
+- `enhance_image(image, quality_info)`: Tăng cường chất lượng
+- `detect_skew(image)`: Phát hiện góc nghiêng
+- `correct_skew(image, angle)`: Sửa góc nghiêng
+
+## 🎨 Tùy chọn Preserve Color
+
+### Vấn đề mất chất lượng ảnh
+
+**Trước v1.0.3:** Tất cả ảnh đều bị chuyển thành binary (đen/trắng) → Mất chất lượng nghiêm trọng
+
+**Từ v1.0.3:** Có thể chọn giữ nguyên chất lượng ảnh hoặc tối ưu cho OCR
+
+### So sánh 2 chế độ
+
+| Tính năng | preserve_color=True | preserve_color=False |
+|-----------|-------------------|---------------------|
+| **Màu sắc** | ✅ Giữ nguyên RGB | ❌ Chuyển grayscale |
+| **Chất lượng** | ✅ Giữ nguyên | ❌ Chuyển binary |
+| **Dung lượng** | 📈 Lớn hơn | 📉 Nhỏ hơn |
+| **Phù hợp cho** | Xem, lưu trữ, in ấn | OCR, nhận dạng text |
+| **Tốc độ OCR** | ⚠️ Chậm hơn | ✅ Nhanh hơn |
+
+### Ví dụ sử dụng
+
+```python
+import magicimg
+
+# 1. Giữ chất lượng ảnh (mặc định)
+result = magicimg.process_image(
+    "input.jpg", 
+    "output_quality.jpg", 
+    preserve_color=True  # Giữ màu sắc và chất lượng
+)
+
+# 2. Tối ưu cho OCR
+ocr_result = magicimg.preprocess_for_ocr(
+    "input.jpg", 
+    "output_ocr.jpg",
+    preserve_color=False  # Chuyển binary cho OCR
+)
+
+# 3. So sánh kết quả
+print(f"Quality steps: {', '.join(result.processing_steps)}")
+print(f"OCR steps: {', '.join(ocr_result.processing_steps)}")
+```
+
+### Test so sánh chất lượng
+
+```python
+# Chạy test so sánh
+python test_quality_comparison.py
+
+# Kết quả sẽ hiển thị:
+# - Original vs Preserve Color vs Binary OCR
+# - Metrics: file size, channels, brightness, contrast, unique colors
+```
+
+## ⚙️ Cấu hình chi tiết
+
+### Tham số cấu hình mặc định
+
+```python
+DEFAULT_CONFIG = {
+    # Ngưỡng chất lượng
+    "min_blur_index": 100.0,        # Độ nét tối thiểu (càng cao càng nét)
+    "min_brightness": 180.0,        # Độ sáng tối thiểu (0-255)
+    "min_contrast": 50.0,           # Tương phản tối thiểu
+    "min_quality_score": 0.6,       # Điểm chất lượng tối thiểu (0-1)
+    
+    # Xử lý góc nghiêng
+    "min_skew_angle": 0.5,          # Góc nghiêng tối thiểu để xoay (độ)
+    "skip_rotation": False,         # Bỏ qua xoay ảnh
+    
+    # GPU và hiệu năng
+    "use_gpu": True,                # Sử dụng GPU nếu có
+    "optimize_for_gpu": True,       # Tối ưu cho GPU
+    "batch_size": 4,                # Kích thước batch
+    
+    # Phát hiện đường kẻ
+    "line_detection": {
+        "min_line_length_ratio": 0.6,
+        "histogram_threshold_ratio": 0.5
+    }
+}
+```
+
+### Tùy chỉnh cho các use case khác nhau
+
+**Ảnh chất lượng cao:**
+```python
+high_quality_config = {
+    "min_blur_index": 120.0,
+    "min_brightness": 200.0,
+    "min_contrast": 60.0,
+    "min_quality_score": 0.8
+}
+```
+
+**Ảnh chất lượng thấp:**
+```python
+low_quality_config = {
+    "min_blur_index": 40.0,
+    "min_brightness": 120.0,
+    "min_contrast": 20.0,
+    "min_quality_score": 0.3
+}
+```
+
+**Xử lý nhanh (bỏ qua một số bước):**
+```python
+fast_config = {
+    "skip_rotation": True,
+    "use_gpu": False,
+    "min_quality_score": 0.4
+}
+```
+
+## 🔧 Debug và Troubleshooting
+
+### Bật chế độ debug
+
+```python
+from magicimg import ImageProcessor
+
+# Tạo processor với debug
+processor = ImageProcessor(debug_dir="debug_output")
+result = processor.process_image("input.jpg", "output.jpg")
+
+# Kiểm tra thư mục debug_output để xem các bước xử lý
+```
+
+### Kiểm tra thông tin hệ thống
+
+```python
+import magicimg
+magicimg.print_system_info()
+```
+
+### Các lỗi thường gặp
+
+**1. Lỗi import torch (GPU):**
+```
+ImportError: No module named 'torch'
+```
+**Giải pháp:** Cài đặt PyTorch:
+```bash
+pip install torch torchvision
+```
+
+**2. Lỗi Tesseract:**
+```
+TesseractNotFoundError
+```
+**Giải pháp:** Cài đặt Tesseract OCR (xem phần cài đặt ở trên)
+
+**3. Lỗi GPU:**
+```
+CUDA out of memory
+```
+**Giải pháp:** Giảm batch_size hoặc tắt GPU:
+```python
+config = {"use_gpu": False, "batch_size": 1}
+```
+
+### Logging
+
+```python
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
+# Bây giờ sẽ thấy log chi tiết
+result = magicimg.preprocess_for_ocr("input.jpg")
+```
+
+## 📊 So sánh hiệu suất
+
+### Test với ảnh thật
+
+```python
+# Chạy test tập trung
+python tests/test_focused_apis.py
+
+# Chạy test toàn diện
+python tests/test_pip_apis.py
+```
+
+### Benchmark
+
+```python
+import time
+import magicimg
+
+# Test thời gian xử lý
+start_time = time.time()
+result = magicimg.preprocess_for_ocr("large_image.jpg")
+processing_time = time.time() - start_time
+
+print(f"Thời gian xử lý: {processing_time:.2f}s")
+print(f"GPU được sử dụng: {result.success}")
+```
+
+## 🤝 Đóng góp
+
+Chúng tôi hoan nghênh mọi đóng góp! Vui lòng:
+
+1. Fork repository
+2. Tạo feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Tạo Pull Request
+
+## 📄 License
+
+Dự án này được phân phối dưới giấy phép MIT. Xem [LICENSE](LICENSE) để biết thêm chi tiết.
+
+## 🆕 Changelog
+
+### v1.0.4 (Latest)
+- 🎯 **GIẢI QUYẾT VẤN ĐỀ MẤT CHẤT LƯỢNG ẢNH**
+- ✅ Thêm tùy chọn `preserve_color` để giữ nguyên chất lượng ảnh
+- ✅ Tách riêng xử lý cho "xem ảnh" vs "OCR"
+- ✅ Cải thiện API với tùy chọn linh hoạt
+- ✅ Test so sánh chất lượng trước/sau chi tiết
+- ✅ Documentation cập nhật với ví dụ preserve_color
+
+### v1.0.2
+- ✅ Tối ưu hóa enhancement để tránh over-processing
+- ✅ Cải thiện phát hiện góc nghiêng
+- ✅ Thêm so sánh trước/sau xử lý
+- ✅ Sửa lỗi GPU memory management
+- ✅ Cập nhật documentation chi tiết
+
+### v1.0.1
+- ✅ Sửa lỗi API parameters
+- ✅ Đồng bộ version numbers
+- ✅ Cải thiện error handling
+
+### v1.0.0
+- 🎉 Phiên bản đầu tiên
+- ✅ Hỗ trợ GPU với CUDA
+- ✅ API đơn giản và mạnh mẽ
+- ✅ Tự động phát hiện và xử lý ảnh
+
+## 📞 Hỗ trợ
+
+- 📧 Email: your.email@example.com
+- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/magicimg/issues)
+- 📖 Documentation: [Wiki](https://github.com/yourusername/magicimg/wiki)
+
+---
+
+**⭐ Nếu thấy hữu ích, hãy cho chúng tôi một star trên GitHub!** 
