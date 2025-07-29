@@ -1,0 +1,2 @@
+include suzie/data/*.zip
+include suzie/data/*.txt
