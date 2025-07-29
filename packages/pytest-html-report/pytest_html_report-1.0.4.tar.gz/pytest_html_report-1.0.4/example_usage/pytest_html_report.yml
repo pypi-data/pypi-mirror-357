@@ -1,0 +1,40 @@
+# Default pytest-html-report configuration
+report:
+  title: "pytest HTML Report"
+  img_url: "https://icon.icepanel.io/Technology/svg/pytest.svg"
+  report_dir: "reports"
+  test_environment: "Development"
+
+theme:
+  primary_color: "#800080"      # Primary brand color (for buttons, active states)
+  primary_hover: "#0747A6"      # Darker shade for hover states
+  success_bg: "#E3FCEF"         # Background for passed tests
+  success_text: "#00875A"       # Text color for passed tests
+  error_bg: "#FFEBE6"           # Background for failed tests
+  error_text: "#DE350B"         # Text color for failed tests
+  warning_bg: "#FFFAE6"         # Background for skipped tests
+  warning_text: "#974F0C"       # Text color for skipped tests
+  info_bg: "#DEEBFF"            # Background for info/categories
+  info_text: "#0747A6"          # Text color for info/categories
+
+# Functional Specifications Mapping
+functional_specs:
+  SPEC-001: "User Authentication"
+  SPEC-002: "Data Processing"
+  SPEC-003: "API Integration"
+  SPEC-004: "Performance Testing"
+  SPEC-005: "Security Features"
+
+# Test Categories
+# Define your custom categories here
+categories:
+  regression: "Regression Tests"
+  smoke: "Smoke Tests"
+  integration: "Integration Tests"
+  unit: "Unit Tests"
+  manual: "Manual Tests"
+  optional: "Optional Tests"
+  performance: "Performance Tests"
+  security: "Security Tests"
+  ui: "UI Tests"
+  api: "API Tests"
