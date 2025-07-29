@@ -1,0 +1,84 @@
+name: CI/CD
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    tags:
+      - "*"
+    branches:
+      - main
+
+jobs:
+  unit_testing:
+    name: Build and Testing
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: ${{ matrix.python-version == '3.13' && 'pip' || '' }}
+
+      - name: Build wheel
+        if: matrix.python-version == '3.13'
+        run: |
+          pip install build --disable-pip-version-check
+          python -m build
+
+      - name: Upload wheel
+        if: matrix.python-version == '3.13'
+        uses: actions/upload-artifact@v4
+        with:
+          name: amzsc-wheel
+          path: dist/
+          retention-days: 1
+
+  release:
+    name: Upload release to PyPI
+    if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
+    needs: [unit_testing]
+    runs-on: ubuntu-latest
+
+    environment:
+      name: pypi
+      url: https://pypi.org/project/amazon-description-scraper
+
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist/
+
+      - name: Flatten directory structure
+        run: |
+          mv dist/*/* dist/
+          rm -rf dist/amzsc-wheel
+
+      - name: Display structure of downloaded files
+        run: ls -R
+
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            ./**/*.whl
