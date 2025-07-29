@@ -1,0 +1,57 @@
+[build-system]
+requires = ["xmake-python >= 0.1.7"]
+build-backend = "xmake_python"
+
+[project]
+name = 'perl5'
+version = '5.41.13'
+description = "Perl is a general-purpose programming language originally developed for text manipulation and now used for a wide range of tasks including system administration, web development, network programming, GUI development, and more."
+readme = 'README.md'
+keywords = ["perl"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Build Tools",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX",
+  "Operating System :: Unix",
+  "Operating System :: MacOS",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+[project.license]
+text = "GPL v3"
+
+[project.urls]
+Homepage = "https://dev.perl.org/perl5/"
+Download = "https://github.com/xmake-io/perl5-wheel/releases"
+"Bug Report" = "https://github.com/xmake-io/perl5-wheel/issues"
+Source = "https://github.com/xmake-io/perl5-wheel"
+
+
+[tool.cibuildwheel]
+archs = ["all"]
+build = "*312-*"
+skip = "*-macosx_x86_64 *_universal2"
+build-frontend = "build[uv]"
+
+[[tool.cibuildwheel.overrides]]
+select = ["*-macosx_*"]
+# AssertionError: uv not found
+before-all = "brew install uv"
+
+# https://github.com/astral-sh/uv/issues/10260
+[[tool.cibuildwheel.overrides]]
+select = ["*-musllinux_s390x", "*-musllinux_ppc64*"]
+build-frontend = "build"
+
+[[tool.cibuildwheel.overrides]]
+select = ["*-musllinux_*"]
+before-all = "apk add gzip"
