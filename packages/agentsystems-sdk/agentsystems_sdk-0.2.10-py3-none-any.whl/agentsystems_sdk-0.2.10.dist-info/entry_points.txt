@@ -1,0 +1,2 @@
+[console_scripts]
+agentsystems = agentsystems_sdk.cli:app
