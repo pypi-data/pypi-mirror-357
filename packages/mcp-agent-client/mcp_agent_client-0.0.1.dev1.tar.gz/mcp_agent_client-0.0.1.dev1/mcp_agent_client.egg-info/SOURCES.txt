@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+mcp_agent_client.egg-info/PKG-INFO
+mcp_agent_client.egg-info/SOURCES.txt
+mcp_agent_client.egg-info/dependency_links.txt
+mcp_agent_client.egg-info/top_level.txt
+mcp_client/__init__.py
