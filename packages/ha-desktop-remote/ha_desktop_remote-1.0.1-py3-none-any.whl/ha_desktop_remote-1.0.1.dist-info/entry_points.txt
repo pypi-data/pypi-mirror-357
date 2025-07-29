@@ -1,0 +1,2 @@
+[gui_scripts]
+ha-desktop-remote = ha_desktop_remote.main:main
