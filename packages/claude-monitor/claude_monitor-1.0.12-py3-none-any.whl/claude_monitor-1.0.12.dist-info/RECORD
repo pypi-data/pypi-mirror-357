@@ -1,0 +1,17 @@
+./.gitignore,sha256=ZvemZZlH0eNpRLZDpyM63pgyOL4c0P-NZcHZ8Ypwk-4,3414
+./CHANGELOG.md,sha256=KIys683a-xVg_5a1sS6rS9a2xmjq5UKN3fr9B6zJqOw,2543
+./CLAUDE.md,sha256=uA0cG6GTnRiZlleeExQ3OglOHlGYPk1qcOhzUX-kI0I,5627
+./CONTRIBUTING.md,sha256=F5AkgIurkVyJCcj7Wk9px3QT1Yv83LgfcMdqP-2SsgY,11562
+./DEVELOPMENT.md,sha256=wp0gVbtt5Ny7P6_qqthwFvrS_vWITQF00WTQDklGR88,11986
+./LICENSE,sha256=c_IvAuE5MPuR_Y3qNgZ5VJ4hhMouZLtVQ7h_HAnMTiw,1063
+./PKG-INFO,sha256=H38F4CKmLY-1sHyVIJC6loNvala9GkXSDG29Msrsa88,27867
+./README.md,sha256=Y3hTD52dBNl-hg5NvZTTQNvUKX7Hvut5ouCjdwxVQrw,25814
+./TROUBLESHOOTING.md,sha256=jIxH1673w07lxNPn7zRnbNKwF4PwDG9g3F5i7Nl6qAA,15567
+./check_dependency.py,sha256=-ApWPgC6Nywgq1Z_eSLA2q1AF1tHbGq_w25zNlDK5As,2039
+./claude_monitor.py,sha256=FeSh_ZWyivxPNMYH5Zq3lmt49OxEf2Zf9AFXA-3uDoE,33394
+./pyproject.toml,sha256=41jz0SLEOKmugTdIvGnecHCJzgISST5eZ1QQGYRBkiw,2410
+claude_monitor-1.0.12.dist-info/METADATA,sha256=H38F4CKmLY-1sHyVIJC6loNvala9GkXSDG29Msrsa88,27867
+claude_monitor-1.0.12.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+claude_monitor-1.0.12.dist-info/entry_points.txt,sha256=m2S5Hrq7fy_4uj3zmH6TccpznJRNR87cdVBWa2Xt140,55
+claude_monitor-1.0.12.dist-info/licenses/LICENSE,sha256=c_IvAuE5MPuR_Y3qNgZ5VJ4hhMouZLtVQ7h_HAnMTiw,1063
+claude_monitor-1.0.12.dist-info/RECORD,,
