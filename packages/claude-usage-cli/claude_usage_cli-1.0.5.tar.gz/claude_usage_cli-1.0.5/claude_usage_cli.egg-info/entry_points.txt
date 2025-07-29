@@ -1,0 +1,2 @@
+[console_scripts]
+claude-usage-cli = claude_monitor.cli:main
