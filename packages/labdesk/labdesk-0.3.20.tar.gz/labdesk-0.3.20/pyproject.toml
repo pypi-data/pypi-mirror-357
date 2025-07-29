@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "labdesk"
+version = "0.3.20"
+description = "Labdesk is a library created to support rapid and reproducible experimentation."
+authors = ["Andrea Rosasco <andrearosasco.ar@gmail.com>"]
+homepage = "https://github.com/andrearosasco/bulb"
+repository = "https://github.com/andrearosasco/bulb"
+readme = "README.md"
+packages = [{include = "bulb"}]
+
+
+[tool.poetry.scripts]
+bulb = "bulb.cli.main:main"
+bulb-manager = "bulb.scripts.manager:main"
+bulb-runner = "bulb.scripts.runner:main"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+typer = "^0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

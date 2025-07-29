@@ -1,0 +1,58 @@
+Metadata-Version: 2.3
+Name: labdesk
+Version: 0.3.20
+Summary: Labdesk is a library created to support rapid and reproducible experimentation.
+Author: Andrea Rosasco
+Author-email: andrearosasco.ar@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: typer (>=0,<1)
+Project-URL: Homepage, https://github.com/andrearosasco/bulb
+Project-URL: Repository, https://github.com/andrearosasco/bulb
+Description-Content-Type: text/markdown
+
+# Labdesk
+
+Labdesk is a library created to support rapid and reproducible experimentation.
+
+## Installation
+
+```bash
+pip install labdesk
+```
+
+## Usage
+
+Labdesk provides command-line tools for managing experiments:
+
+- `bulb` - Main CLI interface
+- `bulb-manager` - Experiment manager
+- `bulb-runner` - Experiment runner
+
+## Requirements
+
+- Python ^3.8
+- typer
+
+## Development
+
+This project uses Poetry for dependency management.
+
+```bash
+poetry install
+poetry run bulb --help
+```
+
+## License
+
+See LICENSE file for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
