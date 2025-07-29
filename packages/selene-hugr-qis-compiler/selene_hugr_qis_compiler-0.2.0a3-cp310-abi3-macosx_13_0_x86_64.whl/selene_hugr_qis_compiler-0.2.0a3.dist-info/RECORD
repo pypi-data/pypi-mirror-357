@@ -1,0 +1,8 @@
+selene_hugr_qis_compiler-0.2.0a3.dist-info/RECORD,,
+selene_hugr_qis_compiler-0.2.0a3.dist-info/WHEEL,sha256=itC2jjdE1zrlgchdi2uHroJ6rLmB4OOrgi6JdRgPLbc,104
+selene_hugr_qis_compiler-0.2.0a3.dist-info/METADATA,sha256=mVYVPKQQ6bNM9IT8tIc455RQr7xUmXYvL__9VIzi_Ok,2294
+selene_hugr_qis_compiler/selene_hugr_qis_compiler.abi3.so,sha256=nhXGBwT9CVRRtDTv5a7DRk9nzfCkAG02W5cH4fS-i6Q,102094992
+selene_hugr_qis_compiler/__init__.py,sha256=uSi7Ial5XfbEoPyv-cQoIQKTJy-EaR7cakaSp29q2gY,179
+selene_hugr_qis_compiler/.dylibs/libc++abi.1.0.dylib,sha256=IXD0m5odY4EBbiyXBX3S-6LQIcLo5EdZOUyp_KuM2fc,323936
+selene_hugr_qis_compiler/.dylibs/libunwind.1.0.dylib,sha256=l9X6-QgzNNCQdjx3kM8sB-Q4l2a08sn7mRMEqxpSGHU,115136
+selene_hugr_qis_compiler/.dylibs/libc++.1.0.dylib,sha256=mIPX_sr53eg6-fjGsnixC6MleQWus1ISuY59SO2OVys,1059232
