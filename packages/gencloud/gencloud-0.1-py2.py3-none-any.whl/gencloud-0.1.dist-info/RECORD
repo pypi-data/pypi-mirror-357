@@ -1,0 +1,12 @@
+gencloud/__init__.py,sha256=Bt6k9jcZBKH2qcuA1qmS9LqjL_Yk7YwJhTBXhv_g4G8,38
+gencloud/cli.py,sha256=o37nki_RJIgDG5LALWHaf26gua6IBJ7GPeBBj6Nn9lo,3147
+gencloud/cloudinit.py,sha256=8HrKV60W7M4nxsMiA6_F7l3FHWlHcO1PWn5ZTLCS8LE,6608
+gencloud/config.py,sha256=HKx-Syh5XntYKpZfSb_Tyfx4iqsoHszOh2uGF0WqLTI,7726
+gencloud/log.py,sha256=TrjrdLBo82nK_1L7wdksQKhIDXB1t9Y0cHmGvZSa0C0,1615
+gencloud/mkuser.py,sha256=NKDSAmXIyyeqpMfX_W4B5zppJxwi57R8mTrq5s5bJAU,5074
+gencloud/util.py,sha256=nd0hZMRDVBN4ioTEOrWMmSVMQiF9rhARl6hFZ8dcJe8,823
+gencloud-0.1.dist-info/entry_points.txt,sha256=LaEX1LCmLgIPmMfYadL4JfDqA02tIm5DN0lb1M0rnU8,45
+gencloud-0.1.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+gencloud-0.1.dist-info/WHEEL,sha256=Dyt6SBfaasWElUrURkknVFAZDHSTwxg3PaTza7RSbkY,100
+gencloud-0.1.dist-info/METADATA,sha256=INZYHFSyt6zzzeDR2xJEc2iLn5DkmzqV3YiRs_eb30I,428
+gencloud-0.1.dist-info/RECORD,,

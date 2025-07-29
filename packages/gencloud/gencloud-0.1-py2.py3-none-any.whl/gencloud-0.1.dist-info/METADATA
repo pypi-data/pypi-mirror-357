@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: gencloud
+Version: 0.1
+Summary: gencloud
+Author-email: gottaeat <eateing@loggedin.net>
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+License-File: LICENSE
+Requires-Dist: pycdlib >= 1.14.0
+Requires-Dist: PyYAML >= 6.0.0
+Requires-Dist: passlib >= 1.6.0
+Project-URL: Home, https://github.com/gottaeat/gencloud
+
+# gencloud
+
