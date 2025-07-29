@@ -1,0 +1,7 @@
+[console_scripts]
+triksha = cli.core:main_cli
+triksha-cli = cli.dravik_cli:main
+triksha-dataset = tools.format_dataset:main
+triksha-deps = cli.dependency_cli:main
+triksha-train = tools.train_model:main
+triksha-verify = verify_env:main
