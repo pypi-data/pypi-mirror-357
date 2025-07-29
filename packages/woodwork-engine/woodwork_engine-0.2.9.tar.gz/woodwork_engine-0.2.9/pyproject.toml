@@ -1,0 +1,68 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "woodwork-engine"
+version = "0.2.9"
+description = "An AI Agent IaC tool that aims to make developing and deploying AI Agents easier."
+readme = "README.md"
+authors = [{ name = "Will Woodward" }]
+requires-python = ">=3.10"
+dependencies = [
+    "colorama>=0.4.6",
+    "deprecated>=1.2.18",
+    "distro>=1.9.0",
+    "idna>=3.10",
+    "jsonpointer>=3.0.0",
+    "python-dotenv>=1.1.0",
+    "pyyaml>=6.0.2",
+    "requests>=2.32.3",
+    "tomli>=2.2.1",
+    "uv>=0.7.12",
+]
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13"
+]
+
+[project.optional-dependencies]
+all = [
+    "chromadb>=1.0.12",
+    "langchain>=0.3.25",
+    "langchain-chroma>=0.2.4",
+    "langchain-community>=0.3.24",
+    "pytest>=8.3.5",
+    "ruff>=0.11.12",
+    "ty==0.0.1a9",
+    "sentence-transformers>=4.1.0",
+]
+
+[project.scripts]
+woodwork = "woodwork.__main__:run_as_standalone_app"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["woodwork*"]
+
+[tool.setuptools.package-data]
+"*" = [
+    "requirements/**/*.txt",
+    "config/log_config.json",
+    "config/.env.example",
+    ]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+ignore = ["E722"]
+
+[tool.ty.rules]
+unknown-argument = "ignore"
+unresolved-import = "ignore"
