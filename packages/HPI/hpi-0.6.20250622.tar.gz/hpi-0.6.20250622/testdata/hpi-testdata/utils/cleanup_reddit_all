@@ -1,0 +1,7 @@
+#!/bin/bash -eux
+cd "$(dirname "$0")"
+
+for f in ../reddit-full/*.json.xz; do
+    name=$(basename $f .json.xz)
+    xzcat $f | ./cleanup_reddit | xz > "../reddit/$name.json.xz"
+done

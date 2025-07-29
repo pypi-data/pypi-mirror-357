@@ -1,0 +1,4 @@
+#!/bin/bash
+set -eux
+
+exec jq '.submissions = [] | .comments = (.comments | map(select(.id == "edn1ebk" or .id == "co5p0kf"))) | .saved = (.saved | map(select(.id == "acxy1v" or .id == "8khft1" or .id == "19ifop"))) | .upvotes = [] | .multireddits = [] | .subreddits = [] | .profile = [] | .upvoted = [] | .downvoted = []'
