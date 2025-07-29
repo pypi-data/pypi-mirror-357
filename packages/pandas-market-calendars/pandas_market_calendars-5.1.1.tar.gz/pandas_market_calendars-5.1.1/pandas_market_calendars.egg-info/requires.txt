@@ -1,0 +1,11 @@
+pandas>=1.1
+tzdata
+python-dateutil
+exchange-calendars>=3.3
+
+[dev]
+pytest
+black
+pre-commit
+build
+twine
