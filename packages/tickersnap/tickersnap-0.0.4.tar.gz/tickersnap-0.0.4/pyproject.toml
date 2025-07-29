@@ -1,0 +1,102 @@
+[build-system]
+requires = ["setuptools>=80.9.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tickersnap"
+version = "0.0.4"
+description = "Tickersnap is a tool for getting snapshots of stock data from www.tickertape.in"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [
+    {name = "Atanu Sarkar", email = "mratanusarkar@gmail.com"}
+]
+maintainers = [
+    {name = "Atanu Sarkar", email = "mratanusarkar@gmail.com"}
+]
+keywords = ["finance", "stock", "market", "data", "financial", "analysis", "automation", "sentiment", "screening", "tickertape"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "pydantic>=2.0.0",
+    "httpx>=0.25.0",
+    "tqdm>=4.67.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pip>=24.2",
+    "uv>=0.4.20",
+    "pytest>=8.3.3",
+    "isort>=5.13.2",
+    "black>=24.10.0",
+    "ruff>=0.6.9",
+]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocstrings>=0.26.1",
+    "mkdocstrings-python>=1.11.1",
+    "mkdocs-material>=9.5.39",
+    "mkdocs-minify-plugin>=0.8.0",
+    "mkdocs-glightbox>=0.4.0",
+    "mkdocs-jupyter>=0.25.0",
+    "jupyter>=1.1.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/mratanusarkar/tickersnap"
+Documentation = "https://mratanusarkar.github.io/tickersnap"
+Repository = "https://github.com/mratanusarkar/tickersnap"
+"Bug Tracker" = "https://github.com/mratanusarkar/tickersnap/issues"
+Changelog = "https://github.com/mratanusarkar/tickersnap/releases"
+
+[tool.setuptools.packages.find]
+include = ["tickersnap*"]
+exclude = ["tests*", "docs*", "site*", "data*", "input*", "output*", "artifacts*", "*.egg-info*"]
+
+[tool.setuptools.package-data]
+tickersnap = ["py.typed"]
+
+[tool.pytest.ini_options]
+pythonpath = "."
+testpaths = ["tests"]
+filterwarnings = "ignore::DeprecationWarning"
+markers = [
+    "integration: marks tests as integration tests (makes real API calls)",
+]
+
+[tool.ruff]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    "S101",             # allow assert
+    "D",                # skip docstring style
+    "F841",             # ignore unused variables in tests
+    "E501",             # ignore line too long in tests
+    "ARG",              # ignore unused fixture args
+    "FBT",              # ignore boolean trap checks
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["tickersnap"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+combine-as-imports = true
