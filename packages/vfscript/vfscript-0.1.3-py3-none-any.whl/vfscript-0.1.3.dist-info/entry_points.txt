@@ -1,0 +1,2 @@
+[console_scripts]
+vfscript = vfscript.main:main
