@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: aivk_web
+Version: 0.1.2
+Summary: Aivk Web UI
+Author-email: LIghtJUNction <LIghtJUNction.me@gmail.com>
+Requires-Python: >=3.13
+Requires-Dist: aivk>=0.4.4
+Requires-Dist: robyn>=0.69.0
+Description-Content-Type: text/markdown
+
+# AIVK core module
+webui
