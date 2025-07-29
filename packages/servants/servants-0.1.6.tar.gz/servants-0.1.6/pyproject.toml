@@ -1,0 +1,14 @@
+[project]
+name = "servants"
+version = "0.1.6"
+description = "A simple library for prototyping and learning agent-based reasoning with tools."
+authors = [
+  { name = "rabeeqiblawi", email = "rabeeqiblawi@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
