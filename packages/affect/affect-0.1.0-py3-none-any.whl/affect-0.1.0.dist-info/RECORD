@@ -1,0 +1,14 @@
+affect/__init__.py,sha256=VFmKLVDj_sXyIxnnd2SyapohkHBg2ktGkExpt1u76W8,479
+affect/exceptions.py,sha256=9VOebOzXg1ltEAv4Kwu4_CRIuUBK0QBYN90jTBaBqys,118
+affect/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+affect/typings.py,sha256=6U7QGWMz09UAfzdpoK8KtJnpFtmy26igXghgHqXPyG0,289
+affect/version.py,sha256=yc1j_YWvi-ykH04eIxy-qA2_X3vwamUIRBjgCa6RkiQ,61
+affect/core/__init__.py,sha256=4wZ-K19Fo2bWqGPtjoEJVkTMjDjfz2Yxpb1vwp1Mr7o,445
+affect/core/_core.py,sha256=1KImoYomHNFYMZnvbHrJI8pAdHc1yBWszZYkROgejV0,6821
+affect/core/_decorators.py,sha256=EwC2m3GI1R93sKUpn3sr4lMo4Kqa4EDsIOpVu60zmQ4,3590
+affect/core/_helpers.py,sha256=Sa01qaWbZSRY_6ExrTZeUWeKukb6DoXRV_Mh5qbpkgg,79
+affect-0.1.0.dist-info/licenses/LICENSE,sha256=rQG41rfUq7E20g4G9nQvVspfB-jwZv5sagP5IIoVUNw,1070
+affect-0.1.0.dist-info/METADATA,sha256=Ba20HwE0zL-EiVF7BZEoAMTGHj7WvzEuhyeIS50iD_s,2991
+affect-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+affect-0.1.0.dist-info/top_level.txt,sha256=M4YV5jI1TQ8XwZNZesfKgN5a409fzp-cqS5HajWdo-A,7
+affect-0.1.0.dist-info/RECORD,,
