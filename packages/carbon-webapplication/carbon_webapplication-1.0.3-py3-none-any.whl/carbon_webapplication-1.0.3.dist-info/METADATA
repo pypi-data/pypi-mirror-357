@@ -1,0 +1,29 @@
+Metadata-Version: 2.3
+Name: carbon_webapplication
+Version: 1.0.3
+Summary: Robust, Ready-to-use, KoçDigital Originated
+License: MIT
+Author: Anıl Eladağ
+Author-email: anil.eladag@kocdigital.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: fastapi (>=0.115.0,<0.116.0)
+Requires-Dist: httpx (>=0.27.2,<0.28.0)
+Requires-Dist: pyjwt (>=2.6.0,<3.0.0)
+Requires-Dist: pyyaml (>=6.0.2,<7.0.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: uvicorn (>=0.31.0,<0.32.0)
+Description-Content-Type: text/markdown
+
+# Carbon
+Robust, Ready-to-use, KoçDigital Originated. It contains many useful libraries that resolves many kinds of problems in aspect
+of infrastructural, design pattern, wrappers, ease of usability, plug and play, standardization and so on...
+
+You run into a trouble? Check Carbon and find if there is a library that works best for you.
