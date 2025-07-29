@@ -1,0 +1,12 @@
+rdkit2ase/__init__.py,sha256=F-Q41FYtnnigitGnJYYHdSwHkcIf7VnIfbrjUZil9dI,598
+rdkit2ase/compress.py,sha256=bEIa8Ppdbk55LHVD-1PpbdR-rkA-jNMMqWSHW3LmyT0,2007
+rdkit2ase/connectivity.py,sha256=hazy_8BL4fn99PYcOJDHDXeJUoho_0c5ihfxhsIJYk8,15142
+rdkit2ase/pack.py,sha256=6fewguSOZLGpcXLivnikZ40B5GTrWypr5AN3vuyfUP4,7139
+rdkit2ase/rdkit2ase.py,sha256=Q_8wwNE9x7ur5P5uISTs4g74lBcpRdEtYiCHz4N_dTA,6001
+rdkit2ase/smiles.py,sha256=G7e0KTbC4qh2OVWGTJ84eTmURW5DmASrniOpqJWty6Y,1929
+rdkit2ase/substructure.py,sha256=ZWZeRDq72FB-hBnTkToxAOTnK0au3QGuTWI0eyzhYLo,3877
+rdkit2ase/utils.py,sha256=HvuT24QLwp_U6KgKraHcIxUvRmurVRRK3xFhGECe1lI,3527
+rdkit2ase-0.1.8.dist-info/METADATA,sha256=No6kRJMt4W_8RBG01P0xqvyzyAEhFOHMeeDEYgAFNBM,1763
+rdkit2ase-0.1.8.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+rdkit2ase-0.1.8.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+rdkit2ase-0.1.8.dist-info/RECORD,,
