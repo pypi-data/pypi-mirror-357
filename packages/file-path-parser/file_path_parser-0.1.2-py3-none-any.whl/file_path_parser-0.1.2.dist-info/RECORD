@@ -1,0 +1,10 @@
+file_path_parser/__init__.py,sha256=im_GUxTTQKblzjYKYxumPuXMJ_NXHuWy8QiNIQThl6g,20
+file_path_parser/api.py,sha256=_hM5U39ZjOfadP7cuBJPfrbe7tngQwmiY4mnWPJG7kE,2817
+file_path_parser/cli.py,sha256=I_XsbFHYNQvS0ciHpQs101CikNuFn0i5vTnEmTo_JDI,1854
+file_path_parser/file_path_parser.py,sha256=gJvdhds1U-yAMs94whc8-KVLSsPbKcwxRwEzEA660TU,10788
+file_path_parser/pattern_matcher.py,sha256=iOYK_qhUBuh_eIPBNEup8j5wrBNYGA5Bjyq67kCd1oA,3541
+file_path_parser-0.1.2.dist-info/entry_points.txt,sha256=zX0RDx1uaVZsjodFVg1LROXLW8jHgNw8uXxyDCyJ5Yc,62
+file_path_parser-0.1.2.dist-info/LICENSE,sha256=tn6P3jLcSJWZJaOLBFMGC2Sj9clgOdM9Sf3W_AQT1FA,1087
+file_path_parser-0.1.2.dist-info/METADATA,sha256=90WR2kMp-W9kf9OAauh7fojxneoY7WDy8i2WBeblnX0,13007
+file_path_parser-0.1.2.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+file_path_parser-0.1.2.dist-info/RECORD,,
