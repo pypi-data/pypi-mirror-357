@@ -1,0 +1,2 @@
+[console_scripts]
+mengshohuafirstmcp = mengshohuafirstmcp:main
