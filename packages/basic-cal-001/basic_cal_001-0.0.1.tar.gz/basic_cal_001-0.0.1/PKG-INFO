@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: basic_cal_001
+Version: 0.0.1
+Summary: A very basic calculator
+Author: nandhu
+Author-email: nandhu <ggnandhinigg@gmail.com>
+License: MIT
+Project-URL: Homepage, https://example.com
+Project-URL: Repository, https://github.com/yourusername/nandhubasicscalculator
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-python
+
+# nandhubasicscalculator
+
+A very basic calculator Python package for educational purposes. Supports basic arithmetic operations such as addition, subtraction, multiplication, and division.
+
+## 📦 Installation
+
+```bash
+pip install basic_cal_001

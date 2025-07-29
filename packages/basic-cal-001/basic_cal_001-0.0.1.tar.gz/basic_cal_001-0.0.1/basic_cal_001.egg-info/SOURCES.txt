@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+basic_cal_001/__init__.py
+basic_cal_001/main.py
+basic_cal_001.egg-info/PKG-INFO
+basic_cal_001.egg-info/SOURCES.txt
+basic_cal_001.egg-info/dependency_links.txt
+basic_cal_001.egg-info/top_level.txt
