@@ -1,0 +1,32 @@
+Metadata-Version: 2.3
+Name: invenio_pidstore_extra
+Version: 0.2.0
+Dynamic: Description
+Dynamic: Description-Content-Type
+Summary: Module that adds URN minting by DNB epicur service.
+Project-URL: Homepage, https://github.com/ulbmuenster/invenio-pidstore-extra
+Author-email: University of Münster <forschungsdaten@uni-muenster.de>
+License: MIT
+Keywords: dnb,invenio,rdm,urn
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.12
+Requires-Dist: arrow>=1.3.0
+Requires-Dist: flask>=3.1.0
+Requires-Dist: idutils>=1.4.2
+Requires-Dist: invenio-pidstore>=2.0.0
+Requires-Dist: invenio-rdm-records>=17.0.2
+Requires-Dist: invenio-search>=3.0.0
+Requires-Dist: opensearch-dsl>=2.1.0
+Provides-Extra: tests
+Requires-Dist: check-manifest; extra == 'tests'
+Requires-Dist: invenio-app>=2.1.0; extra == 'tests'
+Requires-Dist: pytest-black-ng>=0.4.0; extra == 'tests'
+Requires-Dist: pytest-cov==6.1.1; extra == 'tests'
+Requires-Dist: pytest-docstyle==2.0.1; extra == 'tests'
+Requires-Dist: pytest-env==1.1.5; extra == 'tests'
+Requires-Dist: pytest-invenio>=3.3.0; extra == 'tests'
+Requires-Dist: pytest-isort==4.0.0; extra == 'tests'
+Requires-Dist: pytest-mock>=3.12.0; extra == 'tests'
+Requires-Dist: pytest==8.3.5; extra == 'tests'
+Requires-Dist: sphinx>=4.5.0; extra == 'tests'
