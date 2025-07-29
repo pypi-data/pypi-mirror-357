@@ -1,0 +1,12 @@
+pylitematic/__init__.py,sha256=-yLTtTzD7kRpeKMbUTYNy67zkFkxUP8V1DnPXhS3ZFY,202
+pylitematic/block_property.py,sha256=4wwsQrxyNGDcrktpd4tD0Vzv-a1OxWYMj0H05GDiT-I,7739
+pylitematic/block_state.py,sha256=tMRoY6jPtt2M85DR9U9dnQh2Ukp6pP_65xXzMIFeUEo,3546
+pylitematic/geometry.py,sha256=kt2buIJovAymAtaGQYmmWj7ypOt1xI8s--LHkbTPUlM,5399
+pylitematic/region.py,sha256=0bUcK9oVyhNDzfxTjZmVLwMddrIdxvJX-cXkWL8BRSE,11097
+pylitematic/resource_location.py,sha256=gHVE1RTRHtc8DWSlXa0WUom68tRlJy8LU5dOzuONV98,2186
+pylitematic/schematic.py,sha256=SLz4NQNBJkLXV9Oj0fVOE-daP4MRsdYAnnl1vKzJv_Q,7928
+pylitematic/test.py,sha256=9uch5L58o9QVJI50jUcbuulEswYzDgtYnRiIP991jFo,3162
+pylitematic-0.0.3.dist-info/METADATA,sha256=ES-4UDWi6DQU6fCSNrgf5FLMDX_jh1g7k6kx9fmiX70,1033
+pylitematic-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pylitematic-0.0.3.dist-info/top_level.txt,sha256=sYUxm6O7Dh5TzuP-kPFe2FHJWUuwHFO69vN2VBiEG4A,12
+pylitematic-0.0.3.dist-info/RECORD,,
