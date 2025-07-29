@@ -1,0 +1,8 @@
+tpds/__init__.py,sha256=ED6jHcYiuYpr_0vjGz0zx2lrrmJT9sDJCzIljoDfmlM,65
+tpds/packages/__init__.py,sha256=GcaUt6rSCH251luBldfKB-YaO8wBPBJa4clJvSjqiGI,145
+tpds/packages/packages.yaml,sha256=fEal3oHF61xlMpt9xcfo-8eGLDbXktHTk0WMpJWvvZY,4503
+tpds_manifest-1.0.9.dist-info/licenses/LICENSE,sha256=F_itoJVw8BueLDyZXyIPzgH_thxrjAGZ9vasLzVc19I,1322
+tpds_manifest-1.0.9.dist-info/METADATA,sha256=PgXAukDZqeNnNiXTtNEpvdTW3EwwwEo37HYWeBXkikk,2445
+tpds_manifest-1.0.9.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tpds_manifest-1.0.9.dist-info/top_level.txt,sha256=Tl4GsItOlkTwS5kMrk7oOjlZsRztkeFRTneAJ5ZBOjQ,5
+tpds_manifest-1.0.9.dist-info/RECORD,,
