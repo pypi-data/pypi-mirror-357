@@ -1,0 +1,11 @@
+llama_optimus/__init__.py,sha256=g35X4oNbTamLdwV47KwpxteCZX5pO5uQ4WlXETUXQrI,553
+llama_optimus/cli.py,sha256=vpCYEUaB-PlO_-zAC2gCYC10G28GnqEglapvouwfxCA,8262
+llama_optimus/core.py,sha256=QnVpc_dMJwYQATZq0V_EL2BiaSzSUf5IuWSgbxbACLk,24528
+llama_optimus/override_patterns.py,sha256=CoAnIW4eVvbfxb20euWHDEENT-bRuzRlVGXFEu5I8I4,2043
+llama_optimus/search_space.py,sha256=990BKnyiCUjLFLDS66u-0m_I7I0DzYVCSlHUBs2xtrQ,823
+llama_optimus-0.1.8.dist-info/licenses/LICENSE,sha256=zc6wfeubR8H3UZaLlYvnyuPDQDdBf6ysT7QeSSw8R6A,1070
+llama_optimus-0.1.8.dist-info/METADATA,sha256=mkwxsl1lFzdjQX8OwKWx7viIJ4rAwsT7UbMbti1l1Ww,18194
+llama_optimus-0.1.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+llama_optimus-0.1.8.dist-info/entry_points.txt,sha256=_HvBGOcngSnIULYX7WUwqwQ52vVOkYpIuWKpL56XIJA,57
+llama_optimus-0.1.8.dist-info/top_level.txt,sha256=0aADqmcWWJsqd43ik2EOCqDwiyxoqTodsTqZmX_amxc,14
+llama_optimus-0.1.8.dist-info/RECORD,,
