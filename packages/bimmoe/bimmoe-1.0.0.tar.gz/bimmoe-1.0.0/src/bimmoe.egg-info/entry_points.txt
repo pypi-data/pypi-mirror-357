@@ -1,0 +1,2 @@
+[console_scripts]
+qdt-bimmoe = qdt_bimmoe.core:main

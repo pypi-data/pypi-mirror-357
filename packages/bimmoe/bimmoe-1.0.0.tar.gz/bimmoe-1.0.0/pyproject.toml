@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bimmoe"
+version = "1.0.0"
+description = "Quantum Duality Theory (QDT) Bidirectional Multi-Modal Multi-Expert Framework"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "QDT Research Team", email = "research@qdt-framework.org"}
+]
+maintainers = [
+    {name = "QDT Research Team", email = "research@qdt-framework.org"}
+]
+keywords = ["quantum", "multi-modal", "machine learning", "physics", "energy", "tokenization"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.21.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "mypy>=0.800",
+]
+docs = [
+    "sphinx>=4.0",
+    "sphinx-rtd-theme>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/beanapologist/BiMMoE"
+Documentation = "https://github.com/beanapologist/BiMMoE#readme"
+Repository = "https://github.com/beanapologist/BiMMoE"
+Bug-Tracker = "https://github.com/beanapologist/BiMMoE/issues"
+
+[project.scripts]
+qdt-bimmoe = "qdt_bimmoe.core:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.pytest.ini_options]
+testpaths = ["test_qdt_bimmoe.py"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"] 
