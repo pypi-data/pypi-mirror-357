@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Oxygen Calculation Tools &#8212; pyrotoolbox  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Load AquapHOx-L data and recalculate dissolved oxygen with different salinity" href="Demo2.html" />
+    <link rel="prev" title="Workbench" href="Demo1.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Demo2.html" title="Load AquapHOx-L data and recalculate dissolved oxygen with different salinity"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Demo1.html" title="Workbench"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyrotoolbox  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Oxygen Calculation Tools</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="oxygen-calculation-tools">
+<h1>Oxygen Calculation Tools<a class="headerlink" href="#oxygen-calculation-tools" title="Link to this heading">¶</a></h1>
+<p>A collection of functions to re-calculate results from measurements.</p>
+<section id="function-to-calculate-oxygen-partial-pressure-from-raw-data">
+<h2>Function to calculate oxygen partial pressure from raw data<a class="headerlink" href="#function-to-calculate-oxygen-partial-pressure-from-raw-data" title="Link to this heading">¶</a></h2>
+<p>The following functions can be used to calculate oxygen partial pressures from the phase angle dphi. All other oxygen
+units can be calculated from the partial pressure.</p>
+<p id="module-pyrotoolbox.oxygen">Module containing functions for oxygen unit conversions.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.oxygen.calculate_pO2">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">calculate_pO2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dphi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dphi0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dphi100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">humidity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentO2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyrotoolbox.oxygen.calculate_pO2" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate pO2 in hPa for a given phase-angle and temperature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dphi</strong> – phase angle in °</p></li>
+<li><p><strong>temperature</strong> – in °C</p></li>
+<li><p><strong>dphi0</strong> – phase angle at zero calibration point in °</p></li>
+<li><p><strong>dphi100</strong> – phase angle at the upper calibration point in !</p></li>
+<li><p><strong>temp0</strong> – temperature at zero calibration point in °C</p></li>
+<li><p><strong>temp100</strong> – temperature at the upper calibration point in °C</p></li>
+<li><p><strong>pressure</strong> – pressure at the upper calibration point in mbar/hPa</p></li>
+<li><p><strong>humidity</strong> – relative humidity at the upper calibration point in %</p></li>
+<li><p><strong>percentO2</strong> – oxygen content in the dry calibration gas (upper calibration point) in %</p></li>
+<li><p><strong>f</strong> – sensor constant</p></li>
+<li><p><strong>m</strong> – sensor constant</p></li>
+<li><p><strong>kt</strong> – sensor constant (in 1/K)</p></li>
+<li><p><strong>tt</strong> – sensor constant (in 1/K)</p></li>
+<li><p><strong>mt</strong> – sensor constant (in 1/K)</p></li>
+<li><p><strong>ft</strong> – sensor constant (in 1/K)</p></li>
+<li><p><strong>freq</strong> – modulation frequency in Hz</p></li>
+<li><p><strong>kwargs</strong> – to accept additional unused parameters. (allow passing **calibration without an error)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>pO2 in hPa</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.oxygen.calculate_pO2_from_calibration">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">calculate_pO2_from_calibration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dphi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calibration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyrotoolbox.oxygen.calculate_pO2_from_calibration" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate pO2 in hPa for a given dphi, temperature and calibration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Params dphi<span class="colon">:</span></dt>
+<dd class="field-odd"><p>phase angle in °</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>temperature</strong> – in °C</p></li>
+<li><p><strong>calibration</strong> – dictionary as generated by the parser functions (metadata[‘calibration’]).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Expected entries:</dt><dd><ul class="simple">
+<li><p>dphi0 [°]</p></li>
+<li><p>dphi100 [°]</p></li>
+<li><p>temp0 [°C]</p></li>
+<li><p>temp100 [°C]</p></li>
+<li><p>pressure [mbar]</p></li>
+<li><p>humidity [%]</p></li>
+<li><p>percentO2 [%]</p></li>
+<li><p>f</p></li>
+<li><p>m</p></li>
+<li><p>kt [1/K]</p></li>
+<li><p>tt [1/K]</p></li>
+<li><p>mt [1/K]</p></li>
+<li><p>ft [1/K]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="functions-for-unit-conversions">
+<h2>Functions for unit conversions<a class="headerlink" href="#functions-for-unit-conversions" title="Link to this heading">¶</a></h2>
+<p>The following functions are used to convert between oxygen units. The partial pressure of oxygen (in hPa) is the central
+unit. All units can be converted toward pO2 and all units can be calculated from pO2. It is also the measured unit on
+all devices.</p>
+<p id="module-0">Module containing functions for oxygen unit conversions.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.oxygen.i_only_think_in_hpa">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">i_only_think_in_hpa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Series</span></span></span><a class="headerlink" href="#pyrotoolbox.oxygen.i_only_think_in_hpa" title="Link to this definition">¶</a></dt>
+<dd><p>Convert any oxygen data to hPa.</p>
+<p>Useful for people like me who prefer to look at oxygen data in hPa.
+This function takes the dataframe and metadata dict of the parser functions and returns the oxygen data in hPa.
+If you want to change the conditions of the conversions (e.g. assuming the experiment setup was wrong) use
+the convert_to_hPa function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – DataFrame as generated by the parser functions.</p></li>
+<li><p><strong>m</strong> – metadata-dict as generated by the parser functions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Series with oxygen data in hPa.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.oxygen.i_have_a_fireplate_and_still_only_think_in_hPa">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">i_have_a_fireplate_and_still_only_think_in_hPa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#pyrotoolbox.oxygen.i_have_a_fireplate_and_still_only_think_in_hPa" title="Link to this definition">¶</a></dt>
+<dd><p>A copy of the popular “i_only_think_in_hpa” function for fireplate data.</p>
+<p>This was separated due to different format of fireplate data, but works very similar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – DataFrame as generated by the read_fireplate_workbench function.</p></li>
+<li><p><strong>m</strong> – metadata-dict as generated by the read_fireplate_workbench function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with oxygen data in hPa.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.oxygen.convert_to_hPa">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">convert_to_hPa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Series</span></span></span><a class="headerlink" href="#pyrotoolbox.oxygen.convert_to_hPa" title="Link to this definition">¶</a></dt>
+<dd><p>Convert any oxygen unit to hPa.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – any oxygen data produced by a pyroscience device.</p></li>
+<li><p><strong>unit</strong> – unit of the data. Has to be one of (‘oxygen_hPa’, ‘oxygen_torr’, ‘oxygen_%O2’, ‘oxygen_%airsat’, ‘oxygen_µM’, ‘oxygen_µg/L’, ‘oxygen_mg/L’, ‘oxygen_mL/L’).</p></li>
+<li><p><strong>temperature</strong> – sample temperature. Used for all units except ‘oxygen_hPa’, ‘oxygen_torr’ and ‘oxygen_%O2’.</p></li>
+<li><p><strong>pressure</strong> – gas-pressure of or above the sample. Used for all units except ‘oxygen_hPa’ and ‘oxygen_torr’</p></li>
+<li><p><strong>salinity</strong> – salinity of the sample in g/L. Used for all dissolved oxygen units.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.oxygen.hPa_to_torr">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">hPa_to_torr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyrotoolbox.oxygen.hPa_to_torr" title="Link to this definition">¶</a></dt>
+<dd><p>Convert hPa to torr.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – hPa data to convert.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.oxygen.hPa_to_percentO2">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">hPa_to_percentO2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyrotoolbox.oxygen.hPa_to_percentO2" title="Link to this definition">¶</a></dt>
+<dd><p>Convert hPa to %O2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – hPa data to convert.</p></li>
+<li><p><strong>pressure</strong> – gas pressure of the sample in hPa.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.oxygen.hPa_to_percent_airsat">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">hPa_to_percent_airsat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyrotoolbox.oxygen.hPa_to_percent_airsat" title="Link to this definition">¶</a></dt>
+<dd><p>Convert hPa to %airsat. This is a unit for water samples and assumes 100% relative humidity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – hPa data to convert.</p></li>
+<li><p><strong>pressure</strong> – gas pressure above the sample in hPa.</p></li>
+<li><p><strong>temperature</strong> – temperature of the sample in °C.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.oxygen.hPa_to_uM">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">hPa_to_uM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salinity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyrotoolbox.oxygen.hPa_to_uM" title="Link to this definition">¶</a></dt>
+<dd><p>Convert hPa to µM. This is a unit for water sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – hPa data to convert.</p></li>
+<li><p><strong>temperature</strong> – temperature of the sample in °C.</p></li>
+<li><p><strong>salinity</strong> – salinity of the sample in g/L.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.oxygen.hPa_to_mgL">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">hPa_to_mgL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salinity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyrotoolbox.oxygen.hPa_to_mgL" title="Link to this definition">¶</a></dt>
+<dd><p>Convert hPa to mg/L. This is a unit for water sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – hPa data to convert.</p></li>
+<li><p><strong>temperature</strong> – temperature of the sample in °C.</p></li>
+<li><p><strong>salinity</strong> – salinity of the sample in g/L.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="helper-functions-for-oxygen-calculations">
+<h2>Helper functions for oxygen calculations<a class="headerlink" href="#helper-functions-for-oxygen-calculations" title="Link to this heading">¶</a></h2>
+<p>The following functions are implemented do to the above documented calculations. They might still be useful for your
+own unit conversions</p>
+<p>Module containing functions for oxygen unit conversions.</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">vapour_pressure_water</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the vapour pressure of water at given Temperature (°C), return in hPa</p>
+<p>#This is Equation (6) from Murray, F.W. 1967. On the computation of saturation vapour pressure.
+J. Applied Meteorology 6: 203-204</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>temperature</strong> – Temperature in °C</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>vapour pressure in hPa</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">calc_oxygen_solubility</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salinity</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the oxygen solubility in µM for water with given temperature and salinity.</p>
+<p>The formula and constants from “From Garcia 1992: Oxygen solubility in seawater: better fitting equations” are used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>temperature</strong> – water temperature (°C)</p></li>
+<li><p><strong>salinity</strong> – salinity of water (g/L)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>oxygen solubility in µM</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.oxygen.</span></span><span class="sig-name descname"><span class="pre">calc_pressure_and_water_corrected_pO2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pressure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">water_sat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentO2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20.95</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>calculate the partial pressure of oxygen in air with a given water saturation and total pressure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pressure</strong> – ambient pressure in hPa</p></li>
+<li><p><strong>T</strong> – Temperature in °C</p></li>
+<li><p><strong>water_sat</strong> – water saturation of the air in % (0-100)</p></li>
+<li><p><strong>percentO2</strong> – percentage of oxygen in air in % (0-100). Default 20.95</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>partial pressure of oxygen in hPa</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Demo2.html">Load AquapHOx-L data and recalculate dissolved oxygen with different salinity</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Demo4%20O2%20unit%20conversion.html">Oxygen unit conversions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Demo4%20O2%20unit%20conversion.html#Load-data">Load data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo4%20O2%20unit%20conversion.html#convert-input-unit-(%O2)-to-hPa">convert input unit (%O2) to hPa</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Demo4%20O2%20unit%20conversion.html#alternative:">alternative:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Demo4%20O2%20unit%20conversion.html#convert-hPa-to-all-other-oxygen-units">convert hPa to all other oxygen units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo4%20O2%20unit%20conversion.html#unit-conversion-mg/L-for-different-environmental-conditions">unit conversion mg/L for different environmental conditions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Oxygen Calculation Tools</a><ul>
+<li><a class="reference internal" href="#function-to-calculate-oxygen-partial-pressure-from-raw-data">Function to calculate oxygen partial pressure from raw data</a><ul>
+<li><a class="reference internal" href="#pyrotoolbox.oxygen.calculate_pO2"><code class="docutils literal notranslate"><span class="pre">calculate_pO2()</span></code></a></li>
+<li><a class="reference internal" href="#pyrotoolbox.oxygen.calculate_pO2_from_calibration"><code class="docutils literal notranslate"><span class="pre">calculate_pO2_from_calibration()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#functions-for-unit-conversions">Functions for unit conversions</a><ul>
+<li><a class="reference internal" href="#pyrotoolbox.oxygen.i_only_think_in_hpa"><code class="docutils literal notranslate"><span class="pre">i_only_think_in_hpa()</span></code></a></li>
+<li><a class="reference internal" href="#pyrotoolbox.oxygen.i_have_a_fireplate_and_still_only_think_in_hPa"><code class="docutils literal notranslate"><span class="pre">i_have_a_fireplate_and_still_only_think_in_hPa()</span></code></a></li>
+<li><a class="reference internal" href="#pyrotoolbox.oxygen.convert_to_hPa"><code class="docutils literal notranslate"><span class="pre">convert_to_hPa()</span></code></a></li>
+<li><a class="reference internal" href="#pyrotoolbox.oxygen.hPa_to_torr"><code class="docutils literal notranslate"><span class="pre">hPa_to_torr()</span></code></a></li>
+<li><a class="reference internal" href="#pyrotoolbox.oxygen.hPa_to_percentO2"><code class="docutils literal notranslate"><span class="pre">hPa_to_percentO2()</span></code></a></li>
+<li><a class="reference internal" href="#pyrotoolbox.oxygen.hPa_to_percent_airsat"><code class="docutils literal notranslate"><span class="pre">hPa_to_percent_airsat()</span></code></a></li>
+<li><a class="reference internal" href="#pyrotoolbox.oxygen.hPa_to_uM"><code class="docutils literal notranslate"><span class="pre">hPa_to_uM()</span></code></a></li>
+<li><a class="reference internal" href="#pyrotoolbox.oxygen.hPa_to_mgL"><code class="docutils literal notranslate"><span class="pre">hPa_to_mgL()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#helper-functions-for-oxygen-calculations">Helper functions for oxygen calculations</a></li>
+<li><a class="reference internal" href="#examples">Examples</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="Demo1.html"
+                          title="previous chapter">Workbench</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="Demo2.html"
+                          title="next chapter">Load AquapHOx-L data and recalculate dissolved oxygen with different salinity</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Oxygen Calculation Tools.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Demo2.html" title="Load AquapHOx-L data and recalculate dissolved oxygen with different salinity"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Demo1.html" title="Workbench"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyrotoolbox  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Oxygen Calculation Tools</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, PyroScience GmbH.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

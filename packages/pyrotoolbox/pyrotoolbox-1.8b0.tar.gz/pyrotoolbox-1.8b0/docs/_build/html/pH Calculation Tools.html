@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pH Calculation Tools &#8212; pyrotoolbox  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="recalc with different calibration" href="Demo3%20pH%20data%20recalc.html" />
+    <link rel="prev" title="Load AquapHOx-L data and recalculate dissolved oxygen with different salinity" href="Demo2.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Demo3%20pH%20data%20recalc.html" title="recalc with different calibration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Demo2.html" title="Load AquapHOx-L data and recalculate dissolved oxygen with different salinity"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyrotoolbox  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pH Calculation Tools</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-pyrotoolbox.pH">
+<span id="ph-calculation-tools"></span><h1>pH Calculation Tools<a class="headerlink" href="#module-pyrotoolbox.pH" title="Link to this heading">¶</a></h1>
+<p>Module to calculate pH for devices from Pyroscience.</p>
+<p>The following functions are only valid for devices with Firmware &gt;= 4.10 (released 2023).</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.pH.calculate_pH">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.pH.</span></span><span class="sig-name descname"><span class="pre">calculate_pH</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salinity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pka</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slope</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pka_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slope_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pka_is1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pka_is2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyrotoolbox.pH.calculate_pH" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate pH from R, temperature, salinity and sensor constants. See also function calculate_pH_from_calibration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>R</strong> – R-value from the sensor</p></li>
+<li><p><strong>temperature</strong> – temperature of the sample in °C</p></li>
+<li><p><strong>salinity</strong> – salinity of the sample in g/L</p></li>
+<li><p><strong>top</strong> – material constant</p></li>
+<li><p><strong>bottom</strong> – material constant</p></li>
+<li><p><strong>pka</strong> – material constant</p></li>
+<li><p><strong>slope</strong> – material constant</p></li>
+<li><p><strong>pka_t</strong> – material constant</p></li>
+<li><p><strong>bottom_t</strong> – material constant</p></li>
+<li><p><strong>top_t</strong> – material constant</p></li>
+<li><p><strong>slope_t</strong> – material constant</p></li>
+<li><p><strong>pka_is1</strong> – material constant</p></li>
+<li><p><strong>pka_is2</strong> – material constant</p></li>
+<li><p><strong>offset</strong> – offset in pH-units (from 3rd calibration point)</p></li>
+<li><p><strong>kwargs</strong> – kwargs are ignored</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.pH.calculate_pH_from_calibration">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.pH.</span></span><span class="sig-name descname"><span class="pre">calculate_pH_from_calibration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salinity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calibration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyrotoolbox.pH.calculate_pH_from_calibration" title="Link to this definition">¶</a></dt>
+<dd><p>apply a pH calibration to measurement data for FW &gt;= 410</p>
+<p>The calibration parameters can be passed from the calibration metadata.</p>
+<p>Example usage:
+apply_pH_calibration(data[‘R’], data[‘temp’], data[‘salinity’], m[‘calibration’])</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>R</strong> – R-value from the sensor</p></li>
+<li><p><strong>temperature</strong> – temperature of the sample in °C</p></li>
+<li><p><strong>salinity</strong> – salinity of the sample in g/L</p></li>
+<li><p><strong>calibration</strong> – calibration dictionary as created by the parsers</p></li>
+<li><p><strong>kwargs</strong> – kwargs are inserted into the calibration and override the values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>calculated pH values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.pH.calculate_pH_from_interpolated_calibration">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.pH.</span></span><span class="sig-name descname"><span class="pre">calculate_pH_from_interpolated_calibration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salinity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calibrations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyrotoolbox.pH.calculate_pH_from_interpolated_calibration" title="Link to this definition">¶</a></dt>
+<dd><p>Apply an interpolated pH calibration to measurement data</p>
+<p>The top and bottom value is calculated for every passed calibration and fitted linear over time. For every
+measurement point an individual value of top and bottom is calculated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>R</strong> – data for “R”</p></li>
+<li><p><strong>temperature</strong> – overrides temp values from df. Single value or iterable with same length as df is required</p></li>
+<li><p><strong>salinity</strong> – Single value or iterable with same length as df is required</p></li>
+<li><p><strong>calibrations</strong> – dict in format {timestring: calib_data} e.g. {‘2019-05-05 13:10:00’: {pH1: 4, temp1: 22.08, …}}, or a list of calibration-dicts</p></li>
+<li><p><strong>R</strong> – overrides R values from df. Single value or iterable with same length as df is required</p></li>
+<li><p><strong>return_fits</strong> – return the fits of top, bottom and offset instead</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>calculated pH-values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyrotoolbox.pH.calculate_pH_with_prospective_drift_compensation">
+<span class="sig-prename descclassname"><span class="pre">pyrotoolbox.pH.</span></span><span class="sig-name descname"><span class="pre">calculate_pH_with_prospective_drift_compensation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salinity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calibration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyrotoolbox.pH.calculate_pH_with_prospective_drift_compensation" title="Link to this definition">¶</a></dt>
+<dd><p>apply prospective pH drift compensation to a pH measurement.</p>
+<dl class="simple">
+<dt>currently we have identified two main sources of drift for the pH sensor materials:</dt><dd><ul class="simple">
+<li><p>dye hydrolysis or leaching in water (strongly temperature dependent)</p></li>
+<li><p>photo-bleaching during a measurement</p></li>
+</ul>
+</dd>
+</dl>
+<p>The effect on the sensors is assumed to be only a decrease in Top (due to reduced dye content)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>R</strong> – R-values</p></li>
+<li><p><strong>temperature</strong> – temperature data</p></li>
+<li><p><strong>salinity</strong> – salinity data</p></li>
+<li><p><strong>calibration</strong> – calibration dictionary as created by the parser functions</p></li>
+<li><p><strong>start_timestamp</strong> – optional, time of the calibration. By default, the date_calibration_acid value is used</p></li>
+<li><p><strong>d0</strong> – first coefficient of the temperature dependent drift</p></li>
+<li><p><strong>d1</strong> – second coefficient of the temperature dependent drift</p></li>
+<li><p><strong>d2</strong> – third coefficient of the temperature dependent drift</p></li>
+<li><p><strong>d3</strong> – fourth coefficient of the temperature dependent drift</p></li>
+<li><p><strong>start_timestamp</strong> – optional, start of the drift. If omitted the date of the last acid calibration is used</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>array of pH values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Demo3%20pH%20data%20recalc.html">recalc with different calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Demo3%20pH%20data%20recalc.html#calculate-with-different-temperature">calculate with different temperature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Demo3%20pH%20data%20recalc.html#calculate-with-device-temperature">calculate with device temperature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Demo3%20pH%20data%20recalc.html#calculate-with-40-PSU">calculate with 40 PSU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Demo3%20pH%20data%20recalc.html#Interpoliertat-pH-drift-correction">Interpoliertat pH drift correction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Demo3%20pH%20data%20recalc.html#Prospective-pH-drift-correction">Prospective pH drift correction</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">pH Calculation Tools</a><ul>
+<li><a class="reference internal" href="#pyrotoolbox.pH.calculate_pH"><code class="docutils literal notranslate"><span class="pre">calculate_pH()</span></code></a></li>
+<li><a class="reference internal" href="#pyrotoolbox.pH.calculate_pH_from_calibration"><code class="docutils literal notranslate"><span class="pre">calculate_pH_from_calibration()</span></code></a></li>
+<li><a class="reference internal" href="#pyrotoolbox.pH.calculate_pH_from_interpolated_calibration"><code class="docutils literal notranslate"><span class="pre">calculate_pH_from_interpolated_calibration()</span></code></a></li>
+<li><a class="reference internal" href="#pyrotoolbox.pH.calculate_pH_with_prospective_drift_compensation"><code class="docutils literal notranslate"><span class="pre">calculate_pH_with_prospective_drift_compensation()</span></code></a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="Demo2.html"
+                          title="previous chapter">Load AquapHOx-L data and recalculate dissolved oxygen with different salinity</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="Demo3%20pH%20data%20recalc.html"
+                          title="next chapter">recalc with different calibration</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pH Calculation Tools.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Demo3%20pH%20data%20recalc.html" title="recalc with different calibration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Demo2.html" title="Load AquapHOx-L data and recalculate dissolved oxygen with different salinity"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyrotoolbox  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pH Calculation Tools</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, PyroScience GmbH.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

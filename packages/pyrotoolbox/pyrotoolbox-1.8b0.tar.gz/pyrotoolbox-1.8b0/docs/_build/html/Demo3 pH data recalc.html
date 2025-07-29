@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>recalc with different calibration &#8212; pyrotoolbox  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
+    
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FireResponse" href="FireResponse.html" />
+    <link rel="prev" title="pH Calculation Tools" href="pH%20Calculation%20Tools.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="FireResponse.html" title="FireResponse"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pH%20Calculation%20Tools.html" title="pH Calculation Tools"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyrotoolbox  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pH%20Calculation%20Tools.html" accesskey="U">pH Calculation Tools</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">recalc with different calibration</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">from</span> <span class="nn">pyrotoolbox.parsers</span> <span class="kn">import</span> <span class="n">parse</span>
+<span class="kn">from</span> <span class="nn">pyrotoolbox.pH</span> <span class="kn">import</span> <span class="p">(</span><span class="n">calculate_pH</span><span class="p">,</span> <span class="n">calculate_pH_from_calibration</span><span class="p">,</span> <span class="n">calculate_pH_from_interpolated_calibration</span><span class="p">,</span>
+                            <span class="n">calculate_pH_with_prospective_drift_compensation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<section id="recalc-with-different-calibration">
+<h1>recalc with different calibration<a class="headerlink" href="#recalc-with-different-calibration" title="Link to this heading">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pH_hl_1</span><span class="p">,</span> <span class="n">m_pH_hl_1</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="s1">&#39;rovdata/PH2ROV1.txt&#39;</span><span class="p">)</span>
+<span class="n">pH_hl_2</span><span class="p">,</span> <span class="n">m_pH_hl_2</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="s1">&#39;rovdata/PH2ROV2.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pH_hl_1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>status</th>
+      <th>dphi</th>
+      <th>sample_temperature</th>
+      <th>case_temperature</th>
+      <th>signal_intensity</th>
+      <th>ambient_light</th>
+      <th>pressure</th>
+      <th>humidity</th>
+      <th>pH</th>
+      <th>R</th>
+      <th>time_s</th>
+    </tr>
+    <tr>
+      <th>date_time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2024-04-08 13:55:32</th>
+      <td>0.0</td>
+      <td>21.674</td>
+      <td>26.864</td>
+      <td>27.20</td>
+      <td>293.129</td>
+      <td>27.902</td>
+      <td>983.661</td>
+      <td>34.791</td>
+      <td>4.820</td>
+      <td>1.576412</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2024-04-08 13:56:32</th>
+      <td>0.0</td>
+      <td>21.680</td>
+      <td>26.916</td>
+      <td>26.97</td>
+      <td>294.613</td>
+      <td>26.226</td>
+      <td>984.164</td>
+      <td>35.085</td>
+      <td>NaN</td>
+      <td>1.577852</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>2024-04-08 13:57:32</th>
+      <td>0.0</td>
+      <td>21.686</td>
+      <td>27.272</td>
+      <td>26.80</td>
+      <td>291.169</td>
+      <td>26.382</td>
+      <td>984.078</td>
+      <td>35.250</td>
+      <td>NaN</td>
+      <td>1.578747</td>
+      <td>120.0</td>
+    </tr>
+    <tr>
+      <th>2024-04-08 13:58:32</th>
+      <td>0.0</td>
+      <td>21.689</td>
+      <td>27.397</td>
+      <td>26.71</td>
+      <td>290.793</td>
+      <td>26.150</td>
+      <td>983.909</td>
+      <td>35.310</td>
+      <td>NaN</td>
+      <td>1.579240</td>
+      <td>180.0</td>
+    </tr>
+    <tr>
+      <th>2024-04-08 13:59:32</th>
+      <td>0.0</td>
+      <td>21.695</td>
+      <td>27.459</td>
+      <td>26.64</td>
+      <td>290.417</td>
+      <td>26.679</td>
+      <td>983.721</td>
+      <td>35.383</td>
+      <td>NaN</td>
+      <td>1.579230</td>
+      <td>240.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-07-09 17:25:32</th>
+      <td>0.0</td>
+      <td>33.999</td>
+      <td>29.246</td>
+      <td>26.80</td>
+      <td>162.006</td>
+      <td>32.015</td>
+      <td>1042.066</td>
+      <td>43.950</td>
+      <td>8.016</td>
+      <td>0.714338</td>
+      <td>7961400.0</td>
+    </tr>
+    <tr>
+      <th>2024-07-09 17:26:32</th>
+      <td>0.0</td>
+      <td>33.610</td>
+      <td>28.997</td>
+      <td>27.93</td>
+      <td>163.530</td>
+      <td>31.317</td>
+      <td>1042.987</td>
+      <td>42.979</td>
+      <td>8.004</td>
+      <td>0.727966</td>
+      <td>7961460.0</td>
+    </tr>
+    <tr>
+      <th>2024-07-09 17:27:32</th>
+      <td>0.0</td>
+      <td>33.761</td>
+      <td>28.950</td>
+      <td>28.68</td>
+      <td>162.294</td>
+      <td>29.670</td>
+      <td>1044.064</td>
+      <td>42.391</td>
+      <td>8.017</td>
+      <td>0.717720</td>
+      <td>7961520.0</td>
+    </tr>
+    <tr>
+      <th>2024-07-09 17:28:32</th>
+      <td>0.0</td>
+      <td>33.905</td>
+      <td>28.877</td>
+      <td>29.12</td>
+      <td>160.626</td>
+      <td>44.748</td>
+      <td>1045.449</td>
+      <td>42.130</td>
+      <td>8.028</td>
+      <td>0.709191</td>
+      <td>7961580.0</td>
+    </tr>
+    <tr>
+      <th>2024-07-09 17:29:32</th>
+      <td>0.0</td>
+      <td>34.128</td>
+      <td>29.732</td>
+      <td>29.44</td>
+      <td>158.054</td>
+      <td>47.130</td>
+      <td>1046.408</td>
+      <td>41.959</td>
+      <td>8.027</td>
+      <td>0.697615</td>
+      <td>7961640.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>132695 rows × 11 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>calculate_pH_from_calibration<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">Signature:</span>
+calculate_pH_from_calibration<span class="ansi-blue-fg">(</span>
+    R<span class="ansi-blue-fg">,</span>
+    temperature<span class="ansi-blue-fg">,</span>
+    salinity<span class="ansi-blue-fg">,</span>
+    calibration<span class="ansi-blue-fg">:</span> dict<span class="ansi-blue-fg">,</span>
+    <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">,</span>
+<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">Docstring:</span>
+apply a pH calibration to measurement data for FW &gt;= 410
+
+The calibration parameters can be passed from the calibration metadata.
+
+Example usage:
+apply_pH_calibration(data[&#39;R&#39;], data[&#39;temp&#39;], data[&#39;salinity&#39;], m[&#39;calibration&#39;])
+
+:param R: R-value from the sensor
+:param temperature: temperature of the sample in °C
+:param salinity: salinity of the sample in g/L
+:param calibration: calibration dictionary as created by the parsers
+:param kwargs: kwargs are inserted into the calibration and override the values
+:return: calculated pH values
+<span class="ansi-red-fg">File:</span>      ~/Programmieren/pyrotoolbox/pyrotoolbox/pH.py
+<span class="ansi-red-fg">Type:</span>      function
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_endcal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_pH_from_calibration</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">],</span>
+                                                              <span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;sample_temperature&#39;</span><span class="p">],</span>
+                                                              <span class="n">m_pH_hl_1</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;salinity&#39;</span><span class="p">],</span>
+                                                              <span class="n">m_pH_hl_2</span><span class="p">[</span><span class="s1">&#39;calibration&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/christoph/.venvs/pyro/lib/python3.12/site-packages/pandas/core/arraylike.py:399: RuntimeWarning: invalid value encountered in log10
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pH_hl_1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>status</th>
+      <th>dphi</th>
+      <th>sample_temperature</th>
+      <th>case_temperature</th>
+      <th>signal_intensity</th>
+      <th>ambient_light</th>
+      <th>pressure</th>
+      <th>humidity</th>
+      <th>pH</th>
+      <th>R</th>
+      <th>time_s</th>
+      <th>pH_endcal</th>
+    </tr>
+    <tr>
+      <th>date_time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2024-04-08 13:55:32</th>
+      <td>0.0</td>
+      <td>21.674</td>
+      <td>26.864</td>
+      <td>27.20</td>
+      <td>293.129</td>
+      <td>27.902</td>
+      <td>983.661</td>
+      <td>34.791</td>
+      <td>4.820</td>
+      <td>1.576412</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-04-08 13:56:32</th>
+      <td>0.0</td>
+      <td>21.680</td>
+      <td>26.916</td>
+      <td>26.97</td>
+      <td>294.613</td>
+      <td>26.226</td>
+      <td>984.164</td>
+      <td>35.085</td>
+      <td>NaN</td>
+      <td>1.577852</td>
+      <td>60.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-04-08 13:57:32</th>
+      <td>0.0</td>
+      <td>21.686</td>
+      <td>27.272</td>
+      <td>26.80</td>
+      <td>291.169</td>
+      <td>26.382</td>
+      <td>984.078</td>
+      <td>35.250</td>
+      <td>NaN</td>
+      <td>1.578747</td>
+      <td>120.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-04-08 13:58:32</th>
+      <td>0.0</td>
+      <td>21.689</td>
+      <td>27.397</td>
+      <td>26.71</td>
+      <td>290.793</td>
+      <td>26.150</td>
+      <td>983.909</td>
+      <td>35.310</td>
+      <td>NaN</td>
+      <td>1.579240</td>
+      <td>180.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024-04-08 13:59:32</th>
+      <td>0.0</td>
+      <td>21.695</td>
+      <td>27.459</td>
+      <td>26.64</td>
+      <td>290.417</td>
+      <td>26.679</td>
+      <td>983.721</td>
+      <td>35.383</td>
+      <td>NaN</td>
+      <td>1.579230</td>
+      <td>240.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-07-09 17:25:32</th>
+      <td>0.0</td>
+      <td>33.999</td>
+      <td>29.246</td>
+      <td>26.80</td>
+      <td>162.006</td>
+      <td>32.015</td>
+      <td>1042.066</td>
+      <td>43.950</td>
+      <td>8.016</td>
+      <td>0.714338</td>
+      <td>7961400.0</td>
+      <td>7.864503</td>
+    </tr>
+    <tr>
+      <th>2024-07-09 17:26:32</th>
+      <td>0.0</td>
+      <td>33.610</td>
+      <td>28.997</td>
+      <td>27.93</td>
+      <td>163.530</td>
+      <td>31.317</td>
+      <td>1042.987</td>
+      <td>42.979</td>
+      <td>8.004</td>
+      <td>0.727966</td>
+      <td>7961460.0</td>
+      <td>7.849334</td>
+    </tr>
+    <tr>
+      <th>2024-07-09 17:27:32</th>
+      <td>0.0</td>
+      <td>33.761</td>
+      <td>28.950</td>
+      <td>28.68</td>
+      <td>162.294</td>
+      <td>29.670</td>
+      <td>1044.064</td>
+      <td>42.391</td>
+      <td>8.017</td>
+      <td>0.717720</td>
+      <td>7961520.0</td>
+      <td>7.864751</td>
+    </tr>
+    <tr>
+      <th>2024-07-09 17:28:32</th>
+      <td>0.0</td>
+      <td>33.905</td>
+      <td>28.877</td>
+      <td>29.12</td>
+      <td>160.626</td>
+      <td>44.748</td>
+      <td>1045.449</td>
+      <td>42.130</td>
+      <td>8.028</td>
+      <td>0.709191</td>
+      <td>7961580.0</td>
+      <td>7.878145</td>
+    </tr>
+    <tr>
+      <th>2024-07-09 17:29:32</th>
+      <td>0.0</td>
+      <td>34.128</td>
+      <td>29.732</td>
+      <td>29.44</td>
+      <td>158.054</td>
+      <td>47.130</td>
+      <td>1046.408</td>
+      <td>41.959</td>
+      <td>8.027</td>
+      <td>0.697615</td>
+      <td>7961640.0</td>
+      <td>7.879995</td>
+    </tr>
+  </tbody>
+</table>
+<p>132695 rows × 12 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH&#39;</span><span class="p">][</span><span class="s1">&#39;2024-04-10 15:00&#39;</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;startcal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_endcal&#39;</span><span class="p">][</span><span class="s1">&#39;2024-04-10 15:00&#39;</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;endcal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;pH&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/Demo3_pH_data_recalc_7_0.png" src="_images/Demo3_pH_data_recalc_7_0.png" />
+</div>
+</div>
+</section>
+<section id="calculate-with-different-temperature">
+<h1>calculate with different temperature<a class="headerlink" href="#calculate-with-different-temperature" title="Link to this heading">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_fixedT25&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_pH_from_calibration</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">],</span>
+                                                              <span class="mi">25</span><span class="p">,</span>
+                                                              <span class="n">m_pH_hl_1</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;salinity&#39;</span><span class="p">],</span>
+                                                              <span class="n">m_pH_hl_1</span><span class="p">[</span><span class="s1">&#39;calibration&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="calculate-with-device-temperature">
+<h1>calculate with device temperature<a class="headerlink" href="#calculate-with-device-temperature" title="Link to this heading">¶</a></h1>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_devT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_pH_from_calibration</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">],</span>
+                                                              <span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;case_temperature&#39;</span><span class="p">],</span>
+                                                              <span class="n">m_pH_hl_1</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;salinity&#39;</span><span class="p">],</span>
+                                                              <span class="n">m_pH_hl_1</span><span class="p">[</span><span class="s1">&#39;calibration&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/christoph/.venvs/pyro/lib/python3.12/site-packages/pandas/core/arraylike.py:399: RuntimeWarning: invalid value encountered in log10
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+</pre></div></div>
+</div>
+</section>
+<section id="calculate-with-40-PSU">
+<h1>calculate with 40 PSU<a class="headerlink" href="#calculate-with-40-PSU" title="Link to this heading">¶</a></h1>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_PSU40&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_pH_from_calibration</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">],</span>
+                                                              <span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;sample_temperature&#39;</span><span class="p">],</span>
+                                                              <span class="mi">40</span><span class="p">,</span>
+                                                              <span class="n">m_pH_hl_1</span><span class="p">[</span><span class="s1">&#39;calibration&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/christoph/.venvs/pyro/lib/python3.12/site-packages/pandas/core/arraylike.py:399: RuntimeWarning: invalid value encountered in log10
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH&#39;</span><span class="p">][</span><span class="s1">&#39;2024-04-10 15:00&#39;</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;startcal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_fixedT25&#39;</span><span class="p">][</span><span class="s1">&#39;2024-04-10 15:00&#39;</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fixed T=25&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_devT&#39;</span><span class="p">][</span><span class="s1">&#39;2024-04-10 15:00&#39;</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;device T&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_PSU40&#39;</span><span class="p">][</span><span class="s1">&#39;2024-04-10 15:00&#39;</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;40PSU&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;pH&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/Demo3_pH_data_recalc_14_0.png" src="_images/Demo3_pH_data_recalc_14_0.png" />
+</div>
+</div>
+</section>
+<section id="Interpoliertat-pH-drift-correction">
+<h1>Interpoliertat pH drift correction<a class="headerlink" href="#Interpoliertat-pH-drift-correction" title="Link to this heading">¶</a></h1>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_interpol_corr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_pH_from_interpolated_calibration</span><span class="p">(</span>
+                                                <span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">],</span>
+                                                <span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;sample_temperature&#39;</span><span class="p">],</span>
+                                                <span class="mi">35</span><span class="p">,</span>
+                                                <span class="p">{</span><span class="s1">&#39;2024-04-08 13:35&#39;</span><span class="p">:</span> <span class="n">m_pH_hl_1</span><span class="p">[</span><span class="s1">&#39;calibration&#39;</span><span class="p">],</span>
+                                                 <span class="s1">&#39;2024-07-09 13:00&#39;</span><span class="p">:</span> <span class="n">m_pH_hl_2</span><span class="p">[</span><span class="s1">&#39;calibration&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/christoph/.venvs/pyro/lib/python3.12/site-packages/pandas/core/arraylike.py:399: RuntimeWarning: invalid value encountered in log10
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+</pre></div></div>
+</div>
+</section>
+<section id="Prospective-pH-drift-correction">
+<h1>Prospective pH drift correction<a class="headerlink" href="#Prospective-pH-drift-correction" title="Link to this heading">¶</a></h1>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_corr_prosp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_pH_with_prospective_drift_compensation</span><span class="p">(</span>
+                                                <span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">],</span>
+                                                <span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;sample_temperature&#39;</span><span class="p">],</span>
+                                                <span class="mi">35</span><span class="p">,</span>
+                                                <span class="n">m_pH_hl_1</span><span class="p">[</span><span class="s1">&#39;calibration&#39;</span><span class="p">],</span> <span class="mf">4.3652</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">10</span><span class="p">,</span> <span class="mf">9.0761</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/christoph/.venvs/pyro/lib/python3.12/site-packages/pandas/core/arraylike.py:399: RuntimeWarning: invalid value encountered in log10
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH&#39;</span><span class="p">][</span><span class="s1">&#39;2024-04-10 15:00&#39;</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;startcal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_endcal&#39;</span><span class="p">][</span><span class="s1">&#39;2024-04-10 15:00&#39;</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;endcal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_interpol_corr&#39;</span><span class="p">][</span><span class="s1">&#39;2024-04-10 15:00&#39;</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Interpolated&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pH_hl_1</span><span class="p">[</span><span class="s1">&#39;pH_corr_prosp&#39;</span><span class="p">][</span><span class="s1">&#39;2024-04-10 15:00&#39;</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prospective&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;pH&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/Demo3_pH_data_recalc_19_0.png" src="_images/Demo3_pH_data_recalc_19_0.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">recalc with different calibration</a></li>
+<li><a class="reference internal" href="#calculate-with-different-temperature">calculate with different temperature</a></li>
+<li><a class="reference internal" href="#calculate-with-device-temperature">calculate with device temperature</a></li>
+<li><a class="reference internal" href="#calculate-with-40-PSU">calculate with 40 PSU</a></li>
+<li><a class="reference internal" href="#Interpoliertat-pH-drift-correction">Interpoliertat pH drift correction</a></li>
+<li><a class="reference internal" href="#Prospective-pH-drift-correction">Prospective pH drift correction</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="pH%20Calculation%20Tools.html"
+                          title="previous chapter">pH Calculation Tools</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="FireResponse.html"
+                          title="next chapter">FireResponse</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Demo3 pH data recalc.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="FireResponse.html" title="FireResponse"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pH%20Calculation%20Tools.html" title="pH Calculation Tools"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyrotoolbox  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pH%20Calculation%20Tools.html" >pH Calculation Tools</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">recalc with different calibration</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, PyroScience GmbH.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>
