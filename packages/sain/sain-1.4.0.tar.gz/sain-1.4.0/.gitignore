@@ -1,0 +1,12 @@
+__pycache__/
+.mypy_cache/
+.nox/
+.pytest_cache/
+.venv/
+.env/
+.vscode/
+dist/*
+*.whl
+*.gz
+pyrightconfig.json
+t.py
