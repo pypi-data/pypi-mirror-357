@@ -1,0 +1,162 @@
+Metadata-Version: 2.4
+Name: modelred
+Version: 0.1.16
+Summary: ModelRed SDK - Python
+Project-URL: Homepage, https://modelred.ai
+Project-URL: Documentation, https://modelred.ai/docs
+Author-email: ModelRed AI <contact@modelred.ai>
+Requires-Python: >=3.6
+Requires-Dist: aiohttp>=3.8.6
+Description-Content-Type: text/markdown
+
+# ModelRed SDK – Python
+
+**ModelRed** is a Python SDK for red-teaming and security testing of LLMs. This SDK provides convenient access to the [ModelRed API](https://modelred.ai), allowing developers to register models, run assessments, and retrieve risk analytics for models hosted across major providers like OpenAI, Azure, Anthropic, AWS, and HuggingFace.
+
+---
+
+## 🔧 Installation
+
+```bash
+pip install modelred
+```
+
+---
+
+## 🚀 Quick Start
+
+```python
+import asyncio
+from modelred import ModelRed
+
+async def main():
+    async with ModelRed(api_key="mr_your_api_key") as client:
+        usage = await client.get_usage_stats()
+        print("Current Plan:", usage.tier)
+
+asyncio.run(main())
+```
+
+Or use the `MODELRED_API_KEY` environment variable instead of passing it directly.
+
+---
+
+## 📦 Supported Providers
+
+The SDK supports registration and testing of models from:
+
+- ✅ OpenAI
+- ✅ Azure OpenAI
+- ✅ Anthropic
+- ✅ HuggingFace
+- ✅ AWS SageMaker
+- ✅ AWS Bedrock
+- ✅ Custom REST APIs
+
+Each provider has a helper config method via `ProviderConfig`.
+
+---
+
+## 🔐 Authentication
+
+Set your API key in environment:
+
+```bash
+export MODELRED_API_KEY="mr_..."
+```
+
+Or pass it directly when creating the client:
+
+```python
+client = ModelRed(api_key="mr_...")
+```
+
+---
+
+## 📘 Example Usage
+
+### Validate API Key
+
+```python
+account = await client.validate_api_key()
+print(account)
+```
+
+### Register OpenAI Model
+
+```python
+await client.register_openai_model(
+    model_id="my-openai-model",
+    api_key="sk-...",
+    model_name="gpt-3.5-turbo"
+)
+```
+
+### Run Assessment
+
+```python
+result = await client.run_assessment(
+    model_id="my-openai-model",
+    test_suites=["basic_security"],
+    wait_for_completion=True
+)
+print(result.overall_score, result.risk_level)
+```
+
+---
+
+## ⚙️ Configuration Helpers
+
+```python
+from modelred import ProviderConfig
+
+config = ProviderConfig.openai(api_key="sk-...", model_name="gpt-4")
+```
+
+Other helpers include:
+
+- `ProviderConfig.azure(...)`
+- `ProviderConfig.anthropic(...)`
+- `ProviderConfig.huggingface(...)`
+- `ProviderConfig.sagemaker(...)`
+- `ProviderConfig.bedrock(...)`
+- `ProviderConfig.custom_rest(...)`
+
+---
+
+## 🧪 Test Client
+
+You can run the full test suite using:
+
+```bash
+python test_client.py
+```
+
+For a quick test:
+
+```bash
+python test_client.py quick
+```
+
+---
+
+## 🧠 SDK Features
+
+- Async/await support
+- Detailed exceptions (`AuthenticationError`, `QuotaExceededError`, etc.)
+- Full model lifecycle support (register, list, get, delete)
+- Assessment control (run, poll, cancel)
+- Usage tracking and tier-aware features
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 📚 Documentation
+
+- 📘 [Docs & SDK Reference](https://modelred.ai/docs)
+- ✉️ Contact: [contact@modelred.ai](mailto:contact@modelred.ai)
