@@ -1,0 +1,212 @@
+# pyproject.toml
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "setuptools>=61.0", "wheel"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "path-comment-hook"
+version = "0.1.0"
+description = "Pre-commit hook that injects relative-path comments into source files"
+readme = "README.md"
+license = "MIT"
+authors = ["Shorzinator <shorz2905@gmail.com>"]
+maintainers = ["Shorzinator <shorz2905@gmail.com>"]
+keywords = ["pre-commit", "hook", "path", "comment", "header"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Version Control",
+    "Intended Audience :: Developers",
+]
+packages = [{include = "path_comment", from = "src"}]
+include = ["src/path_comment/py.typed", "setup.py"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+typer = "^0.16.0"
+rich = "^13.0.0"
+identify = "^2.5.0"
+chardet = "^5.0.0"
+tomli = {version = "^2.0.0", python = "<3.11"}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+pytest-cov = "^5.0.0"
+ruff = "^0.12.0"
+mypy = "^1.7.0"
+bandit = {extras = ["toml"], version = "^1.7.0"}
+pre-commit = "^3.0.0"
+# docformatter = "^1.7.5"  # Removed due to conflicts with other formatting tools
+commitizen = "^3.20.0"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs-material = "^9.0.0"
+mkdocstrings = {extras = ["python"], version = "^0.26.1"}
+
+[tool.poetry.group.changelog.dependencies]
+towncrier = "^24.8.0"
+
+[tool.poetry.scripts]
+path-comment-hook = "path_comment.cli:main"
+pch = "path_comment.cli:main"
+path-comment-welcome = "path_comment.welcome:show_welcome"
+
+[tool.poetry.urls]
+Documentation = "https://github.com/Shorzinator/path-comment-hook#readme"
+Issues = "https://github.com/Shorzinator/path-comment-hook/issues"
+Source = "https://github.com/Shorzinator/path-comment-hook"
+
+# Tool configurations
+[tool.ruff]
+target-version = "py38"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle errors
+  "W",   # pycodestyle warnings
+  "F",   # pyflakes
+  "I",   # isort
+  "B",   # flake8-bugbear
+  "C4",  # flake8-comprehensions
+  "UP",  # pyupgrade
+  "D",   # pydocstyle
+]
+ignore = [
+  "D203",  # 1 blank line required before class docstring
+  "D213",  # Multi-line docstring summary should start at the second line
+  "UP006", # Use `list` instead of `List` for type annotation (Python 3.8 needs typing.List)
+  "UP007", # Use X | Y for type annotations (Python 3.8 needs typing.Union)
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*" = ["D", "S101"]  # Allow missing docstrings and asserts in tests
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+ignore_errors = true
+disallow_untyped_defs = false
+disallow_untyped_decorators = false
+
+[[tool.mypy.overrides]]
+module = "path_comment.cli"
+disallow_untyped_decorators = false
+
+[[tool.mypy.overrides]]
+module = "tomli"
+ignore_missing_imports = true
+
+[tool.coverage.run]
+source_pkgs = ["path_comment"]
+branch = true
+parallel = true
+omit = [
+  "src/path_comment/__about__.py",
+]
+
+[tool.coverage.paths]
+path_comment = ["src/path_comment", "*/path-comment-hook/src/path_comment"]
+tests = ["tests", "*/path-comment-hook/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B101"]  # Skip assert_used test
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = [
+  "--strict-markers",
+  "--strict-config",
+  "--disable-warnings",
+]
+testpaths = ["tests"]
+
+# Towncrier configuration
+[tool.towncrier]
+package = "path_comment"
+package_dir = "src"
+filename = "CHANGELOG.md"
+directory = "changes/"
+template = "changes/template.rst"
+title_format = "## [{version}] - {date}"
+issue_format = "[#{issue}](https://github.com/Shorzinator/path-comment-hook/issues/{issue})"
+
+[[tool.towncrier.type]]
+directory = "feature"
+name = "Features"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "bugfix"
+name = "Bug Fixes"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "doc"
+name = "Documentation"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "removal"
+name = "Deprecations and Removals"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "misc"
+name = "Miscellaneous"
+showcontent = false
+
+# Path-comment-hook configuration (example)
+[tool.path-comment-hook]
+# Additional patterns to exclude (beyond the comprehensive defaults)
+exclude_globs = ["my-custom-exclude/*"]
+# Whether to use built-in ignore patterns (recommended: true)
+use_default_ignores = true
+# Custom comment templates for specific file extensions
+custom_comment_map = {}
+# Default path resolution mode
+default_mode = "file"
+
+# [tool.docformatter] - removed due to conflicts with other formatting tools
+# wrap_summaries = 100
+# wrap_descriptions = 100
+# pre_summary_newline = false
+# make_summary_multi_line = false
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+tag_format = "v$version"
