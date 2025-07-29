@@ -1,0 +1,10 @@
+numpy
+numba
+scipy
+pydantic
+tqdm
+loguru
+deprecated
+mpi4py
+pymetis
+h5py
