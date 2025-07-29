@@ -1,0 +1,13 @@
+sphero_unsw/__init__.py,sha256=6FvlWo9KtCmeZXoSvTlvHMlXsq4_bgHAvd9xRJAgHko,586
+sphero_unsw/scanner.py,sha256=QlmuPD0dtTtRD-tXQP5MjJ8aeavuBobyLZvYX0HtpMQ,1079
+sphero_unsw/sphero_edu.py,sha256=6ysQeTSvOy1SUcn_PUvMJS_vSDZw0IUQJm03n8kd2Jo,12498
+sphero_unsw/toys_scanner.py,sha256=R8mGWeArLZQvKSjX3yAQwACdgEpwubvUg4BCjEM6v20,4192
+sphero_unsw/types.py,sha256=n_okxfMoKOjvzB3PhdKoS0z32x2fr-08VckPwzJfcpU,572
+sphero_unsw/utils.py,sha256=nGapPIjhE9_RqrKzBJ_KS6zqbYt8exQWCc_NkFo-bS4,4474
+sphero_unsw/commands/sensor.py,sha256=jiZe_IF4QXK1yX34I8-xuQYZG61JZOMjhFxbvgvBKHY,3202
+sphero_unsw/toy/boltplus.py,sha256=w-SxmzcjJcxYfIWTRVP49qBkXG6MIbgs5BtBSjedBTk,20742
+sphero_unsw-0.1.4.dist-info/licenses/LICENSE,sha256=rlQOwdVeWDVXzIeHHSPJzG49tRMhaIWlAaaTw8seRek,1297
+sphero_unsw-0.1.4.dist-info/METADATA,sha256=DkCYiKUtaiFKUzgxqGDGVKoV6mNj_cy7ghTOs0QS27I,10911
+sphero_unsw-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sphero_unsw-0.1.4.dist-info/top_level.txt,sha256=RSUtGc06yObLZT0UpDEcI_A8JwgEbTC9InOq7T24tJw,12
+sphero_unsw-0.1.4.dist-info/RECORD,,
