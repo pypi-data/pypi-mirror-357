@@ -1,0 +1,16 @@
+/.idea
+# Coverage output
+.coverage
+/.nox/
+/build/
+/coverage.xml
+/.zip/
+/venv/
+/dist/
+.env
+**/__pycache__/
+*.pyc
+# MkDocs build output
+/site/
+.venv/
+homelab_airflow_dags/logs/
