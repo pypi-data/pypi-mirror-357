@@ -1,0 +1,8 @@
+LICENSE
+README.md
+jupyterlog.py
+setup.py
+jupyterlog.egg-info/PKG-INFO
+jupyterlog.egg-info/SOURCES.txt
+jupyterlog.egg-info/dependency_links.txt
+jupyterlog.egg-info/top_level.txt
