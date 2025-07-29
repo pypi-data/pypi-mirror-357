@@ -1,0 +1,11 @@
+pyproject.toml
+rafael_nn/__init__.py
+rafael_nn/acfn.py
+rafael_nn/nn.py
+rafael_nn/optimizer.py
+rafael_nn.egg-info/PKG-INFO
+rafael_nn.egg-info/SOURCES.txt
+rafael_nn.egg-info/dependency_links.txt
+rafael_nn.egg-info/requires.txt
+rafael_nn.egg-info/top_level.txt
+tests/test_acfn.py
