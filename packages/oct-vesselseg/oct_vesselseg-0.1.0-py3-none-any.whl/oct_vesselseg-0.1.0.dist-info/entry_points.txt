@@ -1,0 +1,2 @@
+[console_scripts]
+oct_vesselseg = oct_vesselseg:main.app
