@@ -1,0 +1,10 @@
+redshift/__init__.py,sha256=BUNGhk8LwEruSEdITXVFlAy_AD1pyJVK1pZa8lG9tOg,79
+redshift/__main__.py,sha256=X3kYGM_EUKEaBMoBO1VCgZord7nkgxbqdnyaUuJHDMs,2543
+redshift/config.py,sha256=xAn68e3WS1BSlEJfWLOh3-B1HQv8puN7IYdWzbuzOeM,2501
+redshift/pdb.py,sha256=pzVPMu_J4ScJbd1DeQxTUC5IkZKZkvE1G_cOm8VZzeU,7167
+redshift_cli-0.4.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+redshift_cli-0.4.0.dist-info/METADATA,sha256=xNUVhHZz40NbM2NbsCfNUPZpgYrN7bAjKNdSZd7qNds,3644
+redshift_cli-0.4.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+redshift_cli-0.4.0.dist-info/entry_points.txt,sha256=XPpdI4cEDpMBpHIjd9wrZf1sXfrxGuXQY5QOfhsmVXk,52
+redshift_cli-0.4.0.dist-info/top_level.txt,sha256=Wxg0yeXO3gehrsGQlkc2Hj3IjTq9BTElisZsnZ46wGY,9
+redshift_cli-0.4.0.dist-info/RECORD,,
