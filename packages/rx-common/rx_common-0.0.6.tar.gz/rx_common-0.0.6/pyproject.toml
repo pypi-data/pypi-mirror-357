@@ -1,0 +1,32 @@
+[project]
+name        = 'rx_common'
+description = 'Project used to find and load libraries in cal-rx-run3 c++ code'
+version     = '0.0.6'
+readme      = 'README.md'
+dependencies= [
+'data-manipulation-utilities',
+'PyYAML',
+'ap_utilities',
+'rx_data',
+'post_ap',
+]
+
+[project.optional-dependencies]
+dev  = ['pytest']
+
+[tools.setuptools.packages.find]
+where   = ['src']
+
+[project.scripts]
+make_run3_yaml ='rx_common_scripts.make_run3_yaml:main'
+pap_lfn_to_yaml='rx_common_scripts.pap_lfn_to_yaml:main'
+ap_lfn_to_yaml ='rx_common_scripts.ap_lfn_to_yaml:main'
+
+[tool.setuptools.package-data]
+'rx_config' = ['*.yaml']
+'rx_tests'  = ['kernel/*.yaml']
+
+[tool.setuptools]
+script-files=[
+'src/rx_common_scripts/rx_setup',
+]
