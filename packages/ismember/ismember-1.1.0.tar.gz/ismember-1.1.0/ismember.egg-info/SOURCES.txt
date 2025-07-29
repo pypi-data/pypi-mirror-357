@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+ismember/__init__.py
+ismember/example.py
+ismember/ismember.py
+ismember.egg-info/PKG-INFO
+ismember.egg-info/SOURCES.txt
+ismember.egg-info/dependency_links.txt
+ismember.egg-info/requires.txt
+ismember.egg-info/top_level.txt
