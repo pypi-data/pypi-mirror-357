@@ -1,0 +1,45 @@
+Metadata-Version: 2.3
+Name: loregen-common
+Version: 0.1.1
+Summary: Common classes for the loregen project
+Keywords: loregen,common
+Author: ishish.io
+Author-email: ts@ishish.io
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: boto3 (>=1.38.41,<2.0.0)
+Requires-Dist: python-dotenv (>=1.1.0,<2.0.0)
+Project-URL: Documentation, https://github.com/ishish/loregen-common
+Project-URL: Homepage, https://github.com/ishish/loregen-common
+Project-URL: Repository, https://github.com/ishish/loregen-common
+Description-Content-Type: text/markdown
+
+# loregen-common
+
+Common classes for the loregen project.
+
+## Installation
+
+```bash
+pip install loregen-common
+```
+
+## Usage
+
+```python
+from loregen.backend.common import models, utils, openrouter
+
+# Use the common utilities and models
+```
+
+## Development
+
+This package is built using setuptools and can be installed in development mode:
+
+```bash
+pip install -e .
+``` 
