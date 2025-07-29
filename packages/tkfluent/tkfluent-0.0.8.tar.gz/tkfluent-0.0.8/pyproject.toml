@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "tkfluent"
+version = "0.0.8"
+description = "Fluent Design for Tkinter"
+authors = ["XiangQinxi <xiangqinxi@outlook.com>"]
+readme = "README.md"
+documentation = "https://tkfluent.netlify.app"
+packages = [
+    { include = "tkflu" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+tksvg = "^0.7.4"
+tkextrafont = "^0.6.3"
+svgwrite = "^1.4.3"
+pillow = "^10.2.0"
+tkdeft = "^0.0.9"
+easydict = "^1.13"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
