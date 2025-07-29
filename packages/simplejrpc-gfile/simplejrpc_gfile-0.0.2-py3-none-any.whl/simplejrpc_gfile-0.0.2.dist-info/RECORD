@@ -1,0 +1,8 @@
+simplejrpc_gfile/__init__.py,sha256=2jeRDYDT4lKKEPd5mSbSiNlXWl-vwa6Ust79023m7AE,62
+simplejrpc_gfile/simplejrpc_gfile.py,sha256=aD4upzpd9mOvIRJysE3hs2KnVVtTwZg4NOJS8t3GBQY,12275
+simplejrpc_gfile/test/test_file.py,sha256=UjhaGZi3V3f66z5CziMwnMGybzR_d8ARpxII5welDfQ,1947
+simplejrpc_gfile/test/zack.json,sha256=YkUjlQSHJEGxSPR1n_z4ejZvU5AtHrkqC9-OHYVIgAI,28
+simplejrpc_gfile-0.0.2.dist-info/LICENSE.txt,sha256=hkX3aDIg3NAMgCJxq3W7kkLdrplbEpSmJe5kXtniK9I,1060
+simplejrpc_gfile-0.0.2.dist-info/METADATA,sha256=E7j-FyAK6iQuuAcD4haVbhEvW7SXyQ5bS8_tlNSDTIQ,918
+simplejrpc_gfile-0.0.2.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+simplejrpc_gfile-0.0.2.dist-info/RECORD,,
