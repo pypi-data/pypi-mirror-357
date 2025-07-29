@@ -1,0 +1,11 @@
+basemkit/__init__.py,sha256=1mptEzQihbdyqqzMgdns_j5ZGK9gz7hR2bsgA_TnjO4,22
+basemkit/base_cmd.py,sha256=-l6idGyVaywMWLmctwrJoPKcn3bhNGfnxThLKi2aj0Y,6927
+basemkit/basetest.py,sha256=oirMWoUNBIdyf69j1gtYDgvqNyjmQ59e21yciABviOw,2483
+basemkit/persistent_log.py,sha256=Ajs4YBKhSEMu3HJGfYzkhJGsok5dpqJ82QK1x-2rBxg,4240
+basemkit/profiler.py,sha256=h7N3jo43r6VS92UIARZMobNJYnsmpdk1zR4yVsyvhls,1059
+basemkit/shell.py,sha256=-BmVFYtD3PER1ELfLnZTpwF6zJZkf44XH-ii51irdTQ,7569
+basemkit/yamlable.py,sha256=MSTK2VtRAutogKGiwPxpjXbw3akcwOoOqmf-LCncqEE,11613
+pybasemkit-0.0.4.dist-info/METADATA,sha256=O6JmdmH5aalmEBHI8JG1kIFHlVqmTM_kTZklXCbTwVk,2726
+pybasemkit-0.0.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pybasemkit-0.0.4.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+pybasemkit-0.0.4.dist-info/RECORD,,
