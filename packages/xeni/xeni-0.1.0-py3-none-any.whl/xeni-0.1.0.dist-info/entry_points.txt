@@ -1,0 +1,2 @@
+[console_scripts]
+xeni = xeni.cli:main
