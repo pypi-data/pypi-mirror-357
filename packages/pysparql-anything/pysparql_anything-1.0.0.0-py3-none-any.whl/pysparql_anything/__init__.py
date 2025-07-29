@@ -1,0 +1,43 @@
+"""
+Manages the package's namespace, helps the installation process of the API.
+
+Author: Marco Ratta
+Last Modified: 23/06/2025
+"""
+
+import requests
+from github import Github
+from github.GithubException import RateLimitExceededException
+from pysparql_anything import utilities
+from pysparql_anything.__about__ import (
+     __SparqlAnything__, __uri__, __version__
+)
+
+# Checks if SPARQL Anything is not installed. Installs it if so.
+try:
+    if not utilities.has_jar():  # SPARQL Anything not installed.
+        print(f'Welcome to PySPARQL Anything {__version__}, the SPARQL '
+              + 'Anything Python library.')
+        print('No SPARQL Anything executable jar has been found'
+              + ' in the installation folder.')
+        utilities.download_sparql_anything(
+            Github(), __uri__, __SparqlAnything__
+        )
+except requests.ConnectionError as err:
+    print(f' A {type(err)} exception has been raised. \n'
+          + 'Installation unsuccessful!!!')
+    raise
+except requests.Timeout as exc:
+    print(f' A {type(exc)} exception has been raised. \n'
+          + 'Installation unsuccessful!!!')
+    raise
+except RateLimitExceededException as exc:
+    print(f' A {type(exc)} exception has been raised. \n'
+          + 'Installation unsuccessful!!!')
+    raise
+
+# Launches the JVM
+import pysparql_anything.sparql_anything
+
+# Type Aliases
+SparqlAnything = pysparql_anything.sparql_anything.SparqlAnything

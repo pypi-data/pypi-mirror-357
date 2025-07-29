@@ -1,0 +1,2 @@
+[console_scripts]
+sparql-anything = pysparql_anything.cli:main
