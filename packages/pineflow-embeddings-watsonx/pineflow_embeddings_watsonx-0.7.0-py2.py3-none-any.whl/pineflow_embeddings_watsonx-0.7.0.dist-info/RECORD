@@ -1,0 +1,5 @@
+pineflow/embeddings/watsonx/__init__.py,sha256=yPpnxoBWGuWLLeOht7zeayCTifgnpk7weq-2VBVdBdE,94
+pineflow/embeddings/watsonx/base.py,sha256=8Fr83tq_e-dFikr22BLWt-Uy5Fd01GSgGdHBx7MqII8,3847
+pineflow_embeddings_watsonx-0.7.0.dist-info/METADATA,sha256=hIC-oGRm0ms0MPoNT4BbhxC9or0ZQYqCQSTSX6X7DuE,1081
+pineflow_embeddings_watsonx-0.7.0.dist-info/WHEEL,sha256=5druYqcII7zHXzX7qmN0TH895Jg3yuTtfjMgJIVBrKE,92
+pineflow_embeddings_watsonx-0.7.0.dist-info/RECORD,,
