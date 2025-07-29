@@ -1,0 +1,29 @@
+Metadata-Version: 2.3
+Name: pineflow-embeddings-huggingface
+Version: 0.7.1
+Summary: pineflow embeddings huggingface extension
+License: MIT
+Author: Leonardo Furnielis
+Author-email: leonardofurnielis@outlook.com
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: accelerate (>=1.7.0,<2.0.0)
+Requires-Dist: pineflow-core (>=0.7.2,<0.8.0)
+Requires-Dist: sentence-transformers (>=4.1.0,<5.0.0)
+Requires-Dist: torch (>=2.2.2,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Pineflow embeddings extension - huggingface
+
