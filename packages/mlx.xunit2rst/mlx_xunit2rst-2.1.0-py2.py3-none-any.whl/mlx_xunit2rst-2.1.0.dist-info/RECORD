@@ -1,0 +1,12 @@
+mlx/xunit2rst/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mlx/xunit2rst/__main__.py,sha256=iRLj0h4x2aUU1aGygHvbZjYa1dEIjMhVep7voeQvCzg,113
+mlx/xunit2rst/__version__.py,sha256=dseuoOPG9WZ1Ezr1SC3wS9_hczkX-b1NdE4TQPHFJso,511
+mlx/xunit2rst/xunit2rst.mako,sha256=7uznSmSXpoedbGjFMt1oQp5Oo-wj_l55cgv6PFtFzW0,5108
+mlx/xunit2rst/xunit2rst.py,sha256=oTL9Y14BBMA1xX6WwHLMPCf2RmgQulq8vF30pjUuvkQ,14217
+mlx/xunit2rst/assets/xunit2rst.css,sha256=U0prne3-gX5W-vwY9gqhtLMVL-5-uoXwGw9ViBsrg0w,321
+mlx_xunit2rst-2.1.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+mlx_xunit2rst-2.1.0.dist-info/METADATA,sha256=4EP29EYP1Rdm2RNe9MyPPuJ3LstJl2cvCr_kle5B4TE,12424
+mlx_xunit2rst-2.1.0.dist-info/WHEEL,sha256=JNWh1Fm1UdwIQV075glCn4MVuCRs0sotJIq-J6rbxCU,109
+mlx_xunit2rst-2.1.0.dist-info/entry_points.txt,sha256=bDhPtfEhgNuQT8EDBv5ps52hsrnAxP-oqYBaHPTE2pQ,104
+mlx_xunit2rst-2.1.0.dist-info/top_level.txt,sha256=NCVZzyms-obPlDq2Sa--m3oyfnnmLma38KCnE6gmcFE,4
+mlx_xunit2rst-2.1.0.dist-info/RECORD,,
