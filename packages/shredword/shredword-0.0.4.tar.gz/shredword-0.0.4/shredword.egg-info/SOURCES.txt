@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+shred/__init__.py
+shred/cbase.py
+shred/core.py
+shred/lib/libtoken.dll
+shred/lib/libtoken.so
