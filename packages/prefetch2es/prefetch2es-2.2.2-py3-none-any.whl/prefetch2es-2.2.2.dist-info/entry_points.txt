@@ -1,0 +1,3 @@
+[console_scripts]
+prefetch2es = prefetch2es.views.Prefetch2esView:entry_point
+prefetch2json = prefetch2es.views.Prefetch2jsonView:entry_point
