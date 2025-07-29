@@ -1,0 +1,9 @@
+Metadata-Version: 2.2
+Name: taskflow_work
+Version: 0.1.0
+Summary: Uma library simples de orquestração de tarefas estilo Airflow.
+Author: Seu Nome
+Requires-Python: >=3.7
+Dynamic: author
+Dynamic: requires-python
+Dynamic: summary
