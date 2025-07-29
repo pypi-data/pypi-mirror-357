@@ -1,0 +1,16 @@
+video_draft_creator/__init__.py,sha256=B1A3D_hB6fs1y9qXVaQYcdj8fB_A5FjcYK-NceAJvbM,2293
+video_draft_creator/__main__.py,sha256=ugvEtEYgQCZaaOWrpU0oj_Tsp1PSmKhkFIP2TUjpf4g,196
+video_draft_creator/cli.py,sha256=8xU5Lw0XOywMoNIEl5s-IvtEHljLT-4uLjG7UEtauQI,61314
+video_draft_creator/config.py,sha256=Mvkyupo3d9TsL9jYiUuE_Va_Pmu-bWU4AeidmMCTSgE,8669
+video_draft_creator/config_manager.py,sha256=eN_glI_Lazp0hp1H8B1dRhsXrN8NTcxpDiZS3tVniFU,11712
+video_draft_creator/corrector.py,sha256=5Gm4WjWqo1KfReHjJpiDCdGniY9-g0y2ysC1ZWHaQtw,25066
+video_draft_creator/downloader.py,sha256=h8uaIsakS2RZCOENqGinCDCq1CHR3LokTcnfZpWVyTo,20331
+video_draft_creator/output_formatter.py,sha256=xR-s_jnRWYB6DChJt9KBXL-YAQx-EmtZwdV3gyDXpyU,12251
+video_draft_creator/progress.py,sha256=iGrQ8Dd2BukPRYk08uooHL07RgDxftl5Wb5wgwp-G2k,9032
+video_draft_creator/transcriber.py,sha256=ciub03-A-XCpjWGNd1fO11ofl55ELqC4XW-IcMIR2Bk,18741
+video_draft_creator-0.1.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+video_draft_creator-0.1.0.dist-info/METADATA,sha256=cR6MGWCHAU-XqO8Tlq1XclfIEMAGpfhO6DRJXAWvIQI,16770
+video_draft_creator-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+video_draft_creator-0.1.0.dist-info/entry_points.txt,sha256=ap6a_NBuBB2ufMcBHXgn_ptjnuIIsCLaFkawfRWrCBs,104
+video_draft_creator-0.1.0.dist-info/top_level.txt,sha256=mwT6WhSMFFIKXMjzVPTtuQMAsKAPM5MJs3UyrwBtjiY,20
+video_draft_creator-0.1.0.dist-info/RECORD,,

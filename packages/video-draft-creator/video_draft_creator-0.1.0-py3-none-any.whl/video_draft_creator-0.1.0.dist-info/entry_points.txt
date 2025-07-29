@@ -1,0 +1,3 @@
+[console_scripts]
+vdc = video_draft_creator.cli:main
+video-draft-creator = video_draft_creator.cli:main
