@@ -1,0 +1,34 @@
+[build-system]
+requires = [ "setuptools", "wheel",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "photon_canon"
+version = "v2.1.0"
+description = "An in-depth 3D Monte Carlo simulation toolbox with custom systems of planar mediums, custom beams and detectors."
+readme = "README.md"
+requires-python = ">=3"
+keywords = [ "simulation", "parallel", "monte carlo", "photon",]
+dependencies = [ "matplotlib==3.10.3", "numpy==2.3.1", "pandas==2.3.0", "pydantic==2.11.7", "scipy==1.16.0", "tqdm==4.67.1",]
+[[project.authors]]
+name = "Jesse D Ivers"
+email = "iversjesse@gmail.com"
+
+[project.license]
+file = "LICENSE.txt"
+
+[project.optional-dependencies]
+cuda = [ "cupy",]
+dev = [ "toml",]
+test = [ "unittest",]
+
+[project.urls]
+Homepage = "https://www.github.com/jiversivers/monte_carlo"
+Source = "https://www.github.com/jiversivers/monte_carlo"
+"Check me out" = "https://www.jivers.me"
+
+[tool.setuptools.package-data]
+photon_canon = [ "data/*",]
+
+[tool.setuptools.packages.find]
+where = [ "src",]
