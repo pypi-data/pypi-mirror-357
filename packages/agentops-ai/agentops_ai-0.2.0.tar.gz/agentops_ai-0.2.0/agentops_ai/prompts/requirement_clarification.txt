@@ -1,0 +1,12 @@
+Please review and clarify this requirement for better test generation:
+
+Original requirement: {requirement_text}
+File: {file_path}
+
+Make it more specific and testable if needed. If it's already clear, return it unchanged.
+Focus on:
+1. Clear input/output expectations
+2. Specific behavior descriptions  
+3. Edge cases if relevant
+
+Return only the clarified requirement text. 

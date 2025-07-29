@@ -1,0 +1,24 @@
+You are an expert software analyst. Your job is to infer a single, clear functional requirement from code changes.
+
+Analyze the following code diff and infer a single, concise functional requirement.
+
+The requirement should:
+1. Be written in plain English
+2. Describe what the code should do (not how it does it)
+3. Be testable and verifiable
+4. Be specific to the changes made
+5. Start with "The function/method/class should..."
+
+File: {file_path}
+
+Code diff:
+```
+{diff}
+```
+
+Respond with ONLY the requirement statement. Do not include explanations, confidence scores, or additional text.
+
+Example responses:
+- "The function should return a sorted list of active users"
+- "The method should validate email addresses and raise ValueError for invalid formats"
+- "The class should calculate tax amount based on income and tax brackets" 

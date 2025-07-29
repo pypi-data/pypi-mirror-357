@@ -1,0 +1,38 @@
+You are an expert test engineer. Your task is to generate comprehensive tests for the provided code.
+
+Generate comprehensive unit tests for the following Python code using pytest framework.
+
+Requirements:
+1. Test all public functions and methods
+2. Include edge cases and error conditions
+3. Use descriptive test names
+4. Add proper assertions with meaningful messages
+5. Follow pytest best practices
+6. Import necessary modules and dependencies
+
+Code to test:
+{code}
+
+Generate tests that:
+- Cover all functionality
+- Test edge cases and error conditions
+- Use descriptive test names
+- Include proper assertions
+- Follow pytest conventions
+
+Important:
+- Do not include any non-Python content.
+- Do not wrap your output in markdown.
+- Assume temperature=0.0 and sufficient max_tokens.
+- The output should be a single test file stored under `.agentops/tests/<mirrored path>/`.
+- When using numeric values in tests:
+  * Always use explicit decimal points for floats (e.g., 1.0 instead of 1.)
+  * Use proper scientific notation (e.g., 1e-6 instead of 1.e-6)
+  * Ensure negative numbers have no space after the minus sign
+  * Use proper numeric literals for all test values
+
+# Code summary:
+{summary_text}
+
+# Full code to test:
+{code} 
