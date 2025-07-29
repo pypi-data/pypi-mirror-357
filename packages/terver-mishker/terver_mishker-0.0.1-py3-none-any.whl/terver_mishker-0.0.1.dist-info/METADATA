@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: terver-mishker
+Version: 0.0.1
+Summary: библиотека для тервера.
+Dynamic: description
+Dynamic: summary
+
+данная библиотека создана для экзамена по терверу.
