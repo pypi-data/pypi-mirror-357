@@ -1,0 +1,2 @@
+[console_scripts]
+z-y-y-mcp-demo = z_y_y_mcp_demo:main
