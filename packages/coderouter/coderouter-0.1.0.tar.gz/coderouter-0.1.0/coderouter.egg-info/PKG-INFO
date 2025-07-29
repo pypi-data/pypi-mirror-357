@@ -1,0 +1,60 @@
+Metadata-Version: 2.4
+Name: coderouter
+Version: 0.1.0
+Summary: A simple routing library
+Home-page: https://github.com/lawrencechen/coderouter
+Author: Lawrence Chen
+Author-email: 
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# CodeRouter
+
+A simple routing library for Python applications.
+
+## Installation
+
+```bash
+pip install coderouter
+```
+
+## Usage
+
+```python
+from coderouter import Router
+
+router = Router()
+
+def home_handler():
+    return "Welcome home!"
+
+def about_handler():
+    return "About page"
+
+router.add_route("/", home_handler)
+router.add_route("/about", about_handler, methods=["GET", "POST"])
+
+# Handle requests
+result = router.handle("/")  # Returns "Welcome home!"
+result = router.handle("/about", "POST")  # Returns "About page"
+```
+
+## License
+
+MIT
