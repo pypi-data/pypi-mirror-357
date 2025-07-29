@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+remote_mcp_cli/__init__.py
+remote_mcp_cli.egg-info/PKG-INFO
+remote_mcp_cli.egg-info/SOURCES.txt
+remote_mcp_cli.egg-info/dependency_links.txt
+remote_mcp_cli.egg-info/entry_points.txt
+remote_mcp_cli.egg-info/requires.txt
+remote_mcp_cli.egg-info/top_level.txt
