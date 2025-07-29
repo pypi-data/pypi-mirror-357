@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: mils_de
+Version: 1.0
+Summary: The mils-de package implements the the DensityEstimator model used to predict the Plasma density given the Power and Phase of possibly multiple MILS recivers.
+Author-email: Piero Coronica <piero.coronica@mpcdf.mpg.de>
+License-Expression: MIT
+Keywords: MILS,DensityEstimator
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas>=2.1
+Requires-Dist: numpy>=1.20
+Requires-Dist: scikit-learn>=1.3
+Provides-Extra: full
+Requires-Dist: optuna>=3.6; extra == "full"
+Requires-Dist: matplotlib>=3.8; extra == "full"
+Requires-Dist: ipykernel; extra == "full"
+Provides-Extra: dynamic
+Requires-Dist: version; extra == "dynamic"
+Dynamic: license-file
+
+
+# mils-de
+
+The `mils-de` package contains the models and tools necessary for performing analysis in the [`Intensity Refractometry`](https://gitlab.mpcdf.mpg.de/dataanalytics-public/intensity_refractometry) project. Specifically, it implements:
+
+- The `DensityEstimator` model for predicting plasma density based on power and phase measurements from multiple receivers.
+- Weighting functions and evaluation metrics.
+- Constraints for the design space.
+- Data loading and data manipulation tools, including synthetic design creation.
+
+## Installation
+
+To install the package, run:
+
+```bash
+pip install mils-de
+```
+
+### Optional Dependencies
+
+To reproduce the analysis from the [`Intensity Refractometry`](https://gitlab.mpcdf.mpg.de/dataanalytics-public/intensity_refractometry) project, install the optional dependencies:
+
+```bash
+pip install mils-de[full]
+```
+
+## Usage
+
+For usage examples and detailed guides, refer to the notebooks in the [`Intensity Refractometry`](https://gitlab.mpcdf.mpg.de/dataanalytics-public/intensity_refractometry) repository. A good starting point is [this notebook](https://gitlab.mpcdf.mpg.de/dataanalytics-public/intensity_refractometry/tools/notebooks/density_estimator.ipynb), which demonstrates how to fit a density estimator for a specific design and assess its performance.
