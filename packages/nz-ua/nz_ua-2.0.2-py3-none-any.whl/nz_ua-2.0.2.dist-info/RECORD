@@ -1,0 +1,16 @@
+nz-ua/__init__.py,sha256=pt7DbX7pBI8J5qM-DBkDz6p0l-EMVAYR_DJU9hyHI1w,45
+nz-ua/client.py,sha256=hg_s7EPtN7XpDH_PXlktRYUE-CirdpUkdFxpQGVjqtI,5106
+nz-ua/errors.py,sha256=5Jh8g4vFkJzIRhayxQoor6dBsEsCakUQwQ_CAsr6qUo,889
+nz-ua/http.py,sha256=1okicM8LC4PRaGnUmKzQQ5BusmMhVgDoRAHcgPZxPnI,2367
+nz-ua/objects/__init__.py,sha256=GpuN1UOlsfe2hjoT7n9lPPrRi0l15-7WJvVzILWDmpI,173
+nz-ua/objects/hometask.py,sha256=axPA7Cr6g2W5s7xc51mIFw_Tx8hb8q2vsLo6X_kUic4,476
+nz-ua/objects/schedule.py,sha256=aCvhLN6HPFLV332k96QnNOKODxYwemIufAaEr-81AM0,1301
+nz-ua/objects/student.py,sha256=-Tns1n5jxybA-DMD1iVnceMf2pl9veFS0OCcYAF8Lek,485
+nz-ua/objects/student_performance.py,sha256=cOB4ILTcVygJot8GWTh2RCIb_jcNXZ1YIwJHqDO2DMc,663
+nz-ua/objects/subjects_performance.py,sha256=qcI5_IupeeHKSvSZdaaZUHZrCP2QTAgTMJK8JdrkA4w,803
+nz-ua/objects/timetable.py,sha256=jLbKMt9v3EDya3fP5Cw6mDSTiq8kUN1ZZjOqZqLWk90,789
+nz_ua-2.0.2.dist-info/licenses/LICENSE,sha256=rM6fYl7fmYxP9bMoeQb_oFUYie6U4uoIr-SFUWHhVmI,1060
+nz_ua-2.0.2.dist-info/METADATA,sha256=EnQcF_U7zKcuiB1Molh4KuqSZ7NfwZirNY_a4PwofQY,2470
+nz_ua-2.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+nz_ua-2.0.2.dist-info/top_level.txt,sha256=9nGMz2P_iUsmFyHa5VGkqHzMenZbrs3lG2BOP21gs4c,6
+nz_ua-2.0.2.dist-info/RECORD,,
