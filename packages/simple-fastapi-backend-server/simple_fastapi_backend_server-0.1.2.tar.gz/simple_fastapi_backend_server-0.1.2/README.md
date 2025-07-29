@@ -1,0 +1,105 @@
+# simple-fastapi-backend-server
+[![PyPI version](https://img.shields.io/pypi/v/simple-fastapi-backend-server.svg)](https://pypi.org/project/simple-fastapi-backend-server/)
+
+A minimal, prebuilt FastAPI backend server for quick authentication prototyping.
+
+This package instantly runs a FastAPI server with the following endpoints:
+- `GET /` — health check
+- `POST /register` — simulate user registration
+- `POST /login` — simulate user login
+
+Useful for frontend developers who need a simple, no-setup backend server to test and build authentication flows.
+
+---
+
+## 🚀 Features
+
+- Preconfigured FastAPI server
+- Lightweight, zero-setup
+- CLI entry point: `simple-fastapi-backend-server`
+- Returns mock responses for login and registration
+- Ideal for frontend devs prototyping login/register UIs
+
+---
+
+## 🔧 Installation
+
+```bash
+pip install simple-fastapi-backend-server
+```
+## ▶️ Usage
+Once installed, simply run:
+```
+simple-fastapi-backend-server
+```
+The server will start at http://localhost:8000.
+
+## 📋 Endpoints
+- `GET /`
+    ```
+    { "message": "API is running" }
+    ```
+- `POST /register`
+
+    **Request body:**
+    ```
+    {
+    "username": "johndoe",
+    "password": "secret"
+    }
+    ```
+    **Response:**
+    ```
+    {
+    "message": "User registered successfully",
+    "user": {
+        "username": "johndoe",
+        "password": "secret"
+    }
+    }
+    ```
+- `POST /login`
+
+    **Request body:**
+    ```
+    {
+    "username": "johndoe",
+    "password": "secret"
+    }
+    ```
+    **Response:**
+    ```
+    {
+    "message": "User logged in successfully",
+    "user": {
+        "username": "johndoe",
+        "password": "secret"
+    }
+    }
+    ```
+## 🧠 When to Use This
+- ✅ You’re a frontend developer building and testing login/signup forms
+
+- ✅ You don’t want to waste time setting up a full backend
+
+- ✅ You want to test fetch/axios calls, error handling, and form logic
+
+- ❌ Not for production — responses are static and no database is used
+
+## 🧩 No Need to Build Your Own FastAPI Backend
+> This package eliminates the need to create a **FastAPI project from scratch** for simple frontend authentication testing. Just install and run it.
+
+> Perfect for **React, Vue, Angular, or mobile developers** building login/registration UIs.
+
+## 🛑 Not Included
+- No real authentication
+
+- No token generation or database
+
+- No user validation or error handling
+
+👨‍💻 Author
+Created by Ataur Rahman
+
+## 📄 License
+[MIT License](./LICENSE)

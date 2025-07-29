@@ -1,0 +1,2 @@
+[console_scripts]
+simple_fastapi_backend_server = simple_fastapi_backend_server.main:start
