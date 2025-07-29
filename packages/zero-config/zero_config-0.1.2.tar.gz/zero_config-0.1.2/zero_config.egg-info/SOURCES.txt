@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+tests/test_config.py
+tests/test_demo.py
+tests/test_integration.py
+zero_config/__init__.py
+zero_config/config.py
+zero_config.egg-info/PKG-INFO
+zero_config.egg-info/SOURCES.txt
+zero_config.egg-info/dependency_links.txt
+zero_config.egg-info/requires.txt
+zero_config.egg-info/top_level.txt
