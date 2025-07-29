@@ -1,0 +1,7 @@
+setup.py
+script_testing/__init__.py
+script_testing/pypi_uploader.py
+script_testing.egg-info/PKG-INFO
+script_testing.egg-info/SOURCES.txt
+script_testing.egg-info/dependency_links.txt
+script_testing.egg-info/top_level.txt
