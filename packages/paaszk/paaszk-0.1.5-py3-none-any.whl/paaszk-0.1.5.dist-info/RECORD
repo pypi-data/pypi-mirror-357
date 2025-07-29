@@ -1,0 +1,14 @@
+paaszk/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+paaszk/config.py,sha256=D2-WG3HKbsF-AeANxKq38xOCiAoMI6EcTRm4iFExCUk,7175
+paaszk/crypto.py,sha256=SHhM88f6d2lmRWc-O5eYyRM5g1IIfzGi6XheyvrZtAM,3809
+paaszk/dropbox_backend.py,sha256=WymgAn1N8KZZgmOEyIuCR0CJIeDy68BFvCdxJC3s77A,2441
+paaszk/file_ops.py,sha256=0nvc7jK6FUkdZBf66SHmoWMIRo0Hs2v7d1sLii51884,3499
+paaszk/googledrive_backend.py,sha256=M2YjCaFjJxxfBa29eq0f20Heue7JZCluYKjq0Hs3xZ8,5435
+paaszk/main.py,sha256=706rJpOFauFfcLSYPAlkTxrAJf4hSI3vbDrP5ZmbktU,10969
+paaszk/s3_backend.py,sha256=9HCXKhuPPbS7Us2CjgDYGUuaJHUTjWvwU5hQhDFCHAY,3111
+paaszk-0.1.5.dist-info/licenses/LICENSE,sha256=FWkPJbuSgjCsPJJqRVgQHhcY1dT4ENWcNKJYYVe1jNM,1075
+paaszk-0.1.5.dist-info/METADATA,sha256=xhgx0glUlF0PHFzUDs4dP6xfc0z87ZD5Zn-WIF1vto0,3554
+paaszk-0.1.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+paaszk-0.1.5.dist-info/entry_points.txt,sha256=W2kaoKg56VB5SS-oFouO77A_IeFjHkdfGMCHSsRJMmM,44
+paaszk-0.1.5.dist-info/top_level.txt,sha256=ZvhO-AtGXnckC3jM4_jlW4mI0XRYpnV4AiJF_XMmgLM,7
+paaszk-0.1.5.dist-info/RECORD,,

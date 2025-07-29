@@ -1,0 +1,2 @@
+[console_scripts]
+PaasZK = paaszk.main:main
