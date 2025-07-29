@@ -1,0 +1,10 @@
+percy/__init__.py,sha256=zs-aL3_KqnD5gHCL4CX6Lh-coG1DUwWc4ux59QdnprE,685
+percy/cache.py,sha256=3a3XW352_QKxPqxJ2-C9DMRWzaLZsPZ940QofjPJ5SM,1340
+percy/page_metadata.py,sha256=apsdMts1585h0X89NYD5qBpclu3Qf56eUPAaC4PZHgE,1194
+percy/screenshot.py,sha256=O1bpwfKvoiC0UqoYdDxnWLarnFgLTM_e5M_P24fKqR0,7996
+percy/version.py,sha256=9eLNsOOUC93Hd6kpwPqTY0w5VvCWhiy2p8ySgrNGPpY,29
+percy_playwright-1.0.2b0.dist-info/licenses/LICENSE,sha256=KF-SQSTgqBQKI7W9vH-XQT3YlsUwEsEetARbNK7uAT8,1062
+percy_playwright-1.0.2b0.dist-info/METADATA,sha256=6DYG-No4W5rDck6XTLkF3LGuImceLH4VG3UddXYMxso,9409
+percy_playwright-1.0.2b0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+percy_playwright-1.0.2b0.dist-info/top_level.txt,sha256=GMFtmlJOT0In-Q-agFO17VH7Q0-g68iot5a-i3irkuM,6
+percy_playwright-1.0.2b0.dist-info/RECORD,,
