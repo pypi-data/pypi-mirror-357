@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: model-authentication-nibata
+Version: 0.2.0
+Summary: Add your description here
+Requires-Python: >=3.13
+Requires-Dist: sqlmodel>=0.0.24
+Requires-Dist: pydantic[email]
+Requires-Dist: twine>=6.1.0
