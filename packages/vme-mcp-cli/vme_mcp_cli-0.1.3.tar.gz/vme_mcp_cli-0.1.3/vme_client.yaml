@@ -1,0 +1,47 @@
+llm:
+  anthropic_key: ${ANTHROPIC_API_KEY}
+  openai_key: ${OPENAI_API_KEY}
+  default_provider: anthropic
+  default_model: claude-3-5-sonnet-20241022
+
+server:
+  servers:
+    vme:
+      name: "vme"
+      transport: "stdio"
+      path_or_url: "src/servers/progressive_discovery_server.py"
+      timeout: 30
+      auto_connect: true
+      enabled: true
+  default_timeout: 30
+
+audio:
+  enabled: true
+  mode: "input_only"  # Options: "full_conversation", "input_only", "transcribe_only"
+  use_dedicated_transcription_api: true  # Use new transcription API for better performance
+  sample_rate: 24000
+  channels: 1
+  chunk_size: 1024
+  input_device: null   # null = default device
+  output_device: null  # null = default device
+  model: "gpt-4o-realtime-preview-2024-10-01"
+  transcription_model: "gpt-4o-transcribe"  # gpt-4o-transcribe, gpt-4o-mini-transcribe, whisper-1
+  voice: echo                               # alloy, echo, fable, onyx, nova, shimmer
+  vad_threshold: 0.6
+  vad_prefix_padding_ms: 300
+  vad_silence_duration_ms: 600
+  auto_submit_on_speech_end: true    # Auto-submit transcribed text to Claude
+  show_transcription_in_input: true  # Show live transcription in input field
+  noise_reduction: "near_field"      # near_field, far_field, null
+  instructions: |
+    You are a helpful assistant for VME infrastructure management.
+    Keep responses conversational and concise for audio output.
+    When the user asks about infrastructure, provide brief spoken summaries
+    while detailed information will be handled separately via text.
+
+ui:
+  theme: github_dark
+  show_thinking_indicator: true
+  max_message_history: 1000
+  audio_visualizer: true
+  fft_bars: 8
