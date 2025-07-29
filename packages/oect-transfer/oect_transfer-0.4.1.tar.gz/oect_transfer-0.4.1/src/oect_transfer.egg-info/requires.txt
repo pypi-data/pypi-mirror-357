@@ -1,0 +1,11 @@
+numpy>=1.23
+
+[dev]
+black>=22.0
+flake8>=4.0
+mypy>=0.950
+build
+
+[docs]
+sphinx>=4.0
+sphinx-rtd-theme>=1.0
