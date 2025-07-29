@@ -1,0 +1,12 @@
+discord.libs/libgcc_s-e52197c3.so.1,sha256=vkPW1Auw6CH9Bjk7frmX3hry_1H9c0tRI0Ncyg71WUI,724137
+discord/ext/songbird/__init__.py,sha256=lBlRUfDFdWgBUJA-4fDRzKC0ShxdbU7_qxAP0WdKYbQ,592
+discord/ext/songbird/backend.pyi,sha256=0K1_RCa_mqsiHMLIhNeCekVuBAZDzNEaBlXBIQyVJ-U,5225
+discord/ext/songbird/backend.pypy311-pp73-aarch64-linux-gnu.so,sha256=R1Uycz9sv2-uBZd6PNTcmHoOxSfrAI4MhLPRD_DAHvo,9375425
+discord/ext/songbird/client.py,sha256=lYDW3PvSelRqE3327QoYcs6FuXkuhvYZBCMifJawAAo,5272
+discord/ext/songbird/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+discord/ext/songbird/receiver.py,sha256=m08BXXTA3P0Kv-wEyvWpBxVGeyysy1gPOkfMMBhC6-w,1184
+discord/ext/songbird/track.py,sha256=6pdVF81-0EYKUtqDJAi15mbs05DmjSp18TAmV8UA-sc,1563
+discord_ext_songbird-0.1.1.dist-info/METADATA,sha256=XMIOTnTuAJOvmNthmQCb7Wd8qBcBRRro8RuYr8Ufghw,6350
+discord_ext_songbird-0.1.1.dist-info/WHEEL,sha256=pS88CuPWjjIYFr6yspI1i--6LC5fKV_Cr6MTQtaaKgw,115
+discord_ext_songbird-0.1.1.dist-info/licenses/LICENSE,sha256=KtJvHP6Pk9c5XIzJoLwtoH7JJMgeU0LaxH9JfVzuuIM,1071
+discord_ext_songbird-0.1.1.dist-info/RECORD,,
