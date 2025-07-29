@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: shopkeeper-calculate-mcp-server
+Version: 0.1.0
+Summary: Add your description here
+Author-email: 'shopkeeper' <527098070@qq.com>
+Requires-Python: >=3.12
+Requires-Dist: mcp[cli]>=1.9.4
+Requires-Dist: numexpr>=2.11.0

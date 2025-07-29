@@ -1,0 +1,20 @@
+[project]
+name = "shopkeeper-calculate-mcp-server"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "'shopkeeper'", email = "527098070@qq.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=1.9.4",
+    "numexpr>=2.11.0",
+]
+
+[project.scripts]
+shopkeeper-calculate-mcp-server = "shopkeeper_calculate_mcp_server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
