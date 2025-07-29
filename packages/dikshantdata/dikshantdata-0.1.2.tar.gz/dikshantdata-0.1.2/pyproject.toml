@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dikshantdata"
+version = "0.1.2"
+description = "Static schema-based fake data generator (Pandas output only)"
+readme = "README.md"
+authors = [
+  { name="Dikshant Ghimire", email="dikkughimire@gmail.com" },
+]
+requires-python = ">=3.7"
+dependencies = [
+  "pandas>=1.0"
+]
+
+
+[project.urls]
+Homepage = "https://github.com/dikshantgh/dikshantdata"
+Repository = "https://github.com/dikshantgh/dikshantdata"
+Issues = "https://github.com/dikshantgh/dikshantdata/issues"
+
+
+[tool.setuptools.package-data]
+dikshantdata = ["*.py"]
+
+[project.scripts]
+dikshantdata = "dikshantdata.generator:generate" 
+
+[tool.setuptools]
+packages = ["dikshantdata"]
