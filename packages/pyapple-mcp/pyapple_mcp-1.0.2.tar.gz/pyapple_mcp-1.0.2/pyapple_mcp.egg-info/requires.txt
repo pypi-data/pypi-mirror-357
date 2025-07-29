@@ -1,0 +1,15 @@
+mcp>=1.0.0
+httpx>=0.25.0
+beautifulsoup4>=4.12.0
+pyobjc-framework-Cocoa>=10.0
+pyobjc-framework-AddressBook>=10.0
+pyobjc-framework-EventKit>=10.0
+pyobjc-framework-ScriptingBridge>=10.0
+pyobjc-framework-MapKit>=10.0
+
+[dev]
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+isort>=5.12.0
+mypy>=1.5.0

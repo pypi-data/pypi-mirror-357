@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyapple-mcp"
+version = "1.0.2"
+description = "Python implementation of Apple MCP tools for macOS"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Steven Yu", email = "pyapple-mcp@example.com" }
+]
+keywords = ["mcp", "model-context-protocol", "apple", "macos", "automation", "applescript"]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: MacOS",
+]
+
+requires-python = ">=3.10"
+
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.25.0",
+    "beautifulsoup4>=4.12.0",
+    "pyobjc-framework-Cocoa>=10.0",
+    "pyobjc-framework-AddressBook>=10.0",
+    "pyobjc-framework-EventKit>=10.0",
+    "pyobjc-framework-ScriptingBridge>=10.0",
+    "pyobjc-framework-MapKit>=10.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["pyapple_mcp*"]
+exclude = ["contexts*"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.5.0",
+]
+
+[project.urls]
+Homepage = "https://54yyyu.github.io/pyapple-mcp/"
+Repository = "https://github.com/54yyyu/pyapple-mcp"
+Issues = "https://github.com/54yyyu/pyapple-mcp/issues"
+Documentation = "https://54yyyu.github.io/pyapple-mcp/api.html"
+
+[project.scripts]
+pyapple-mcp = "pyapple_mcp.server:main"
+pyapple-mcp-setup = "pyapple_mcp.setup_helper:main"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true 
