@@ -1,0 +1,194 @@
+[tool.poetry]
+package-mode = true
+name = "lfprop"
+version = "1.0.0"
+description = "A package for gradient-free neural network training using LFP"
+readme = "README.md"
+authors = [
+    "Leander Weber <leander.weber@hhi.fraunhofer.de>",
+    "Jim Berend <jim.berend@hhi.fraunhofer.de>",
+    "Moritz Weckbecker <moritz.weckbecker@hhi.fraunhofer.de>",
+    "Alexander Binder <alexander.binder@ovgu.de>",
+    "Thomas Wiegand <thomas.wiegand@hhi.fraunhofer.de>",
+    "Wojciech Samek <wojciech.samek@hhi.fraunhofer.de>",
+    "Sebastian Lapuschkin <sebastian.lapuschkin@hhi.fraunhofer.de>",
+]
+maintainers = [
+    "Leander Weber <leander.weber@hhi.fraunhofer.de>",
+    "Jim Berend <jim.berend@hhi.fraunhofer.de>",
+    "Moritz Weckbecker <moritz.weckbecker@hhi.fraunhofer.de>",
+]
+keywords = [
+    "explainable ai",
+    "xai",
+    "machine learning",
+    "deep learning",
+    "gradient-free optimization",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+license = "BSD-3-Clause"
+exclude = [
+    "cluster_run",
+    "configs",
+    "experiment_utils",
+    "minimal-example-data",
+    "wandb",
+    "nbs",
+    "docs",
+    "tests",
+    ".gitignore",
+    "minimal_example.ipynb",
+    "minimal_example_spiking_nets.ipynb",
+    "run_experiment.py",
+    "run_experiment_rstdp.py",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+lxt = "^0.6.1"
+zennit = "^0.5.1"
+wandb = { version = "^0.19.4", optional = true }
+notebook = { version = "^7.3.2", optional = true }
+joblib = { version = "^1.4.2", optional = true }
+pandas = { version = "^2.2.3", optional = true }
+scikit-learn = { version = "^1.6.1", optional = true }
+matplotlib = { version = "<3.8", optional = true }
+torcheval = { version = "^0.0.7", optional = true }
+snntorch = { version = "^0.9.1", optional = true }
+datasets = { version = "^3.3.2", optional = true }
+torch-pso = { version = "*", optional = true }
+transformers = { version = "^4.52.4", optional = true }
+
+[tool.poetry.extras]
+quickstart = ["notebook", "torcheval", "snntorch"]
+full = [
+    "wandb",
+    "notebook",
+    "joblib",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "torcheval",
+    "snntorch",
+    "datasets",
+    "transformers",
+    "torch-pso"
+]
+
+
+[project]
+name = "lfprop"
+version = "1.0.0"
+description = "A package for gradient-free neural network training using LFP"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Leander Weber", email = "leander.weber@hhi.fraunhofer.de" },
+    { name = "Jim Berend", email = "jim.berend@hhi.fraunhofer.de" },
+    { name = "Moritz Weckbecker", email = "moritz.weckbecker@hhi.fraunhofer.de" },
+    { name = "Alexander Binder", email = "alexander.binder@ovgu.de" },
+    { name = "Thomas Wiegand", email = "thomas.wiegand@hhi.fraunhofer.de" },
+    { name = "Wojciech Samek", email = "wojciech.samek@hhi.fraunhofer.de" },
+    { name = "Sebastian Lapuschkin", email = "sebastian.lapuschkin@hhi.fraunhofer.de" },
+]
+maintainers = [
+    { name = "Leander Weber", email = "leander.weber@hhi.fraunhofer.de" },
+    { name = "Jim Berend", email = "jim.berend@hhi.fraunhofer.de" },
+]
+keywords = [
+    "explainable ai",
+    "xai",
+    "machine learning",
+    "deep learning",
+    "gradient-free optimization",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Source = "https://github.com/leanderweber/layerwise-feedback-propagation"
+Issues = "https://github.com/leanderweber/layerwise-feedback-propagation/issues"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".github",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "docs",
+    "nbs",
+    "node_modules",
+    "site-packages",
+    "venv",
+    "*.ipynb",
+]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",   # By default, Ruff enables Flake8's E and F rules
+    "F",   # Pyflakes - F, pycodestyle - E, W
+    "W",
+    "A",   # flake8-builtins - A
+    "PLC", # Pylint - PLC, PLE, PLW
+    "PLE",
+    "PLW",
+    "I",   # isort - I
+]
+fixable = ["ALL"]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
