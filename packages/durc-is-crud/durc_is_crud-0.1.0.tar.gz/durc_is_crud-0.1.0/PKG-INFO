@@ -1,0 +1,130 @@
+Metadata-Version: 2.4
+Name: durc_is_crud
+Version: 0.1.0
+Summary: A package for Database to CRUD operations
+Home-page: https://github.com/ftrotter/durc_is_crud
+Author: Fred Trotter
+Author-email: fred@example.com
+Project-URL: Bug Reports, https://github.com/ftrotter/durc_is_crud/issues
+Project-URL: Source, https://github.com/ftrotter/durc_is_crud
+Project-URL: Documentation, https://github.com/ftrotter/durc_is_crud/tree/main/docs
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.0
+Classifier: Framework :: Django :: 3.1
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Database
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: django>=3.0.0
+Requires-Dist: pytest>=6.0.0
+Requires-Dist: pytest-django>=4.0.0
+Provides-Extra: dev
+Requires-Dist: black; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: coverage; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# DURC Is CRUD
+
+DURC (Database to CRUD) is a Python package that simplifies the process of generating CRUD (Create, Read, Update, Delete) operations from database schemas. It automatically extracts relational models from your database and generates the necessary code artifacts.
+
+## Features
+
+- **Database Schema Extraction**: Automatically extract database schema information including tables, columns, primary keys, foreign keys, and relationships.
+- **Relationship Detection**: Automatically detect relationships between tables based on foreign keys and naming conventions.
+- **Code Generation**: Generate code artifacts based on the extracted relational model (currently a placeholder, with full implementation coming soon).
+- **PostgreSQL Support**: Currently optimized for PostgreSQL databases, with plans to support other database systems in the future.
+- **Django Integration**: Seamlessly integrates with Django projects through management commands.
+
+## Installation
+
+```bash
+# Basic installation (includes testing capabilities)
+pip install durc-is-crud
+
+# Installation with development dependencies (for contributors)
+pip install durc-is-crud[dev]
+```
+
+For detailed installation instructions, see the [Installation Guide](docs/installation.md).
+
+## Quick Start
+
+1. Add `durc_is_crud` to your `INSTALLED_APPS` in your Django settings:
+
+   ```python
+   INSTALLED_APPS = [
+       # ...
+       'durc_is_crud',
+       # ...
+   ]
+   ```
+
+2. Extract the relational model from your database:
+
+   ```bash
+   python manage.py durc_mine --include mydb.public
+   ```
+
+3. Compile the relational model into code artifacts:
+
+   ```bash
+   python manage.py durc_compile
+   ```
+
+4. Run tests for the DURC package:
+
+   ```bash
+   # Run all tests (both standalone and Django-dependent)
+   python manage.py durc_test
+
+   # Run only standalone tests that don't require Django
+   python manage.py durc_test --standalone-only
+
+   # Run only tests that require Django
+   python manage.py durc_test --django-only
+   ```
+
+For more detailed usage instructions, see the [Usage Guide](docs/usage.md).
+
+## Documentation
+
+- [Installation Guide](docs/installation.md)
+- [Usage Guide](docs/usage.md)
+- [Testing Guide](tests/README.md)
+
+## Requirements
+
+- Python 3.6+
+- Django 3.0+
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
