@@ -1,0 +1,144 @@
+Metadata-Version: 2.4
+Name: aiwand
+Version: 0.1.0
+Summary: A simple AI toolkit for text processing using OpenAI and Gemini APIs
+Home-page: https://github.com/onlyoneaman/aiwand
+Author: Aman Kumar
+Author-email: 2000.aman.sinha@gmail.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.0.0
+Requires-Dist: python-dotenv>=0.19.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: black>=21.0; extra == "dev"
+Requires-Dist: flake8>=3.8; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# AIWand 🪄
+
+> A simple and elegant Python package for AI-powered text processing using OpenAI and Google Gemini APIs.
+
+[![PyPI version](https://img.shields.io/pypi/v/aiwand.svg)](https://pypi.org/project/aiwand/)
+[![Python versions](https://img.shields.io/pypi/pyversions/aiwand.svg)](https://pypi.org/project/aiwand/)
+[![License](https://img.shields.io/pypi/l/aiwand.svg)](https://github.com/onlyoneaman/aiwand/blob/main/LICENSE)
+
+## ✨ Features
+
+- **Smart Provider Selection** - Automatically uses OpenAI or Gemini based on available keys
+- **Text Summarization** - Create concise, detailed, or bullet-point summaries  
+- **AI Chat** - Have conversations with context history
+- **Text Generation** - Generate content from prompts
+- **CLI Interface** - Use from command line
+- **Virtual Environment Ready** - Easy setup with automated scripts
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Using pip
+pip install aiwand
+
+# With virtual environment (recommended)
+python -m venv .venv
+source .venv/bin/activate  # Linux/Mac
+pip install aiwand
+```
+
+### Basic Usage
+
+```python
+import aiwand
+
+# Set your API key
+aiwand.configure_api_key("your-api-key", "openai")  # or "gemini"
+
+# Summarize text
+summary = aiwand.summarize("Your long text here...")
+
+# Chat with AI  
+response = aiwand.chat("What is machine learning?")
+
+# Generate text
+story = aiwand.generate_text("Write a poem about coding")
+```
+
+### CLI Usage
+
+```bash
+# Summarize text
+aiwand summarize "Your text here" --style bullet-points
+
+# Chat with AI
+aiwand chat "Explain quantum computing"
+
+# Generate content
+aiwand generate "Write a haiku about programming"
+```
+
+## 🔧 Configuration
+
+Set your API keys via environment variables:
+
+```bash
+# Option 1: OpenAI
+export OPENAI_API_KEY="your-openai-key"
+
+# Option 2: Gemini  
+export GEMINI_API_KEY="your-gemini-key"
+
+# Option 3: Both (set preference)
+export OPENAI_API_KEY="your-openai-key"
+export GEMINI_API_KEY="your-gemini-key"
+export AI_DEFAULT_PROVIDER="gemini"  # or "openai"
+```
+
+Or use a `.env` file:
+```
+OPENAI_API_KEY=your-openai-key
+GEMINI_API_KEY=your-gemini-key
+AI_DEFAULT_PROVIDER=openai
+```
+
+## 📚 Documentation
+
+- **[Installation Guide](docs/installation.md)** - Detailed setup instructions
+- **[API Reference](docs/api-reference.md)** - Complete function documentation  
+- **[CLI Reference](docs/cli.md)** - Command line usage
+- **[Virtual Environment Guide](docs/venv-guide.md)** - Best practices for Python environments
+
+## 🤝 Connect
+
+- **GitHub**: [github.com/onlyoneaman/aiwand](https://github.com/onlyoneaman/aiwand)
+- **PyPI**: [pypi.org/project/aiwand](https://pypi.org/project/aiwand/)
+- **X (Twitter)**: [@onlyoneaman](https://x.com/onlyoneaman)
+
+## 📝 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+---
+
+**Made with ❤️ by [Aman Kumar](https://x.com/onlyoneaman)** 
