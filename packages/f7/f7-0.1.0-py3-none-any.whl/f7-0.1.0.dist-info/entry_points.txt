@@ -1,0 +1,5 @@
+[console_scripts]
+F7=f7.__main__:main
+F7-shift=f7.__main__:main
+f7=f7.__main__:main
+
