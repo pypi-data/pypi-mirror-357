@@ -1,0 +1,2 @@
+[console_scripts]
+project-unpack = sql_status.__main__:main
