@@ -1,0 +1,5 @@
+[invenio_base.apps]
+invenio_pidstore_extra = invenio_pidstore_extra:InvenioUrnProvider
+
+[invenio_i18n.translations]
+messages = invenio_pidstore_extra
