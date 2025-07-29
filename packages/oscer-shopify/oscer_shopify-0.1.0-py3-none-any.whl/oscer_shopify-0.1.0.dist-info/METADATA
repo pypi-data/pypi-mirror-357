@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: oscer-shopify
+Version: 0.1.0
+Summary: Python wrapper to fetch Shopify product images and export as CSV
+Home-page: https://github.com/oscerpk/oscer_shopify
+Author: Usman Shahid
+Author-email: usman@example.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
