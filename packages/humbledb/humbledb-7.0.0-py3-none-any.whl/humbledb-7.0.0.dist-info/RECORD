@@ -1,0 +1,16 @@
+humbledb/__init__.py,sha256=G9B1IOnMfi_29H0eUJbDmOD0dIKnguWeQt22z4p2ZbA,1545
+humbledb/_version.py,sha256=F_s1P9U3tXXJe1UdguWgLGVJHEsPari8AMa7-s14Ra8,4693
+humbledb/array.py,sha256=OBWd6VzbwpRPuLZtwJLDs2GJvRa4QPBCaePhheP_HtU,10031
+humbledb/cursor.py,sha256=axsubO46f4s_4OHi6UgFfc_rKgJ5VHXUroPX3IhF-j4,2798
+humbledb/document.py,sha256=fN60ST2SeBOmqrgXbhIajtKY73pc-BIW-Rb1QiEhac0,24705
+humbledb/errors.py,sha256=ethUq6TLXctlBaHheynGoL2yGzx7f_nuxaIjETqaTNI,1356
+humbledb/helpers.py,sha256=FQlJe_yx1-RDunYHGZkG20XjVdA4Kye7fhaQd6RI9zo,3760
+humbledb/index.py,sha256=Bt4Me0EFeS8k7bRYFzHKIwZCkqBBpSMN7DgZxv4rsN8,2839
+humbledb/maps.py,sha256=CSEtqhak3vZIYNcex3TXjZ1mWru1rZG2x8LQkBBDiMs,8379
+humbledb/mongo.py,sha256=4m3x-SXQ2ChkvmxRUuyHY5I_AjLYZjwM15gClVoFaHk,10883
+humbledb/report.py,sha256=-1IKmGrmcn9K3gOg05cDTqRALZt3XhpVvZTsNvrZ9o8,33332
+humbledb-7.0.0.dist-info/licenses/LICENSE.rst,sha256=-FYe1kDli4iXsFAEUGs012YfKILKcGnYJ4KAXweipDI,570
+humbledb-7.0.0.dist-info/METADATA,sha256=fvHvkKMMtZtlPgLvsClzC517WuKXPzOznjQk3xcftRA,4520
+humbledb-7.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+humbledb-7.0.0.dist-info/top_level.txt,sha256=1j3toeeTwF36d_8FjCb2E_tlHv3RAeRk9SkGuaJHUuw,9
+humbledb-7.0.0.dist-info/RECORD,,
