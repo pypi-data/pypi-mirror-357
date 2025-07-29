@@ -1,0 +1,5 @@
+setup.py
+elbloadmonitor.egg-info/PKG-INFO
+elbloadmonitor.egg-info/SOURCES.txt
+elbloadmonitor.egg-info/dependency_links.txt
+elbloadmonitor.egg-info/top_level.txt
