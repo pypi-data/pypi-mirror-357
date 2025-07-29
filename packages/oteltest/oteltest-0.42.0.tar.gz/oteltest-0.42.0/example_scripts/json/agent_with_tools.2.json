@@ -1,0 +1,769 @@
+{
+  "metric_requests": [
+    {
+      "pbreq": {
+        "resourceMetrics": [
+          {
+            "resource": {
+              "attributes": [
+                {
+                  "key": "telemetry.sdk.language",
+                  "value": {
+                    "stringValue": "python"
+                  }
+                },
+                {
+                  "key": "telemetry.sdk.name",
+                  "value": {
+                    "stringValue": "opentelemetry"
+                  }
+                },
+                {
+                  "key": "telemetry.sdk.version",
+                  "value": {
+                    "stringValue": "1.34.1"
+                  }
+                },
+                {
+                  "key": "telemetry.auto.version",
+                  "value": {
+                    "stringValue": "0.55b1"
+                  }
+                },
+                {
+                  "key": "service.name",
+                  "value": {
+                    "stringValue": "unknown_service"
+                  }
+                }
+              ]
+            },
+            "scopeMetrics": [
+              {
+                "scope": {
+                  "name": "opentelemetry.instrumentation.langchain",
+                  "version": "0.0.1"
+                },
+                "metrics": [
+                  {
+                    "name": "gen_ai.client.operation.duration",
+                    "description": "GenAI operation duration",
+                    "unit": "s",
+                    "histogram": {
+                      "dataPoints": [
+                        {
+                          "startTimeUnixNano": "1750693899171241000",
+                          "timeUnixNano": "1750693904451045000",
+                          "count": "3",
+                          "sum": 0.0021970272064208984,
+                          "bucketCounts": [
+                            "0",
+                            "3",
+                            "0",
+                            "0",
+                            "0",
+                            "0",
+                            "0",
+                            "0",
+                            "0",
+                            "0",
+                            "0",
+                            "0",
+                            "0",
+                            "0",
+                            "0",
+                            "0"
+                          ],
+                          "explicitBounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "exemplars": [
+                            {
+                              "timeUnixNano": "1750693903726292000",
+                              "asDouble": 0.0003559589385986328,
+                              "spanId": "CM/uGsj7w9k=",
+                              "traceId": "2Pqd0ifteSWx36TubBY8tA=="
+                            }
+                          ],
+                          "attributes": [
+                            {
+                              "key": "gen_ai.system",
+                              "value": {
+                                "stringValue": "langchain"
+                              }
+                            },
+                            {
+                              "key": "gen_ai.operation.name",
+                              "value": {
+                                "stringValue": "execute_tool"
+                              }
+                            }
+                          ],
+                          "min": 0.0003559589385986328,
+                          "max": 0.0012979507446289062
+                        }
+                      ],
+                      "aggregationTemporality": "AGGREGATION_TEMPORALITY_CUMULATIVE"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "headers": {
+        "user-agent": "grpc-python/1.73.0 grpc-c/48.0.0 (osx; chttp2)"
+      },
+      "test_elapsed_ms": 10124
+    }
+  ],
+  "trace_requests": [
+    {
+      "pbreq": {
+        "resourceSpans": [
+          {
+            "resource": {
+              "attributes": [
+                {
+                  "key": "telemetry.sdk.language",
+                  "value": {
+                    "stringValue": "python"
+                  }
+                },
+                {
+                  "key": "telemetry.sdk.name",
+                  "value": {
+                    "stringValue": "opentelemetry"
+                  }
+                },
+                {
+                  "key": "telemetry.sdk.version",
+                  "value": {
+                    "stringValue": "1.34.1"
+                  }
+                },
+                {
+                  "key": "telemetry.auto.version",
+                  "value": {
+                    "stringValue": "0.55b1"
+                  }
+                },
+                {
+                  "key": "service.name",
+                  "value": {
+                    "stringValue": "unknown_service"
+                  }
+                }
+              ]
+            },
+            "scopeSpans": [
+              {
+                "scope": {
+                  "name": "opentelemetry.instrumentation.langchain",
+                  "version": "0.0.1"
+                },
+                "spans": [
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "si5jXhd1E7I=",
+                    "parentSpanId": "SVrpH4n2+fA=",
+                    "name": "RunnableLambda",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693897387873000",
+                    "endTimeUnixNano": "1750693897387980000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "SVrpH4n2+fA=",
+                    "parentSpanId": "sPBdKG26/l8=",
+                    "name": "RunnableParallel<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693897387707000",
+                    "endTimeUnixNano": "1750693897388026000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "sPBdKG26/l8=",
+                    "parentSpanId": "aneFfshX+9s=",
+                    "name": "RunnableAssign<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693897387496000",
+                    "endTimeUnixNano": "1750693897388048000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "80+XHZzWK7M=",
+                    "parentSpanId": "aneFfshX+9s=",
+                    "name": "ChatPromptTemplate",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693897388262000",
+                    "endTimeUnixNano": "1750693897388415000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "z93ZT2Z3ixE=",
+                    "parentSpanId": "aneFfshX+9s=",
+                    "name": "ReActSingleInputOutputParser",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693899169118000",
+                    "endTimeUnixNano": "1750693899169941000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "aneFfshX+9s=",
+                    "parentSpanId": "1KCVIEOeF9U=",
+                    "name": "RunnableSequence",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693897385566000",
+                    "endTimeUnixNano": "1750693899170047000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "NUbqK0Sf0Rw=",
+                    "parentSpanId": "1KCVIEOeF9U=",
+                    "name": "CurrentWeather",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693899170394000",
+                    "endTimeUnixNano": "1750693899170950000",
+                    "attributes": [
+                      {
+                        "key": "gen_ai.tool.description",
+                        "value": {
+                          "stringValue": "Useful for getting the current weather in a specific location"
+                        }
+                      },
+                      {
+                        "key": "gen_ai.tool.name",
+                        "value": {
+                          "stringValue": "CurrentWeather"
+                        }
+                      },
+                      {
+                        "key": "gen_ai.operation.name",
+                        "value": {
+                          "stringValue": "execute_tool"
+                        }
+                      }
+                    ],
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "56ENFi6WNvw=",
+                    "parentSpanId": "fHOmMits8lA=",
+                    "name": "RunnableLambda",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693899173518000",
+                    "endTimeUnixNano": "1750693899173920000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "fHOmMits8lA=",
+                    "parentSpanId": "3KCXWNPz4CA=",
+                    "name": "RunnableParallel<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693899172966000",
+                    "endTimeUnixNano": "1750693899174105000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "3KCXWNPz4CA=",
+                    "parentSpanId": "uEkIs+eDaDs=",
+                    "name": "RunnableAssign<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693899172316000",
+                    "endTimeUnixNano": "1750693899174224000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "vqXXwBmKSdo=",
+                    "parentSpanId": "uEkIs+eDaDs=",
+                    "name": "ChatPromptTemplate",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693899174527000",
+                    "endTimeUnixNano": "1750693899175006000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "3zQpvH/4m5o=",
+                    "parentSpanId": "uEkIs+eDaDs=",
+                    "name": "ReActSingleInputOutputParser",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693900279312000",
+                    "endTimeUnixNano": "1750693900279625000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "uEkIs+eDaDs=",
+                    "parentSpanId": "1KCVIEOeF9U=",
+                    "name": "RunnableSequence",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693899171767000",
+                    "endTimeUnixNano": "1750693900279705000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "bjsJCJIHX9wtB+NWY9PiKw==",
+                    "spanId": "1KCVIEOeF9U=",
+                    "name": "AgentExecutor",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693897385295000",
+                    "endTimeUnixNano": "1750693900280072000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "DDt4cZNhAJc=",
+                    "parentSpanId": "VldqBvdE3x8=",
+                    "name": "RunnableLambda",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693900282271000",
+                    "endTimeUnixNano": "1750693900282606000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "VldqBvdE3x8=",
+                    "parentSpanId": "KQJDQWt12aM=",
+                    "name": "RunnableParallel<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693900281743000",
+                    "endTimeUnixNano": "1750693900282745000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "KQJDQWt12aM=",
+                    "parentSpanId": "hVgfuDRyBV0=",
+                    "name": "RunnableAssign<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693900281115000",
+                    "endTimeUnixNano": "1750693900282845000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "edjx/tzY9WY=",
+                    "parentSpanId": "hVgfuDRyBV0=",
+                    "name": "ChatPromptTemplate",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693900283005000",
+                    "endTimeUnixNano": "1750693900283327000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "nvVBtiNsREE=",
+                    "parentSpanId": "hVgfuDRyBV0=",
+                    "name": "ReActSingleInputOutputParser",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693901290223000",
+                    "endTimeUnixNano": "1750693901290521000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "hVgfuDRyBV0=",
+                    "parentSpanId": "2rq5m5hqN4Q=",
+                    "name": "RunnableSequence",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693900280677000",
+                    "endTimeUnixNano": "1750693901290597000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "Ta5jpxRc31M=",
+                    "parentSpanId": "2rq5m5hqN4Q=",
+                    "name": "CurrentTime",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693901290853000",
+                    "endTimeUnixNano": "1750693901292144000",
+                    "attributes": [
+                      {
+                        "key": "gen_ai.tool.description",
+                        "value": {
+                          "stringValue": "Useful for getting the current date and time. This tool doesn't require any input."
+                        }
+                      },
+                      {
+                        "key": "gen_ai.tool.name",
+                        "value": {
+                          "stringValue": "CurrentTime"
+                        }
+                      },
+                      {
+                        "key": "gen_ai.operation.name",
+                        "value": {
+                          "stringValue": "execute_tool"
+                        }
+                      }
+                    ],
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "tryq7C2CYfY=",
+                    "parentSpanId": "mu5CyWLktVM=",
+                    "name": "RunnableLambda",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693901294242000",
+                    "endTimeUnixNano": "1750693901294591000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "mu5CyWLktVM=",
+                    "parentSpanId": "9+sfVQxYVvg=",
+                    "name": "RunnableParallel<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693901293706000",
+                    "endTimeUnixNano": "1750693901294729000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "9+sfVQxYVvg=",
+                    "parentSpanId": "/WcrcFcdYcY=",
+                    "name": "RunnableAssign<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693901293098000",
+                    "endTimeUnixNano": "1750693901294828000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "o7H59YBLbY4=",
+                    "parentSpanId": "/WcrcFcdYcY=",
+                    "name": "ChatPromptTemplate",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693901294995000",
+                    "endTimeUnixNano": "1750693901295315000",
+                    "status": {},
+                    "flags": 256
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "headers": {
+        "user-agent": "grpc-python/1.73.0 grpc-c/48.0.0 (osx; chttp2)"
+      },
+      "test_elapsed_ms": 7455
+    },
+    {
+      "pbreq": {
+        "resourceSpans": [
+          {
+            "resource": {
+              "attributes": [
+                {
+                  "key": "telemetry.sdk.language",
+                  "value": {
+                    "stringValue": "python"
+                  }
+                },
+                {
+                  "key": "telemetry.sdk.name",
+                  "value": {
+                    "stringValue": "opentelemetry"
+                  }
+                },
+                {
+                  "key": "telemetry.sdk.version",
+                  "value": {
+                    "stringValue": "1.34.1"
+                  }
+                },
+                {
+                  "key": "telemetry.auto.version",
+                  "value": {
+                    "stringValue": "0.55b1"
+                  }
+                },
+                {
+                  "key": "service.name",
+                  "value": {
+                    "stringValue": "unknown_service"
+                  }
+                }
+              ]
+            },
+            "scopeSpans": [
+              {
+                "scope": {
+                  "name": "opentelemetry.instrumentation.langchain",
+                  "version": "0.0.1"
+                },
+                "spans": [
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "HpI7Hk7tNCY=",
+                    "parentSpanId": "/WcrcFcdYcY=",
+                    "name": "ReActSingleInputOutputParser",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693902882020000",
+                    "endTimeUnixNano": "1750693902882368000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "/WcrcFcdYcY=",
+                    "parentSpanId": "2rq5m5hqN4Q=",
+                    "name": "RunnableSequence",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693901292606000",
+                    "endTimeUnixNano": "1750693902882449000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "DcC5rYdLbjudKaE7xw057g==",
+                    "spanId": "2rq5m5hqN4Q=",
+                    "name": "AgentExecutor",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693900280456000",
+                    "endTimeUnixNano": "1750693902882563000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "sQhYj8dn3Wo=",
+                    "parentSpanId": "MIL0w4BcGvM=",
+                    "name": "RunnableLambda",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693902884618000",
+                    "endTimeUnixNano": "1750693902884893000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "MIL0w4BcGvM=",
+                    "parentSpanId": "6Xz9Lc+FrEM=",
+                    "name": "RunnableParallel<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693902884190000",
+                    "endTimeUnixNano": "1750693902884998000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "6Xz9Lc+FrEM=",
+                    "parentSpanId": "rbj08MHn3X4=",
+                    "name": "RunnableAssign<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693902883474000",
+                    "endTimeUnixNano": "1750693902885068000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "7M5nXrJkidc=",
+                    "parentSpanId": "rbj08MHn3X4=",
+                    "name": "ChatPromptTemplate",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693902885194000",
+                    "endTimeUnixNano": "1750693902885535000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "9Jgg2QvGUec=",
+                    "parentSpanId": "rbj08MHn3X4=",
+                    "name": "ReActSingleInputOutputParser",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693903725298000",
+                    "endTimeUnixNano": "1750693903725609000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "rbj08MHn3X4=",
+                    "parentSpanId": "os5KCxgu+34=",
+                    "name": "RunnableSequence",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693902883012000",
+                    "endTimeUnixNano": "1750693903725684000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "CM/uGsj7w9k=",
+                    "parentSpanId": "os5KCxgu+34=",
+                    "name": "WebSearch",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693903725900000",
+                    "endTimeUnixNano": "1750693903726270000",
+                    "attributes": [
+                      {
+                        "key": "gen_ai.tool.description",
+                        "value": {
+                          "stringValue": "Useful for searching information on the web"
+                        }
+                      },
+                      {
+                        "key": "gen_ai.tool.name",
+                        "value": {
+                          "stringValue": "WebSearch"
+                        }
+                      },
+                      {
+                        "key": "gen_ai.operation.name",
+                        "value": {
+                          "stringValue": "execute_tool"
+                        }
+                      }
+                    ],
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "uRv0Wln7oxo=",
+                    "parentSpanId": "nUJb7fEnTgs=",
+                    "name": "RunnableLambda",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693903728239000",
+                    "endTimeUnixNano": "1750693903728532000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "nUJb7fEnTgs=",
+                    "parentSpanId": "gnwERAn9UJk=",
+                    "name": "RunnableParallel<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693903727797000",
+                    "endTimeUnixNano": "1750693903728812000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "gnwERAn9UJk=",
+                    "parentSpanId": "oKp/CVu3uAw=",
+                    "name": "RunnableAssign<agent_scratchpad>",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693903727109000",
+                    "endTimeUnixNano": "1750693903728940000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "APAGn9bmYjU=",
+                    "parentSpanId": "oKp/CVu3uAw=",
+                    "name": "ChatPromptTemplate",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693903729194000",
+                    "endTimeUnixNano": "1750693903729567000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "syvFgY+0KqI=",
+                    "parentSpanId": "oKp/CVu3uAw=",
+                    "name": "ReActSingleInputOutputParser",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693904450124000",
+                    "endTimeUnixNano": "1750693904450326000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "oKp/CVu3uAw=",
+                    "parentSpanId": "os5KCxgu+34=",
+                    "name": "RunnableSequence",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693903726640000",
+                    "endTimeUnixNano": "1750693904450383000",
+                    "status": {},
+                    "flags": 256
+                  },
+                  {
+                    "traceId": "2Pqd0ifteSWx36TubBY8tA==",
+                    "spanId": "os5KCxgu+34=",
+                    "name": "AgentExecutor",
+                    "kind": "SPAN_KIND_INTERNAL",
+                    "startTimeUnixNano": "1750693902882795000",
+                    "endTimeUnixNano": "1750693904450456000",
+                    "status": {},
+                    "flags": 256
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "headers": {
+        "user-agent": "grpc-python/1.73.0 grpc-c/48.0.0 (osx; chttp2)"
+      },
+      "test_elapsed_ms": 10125
+    }
+  ],
+  "log_requests": []
+}
