@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/tg4perfetto/__init__.py
+src/tg4perfetto/_core.py
+src/tg4perfetto/_profile.py
+src/tg4perfetto/_tgen.py
+src/tg4perfetto/example.py
+src/tg4perfetto/example_profile.py
+src/tg4perfetto/perfetto_trace.proto
+src/tg4perfetto.egg-info/PKG-INFO
+src/tg4perfetto.egg-info/SOURCES.txt
+src/tg4perfetto.egg-info/dependency_links.txt
+src/tg4perfetto.egg-info/requires.txt
+src/tg4perfetto.egg-info/top_level.txt
