@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "html_cleaner_kinship"
+version = "0.2"
+description = "An HTML cleaner customized for kinship ties extraction from large text corpra"
+
+readme = "readme.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+pandas = "2.2.2"
+numpy = "1.26.4"
+regex = "*"
+beautifulsoup4 = "^4.12"
+
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
