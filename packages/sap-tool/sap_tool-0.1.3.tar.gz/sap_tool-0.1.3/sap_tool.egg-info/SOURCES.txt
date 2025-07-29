@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+sap_tool/__init__.py
+sap_tool.egg-info/PKG-INFO
+sap_tool.egg-info/SOURCES.txt
+sap_tool.egg-info/dependency_links.txt
+sap_tool.egg-info/top_level.txt
