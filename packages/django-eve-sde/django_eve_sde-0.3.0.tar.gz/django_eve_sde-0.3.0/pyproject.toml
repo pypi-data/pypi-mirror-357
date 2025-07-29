@@ -1,0 +1,19 @@
+[project]
+name = "django-eve-sde"
+version = "0.3.0"
+description = "Something"
+authors = [
+    {name = "Tim Davis",email = "binary.god@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11,<4"
+dependencies = [
+    "django (>=5.2.2,<6.0.0)",
+    "requests (>=2.32.3,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
