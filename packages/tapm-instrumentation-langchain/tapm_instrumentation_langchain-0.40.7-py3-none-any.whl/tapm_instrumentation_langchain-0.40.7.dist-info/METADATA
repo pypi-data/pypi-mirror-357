@@ -1,0 +1,45 @@
+Metadata-Version: 2.4
+Name: tapm-instrumentation-langchain
+Version: 0.40.7
+Summary: OpenTelemetry Official Langchain instrumentation
+License-Expression: Apache-2.0
+Requires-Python: >=3.8
+Requires-Dist: opentelemetry-api<2.0.0,>=1.30.0
+Requires-Dist: opentelemetry-instrumentation<1.0.0,>=0.51b0
+Requires-Dist: opentelemetry-semantic-conventions<1.0.0,>=0.51b0
+Provides-Extra: instruments
+Requires-Dist: langchain-core>0.1.0; extra == 'instruments'
+Requires-Dist: langchain>=0.0.346; extra == 'instruments'
+Provides-Extra: test
+Requires-Dist: langchain-community; extra == 'test'
+Requires-Dist: langchain-core>0.1.0; extra == 'test'
+Requires-Dist: langchain-openai; extra == 'test'
+Requires-Dist: langchain>=0.0.346; extra == 'test'
+Requires-Dist: pytest; extra == 'test'
+Requires-Dist: pytest-asyncio; extra == 'test'
+Requires-Dist: pytest-recording; extra == 'test'
+Requires-Dist: pytest-sugar; extra == 'test'
+Requires-Dist: vcrpy; extra == 'test'
+Description-Content-Type: text/x-rst
+
+OpenTelemetry Langchain Instrumentation
+========================================
+
+This package provides OpenTelemetry instrumentation support for the Langchain framework.
+
+Installation
+------------
+
+::
+
+    pip install tapm-instrumentation-langchain
+
+Usage
+-----
+
+.. code-block:: python
+
+    from opentelemetry.instrumentation.langchain import LangchainInstrumentor
+    LangchainInstrumentor().instrument()
+
+    # Now your Langchain application will automatically generate traces 
