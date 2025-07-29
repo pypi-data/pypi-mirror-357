@@ -1,0 +1,14 @@
+mcp_outlook-0.1.11.dist-info/licenses/LICENSE,sha256=QVS7Rt6eNt1OnIlbVkGIxnLD6OE6u5l3FH1JEbFrflU,1087
+mcp_outlook_server/__init__.py,sha256=MKfdiWZLRWZLiQQtKTQx_5qmIjCEo2ZR6pjp3Pb0TOY,160
+mcp_outlook_server/clean_utils.py,sha256=MJ3sFV4lAwkdPD0WbGRqZfNuz8NEnhR1plBXWA3Pmh4,12475
+mcp_outlook_server/common.py,sha256=q0V7Xixq_zuxdts8mZ2Ebov0a3Zv3oRMiRyofOM-DSY,1666
+mcp_outlook_server/format_utils.py,sha256=zCYzGjlfJn6Vq1Oo1SX5y-zuJkPzUeUvKU49rqdVEzw,6277
+mcp_outlook_server/format_utils_search.py,sha256=xVTQPwrF4eo5YqmYZRwSXQV9m5ZqgUmKjNwyU7L3QO4,3249
+mcp_outlook_server/resources.py,sha256=lfZm7p2bqDtUjkIqIw2_pnI00bbw4sEXN58pSgU4PdM,8034
+mcp_outlook_server/server.py,sha256=9Mrs9vqadxD8fiWLw7VUykBBzgITshzUWcVD1m77Ikk,278
+mcp_outlook_server/tools.py,sha256=7HWarVUoZNrJ-GrQFuPCeBr2ZuCnVogE7GkL1SRff2w,6669
+mcp_outlook-0.1.11.dist-info/METADATA,sha256=ryvo_ifB4GhktYcxJAWsi13g9i-Ap_Q3f4OS6BbLzHQ,16794
+mcp_outlook-0.1.11.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mcp_outlook-0.1.11.dist-info/entry_points.txt,sha256=yNsPmSqctt4Zg8GP45nzrurxnCjlgPCvCyTActJmitk,56
+mcp_outlook-0.1.11.dist-info/top_level.txt,sha256=AixX5WH_aeLCKa6Xerd2hsEFtBke4eME609wUHWbpQo,19
+mcp_outlook-0.1.11.dist-info/RECORD,,
