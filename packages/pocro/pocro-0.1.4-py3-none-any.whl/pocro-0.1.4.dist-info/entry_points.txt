@@ -1,0 +1,4 @@
+[console_scripts]
+pocro=src.cli:cli
+start=src.main:main
+
