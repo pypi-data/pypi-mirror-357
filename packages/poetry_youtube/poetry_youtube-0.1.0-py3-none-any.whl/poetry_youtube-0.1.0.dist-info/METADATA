@@ -1,0 +1,15 @@
+Metadata-Version: 2.3
+Name: poetry_youtube
+Version: 0.1.0
+Summary: 
+Author: ZeeshanZk09
+Author-email: mzeeshankhan0988@gmail.com
+Requires-Python: >=3.13
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: pytest (>=8.4.1,<9.0.0)
+Requires-Dist: request2 (>=0.2,<0.3)
+Requires-Dist: requests (>=2.32.4,<3.0.0)
+Description-Content-Type: text/markdown
+
+
