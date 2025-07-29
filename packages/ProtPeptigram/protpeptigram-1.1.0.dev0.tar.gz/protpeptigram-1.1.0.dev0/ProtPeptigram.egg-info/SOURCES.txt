@@ -1,0 +1,16 @@
+README.md
+setup.py
+ProtPeptigram/DataProcessor.py
+ProtPeptigram/__init__.py
+ProtPeptigram/logger.py
+ProtPeptigram/main.py
+ProtPeptigram/runner.py
+ProtPeptigram/viz.py
+ProtPeptigram.egg-info/PKG-INFO
+ProtPeptigram.egg-info/SOURCES.txt
+ProtPeptigram.egg-info/dependency_links.txt
+ProtPeptigram.egg-info/entry_points.txt
+ProtPeptigram.egg-info/not-zip-safe
+ProtPeptigram.egg-info/requires.txt
+ProtPeptigram.egg-info/top_level.txt
+test/test_protpeptigram.py
