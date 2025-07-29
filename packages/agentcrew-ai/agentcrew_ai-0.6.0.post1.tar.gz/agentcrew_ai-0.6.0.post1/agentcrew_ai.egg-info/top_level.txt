@@ -1,0 +1,11 @@
+AgentCrew
+ai_docs
+build
+claude_playground
+dist
+examples
+generated_images
+memory_db
+persistents
+specs
+tests
