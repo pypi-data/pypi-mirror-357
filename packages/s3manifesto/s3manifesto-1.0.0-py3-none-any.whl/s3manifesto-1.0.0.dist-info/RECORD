@@ -1,0 +1,17 @@
+s3manifesto/__init__.py,sha256=ap_bK5s8h31djaZZgDiGEkBPmYIiyEkM4FgK_2b6aWU,421
+s3manifesto/_version.py,sha256=J3F2vbnq0nqrz-uxHQdTuvUm3Mym3zLXOxs5RFW7bfw,533
+s3manifesto/api.py,sha256=99K9N7zRFRqyY3rfmNCOHzIcRnLzgmJLbRhSX9cTomg,308
+s3manifesto/compact.py,sha256=tNPyqgi7b9ZB1U3AF0g1cSxnKH-NVS3zgdcTvI2KT50,127
+s3manifesto/constants.py,sha256=G_RW_0EN-pM3D__DAA09SGGU7hLiJyyjUvzZALvHlUY,307
+s3manifesto/grouper.py,sha256=QuvNfXuwJ4UIs2JVLb4H6SQo9J_GPBuJdnRGzziIoso,5082
+s3manifesto/manifest.py,sha256=-zn5jv3PsEguamuwa8H003_BlI8uV52y7viCV7oCIHg,13599
+s3manifesto/model.py,sha256=rWoheluJZHCZdnEutpFIwKo3dMjp5kE9afRWRkRAT_M,6145
+s3manifesto/more_itertools.py,sha256=W2zXm-DiijWNEbTZYnfMuuBD4z7HxNnNmjNDBkg32hk,1174
+s3manifesto/paths.py,sha256=97S8BLeL_V7rmEA-I0RmMZCJ8p1lZseMiorow53W4C8,642
+s3manifesto/typehint.py,sha256=dNePn5NGiTWH9BNyFuNm09qDEdN9MPG__zVYdUzQY5I,73
+s3manifesto/utils.py,sha256=EVjxEB-pXj9zA_RGzOzrwuKm3jHz9pxyuJI4kQAj89U,813
+s3manifesto-1.0.0.dist-info/AUTHORS.rst,sha256=oo38V9AD_y57Ac69mKmiItWquV29SRi2aTCdKQo531A,767
+s3manifesto-1.0.0.dist-info/LICENSE.txt,sha256=XdQC0luSkyoucd4qAb4Wnchc6ZbzGTAGI6gpk_22Ytc,1122
+s3manifesto-1.0.0.dist-info/METADATA,sha256=wiIk0nF7zbiGb5q5qNOjGhyabGQ3gK8yObaE1xJxyok,8713
+s3manifesto-1.0.0.dist-info/WHEEL,sha256=XbeZDeTWKc1w7CSIyre5aMDU_-PohRwTQceYnisIYYY,88
+s3manifesto-1.0.0.dist-info/RECORD,,
