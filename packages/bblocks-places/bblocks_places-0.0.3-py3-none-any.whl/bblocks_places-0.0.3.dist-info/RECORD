@@ -1,0 +1,12 @@
+bblocks/places/__init__.py,sha256=5QjWamjmWgvSyH9PC_BbEqmWzkBgUwS2WeFmRLk9ma4,527
+bblocks/places/concordance.csv,sha256=ahBLStlW2ArBkgblTf0ooHvp7Vod6Eprj6ovjRBZ3fw,37443
+bblocks/places/concordance.py,sha256=_qohzw53Hdc_tLJ9yYpV4gsGGGY54ufT8xZgEIhoNhc,4263
+bblocks/places/config.py,sha256=eP0eYrMJGWoKbS-imq2-z6HbU1nJLOxZ_n5iA6Jwzpg,1573
+bblocks/places/disambiguator.py,sha256=B7x-gKi3kKQpiRViDf6pS5kq6TTAex9P9jPSDp7jY4U,6443
+bblocks/places/main.py,sha256=pWZgfOKc7pkkVFivaDc4oPZnH-7k1mQY_sSF0Z-rlOY,24768
+bblocks/places/resolver.py,sha256=RxQWr4PS_GShXgPc62DeG4Uvnl6zlfoInuhcPARNous,37889
+bblocks/places/utils.py,sha256=eOwpXikB-HSQgC5FkzCtJKQGschNKAgjTv5QcN97buA,903
+bblocks_places-0.0.3.dist-info/LICENSE,sha256=q68_L490sr90_IyOD2JIU5JWvp62qCPJWfvPigiYlVM,1069
+bblocks_places-0.0.3.dist-info/METADATA,sha256=re-F7dEmM6wEiIvT8BxfCdF2xMxdCRXxOe13rsaeZG4,5594
+bblocks_places-0.0.3.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+bblocks_places-0.0.3.dist-info/RECORD,,
