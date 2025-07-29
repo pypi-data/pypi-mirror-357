@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: turkle
+Version: 3.1.0
+Summary: Django-based clone of Amazon's Mechanical Turk service
+Home-page: https://github.com/hltcoe/turkle
+Author: Craig Harman
+Author-email: craig@craigharman.net
+License: BSD
+Project-URL: Documentation, https://turkle.readthedocs.io/
+Keywords: annotation,crowdsourcing,mturk,mechanical turk
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: beautifulsoup4
+Requires-Dist: Django ~=4.2.23
+Requires-Dist: django-admin-autocomplete-list-filter2 ==1.0.3
+Requires-Dist: django-guardian ==2.4.0
+Requires-Dist: djangorestframework ==3.15.2
+Requires-Dist: drf-nested-routers ==0.94.2
+Requires-Dist: humanfriendly
+Requires-Dist: inflection
+Requires-Dist: jsonfield ==3.1.0
+Requires-Dist: uritemplate
+
+# Turkle
+
+Run a clone of Amazon's Mechanical **Turk** service in your **local environment**.
+
+Turkle is implemented as a [Django](https://www.djangoproject.com)-based web 
+application that can be deployed on your local network or hosted on a public
+server. It is compatible with Human Intelligence Tasks (HITs) from Amazon 
+Mechanical Turk. Turkle can use the same HTML Task template files and CSV
+files as the MTurk requester web GUI. The results of the Tasks completed by
+the workers can be exported to CSV files.
+
+Turkle's features include:
+- Authentication support for Users
+- Projects can be restricted to Users who are members of a particular Group
+- Projects can be configured so that each Task needs to be completed by multiple Workers (redundant annotations)
+- An admin GUI for managing Users, Groups, Projects, and Batches of Tasks
+- A RESTful API for managing Users, Groups, Projects, and Batches.
+- Docker images using the SQLite or MySQL database backends
+
+Full documentation is available at [Read the Docs](https://turkle.readthedocs.io/).
