@@ -1,0 +1,10 @@
+gsc_api_handler/__about__.py,sha256=H-DehcNAYFR7kq_K93WcyL5oGseCPFTz-0bFBB_5_uU,136
+gsc_api_handler/__init__.py,sha256=sMHae1pd9Ek3byEYrQl9BFbw5ibl9jsUckdVWMF--3U,34
+gsc_api_handler/auth.py,sha256=-XszpzMRG3F1NUUun5SOKj4zE-CSp8MyCkuguN8rhpc,1281
+gsc_api_handler/core.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gsc_api_handler/fetcher.py,sha256=xhu79U0oC06PnUDBYn6AuWDSb65gykyDBCUEqkdo7r4,3072
+gsc_api_handler/utils.py,sha256=ttQCIoZTZeQMH3oOOIkGmkxxZzqdDdC6MtSutHvu9Mc,820
+gsc_api_handler-0.0.1.dist-info/METADATA,sha256=HggzNAJf9dEe-lZYTbaVls1z6MqWovPLpiCGsXJMcf8,4743
+gsc_api_handler-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+gsc_api_handler-0.0.1.dist-info/licenses/LICENSE.txt,sha256=M1cBXGJY1B7jaalLQeqTwDzxLkZnI0JVbRKKYgshv-E,1106
+gsc_api_handler-0.0.1.dist-info/RECORD,,
