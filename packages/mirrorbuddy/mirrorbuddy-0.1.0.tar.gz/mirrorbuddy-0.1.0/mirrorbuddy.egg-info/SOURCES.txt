@@ -1,0 +1,9 @@
+README.md
+setup.py
+main/__init__.py
+main/main.py
+mirrorbuddy.egg-info/PKG-INFO
+mirrorbuddy.egg-info/SOURCES.txt
+mirrorbuddy.egg-info/dependency_links.txt
+mirrorbuddy.egg-info/requires.txt
+mirrorbuddy.egg-info/top_level.txt
