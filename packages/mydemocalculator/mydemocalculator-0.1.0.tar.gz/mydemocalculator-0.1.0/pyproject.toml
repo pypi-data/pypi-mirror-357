@@ -1,0 +1,17 @@
+[project]
+name = "mydemocalculator"
+version = "0.1.0"
+description = "sample demo calculator"
+readme = "README.md"
+authors = [
+    { name = "Sathishmahi", email = "sathishmahi433@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+mydemocalculator = "mydemocalculator:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
