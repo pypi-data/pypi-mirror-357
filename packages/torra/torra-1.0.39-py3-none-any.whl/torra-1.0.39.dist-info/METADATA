@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: torra
+Version: 1.0.39
+Summary: Torrent client
+Home-page: https://github.com/colin-i/tora
+Author: cb
+Author-email: costin.botescu@gmail.com
+License: MIT
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+Requires-Dist: appdirs >=1.4.3
+Requires-Dist: libtorrent
+
+Torrent client.\
+To remove configuration launch ```torra --remove-config```. There is also ```torra --debug```.\
+To specify another torrent list at start, launch with an argument, e.g. ```torra ~/torrents.txt```, or ```torra f ~/torrents.txt```\
+[Git Page](https://github.com/colin-i/tora)
