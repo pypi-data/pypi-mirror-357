@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+pathroot.py
+pyproject.toml
+test_pathroot.py
+pathroot.egg-info/PKG-INFO
+pathroot.egg-info/SOURCES.txt
+pathroot.egg-info/dependency_links.txt
+pathroot.egg-info/requires.txt
+pathroot.egg-info/top_level.txt
