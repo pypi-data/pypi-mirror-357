@@ -1,0 +1,17 @@
+README.md
+setup.py
+TUKAkit/__init__.py
+TUKAkit/parse.py
+TUKAkit.egg-info/PKG-INFO
+TUKAkit.egg-info/SOURCES.txt
+TUKAkit.egg-info/dependency_links.txt
+TUKAkit.egg-info/top_level.txt
+TUKAkit/_pd_cache/__init__.py
+TUKAkit/_util/__init__.py
+TUKAkit/_util/_critera.py
+TUKAkit/testing/__init__.py
+TUKAkit/testing/_test.py
+TUKAkit/testing/data/Ac2IrRh.cif
+TUKAkit/testing/data/CaO2.cif
+TUKAkit/testing/data/Na2O2.cif
+TUKAkit/testing/data/NaCaO3.cif

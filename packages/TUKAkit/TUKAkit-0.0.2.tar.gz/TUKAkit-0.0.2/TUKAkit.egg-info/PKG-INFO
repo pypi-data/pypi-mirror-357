@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: TUKAkit
+Version: 0.0.2
+Summary: Toolkit for evaluating crystal structures with the TUKA criteria
+Home-page: https://github.com/Bin-Cao/TUKA-criteria
+Author: Bin Cao
+Author-email: binjacobcao@gmail.com
+Maintainer: Bin Cao
+Maintainer-email: binjacobcao@gmail.com
+License: MIT License
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+
+
+**TUKA** is a set of criteria designed to evaluate the stability and novelty of crystal structures in the context of AI-driven materials discovery. A crystal is classified as **TUKA-stable** if it satisfies three core aspects:
+
+1. **Thermodynamic feasibility** (negative formation energy and close to the convex hull),
+2. **Uniqueness** (novel structure compared to known materials), and
+3. **Kinetic stability** (stable phonon spectrum).
+
+The TUKA criteria were introduced in the survey [*Materials Generation in the Era of Artificial Intelligence*](https://arxiv.org/pdf/2505.16379) and are supported by the open-source Python toolkit **TUKAkit**, which provides automated evaluation of candidate structures using these principles.
