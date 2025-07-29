@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: dodo-lookup
+Version: 0.2.0
+Requires-Python: >=3.7
+Requires-Dist: python-whois
+Requires-Dist: termcolor
+Requires-Dist: pyfiglet
+Requires-Dist: prettytable
+Requires-Dist: tqdm
+Dynamic: requires-dist
+Dynamic: requires-python
