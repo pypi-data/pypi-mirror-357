@@ -1,0 +1,120 @@
+[project]
+name = "ablate"
+version = "0.2.1"
+description = "ablate turns deep learning experiments into structured, human-readable reports."
+authors = [{ name = "Simon Rampp", email = "simon@rampp.dev" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = [
+    "machine learning",
+    "deep learning",
+    "experiment tracking",
+    "reporting",
+    "markdown",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "matplotlib>=3.10.3",
+    "pandas>=2.2.3",
+    "pydantic>=2.11.4",
+    "pyyaml>=6.0.2",
+    "seaborn>=0.13.2",
+    "tabulate>=0.9.0",
+]
+
+[dependency-groups]
+dev = [
+    "codespell>=2.4.1",
+    "mypy==1.16.0",
+    "pandas-stubs>=2.2.3.250527",
+    "pre-commit==4.2.0",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
+    "ruff==0.11.8",
+    "tomli>=2.2.1",
+    "types-pyyaml>=6.0.12.20250516",
+    "types-seaborn>=0.13.2.20250516",
+]
+docs = [
+    "catppuccin[pygments]>=2.4.1",
+    "pydata-sphinx-theme>=0.16.1",
+    "sphinx>=8.1.3",
+    "sphinx-argparse>=0.5.2",
+    "sphinx-autodoc-typehints>=3.0.1",
+    "sphinx-copybutton>=0.5.2",
+    "sphinx-design>=0.6.1",
+    "sphinxcontrib-jquery>=4.1",
+    "tree-sitter>=0.24.0",
+    "tree-sitter-python>=0.23.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.optional-dependencies]
+mlflow = ["mlflow>=2.22.0"]
+jupyter = ["jupyter>=1.1.1"]
+tensorboard = ["tensorboard>=2.19.0"]
+wandb = ["wandb>=0.19.11"]
+clearml = ["clearml>=2.0.0"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    "F",
+    "E",
+    "W",
+    "I",
+    "N",
+    "Q",
+    "ANN",
+    "BLE",
+    "B",
+    "C4",
+    "ISC",
+    "ICN",
+    "LOG",
+    "G",
+    "PYI",
+    "PT",
+    "RET",
+    "SIM",
+    "TC",
+    "ERA",
+]
+ignore = ["E741", "N812", "N806", "N802", "ANN401"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["ablate"]
+force-sort-within-sections = true
+lines-after-imports = 2
+
+[tool.pytest.ini_options]
+addopts = "--cov=ablate --cov-report=term-missing"
+testpaths = "tests"
+filterwarnings = ["ignore::DeprecationWarning:jupyter_client.connect"]
+
+[tool.codespell]
+skip = "uv.lock"
+
+[tool.mypy]
+files = ["ablate", "tests"]
+explicit_package_bases = true
+ignore_missing_imports = true
