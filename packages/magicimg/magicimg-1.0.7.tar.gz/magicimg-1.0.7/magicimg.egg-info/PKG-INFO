@@ -1,0 +1,417 @@
+Metadata-Version: 2.1
+Name: magicimg
+Version: 1.0.7
+Summary: Thư viện xử lý ảnh thông minh với hỗ trợ GPU tự động
+Home-page: https://github.com/magicimg/magicimg
+Author: MagicImg Team
+Author-email: contact@magicimg.com
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: gpu
+License-File: LICENSE
+
+# MagicImg - Thư viện xử lý ảnh thông minh
+
+[![Version](https://img.shields.io/badge/version-1.0.6-blue.svg)](https://pypi.org/project/magicimg/)
+[![Python](https://img.shields.io/badge/python-3.7%2B-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+MagicImg là thư viện Python mạnh mẽ cho xử lý và tiền xử lý ảnh, được tối ưu cho OCR và computer vision với hỗ trợ GPU tự động.
+
+## 🚀 Tính năng mới trong v1.0.6
+
+- ✅ **Sửa lỗi API consistency**: Tất cả wrapper functions giờ đây trả về format nhất quán
+- ✅ **Tối ưu type annotations**: Cải thiện type hints cho tất cả functions
+- ✅ **Enhanced error handling**: Xử lý lỗi tốt hơn trong các API functions
+- ✅ **Preserve color option**: Tùy chọn giữ nguyên màu sắc ảnh gốc
+- ✅ **API stability**: Không còn lỗi unpack ProcessingResult objects
+
+## 📦 Cài đặt
+
+### Cài đặt cơ bản
+```bash
+pip install magicimg
+```
+
+### Cài đặt với GPU support
+```bash
+pip install magicimg[gpu]
+# hoặc
+pip install magicimg torch torchvision
+```
+
+### Cài đặt Tesseract OCR
+
+#### Windows
+```bash
+# Sử dụng winget
+winget install UB-Mannheim.TesseractOCR
+
+# Thêm vào PATH
+set PATH=%PATH%;C:\Program Files\Tesseract-OCR
+```
+
+#### Ubuntu/Debian
+```bash
+sudo apt-get update
+sudo apt-get install tesseract-ocr tesseract-ocr-vie
+```
+
+#### macOS
+```bash
+brew install tesseract
+```
+
+## 🎯 Sử dụng nhanh
+
+### Basic Usage
+```python
+import magicimg
+
+# Xử lý ảnh cơ bản với preserve color
+result = magicimg.process_image("input.jpg", "output.jpg", preserve_color=True)
+print(f"Success: {result.success}")
+print(f"Processing steps: {result.processing_steps}")
+
+# Kiểm tra chất lượng ảnh
+is_good, quality_info, enhanced = magicimg.check_image_quality("input.jpg")
+print(f"Quality score: {quality_info['quality_score']}")
+
+# Tăng cường ảnh
+enhanced = magicimg.enhance_image("input.jpg", "enhanced.jpg")
+
+# Preprocessing cho OCR (tối ưu cho text recognition)
+result = magicimg.preprocess_for_ocr("input.jpg", "output.jpg", preserve_color=False)
+```
+
+### API Mode (cho Google, Anthropic, Local API)
+```python
+import magicimg
+
+# Preprocessing cho Google Vision API
+success, info, output_path = magicimg.preprocess_image_for_api(
+    "input.jpg", 
+    provider="google",
+    output_dir="./output/",
+    min_quality_score=0.3
+)
+
+print(f"Success: {success}")
+print(f"Output: {output_path}")
+print(f"Processing steps: {info['processing_steps']}")
+```
+
+## 📚 API Reference
+
+### Core Functions
+
+#### `process_image(image_path, output_path=None, auto_rotate=True, preserve_color=True)`
+Xử lý ảnh hoàn chỉnh với tất cả các bước tối ưu.
+
+**Parameters:**
+- `image_path` (str | np.ndarray): Đường dẫn ảnh hoặc numpy array
+- `output_path` (str, optional): Đường dẫn lưu kết quả
+- `auto_rotate` (bool): Tự động xoay ảnh (default: True)
+- `preserve_color` (bool): Giữ nguyên màu sắc (default: True)
+
+**Returns:**
+- `ProcessingResult`: Object chứa kết quả xử lý
+
+#### `check_image_quality(image_path)`
+Kiểm tra chất lượng ảnh và đánh giá các metrics.
+
+**Returns:**
+- `tuple(bool, dict, np.ndarray)`: (is_good, quality_info_dict, enhanced_image)
+
+#### `preprocess_image_for_api(image_path, provider="google")`
+Tiền xử lý ảnh tối ưu cho các API nhà cung cấp.
+
+**Parameters:**
+- `provider`: "google", "anthropic", hoặc "local"
+
+**Returns:**
+- `tuple(bool, dict, str)`: (success, processing_info, output_path)
+
+### Quality Enhancement Functions
+
+#### `enhance_image(image_path, output_path=None)`
+Tăng cường chất lượng ảnh một cách nhẹ nhàng.
+
+#### `enhance_image_for_ocr(image_path, output_path=None)`
+Tối ưu ảnh đặc biệt cho OCR (chuyển binary).
+
+### Orientation & Skew Functions
+
+#### `detect_skew(image_path)`
+Phát hiện góc nghiêng của ảnh.
+
+#### `correct_skew(image_path, angle=None)`
+Sửa góc nghiêng của ảnh.
+
+#### `rotate_image(image_path, angle)`
+Xoay ảnh theo góc cho trước.
+
+## ⚙️ Cấu hình nâng cao
+
+### GPU Configuration
+```python
+from magicimg import ImageProcessor
+
+# Cấu hình GPU tùy chỉnh
+config = {
+    "use_gpu": True,
+    "gpu_id": 0,
+    "gpu_memory_limit": 0.7,
+    "batch_size": 4,
+    "optimize_for_gpu": True
+}
+
+processor = ImageProcessor(config=config)
+result = processor.process_image("input.jpg")
+```
+
+### Quality Thresholds
+```python
+# Cấu hình ngưỡng chất lượng
+config = {
+    "min_blur_index": 100.0,      # Tăng yêu cầu độ nét
+    "min_brightness": 200.0,      # Tăng yêu cầu độ sáng
+    "min_contrast": 60.0,         # Tăng yêu cầu độ tương phản
+    "min_resolution": (1200, 1600) # Tăng độ phân giải tối thiểu
+}
+
+processor = ImageProcessor(config=config)
+```
+
+### Processing Modes
+
+#### High Quality Mode (cho ảnh quan trọng)
+```python
+config = {
+    "min_blur_index": 120.0,
+    "min_brightness": 220.0,
+    "min_contrast": 70.0,
+    "min_resolution": (1500, 2000)
+}
+result = magicimg.process_image("input.jpg", config=config, preserve_color=True)
+```
+
+#### Fast Processing Mode (cho batch processing)
+```python
+config = {
+    "min_blur_index": 60.0,
+    "min_brightness": 160.0,
+    "min_contrast": 40.0,
+    "skip_rotation": True
+}
+result = magicimg.process_image("input.jpg", config=config)
+```
+
+#### OCR Optimization Mode
+```python
+result = magicimg.preprocess_for_ocr("input.jpg", preserve_color=False)
+# preserve_color=False -> chuyển binary cho OCR tối ưu
+```
+
+## 🔧 Debugging & Troubleshooting
+
+### Enable Debug Mode
+```python
+processor = ImageProcessor(debug_dir="./debug/")
+result = processor.process_image("input.jpg")
+# Debug images sẽ được lưu trong ./debug/
+```
+
+### Common Issues
+
+#### 1. GPU không được phát hiện
+```bash
+# Kiểm tra CUDA
+python -c "import torch; print(torch.cuda.is_available())"
+
+# Nếu False, cài đặt PyTorch với CUDA
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+```
+
+#### 2. Tesseract error
+```bash
+# Windows: Thêm Tesseract vào PATH
+set PATH=%PATH%;C:\Program Files\Tesseract-OCR
+
+# Linux: Cài đặt Tesseract
+sudo apt-get install tesseract-ocr
+```
+
+#### 3. Memory errors với ảnh lớn
+```python
+# Giảm batch_size
+config = {"batch_size": 2, "gpu_memory_limit": 0.5}
+processor = ImageProcessor(config=config)
+```
+
+### System Information
+```python
+import magicimg
+magicimg.print_system_info()
+# In thông tin hệ thống và dependencies
+```
+
+## 📊 Performance Tips
+
+### 1. Batch Processing
+```python
+from magicimg import ImageProcessor
+
+processor = ImageProcessor(config={"batch_size": 8})
+
+# Xử lý nhiều ảnh cùng lúc
+image_paths = ["img1.jpg", "img2.jpg", "img3.jpg"]
+for path in image_paths:
+    result = processor.process_image(path)
+    print(f"Processed {path}: {result.success}")
+```
+
+### 2. Memory Management
+```python
+# Sử dụng context manager cho GPU
+from magicimg.core import gpu_memory_manager
+
+with gpu_memory_manager():
+    result = magicimg.process_image("large_image.jpg")
+```
+
+### 3. Preserve Color vs OCR Mode
+```python
+# Cho ảnh cần giữ chất lượng cao
+result = magicimg.process_image("photo.jpg", preserve_color=True)
+
+# Cho text recognition
+result = magicimg.preprocess_for_ocr("document.jpg", preserve_color=False)
+```
+
+## 🧪 Testing
+
+### Run API Consistency Tests
+```bash
+# Test tất cả API functions
+python -c "
+import magicimg
+print('Testing basic APIs...')
+result1 = magicimg.check_image_quality('input.jpg')
+result2 = magicimg.process_image('input.jpg')
+result3 = magicimg.preprocess_image_for_api('input.jpg')
+print('All APIs working correctly!')
+"
+```
+
+### Performance Benchmark
+```python
+import time
+import magicimg
+
+start = time.time()
+result = magicimg.process_image("test.jpg")
+end = time.time()
+
+print(f"Processing time: {end-start:.2f}s")
+print(f"Success: {result.success}")
+```
+
+## 📝 Examples
+
+### Complete Processing Pipeline
+```python
+import magicimg
+
+def process_document(input_path, output_dir="./output/"):
+    """Xử lý document hoàn chỉnh"""
+    
+    # 1. Kiểm tra chất lượng
+    is_good, quality_info, enhanced = magicimg.check_image_quality(input_path)
+    print(f"Quality score: {quality_info['quality_score']:.2f}")
+    
+    # 2. Xử lý với preserve color
+    result = magicimg.process_image(
+        input_path, 
+        output_path=f"{output_dir}/processed.jpg",
+        preserve_color=True
+    )
+    
+    # 3. Tạo version cho OCR
+    ocr_result = magicimg.preprocess_for_ocr(
+        input_path,
+        output_path=f"{output_dir}/ocr_ready.jpg", 
+        preserve_color=False
+    )
+    
+    # 4. API processing
+    api_success, api_info, api_path = magicimg.preprocess_image_for_api(
+        input_path,
+        provider="google",
+        output_dir=output_dir
+    )
+    
+    return {
+        "quality": quality_info,
+        "processed": result.success,
+        "ocr_ready": ocr_result.success,
+        "api_ready": api_success,
+        "steps": result.processing_steps
+    }
+
+# Sử dụng
+results = process_document("document.jpg")
+print(results)
+```
+
+## 🆕 Changelog v1.0.6
+
+### Fixed
+- ✅ Sửa lỗi API consistency trong wrapper functions
+- ✅ Sửa lỗi unpack ProcessingResult objects  
+- ✅ Cải thiện type annotations cho tất cả functions
+- ✅ Sửa lỗi return type mismatch giữa core và wrapper functions
+
+### Improved
+- 🚀 Tối ưu memory management cho GPU processing
+- 🚀 Cải thiện error handling trong tất cả API functions
+- 🚀 Thêm preserve_color option cho flexibility
+- 🚀 Enhanced debugging capabilities
+
+### Added
+- ➕ API consistency test suite
+- ➕ Comprehensive error reporting
+- ➕ Better documentation với examples
+
+## 🤝 Contributing
+
+1. Fork repository
+2. Tạo feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Tạo Pull Request
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 🙋‍♂️ Support
+
+- 📧 Email: shumi2011@gmail.com
+- 🐛 Issues: [GitHub Issues](https://github.com/magicimg/magicimg/issues)
+- 📖 Documentation: [Full Docs](https://magicimg.readthedocs.io/)
+
+---
+
+**Made with ❤️ by MagicImg Team** 
