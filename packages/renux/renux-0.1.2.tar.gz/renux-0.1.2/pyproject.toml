@@ -1,0 +1,42 @@
+[project]
+name = "renux"
+version = "0.1.2"
+description = "A terminal-based bulk file renamer with a TUI"
+authors = [
+    {name = "Andrian Lloyd Maagma", email = "maagmaandrian@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10,<4.0.0"
+dependencies = [
+    "python-slugify (>=8.0.4,<9.0.0)",
+    "rich (>=14.0.0,<15.0.0)",
+    "textual (>=3.3.0,<4.0.0)",
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project.scripts]
+renux = "renux.cli:main"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.4.1"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.16.1"
+commitizen = "^4.8.3"
+black = "^25.1.0"
+pre-commit = "^4.2.0"
+isort = "^6.0.1"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "v$version"
+version_scheme = "semver2"
+version_provider = "pep621"
+update_changelog_on_bump = true
+
+[tool.isort]
+profile = "black"
