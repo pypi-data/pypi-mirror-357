@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: cities_of_turkiye
+Version: 1.0.0
+Summary: Türkiye illeri hakkında bilgi içeren python kütüphanesi
+Home-page: https://github.com/majestyy01/cities_of_turkiye
+Author: Mert Ali 'WyltexDEV' Kaya
+Author-email: mrtalikyaa@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
