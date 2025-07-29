@@ -1,0 +1,147 @@
+# syncable
+
+**syncable** is a Python decorator that allows you to call asynchronous functions from both synchronous and asynchronous contexts seamlessly. This is especially useful for library authors and application developers who want to provide a unified API, regardless of whether the caller is in an async or sync context.
+
+---
+
+## Features
+
+- Call async functions from sync code without worrying about event loops.
+- Works transparently in async, sync, and AnyIO worker thread contexts.
+- Preserves context variables (`contextvars`) across thread boundaries.
+- Simple, lightweight, and dependency-minimal (only requires `anyio`).
+
+---
+
+## Installation
+
+```sh
+pip install syncable
+```
+
+---
+
+## Usage
+
+### Basic Example
+
+Suppose you have an async function:
+
+```python
+import asyncio
+
+async def fetch_data():
+    await asyncio.sleep(1)
+    return "data"
+```
+
+With `syncable`, you can decorate it:
+
+```python
+from syncable import syncable
+
+@syncable
+async def fetch_data():
+    await asyncio.sleep(1)
+    return "data"
+```
+
+Now you can call `fetch_data()` from **both** sync and async code:
+
+#### From Synchronous Code
+
+```python
+result = fetch_data()
+print(result)  # "data"
+```
+
+#### From Asynchronous Code
+
+```python
+async def main():
+    result = await fetch_data()
+    print(result)  # "data"
+
+import asyncio
+asyncio.run(main())
+```
+
+---
+
+## How It Works
+
+- **Async context:** Returns the coroutine for you to `await`.
+- **Sync context:** Runs the coroutine in a background event loop and blocks until the result is ready.
+- **AnyIO worker thread:** Uses AnyIO's thread portal to run the coroutine in the main event loop.
+
+---
+
+## Advanced Example: Preserving Context Variables
+
+```python
+import contextvars
+from syncable import syncable
+
+user_var = contextvars.ContextVar("user")
+
+@syncable
+async def whoami():
+    return user_var.get()
+
+def sync_caller():
+    user_var.set("alice")
+    print(whoami())  # prints "alice"
+
+import asyncio
+
+async def async_caller():
+    user_var.set("bob")
+    print(await whoami())  # prints "bob"
+
+sync_caller()
+asyncio.run(async_caller())
+```
+
+---
+
+## Accessing the Original Async Function
+
+If you need the undecorated async function, use the `.aio` attribute:
+
+```python
+@syncable
+async def foo(): ...
+
+foo.aio  # This is the original async function
+```
+
+---
+
+## Limitations
+
+- **Async generators** are not supported and will raise an error if decorated.
+- Relies on AnyIO internals for worker thread detection (may break with future AnyIO versions).
+- In rare edge cases (e.g., nested event loops in Jupyter), behavior may vary.
+
+---
+
+## Logging
+
+`syncable` uses Python's standard logging. To see debug logs, configure logging in your application:
+
+```python
+import logging
+logging.basicConfig(level=logging.DEBUG)
+```
+
+---
+
+## License
+
+MIT
+
+---
+
+## Contributing
+
+Pull requests and issues are welcome!
