@@ -1,0 +1,10 @@
+pyciaaw/__init__.py,sha256=aYsiMrqKtl_8iPOwhBW8gr2Izw47ZOXwwI46jpfcEiM,2610
+pyciaaw/_ciaaw.cp313-win_amd64.pyd,sha256=MTF4sJVxMOwdeS96KgokCjECLNyt3NkItyryEe2ooS4,11776
+pyciaaw/libciaaw.a,sha256=b9ZlPVazwvb02UKenmu3bbJnIrKyJNXn5vSjs36N1lo,526752
+pyciaaw/libciaaw.dll,sha256=_g27aZ7uq9fTuvUqWeIAnHO-KxmOnfIbSN_4GLNVi-k,1322186
+pyciaaw/libciaaw.dll.a,sha256=yoytWbvnOPb7LTXd9CPMrk--T-BI_KKcvG8s0Cfxmuk,685102
+pyciaaw-1.0.0.dist-info/licenses/LICENSE,sha256=L89ZlAU1h12hV7se2OZ1DmQ58zzcsJBcukggeWbeQTI,1086
+pyciaaw-1.0.0.dist-info/METADATA,sha256=Ro4C2n4-LwzDfsvFLeGhgGWsv5AtlKTIffqIxJOxVN4,976
+pyciaaw-1.0.0.dist-info/WHEEL,sha256=qV0EIPljj1XC_vuSatRWjn02nZIz3N1t8jsZz7HBr2U,101
+pyciaaw-1.0.0.dist-info/top_level.txt,sha256=IRCyNd8GkILV853CkTNUBvsrUoEl0uRg3sH6VMu_B84,8
+pyciaaw-1.0.0.dist-info/RECORD,,
