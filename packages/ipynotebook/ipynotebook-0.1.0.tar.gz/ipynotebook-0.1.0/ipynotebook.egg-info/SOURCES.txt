@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+ipynotebook/__init__.py
+ipynotebook/__main__.py
+ipynotebook/app.py
+ipynotebook.egg-info/PKG-INFO
+ipynotebook.egg-info/SOURCES.txt
+ipynotebook.egg-info/dependency_links.txt
+ipynotebook.egg-info/entry_points.txt
+ipynotebook.egg-info/requires.txt
+ipynotebook.egg-info/top_level.txt
+ipynotebook/static/index.html
+ipynotebook/static/vendor/particles.min.js
