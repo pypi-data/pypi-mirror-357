@@ -1,0 +1,53 @@
+# Video Draft Creator 配置文件
+
+# 文本纠错配置 (DeepSeek API)
+correction:
+  api_key: ""
+  api_endpoint: "https://api.deepseek.com/chat/completions"
+  model: "deepseek-chat"
+  max_retries: 3
+  timeout: 30
+  chunk_size: 2000  # 长文本分块大小
+
+# 下载配置
+download:
+  output_dir: "./temp"
+  audio_quality: "best"
+  supported_formats: ["mp3", "wav", "m4a"]
+  
+  # Cookie配置 - 解决平台验证问题
+  cookies:
+    # 从浏览器导出cookies (推荐方式)
+    # 支持的浏览器: chrome, firefox, safari, edge, opera, brave
+    from_browser: "chrome"  # 设置为null禁用浏览器cookie导入
+    
+    # 手动指定cookie文件路径
+    cookie_file: null  # 例如: "./cookies.txt"
+    
+    # 自动处理验证
+    auto_captcha: true  # 自动处理简单验证
+    
+  # 网络配置
+  network:
+    timeout: 30
+    retries: 3
+    user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+
+# 转录配置
+transcription:
+  model_size: "base"  # tiny, base, small, medium, large, large-v2, large-v3
+  language: "auto"  # auto, zh, en
+  temperature: 0.0
+  beam_size: 5
+
+# 输出配置
+output:
+  default_format: "markdown"
+  include_timestamps: true
+  include_summary: true
+  include_keywords: true
+
+# 日志配置
+logging:
+  level: "INFO"
+  file: "./logs/video_draft_creator.log" 
