@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+pyproject.toml
+dikshantdata/dikshantdata.egg-info/PKG-INFO
+dikshantdata/dikshantdata.egg-info/SOURCES.txt
+dikshantdata/dikshantdata.egg-info/dependency_links.txt
+dikshantdata/dikshantdata.egg-info/entry_points.txt
+dikshantdata/dikshantdata.egg-info/requires.txt
+dikshantdata/dikshantdata.egg-info/top_level.txt
+tests/test_generator.py
