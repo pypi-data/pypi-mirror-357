@@ -1,0 +1,1 @@
+from .gestaostocks import Armazem
