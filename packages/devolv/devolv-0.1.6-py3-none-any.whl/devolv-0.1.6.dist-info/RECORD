@@ -1,0 +1,14 @@
+devolv/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+devolv/cli.py,sha256=jPC2PELbiIHuYs_fEDMT5Crfwu9RPVTBtK8k9fIvFow,350
+devolv/iam/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+devolv/iam/validator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+devolv/iam/validator/cli.py,sha256=UZidTApycORYabev5MXJH7rWvOr5WhpgTzGYw-4T62g,1198
+devolv/iam/validator/core.py,sha256=tsMwC3w1Q-zcIWuvuNfs1iYz_tM51DSiaiiclOTuNV8,783
+devolv/iam/validator/folder.py,sha256=jXbgiaz17K_PexFcpy2ddC_lcmUHlwOgrwZ_iaiJDsA,1164
+devolv/iam/validator/rules.py,sha256=23uYFj5l6HB4eTavEv7mM0KIKWqaQlea6dvtTiMSLN0,1362
+devolv-0.1.6.dist-info/licenses/LICENSE,sha256=KcU-lT6QrAtrlfFOONv5a4Yfpgk0ZyREMkkWR0ltJck,1067
+devolv-0.1.6.dist-info/METADATA,sha256=btaSvO5CzuUNy0_7W-gJYUMlAR7ZLKaa-2gZqSyDgUw,2056
+devolv-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+devolv-0.1.6.dist-info/entry_points.txt,sha256=vBGCXRAQa1wU5iQBTwDoKRwZpRcngleI6gTJ3Wlbdg0,42
+devolv-0.1.6.dist-info/top_level.txt,sha256=Z6sdR3un_r-Ho6PF3njM6UhXLKDt924ooYKdvM6rvXg,7
+devolv-0.1.6.dist-info/RECORD,,
