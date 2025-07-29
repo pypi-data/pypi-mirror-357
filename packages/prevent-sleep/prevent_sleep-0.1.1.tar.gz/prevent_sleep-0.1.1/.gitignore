@@ -1,0 +1,22 @@
+*~
+*.py[cod]
+__pycache__
+.cache
+.coverage
+.pytest_cache
+*.egg
+*.egg-info
+TAGS
+*.class
+.eggs
+dist
+.tox
+.nox
+.mypy_cache
+*_flymake.py
+flycheck_*.py
+build
+test/out
+
+# Sphinx
+doc/_build/*
