@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-20 17:53+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps.py:7
+msgid "cookie consent"
+msgstr ""
+
+#: models.py:13
+msgid ""
+"Enter a valid 'varname' consisting of letters, numbers, underscores or "
+"hyphens."
+msgstr ""
+
+#: models.py:58
+msgid "Variable name"
+msgstr ""
+
+#: models.py:63 models.py:127
+msgid "Name"
+msgstr ""
+
+#: models.py:64 models.py:128
+msgid "Description"
+msgstr ""
+
+#: models.py:66
+msgid "Is required"
+msgstr ""
+
+#: models.py:67
+msgid "Are cookies in this group required."
+msgstr ""
+
+#: models.py:71
+msgid "Is deletable?"
+msgstr ""
+
+#: models.py:72
+msgid "Can cookies in this group be deleted."
+msgstr ""
+
+#: models.py:75
+msgid "Ordering"
+msgstr ""
+
+#: models.py:76 models.py:131 models.py:186
+msgid "Created"
+msgstr ""
+
+#: models.py:81
+msgid "Cookie Group"
+msgstr ""
+
+#: models.py:82
+msgid "Cookie Groups"
+msgstr ""
+
+#: models.py:129
+msgid "Path"
+msgstr ""
+
+#: models.py:130
+msgid "Domain"
+msgstr ""
+
+#: models.py:136
+msgid "Cookie"
+msgstr ""
+
+#: models.py:137 templates/cookie_consent/cookiegroup_list.html:6
+msgid "Cookies"
+msgstr ""
+
+#: models.py:173
+msgid "Declined"
+msgstr ""
+
+#: models.py:174
+msgid "Accepted"
+msgstr ""
+
+#: models.py:179
+msgid "Action"
+msgstr ""
+
+#: models.py:185
+msgid "Version"
+msgstr ""
+
+#: models.py:195
+msgid "Log item"
+msgstr ""
+
+#: models.py:196
+msgid "Log items"
+msgstr ""
+
+#: templates/cookie_consent/cookiegroup_list.html:8
+msgid ""
+"This is a list of the categories of cookies used in our website and why we "
+"use them."
+msgstr ""
+
+#: templates/cookie_consent/cookiegroup_list.html:12
+msgid "For more information, please read:"
+msgstr ""
+
+#: templates/cookie_consent/cookiegroup_list.html:17
+msgid "Privacy Statement"
+msgstr ""
+
+#: templates/cookie_consent/cookiegroup_list.html:28
+#: templates/cookie_consent/include/cookie_bar_body.html:15
+msgid "Accept all"
+msgstr ""
+
+#: templates/cookie_consent/cookiegroup_list.html:29
+#: templates/cookie_consent/include/cookie_bar_body.html:16
+msgid "Decline all"
+msgstr ""
+
+#: templates/cookie_consent/include/cookie_bar_body.html:6
+msgid ""
+"\n"
+"          <p>\n"
+"            This site uses cookies for better performance and user "
+"experience.<br>\n"
+"            Do you agree to use these cookies?\n"
+"          </p>\n"
+"        "
+msgstr ""
