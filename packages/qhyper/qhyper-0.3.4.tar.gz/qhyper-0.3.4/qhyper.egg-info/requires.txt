@@ -1,0 +1,8 @@
+numpy~=1.26.4
+PennyLane~=0.38
+tdqm
+sympy==1.13.1
+dwave-system
+gurobipy
+pandas
+wfcommons
