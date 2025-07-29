@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+src/medikation/__init__.py
+src/medikation/__main__.py
+src/medikation.egg-info/PKG-INFO
+src/medikation.egg-info/SOURCES.txt
+src/medikation.egg-info/dependency_links.txt
+src/medikation.egg-info/top_level.txt
+src/medikation/core/__init__.py
+src/medikation/tests/__init__.py
+src/medikation/tests/test_1984.py
