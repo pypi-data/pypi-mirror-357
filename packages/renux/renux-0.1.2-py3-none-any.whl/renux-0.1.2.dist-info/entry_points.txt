@@ -1,0 +1,3 @@
+[console_scripts]
+renux=renux.cli:main
+
