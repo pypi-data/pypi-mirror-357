@@ -1,0 +1,9 @@
+
+[dev]
+coverage>=7.9
+coverage[toml]>=7.5.0
+pytest>=8.0
+pytest-mock>=3.14
+mypy>=1.16.0
+mypy_extensions>=1.0.0
+ruff>=0.12

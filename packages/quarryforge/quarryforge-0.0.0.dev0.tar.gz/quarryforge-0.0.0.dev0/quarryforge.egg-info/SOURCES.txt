@@ -1,0 +1,10 @@
+LICENSE
+NOTICE
+README
+pyproject.toml
+quarryforge.egg-info/PKG-INFO
+quarryforge.egg-info/SOURCES.txt
+quarryforge.egg-info/dependency_links.txt
+quarryforge.egg-info/requires.txt
+quarryforge.egg-info/top_level.txt
+tests/test_model.py

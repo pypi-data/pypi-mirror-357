@@ -1,0 +1,127 @@
+# ===================================================================
+# pyproject.toml for the quarryforge package
+# ===================================================================
+
+[build-system]
+requires = ["setuptools>=80.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quarryforge"
+version = "0.0.0dev0"
+description = "A Python package for interacting with and migrating Fossil SCM repositories."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+authors = [
+  { name = "mesotron.dev", email = "mail@mesotron.dev" },
+]
+maintainers = [
+  { name = "mesotron.dev", email = "mail@mesotron.dev" },
+]
+keywords = ["fossil", "export", "scm", "vcs", "git", "migration", "github"]
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Build Tools",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Software Development :: Version Control",
+  "Typing :: Typed",
+  "Topic :: Utilities",
+]
+
+# --- Runtime Dependencies ---
+dependencies = []
+
+[project.optional-dependencies]
+# Development dependencies for testing, linting, and formatting.
+# Install with: pip install -e .[dev]
+dev = [
+  "coverage>=7.9",
+  "coverage[toml]>=7.5.0", 
+  "pytest>=8.0",
+  "pytest-mock>=3.14", 
+  "mypy>=1.16.0",
+  "mypy_extensions>=1.0.0",
+  "ruff>=0.12",
+]
+
+[project.urls]
+#Homepage = "https://github.com/user/quarryforge"
+Repository = "https://github.com/nortosem/quarryforge"
+#"Bug Tracker" = "https://github.com/user/quarryforge/issues"
+
+# ===================================================================
+# Tool Configurations
+# ===================================================================
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["quarryforge*"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --cov=quarryforge --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["quarryforge"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unreachable = true
+exclude = ["tests/", "build/", "dist/", ".venv/"]
+
+# ===================================================================
+# Ruff Configuration (Linter and Formatter)
+# ===================================================================
+
+[tool.ruff]
+# Global settings for both linter and formatter
+target-version = "py310"
+line-length = 80
+exclude = [".venv", ".git", "__pycache__", "build", "dist"]
+
+# --- Linter Configuration ---
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "PL", "D"] 
+ignore = [
+    # --- Docstring Rules (from pylint's missing-*-docstring) ---
+    # Allow test functions to be complex
+    "PLR0904", # too-many-public-methods
+    "PLR2004", # magic-value-comparison
+    # Docstring rules to ignore globally (can be enabled later)
+    "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107",
+    # --- Disabled Style & Refactoring Rules ---
+    "PLR1722", # pylint: useless-suppression
+]
+
+dummy-variable-rgx = "^(_|main)$"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D100", "D101", "D102", "D103", "D104", "D107", "PLR0904"] 
+# No docs, too many public methods in tests
+# --- Pylint-specific rule settings ---
+[tool.ruff.lint.pylint]
+max-args = 10
+max-returns = 15
+max-branches = 18
+# --- Naming Conventions (from pylintrc [BASIC]) ---
+[tool.ruff.lint.pep8-naming]
+classmethod-decorators = ["classmethod", "classproperty"]
+# --- Formatter Configuration ---
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+docstring-code-line-length = 80
