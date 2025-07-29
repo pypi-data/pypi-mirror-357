@@ -1,0 +1,2 @@
+[console_scripts]
+directory-mcp = directory_mcp.__main__:main
