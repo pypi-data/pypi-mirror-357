@@ -1,0 +1,3 @@
+[console_scripts]
+load-info=load.core:info
+
