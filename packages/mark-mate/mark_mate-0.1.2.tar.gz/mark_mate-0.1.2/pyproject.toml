@@ -1,0 +1,195 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mark-mate"
+version = "0.1.2"
+description = "Your AI Teaching Assistant for Assignments and Assessment"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "MarkMate Development Team", email = "dev@markmate.ai"}
+]
+keywords = ["education", "grading", "ai", "assessment", "teaching", "automated-grading"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Topic :: Education",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.9"
+dependencies = [
+    # Document processing
+    "PyPDF2>=3.0.0",
+    "python-docx>=1.1.0",
+    "markdown>=3.6.0",
+    "nbconvert>=7.16.0",
+    # Office documents
+    "python-pptx>=0.6.23",
+    "openpyxl>=3.1.2",
+    "pandas>=2.2.0",
+    # Web validation
+    "beautifulsoup4>=4.12.3",
+    "html5lib>=1.1",
+    "cssutils>=2.11.1",
+    "lxml>=5.1.0",
+    "requests>=2.31.0",
+    # LLM API clients (unified through LiteLLM)
+    "litellm>=1.55.0",
+    "anthropic>=0.40.0",
+    "openai>=1.50.0",
+    # Configuration management
+    "pyyaml>=6.0.1",
+    # Data validation and serialization
+    "pydantic>=2.0.0",
+    # GUI framework
+    "flet>=0.21.0",
+    # Visualization for GUI
+    "matplotlib>=3.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.6.0",
+    "basedpyright>=1.17.0",
+]
+docs = [
+    "mkdocs>=1.6.0",
+    "mkdocs-material>=9.5.0",
+    "mkdocstrings[python]>=0.25.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/markmate-ai/mark-mate"
+Documentation = "https://mark-mate.readthedocs.io"
+Repository = "https://github.com/markmate-ai/mark-mate"
+"Bug Reports" = "https://github.com/markmate-ai/mark-mate/issues"
+
+[project.scripts]
+mark-mate = "mark_mate.cli.main:main"
+mark-mate-gui = "mark_mate.gui.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mark_mate = ["config/*.json", "templates/*.txt"]
+
+# Ruff configuration (replaces black, flake8, pylint)
+[tool.ruff]
+target-version = "py39"
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "ARG", # flake8-unused-arguments
+    "COM", # flake8-commas
+    "S",   # flake8-bandit
+    "T20", # flake8-print
+    "SIM", # flake8-simplify
+    "LOG", # flake8-logging
+    "N",   # pep8-naming
+]
+ignore = [
+    "S101",   # Use of assert
+    "S603",   # subprocess untrusted input
+    "COM812", # trailing comma missing
+    "T201",   # print found
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*" = ["S101", "ARG", "SLF001"]
+"scripts/**/*" = ["T201", "S602", "S603"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+# BasedPyright configuration (replaces mypy)
+[tool.basedpyright]
+pythonVersion = "3.9"
+include = ["src", "tests"]
+exclude = ["**/__pycache__", "build", "dist"]
+venvPath = "."
+venv = ".venv"
+
+reportMissingImports = true
+reportMissingTypeStubs = false
+reportUnusedImport = true
+reportUnusedClass = true
+reportUnusedFunction = true
+reportUnusedVariable = true
+reportDuplicateImport = true
+reportPrivateUsage = "warning"
+reportUnnecessaryTypeIgnoreComment = true
+
+strictListInference = true
+strictDictionaryInference = true
+strictSetInference = true
+
+# Pytest configuration
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--tb=short",
+    "--cov=mark_mate",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning",
+]
+
+# Coverage configuration
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
+
+[dependency-groups]
+dev = [
+    "build>=1.2.2.post1",
+    "twine>=6.1.0",
+]
