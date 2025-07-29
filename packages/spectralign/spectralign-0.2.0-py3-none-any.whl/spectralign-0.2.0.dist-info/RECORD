@@ -1,0 +1,11 @@
+spectralign/__init__.py,sha256=g2oMq_XCeS1lddzj8g_y0h4OFGVOkTsNNzWOFvTn53Y,728
+spectralign/affine.py,sha256=LRRz51ptDrsqCNheY2gtkVAt5RkCcbrgg8nwOlsqdBE,7356
+spectralign/funcs.py,sha256=Xnj34dHceyBRDbowe6n1ky_F2R8lcd_DbQZyF3IhXTY,40774
+spectralign/image.py,sha256=d2Z3pyxwp78yZEW0oQ3aay2ZfCxnFooTppC9LxvyxAI,10428
+spectralign/optimize.py,sha256=SSNOwNt2q7KAmCjEU5YhyG51uIT8D8TJ95Pu95pZe1U,2846
+spectralign/swim.py,sha256=ndDBXaidoAP25wMC1G10G9Ej8J0Hif33y43ldBvReD8,3527
+spectralign-0.2.0.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+spectralign-0.2.0.dist-info/METADATA,sha256=wcSU8mQs3WDw1QyoQ457PttKNUtjbLKo6lFcEpILx0E,1448
+spectralign-0.2.0.dist-info/WHEEL,sha256=iAkIy5fosb7FzIOwONchHf19Qu7_1wCWyFNR5gu9nU0,91
+spectralign-0.2.0.dist-info/top_level.txt,sha256=35oA5WudvLa5oT5L9hxYe87rKeTZOLrgShbVvBQgFH8,12
+spectralign-0.2.0.dist-info/RECORD,,
