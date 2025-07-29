@@ -1,0 +1,2 @@
+[console_scripts]
+tm = tm_timer.cli:entry
