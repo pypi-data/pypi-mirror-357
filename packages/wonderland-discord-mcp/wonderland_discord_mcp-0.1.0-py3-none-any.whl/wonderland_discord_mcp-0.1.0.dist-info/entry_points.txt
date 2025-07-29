@@ -1,0 +1,2 @@
+[console_scripts]
+wonderland-discord-mcp = main:main
