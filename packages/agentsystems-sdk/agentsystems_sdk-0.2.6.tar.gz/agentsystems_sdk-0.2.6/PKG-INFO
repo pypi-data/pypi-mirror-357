@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: agentsystems-sdk
+Version: 0.2.6
+Summary: AgentSystems Python SDK and CLI
+Author-email: AgentSystems <support@agentsystems.ai>
+License-Expression: Apache-2.0
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: NOTICE
+Requires-Dist: typer[all]>=0.9
+Dynamic: license-file
+
+# agentsystems-sdk
+
+```bash
+python3 -m pip install --upgrade pipx  # once
+pipx install agentsystems-sdk          # creates ~/.local/pipx/venvs/agentsystems-sdk
+```
