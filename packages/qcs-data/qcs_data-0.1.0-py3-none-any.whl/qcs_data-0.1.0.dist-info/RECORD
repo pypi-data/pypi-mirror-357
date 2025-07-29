@@ -1,0 +1,7 @@
+qcs_data/__init__.py,sha256=UjHR8hkJRB3t1QLEvQlKch_VeDDTaZ23apQXQLVNTSg,123
+qcs_data/downloader.py,sha256=l9vJpC1C4YFG1xpxyJu8CnmXtQzEqs6gfTaISY2kNO0,389
+qcs_data/filter.py,sha256=_aRWsnPhW9EsmrJolWhomJ2YX5c_mGNqflksJiouK4Q,1426
+qcs_data-0.1.0.dist-info/METADATA,sha256=STjHO2h32W9Q1JuVF5BoKd9pbv4jAsWQd3YkYi-rggY,141
+qcs_data-0.1.0.dist-info/WHEEL,sha256=GV9aMThwP_4oNCtvEC2ec3qUYutgWeAzklro_0m4WJQ,91
+qcs_data-0.1.0.dist-info/top_level.txt,sha256=MSEQtgA0C1gi28JkJ7XjKa7T77dQ0MW2GyFX7lcPsnk,9
+qcs_data-0.1.0.dist-info/RECORD,,
