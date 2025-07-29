@@ -1,0 +1,2 @@
+[console_scripts]
+ai_commit_generator = ai_commit_generator.cli:main
