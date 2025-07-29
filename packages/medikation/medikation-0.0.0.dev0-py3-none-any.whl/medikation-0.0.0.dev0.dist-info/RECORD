@@ -1,0 +1,10 @@
+medikation/__init__.py,sha256=i3Bpmcf6iUMJj90aGaVFGbxxuD3hLz0BTzugRh4w73M,100
+medikation/__main__.py,sha256=jYa4pvXft2J_hqI_9OFDtK798rTsjZhWyFrY5Fln3Ng,67
+medikation/core/__init__.py,sha256=Tr3CwIPY695IbF4DrKHrDes1AKd_iJgddUP46jxKHSw,163
+medikation/tests/__init__.py,sha256=mQxgXneJTCjdkEhMryGqElGWN-YNMWMqDdwWAroehik,298
+medikation/tests/test_1984.py,sha256=GPfy8FPaGbj-w9uGHkJYSjmlSReVAXwiHS8JydJaERw,187
+medikation-0.0.0.dev0.dist-info/licenses/LICENSE.txt,sha256=fOh9FHccUt9OcJPBaVJ482GX4yrl_FxCUk9YRZ53JOI,1074
+medikation-0.0.0.dev0.dist-info/METADATA,sha256=aPR819WrvlKvBDGJBVmCXZP_RVdrsCCj-ICrt5Xol5Y,2687
+medikation-0.0.0.dev0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+medikation-0.0.0.dev0.dist-info/top_level.txt,sha256=eHlo1_Y9kACluH-3h836SO5HhTHij5BxqagMWDjHJD0,11
+medikation-0.0.0.dev0.dist-info/RECORD,,
