@@ -1,0 +1,101 @@
+{% extends 'chat/base.html' %}
+{% load humanize %}  <!-- Load humanize for naturaltime filter -->
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Chat with {{ recipient.username }}</h2>
+    <div id="chat-box" class="bg-white p-4 rounded-lg shadow-md h-96 overflow-y-auto mb-4">
+        {% for message in messages %}
+            <div class="mb-2 {% if message.sender == user %}text-right{% endif %}">
+                <p class="inline-block bg-{% if message.sender == user %}blue-100{% else %}gray-100{% endif %} p-2 rounded">
+                    <strong>{{ message.sender.username }}</strong>: {{ message.content }}
+                    <br>
+                    <small class="text-gray-500">{{ message.timestamp|naturaltime }}</small>
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+    <form id="chat-form" class="flex">
+        <input type="hidden" id="recipient-id" value="{{ recipient.id }}">
+        <textarea id="message-input" class="border p-2 rounded w-full mr-2" placeholder="Type your message..." required></textarea>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Send</button>
+    </form>
+</div>
+
+<script>
+    const chatSocket = new WebSocket('ws://' + window.location.host + '/ws/chat/');
+
+    chatSocket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        const message = data.message;
+        const chatBox = document.getElementById('chat-box');
+        const div = document.createElement('div');
+        div.className = message.sender === '{{ user.username }}' ? 'mb-2 text-right' : 'mb-2';
+        // Convert ISO timestamp to human-readable format
+        const timestamp = new Date(message.timestamp);
+        const now = new Date();
+        const diffSeconds = Math.floor((now - timestamp) / 1000);
+        let humanTime;
+        if (diffSeconds < 60) {
+            humanTime = 'just now';
+        } else if (diffSeconds < 3600) {
+            const minutes = Math.floor(diffSeconds / 60);
+            humanTime = `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+        } else if (diffSeconds < 86400) {
+            const hours = Math.floor(diffSeconds / 3600);
+            humanTime = `${hours} hour${hours > 1 ? 's' : ''} ago`;
+        } else if (diffSeconds < 604800) {
+            const days = Math.floor(diffSeconds / 86400);
+            humanTime = days === 1 ? 'yesterday' : `${days} days ago`;
+        } else {
+            humanTime = timestamp.toLocaleString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            });
+        }
+        div.innerHTML = `
+            <p class="inline-block bg-${message.sender === '{{ user.username }}' ? 'blue-100' : 'gray-100'} p-2 rounded">
+                <strong>${message.sender}</strong>: ${message.content}
+                <br>
+                <small class="text-gray-500">${humanTime}</small>
+            </p>
+        `;
+        chatBox.appendChild(div);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    const messageInput = document.getElementById('message-input');
+    const chatForm = document.getElementById('chat-form');
+
+    // Handle form submission (for both button click and Enter key)
+    chatForm.onsubmit = function(e) {
+        e.preventDefault();
+        const recipientId = document.getElementById('recipient-id').value;
+        const content = messageInput.value.trim();
+
+        if (content) {
+            chatSocket.send(JSON.stringify({
+                'recipient_id': recipientId,
+                'content': content
+            }));
+            messageInput.value = '';
+        }
+        return false;
+    };
+
+    // Handle Enter key to submit, Shift + Enter for new line
+    messageInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault(); // Prevent adding a new line
+            chatForm.dispatchEvent(new Event('submit')); // Trigger form submission
+        }
+    });
+</script>
+{% endblock %}
