@@ -1,0 +1,150 @@
+{
+    "product_types": {
+        "accessories": [
+            "General Accessories",
+            "Hearing Protection",
+            "Metronomes",
+            "Tuners",
+            "Other General Accessories",
+            "Musical Instruments & Gear",
+            "Music Memorabilia",
+            "Parts & Accessories",
+            "Other Guitars"
+        ],
+        "amps": [
+            "Amplifiers",
+            "Vintage Pro Audio Equipment",
+            "Guitar Amplifiers",
+            "Vintage Amplifiers & Tube Amps",
+            "Vintage Preamps & Tube Preamps"
+        ],
+        "pro-audio": [
+            "Cables, Leads & Connectors",
+            "TV, Video & Home Audio",
+            "Stage Lighting & Effects",
+            "Cases, Racks & Bags",
+            "Digital Vinyl Systems (DVS)",
+            "DJ & Monitoring Headphones",
+            "DJ CD/MP3 Players",
+            "DJ Equipment Packages",
+            "DJ Controllers",
+            "DJ Mixers",
+            "DJ Turntables",
+            "DJ Turntable Parts & Accessories",
+            "Computer Speakers",
+            "Piatti per DJ",
+            "Speakers & Monitors",
+            "Stands & Supports",
+            "Other DJ Equipment",
+            "Audio/MIDI Interfaces",
+            "Audio Power Conditioners",
+            "Cables, Snakes & Interconnects",
+            "In-Ear Monitors",
+            "Live & Studio Mixers",
+            "Microphones & Wireless Systems",
+            "MIDI Keyboards & Controllers",
+            "Recorders",
+            "Samplers & Sequencers",
+            "Signal Processors/Rack Effects",
+            "Mixer",
+            "Software, Loops & Samples",
+            "Speaker Drivers & Horns",
+            "Speakers",
+            "Stands, Mounts & Holders",
+            "Pro Audio Equipment",
+            "Other Pro Audio Equipment",
+            "External Sound Cards",
+            "Computer Microphones",
+            "Reel-to-Reel Tape Recorders",
+            "Vintage Speakers",
+            "Vintage Speaker & Horn Drivers",
+            "Preamps & Channel Strips",
+            "Pro Audio Equipment Parts"
+        ],
+        "home-audio": [
+            "Headphones",
+            "Home Audio Equipment",
+            "Cassette Player Parts & Components",
+            "Record Player, Turntable Parts",
+            "Portable Audio & Headphones",
+            "Vintage Record Players",
+            "8-Track Players",
+            "Vintage Cassette Decks",
+            "Vintage Headphones",
+            "Vintage Radios",
+            "Vintage Stereo Receivers",
+            "Vintage Tuners & Tube Tuners"
+        ],
+        "keyboards-and-synths": [
+            "Synthesizers",
+            "Vintage Pianos & Keyboards"
+        ],
+        "acoustic-guitars": [
+            "Acoustic Electric Guitars",
+            "Acoustic Guitars",
+            "Cigar Box Guitars",
+            "Classical Guitars",
+            "Guitar Building & Luthier Supplies",
+            "Lap & Pedal Steel Guitars",
+            "Resonators",
+            "Travel Guitars",
+            "Vintage Guitars & Basses"
+        ],
+        "bass-guitars": [
+            "Bass Guitars",
+            "Guitars & Basses"
+        ],
+        "electric-guitars": [
+            "Electric Guitars"
+        ],
+        "parts": [
+            "Necks",
+            "Pickups",
+            "Vintage Tubes & Tube Sockets",
+            "Vintage Transformers"
+        ],
+        "band-and-orchestra": [
+            "Vintage Brass",
+            "Vintage String",
+            "Vintage Wind & Woodwind"
+        ],
+        "drums-and-percussion": [
+            "Electronic Drums",
+            "snare drums",
+            "toms",
+            "Vintage Percussion"
+        ]
+    },
+    "item_conditions": {
+        "New": "Brand New",
+        "Used": "Very Good",
+        "For parts or not working": "Non Functioning"
+    },
+    "category_page_numbers": {
+        "Musical Instruments & Gear": 619,
+        "Home Audio Equipment": 184973,
+        "Cassette Player Parts & Components": 31197,
+        "Record Player, Turntable Parts": 64619,
+        "Speaker Parts & Components": 184647,
+        "Home Audio Accessories": 184976,
+        "Portable Audio & Headphones": 15052,
+        "Computer Speakers": 3702,
+        "External Sound Cards": 75518,
+        "Computer Microphones": 116309,
+        "Music Memorabilia": 2329,
+        "Vintage Record Players": 48649,
+        "8-track Players": 183078,
+        "Reel-to-Reel Tape Recorders": 116868,
+        "Vintage Amplifiers & Tube Amps": 73368,
+        "Vintage Cassette Decks": 71574,
+        "Vintage Headphones": 183074,
+        "Vintage Preamps & Tube Preamps": 67807,
+        "Vintage Radios": 50595,
+        "Vintage Speakers": 50597,
+        "Vintage Stereo Receivers": 50596,
+        "Vintage Tuners & Tube Tuners": 73382,
+        "Vintage Speaker & Horn Drivers": 73372,
+        "Vintage Tubes & Tube Sockets": 64627,
+        "Vintage Transformers": 67815
+    }
+}

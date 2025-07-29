@@ -1,0 +1,3 @@
+[console_scripts]
+rebay = rebay.engine:main
+scan_listing = rebay.scan_listing:main
