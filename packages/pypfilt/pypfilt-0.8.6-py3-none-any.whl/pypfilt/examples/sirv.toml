@@ -1,0 +1,46 @@
+[components]
+model = "pypfilt.examples.sirv.SirvOde"
+time = "pypfilt.Scalar"
+sampler = "pypfilt.sampler.LatinHypercube"
+summary = "pypfilt.summary.HDF5"
+
+[time]
+start = 0.0
+until = 80.0
+steps_per_unit = 12
+summaries_per_unit = 12
+
+[model]
+population_size = 10000
+
+[prior]
+R0 = { name = "uniform", args.loc = 2, args.scale = 1 }
+gamma = { name = "uniform", args.loc = 0.25, args.scale = 0.1 }
+R0_reduction = { name = "constant", args.value = 0 }
+R0_inc_threshold = { name = "constant", args.value = 0 }
+Vaccine_rate = { name = "constant", args.value = 0 }
+Vaccine_start = { name = "constant", args.value = 0 }
+
+[summary.tables]
+daily_inc.component = "pypfilt.summary.SimulatedObs"
+daily_inc.observation_unit = "daily_incidence"
+final_sizes.component = "pypfilt.examples.sirv.FinalSize"
+
+[filter]
+particles = 500
+prng_seed = 2001
+history_window = -1
+
+[observations.daily_incidence]
+model = "pypfilt.examples.sirv.Incidence"
+observation_period = 1
+
+[scenario.Baseline]
+
+[scenario."Reduce R0"]
+prior.R0_reduction = { name = "constant", args.value = 0.33 }
+prior.R0_inc_threshold = { name = "constant", args.value = 100 }
+
+[scenario.Vaccination]
+prior.Vaccine_rate = { name = "constant", args.value = 1000 }
+prior.Vaccine_start = { name = "constant", args.value = 28 }
