@@ -1,0 +1,17 @@
+ambientweather2sqlite/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ambientweather2sqlite/__main__.py,sha256=3WOM5UxKASIXc1FmnDQ0PC9Qa7hZ8aNKEGHP43EO3l8,1343
+ambientweather2sqlite/awparser.py,sha256=4wcTFME5aVGVpvAY1JvJtcDTpLfYKpgIxhhE2mdMecs,7622
+ambientweather2sqlite/configuration.py,sha256=XJ2b4xR-0qpCl_lJPlC8kYIJB2QnrsojrJpa7C89vxE,1624
+ambientweather2sqlite/daemon.py,sha256=WRmUWOVSqq5uNeAwgkSktNmD306lAKjBqmPfIIZj8z4,2377
+ambientweather2sqlite/database.py,sha256=I-KEE6i-GPXAE2CbYfSybjWzGPr1X6tad3Gb4Yo5r4A,8695
+ambientweather2sqlite/exceptions.py,sha256=3S4ZWtko64UzpLb5Qb0KHPpS19prRpofx6nYmx92eUY,1088
+ambientweather2sqlite/metadata.py,sha256=v77n13L5TqMfmyqfq_LbSgG1hanH7h-SI9yjc_Vw934,1484
+ambientweather2sqlite/mureq.py,sha256=OnQdFQY9UkGJnedfi0qTp7mtgDkE9HC_rv4kECqXvgw,17588
+ambientweather2sqlite/server.py,sha256=YU3WvutbT9GniBAHyTlWe8Xkk2Z7d5gXUfenZqODFg8,5075
+ambientweather2sqlite/units_mapping.py,sha256=5PK8fktpgOoIf9O0tASqALdLnZP3H7oPcdx5wmUPv_8,1762
+ambientweather2sqlite-0.5.0.dist-info/licenses/LICENSE.md,sha256=JsA7wEnBX8W55S15Ggbxprwy-J7cj4xwGrCq32boW4I,34940
+ambientweather2sqlite-0.5.0.dist-info/METADATA,sha256=z4s7h8MwnHcPRzv2HP5qb4xYu3Or6VrSBc5U2YjveJk,3181
+ambientweather2sqlite-0.5.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ambientweather2sqlite-0.5.0.dist-info/entry_points.txt,sha256=0dSN7ewUUPsjcL41AzitG4I7OQDYO0gahXBEfpgKWus,75
+ambientweather2sqlite-0.5.0.dist-info/top_level.txt,sha256=GzM4Y5sRlyZuSmYdwigDi4DSzJyRe4ikTmF_tA_ndaY,22
+ambientweather2sqlite-0.5.0.dist-info/RECORD,,
