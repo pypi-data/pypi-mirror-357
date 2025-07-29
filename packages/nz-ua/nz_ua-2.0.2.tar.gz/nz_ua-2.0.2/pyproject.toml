@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nz-ua"
+version = "2.0.2"
+description = "Library for working with the nz.ua service."
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "MrPandir"}
+]
+keywords = [
+    "nz",
+    "nz-ua",
+    "nz.ua",
+    "async",
+    "api",
+    "python",
+    "python3",
+    "python3.11",
+]
+classifiers = [
+    "Development Status :: 7 - Inactive",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.10.0"
+dependencies = [
+    "aiohttp>=3.8.4",
+    "pydantic>=1.10.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/MrPandir/nz-ua"
+Repository = "https://github.com/MrPandir/nz-ua"
+Issues = "https://github.com/MrPandir/nz-ua/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nz-ua*"]
