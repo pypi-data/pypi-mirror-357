@@ -1,0 +1,7 @@
+pyproject.toml
+setup.cfg
+ludo/__init__.py
+ludo.egg-info/PKG-INFO
+ludo.egg-info/SOURCES.txt
+ludo.egg-info/dependency_links.txt
+ludo.egg-info/top_level.txt
