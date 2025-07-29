@@ -1,0 +1,23 @@
+pydantic>=2.9
+numpy<2.0.0
+cmake>=3.21
+ninja
+packaging
+setuptools>=61
+wheel
+tqdm
+transformers>=4.51.1
+uvicorn[standard]
+openai>=1.52.0
+logger
+torch==2.5.1
+zmq
+aiohttp
+datasets
+pillow
+
+[:python_version < "3.9"]
+fastapi<0.113.0,>=0.107.0
+
+[:python_version >= "3.9"]
+fastapi!=0.113.*,!=0.114.0,>=0.107.0
