@@ -1,0 +1,7 @@
+{% if perms.greenlight.can_use_greenlight %}
+<li>
+    <a href="{% url 'greenlight' %}">
+        <i class="fas fa-traffic-light"></i> Greenlight
+    </a>
+</li>
+{% endif %}
