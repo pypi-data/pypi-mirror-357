@@ -1,0 +1,10 @@
+mvcgen/__init__.py,sha256=GbaDXkngSvtZE2lj53rw3iee8HCltfjla14d-Iy-mMY,603
+mvcgen/agent.py,sha256=NWbIs-g8tNpCC5K_ZJlxkE_DZn5R1aO69AQWf4ZwupE,8006
+mvcgen/dotenv.py,sha256=a0P8sCQFdGR3VziPgBV_q-khHFTpJcAt8nM_5HfhXpU,993
+mvcgen/models.py,sha256=S88f-GNiieryqNgxA2JDHpEK1CWksgE19l2HHXFp744,12231
+mvcgen/schemas.py,sha256=8lJzAtFqSM4oJOcld5RNsr1BzE92u0B0CirrnWP21KE,4113
+mvcgen/utils.py,sha256=cbX2bQ5ItzeVF0072IIVqiYEvfzcZAmdnwPBwVEdKsQ,1364
+mvcgen-0.1.0.dist-info/METADATA,sha256=gKFe4PE52z7UWk_yeQWb47wgZjDS1jvJ7iTN6wULdxU,7587
+mvcgen-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mvcgen-0.1.0.dist-info/licenses/LICENSE,sha256=Qm6z7l2MK5DrqvVpUzebVDU5LbRFCkeP3YWTNvjI9cU,1063
+mvcgen-0.1.0.dist-info/RECORD,,
