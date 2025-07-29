@@ -1,0 +1,1002 @@
+# Colorful Style 🌈 - Thư Viện TUI Siêu Đẹp
+
+> **Colorful Style** là một thư viện Python nâng cao để tạo ra những giao diện terminal đẹp mắt với 256 màu sắc, 16 triệu màu RGB, và hàng trăm hiệu ứng tuyệt vời.
+> 
+> Được lấy cảm hứng từ **pystyle** và được nâng cấp với nhiều tính năng hiện đại.
+
+## 📋 Mục Lục
+
+- [✨ Tính Năng Nổi Bật](#-tính-năng-nổi-bật)
+- [🚀 Cài Đặt](#-cài-đặt)
+- [📚 Hướng Dẫn Chi Tiết](#-hướng-dẫn-chi-tiết)
+- [🎨 Bảng Màu Đầy Đủ](#-bảng-màu-đầy-đủ)
+- [✨ Hiệu Ứng Animation](#-hiệu-ứng-animation)
+- [🎭 Hiệu Ứng Đặc Biệt](#-hiệu-ứng-đặc-biệt)
+- [📦 Box Styles](#-box-styles)
+- [🎯 Text Alignment](#-text-alignment)
+- [🎮 Interactive Elements](#-interactive-elements)
+- [🎪 Banner Effects](#-banner-effects)
+- [🔧 Cấu Hình Nâng Cao](#-cấu-hình-nâng-cao)
+- [📝 Ví Dụ Hoàn Chỉnh](#-ví-dụ-hoàn-chỉnh)
+- [🛠️ API Reference](#️-api-reference)
+- [🤝 Đóng Góp](#-đóng-góp)
+
+## ✨ Tính Năng Nổi Bật
+
+### 🎨 **Hệ Thống Màu Sắc**
+- **256 màu ANSI** chuẩn
+- **16 triệu màu RGB** tùy chỉnh
+- **Màu hex** hỗ trợ đầy đủ
+- **Gradient effects** đa dạng (ngang, dọc, chéo, xoay)
+- **Color blending** và **transparency**
+
+### ✨ **Hiệu Ứng Animation**
+- **Typing effect** với tốc độ tùy chỉnh
+- **Fade in/out** mượt mà
+- **Blink effect** nhấp nháy
+- **Rainbow animation** cầu vồng
+- **Matrix effect** ma trận
+- **Pulse effect** nhịp đập
+- **Wave effect** sóng
+
+### 🎭 **Hiệu Ứng Đặc Biệt**
+- **Glitch effect** nhiễu loạn
+- **Neon glow** phát sáng
+- **Hologram effect** hologram
+- **Fire effect** lửa
+- **Water effect** nước
+- **Smoke effect** khói
+- **Lightning effect** sét
+- **Sparkle effect** lấp lánh
+
+### 📦 **Box Styles**
+- **Simple box** viền đơn
+- **Double box** viền đôi
+- **Rounded box** viền tròn
+- **Gradient box** gradient
+- **Neon box** neon
+- **Shadow box** bóng đổ
+- **3D box** 3D
+
+### 🎯 **Text Alignment**
+- **Center alignment** căn giữa
+- **Left alignment** căn trái
+- **Right alignment** căn phải
+- **Justify alignment** căn đều
+- **Smart centering** thông minh
+
+### 🎮 **Interactive Elements**
+- **Progress bars** thanh tiến trình
+- **Spinners** quay tròn
+- **Menus** menu tương tác
+- **Input prompts** nhập liệu
+- **Confirmation dialogs** xác nhận
+
+### 🎪 **Banner Effects**
+- **ASCII art** nghệ thuật ASCII
+- **Emoji banners** banner emoji
+- **Particle effects** hiệu ứng hạt
+- **Animated banners** banner động
+
+### 🌟 **System Utilities**
+- **Terminal control** điều khiển terminal
+- **Screen clearing** xóa màn hình
+- **Cursor positioning** định vị con trỏ
+- **Sound effects** hiệu ứng âm thanh
+
+## 🚀 Cài Đặt
+
+### Cài Đặt Từ PyPI
+```bash
+pip install colorful-style
+```
+
+### Cài Đặt Từ Source
+```bash
+git clone https://github.com/giakietdev/colorful-style.git
+cd colorful-style
+pip install -e .
+```
+
+### Yêu Cầu Hệ Thống
+- Python 3.7+
+- Terminal hỗ trợ ANSI colors
+- Windows: Windows 10+ với terminal mới
+- Linux/macOS: Terminal mặc định
+
+## 📚 Hướng Dẫn Chi Tiết
+
+### 1. Khởi Tạo Cơ Bản
+
+```python
+from colorful_style import *
+
+# Khởi tạo hệ thống
+System.init()
+System.clear()
+System.title("Colorful Style Demo")
+```
+
+### 2. Sử Dụng Màu Sắc Cơ Bản
+
+```python
+from colorful_style import Colors
+
+# Màu cơ bản ANSI
+print(Colors.red + "Văn bản màu đỏ")
+print(Colors.green + "Văn bản màu xanh lá")
+print(Colors.blue + "Văn bản màu xanh dương")
+print(Colors.yellow + "Văn bản màu vàng")
+print(Colors.magenta + "Văn bản màu tím")
+print(Colors.cyan + "Văn bản màu xanh lơ")
+print(Colors.white + "Văn bản màu trắng")
+print(Colors.black + "Văn bản màu đen")
+
+# Màu sáng
+print(Colors.bright_red + "Văn bản màu đỏ sáng")
+print(Colors.bright_green + "Văn bản màu xanh lá sáng")
+print(Colors.bright_blue + "Văn bản màu xanh dương sáng")
+
+# Màu RGB tùy chỉnh
+print(Colors.rgb(255, 100, 150) + "Màu RGB tùy chỉnh")
+print(Colors.rgb(100, 200, 255) + "Màu RGB khác")
+
+# Màu hex
+print(Colors.hex("#FF6B9D") + "Màu hex tùy chỉnh")
+print(Colors.hex("#4ECDC4") + "Màu hex khác")
+
+# Màu 256 màu ANSI
+print(Colors.color_256(196) + "Màu 256 ANSI")
+print(Colors.color_256(51) + "Màu 256 ANSI khác")
+```
+
+### 3. Hiệu Ứng Gradient
+
+```python
+from colorful_style import Colorate, Colors
+
+# Gradient ngang
+print(Colorate.Horizontal(Colors.rainbow, "Văn bản cầu vồng ngang", 1))
+print(Colorate.Horizontal(Colors.sunset, "Văn bản hoàng hôn ngang", 1))
+print(Colorate.Horizontal(Colors.ocean, "Văn bản đại dương ngang", 1))
+
+# Gradient dọc
+print(Colorate.Vertical(Colors.rainbow, "Văn bản cầu vồng dọc", 1))
+print(Colorate.Vertical(Colors.fire, "Văn bản lửa dọc", 1))
+print(Colorate.Vertical(Colors.forest, "Văn bản rừng dọc", 1))
+
+# Gradient chéo
+print(Colorate.Diagonal(Colors.neon, "Văn bản neon chéo", 1))
+print(Colorate.Diagonal(Colors.gold, "Văn bản vàng chéo", 1))
+print(Colorate.Diagonal(Colors.silver, "Văn bản bạc chéo", 1))
+
+# Gradient xoay
+print(Colorate.Rotating(Colors.rainbow, "Văn bản cầu vồng xoay", 1))
+print(Colorate.Rotating(Colors.sunset, "Văn bản hoàng hôn xoay", 1))
+
+# Gradient tùy chỉnh
+custom_gradient = [Colors.red, Colors.orange, Colors.yellow, Colors.green, Colors.blue, Colors.purple]
+print(Colorate.Horizontal(custom_gradient, "Gradient tùy chỉnh", 1))
+```
+
+### 4. Hiệu Ứng Animation
+
+```python
+from colorful_style import Animate, Colors
+
+# Typing effect
+Animate.typing("Văn bản được gõ từng ký tự một cách mượt mà...", Colors.rainbow, speed=0.03)
+Animate.typing("Tốc độ gõ có thể điều chỉnh!", Colors.gold, speed=0.05)
+Animate.typing("Hiệu ứng typing rất thú vị!", Colors.cyan, speed=0.02)
+
+# Fade in/out
+Animate.fade_in("Văn bản xuất hiện dần dần", Colors.blue, duration=2)
+Animate.fade_out("Văn bản biến mất dần dần", Colors.red, duration=2)
+
+# Blink effect
+Animate.blink("Văn bản nhấp nháy", Colors.yellow, times=5)
+Animate.blink("Nhấp nháy với tốc độ nhanh", Colors.green, times=10, speed=0.1)
+
+# Rainbow animation
+Animate.rainbow("Văn bản cầu vồng chuyển động", duration=3)
+Animate.rainbow("Cầu vồng với tốc độ chậm", duration=5, speed=0.1)
+
+# Matrix effect
+Animate.matrix("MATRIX DIGITAL RAIN", duration=5)
+Animate.matrix("MATRIX EFFECT", duration=3, intensity=0.8)
+
+# Pulse effect
+Animate.pulse("Văn bản nhịp đập", Colors.pink, duration=3)
+Animate.pulse("Nhịp đập với màu neon", Colors.neon, duration=2)
+
+# Wave effect
+Animate.wave("Văn bản sóng", Colors.ocean, duration=3)
+Animate.wave("Sóng với màu gradient", Colors.rainbow, duration=4)
+```
+
+### 5. Hiệu Ứng Đặc Biệt
+
+```python
+from colorful_style import Effects, Colors
+
+# Glitch effect
+Effects.glitch("GLITCH EFFECT", Colors.cyan, intensity=0.3)
+Effects.glitch("GLITCH MẠNH HƠN", Colors.red, intensity=0.7)
+Effects.glitch("GLITCH NHẸ", Colors.green, intensity=0.1)
+
+# Neon glow
+Effects.neon("NEON GLOW", Colors.pink, glow_intensity=0.8)
+Effects.neon("NEON MẠNH", Colors.cyan, glow_intensity=1.0)
+Effects.neon("NEON NHẸ", Colors.yellow, glow_intensity=0.5)
+
+# Hologram effect
+Effects.hologram("HOLOGRAM TEXT", Colors.rainbow, flicker=True)
+Effects.hologram("HOLOGRAM ỔN ĐỊNH", Colors.cyan, flicker=False)
+
+# Fire effect
+Effects.fire("FIRE TEXT", height=10, duration=3)
+Effects.fire("LỬA CAO", height=15, duration=5)
+Effects.fire("LỬA THẤP", height=5, duration=2)
+
+# Water effect
+Effects.water("WATER RIPPLE", Colors.blue, ripple_speed=0.1)
+Effects.water("SÓNG NHANH", Colors.cyan, ripple_speed=0.2)
+Effects.water("SÓNG CHẬM", Colors.ocean, ripple_speed=0.05)
+
+# Smoke effect
+Effects.smoke("SMOKE TEXT", Colors.gray, duration=3)
+Effects.smoke("KHÓI ĐẬM", Colors.dark_gray, duration=4)
+
+# Lightning effect
+Effects.lightning("LIGHTNING", Colors.yellow, duration=2)
+Effects.lightning("SÉT MẠNH", Colors.bright_yellow, duration=3)
+
+# Sparkle effect
+Effects.sparkle("SPARKLE TEXT", Colors.gold, duration=3)
+Effects.sparkle("LẤP LÁNH", Colors.silver, duration=2)
+```
+
+### 6. Box Styles
+
+```python
+from colorful_style import Box, Colors
+
+# Simple box
+print(Box.Simple("Nội dung trong box đơn giản", Colors.blue))
+print(Box.Simple("Box với màu gradient", Colors.rainbow))
+
+# Double box
+print(Box.Double("Nội dung trong box đôi", Colors.green))
+print(Box.Double("Box đôi với màu neon", Colors.neon))
+
+# Rounded box
+print(Box.Rounded("Nội dung trong box tròn", Colors.purple))
+print(Box.Rounded("Box tròn với màu vàng", Colors.gold))
+
+# Gradient box
+print(Box.Gradient("Nội dung trong box gradient", Colors.rainbow))
+print(Box.Gradient("Box gradient hoàng hôn", Colors.sunset))
+
+# Neon box
+print(Box.Neon("Nội dung trong box neon", Colors.cyan))
+print(Box.Neon("Box neon với màu hồng", Colors.pink))
+
+# Shadow box
+print(Box.Shadow("Nội dung trong box bóng đổ", Colors.gray))
+print(Box.Shadow("Box bóng với màu đen", Colors.black))
+
+# 3D box
+print(Box.ThreeD("Nội dung trong box 3D", Colors.blue))
+print(Box.ThreeD("Box 3D với màu gradient", Colors.rainbow))
+
+# Box với nội dung nhiều dòng
+content = """Dòng 1: Nội dung đầu tiên
+Dòng 2: Nội dung thứ hai
+Dòng 3: Nội dung thứ ba"""
+print(Box.Simple(content, Colors.cyan))
+```
+
+### 7. Text Alignment
+
+```python
+from colorful_style import Align, Colors
+
+# Center alignment
+print(Align.Center("Văn bản căn giữa", Colors.gold))
+print(Align.Center("Căn giữa với màu gradient", Colors.rainbow))
+
+# Left alignment
+print(Align.Left("Văn bản căn trái", Colors.blue))
+print(Align.Left("Căn trái với màu neon", Colors.neon))
+
+# Right alignment
+print(Align.Right("Văn bản căn phải", Colors.green))
+print(Align.Right("Căn phải với màu vàng", Colors.yellow))
+
+# Justify alignment
+text = "Văn bản căn đều hai bên với độ dài đủ để thấy hiệu ứng căn đều"
+print(Align.Justify(text, Colors.purple))
+
+# Smart centering với box
+centered_text = Align.Center("Văn bản căn giữa thông minh", Colors.cyan)
+print(Box.Simple(centered_text, Colors.blue))
+
+# Alignment với nhiều dòng
+multi_line = """Dòng 1: Nội dung đầu tiên
+Dòng 2: Nội dung thứ hai dài hơn
+Dòng 3: Nội dung thứ ba"""
+print(Align.Center(multi_line, Colors.rainbow))
+```
+
+### 8. Interactive Elements
+
+```python
+from colorful_style import Interactive, Colors
+
+# Progress bar
+Interactive.progress_bar("Đang tải dữ liệu...", total=100, current=25, color=Colors.blue)
+Interactive.progress_bar("Đang xử lý...", total=100, current=50, color=Colors.green)
+Interactive.progress_bar("Hoàn thành!", total=100, current=100, color=Colors.gold)
+
+# Spinner
+Interactive.spinner("Đang xử lý dữ liệu...", color=Colors.cyan)
+Interactive.spinner("Đang tải file...", color=Colors.pink)
+
+# Menu
+options = ["Tùy chọn A", "Tùy chọn B", "Tùy chọn C"]
+choice = Interactive.menu("Chọn một tùy chọn:", options, Colors.rainbow)
+print(f"Bạn đã chọn: {options[choice]}")
+
+# Input prompt
+name = Interactive.input("Nhập tên của bạn: ", Colors.cyan)
+age = Interactive.input("Nhập tuổi của bạn: ", Colors.green)
+print(f"Xin chào {name}, bạn {age} tuổi!")
+
+# Confirmation dialog
+confirm = Interactive.confirm("Bạn có muốn tiếp tục không?", Colors.yellow)
+if confirm:
+    print("Đã xác nhận!")
+else:
+    print("Đã hủy bỏ!")
+
+# Multi-select menu
+items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
+selected = Interactive.multi_select("Chọn nhiều items:", items, Colors.purple)
+print(f"Đã chọn: {selected}")
+```
+
+### 9. Banner Effects
+
+```python
+from colorful_style import Banner, Colors
+
+# ASCII art banner
+Banner.ascii_art("MENU DEMO", Colors.rainbow, font="big")
+print()
+
+# Menu chính
+options = [
+    "🎨 Demo Màu Sắc",
+    "✨ Demo Hiệu Ứng",
+    "🎭 Demo Animation",
+    "📦 Demo Box Styles",
+    "🎮 Demo Interactive",
+    "🎪 Demo Banner",
+    "⚙️ Cài Đặt",
+    "❌ Thoát"
+]
+
+choice = Interactive.menu("Chọn một tùy chọn:", options, Colors.cyan)
+
+if choice == 0:
+    demo_colors()
+elif choice == 1:
+    demo_effects()
+elif choice == 2:
+    demo_animations()
+elif choice == 3:
+    demo_boxes()
+elif choice == 4:
+    demo_interactive()
+elif choice == 5:
+    demo_banners()
+elif choice == 6:
+    demo_config()
+elif choice == 7:
+    break
+
+System.clear()
+Animate.typing("Cảm ơn bạn đã sử dụng Colorful Style!", Colors.gold, speed=0.03)
+time.sleep(2)
+```
+
+## 🎨 Bảng Màu Đầy Đủ
+
+### Màu Cơ Bản ANSI
+```python
+# Màu thường
+Colors.black      # Đen
+Colors.red        # Đỏ
+Colors.green      # Xanh lá
+Colors.yellow     # Vàng
+Colors.blue       # Xanh dương
+Colors.magenta    # Tím
+Colors.cyan       # Xanh lơ
+Colors.white      # Trắng
+
+# Màu sáng
+Colors.bright_black   # Đen sáng
+Colors.bright_red     # Đỏ sáng
+Colors.bright_green   # Xanh lá sáng
+Colors.bright_yellow  # Vàng sáng
+Colors.bright_blue    # Xanh dương sáng
+Colors.bright_magenta # Tím sáng
+Colors.bright_cyan    # Xanh lơ sáng
+Colors.bright_white   # Trắng sáng
+```
+
+### Màu Gradient Có Sẵn
+```python
+Colors.rainbow    # Cầu vồng
+Colors.sunset     # Hoàng hôn
+Colors.ocean      # Đại dương
+Colors.forest     # Rừng
+Colors.fire       # Lửa
+Colors.neon       # Neon
+Colors.gold       # Vàng
+Colors.silver     # Bạc
+Colors.purple     # Tím
+Colors.pink       # Hồng
+Colors.orange     # Cam
+Colors.brown      # Nâu
+Colors.gray       # Xám
+Colors.dark_gray  # Xám đậm
+Colors.light_gray # Xám nhạt
+```
+
+### Màu RGB Tùy Chỉnh
+```python
+# Tạo màu RGB
+Colors.rgb(255, 0, 0)      # Đỏ thuần
+Colors.rgb(0, 255, 0)      # Xanh lá thuần
+Colors.rgb(0, 0, 255)      # Xanh dương thuần
+Colors.rgb(255, 255, 0)    # Vàng
+Colors.rgb(255, 0, 255)    # Magenta
+Colors.rgb(0, 255, 255)    # Cyan
+Colors.rgb(255, 255, 255)  # Trắng
+Colors.rgb(0, 0, 0)        # Đen
+
+# Màu gradient tùy chỉnh
+custom_colors = [
+    Colors.rgb(255, 0, 0),    # Đỏ
+    Colors.rgb(255, 127, 0),  # Cam
+    Colors.rgb(255, 255, 0),  # Vàng
+    Colors.rgb(0, 255, 0),    # Xanh lá
+    Colors.rgb(0, 0, 255),    # Xanh dương
+    Colors.rgb(75, 0, 130),   # Chàm
+    Colors.rgb(148, 0, 211)   # Tím
+]
+```
+
+## 🔧 Cấu Hình Nâng Cao
+
+### Cấu Hình Hệ Thống
+```python
+from colorful_style import Config, Colors
+
+# Bật/tắt hiệu ứng
+Config.enable_animations(True)
+Config.enable_sound(False)
+Config.enable_effects(True)
+
+# Cài đặt tốc độ mặc định
+Config.set_default_speed(0.05)
+Config.set_default_duration(2)
+Config.set_default_intensity(0.5)
+
+# Cài đặt màu mặc định
+Config.set_default_color(Colors.blue)
+Config.set_default_gradient(Colors.rainbow)
+
+# Cài đặt terminal
+Config.set_terminal_size(80, 24)
+Config.set_cursor_style("block")
+Config.set_scroll_region(1, 20)
+
+# Cài đặt âm thanh
+Config.set_sound_enabled(True)
+Config.set_sound_volume(0.5)
+Config.set_sound_frequency(440)
+
+# Lưu cấu hình
+Config.save_config("my_config.json")
+
+# Tải cấu hình
+Config.load_config("my_config.json")
+```
+
+### Cấu Hình Hiệu Ứng
+```python
+# Cấu hình animation
+Config.set_animation_speed(0.03)
+Config.set_animation_duration(3)
+Config.set_animation_loop(True)
+
+# Cấu hình effects
+Config.set_effect_intensity(0.7)
+Config.set_effect_duration(2)
+Config.set_effect_sound(True)
+
+# Cấu hình colors
+Config.set_color_mode("rgb")
+Config.set_gradient_steps(10)
+Config.set_transparency(0.8)
+```
+
+## 📝 Ví Dụ Hoàn Chỉnh
+
+### Ví Dụ 1: Ứng Dụng Menu Tương Tác
+```python
+from colorful_style import *
+import time
+
+def main():
+    System.init()
+    System.clear()
+    System.title("Colorful Style Menu Demo")
+    
+    while True:
+        System.clear()
+        
+        # Banner
+        Banner.ascii_art("MENU DEMO", Colors.rainbow, font="big")
+        print()
+        
+        # Menu chính
+        options = [
+            "🎨 Demo Màu Sắc",
+            "✨ Demo Hiệu Ứng",
+            "🎭 Demo Animation",
+            "📦 Demo Box Styles",
+            "🎮 Demo Interactive",
+            "🎪 Demo Banner",
+            "⚙️ Cài Đặt",
+            "❌ Thoát"
+        ]
+        
+        choice = Interactive.menu("Chọn một tùy chọn:", options, Colors.cyan)
+        
+        if choice == 0:
+            demo_colors()
+        elif choice == 1:
+            demo_effects()
+        elif choice == 2:
+            demo_animations()
+        elif choice == 3:
+            demo_boxes()
+        elif choice == 4:
+            demo_interactive()
+        elif choice == 5:
+            demo_banners()
+        elif choice == 6:
+            demo_config()
+        elif choice == 7:
+            break
+    
+    System.clear()
+    Animate.typing("Cảm ơn bạn đã sử dụng Colorful Style!", Colors.gold, speed=0.03)
+    time.sleep(2)
+
+def demo_colors():
+    System.clear()
+    print(Align.Center("=== DEMO MÀU SẮC ===", Colors.gold))
+    print()
+    
+    # Màu cơ bản
+    colors = [Colors.red, Colors.green, Colors.blue, Colors.yellow, Colors.magenta, Colors.cyan]
+    color_names = ["Đỏ", "Xanh lá", "Xanh dương", "Vàng", "Tím", "Xanh lơ"]
+    
+    for color, name in zip(colors, color_names):
+        print(f"{color}{name:10} - Màu sắc đẹp mắt!")
+    
+    print()
+    
+    # Gradient
+    print(Colorate.Horizontal(Colors.rainbow, "Gradient cầu vồng", 1))
+    print(Colorate.Horizontal(Colors.sunset, "Gradient hoàng hôn", 1))
+    print(Colorate.Horizontal(Colors.ocean, "Gradient đại dương", 1))
+    
+    print()
+    Interactive.input("Nhấn Enter để tiếp tục...", Colors.cyan)
+
+def demo_effects():
+    System.clear()
+    print(Align.Center("=== DEMO HIỆU ỨNG ===", Colors.gold))
+    print()
+    
+    Effects.glitch("GLITCH EFFECT", Colors.cyan, intensity=0.3)
+    time.sleep(1)
+    
+    Effects.neon("NEON GLOW", Colors.pink, glow_intensity=0.8)
+    time.sleep(1)
+    
+    Effects.hologram("HOLOGRAM TEXT", Colors.rainbow, flicker=True)
+    time.sleep(1)
+    
+    print()
+    Interactive.input("Nhấn Enter để tiếp tục...", Colors.cyan)
+
+def demo_animations():
+    System.clear()
+    print(Align.Center("=== DEMO ANIMATION ===", Colors.gold))
+    print()
+    
+    Animate.typing("Hiệu ứng typing...", Colors.rainbow, speed=0.03)
+    print()
+    
+    Animate.blink("Hiệu ứng blink", Colors.yellow, times=3)
+    print()
+    
+    Animate.rainbow("Hiệu ứng rainbow", duration=2)
+    print()
+    
+    Interactive.input("Nhấn Enter để tiếp tục...", Colors.cyan)
+
+def demo_boxes():
+    System.clear()
+    print(Align.Center("=== DEMO BOX STYLES ===", Colors.gold))
+    print()
+    
+    print(Box.Simple("Simple Box", Colors.blue))
+    print()
+    print(Box.Double("Double Box", Colors.green))
+    print()
+    print(Box.Rounded("Rounded Box", Colors.purple))
+    print()
+    print(Box.Gradient("Gradient Box", Colors.rainbow))
+    print()
+    print(Box.Neon("Neon Box", Colors.cyan))
+    
+    print()
+    Interactive.input("Nhấn Enter để tiếp tục...", Colors.cyan)
+
+def demo_interactive():
+    System.clear()
+    print(Align.Center("=== DEMO INTERACTIVE ===", Colors.gold))
+    print()
+    
+    # Progress bar
+    for i in range(0, 101, 10):
+        Interactive.progress_bar("Đang tải...", 100, i, Colors.blue)
+        time.sleep(0.2)
+    print()
+    
+    # Menu
+    options = ["Tùy chọn A", "Tùy chọn B", "Tùy chọn C"]
+    choice = Interactive.menu("Chọn một tùy chọn:", options, Colors.rainbow)
+    print(f"Bạn đã chọn: {options[choice]}")
+    
+    print()
+    Interactive.input("Nhấn Enter để tiếp tục...", Colors.cyan)
+
+def demo_banners():
+    System.clear()
+    print(Align.Center("=== DEMO BANNER ===", Colors.gold))
+    print()
+    
+    Banner.ascii_art("BANNER", Colors.rainbow, font="big")
+    print()
+    
+    Banner.emoji("🎨 Beautiful Banner 🎨", Colors.gold)
+    print()
+    
+    Banner.particle("PARTICLE", Colors.cyan, particle_count=30)
+    
+    print()
+    Interactive.input("Nhấn Enter để tiếp tục...", Colors.cyan)
+
+def demo_config():
+    System.clear()
+    print(Align.Center("=== DEMO CẤU HÌNH ===", Colors.gold))
+    print()
+    
+    # Thay đổi cấu hình
+    Config.set_default_speed(0.02)
+    Config.set_default_color(Colors.pink)
+    
+    Animate.typing("Tốc độ đã được thay đổi!", Colors.pink, speed=0.02)
+    print()
+    
+    # Khôi phục cấu hình
+    Config.set_default_speed(0.05)
+    Config.set_default_color(Colors.blue)
+    
+    print("Cấu hình đã được khôi phục!")
+    print()
+    Interactive.input("Nhấn Enter để tiếp tục...", Colors.cyan)
+
+if __name__ == "__main__":
+    main()
+```
+
+### Ví Dụ 2: Game Đơn Giản
+```python
+from colorful_style import *
+import random
+import time
+
+def number_guessing_game():
+    System.init()
+    System.clear()
+    System.title("Number Guessing Game")
+    
+    Banner.ascii_art("NUMBER GAME", Colors.rainbow, font="big")
+    print()
+    
+    Animate.typing("Chào mừng đến với trò chơi đoán số!", Colors.gold, speed=0.03)
+    print()
+    
+    # Chọn độ khó
+    difficulty_options = ["Dễ (1-10)", "Trung bình (1-50)", "Khó (1-100)"]
+    difficulty = Interactive.menu("Chọn độ khó:", difficulty_options, Colors.cyan)
+    
+    ranges = [10, 50, 100]
+    max_number = ranges[difficulty]
+    target = random.randint(1, max_number)
+    
+    Animate.typing(f"Tôi đã chọn một số từ 1 đến {max_number}!", Colors.green, speed=0.03)
+    print()
+    
+    attempts = 0
+    max_attempts = 10
+    
+    while attempts < max_attempts:
+        attempts += 1
+        remaining = max_attempts - attempts + 1
+        
+        print(f"Lần thử {attempts}/{max_attempts}")
+        Interactive.progress_bar("Còn lại", max_attempts, remaining, Colors.blue)
+        print()
+        
+        try:
+            guess = int(Interactive.input("Đoán số của bạn: ", Colors.cyan))
+        except ValueError:
+            print(Colors.red + "Vui lòng nhập một số hợp lệ!")
+            continue
+        
+        if guess == target:
+            System.clear()
+            Effects.fire("CHÚC MỪNG!", height=8, duration=2)
+            print()
+            Animate.typing(f"Bạn đã đoán đúng số {target} sau {attempts} lần thử!", Colors.gold, speed=0.03)
+            break
+        elif guess < target:
+            print(Colors.yellow + "Số cần tìm lớn hơn!")
+        else:
+            print(Colors.red + "Số cần tìm nhỏ hơn!")
+        
+        print()
+    
+    if attempts >= max_attempts:
+        print(Colors.red + f"Game Over! Số cần tìm là: {target}")
+    
+    print()
+    Interactive.input("Nhấn Enter để chơi lại...", Colors.cyan)
+
+if __name__ == "__main__":
+    while True:
+        number_guessing_game()
+        play_again = Interactive.confirm("Bạn có muốn chơi lại không?", Colors.green)
+        if not play_again:
+            break
+    
+    System.clear()
+    Animate.typing("Cảm ơn bạn đã chơi!", Colors.rainbow, speed=0.03)
+```
+
+## 🛠️ API Reference
+
+### Colors Module
+```python
+# Màu cơ bản
+Colors.red, Colors.green, Colors.blue, Colors.yellow, Colors.magenta, Colors.cyan, Colors.white, Colors.black
+
+# Màu sáng
+Colors.bright_red, Colors.bright_green, Colors.bright_blue, Colors.bright_yellow, Colors.bright_magenta, Colors.bright_cyan, Colors.bright_white, Colors.bright_black
+
+# Màu gradient
+Colors.rainbow, Colors.sunset, Colors.ocean, Colors.forest, Colors.fire, Colors.neon, Colors.gold, Colors.silver, Colors.purple, Colors.pink, Colors.orange, Colors.brown, Colors.gray, Colors.dark_gray, Colors.light_gray
+
+# Tạo màu tùy chỉnh
+Colors.rgb(r, g, b)           # Tạo màu RGB
+Colors.hex(hex_code)          # Tạo màu từ hex
+Colors.color_256(index)       # Tạo màu 256 ANSI
+```
+
+### Colorate Module
+```python
+# Gradient effects
+Colorate.Horizontal(colors, text, speed)    # Gradient ngang
+Colorate.Vertical(colors, text, speed)      # Gradient dọc
+Colorate.Diagonal(colors, text, speed)      # Gradient chéo
+Colorate.Rotating(colors, text, speed)      # Gradient xoay
+```
+
+### Animate Module
+```python
+# Animation effects
+Animate.typing(text, color, speed)          # Typing effect
+Animate.fade_in(text, color, duration)      # Fade in
+Animate.fade_out(text, color, duration)     # Fade out
+Animate.blink(text, color, times, speed)    # Blink effect
+Animate.rainbow(text, duration, speed)      # Rainbow animation
+Animate.matrix(text, duration, intensity)   # Matrix effect
+Animate.pulse(text, color, duration)        # Pulse effect
+Animate.wave(text, color, duration)         # Wave effect
+```
+
+### Effects Module
+```python
+# Special effects
+Effects.glitch(text, color, intensity)      # Glitch effect
+Effects.neon(text, color, glow_intensity)   # Neon glow
+Effects.hologram(text, color, flicker)      # Hologram effect
+Effects.fire(text, height, duration)        # Fire effect
+Effects.water(text, color, ripple_speed)    # Water effect
+Effects.smoke(text, color, duration)        # Smoke effect
+Effects.lightning(text, color, duration)    # Lightning effect
+Effects.sparkle(text, color, duration)      # Sparkle effect
+```
+
+### Box Module
+```python
+# Box styles
+Box.Simple(text, color)       # Simple box
+Box.Double(text, color)       # Double box
+Box.Rounded(text, color)      # Rounded box
+Box.Gradient(text, color)     # Gradient box
+Box.Neon(text, color)         # Neon box
+Box.Shadow(text, color)       # Shadow box
+Box.ThreeD(text, color)       # 3D box
+```
+
+### Align Module
+```python
+# Text alignment
+Align.Center(text, color)     # Center alignment
+Align.Left(text, color)       # Left alignment
+Align.Right(text, color)      # Right alignment
+Align.Justify(text, color)    # Justify alignment
+```
+
+### Interactive Module
+```python
+# Interactive elements
+Interactive.progress_bar(text, total, current, color)     # Progress bar
+Interactive.spinner(text, color)                          # Spinner
+Interactive.menu(text, options, color)                    # Menu
+Interactive.input(prompt, color)                          # Input prompt
+Interactive.confirm(text, color)                          # Confirmation dialog
+Interactive.multi_select(text, items, color)              # Multi-select menu
+```
+
+### Banner Module
+```python
+# Banner effects
+Banner.ascii_art(text, color, font)        # ASCII art banner
+Banner.emoji(text, color)                  # Emoji banner
+Banner.particle(text, color, particle_count) # Particle banner
+Banner.animated(text, color, duration)     # Animated banner
+Banner.gradient(text, color)               # Gradient banner
+```
+
+### System Module
+```python
+# System utilities
+System.init()                 # Initialize system
+System.clear()                # Clear screen
+System.title(title)           # Set window title
+System.get_size()             # Get terminal size
+System.set_size(width, height) # Set terminal size
+System.hide_cursor()          # Hide cursor
+System.show_cursor()          # Show cursor
+System.move_cursor(x, y)      # Move cursor
+System.save_position()        # Save cursor position
+System.restore_position()     # Restore cursor position
+```
+
+### Config Module
+```python
+# Configuration
+Config.enable_animations(enable)           # Enable/disable animations
+Config.enable_sound(enable)                # Enable/disable sound
+Config.enable_effects(enable)              # Enable/disable effects
+Config.set_default_speed(speed)            # Set default speed
+Config.set_default_duration(duration)      # Set default duration
+Config.set_default_color(color)            # Set default color
+Config.set_default_gradient(gradient)      # Set default gradient
+Config.save_config(filename)               # Save configuration
+Config.load_config(filename)               # Load configuration
+```
+
+## 🤝 Đóng Góp
+
+Chúng tôi rất hoan nghênh mọi đóng góp! Hãy tham gia phát triển dự án:
+
+### Cách Đóng Góp
+1. **Fork** repository
+2. **Tạo branch** mới (`git checkout -b feature/amazing-feature`)
+3. **Commit** thay đổi (`git commit -m 'Add amazing feature'`)
+4. **Push** lên branch (`git push origin feature/amazing-feature`)
+5. **Tạo Pull Request**
+
+### Báo Cáo Lỗi
+- Tạo **Issue** với mô tả chi tiết
+- Bao gồm **môi trường** (OS, Python version)
+- Cung cấp **code example** để tái hiện lỗi
+
+### Đề Xuất Tính Năng
+- Tạo **Issue** với label "enhancement"
+- Mô tả chi tiết tính năng mong muốn
+- Cung cấp **use case** cụ thể
+
+### Hướng Dẫn Phát Triển
+```bash
+# Clone repository
+git clone https://github.com/giakietdev/colorful-style.git
+cd colorful-style
+
+# Tạo virtual environment
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+
+# Cài đặt dependencies
+pip install -r requirements.txt
+
+# Chạy tests
+python -m pytest tests/
+
+# Chạy demo
+python demo.py
+```
+
+## 📄 Giấy Phép
+
+Dự án này được phân phối dưới giấy phép **MIT License**. Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
+
+## 👥 Tác Giả
+
+- **Your Name** - *Tác giả chính* - [GitHub](https://github.com/giakietdev)
+- **Contributors** - Xem danh sách [contributors](https://github.com/giakietdev/colorful-style/graphs/contributors)
+
+## 🙏 Cảm Ơn
+
+- [pystyle](https://github.com/billythegoat356/pystyle) - Thư viện gốc
+- [colorama](https://github.com/tartley/colorama) - Hỗ trợ màu sắc
+- [rich](https://github.com/Textualize/rich) - Terminal formatting
+- [pyfiglet](https://github.com/pwaller/pyfiglet) - ASCII art
+- [blessed](https://github.com/jquast/blessed) - Terminal utilities
+
+## 📊 Thống Kê
+
+![GitHub stars](https://img.shields.io/github/stars/giakietdev/colorful-style)
+![GitHub forks](https://img.shields.io/github/forks/giakietdev/colorful-style)
+![GitHub issues](https://img.shields.io/github/issues/giakietdev/colorful-style)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/giakietdev/colorful-style)
+![GitHub license](https://img.shields.io/github/license/giakietdev/colorful-style)
+![Python version](https://img.shields.io/pypi/pyversions/colorful-style)
+
+## 🌟 Hỗ Trợ
+
+Nếu dự án này hữu ích với bạn, hãy:
+
+- ⭐ **Star** repository
+- 🔄 **Fork** và chia sẻ
+- 🐛 **Báo cáo** lỗi
+- 💡 **Đề xuất** tính năng
+- 🤝 **Đóng góp** code
+
+---
+
+**Colorful Style** - Tạo ra những giao diện terminal đẹp mắt và ấn tượng! 🎨✨ 
