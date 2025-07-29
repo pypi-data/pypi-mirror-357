@@ -1,0 +1,19 @@
+[project]
+name = "SAUIGeo"
+version = "1.3.5"
+authors = [
+  { name="Geomedge", email="wieczorekr463@gmail.com" },
+]
+description = "My Own UI Library"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/Geomedge/SAU"
+Issues = "https://github.com/Geomedge/SAU/issues"
