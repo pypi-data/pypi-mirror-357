@@ -1,0 +1,7 @@
+README.md
+setup.py
+ez-hangul/__init__.py
+ez_hangul.egg-info/PKG-INFO
+ez_hangul.egg-info/SOURCES.txt
+ez_hangul.egg-info/dependency_links.txt
+ez_hangul.egg-info/top_level.txt

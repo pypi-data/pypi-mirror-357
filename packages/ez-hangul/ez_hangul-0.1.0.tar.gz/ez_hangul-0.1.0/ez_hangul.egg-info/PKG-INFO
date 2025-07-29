@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: ez-hangul
+Version: 0.1.0
+Summary: 쉽고 강력한 한글 자모 결합 조합 처리, 조사 자동화, 순우리말 변환 유틸리티
+Author: Jinyoon
+Author-email: jinyoonbz@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Text Processing :: Linguistic
+Classifier: Natural Language :: Korean
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-python
+Dynamic: summary
