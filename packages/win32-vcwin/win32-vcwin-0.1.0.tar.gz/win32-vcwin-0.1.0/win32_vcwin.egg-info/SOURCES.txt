@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+win32_vcwin/__init__.py
+win32_vcwin/main.py
+win32_vcwin/vcwin_worker.exe
+win32_vcwin.egg-info/PKG-INFO
+win32_vcwin.egg-info/SOURCES.txt
+win32_vcwin.egg-info/dependency_links.txt
+win32_vcwin.egg-info/entry_points.txt
+win32_vcwin.egg-info/top_level.txt

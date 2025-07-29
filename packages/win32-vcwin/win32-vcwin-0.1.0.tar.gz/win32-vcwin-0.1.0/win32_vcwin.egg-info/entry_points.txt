@@ -1,0 +1,2 @@
+[console_scripts]
+vcwin = win32_vcwin.main:main
