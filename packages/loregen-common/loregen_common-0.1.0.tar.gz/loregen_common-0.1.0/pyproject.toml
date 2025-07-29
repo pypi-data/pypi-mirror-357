@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "loregen-common"
+version = "0.1.0"
+description = "Common classes for the loregen project"
+authors = ["ishish.io <ts@ishish.io>"]
+readme = "README.md"
+packages = [{ include = "loregen", from = "src" }]
+repository = "https://github.com/ishish/loregen-common"
+homepage = "https://github.com/ishish/loregen-common"
+documentation = "https://github.com/ishish/loregen-common"
+keywords = ["loregen", "common"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+
+[tool.poetry.dependencies]
+python = ">=3.13"
+python-dotenv = ">=1.1.0,<2.0.0"
+boto3 = ">=1.38.41,<2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+build = "^1.2.2.post1"
+twine = "^5.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
