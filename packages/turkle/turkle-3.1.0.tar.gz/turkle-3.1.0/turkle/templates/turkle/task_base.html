@@ -1,0 +1,16 @@
+{% extends "turkle/base.html" %}
+
+{% block subheader %}
+<div class="project-header bg-light clearfix" >
+  <div class="float-left">
+    <span>
+      <b>Project:</b> {{ task.batch.project.name }} /
+      <b>Batch:</b> {{ task.batch.name }}
+    </span>
+  </div>
+  <div class="float-right">
+    {% block subheader_right %}
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+/* Turkle admin theme - see admin-turkle.css for app css */
+#footer {
+  background-color: var(--breadcrumbs-bg);
+  color: var(--breadcrumbs-link-fg);
+  padding: 10px 40px;
+  border: none;
+  font-size: 14px;
+  text-align: right;
+  margin-top: 4px;
+}
+/* let iframe expand to fill vertical space */
+.turkle-batch-preview #content-start {
+  display: flex;
+  flex-direction: column;
+}
+.turkle-batch-preview #content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+/* cancel button on review batch page */
+#cancelButton {
+  background: var(--close-button-bg);
+}
+#cancelButton:hover {
+  background: var(--close-button-hover-bg);
+}
