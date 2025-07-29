@@ -1,0 +1,60 @@
+[build-system]
+requires = ['hatchling', 'uv-dynamic-versioning']
+build-backend = 'hatchling.build'
+
+[tool.hatch.version]
+source = 'uv-dynamic-versioning'
+
+[project]
+name = "mmragsdk"
+dynamic = ['version']
+description = "A simple SDK for the mmRag Application, the github for the app can be found here: https://github.com/marcoslashpro/multimodal-rag.git"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain>=0.3.25",
+    "pydantic>=2.11.7",
+    "python-dotenv>=1.1.0",
+    "requests>=2.32.4",
+]
+
+[dependency-groups]
+dev = [
+    "build>=1.2.2.post1",
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+    "twine>=6.1.0",
+]
+
+[tool.uv.workspace]
+members = [
+    "sdk",
+]
+
+
+[tool.pytest.init_options]
+addopts = "--cov=src/mmrag_sdk"
+testpaths = [
+    "tests"
+]
+
+[tool.tox]
+env_list = [
+    "mypy",
+    "tests"
+]
+isolated_build = true
+
+[tool.tox.gh-actions]
+python = "3.12: py312"
+
+[tool.tox.env.tests]
+deps = [
+    "pytest>=8.4.0",
+    "pytest-cov>=6.2.1",
+]
+commands = [
+    [
+        "pytest", { replace = "posargs", default = ["tests"], extend = true }
+    ]
+]
