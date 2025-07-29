@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: OBRAG
+Version: 0.1.0
+Summary: Obsidian RAG assistant with access to your local vault.
+Author-email: Angel Patricio <aopatric@mit.edu>
+License-Expression: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tomli-w<2.0,>=1.2.0
+Requires-Dist: tqdm<5.0,>=4.67.1
+Requires-Dist: langchain-chroma<0.3,>=0.2.4
+Requires-Dist: langchain-openai<0.4,>=0.3.24
+Requires-Dist: langchain-huggingface<0.4,>=0.3.0
+Requires-Dist: langchain-community<0.4,>=0.3.26
+Requires-Dist: langgraph<0.5,>=0.4.8
+Requires-Dist: sentence-transformers<4.2,>=4.1.0
+Dynamic: license-file
+
+# OBRAG
+Obsidian-linked RAG Agent.
+
+Installation:
+
+Requires Python >= 3.11:
+
+```python
+pip install obrag
+obrag --help
+```
+
+If there are any issues, reconfiguring with `obrag --reconfigure` should solve problems.
+
+Simple Obsidian-linked RAG CLI for querying note base; API inference and local embeddings with HuggingFace.
+
+To rebuild the vector store, use `obrag --rebuild`.
+
+To skip the CLI and ask a question directly from the terminal, use `obrag --ask QUESTION`.
+
+Happy querying.

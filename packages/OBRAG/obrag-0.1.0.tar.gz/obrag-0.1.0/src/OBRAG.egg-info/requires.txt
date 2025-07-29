@@ -1,0 +1,8 @@
+tomli-w<2.0,>=1.2.0
+tqdm<5.0,>=4.67.1
+langchain-chroma<0.3,>=0.2.4
+langchain-openai<0.4,>=0.3.24
+langchain-huggingface<0.4,>=0.3.0
+langchain-community<0.4,>=0.3.26
+langgraph<0.5,>=0.4.8
+sentence-transformers<4.2,>=4.1.0
