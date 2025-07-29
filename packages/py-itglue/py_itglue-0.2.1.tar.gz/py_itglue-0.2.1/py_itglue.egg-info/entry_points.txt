@@ -1,0 +1,2 @@
+[console_scripts]
+itglue-cli = itglue.cli:main
