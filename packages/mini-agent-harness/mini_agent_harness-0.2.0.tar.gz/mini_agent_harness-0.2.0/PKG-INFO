@@ -1,0 +1,88 @@
+Metadata-Version: 2.1
+Name: mini-agent-harness
+Version: 0.2.0
+Summary: Small, test-first AI agent starter kit with built-in pytest harness.
+License: MIT
+Author: Haluk Sonmezler
+Author-email: halukson@icloud.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Provides-Extra: all
+Provides-Extra: gemini
+Provides-Extra: server
+Requires-Dist: deepeval (>=0.20.5,<0.21.0) ; extra == "all"
+Requires-Dist: fastapi (>=0.110.0,<0.111.0) ; extra == "all" or extra == "server"
+Requires-Dist: google-generativeai (>=0.4.1,<0.5.0) ; extra == "all" or extra == "gemini"
+Requires-Dist: guardrails-ai (>=0.4.0,<0.5.0) ; extra == "all"
+Requires-Dist: langsmith (>=0.1.45,<0.2.0) ; extra == "all"
+Requires-Dist: openai (>=1.25.0,<2.0.0) ; extra == "all"
+Requires-Dist: pytest (>=8.2.0,<9.0.0)
+Requires-Dist: python-multipart (>=0.0.9,<0.0.10) ; extra == "all" or extra == "server"
+Requires-Dist: pyyaml (>=6.0,<7.0)
+Requires-Dist: typer (>=0.9.0,<0.10.0)
+Requires-Dist: uvicorn (>=0.29.0,<0.30.0) ; extra == "all" or extra == "server"
+Description-Content-Type: text/markdown
+
+<p align="center">
+  <img src="https://img.shields.io/pypi/v/mini-agent-harness?logo=pypi" alt="PyPI">
+  <img src="https://img.shields.io/npm/v/mini-agent-harness?logo=npm" alt="NPM">
+  <img src="https://github.com/HalukProductions/MiniAgentHarness/actions/workflows/ci.yml/badge.svg" alt="Build Status">
+</p>
+
+# MiniAgentHarness
+
+> ⚡️ Small, **test-first** AI-agent starter kit with one-click deploy.
+
+MiniAgentHarness gives you a production-ready scaffold for building ReAct-style language-model agents **with a built-in Pytest harness** so you catch prompt regressions _before_ they reach prod. Spin it up locally, run `pytest`, and deploy to Vercel in minutes.
+
+## Features
+
+- 🧪 **Testing harness** — Pytest plugin, DeepEval metrics, LangSmith replays (coming soon)
+- 🚀 **Zero-config deploy** — FastAPI backend + React chat, ready for Vercel Edge / CF Workers
+- 🧩 **Tool registry** — YAML → auto-imported Python stubs (generate via CLI)
+- 📦 **Batteries included** — CLI, CI workflow, linting hooks, example agents & tests
+
+## Quickstart
+
+```bash
+# 1. Install (Poetry recommended)
+pipx install poetry  # if you don't already have it
+git clone https://github.com/HalukProductions/MiniAgentHarness.git && cd MiniAgentHarness
+poetry install
+
+# 2. Run unit tests (stub passes green)
+poetry run pytest -q
+
+# 3. Generate an example agent
+poetry run mini-agent init  # creates agents/quickstart.yaml
+
+# 4. (Soon) Serve with your favourite model
+poetry run mini-agent serve --model ollama/llama3
+```
+
+## CLI
+
+| Command            | Description                                |
+| ------------------ | ------------------------------------------ |
+| `mini-agent init`  | Generate a stub agent YAML & tool skeleton |
+| `mini-agent test`  | Run Pytest suite (wrapper)                 |
+| `mini-agent serve` | Start FastAPI + React UI (TBA)             |
+
+## Contributing
+
+PRs welcome! Check `TASKS.md` for the active roadmap. For local development:
+
+```bash
+poetry install --with dev
+pre-commit install
+```
+
+## License
+
+MIT © Haluk Sonmezler
+
