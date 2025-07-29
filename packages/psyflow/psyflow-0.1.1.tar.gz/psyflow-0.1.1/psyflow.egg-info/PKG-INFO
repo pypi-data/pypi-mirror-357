@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: psyflow
+Version: 0.1.1
+Summary: A utility package for building modular PsychoPy experiments.
+Author: Zhipeng Cao
+Author-email: Zhipeng Cao <zhipeng30@foxmail.com>
+Requires-Dist: psychopy
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: click
+Requires-Dist: cookiecutter
+Requires-Dist: pyyaml
+Requires-Dist: pyserial
+Requires-Dist: edge-tts
+Requires-Dist: requests
+Requires-Dist: tiktoken
+Requires-Dist: openai
+Requires-Dist: google-generativeai
+Dynamic: author
