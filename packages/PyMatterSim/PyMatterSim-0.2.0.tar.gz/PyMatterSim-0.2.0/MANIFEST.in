@@ -1,0 +1,8 @@
+include requirements.txt
+include README.md
+include LICENSE
+include CMakeLists.txt
+recursive-include PyMatterSim/templates *.html
+recursive-include shell/*
+recursive-include CMakeFiles/*
+recursive-include conda-recipe/*
