@@ -1,0 +1,10 @@
+mmkv/__init__.py,sha256=9XEsfKOIuOZqX8jAknlsKWkD8KELF4Vf20JZgI-ZUb8,114
+mmkv/core.py,sha256=GXLtA1XdMJ0cpJI8J2avaSKlSuXYOtfx_t9lNqg21H0,4085
+mmkv/helper.py,sha256=lCLsvcg0u74Y_cdJBvcteH_2vFrAREoPBjK_BLNTXz4,929
+mmkv/libs/darwin_x86_64/mmkv.cpython-313-darwin.so,sha256=TzAyDKpT5aiK1f7D03PUwqIYgv3xC0h1GftkA3oA3hA,546216
+mmkv/libs/linux_x86_64/mmkv.cpython-312-x86_64-linux-gnu.so,sha256=r2E3rOPBg8IUwiR2ggmApiijdfwSzmjVN2T9eSJrlVc,1836904
+mmkv/libs/win_amd64/mmkv.cp39-win_amd64.pyd,sha256=8WjfgWtdTdwIWcApb1tCqemEF2U2qkHkXwOUGrgdydY,491008
+sb_tencent_mmkv-0.1.5.1.dist-info/METADATA,sha256=70c33GxlzvgBLqyq3WEWH3EEHuw82BqdVCZoWC_Extk,627
+sb_tencent_mmkv-0.1.5.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sb_tencent_mmkv-0.1.5.1.dist-info/top_level.txt,sha256=i8IG3AUZIGkhlvU1uCTN_OIGPeDilYPKJEQKlaQo_6E,5
+sb_tencent_mmkv-0.1.5.1.dist-info/RECORD,,
