@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voleybol Maç Tahmini</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: none;
+            border-radius: 15px;
+        }
+        .prediction-result {
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+        .win { background-color: #d4edda; }
+        .lose { background-color: #f8d7da; }
+        .draw { background-color: #fff3cd; }
+        .progress-bar {
+            transition: width 0.6s ease;
+        }
+        .team-select {
+            margin-bottom: 1.5rem;
+        }
+        .venue-select {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card p-4 mt-4">
+                    <h2 class="text-center mb-4">Voleybol Maç Tahmini</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6 team-select">
+                            <label class="form-label">1. Takım:</label>
+                            <select id="team1" class="form-select"></select>
+                        </div>
+                        <div class="col-md-6 team-select">
+                            <label class="form-label">2. Takım:</label>
+                            <select id="team2" class="form-select"></select>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button onclick="predict()" class="btn btn-primary btn-lg">Tahmin Et</button>
+                    </div>
+
+                    <div id="predictionResult" class="prediction-result mt-4">
+                        <h4 class="text-center mb-3">Tahmin Sonucu</h4>
+                        <div class="mb-3">
+                            <label class="form-label">1. Takım Kazanma Olasılığı:</label>
+                            <div class="progress">
+                                <div id="team1WinProb" class="progress-bar bg-success" role="progressbar"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Beraberlik Olasılığı:</label>
+                            <div class="progress">
+                                <div id="drawProb" class="progress-bar bg-warning" role="progressbar"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">2. Takım Kazanma Olasılığı:</label>
+                            <div class="progress">
+                                <div id="team2WinProb" class="progress-bar bg-danger" role="progressbar"></div>
+                            </div>
+                        </div>
+                        <h5 id="predictionText" class="text-center mt-3"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sayfa yüklendiğinde takım listesini al
+        window.onload = async function() {
+            const response = await fetch("http://127.0.0.1:8000/teams");
+            const data = await response.json();
+            
+            const team1Select = document.getElementById("team1");
+            const team2Select = document.getElementById("team2");
+            
+            data.teams.forEach(team => {
+                team1Select.add(new Option(team, team));
+                team2Select.add(new Option(team, team));
+            });
+        }
+
+        async function predict() {
+            const team1 = document.getElementById("team1").value;
+            const team2 = document.getElementById("team2").value;
+
+            if (team1 === team2) {
+                alert("Lütfen farklı takımlar seçin!");
+                return;
+            }
+
+            // Takım istatistiklerini çek
+            const team1Stats = await getTeamStats(team1);
+            const team2Stats = await getTeamStats(team2);
+
+            // Son karşılaşma sonucu
+            let lastMatchResult = 0;
+            try {
+                const lmrRes = await fetch(`http://127.0.0.1:8000/last_match_result?team1=${encodeURIComponent(team1)}&team2=${encodeURIComponent(team2)}`);
+                if (lmrRes.ok) {
+                    const lmrData = await lmrRes.json();
+                    lastMatchResult = lmrData.last_match_result;
+                }
+            } catch (e) {
+                lastMatchResult = 0;
+            }
+
+            try {
+                const response = await fetch("http://127.0.0.1:8000/predict", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        team1: team1,
+                        team2: team2,
+                        team1_last_5_win_rate: team1Stats.win_rate,
+                        team2_last_5_win_rate: team2Stats.win_rate,
+                        last_match_result: lastMatchResult,
+                        team1_historical_avg_score_diff: team1Stats.score_diff,
+                        team2_historical_avg_score_diff: team2Stats.score_diff,
+                        team1_last_5_sets_avg: team1Stats.goals_avg,
+                        team2_last_5_sets_avg: team2Stats.goals_avg
+                    })
+                });
+
+                const result = await response.json();
+                // Sonuçları göster
+                const resultDiv = document.getElementById("predictionResult");
+                resultDiv.style.display = "block";
+                // Progress barları güncelle
+                const team1Prob = result.win_probability_team1;
+                const team2Prob = result.win_probability_team2;
+                const drawProb = result.draw_probability;
+                // NaN kontrolü ve varsayılan değerler
+                const validTeam1Prob = isNaN(team1Prob) ? 0 : team1Prob;
+                const validTeam2Prob = isNaN(team2Prob) ? 0 : team2Prob;
+                const validDrawProb = isNaN(drawProb) ? 0 : drawProb;
+                // Olasılıkların toplamı 1'e eşit olmalı
+                const total = validTeam1Prob + validTeam2Prob + validDrawProb;
+                const normalizedTeam1Prob = total === 0 ? 0.33 : validTeam1Prob / total;
+                const normalizedTeam2Prob = total === 0 ? 0.33 : validTeam2Prob / total;
+                const normalizedDrawProb = total === 0 ? 0.34 : validDrawProb / total;
+                document.getElementById("team1WinProb").style.width = `${normalizedTeam1Prob * 100}%`;
+                document.getElementById("team1WinProb").textContent = `${(normalizedTeam1Prob * 100).toFixed(1)}%`;
+                document.getElementById("drawProb").style.width = `${normalizedDrawProb * 100}%`;
+                document.getElementById("drawProb").textContent = `${(normalizedDrawProb * 100).toFixed(1)}%`;
+                document.getElementById("team2WinProb").style.width = `${normalizedTeam2Prob * 100}%`;
+                document.getElementById("team2WinProb").textContent = `${(normalizedTeam2Prob * 100).toFixed(1)}%`;
+                // Tahmin metnini güncelle
+                
+let predictionText = "";
+if (total === 0) {
+    predictionText = "Tahmin yapılamıyor. Lütfen farklı takımlar seçin.";
+} else {
+    if (result.predicted_result === 0) {
+        predictionText = `${team1} kazanabilir`;
+    } else if (result.predicted_result === 1) {
+        predictionText = `${team2} kazanabilir`;
+    } else {
+        predictionText = "Berabere bitebilir";
+    }
+}
+
+document.getElementById("predictionText").textContent = predictionText;
+                resultDiv.className = "prediction-result mt-4 " + 
+                    (total === 0 ? "draw" :
+                    highestProb === normalizedTeam1Prob ? "win" : 
+                    highestProb === normalizedTeam2Prob ? "lose" : "draw");
+            } catch (error) {
+                console.error("Hata:", error);
+                alert("Tahmin yapılırken bir hata oluştu. Lütfen tekrar deneyin.");
+            }
+        }
+
+        // Takım istatistiklerini backend'den çek
+        async function getTeamStats(team) {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/team_stats?team=${encodeURIComponent(team)}`);
+                if (!response.ok) throw new Error("İstatistik alınamadı");
+                const data = await response.json();
+                return data;
+            } catch (e) {
+                return { win_rate: 0.5, score_diff: 0, goals_avg: 0 };
+            }
+        }
+    </script>
+</body>
+</html>
