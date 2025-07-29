@@ -1,0 +1,9 @@
+coord2loc_can/__init__.py,sha256=E4OayX32-8PUT7ko4CTvjLAL0Ll-cZn6-DmgVjHRgvs,393
+coord2loc_can/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+coord2loc_can/data/__init__.py,sha256=it4ne06pqJ3jo8qTBWzlNeKTiGbVgFoKOC5D6xzVJkg,74
+coord2loc_can/data/meta.msgpack,sha256=igfZQ7qxcxKjLCaqokmfqU2tsOEteKgn31lF8rj0DMM,210
+coord2loc_can/data/polygons.msgpack,sha256=jf0z8-nKS3feaXzYSUoy4el2igSHeOmnWBrGM7KYK5c,14623110
+coord2loc_can-0.0.1.dist-info/METADATA,sha256=Kd0P81As5bM1TY3Rz4DjfHEKSA8UGuqCvslJsZND6vU,180
+coord2loc_can-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+coord2loc_can-0.0.1.dist-info/entry_points.txt,sha256=IRC0EL9P8tc-1aRYIpbv_gRYGhfIiaL4U2e1Qk3XysQ,46
+coord2loc_can-0.0.1.dist-info/RECORD,,

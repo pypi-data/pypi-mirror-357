@@ -1,0 +1,2 @@
+[coord2loc.data]
+usa = coord2loc_can:get_data
