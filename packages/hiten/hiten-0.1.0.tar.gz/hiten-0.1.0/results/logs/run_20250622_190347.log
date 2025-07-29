@@ -1,0 +1,95 @@
+2025-06-22 19:03:47,522 - root - INFO - Log file created: results/logs\run_20250622_190347.log
+2025-06-22 19:03:48,149 - hiten.utils.log_config - INFO - Created Body: name='Earth', mass=5.972e+24, radius=6378137.0, color='blue', parent='None'
+2025-06-22 19:03:48,149 - hiten.utils.log_config - INFO - Created Body: name='Moon', mass=7.348e+22, radius=1737400.0, color='gray', parent='Earth'
+2025-06-22 19:03:48,149 - hiten.utils.log_config - INFO - Initializing System with primary='Earth', secondary='Moon', distance=3.8440e+08
+2025-06-22 19:03:48,149 - hiten.utils.log_config - INFO - Calculated mass parameter mu = 1.215454e-02
+2025-06-22 19:03:48,155 - hiten.utils.log_config - WARNING - Triangular points are potentially unstable for mu > 0.009347 (current mu = 0.012154535289174722)
+2025-06-22 19:03:48,156 - hiten.utils.log_config - WARNING - Triangular points are potentially unstable for mu > 0.009347 (current mu = 0.012154535289174722)
+2025-06-22 19:03:48,156 - hiten.utils.log_config - INFO - Computed 5 Libration points.
+2025-06-22 19:03:48,157 - hiten.utils.log_config - INFO - Generating Poincaré map for L1 of the Earth-Moon system…
+2025-06-22 19:03:48,167 - hiten.utils.log_config - INFO - Computing center manifold for L1Point, max_deg=10
+2025-06-22 19:03:51,807 - hiten.utils.log_config - INFO - Gamma for L1Point = 0.15094977166750456
+2025-06-22 19:03:51,807 - hiten.utils.log_config - INFO - c2(mu) = 5.147737438132596
+2025-06-22 19:03:51,807 - hiten.utils.log_config - INFO - c3(mu) = 3.2468540391569745
+2025-06-22 19:03:51,808 - hiten.utils.log_config - INFO - c4(mu) = 3.5848056767243492
+2025-06-22 19:03:51,808 - hiten.utils.log_config - INFO - c5(mu) = 3.5247223968156405
+2025-06-22 19:03:51,808 - hiten.utils.log_config - INFO - c6(mu) = 3.5354044001655094
+2025-06-22 19:03:51,808 - hiten.utils.log_config - INFO - c7(mu) = 3.533505282877971
+2025-06-22 19:03:51,808 - hiten.utils.log_config - INFO - c8(mu) = 3.533842920524553
+2025-06-22 19:03:51,808 - hiten.utils.log_config - INFO - c9(mu) = 3.5337828930680404
+2025-06-22 19:03:51,808 - hiten.utils.log_config - INFO - c10(mu) = 3.5337935651467376
+2025-06-22 19:04:03,183 - hiten.utils.log_config - INFO - Normalizing at order: 3
+2025-06-22 19:04:07,416 - hiten.utils.log_config - INFO - Normalizing at order: 4
+2025-06-22 19:04:07,579 - hiten.utils.log_config - INFO - Normalizing at order: 5
+2025-06-22 19:04:07,675 - hiten.utils.log_config - INFO - Normalizing at order: 6
+2025-06-22 19:04:07,748 - hiten.utils.log_config - INFO - Normalizing at order: 7
+2025-06-22 19:04:07,806 - hiten.utils.log_config - INFO - Normalizing at order: 8
+2025-06-22 19:04:07,840 - hiten.utils.log_config - INFO - Normalizing at order: 9
+2025-06-22 19:04:07,862 - hiten.utils.log_config - INFO - Normalizing at order: 10
+2025-06-22 19:04:10,452 - hiten.utils.log_config - INFO - Center manifold computation complete for L1Point
+2025-06-22 19:04:10,453 - hiten.utils.log_config - INFO - Generating Poincaré map at energy h0=6.000000e-01 (method=rk)
+2025-06-22 19:04:11,445 - hiten.utils.log_config - INFO - Finding q2 turning point at energy h0=6.000000e-01
+2025-06-22 19:04:11,465 - hiten.utils.log_config - INFO - Found q2 turning point: 7.410039e-01
+2025-06-22 19:04:11,466 - hiten.utils.log_config - INFO - Finding p2 turning point at energy h0=6.000000e-01
+2025-06-22 19:04:11,468 - hiten.utils.log_config - INFO - Found p2 turning point: 7.276206e-01
+2025-06-22 19:04:11,468 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(-0.6669034734857271), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,471 - hiten.utils.log_config - INFO - Found p3 turning point: 3.024804e-01
+2025-06-22 19:04:11,471 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(-0.5967031078556506), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,473 - hiten.utils.log_config - INFO - Found p3 turning point: 4.151596e-01
+2025-06-22 19:04:11,474 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(-0.526502742225574), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,476 - hiten.utils.log_config - INFO - Found p3 turning point: 4.967411e-01
+2025-06-22 19:04:11,476 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(-0.4563023765954975), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,479 - hiten.utils.log_config - INFO - Found p3 turning point: 5.602630e-01
+2025-06-22 19:04:11,479 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(-0.38610201096542096), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,481 - hiten.utils.log_config - INFO - Found p3 turning point: 6.107691e-01
+2025-06-22 19:04:11,481 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(-0.3159016453353444), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,484 - hiten.utils.log_config - INFO - Found p3 turning point: 6.507647e-01
+2025-06-22 19:04:11,484 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(-0.2457012797052679), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,486 - hiten.utils.log_config - INFO - Found p3 turning point: 6.816524e-01
+2025-06-22 19:04:11,487 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(-0.17550091407519136), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,489 - hiten.utils.log_config - INFO - Found p3 turning point: 7.042658e-01
+2025-06-22 19:04:11,489 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(-0.10530054844511483), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,492 - hiten.utils.log_config - INFO - Found p3 turning point: 7.191063e-01
+2025-06-22 19:04:11,492 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(-0.03510018281503835), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,494 - hiten.utils.log_config - INFO - Found p3 turning point: 7.264610e-01
+2025-06-22 19:04:11,494 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(0.03510018281503824), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,497 - hiten.utils.log_config - INFO - Found p3 turning point: 7.264610e-01
+2025-06-22 19:04:11,497 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(0.10530054844511483), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,500 - hiten.utils.log_config - INFO - Found p3 turning point: 7.191063e-01
+2025-06-22 19:04:11,500 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(0.1755009140751913), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,502 - hiten.utils.log_config - INFO - Found p3 turning point: 7.042658e-01
+2025-06-22 19:04:11,502 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(0.24570127970526778), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,505 - hiten.utils.log_config - INFO - Found p3 turning point: 6.816524e-01
+2025-06-22 19:04:11,505 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(0.31590164533534437), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,508 - hiten.utils.log_config - INFO - Found p3 turning point: 6.507647e-01
+2025-06-22 19:04:11,508 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(0.38610201096542096), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,510 - hiten.utils.log_config - INFO - Found p3 turning point: 6.107691e-01
+2025-06-22 19:04:11,510 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(0.45630237659549744), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,513 - hiten.utils.log_config - INFO - Found p3 turning point: 5.602630e-01
+2025-06-22 19:04:11,513 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(0.5265027422255739), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,515 - hiten.utils.log_config - INFO - Found p3 turning point: 4.967411e-01
+2025-06-22 19:04:11,515 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(0.5967031078556504), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,517 - hiten.utils.log_config - INFO - Found p3 turning point: 4.151596e-01
+2025-06-22 19:04:11,518 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': np.float64(0.6669034734857271), 'p2': 0.0, 'p3': 0.0}, h0=6.000000e-01
+2025-06-22 19:04:11,520 - hiten.utils.log_config - INFO - Found p3 turning point: 3.024804e-01
+2025-06-22 19:04:11,520 - hiten.utils.log_config - INFO - Using dt=1.0e-02, calculated max_steps per crossing: 2000
+2025-06-22 19:04:48,837 - hiten.utils.log_config - INFO - Poincaré map computation complete: 500 points
+2025-06-22 19:04:52,050 - hiten.utils.log_config - INFO - Converting Poincaré point [-0.00103615  0.0232582 ] (section=q3) to initial conditions
+2025-06-22 19:04:52,051 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': -0.001036152291842887, 'p2': 0.023258201615620252}, h0=6.000000e-01
+2025-06-22 19:04:52,053 - hiten.utils.log_config - INFO - Found p3 turning point: 7.270433e-01
+2025-06-22 19:04:56,850 - hiten.utils.log_config - INFO - CM → synodic transformation complete
+2025-06-22 19:04:56,850 - hiten.utils.log_config - INFO - Initial conditions: [ 8.44140039e-01 -1.10190126e-04  3.15146659e-07 -7.61136427e-05
+ -1.46974393e-02  1.66544221e-01]
+2025-06-22 19:04:56,851 - hiten.utils.log_config - INFO - Using provided initial conditions for generic orbit around L1: [ 0.844140039311 -0.000110190126  0.000000315147 -0.000076113643
+ -0.014697439331  0.166544221476]
+2025-06-22 19:04:56,851 - hiten.utils.log_config - INFO - Initialized generic orbit around L1
+2025-06-22 19:04:56,930 - hiten.utils.log_config - INFO - L1Point position calculated with primary interval: x = 0.8368956930433207
+2025-06-22 19:05:02,502 - hiten.utils.log_config - INFO - Converting Poincaré point [0.61224259 0.12284961] (section=q3) to initial conditions
+2025-06-22 19:05:02,502 - hiten.utils.log_config - INFO - Solving for p3 with fixed values {'q2': 0.612242585922972, 'p2': 0.12284960572325573}, h0=6.000000e-01
+2025-06-22 19:05:02,505 - hiten.utils.log_config - INFO - Found p3 turning point: 3.473186e-01
+2025-06-22 19:05:05,619 - hiten.utils.log_config - INFO - CM → synodic transformation complete
+2025-06-22 19:05:05,619 - hiten.utils.log_config - INFO - Initial conditions: [ 8.52620198e-01  6.56418821e-02  1.39740645e-04  3.79648069e-02
+ -4.65396954e-02  8.01614906e-02]
+2025-06-22 19:05:05,620 - hiten.utils.log_config - INFO - Using provided initial conditions for generic orbit around L1: [ 0.852620198136  0.065641882079  0.000139740645  0.037964806855
+ -0.046539695351  0.080161490559]
+2025-06-22 19:05:05,620 - hiten.utils.log_config - INFO - Initialized generic orbit around L1
