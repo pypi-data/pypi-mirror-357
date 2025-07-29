@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+src/affect/__init__.py
+src/affect/exceptions.py
+src/affect/py.typed
+src/affect/typings.py
+src/affect/version.py
+src/affect.egg-info/PKG-INFO
+src/affect.egg-info/SOURCES.txt
+src/affect.egg-info/dependency_links.txt
+src/affect.egg-info/requires.txt
+src/affect.egg-info/top_level.txt
+src/affect/core/__init__.py
+src/affect/core/_core.py
+src/affect/core/_decorators.py
+src/affect/core/_helpers.py
