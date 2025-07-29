@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+redshift/__init__.py
+redshift/__main__.py
+redshift/config.py
+redshift/pdb.py
+redshift_cli.egg-info/PKG-INFO
+redshift_cli.egg-info/SOURCES.txt
+redshift_cli.egg-info/dependency_links.txt
+redshift_cli.egg-info/entry_points.txt
+redshift_cli.egg-info/requires.txt
+redshift_cli.egg-info/top_level.txt
