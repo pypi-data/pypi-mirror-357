@@ -1,0 +1,58 @@
+Metadata-Version: 2.4
+Name: cleanslay
+Version: 0.1.0
+Summary: Safe JSON serializer for complex Python objects (Pydantic, Pandas, NumPy, etc.)
+Home-page: https://github.com/grakn/cleanslay
+Author: Pragman
+Author-email: Phragman <a@staphi.com>
+License-Expression: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: numpy; extra == "test"
+Requires-Dist: pandas; extra == "test"
+Requires-Dist: pydantic; extra == "test"
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# 🧼 cleanslay
+
+**cleanslay** is a Python library that safely sanitizes complex objects into JSON-serializable structures.
+
+It handles:
+
+- Built-in types: `str`, `int`, `float`, `bool`, `None`
+- Collections: `dict`, `list`, `tuple`, `set`
+- Special types: `datetime`, `date`, `UUID`, `Decimal`
+- Libraries:
+  - ✅ Pydantic models
+  - ✅ Dataclasses
+  - ✅ NumPy arrays and scalars
+  - ✅ Pandas Series and DataFrames
+- Fallback for custom classes
+
+---
+
+## 🔧 Installation
+
+```
+pip install cleanslay
+```
+
+## For development
+
+```
+poetry install --extras "test"
+or
+pip3 install ".[test]"
+```
+
+## For testing
+
+```
+pytest tests --tb=short --disable-warnings
+```
