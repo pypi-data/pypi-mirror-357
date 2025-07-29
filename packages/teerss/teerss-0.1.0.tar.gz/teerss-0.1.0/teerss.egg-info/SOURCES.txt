@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+teerss/__init__.py
+teerss/main.py
+teerss.egg-info/PKG-INFO
+teerss.egg-info/SOURCES.txt
+teerss.egg-info/dependency_links.txt
+teerss.egg-info/entry_points.txt
+teerss.egg-info/requires.txt
+teerss.egg-info/top_level.txt

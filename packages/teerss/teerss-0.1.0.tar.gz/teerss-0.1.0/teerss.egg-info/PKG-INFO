@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: teerss
+Version: 0.1.0
+Summary: A terminal-based RSS reader built with Rich
+Author: Keith Henderson
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: feedparser
+Requires-Dist: requests
+Requires-Dist: readability-lxml
+Requires-Dist: beautifulsoup4
+Requires-Dist: rich
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
