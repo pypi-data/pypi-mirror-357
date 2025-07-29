@@ -1,0 +1,8 @@
+[console_scripts]
+metanode = metanode.cli.main:app
+metanode-cli = metanode.cli.main:app
+metanode-cloud = metanode.cloud.cli:main
+metanode-deploy = metanode.deployment.auto_deploy_agent:cli_main
+metanode-k8s = metanode.cli.main:k8s_app
+metanode-miner = metanode.mining.console:main
+metanode-wallet = metanode.wallet.cli:main
