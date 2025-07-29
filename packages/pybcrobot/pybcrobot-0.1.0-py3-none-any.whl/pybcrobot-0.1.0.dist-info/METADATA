@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: pybcrobot
+Version: 0.1.0
+Summary: A colorful AI chatbot for the terminal using OpenRouter API
+Author: Your Name
+Author-email: your@email.com
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: colorama
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+later buddy 
