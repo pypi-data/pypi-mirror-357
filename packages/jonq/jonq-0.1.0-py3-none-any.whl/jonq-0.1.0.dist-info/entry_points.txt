@@ -1,0 +1,2 @@
+[console_scripts]
+jonq = jonq.main:main
