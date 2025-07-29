@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools==75.6.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cmrseq"
+version = "0.27.1"
+description = "Define your MRI sequences in pure python!"
+readme = "README.rst"
+requires-python = ">=3.10"
+authors = [
+    {name = "Jonathan Weine", email = "weine@biomed.ee.ethz.ch"},
+    {name = "Charles McGrath", email = "mcgrath@biomed.ee.ethz.ch"}
+]
+license = { text = "GPL-3.0-or-later" }
+dependencies = [
+    "numpy",
+    "pint",
+    "matplotlib",
+    "tqdm",
+    "scipy>=1.12",
+    "sigpy"
+]
+keywords = ["MRI", "pulse sequence", "cardiac", "simulation", "medical imaging"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Medical Science Apps."
+]
+
+
+[project.urls]
+Documentation = "https://people.ee.ethz.ch/~mcgrathc/cmrseq/latest/index.html"
+Source = "https://gitlab.ethz.ch/ibt-cmr/mri_simulation/cmrseq"
+Institute = "https://cmr.ethz.ch/"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cmrseq", "cmrseq.*"]

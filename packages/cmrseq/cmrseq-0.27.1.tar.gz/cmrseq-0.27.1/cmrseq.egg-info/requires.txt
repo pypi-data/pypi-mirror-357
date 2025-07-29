@@ -1,0 +1,6 @@
+numpy
+pint
+matplotlib
+tqdm
+scipy>=1.12
+sigpy
