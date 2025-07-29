@@ -1,0 +1,15 @@
+
+.. grid:: 1 2 2 2
+    :gutter: 2
+
+    
+    .. grid-item-card::
+        :text-align: center
+        :link: examples/particle.html
+
+        .. image:: _static/examples/particle/burch+16_overview.png
+            :alt: Particle distribution
+        +++
+        Particle distribution
+
+        

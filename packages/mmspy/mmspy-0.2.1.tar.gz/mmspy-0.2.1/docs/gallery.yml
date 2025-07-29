@@ -1,0 +1,4 @@
+notebooks-examples:
+  - title: Particle distribution
+    path: examples/particle.html
+    thumbnail: _static/examples/particle/burch+16_overview.png
