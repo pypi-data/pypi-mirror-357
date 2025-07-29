@@ -1,0 +1,11 @@
+pyreadline3
+httpx
+openai
+litellm
+PyYAML
+json5
+duckduckgo_search
+beautifulsoup4
+requests
+mcp
+fastapi
