@@ -1,0 +1,10 @@
+README.md
+setup.py
+simple_fastapi_backend_server/__init__.py
+simple_fastapi_backend_server/main.py
+simple_fastapi_backend_server.egg-info/PKG-INFO
+simple_fastapi_backend_server.egg-info/SOURCES.txt
+simple_fastapi_backend_server.egg-info/dependency_links.txt
+simple_fastapi_backend_server.egg-info/entry_points.txt
+simple_fastapi_backend_server.egg-info/requires.txt
+simple_fastapi_backend_server.egg-info/top_level.txt
