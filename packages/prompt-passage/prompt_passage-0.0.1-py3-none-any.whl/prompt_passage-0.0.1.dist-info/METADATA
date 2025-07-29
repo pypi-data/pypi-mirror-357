@@ -1,0 +1,57 @@
+Metadata-Version: 2.4
+Name: prompt-passage
+Version: 0.0.1
+Summary: A local proxy for LLMs, providing a unified interface for multiple models and support for identity based authentication.
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: azure-identity==1.23.0
+Requires-Dist: fastapi==0.115.12
+Requires-Dist: httpx==0.28.1
+Requires-Dist: openai==1.79.0
+Requires-Dist: pydantic==2.11.4
+Requires-Dist: pyyaml==6.0.2
+Requires-Dist: uvicorn==0.34.2
+Dynamic: license-file
+
+# local-llm-proxy
+
+Proxy local LLM calls to Azure
+
+
+## Example config
+
+```yaml
+port: 8095
+providers:
+  azure-o4-mini-env:
+    endpoint: "https://{service}.cognitiveservices.azure.com/openai/deployments/o4-mini/chat/completions?api-version=2025-01-01-preview"
+    model: o4-mini
+    auth:
+      type: apikey
+      envKey: AZURE_OPENAI_API_KEY
+  azure-o4-mini-key:
+    endpoint: "https://{service}.cognitiveservices.azure.com/openai/deployments/o4-mini/chat/completions?api-version=2025-01-01-preview"
+    model: o4-mini
+    auth:
+      type: apikey
+      key: djjskskskkkk
+  azure-o4-mini-azcli:
+    endpoint: "https://{service}.cognitiveservices.azure.com/openai/deployments/o4-mini/chat/completions?api-version=2025-01-01-preview"
+    model: o4-mini
+    auth:
+      type: azcli
+```
+
+## Dev environment setup
+
+```bash
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Install packages
+make install
+
+# Lint and type check
+make check
+```
