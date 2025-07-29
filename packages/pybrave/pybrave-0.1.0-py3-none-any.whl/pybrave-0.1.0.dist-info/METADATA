@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: pybrave
+Version: 0.1.0
+Summary: Bioinformatics Reactive Analysis and Visualization Engine
+Author: WangYang
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi
+Requires-Dist: sqlalchemy
+Requires-Dist: pandas
+Requires-Dist: uvicorn[standard]
+Requires-Dist: typer
+Requires-Dist: pymysql
+Requires-Dist: click==8.1.8
+Dynamic: author
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pybrave/brave/refs/heads/master/brave/frontend/img/logo.png" alt="brave" style="width: 500px;">
+</p>
+<p align="center" style="font-size: 1.5em;">
+    <em>Bioinformatics Reactive Analysis and Visualization Engine</em>
+</p>
+
+
+```
+pip install setuptools wheel twine
+python setup.py sdist bdist_wheel
+twine upload dist/*
+```
