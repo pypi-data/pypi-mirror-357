@@ -1,0 +1,10 @@
+README.md
+setup.py
+contextdict/__init__.py
+contextdict/core.py
+contextdict.egg-info/PKG-INFO
+contextdict.egg-info/SOURCES.txt
+contextdict.egg-info/dependency_links.txt
+contextdict.egg-info/requires.txt
+contextdict.egg-info/top_level.txt
+tests/test_contextdict.py
