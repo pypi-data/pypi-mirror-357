@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: orchard-python-client
+Version: 1.0.0
+Summary: Python client for interacting with the Orchard orchestration API
+Author: Mor Dabastany
+Author-email: morpci@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3
+Requires-Dist: requests
+Requires-Dist: PyYAML
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
