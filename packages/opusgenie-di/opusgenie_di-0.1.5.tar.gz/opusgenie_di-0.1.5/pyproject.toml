@@ -1,0 +1,154 @@
+[project]
+name = "opusgenie-di"
+version = "0.1.5"
+description = "A powerful, multi-context dependency injection framework for Python with comprehensive async lifecycle management"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [
+    {name = "Abhishek Pathak"}
+]
+keywords = [
+    "dependency-injection",
+    "di",
+    "inversion-of-control",
+    "ioc",
+    "framework",
+    "python",
+    "multi-context",
+    "angular-style",
+    "type-safe",
+    "async",
+    "lifecycle-management",
+    "event-driven"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: System :: Systems Administration",
+    "Typing :: Typed",
+]
+
+dependencies = [
+    "dependency-injector>=4.46.0",
+    "pydantic>=2.11.5",
+    "structlog>=25.3.0",
+    "typing-extensions>=4.0.0",
+]
+
+[build-system]
+requires = ["setuptools", "wheel", "uv"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = {find = {where = ["."], include = ["opusgenie_di*"], exclude = ["**/tests/**"]}}
+
+[tool.setuptools.package-dir]
+"" = "."
+
+[tool.setuptools.package-data]
+opusgenie_di = ["py.typed"]
+
+[dependency-groups]
+dev = [
+    "build>=1.2.2.post1",
+    "coverage>=7.8.2",
+    "mypy>=1.15.0",
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.1.1",
+    "pyyaml>=6.0.2",
+    "ruff>=0.11.11",
+    "twine>=6.1.0",
+]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocs-awesome-pages-plugin>=2.10.1",
+    "mkdocs-git-revision-date-localized-plugin>=1.2.0",
+    "mkdocs-macros-plugin>=1.0.0",
+    "mkdocs-material[imaging]>=9.6.14",
+    "mkdocs-mermaid2-plugin>=1.1.0",
+    "mkdocs-minify-plugin>=0.8.0",
+    "mkdocstrings[python]>=0.29.1",
+    "pymdown-extensions>=10.15",
+]
+
+[tool.mypy]
+python_version = "3.12"
+mypy_path = "."
+namespace_packages = true
+explicit_package_bases = true
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+exclude = [
+    "examples/",
+    "tests/",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.ruff]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".venv",
+    "venv",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings  
+    "F",   # pyflakes
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "ICN", # flake8-import-conventions
+    "PIE", # flake8-pie
+    "PYI", # flake8-pyi
+    "RSE", # flake8-raise
+    "RET", # flake8-return
+    "SIM", # flake8-simplify
+]
+
+ignore = [
+    "E501",  # Line too long (handled by formatter)
+    "B008",  # Do not perform function calls in argument defaults
+    "B904",  # Within an except clause, raise exceptions with raise ... from err
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+    "F401", # Imported but unused
+    "F403", # Star imports
+    "F405", # Name may be undefined due to star imports
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["opusgenie_di"]
+force-single-line = false
+force-sort-within-sections = true
+
+[project.urls]
+Homepage = "https://github.com/krabhishek/opusgenie-di"
+Repository = "https://github.com/krabhishek/opusgenie-di"
+"Bug Tracker" = "https://github.com/krabhishek/opusgenie-di/issues"
+Documentation = "https://github.com/krabhishek/opusgenie-di#readme"
+Changelog = "https://github.com/krabhishek/opusgenie-di/releases"
