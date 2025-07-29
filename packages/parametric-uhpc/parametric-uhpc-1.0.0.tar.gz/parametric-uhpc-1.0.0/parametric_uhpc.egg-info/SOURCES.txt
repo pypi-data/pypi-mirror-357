@@ -1,0 +1,16 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+parametric_uhpc/__init__.py
+parametric_uhpc/deflection.py
+parametric_uhpc/draw.py
+parametric_uhpc/envelope.py
+parametric_uhpc/main_model.py
+parametric_uhpc/mk_equations.py
+parametric_uhpc/plot_beta.py
+parametric_uhpc.egg-info/PKG-INFO
+parametric_uhpc.egg-info/SOURCES.txt
+parametric_uhpc.egg-info/dependency_links.txt
+parametric_uhpc.egg-info/requires.txt
+parametric_uhpc.egg-info/top_level.txt
