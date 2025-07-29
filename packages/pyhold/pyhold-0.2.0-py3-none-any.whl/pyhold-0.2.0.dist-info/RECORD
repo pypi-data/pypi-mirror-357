@@ -1,0 +1,9 @@
+pyhold/__init__.py,sha256=uqWzLhGGyeloKRn1ELBPK4KLIJ90RfG9m4h41LZnvyo,157
+pyhold/pyhold.py,sha256=pAsKJbRJ_16uYQBdT1bHgmJbDZzsjmAO6mdYqGcMLmc,506
+pyhold/pyholdkeyvalue.py,sha256=aQ7wdcAXdxSDTYkbu8NpGOgaF_2rTMlpxIpc0XtD8MA,18019
+pyhold/pyholdlinkedlist.py,sha256=pmESWc0J6XVJNSKiAomjG4Jn7sJTVA6yYHQCsXPzkVI,27014
+pyhold-0.2.0.dist-info/licenses/LICENSE,sha256=yodBNYG0tl0uSmqLI_oOsYu1aPP78zMZ_8BxnUZbQOg,1074
+pyhold-0.2.0.dist-info/METADATA,sha256=pU_5aP7feTpu4UbPBwaHb18iF7Z3I3fFzYWJMHsF2xg,12682
+pyhold-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pyhold-0.2.0.dist-info/top_level.txt,sha256=dJXxA7eSBOmlEuGkFZG7VICHMc3GR2LXQR777xjhs2g,7
+pyhold-0.2.0.dist-info/RECORD,,
