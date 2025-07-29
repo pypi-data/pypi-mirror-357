@@ -1,0 +1,48 @@
+# remote-mcp-cli
+
+This repository provides **remote-mcp-cli**, a minimal command line interface for a
+remote MCP server.
+
+## Installation
+
+Use [uv](https://github.com/astral-sh/uv) to install the project in editable
+mode:
+
+```bash
+uv pip install -e .
+```
+
+## Usage
+
+After installation the `remote-mcp-cli` command is available. See its help for all
+options:
+
+```bash
+remote-mcp-cli --help
+```
+
+### Examples
+
+List available tools:
+
+```bash
+remote-mcp-cli https://mcp.example.com/mcp list
+```
+
+Call a tool (arguments are a JSON string):
+
+```bash
+remote-mcp-cli https://mcp.example.com/mcp call translate '{"text":"hola","target_lang":"en"}'
+```
+
+The command supports the `MCP_TOKEN` environment variable for bearer tokens.
+
+## Building and Publishing
+
+To build and publish the package with `uv`:
+
+```bash
+uv build
+uv pip install --system twine
+uv twine upload dist/*
+```
