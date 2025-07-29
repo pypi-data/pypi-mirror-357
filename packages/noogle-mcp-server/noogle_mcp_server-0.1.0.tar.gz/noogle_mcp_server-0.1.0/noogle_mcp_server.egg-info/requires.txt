@@ -1,0 +1,8 @@
+beautifulsoup4>=4.13.4
+fastmcp
+httpx
+
+[test]
+pytest>=8.4.1
+pytest-httpx>=0.35.0
+pytest-asyncio>=1.0.0
