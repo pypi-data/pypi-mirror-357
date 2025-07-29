@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+tests/test_core.py
+ultracalc/__init__.py
+ultracalc/core.py
+ultracalc.egg-info/PKG-INFO
+ultracalc.egg-info/SOURCES.txt
+ultracalc.egg-info/dependency_links.txt
+ultracalc.egg-info/top_level.txt
