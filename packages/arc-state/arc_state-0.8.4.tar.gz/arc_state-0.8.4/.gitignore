@@ -1,0 +1,9 @@
+.vscode/
+hostfile
+__pycache__/
+vci_job_*
+wandb
+lightning_logs/
+outputs/
+log/
+uv.lock
