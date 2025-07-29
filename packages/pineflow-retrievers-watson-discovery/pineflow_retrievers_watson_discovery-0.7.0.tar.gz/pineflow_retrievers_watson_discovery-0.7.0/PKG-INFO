@@ -1,0 +1,27 @@
+Metadata-Version: 2.3
+Name: pineflow-retrievers-watson-discovery
+Version: 0.7.0
+Summary: pineflow retrievers watson discovery extension
+License: MIT
+Author: Leonardo Furnielis
+Author-email: leonardofurnielis@outlook.com
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: ibm-watson (>=10.0.0,<11.0.0)
+Requires-Dist: pineflow-core (>=0.7.1,<0.8.0)
+Description-Content-Type: text/markdown
+
+# Pineflow retrievers extension - Watson Discovery
+
