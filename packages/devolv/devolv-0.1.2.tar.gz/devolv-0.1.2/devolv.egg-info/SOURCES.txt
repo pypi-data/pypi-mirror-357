@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+devolv/__init__.py
+devolv/cli.py
+devolv.egg-info/PKG-INFO
+devolv.egg-info/SOURCES.txt
+devolv.egg-info/dependency_links.txt
+devolv.egg-info/top_level.txt
+devolv/iam/__init__.py
+devolv/iam/validator/__init__.py
+devolv/iam/validator/cli.py
+devolv/iam/validator/core.py
+devolv/iam/validator/rules.py
+tests/test_validator.py
