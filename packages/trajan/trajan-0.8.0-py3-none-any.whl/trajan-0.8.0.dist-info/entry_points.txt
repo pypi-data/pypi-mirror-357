@@ -1,0 +1,4 @@
+[console_scripts]
+trajaninfo=trajan.scripts.trajaninfo:main
+trajanshow=trajan.scripts.trajanshow:main
+
