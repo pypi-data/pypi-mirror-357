@@ -1,0 +1,4 @@
+click
+pynput
+requests
+customtkinter
