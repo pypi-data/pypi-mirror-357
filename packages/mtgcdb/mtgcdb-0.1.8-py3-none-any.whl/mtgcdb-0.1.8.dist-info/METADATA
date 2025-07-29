@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: mtgcdb
+Version: 0.1.8
+Summary: MTG Card Database
+Author-email: j6e <jongares@hotmail.com>
+License-Expression: Apache-2.0
+License-File: LICENSE
+Requires-Python: ~=3.12
+Requires-Dist: httpx<0.28,>=0.27.0
+Requires-Dist: loguru<0.8,>=0.7.2
+Requires-Dist: sqlalchemy<3,>=2.0.30
+Description-Content-Type: text/markdown
+
+# MTGCDB
+
+MTG Card Database
+
+## Usage
+
+```python
+from mtgcdb import MTGDBC
+
+mtg = MTGDBC()
+
+card = mtg.get_card_by_name('Goblin Guide')
+print(card)
+
+isd = mtg.get_cards_by_set_code('ISD')
+print(isd)
+```
