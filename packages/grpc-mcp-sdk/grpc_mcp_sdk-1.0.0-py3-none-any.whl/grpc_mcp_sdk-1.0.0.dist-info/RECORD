@@ -1,0 +1,9 @@
+grpc_mcp_sdk/__init__.py,sha256=4HsN5dKMMfLTbmj3oCvprmdy7qpB6qcEAIoHz91pR9U,3987
+grpc_mcp_sdk/bridge.py,sha256=PUp7z-PieTMVHSr5m0D-uzdrxA1xyTfsCyfzQfLk4Rg,19592
+grpc_mcp_sdk/core.py,sha256=MZJOX1S6YkS1B81Wbxwq8d10qmGJMHXOd2fo2rnCipY,48281
+grpc_mcp_sdk-1.0.0.dist-info/licenses/LICENSE,sha256=AJBO09xYpKlbQCyCqveAOooqC7x587-rWNEpLMyQqts,1093
+grpc_mcp_sdk-1.0.0.dist-info/METADATA,sha256=TktX0dF3w33Kv3pHtfebMJsEt8-uEgTitXDT0BMKCZI,17070
+grpc_mcp_sdk-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+grpc_mcp_sdk-1.0.0.dist-info/entry_points.txt,sha256=nhTATZlyw-u0y3FO7yDOBHsGwTYINZwpHXjE6FFUNjo,47
+grpc_mcp_sdk-1.0.0.dist-info/top_level.txt,sha256=x7DhD6Sge5Pl8I4y1zIAs9WVi-srNFcPecvsnabuZrs,13
+grpc_mcp_sdk-1.0.0.dist-info/RECORD,,
