@@ -1,0 +1,39 @@
+# Include documentation files
+include README.md
+include LICENSE
+include CHANGELOG.md
+
+# Include requirements
+include requirements.txt
+
+# Include configuration files
+include pyproject.toml
+include setup.py
+
+# Include guide files
+include *.md
+
+# Include package data
+recursive-include documents_to_markdown *.py
+recursive-include documents_to_markdown *.md
+recursive-include documents_to_markdown *.txt
+
+# Exclude development and test files
+exclude document_converter.py
+exclude example_usage.py
+exclude debug_*.py
+exclude demo_*.py
+exclude test_*.py
+
+# Exclude directories
+recursive-exclude __pycache__ *
+recursive-exclude *.pyc *
+recursive-exclude .git *
+recursive-exclude .pytest_cache *
+recursive-exclude input *
+recursive-exclude output *
+recursive-exclude demo_files *
+
+# Include only necessary service files
+global-exclude *.pyc
+global-exclude __pycache__

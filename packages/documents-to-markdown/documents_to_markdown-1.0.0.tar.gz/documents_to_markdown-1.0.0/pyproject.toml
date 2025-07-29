@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "documents-to-markdown"
+version = "1.0.0"
+description = "A comprehensive Python library for converting various document types to Markdown format"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Felix", email = "yangzhenwu@gmail.com"}
+]
+maintainers = [
+    {name = "Felix", email = "yangzhenwu@gmail.com"}
+]
+keywords = ["document", "conversion", "markdown", "word", "pdf", "excel", "image", "text", "converter"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Markup",
+    "Topic :: Office/Business :: Office Suites",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "python-docx>=1.2.0",
+    "PyMuPDF>=1.24.14",
+    "openpyxl>=3.1.2",
+    "xlrd>=2.0.1",
+    "python-dotenv>=1.0.0",
+    "openai>=1.51.0",
+    "Pillow>=10.4.0",
+    "requests>=2.32.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/ChaosAIs/DocumentsToMarkdown"
+Repository = "https://github.com/ChaosAIs/DocumentsToMarkdown.git"
+Documentation = "https://github.com/ChaosAIs/DocumentsToMarkdown/blob/main/README.md"
+"Bug Reports" = "https://github.com/ChaosAIs/DocumentsToMarkdown/issues"
+
+[project.scripts]
+documents-to-markdown = "documents_to_markdown.cli:main"
+doc2md = "documents_to_markdown.cli:main"
+
+[tool.setuptools]
+packages = ["documents_to_markdown", "documents_to_markdown.services", "documents_to_markdown.services.ai_services"]
+
+[tool.setuptools.package-data]
+documents_to_markdown = ["*.md", "*.txt"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
