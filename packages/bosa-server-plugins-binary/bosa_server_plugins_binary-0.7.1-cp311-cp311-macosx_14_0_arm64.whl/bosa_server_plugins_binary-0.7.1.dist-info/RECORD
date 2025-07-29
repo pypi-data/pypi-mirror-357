@@ -1,0 +1,6 @@
+bosa_server_plugins.build/.gitignore,sha256=aEiIwOuxfzdCmLZe4oB1JsBmCUxwG8x-u-HBCV9JT8E,1
+bosa_server_plugins.cpython-311-darwin.so,sha256=pEx3FLHDSFYKOeu5eHmVv6NCfaMOrHpmoBbSMHpxM8w,8811528
+bosa_server_plugins.pyi,sha256=X2T2gK-XcmVeD9WJhvtgER0TrXtzjNUjtbeeSJSYk18,3331
+bosa_server_plugins_binary-0.7.1.dist-info/METADATA,sha256=uaR2amze-SCNBbKJeNT3tilMJhN8i_luWttMwqAlnYg,4191
+bosa_server_plugins_binary-0.7.1.dist-info/WHEEL,sha256=h9XAMipeFIBqDUT_aBB0JdEY0xFkdkjrW2Vy94TWs4I,106
+bosa_server_plugins_binary-0.7.1.dist-info/RECORD,,
