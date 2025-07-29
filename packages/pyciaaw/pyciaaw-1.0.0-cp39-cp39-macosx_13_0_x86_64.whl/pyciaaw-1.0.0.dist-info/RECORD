@@ -1,0 +1,9 @@
+pyciaaw/__init__.py,sha256=Jma15OONVKTtxc9il95gLw1WRGYFYeJfF7KQl4l5ce0,2507
+pyciaaw/_ciaaw.cpython-39-darwin.so,sha256=L2VZUfhq3EfXeV6aHFlCUhT3kBKFQxj1vb20Mzye0vk,51264
+pyciaaw/libciaaw.a,sha256=JvScXHuIkix66zBMugEi9YDlD1Whu59QugxmWHrC3Fc,536176
+pyciaaw/libciaaw.dylib,sha256=go8dgDg-L21UYcwYta0woCRpN2NcMtNJ-HGPo3rt0-w,4874928
+pyciaaw-1.0.0.dist-info/licenses/LICENSE,sha256=rPuuWRMCUNHTwM4-8LwcNyw9xUWFQTYN6-Tl0QcqCiI,1064
+pyciaaw-1.0.0.dist-info/METADATA,sha256=pL-GN_Wmo0MT74Ik2HXufhBr5meDJQkIC9QoehwaeXY,940
+pyciaaw-1.0.0.dist-info/WHEEL,sha256=84rcUFAJzBzNLLJWDQ_iXDdqn7B8fyI7qtJBI54Q1k4,108
+pyciaaw-1.0.0.dist-info/top_level.txt,sha256=IRCyNd8GkILV853CkTNUBvsrUoEl0uRg3sH6VMu_B84,8
+pyciaaw-1.0.0.dist-info/RECORD,,
