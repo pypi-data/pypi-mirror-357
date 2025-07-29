@@ -1,0 +1,312 @@
+Metadata-Version: 2.4
+Name: pythonaibrain
+Version: 1.1.4
+Summary: PythonAIBrain is a versatile, plug-and-play Python package designed to help you build offline intelligent AI assistants and applications effortlessly. With modules covering speech recognition, text-to-speech, image generation, natural language understanding, and more, PythonAIBrain lets you create powerful AI solutions without deep expertise or complex setup. Whether you’re a beginner or an experienced developer, get ready to bring your AI ideas to life quickly and efficiently.
+Author-email: Divyanshu Sinha <divyanshu.sinha136@gmail.com>
+Project-URL: Homepage, https://pypi.org/project/pythonaibrain
+Project-URL: Repository, https://github.com/World-Of-Programming-And-Technology/PythonAI
+Project-URL: Issues, https://github.com/World-Of-Programming-And-Technology/PythonAI/issues
+Keywords: AI Assistant,Machine Learning,Natural Language Processing,Text to Speech,Speech Recognition,Image Generation,Computer Vision,Chatbot,Voice Assistant,AI Framework,AI Modules,Easy AI,Plug and Play AI,Python Package,AI Library,AI Toolkit,Python Automation,Smart Assistant,Python Developer,Biggner Friendly,AI Starter Kit,Open Source AI,Offline Chatbot,Python AI Tool Kit,AI Tools,Advance Chatbot,Advance Chatbot tools kit
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: nltk
+Requires-Dist: pyjokes
+Requires-Dist: yfinance
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: torch
+Requires-Dist: flask
+Requires-Dist: flask-limiter
+Requires-Dist: opencv-python
+Requires-Dist: Pillow
+Requires-Dist: pyzbar
+Requires-Dist: ultralytics
+Requires-Dist: sympy
+Requires-Dist: PyMuPDF
+Requires-Dist: pyttsx3
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Requires-Dist: tokenizers
+Requires-Dist: customtkinter
+Requires-Dist: python-multipart
+Requires-Dist: easyocr
+Requires-Dist: python-pptx
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Dynamic: license-file
+
+# PythonAIBrain
+
+Make your first AI Assistant in Python. No complex setup, no advanced coding. Just install, configure, and run!
+
+---
+
+## Installation
+
+Install the PythonAIBrain package:
+
+```bash
+pip install pythonaibrain==1.1.0
+````
+
+---
+
+## Modules
+
+* Camera
+* TTS (Text To Speech)
+* PTT (PDF To Text)
+* ITT (Image To Text)
+* MethAI
+* Search
+* Memory
+* Context
+* Brain
+* Advance Brain
+
+---
+
+## Camera Module
+
+The `pyaitk` toolkit supports Camera to click photos and make videos. It can save photos/videos and send them to PyAI for processing.
+
+### Example: Start your camera
+
+```python
+import pyaitk
+from pyaitk import Camera
+import tkinter as tk
+
+root = tk.Tk()          # Create GUI
+Camera(root)            # Start camera and pass root as master
+root.mainloop()         # Run the GUI
+```
+
+Or simply:
+
+```python
+from pyaitk.Camera import Start
+Start()
+```
+
+Or via Brain module:
+
+```python
+from pyaitk import Brain
+
+brain = Brain()
+brain.load()
+brain.process_messages('Click Photo')
+```
+
+---
+
+## TTS (Text To Speech)
+
+Converts text to speech in male or female voice.
+
+### Example
+
+```python
+import pyaitk
+from pyaitk import TTS
+
+tts = TTS(text='Hello World')
+tts.say(voice='Male')    # Male voice
+tts.say(voice='Female')  # Female voice
+```
+
+By default, `tts.say()` uses the male voice.
+
+---
+
+## PTT (PDF To Text)
+
+Extracts text from a PDF or image.
+
+### Example
+
+```python
+import pyaitk
+from pyaitk import PTT
+
+ptt = PTT(path='example.pdf')  # Provide your file path
+print(ptt)                     # Extracted text output
+```
+
+---
+
+## Context Module
+
+Extracts answers from a given text context.
+
+### Example
+
+```python
+import pyaitk
+from pyaitk import Contexts
+
+context = '''
+Patanjali Ayurved is an Indian company. It was founded by Baba Ramdev and Acharya Balkrishna in 2006.
+'''
+
+question = 'Who founded Patanjali Ayurved?'
+contexts = Contexts()
+answer = contexts.ask(context=context, question=question)
+print(answer)
+```
+
+---
+
+## Brain Module
+
+A simple AI brain module that classifies input messages and extracts entities like name, location, and age.
+
+### Message types classified
+
+* Question
+* Answer
+* Command
+* Shutdown
+* Make Directory
+* Statement
+* Name
+* Know
+* Start
+
+### Notes:
+
+* `Shutdown` and `Start` commands require terminal support and **do not work on Android or iOS.**
+* `Make Directory` creates folders on your device.
+* `Statement` is any plain text that is not a command/question.
+* `Name` detects if a message contains a person's name.
+
+### How to create `intents.json`
+
+```json
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "What's up?", "Howdy"],
+      "responses": ["Hello! How can I help you today?", "Hey there!", "Hi! What can I do for you?"]
+    },
+    {
+      "tag": "bye",
+      "patterns": ["Bye", "See you soon", "Take care"],
+      "responses": ["Bye! Have a great day", "See you"]
+    }
+  ]
+}
+```
+
+Save this as a `.json` file and provide it to the Brain module.
+
+### Usage
+
+```python
+from pyaitk import Brain
+
+brain = Brain(intents_path='intents.json')  # or Brain() with default
+brain.train()
+brain.save()
+message = input('Message: ')
+message_type = brain.predict_message_type(message=message)
+
+if message_type in ['Question', 'Answer']:
+    print(f'Answer: {brain.process_messages(message=message)}')
+```
+Or,
+```python
+from pyaitk import Brain
+
+brain = Brain()
+brain.load()
+message = input('Message: ')
+message_type = brain.predict_message_type(message=message)
+
+if message_type in ['Question', 'Answer']:
+    print(f'Answer: {brain.process_messages(message=message)}')
+```
+
+
+---
+
+## Advance Brain Module
+
+An advanced version of the Brain module with smarter classification and better entity recognition.
+
+### Usage
+
+```python
+from pyaitk import AdvanceBrain
+
+advance_brain = AdvanceBrain(intents_path='intents.json')  # or AdvanceBrain()
+
+message = input('Message: ')
+message_type = advance_brain.predict_message_type(message=message)
+
+if message_type in ['Question', 'Answer']:
+    print(f'Answer: {advance_brain.process_messages(message=message)}')
+```
+
+### Same limitations apply as Brain module for commands.
+
+---
+
+## Python AI Modules Summary
+
+| Module Name  | Description                                 |
+| ------------ | ------------------------------------------- |
+| Brain        | Basic AI brain using `.json` knowledge base |
+| AdvanceBrain | Advanced AI brain with better understanding |
+| TTS          | Text to speech                              |
+| STT          | Speech to text                              |
+| TTI          | Text to image                               |
+| ITT          | Image to text extraction                    |
+| Camera       | Capture photos and videos                   |
+| Context      | Get answers from text contexts              |
+
+---
+
+## Built-in AI Assistant - PyBrain
+
+If you prefer not to code your own AI, use the built-in **PyBrain** GUI or web assistant.
+
+### GUI
+
+```python
+import PyAgent
+PyAgent.App()
+```
+
+### Web Server
+
+```python
+from PyAgent import PYAS
+PYAS.app.run(debug=False)
+```
+
+Or
+
+```python
+from PyAgent import Server
+server = Server()
+server.run()
+```
+
+---
+
+## Visit [PyPI](https://pypi.org/project/pythonaibrain) for installation and more details.
+
+---
+
+**Start building your AI assistant today with PythonAIBrain!**
