@@ -1,0 +1,11 @@
+osc_data-0.1.9.dist-info/METADATA,sha256=DI1ql-5aO4d4eVTVIKL8XjP98BMeW8bhNudPyBN4M9o,347
+osc_data-0.1.9.dist-info/WHEEL,sha256=l1vhwtWCYEW2jwRYHpKxbN3fl_lgdUpY7Hrp_A4sC3c,106
+osc_data/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+osc_data/_core.cpython-312-darwin.so,sha256=Wt-1vc2TiNA7q976FLl1hQUQL8bl2pWOlx43p3SKNt0,804064
+osc_data/assets/text/tn/tagger.fst,sha256=xTM_EFzulNnMrfLpSZfjh0NRY8smcJJkc6PxxOUB76Y,3479822
+osc_data/assets/text/tn/verbalizer.fst,sha256=gWGKgfTu6VJPrgdjFSoJ18cEYNLWcAQ7_JcVZoV1qaY,558366
+osc_data/assets/text/tn/verbalizer_remove_erhua.fst,sha256=VoZnjew7YiDRoDC6TgDHKXhrkcSGOz030Pnqad8JhcE,558366
+osc_data/audio.py,sha256=sMAVy7Sl5qYb7LkOyL9KLhRVFpPydfuzq47jvdsDBJw,557
+osc_data/text.py,sha256=WywvaFcEJIHHtrKY5DvL0IW7xkPh1VRTNQEo82Wlweg,4984
+osc_data/text_stream.py,sha256=aqxdgEl0mHRl6Ir50EhkzQXafOYa4dVEyUQz-1jkOqg,2076
+osc_data-0.1.9.dist-info/RECORD,,
