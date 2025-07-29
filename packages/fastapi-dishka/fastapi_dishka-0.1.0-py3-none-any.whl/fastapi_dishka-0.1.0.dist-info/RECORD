@@ -1,0 +1,10 @@
+fastapi_dishka/__init__.py,sha256=hro_EU8anVgbk16LMfSYIbuomGJufxpBsSC3eaGaO-k,309
+fastapi_dishka/app.py,sha256=C3EO6sIL6MwUGGGH944Hz0A2fNbdJpI7vt-bPvJNOwk,5796
+fastapi_dishka/middleware.py,sha256=0hW0xLMuuK2G7ceQB-KwjhfD9lqeatFi6Zg8Ue_LjsQ,3234
+fastapi_dishka/providers.py,sha256=nIeKOuEIBHG9Kv4XorhAGv82MVaM_GyVLeEhGUDJDh4,3247
+fastapi_dishka/router.py,sha256=7JMR9HRCbQ3ETMwvHFyXZi1ighSivkUrfO6CSNqmraU,906
+fastapi_dishka-0.1.0.dist-info/licenses/LICENSE,sha256=AT6ZQtNZSepg28ALpQGMmXGtTGzKXybM8iJd-dA8Aec,1063
+fastapi_dishka-0.1.0.dist-info/METADATA,sha256=7fbLMZyxz99juIZN4snVPCHF2UV8CHTN_LK1y6MsemY,1594
+fastapi_dishka-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fastapi_dishka-0.1.0.dist-info/top_level.txt,sha256=yJfiHVhr0fi-bEfnAJc9ylkQLQ9TxZvbo0psUJbNQZI,15
+fastapi_dishka-0.1.0.dist-info/RECORD,,
