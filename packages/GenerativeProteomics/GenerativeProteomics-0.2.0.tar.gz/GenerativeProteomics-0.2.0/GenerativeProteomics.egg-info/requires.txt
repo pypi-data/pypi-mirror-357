@@ -1,0 +1,8 @@
+torch
+torchinfo
+numpy
+tqdm
+pandas
+scikit-learn
+optuna
+psutil
