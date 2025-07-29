@@ -1,0 +1,34 @@
+[project]
+name = "osc-data"
+version = "0.1.8"
+description = "data represent, processing"
+readme = "README.md"
+authors = [
+    { name = "wangmengdi", email = "790990241@qq.com" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "kaldifst>=1.7.14",
+    "pydantic>=2.11.7",
+]
+
+[tool.maturin]
+module-name = "osc_data._core"
+python-packages = ["osc_data"]
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "maturin>=1.8.6",
+    "numpy>=2.0.2",
+    "pip>=25.1.1",
+    "torch>=2.7.1",
+]
+
+[[tool.uv.index]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
