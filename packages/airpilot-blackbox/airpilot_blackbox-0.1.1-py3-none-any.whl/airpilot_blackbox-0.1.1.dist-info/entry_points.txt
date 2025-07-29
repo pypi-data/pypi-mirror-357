@@ -1,0 +1,3 @@
+[console_scripts]
+airpilot-blackbox = airpilot_blackbox.cli:main
+blackbox = airpilot_blackbox.cli:main
