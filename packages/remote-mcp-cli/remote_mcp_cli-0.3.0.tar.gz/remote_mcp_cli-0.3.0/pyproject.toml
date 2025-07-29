@@ -1,0 +1,14 @@
+[project]
+name = "remote-mcp-cli"
+version = "0.3.0"
+description = "Minimal MCP client CLI"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "click",
+    "httpx",
+]
+
+[project.scripts]
+remote-mcp-cli = "remote_mcp_cli:main"
+
