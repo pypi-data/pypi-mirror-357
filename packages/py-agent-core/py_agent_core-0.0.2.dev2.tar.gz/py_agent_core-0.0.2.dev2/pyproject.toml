@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-agent-core"
+version = "0.0.2.dev2"  
+authors = [
+  { name="Federico Monfasani", email="fmonfasani@gmail.com" },
+]
+description = "Placeholder for the official Python SDK for the Intelligent Agents Platform (IAP). Coming soon!"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/fmonfasani/intelligent-agents-platform"
+"Bug Tracker" = "https://github.com/fmonfasani/intelligent-agents-platform/issues"
+Documentation = "https://github.com/fmonfasani/intelligent-agents-platform/wiki"
+Repository = "https://github.com/fmonfasani/intelligent-agents-platform"
