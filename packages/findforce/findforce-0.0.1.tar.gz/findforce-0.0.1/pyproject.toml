@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "findforce"
+version = "0.0.1"
+description = "FindForce Email Verification SDK"
+readme = {text = "Professional email verification and validation service", content-type = "text/markdown"}
+authors = [
+    {name = "FindForce", email = "sdk@findforce.io"}
+]
+license = {file = "LICENSE"}
+requires-python = ">=3.7"
+dependencies = [
+    "requests>=2.25.0"
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.urls]
+Homepage = "https://github.com/findforce/findforce-sdk-python"
+
+[tool.setuptools.packages.find]
+where = ["."]

@@ -1,0 +1,8 @@
+LICENSE
+pyproject.toml
+findforce/__init__.py
+findforce.egg-info/PKG-INFO
+findforce.egg-info/SOURCES.txt
+findforce.egg-info/dependency_links.txt
+findforce.egg-info/requires.txt
+findforce.egg-info/top_level.txt
