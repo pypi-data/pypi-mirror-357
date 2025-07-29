@@ -1,0 +1,15 @@
+include README.md
+include LICENSE
+include pyproject.toml
+include requirements.txt
+include requirements-dev.txt
+include environment.yml
+recursive-include medvision *.py
+recursive-include configs *.yml *.yaml
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *.so
+recursive-exclude * .DS_Store
+recursive-exclude data *
+recursive-exclude outputs *
+exclude .gitignore
