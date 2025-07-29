@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "jubeatools"
+version = "3.0.0"
+description = "A toolbox for jubeat file formats"
+authors = ["Stepland <10530295-Buggyroom@users.noreply.gitlab.com>"]
+readme = "README.md"
+repository = "https://gitlab.com/square-game-liberation-front/jubeatools"
+documentation = "https://jubeatools.readthedocs.io/en/latest/"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+click = "^8.0.3"
+simplejson = "^3.17.0"
+marshmallow = "^3.6.0"
+parsimonious = "^0.10.0"
+more-itertools = "^8.4.0"
+sortedcontainers = "^2.3.0"
+python-constraint = "^1.4.0"
+construct = "^2.10"
+construct-typing = "^0.5.3"
+marshmallow-dataclass = {extras = ["enum", "union"], version = "^8.5.14"}
+
+[tool.poetry.scripts]
+jubeatools = 'jubeatools.cli.cli:convert'
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.2"
+rope = "^0.17.0"
+black = "^22.1.0"
+hypothesis = "^6.106.1"
+isort = "^5.10.1"
+toml = "^0.10.2"
+flake8 = "^6.1.0"
+autoimport = "^1.2.2"
+types-simplejson = "^3.17.1"
+types-toml = "^0.10.1"
+mypy = "^1.16.1"
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
