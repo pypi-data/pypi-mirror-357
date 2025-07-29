@@ -1,0 +1,10 @@
+tree2proj/__init__.py,sha256=2MaMSKH30Yx_704WMHdxCLLzNH_lB0JJ2Ld_kT9mOoE,34
+tree2proj/builder.py,sha256=3BHbeF4tkV4KsKryuDEmXZ2cToey2Y4DkLUcB8g2Cao,1595
+tree2proj/cli.py,sha256=bGObAJOFhKcSAqCcb5mlKyDV8YmkYZHOToZc2fYzW_g,1728
+tree2proj/example.py,sha256=1JufKocVHOEBjrLVwBG_tjkWNIcuWxNyCxfGORyjLf0,691
+tree2proj-0.1.1.dist-info/LICENSE,sha256=VYv5f0vC8qXbzUTQ0Ep7kE49jakh4UcgQnprx8ZbmZo,1092
+tree2proj-0.1.1.dist-info/METADATA,sha256=B7BXUhm5g8mjfbCCa3abkmuqoa-lGMFL__NTHwWBpag,3118
+tree2proj-0.1.1.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+tree2proj-0.1.1.dist-info/entry_points.txt,sha256=81kQwRLFVUFjBjavBjqDlUV--F6reaQQ5NCxnPxLKjk,49
+tree2proj-0.1.1.dist-info/top_level.txt,sha256=mx1LCb_Hpb7OMDP3PzPFQn10i7n5XK1XwnpEMZPWTjw,10
+tree2proj-0.1.1.dist-info/RECORD,,
