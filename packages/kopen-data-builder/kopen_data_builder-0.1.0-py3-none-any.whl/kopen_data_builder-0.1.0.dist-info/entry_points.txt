@@ -1,0 +1,2 @@
+[console_scripts]
+kopen-data-builder = kopen_data_builder.cli.main:app
