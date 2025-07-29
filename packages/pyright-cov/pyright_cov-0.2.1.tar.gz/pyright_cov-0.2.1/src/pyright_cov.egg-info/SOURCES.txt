@@ -1,0 +1,11 @@
+LICENSE.md
+README.md
+pyproject.toml
+src/pyright_cov.py
+src/pyright_cov.egg-info/PKG-INFO
+src/pyright_cov.egg-info/SOURCES.txt
+src/pyright_cov.egg-info/dependency_links.txt
+src/pyright_cov.egg-info/entry_points.txt
+src/pyright_cov.egg-info/requires.txt
+src/pyright_cov.egg-info/top_level.txt
+tests/test_main.py
