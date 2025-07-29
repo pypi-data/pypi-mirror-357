@@ -1,0 +1,12 @@
+groundit/__init__.py,sha256=dEj3LPagdbrcmrxQstXtjCXo3_P2r-KO74QQFlABfas,4368
+groundit/config.py,sha256=OVM9ICHyPsp64XqJyWvKw7SxCgSA6emzE07IuU1Tddw,607
+groundit/confidence/confidence_extractor.py,sha256=FsBMc-2RZOhwHqNerGKkeYnxbqX-800CGWqI4m4PJO8,11287
+groundit/confidence/logprobs_aggregators.py,sha256=fvGQGHYva4v3rZXYt41IijpX8L5HGTtc88CPbLro1T0,1014
+groundit/confidence/models.py,sha256=U8ncWLKLD0ggHVR7jRNmnARIRn_7r_vKs5Ilc0V8r-k,2797
+groundit/reference/add_source_spans.py,sha256=ZReTKkO8StEvpDRz09SSdGnYOJlzuIAzLE0xJiiUCxs,2316
+groundit/reference/create_model_with_source.py,sha256=4tqnfs-IGbysvokPdctLi86UIszqWDnpPFEO1oRc3jg,10205
+groundit/reference/models.py,sha256=R2JVGcI9P4nAUnhs4GUNzjGyXUeLvGtwwkYzjMIX6pk,671
+groundit-0.1.1.dist-info/METADATA,sha256=okFRdvAKeriOVjVNyNZ6L7DaXY4ndEkI9obMMSFLYUs,5567
+groundit-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+groundit-0.1.1.dist-info/licenses/LICENSE,sha256=4TPz1vsBf34N31Gp7RbnjzP0IdSA7tFZQQixTAZT4Tk,1085
+groundit-0.1.1.dist-info/RECORD,,
