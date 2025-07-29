@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: teemboom-chat
+Version: 1.0.0
+Summary: A Python package for creating JWT tokens for teemboom chat applications
+Author-email: James Koduah <dev@teemboom.com>
+Maintainer-email: James Koduah <dev@teemboom.com>
+Project-URL: Homepage, https://github.com/teemboom/teemboom-chat-PyPI-package
+Project-URL: Repository, https://github.com/teemboom/teemboom-chat-PyPI-package
+Project-URL: Bug Tracker, https://github.com/teemboom/teemboom-chat-PyPI-package/issues
+Project-URL: Documentation, https://github.com/teemboom/teemboom-chat-PyPI-package#readme
+Keywords: chat,jwt,token,teemboom,authentication
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Security :: Cryptography
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyJWT>=2.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0.0; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Dynamic: license-file
