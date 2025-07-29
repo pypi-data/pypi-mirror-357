@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+cloc/__init__.py
+cloc/__main__.py
+cloc/languages.json
+plazma_cloc.egg-info/PKG-INFO
+plazma_cloc.egg-info/SOURCES.txt
+plazma_cloc.egg-info/dependency_links.txt
+plazma_cloc.egg-info/requires.txt
+plazma_cloc.egg-info/top_level.txt
