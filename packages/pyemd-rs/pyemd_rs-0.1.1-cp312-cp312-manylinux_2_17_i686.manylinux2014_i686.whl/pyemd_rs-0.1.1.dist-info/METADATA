@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: pyemd-rs
+Version: 0.1.1
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Dist: numpy>1.24
+License-File: LICENSE
+License: MIT
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# pyemd-rs
+
+This library attempts to reimplement the [PyEMD](https://github.com/laszukdawid/PyEMD) library in Rust.
+
+The original library is licensed under [Apache-2.0 Copyright 2017 Dawid Laszuk](https://github.com/laszukdawid/PyEMD/blob/master/LICENSE.md)
+
