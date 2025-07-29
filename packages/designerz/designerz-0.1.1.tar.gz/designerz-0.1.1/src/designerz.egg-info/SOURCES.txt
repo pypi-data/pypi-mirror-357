@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/designerz/__init__.py
+src/designerz/core.py
+src/designerz.egg-info/PKG-INFO
+src/designerz.egg-info/SOURCES.txt
+src/designerz.egg-info/dependency_links.txt
+src/designerz.egg-info/requires.txt
+src/designerz.egg-info/top_level.txt
+tests/test_main.py
