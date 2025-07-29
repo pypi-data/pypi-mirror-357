@@ -1,0 +1,5 @@
+setup.py
+cloudx_auth.egg-info/PKG-INFO
+cloudx_auth.egg-info/SOURCES.txt
+cloudx_auth.egg-info/dependency_links.txt
+cloudx_auth.egg-info/top_level.txt
