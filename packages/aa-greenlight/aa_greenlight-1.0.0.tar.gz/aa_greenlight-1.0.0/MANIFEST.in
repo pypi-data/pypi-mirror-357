@@ -1,0 +1,2 @@
+recursive-include greenlight/templates *
+recursive-include greenlight/static *
