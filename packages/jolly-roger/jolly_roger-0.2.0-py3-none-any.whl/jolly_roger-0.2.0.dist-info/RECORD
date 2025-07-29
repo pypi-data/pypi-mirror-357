@@ -1,0 +1,17 @@
+jolly_roger/__init__.py,sha256=7xiZLdeY-7sgrYGQ1gNdCjgCfqnoPXK7AeaHncY_DGU,204
+jolly_roger/_version.py,sha256=iB5DfB5V6YB5Wo4JmvS-txT42QtmGaWcWp3udRT7zCI,511
+jolly_roger/_version.pyi,sha256=j5kbzfm6lOn8BzASXWjGIA1yT0OlHTWqlbyZ8Si_o0E,118
+jolly_roger/baselines.py,sha256=C_vC3v_ciU2T_si31oS0hUmsMNTQA0USxrm4118vYvY,4615
+jolly_roger/delays.py,sha256=cvLMhChkkB6PkS11v6JU8Wn23Zqv5bQY1HTMzeIGTNw,3015
+jolly_roger/flagger.py,sha256=tlC-M_MpLpqOvkF544zw2EvOUpbSpasO2zlMlXMcxSs,3034
+jolly_roger/hour_angles.py,sha256=ld3jiEDQXlYLHrChUxYD_UBSxKH0qarstakBPLQ0M8s,6044
+jolly_roger/logging.py,sha256=04YVHnF_8tKDkXNtXQ-iMyJ2BLV-qowbPAqqMFDxYE4,1338
+jolly_roger/plots.py,sha256=LsueygCHpGvBXZe2y4q1fmJEMyjoMl65JzFMzbduawI,5280
+jolly_roger/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jolly_roger/tractor.py,sha256=ORkQb7T7jxMFVcDihH1McYYGq07OgsvbfT44D82ghL4,27723
+jolly_roger/uvws.py,sha256=ujZdIIxNY2k4HY9p65kUyH-VqN6thNpOrBb-wpL9mYM,12424
+jolly_roger-0.2.0.dist-info/METADATA,sha256=vFDa_-0nKwhoFVmm9x_qqQgZURZV8jPBprgRue9h7XY,4221
+jolly_roger-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+jolly_roger-0.2.0.dist-info/entry_points.txt,sha256=q8RYosASYsPShzsIo58NxOhIMuB4F-gQ2uG6zS2p224,98
+jolly_roger-0.2.0.dist-info/licenses/LICENSE,sha256=7G-TthaPSOehr-pdj4TJydXj3eIUmerMbCUSatMr8hc,1522
+jolly_roger-0.2.0.dist-info/RECORD,,
