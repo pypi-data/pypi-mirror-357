@@ -1,0 +1,4 @@
+build
+dist
+django_async_manager
+task_queue
