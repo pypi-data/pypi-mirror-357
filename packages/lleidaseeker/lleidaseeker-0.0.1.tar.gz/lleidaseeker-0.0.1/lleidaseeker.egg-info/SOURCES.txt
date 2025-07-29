@@ -1,0 +1,23 @@
+AUTHORS.rst
+LICENSE.rst
+MANIFEST.in
+README.rst
+setup.py
+docs/IO License Terms.pdf
+docs/Seeker_Reference_Manual.pdf
+docs/Seeker_User_s_Manual.pdf
+docs/authors.rst
+docs/index.rst
+docs/installation.rst
+docs/readme.rst
+docs/usage.rst
+lleidaseeker/__init__.py
+lleidaseeker/lleidaseeker.cpython-36-linux.so
+lleidaseeker/lleidaseeker.py
+lleidaseeker.egg-info/PKG-INFO
+lleidaseeker.egg-info/SOURCES.txt
+lleidaseeker.egg-info/dependency_links.txt
+lleidaseeker.egg-info/not-zip-safe
+lleidaseeker.egg-info/top_level.txt
+lleidaseeker/bin/coll-linux
+lleidaseeker/scripts/seekeragg.sh
