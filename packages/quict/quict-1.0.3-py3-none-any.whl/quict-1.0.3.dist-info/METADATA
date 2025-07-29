@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: quict
+Version: 1.0.3
+Summary: Quantum Compute Platform of Institute of Computing Technology
+Home-page: https://e.gitee.com/quictucas/repos/quictucas/quict
+Author: Library for Quantum Computation and Theoretical Computer Science, ICT, CAS
+Author-email: quact@ict.ac.cn
+License: Apache License 2.0
+Platform: Windows
+Platform: Linux
+Platform: macOS
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: matplotlib>=3.6.1
+Requires-Dist: networkx>=2.8.7
+Requires-Dist: numba>=0.56.3
+Requires-Dist: numpy>=1.23.4
+Requires-Dist: ply>=3.11
+Requires-Dist: psutil>=5.9.4
+Requires-Dist: pylatexenc>=2.10
+Requires-Dist: scipy>=1.9.2
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: IPython
+Requires-Dist: prettytable>=3.6.0
+Requires-Dist: pandas>=1.5.3
+Requires-Dist: sympy
+

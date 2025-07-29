@@ -1,0 +1,2 @@
+[console_scripts]
+quict = QuICT.tools.cli.quict:main
