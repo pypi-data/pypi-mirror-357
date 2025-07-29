@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: hiagent-observe
+Version: 0.1.0
+Summary: HiAgent Observe SDK
+Requires-Python: >=3.10
+Requires-Dist: hiagent-api<0.2.0,>=0.1.0
+Requires-Dist: opentelemetry-api>=1.33.1
+Requires-Dist: opentelemetry-exporter-otlp-proto-http>=1.33.1
+Requires-Dist: opentelemetry-sdk>=1.33.1
+Requires-Dist: pydantic>=2.11.5
+Requires-Dist: python-dotenv>=1.1.0
+Requires-Dist: requests==2.32.3
+Description-Content-Type: text/markdown
+
+# HiAgent Observe SDK
