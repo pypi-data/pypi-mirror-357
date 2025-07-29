@@ -1,0 +1,9 @@
+tomli-w
+tqdm
+langchain-chroma
+langchain-openai
+langchain-huggingface
+langchain-community
+langgraph
+sentence-transformers
+duckduckgo-search
