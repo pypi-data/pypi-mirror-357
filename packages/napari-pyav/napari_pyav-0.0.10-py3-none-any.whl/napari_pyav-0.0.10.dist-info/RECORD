@@ -1,0 +1,11 @@
+napari_pyav/__init__.py,sha256=cSXn1T03Roiwpjds_OVPM76WMHeOJ9HAgr6LVIMpGSw,83
+napari_pyav/_reader.py,sha256=QvQq5Qkc7YOEH0AI1QdQ-QHmy1Yi6_oIJZujAg4aWVw,8579
+napari_pyav/napari.yaml,sha256=xGPwTkt98MT0WSvNGNlnehPasxPiPnPPHRAalzMhWc8,545
+napari_pyav/_tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+napari_pyav/_tests/test_reader.py,sha256=2mqrgEUj5NkP6yFcD1n9z2hd3THlKY5XvUOyfwPALF4,591
+napari_pyav-0.0.10.dist-info/licenses/LICENSE,sha256=Aqhgy7JYbOrtb2ITovf_0ixEy9GKjXRPwhyht8I1Ovk,1079
+napari_pyav-0.0.10.dist-info/METADATA,sha256=o4aZmtylms6a8tQ48KXvmLCGEU1ocuGZ2eYfzfERciE,5736
+napari_pyav-0.0.10.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+napari_pyav-0.0.10.dist-info/entry_points.txt,sha256=nMO4HnHbKlt_IAIfo4v_Er_e4TgPloZI9mVXpOnvqts,56
+napari_pyav-0.0.10.dist-info/top_level.txt,sha256=r9SXy41LHa4UohLlaCHfl2Z1Z18dAGfjaHLn6gb920c,12
+napari_pyav-0.0.10.dist-info/RECORD,,
