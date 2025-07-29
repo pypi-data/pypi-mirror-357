@@ -1,0 +1,13 @@
+kat_transform/__init__.py,sha256=4EDfb25aXb5pJrs0RNRuGcxWpDY7oEuGjCfUucgsg_Y,1953
+kat_transform/exceptions.py,sha256=Anw5abLNED14_rZ_bmtcBeAZehObECjZmDkJLLKnxN4,493
+kat_transform/field.py,sha256=tucE6ZU-L24mVACCTy0UWvjEh8nM6OxnB4mvnV7vGIA,1971
+kat_transform/markers.py,sha256=SsEW5w6YI22RS03B7NDUCF91W0dGqnCNkfHCXgEFU1I,1023
+kat_transform/metadata.py,sha256=02y5aiW6L_eJZ7znEkLfdwUwyNQYB8CdrdHo6x4iEHw,388
+kat_transform/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+kat_transform/resolve_fields.py,sha256=H57-Pt-bKQ8dOKeymshxzGvMpmieoDNagtsYyBYyHuA,1689
+kat_transform/schema.py,sha256=RmTRi1CKRYyIEQ8DPbjVLiEqwY8phxOVvPZX856bf18,1099
+kat_transform/util.py,sha256=Lygk6Ol3u8Xe8-paFMqXatbR3Uh85buQOX1XvWgEGJY,516
+kat_transform-0.0.3.dist-info/METADATA,sha256=NavmSFSzaYDQ95gVIauVVY4FOF8Cwmu5GWHHKQMrArY,3803
+kat_transform-0.0.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+kat_transform-0.0.3.dist-info/licenses/LICENSE.md,sha256=zFRw_u1mGSOH8GrpOu0L1P765aX9fB5UpKz06mTxAos,34893
+kat_transform-0.0.3.dist-info/RECORD,,
