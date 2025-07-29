@@ -1,0 +1,8 @@
+setup.py
+xamppfixer/__init__.py
+xamppfixer/fixer.py
+xamppfixer.egg-info/PKG-INFO
+xamppfixer.egg-info/SOURCES.txt
+xamppfixer.egg-info/dependency_links.txt
+xamppfixer.egg-info/entry_points.txt
+xamppfixer.egg-info/top_level.txt
