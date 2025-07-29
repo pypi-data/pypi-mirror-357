@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      lang="en"
+      metal:use-macro="context/@@main_template/macros/master"
+      xml:lang="en"
+      i18n:domain="plone"
+><![CDATA[ <>& ]]>
+  <body>
+    <metal:main fill-slot="content-core">
+      <metal:content-core define-macro="content-core">
+        <tal:block repeat="widget python:view.widgets('input')" />
+        (<a disabled
+           href="#"
+        >whatever</a>)
+        a<b disabled="disabled"
+           href="#"
+           data-pat-plone-modal='{"actionOptions": {"disableAjaxFormSubmit":true}}'
+           tal:define="
+             foo python:1
+
+             bar python:2;
+           "
+           tal:condition='python: "I have double quotes"'
+        >whatever</b>
+        "<c href="#">whatever</c>"
+        <pre>
+          Foo
+            Bar
+        </pre>
+        <span tal:define="
+                foo python: 1 &gt; 2 and 1 &lt; 2 and &amp;;
+                bar python: 1 > 2 and 1 < 2 and &;
+              "></span>
+        <tal:span define="
+                    foo python: 1 &gt; 2 and 1 &lt; 2 and &amp;;
+                    bar python: 1 > 2 and 1 < 2 and &;
+                  " />
+      </metal:content-core>
+    </metal:main>
+    <![CDATA[
+      This
+        should
+          be
+
+            preserved
+              as
+                is
+  ]]>
+  </body>
+</html>

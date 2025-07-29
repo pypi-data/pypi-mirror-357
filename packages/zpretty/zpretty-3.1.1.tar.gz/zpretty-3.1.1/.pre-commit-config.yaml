@@ -1,0 +1,24 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 25.1.0
+    hooks:
+      - id: black
+  - repo: https://github.com/pycqa/isort
+    rev: 6.0.1
+    hooks:
+      - id: isort
+  - repo: https://github.com/PyCQA/flake8
+    rev: 7.2.0
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          # Require for Python <= 3.7
+          - importlib-metadata<5.0
+  - repo: https://github.com/mgedmin/check-manifest
+    rev: "0.50"
+    hooks:
+    -   id: check-manifest
+  - repo: https://github.com/regebro/pyroma
+    rev: "4.2"
+    hooks:
+    -   id: pyroma
