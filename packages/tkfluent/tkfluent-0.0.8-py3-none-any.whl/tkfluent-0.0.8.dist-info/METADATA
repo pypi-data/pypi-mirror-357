@@ -1,0 +1,29 @@
+Metadata-Version: 2.3
+Name: tkfluent
+Version: 0.0.8
+Summary: Fluent Design for Tkinter
+Author: XiangQinxi
+Author-email: xiangqinxi@outlook.com
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: easydict (>=1.13,<2.0)
+Requires-Dist: pillow (>=10.2.0,<11.0.0)
+Requires-Dist: svgwrite (>=1.4.3,<2.0.0)
+Requires-Dist: tkdeft (>=0.0.9,<0.0.10)
+Requires-Dist: tkextrafont (>=0.6.3,<0.7.0)
+Requires-Dist: tksvg (>=0.7.4,<0.8.0)
+Project-URL: Documentation, https://tkfluent.netlify.app
+Description-Content-Type: text/markdown
+
+# tkfluent
+
+`tkinter`现代化组件库。设计来于`Fluent` `WinUI3` 设计
+
+![](https://learn.microsoft.com/zh-cn/windows/apps/images/logo-winui.png)
