@@ -1,0 +1,3 @@
+[console_scripts]
+swarmpal=swarmpal.cli:cli
+
