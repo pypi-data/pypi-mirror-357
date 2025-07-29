@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tmgjl-python"
+version = "0.1.0.0"
+description = "A minimalistic game set up for game engine development for game jams."
+authors = [{ name = "T" }]
+license = { text = "MIT" }
+readme = "README.md"
+dependencies = [
+    "pygame>=2.6.1",
+    "requests>=2.26.0",
+    "hatch>=1.14.1",
+]
+requires-python = ">=3.12"
+
+
+[tool.hatch.build.targets.sdist]
+include = ["tmgjl/*.py"]
+exclude = [
+    "tests/*",
+    "docs/*",
+    "test_assets/*",
+    "tox.ini",
+    "Makefile",
+    "README.md",
+    ".pre-commit-config.yaml",
+    "uv.lock"
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = [
+    "-ra -q",
+    "--numprocesses=auto",
+    "--durations=20"
+]
+testpaths = ["tests/"]
+
+[tool.mypy]
+strict = true
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "tox>=4.25.0",
+]
+docs = [
+    "groundwork-sphinx-theme>=1.1.1",
+    "myst-parser>=4.0.1",
+    "sphinx>=8.2.3",
+]
+lint = [
+    "mypy>=1.15.0",
+    "ruff>=0.11.6",
+]
+test = [
+    "pytest>=8.3.5",
+    "pytest-xdist[psutil]>=3.6.1",
+    "tox>=4.25.0",
+    "pytest-sugar>=1.0.0",
+    "pytest-cov>=6.1.1"
+]
