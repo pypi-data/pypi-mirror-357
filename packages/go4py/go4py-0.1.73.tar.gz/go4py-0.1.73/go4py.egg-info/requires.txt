@@ -1,0 +1,5 @@
+click>=8.1.8
+msgpack>=1.1.0
+pydantic>=2.10.6
+pyyaml>=6.0.2
+rich>=13.9.4

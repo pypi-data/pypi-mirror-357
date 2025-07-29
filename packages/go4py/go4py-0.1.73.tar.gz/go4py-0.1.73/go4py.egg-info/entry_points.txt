@@ -1,0 +1,2 @@
+[console_scripts]
+go4py = go4py.cli:cli

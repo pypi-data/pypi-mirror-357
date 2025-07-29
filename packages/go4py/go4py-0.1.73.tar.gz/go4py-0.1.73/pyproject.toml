@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "go4py"
+version = "0.1.73"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "click>=8.1.8",
+    "msgpack>=1.1.0",
+    "pydantic>=2.10.6",
+    "pyyaml>=6.0.2",
+    "rich>=13.9.4",
+]
+
+[dependency-groups]
+dev = [
+    "ipython>=8.35.0",
+    "joblib>=1.4.2",
+    "numpy>=2.2.4",
+    "pytest>=8.3.5",
+    "requests>=2.32.3",
+    "twine>=6.1.0",
+
+]
+
+[project.scripts]
+go4py = "go4py.cli:cli"  # This creates the executable
+
+[tool.setuptools]
+packages = ["go4py"]  # List all your package directories
+
+[tool.setuptools.package-data]
+"go4py" = ["templates/**","go_cmd/**","**/*.py"]
