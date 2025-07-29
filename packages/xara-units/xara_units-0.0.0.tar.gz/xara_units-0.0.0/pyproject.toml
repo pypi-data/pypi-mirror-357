@@ -1,0 +1,57 @@
+[project]
+name = "xara_units"
+version = "0.0.0"
+authors = [
+  {name="Chrystal Chern", email="52893467+chrystalchern@users.noreply.github.com"}
+]
+
+description="A small helper package for dealing with units in xara/OpenSees."
+
+readme = "README.md"
+
+keywords = [
+    "engineering",
+    "xara",
+    "opensees",
+] 
+
+dependencies = [
+  "numpy",
+]
+
+classifiers = [
+    'Development Status :: 4 - Beta',
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: BSD License',
+    'Programming Language :: C',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3 :: Only',
+    'Programming Language :: Python :: Implementation :: CPython',
+    'Topic :: Software Development',
+    'Topic :: Scientific/Engineering',
+    'Operating System :: Microsoft :: Windows',
+    'Operating System :: POSIX',
+    'Operating System :: Unix',
+    'Operating System :: MacOS',
+]
+
+[project.urls]
+repository = "http://github.com/chrystalchern/xara_units"
+#Documentation = "https://chrystalchern.github.io/xara_units"
+
+
+[build-system]
+requires = [
+    "setuptools >= 52.0.2",
+]
+
+build-backend = "setuptools.build_meta"
+
