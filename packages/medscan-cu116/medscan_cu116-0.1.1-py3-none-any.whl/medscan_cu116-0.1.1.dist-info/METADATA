@@ -1,0 +1,267 @@
+Metadata-Version: 2.4
+Name: medscan-cu116
+Version: 0.1.1
+Summary: Medscan with CUDA 11.6 (PyTorch GPU support)
+Author-email: Cristo van den Berg <cristo99@live.nl>
+Project-URL: Homepage, https://github.com/CristovdBerg/medscan
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pandas==2.2.3
+Requires-Dist: pyyaml==6.0.2
+Requires-Dist: scikit-learn==1.6.1
+Requires-Dist: scipy==1.15.3
+Requires-Dist: numpy==2.1.2
+Requires-Dist: matplotlib==3.10.3
+Requires-Dist: torch==1.13.1+cu116
+Requires-Dist: torchvision==0.13.1+cu116
+Requires-Dist: torchaudio==0.12.1+cu116
+Requires-Dist: triton==3.2.0
+Requires-Dist: fsspec==2024.6.1
+Requires-Dist: pillow==11.0.0
+Requires-Dist: openpyxl==3.1.5
+Requires-Dist: joblib==1.5.1
+Requires-Dist: networkx==3.3
+Provides-Extra: dev
+Requires-Dist: pytest>=8.2; extra == "dev"
+Requires-Dist: ipykernel; extra == "dev"
+Requires-Dist: jupyter_client; extra == "dev"
+Requires-Dist: debugpy; extra == "dev"
+Requires-Dist: pre-commit; extra == "dev"
+
+# MedScan – End‑to‑End Medical Imaging Training Pipeline
+
+MedScan is a self‑contained Python package that lets you **pre‑process and augment data**, **train deep‑learning models**, **evaluate with plots/metrics**, and **save / reload checkpoints** – all from **one intuitive API** **or** a single **command‑line call**.
+
+---
+
+## Table of Contents
+
+1. [Key Features](#key-features)
+2. [Repository Layout](#repository-layout)
+3. [Installation](#installation)
+4. [Quick‑Start Notebook](#quick-start-notebook)
+5. [Command‑Line Usage](#command-line-usage)
+6. [Prediction CLI](#prediction-cli)
+7. [API Overview](#api-overview)
+8. [Training Pipeline Walk‑Through](#training-pipeline-walk-through)
+9. [Saving, Loading & Plot Outputs](#saving-loading--plot-outputs)
+10. [Troubleshooting](#troubleshooting)
+11. [License](#license)
+
+---
+
+## Key Features
+
+* **One‑line data split** with `Data.split()` (stratified, group‑aware, or plain).
+* **Config‑driven** augmentation, balancing, masking & context‐feature handling via `PreprocessConfig`.
+* **Flexible training**:
+
+  * **Multi‑head** model (shared backbone, one head per target) *or*
+  * **Single‑head‑per‑label** models (optionally across multiple backbones).
+* **Torch AMP** support (mixed precision) & automatic GPU/CPU selection.
+* **Automatic early stopping** per head or per model.
+* **Rich evaluation** with confusion matrices, loss & LR curves, AUC/Accuracy/F1.
+* **Full CLI runner (`train.py`)** – reproduce your notebook runs head‑less.
+* Saved **plots** are dropped into a `plots/` folder **automatically** when using the CLI.
+
+---
+
+## Repository Layout
+
+```
+medscan/                  # Package root
+├── __init__.py           # Exposes Data, PreprocessConfig, TrainConfig, Pipeline
+├── config.py             # @dataclass configs used throughout
+├── data.py               # Data.split utility (train/val/test)
+├── pipeline.py           # Core training/inference/evaluation pipeline
+└── transform.py          # Augmentation & class‑balancing logic
+examples/                 # Example notebooks + sample CSV
+  └── merged_dataframe.csv
+train.py                  # CLI interface wrapping the Pipeline
+README.md                 # (this file)
+```
+
+---
+
+## Installation
+
+> **Prerequisites**: Python ≥ 3.9
+
+| Target            | Command                     |
+| ----------------- | --------------------------- |
+| **CPU (default)** | `pip install medscan`       |
+| **cu116 build**   | `pip install medscan-cu116` |
+| **cu117 build**   | `pip install medscan-cu117` |
+| **cu118 build**   | `pip install medscan-cu118` |
+| **cu121 build**   | `pip install medscan-cu121` |
+| **cu124 build**   | `pip install medscan-cu124` |
+
+> Pick **exactly one** line that matches your CUDA toolkit (or none for CPU). No extra wheels needed — each tag bundles the correct Torch + torchvision wheels.
+
+| Environment     | Requirements file                     |
+| --------------- | ------------------------------------- |
+| CPU (default)   | `pip install -r requirements_cpu.txt` |
+| cu116           | `pip install -r requirements_cu116.txt` |
+| cu117           | `pip install -r requirements_cu117.txt` |
+| cu118           | `pip install -r requirements_cu118.txt` |
+| cu121           | `pip install -r requirements_cu121.txt` |
+| cu124           | `pip install -r requirements_cu124.txt` |
+> **Tip** – if you already have PyTorch installed, make sure the wheel versions match the list above.
+
+---
+
+## Quick‑Start Notebook
+
+Open `examples/medscan_quickstart.ipynb` and follow the annotated steps — the only manual preparation is to **create a single DataFrame that already contains `img_path` plus all target columns**. Everything afterwards (split, augment, train, evaluate) is automated by the pipeline.
+
+````python
+import pandas as pd
+from medscan import Pipeline, Data, PreprocessConfig, TrainConfig
+
+# 1️⃣  Prepare your own merged DataFrame -> df_merged (img_path + labels)
+# 2️⃣  Split, configure, train, evaluate — see the notebook for details
+# ... see the full notebook in /examples for detailed comments
+````
+
+The notebook in examples shows how to build a toy `df_merged`, configure preprocessing/training, train for **one epoch**, evaluate, and save the best model.
+
+---
+
+## Command‑Line Usage
+
+`train.py` wraps every step so you can train from the shell – no notebook needed.
+
+### Minimal run
+
+```bash
+python train.py \
+  --data_path "path/to/merged_dataframe.csv"
+```
+
+> This uses *all defaults*: CPU, 70 / 15 / 15 train‑val‑test split, no augmentation, single `resnet34` backbone, multi‑head mode, 10 epochs, and saves plots to `./plots/`.
+
+### Full run (every flag)
+
+```bash
+python train.py \
+  --data_path "path/to/merged_dataframe.csv" \
+  --filter_column "Neuro_Imaging=1" \
+  --filter_column "Hemisphere=0" \
+  # (repeat --filter_column to apply multiple conditions)
+  --targets "Neuro_Imaging,Motion_Artefact,Skull_Visibility,Projection,Contrast_fluid,DSA,Hemisphere,ICA_Top_visible,MCA_visible" \
+  --train_frac 0.7  \
+  --val_frac 0.15  \
+  --seed 123 \
+  --augment  \
+  --augment_factor 2  \
+  --balance_on \
+  --augmented_image_path augmented_images \
+  --elastic_alpha 34.0  \
+  --elastic_sigma 4.0 \
+  --contrast_min 0.4 \
+  --contrast_max 0.9 \
+  --input_size 224 \
+  --batch_size 32 \
+  --epochs 10 \
+  --early_stopping_patience 3 \
+  --learning_rate 0.001 \
+  --optimizer AdamW \
+  --dropout \
+  --dropout_rate 0.5 \
+  --mixed_precision \
+  --save_best_model \
+  --checkpoint_dir checkpoints \
+  --metric val_loss \
+  --metric_mode min \
+  --confidence_score \
+  --pretrained_models "resnet34,resnet50" \
+  --train_per_label \
+  --force_cpu \
+  --save_model_path best_model.pt \
+  --plots "confusion_matrix,loss_vs_epoch,lr_vs_epoch" \
+  --metrics "AUC,accuracy,F1"
+```
+
+All arguments are documented via `python train.py -h`.
+
+> **Plots** are saved to `./plots/plot_*.png` (auto‑created).
+>
+> **Augmented images** are saved under the folder you specify in `--augmented_image_path` (default: `augmented_images/`).
+
+---
+## Prediction CLI
+
+`predict.py` lets you run inference on a folder of images using a saved pipeline directory or checkpoint.
+
+```bash
+python medscan/predict.py \
+  --img_dir path/to/image_folder \
+  --model_path path/to/pipeline_dir \
+  --labels all \
+  --output_csv predictions.csv \
+  --force_cpu
+```
+
+Use `--labels` to restrict targets, `--confidence` to output probability scores, and omit `--force_cpu` to use a GPU if available.
+
+---
+## API Overview
+
+| Class / Function                | Role                                                          |
+| ------------------------------- | ------------------------------------------------------------- |
+| `Data.split`                    | Stratified (or group‑aware) train/val/test split in one call. |
+| `PreprocessConfig`              | Declarative augmentation & balance settings.                  |
+| `TrainConfig`                   | Training hyper‑parameters, device, backbone list, etc.        |
+| `Pipeline`                      | Orchestrates training, prediction, evaluation, save/load.     |
+| `transform.augment_and_balance` | Internal helper to expand/upsample data.                      |
+
+All objects live under `medscan` and are re‑exported via `__init__.py` for convenience:
+
+```python
+from medscan import Data, PreprocessConfig, TrainConfig, Pipeline
+```
+
+---
+
+## Training Pipeline Walk‑Through
+
+1. **Provide a merged DataFrame** — user‑supplied, must include `img_path` and all label columns.
+2. **Split** into train / val / test with `Data.split()` (ensures each class appears in every subset).
+3. **Preprocess** (`PreprocessConfig`)
+
+   * Optional augmentation: *elastic*, *contrast*, *contrast + elastic*.
+   * Optional class balancing (upsampling) – requires `augment=True`.
+   * Optional mask handling & context features.
+4. **Model training** (`Pipeline.fit`)
+
+   * **Multi‑head** *(default)*: one backbone + multiple classification heads.
+   * **Per‑label**: one backbone *per* target (single head each).
+   * Early stopping is tracked individually per head.
+5. **Prediction** (`Pipeline.predict`): adds `Label_<target>` columns.
+6. **Evaluation** (`Pipeline.evaluate`): calculates metrics & shows / saves plots.
+7. **Save / Load** (`Pipeline.save` / `Pipeline.load`): preserves all weights and head mapping.
+
+---
+
+## Saving, Loading & Plot Outputs
+
+* **Saving**: `model.save("best_model.pt")` stores either a single multi‑head state or a dict of per‑label states.
+* **Loading**: supply the same `PreprocessConfig` / `TrainConfig` (device can differ) and call `model.load()`.
+* **Plots**: when run via the CLI, every `plt.show()` call is monkey‑patched to dump PNGs under `plots/`. In notebooks they still display inline.
+
+---
+
+## Troubleshooting
+
+| Issue                       | Fix                                                                      |
+| --------------------------- | ------------------------------------------------------------------------ |
+| *CUDA library not found*    | Install a matching `requirements_cuXXX.txt` wheel or pass `--force_cpu`. |
+| *Class missing in test/val* | Lower `train_frac` / `val_frac` or disable `require_all_classes`.        |
+| *No plots on server*        | Use the CLI; plots are saved to disk instead of shown.                   |
+| *OOM on GPU*                | Reduce `--batch_size`, `--input_size`, or train on CPU.                  |
+
+---
+
+## License
+
+This project is released under the MIT License. See [LICENSE](LICENSE) for details.
