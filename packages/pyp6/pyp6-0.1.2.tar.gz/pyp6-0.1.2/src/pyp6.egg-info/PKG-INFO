@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: pyp6
+Version: 0.1.2
+Summary: A Python package for interacting with and automating workflows for Primavera P6 SQLite databases.
+Author-email: Sanjeev Bashyal <sanjeev.bashyal@gmail.com>
+Project-URL: Homepage, https://github.com/SanjeevBashyal/PyP6
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Database
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Dynamic: license-file
+
+# PyP6
+Python package for Swift Workflow for Primavera P6 (SQLite)
+
+pip install pyp6
