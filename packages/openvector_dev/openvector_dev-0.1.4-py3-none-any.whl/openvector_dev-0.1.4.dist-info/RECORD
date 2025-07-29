@@ -1,0 +1,16 @@
+lein_vector/__init__.py,sha256=wQVJu6E6SYyBD1B59WlpTBy0qZuo9aj3sVTnpGYtiIk,411
+lein_vector/api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lein_vector/api/facade.py,sha256=nwwbwKLVGG9O1VVOJLOm1gLaIGHrLOAW-Lw_lhj6sPk,5717
+lein_vector/bases/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lein_vector/bases/embeding_provider_abc.py,sha256=eWdyxto-5uhSU61pR28537UGZ6oeJ7Y5wol3abLg828,304
+lein_vector/bases/memory_manager_abc.py,sha256=qmj3P9zTWPFhGeT90_08VXjWI9NfSpJmIOoPXQCuTAE,1564
+lein_vector/memory_manager_qdrant.py,sha256=tFQK16ZLCaekLyUR50pkZSTgJQFrbSUgSETVSQph6yM,4792
+lein_vector/memory_manager_ram.py,sha256=I-zapqy0PTvga01o0KJgP4QUPw19zxltlxZgNddjBTM,6033
+lein_vector/qdrant_adapter.py,sha256=jPeFfoS70xfHLXd4oOgInj5pyCIMGCo3xt8cqjFUvgw,3912
+lein_vector/schemas/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lein_vector/schemas/chunk.py,sha256=yt2Lb9zL9IJypQTJACVDlHkkS9_3clDoPpvn_5NBTi8,1198
+lein_vector/sentence_transformer.py,sha256=F2o2-UhLLr5fI-HXJeRQ-drjrNgzhV0D9zN2svHIyOs,2473
+lein_vector/short_term.py,sha256=nVVZeXE_KR8NTmbBGZWedcA0N8Xo65cLP2cYSh0VeTE,1944
+openvector_dev-0.1.4.dist-info/METADATA,sha256=CFQGTIFnAzQbylvnN4UvoLLgw9anI2T0AYFOv-D2s6c,3129
+openvector_dev-0.1.4.dist-info/WHEEL,sha256=XbeZDeTWKc1w7CSIyre5aMDU_-PohRwTQceYnisIYYY,88
+openvector_dev-0.1.4.dist-info/RECORD,,
