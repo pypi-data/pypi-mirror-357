@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/pytest_fmu_filter/__init__.py
+src/pytest_fmu_filter/md.py
+src/pytest_fmu_filter/plugin.py
+src/pytest_fmu_filter.egg-info/PKG-INFO
+src/pytest_fmu_filter.egg-info/SOURCES.txt
+src/pytest_fmu_filter.egg-info/dependency_links.txt
+src/pytest_fmu_filter.egg-info/entry_points.txt
+src/pytest_fmu_filter.egg-info/requires.txt
+src/pytest_fmu_filter.egg-info/top_level.txt
+tests/test_fmu_filter.py
+tests/test_md.py
