@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: coord2loc-can
+Version: 0.0.1
+Summary: Canada province outlines for coord2loc
+Author-email: James Hale <james+coord2loc@hale.zip>
+Requires-Python: >=3.9
