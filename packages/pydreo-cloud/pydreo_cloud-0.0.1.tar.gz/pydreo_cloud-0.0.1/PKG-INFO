@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: pydreo-cloud
+Version: 0.0.1
+Summary: Library to login to Dreo cloud and get device info.
+Home-page: https://github.com/dreo-team/pydreo-cloud
+Download-URL: https://github.com/dreo-team/pydreo-cloud/archive/refs/tags/0.0.1.tar.gz
+Author: Brooke Wang
+Author-email: developer@dreo.com
+License: MIT
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: tzlocal
+Requires-Dist: click
+Requires-Dist: pycryptodome
+Dynamic: author
+Dynamic: author-email
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
