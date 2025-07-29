@@ -1,0 +1,11 @@
+requests
+typing_extensions
+
+[all]
+saapi[tests]
+
+[tests]
+pytest
+pytest-mock
+pytest-cov
+tox
