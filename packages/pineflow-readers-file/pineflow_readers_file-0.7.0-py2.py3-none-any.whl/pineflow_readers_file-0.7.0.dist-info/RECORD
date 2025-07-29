@@ -1,0 +1,8 @@
+pineflow/readers/file/__init__.py,sha256=2zQJ5dotcKgpd2bA76M_z_MB_WJe3JRenhVajHp5pLw,284
+pineflow/readers/file/docx.py,sha256=N0a0Ahc7jmODLU2yttPAv-dBpZ6A8x9EnJIrvZCq2Fg,1042
+pineflow/readers/file/html.py,sha256=SGxe1BHm7Yet1mLkiRatbuP-ddzs0RK-KGlVWNZuqxk,2492
+pineflow/readers/file/json.py,sha256=9y_4yOfDgj03wazBccgqT7ko5z8JqqwwThMqFVx_Q58,1778
+pineflow/readers/file/pdf.py,sha256=7Nnt3RtGEFBjXnOOpvn17F4-iRBgDyb1iQpdF5GU2KI,1248
+pineflow_readers_file-0.7.0.dist-info/METADATA,sha256=VdE2CW_y9HgppV__MH4hSCnfgXggsnKdu-tjxx54830,1174
+pineflow_readers_file-0.7.0.dist-info/WHEEL,sha256=5druYqcII7zHXzX7qmN0TH895Jg3yuTtfjMgJIVBrKE,92
+pineflow_readers_file-0.7.0.dist-info/RECORD,,
