@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm", "wheel", "numpy"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = 'ltfatpy'
+dynamic = ["version", "dependencies"]
+requires-python = '>=3.4'
+
+readme = {file = "README.rst", content-type = "text/x-rst"}
+description = 'The Large Time-Frequency Toolbox (LTFAT) in Python'
+
+authors = [
+    {name = "Florent Jaillet"},
+    {name = "Denis Arrivault"},
+    {name = "Valentin Emiya", email = 'valentin.emiya@lis-lab.fr'}]
+
+classifiers=['Development Status :: 5 - Production/Stable',
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: End Users/Desktop',
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    'Operating System :: MacOS :: MacOS X',
+    'Operating System :: POSIX :: Linux',
+    'Programming Language :: C',
+    'Programming Language :: Python :: 3.4',
+    'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Topic :: Scientific/Engineering :: Mathematics',
+    'Topic :: Scientific/Engineering'
+]
+
+[project.optional-dependencies]
+test = ['pytest', 'nose', 'coverage']
+doc = ["sphinx==5.0", "numpydoc", "sphinx_gallery", "matplotlib", "sphinx_rtd_theme"]
+
+
+[project.urls]
+"Sources" =  "https://gitlab.lis-lab.fr/dev/ltfatpy"
+Documentation  = "https://dev.pages.lis-lab.fr/ltfatpy"
+"Bug Tracker" = "https://gitlab.lis-lab.fr/dev/ltfatpy/-/issues"
+
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}

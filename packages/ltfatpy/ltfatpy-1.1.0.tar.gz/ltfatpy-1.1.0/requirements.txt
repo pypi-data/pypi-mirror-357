@@ -1,0 +1,4 @@
+scipy>=0.18
+importlib_resources
+numpy>=1.8
+matplotlib>=1.4
