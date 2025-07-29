@@ -1,0 +1,45 @@
+{
+    "schema_version": "1.0",
+    "name": "rubric-agent",
+    "version": "0.0.6",
+    "description": "학생 과제 루브릭 생성 및 피드백 MCP 서버",
+    "metadata": {
+      "envVars": [
+        {
+          "name": "OPENAI_API_KEY",
+          "description": "OpenAI API 키 (예: sk-…)"
+        },
+        {
+          "name": "GOOGLE_API_KEY",
+          "description": "Google API 키 (예: AI…)"
+        },
+        {
+          "name": "MODEL_NAME", 
+          "description": "LLM 모델 이름 (예: gpt-4o-mini)" 
+        },
+        { 
+          "name": "MODEL_TYPE",  
+          "description": "openai 또는 gemini" 
+        }
+      ]
+    },
+    "commands": [
+      {
+        "name": "generate_rubric_feedback",
+        "description": "토픽·목표·학년별 루브릭 생성 및 피드백 반환",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "topic":             { "type": "string" },
+            "objective":         { "type": "string" },
+            "grade_level":       { "type": "string" },
+            "name":              { "type": ["string", "null"] },
+            "student_submission":{ "type": ["string", "null"] }
+          },
+          "required": ["topic","objective","grade_level"]
+        }
+      }
+    ]
+  }
+  
+  
