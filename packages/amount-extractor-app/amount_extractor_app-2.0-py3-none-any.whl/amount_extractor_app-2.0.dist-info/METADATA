@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: amount-extractor-app
+Version: 2.0
+Summary: GUI tool to extract and calculate money values from text
+Home-page: UNKNOWN
+Author: CRYPT_ATU
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: colorama
+Requires-Dist: tkinter
+
+UNKNOWN
+

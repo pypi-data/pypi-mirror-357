@@ -1,0 +1,3 @@
+[gui_scripts]
+amount-extractor = amount_extractor.gui_launcher:launch_app
+
