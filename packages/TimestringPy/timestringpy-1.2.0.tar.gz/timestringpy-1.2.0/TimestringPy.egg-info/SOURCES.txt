@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+TimestringPy.egg-info/PKG-INFO
+TimestringPy.egg-info/SOURCES.txt
+TimestringPy.egg-info/dependency_links.txt
+TimestringPy.egg-info/top_level.txt
+timestring/__init__.py
+timestring/test_init.py
