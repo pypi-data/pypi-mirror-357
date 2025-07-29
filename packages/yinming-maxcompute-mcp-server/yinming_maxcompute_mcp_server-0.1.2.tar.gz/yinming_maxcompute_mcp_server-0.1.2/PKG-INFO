@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: yinming-maxcompute-mcp-server
+Version: 0.1.2
+Summary: A MaxCompute data warehouse assistant that helps users run SQL queries.
+Author-email: yinming <yinming@jc-ai.com>
+Requires-Python: >=3.13
+Requires-Dist: mcp[cli]>=1.9.4
+Requires-Dist: pyodps>=0.12.3
