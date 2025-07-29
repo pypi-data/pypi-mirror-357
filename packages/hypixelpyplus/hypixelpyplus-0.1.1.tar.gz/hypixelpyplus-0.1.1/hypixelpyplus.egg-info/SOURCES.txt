@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+hypixelpyplus/__init__.py
+hypixelpyplus/hypixelpyplus.py
+hypixelpyplus.egg-info/PKG-INFO
+hypixelpyplus.egg-info/SOURCES.txt
+hypixelpyplus.egg-info/dependency_links.txt
+hypixelpyplus.egg-info/requires.txt
+hypixelpyplus.egg-info/top_level.txt

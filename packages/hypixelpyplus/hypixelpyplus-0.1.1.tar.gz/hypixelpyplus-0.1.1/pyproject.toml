@@ -1,0 +1,11 @@
+[project]
+name = "hypixelpyplus"
+version = "0.1.1"
+description = "An unofficial Python wrapper for the Hypixel API"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.7"
+dependencies = ["requests"]
+
+[tool.setuptools]
+packages = ["hypixelpyplus"]
