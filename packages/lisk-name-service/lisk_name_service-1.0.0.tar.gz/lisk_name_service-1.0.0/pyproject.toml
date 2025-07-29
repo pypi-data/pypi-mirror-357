@@ -1,0 +1,21 @@
+[project]
+name = "lisk-name-service"
+version = "1.0.0"
+description = "Python SDK for resolving Lisk Name Service (.lisk) names"
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [
+  { name = "Wiseman Umanah", email = "wisemanumanah@gmail.com" },
+  { name = "Emmanuel Bassey", email = "basscee1604@gmail.com" }
+]
+license = "MIT"
+dependencies = [
+  "requests"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
