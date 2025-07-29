@@ -1,0 +1,2 @@
+[console_scripts]
+mcp_jsondiff_kel = mcp_jsondiff_kel:main
