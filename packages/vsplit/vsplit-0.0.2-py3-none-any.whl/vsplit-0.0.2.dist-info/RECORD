@@ -1,0 +1,10 @@
+vsplit/__init__.py,sha256=coTC3MAGmczM90VTjOdlCtiPofjSz31El5oF2O3Xod8,165
+vsplit/chunk.py,sha256=FJhE7OZTEJq21mqvp2IPngWjYG3L-iQs63xrc6cbJBs,9238
+vsplit/cli.py,sha256=BfIuliS82suBrI_jYp0RUb7PXNHRCbcxnZ_p56g8Uiw,8359
+vsplit/splitter.py,sha256=eBBvDCZQNwLK7HGomJOxZrpowfWal__W-pQdtIKoq6w,3545
+vsplit/vars.py,sha256=a8ClPOVvxWhLUcx5M2p8fTS7gs0nfaK7mbSsf8fPUM8,266
+vsplit-0.0.2.dist-info/METADATA,sha256=ixOm7-0u3jJSDmT9bZoh00yWlNp0OuARsJkihTjynkA,2601
+vsplit-0.0.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+vsplit-0.0.2.dist-info/entry_points.txt,sha256=WPNTtvoYtQQ5_G_pGz3pgUOxFzSfqLbGqv60dgM6Vqo,43
+vsplit-0.0.2.dist-info/licenses/LICENSE,sha256=ul5qxkUxGFZj5irXGSt89rGLgF5Ye_9aVW_5PTaeisE,1068
+vsplit-0.0.2.dist-info/RECORD,,
