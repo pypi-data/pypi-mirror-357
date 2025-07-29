@@ -1,0 +1,83 @@
+[project]
+name = "akv-tui"
+description = "Simple TUI to search Azure KeyVault"
+authors = [{name = "Jonathan Kößler", email = "mail@jonathan-koessler.de"}]
+readme = "README.md"
+dynamic = ["version"]
+requires-python = ">=3.11, <3.14"
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "azure-identity>=1.23.0",
+    "azure-keyvault>=4.2.0",
+    "azure-mgmt-keyvault>=11.0.0",
+    "azure-mgmt-resource>=24.0.0",
+    "pyperclip>=1.9.0",
+    "textual>=3.4.0",
+]
+
+[project.scripts]
+akv-tui = "akv_tui.app:main"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.1.0",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.2.1",
+    "pytest-mock>=3.14.1",
+    "ruff>=0.9.9",
+    "tox>=4.27.0",
+    "tox-uv>=1.26.0",
+]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["D100", "COM812"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D", "ANN", "S101"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=akv_tui --cov-report term-missing"
+
+[tool.tox]
+env_list = ["py311", "py312", "py313"]
+requires = ["tox-uv"]
+
+[tool.tox.testenv]
+uv = true
+extras = "dev"
+
+[tool.tox.env_run_base]
+commands = [["pytest"]]
+
+[build-system]
+requires = ["hatchling", "uv-dynamic-versioning"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
+
+[tool.uv-dynamic-versioning]
+vcs = "git"
+style = "semver"
+bump = true
+
+[tool.hatch.build.hooks.version]
+path = "src/akv_tui/_version.py"
+template = '''
+version = "{version}"
+'''
