@@ -1,0 +1,227 @@
+D 2025-06-22T21:05:54.627190-0500 | INFO | process_markdown_file | 79 | 
+
+====================================================
+
+ | {}
+D 2025-06-22T21:05:54.627425-0500 | INFO | process_markdown_file | 80 | Processing Markdown File: ../../md_processing/dr_egeria_inbox/dr_egeria_data_designer_1.md | {}
+D 2025-06-22T21:06:29.028631-0500 | INFO | process_markdown_file | 79 | 
+
+====================================================
+
+ | {}
+D 2025-06-22T21:06:29.028835-0500 | INFO | process_markdown_file | 80 | Processing Markdown File: ../../md_processing/dr_egeria_inbox/dr_egeria_data_designer_1.md | {}
+D 2025-06-22T21:06:29.029057-0500 | INFO | parse_upsert_command | 78 | 	Processing Update on a Data Structure  
+ | {}
+D 2025-06-22T21:06:29.029304-0500 | INFO | print_msg | 94 | INFO-Optional attribute with labels `{'Version Identifier', 'Version', 'Published Version'}` missing | {}
+D 2025-06-22T21:06:29.029338-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `Display Name` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Basic` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.081500-0500 | INFO | print_msg | 94 | DEBUG-INFO->Found Data Structure `TBDF-Incoming Weekly Measurement Data` with qualified name `DataStruct::TBDF-Incoming Weekly Measurement Data` | {}
+D 2025-06-22T21:06:29.081589-0500 | INFO | proc_el_id | 640 | Element TBDF-Incoming Weekly Measurement Data exists | {}
+D 2025-06-22T21:06:29.081624-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `Description` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Basic` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.081747-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `In Data Specification` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Basic` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.081892-0500 | DEBUG | proc_name_list | 801 | Attribute with labels `{element_type}` missing | {}
+D 2025-06-22T21:06:29.081922-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `Glossary Term` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Advanced` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.081943-0500 | TRACE | parse_upsert_command | 97 | Attribute `Glossary Term` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:06:29.081964-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `Qualified Name` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Basic` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.081989-0500 | INFO | proc_el_id | 615 | Optional attribute with label`Data Structure` missing | {}
+D 2025-06-22T21:06:29.082007-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `GUID` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Basic` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.082160-0500 | INFO | proc_simple_attribute | 445 | Optional attribute with labels: `{'Guid', 'GUID', 'guid'}` missing | {}
+D 2025-06-22T21:06:29.082183-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `Effective Time` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Advanced` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.082201-0500 | TRACE | parse_upsert_command | 97 | Attribute `Effective Time` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:06:29.082219-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `Effective From` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Advanced` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.082237-0500 | TRACE | parse_upsert_command | 97 | Attribute `Effective From` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:06:29.082255-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `Effective To` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Advanced` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.082283-0500 | TRACE | parse_upsert_command | 97 | Attribute `Effective To` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:06:29.082301-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `Merge Update` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Advanced` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.082320-0500 | TRACE | parse_upsert_command | 97 | Attribute `Merge Update` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:06:29.082338-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `Additional Properties` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Invisible` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.082353-0500 | TRACE | parse_upsert_command | 97 | Attribute `Additional Properties` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:06:29.082368-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `Extended Properties` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Invisible` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.082382-0500 | TRACE | parse_upsert_command | 97 | Attribute `Extended Properties` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:06:29.082395-0500 | TRACE | parse_upsert_command | 92 | ___
+Processing `Journal Entry` in `Update` on a `Data Structure` 
+	with usage level: `Basic` and  attribute level `Invisible` and for_update `True`
+ | {}
+D 2025-06-22T21:06:29.082409-0500 | TRACE | parse_upsert_command | 97 | Attribute `Journal Entry` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:06:29.084882-0500 | DEBUG | process_data_structure_upsert_command | 706 | {
+    "valid": true,
+    "exists": true,
+    "display": "\n\t* Display Name: `TBDF-Incoming Weekly Measurement Data`\n\t\n\t* Description: `This describes the weekly measurement data for each patient for the Teddy Bear drop foot clinical trial.`\n\t\n\t* Qualified Name: `DataStruct::TBDF-Incoming Weekly Measurement Data`\n\t\n\t* GUID: `fd9380f4-1067-4f7b-bf3f-cb2f3a0e8341`\n\t",
+    "display_name": "Data Structure",
+    "qn_prefix": "DataStruct",
+    "is_own_anchor": true,
+    "reason": "",
+    "version": null,
+    "guid": "fd9380f4-1067-4f7b-bf3f-cb2f3a0e8341",
+    "qualified_name": "DataStruct::TBDF-Incoming Weekly Measurement Data",
+    "attributes": {
+        "Display Name": {
+            "status": "INFO",
+            "reason": "Element TBDF-Incoming Weekly Measurement Data exists",
+            "value": "TBDF-Incoming Weekly Measurement Data",
+            "valid": true,
+            "exists": true,
+            "qualified_name": "DataStruct::TBDF-Incoming Weekly Measurement Data",
+            "guid": "fd9380f4-1067-4f7b-bf3f-cb2f3a0e8341"
+        },
+        "Description": {
+            "status": "INFO",
+            "OK": null,
+            "value": "This describes the weekly measurement data for each patient for the Teddy Bear drop foot clinical trial.",
+            "valid": true,
+            "exists": true
+        },
+        "In Data Specification": {
+            "status": "INFO",
+            "reason": "Attribute with labels `{element_type}` missing",
+            "value": null,
+            "valid": false,
+            "exists": false
+        },
+        "Qualified Name": {
+            "status": "INFO",
+            "reason": "Optional attribute with label`Data Structure` missing",
+            "value": null,
+            "valid": false,
+            "exists": false
+        },
+        "GUID": {
+            "status": "INFO",
+            "reason": "Optional attribute with labels: `{'Guid', 'GUID', 'guid'}` missing",
+            "value": null,
+            "valid": true,
+            "exists": false
+        }
+    }
+} | {}
+D 2025-06-22T21:06:29.120455-0500 | INFO | process_data_structure_upsert_command | 796 | Updated element `TBDF-Incoming Weekly Measurement Data` with GUID fd9380f4-1067-4f7b-bf3f-cb2f3a0e8341 | {}
+D 2025-06-22T21:06:29.218865-0500 | DEBUG | update_data_collection_memberships | 130 | as_is: set() | {}
+D 2025-06-22T21:06:29.218956-0500 | DEBUG | update_data_collection_memberships | 131 | to_be_set: set() | {}
+D 2025-06-22T21:06:29.218989-0500 | DEBUG | update_data_collection_memberships | 135 | to_remove: set() | {}
+D 2025-06-22T21:06:29.219017-0500 | DEBUG | update_data_collection_memberships | 141 | to_add: set() | {}
+D 2025-06-22T21:06:29.219049-0500 | SUCCESS | process_data_structure_upsert_command | 807 | Updated  Data Structure `TBDF-Incoming Weekly Measurement Data` with GUID fd9380f4-1067-4f7b-bf3f-cb2f3a0e8341
+
+___ | {}
+D 2025-06-22T21:07:01.300523-0500 | INFO | process_markdown_file | 79 | 
+
+====================================================
+
+ | {}
+D 2025-06-22T21:07:01.300839-0500 | INFO | process_markdown_file | 80 | Processing Markdown File: ../../md_processing/dr_egeria_inbox/dr_egeria_data_designer_1.md | {}
+D 2025-06-22T21:13:00.847213-0500 | INFO | process_markdown_file | 79 | 
+
+====================================================
+
+ | {}
+D 2025-06-22T21:13:00.847595-0500 | INFO | process_markdown_file | 80 | Processing Markdown File: ../../md_processing/dr_egeria_inbox/dr_egeria_data_designer_1.md | {}
+D 2025-06-22T21:13:00.847888-0500 | INFO | parse_view_command | 276 | 	Processing View on  Data Structures  
+ | {}
+D 2025-06-22T21:13:00.847923-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Search String` in `View` on a `Data Structures` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:13:00.848092-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Output Format` in `View` on a `Data Structures` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:13:00.848184-0500 | WARNING | proc_valid_value | 513 | Invalid value for attribute `{'Output Format', 'Format'}` | {}
+D 2025-06-22T21:13:00.848209-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Detailed` in `View` on a `Data Structures` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:13:00.848228-0500 | TRACE | parse_view_command | 290 | Attribute `Detailed` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:13:00.848246-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Effective Time` in `View` on a `Data Structures` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:13:00.848261-0500 | TRACE | parse_view_command | 290 | Attribute `Effective Time` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:13:00.913154-0500 | INFO | process_data_structure_list_command | 1520 | Wrote `Data Structures` for search string: `*` | {}
+D 2025-06-22T21:13:00.913258-0500 | INFO | parse_view_command | 276 | 	Processing View on  Data Fields  
+ | {}
+D 2025-06-22T21:13:00.913296-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Search String` in `View` on a `Data Fields` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:13:00.913339-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Output Format` in `View` on a `Data Fields` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:13:00.913388-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Detailed` in `View` on a `Data Fields` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:13:00.913416-0500 | TRACE | parse_view_command | 290 | Attribute `Detailed` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:13:00.913444-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Effective Time` in `View` on a `Data Fields` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:13:00.913469-0500 | TRACE | parse_view_command | 290 | Attribute `Effective Time` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:13:01.067183-0500 | INFO | process_data_field_list_command | 1580 | Wrote `Data Fields` for search string: `*` | {}
+D 2025-06-22T21:19:17.837646-0500 | INFO | process_markdown_file | 79 | 
+
+====================================================
+
+ | {}
+D 2025-06-22T21:19:17.837857-0500 | INFO | process_markdown_file | 80 | Processing Markdown File: ../../md_processing/dr_egeria_inbox/dr_egeria_data_designer_1.md | {}
+D 2025-06-22T21:19:17.838093-0500 | INFO | parse_view_command | 276 | 	Processing View on  Data Structures  
+ | {}
+D 2025-06-22T21:19:17.838130-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Search String` in `View` on a `Data Structures` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:19:17.838317-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Output Format` in `View` on a `Data Structures` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:19:17.838464-0500 | WARNING | proc_valid_value | 513 | Invalid value for attribute `{'Format', 'Output Format'}` | {}
+D 2025-06-22T21:19:17.838490-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Detailed` in `View` on a `Data Structures` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:19:17.838509-0500 | TRACE | parse_view_command | 290 | Attribute `Detailed` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:19:17.838527-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Effective Time` in `View` on a `Data Structures` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:19:17.838543-0500 | TRACE | parse_view_command | 290 | Attribute `Effective Time` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:19:17.907991-0500 | INFO | process_data_structure_list_command | 1520 | Wrote `Data Structures` for search string: `*` | {}
+D 2025-06-22T21:19:17.908180-0500 | INFO | parse_view_command | 276 | 	Processing View on  Data Fields  
+ | {}
+D 2025-06-22T21:19:17.908234-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Search String` in `View` on a `Data Fields` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:19:17.908310-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Output Format` in `View` on a `Data Fields` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:19:17.908377-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Detailed` in `View` on a `Data Fields` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:19:17.908414-0500 | TRACE | parse_view_command | 290 | Attribute `Detailed` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:19:17.908452-0500 | TRACE | parse_view_command | 287 | ___
+Processing `Effective Time` in `View` on a `Data Fields` 
+	with usage level: `Basic`  | {}
+D 2025-06-22T21:19:17.908486-0500 | TRACE | parse_view_command | 290 | Attribute `Effective Time` is not supported for `Basic` usage level. Skipping. | {'highlight': True}
+D 2025-06-22T21:19:18.061319-0500 | INFO | process_data_field_list_command | 1580 | Wrote `Data Fields` for search string: `*` | {}
