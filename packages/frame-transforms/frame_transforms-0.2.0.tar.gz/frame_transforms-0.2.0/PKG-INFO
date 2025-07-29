@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: frame-transforms
+Version: 0.2.0
+Summary: Automatically compute and apply coordinate frame transformations
+Project-URL: Homepage, https://github.com/MinhxNguyen7/FrameTransforms/
+Keywords: coordinate,frame,geometry,pose,robotics,transformation
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: numpy>=2.2
+Requires-Dist: scipy>=1.15
+Provides-Extra: build
+Requires-Dist: build>=1.2.2; extra == 'build'
+Requires-Dist: hatchling; extra == 'build'
+Requires-Dist: twine>=6.1.0; extra == 'build'
+Provides-Extra: dev
+Requires-Dist: flake8>=7.3; extra == 'dev'
+Requires-Dist: isort>=5.12; extra == 'dev'
+Requires-Dist: pytest>=7.4; extra == 'dev'
+Requires-Dist: scipy-stubs>=1.15; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: pytest>=8.4; extra == 'test'
+Description-Content-Type: text/markdown
+
+# Description
+FrameTransforms is a lightweight, native Python pacakge to simplify frame transformations. It supports:
+
+1. Registration and update of relative coordinate frames.
+2. Automatic computation of transitive transformations.
+3. Multithreaded access.
+
+## Application
+Consider a simple robot consisting of a mobile base and a camera mounted on a gimbal. 
+
+The camera detects an obstacle in its coordinate frame. Where is it in world frame?
+
+```python
+registry.update(Frame.WORLD, Frame.BASE, base_pose)
+registry.update(Frame.BASE, Frame.CAMERA, camera_pose)
+
+# Locations are in homogenous coordinates
+obstacle_in_world = registry.get_transform(Frame.CAMERA, Frame.WORLD) @ obstacle_in_camera
+```
+
+# [Examples](https://github.com/MinhxNguyen7/FrameTransforms/blob/main/example.py)
