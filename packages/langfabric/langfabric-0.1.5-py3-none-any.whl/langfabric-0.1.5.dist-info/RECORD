@@ -1,0 +1,10 @@
+langfabric/__init__.py,sha256=Tb5djjIYX-2cqXBg-ZACQ9wjdkhkHTcsPgO8I6JsBCA,762
+langfabric/fabric.py,sha256=8nD0yyPn_BxrG19mXJ9QdaUMlODO6SLd8RAUpx2dkMo,6725
+langfabric/loader.py,sha256=z3IxND6QgLbk4aZmPY_RAyRxQjZ3NFOdU0q9iuFqiMw,2284
+langfabric/manager.py,sha256=GJnP3SXR9Y6jTtEbjCiPHuGpIZx7BY0mzIwV3StuYto,2114
+langfabric/rebuild_models.py,sha256=87_j33Y3_P7hvyrWgThzrXGGVjCSeoNFUPU6nrwnKQ8,670
+langfabric/schema.py,sha256=JRQTb85upkfcrtCf5QHSgZq8uzUZJOjiOAp1MtMfP28,1404
+langfabric-0.1.5.dist-info/LICENSE,sha256=Ln9PYxMTq_vv6a3Lcp48CAX96gelZUlnENsEbqCus0k,1062
+langfabric-0.1.5.dist-info/METADATA,sha256=WbwynS1fS5lDpoZh4n1n7pqms32Tu9VxhUEf-09f7d8,3934
+langfabric-0.1.5.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+langfabric-0.1.5.dist-info/RECORD,,
