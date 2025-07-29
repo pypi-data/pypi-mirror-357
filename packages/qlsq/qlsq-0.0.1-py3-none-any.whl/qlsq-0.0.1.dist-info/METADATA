@@ -1,0 +1,94 @@
+Metadata-Version: 2.4
+Name: qlsq
+Version: 0.0.1
+Summary: dynamic sql generetor
+Author-email: Marius Kavaliauskas <mariuskava+qlsq@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://gitlab.com/qlsq/qlsq
+Project-URL: Issue Tracker, https://gitlab.com/qlsq/qlsq/-/issues
+Project-URL: Source Code, https://gitlab.com/qlsq/qlsq
+Keywords: sql,postgresql,sql-generator
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: python-dateutil>=2.9.0.post0
+Dynamic: license-file
+
+# $(QL)^2$
+
+https://pypi.org/project/qlsq/
+
+
+`qlsq` (QL-squared) is library for generating predictable sql queries from lisp-like queries.
+- Avoids N + 1 Query problem.
+- Lets you controll query complexity
+  - prevent filtering by non index columns.
+  - only does left joins for required selected fields (it is developers resposibility to ensure 1:1 mapping).
+- Allows claim based access controll for each field.
+- Does not support nesting (unless implemented in sql)
+- Only works with psycopg - generates parametrized queries like `SELECT %(param_0)s;`
+
+
+# How it looks like:
+
+```python
+# 1. Each query will be generated in a context.
+# Context is a set of fields and tables definitions.
+# This example assumes there exist `user_tasks` and `users` tables.
+# Normal application would have multiple contexts.
+
+from qlsq import ContextTable, ContextField, Context, QueryType
+tables = [
+    ContextTable(
+        alias="ut",
+        source="user_tasks",
+        join_condition=None,
+        depends_on=[]
+    ),
+    ContextTable(
+        alias="u",
+        source="users",
+        join_condition="u.id = ut.user_id",
+        depends_on=["ut"]
+    ),
+]
+fields = [
+    ContextField(
+        alias="full_name",
+        source="u.full_name",
+        query_type=QueryType.text,
+        depends_on=["u"],
+        read_claim="r_full_name",
+        edit_claim="e_full_name",
+        filter_claim="f_full_name",
+    ),
+    ContextField(
+        alias="user_id",
+        source="ut.user_id",
+        query_type=QueryType.numeric,
+        depends_on=["ut"],
+        read_claim="r_user_id",
+        edit_claim="e_user_id",
+        filter_claim="f_user_id",
+    ),
+]
+context = Context(tables, fields)
+
+# 2. write a query (this could be done on a frontend)
+lq = [["select", "full_name"], ["where", ["eq", "user_id", 3]]]
+
+# 3. create query object
+q = context.parse_query(lq)
+
+# 4. generate sql and params
+sql, params = q.to_sql()
+
+# expected sql:
+# SELECT u.full_name FROM user_tasks ut LEFT JOIN users u ON u.id = ut.user_id WHERE (ut.user_id = %(param_0)s);
+
+# expected params:
+# {"param_0": 3}
+```
