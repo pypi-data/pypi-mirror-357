@@ -1,0 +1,11 @@
+adaptive_nms.libs/libgcc_s-0cd532bd.so.1,sha256=yPk0-VjyKzucjnkP3mvC0vVaua6Ln17qZUJbICcXgtA,181737
+adaptive_nms.libs/libstdc++-5d72f927.so.6.0.33,sha256=fogxHsmB1_D6C-a_-uHh8Ei_6Qh52a8vLlicJRM3ehk,3562401
+adaptivenms/__init__.py,sha256=MK5um9-joSvb78w80ZZCcqdF8kUzVfBk-sp7p06MCQc,70
+adaptivenms/square_covering_adaptive_nms.cpython-311-x86_64-linux-musl.so,sha256=0RkUQ2rc8rm4B0nWmFMrlzg8tnFWxAi67hMLDupm5RQ,1602065
+adaptivenms/square_covering_adaptive_nms.pyi,sha256=ccitJVMhZy896XuE3T6Zaw-jVLLtXcwpRWpilV6awyg,374
+adaptivenms/square_covering_adaptive_nms.pyx,sha256=_3jif7QRZ-OyHeb-Zft74-Xinati3WUQSEpdKTZuivU,7146
+adaptive_nms-1.0.0a1.dist-info/METADATA,sha256=8wn79Zj2mbQjKIWUy8vWyPhxJOgsq_YaYtAGCaOnCJE,3059
+adaptive_nms-1.0.0a1.dist-info/WHEEL,sha256=kA_iIvT-cxTFNl4I8QDfFHN1DAyqZDYakVXCaObxeLo,112
+adaptive_nms-1.0.0a1.dist-info/top_level.txt,sha256=idh_7Nq8w5zZu7MMTBjUIbAwTuI_lw3BUsMVl5n69wc,12
+adaptive_nms-1.0.0a1.dist-info/RECORD,,
+adaptive_nms-1.0.0a1.dist-info/licenses/LICENSE,sha256=4m2uwBDYt1Bz6J39VN8-5U26TQpQe2HnL38mNdR0_qM,1073
