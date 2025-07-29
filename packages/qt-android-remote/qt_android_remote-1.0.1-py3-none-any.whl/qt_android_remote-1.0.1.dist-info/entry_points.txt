@@ -1,0 +1,2 @@
+[gui_scripts]
+qt-android-remote = qt_android_remote.main:main
