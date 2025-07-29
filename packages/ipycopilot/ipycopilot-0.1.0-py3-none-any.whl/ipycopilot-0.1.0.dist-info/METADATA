@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: ipycopilot
+Version: 0.1.0
+Summary: Desktop landing page for ipycopilot – PyWebview + React with particles.js
+Author-email: Your Name <you@example.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pywebview
+Dynamic: license-file
+
+# ipycopilot
+
+A Copilot for Data Science, that changes the way you use notebooks
+---
+
+## Features
+
+* **A Copilot for Data Science** – Reimagining your Data Science workflow.  
+
+---
+
+## Installation
+
+```bash
+pip install ipycopilot
+
+## License
+
+| Audience | Cost | Modification Allowed? | Notes |
+|----------|------|-----------------------|-------|
+| **Individual (personal / hobby)** | **Free** | **No** | Private, non-commercial use only |
+| **Commercial / organizational** | **Paid** | Only if expressly granted in a separate contract | Contact <you@example.com> |
+
+Full terms in [LICENSE](LICENSE).

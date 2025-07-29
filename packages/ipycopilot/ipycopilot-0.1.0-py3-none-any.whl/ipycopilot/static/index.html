@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ipyCopilot | Coming Soon</title>
+
+  <!-- ============  Global layout & backdrop  ============ -->
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;               /* fallback behind canvas */
+    }
+    #root {
+      width: 100%;
+      height: 100%;
+      position: relative;             /* context for centered text */
+    }
+    #particles-js {
+      position: fixed;
+      inset: 0;
+      z-index: 0;                     /* behind everything except body */
+    }
+
+    /* ============  Centered text styles  ============ */
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;                     /* above canvas */
+      user-select: none;
+    }
+    .title {
+      margin: 0;
+      font: 900 5rem/1 "Segoe UI", sans-serif;
+      letter-spacing: .05em;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0,0,0,.6);
+    }
+    .subtitle {
+      font: 600 2rem/1.2 "Segoe UI", sans-serif;
+      color: #fff;
+    }
+
+    /* ============  Animated letters  ============ */
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50%     { transform: scale(1.35); }
+    }
+    .letter {
+      display: inline-block;
+      animation: pulse 1s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Particle canvas -->
+  <div id="particles-js"></div>
+
+  <!-- React mount-point -->
+  <div id="root"></div>
+
+  <!-- ============  Libraries  ============ -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- local copy of particles.js lives in static/vendor/ -->
+  <script src="vendor/particles.min.js"></script>
+
+  <!-- ============  React UI  ============ -->
+  <script type="text/babel">
+    /* Animated subtitle component */
+    function ComingSoon({ text }) {
+      return (
+        <span className="subtitle">
+          {text.split("").map((ch, i) => (
+            <span
+              key={i}
+              className="letter"
+              style={{ animationDelay: `${i * 0.12}s` }}
+            >
+              {ch}
+            </span>
+          ))}
+        </span>
+      );
+    }
+
+    /* Root component */
+    function App() {
+      return (
+        <div className="center-text">
+          <ComingSoon text="A Copilot for Data Science" />
+          <h1 className="title">ipyCopilot</h1>
+          <ComingSoon text="coming soon" />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+
+  <!-- ============  Particles init  ============ -->
+  <script>
+    window.addEventListener('load', () => {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color:  { value: '#ffffff' },
+          shape:  { type: 'circle' },
+          opacity:{ value: 0.5 },
+          size:   { value: 3 },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#ffffff',
+            opacity: 0.4,
+            width: 1
+          },
+          move: { enable: true, speed: 2 }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: {
+            onhover: { enable: true, mode: 'repulse' },
+            onclick: { enable: true, mode: 'push' }
+          },
+          modes: {
+            repulse: { distance: 100, duration: 0.4 },
+            push:    { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
+      });
+    });
+  </script>
+</body>
+</html>
