@@ -1,0 +1,116 @@
+TIMEOUT = 5
+ARTIFACT_ROWS = 10
+CHECK_INTERVAL = 0.5
+BASE_TABLE_VERSION = "base"
+TEMP_INSTANCE = "TEMP_"
+ARTIFACT_DTYPE = "artifact_string"
+BUILDER_NAME = "name"
+BUILDER_TYPE = "builder_type"
+INDEX_BUILDER_SUFFIX = "_index"
+BUILDER_DEPENDENCIES = "dependencies"
+BUILDER_ARGUMENTS = "arguments"
+
+META_LOG_FILE = "logs.txt"
+META_CLOG_FILE = "log_ids.txt"
+META_ALOG_FILE = "active_logs.json"
+META_CHIST_FILE = "columns_history.json"
+META_THIST_FILE = "tables_history.json"
+META_TEMP_FILE = "tables_temp.json"
+META_DESCRIPTION_FILE = "description.yaml"
+META_LOG_LOCK_FILE = "LOG.lock"
+META_FILE_LOCK_FILE = "FILE.lock"
+
+RESTART_LOCK = "restart"
+CODE_FOLDER = "code_functions"
+ARCHIVE_FOLDER = "EXECUTION_ARCHIVE"
+DELETION_FOLDER = "ARCHIVED_TRASH"
+BUILDER_FOLDER = "builders"
+METADATA_FOLDER = "metadata"
+LOCK_FOLDER = "locks"
+TEMP_FOLDER = "_temp"
+ARTIFACT_FOLDER = "artifacts"
+ARTIFACT_REFERENCE = "~ARTIFACT_FOLDER~"
+PROCESS_ID_REFERENCE = "~PROCESS_ID~"
+TABLEVAULT_IDENTIFIER = ".tablevault"
+ILLEGAL_TABLE_NAMES = [
+    ARCHIVE_FOLDER,
+    BUILDER_FOLDER,
+    DELETION_FOLDER,
+    CODE_FOLDER,
+    METADATA_FOLDER,
+    LOCK_FOLDER,
+    TEMP_FOLDER,
+    RESTART_LOCK,
+    ARTIFACT_FOLDER,
+    META_DESCRIPTION_FILE,
+    TABLEVAULT_IDENTIFIER,
+    PROCESS_ID_REFERENCE,
+]
+
+TABLE_FILE = "table.csv"
+DTYPE_FILE = "dtypes.json"
+
+
+STOP_PROCESS_OP = "stop_process"
+CREATE_BUILDER_FILE_OP = "create_builder_file"
+CREATE_CODE_MODULE_OP = "create_code_module"
+DELETE_BUILDER_FILE_OP = "delete_builder_file"
+DELTE_CODE_MODULE_OP = "delete_code_module"
+RENAME_TABLE_OP = "rename_table"
+DELETE_TABLE_OP = "delete_table"
+DELETE_INSTANCE_OP = "delete_instance"
+MAT_OP = "materialize_instance"
+WRITE_INSTANCE_OP = "write_instance"
+WRITE_INSTANCE_INNER_OP = "write_instance_inner"
+EXECUTE_OP = "execute_instance"
+EXECUTE_INNER_OP = "execute_instance_inner"
+CREATE_INSTANCE_OP = "create_instance"
+CREATE_TABLE_OP = "create_table"
+RESTART_OP = "restart_database"
+VALID_OPS = [
+    STOP_PROCESS_OP,
+    CREATE_BUILDER_FILE_OP,
+    DELETE_BUILDER_FILE_OP,
+    CREATE_CODE_MODULE_OP,
+    DELTE_CODE_MODULE_OP,
+    RENAME_TABLE_OP,
+    DELETE_TABLE_OP,
+    DELETE_INSTANCE_OP,
+    EXECUTE_OP,
+    CREATE_INSTANCE_OP,
+    CREATE_TABLE_OP,
+    RESTART_OP,
+    MAT_OP,
+    WRITE_INSTANCE_OP,
+    WRITE_INSTANCE_INNER_OP,
+    EXECUTE_INNER_OP,
+]
+
+TABLE_SELF = "self"
+# OUTPUT_SELF = "self"
+TABLE_INDEX = "index"
+
+
+EX_CLEAR_TABLE = "clear_table"
+TABLE_ALLOW_MARTIFACT = "multiple_artifacts"
+TABLE_SIDE_EFFECTS = "side_effects"
+
+DESCRIPTION_SUMMARY = "summary"
+DESCRIPTION_ORIGIN = "origin"
+DESCRIPTION_EDIT = "external_edit"
+DESCRIPTION_AUTHOR = "author"
+
+DESCRIPTION_DEPENDENCIES = "dependencies"
+DESCRIPTION_FUTURE = "future_version"
+DESCRIPTION_CHILDREN = "children"
+DESCRIPTION_SUCCESS = "success"
+DESCRIPTION_ARTIFACT = "artifact_instance"
+
+BUILDER_RTYPE_DATAFRAME = "dataframe"
+BUILDER_RTYPE_ROWWISE = "row-wise"
+BUILDER_RTYPE_GENERATOR = "generator"
+
+
+REMOTE_LOG_FILE = "remote.log"
+REMOTE_LOCK = "remote"
+REMOTE_CHECK_INTERVAL = 0.1
