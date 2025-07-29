@@ -1,0 +1,2 @@
+[mdformat.codeformatter]
+python = markdown_format_ruff:format_python
