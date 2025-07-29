@@ -1,0 +1,2 @@
+[console_scripts]
+capella-diff-tool = capella_diff_tools.__main__:main
