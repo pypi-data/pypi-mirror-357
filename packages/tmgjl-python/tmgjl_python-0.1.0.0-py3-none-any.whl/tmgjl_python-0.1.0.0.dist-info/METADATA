@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: tmgjl-python
+Version: 0.1.0.0
+Summary: A minimalistic game set up for game engine development for game jams.
+Author: T
+License: MIT
+Requires-Python: >=3.12
+Requires-Dist: hatch>=1.14.1
+Requires-Dist: pygame>=2.6.1
+Requires-Dist: requests>=2.26.0
+Provides-Extra: dev
+Requires-Dist: pre-commit>=4.2.0; extra == 'dev'
+Requires-Dist: pytest>=8.3.5; extra == 'dev'
+Requires-Dist: tox>=4.25.0; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: groundwork-sphinx-theme>=1.1.1; extra == 'docs'
+Requires-Dist: myst-parser>=4.0.1; extra == 'docs'
+Requires-Dist: sphinx>=8.2.3; extra == 'docs'
+Provides-Extra: lint
+Requires-Dist: mypy>=1.15.0; extra == 'lint'
+Requires-Dist: ruff>=0.11.6; extra == 'lint'
+Provides-Extra: test
+Requires-Dist: pytest-cov>=6.1.1; extra == 'test'
+Requires-Dist: pytest-sugar>=1.0.0; extra == 'test'
+Requires-Dist: pytest-xdist[psutil]>=3.6.1; extra == 'test'
+Requires-Dist: pytest>=8.3.5; extra == 'test'
+Requires-Dist: tox>=4.25.0; extra == 'test'
