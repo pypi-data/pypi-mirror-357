@@ -1,0 +1,44 @@
+Metadata-Version: 2.4
+Name: py-agent-tool
+Version: 0.0.1.dev1
+Summary: Placeholder for the official Python SDK for the Intelligent Agents Platform (MCP). Coming soon!
+Author-email: Federico Monfasani <fmonfasani@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/fmonfgasani/intelligent-agents-platform
+Project-URL: Bug Tracker, https://github.com/fmonfasani/intelligent-agents-platform/issues
+Classifier: Development Status :: 1 - Planning
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# MCP Client SDK
+
+[![PyPI version](https://badge.fury.io/py/mcp-client.svg)](https://badge.fury.io/py/mcp-client)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+**Official Python SDK for the Intelligent Agents Platform (MCP).**
+
+## 🚧 Status: In Planning Phase
+
+This package is currently a placeholder to reserve the name `mcp-client` on PyPI. The official SDK is under active development and will be released soon.
+
+The goal is to provide a seamless and powerful interface to the MCP, enabling developers to optimize LLM usage for cost, speed, and quality effortlessly.
+
+### Vision
+
+```python
+# The future of interacting with LLMs:
+from mcp_client import MCPClient
+
+client = MCPClient()
+result = client.route(
+    content="Analyze our Q3 financial report and highlight key risks.",
+    task_type="financial_analysis",
+    optimize_for="quality"
+)
+print(result.content)
