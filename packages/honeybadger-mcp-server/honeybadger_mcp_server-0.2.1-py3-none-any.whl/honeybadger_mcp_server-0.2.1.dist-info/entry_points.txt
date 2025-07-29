@@ -1,0 +1,2 @@
+[console_scripts]
+honeybadger-mcp-server = honeybadger_mcp_server:main
