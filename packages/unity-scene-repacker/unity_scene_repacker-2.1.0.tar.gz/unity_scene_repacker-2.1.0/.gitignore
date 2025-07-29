@@ -1,0 +1,16 @@
+/target
+/uv.lock
+
+/out
+/*.unity3d
+/*.bundle
+/*.so
+/*.dll
+
+__pycache__
+*.pyc
+
+/.idea
+/.vscode
+
+/*.tpk
