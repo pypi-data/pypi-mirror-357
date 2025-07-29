@@ -1,0 +1,96 @@
+Metadata-Version: 2.4
+Name: methodlogger
+Version: 0.1.2
+Summary: Log entry and exit of methods with a decorator
+Author-email: Piyush Chauhan <piyush23321@gmail.com>
+License: MIT
+Keywords: logging,decorator,debug,trace
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# methodlogger
+
+`methodlogger` is a lightweight Python decorator that logs the entry and exit of methods or functions. It is ideal for debugging, performance tracing, and audit logging in both standalone Python projects.
+
+---
+
+# 📦 Installation
+
+```bash
+pip3 install methodlogger
+(or use `pip` if it's already mapped to Python 3)
+```
+
+---
+
+## 🚀 What Does It Do?
+
+The `@log_method` decorator wraps any function or method and:
+- Logs when it **enters and exits**.
+- Supports **custom log messages**.
+- Includes **timestamp logging** (optional).
+- Uses **Python’s logging** module — works with any existing log setup.
+- Fully **configurable**, and supports external integration (JSON config, etc.)
+
+---
+
+## ✅ Features
+
+- 🧩 Plug-and-play decorator
+- 📃 Optional custom message per method
+- ⏱ Show timestamps in logs
+- ⚙️ Globally configurable via `log_config`
+
+---
+
+## 🔧 Configuration (`log_config`)
+
+The decorator reads configuration from a central dictionary:
+
+```python
+from methodlogger import log_config
+
+log_config["enabled"] = True                      # Enable/disable all logging
+log_config["default_message"] = "Executing"       # Fallback message if none provided
+log_config["log_level"] = "INFO"                  # Log level (INFO, DEBUG, etc.)
+log_config["show_time"] = True                    # Show timestamps in log
+
+```
+
+---
+## 💡 Use Cases
+- Debugging production code
+
+- Tracking performance
+
+- Building audit logs
+
+- Understanding 3rd-party library behavior
+
+---
+
+## 🧪 Basic Example
+
+```python
+from methodlogger.decorators import log_method
+
+@log_method("Processing say_hello()")
+def say_hello():
+    print("Hello!")
+
+say_hello()
+
+[2025-06-23 14:10:12] Entering: say_hello - Processing say_hello()
+Hello!
+[2025-06-23 14:10:12] Exiting : say_hello - Processing say_hello()
+```
+
+You can also use it with no arguments:
+
+```python
+@log_method()
+def compute():
+    return 42
+```
