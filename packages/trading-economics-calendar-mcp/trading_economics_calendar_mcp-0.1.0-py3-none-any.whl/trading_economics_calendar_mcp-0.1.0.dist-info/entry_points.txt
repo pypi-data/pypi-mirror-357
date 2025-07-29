@@ -1,0 +1,2 @@
+[console_scripts]
+trading-economics-mcp = trading_economics_calendar.server:main
