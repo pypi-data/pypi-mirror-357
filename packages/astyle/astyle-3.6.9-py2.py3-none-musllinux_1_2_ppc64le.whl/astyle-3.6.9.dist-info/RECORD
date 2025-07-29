@@ -1,0 +1,7 @@
+astyle.scripts/astyle,sha256=SBiVPrAPlxJKitw56IhKVn2g5MaQvJpy8wYdP2Mk8QM,795897
+astyle.libs/libstdc++-62bfff6d.so.6.0.32,sha256=1C4fUqLtpaTP6wDAErLN94_ESKB1LjID1VU3LxMCP64,4174113
+astyle.libs/libgcc_s-493bcbf3.so.1,sha256=tAAN5ajqbmdGiiwJ2HgUD8eRUYmjx1O-Yrl86x6eGDU,200345
+astyle-3.6.9.data/scripts/astyle,sha256=JioWskr9CzzeGUBmTJuuhAkTcpuHZroJyRGy2WfVsPM,192
+astyle-3.6.9.dist-info/RECORD,,
+astyle-3.6.9.dist-info/METADATA,sha256=9lwJJ6RyR0VVdQ2GzEpm9bU1CfeQB6cgyr_HtPJjGfA,1853
+astyle-3.6.9.dist-info/WHEEL,sha256=nnMLz0WN1HHHLQqH-iE4tK8YiJp-fpZ8XfJs7W-jnUA,151
