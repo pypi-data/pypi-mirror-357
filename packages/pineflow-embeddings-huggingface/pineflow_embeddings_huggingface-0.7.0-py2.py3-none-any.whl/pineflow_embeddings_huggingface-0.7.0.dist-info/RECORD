@@ -1,0 +1,5 @@
+pineflow/embeddings/huggingface/__init__.py,sha256=jGV5B1-WwGZBE12kMu7pJG8Idotk0Q-YwHtUQqN9Wf0,106
+pineflow/embeddings/huggingface/base.py,sha256=fpHkthTbZeqs3hlAsdsZ_BSSvaRn_4wVu9tmKjbvz5U,2407
+pineflow_embeddings_huggingface-0.7.0.dist-info/METADATA,sha256=qXILI1VhBrgI5tkr2G7WJ6yfaazLK5o0UlEFAnJMEtg,1180
+pineflow_embeddings_huggingface-0.7.0.dist-info/WHEEL,sha256=5druYqcII7zHXzX7qmN0TH895Jg3yuTtfjMgJIVBrKE,92
+pineflow_embeddings_huggingface-0.7.0.dist-info/RECORD,,
