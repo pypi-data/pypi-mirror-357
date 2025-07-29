@@ -1,0 +1,2 @@
+[comictagger.talker]
+gcd = gcd_talker.gcd:GCDTalker
