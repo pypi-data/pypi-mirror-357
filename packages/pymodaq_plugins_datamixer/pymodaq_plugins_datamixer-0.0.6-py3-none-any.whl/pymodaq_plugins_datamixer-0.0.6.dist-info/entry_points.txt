@@ -1,0 +1,11 @@
+[pymodaq.extensions]
+datamixer = pymodaq_plugins_datamixer
+
+[pymodaq.instruments]
+datamixer = pymodaq_plugins_datamixer
+
+[pymodaq.models]
+datamixer = pymodaq_plugins_datamixer
+
+[pymodaq.plugins]
+datamixer = pymodaq_plugins_datamixer
