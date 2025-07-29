@@ -1,0 +1,9 @@
+__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+example/example.py,sha256=lLfkezDpBt9QIpgy6hBsO6zG0RyLR72UEql7soE_aS8,405
+sdk/__init__.py,sha256=sRykpqvZ3cqntp4DDlFjuMU0O9KeqXYPIS_bolCEc90,110
+sdk/bot.py,sha256=Du3nEsjkG3nHZQt6qkn8nsugVinaiOyRWZekvLvuo6o,258
+sdk/message.py,sha256=rshqpDgNocclwnkMYiVnJrs40OdjFbQF6vuVXEm9VDA,1566
+lotuschat_bot_sdk-0.1.0.dist-info/METADATA,sha256=WJhTc4Ue-Vso3xu5pPAwr4gq0QOspKHVEZA4Py5bEB0,271
+lotuschat_bot_sdk-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+lotuschat_bot_sdk-0.1.0.dist-info/top_level.txt,sha256=a6hS2nWWJQ8np3I0iNeo5ZR0-ihskJZlbkGJTW7dr-E,21
+lotuschat_bot_sdk-0.1.0.dist-info/RECORD,,
