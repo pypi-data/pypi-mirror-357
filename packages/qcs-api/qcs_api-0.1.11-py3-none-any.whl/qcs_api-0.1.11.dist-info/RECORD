@@ -1,0 +1,7 @@
+qcs_api/__init__.py,sha256=UjHR8hkJRB3t1QLEvQlKch_VeDDTaZ23apQXQLVNTSg,123
+qcs_api/downloader.py,sha256=l9vJpC1C4YFG1xpxyJu8CnmXtQzEqs6gfTaISY2kNO0,389
+qcs_api/filter.py,sha256=_aRWsnPhW9EsmrJolWhomJ2YX5c_mGNqflksJiouK4Q,1426
+qcs_api-0.1.11.dist-info/METADATA,sha256=LtwUOECuvCU2JOEVKlTbHzqRRZoS_yJpoeNgfWGjQS4,199
+qcs_api-0.1.11.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+qcs_api-0.1.11.dist-info/top_level.txt,sha256=5uMvqtb5sI8j-T2DR7PZuVx-FhTeMOv-BFxLp1a-QbU,8
+qcs_api-0.1.11.dist-info/RECORD,,
