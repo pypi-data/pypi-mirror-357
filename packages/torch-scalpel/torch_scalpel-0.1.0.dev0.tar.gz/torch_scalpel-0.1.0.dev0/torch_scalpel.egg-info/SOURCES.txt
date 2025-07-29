@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+torch_scalpel/__init__.py
+torch_scalpel.egg-info/PKG-INFO
+torch_scalpel.egg-info/SOURCES.txt
+torch_scalpel.egg-info/dependency_links.txt
+torch_scalpel.egg-info/requires.txt
+torch_scalpel.egg-info/top_level.txt
