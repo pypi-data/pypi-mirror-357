@@ -1,0 +1,11 @@
+xneos/__init__.py,sha256=xuHtPsO_wL68Vcxf3afUOqjgrHzhRGkPjTya5L7JO_w,111
+xneos/neos.py,sha256=vAukNlFtZiqy40zVL5YDRHZ9VxWNY7DRd4nNaXIOdks,8827
+xneos/quickstart.py,sha256=pC4ET_kj5Zan09g-fYLKXxbLRrTCFxHriXdPV7Ttl1M,2756
+xneos/templates/xneos_main.py,sha256=6C_ckuhUEfuP6a6VzAOlSziloYG_McDgt0O4MKGlToA,528
+xneos/templates/xneos_template.xlsm,sha256=E3M9Kze06UJUdkuka73j0bIUeOP3Qri3U9WUnCeui5g,102631
+xneos-0.1.0.dist-info/licenses/LICENSE,sha256=piFDfLVnu-7QUjonDgDZKXq8Rm8pbmftaj-OjArtlnc,1102
+xneos-0.1.0.dist-info/METADATA,sha256=iazIcY9PYNhnpeaxAPfmKSm34yy6LV7kkBT1N4LFIwA,2910
+xneos-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+xneos-0.1.0.dist-info/entry_points.txt,sha256=aK-HNOdVphu7pePZSKgguBRdVoPyl2Q8bNQmCm6G_Oc,48
+xneos-0.1.0.dist-info/top_level.txt,sha256=6-2L6GjUcdMcj4baczKnXYHu7VkyA3dVAyGYwgUtv2A,6
+xneos-0.1.0.dist-info/RECORD,,
