@@ -1,0 +1,103 @@
+# Tell pip to use flit to build this package
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "deepview"
+home-page = "https://github.com/satishlokkoju/deepview"
+license = "Apache-2.0"
+description-file="README.md"
+
+author = "Satish Lokkoju"
+author-email = "satish.lokkoju@gmail.com"
+classifiers = [
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+    'Topic :: Scientific/Engineering :: Information Analysis',
+    'Development Status :: 5 - Production/Stable',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+    'Operating System :: MacOS',
+    'Operating System :: POSIX :: Linux',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Education',
+    'Intended Audience :: Science/Research',
+]
+
+requires-python = ">3.9"
+requires = [
+    "annoy",  # duplicates -- approximate nearest neighbor oh yeah
+    "autofaiss",
+    "numpy",
+    "scikit-learn"
+]
+
+[tool.flit.metadata.requires-extra]
+# DeepView BASE EXTENSIONS
+image = [
+    "opencv-python-headless",
+    "Pillow",  # Pillow AKA PIL
+]
+dimreduction = [
+    "umap-learn",
+    "pacmap",
+]
+dataset-report = [
+    "pandas",
+    "umap-learn",
+    "pacmap",
+]
+
+canvas = [
+    "canvas_ux==3.9.6",
+    "canvas_summary==3.9.6",
+    "canvas_scatterplot==3.9.6",
+    "canvas_list==3.9.6",
+    "canvas_duplicates==3.9.6",
+    "canvas_data_map==3.9.6",
+    "canvas_familiarity==3.9.6"
+]
+
+# MODEL EXTENSIONS
+tensorflow = ["deepview_tensorflow[tf]==3.9.6"]
+data = ["deepview_data==3.9.6"]
+torch = ["deepview_torch==3.9.6"]
+
+# DEV EXTENSIONS
+test = [
+    "flake8",
+    "importlib-metadata",
+    "mypy",
+    "pytest",
+    "pytest-cov",
+    "pytest-flake8",
+    "pytest-mypy",
+    "pytest-xdist[psutil]",
+    "pytest-timeout",
+    "flake8-copyright",
+]
+notebook = [
+    "notebook>6.0.0,<8.0.0",
+    "matplotlib",
+    "pandas",
+    "jupyter-datatables",
+    "plotly",
+    "kaggle",
+    "watermark"
+]
+complete = [
+    "deepview[image]==3.9.6",
+    "deepview[dimreduction]==3.9.6",
+    "deepview[dataset-report]==3.9.6",
+    "deepview[tensorflow]==3.9.6",
+    "deepview[torch]==3.9.6",
+    "deepview[data]==3.9.6",
+    "deepview[notebook]==3.9.6",
+    "deepview[canvas]==3.9.6",
+]
+
+[tool.flit.metadata.urls]
+Documentation = "https://satishlokkoju.github.io/deepview"
+Changelog = "https://github.com/satishlokkoju/deepview/blob/main/CHANGELOG.md"

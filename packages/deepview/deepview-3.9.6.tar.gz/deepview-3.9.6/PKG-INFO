@@ -1,0 +1,103 @@
+Metadata-Version: 2.4
+Name: deepview
+Version: 3.9.6
+Summary: Base Data and Network Introspection Kit (DeepView) Library.
+Home-page: https://github.com/satishlokkoju/deepview
+Author: Satish Lokkoju
+Author-email: satish.lokkoju@gmail.com
+Requires-Python: >3.9
+Description-Content-Type: text/markdown
+License: Apache-2.0
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Requires-Dist: annoy
+Requires-Dist: autofaiss
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: canvas_ux==3.9.6 ; extra == "canvas"
+Requires-Dist: canvas_summary==3.9.6 ; extra == "canvas"
+Requires-Dist: canvas_scatterplot==3.9.6 ; extra == "canvas"
+Requires-Dist: canvas_list==3.9.6 ; extra == "canvas"
+Requires-Dist: canvas_duplicates==3.9.6 ; extra == "canvas"
+Requires-Dist: canvas_data_map==3.9.6 ; extra == "canvas"
+Requires-Dist: canvas_familiarity==3.9.6 ; extra == "canvas"
+Requires-Dist: deepview[image]==3.9.6 ; extra == "complete"
+Requires-Dist: deepview[dimreduction]==3.9.6 ; extra == "complete"
+Requires-Dist: deepview[dataset-report]==3.9.6 ; extra == "complete"
+Requires-Dist: deepview[tensorflow]==3.9.6 ; extra == "complete"
+Requires-Dist: deepview[torch]==3.9.6 ; extra == "complete"
+Requires-Dist: deepview[data]==3.9.6 ; extra == "complete"
+Requires-Dist: deepview[notebook]==3.9.6 ; extra == "complete"
+Requires-Dist: deepview[canvas]==3.9.6 ; extra == "complete"
+Requires-Dist: deepview_data==3.9.6 ; extra == "data"
+Requires-Dist: pandas ; extra == "dataset-report"
+Requires-Dist: umap-learn ; extra == "dataset-report"
+Requires-Dist: pacmap ; extra == "dataset-report"
+Requires-Dist: umap-learn ; extra == "dimreduction"
+Requires-Dist: pacmap ; extra == "dimreduction"
+Requires-Dist: opencv-python-headless ; extra == "image"
+Requires-Dist: Pillow ; extra == "image"
+Requires-Dist: notebook>6.0.0,<8.0.0 ; extra == "notebook"
+Requires-Dist: matplotlib ; extra == "notebook"
+Requires-Dist: pandas ; extra == "notebook"
+Requires-Dist: jupyter-datatables ; extra == "notebook"
+Requires-Dist: plotly ; extra == "notebook"
+Requires-Dist: kaggle ; extra == "notebook"
+Requires-Dist: watermark ; extra == "notebook"
+Requires-Dist: deepview_tensorflow[tf]==3.9.6 ; extra == "tensorflow"
+Requires-Dist: flake8 ; extra == "test"
+Requires-Dist: importlib-metadata ; extra == "test"
+Requires-Dist: mypy ; extra == "test"
+Requires-Dist: pytest ; extra == "test"
+Requires-Dist: pytest-cov ; extra == "test"
+Requires-Dist: pytest-flake8 ; extra == "test"
+Requires-Dist: pytest-mypy ; extra == "test"
+Requires-Dist: pytest-xdist[psutil] ; extra == "test"
+Requires-Dist: pytest-timeout ; extra == "test"
+Requires-Dist: flake8-copyright ; extra == "test"
+Requires-Dist: deepview_torch==3.9.6 ; extra == "torch"
+Project-URL: Changelog, https://github.com/satishlokkoju/deepview/blob/main/CHANGELOG.md
+Project-URL: Documentation, https://satishlokkoju.github.io/deepview
+Provides-Extra: canvas
+Provides-Extra: complete
+Provides-Extra: data
+Provides-Extra: dataset-report
+Provides-Extra: dimreduction
+Provides-Extra: image
+Provides-Extra: notebook
+Provides-Extra: tensorflow
+Provides-Extra: test
+Provides-Extra: torch
+
+# DeepView
+
+DeepView is a Python package for deep learning model visualization and analysis. This can also aid in exploratory data analysis of large datasets including image and tabular data.
+
+## Features
+
+- Model visualization
+- Performance analysis of Deep Learning models including inactive unit analysis
+- Dataset insights and visual data analysis
+
+## Installation
+
+```
+pip install deepview
+```
+
+## Usage
+
+```
+import deepview
+
+```
