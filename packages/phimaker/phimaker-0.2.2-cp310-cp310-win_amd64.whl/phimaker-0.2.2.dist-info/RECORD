@@ -1,0 +1,6 @@
+phimaker-0.2.2.dist-info/METADATA,sha256=HsGMY2gzayydy10uNGy_Jw_FH_i6JdW5Nclhla-2aPE,1039
+phimaker-0.2.2.dist-info/WHEEL,sha256=oIYcReGXK7h7Rxp85Q3K9Z3I1xK99xgU5My5R5-0sSU,96
+phimaker/__init__.py,sha256=2DIEQ9q2noc_ejC4-IYLgV15JxdFKJsMLztmyLN-J8o,239
+phimaker/_washboard_interface.py,sha256=yeAGaIgQyDQak2IshG5UGKy054FeOMd_x9GmuBq8qoY,7241
+phimaker/phimaker.cp310-win_amd64.pyd,sha256=Y4Ie1Pc5Sh3RwU4nGD54C5NQLPy4xFUjU5bOXxes4PM,869888
+phimaker-0.2.2.dist-info/RECORD,,
