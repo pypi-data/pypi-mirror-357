@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+mcp_server_botak.egg-info/PKG-INFO
+mcp_server_botak.egg-info/SOURCES.txt
+mcp_server_botak.egg-info/dependency_links.txt
+mcp_server_botak.egg-info/entry_points.txt
+mcp_server_botak.egg-info/requires.txt
+mcp_server_botak.egg-info/top_level.txt

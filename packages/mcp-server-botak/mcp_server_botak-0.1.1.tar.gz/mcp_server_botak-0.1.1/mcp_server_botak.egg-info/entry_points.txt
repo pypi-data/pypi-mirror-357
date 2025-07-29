@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-server-botak = mcp_server_botak.server:main
