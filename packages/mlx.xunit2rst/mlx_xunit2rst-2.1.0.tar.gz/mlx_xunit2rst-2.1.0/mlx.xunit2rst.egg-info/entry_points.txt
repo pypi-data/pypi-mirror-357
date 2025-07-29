@@ -1,0 +1,3 @@
+[console_scripts]
+mlx.xunit2rst = mlx.xunit2rst.xunit2rst:main
+xunit2rst = mlx.xunit2rst.xunit2rst:main
