@@ -1,0 +1,15 @@
+fastremap/__init__.py,sha256=OFQQDhYXoAV4FzQYj1NY908ldDiHIcM7y0H5yvjYLjk,829
+fastremap/fastremap.cp39-win_amd64.pyd,sha256=DXgPP-PYiemwUZCgmqJ4lcmFH6yUzX8mMQijKHeoaKk,1977344
+fastremap/fastremap.pxd,sha256=buQmEJrjfExbqY90ESwGrDld5v09N7oXjVQB-wZvhi8,4066
+fastremap/fastremap.pyi,sha256=z_jbEROJAKqbr-gO9poQabF1-OBs5_bs-2rDpGjeoWo,15390
+fastremap/fastremap.pyx,sha256=jqVy6UaiaWyQLSwLLraLskAc9Ib0oilExq-R8FcT7Nw,46677
+fastremap/ipt.hpp,sha256=MiyDDgjGAjXJ5m_bEmTvLIO79xVD92EgK0jS_PQjC1I,8261
+fastremap/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastremap/ska_flat_hash_map.hpp,sha256=zosmxi4QAdrS8FUzF_4nUPKAX72JmVAfJ-x4W8ztdfQ,63151
+fastremap-1.17.0.dist-info/licenses/AUTHORS,sha256=fp7K3Hh22cRdHzMj837IAKImGxut2SRouzHe8pNphus,62
+fastremap-1.17.0.dist-info/licenses/LICENSE,sha256=fTqV5eBpeAZO0_jit8j4Ref9ikBSlHJ8xwj5TLg7gFk,7817
+fastremap-1.17.0.dist-info/METADATA,sha256=6RcLJZVobGkgrU1_1Uv7k_6UCUFyrxe_SweRHh0_NnE,10532
+fastremap-1.17.0.dist-info/WHEEL,sha256=XkFE14KmFh7mutkkb-qn_ueuH2lwfT8rLdfc5xpQ7wE,99
+fastremap-1.17.0.dist-info/pbr.json,sha256=dR1UpQuiiTyrZ7Y1PMguAEXlAjPBXmHM_DXmzrK1gbY,47
+fastremap-1.17.0.dist-info/top_level.txt,sha256=D-q4-YJbbk7QpuU8fxH9rFQEjV_W6wpdruzTTDV4N5s,10
+fastremap-1.17.0.dist-info/RECORD,,
