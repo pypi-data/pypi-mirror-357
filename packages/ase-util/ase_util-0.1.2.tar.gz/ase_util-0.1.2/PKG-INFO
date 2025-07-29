@@ -1,0 +1,19 @@
+Metadata-Version: 2.3
+Name: ase-util
+Version: 0.1.2
+Summary: ase-util is a utility package related to ASE. With the appropriate calculator, relevant calculations can be performed.
+Author: wangjinlong
+Author-email: 396292346@qq.com
+Requires-Python: >=3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: ase (>=3.21.1)
+Description-Content-Type: text/markdown
+
+# ase-util
+ase-util is a utility package related to ASE. With the appropriate calculator, relevant calculations can be performed.
+url:
