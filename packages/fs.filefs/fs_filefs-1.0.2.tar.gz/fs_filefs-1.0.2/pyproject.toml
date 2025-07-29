@@ -1,0 +1,29 @@
+[project]
+name = "fs.filefs"
+version = "1.0.2"
+description = "A custom filesystem for pyfilesystem2 that allows mounting files from other filesystems."
+keywords = ["pyfilesystem", "filesystem", "fs"]
+maintainers = [
+    { name = "Andreas Bichinger", email = "andreas.bichinger@gmail.com" },
+]
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fs>=2.4.16"
+]
+license = "MIT" 
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/abichinger/fs.filefs"
+Issues = "https://github.com/abichinger/fs.filefs/issues"
+
+[tool.setuptools]
+packages = ["fs.filefs"]

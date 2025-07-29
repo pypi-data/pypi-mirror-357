@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+fs.filefs.egg-info/PKG-INFO
+fs.filefs.egg-info/SOURCES.txt
+fs.filefs.egg-info/dependency_links.txt
+fs.filefs.egg-info/requires.txt
+fs.filefs.egg-info/top_level.txt
+fs/filefs/__init__.py
+fs/filefs/filefs.py
+tests/test_filefs.py
