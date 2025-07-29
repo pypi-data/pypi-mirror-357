@@ -1,0 +1,38 @@
+# Plasma
+A developer's toolkit for managing and automating common development tasks.
+
+## Overview
+Plasma is a command-line utility that provides a collection of useful commands for developers, organized into categories for easy access.
+
+## Installation
+Install the package using `uv`:
+```bash
+uv add plsma
+```
+
+Or clone and install locally:
+```bash
+git clone https://github.com/zanderlewis/devtools.git
+cd plsma
+uv install -e .
+```
+
+## Usage
+The main command is `dt`. You can:
+- List all available commands: `dt` or `dt list`
+- List commands by category: `dt list:<category>`
+- Run a specific command: `dt <command> [args]`
+- Show version: `dt --version`
+- Show help: `dt --help`
+
+## Requirements
+- Python 3.10+
+- Dependencies: click, psutil, rich
+
+## Development
+This project uses:
+- `uv` for dependency management
+- `ruff` for linting and formatting
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
