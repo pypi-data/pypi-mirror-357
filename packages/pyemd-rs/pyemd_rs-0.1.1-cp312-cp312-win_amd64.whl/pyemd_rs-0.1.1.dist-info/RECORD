@@ -1,0 +1,10 @@
+pyemd_rs-0.1.1.dist-info/METADATA,sha256=F9rUJxls7Z4pKz6UYwj6Ey_-xtrJjA3MSryY7AmPgEw,651
+pyemd_rs-0.1.1.dist-info/WHEEL,sha256=2Rq0eWWH7u9Ffm_ZQEcE2_DVE8if9XSfMophnE-xWmc,96
+pyemd_rs-0.1.1.dist-info/licenses/LICENSE,sha256=2Y8a3W-ndrAOd-S-LKT8hbJDt4WHkFBY8-R-zuQFtGE,1092
+pyemd_rs/__init__.py,sha256=vl8a-lfgHwUgyUDnZeMYyKLbQOYJCqtHmW8U9L9GVJ4,156
+pyemd_rs/_pyemd_rs.cp312-win_amd64.pyd,sha256=eEmlLBg18zbXWtL6kOsbWTFhCW3wrlWG0qWTwV9jb8k,622080
+pyemd_rs/_pyemd_rs.pyi,sha256=TQEzaCqfRgCHvDSDEAKTNnkgNwlBRZ8CNfpRRCnpV6E,2499
+pyemd_rs/_testing.py,sha256=JDBbLXPpEfJKZZOR_plKt1cnpuYDIC-zvdjDD9smXxI,435
+pyemd_rs/emd.py,sha256=GHIea1kUrDpintEagExs938hmPCgxGzjyLVDYOHi9HA,28
+pyemd_rs/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyemd_rs-0.1.1.dist-info/RECORD,,
