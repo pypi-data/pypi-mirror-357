@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: telegram-notifier_mcp_ac
+Version: 0.1.1
+Summary: Add your description here
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: mcp>=1.9.4
+Requires-Dist: requests>=2.32.4
