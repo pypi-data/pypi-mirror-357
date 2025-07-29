@@ -1,0 +1,5 @@
+[console_scripts]
+bulb=bulb.cli.main:main
+bulb-manager=bulb.scripts.manager:main
+bulb-runner=bulb.scripts.runner:main
+
