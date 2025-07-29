@@ -1,0 +1,23 @@
+Metadata-Version: 2.2
+Name: octdata4python
+Version: 0.1.2
+Summary: Python bindings for reading and parsing E2E/SDB OCT files using a high-performance C++ backend
+Keywords: OCT,optical coherence tomography,Heidelberg,sdb,e2e,medical imaging,C++,Python
+Author: Faizan Hemotra
+License: AGPL-3.0-only
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Programming Language :: C++
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Project-URL: Homepage, https://github.com/fzhem/octdata4python
+Project-URL: Documentation, https://github.com/fzhem/octdata4python/blob/main/README.md
+Project-URL: Repository, https://github.com/fzhem/octdata4python
+Project-URL: Issues, https://github.com/fzhem/octdata4python/issues
+Requires-Python: >=3.10
+Requires-Dist: numpy>1.26.0
+Description-Content-Type: text/markdown
+
+# [octdata4python](https://github.com/kaygdev/octdata4python) with wheels 🛞
+- octdata4python is a Python wrapper for [LibOctData](https://github.com/neurodial/LibOctData), which supports multiple OCT formats including Heidelberg Engineering, IMG, GIPL, and more. Check the repo for full details.
+- Use `octdata4python.read_file` to read an OCT file.
