@@ -1,0 +1,11 @@
+textual>=3.3.0
+
+[dev]
+black
+flake8
+isort
+mypy
+pytest
+pytest-asyncio
+pytest-cov
+textual-dev
