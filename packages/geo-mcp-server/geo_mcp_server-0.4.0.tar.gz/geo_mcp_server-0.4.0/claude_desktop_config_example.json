@@ -1,0 +1,14 @@
+{
+    "mcpServers": {
+      "geo-mcp": {
+        "command": "path/to/GEO_MCP/geo_mcp_server/.venv/bin/python",
+        "args": ["path/to/GEO_MCP/geo_mcp_server/main.py"],
+        "env": {
+          "PYTHONPATH": "path/to/GEO_MCP/geo_mcp_server",
+          "PWD": "path/to/GEO_MCP/geo_mcp_server",
+          "CONFIG_PATH": "path/to/GEO_MCP/geo_mcp_server/config.json",
+          "DOWNLOAD_DIR": "path/to/downloads"
+        }
+      }
+    }
+  } 

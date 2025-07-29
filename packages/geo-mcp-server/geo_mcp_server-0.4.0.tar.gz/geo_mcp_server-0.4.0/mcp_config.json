@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "geo-mcp": {
+      "command": "/Users/matthiasflo/Documents/2025/GEO_MCP/geo_mcp_server/.venv/bin/python",
+      "args": ["/Users/matthiasflo/Documents/2025/GEO_MCP/geo_mcp_server/main.py"],
+      "env": {
+        "PYTHONPATH": ".",
+        "PWD": "/Users/matthiasflo/Documents/2025/GEO_MCP/geo_mcp_server"
+      }
+    }
+  }
+} 
