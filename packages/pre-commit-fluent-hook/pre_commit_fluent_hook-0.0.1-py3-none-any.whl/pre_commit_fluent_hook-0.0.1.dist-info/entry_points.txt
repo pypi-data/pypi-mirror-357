@@ -1,0 +1,2 @@
+[console_scripts]
+check-fluent = pre_commit_fluent_hook.check_fluent:main
