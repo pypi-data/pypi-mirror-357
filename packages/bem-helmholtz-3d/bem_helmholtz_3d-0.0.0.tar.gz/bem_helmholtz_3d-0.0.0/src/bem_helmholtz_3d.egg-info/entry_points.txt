@@ -1,0 +1,2 @@
+[console_scripts]
+bem-helmholtz-3d = bem_helmholtz_3d.cli:app
