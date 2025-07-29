@@ -1,0 +1,88 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qt-android-remote"
+version = "1.0.0"
+authors = [
+    {name = "David Markey", email = "david@dmarkey.com"},
+]
+description = "Desktop remote control application for Android TV using direct connection"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Home Automation",
+    "Topic :: Multimedia",
+    "Topic :: System :: Hardware",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Environment :: X11 Applications :: Qt",
+    "Environment :: Win32 (MS Windows)",
+    "Environment :: MacOS X",
+]
+keywords = ["android-tv", "remote", "control", "desktop", "gui", "qt", "pyside6", "androidtvremote2"]
+dependencies = [
+    "PySide6>=6.0.0",
+    "androidtvremote2>=0.2.2",
+    "zeroconf>=0.47.0",
+    "aiofiles>=0.8",
+    "cryptography>=3",
+    "protobuf>=4.21",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-qt>=4.0",
+    "black>=22.0",
+    "flake8>=4.0",
+    "mypy>=0.900",
+]
+
+[project.urls]
+Homepage = "https://github.com/dmarkey/qt-android-remote"
+Repository = "https://github.com/dmarkey/qt-android-remote"
+Issues = "https://github.com/dmarkey/qt-android-remote/issues"
+Documentation = "https://github.com/dmarkey/qt-android-remote#readme"
+
+[project.gui-scripts]
+qt-android-remote = "qt_android_remote.main:main"
+
+[tool.setuptools]
+packages = ["qt_android_remote"]
+
+[tool.setuptools.package-data]
+qt_android_remote = ["*.png", "*.ico", "*.svg"]
+"*" = ["images/*.png", "images/*.ico", "images/*.svg"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
