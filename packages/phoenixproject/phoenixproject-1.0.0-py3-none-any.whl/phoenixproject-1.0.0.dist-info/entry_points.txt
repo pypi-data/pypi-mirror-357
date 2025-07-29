@@ -1,0 +1,2 @@
+[console_scripts]
+phoenixproject = affiliate_ai.cli:main
