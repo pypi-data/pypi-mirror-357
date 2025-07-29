@@ -1,0 +1,8 @@
+dropmail/__init__.py,sha256=BueICmsRbGCAKBYG-N5nrYgdyti8c-dndu4z28TnzBk,387
+dropmail/__version__.py,sha256=c-iYlkZOoBuzD2JKmG8_fnP3WORl1kaVDHUfGzs9TTM,80
+dropmail/client.py,sha256=Ig3gJvdngdV-33f9sotO313s87023MrX22r5MO1TT44,21214
+dropmail/exceptions.py,sha256=5ccKfUtIFeJYDLws-uPDcOkL4BKCPKvqr0UCF8ZDtBE,271
+dropmail-1.0.3.dist-info/METADATA,sha256=0rn7EGcNmP1Xof6KaqA1JjMnSxlQR64giK1nbjw28-M,5012
+dropmail-1.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dropmail-1.0.3.dist-info/top_level.txt,sha256=DbRLTLJUX254V8MgdIoYS_83xMQe_ZrZsybBJpiUEus,9
+dropmail-1.0.3.dist-info/RECORD,,
