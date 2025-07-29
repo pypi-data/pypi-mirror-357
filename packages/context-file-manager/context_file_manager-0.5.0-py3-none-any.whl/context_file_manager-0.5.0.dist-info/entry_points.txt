@@ -1,0 +1,3 @@
+[console_scripts]
+cfm = cfm_package.main:main
+cfm-mcp = cfm_package.cfm_mcp_server:main
