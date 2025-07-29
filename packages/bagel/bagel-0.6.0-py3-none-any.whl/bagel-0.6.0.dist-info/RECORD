@@ -1,0 +1,17 @@
+bagel/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bagel/cli.py,sha256=aScRO0Afh3cLUTUIX-MuQNFpx8tSyo9hfBR0ZBrxLSo,20741
+bagel/dictionary_models.py,sha256=zV3EizOh_KMU5T_R3BEC1FAQbrpuBlclRfwpdf3RM8g,5023
+bagel/logger.py,sha256=QtUUkuPcGEngumnxSvwoevwbc35rGGuotiMN0m4oPBs,1739
+bagel/mappings.py,sha256=_M94A38Du_Y2C0UdSz-099NFD89Eadc3RvBIbO0CagQ,3856
+bagel/models.py,sha256=Qj2mfBH2vylLNDw8p_0sqL37X6V-wWqGtn2HBGU2-uE,2756
+bagel/utilities/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bagel/utilities/bids_utils.py,sha256=3XQEHiV4ZqLKXcVSKOV_OHjO_s4tNaodyEliNWC98FQ,2570
+bagel/utilities/derivative_utils.py,sha256=q7lVHCdN4K9iwybwX_BY3FXz4Z2ExzN7KdC0ha-ig_Y,5520
+bagel/utilities/file_utils.py,sha256=I9OcgIcH3ibDu_adCP9EDwXrIla5G2CAAoi5DUHgHFY,3345
+bagel/utilities/model_utils.py,sha256=M6PxY1iR4h3nA0DgSHzlzuSOQQslobW52sMQpPBcTVw,4396
+bagel/utilities/pheno_utils.py,sha256=7vMKQUHqzQ8k4D3PajZVG7wVXqxBIWMXmqYotj7uCjU,24158
+bagel-0.6.0.dist-info/METADATA,sha256=RbRp4m1xVfSuOCZeVU5aWRbpfNhE8rIsIC9p1zG2O9Q,6625
+bagel-0.6.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+bagel-0.6.0.dist-info/entry_points.txt,sha256=OcADLXneL70JYrrPdQ7fME6w2OGCJ0XHIptoMwQTBhs,42
+bagel-0.6.0.dist-info/licenses/LICENSE,sha256=yb4WucoLgKZ-gV55apD8ZSkVa8sC96cFzZ7lsI2TxfA,1109
+bagel-0.6.0.dist-info/RECORD,,
