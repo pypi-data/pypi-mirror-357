@@ -1,0 +1,10 @@
+organizer/__init__.py,sha256=4l4Y6yzFyb3x8NeVc-MLbNI4wVxniijBPFVZv0V7PZA,52
+organizer/__main__.py,sha256=jbnbSHapEB3_gX76x7mHvsXHSkwWWaBU4gQQ2iP_RWU,1053
+organizer/engine.py,sha256=DgSIs5bQDfnzqhkFqQd_4ql4OxLkJAlys3G4tAQTC88,2855
+organizer/interface.py,sha256=klG7p6hXZvTfZ0j4YufOugbLVVRC9JL54XvsJxEa1dM,1414
+organizer/utils.py,sha256=lbAezv0ZdsXvW_HkWMMUJpA1K9OBzWInoCxlU0vnPCY,369
+tidybit2-0.1.5.dist-info/METADATA,sha256=wEXg1qkH4BF050KtGPebORJikXji1bx9BpNmCsVFpuU,2966
+tidybit2-0.1.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tidybit2-0.1.5.dist-info/entry_points.txt,sha256=PHSijuvOuVi3x5Ir9XQOQ72a9VKAdg8HjXoMHbeB684,53
+tidybit2-0.1.5.dist-info/top_level.txt,sha256=k6whYj73ePUKPv-hAy0D8mQ4Q3JsmcOKbF8EK1-_4Ws,10
+tidybit2-0.1.5.dist-info/RECORD,,
