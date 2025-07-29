@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: core_extract_and_load
+Version: 0.1
+Summary: core
+Home-page: https://github.com/facuvegaingenieer/example-core
+Author: facundo vega
+Author-email: facundo.vega1234@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
