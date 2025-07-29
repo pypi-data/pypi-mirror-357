@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: wokki_chat_bot_client
+Version: 0.1.0
+Summary: Python client for wokki chat bots
+Author: wokki20
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Requires-Dist: python-socketio[client]
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

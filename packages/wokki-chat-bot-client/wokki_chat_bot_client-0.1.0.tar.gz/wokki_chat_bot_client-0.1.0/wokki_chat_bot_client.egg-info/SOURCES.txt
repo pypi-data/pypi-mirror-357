@@ -1,0 +1,9 @@
+pyproject.toml
+setup.py
+wokki_chat_bot/__init__.py
+wokki_chat_bot/client.py
+wokki_chat_bot_client.egg-info/PKG-INFO
+wokki_chat_bot_client.egg-info/SOURCES.txt
+wokki_chat_bot_client.egg-info/dependency_links.txt
+wokki_chat_bot_client.egg-info/requires.txt
+wokki_chat_bot_client.egg-info/top_level.txt
