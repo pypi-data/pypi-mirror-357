@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: mdformat-taplo
+Version: 0.9.3
+Summary: Mdformat plugin to format toml code blocks using taplo.
+Author-email: Bagard Hoel <hoel.bagard@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.8
+Requires-Dist: taplo==0.9.3
+Description-Content-Type: text/markdown
+
+# Mdformat Taplo
+
+Mdformat plugin to format toml code blocks using [taplo](https://taplo.tamasfe.dev/).
+
+## Installation
+
+The package is available on pypi [here](https://pypi.org/project/mdformat-taplo/), you can install it with:
+
+```bash
+pip install mdformat-taplo
+```

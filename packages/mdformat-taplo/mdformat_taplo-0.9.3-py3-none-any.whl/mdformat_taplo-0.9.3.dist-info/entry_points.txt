@@ -1,0 +1,2 @@
+[mdformat.codeformatter]
+toml = mdformat_taplo:format_toml
