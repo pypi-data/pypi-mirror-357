@@ -1,0 +1,10 @@
+clock_pattern/__init__.py,sha256=IMjkMO3twhQzluVTo8Z6rE7Eg-9U79_LGKMcsWLKBkY,22
+clock_pattern/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clock_pattern/clocks/__init__.py,sha256=5D4k3fSqGGN_cvIXHs4lqL7pMItbeIMDKQ930nz9ztk,66
+clock_pattern/clocks/system_clock.py,sha256=JmUdwVu9gAfH84-JY-suQUClvR8JMuujF84lccJ-BP0,3055
+clock_pattern/models/__init__.py,sha256=Q3O6MR-aEh4SeDQY4Tgsy24i-Ne4ZSQL4HY5rIhOCe8,47
+clock_pattern/models/clock.py,sha256=RUb2TNy4BAOne1GdAZ4DlTRhfGzjco6E9NY-u-O654o,1147
+clock_pattern-0.1.0.dist-info/METADATA,sha256=ww1foUF6BP19i7W1jfrZMjZY_cJv_Z-92Rz5JwE068A,3723
+clock_pattern-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+clock_pattern-0.1.0.dist-info/licenses/LICENSE.md,sha256=k3Sxbijlj46RildqRYKoeS0MNBAMcIOMdlixIyMxZ74,1071
+clock_pattern-0.1.0.dist-info/RECORD,,
