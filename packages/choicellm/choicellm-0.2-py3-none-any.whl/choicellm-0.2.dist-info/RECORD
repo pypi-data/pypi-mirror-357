@@ -1,0 +1,11 @@
+__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aggregate.py,sha256=VWHeUIhLnZJ6d8XL2qpSgwi2TPWOpCu0L1altTojJSU,2950
+choicellm.py,sha256=hKn1_Su06NlM5lcUG9LSa4LZGtnDD7fliNuU-jUSass,12331
+multichoicemodel.py,sha256=hNwZYSHcblpDMI_Kvm-lKI-Y8IRgygQovRbVkysjUkk,8962
+prompttemplate.py,sha256=lmC3rR5I8EED8gd7wCSwSQAVWMvCQ3ihtl5gTlVbA_E,14028
+choicellm-0.2.dist-info/licenses/LICENSE,sha256=RpvAZSjULHvoTR_esTlucJ08-zdQydnoqQLbqOh9Ub8,13826
+choicellm-0.2.dist-info/METADATA,sha256=o_un65JYv-73vKjqt1S38SFBQZgszjnomqVkXExiUbU,8067
+choicellm-0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+choicellm-0.2.dist-info/entry_points.txt,sha256=cx6jpyWH6FefLhBa_WUbRQB0P_MhU0LDMpmTYnWYUCU,123
+choicellm-0.2.dist-info/top_level.txt,sha256=OeaZvTv52UE1vjHKB5TxOWuOwWLdxpBG5AYOU70WI2c,61
+choicellm-0.2.dist-info/RECORD,,
