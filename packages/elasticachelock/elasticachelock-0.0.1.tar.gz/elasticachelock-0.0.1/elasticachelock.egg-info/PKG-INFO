@@ -1,0 +1,63 @@
+Metadata-Version: 2.4
+Name: elasticachelock
+Version: 0.0.1
+Summary: Elasticache/Redis Lock for AWS Lambdas is a pure Python lib that implements a distributed locking mechanism using Redis Pub/Sub. It's designed for scenarios where multiple concurrent Lambda executions need to ensure that certain tasks are performed exclusively by a single instance. Supports configurable TTL, retry logic with backoff, customizable timeouts and timezone.
+Home-page: https://github.com/rabuchaim/elasticachelock
+Author: Ricardo Abuchaim
+Author-email: ricardoabuchaim@gmail.com
+Maintainer: Ricardo Abuchaim
+Maintainer-email: ricardoabuchaim@gmail.com
+License: MIT
+Project-URL: Issue Tracker, https://github.com/rabuchaim/elasticachelock/issues
+Project-URL: Source code, https://github.com/rabuchaim/elasticachelock
+Keywords: aws,lambda,redis,lock,elasticache,distributed-locking,pub/sub,pubsub
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Security
+Classifier: Topic :: Internet
+Classifier: Topic :: Internet :: Finger
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: System :: Monitoring
+Classifier: Topic :: System :: Networking
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Localization
+Classifier: Topic :: Utilities
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: Operating System :: Microsoft :: Windows :: Windows 11
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: POSIX :: BSD
+Classifier: Operating System :: POSIX :: BSD :: FreeBSD
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: project-url
+Dynamic: requires-python
+Dynamic: summary
+
+# elasticachelock
+Elasticache/Redis Lock for AWS Lambdas is a pure Python lib that implements a distributed locking mechanism using Redis Pub/Sub. It's designed for scenarios where multiple concurrent Lambda executions need to ensure that certain tasks are performed exclusively by a single instance. Supports configurable TTL, retries, backoff, customizable timeouts and tz

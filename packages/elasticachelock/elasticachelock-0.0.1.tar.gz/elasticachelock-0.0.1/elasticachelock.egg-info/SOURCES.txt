@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+elasticachelock.egg-info/PKG-INFO
+elasticachelock.egg-info/SOURCES.txt
+elasticachelock.egg-info/dependency_links.txt
+elasticachelock.egg-info/not-zip-safe
+elasticachelock.egg-info/top_level.txt
