@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+container_tagbot/__init__.py
+container_tagbot.egg-info/PKG-INFO
+container_tagbot.egg-info/SOURCES.txt
+container_tagbot.egg-info/dependency_links.txt
+container_tagbot.egg-info/entry_points.txt
+container_tagbot.egg-info/requires.txt
+container_tagbot.egg-info/top_level.txt
