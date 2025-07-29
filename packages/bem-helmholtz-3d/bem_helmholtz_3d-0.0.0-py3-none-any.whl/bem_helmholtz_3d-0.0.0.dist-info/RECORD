@@ -1,0 +1,11 @@
+bem_helmholtz_3d/__init__.py,sha256=ShXQBVjyiSOHxoQJS2BvNG395W4KZfqMxZWBAR0MZrE,22
+bem_helmholtz_3d/__main__.py,sha256=NT6BCfBF6U5JSR5eIAf7kUGrL8lU05VqjqO3gJs4_mw,119
+bem_helmholtz_3d/cli.py,sha256=RSDcFm6oNar9J0hDAeWlFrqgXcGPsQ6tpzsNQkcVVZA,206
+bem_helmholtz_3d/main.py,sha256=j2h8YoaIyvMAosyxXlV3rlWEQ7x1yvnZWhdjVG4vXdU,82
+bem_helmholtz_3d/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bem_helmholtz_3d-0.0.0.dist-info/licenses/LICENSE,sha256=Otwb96xcK4QBqXXVdBKpLZVnc4mJuFTa8rsMUEpphMM,1061
+bem_helmholtz_3d-0.0.0.dist-info/METADATA,sha256=B3FMyUET5LOaanZvh2doV5W911ekOp55lwXe4AaGTEw,4229
+bem_helmholtz_3d-0.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+bem_helmholtz_3d-0.0.0.dist-info/entry_points.txt,sha256=bIinBBU-D_AyGtxjMHsN85UWsvdEntETqEffPSDcwPk,62
+bem_helmholtz_3d-0.0.0.dist-info/top_level.txt,sha256=kFxo2Le2e-f-51_p0x_Guhj78jOzLpqq898GmnIqRGM,17
+bem_helmholtz_3d-0.0.0.dist-info/RECORD,,
