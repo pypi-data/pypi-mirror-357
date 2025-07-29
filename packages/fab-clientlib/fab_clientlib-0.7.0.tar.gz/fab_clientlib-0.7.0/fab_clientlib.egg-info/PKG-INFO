@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: fab-clientlib
+Version: 0.7.0
+Summary: FAB Client Lib
+Home-page: https://pypi.org/project/fab-clientlib/
+Author: Olivier Stuker, Christian Eichenberger, Manuel Schneider
+Author-email: contact@flatland-association.org
+License: MIT License
+Keywords: OpenAPI,OpenAPI-Generator,FAB Client Lib
+Description-Content-Type: text/markdown
+Requires-Dist: urllib3<3.0.0,>=2.1.0
+Requires-Dist: python-dateutil>=2.8.2
+Requires-Dist: pydantic>=2
+Requires-Dist: typing-extensions>=4.7.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+    Python client lib to access Flatland Association Benchmarks / AI4REALNET Campaign Hub Backend API, generated with openapi-generator
+    
