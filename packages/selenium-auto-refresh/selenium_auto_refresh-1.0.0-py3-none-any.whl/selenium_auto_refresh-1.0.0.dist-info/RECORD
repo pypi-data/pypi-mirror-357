@@ -1,0 +1,9 @@
+selenium_auto_refresh/__init__.py,sha256=ImU56eA-s3S8Lc8F6TwgOYIXPrKZ5aw8vxpp1BIkfJw,254
+selenium_auto_refresh/refresher.py,sha256=e-84QSFwsVsoyHVG5agfSXwKZnwguBQmcw-ce5IHH0E,3963
+selenium_auto_refresh-1.0.0.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_refresher.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+selenium_auto_refresh-1.0.0.dist-info/METADATA,sha256=VmbQegIHALArhb_QaYaz4wbl5jskhGxW-xq-Ik7twhI,4454
+selenium_auto_refresh-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+selenium_auto_refresh-1.0.0.dist-info/top_level.txt,sha256=XwEyULd0cETE_HPf7B8D0eMjmSL9yH4iWcF2pL2DxqI,28
+selenium_auto_refresh-1.0.0.dist-info/RECORD,,
