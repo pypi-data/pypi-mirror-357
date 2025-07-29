@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: composite_silhouette
+Version: 0.1.1
+Summary: A robust clustering evaluation framework that combines micro- and macro-averaged silhouette scores into a composite metric using statistical weighting.
+Home-page: https://github.com/semoglou/composite_silhouette
+Author: Angelos Semoglou
+Author-email: a.semoglou@outlook.com
+License: MIT
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: joblib>=1.4.2
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
