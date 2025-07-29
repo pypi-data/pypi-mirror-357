@@ -1,0 +1,15 @@
+ecdev/crossplatform.mk,sha256=XUbRNuHW-aqEmWXcX1o9LQp81LqfPGTWeX-CF44yVsY,29357
+ecdev/default.cf,sha256=P82bAH-Nk6neE4OmvvjGbXeaJd6Qn3jMq1AFiolIkpc,4903
+ecdev/bin/ear,sha256=huD7yVv37vntfe_AvuFsrmvtBzhZaPKd_Tof5mvkQs4,37860
+ecdev/bin/ecc,sha256=4J3i6GknmGX5zUq2FSKz7op0ZsN9u-PgLt_qfAgRZ50,30510
+ecdev/bin/ecp,sha256=kX9_ooEn2AoBRG5-dsGrzvWD94MF8LK2XNxEA0lu4nw,46415
+ecdev/bin/ecs,sha256=o_2x_oE6_frvJry8hdELHVlZSpAnfN2igWpEFfIOoVw,53880
+ecdev/include/cffi-ecrt.h,sha256=j4LyHGuf33fxi8idmKzD0ezpvZUtxIf-DtZ8eajy1yU,108934
+ecdev/include/ecrt.h,sha256=yBK-F44HOaUCnZlASLHWQagjXnazuN_jv35pHVDquWs,220492
+ecdev/lib/libecrt.so,sha256=XQLYS9M6mbRVJX-88gVB6EoznXAHnSzzQK0A8mWUfVc,676188
+ecdev/lib/libecrtStatic.a,sha256=v_YNCgBFSLn8gdWSknPuKeyIP_yik8h0Hyq8f5CU8es,1458038
+ecdev/lib/libectp.so,sha256=13TA7MIKFBU4MU1uHZ1gGu8TnoFbJnbmPVifPftOWJ4,1155993
+ecdev-0.0.3.dist-info/METADATA,sha256=jLtO70dSVk92KYxE6eVWcfAtM-NWYDV1v4hD-_9lEVE,7098
+ecdev-0.0.3.dist-info/WHEEL,sha256=fMLPkepYVUvUoq_3XVOZtGxx7Yf4tSuVTTmsHuI5VeM,176
+ecdev-0.0.3.dist-info/top_level.txt,sha256=z940rZ5dgnxvZ0Tm4EvDtNNvZMnGQsn05kVz_FN50po,6
+ecdev-0.0.3.dist-info/RECORD,,
