@@ -1,0 +1,3 @@
+[console_scripts]
+ipatel = ipatel.cli:main
+ipatel-update = ipatel.scripts.update_db:main
