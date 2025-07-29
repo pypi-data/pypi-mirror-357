@@ -1,0 +1,3 @@
+[console_scripts]
+automatoes = automatoes.cli:automatoes_main
+manuale = automatoes.cli:manuale_main
