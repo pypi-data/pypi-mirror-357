@@ -1,0 +1,1 @@
+simple_sphinx_xml_sitemap
