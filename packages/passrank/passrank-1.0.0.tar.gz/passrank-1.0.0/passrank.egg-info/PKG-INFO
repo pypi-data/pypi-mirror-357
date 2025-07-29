@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: passrank
+Version: 1.0.0
+Summary: AI-inspired password strength scoring system
+Home-page: https://github.com/yourusername/passrank
+Author: Aditya Anand
+Author-email: your.email@example.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# passrank
+
+This is a Python library that evaluates the strength of passwords using a custom point-based system. It scores the password based on length, character variety, and transitions between characters.
+
+##  Commands
+
+### `evaluate(<password>)`
+- Returns the numeric score of the given password.
+
+### `rate(<score>)`
+- Returns the human-readable rating (e.g., Weak, Moderate, Strong).
+
+## Disclaimer
+
+> This tool has a high accuracy rate, but not 100%.  
+> Use it at your own risk.  
+> The author is **not responsible** if your password gets found in a data breach and you get **cooked** i.e incur **any** loss.
+
+---
+
+##  Example
+
+```python
+import passrank
+
+score = passrank.evaluate("IlvuM10@")
+print(score)  # e.g. 1250
+
+print(passrank.rate(score))  #  Strong
