@@ -1,0 +1,11 @@
+ha_desktop_remote/__init__.py,sha256=3LaQjWLdIUwHbKWTsrU7AdHXM0V78_ds8KG88TVwZ20,520
+ha_desktop_remote/main.py,sha256=8FTf_WoIG-UPEllDpqpHVnxrYoa4KxfOMmTpKSTdXJY,2119
+ha_desktop_remote/remote_manager.py,sha256=bIVLdB2yxfgVfhvLpd7CyOEecHzXZ20YTZfCsFXPW28,3721
+ha_desktop_remote/remote_window.py,sha256=D2XtK5qLmFrvJ3QbJr0hKvP8zA9_qqCSz4K0fW-2pX4,32479
+ha_desktop_remote/remote_wizard.py,sha256=NfeZjyDIl9-kPC2l2ZZWD3X2awcIBZGq4B6oWTXu94Q,35676
+ha_desktop_remote-1.0.3.dist-info/licenses/LICENSE,sha256=79RjEUsj6CvNdnMEhBB6TVDBVf5ycSV-lh4kWc71uy8,1069
+ha_desktop_remote-1.0.3.dist-info/METADATA,sha256=TJszdGoyiAN854aeDCqqWPABsPbldajezvINLJzX7zQ,10532
+ha_desktop_remote-1.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ha_desktop_remote-1.0.3.dist-info/entry_points.txt,sha256=UzNGFr17TjZ1yTl6U16sZ9JbmUaHjRvrGQviZjIwRPc,62
+ha_desktop_remote-1.0.3.dist-info/top_level.txt,sha256=fEl8QqtU3sw1JSHFVO9n-BF78pYxEEOG37dg8vH4TdE,18
+ha_desktop_remote-1.0.3.dist-info/RECORD,,
