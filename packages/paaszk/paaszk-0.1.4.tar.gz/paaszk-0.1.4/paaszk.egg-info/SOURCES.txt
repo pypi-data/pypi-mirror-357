@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+paaszk/__init__.py
+paaszk/config.py
+paaszk/crypto.py
+paaszk/dropbox_backend.py
+paaszk/file_ops.py
+paaszk/googledrive_backend.py
+paaszk/main.py
+paaszk/s3_backend.py
+paaszk.egg-info/PKG-INFO
+paaszk.egg-info/SOURCES.txt
+paaszk.egg-info/dependency_links.txt
+paaszk.egg-info/entry_points.txt
+paaszk.egg-info/requires.txt
+paaszk.egg-info/top_level.txt

@@ -1,0 +1,28 @@
+[project]
+name = "paaszk"
+urls = { "Homepage" = "https://github.com/pedrorodrigues1997/PaaSZK", "Bug Tracker" = "https://github.com/pedrorodrigues1997/PaaSZK/issues" }
+version = "0.1.4"
+description = "A zero-knowledge encrypted vault CLI tool."
+authors = [{ name="Pedro Rodrigues", email="pedrex1997@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+
+dependencies = [
+    "cryptography",
+    "argon2-cffi",
+    "pyyaml",
+    "boto3",
+    "dropbox",
+    "google-api-python-client",
+    "google-auth",
+    "google-auth-oauthlib",
+    "minio",
+]
+
+[project.scripts]
+PaasZK = "paaszk.main:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
