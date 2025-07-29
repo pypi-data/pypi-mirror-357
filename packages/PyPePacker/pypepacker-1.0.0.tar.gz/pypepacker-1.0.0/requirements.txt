@@ -1,0 +1,3 @@
+PyPeLoader >= 1.0.0
+RC6Encryption >= 1.0.1
+EntropyEncoding >= 0.0.5
