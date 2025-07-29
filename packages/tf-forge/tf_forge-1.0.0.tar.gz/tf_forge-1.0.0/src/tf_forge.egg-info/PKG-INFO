@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: tf-forge
+Version: 1.0.0
+Summary: A CLI toolkit for building and maintaining Terraform modules.
+Author-email: Nikola Roganovic <nikola.roganovic032@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/CraftyDevops/tf-forge.git
+Project-URL: Repository, https://github.com/CraftyDevops/tf-forge.git
+Keywords: terraform,devops,cli,iac,module
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: typer[all]
+Requires-Dist: rich
+Requires-Dist: python-hcl2
+Requires-Dist: semver

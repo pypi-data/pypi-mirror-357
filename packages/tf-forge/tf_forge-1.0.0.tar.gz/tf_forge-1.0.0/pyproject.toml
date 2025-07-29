@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tf-forge"
+version = "1.0.0"
+description = "A CLI toolkit for building and maintaining Terraform modules."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+  {name = "Nikola Roganovic", email = "nikola.roganovic032@gmail.com"},
+]
+keywords = ["terraform", "devops", "cli", "iac", "module"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+  "typer[all]",
+  "rich",
+  "python-hcl2",
+  "semver",
+]
+
+[project.scripts]
+forge = "forge.app:app"
+
+[project.urls]
+Homepage = "https://github.com/CraftyDevops/tf-forge.git"
+Repository = "https://github.com/CraftyDevops/tf-forge.git"

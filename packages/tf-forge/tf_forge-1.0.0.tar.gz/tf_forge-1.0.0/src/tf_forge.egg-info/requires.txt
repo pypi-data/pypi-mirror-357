@@ -1,0 +1,4 @@
+typer[all]
+rich
+python-hcl2
+semver
