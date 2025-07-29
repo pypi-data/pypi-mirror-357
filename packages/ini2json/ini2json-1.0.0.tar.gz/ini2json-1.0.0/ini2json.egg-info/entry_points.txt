@@ -1,0 +1,3 @@
+[console_scripts]
+ini2json = ini2json.main:ini2json
+json2ini = ini2json.main:json2ini

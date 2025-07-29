@@ -1,0 +1,14 @@
+Metadata-Version: 2.2
+Name: ini2json
+Version: 1.0.0
+Summary: Convert INI files to JSON and back for easy CLI tooling
+Author: @readwithai
+Author-email: talwrii@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.7
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-python
+Dynamic: summary
