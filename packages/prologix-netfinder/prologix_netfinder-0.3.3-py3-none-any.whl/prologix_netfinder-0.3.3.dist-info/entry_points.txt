@@ -1,0 +1,3 @@
+[console_scripts]
+prologix-getifaddrs = prologix_netfinder.getifaddrs:main
+prologix-netfinder = prologix_netfinder.nfcli:main
