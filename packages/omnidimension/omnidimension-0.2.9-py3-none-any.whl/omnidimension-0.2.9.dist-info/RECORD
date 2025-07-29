@@ -1,0 +1,15 @@
+omnidim_mcp_server/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+omnidim_mcp_server/main.py,sha256=-KIcJiCkxvPbQ20eShg5QftyRLXIQepqVDK6fhpvemw,2394
+omnidimension/__init__.py,sha256=_5xoxBvqik7-PeMx5hwvFygQoUHpV34lQIJj__e4LaA,26
+omnidimension/client.py,sha256=1PuMIQ8cSrXefkzF1eD6B3TsO_VLWXsS4yjsYSTVJhc,6251
+omnidimension/Agent/__init__.py,sha256=rIoSfggiyjCzLG_Mt_Q7n6pdE4ASR7nTZEuGaNpPjlM,3132
+omnidimension/Call/__init__.py,sha256=xjAyJB0hEbFMoMItPOo1yuFq5njHkrKAnkO2_YbFYa0,2264
+omnidimension/Integrations/__init__.py,sha256=fegAVSOWacCEEOSdZ6vf_3w-5vnzC1IZ8u3RtP0SWYg,16648
+omnidimension/KnowledgeBase/__init__.py,sha256=CihLXL3bnmTlBrRlJ3DP_2EGTkK3KRas8gxGsQoT8Bo,4092
+omnidimension/PhoneNumber/__init__.py,sha256=wzsVUU7Zr5zYTs-T6ljvmUJMhLKijbCvS5Tt5eVVo1I,2372
+omnidimension-0.2.9.dist-info/licenses/LICENSE,sha256=K5KnPgyq0t1FjFxEE-BjqXW1wjZMyT0RHq9tGLiUK6c,1070
+omnidimension-0.2.9.dist-info/METADATA,sha256=U9ekecU1uV3w8-gBYBUsBEaHk6D6vOIXIJv9aago2CE,4837
+omnidimension-0.2.9.dist-info/WHEEL,sha256=CmyFI0kx5cdEMTLiONQRbGQwjIoR1aIYB7eCAQ4KPJ0,91
+omnidimension-0.2.9.dist-info/entry_points.txt,sha256=BazfCfwbItNzbVvCpDaLnOZxvjnRkOhPOnjcVi2I0wI,74
+omnidimension-0.2.9.dist-info/top_level.txt,sha256=0P2cFgol5fGZ3BpCdbNgMuRGJyY4dCSBctcQfBnHCTI,33
+omnidimension-0.2.9.dist-info/RECORD,,
