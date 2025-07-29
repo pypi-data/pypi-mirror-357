@@ -1,0 +1,7 @@
+azure_resource_graph/__init__.py,sha256=vhT2l9zdEVutJgKwwOw0Yh83-aK-Av1W17dWLWilTIQ,604
+azure_resource_graph/client.py,sha256=E43jUkfxFTUoJhCMdgR-xBJUhGcdLWvCP2_DyKoXJhQ,16428
+azure_resource_graph-1.0.12.dist-info/licenses/LICENSE,sha256=r4iBmnC_o2DTujCdhxocpze8eS5wjr88XxV11ju847Y,1077
+azure_resource_graph-1.0.12.dist-info/METADATA,sha256=qyRfcKtD73efjqGIEv1L1rB5fPOlS6wkobAg4tJSUXQ,15997
+azure_resource_graph-1.0.12.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+azure_resource_graph-1.0.12.dist-info/top_level.txt,sha256=b81zYGMFqKuBtBxZQOLjXAUYDq27Hf0fHeeNHHrHIEM,21
+azure_resource_graph-1.0.12.dist-info/RECORD,,
