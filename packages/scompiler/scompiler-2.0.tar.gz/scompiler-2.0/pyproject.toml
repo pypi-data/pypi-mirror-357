@@ -1,0 +1,34 @@
+[project]
+name = "scompiler"
+version = "2.0"
+description = "Simple program to compile, run and save code"
+readme = "README.md"
+requires-python = ">=3.13"
+classifiers = [
+	"Development Status :: 5 - Production/Stable",
+	"Intended Audience :: Developers",
+	"Operating System :: POSIX :: Linux",
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3.13",
+]
+
+dependencies = [
+	"setuptools",
+]
+
+[[authors]]
+name = "Hans von Hohenstaufen"
+email = "Hans.von.Hohenstaufen@protonmail.com"
+
+[project.license]
+file = 'LICENSE'
+
+[project.scripts]
+scompiler="scompiler.__main__:main"
+
+[project.urls]
+Homepage = "https://gitlab.com/HansvonHohenstaufen/scompiler.git"
+
+[build-system]
+requires = ["setuptools>=75.8.2"]
+build-backend = "setuptools.build_meta"

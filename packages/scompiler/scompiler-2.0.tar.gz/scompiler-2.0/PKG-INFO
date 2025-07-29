@@ -1,0 +1,125 @@
+Metadata-Version: 2.4
+Name: scompiler
+Version: 2.0
+Summary: Simple program to compile, run and save code
+License: The MIT License (MIT)
+        
+        © 2023-2025 Hans von Hohenstaufen <Hans.von.Hohenstaufen@protonmail.com>
+        
+        Permission is hereby granted, free of charge, to any person obtaining a
+        copy of this software and associated documentation files (the "Software"),
+        to deal in the Software without restriction, including without limitation
+        the rights to use, copy, modify, merge, publish, distribute, sublicense,
+        and/or sell copies of the Software, and to permit persons to whom the
+        Software is furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in
+        all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+        THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+        FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+        DEALINGS IN THE SOFTWARE.
+        
+Project-URL: Homepage, https://gitlab.com/HansvonHohenstaufen/scompiler.git
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: setuptools
+Dynamic: license-file
+
+# scompiler
+
+scompiler is a python program to compile some programs and save text and image
+output.
+
+The code is compiler and/or run in temporal directory `/tmp/scompiler/`.
+
+# Features
+
+Support:
+
+- LaTeX
+- Mbed
+- Python
+
+# Packaging
+
+- **Gentoo:** imperium repository.
+
+# Requirements
+
+In order to use you need install:
+
+| Language | Requirements |
+|----------|--------------|
+| LaTeX    | texlive      |
+|          | exiftool     |
+| Mbed     | mbed-tools   |
+|          | gcc(arm)     |
+| Python   | python       |
+
+# Installation
+
+To install the Python library and the command line utility, run:
+
+```bash
+python3 -m build
+pip install dist/*.whl
+```
+
+# Running
+
+## LaTeX
+
+The recommended structure is one main file.
+
+```
+document_name/
+├── files/
+│   ├── chapter_1/
+│   │   ├── main.tex
+│   │   ├── section_1.tex
+│   │   └── section_2.tex
+│   └── main.tex
+├── images/
+└── report.tex
+```
+
+The bibliography use `biber`.
+
+The pdf is save in `/tmp/` with the name from main `tex` file.
+
+## Mbed
+
+The first time is create symbolic link to build directory `cmake_build/`. That
+is save in `/tmp/scompiler/`.
+
+Is recommended use symbolic link to `mbed-os/` for the project size.
+
+The binary is save in `/tmp/` with the prefix `stm_<name_project>.bin`.
+
+## Python
+
+### Script
+
+Copy and run script.
+
+### Package
+
+Create a directory to virtual `env` where the package is installed
+`/tmp/scompiler-test-py/`.
+
+To activate the `venv` run:
+
+```
+source /tmp/scompiler-test-py/.venv/bin/activate
+```

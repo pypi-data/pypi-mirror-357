@@ -1,0 +1,2 @@
+[console_scripts]
+scompiler = scompiler.__main__:main
