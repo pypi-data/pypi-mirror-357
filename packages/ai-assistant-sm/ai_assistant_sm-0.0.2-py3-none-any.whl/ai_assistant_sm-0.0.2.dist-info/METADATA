@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: ai_assistant_sm
+Version: 0.0.2
+Summary: Sub Module for AI Assistant Project
+Home-page: 
+Author: Arun CS
+Author-email: aruncs31s@proton.com
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: SpeechRecognition
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: summary
+
+# Assistant
+
+## Installation
+
+```bash
+pip install ai-assistant-sm
+```
+
+
+
+### Suppress the Warnings
+```bash
+python src/assistant/assistant.py 2> >(grep -v ALSA) 
+```
