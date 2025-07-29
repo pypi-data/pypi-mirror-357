@@ -1,0 +1,114 @@
+prompt: |
+  You are an expert at analyzing prompt templates and understanding their semantic meaning and purpose.
+
+  Given a template and its context, analyze it to extract detailed semantic information that will enable
+  precise data format understanding and synthetic data generation.
+
+  **Template to analyze:**
+  ```
+  {template}
+  ```
+
+  **File Context:**
+  ```python
+  {file_content}
+  ```
+
+  **Template Location:** Line {line_number} in {file_path}
+  **Provider:** {provider}
+  **Model:** {model}
+
+  **Existing Parameters (if any):**
+  {parameters_info}
+
+  Analyze this template and provide a comprehensive semantic understanding. Focus on:
+
+  1. **Template Purpose**: What is this template designed to do? Be specific.
+  2. **Domain Context**: What domain/field does this template operate in?
+  3. **Output Characteristics**: What kind of output should this template generate?
+  4. **Parameter Analysis**: For each parameter in the template, understand what it represents semantically.
+
+  **CRITICAL FORMATTING REQUIREMENTS:**
+  Return ONLY valid JSON with this EXACT structure:
+
+  ```json
+  {{
+    "template_semantics": {{
+      "template_purpose": "Detailed description of what this template does",
+      "domain_context": "Specific domain context (e.g., plant_care, legal_documents, code_generation)",
+      "output_structure": "Description of output format/structure",
+      "output_description": "What the output contains and its characteristics",
+      "complexity_level": "simple|intermediate|complex",
+      "language_style": "formal|casual|technical|instructional"
+    }},
+    "parameters": [
+      {{
+        "parameter_name": "exact_parameter_name_from_template",
+        "semantic_type": "what_this_parameter_represents",
+        "semantic_description": "Clear description of what values this parameter should contain",
+        "value_domain": "the_universe_of_possible_values",
+        "value_pattern": "pattern_or_format_of_expected_values",
+        "generation_strategy": "how_to_generate_realistic_values_for_this_parameter",
+        "constraints": {{
+          "type": "string|integer|number|boolean",
+          "format": "specific_format_requirements",
+          "examples_needed": 5
+        }}
+      }}
+    ],
+    "examples": [
+      {{
+        "parameter_name": "exact_parameter_name",
+        "example_values": [
+          {{
+            "value": "example_value_1",
+            "type": "common_case",
+            "confidence": 0.9
+          }},
+          {{
+            "value": "example_value_2",
+            "type": "edge_case",
+            "confidence": 0.8
+          }}
+        ]
+      }}
+    ]
+  }}
+  ```
+
+  **Key Guidelines:**
+  - Be domain-agnostic - work for any template (plant care, legal, code, etc.)
+  - Extract semantic meaning from template content, not just parameter names
+  - Provide realistic, contextually appropriate examples
+  - Focus on what would enable accurate synthetic data generation
+  - Consider the template's language patterns and structure
+  - Generate examples that match the semantic intent of the template
+  - Use the file context to understand how the template is used in the application
+
+system: |
+  You are a specialized AI trained to perform semantic analysis of prompt templates.
+  You excel at understanding the intent, domain, and parameter requirements of any template.
+  You MUST respond with valid JSON only. No explanations, no markdown, no code blocks.
+
+parameters:
+  template:
+    description: "The prompt template to analyze"
+    default: ""
+  file_content:
+    description: "Content of the file containing the template"
+    default: ""
+  file_path:
+    description: "Path to the file containing the template"
+    default: "unknown"
+  line_number:
+    description: "Line number where the template is found"
+    default: 0
+  provider:
+    description: "LLM provider (ollama, openai, etc.)"
+    default: "unknown"
+  model:
+    description: "Model name being used"
+    default: "unknown"
+  parameters_info:
+    description: "Information about existing parameters"
+    default: "No existing parameter information available"

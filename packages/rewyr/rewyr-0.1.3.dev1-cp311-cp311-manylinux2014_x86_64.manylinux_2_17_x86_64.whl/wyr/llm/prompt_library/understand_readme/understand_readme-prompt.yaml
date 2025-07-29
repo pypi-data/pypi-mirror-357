@@ -1,0 +1,26 @@
+system: |
+  You are an expert software developer specializing in technical documentation analysis.
+  Your task is to extract the most important information from README files, providing a
+  clear and concise understanding of the project.
+
+prompt: |
+  Please analyze the following README.md content and provide a comprehensive summary:
+
+  ```markdown
+  {readme_content}
+  ```
+
+  In your summary, focus on:
+
+  1. What is the project/tool's main purpose?
+  2. What features does it offer?
+  3. How is it used (key usage patterns)?
+  4. What technologies/dependencies does it rely on?
+  5. Are there any important requirements or installation steps?
+
+  Organize your response in a structured format that highlights the key aspects of the project.
+
+parameters:
+  readme_content:
+    default: ""
+    description: "The content of the README.md file to analyze"

@@ -1,0 +1,95 @@
+system: |
+  You are an expert judge that evaluates whether execution results are correct based on atom semantics.
+  You must determine if the execution result matches what the atom is designed to do.
+
+prompt: |
+  Judge whether this execution result is PASS or FAIL based on the atom semantics.
+
+  # Atom Semantics
+  Task Type: {task_type}
+  Domain: {domain}
+  Template Purpose: {template_purpose}
+  Expected Output: {output_description}
+
+  # Template
+  ```
+  {template}
+  ```
+
+  # Execution Result
+  Input: {input_data}
+  Return Code: {return_code}
+  Output: {stdout}
+  Errors: {stderr}
+  Generated Files: {generated_files_content}
+
+  # Instructions
+  Based on the atom semantics and template, judge if the execution result meets HIGH STANDARDS for correctness and completeness.
+  Be STRICT in your judgment - only well-executed results that demonstrate excellence should receive PASS.
+
+  **STRICT CRITERIA FOR PASS:**
+  - ALL required sections from the template must be present and comprehensive
+  - Scientific names must be accurate (incorrect scientific names = FAIL)
+  - Care instructions must be factually correct for the specific plant
+  - Information must be detailed and specific, not generic or vague
+  - Output format must match template requirements (e.g., proper markdown formatting)
+  - No significant factual errors or misleading information
+  - Content must demonstrate deep understanding of the specific plant's needs
+
+  **AUTOMATIC FAIL CONDITIONS:**
+  - Empty output or execution errors
+  - Missing required sections from template
+  - Incorrect scientific names or plant identification
+  - Generic care instructions that could apply to any plant
+  - Significant factual errors about plant care
+  - Poor formatting that doesn't follow template structure
+  - Vague or incomplete information in any section
+  - Any indication the system confused the plant with another species
+
+  **EDGE CASES:**
+  - For unknown/fake plants: PASS only if system correctly identifies plant as unknown
+  - For specialized plants (carnivorous, air plants): Require specialized care instructions
+
+  Only award PASS to outputs that would be suitable for publication in a professional plant care guide.
+
+  IMPORTANT: Your response MUST follow this exact structured format:
+
+  VERDICT: [PASS or FAIL]
+  REASON: [Brief explanation of your decision]
+
+  Examples:
+  - For a high-quality execution:
+    VERDICT: PASS
+    REASON: Comprehensive care guide with accurate scientific name, detailed care instructions for all sections, and plant-specific recommendations
+
+  - For a failed execution:
+    VERDICT: FAIL
+    REASON: Incorrect scientific name and generic care instructions that lack plant-specific details
+
+  - For missing sections:
+    VERDICT: FAIL
+    REASON: Missing propagation methods and common problems sections required by template
+
+  You MUST include both VERDICT and REASON lines. Do not include any other text outside this structure.
+
+parameters:
+  task_type:
+    default: ""
+  domain:
+    default: ""
+  template_purpose:
+    default: ""
+  output_description:
+    default: ""
+  template:
+    default: ""
+  input_data:
+    default: ""
+  return_code:
+    default: 0
+  stdout:
+    default: ""
+  stderr:
+    default: ""
+  generated_files_content:
+    default: ""

@@ -1,0 +1,60 @@
+prompt: |
+  I need you to analyze code around an LLM API call to extract the prompt template and any parameters used in it.
+
+  # Context
+  I've identified an LLM API call (atom) at the following location in a codebase:
+  - File: {file_path}
+  - Line number: {line_number}
+  - Type: {atom_type}
+  - Provider: {provider}
+
+  # Task
+  1. Examine the code to identify the prompt template sent to the LLM API
+  2. Extract any parameters (variables, placeholders) used in the template
+  3. Return the exact template and parameter information in a structured way
+
+  # Code Snippet
+  ```
+  {code_snippet}
+  ```
+
+  # Response Format
+  Provide your analysis in the following JSON structure:
+  ```json
+  {
+    "template": "The full prompt template extracted from the code",
+    "parameters": [
+      {
+        "name": "parameter_name",
+        "description": "What this parameter is used for"
+      }
+    ],
+    "notes": "Any additional information or uncertainties"
+  }
+  ```
+
+  If you cannot find a template, provide an empty template string and explain why in the notes.
+
+system: |
+  You are an expert code analyzer specialized in identifying LLM prompt templates in code.
+  Your task is to carefully examine code snippets to extract prompt templates and parameter information.
+  Be precise and focus only on extracting the actual template text sent to the LLM.
+  For parameters, identify variables that are interpolated into the template.
+  Respond only with the requested JSON structure.
+
+parameters:
+  file_path:
+    default: ""
+    description: "Path to the file containing the LLM API call"
+  line_number:
+    default: 0
+    description: "Line number where the LLM API call was detected"
+  atom_type:
+    default: ""
+    description: "Type of the LLM call/atom (e.g., 'openai', 'anthropic')"
+  provider:
+    default: ""
+    description: "The provider of the LLM API (e.g., 'OpenAI', 'Anthropic')"
+  code_snippet:
+    default: ""
+    description: "Code snippet around the LLM API call"

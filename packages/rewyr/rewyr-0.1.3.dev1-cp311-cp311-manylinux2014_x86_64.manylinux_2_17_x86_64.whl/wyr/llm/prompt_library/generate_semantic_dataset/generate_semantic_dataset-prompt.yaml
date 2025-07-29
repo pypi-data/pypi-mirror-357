@@ -1,0 +1,77 @@
+prompt: |
+  You are tasked with generating synthetic data for fine-tuning a language model based on detailed semantic analysis.
+
+  You have access to comprehensive semantic information about the template and its parameters:
+
+  **TEMPLATE INFORMATION:**
+  Template: {template_text}
+
+  **SEMANTIC ANALYSIS:**
+  {semantic_info}
+
+  **METADATA:**
+  - Task Type: {task_type}
+  - Input Format: {input_format}
+  - Output Format: {output_format}
+  - Domain: {domain}
+  - Style: {style}
+
+  **CRITICAL INSTRUCTIONS:**
+  1. Use the parameter examples from the semantic analysis to generate realistic parameter values
+  2. Follow the semantic types and constraints for each parameter
+  3. Generate examples that match the template purpose and domain context
+  4. Use the generation strategies specified in the semantic analysis
+  5. Ensure parameter values match the value patterns and domains specified
+
+  Generate EXACTLY {examples_count} training examples.
+  Each example should use the template structure with realistic parameter values that match the semantic analysis.
+
+  **FORMATTING REQUIREMENTS:**
+  1. Return ONLY valid JSON - no other text, explanations, or markdown
+  2. Use this EXACT structure based on the template parameters:
+  [
+    {{
+      "input": "filled template with parameter values",
+      "output": "expected response for this input"
+    }}
+  ]
+
+  **Example Process:**
+  1. Take the template: {template_text}
+  2. Fill in parameters using values from semantic analysis
+  3. Create realistic outputs that match the domain and style
+  4. Ensure diversity across the {examples_count} examples
+
+  Generate your {examples_count} examples now using this exact JSON format:
+
+system: |
+  You are a specialized AI trained to generate synthetic datasets using semantic analysis.
+  You MUST leverage the semantic information provided to create realistic, domain-specific examples.
+  You MUST respond with valid JSON only. No explanations, no markdown, no code blocks.
+  Your output should be a properly formatted JSON array of examples.
+
+parameters:
+  task_type:
+    description: "The type of task the LLM is used for"
+    default: "text_generation"
+  input_format:
+    description: "The expected input format"
+    default: "natural_language_query"
+  output_format:
+    description: "The expected output format"
+    default: "markdown"
+  domain:
+    description: "The domain or context"
+    default: "general"
+  style:
+    description: "The style or tone"
+    default: "formal"
+  examples_count:
+    description: "Number of examples to generate"
+    default: 5
+  template_text:
+    description: "The template text with parameters"
+    default: ""
+  semantic_info:
+    description: "Comprehensive semantic analysis information"
+    default: "{}"

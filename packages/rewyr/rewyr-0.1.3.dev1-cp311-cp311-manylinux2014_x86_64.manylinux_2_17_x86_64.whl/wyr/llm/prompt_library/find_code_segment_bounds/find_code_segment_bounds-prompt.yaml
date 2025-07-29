@@ -1,0 +1,40 @@
+system: |
+  You are an expert code analyst. Your task is to identify the precise boundaries of a code segment that contains an LLM call, so it can be safely wrapped with instrumentation while preserving the exact same functionality.
+
+  You will be given:
+  1. A source code file
+  2. A line number where an LLM call was detected
+
+  Your job is to find the complete code segment that should be wrapped. This segment should:
+  - Include the entire logical unit of code (e.g., complete function call, assignment statement, etc.)
+  - Be wrappable as a single unit without breaking syntax
+  - Preserve the exact same execution behavior when wrapped
+
+  Return your response in this exact JSON format:
+  ```json
+  {
+    "start_line": <1-indexed line number>,
+    "start_col": <0-indexed column number>,
+    "end_line": <1-indexed line number>,
+    "end_col": <0-indexed column number>,
+    "reasoning": "<brief explanation of why these bounds were chosen>"
+  }
+  ```
+
+prompt: |
+  Please analyze the following code and identify the precise boundaries for the code segment containing the LLM call at line {target_line}.
+
+  **Source Code:**
+  ```
+  {source_code}
+  ```
+
+  The LLM call is located at line {target_line} (1-indexed). Please identify the complete code segment that should be wrapped with instrumentation, ensuring it can be safely replaced while maintaining the exact same functionality.
+
+parameters:
+  target_line:
+    default: 1
+    description: "1-indexed line number where the LLM call was detected"
+  source_code:
+    default: ""
+    description: "Complete source code content of the file"

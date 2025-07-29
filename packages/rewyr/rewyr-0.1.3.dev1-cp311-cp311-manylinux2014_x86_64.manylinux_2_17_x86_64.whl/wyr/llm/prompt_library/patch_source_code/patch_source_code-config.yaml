@@ -1,0 +1,11 @@
+model:
+  name: "groq/llama-3.3-70b-versatile"
+  temperature: 0.1
+  max_tokens: 2000
+
+description: |
+  This task uses the Groq Llama 3.3 70B model to patch source code files by adding
+  instrumentation around LLM calls. The model receives the original source code and
+  atom information, then returns a complete, syntactically correct patched version.
+
+version: "1.0"

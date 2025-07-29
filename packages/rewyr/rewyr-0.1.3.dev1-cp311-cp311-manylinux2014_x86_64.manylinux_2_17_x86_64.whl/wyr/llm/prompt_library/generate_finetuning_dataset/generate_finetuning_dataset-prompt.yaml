@@ -1,0 +1,76 @@
+prompt: |
+  You are tasked with generating synthetic data for fine-tuning a language model based on the metadata of LLM atoms.
+
+  Your goal is to create a diverse and representative dataset that reflects the typical use cases and contexts where the LLM is applied. Use the metadata provided to guide the generation of examples that are relevant and useful for fine-tuning.
+
+  Consider the following metadata attributes:
+  - Task Type: {task_type}
+  - Input Format: {input_format}
+  - Output Format: {output_format}
+  - Domain: {domain}
+  - Style: {style}
+
+  Generate EXACTLY {examples_count} examples that align with these attributes.
+  Each example should be a realistic scenario or query that the LLM might encounter,
+  along with an appropriate response or completion.
+
+  Focus on the content and quality of the examples,
+  ensuring they are varied and cover different aspects of the task type and domain.
+  The examples should be suitable for training the model to handle similar real-world tasks effectively.
+
+  **CRITICAL FORMATTING REQUIREMENTS:**
+  1. Return ONLY valid JSON - no other text, explanations, or markdown
+  2. Use this EXACT structure:
+  [
+    {{
+      "input": "your input text here",
+      "output": "your output text here"
+    }},
+    {{
+      "input": "your input text here",
+      "output": "your output text here"
+    }}
+  ]
+  3. Ensure all strings are properly quoted with double quotes
+  4. Include exactly {examples_count} objects in the array
+  5. End each object with a comma except the last one
+  6. Close the JSON array with ]
+
+  **EXAMPLE OF CORRECT FORMAT:**
+  [
+    {{
+      "input": "Classify the sentiment: 'This product is amazing!'",
+      "output": "positive"
+    }},
+    {{
+      "input": "Classify the sentiment: 'I hate waiting in long lines.'",
+      "output": "negative"
+    }}
+  ]
+
+  Generate your {examples_count} examples now using this exact JSON format:
+
+system: |
+  You are a specialized AI trained to generate synthetic datasets for fine-tuning language models.
+  You MUST respond with valid JSON only. No explanations, no markdown, no code blocks.
+  Your output should be a properly formatted JSON array of examples.
+
+parameters:
+  task_type:
+    description: "The type of task the LLM is used for (e.g., classification, summarization)"
+    default: "classification"
+  input_format:
+    description: "The expected input format (e.g., sentence, paragraph)"
+    default: "sentence"
+  output_format:
+    description: "The expected output format (e.g., label, summary)"
+    default: "label"
+  domain:
+    description: "The domain or context (e.g., medical, legal)"
+    default: "general"
+  style:
+    description: "The style or tone (e.g., formal, concise)"
+    default: "formal"
+  examples_count:
+    description: "Number of examples to generate"
+    default: 5

@@ -1,0 +1,9 @@
+model:
+  name: "groq/deepseek-r1-distill-llama-70b"
+  temperature: 0.1
+
+description: |
+  This task uses a large language model to analyze code around an LLM API call
+  and extract the prompt template and parameters used in it.
+
+version: "1.0"

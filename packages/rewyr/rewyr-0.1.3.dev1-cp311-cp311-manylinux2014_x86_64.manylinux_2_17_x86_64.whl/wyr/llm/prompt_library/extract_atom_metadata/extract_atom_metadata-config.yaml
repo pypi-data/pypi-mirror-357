@@ -1,0 +1,13 @@
+model:
+  name: "groq/deepseek-r1-distill-llama-70b"
+  temperature: 0.1
+  max_tokens: 1000
+
+description: |
+  This task uses the Groq DeepSeek model to analyze LLM usage in code and extract
+  semantic metadata including task type, input/output formats, domain, and style.
+
+  The model analyzes code snippets, templates, and context to determine the purpose
+  and characteristics of LLM usage patterns.
+
+version: "1.0"

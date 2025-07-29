@@ -1,0 +1,87 @@
+system: |
+  You are an expert code analyzer specialized in understanding LLM usage patterns and extracting semantic metadata.
+  Your task is to analyze code containing LLM API calls and determine the task type, input/output formats, domain, and style.
+  Be precise and focus on the actual purpose and context of the LLM usage.
+
+prompt: |
+  Analyze the following LLM usage in code and extract semantic metadata about its purpose and characteristics.
+
+  # Context
+  - File: {file_path}
+  - Line: {line_number}
+  - Provider: {provider}
+  - Model: {model}
+
+  # Code Analysis
+  ```
+  {code_snippet}
+  ```
+
+  # Template Information
+  Template: {template}
+  Parameters: {parameters}
+
+  # Task
+  Based on the code context, template content, and usage patterns, determine:
+
+  1. **Task Type**: What kind of LLM task is this?
+     - Examples: text_generation, classification, summarization, translation, question_answering, code_generation, instruction_following, creative_writing, analysis, extraction, etc.
+
+  2. **Input Format**: What type of input does this LLM call expect?
+     - Examples: text, structured_data, code, json, markdown, natural_language_query, document, image_description, etc.
+
+  3. **Output Format**: What type of output does this LLM call produce?
+     - Examples: text, json, markdown, code, classification_label, summary, translation, structured_response, boolean, etc.
+
+  4. **Domain**: What domain or field does this LLM usage relate to?
+     - Examples: general, technical, medical, legal, financial, educational, creative, business, scientific, programming, etc.
+
+  5. **Style**: What style or tone should the LLM output have?
+     - Examples: formal, casual, technical, creative, concise, detailed, professional, friendly, academic, conversational, etc.
+
+  # Response Format
+  Provide your analysis in the following JSON structure:
+  ```json
+  {{
+    "task_type": "specific_task_type",
+    "input_format": "input_type",
+    "output_format": "output_type",
+    "domain": "domain_area",
+    "style": "output_style",
+    "confidence": 0.95,
+    "reasoning": "Brief explanation of your analysis and why you chose these categories"
+  }}
+  ```
+
+  # Guidelines
+  - Be specific but not overly narrow in your categorizations
+  - Consider the template content as the primary indicator of purpose
+  - Look at variable names and context for additional clues
+  - If uncertain, choose the most likely category and indicate lower confidence
+  - Focus on the actual LLM task, not the surrounding application logic
+  - Consider the model type (if specified) as it may indicate the intended use case
+
+  Analyze the code and provide the metadata:
+
+parameters:
+  file_path:
+    default: ""
+    description: "Path to the file containing the LLM usage"
+  line_number:
+    default: 0
+    description: "Line number where the LLM usage was detected"
+  provider:
+    default: ""
+    description: "LLM provider (e.g., openai, anthropic, ollama)"
+  model:
+    default: ""
+    description: "Specific model being used"
+  code_snippet:
+    default: ""
+    description: "Code snippet containing the LLM usage"
+  template:
+    default: ""
+    description: "Extracted prompt template"
+  parameters:
+    default: ""
+    description: "Template parameters as string representation"

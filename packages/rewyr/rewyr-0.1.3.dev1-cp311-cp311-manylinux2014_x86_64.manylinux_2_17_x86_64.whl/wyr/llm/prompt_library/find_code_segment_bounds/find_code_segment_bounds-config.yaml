@@ -1,0 +1,12 @@
+model:
+  name: "groq/llama-3.3-70b-versatile"
+  temperature: 0.1
+  max_tokens: 1000
+
+description: |
+  This task uses the Groq Llama 3.3 70B model to analyze code and identify precise
+  boundaries for code segments containing LLM calls. The model determines the exact
+  start and end positions (line:column) that can be safely wrapped with instrumentation
+  while preserving the original functionality.
+
+version: "1.0"

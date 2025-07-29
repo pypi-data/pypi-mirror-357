@@ -1,0 +1,3 @@
+model:
+  name: "groq/deepseek-r1-distill-llama-70b"
+  temperature: 0.0

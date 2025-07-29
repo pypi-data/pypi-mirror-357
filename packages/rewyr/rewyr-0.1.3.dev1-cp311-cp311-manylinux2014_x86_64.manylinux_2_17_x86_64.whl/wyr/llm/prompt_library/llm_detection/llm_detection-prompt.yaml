@@ -1,0 +1,55 @@
+prompt: |
+  Analyze the following code snippet and identify if it contains any LLM (Large Language Model) API usage patterns.
+  Look for:
+  1. Direct API calls to LLM providers (OpenAI, Anthropic, etc.)
+  2. Framework-specific LLM usage (LangChain, LlamaIndex, etc.)
+
+  Code snippet:
+  {code_snippet}
+
+  IMPORTANT: You MUST respond with a valid JSON object. Do not include any other text or explanation.
+  The JSON must follow this exact structure:
+  {{
+    "provider": "string or null",      // e.g., "openai", "anthropic"
+    "framework": "string or null",     // e.g., "langchain", "llama_index"
+    "model_name": "string or null",    // e.g., "gpt-4", "claude-2"
+    "confidence": float (0-1)          // confidence score
+  }}
+
+  Example responses:
+  1. For OpenAI usage:
+  {{
+    "provider": "openai",
+    "framework": null,
+    "model_name": "gpt-4",
+    "confidence": 0.95
+  }}
+
+  2. For LangChain usage:
+  {{
+    "provider": "openai",
+    "framework": "langchain",
+    "model_name": "gpt-3.5-turbo",
+    "confidence": 0.9
+  }}
+
+  3. For no LLM usage:
+  {{
+    "provider": null,
+    "framework": null,
+    "model_name": null,
+    "confidence": 0.0
+  }}
+
+system: |
+  You are an expert code analyzer specialized in detecting LLM (Large Language Model) usage patterns in code.
+  You have deep knowledge of various LLM frameworks, APIs, and common patterns used in LLM applications.
+  Your task is to analyze code snippets and identify if they contain any LLM-related functionality.
+  Be precise in identifying the provider, framework, and model name.
+  Provide a confidence score between 0 and 1 based on how certain you are about the detection.
+  You MUST respond with a valid JSON object only. Do not include any other text or explanation.
+
+parameters:
+  code_snippet:
+    type: string
+    description: The code snippet to analyze for LLM usage patterns
