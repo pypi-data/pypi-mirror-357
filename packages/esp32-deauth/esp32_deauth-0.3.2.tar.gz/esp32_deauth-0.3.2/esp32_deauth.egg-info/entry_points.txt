@@ -1,0 +1,2 @@
+[console_scripts]
+esp32-deauth = esp32_deauth.cli:cli

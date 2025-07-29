@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+esp32_deauth/__init__.py
+esp32_deauth/cli.py
+esp32_deauth/deauth.py
+esp32_deauth.egg-info/PKG-INFO
+esp32_deauth.egg-info/SOURCES.txt
+esp32_deauth.egg-info/dependency_links.txt
+esp32_deauth.egg-info/entry_points.txt
+esp32_deauth.egg-info/requires.txt
+esp32_deauth.egg-info/top_level.txt
+esp32_deauth/firmware/bootloader.bin
+esp32_deauth/firmware/esp32-wifi-penetration-tool.bin
+esp32_deauth/firmware/partition-table.bin
