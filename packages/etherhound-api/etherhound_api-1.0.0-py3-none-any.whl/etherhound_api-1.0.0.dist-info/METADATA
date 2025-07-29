@@ -1,0 +1,264 @@
+Metadata-Version: 2.4
+Name: etherhound-api
+Version: 1.0.0
+Summary: EtherHound API - API Client for EtherHound Core
+Author: Spicy Penguin
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp
+Requires-Dist: pydantic
+Dynamic: requires-python
+
+<a id="readme-top"></a>
+
+[![Forks][forks-shield]][forks-url] [![Issues][issues-shield]][issues-url]
+[![Contributors][contributors-shield]][contributors-url]
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/EtherHounds/API">
+    <img src="images/api.png" alt="Logo" width="80" height="80">
+  </a>
+
+<h3 align="center">EtherHound (API)</h3>
+
+  <p align="center">
+    The API of EtherHound Core
+    <br />
+    <a href="https://etherhounds-api.readthedocs.io/en/latest/index.html"><strong>Explore the docs »</strong></a>
+    <!--<br />
+    <br />
+    <a href="https://github.com/EtherHounds/API">View Demo</a>
+    &middot;
+    <a href="https://github.com/EtherHounds/API/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    &middot;
+    <a href="https://github.com/EtherHounds/API/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>-->
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+EtherHound API is an asynchronous Python client library designed to interact seamlessly with the EtherHound Core API. It provides a simple and efficient interface for making HTTP requests to EtherHound-powered services, supporting modern Python features and type hints. Built on top of `aiohttp` and leveraging `pydantic` for data validation, this library enables developers to quickly integrate EtherHound API endpoints into their applications with minimal boilerplate.
+
+Key features:
+- Asynchronous HTTP requests for high performance
+- Configurable host, port, and protocol settings
+- Designed for extensibility
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### Built With
+
+* [![Pydantic]][Pydantic-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Prerequisites
+
+* python >= 3.11
+* pydantic
+* aiohttp
+
+### Installation
+
+#### Github installation:
+  1. clone the repo
+  ```bash
+  git clone https://github.com/EtherHounds/API.git
+  ```
+  2. cd into the repo
+  ```bash
+  cd API
+  ```
+
+  3. build
+  ```bash
+  pip install . -U
+  ```
+
+  4. done!
+
+#### PyPi (recommended):
+  ```bash
+  pip install etherhound-api
+  ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+### Subscribe to an Event
+
+```python
+from houndapi import HoundAPI, LogsSubscription
+import asyncio
+
+async def main():
+  client = HoundAPI(
+    host="127.0.0.1", # local host
+    port=8080
+  )
+  result = await client.subscribe(LogsSubscription(
+    label="deposits",
+    address="0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", # BSC-WBNB Contract
+    topics=["0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c"] # The Deposit Event Hash
+  ))
+  print(f"Subscribed Successfully ✔️, Subscription ID: ({result.result[0]})")
+  await client.close()
+
+asyncio.run(main())
+```
+
+### Poll Subscription Events
+
+```python
+from houndapi import HoundAPI
+import asyncio
+
+async def main():
+  client = HoundAPI(
+    host="127.0.0.1", # local host
+    port=8080
+  )
+  result = await client.poll(
+    subscription_id="0xYourSubscriptionID",
+    limit=10 # poll only first 10 events
+  )
+  for res in result:
+    print(f"New Event From Subscription {res.label}")
+    print(f"({res.result.address}) Has Deposited {(int(res.result.data, base=16))*10**-18:.8f} WBNB")
+    print(f"(https://bscscan.com/tx/{res.result.transaction_hash})")
+    print("-"*50)
+  await client.close()
+
+asyncio.run(main())
+```
+
+<!--_For more examples, please refer to the [Documentation](https://example.com)_-->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Examples
+- [ ] Better Documentation
+
+See the [open issues](https://github.com/EtherHounds/API/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Top contributors:
+
+<a href="https://github.com/EtherHounds/API/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=EtherHounds/API" alt="contrib.rocks image" />
+</a>
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the project_license. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+SpicyPenguin - [@kerolis55463](https://t.me/kerolis55463)
+
+Project Link: [https://github.com/EtherHounds/API](https://github.com/EtherHounds/API)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS
+## Acknowledgments
+
+* []()
+* []()
+* []()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>-->
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/EtherHounds/API.svg?style=for-the-badge
+[contributors-url]: https://github.com/EtherHounds/API/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/EtherHounds/API.svg?style=for-the-badge
+[forks-url]: https://github.com/EtherHounds/API/network/members
+[stars-shield]: https://img.shields.io/github/stars/EtherHounds/API.svg?style=for-the-badge
+[stars-url]: https://github.com/EtherHounds/API/stargazers
+[issues-shield]: https://img.shields.io/github/issues/EtherHounds/API.svg?style=for-the-badge
+[issues-url]: https://github.com/EtherHounds/API/issues
+[license-shield]: https://img.shields.io/github/license/EtherHounds/API.svg?style=for-the-badge
+[license-url]: https://github.com/EtherHounds/API/blob/master/LICENSE.txt
+[Pydantic]: https://img.shields.io/badge/pydantic-darkred?style=for-the-badge&logo=pydantic
+[Pydantic-url]: https://docs.pydantic.dev/latest/
