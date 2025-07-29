@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tidybit2"
+version = "0.1.4"
+description = "A CLI tool to organize files into system and custom folders"
+authors = [{name = "Kelly", email = "your.email@example.com"}]
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = ["questionary", "colorama"]  # Added colorama for colored output
+[project.scripts]
+organize = "organizer.__main__:main"
