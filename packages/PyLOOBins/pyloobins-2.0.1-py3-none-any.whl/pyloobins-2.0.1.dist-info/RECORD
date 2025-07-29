@@ -1,0 +1,10 @@
+pyloobins/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyloobins/cli.py,sha256=JryMxqE2qc4WmnW1N8aq6UsvfxV358SnBEGoASSklA8,3201
+pyloobins/models.py,sha256=ovgrUiVjjT3hZZwn29iWSjd7YHw0um48a5lQq_USYQs,5235
+pyloobins/templates/loobin.md.j2,sha256=ndlgidTiq2pJ0c71ZVfFB4f3Ouujntt86En8_EMbShs,1311
+pyloobins/util.py,sha256=aH1YmS9BerhXyHNQYIbitNjKB7rTsuWda4RlvWZnohs,3076
+pyloobins-2.0.1.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+pyloobins-2.0.1.dist-info/METADATA,sha256=bub60XP8k27-k9eCtPlFHQfwj2V9CxWlXW_Sq2ZxpBQ,4038
+pyloobins-2.0.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+pyloobins-2.0.1.dist-info/entry_points.txt,sha256=NOskQ5rCHRo5AokV1I1OqBijkY1vPYCaCkPf5bdWbNU,47
+pyloobins-2.0.1.dist-info/RECORD,,
