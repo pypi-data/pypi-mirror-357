@@ -1,0 +1,10 @@
+authorization_api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+authorization_api/authorization_api.py,sha256=W_VCg_cbjdjYT7CZQHxYLKRb7fyZzwKE6Qc6GBDHFns,5737
+authorization_api/authorization_api.yaml,sha256=KM4JisAZXb8ouBbmXAr_YUUXtVERaKkj_Mc5Z7NU9eY,10494
+authorization_api/authorization_pulumi.py,sha256=W_VCg_cbjdjYT7CZQHxYLKRb7fyZzwKE6Qc6GBDHFns,5737
+authorization_api/token_validator.py,sha256=2KfKo8zEQ_eVIOlo6ZPLRU6LilNcnNRVYqMzTRrSnXg,5711
+authorization_api/user_pool.py,sha256=JdSezLpq1N4xOyBn0Ease0rw_mY6fqxUncT9i0TYdQo,3225
+authorization_api-0.0.1.dist-info/licenses/LICENSE,sha256=CSBP0VLr90VHNydywQ8RZ5awyRNhkWWbB7PNOoryokA,1066
+authorization_api-0.0.1.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+authorization_api-0.0.1.dist-info/METADATA,sha256=U11Rn_aOgn0y0mCGdhIZHA0XW89x0rOyC1BFMhkY74Y,1795
+authorization_api-0.0.1.dist-info/RECORD,,
