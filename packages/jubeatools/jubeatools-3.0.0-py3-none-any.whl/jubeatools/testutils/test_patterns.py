@@ -1,0 +1,65 @@
+import tempfile
+from contextlib import contextmanager
+from pathlib import Path
+from typing import Callable, ContextManager, Iterator, Optional
+
+from hypothesis import note
+
+from jubeatools import song
+from jubeatools.formats import DUMPERS, LOADERS, Format
+from jubeatools.formats.guess import guess_format
+
+
+@contextmanager
+def open_temp_dir() -> Iterator[Path]:
+    with tempfile.TemporaryDirectory() as temp_dir:
+        yield Path(temp_dir)
+
+
+def dump_and_load_then_compare(
+    format_: Format,
+    song: song.Song,
+    bytes_decoder: Callable[[bytes], str] = lambda b: b.decode("utf-8"),
+    temp_path: Callable[[], ContextManager[Path]] = open_temp_dir,
+    load_options: Optional[dict] = None,
+    dump_options: Optional[dict] = None,
+    test_guess_format: bool = False,
+) -> None:
+    recovered_song = dump_and_load(
+        format_,
+        song,
+        bytes_decoder,
+        temp_path,
+        load_options,
+        dump_options,
+        test_guess_format,
+    )
+    assert recovered_song == song
+
+
+def dump_and_load(
+    format_: Format,
+    song: song.Song,
+    bytes_decoder: Callable[[bytes], str] = lambda b: b.decode("utf-8"),
+    temp_path: Callable[[], ContextManager[Path]] = open_temp_dir,
+    load_options: Optional[dict] = None,
+    dump_options: Optional[dict] = None,
+    test_guess_format: bool = False,
+) -> song.Song:
+    load_options = load_options or {}
+    dump_options = dump_options or {}
+    loader = LOADERS[format_]
+    dumper = DUMPERS[format_]
+    song.minimize_timings()
+    song.minimize_hakus()
+    with temp_path() as folder_path:
+        files = dumper(song, folder_path, **dump_options)
+        for file_path, bytes_ in files.items():
+            file_path.write_bytes(bytes_)
+            note(f"Wrote to {file_path} :\n{bytes_decoder(bytes_)}")
+            if test_guess_format:
+                assert guess_format(file_path) == format_
+        recovered_song = loader(folder_path, **load_options)
+        recovered_song.minimize_timings()
+        recovered_song.minimize_hakus()
+        return recovered_song

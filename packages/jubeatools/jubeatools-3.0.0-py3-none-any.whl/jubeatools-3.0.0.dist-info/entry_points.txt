@@ -1,0 +1,3 @@
+[console_scripts]
+jubeatools=jubeatools.cli.cli:convert
+
