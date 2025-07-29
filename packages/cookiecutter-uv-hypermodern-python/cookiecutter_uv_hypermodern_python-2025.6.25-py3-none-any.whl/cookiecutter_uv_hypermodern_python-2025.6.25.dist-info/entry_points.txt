@@ -1,0 +1,2 @@
+[console_scripts]
+cookiecutter-uv-hypermodern-python-instance = cookiecutter_uv_hypermodern_python.__main__:main
