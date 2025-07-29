@@ -1,0 +1,17 @@
+xara_units/__init__.py,sha256=G0rD4ynSRhHTgCTWOWgvU3psK5BW4GfqzCIPwzbxTJY,24
+xara_units/__main__.py,sha256=o01rW-_36anhZlQRgExDfM3BoLYoO3DxvwrJSoqi7WE,638
+xara_units/cgs.py,sha256=VI39FCTn6OP9d5UqK6vHxMUGQAPmfOTfDsKbPrqpA8E,5074
+xara_units/english.py,sha256=cGA6Pq9JzU9yayPCc_hJ5v7Vbm1pohdi6a6amcw4wLM,102
+xara_units/fas.py,sha256=ZsTHiiWENZGKmy3EN8-cStbF1xLSKTv9zWKCdTq55-g,5074
+xara_units/fks.py,sha256=9TgphIo2IvHWE9qWWe8rAnL-__ZwK3HCV2ZRMV7bhHM,5074
+xara_units/fps.py,sha256=RdcbTbbs3vttrEmkWoLkYbBMf4GtsURMJ5yREH_8Qhc,5074
+xara_units/ias.py,sha256=hPqOSVrdWlGNgzmoXR29NugIe8u5q93XJfgpYA2Eq2c,5001
+xara_units/iks.py,sha256=cmVpXW1f63rsoP-P1jU2CFfHRhEubV_KrbYKYp4xm2M,4836
+xara_units/ips.py,sha256=tnP04aJxq0irkDcjZpGhsfr4yhvWIx-DnYYCurEnRn8,4983
+xara_units/mks.py,sha256=D9T-cAmjKqaeruDJtdurOXgwNeKe8TbeQMVtJiu3FZ4,5050
+xara_units/si.py,sha256=P2MEOBWfBQE8nM8CnxRICFVdRb27OP7brc-nclf74Pw,102
+xara_units/units.py,sha256=2RX8A37iGsoQW6aS1wmhW-k-r6f6bZyHBG73V02Yjn0,2286
+xara_units-0.0.0.dist-info/METADATA,sha256=mxYBOgp5h6kZClh0l81KlPmTwzh9y0FjR9vSGpV9A5k,1451
+xara_units-0.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+xara_units-0.0.0.dist-info/top_level.txt,sha256=3q6tl9FmK-UgfyFbQL_070fqhNSsk5Xcpjq-3v8MX-A,11
+xara_units-0.0.0.dist-info/RECORD,,
