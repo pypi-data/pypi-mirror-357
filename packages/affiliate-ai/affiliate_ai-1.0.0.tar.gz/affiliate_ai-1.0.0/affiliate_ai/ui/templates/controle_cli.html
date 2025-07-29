@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>🚀 Contrôle IA – Actions rapides</h1>
+
+<div class="bloc">
+    <h2>🔧 Actions IA manuelles</h2>
+    <form method="post" action="/controle/cli">
+        <label for="action">Choisir une action :</label><br>
+        <select name="action" id="action" required>
+            <option value="serve">Lancer le serveur Flask</option>
+            <option value="run">Lancer une publication immédiate</option>
+            <option value="plan">Planifier une date (YYYY-MM-DD)</option>
+        </select>
+        <input type="text" name="date" placeholder="Ex: 2025-06-30 (pour planifier)">
+        <br><br>
+        <button type="submit" class="btn">🚀 Exécuter</button>
+    </form>
+</div>
+
+<div class="bloc">
+    <a href="/dashboard-integrated">⬅️ Retour au tableau de bord</a>
+</div>
+{% endblock %}

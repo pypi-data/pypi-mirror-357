@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📊 Quotas IA</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>👥 Suivi des Quotas Utilisateurs IA</h1>
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Quota utilisé</th>
+                <th>Quota total</th>
+                <th>Dernier reset</th>
+                <th>🔁 Reset</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user, info in quotas.items() %}
+            <tr>
+                <td>{{ user }}</td>
+                <td>{{ info.used }}</td>
+                <td>{{ info.limit }}</td>
+                <td>{{ info.last_reset }}</td>
+                <td>
+                    <form method="POST" action="/reset-quota">
+                        <input type="hidden" name="user" value="{{ user }}">
+                        <input type="number" name="new_limit" value="{{ info.limit }}">
+                        <button type="submit">Reset</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

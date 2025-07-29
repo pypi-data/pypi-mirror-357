@@ -1,0 +1,2 @@
+[console_scripts]
+affiliate-ai = affiliate_ai.cli:main

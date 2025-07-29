@@ -1,0 +1,8 @@
+include setup.py
+include pyproject.toml
+include README.md
+include LICENSE
+recursive-include affiliate_ai *
+recursive-include tests *
+recursive-include docs *
+global-include *.md *.rst *.txt

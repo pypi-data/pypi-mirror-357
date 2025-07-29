@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if update_status %}
+<div class="bloc">
+    <h2>🟢 Statut de la dernière mise à jour</h2>
+    <p>{% if "rollback" in update_status %}🔙 <strong>{{ update_status }}</strong>{% else %}{{ update_status }}{% endif %}</p>
+</div>
+{% endif %}
+
+<h1>🔥 PhoenixProject – Tableau de bord IA</h1>
+
+<ul>
+    <li><a href="{{ url_for('docs.afficher_doc_reddit') }}">📖 Documentation Reddit</a></li>
+    <li><a href="{{ url_for('preview_produit') }}">🔮 Prochain produit à publier</a></li>
+    <li><a href="{{ url_for('afficher_stats') }}">📊 Statistiques IA</a></li>
+    <li><a href="{{ url_for('afficher_backups') }}">💾 Voir les sauvegardes</a></li>
+    <li><a href="{{ url_for('formulaire_controle') }}">🧪 Contrôle manuel IA</a></li>
+</ul>
+
+<div class="bloc">
+    <h2>💸 Revenus estimés</h2>
+    <p>Nombre de publications : {{ nb_posts }}</p>
+    <p>Estimation actuelle : <strong>{{ revenu_estime }} €</strong></p>
+</div>
+
+<div class="bloc">
+    <h2>📆 Planification IA</h2>
+    <form action="/planifier" method="post">
+        <label for="date">Choisir une date :</label>
+        <input type="date" id="date" name="date" required>
+        <button class="btn" type="submit">🕒 Planifier une publication</button>
+    </form>
+</div>
+
+<div class="bloc">
+    <h2>⛔ Contrôle IA</h2>
+    <form method="post" action="{{ url_for('ia.toggle_ia') }}">
+        <button type="submit" class="btn btn-danger">⏯️ Pause / Reprise IA</button>
+    </form>
+</div>
+
+<div class="bloc">
+    <h2>🧪 Contrôle manuel (CLI)</h2>
+    <form method="post" action="/controle/cli">
+        <label for="action">Action :</label><br>
+        <select name="action" id="action" required>
+            <option value="serve">Lancer le serveur Flask</option>
+            <option value="run">Publication immédiate</option>
+            <option value="plan">Planifier une date (YYYY-MM-DD)</option>
+        </select>
+        <input type="text" name="date" placeholder="Ex: 2025-06-30 (pour planifier)">
+        <br><br>
+        <button type="submit" class="btn">🚀 Lancer l'action</button>
+    </form>
+</div>
+
+    .success { color: green; }
+    <ul>
+        {% for log in historique %}
+            <li>[{{ log.timestamp }}] {{ log.action }} ({{ log.date }}) – {{ log.statut }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+<div class="bloc">
+    <h2>🔄 Mise à jour système</h2>
+    <form method="post" action="/update-project">
+        <button type="submit" class="btn btn-warning">🔁 Lancer la mise à jour</button>
+    </form>
+</div>
+
+{% endblock %}

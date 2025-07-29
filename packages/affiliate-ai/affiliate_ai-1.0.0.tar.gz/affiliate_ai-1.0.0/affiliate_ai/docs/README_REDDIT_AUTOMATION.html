@@ -1,0 +1,94 @@
+<h1>🤖 Affiliate AI – Fonctionnement &amp; Automatisation</h1>
+
+<hr />
+
+<h2>🎯 Objectif</h2>
+
+<p>Une IA autonome capable de générer, publier et monétiser automatiquement des <strong>avis de produits affiliés</strong> sur Reddit et d'autres plateformes, de manière <strong>naturelle</strong>, <strong>discrète</strong>, et <strong>rentable</strong>.</p>
+
+<hr />
+
+<h2>📦 Structure des modules</h2>
+
+<p>| Module | Rôle |
+|--------|------|
+| <code>review_generator.py</code> | Génère un avis IA à partir d’un produit |
+| <code>publisher.py</code> | Publie l’avis sur Reddit, en respectant les règles |
+| <code>subreddit_rules.py</code> | Analyse les règles du subreddit en temps réel |
+| <code>variation_generator.py</code> | Génère des variantes du contenu pour éviter le spam |
+| <code>auto_publish.py</code> | Pipeline automatique (produit → avis → publication) |
+| <code>auto_scheduler.py</code> | Boucle autonome avec contrôle des règles et temporisation |
+| <code>reddit_logs_web.py</code> | Interface Web pour voir / republier les posts |
+| <code>config_loader.py</code> | Charge les tokens et configurations sensibles |</p>
+
+<hr />
+
+<h2>⚙️ Fonctionnement du pipeline</h2>
+
+<ol>
+<li>Sélection aléatoire d’un produit dans <code>produits.json</code></li>
+<li>Génération d’un avis IA (formulé naturellement)</li>
+<li>Variation automatique du contenu (anti-spam)</li>
+<li>Vérification des règles Reddit (<code>about/rules</code>)</li>
+<li>Adaptation du contenu (lien supprimé, titre formaté)</li>
+<li>Publication sur Reddit (si règles compatibles)</li>
+<li>Enregistrement dans les logs JSON</li>
+<li>Possibilité de republier ailleurs automatiquement</li>
+</ol>
+
+<hr />
+
+<h2>🔁 Republier un post Reddit</h2>
+
+<ul>
+<li>Interface : <code>/reddit-logs</code></li>
+<li>Boutons :
+<ul>
+<li>📤 Republier avec subreddit / titre modifié</li>
+<li>🗑 Supprimer l’entrée du log</li>
+</ul></li>
+<li>Le contenu est <strong>légèrement modifié</strong> automatiquement</li>
+</ul>
+
+<hr />
+
+<h2>🔐 Sécurité &amp; Respect des règles</h2>
+
+<p>✅ Grâce à <code>subreddit_rules.py</code> :
+- L’IA évite les subreddits hostiles à l’IA, aux nouveaux comptes ou à la promotion
+- Elle adapte chaque publication avant de l’envoyer
+- Elle attend 2h entre deux publications (scheduler)</p>
+
+<hr />
+
+<h2>💻 Lancer l'automatisation</h2>
+
+<p>```bash</p>
+
+<h1>Pour publier une fois (test)</h1>
+
+<p>python affiliate<em>ai/core/auto</em>publish.py</p>
+
+<h1>Pour une boucle permanente sécurisée</h1>
+
+<p>python affiliate<em>ai/core/auto</em>scheduler.py</p>
+
+<h1>Pour accéder à l’interface Web des logs</h1>
+
+<p>http://localhost:5000/reddit-logs
+```</p>
+
+<hr />
+
+<h2>🧠 À venir</h2>
+
+<ul>
+<li>Plugin Medium / X / LinkedIn</li>
+<li>Choix dynamique de subreddit selon les tendances</li>
+<li>Filtrage des produits par saison / événement</li>
+<li>Tracking complet des revenus et clics (via shorteners)</li>
+</ul>
+
+<hr />
+
+<p>© PhoenixProject 2025 – All rights protected 🕊️</p>

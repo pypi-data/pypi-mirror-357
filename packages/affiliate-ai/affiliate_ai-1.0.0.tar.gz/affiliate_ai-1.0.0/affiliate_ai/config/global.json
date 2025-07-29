@@ -1,0 +1,13 @@
+{
+  "user_id": "phoenix_master",
+  "keywords": [
+    "livres IA",
+    "d\u00e9veloppement web",
+    "programmation Python"
+  ],
+  "platforms": [
+    "reddit"
+  ],
+  "preferred_language": "fr",
+  "stripe_invoice_url": "http://localhost:5000/invoice"
+}

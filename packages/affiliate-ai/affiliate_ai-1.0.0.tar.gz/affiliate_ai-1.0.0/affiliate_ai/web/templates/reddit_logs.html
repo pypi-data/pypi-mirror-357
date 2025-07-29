@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📢 Logs Reddit & Republier</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>📝 Historique des publications Reddit</h1>
+    <table border="1" cellpadding="6">
+        <thead>
+            <tr>
+                <th>🕒 Date</th>
+                <th>📄 Titre</th>
+                <th>🌐 Subreddit</th>
+                <th>🔗 Lien</th>
+                <th>⚙️ Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in logs %}
+            <tr>
+                <td>{{ entry.timestamp }}</td>
+                <td>{{ entry.title }}</td>
+                <td>{{ entry.subreddit }}</td>
+                <td><a href="{{ entry.url }}" target="_blank">Voir</a></td>
+                <td>
+                    <form method="POST" action="/republish/{{ loop.index0 }}">
+                        <input type="text" name="new_subreddit" placeholder="ex: AItools" required>
+                        <input type="text" name="new_title" placeholder="Titre modifié (facultatif)">
+                        <button type="submit">📤 Republier</button>
+                    </form>
+                    <form method="POST" action="/delete-log/{{ loop.index0 }}">
+                        <button type="submit">🗑 Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

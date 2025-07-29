@@ -1,0 +1,144 @@
+Metadata-Version: 2.4
+Name: affiliate_ai
+Version: 1.0.0
+Summary: Systeme IA de publication automatique et planification Reddit/Affiliation - Bundle unifie pour la gestion d'affiliation
+Home-page: https://github.com/PhoenixGuardianTools/unified_affiliate_bundle
+Author: PhoenixProject
+Author-email: contact@phonxproject.onmicrosoft.com
+License: MIT
+Project-URL: Bug Reports, https://github.com/PhoenixGuardianTools/unified_affiliate_bundle/issues
+Project-URL: Source, https://github.com/PhoenixGuardianTools/unified_affiliate_bundle
+Project-URL: Documentation, https://github.com/PhoenixGuardianTools/unified_affiliate_bundle#readme
+Keywords: affiliate,reddit,automation,ai,publishing,scheduling,affiliate_ai,marketing,social-media
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Framework :: Flask
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Communications :: Email
+Classifier: Topic :: Office/Business :: Financial :: Accounting
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: flask>=2.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# PhoenixProject - Système IA d'Affiliation Unifié
+
+## 🚀 Description
+
+PhoenixProject est un système d'intelligence artificielle complet pour la gestion automatique d'affiliation et la planification de publications Reddit. Ce bundle unifié offre une solution intégrée pour optimiser vos revenus d'affiliation.
+
+## ✨ Fonctionnalités principales
+
+- 🤖 **IA de publication automatique** : Génération automatique de contenu optimisé
+- 📅 **Planification intelligente** : Planification automatique des publications Reddit
+- 💰 **Gestion des revenus** : Suivi et analyse des revenus d'affiliation
+- 📊 **Dashboard en temps réel** : Interface web pour le monitoring
+- 🔄 **Automatisation complète** : Workflows automatisés pour l'affiliation
+- 📈 **Analytics avancés** : Rapports détaillés et métriques de performance
+
+## 🛠️ Installation
+
+```bash
+pip install affiliate_ai
+```
+
+## 🚀 Utilisation rapide
+
+```python
+from affiliate_ai import cli
+
+# Lancement de l'interface CLI
+cli.main()
+```
+
+Ou directement via la commande :
+```bash
+affiliate-ai
+```
+
+## 📁 Structure du projet
+
+```
+affiliate_ai/
+├── amazon/          # Modules Amazon Affiliation
+├── core/           # Fonctionnalités principales
+├── reddit/         # Automatisation Reddit
+├── ui/             # Interface utilisateur
+├── web/            # Interface web
+└── tools/          # Outils utilitaires
+```
+
+## 🔗 Liens utiles
+
+- 📖 [Documentation complète](https://github.com/PhoenixGuardianTools/unified_affiliate_bundle#readme)
+- 🐛 [Signaler un bug](https://github.com/PhoenixGuardianTools/unified_affiliate_bundle/issues)
+- 💡 [Demander une fonctionnalité](https://github.com/PhoenixGuardianTools/unified_affiliate_bundle/issues)
+
+## 👨‍💻 Développement
+
+Pour contribuer au projet ou publier une nouvelle version :
+
+1. **Cloner le repository** :
+   ```bash
+   git clone https://github.com/PhoenixGuardianTools/unified_affiliate_bundle.git
+   cd unified_affiliate_bundle
+   ```
+
+2. **Installer en mode développement** :
+   ```bash
+   pip install -e .
+   ```
+
+3. **Lancer les tests** :
+   ```bash
+   python test_all.py
+   ```
+
+4. **Publier une nouvelle version** :
+   ```bash
+   python -m build
+   python scripts/upload_to_pypi.py
+   ```
+
+📋 **Guide complet** : Voir [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) pour les détails de publication.
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à :
+- Signaler des bugs
+- Proposer de nouvelles fonctionnalités
+- Soumettre des pull requests
+
+## 📞 Support
+
+- 📧 Email : contact@phonxproject.onmicrosoft.com
+- 🐙 GitHub : [PhoenixGuardianTools/unified_affiliate_bundle](https://github.com/PhoenixGuardianTools/unified_affiliate_bundle)
+
+---
+
+**PhoenixProject** - Propulsé par l'IA pour maximiser vos revenus d'affiliation 🚀 
