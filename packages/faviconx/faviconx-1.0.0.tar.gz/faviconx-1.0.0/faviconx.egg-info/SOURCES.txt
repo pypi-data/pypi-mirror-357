@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+faviconx/__init__.py
+faviconx/__main__.py
+faviconx.egg-info/PKG-INFO
+faviconx.egg-info/SOURCES.txt
+faviconx.egg-info/dependency_links.txt
+faviconx.egg-info/entry_points.txt
+faviconx.egg-info/not-zip-safe
+faviconx.egg-info/requires.txt
+faviconx.egg-info/top_level.txt
+tests/test_faviconx.py
