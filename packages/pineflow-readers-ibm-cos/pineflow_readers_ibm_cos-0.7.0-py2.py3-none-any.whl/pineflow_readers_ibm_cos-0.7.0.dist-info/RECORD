@@ -1,0 +1,5 @@
+pineflow/readers/ibm_cos/__init__.py,sha256=9q_2R9B8PGSQYCpFesquI3KBAnYVr_eLdku-lMhOGL4,83
+pineflow/readers/ibm_cos/base.py,sha256=IaU4KE-kBC-kQzrGihJqwloBzlklhY9WaEMoUHgTUnw,2305
+pineflow_readers_ibm_cos-0.7.0.dist-info/METADATA,sha256=1Qy9Xv2VpgRhi48se4O1ZgYeXjvX8-b0Bh6kN8bPSWU,1104
+pineflow_readers_ibm_cos-0.7.0.dist-info/WHEEL,sha256=5druYqcII7zHXzX7qmN0TH895Jg3yuTtfjMgJIVBrKE,92
+pineflow_readers_ibm_cos-0.7.0.dist-info/RECORD,,
