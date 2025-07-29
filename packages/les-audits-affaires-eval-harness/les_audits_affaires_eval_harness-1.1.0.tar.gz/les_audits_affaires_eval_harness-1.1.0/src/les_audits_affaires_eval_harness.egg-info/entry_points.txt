@@ -1,0 +1,2 @@
+[console_scripts]
+lae-eval = les_audits_affaires_eval.cli:main
