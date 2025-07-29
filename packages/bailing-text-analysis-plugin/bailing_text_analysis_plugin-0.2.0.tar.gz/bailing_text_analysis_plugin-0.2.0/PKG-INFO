@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: bailing-text-analysis-plugin
+Version: 0.2.0
+Summary: 百炼文本分析插件
+Author: xindy
+Author-email: qixiong168@163.com
+Requires-Dist: nltk==3.8.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: summary

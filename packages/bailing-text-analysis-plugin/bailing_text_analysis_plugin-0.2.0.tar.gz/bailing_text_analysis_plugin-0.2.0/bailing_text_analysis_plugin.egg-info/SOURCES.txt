@@ -1,0 +1,7 @@
+setup.py
+bailing_text_analysis_plugin.egg-info/PKG-INFO
+bailing_text_analysis_plugin.egg-info/SOURCES.txt
+bailing_text_analysis_plugin.egg-info/dependency_links.txt
+bailing_text_analysis_plugin.egg-info/entry_points.txt
+bailing_text_analysis_plugin.egg-info/requires.txt
+bailing_text_analysis_plugin.egg-info/top_level.txt
