@@ -1,0 +1,2 @@
+[console_scripts]
+easyh5 = easytrajh5.cli:h5
