@@ -1,0 +1,13 @@
+obrag/__init__.py,sha256=Pru0BlFBASFCFo7McHdohtKkUtgMPDwbGfyUZlE2_Vw,21
+obrag/cli.py,sha256=F1sQUiDZhTZeDS_bgp0NTt0uUC56xm7syD6O6TXChtQ,2950
+obrag/config.py,sha256=a-epqmYOcmWeZUWwQb_A9ymJtXHSDycxCebtrFB2pgs,5520
+obrag/indexing.py,sha256=2i-vkEv57vuLW-qtW6TWaHFCGlpXSheC2zR7lp32I7I,6464
+obrag/logging.py,sha256=l1LGwzvjIVKGdWAdUw6cIGVJjEIRmk98QuISrYy3iLs,845
+obrag/rag.py,sha256=YzVWWpy4XABwAeQyKCw8Wvf0NlCRgFvwNS9_NnHOY-k,2700
+obrag/utils.py,sha256=UteUnbpZgAC8RBMJDU0eBkSPaDK1auSMdXD3V1N3CgM,2380
+obrag-0.1.0.dist-info/licenses/LICENSE,sha256=JAn_-TKWMNI4zuLA0pl4PggA_-plrVGkg_0BteQiXw0,1065
+obrag-0.1.0.dist-info/METADATA,sha256=Bi4boMyEcpLb8YoWtZB9IS_bkzQPK-lmPbAJfrAe-u8,1118
+obrag-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+obrag-0.1.0.dist-info/entry_points.txt,sha256=5-vZ_sE8wmHLWZmicjM1qhk9bHWH78aMOjOwrKcQnyk,41
+obrag-0.1.0.dist-info/top_level.txt,sha256=pWsf9PxvdeBm3-uNj-shaNCsxnprsJIF6s31Sz2bWmo,6
+obrag-0.1.0.dist-info/RECORD,,
