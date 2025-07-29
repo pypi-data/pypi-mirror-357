@@ -1,0 +1,11 @@
+albanianlanguage/__init__.py,sha256=x02B_SX3WskT2_JN3nwGygQxp5OtP4AahL_8fM1M5QM,276
+albanianlanguage/__version__.py,sha256=LwnWxKgk3K-pI4SBu3kGXwqKSREhz4b2iU-psos0KiQ,50
+albanianlanguage/words.py,sha256=FxaYLeXZMqihnWo74EFEuTi3KzCvN3BgGiC4M23IVOg,3347
+albanianlanguage/data/words.csv,sha256=2jiE_2woWxTs24dbLYOLfMNsmcZdQMpm1LpvfYCuGeA,12203635
+albanianlanguage-0.1.8.dist-info/licenses/LICENSE,sha256=Pa8nMHNTdbd9_-7MK3oo-MY38RLrjDck8BqeqqXHCM8,1071
+tests/__init__.py,sha256=g-EHkRNVssxndfWJXU3cld8boY-Ie-5FsMi8vNVbs2U,42
+tests/test_words.py,sha256=vZYtAO8ahfVjc-0m8wpLXa2KbgzUQfUiL5APqcg-A6w,2640
+albanianlanguage-0.1.8.dist-info/METADATA,sha256=MWVdNmxqqj6dg-OjFuLYNNWW_pA5mcMQWWAyAYc-YaA,5183
+albanianlanguage-0.1.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+albanianlanguage-0.1.8.dist-info/top_level.txt,sha256=O2pFyTYvew55YrSbSxm4uun12BhbYfi1AaVDJpMrjiE,23
+albanianlanguage-0.1.8.dist-info/RECORD,,
