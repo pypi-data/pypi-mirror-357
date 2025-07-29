@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: deepview_torch
+Version: 3.9.6
+Summary: DeepView PyTorch integration and support.
+Home-page: https://github.com/satishlokkoju/deepview
+Author: Satish Lokkoju
+Author-email: satish.lokkoju@gmail.com
+Requires-Python: >3.9
+Description-Content-Type: text/markdown
+License: Apache-2.0
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Requires-Dist: deepview==3.9.6
+Requires-Dist: torch
+Requires-Dist: torchvision ; extra == "test"
+Project-URL: Changelog, https://github.com/satishlokkoju/deepview/blob/main/CHANGELOG.md
+Project-URL: Documentation, https://satishlokkoju.github.io/deepview
+Provides-Extra: test
+
+# Data and Network Introspection Kit (DeepView) - PyTorch
+
+This package contains the PyTorch extensions of [DeepView](https://github.com/satishlokkoju/deepview).
+
+To learn more about DeepView, please see the [docs](https://betterwithdata.github.io/deepview).
+
+## Installation
+
+To install DeepView PyTorch, use:
+```
+pip install "deepview[torch]"
+```
+
