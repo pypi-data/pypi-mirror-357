@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loops-sdk"
+version = "0.3.0"
+description = "Loops SDK for Python"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+  {name = "Adrian Chen", email = "pypi@familiar.pub"}
+]
+dependencies = [
+  "requests==2.31.0",
+  "build==1.2.2.post1",
+  "twine==6.1.0"
+]
+
+[project.optional-dependencies]
+# Development and testing extras
+# Install with: `uv pip install -e .[test]`
+
+test = [
+  "pytest==7.4.4",
+  "pytest-mock==3.14.0",
+  "coverage==7.4.4",
+  "ruff==0.4.4",
+  "pre-commit==4.2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/infernal-moose/loops-python"
+Issues = "https://github.com/infernal-moose/loops-python/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["loops_sdk"]
+
+[tool.ruff]
+line-length = 120
+# Target the same Python version used in CI
+target-version = "py311"
+exclude = ["dist", ".venv", "__pycache__"]

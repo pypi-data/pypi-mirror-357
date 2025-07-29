@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/loops_sdk.py
+src/loops_sdk.egg-info/PKG-INFO
+src/loops_sdk.egg-info/SOURCES.txt
+src/loops_sdk.egg-info/dependency_links.txt
+src/loops_sdk.egg-info/requires.txt
+src/loops_sdk.egg-info/top_level.txt
+test/test_loops_sdk.py
