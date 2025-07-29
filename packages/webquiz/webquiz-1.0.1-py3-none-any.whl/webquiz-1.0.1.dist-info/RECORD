@@ -1,0 +1,8 @@
+webquiz/__init__.py,sha256=4rNJx9htuTW-3oyPbIXM-lZLF0POJNy8njvoyR0Ap5U,231
+webquiz/cli.py,sha256=n3kOgc3GNkGvp4AKo1Snj33JYpsyz7N4JUe39kaKvFA,9509
+webquiz/server.py,sha256=uDTCOEv1zaCzw9jCiZxm-7D8vIGrnL36_6Qr2sy6NsQ,17478
+webquiz/templates/index.html,sha256=-26IoQV-twdRU4BKifTEfCkEIsu3QLCw_S5UYbx7SLA,17972
+webquiz-1.0.1.dist-info/METADATA,sha256=eLuprESZEiz-Ezqs1FLrXyqaSleKRxta4Ng5kI9Smy0,10626
+webquiz-1.0.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+webquiz-1.0.1.dist-info/entry_points.txt,sha256=0pztbXpI0BnVvbwn3sJJnyrt-Bad4ChRgLynq9POExg,44
+webquiz-1.0.1.dist-info/RECORD,,
