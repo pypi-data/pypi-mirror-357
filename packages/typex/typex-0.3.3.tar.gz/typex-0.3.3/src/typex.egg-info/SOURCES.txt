@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+src/typex/__init__.py
+src/typex/basic.py
+src/typex/constants.py
+src/typex/decorators.py
+src/typex/dirstruct.py
+src/typex.egg-info/PKG-INFO
+src/typex.egg-info/SOURCES.txt
+src/typex.egg-info/dependency_links.txt
+src/typex.egg-info/top_level.txt
