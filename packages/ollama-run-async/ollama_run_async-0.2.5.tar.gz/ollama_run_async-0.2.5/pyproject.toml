@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name             = "ollama-run-async"
+version          = "0.2.5"
+description      = "Functions to conveniently run asynchronous Ollama workflows, including RAG support."
+readme           = "ReadME.md"
+requires-python  = ">=3.9"
+dependencies     = [
+  "pandas",
+  "numpy",
+  "tqdm",
+  "ollama",
+  "nest_asyncio",
+  "langchain>=0.0.299",
+  "langchain-community>=0.0.74",
+  "faiss-cpu>=1.7.3",
+  "chromadb>=0.3.21",
+]
+
+[tool.setuptools]
+py-modules = ["async_run_ollama", "ollama_rag_run"]

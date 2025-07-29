@@ -1,0 +1,9 @@
+pandas
+numpy
+tqdm
+ollama
+nest_asyncio
+langchain>=0.0.299
+langchain-community>=0.0.74
+faiss-cpu>=1.7.3
+chromadb>=0.3.21
