@@ -1,0 +1,82 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "algomake"
+version = "0.1.0"
+description = "A custom machine learning library implemented from scratch."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT" # Changed to a simple string as per deprecation warning
+authors = [
+  { name = "Arya Patil", email = "patilarya3133@gmail.com" },
+]
+keywords = ["machine-learning", "deep-learning", "algorithms", "from-scratch"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    # "License :: OSI Approved :: MIT License", # Removed this as it's deprecated with project.license = "MIT"
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Development Status :: 3 - Alpha",
+]
+dependencies = [
+    "numpy>=1.20.0",
+]
+
+[project.optional-dependencies] # This is where your 'extras' like 'dev' go
+dev = [
+    "pytest>=7.0",
+    "flake8>=4.0",
+    "black>=22.0",
+    "isort>=5.0",
+    "sphinx", # For documentation generation
+    "sphinx_rtd_theme",
+]
+docs = [
+    "sphinx",
+    "sphinx_rtd_theme",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/algoforge" # Replace with your GitHub repo URL
+"Bug Tracker" = "https://github.com/yourusername/algoforge/issues" # Replace with your GitHub repo URL
+
+[tool.setuptools.packages.find]
+include = ["algoforge", "algoforge.*"]
+
+[tool.pytest.ini_options]
+min_version = "6.0"
+addopts = "-ra --strict-markers --ignore=setup.py"
+testpaths = [
+    "tests",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | build
+  | dist
+  | algoforge/metrics # Example: if you want to exclude a specific folder
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+known_first_party = ["algomake"]
