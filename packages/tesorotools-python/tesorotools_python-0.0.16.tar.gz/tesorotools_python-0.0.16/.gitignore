@@ -1,0 +1,22 @@
+.venv/
+.build1/
+
+__pycache__
+
+data/
+config/
+debug/
+tablas/
+
+dist/
+
+*.png
+*.feather
+*.csv
+*.docx
+*.docx#
+
+test/
+
+# font files
+*.otf
