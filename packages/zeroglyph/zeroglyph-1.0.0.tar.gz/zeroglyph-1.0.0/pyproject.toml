@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zeroglyph"                   # Your package name
+version = "1.0.0"                    # Initial version
+description = "Ultra-compact text compression for AI APIs"
+readme = "README.md"                 # Path to your README
+requires-python = ">=3.8"            # Minimum Python version
+license = { file = "LICENSE" }       # License file
+authors = [ { name="Goodzy", email="goodzemcee@gmail.com" } ]
+dependencies = [
+  "zstandard",
+  "pyyaml",
+  "huffman"
+]
