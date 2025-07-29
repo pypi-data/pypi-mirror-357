@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: rockford
+Version: 0.0.1
+Summary: Rockford is forensic kit for email
+Author-email: Brian Farrell <brian.farrell@me.com>
+License: AGPLv3
+Project-URL: repository, https://gitlab.com/brianfarrell/rockford/
+Project-URL: documentation, https://brianfarrell.gitlab.io/rockford/
+Keywords: forensics,email
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: loguru>=0.7.2
+Requires-Dist: python-dateutil
+Provides-Extra: dev
+Requires-Dist: build[virtualenv]; extra == "dev"
+Requires-Dist: setuptools; extra == "dev"
+Requires-Dist: setuptools-scm[toml]; extra == "dev"
+Requires-Dist: twine; extra == "dev"
+Provides-Extra: doc
+Requires-Dist: mkdocs-macros-plugin; extra == "doc"
+Requires-Dist: mkdocs-material[imaging,recommended]; extra == "doc"
+Requires-Dist: mkdocstrings[python]; extra == "doc"
+Requires-Dist: mike; extra == "doc"
+Provides-Extra: test
+Requires-Dist: coverage[toml]; extra == "test"
+Requires-Dist: dirty-equals; extra == "test"
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: pytest-env; extra == "test"
+
+
+This is Jim Rockford.  At the tone, leave your name and message.  I'll get back to you.
