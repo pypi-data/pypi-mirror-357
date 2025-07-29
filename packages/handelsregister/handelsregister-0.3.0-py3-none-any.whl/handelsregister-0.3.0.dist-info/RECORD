@@ -1,0 +1,11 @@
+handelsregister/__init__.py,sha256=oOTGGJOLDBKvdqFrVv_wHS5LshBF31GHDp_RASk2dUQ,392
+handelsregister/cli.py,sha256=BRy_Ts7HUvalopD6zKBjz_noBjjTz_AD7vVDNR7qIvk,11762
+handelsregister/client.py,sha256=GKB01EhXV0pHlR1YjZT_4wK3vzYciY9e4xcN-YTnABs,35014
+handelsregister/company.py,sha256=0pChKdbYjCOipFXb-tbdk7MBPw-c0JrPBXquh_zHnWc,17753
+handelsregister/exceptions.py,sha256=ksQlfrqcqcA3JuVOVduDZHl3SlByiYYxO7_LD3mRjgY,359
+handelsregister/version.py,sha256=VwUrQ2jUwyXoslzER1vmxzHxtWjMyHMG2pA7_siqOOw,86
+handelsregister-0.3.0.dist-info/METADATA,sha256=qc13vhqtFKu9F6908VwYxH5g_kdFc3sAWn8jM_NsfmQ,9337
+handelsregister-0.3.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+handelsregister-0.3.0.dist-info/entry_points.txt,sha256=57XGBVhXqUumrl-lNR7SSKSAYgwJXD9yfG2OCdRevPI,61
+handelsregister-0.3.0.dist-info/top_level.txt,sha256=VzFXz6kBiwWZ_fEkAy4_EtfAKzQDjBP81jOtE6AE-kQ,16
+handelsregister-0.3.0.dist-info/RECORD,,
