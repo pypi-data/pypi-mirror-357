@@ -1,0 +1,11 @@
+parxel/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+parxel/iterator.py,sha256=JPqLYWKSd-6Xj-H7DXmqyVNSNxwsQNWs_iYgEVVYfv0,1976
+parxel/lexer.py,sha256=Zx9ZOYBxZ0B5ucHA7bPtk15Dq5OkJN31FBeL5y8kdVo,2658
+parxel/nodes.py,sha256=onYW4eK0z3E-fxHG4_s6UgdoS8bhc-XURxTbkXPPIJc,4332
+parxel/parser.py,sha256=Qvi_juj9utCBLfhB7lvZUA3c2L8nHsnKpnaRFdzYVak,7639
+parxel/token.py,sha256=VtgSJs_7LaJ7iZ9J4g2hpJrSBpOfhMT5pOHAIf0mmps,1275
+parxel-0.0.15.dist-info/licenses/LICENSE,sha256=P9hgoiHHNjudu3ZwxPX_yauqmKkD7a8ZTcSgNZL1C5Y,1083
+parxel-0.0.15.dist-info/METADATA,sha256=DdeIONHeGwozL_VddPFRZFGtclJX8wuHLcS2aQF5QtE,3797
+parxel-0.0.15.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+parxel-0.0.15.dist-info/top_level.txt,sha256=Wbd5b-ptNv72LzFdqqBTaPgeaSfChqfvGxZkOXG3EPw,7
+parxel-0.0.15.dist-info/RECORD,,
