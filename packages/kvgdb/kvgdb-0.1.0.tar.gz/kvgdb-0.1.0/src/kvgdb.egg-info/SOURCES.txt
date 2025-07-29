@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/kvgdb/__init__.py
+src/kvgdb.egg-info/PKG-INFO
+src/kvgdb.egg-info/SOURCES.txt
+src/kvgdb.egg-info/dependency_links.txt
+src/kvgdb.egg-info/requires.txt
+src/kvgdb.egg-info/top_level.txt
+tests/test_kvgdb.py
