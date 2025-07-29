@@ -1,0 +1,158 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dissect.cobaltstrike"
+dynamic = ["version"]
+description = "a Python library for dissecting Cobalt Strike related data"
+requires-python = ">=3.9"
+license = {text = "MIT License"}
+readme = "README.rst"
+authors = [
+    {name = "Yun Zheng Hu", email = "hu@fox-it.com"},
+]
+dependencies = [
+    "dissect.cstruct >= 4.6.dev",
+    "lark",
+]
+keywords = ["dissect", "cobaltstrike", "beacon", "parser", "parsing", "lark", "cstruct"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: Utilities",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/fox-it/dissect.cobaltstrike"
+Documentation = "https://dissect-cobaltstrike.readthedocs.io/"
+Source = "https://github.com/fox-it/dissect.cobaltstrike"
+
+[project.optional-dependencies]
+c2 = [
+    "flow.record",
+    "pycryptodome",
+    "httpx",
+]
+pcap = [
+    "pyshark",
+    "dissect.cobaltstrike[c2]",
+]
+full = [
+    "dissect.cobaltstrike[c2,pcap]",
+    "rich",
+]
+test = [
+    "pytest",
+    "pytest-cov",
+    "pytest-httpserver",
+    "dissect.cobaltstrike[full]",
+]
+docs = [
+    "sphinx",
+    "sphinx_rtd_theme>=2.0",
+    "sphinx-autoapi",
+    "sphinx-copybutton",
+    "sphinx-argparse-cli",
+    "ipython",
+    "pickleshare",
+    "dissect.cobaltstrike[full]",
+]
+
+[project.scripts]
+beacon-artifact = "dissect.cobaltstrike.artifact:main"
+beacon-dump = "dissect.cobaltstrike.beacon:main"
+beacon-xordecode = "dissect.cobaltstrike.xordecode:main"
+beacon-pcap = "dissect.cobaltstrike.pcap:main"
+beacon-client = "dissect.cobaltstrike.client:main"
+c2profile-dump = "dissect.cobaltstrike.c2profile:main"
+
+[tool.hatch]
+version.source = "vcs"
+version.raw-options.local_scheme = "no-local-version"
+build.hooks.vcs.version-file = "dissect/cobaltstrike/_version.py"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/tests/beacons/",
+  "/tests/profiles/",
+]
+
+[tool.hatch.build.targets.wheel]
+only-include = ["dissect/cobaltstrike", "tests", "docs"]
+
+[tool.black]
+line-length = 120
+color = true
+
+[tool.ruff]
+line-length = 120
+lint.select = [
+    "F",    # Pyflakes
+    "E",    # pycodestyle
+    "W",    # pycodestyle
+    #"C90",    # mccabe
+    "I",    # isort
+    #"N",    # pep8-naming
+    #"D",    # pydocstyle
+    #"UP",    # pyupgrade
+    "YTT",    # flake8-2020
+    #"ANN",    # flake8-annotations
+    "ASYNC",    # flake8-async
+    #"S",    # flake8-bandit
+    #"BLE",    # flake8-blind-except
+    #"FBT",    # flake8-boolean-trap
+    #"B",    # flake8-bugbear
+    #"A",    # flake8-builtins
+    #"COM",    # flake8-commas
+    #"C4",    # flake8-comprehensions
+    #"DTZ",    # flake8-datetimez
+    "T10",    # flake8-debugger
+    #"DJ",    # flake8-django
+    #"EM",    # flake8-errmsg
+    #"EXE",    # flake8-executable
+    "FA",    # flake8-future-annotations
+    "ISC",    # flake8-implicit-str-concat
+    "ICN",    # flake8-import-conventions
+    #"G",    # flake8-logging-format
+    #"INP",    # flake8-no-pep420
+    "PIE",    # flake8-pie
+    #"T20",    # flake8-print
+    "PYI",    # flake8-pyi
+    #"PT",    # flake8-pytest-style
+    "Q",    # flake8-quotes
+    "RSE",    # flake8-raise
+    #"RET",    # flake8-return
+    #"SLF",    # flake8-self
+    #"SIM",    # flake8-simplify
+    "TID",    # flake8-tidy-imports
+    "TCH",    # flake8-type-checking
+    "INT",    # flake8-gettext
+    #"ARG",    # flake8-unused-arguments
+    #"PTH",    # flake8-use-pathlib
+    "TD",    # flake8-todos
+    #"ERA",    # eradicate
+    #"PD",    # pandas-vet
+    #"PGH",    # pygrep-hooks
+    #"PL",    # Pylint
+    #"TRY",    # tryceratops
+    #"FLY",    # flynt
+    #"NPY",    # NumPy-specific
+    #"RUF",    # Ruff-specific
+]
