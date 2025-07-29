@@ -1,0 +1,8 @@
+﻿   docutils
+pytest~=8.3.5
+pyyaml~=6.0.2
+   requests
+   sqlalchemy
+toml~=0.10.2
+dotenv~=0.9.9
+python-dotenv~=1.1.0

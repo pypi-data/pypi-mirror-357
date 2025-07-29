@@ -1,0 +1,64 @@
+﻿[general]
+app_name = "TOMLTestSuite"
+mode = "staging"
+active = true
+build = 47
+release_date = 2024-06-03T15:30:00Z
+
+[developer]
+main = "poziel"
+emails = ["poziel@domain.com", "sophie@domain.com"]
+contributors = [
+  { name = "luc", role = "tester" },
+  { name = "max", role = "ops" }
+]
+
+[service]
+enabled = true
+rate_limit_per_minute = 250
+timeout = 12.75
+
+[service.oauth]
+provider = "auth0"
+client_id = "abcd1234"
+client_secret = "s3cr3t"
+redirect_uris = ["https://test.local/callback", "http://localhost:8080/callback"]
+
+[service.endpoints]
+login = "/api/login"
+logout = "/api/logout"
+refresh = "/api/refresh"
+
+[storage]
+type = "s3"
+bucket = "toml-test-bucket"
+region = "ca-central-1"
+credentials = { access_key = "AKIA...", secret_key = "very-secret" }
+backup_days = [ "Monday", "Thursday" ]
+max_backup_size_gb = 10
+
+[logging]
+level = "debug"
+log_to_console = true
+log_to_file = false
+file_path = "/var/log/tomltest.log"
+
+[[features]]
+name = "leaderboard"
+active = true
+params = { max_entries = 1000, public = true }
+
+[[features]]
+name = "chat"
+active = false
+params = { max_rooms = 50, moderation = true }
+
+[monitoring]
+enabled = true
+tools = ["grafana", "newrelic"]
+interval_seconds = 60
+
+[security]
+cors_allowed_origins = ["https://trusted.domain", "http://localhost:3000"]
+jwt_secret = "superjwtsecret"
+max_sessions = 5

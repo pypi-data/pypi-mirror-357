@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pz-uniconfig"
+version = "1.0.1"
+authors = [
+  { name="Alexandre Sauvé", email="alexandre.sauve.dev@gmail.com" },
+]
+description = "Unified config management for Python: YAML, JSON, TOML, dotenv, INI—one API."
+readme = "README.md"
+requires-python = ">=3.0"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "pyyaml~=6.0.2",
+  "requests",
+  "sqlalchemy",
+  "toml~=0.10.2",
+  "dotenv~=0.9.9",
+  "python-dotenv~=1.1.0",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest~=8.3.5",
+  "docutils",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["pz_uniconfig"]
+
+[project.urls]
+Homepage = "https://github.com/poziel/uniconfig"
+Issues = "https://github.com/poziel/uniconfig"

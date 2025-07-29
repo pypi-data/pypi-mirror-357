@@ -1,0 +1,80 @@
+﻿project:
+  title: "YAMLConfigTest"
+  environment: "production"
+  enabled: true
+  release_date: 2024-06-03
+  owners:
+    - username: "poziel"
+      contact: "poziel@domain.com"
+      roles: ["admin", "dev"]
+    - username: "bob"
+      contact: "bob@domain.com"
+      roles: ["moderator"]
+
+api:
+  main_url: "https://api.example.com/v1/"
+  auth_required: true
+  retry:
+    max_attempts: 5
+    backoff_factor: 1.5
+    exceptions:
+      - "TimeoutError"
+      - "ConnectionError"
+  endpoints:
+    users: "/users"
+    stats: "/stats"
+    login: "/login"
+    logout: "/logout"
+
+features:
+  - name: "chat"
+    active: true
+    max_channels: 10
+    allowed_types: ["text", "voice"]
+  - name: "files"
+    active: false
+    max_storage_mb: 512
+    extensions: [".pdf", ".docx", ".png", ".jpg"]
+
+notifications:
+  email:
+    enabled: true
+    smtp_server: "smtp.domain.com"
+    port: 465
+    username: "mailer@domain.com"
+    password: "dontcommitme"
+    templates:
+      welcome: "welcome_email.html"
+      reset: "reset_email.html"
+  sms:
+    enabled: false
+    provider: null
+
+servers:
+  eu-west:
+    ip: "51.140.12.77"
+    port: 8080
+    status: "online"
+  us-east:
+    ip: "34.120.55.17"
+    port: 8080
+    status: "maintenance"
+
+metrics:
+  enabled: true
+  interval_seconds: 60
+  providers:
+    - "prometheus"
+    - "datadog"
+
+maintenance_mode: false
+admin_panel:
+  enabled: true
+  whitelisted_ips:
+    - "192.168.1.10"
+    - "192.168.1.11"
+    - "127.0.0.1"
+  features:
+    - "logs"
+    - "stats"
+    - "user_management"

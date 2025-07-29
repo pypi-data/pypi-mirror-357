@@ -1,0 +1,88 @@
+{
+  "app": {
+    "name": "ConfigManagerDemo",
+    "debug": true,
+    "version": "1.0.0",
+    "maintainers": [
+      {
+        "name": "Poziel",
+        "email": "poziel@example.com"
+      },
+      {
+        "name": "Alice",
+        "email": "alice@example.com"
+      }
+    ],
+    "features": {
+      "registration": true,
+      "multi_language": true,
+      "email_verification": false,
+      "supported_languages": [
+        "en",
+        "fr",
+        "es"
+      ]
+    }
+  },
+  "database": {
+    "engine": "postgresql",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "supersecret",
+    "max_connections": 20,
+    "timeout": 30.5
+  },
+  "cache": {
+    "enabled": true,
+    "type": "redis",
+    "redis": {
+      "host": "127.0.0.1",
+      "port": 6379,
+      "db": 0,
+      "password": null
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "handlers": [
+      "console",
+      "file"
+    ],
+    "file": {
+      "path": "/var/log/myapp.log",
+      "max_size_mb": 10,
+      "backup_count": 5
+    }
+  },
+  "third_party": {
+    "riot_api": {
+      "api_key": "RGAPI-xxx",
+      "queue_url": "https://static.developer.riotgames.com/docs/lol/queues.json",
+      "enabled": true
+    },
+    "payment": {
+      "provider": "stripe",
+      "api_key": "sk_test_abcdef",
+      "sandbox": true,
+      "currencies_supported": [
+        "CAD",
+        "USD",
+        "EUR"
+      ]
+    }
+  },
+  "security": {
+    "cors": {
+      "allowed_origins": [
+        "https://poziel.com",
+        "http://localhost:3000"
+      ],
+      "allow_credentials": true
+    },
+    "rate_limit": {
+      "enabled": true,
+      "requests_per_minute": 120
+    }
+  }
+}
