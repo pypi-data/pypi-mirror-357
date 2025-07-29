@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: st_dataframe_paginator
+Version: 0.0.4
+Summary: Dataframe paginator for Streamlit
+Home-page: 
+Author: Ayumu Yamaguchi
+Author-email: 
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/gussan-me/st-dataframe-paginator
+Project-URL: Issues, https://github.com/gussan-me/st-dataframe-paginator/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+Dynamic: requires-python
