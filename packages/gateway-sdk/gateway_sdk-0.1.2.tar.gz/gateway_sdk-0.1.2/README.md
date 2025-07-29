@@ -1,0 +1,125 @@
+# Agntcy SDK
+
+The Agntcy SDK provides a factory and set of interfaces for creating agentic communication bridges and clients. This SDK is designed to enable interoperability between different agent protocols and messaging layers by decoupling protocol logic from the underlying network stack.
+
+<div align="center" style="margin-bottom: 1rem;">
+  <a href="https://pypi.org/project/your-package-name/" target="_blank" style="margin-right: 0.5rem;">
+    <img src="https://img.shields.io/pypi/v/your-package-name?logo=pypi&logoColor=%23FFFFFF&label=Version&color=%2300BCEB" alt="PyPI version">
+  </a>
+  <a href="./LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/License-Apache%202.0-blue?color=%2300BCEB" alt="Apache License">
+  </a>
+</div>
+
+---
+
+**🧠 Supported Agent Protocols**
+
+- [x] A2A
+- [ ] MCP _(coming soon)_
+
+**📡 Supported Messaging Transports**
+
+- [x] SLIM
+- [x] NATS
+- [ ] MQTT _(coming soon)_
+- [ ] WebSocket _(coming soon)_
+
+### Architecture
+
+[![architecture](assets/architecture.png)]()
+
+## Installation
+
+This project uses [uv](https://github.com/astral-sh/uv) for package management:
+
+```bash
+# Install UV if you don't have it already
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Create a new virtual environment and install the dependencies:
+
+```bash
+uv venv
+source .venv/bin/activate
+```
+
+## Getting Started
+
+Create an A2A server bridge with your network transport of choice:
+
+```python
+from a2a.server import A2AServer
+from gateway_sdk.factory import GatewayFactory
+
+...
+server = A2AServer(agent_card=agent_card, request_handler=request_handler)
+
+factory = GatewayFactory()
+transport = factory.create_transport("NATS", "localhost:4222")
+bridge = factory.create_bridge(server, transport=transport)
+
+await bridge.start()
+```
+
+Create an A2A client with a transport of your choice:
+
+```python
+from gateway_sdk.factory import GatewayFactory
+from gateway_sdk.factory import ProtocolTypes
+
+factory = GatewayFactory()
+
+transport = factory.create_transport("NATS", "localhost:4222")
+
+# connect via agent URL
+client_over_nats = await factory.create_client("A2A", agent_url="http://localhost:9999", transport=transport)
+
+# or connect via agent topic
+client_over_nats = await factory.create_client(ProtocolTypes.A2A.value, agent_topic="Hello_World_Agent_1.0.0", transport=transport)
+```
+
+## Testing
+
+The `/tests` directory contains e2e tests for the gateway factory, including A2A client and various transports.
+
+### Prerequisites
+
+Run the required message bus services:
+
+```bash
+docker-compose -f infra/docker/docker-compose.yaml up
+```
+
+**✅ Test the gateway factory with A2A client and all available transports**
+
+Run the parameterized e2e test for the A2A client across all transports:
+
+```bash
+uv run pytest tests/e2e/test_a2a.py::test_client -s
+```
+
+Or run a single transport test:
+
+```bash
+uv run pytest tests/e2e/test_a2a.py::test_client -s -k "SLIM"
+```
+
+## Development
+
+Run a local documentation server:
+
+```bash
+make docs
+```
+
+## Roadmap
+
+- [x] Support A2A protocol
+- [x] Support NATS transport
+- [ ] Support SLIM transport
+- [ ] Support MQTT transport
+- [x] Support e2e observability via Traceloop and OpenTelemetry
+- [ ] Add authentication and transport security
+- [ ] Add traffic routing via SLIM control plane
