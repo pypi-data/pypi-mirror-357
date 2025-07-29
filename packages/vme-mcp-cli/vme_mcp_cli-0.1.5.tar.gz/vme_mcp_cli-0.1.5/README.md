@@ -1,0 +1,312 @@
+# VME/Morpheus FastMCP Server v2
+
+Advanced MCP server for HPE VM Essentials (VME) and Morpheus infrastructure management with automatic platform detection and intelligent tool filtering.
+
+**NEW:** Now includes a sophisticated **VME Textual CLI Client** with **OpenAI Realtime API audio integration** for voice-enabled infrastructure management.
+
+## Features
+
+- **🔍 Automatic Platform Detection** - Detects VME vs Morpheus Enterprise at startup
+- **⚡ Dynamic Route Filtering** - Only exposes available endpoints based on platform capabilities  
+- **🛠️ Comprehensive Tool Suite** - 17+ VME management tools for VMs, storage, networking
+- **🎙️ Voice-Enabled Chat Interface** - OpenAI Realtime API integration with microphone support
+- **🧪 Advanced Testing Framework** - Multi-test suite with single test execution
+- **🏗️ Real Infrastructure Integration** - Works with live VME/Morpheus deployments
+
+## Quick Start
+
+### 🚀 VME Textual CLI Client (NEW)
+
+**Manage VME infrastructure through natural language chat with voice support:**
+
+#### Audio Setup (For Microphone Support)
+
+**Fedora/RHEL:**
+```bash
+# Install PortAudio for real microphone access
+sudo dnf install -y portaudio-devel
+
+# Install Python audio dependencies
+uv add pyaudio
+
+# Verify audio system
+pactl info
+```
+
+**Ubuntu/Debian:**
+```bash
+sudo apt-get install portaudio19-dev
+uv add pyaudio
+```
+
+#### Quick Start
+
+1. **Setup Environment**
+   ```bash
+   # Edit .env with your credentials
+   echo "VME_API_BASE_URL=https://your-vme-server/api" >> .env
+   echo "VME_API_TOKEN=your-api-token" >> .env
+   echo "ANTHROPIC_API_KEY=your-anthropic-key" >> .env
+   echo "OPENAI_API_KEY=your-openai-key" >> .env  # For audio features
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   uv sync
+   ```
+
+3. **Launch Client**
+   ```bash
+   # Simple launch (loads API keys from .env)
+   python launch_client.py
+   
+   # Or use module directly
+   python -m src.clients.textual_cli.main
+   ```
+
+4. **Configure Audio (Optional)**
+   ```yaml
+   # Edit vme_client.yaml to enable voice features
+   audio:
+     enabled: true                    # Enable audio support
+     voice: "alloy"                   # OpenAI voice (alloy, echo, fable, onyx, nova, shimmer)
+     model: "gpt-4o-realtime-preview-2024-10-01"
+   ```
+
+5. **Start Chatting**
+   ```
+   💬 Try these commands (type or speak):
+   • "What tools are available?"
+   • "Discover compute infrastructure"  
+   • "List all VMs"
+   • "Get appliance settings"
+   • "Create a VM called test-server"
+   ```
+
+   **Audio Features:**
+   - 🎤 **Microphone Status**: Visual indicator when listening/speaking
+   - 🔊 **Voice Responses**: AI responds with speech + text
+   - 📊 **Audio Levels**: Real-time visualization of microphone input
+   - 🎛️ **System Integration**: Linux system tray shows mic activity
+
+### 🔧 MCP Server Only
+
+1. **Setup Environment**
+   ```bash
+   # Copy environment template
+   cp .env.example .env
+   
+   # Edit with your VME/Morpheus credentials
+   vim .env
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   uv sync
+   ```
+
+3. **Run Server**
+   ```bash
+   # Auto-detecting server (recommended)
+   uv run python vme_server_filtered.py
+   
+   # With MCP Inspector for testing
+   ./scripts/test-with-inspector.sh
+   ```
+
+## Testing
+
+```bash
+# Run all tests
+uv run python tests/test_fastmcp_client.py
+
+# Run single test
+uv run python tests/test_fastmcp_client.py check_license_info
+
+# Available test cases
+uv run python tests/test_fastmcp_client.py invalid_name
+```
+
+## VME Textual CLI Client
+
+### Features
+
+🎨 **Rich Terminal Interface**
+- GitHub-inspired dark theme with professional styling
+- Real-time thinking indicators with animations
+- Markdown rendering for LLM responses
+- Clean chat interface with syntax highlighting
+
+🧠 **AI-Powered Infrastructure Management**  
+- Natural language VM creation and management
+- Intelligent tool discovery and calling
+- Context-aware infrastructure operations
+- Support for both Anthropic Claude and OpenAI GPT
+
+🔧 **Progressive Discovery Workflow**
+- Start with 18 basic tools
+- Unlock tool groups on demand: `discover_compute_infrastructure()` → 40+ VM tools
+- Logical grouping: compute, networking, storage, monitoring, management
+- Guided workflows for complex operations
+
+⚙️ **Smart Configuration**
+- YAML-based configuration with environment variable resolution
+- Auto-loading from `.env` files
+- Configurable timeouts, themes, and LLM settings
+- Validation for API keys and server connectivity
+
+### Client Architecture
+
+```
+src/clients/textual_cli/
+├── main.py              # CLI entry point with Click interface
+├── config/
+│   └── settings.py      # YAML config system with .env support
+├── ui/
+│   └── app.py          # Textual interface (GitHub theme, chat area)
+├── mcp/
+│   └── manager.py      # FastMCP client integration
+└── llm/
+    └── manager.py      # LLM providers (Anthropic/OpenAI)
+
+launch_client.py         # Simple launcher script
+vme_client.yaml         # Default client configuration
+test_client.py          # Component testing utility
+```
+
+### Usage Examples
+
+```bash
+# Basic infrastructure queries
+"What tools are available?"
+"Get appliance settings"
+"Show current license information"
+
+# VM Management  
+"List all virtual machines"
+"Create a VM called 'web-server-01' with large size"
+"Show me VM creation options"
+
+# Progressive Discovery
+"Discover compute infrastructure"     # Unlocks 40+ VM tools
+"Discover networking capabilities"    # Unlocks network tools  
+"Discover storage capabilities"       # Unlocks storage tools
+"What infrastructure is available?"   # Overview of all capabilities
+
+# Advanced Operations
+"Create a web server VM with 4 CPUs"
+"Show me all running VMs in zone us-east-1"
+"What instance types are available?"
+```
+
+### Configuration
+
+**Default config (`vme_client.yaml`):**
+```yaml
+llm:
+  anthropic_key: ${ANTHROPIC_API_KEY}
+  default_provider: anthropic
+  default_model: claude-3-5-sonnet-20241022
+
+server:
+  script_path: src/servers/progressive_discovery_server.py
+  auto_connect: true
+  timeout: 30
+
+ui:
+  theme: github_dark
+  show_thinking_indicator: true
+  max_message_history: 1000
+```
+
+## Architecture
+
+```
+   api_utils.py              # Shared API utilities and platform detection
+   vme_server_filtered.py    # Main MCP server with filtering
+   src/servers/
+      progressive_discovery_server.py  # Progressive discovery for clients
+      vme_server_adaptive.py          # Client-adaptive server  
+   src/clients/textual_cli/           # Textual CLI client
+   tests/
+      test_fastmcp_client.py # Comprehensive test suite
+   config/                   # YAML route configurations (future)
+   scripts/                  # Testing and development scripts
+```
+
+## Platform Detection
+
+The server automatically detects platform type using license endpoint:
+
+```python
+from api_utils import detect_platform_type
+
+platform = detect_platform_type(api_url, token)
+# Returns: 'vme', 'morpheus', or 'unknown'
+```
+
+## Available Tools
+
+### VME Core Tools 
+- **VM Management**: Create, list, manage instances
+- **Platform Info**: License status, appliance settings  
+- **Instance Types**: Provisioning options and configurations
+- **Infrastructure**: Basic storage, networking, zones
+
+### Enterprise Tools (Morpheus Only) 🏢
+- Advanced reporting and analytics
+- Workflow automation
+- Multi-cloud management  
+- Enterprise billing and costing
+
+## Configuration
+
+### Environment Variables
+```bash
+VME_API_BASE_URL=https://your-vme-server/api
+VME_API_TOKEN=your-api-token
+ANTHROPIC_API_KEY=your-anthropic-key  # For testing
+```
+
+### MCP Client Configuration
+```json
+{
+  "mcpServers": {
+    "vme-infrastructure": {
+      "command": "uv",
+      "args": ["run", "python", "vme_server_filtered.py"],
+      "env": {
+        "VME_API_BASE_URL": "https://vmemgr01.lab.loc/api",
+        "VME_API_TOKEN": "your-token-here"
+      }
+    }
+  }
+}
+```
+
+## Development
+
+1. **Platform Detection Testing**
+   ```bash
+   uv run python tests/test_fastmcp_client.py check_license_info
+   ```
+
+2. **VM Operations Testing**  
+   ```bash
+   uv run python tests/test_fastmcp_client.py list_running_vms
+   ```
+
+3. **Full Test Suite**
+   ```bash
+   uv run python tests/test_fastmcp_client.py
+   ```
+
+## Known Issues
+
+- Claude Code MCP client has bugs with tool name limits (use MCP Inspector for testing)
+- VME returns 403 for enterprise-only endpoints (expected behavior)
+- FastMCP route filtering logs may interfere with stdio transport
+
+## License
+
+Private repository - Internal use only.
