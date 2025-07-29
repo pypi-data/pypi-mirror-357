@@ -1,0 +1,14 @@
+.gitignore
+LICENSE
+MANIFEST.in
+README.md
+RELEASE_NOTES.md
+nb_log_config.py
+publish.py
+pyproject.toml
+nb_config/__init__.py
+nb_config.egg-info/PKG-INFO
+nb_config.egg-info/SOURCES.txt
+nb_config.egg-info/dependency_links.txt
+nb_config.egg-info/requires.txt
+nb_config.egg-info/top_level.txt
