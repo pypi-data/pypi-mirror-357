@@ -1,0 +1,6 @@
+cloudflare_ip_filter/__init__.py,sha256=VG7hW_EGl__c2ADtSg0GWV2axtNOe8wbkKo6AU2vQ8A,69
+cloudflare_ip_filter/ip_filter.py,sha256=a9cFPxQ_HDF_Wnw-BmJzj3yVfMifKwK1sjB8CDYkpI0,1425
+cloudflare_ip_filter-0.1.0.dist-info/METADATA,sha256=GAxh-Tw_dDj9jhvw2fIVf8dQcUAn1jYgr6xArY3CMxY,2938
+cloudflare_ip_filter-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cloudflare_ip_filter-0.1.0.dist-info/top_level.txt,sha256=mof0bwbv0bbpMhCC6MAzBSHdUrKztzWXzqw-GKQYfdg,21
+cloudflare_ip_filter-0.1.0.dist-info/RECORD,,
