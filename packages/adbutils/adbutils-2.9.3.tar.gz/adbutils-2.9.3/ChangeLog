@@ -1,0 +1,11 @@
+CHANGES
+=======
+
+2.9.3
+-----
+
+* fix creat\_connection socket leak (#180)
+* fix device.battery() error
+* fix adb 1.0.39 compatible, close #145
+* fix transport\_id not working with forward
+* fix sync with tport id (#173)
