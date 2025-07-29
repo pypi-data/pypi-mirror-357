@@ -1,0 +1,55 @@
+Metadata-Version: 2.4
+Name: deepview_tensorflow
+Version: 3.9.6
+Summary: TensorFlow extensions of DeepView.
+Home-page: https://github.com/satishlokkoju/deepview
+Author: Satish Lokkoju
+Author-email: satish.lokkoju@gmail.com
+Requires-Python: >3.9
+Description-Content-Type: text/markdown
+License: Apache-2.0
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Requires-Dist: deepview==3.9.6
+Requires-Dist: tqdm>=4.65.0
+Requires-Dist: opencv-python-headless>=4.0.0
+Requires-Dist: typing-extensions>=4.0.0; python_version < '3.8'
+Requires-Dist: tensorflow[and-cuda]>2.15.0 ; extra == "tf" and ( platform_system=='Linux')
+Requires-Dist: tensorflow>2.15.0 ; extra == "tf" and ( platform_system!='Linux')
+Project-URL: Changelog, https://github.com/satishlokkoju/deepview/blob/main/CHANGELOG.md
+Project-URL: Documentation, https://satishlokkoju.github.io/deepview
+Provides-Extra: tf
+
+# Data and Network Introspection Kit (DeepView) - TensorFlow
+
+This package contains the TensorFlow extensions of [DeepView](https://github.com/satishlokkoju/deepview).
+
+To learn more about DeepView, please see the [docs](https://satishlokkoju.github.io/deepview).
+
+## Installation
+
+To install TensorFlow 2 (CPU or GPU), use:
+```
+pip install "deepview[tensorflow]"
+```
+
+To install TensorFlow 1 CPU, use:
+```
+pip install "deepview[tensorflow1]"
+```
+
+For TensorFlow 1 GPU:
+```
+pip install  "deepview[tensorflow1-gpu]"
+```
+

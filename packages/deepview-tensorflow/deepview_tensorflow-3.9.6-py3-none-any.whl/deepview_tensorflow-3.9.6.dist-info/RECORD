@@ -1,0 +1,16 @@
+deepview_tensorflow/__init__.py,sha256=DlDbuHuCIZHQ7yio3WP1-GEhy21acBNTXsysRvm_zfM,1953
+deepview_tensorflow/_sample_datasets.py,sha256=JpNf0D5O-Rf6aIT-r6wejxla1QrIOhZDZq6DMZbkzd0,14401
+deepview_tensorflow/_sample_models.py,sha256=_1FiPUTAIupRCIaHPeoig-ENvo3UG0b6xbOeZtfYUhM,10269
+deepview_tensorflow/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+deepview_tensorflow/_tensorflow/__init__.py,sha256=xJameZ-B79ZiycxvylHHMHVEV-lqJTNggTSd2p3UcUk,1278
+deepview_tensorflow/_tensorflow/_tensorflow_file_loaders.py,sha256=1HI8vVtkbo6dVX6M9NvX9vAU-ixOoLDDodfOJ4WaPJs,3939
+deepview_tensorflow/_tensorflow/_tensorflow_loading.py,sha256=UfIBvQ-_dg-2cCui-941n2wlX6UOQYiswu0rV8dYJIc,3339
+deepview_tensorflow/_tensorflow/_tensorflow_protocols.py,sha256=5rXylUe2euUYMEHXLT6-GCbLCBTIP_hcQz3H-E8bhEo,2792
+deepview_tensorflow/_tensorflow/_tf2_file_loaders.py,sha256=QtG_C4VUSOnpXwY82PHxI-GTxOqIO11cjqKlSclJoGI,2877
+deepview_tensorflow/_tensorflow/_tf2_loading.py,sha256=GTEO9ok4LuR7V4oS04bHxwT5yC2OgnIxJsAzj4zsOYU,2811
+deepview_tensorflow/_tensorflow/_tf2_model.py,sha256=sIYzgjPIIIgeXhtTHBEj3tEj958SZz_7qAbWoZMVwV4,6406
+deepview_tensorflow/samples/__init__.py,sha256=niFYbOnLDyqAOzhTakOt9JKdJTr3ygRQD_p9QH4jV4c,1386
+deepview_tensorflow/samples/_simple_cnn_keras.py,sha256=8Bxm1dR8ONLAJmJKFj9wcK8rSH1X3RGOGfFUHBjafoI,5458
+deepview_tensorflow-3.9.6.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+deepview_tensorflow-3.9.6.dist-info/METADATA,sha256=hEfjt3jMyf-azfegFXbObEfhrCNznWf3UdgQc_Pehdw,1963
+deepview_tensorflow-3.9.6.dist-info/RECORD,,
