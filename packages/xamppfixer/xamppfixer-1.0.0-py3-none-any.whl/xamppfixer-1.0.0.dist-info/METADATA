@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: xamppfixer
+Version: 1.0.0
+Summary: Automatic XAMPP fixer tool for Windows
+Author: Sumit Poudel
+Author-email: sumitpoudel79@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# XAMPP Fixer
+
+A smart CLI tool to automatically diagnose and fix XAMPP issues like Apache/MySQL port conflicts, MySQL corruption, and service crashes.
+
+## Installation
+
+```bash
+pip install xamppfixer
