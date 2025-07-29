@@ -1,0 +1,12 @@
+livekit/plugins/volcengine/__init__.py,sha256=qDyd3d1lfdcErupeFoAhMemmjgD3IEiZCAam_k4efpc,598
+livekit/plugins/volcengine/bigmodel_stt.py,sha256=Se6WSeH0zbS0c5AKSs9FZAI5q60fF3vV-FTDL-mohFE,21096
+livekit/plugins/volcengine/llm.py,sha256=hoIu_bgZuHozxEbowXVl9l9b_wVdzPyo44wbfdwJMW0,10581
+livekit/plugins/volcengine/log.py,sha256=7kYPNM_jNZAHsDK0JJp5geFayvrQHTgJcLMGRVoRY8Y,80
+livekit/plugins/volcengine/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+livekit/plugins/volcengine/stt.py,sha256=Amz1MLZRscbWuvVWE0iyUfFVqUChI8f0kGwUHw_QPNE,22864
+livekit/plugins/volcengine/tts.py,sha256=4Enx5BJBqZ6AGMJM2JJZCL1c8OVT20rvz0a1tU7WbAo,10672
+livekit/plugins/volcengine/utils.py,sha256=mdnaCsxL53C8nMVbIQx3CHdhNLpvfcFjHaB_sqBAZP0,4805
+livekit/plugins/volcengine/version.py,sha256=IIbh7Uae4r_OUV6vbhlpT3huI5QZZAAr1FFXCvTxvz0,27
+livekit_plugins_volcengine-1.1.2.post5.dist-info/METADATA,sha256=ggQBHpMh_JJoeo14TqBmjwBOv9y23gjjiUoobHzG8LU,2722
+livekit_plugins_volcengine-1.1.2.post5.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+livekit_plugins_volcengine-1.1.2.post5.dist-info/RECORD,,
