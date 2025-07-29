@@ -1,0 +1,17 @@
+papers_please/__init__.py,sha256=eZgsiX_GJ_Ew-qC0bXY7zVh72YcDKRZmBT70xz160hw,781
+papers_please/client/OpenAlexAPIClient.py,sha256=VUGbjONs8lwgbjBZHgOz0NKt9N-3XNvSd8wLsRsfkiM,14065
+papers_please/client/OrcidAPIClient.py,sha256=tly479-LimSJrDBLBmBAlIUirs_KmS0V3q044sRlUlg,1025
+papers_please/client/ScopusAPIClient.py,sha256=RP1mvvJ4mt58hWAX5t8JEHK-CEGxdRr8WvGh-3JbTMU,17162
+papers_please/core/Metrics.py,sha256=z0CTKqq4MIjBWB-tnE7QYXsvjf1fTSgDxnJj9wXTs-o,6764
+papers_please/core/ResearchGroup.py,sha256=YSXKlnhQKHsXIm3D-sMypU323L7iqULnLp2onho2xLA,1099
+papers_please/core/Researcher.py,sha256=-3jXPx8AmEtlauPTdFZbT3pehuioCmhzVm-rc5O6kdc,4382
+papers_please/data/OrcidAPIDataParser.py,sha256=U7QZstjKN3Rl9HaV1VKn64T18bTh1Wy_Ij1dusTOftM,7424
+papers_please/data/XMLParser.py,sha256=cwRkV3N0zym3zyvz4dWReFsrp6bnO4Qfidq-TNdITfo,3142
+papers_please/tests/__init__.py,sha256=UcC5YqnL1SMOub1D6du18wx81S6-76mgDzBo-5Nq4-g,38
+papers_please/tests/test_openalex_api_client_integration.py,sha256=t4Qq_Iz3yZng77CCyEa9apcyENUNCjRl_FG1CBKdfA0,10584
+papers_please/tests/test_orcid_api_client_integration.py,sha256=gj6wtN8j8aZiLfIyhUrnTwFfp4NSfF7Axgg7cJuHS_w,4775
+papers_please/tests/test_scopus_api_client_integration.py,sha256=vZLdDeaVEy55jcKHKnhZXQILr3y9brRmJcFDYX4biTM,16044
+papers_please-1.1.0.dist-info/METADATA,sha256=Ksz5wDvT17AC2CNIz5-kYcfQtCZxDFMJJ2bH4_9wWXg,7589
+papers_please-1.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+papers_please-1.1.0.dist-info/top_level.txt,sha256=FR3PmFNE0eDeZfby7CwAj1nqxds83dqRGoJUl04PogM,14
+papers_please-1.1.0.dist-info/RECORD,,

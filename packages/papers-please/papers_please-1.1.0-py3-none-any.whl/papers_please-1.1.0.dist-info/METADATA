@@ -1,0 +1,286 @@
+Metadata-Version: 2.4
+Name: papers-please
+Version: 1.1.0
+Summary: A comprehensive Python library for retrieving and analyzing researcher data from ORCID and converting Lattes XML files to BibTeX format
+Author: Henrique Marques, Gabriel Barbosa, Renato Spessoto, Henrique Gomes, Eduardo Neves
+Maintainer-email: Gabriel Barbosa <gabriel_barbosa@usp.br>
+Project-URL: Repository, https://github.com/EngSoft2025/orcid-project-papers-please
+Project-URL: Issues, https://github.com/EngSoft2025/orcid-project-papers-please/issues
+Keywords: orcid,research,publications,bibtex,lattes,academic,citations,researcher,bibliography,scopus,openalex
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Text Processing :: Markup :: XML
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: certifi==2025.4.26
+Requires-Dist: charset-normalizer==3.4.2
+Requires-Dist: defusedxml>=0.7.1
+Requires-Dist: idna==3.10
+Requires-Dist: numpy==2.2.5
+Requires-Dist: pandas==2.2.3
+Requires-Dist: python-dateutil==2.9.0.post0
+Requires-Dist: pytz==2025.2
+Requires-Dist: requests==2.32.3
+Requires-Dist: six==1.17.0
+Requires-Dist: tzdata==2024.2
+Requires-Dist: urllib3==2.4.0
+
+# Papers, Please
+
+A comprehensive Python library for retrieving and analyzing researcher data from ORCID and converting Lattes XML files to BibTeX format.
+
+## Features
+
+- **ORCID Integration**: Retrieve detailed researcher information including publications, education, employment history, and more
+- **Research Group Analysis**: Analyze groups of researchers and their combined publication metrics
+- **Lattes XML Conversion**: Convert Brazilian Lattes Platform XML files to BibTeX format to update your work in ORCID
+- **API Clients**: Built-in support for OpenAlex and Scopus APIs for publication metrics
+- **Data Processing**: Clean and structured data output with pandas DataFrames
+
+## Installation
+
+```bash
+pip install papers-please
+```
+
+## Quick Start
+
+### Individual Researcher Analysis
+
+```python
+from papers_please import Researcher
+
+# Initialize with ORCID ID
+researcher = Researcher("0000-0003-1574-0784")
+
+# Basic information
+print(f"Name: {researcher.name}")
+print(f"Biography: {researcher.biography}")
+
+# Keywords and research areas
+print(f"Keywords: {researcher.keywords}")
+
+# Publications as pandas DataFrame
+papers = researcher.papers
+print(f"Total publications: {len(papers)}")
+
+# Education and employment history
+print("Education:", researcher.education)
+print("Employment:", researcher.employments)
+```
+
+### Research Group Analysis
+
+```python
+from papers_please import Researcher, ResearchGroup
+
+# Create multiple researchers
+researchers = [
+    Researcher("0000-0003-1574-0784"),
+    Researcher("0000-0002-8715-2896")
+]
+
+# Analyze as a group
+group = ResearchGroup(researchers)
+group_papers = group.papers
+
+print(f"Total unique publications: {len(group_papers)}")
+print(f"Publication types: {group_papers['type'].value_counts()}")
+```
+
+### Lattes XML Conversion
+
+```python
+from papers_please import XMLParser
+
+# Convert Lattes XML to BibTeX
+parser = XMLParser(xml_path="lattes_data.xml")
+parser.generate_bibtex(output_path="publications.bib")
+```
+
+### Publication Metrics
+
+```python
+from papers_please import Metrics
+
+# Initialize with API keys (optional)
+metrics = Metrics(
+    scopus_api_key="your_scopus_key",  # Optional (only if you wish to use metrics from scopus)
+    openalex_email="your_email@domain.com"  # Optional for polite pool
+)
+
+# Calculate metrics for a researcher
+researcher = Researcher("0000-0003-1574-0784")
+researcher_metrics = metrics.get_metrics_for_entity(researcher)
+
+print(f"Total citations: {researcher_metrics['total_citations']}")
+print(f"H-index: {researcher_metrics['h_index']}")
+print(f"Publications per year: {researcher_metrics['publications_per_year']}")
+```
+
+## API Reference
+
+### Core Classes
+
+#### `Researcher`
+
+Represents an individual researcher with ORCID data.
+
+**Properties:**
+
+- `name`: Full name
+- `first_name`: First name
+- `last_name`: Last name
+- `biography`: Researcher biography
+- `keywords`: List of research keywords
+- `emails`: List of email addresses
+- `papers`: Publications as pandas DataFrame
+- `education`: Education history
+- `employments`: Employment history
+- `external_links`: External profile links
+
+#### `ResearchGroup`
+
+Represents a group of researchers for collective analysis.
+
+**Properties:**
+
+- `researchers`: List of Researcher objects
+- `papers`: Combined unique publications from all researchers
+
+#### `XMLParser`
+
+Converts Lattes platform XML files to BibTeX format.
+
+**Methods:**
+
+- `generate_bibtex(output_path)`: Generate BibTeX file from XML data
+
+#### `Metrics`
+
+Calculate publication metrics using external APIs.
+
+**Methods:**
+
+- `get_metrics_for_entity(entity)`: Calculate metrics for researcher or group
+- `get_metrics_for_works(entity)`: Get detailed per-publication metrics
+
+### API Clients
+
+#### `OrcidAPIClient`
+
+Client for ORCID API interactions.
+
+#### `OpenAlexAPIClient`
+
+Client for OpenAlex API with features like:
+
+- Author metrics by ORCID
+- Publication data by DOI
+- Citation counts and open access information
+
+#### `ScopusAPIClient`
+
+Client for Scopus API with enhanced bibliometric data.
+
+## Configuration
+
+### API Keys (Optional)
+
+For enhanced functionality, you can configure API keys:
+
+```python
+# Scopus API (for advanced metrics)
+metrics = Metrics(scopus_api_key="your_scopus_api_key")
+
+# OpenAlex (email for polite pool - faster response)
+metrics = Metrics(openalex_email="your_email@example.com")
+```
+
+### Rate Limiting
+
+The library implements automatic rate limiting for API calls to respect service limits.
+
+## Data Structure
+
+### Publications DataFrame
+
+The `papers` property returns a pandas DataFrame with columns:
+
+- `title`: Publication title
+- `doi`: Digital Object Identifier
+- `journal`: Journal name
+- `publication_date`: Publication date
+- `type`: Publication type
+- `authors`: List of authors
+- `url`: Publication URL
+
+## Error Handling
+
+The library includes comprehensive error handling for:
+
+- Invalid ORCID IDs
+- API rate limits
+- Network connectivity issues
+- Malformed data
+
+## Examples
+
+### Export to Different Formats
+
+```python
+researcher = Researcher("0000-0003-1574-0784")
+papers = researcher.papers
+
+# Export to CSV
+papers.to_csv("publications.csv", index=False)
+
+# Export to Excel
+papers.to_excel("publications.xlsx", index=False)
+
+# Filter by publication type
+journal_articles = papers[papers['type'] == 'journal-article']
+```
+
+### Research Collaboration Analysis
+
+```python
+group = ResearchGroup([researcher1, researcher2, researcher3])
+papers = group.papers
+
+# Find collaborative publications
+collaboration_matrix = papers.groupby(['authors']).size()
+
+# Analyze publication trends
+yearly_trends = papers.groupby(papers['publication_date'].dt.year).size()
+```
+
+## Requirements
+
+- Python 3.10+
+- pandas
+- requests
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Authors
+
+- Henrique Marques
+- Gabriel Barbosa
+- Renato Spessoto
+- Henrique Gomes
+- Eduardo Neves
+
+## Support
+
+For support and questions, please open an issue on the project repository.
