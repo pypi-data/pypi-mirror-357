@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "gemini-public-api"
+version = "0.11.3"
+description = "⚠️ This package is no longer maintained. No future updates will be released."
+authors = ["Michal Polit <mpolit@protonmail.com>"]
+readme = "README.md"
+packages = [{include = "gemini_public_api"}]
+classifiers = [
+    "Development Status :: 7 - Inactive",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.31.0"
+aiohttp = "^3.9.3"
+certifi = "2025.6.15"
+charset-normalizer = "3.4.2"
+idna = "3.10"
+urllib3 = "2.5.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = ">=8.1.1,<9.0.0"
+pytest-asyncio = ">=0.23.6,<1.1"
+coverage = "^7.4.4"
+mock = ">=5.1.0,<6.0.0"
+hypothesis = "^6.99.13"
+pytest-cov = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
