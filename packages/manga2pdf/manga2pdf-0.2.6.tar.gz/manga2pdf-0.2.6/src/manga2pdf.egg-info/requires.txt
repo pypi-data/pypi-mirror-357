@@ -1,0 +1,10 @@
+lxml
+numpy
+img2pdf
+Pillow
+pikepdf
+rarfile
+i18nice[YAML]
+
+[windows]
+win32_setctime
