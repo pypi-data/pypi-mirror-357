@@ -1,0 +1,134 @@
+{
+  "uuid": "02b9dcb4-f609-43da-8938-53b410777301",
+  "root": "E:\1vsCode\python\rebay\src",
+  "codebase": {
+    "tree": {
+      "./": {
+        "entries": [
+          "rebay/"
+        ],
+        "profile": [391, 169, 38, 67]
+      },
+      "rebay/": {
+        "entries": [
+          "listing_globber.py",
+          "models.py",
+          "utilities.py",
+          "engine.py",
+          "parsers.py",
+          "scan_listing.py"
+        ],
+        "profile": [391, 169, 38, 67]
+      }
+    },
+    "files": {
+      "rebay\listing_globber.py": {
+        "checksum": "f65a4f106a19de989499dd93045a3e25",
+        "profile": [22, 59, 0, 0],
+        "measurements": [
+          {"unit_name": "__init__", "start": {"line": 13, "column": 5}, "end": {"line": 22, "column": 47}, "value": 10},
+          {"unit_name": "get_shop_page_parser", "start": {"line": 24, "column": 5}, "end": {"line": 32, "column": 10}, "value": 9},
+          {"unit_name": "_log_page_listings", "start": {"line": 34, "column": 5}, "end": {"line": 36, "column": 89}, "value": 3},
+          {"unit_name": "get_listing_urls_from_page_range", "start": {"line": 38, "column": 5}, "end": {"line": 59, "column": 20}, "value": 22},
+          {"unit_name": "get_listing_urls_for_category", "start": {"line": 61, "column": 5}, "end": {"line": 83, "column": 20}, "value": 19},
+          {"unit_name": "get_all_listing_urls", "start": {"line": 85, "column": 5}, "end": {"line": 103, "column": 28}, "value": 18}
+        ]
+      },
+      "rebay\models.py": {
+        "checksum": "067d39f30742fb2ef18341f7e5808bbc",
+        "profile": [110, 18, 0, 0],
+        "measurements": [
+          {"unit_name": "__str__", "start": {"line": 36, "column": 5}, "end": {"line": 53, "column": 10}, "value": 18},
+          {"unit_name": "__post_init__", "start": {"line": 62, "column": 5}, "end": {"line": 63, "column": 36}, "value": 2},
+          {"unit_name": "logpath", "start": {"line": 66, "column": 5}, "end": {"line": 67, "column": 54}, "value": 2},
+          {"unit_name": "url", "start": {"line": 70, "column": 5}, "end": {"line": 71, "column": 55}, "value": 2},
+          {"unit_name": "output_path", "start": {"line": 74, "column": 5}, "end": {"line": 75, "column": 84}, "value": 2},
+          {"unit_name": "get_rejected_listings", "start": {"line": 77, "column": 5}, "end": {"line": 84, "column": 55}, "value": 8},
+          {"unit_name": "get_inventory_warning_item_numbers", "start": {"line": 86, "column": 5}, "end": {"line": 94, "column": 61}, "value": 9},
+          {"unit_name": "get_errored_listing_item_numbers", "start": {"line": 96, "column": 5}, "end": {"line": 104, "column": 61}, "value": 9},
+          {"unit_name": "get_description_warning_item_numbers", "start": {"line": 106, "column": 5}, "end": {"line": 114, "column": 61}, "value": 9},
+          {"unit_name": "get_item_numbers_from_events", "start": {"line": 116, "column": 5}, "end": {"line": 124, "column": 28}, "value": 9},
+          {"unit_name": "get_csv_indicies", "start": {"line": 126, "column": 5}, "end": {"line": 133, "column": 24}, "value": 7},
+          {"unit_name": "get_page_url", "start": {"line": 135, "column": 5}, "end": {"line": 139, "column": 191}, "value": 3},
+          {"unit_name": "_convert_image_urls", "start": {"line": 141, "column": 5}, "end": {"line": 147, "column": 23}, "value": 7},
+          {"unit_name": "save_to_csv", "start": {"line": 149, "column": 5}, "end": {"line": 165, "column": 35}, "value": 15},
+          {"unit_name": "get_no_description_listings", "start": {"line": 167, "column": 5}, "end": {"line": 171, "column": 10}, "value": 5},
+          {"unit_name": "get_csv_row_url_map", "start": {"line": 173, "column": 5}, "end": {"line": 175, "column": 78}, "value": 3},
+          {"unit_name": "save_csv_row_url_map", "start": {"line": 177, "column": 5}, "end": {"line": 183, "column": 10}, "value": 7},
+          {"unit_name": "load", "start": {"line": 193, "column": 5}, "end": {"line": 195, "column": 71}, "value": 3},
+          {"unit_name": "get_category_name", "start": {"line": 197, "column": 5}, "end": {"line": 204, "column": 10}, "value": 8}
+        ]
+      },
+      "rebay\utilities.py": {
+        "checksum": "7ac410297dc714f5393d8828830fd7a1",
+        "profile": [7, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "get_page", "start": {"line": 6, "column": 1}, "end": {"line": 12, "column": 57}, "value": 7}
+        ]
+      },
+      "rebay\engine.py": {
+        "checksum": "bfba57b66f7f9dcffd9ae406c7920869",
+        "profile": [81, 21, 38, 67],
+        "measurements": [
+          {"unit_name": "__init__", "start": {"line": 23, "column": 5}, "end": {"line": 34, "column": 59}, "value": 12},
+          {"unit_name": "get_parsable_items", "start": {"line": 36, "column": 5}, "end": {"line": 44, "column": 28}, "value": 9},
+          {"unit_name": "get_listing_parser", "start": {"line": 46, "column": 5}, "end": {"line": 58, "column": 22}, "value": 13},
+          {"unit_name": "parse_item", "start": {"line": 60, "column": 5}, "end": {"line": 129, "column": 33}, "value": 67},
+          {"unit_name": "parse_listings", "start": {"line": 131, "column": 5}, "end": {"line": 139, "column": 77}, "value": 9},
+          {"unit_name": "store_item", "start": {"line": 141, "column": 5}, "end": {"line": 143, "column": 13}, "value": 3},
+          {"unit_name": "postscrape_chores", "start": {"line": 145, "column": 5}, "end": {"line": 203, "column": 77}, "value": 38},
+          {"unit_name": "display", "start": {"line": 168, "column": 13}, "end": {"line": 176, "column": 24}, "value": 9},
+          {"unit_name": "get_log_stats", "start": {"line": 205, "column": 5}, "end": {"line": 213, "column": 157}, "value": 9},
+          {"unit_name": "scrape", "start": {"line": 215, "column": 5}, "end": {"line": 240, "column": 33}, "value": 21},
+          {"unit_name": "get_args", "start": {"line": 243, "column": 1}, "end": {"line": 254, "column": 77}, "value": 10},
+          {"unit_name": "main", "start": {"line": 277, "column": 1}, "end": {"line": 283, "column": 20}, "value": 7}
+        ]
+      },
+      "rebay\parsers.py": {
+        "checksum": "709d9224fc5d1e994c1a4ef319993afb",
+        "profile": [171, 36, 0, 0],
+        "measurements": [
+          {"unit_name": "__init__", "start": {"line": 18, "column": 5}, "end": {"line": 24, "column": 47}, "value": 7},
+          {"unit_name": "listings_per_page", "start": {"line": 31, "column": 5}, "end": {"line": 32, "column": 19}, "value": 2},
+          {"unit_name": "num_pages", "start": {"line": 35, "column": 5}, "end": {"line": 41, "column": 17}, "value": 7},
+          {"unit_name": "listings", "start": {"line": 44, "column": 5}, "end": {"line": 46, "column": 76}, "value": 3},
+          {"unit_name": "listing_urls", "start": {"line": 49, "column": 5}, "end": {"line": 59, "column": 20}, "value": 11},
+          {"unit_name": "__init__", "start": {"line": 70, "column": 5}, "end": {"line": 71, "column": 42}, "value": 2},
+          {"unit_name": "title", "start": {"line": 74, "column": 5}, "end": {"line": 81, "column": 36}, "value": 8},
+          {"unit_name": "condition", "start": {"line": 84, "column": 5}, "end": {"line": 90, "column": 10}, "value": 7},
+          {"unit_name": "inventory", "start": {"line": 93, "column": 5}, "end": {"line": 110, "column": 25}, "value": 18},
+          {"unit_name": "item_specifics_columns", "start": {"line": 113, "column": 5}, "end": {"line": 116, "column": 63}, "value": 4},
+          {"unit_name": "get_from_item_sepecifics_columns", "start": {"line": 118, "column": 5}, "end": {"line": 129, "column": 18}, "value": 10},
+          {"unit_name": "make", "start": {"line": 132, "column": 5}, "end": {"line": 133, "column": 62}, "value": 2},
+          {"unit_name": "model", "start": {"line": 136, "column": 5}, "end": {"line": 137, "column": 62}, "value": 2},
+          {"unit_name": "year", "start": {"line": 140, "column": 5}, "end": {"line": 141, "column": 67}, "value": 2},
+          {"unit_name": "finish", "start": {"line": 144, "column": 5}, "end": {"line": 145, "column": 67}, "value": 2},
+          {"unit_name": "price", "start": {"line": 148, "column": 5}, "end": {"line": 151, "column": 38}, "value": 4},
+          {"unit_name": "breadcrumbs", "start": {"line": 154, "column": 5}, "end": {"line": 156, "column": 61}, "value": 3},
+          {"unit_name": "product_type", "start": {"line": 159, "column": 5}, "end": {"line": 163, "column": 31}, "value": 5},
+          {"unit_name": "_get_image_urls_regex", "start": {"line": 165, "column": 5}, "end": {"line": 177, "column": 35}, "value": 12},
+          {"unit_name": "image_urls", "start": {"line": 180, "column": 5}, "end": {"line": 190, "column": 22}, "value": 10},
+          {"unit_name": "get_condition", "start": {"line": 192, "column": 5}, "end": {"line": 194, "column": 81}, "value": 3},
+          {"unit_name": "get_inventory", "start": {"line": 196, "column": 5}, "end": {"line": 205, "column": 25}, "value": 10},
+          {"unit_name": "get_make", "start": {"line": 207, "column": 5}, "end": {"line": 212, "column": 25}, "value": 6},
+          {"unit_name": "get_model", "start": {"line": 214, "column": 5}, "end": {"line": 219, "column": 26}, "value": 6},
+          {"unit_name": "get_year", "start": {"line": 221, "column": 5}, "end": {"line": 226, "column": 25}, "value": 6},
+          {"unit_name": "get_finish", "start": {"line": 228, "column": 5}, "end": {"line": 233, "column": 27}, "value": 6},
+          {"unit_name": "get_product_type", "start": {"line": 235, "column": 5}, "end": {"line": 248, "column": 18}, "value": 12},
+          {"unit_name": "get_images", "start": {"line": 250, "column": 5}, "end": {"line": 258, "column": 22}, "value": 7},
+          {"unit_name": "__init__", "start": {"line": 264, "column": 5}, "end": {"line": 266, "column": 78}, "value": 3},
+          {"unit_name": "description", "start": {"line": 269, "column": 5}, "end": {"line": 278, "column": 32}, "value": 9},
+          {"unit_name": "html_no_scripts", "start": {"line": 281, "column": 5}, "end": {"line": 301, "column": 23}, "value": 18}
+        ]
+      },
+      "rebay\scan_listing.py": {
+        "checksum": "43dc4b579798dd26c17a6f9759341cf2",
+        "profile": [0, 35, 0, 0],
+        "measurements": [
+          {"unit_name": "get_args", "start": {"line": 6, "column": 1}, "end": {"line": 25, "column": 16}, "value": 17},
+          {"unit_name": "main", "start": {"line": 28, "column": 1}, "end": {"line": 45, "column": 10}, "value": 18}
+        ]
+      }
+    }
+  }
+}

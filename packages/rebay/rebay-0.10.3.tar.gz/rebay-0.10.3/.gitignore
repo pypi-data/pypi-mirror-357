@@ -1,0 +1,10 @@
+__pycache__
+.coverage
+.vscode
+.pytest_cache
+*scratch*
+*.txt
+*logs
+output
+rebay_output
+page_dumps
