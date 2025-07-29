@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "django-autofilters"
+version = "0.1.0"
+description = "Enhanced Django Admin filters with autocomplete support and OR condition combinations"
+authors = ["YoungKwang Yang <me@youngkwang.dev>"]
+readme = "README.md"
+packages = [{include = "auto_filters"}]
+license = "MIT"
+homepage = "https://github.com/2ykwang/django-autofilters"
+repository = "https://github.com/2ykwang/django-autofilters"
+documentation = "https://github.com/2ykwang/django-autofilters"
+keywords = ["django", "admin", "filters", "autocomplete"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Framework :: Django :: 5.2",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+django = ">=4.2,<5.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-django = "^4.8.0"
+black = "^24.1.1"
+isort = "^5.13.2"
+flake8 = "^7.0.0"
+mypy = "^1.8.0"
+coverage = "^7.4.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+strict_optional = true 
