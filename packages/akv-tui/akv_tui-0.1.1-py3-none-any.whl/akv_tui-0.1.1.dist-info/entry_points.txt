@@ -1,0 +1,2 @@
+[console_scripts]
+akv-tui = akv_tui.app:main
