@@ -1,0 +1,16 @@
+pkgs/__init__.py,sha256=zpXNoIVcYlUCACvIjtYhwe8fYrMzdrZM05chc1QMHko,800
+pkgs/dynamo_manager/create.py,sha256=UEt2UOf_i1B2twHK6RRWhR2eiz9BaG2qScYbJtlFhts,753
+pkgs/dynamo_manager/table_crud.py,sha256=mk08Um9KZgFCBhx1HbTXdifTzzGCRZHX2IYVHqRqt8s,412
+pkgs/image_processing/converters.py,sha256=mxc9QzL8DD4XaHveqyjcxoVye3-LC34FF8C4RDx5yHM,249
+pkgs/models/deepfake_dataset.py,sha256=TUn2_mIkbT6wfs5zlHM5L_XDtVG39-ffBkLtrWDjbxs,1139
+pkgs/models/enums.py,sha256=9tvN03YiuxdTpjirjGJ47vs6bH0EuvNKMXQ3IA8aLR8,783
+pkgs/models/training_record.py,sha256=DVJTYcfDcwsLTudB0Oa72DhFs2qSIy7rAxuWkjNbfV0,839
+pkgs/s3_manager/client.py,sha256=wS-61otir17F0ihrKfx0YGiXqV8bjm1jBKtB2ZqEZgM,589
+pkgs/s3_manager/load_deepfake_classifier.py,sha256=kZDZQeCFB3V1-0ZQs2dCHDGZxCqxNGEtel7jqjn3Hi4,1552
+pkgs/s3_manager/load_files.py,sha256=JCo1zpyf6An5qYg-11C8IfS5bitdSGGst654rkuoPAM,1182
+pkgs/s3_manager/load_manifest.py,sha256=EH5OME77u1WXZ81dHILyZEmy-kmBOSf3U9MvpHcw0iM,583
+pkgs/s3_manager/utils.py,sha256=LY-VqOfXJI-PovjYwP-KSxhDbQqCvvmo7uvh9y_9SzI,1206
+coffee_vision_deepfake_pipeline-0.1.0.dist-info/METADATA,sha256=in9hXfBmeyqTh_qDcvVbhlZLuxlPlZ9lBk24ijVlbMU,219
+coffee_vision_deepfake_pipeline-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+coffee_vision_deepfake_pipeline-0.1.0.dist-info/top_level.txt,sha256=TRiykxOlX4OVKzEVi8C0YNB4nwfN0EkRZ3gzxR2SwMk,5
+coffee_vision_deepfake_pipeline-0.1.0.dist-info/RECORD,,
