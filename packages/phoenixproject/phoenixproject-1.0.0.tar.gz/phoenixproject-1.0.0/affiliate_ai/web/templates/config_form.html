@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🛠️ Configuration IA</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>🔧 Modifier la configuration IA</h1>
+    <form method="POST" action="/update-config">
+        <label>User ID:</label><br>
+        <input type="text" name="user_id" value="{{ config.user_id }}"><br><br>
+
+        <label>Keywords (séparés par virgules):</label><br>
+        <input type="text" name="keywords" value="{{ config.keywords | join(', ') }}"><br><br>
+
+        <label>Plateformes (séparées par virgules):</label><br>
+        <input type="text" name="platforms" value="{{ config.platforms | join(', ') }}"><br><br>
+
+        <label>Langue préférée:</label><br>
+        <input type="text" name="preferred_language" value="{{ config.preferred_language }}"><br><br>
+
+        <label>Stripe invoice URL:</label><br>
+        <input type="text" name="stripe_invoice_url" value="{{ config.stripe_invoice_url }}"><br><br>
+
+        <button type="submit">💾 Sauvegarder</button>
+    </form>
+</body>
+</html>

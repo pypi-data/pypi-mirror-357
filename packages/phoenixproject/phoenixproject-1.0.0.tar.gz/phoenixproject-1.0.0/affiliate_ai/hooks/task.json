@@ -1,0 +1,7 @@
+{
+  "action": "post_amazon_review",
+  "params": {
+    "product_id": "B000123456",
+    "message": "✨ Produit recommandé par notre IA autonome !"
+  }
+}
