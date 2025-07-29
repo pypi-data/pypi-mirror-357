@@ -1,0 +1,11 @@
+ipygraph/__init__.py,sha256=34LNp6X6i9uMsp-oR-rfCGXuXZpb8OySLWQwiC-JLPo,581
+ipygraph/__main__.py,sha256=K98BO7GszyT6TPeQmNevXJtJh8StR-HG0rr8GnOIaSc,28
+ipygraph/app.py,sha256=QcMnRbEZY0Tmm6YCnGNJeF8IrRqek1qroSn-08_jAmc,2231
+ipygraph/static/index.html,sha256=3QDth6oWaFSqcaNfcdmOY_no3MnVO1K0c7ik6YBTnhA,3779
+ipygraph/static/vendor/particles.min.js,sha256=4CVKTLmrkrCVvcp7cJhhBq7-PUdDjbXA3x3HI_cudR0,23016
+ipygraph-0.1.0.dist-info/licenses/LICENSE,sha256=cfXzmTgBL_1IsjWBCUFmcnM8pu2H8gqybWJBAoq1Nek,6736
+ipygraph-0.1.0.dist-info/METADATA,sha256=AKY-VyZn3aDmWuJYNWuNKmu_v25QJvUpCCQXVnwTFUM,1413
+ipygraph-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ipygraph-0.1.0.dist-info/entry_points.txt,sha256=vg5BYGG618QreRrkQJcuwVcBZsFGF9TF_LgPcDoyHYU,46
+ipygraph-0.1.0.dist-info/top_level.txt,sha256=25M51U791Q4ek7OUVgI9X5CDXECuXJqNXuE3Hylx5eg,9
+ipygraph-0.1.0.dist-info/RECORD,,
