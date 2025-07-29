@@ -1,0 +1,15 @@
+detect_row/__init__.py,sha256=9c35thDdWymbYzhydxw9Ee-Uz-6XCrYoYzqUe4Vtnlk,1104
+detect_row/advanced_column_extractor.py,sha256=vOMcbTfRWojBFJWrb4zCC9WPJ3aJYMaR2pD_lYhmCcs,27961
+detect_row/advanced_row_extractor.py,sha256=ZRgu5f5_w1NKlpviBuoMkwMOgibCowkRHaIkYalpjlM,36395
+detect_row/advanced_table_extractor.py,sha256=UqvgEu-eHqT0HrukwuHGx-nLjuK-nFwYMK9TDhsGHtY,25992
+detect_row/base.py,sha256=L8DUlFkSac248pwBENzRb3CotvpyNW6XDEClg7Neozo,17970
+detect_row/basic_row_extractor.py,sha256=1rWouRrnk9zI7_PQn9SYDymM-KM3UhSaSOGJo9yLfVk,19778
+detect_row/enhanced_column_detector.py,sha256=mQR71uSZkAU2ADPPlZmNgZm1bgHQyFA_4cWTx7S_67E,17960
+detect_row/gpu_support.py,sha256=wRnjzSdVhSPudia-rEnZ9bsnni1ccx9_tjnDkshSwow,8494
+detect_row/tesseract_ocr_extractor.py,sha256=Fam0swGPsX-kt-2iYP2nTVh1eYbiduHYYJIdJmL-UjM,16506
+detect_row-2.0.5.dist-info/licenses/LICENSE,sha256=Kdeh093qknm4CMVRNADpB73lYipXhuyaQXW2o-zh_HM,1095
+detect_row-2.0.5.dist-info/METADATA,sha256=S__ft-VsSVC8_2noMsqWv8fzoLqUrYw-uccmuEX9cJU,13076
+detect_row-2.0.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+detect_row-2.0.5.dist-info/entry_points.txt,sha256=mJEhkFTEbJGQ0ySOl3CoRxJcFvt3Y-q6vlu-ftRnlNw,623
+detect_row-2.0.5.dist-info/top_level.txt,sha256=EjRkfKFsJeQyRJELs-ItSfzE2yvh0nLdOSwFwKIIIMk,11
+detect_row-2.0.5.dist-info/RECORD,,
