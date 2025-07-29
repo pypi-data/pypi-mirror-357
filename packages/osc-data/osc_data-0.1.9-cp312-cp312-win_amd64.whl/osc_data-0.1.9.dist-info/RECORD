@@ -1,0 +1,11 @@
+osc_data-0.1.9.dist-info/METADATA,sha256=Ti0Dvi0Vkdoxcisg6JpGdbIyEH3xFDaovJPkZSwFsgM,353
+osc_data-0.1.9.dist-info/WHEEL,sha256=2Rq0eWWH7u9Ffm_ZQEcE2_DVE8if9XSfMophnE-xWmc,96
+osc_data/__init__.py,sha256=frcCV1k9oG9oKj3dpUqdJg1PxRT2RSN_XKdLCPjaYaY,2
+osc_data/_core.cp312-win_amd64.pyd,sha256=TJf4lSwTZocUMiE6whRjkwM_qgKTJKFSuYcUOjHRsSg,512000
+osc_data/assets/text/tn/tagger.fst,sha256=xTM_EFzulNnMrfLpSZfjh0NRY8smcJJkc6PxxOUB76Y,3479822
+osc_data/assets/text/tn/verbalizer.fst,sha256=gWGKgfTu6VJPrgdjFSoJ18cEYNLWcAQ7_JcVZoV1qaY,558366
+osc_data/assets/text/tn/verbalizer_remove_erhua.fst,sha256=VoZnjew7YiDRoDC6TgDHKXhrkcSGOz030Pnqad8JhcE,558366
+osc_data/audio.py,sha256=StH_9xMN7etO1usRxLJMQwBPWYzyHIPtz1fvC5PDQMI,580
+osc_data/text.py,sha256=G4JiLrCmS1WwKdKy4wMA6D2Pa5mn0Ehx60ctivVfe4I,5164
+osc_data/text_stream.py,sha256=FHdeFtVCFC-w0Zc_gFmAohrSPaNKZa2fXfSCB3-WtXk,2126
+osc_data-0.1.9.dist-info/RECORD,,
