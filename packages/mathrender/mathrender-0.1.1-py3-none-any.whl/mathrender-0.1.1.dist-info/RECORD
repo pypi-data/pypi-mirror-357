@@ -1,0 +1,13 @@
+mathrender/__init__.py,sha256=RinIlNrtQOFz0F8oQgHvcIicn9U9GkJf8T1oB54gheY,85
+mathrender/cli.py,sha256=W_Nf1Df_2_7mui8JIfkI9U-h3PWXLB2YeYgznFZsvHw,12680
+mathrender/converter.py,sha256=Vn4bN3CA4hoGIA2ihi5vAFLDChD4VBuH7tyCEurR0ug,8258
+mathrender/mime_builder.py,sha256=HvjvG9O2sIbDduz8EVfO5EfcXdVPtYQwZGId2zmftdQ,8323
+mathrender/rich_clipboard.py,sha256=sYuLHWsvwoWYhGen2uONvgioHV8iBqu-HORO7iuCnv4,4301
+mathrender/sendgrid_sender.py,sha256=KH8nTVeDYrwxFSUzlZtNmL54IolPIC_n9vfAd_5a-Y4,3407
+mathrender/simple_gmail.py,sha256=AH4FvuPzpR7SFbfFLs4_dbioDVSFtrLKp3lgaulX8Po,2282
+mathrender/smtp_sender.py,sha256=ePCaUJlPwYq5gwaxu0vrlsdVh3TMDH0N-LLts-4J2DA,3560
+mathrender-0.1.1.dist-info/LICENSE,sha256=OphKV48tcMv6ep-7j-8T6nycykPT0g8ZlMJ9zbGvdPs,1066
+mathrender-0.1.1.dist-info/METADATA,sha256=EylV5pbWz6rnmOnB0vFPkU4a9aj6zgj17DNFLl7nVAo,8284
+mathrender-0.1.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+mathrender-0.1.1.dist-info/entry_points.txt,sha256=ep5AvXt38fUsw3XVDrl6KJTkHU1ENU2fafwsItd8gsQ,50
+mathrender-0.1.1.dist-info/RECORD,,
