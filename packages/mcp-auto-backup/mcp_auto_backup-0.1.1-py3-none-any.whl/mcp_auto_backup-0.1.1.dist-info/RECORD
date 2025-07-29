@@ -1,0 +1,17 @@
+mcp_auto_backup/__init__.py,sha256=pSaPv2FniO3dLlK_4bMzTUrGkSFG5mZL_6VPjwU8KPA,775
+mcp_auto_backup/cli.py,sha256=hOEjyRH-cLySe2t8OBjoJ6wAxl1XMesC7vFeEI7ZkU4,5495
+mcp_auto_backup/server.py,sha256=hU6llE4AegeFKXJMK6uDDLeMj6vQ4RVIt84zO0tVeRI,5502
+mcp_auto_backup/config/__init__.py,sha256=1fThlMIJsuqk1kOUxVWEe7bksQbvY7dnNRHgrBzRNak,227
+mcp_auto_backup/config/settings.py,sha256=ME2ZEXTMDnxrUIYLgyQwfb_LmNz0-kUtjXeq6G57eY4,3812
+mcp_auto_backup/core/__init__.py,sha256=B7Do3fVMtk5m4danRDxXatb-eZDIiH_5faxngFoDL_o,921
+mcp_auto_backup/core/backup.py,sha256=-Xur5uSUFezN_Vfy4voWnNXWHE7Am5oqeSIEAAmqQDg,12301
+mcp_auto_backup/core/storage.py,sha256=26bZofLvxpZYhX5uXBIs_tZgKh5a3DpLTOJ0qKno8MY,19973
+mcp_auto_backup/core/utils.py,sha256=wQwLa2DRs9oaDk9PCFTZn2AKjopO0Q3HmPITIs4G36s,12111
+mcp_auto_backup/tools/__init__.py,sha256=FLOm74thelCPZy2lc3SKtgB_CvWue8plFbxDVXhaSXY,278
+mcp_auto_backup/tools/file_tools.py,sha256=qtVTA4QsDk6n0WUDNbWH13mTSJVseJ7KL9P2mNNy3AI,6463
+mcp_auto_backup/tools/folder_tools.py,sha256=eEEQr_EXaG-dP5Z65AprOQ5kM7EzdvCBOVzrSeJWoN8,5381
+mcp_auto_backup-0.1.1.dist-info/METADATA,sha256=EabtgtU2CG8sQtxz0pOGys_QksHSRdb10e5xAN3raCc,7300
+mcp_auto_backup-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_auto_backup-0.1.1.dist-info/entry_points.txt,sha256=IP3-2P73TzBAJs9vugifse6nIovKoL6Cy5Gdg4PxCrk,61
+mcp_auto_backup-0.1.1.dist-info/licenses/LICENSE,sha256=td75p26wbRk4-NqwUNFfAnSkYKY1g_zYZeAfgNISjVo,1077
+mcp_auto_backup-0.1.1.dist-info/RECORD,,
