@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: neural-feature-importance
+Version: 0.5.0
+Summary: Variance-based feature importance for Neural Networks using callbacks for Keras and PyTorch
+Author: CR de Sá
+Requires-Dist: numpy
+Provides-Extra: tensorflow
+Requires-Dist: tensorflow; extra == "tensorflow"
+Provides-Extra: torch
+Requires-Dist: torch; extra == "torch"
