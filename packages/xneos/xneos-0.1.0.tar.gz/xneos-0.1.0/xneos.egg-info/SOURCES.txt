@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+xneos/__init__.py
+xneos/neos.py
+xneos/quickstart.py
+xneos.egg-info/PKG-INFO
+xneos.egg-info/SOURCES.txt
+xneos.egg-info/dependency_links.txt
+xneos.egg-info/entry_points.txt
+xneos.egg-info/requires.txt
+xneos.egg-info/top_level.txt
+xneos/templates/xneos_main.py
+xneos/templates/xneos_template.xlsm
