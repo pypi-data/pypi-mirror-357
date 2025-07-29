@@ -1,0 +1,8 @@
+README.md
+setup.py
+taskflow-zng/__init__.py
+taskflow-zng/core.py
+taskflow_zng.egg-info/PKG-INFO
+taskflow_zng.egg-info/SOURCES.txt
+taskflow_zng.egg-info/dependency_links.txt
+taskflow_zng.egg-info/top_level.txt
