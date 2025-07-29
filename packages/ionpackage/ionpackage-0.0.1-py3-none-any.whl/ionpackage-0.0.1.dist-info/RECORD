@@ -1,0 +1,11 @@
+ionpackage/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ionpackage/pdftoimage.py,sha256=q132Jbx229ThY77S3YiN-Cj5AVm7k1VlJcMYIbZUHUY,3
+ionpackage/pdftotext.py,sha256=Aql6Sd7J51CrMCziynPlbusxdZ4W8Lhk5h0A5TsrAiU,41
+ionpackage-0.0.1.dist-info/licenses/LICENSE,sha256=ixuiBLtpoK3iv89l7ylKkg9rs2GzF9ukPH7ynZYzK5s,35148
+pypackage/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pypackage/pdftoimage.py,sha256=q132Jbx229ThY77S3YiN-Cj5AVm7k1VlJcMYIbZUHUY,3
+pypackage/pdftotext.py,sha256=Aql6Sd7J51CrMCziynPlbusxdZ4W8Lhk5h0A5TsrAiU,41
+ionpackage-0.0.1.dist-info/METADATA,sha256=EPtCvgvvBMfSFl1ppub6P4yp3DzXzrVd6DDcKWwIf-U,137
+ionpackage-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ionpackage-0.0.1.dist-info/top_level.txt,sha256=XopdYAsQfDv4c0hKsdIBjl0Z2J8HdDuSz8EfpASfI3I,11
+ionpackage-0.0.1.dist-info/RECORD,,
