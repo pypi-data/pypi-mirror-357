@@ -1,0 +1,2 @@
+[console_scripts]
+tactical-runtime = tactical_runtime_core.main:main

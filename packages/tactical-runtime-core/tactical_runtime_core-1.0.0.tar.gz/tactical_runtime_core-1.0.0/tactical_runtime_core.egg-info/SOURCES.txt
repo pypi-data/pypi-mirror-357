@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+tactical_runtime_core.egg-info/PKG-INFO
+tactical_runtime_core.egg-info/SOURCES.txt
+tactical_runtime_core.egg-info/dependency_links.txt
+tactical_runtime_core.egg-info/entry_points.txt
+tactical_runtime_core.egg-info/top_level.txt
