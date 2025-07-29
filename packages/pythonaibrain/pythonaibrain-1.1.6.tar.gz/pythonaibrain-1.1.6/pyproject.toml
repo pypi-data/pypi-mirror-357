@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pythonaibrain"
+version = "1.1.6"
+description = "PythonAIBrain is a versatile, plug-and-play Python package designed to help you build offline intelligent AI assistants and applications effortlessly. With modules covering speech recognition, text-to-speech, image generation, natural language understanding, and more, PythonAIBrain lets you create powerful AI solutions without deep expertise or complex setup. Whether you’re a beginner or an experienced developer, get ready to bring your AI ideas to life quickly and efficiently."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [{ name = "Divyanshu Sinha", email = "divyanshu.sinha136@gmail.com" }]
+keywords = [
+  "AI Assistant", "Machine Learning","Natural Language Processing", "Text to Speech","Speech Recognition",
+  "Image Generation", "Computer Vision", "Chatbot", "Voice Assistant", "AI Framework",
+  "AI Modules", "Easy AI", "Plug and Play AI", "Python Package", "AI Library",
+  "AI Toolkit", "Python Automation", "Smart Assistant", "Python Developer", "Biggner Friendly",
+  "AI Starter Kit", "Open Source AI", "Offline Chatbot", "Python AI Tool Kit", "AI Tools", "Advance Chatbot", "Advance Chatbot tools kit"
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Intended Audience :: Developers"
+]
+
+dependencies = [
+    "nltk",
+    "pyjokes",
+    "yfinance",
+    "numpy",
+    "scikit-learn",
+    "torch",
+    "flask",
+    "flask-limiter",
+    "opencv-python",
+    "Pillow",
+    "pyzbar",
+    "ultralytics",
+    "sympy",
+    "PyMuPDF",
+    "pyttsx3",
+    "requests",
+    "beautifulsoup4",
+    "tokenizers",
+    "customtkinter",
+    "python-multipart",
+    "easyocr",
+    "python-pptx"
+]
+
+[tool.setuptools.package-data]
+"pyaitk" = ["intents.json", "dimensions.json", "model.pth", "NERDimension.json", "NERModel.pth", "FrameClassifier.pth", "FrameClassifierDimension.json"]
+"pyaitk.eye" = ["yolov8n.pt"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pyaitk*", "PyAgent*"]
+
+[tool.pythonaibrain.author]
+full_name = "Divyanshu Sinha"
+email = "divyanshu.sinha136@gmail.com"
+website = "https://github.com/DivyanshuSinha136"
+affiliation = "World Of Programming And Technology"
+location = "India"
+role = "Creator & Lead Developer"
+
+[project.optional-dependencies]
+test = ["pytest"]
+docs = ["sphinx"]
+
+[project.urls]
+"Homepage" = "https://pypi.org/project/pythonaibrain"
+"Repository" = "https://github.com/World-Of-Programming-And-Technology/PythonAI"
+"Issues" = "https://github.com/World-Of-Programming-And-Technology/PythonAI/issues"
