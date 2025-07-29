@@ -1,0 +1,10 @@
+pappardelle/__init__.py,sha256=NCyZityAGTSTzmuIE7qUxw2o1ZW5icrNzBx3pTZJ3fU,1347
+pappardelle/date_helpers.py,sha256=GGPSCWJsk4LAIVWKoeR35o4XtXowipPjb_htbf5MnqY,5213
+pappardelle/dict_helpers.py,sha256=BIvglgQSm0l11P5wdzXbGhlwttJNwlqWTEeGtgJYjQU,644
+pappardelle/function_helpers.py,sha256=fvNWqxS61V7JagBPrhjlkHg1ulVS36S6AyAhbT9a8IQ,340
+pappardelle/lists_helpers.py,sha256=KkF93_sL7E12_dFatQDbdFrj_ryG9YVT09KYcVIpL_E,1689
+pappardelle-0.6.dist-info/LICENSE,sha256=w0NSMoDCPVsN60o5z0Fop0iyc-_AeXhQvqHwiR9Rmnk,1072
+pappardelle-0.6.dist-info/METADATA,sha256=l3p2sI6KX3hJgdigjBh2AgeiVrhOaSelccMGHQnZVQY,4669
+pappardelle-0.6.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+pappardelle-0.6.dist-info/top_level.txt,sha256=6k31TYBDAJrThpcCVWdKGWEsL3kKAyMfBpk_jGz9KMs,12
+pappardelle-0.6.dist-info/RECORD,,
