@@ -1,0 +1,12 @@
+config/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+config/ddbconfig.py,sha256=NlN-n8tJRRRW8YVuJVlzHuvukOW0QqHMjx9FcAJC3cA,628
+ddbmodel-0.1.0.dist-info/licenses/LICENSE,sha256=eksWJ-xGl0U7Scq-21pv12zsyHBDo2S23MNIAaK4yys,1078
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_field.py,sha256=nEbsIYXY3bcfFMh-_wY4mlQb08LHpIQFGrH2pkQndTg,5256
+tests/test_key.py,sha256=r16_gZrI57JVz-qGtKdF6c0JFU2DveimTrAwB7sznBw,2365
+tests/test_record.py,sha256=MKrKOGjXjH3UScouSn9WoYJQM3o6-6228OPUP696i3E,17238
+tests/test_transaction.py,sha256=6Tt7pjmMgm48DffRfNpxrRWzYWaBD9n82uHsNkX0h7M,2542
+ddbmodel-0.1.0.dist-info/METADATA,sha256=lWplQQsk4DTaRL0T8JW5oESyueJOVlsBltQP-JFgl8s,1175
+ddbmodel-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ddbmodel-0.1.0.dist-info/top_level.txt,sha256=5GYk53JUpFFbemTzA2baHoauX2o4kdXySDautaMLmrg,13
+ddbmodel-0.1.0.dist-info/RECORD,,
