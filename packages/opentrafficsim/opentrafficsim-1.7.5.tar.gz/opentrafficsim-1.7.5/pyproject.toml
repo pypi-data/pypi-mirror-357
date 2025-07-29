@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "opentrafficsim"
+description = "Python package which includes Opentrafficsim (OTS)"
+authors = ["Cyber-Physical Systems Group, Technical University of Munich <commonroad@lists.lrz.de>"]
+version = "1.7.5"
+readme = "README.md"
+packages = [
+    { include = "__init__.py", to = "opentrafficsim" },
+    { include = "ots-distribution-1.7.5.jar", from = "opentrafficsim/ots-distribution/target", to = "opentrafficsim/ots-distribution/target" },
+]
+license = "BSD-3-Clause"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+
+[tool.poetry.group.dev.dependencies]
+bump-my-version = ">=0.26.0"
+
+
+[tool.bumpversion]
+current_version = "1.7.5"
+commit = true
+tag = true
+tag_name = "{new_version}"
+allow_dirty = true
+ignore_missing_version = false
+message = "Bump version to {new_version}"
+
+[[tool.bumpversion.files]]
+filename = "__init__.py"
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+search = "{current_version}.jar"
+replace = "{new_version}.jar"
