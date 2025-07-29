@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/__init__.py
+src/aggregate.py
+src/choicellm.py
+src/multichoicemodel.py
+src/prompttemplate.py
+src/choicellm.egg-info/PKG-INFO
+src/choicellm.egg-info/SOURCES.txt
+src/choicellm.egg-info/dependency_links.txt
+src/choicellm.egg-info/entry_points.txt
+src/choicellm.egg-info/requires.txt
+src/choicellm.egg-info/top_level.txt

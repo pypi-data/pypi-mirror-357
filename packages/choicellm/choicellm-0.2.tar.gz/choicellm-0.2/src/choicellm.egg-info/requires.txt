@@ -1,0 +1,9 @@
+transformers
+torch
+accelerate
+optimum
+auto_gptq
+bitsandbytes
+openai
+tiktoken
+pandas

@@ -1,0 +1,4 @@
+[console_scripts]
+choicellm = choicellm:main
+choicellm-aggregate = aggregate:main
+choicellm-template = prompttemplate:main
