@@ -1,0 +1,13 @@
+asyncmaxbot-1.4.0.dist-info/licenses/LICENSE,sha256=gz1geKXfcHtxGBFiAteAZ6x3SdqZfBqJAsOOr6fnxvY,1083
+maxbot/__init__.py,sha256=dgPShK2gwCuYju3A3kYn1K8aTLsa8S6Rg_5yqw01xgU,2379
+maxbot/bot.py,sha256=MwbK8RZA5lZ_I-hYo6Xn2uExF9DtBqe0hSZ6e1AVZuU,35383
+maxbot/dispatcher.py,sha256=WOl5fYS6d5d1f12IkwIxPCQJSN837Vpx39mILv6wTsM,13713
+maxbot/filters.py,sha256=QH9Cqori7yE3LPY82H4AK-BKKSowb1zjBfUoN7qquKo,18311
+maxbot/max_types.py,sha256=xuxi431akcxkjFrav0omT8olsAISRf43pcm0H0tEo7M,22459
+maxbot/middleware.py,sha256=EXl0vChvs218EJa3wB6Kbxcy1TRh1h8nhiijS3fc0fQ,10591
+maxbot/router.py,sha256=hjP_XXVtKmvP5AvPLOqtdAQ5iFdXIFBD6dPk-BDly0w,1541
+asyncmaxbot-1.4.0.dist-info/METADATA,sha256=aAZiZqeI7fpKGXTgrFcwEWd-I4XDfABDBLoS6I4HQtg,5676
+asyncmaxbot-1.4.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+asyncmaxbot-1.4.0.dist-info/entry_points.txt,sha256=RxqRjlhCzBqA1cAFpewi4dhvQTdEnFcRs6eZgq_2KsU,48
+asyncmaxbot-1.4.0.dist-info/top_level.txt,sha256=uDZb__8IlX6OR8gSOBw1OAmd6FpoDe8tLYgVR2lwJSM,7
+asyncmaxbot-1.4.0.dist-info/RECORD,,
