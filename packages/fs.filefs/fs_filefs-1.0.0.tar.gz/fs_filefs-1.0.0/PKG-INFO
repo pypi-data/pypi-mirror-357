@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: fs.filefs
+Version: 1.0.0
+Summary: A custom filesystem for pyfilesystem2 that allows mounting files from other filesystems.
+Maintainer-email: Andreas Bichinger <andreas.bichinger@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/abichinger/fs.filefs
+Project-URL: Issues, https://github.com/abichinger/fs.filefs/issues
+Keywords: pyfilesystem,filesystem,fs
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fs>=2.4.16
+Dynamic: license-file
+
+# fs.filefs: Custom filesystem for pyfilesystem2
+
+This package provides `FileFS`, a custom filesystem for [pyfilesystem2](https://pyfilesystem2.readthedocs.io/) that allows you to mount files from other filesystems.
+
+## Installation
+
+```sh
+pip install fs.filefs
+```
+
+## Usage Example
+
+```python
+from fs.osfs import OSFS
+from fs.filefs import FileFS
+
+image_fs = OSFS("~/images")
+file_fs = FileFS()
+file_fs.add_file("screenshot_1.png", image_fs)
+file_fs.add_file("screenshot_2.png", image_fs, name="img_2.png")
+
+print(file_fs.listdir("/"))  # ['screenshot_1.png', 'img_2.png']
+```
+
+## Develpment
+
+```sh
+# Install package in editable mode
+pip install -e .
+
+# Run tests
+python -m unittest discover -s tests
+```
