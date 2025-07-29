@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+GenerativeProteomics/__init__.py
+GenerativeProteomics/dataset.py
+GenerativeProteomics/hypers.py
+GenerativeProteomics/model.py
+GenerativeProteomics/output.py
+GenerativeProteomics/protogain.py
+GenerativeProteomics/utils.py
+GenerativeProteomics.egg-info/PKG-INFO
+GenerativeProteomics.egg-info/SOURCES.txt
+GenerativeProteomics.egg-info/dependency_links.txt
+GenerativeProteomics.egg-info/requires.txt
+GenerativeProteomics.egg-info/top_level.txt
