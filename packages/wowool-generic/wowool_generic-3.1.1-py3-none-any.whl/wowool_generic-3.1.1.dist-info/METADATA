@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: wowool-generic
+Version: 3.1.1
+Summary: Wowool NLP generic Package
+Description-Content-Type: text/markdown
+
+# Wowool NLP generic Package
+This package contains the language file and domains for generic.
+To use this package, you need to install the wowool-sdk package and request a license file at info@wowool.com
+
+## Usage
+
+```python
+from wowool.sdk import Pipeline
+from pathlib import Path
+input_text = Path("input.txt").read_text()
+pipeline = Pipeline("generic,entity")
+doc = pipeline(input_text)
+print(doc)
+```
+
+## Domains
+
+
+
