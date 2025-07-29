@@ -1,0 +1,25 @@
+[project]
+name = "clash-of-clans-python-api"
+version = "0.2"
+description = "A wrapper for the official Clash of Clans API."
+authors = [
+    {name = "TheBiemGamer",email="biemgamer@pm.me"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx (>=0.28.1,<0.29.0)"
+]
+
+[project.urls]
+"Source Code" = "https://github.com/TheBiemGamer/ClashOfClansPythonAPI"
+
+[tool.poetry]
+packages = [
+    { include = "coc_api", from = "src" }
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
