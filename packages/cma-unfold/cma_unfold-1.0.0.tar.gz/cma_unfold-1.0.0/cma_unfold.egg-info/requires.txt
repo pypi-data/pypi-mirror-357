@@ -1,0 +1,10 @@
+numpy
+pandas
+Pillow
+matplotlib
+scipy
+cma
+
+[dev]
+build
+twine
