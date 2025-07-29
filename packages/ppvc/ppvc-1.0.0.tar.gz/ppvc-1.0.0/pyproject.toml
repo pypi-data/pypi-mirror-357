@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ppvc"
+version = "1.0.0"
+description = "A command-line utility for listing Python package versions from PyPI"
+readme = "README.md"
+license = {text = "BSD-2-Clause"}
+authors = [
+    {name = "Rapid Rabbit Software", email = "python@rapidrabbit.software"}
+]
+maintainers = [
+    {name = "Chris McMichael", email = "python@apprabb.it"}
+]
+keywords = ["pypi", "package", "version", "cli", "utility"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "packaging>=23.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+ppvc = "ppvc.ppvc:main"
+
+[project.urls]
+Homepage = "https://github.com/rapidrabbitsoft/ppvc"
+Repository = "https://github.com/rapidrabbitsoft/ppvc"
+"Bug Reports" = "https://github.com/rapidrabbitsoft/ppvc/issues"
+"Source" = "https://github.com/rapidrabbitsoft/ppvc"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ppvc*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.md"] 
