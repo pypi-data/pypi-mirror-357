@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+include/wigner.h
+python/README.md
+python/wigner.c
+src/wigner_3jj.c
+src/wigner_3jm.c
+src/wigner_6j.c
+src/wigner_dl.c
+src/wigner.egg-info/PKG-INFO
+src/wigner.egg-info/SOURCES.txt
+src/wigner.egg-info/dependency_links.txt
+src/wigner.egg-info/requires.txt
+src/wigner.egg-info/top_level.txt
