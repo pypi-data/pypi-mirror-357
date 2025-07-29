@@ -1,0 +1,8 @@
+rafael_nn/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rafael_nn/acfn.py,sha256=R1Pn6VgqlvziXS9awu6qEuHRtNP4p-cHZNa39-RQvXI,583
+rafael_nn/nn.py,sha256=Zm7JzcXnAqlzAjELjMkRp6qEu-PjlBAx58eblQPLa1Q,960
+rafael_nn/optimizer.py,sha256=4u7ZeRlOB6r7ReYpSLaOu4HlNixcaz8fSZGRJU5_75A,210
+rafael_nn-0.1.0.dist-info/METADATA,sha256=ZIcx0-ppcRLBFl-cl3gg8lWQCXKnTWC-GDr-xhThv0A,250
+rafael_nn-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+rafael_nn-0.1.0.dist-info/top_level.txt,sha256=YB8sfVv4W4VTJl9Zlo2mpx0oL36v8herAo4yaYF1eLY,10
+rafael_nn-0.1.0.dist-info/RECORD,,
