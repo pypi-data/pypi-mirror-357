@@ -1,0 +1,104 @@
+[project]
+name = "flask-squeeze"
+version = "3.4.0"
+description = "Compress and minify Flask responses!"
+readme = "README.md"
+authors = [{ name = "Marcel Kröker", email = "kroeker.marcel@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers=[
+	"Programming Language :: Python :: 3",
+	"License :: OSI Approved :: MIT License",
+	"Operating System :: OS Independent",
+	"Intended Audience :: Developers",
+	"Programming Language :: Python",
+	"Topic :: Software Development :: Libraries :: Python Modules"
+]
+requires-python = ">=3.8, <3.14"
+
+
+########################################################################################
+#### MARK: Dependencies
+
+
+dependencies = [
+	"flask>=1",
+	"werkzeug>=0",
+	"brotli~=1.1",
+	"rjsmin~=1.2",
+	"rcssmin~=1.2",
+]
+
+
+[dependency-groups]
+dev = [
+	"mypy>=1.14.1",
+	"pytest-cov ~= 5.0.0",
+	"ruff>=0.9.3",
+]
+
+
+########################################################################################
+#### MARK: Packaging
+
+
+[tool.setuptools]
+packages = ["flask_squeeze"]
+license-files = [] # Workaround for https://github.com/astral-sh/uv/issues/9513
+
+
+[tool.uv]
+package = true
+
+
+########################################################################################
+#### MARK: Ruff
+
+
+[tool.ruff]
+show-fixes = true
+line-length = 120
+
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+	"ANN202", # Missing return type annotation for private function
+	"D", # docstrings
+	"E501", # line length
+	"ERA001", # Found commented-out code
+	"FBT001", # Boolean-typed positional argument in function definition
+	"FIX002", # Line contains TODO, consider resolving the issue
+	"INP001", # File is part of an implicit namespace package. Add an `__init__.py`.
+	"S101", # Use of `assert` detected
+	"T201", # `print` found
+	"TD002", # Missing author in TODO; try: `# TODO(<author_name>): ...`
+	"TD003", # Missing issue link on the line following this TODO
+	"UP006", # use Dict (not possible in python 3.8)
+	"UP007", # use X | Y for union (not possible in python 3.8)
+	"UP035", # use typing Dict and List (not possible in python 3.8)
+	"W191", # indentation contains tabs
+]
+
+
+[tool.ruff.format]
+indent-style = "tab"
+quote-style = "double"
+
+
+########################################################################################
+#### MARK: Testing
+
+[tool.coverage.report]
+omit = [
+	"tests/*",
+]
+exclude_also = [
+	"if TYPE_CHECKING:",
+]
+
+
+########################################################################################
+#### MARK: Mypy
+
+[tool.mypy]
+ignore_missing_imports = true
