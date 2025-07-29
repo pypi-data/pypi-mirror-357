@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: qcs_api
+Version: 0.1.5
+Author: TUM QCS
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: requests
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-dist
