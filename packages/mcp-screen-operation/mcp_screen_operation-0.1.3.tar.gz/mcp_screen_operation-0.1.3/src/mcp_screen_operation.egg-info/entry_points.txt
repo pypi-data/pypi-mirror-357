@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-screen-operation = screen_operation_server.main:main

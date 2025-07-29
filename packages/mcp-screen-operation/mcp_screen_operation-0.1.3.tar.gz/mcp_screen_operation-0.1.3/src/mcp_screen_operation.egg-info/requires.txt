@@ -1,0 +1,26 @@
+mcp>=1.9.4
+fastmcp>=2.3.0
+mss
+Pillow
+pyautogui
+
+[:sys_platform == "darwin"]
+pyobjc-framework-Quartz
+pyobjc-framework-Cocoa
+
+[:sys_platform == "linux"]
+python-xlib
+
+[:sys_platform == "win32"]
+pywin32
+
+[build]
+build>=1.0.0
+twine>=5.0.0
+wheel>=0.42.0
+
+[dev]
+pylint
+pylint-plugin-utils
+pylint-mcp
+black
