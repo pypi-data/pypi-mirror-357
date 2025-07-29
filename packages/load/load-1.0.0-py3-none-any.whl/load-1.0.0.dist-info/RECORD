@@ -1,0 +1,11 @@
+load/__init__.py,sha256=sRK_uCUKnE-9kmIsDylyOLdyweA4dnKuhlffBjYy7Qk,1066
+load/core.py,sha256=Z5CosgaMraJHhZ5QolyE_yO-fAMjZvkLs3u_1it57mE,4537
+load/magic.py,sha256=KRcgdhC3kSwC-sOV4Q42YJo3bYfjv2YrYIMi65dsLS8,1115
+load/registry.py,sha256=_P2FzrUYyn7FqmkWc2p8CWowRLC9tTKHfjJOdk8zMUA,6302
+load/shortcuts.py,sha256=zDqsqROV-DVUvJ1DfUvWURz43pfcvde8m92dGOnAGIs,680
+load/utils.py,sha256=s_DkJ_6ecGfWrtTAjVChD8XHcn4NNt_IKoKKejY1Pv8,1709
+load-1.0.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+load-1.0.0.dist-info/METADATA,sha256=RYmZfgu2IhOpARQBj6oNYgB6T5NcqKCtukr1Kvm514Y,9338
+load-1.0.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+load-1.0.0.dist-info/entry_points.txt,sha256=2FU4edOtP5ChutxP3LlwdzBpYJEploS2KFHJyULi2Uk,44
+load-1.0.0.dist-info/RECORD,,
