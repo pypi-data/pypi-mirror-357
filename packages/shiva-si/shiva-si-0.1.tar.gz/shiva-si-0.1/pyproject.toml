@@ -1,0 +1,28 @@
+[project]
+name = "shiva-si"
+version = "0.1"
+description = "Dataset-agnostic model saving and loading format (.si) for AI/ML pipelines"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "Proprietary" }
+
+authors = [
+  { name = "Siddique Shiva", email = "easwararaj05687@gmail.com" }
+]
+
+keywords = ["model saving", "torch", "tensorflow", "onnx", "machine learning", "serialization", ".si format"]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: Other/Proprietary License",
+  "Operating System :: OS Independent"
+]
+
+dependencies = [
+  "torch>=1.12.0",
+  "tensorflow==2.10.1",
+  "onnx>=1.12.0",
+  "psutil",
+  "cython",
+  "numpy<2.0"
+]
