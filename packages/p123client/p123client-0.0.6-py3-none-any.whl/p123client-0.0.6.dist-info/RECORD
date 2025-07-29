@@ -1,0 +1,12 @@
+LICENSE,sha256=o5242_N2TgDsWwFhPn7yr8YJNF7XsJM5NxUMtcT97bc,1100
+p123client/__init__.py,sha256=gfUum-q3f_XuXOk2HpArDAIxAlscZm8Fau1kiNkNFpg,214
+p123client/client.py,sha256=Vo1QbNuDdNQBrrjXJki1n5IXFxoYd0QsK4R2eL5-Wxg,240077
+p123client/const.py,sha256=T17OzPQrnIG6w_Hzjc8TF_fFMKa-hQMSn1gff8pVcBc,56
+p123client/exception.py,sha256=d2PN6mRJuw6SXNiTOBfjZQ6qfInAvkERkcbx4PQ-7vA,1369
+p123client/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+p123client/tool/__init__.py,sha256=zlKMg_ETifq4pFsbmqAS_BqU-fuqrYWbCs_HD4Vra6o,16649
+p123client/type.py,sha256=T17OzPQrnIG6w_Hzjc8TF_fFMKa-hQMSn1gff8pVcBc,56
+p123client-0.0.6.dist-info/LICENSE,sha256=o5242_N2TgDsWwFhPn7yr8YJNF7XsJM5NxUMtcT97bc,1100
+p123client-0.0.6.dist-info/METADATA,sha256=7JhGIxHwVQHzN9dc2fWzTFDkZCVBq6RXZWxfLmpeZo0,8867
+p123client-0.0.6.dist-info/WHEEL,sha256=Nq82e9rUAnEjt98J6MlVmMCZb-t9cYE2Ir1kpBmnWfs,88
+p123client-0.0.6.dist-info/RECORD,,
