@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vinzy_automl"
+version = "1.0.0"
+description = "Automated Machine Learning package"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Vinayak Bhosale"}
+]
+dependencies = [
+    "numpy>=1.20.0",
+    "pandas>=1.0.0",
+    "scikit-learn>=1.0.0",
+    "matplotlib>=3.5.0"
+]
+
+[project.optional-dependencies]
+full = [
+    "xgboost>=1.5.0",
+    "lightgbm>=3.3.0",
+    "catboost>=1.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/vinayak-97/vinzy_automl"

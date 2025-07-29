@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+vinzy_automl/__init__.py
+vinzy_automl/automl.py
+vinzy_automl.egg-info/PKG-INFO
+vinzy_automl.egg-info/SOURCES.txt
+vinzy_automl.egg-info/dependency_links.txt
+vinzy_automl.egg-info/requires.txt
+vinzy_automl.egg-info/top_level.txt
