@@ -1,0 +1,59 @@
+Metadata-Version: 2.4
+Name: algomake
+Version: 0.1.1
+Summary: A custom machine learning library implemented from scratch.
+Author-email: Arya Patil <patilarya3133@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/yourusername/algoforge
+Project-URL: Bug Tracker, https://github.com/yourusername/algoforge/issues
+Keywords: machine-learning,deep-learning,algorithms,from-scratch
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.20.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: flake8>=4.0; extra == "dev"
+Requires-Dist: black>=22.0; extra == "dev"
+Requires-Dist: isort>=5.0; extra == "dev"
+Requires-Dist: sphinx; extra == "dev"
+Requires-Dist: sphinx_rtd_theme; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: sphinx_rtd_theme; extra == "docs"
+
+# AlgoMake
+
+A custom machine learning library built from scratch to deepen understanding of fundamental algorithms.
+
+## Overview
+
+AlgoMake is a personal project aimed at implementing various machine learning models and utility functions without relying heavily on established libraries like Scikit-learn or TensorFlow for core algorithm logic. The goal is to provide transparent and educational implementations of common machine learning concepts.
+
+## Features
+
+-   **Base Estimator:** A foundational `BaseEstimator` class for consistent API design.
+-   **Gaussian Mixture Models (GMM):** A complete implementation of GMM using the Expectation-Maximization (EM) algorithm, optimized to run without `scipy` dependencies for its core components.
+-   **K-Nearest Neighbors (KNN):** (Mention if implemented)
+-   **Linear Models:** (Mention if implemented, e.g., Linear Regression, Logistic Regression)
+-   **Preprocessing Tools:** (Mention if implemented, e.g., StandardScaler, MinMaxScaler)
+-   **Evaluation Metrics:** (Mention if implemented, e.g., Accuracy, MSE)
+-   **Modular Design:** Easy to extend with new algorithms.
+-   **Comprehensive Testing:** Each component is rigorously tested using `pytest`.
+
+## Installation
+
+You can install AlgoMake directly from source:
+
+```bash
+git clone [https://github.com/yourusername/AlgoMake.git](https://github.com/yourusername/AlgoMake.git)
+cd AlgoMake
+pip install -e .
