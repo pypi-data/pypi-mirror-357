@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: astro_what
+Version: 0.1.1
+Summary: CLI astronomy toolkit for moon data and lunar phases
+Author: Shreenidhi
+Classifier: Programming Language :: Python :: 3
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click
+Requires-Dist: skyfield
+Requires-Dist: matplotlib
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+ # 🌙 astro_what
+
+A Python command-line tool to explore moon phases, positions, and lunar events — directly from your terminal. Built using Skyfield and Click, it’s perfect for hobbyist astronomers, students, and night-sky enthusiasts.
+
+## Features
+
+- Get real-time moon phase and illumination data
+- Forecast upcoming lunar phase transitions
+- Visualize the moon’s position using polar charts
+- Fully offline-friendly after installation
+
+## Installation
+
+'''bash
+pip install astro-what'''
+
+## Usage 
+- astro moon --date 2025-06-23
+- astro phases --days 5
+- astro chart --date 2025-06-23
+
+
