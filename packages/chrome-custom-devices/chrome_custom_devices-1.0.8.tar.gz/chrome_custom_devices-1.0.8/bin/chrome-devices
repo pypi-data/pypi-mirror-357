@@ -1,0 +1,59 @@
+#!/usr/bin/env node
+
+const { execSync } = require('child_process');
+const path = require('path');
+const fs = require('fs');
+
+function runInstaller() {
+    console.log('🚀 Chrome Custom Devices - npm Installer');
+    console.log('==========================================\n');
+    
+    try {
+        // Check if quick-install.sh exists in the package
+        const scriptPath = path.join(__dirname, '..', 'quick-install.sh');
+        
+        if (fs.existsSync(scriptPath)) {
+            console.log('📦 Running local installer...');
+            execSync(`bash "${scriptPath}"`, { stdio: 'inherit' });
+        } else {
+            console.log('📦 Downloading and running installer...');
+            const installCommand = 'curl -sSL https://raw.githubusercontent.com/hatimmakki/chrome-custom-devices/main/quick-install.sh | bash';
+            execSync(installCommand, { stdio: 'inherit' });
+        }
+        
+        console.log('\n✨ Installation complete!');
+        console.log('🔄 Restart Chrome to see your new devices in DevTools > Settings > Devices');
+        
+    } catch (error) {
+        console.error('\n❌ Installation failed:', error.message);
+        console.log('\n💡 Alternative installation methods:');
+        console.log('   pip install chrome-custom-devices');
+        console.log('   curl -sSL https://raw.githubusercontent.com/hatimmakki/chrome-custom-devices/main/quick-install.sh | bash');
+        process.exit(1);
+    }
+}
+
+// Show help or run installer
+if (process.argv.includes('--help') || process.argv.includes('-h')) {
+    console.log(`
+Chrome Custom Devices Manager
+
+Usage:
+  chrome-devices                Install devices to all Chrome profiles
+  chrome-devices --help         Show this help message
+
+This tool adds 22+ desktop device presets to Chrome DevTools:
+• MacBook models (12", 13", 15", 16") from 2014-2021  
+• iMac 24" - 2021
+• MacBook Air models
+• Notebooks with touch and HiDPI screens
+• Dell Latitude, Microsoft Surface Duo
+• Generic notebook
+
+Perfect for testing responsive designs on actual desktop resolutions!
+
+Repository: https://github.com/hatimmakki/chrome-custom-devices
+`);
+} else {
+    runInstaller();
+}
