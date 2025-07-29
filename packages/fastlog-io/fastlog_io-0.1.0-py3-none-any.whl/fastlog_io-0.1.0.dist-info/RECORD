@@ -1,0 +1,10 @@
+fastlog/__init__.py,sha256=liEBajqZD3wmqILPpAbfVZ1xyn4vLvy5LG5SOeMfAjo,487
+fastlog/config.py,sha256=9PKil_bQxk_Y4KhL_6sdRf3HIDEECR4lfqm2RFCv-NE,987
+fastlog/core.py,sha256=vZR6tJq8N68vtAxLdUtVvAFyjmiUZmWya0BP-Ud6_Og,3345
+fastlog/helpers.py,sha256=ywzfhMFD1uiyXrIvZX9FTgT0y39QX6HvJGo-WfZeaMw,330
+fastlog/intercept.py,sha256=rf9BbRWvAJ2Z6whqsLRXnzPq2l4zHDwA-mtTQ8pEdNY,1649
+fastlog/metrics.py,sha256=g3_hA7m5jVI6scGOGC5fo9Yb71BugL8km-V9SNQa-r8,1015
+fastlog_io-0.1.0.dist-info/METADATA,sha256=dS5JHTmhduI-zDV-4FqeWIGmc2EojIn6bdeO8HTpjOM,4427
+fastlog_io-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+fastlog_io-0.1.0.dist-info/licenses/LICENSE,sha256=H5l4pEKXYzeobqnqWgyXrmsb2rVtlmHQWTjxY7jlW-M,1055
+fastlog_io-0.1.0.dist-info/RECORD,,
