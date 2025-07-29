@@ -1,0 +1,15 @@
+./.gitignore,sha256=XlxrXLJVG8Zulh7yhwvg0JE1ytqao3QK6OTed3WLirU,697
+./.pre-commit-config.yaml,sha256=0h__EIOi9ySG8BttSGcpRKZa3-MUxDl1rqYV1y8BaRo,468
+./.python-version,sha256=v8KwrVavnox0GgQ6jiCu1KShtucITz83Y08gcAMAeNU,4
+./PKG-INFO,sha256=6WKYm8I-ozoW4zTTcE24KXB7z4TIolTbDJ8p-irRo88,2744
+./README.md,sha256=JQ6Zkd2Rtrx9vl4k10AOhkjV0QZWFIfH1gBbUXm4lTk,2343
+./py.typed,sha256=Nqnn8clbgv-5l0PgxcTOldg8mkMKrFn4TvPL-rYUUGg,1
+./pyproject.toml,sha256=mj21yqbz7S9IKO5m0fV3WEc7HpA6JfrNT0r3Ncjai48,976
+./tinymsg.py,sha256=DsJRKguGmUQxvy4YmN3zKl1gqmMeWuvqdB1Oz5W4XxQ,1171
+./tinymsg.pyi,sha256=VHVc3155ORL9Qom-GOd0q6vfl_w-z6bA5heiz4jek-g,849
+./uv.lock,sha256=m9ibXAuua81UDC8lZ4cesFL-p-sPm4-jhsjPJTtzfQw,86129
+./tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+./tests/test_tinymsg.py,sha256=cLqLRWkleAYmg0QScpBfV7J8rY9vE7yb3Raa5IsuVhU,8356
+tinymsg-0.1.1.dist-info/METADATA,sha256=6WKYm8I-ozoW4zTTcE24KXB7z4TIolTbDJ8p-irRo88,2744
+tinymsg-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+tinymsg-0.1.1.dist-info/RECORD,,
