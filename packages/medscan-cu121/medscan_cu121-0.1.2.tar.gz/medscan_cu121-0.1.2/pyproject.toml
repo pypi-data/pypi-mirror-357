@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medscan-cu121"
+version = "0.1.2"
+description = "Multimodal image classification framework for neuroimaging applications (CUDA 12.1 version)"
+readme = "README.md"
+requires-python = ">=3.10"
+
+authors = [
+  { name = "Cristo van den Berg", email = "cristo99@live.nl" }
+]
+
+dependencies = [
+  "pandas==2.2.3",
+  "pyyaml==6.0.2",
+  "scikit-learn==1.6.1",
+  "scipy==1.15.3",
+  "numpy==2.1.2",
+  "matplotlib==3.10.3",
+  "torch==2.5.1+cu121",
+  "torchvision==0.20.1+cu121",
+  "torchaudio==2.5.1+cu121",
+  "triton==3.2.0,<4.0.0",
+  "fsspec==2024.6.1",
+  "pillow==11.0.0",
+  "openpyxl==3.1.5",
+  "joblib==1.5.1",
+  "networkx==3.3"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2",
+  "ipykernel",
+  "jupyter_client",
+  "debugpy",
+  "pre-commit"
+]
+
+[project.urls]
+Homepage = "https://github.com/CristovdBerg/medscan"
+
+[tool.setuptools.packages.find]
+where = ["."]
