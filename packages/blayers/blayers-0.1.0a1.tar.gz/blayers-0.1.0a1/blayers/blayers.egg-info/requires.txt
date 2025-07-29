@@ -1,0 +1,17 @@
+numpy
+jax
+numpyro
+
+[dev]
+optax
+pytest
+pytest-check
+mypy
+black
+isort
+autoflake
+sphinx
+furo
+coverage
+pytest-cov
+pre-commit
