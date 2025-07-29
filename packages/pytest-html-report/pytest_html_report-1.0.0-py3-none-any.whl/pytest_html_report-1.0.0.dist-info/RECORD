@@ -1,0 +1,13 @@
+pytest_html_report/CONTRIBUTING.md,sha256=OaHHchNwKJimAlfF4TDhxMXtnDLt9Cr8S7QyEt2g0cY,499
+pytest_html_report/__init__.py,sha256=IrPkJRdPgApTO8Z97H9-9jY3Brd8S5RlfC-m0KEz2cM,142
+pytest_html_report/config.py,sha256=sRj6NVjErZg5AXRA2RfomvRPaIJmPcwn0sH2-gUkyrw,3182
+pytest_html_report/default_config.yml,sha256=q1dQ30FqSQ0vIjlRiUFD_2lxzzAiN8SNwr2ROr0i31g,784
+pytest_html_report/plugin.py,sha256=xb76mK0hOh6PLK70f8aZsDb0ZZf6_YZWzjsiDl-aq4A,15133
+pytest_html_report/report_generator.py,sha256=q0E8N2zjwyI86beRbeAb2IGrSGvVEUcR8vJRygLTHCY,14720
+pytest_html_report/templates/report_template.html,sha256=vR7y0-CfkHeKt1gF8Kd85Tv3LZpzUg4Y3-SOmDMf77I,19622
+pytest_html_report-1.0.0.dist-info/licenses/LICENSE,sha256=4o0s-QjWA8F-3szEa7uk5WFysNDZBZxNkWjv_bLuNyk,1072
+pytest_html_report-1.0.0.dist-info/METADATA,sha256=P96jnfS9ssiRhac5zYhjuWrG9-8LtZVOfmRC-ZVOKY0,2467
+pytest_html_report-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pytest_html_report-1.0.0.dist-info/entry_points.txt,sha256=GXOvWjJCGI6WVN6mz4fwIYAfmbpSfjCsEyie1sD7j8k,58
+pytest_html_report-1.0.0.dist-info/top_level.txt,sha256=1Xh4WB6P9xwQuiOM-AAHJ8nUjvteAuplAyCWiZqbexE,19
+pytest_html_report-1.0.0.dist-info/RECORD,,

@@ -1,0 +1,35 @@
+# Default pytest-html-report configuration
+report:
+  title: "pytest HTML Report"
+  img_url: "https://icon.icepanel.io/Technology/svg/pytest.svg"
+  report_dir: "reports"
+  test_environment: "Development"
+
+theme:
+  primary_color: "#0052CC"
+  primary_hover: "#0747A6"
+  success_bg: "#E3FCEF"
+  success_text: "#00875A"
+  error_bg: "#FFEBE6"
+  error_text: "#DE350B"
+  warning_bg: "#FFFAE6"
+  warning_text: "#974F0C"
+  info_bg: "#DEEBFF"
+  info_text: "#0747A6"
+
+functional_specs:
+  SPEC-001: "Feature 1"
+  SPEC-002: "Feature 2"
+
+categories:
+  regression: "Regression Tests"
+  smoke: "Smoke Tests"
+  integration: "Integration Tests"
+  unit: "Unit Tests"
+  manual: "Manual Tests"
+  optional: "Optional Tests"
+  performance: "Performance Tests"
+
+logging:
+  step_level: 24
+  assertion_level: 25
