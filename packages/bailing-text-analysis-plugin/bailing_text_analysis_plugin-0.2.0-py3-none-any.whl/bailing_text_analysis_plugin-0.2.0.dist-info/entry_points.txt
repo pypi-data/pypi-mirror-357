@@ -1,0 +1,2 @@
+[bailing.plugins]
+text_analysis = my_plugin:create_plugin
