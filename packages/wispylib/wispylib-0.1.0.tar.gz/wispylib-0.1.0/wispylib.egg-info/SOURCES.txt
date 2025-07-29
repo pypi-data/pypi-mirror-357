@@ -1,0 +1,12 @@
+LICENCE
+README.md
+pyproject.toml
+setup.py
+wispylib/__init__.py
+wispylib/core.py
+wispylib.egg-info/PKG-INFO
+wispylib.egg-info/SOURCES.txt
+wispylib.egg-info/dependency_links.txt
+wispylib.egg-info/entry_points.txt
+wispylib.egg-info/requires.txt
+wispylib.egg-info/top_level.txt
