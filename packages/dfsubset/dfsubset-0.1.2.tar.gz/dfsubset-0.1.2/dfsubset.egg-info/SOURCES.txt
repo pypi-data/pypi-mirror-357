@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+dfsubset/__init__.py
+dfsubset/core.py
+dfsubset.egg-info/PKG-INFO
+dfsubset.egg-info/SOURCES.txt
+dfsubset.egg-info/dependency_links.txt
+dfsubset.egg-info/requires.txt
+dfsubset.egg-info/top_level.txt
+tests/test_core.py
