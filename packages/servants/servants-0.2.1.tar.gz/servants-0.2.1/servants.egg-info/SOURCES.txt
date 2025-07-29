@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+servants/__init__.py
+servants/test_tool_example.py
+servants.egg-info/PKG-INFO
+servants.egg-info/SOURCES.txt
+servants.egg-info/dependency_links.txt
+servants.egg-info/top_level.txt
