@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: helloworld2025
+Version: 0.0.1
+Summary: This is a hello world package
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+License-File: LICENSE.txt
+Provides-Extra: dev
+Requires-Dist: pytest>=3.7; extra == "dev"
+Dynamic: classifier
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: summary
