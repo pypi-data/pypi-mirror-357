@@ -1,0 +1,11 @@
+LICENSE
+README.md
+docxtpl_checker.py
+setup.py
+docxtpl_checker.egg-info/PKG-INFO
+docxtpl_checker.egg-info/SOURCES.txt
+docxtpl_checker.egg-info/dependency_links.txt
+docxtpl_checker.egg-info/entry_points.txt
+docxtpl_checker.egg-info/not-zip-safe
+docxtpl_checker.egg-info/requires.txt
+docxtpl_checker.egg-info/top_level.txt

@@ -1,0 +1,299 @@
+Metadata-Version: 2.4
+Name: docxtpl-checker
+Version: 0.0.1
+Summary: A comprehensive validation tool for python-docx-template (docxtpl) Word templates
+Home-page: https://github.com/VicBioDev/docxtpl_checker
+Author: Docxtpl Template Checker
+Author-email: vic.wangyifan@gmail.com
+Project-URL: Bug Reports, https://github.com/VicBioDev/docxtpl_checker/issues
+Project-URL: Source, https://github.com/VicBioDev/docxtpl_checker
+Project-URL: Documentation, https://github.com/VicBioDev/docxtpl_checker#readme
+Keywords: docxtpl jinja2 template validation word document docx
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Text Processing :: Markup
+Classifier: Topic :: Office/Business :: Office Suites
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: jinja2>=2.10
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Docxtpl Template Checker
+
+[![Python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+A comprehensive validation tool for [python-docx-template](https://github.com/elapouya/python-docx-template) (docxtpl) Word templates. This tool helps you find and fix syntax errors in your Jinja2 templates embedded in Word documents, ensuring your templates work correctly before processing.
+
+## ✨ Features
+
+- 🔍 **Comprehensive Syntax Validation**: Detects Jinja2 and docxtpl-specific syntax errors
+- 📋 **Detailed Error Reports**: Generates markdown reports with precise error locations and context
+- 🌐 **Multi-language Support**: Full localization in English and Chinese (中文)
+- 📍 **Context-aware Error Location**: Shows exact line numbers and surrounding context
+- 🏷️ **Docxtpl-specific Validation**: Understands `{%p %}`, `{%tr %}`, `{%tc %}`, `{%r %}` prefix tags
+- 🎯 **Smart Error Detection**: Identifies unmatched tags, bracket/quote issues, and common mistakes
+- 📊 **Multiple Output Formats**: Terminal summary and detailed markdown reports
+- 🛠️ **Command-line Interface**: Easy integration into CI/CD pipelines
+
+## 📦 Installation
+
+### Prerequisites
+
+- Python 3.6 or higher
+- `jinja2` library
+
+### Install Dependencies
+
+```bash
+pip install jinja2
+```
+
+### Download
+
+```bash
+git clone https://github.com/YOUR_USERNAME/docxtpl_checker.git
+cd docxtpl_checker
+```
+
+## 🚀 Quick Start
+
+### Basic Usage
+
+```bash
+# Validate a docxtpl template
+python docxtpl_checker.py template.docx
+
+# Generate Chinese report
+python docxtpl_checker.py template.docx --language zh --report 验证报告.md
+
+# Enable verbose logging
+python docxtpl_checker.py template.docx --verbose
+```
+
+### Example Output
+
+```
+Validation Results:
+  Errors: 1
+  Warnings: 0
+  Info: 2
+
+❌ Validation failed with 1 errors
+
+Detailed report saved to: docxtpl_validation_report.md
+```
+
+## 📚 Usage Guide
+
+### Command Line Options
+
+```
+usage: docxtpl_checker.py [-h] [--report REPORT] [--verbose] [--language {en,zh}] template
+
+positional arguments:
+  template              docxtpl template file path (.docx)
+
+options:
+  -h, --help            show this help message and exit
+  --report REPORT, -r REPORT
+                        Validation report output path (default: docxtpl_validation_report.md)
+  --verbose, -v         Enable verbose logging
+  --language {en,zh}, -l {en,zh}
+                        Output language: en (English) or zh (Chinese) (default: en)
+```
+
+### Examples
+
+```bash
+# Basic validation
+python docxtpl_checker.py my_template.docx
+
+# Custom report location
+python docxtpl_checker.py my_template.docx --report reports/validation.md
+
+# Chinese interface and report
+python docxtpl_checker.py my_template.docx -l zh -r 中文报告.md
+
+# Verbose output for debugging
+python docxtpl_checker.py my_template.docx --verbose
+```
+
+## 🔍 What It Validates
+
+### Jinja2 Syntax
+- Variable tags: `{{ variable }}`
+- Statement tags: `{% if condition %}`, `{% for item in items %}`
+- Comment tags: `{# comment #}`
+- Bracket and quote matching
+- Control structure pairing
+
+### Docxtpl-specific Features
+- Paragraph control: `{% p if condition %}...{% p endif %}`
+- Table row control: `{% tr for item in items %}...{% tr endfor %}`
+- Table cell control: `{% tc if condition %}...{% tc endif %}`
+- Run control: `{% r if condition %}...{% r endif %}`
+- Image filters: `{{ image_var|image }}`
+- Subdocument inclusion: `{{ subdoc(template_var) }}`
+
+### Common Issues Detected
+- ✅ Unmatched opening/closing tags
+- ✅ Missing docxtpl prefix in end tags
+- ✅ Bracket and parentheses mismatches
+- ✅ Unbalanced quotes
+- ✅ Syntax errors in expressions
+- ✅ Incorrect filter usage
+- ✅ Split tags caused by Word formatting
+
+## 📖 Report Features
+
+The tool generates detailed markdown reports with:
+
+- **📊 Summary**: Overview of errors, warnings, and suggestions
+- **🎯 Precise Locations**: Exact line numbers and document sections
+- **📍 Context Display**: Shows surrounding lines for easy error location
+- **💡 Helpful Suggestions**: Specific recommendations for fixing issues
+- **🏷️ Categorized Issues**: Organized by error types and severity
+- **📋 Best Practices**: Includes docxtpl template guidelines
+
+### Sample Report Section
+
+```markdown
+## Errors 🔴
+
+### Docxtpl Structure
+
+#### 1. {%p if%} tag mismatch: found {%endif%} instead of {%p endif%}
+
+**Location:** Document (Line 9)
+
+**📍 Context:**
+```
+    7: {% p if false %}
+    8: {{ name2 }}
+>>> 9: {% end if %}
+    10: {% p endif %}
+    11: {% tr for i in range(10) %}
+```
+
+**💡 Suggestion:** Change {%endif%} to {%p endif%} to match the docxtpl prefix pattern
+```
+
+## 🌐 Supported Languages
+
+### English (Default)
+```bash
+python docxtpl_checker.py template.docx --language en
+```
+
+### Chinese (中文)
+```bash
+python docxtpl_checker.py template.docx --language zh
+```
+
+All error messages, categories, and suggestions are fully localized.
+
+## 🏗️ Project Structure
+
+```
+docxtpl_checker/
+├── docxtpl_checker.py          # Main validation script
+├── examples/                   # Sample template files
+│   ├── correct.docx           # Valid template example
+│   ├── wrong_paragraph.docx   # Template with paragraph errors
+│   └── wrong_tablerow.docx    # Template with table row errors
+├── deprecated/                 # Previous versions and experiments
+├── index.rst                  # Docxtpl syntax documentation
+├── README.md                  # This file
+├── requirements.txt           # Python dependencies
+├── .gitignore                # Git ignore patterns
+└── LICENSE                   # MIT license
+```
+
+## 🛠️ Development
+
+### Running Tests
+
+Test with the provided example files:
+
+```bash
+# Test correct template
+python docxtpl_checker.py examples/correct.docx
+
+# Test problematic templates
+python docxtpl_checker.py examples/wrong_paragraph.docx
+python docxtpl_checker.py examples/wrong_tablerow.docx
+
+# Test Chinese localization
+python docxtpl_checker.py examples/wrong_paragraph.docx --language zh
+```
+
+### Adding New Validations
+
+The tool is designed to be extensible. Key methods for adding validations:
+
+- `validate_single_block()`: Add new block-level validations
+- `check_template_structure()`: Add new structure-level validations
+- `check_docxtpl_specific()`: Add docxtpl-specific validations
+
+## 📋 Requirements
+
+- Python 3.6+
+- jinja2
+
+See `requirements.txt` for specific versions.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests.
+
+### Areas for Contribution
+- Additional validation rules
+- More language translations
+- Performance improvements
+- Additional output formats
+- Integration with other tools
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [python-docx-template (docxtpl)](https://github.com/elapouya/python-docx-template) - The amazing library this tool validates
+- [Jinja2](https://jinja.palletsprojects.com/) - The template engine used by docxtpl
+- [python-docx](https://github.com/python-openxml/python-docx) - For Word document processing
+
+## 📞 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [examples/](examples/) directory for sample usage
+2. Review the generated validation reports for detailed error information
+3. Create an issue on GitHub with your template and error details
+
+---
+
+**Happy templating!** 🎉
