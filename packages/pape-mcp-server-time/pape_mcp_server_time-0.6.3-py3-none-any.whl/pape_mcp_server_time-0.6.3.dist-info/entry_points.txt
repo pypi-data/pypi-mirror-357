@@ -1,0 +1,2 @@
+[console_scripts]
+pape-mcp-server-time = pape_mcp_server_time:main
