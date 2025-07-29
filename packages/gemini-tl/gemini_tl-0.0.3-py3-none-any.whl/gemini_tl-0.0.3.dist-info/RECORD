@@ -1,0 +1,12 @@
+gemini_tl/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gemini_tl/config.py,sha256=k8nnM6E7APR88FGmA753BS4dYtSbKpvGiXx92KuLoFY,7912
+gemini_tl/gemini.py,sha256=F3wH_H9xJ-0Uv3U3aeZLHgzZm3LQCUYVk8m18N_UcQ0,20324
+gemini_tl/main.py,sha256=RZvf0GXs5YmbNHjhQBCaFx8Ev9w1Nz_FtZC_5ir43Hc,7012
+gemini_tl/models.py,sha256=M_Nk2NZzKoTqDOuwDLd8iv1p8EOz3fx2BCMS_3WFEMI,5543
+gemini_tl/video.py,sha256=-NjZoFkdrIpa3OPPzHts9tnj4oDYPSkuuKz2RKPT8fo,3265
+gemini_tl-0.0.3.dist-info/licenses/LICENSE,sha256=n-wReXP3dPWzar1Rg8aOJlQ34ScunvLfhdVPtgXzI18,1066
+gemini_tl-0.0.3.dist-info/METADATA,sha256=GFTIAF28do81FHQtP5cjG8aS20E7uUfFVF8NV56ZWto,5013
+gemini_tl-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gemini_tl-0.0.3.dist-info/entry_points.txt,sha256=R4hs27uvEtZ-EnTmXSaQI6Ba8eUXUJziM75JWBTxPUE,50
+gemini_tl-0.0.3.dist-info/top_level.txt,sha256=C-jhvro659u1Chg51weWiKzbFj6vxoY4OfXVkLdb_f4,10
+gemini_tl-0.0.3.dist-info/RECORD,,
