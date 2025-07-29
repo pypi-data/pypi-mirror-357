@@ -1,0 +1,736 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'ECS Infrastructure for Chatbot Application'
+
+Parameters:
+  VpcCidr:
+    Type: String
+    Default: '10.0.0.0/16'
+  
+  ECRRepositoryURI:
+    Type: String
+    Description: 'Base ECR repository URI (without image name)'
+    Default: 'public.ecr.aws/e7b5q5z5/nam685'
+  
+  SecretARN:
+    Type: String
+    Description: Secret ARN for chatbot application
+    Default: 'arn:aws:secretsmanager:eu-central-1:417744795771:secret:chatbot-secrets-TXOVcr'
+
+Resources:
+  # VPC and Networking
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref VpcCidr
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      Tags:
+        - Key: Name
+          Value: chatbot-vpc
+
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: chatbot-igw
+
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref InternetGateway
+
+  PublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: '10.0.1.0/24'
+      AvailabilityZone: !Select [0, !GetAZs '']
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: chatbot-public-subnet
+
+  PrivateSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: '10.0.2.0/24'
+      AvailabilityZone: !Select [0, !GetAZs '']
+      Tags:
+        - Key: Name
+          Value: chatbot-private-subnet-1
+
+  PrivateSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: '10.0.3.0/24'
+      AvailabilityZone: !Select [1, !GetAZs '']
+      Tags:
+        - Key: Name
+          Value: chatbot-private-subnet-2
+
+  NATGateway:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId: !GetAtt EIPForNAT.AllocationId
+      SubnetId: !Ref PublicSubnet
+      Tags:
+        - Key: Name
+          Value: chatbot-nat
+
+  EIPForNAT:
+    Type: AWS::EC2::EIP
+    DependsOn: AttachGateway
+    Properties:
+      Domain: vpc
+
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: chatbot-public-rt
+
+  PrivateRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: chatbot-private-rt
+
+  PublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: AttachGateway
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId: !Ref InternetGateway
+
+  PrivateRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable
+      DestinationCidrBlock: '0.0.0.0/0'
+      NatGatewayId: !Ref NATGateway
+
+  PublicSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PublicSubnet
+      RouteTableId: !Ref PublicRouteTable
+
+  PrivateSubnet1RouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PrivateSubnet1
+      RouteTableId: !Ref PrivateRouteTable
+
+  PrivateSubnet2RouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PrivateSubnet2
+      RouteTableId: !Ref PrivateRouteTable
+
+  # Security Groups
+  ALBSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for Application Load Balancer
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: '0.0.0.0/0'
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: '0.0.0.0/0'
+
+  ECSSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for ECS tasks
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 3000
+          ToPort: 3000
+          SourceSecurityGroupId: !Ref ALBSecurityGroup
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          SourceSecurityGroupId: !Ref ECSSecurityGroup
+        - IpProtocol: tcp
+          FromPort: 8000
+          ToPort: 8000
+          SourceSecurityGroupId: !Ref ECSSecurityGroup
+        - IpProtocol: tcp
+          FromPort: 5432
+          ToPort: 5432
+          SourceSecurityGroupId: !Ref ECSSecurityGroup
+        - IpProtocol: tcp
+          FromPort: 6379
+          ToPort: 6379
+          SourceSecurityGroupId: !Ref ECSSecurityGroup
+      SecurityGroupEgress:
+        - IpProtocol: -1
+          CidrIp: '0.0.0.0/0'
+
+  # EFS for PostgreSQL data persistence
+  EFSFileSystem:
+    Type: AWS::EFS::FileSystem
+    Properties:
+      CreationToken: chatbot-postgres-data
+      FileSystemTags:
+        - Key: Name
+          Value: chatbot-postgres-data
+
+  EFSMountTarget1:
+    Type: AWS::EFS::MountTarget
+    Properties:
+      FileSystemId: !Ref EFSFileSystem
+      SubnetId: !Ref PrivateSubnet1
+      SecurityGroups:
+        - !Ref EFSSecurityGroup
+
+  EFSMountTarget2:
+    Type: AWS::EFS::MountTarget
+    Properties:
+      FileSystemId: !Ref EFSFileSystem
+      SubnetId: !Ref PrivateSubnet2
+      SecurityGroups:
+        - !Ref EFSSecurityGroup
+
+  EFSSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for EFS
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 2049
+          ToPort: 2049
+          SourceSecurityGroupId: !Ref ECSSecurityGroup
+
+  # IAM Roles
+  ECSTaskExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
+      Policies:
+        - PolicyName: SecretsManagerAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - secretsmanager:GetSecretValue
+                Resource: !Ref SecretARN
+
+  # ECS Cluster
+  ECSCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: chatbot-cluster
+      CapacityProviders:
+        - EC2
+      DefaultCapacityProviderStrategy:
+        - CapacityProvider: EC2
+          Weight: 1
+
+  # Auto Scaling Group for EC2 instances
+  LaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    Properties:
+      LaunchTemplateName: chatbot-ecs-lt
+      LaunchTemplateData:
+        ImageId: ami-0c02fb55956c7d316  # Amazon Linux 2 ECS-optimized
+        InstanceType: t2.micro
+        IamInstanceProfile:
+          Arn: !GetAtt EC2InstanceProfile.Arn
+        SecurityGroupIds:
+          - !Ref ECSSecurityGroup
+        UserData:
+          Fn::Base64: !Sub |
+            #!/bin/bash
+            echo ECS_CLUSTER=${ECSCluster} >> /etc/ecs/ecs.config
+
+  AutoScalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+      VPCZoneIdentifier:
+        - !Ref PrivateSubnet1
+        - !Ref PrivateSubnet2
+      LaunchTemplate:
+        LaunchTemplateId: !Ref LaunchTemplate
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
+      MinSize: 1
+      MaxSize: 3
+      DesiredCapacity: 1
+      Tags:
+        - Key: Name
+          Value: chatbot-ecs-instance
+          PropagateAtLaunch: true
+
+  EC2Role:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role
+
+  EC2InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - !Ref EC2Role
+
+  # Service Discovery
+  ServiceDiscoveryNamespace:
+    Type: AWS::ServiceDiscovery::PrivateDnsNamespace
+    Properties:
+      Name: chatbot.local
+      Vpc: !Ref VPC
+
+  # Task Definitions
+  PostgresTaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: chatbot-postgres
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - EC2
+      ExecutionRoleArn: !GetAtt ECSTaskExecutionRole.Arn
+      ContainerDefinitions:
+        - Name: postgres
+          Image: postgres:16
+          Memory: 512
+          Essential: true
+          Environment:
+            - Name: POSTGRES_DB
+              Value: postgres
+            - Name: POSTGRES_USER
+              Value: postgres
+          Secrets:
+            - Name: POSTGRES_PASSWORD
+              ValueFrom: !Sub "${SecretARN}:POSTGRES_PASSWORD::"
+          MountPoints:
+            - SourceVolume: postgres-data
+              ContainerPath: /var/lib/postgresql/data
+          HealthCheck:
+            Command:
+              - CMD-SHELL
+              - pg_isready -U postgres
+            Interval: 30
+            Timeout: 5
+            Retries: 3
+            StartPeriod: 60
+          PortMappings:
+            - ContainerPort: 5432
+              Protocol: tcp
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: !Ref LogGroup
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: postgres
+      Volumes:
+        - Name: postgres-data
+          EFSVolumeConfiguration:
+            FileSystemId: !Ref EFSFileSystem
+
+  RedisTaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: chatbot-redis
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - EC2
+      ExecutionRoleArn: !GetAtt ECSTaskExecutionRole.Arn
+      ContainerDefinitions:
+        - Name: redis
+          Image: redis:6
+          Memory: 256
+          Essential: true
+          HealthCheck:
+            Command:
+              - CMD-SHELL
+              - redis-cli ping
+            Interval: 30
+            Timeout: 5
+            Retries: 3
+          PortMappings:
+            - ContainerPort: 6379
+              Protocol: tcp
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: !Ref LogGroup
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: redis
+
+  LangGraphTaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: chatbot-langgraph
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - EC2
+      ExecutionRoleArn: !GetAtt ECSTaskExecutionRole.Arn
+      ContainerDefinitions:
+        - Name: langgraph-api
+          Image: !Sub "${ECRRepositoryURI}/chatbot:latest"
+          Memory: 1024
+          Essential: true
+          Environment:
+            - Name: CONTAINER_PORT
+              Value: "8000"
+            - Name: REDIS_URI
+              Value: redis://redis.chatbot.local:6379
+            - Name: POSTGRES_URI
+              Value: postgres://postgres:password@postgres.chatbot.local:5432/postgres?sslmode=disable
+            - Name: LANGSMITH_TRACING
+              Value: "true"
+            - Name: LANGSMITH_PROJECT
+              Value: chatbot
+            - Name: LANGSMITH_ENDPOINT
+              Value: https://eu.api.smith.langchain.com
+          Secrets:
+            - Name: LANGSMITH_API_KEY
+              ValueFrom: !Sub "${SecretARN}:LANGSMITH_API_KEY::"
+            - Name: OPENAI_API_KEY
+              ValueFrom: !Sub "${SecretARN}:OPENAI_API_KEY::"
+            - Name: POSTGRES_PASSWORD
+              ValueFrom: !Sub "${SecretARN}:POSTGRES_PASSWORD::"
+          HealthCheck:
+            Command:
+              - CMD-SHELL
+              - python src/chatbot/healthcheck.py
+            Interval: 30
+            Timeout: 5
+            Retries: 3
+            StartPeriod: 60
+          PortMappings:
+            - ContainerPort: 8000
+              Protocol: tcp
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: !Ref LogGroup
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: langgraph
+
+  FastAPITaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: chatbot-fastapi
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - EC2
+      ExecutionRoleArn: !GetAtt ECSTaskExecutionRole.Arn
+      ContainerDefinitions:
+        - Name: fastapi
+          Image: !Sub "${ECRRepositoryURI}/chatbot-api:latest"
+          Memory: 512
+          Essential: true
+          Environment:
+            - Name: CONTAINER_PORT
+              Value: "8080"
+            - Name: UI_URL
+              Value: http://ui.chatbot.local:3000
+            - Name: LANGGRAPH_API_URI
+              Value: http://langgraph-api.chatbot.local:8000
+          HealthCheck:
+            Command:
+              - CMD-SHELL
+              - python api/healthcheck.py
+            Interval: 30
+            Timeout: 5
+            Retries: 3
+            StartPeriod: 30
+          PortMappings:
+            - ContainerPort: 8080
+              Protocol: tcp
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: !Ref LogGroup
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: fastapi
+
+  NextJSTaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: chatbot-nextjs
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - EC2
+      ExecutionRoleArn: !GetAtt ECSTaskExecutionRole.Arn
+      ContainerDefinitions:
+        - Name: nextjs
+          Image: !Sub "${ECRRepositoryURI}/chatbot-ui:latest"
+          Memory: 512
+          Essential: true
+          Environment:
+            - Name: HOSTNAME
+              Value: 0.0.0.0
+            - Name: CONTAINER_PORT
+              Value: "3000"
+            - Name: API_URL
+              Value: http://fastapi.chatbot.local:8080
+          HealthCheck:
+            Command:
+              - CMD-SHELL
+              - curl -f http://localhost:3000/health
+            Interval: 30
+            Timeout: 5
+            Retries: 3
+            StartPeriod: 30
+          PortMappings:
+            - ContainerPort: 3000
+              Protocol: tcp
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: !Ref LogGroup
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: nextjs
+
+  # CloudWatch Log Group
+  LogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: /ecs/chatbot
+      RetentionInDays: 3
+
+  # ECS Services
+  PostgresService:
+    Type: AWS::ECS::Service
+    Properties:
+      Cluster: !Ref ECSCluster
+      TaskDefinition: !Ref PostgresTaskDefinition
+      DesiredCount: 1
+      LaunchType: EC2
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          SecurityGroups:
+            - !Ref ECSSecurityGroup
+          Subnets:
+            - !Ref PrivateSubnet1
+            - !Ref PrivateSubnet2
+      ServiceRegistries:
+        - RegistryArn: !GetAtt PostgresServiceDiscovery.Arn
+
+  PostgresServiceDiscovery:
+    Type: AWS::ServiceDiscovery::Service
+    Properties:
+      Name: postgres
+      DnsConfig:
+        NamespaceId: !Ref ServiceDiscoveryNamespace
+        DnsRecords:
+          - Type: A
+            TTL: 60
+      HealthCheckCustomConfig:
+        FailureThreshold: 1
+
+  RedisService:
+    Type: AWS::ECS::Service
+    Properties:
+      Cluster: !Ref ECSCluster
+      TaskDefinition: !Ref RedisTaskDefinition
+      DesiredCount: 1
+      LaunchType: EC2
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          SecurityGroups:
+            - !Ref ECSSecurityGroup
+          Subnets:
+            - !Ref PrivateSubnet1
+            - !Ref PrivateSubnet2
+      ServiceRegistries:
+        - RegistryArn: !GetAtt RedisServiceDiscovery.Arn
+
+  RedisServiceDiscovery:
+    Type: AWS::ServiceDiscovery::Service
+    Properties:
+      Name: redis
+      DnsConfig:
+        NamespaceId: !Ref ServiceDiscoveryNamespace
+        DnsRecords:
+          - Type: A
+            TTL: 60
+      HealthCheckCustomConfig:
+        FailureThreshold: 1
+
+  LangGraphService:
+    Type: AWS::ECS::Service
+    DependsOn:
+      - PostgresService
+      - RedisService
+    Properties:
+      Cluster: !Ref ECSCluster
+      TaskDefinition: !Ref LangGraphTaskDefinition
+      DesiredCount: 1
+      LaunchType: EC2
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          SecurityGroups:
+            - !Ref ECSSecurityGroup
+          Subnets:
+            - !Ref PrivateSubnet1
+            - !Ref PrivateSubnet2
+      ServiceRegistries:
+        - RegistryArn: !GetAtt LangGraphServiceDiscovery.Arn
+
+  LangGraphServiceDiscovery:
+    Type: AWS::ServiceDiscovery::Service
+    Properties:
+      Name: langgraph-api
+      DnsConfig:
+        NamespaceId: !Ref ServiceDiscoveryNamespace
+        DnsRecords:
+          - Type: A
+            TTL: 60
+      HealthCheckCustomConfig:
+        FailureThreshold: 1
+
+  FastAPIService:
+    Type: AWS::ECS::Service
+    DependsOn: LangGraphService
+    Properties:
+      Cluster: !Ref ECSCluster
+      TaskDefinition: !Ref FastAPITaskDefinition
+      DesiredCount: 1
+      LaunchType: EC2
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          SecurityGroups:
+            - !Ref ECSSecurityGroup
+          Subnets:
+            - !Ref PrivateSubnet1
+            - !Ref PrivateSubnet2
+      ServiceRegistries:
+        - RegistryArn: !GetAtt FastAPIServiceDiscovery.Arn
+
+  FastAPIServiceDiscovery:
+    Type: AWS::ServiceDiscovery::Service
+    Properties:
+      Name: fastapi
+      DnsConfig:
+        NamespaceId: !Ref ServiceDiscoveryNamespace
+        DnsRecords:
+          - Type: A
+            TTL: 60
+      HealthCheckCustomConfig:
+        FailureThreshold: 1
+
+  NextJSService:
+    Type: AWS::ECS::Service
+    DependsOn: FastAPIService
+    Properties:
+      Cluster: !Ref ECSCluster
+      TaskDefinition: !Ref NextJSTaskDefinition
+      DesiredCount: 1
+      LaunchType: EC2
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          SecurityGroups:
+            - !Ref ECSSecurityGroup
+          Subnets:
+            - !Ref PrivateSubnet1
+            - !Ref PrivateSubnet2
+      LoadBalancers:
+        - ContainerName: nextjs
+          ContainerPort: 3000
+          TargetGroupArn: !Ref ALBTargetGroup
+      ServiceRegistries:
+        - RegistryArn: !GetAtt NextJSServiceDiscovery.Arn
+
+  NextJSServiceDiscovery:
+    Type: AWS::ServiceDiscovery::Service
+    Properties:
+      Name: ui
+      DnsConfig:
+        NamespaceId: !Ref ServiceDiscoveryNamespace
+        DnsRecords:
+          - Type: A
+            TTL: 60
+      HealthCheckCustomConfig:
+        FailureThreshold: 1
+
+  # Application Load Balancer
+  ApplicationLoadBalancer:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+      Name: chatbot-alb
+      Scheme: internet-facing
+      Type: application
+      Subnets:
+        - !Ref PublicSubnet
+        - !Ref PrivateSubnet2  # Need second public subnet for ALB
+      SecurityGroups:
+        - !Ref ALBSecurityGroup
+
+  ALBTargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: chatbot-nextjs-tg
+      Port: 3000
+      Protocol: HTTP
+      VpcId: !Ref VPC
+      TargetType: ip
+      HealthCheckPath: /health
+      HealthCheckProtocol: HTTP
+      HealthCheckIntervalSeconds: 30
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 2
+      UnhealthyThresholdCount: 3
+
+  ALBListener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref ALBTargetGroup
+      LoadBalancerArn: !Ref ApplicationLoadBalancer
+      Port: 80
+      Protocol: HTTP
+
+Outputs:
+  LoadBalancerDNS:
+    Description: DNS name of the load balancer
+    Value: !GetAtt ApplicationLoadBalancer.DNSName
+    Export:
+      Name: !Sub "${AWS::StackName}-LoadBalancerDNS"
+  
+  VPCId:
+    Description: VPC ID
+    Value: !Ref VPC
+    Export:
+      Name: !Sub "${AWS::StackName}-VPC"
+  
+  ECSClusterName:
+    Description: ECS Cluster Name
+    Value: !Ref ECSCluster
+    Export:
+      Name: !Sub "${AWS::StackName}-ECSCluster"

@@ -1,0 +1,96 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "chatbot_nam685"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Nam Le", email = "lehainam2371999@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "langgraph",
+  "langchain[openai]",
+  "pydantic",
+  "python-dotenv",
+  "langchain-tavily",
+  "grandalf",
+  "fastapi[standard]",
+  "uvicorn[standard]",
+]
+
+[project.urls]
+Documentation = "https://github.com/Nam Le/chatbot#readme"
+Issues = "https://github.com/Nam Le/chatbot/issues"
+Source = "https://github.com/Nam Le/chatbot"
+
+[tool.hatch.version]
+path = "src/chatbot/__about__.py"
+
+[tool.hatch.envs.dev]
+dependencies = [
+  "langgraph-cli[inmem]",
+  "langgraph-sdk",
+  "ruff",
+  "mypy>=1.0.0",
+  "black",
+  "pytest",
+]
+
+[tool.hatch.envs.dev.scripts]
+lint = "ruff check ."
+fix = "ruff check . --fix"
+format = "black ."
+typecheck = "mypy --install-types --non-interactive {args:src/chatbot tests}"
+test = "pytest"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+lint.select = ["F", "E", "W", "I", "N", "UP", "B", "A", "C90"]
+lint.ignore = ["E501"]
+exclude = ["__pycache__", "build", "dist", ".venv"]
+
+[tool.coverage.run]
+source_pkgs = ["chatbot", "tests", "api"]
+branch = true
+parallel = true
+omit = [
+  "src/chatbot/__about__.py",
+]
+
+[tool.coverage.paths]
+chatbot = ["src/chatbot", "*/chatbot/src/chatbot"]
+tests = ["tests", "*/chatbot/tests"]
+api = ["api", "*/chatbot/api"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chatbot"]

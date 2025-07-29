@@ -1,0 +1,69 @@
+Metadata-Version: 2.4
+Name: chatbot_nam685
+Version: 0.0.9
+Project-URL: Documentation, https://github.com/Nam Le/chatbot#readme
+Project-URL: Issues, https://github.com/Nam Le/chatbot/issues
+Project-URL: Source, https://github.com/Nam Le/chatbot
+Author-email: Nam Le <lehainam2371999@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Requires-Dist: fastapi[standard]
+Requires-Dist: grandalf
+Requires-Dist: langchain-tavily
+Requires-Dist: langchain[openai]
+Requires-Dist: langgraph
+Requires-Dist: pydantic
+Requires-Dist: python-dotenv
+Requires-Dist: uvicorn[standard]
+Description-Content-Type: text/markdown
+
+# chatbot
+
+This is a hands-on project to learn to create chatbot agent using LangChain & LangGraph.
+Use hatch package manager
+
+Based on gpt-4o-mini LLM model, with added features:
+- Tool calling: multiply tool, web search tool
+- Memory: short term memory from conversation thread
+- Human-in-the-loop: verify tool call before executing, in case conversational topic is sensitive
+- State: add custom state "sensitivity", indicating if conversation topic is sensitive or not
+
+Agent architecture: use 2 chat models for separation of concern
+- Helper model to classify if conversation is sensitive or not
+- Main model equiped with tools
+
+Added minimal unit tests
+
+Prepared for deployment as standalone container via LangGraph Platform
+
+[![PyPI - Version](https://img.shields.io/pypi/v/chatbot.svg)](https://pypi.org/project/chatbot)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/chatbot.svg)](https://pypi.org/project/chatbot)
+
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+PyPI package: https://pypi.org/project/chatbot_nam685/
+
+```console
+pip install chatbot_nam685
+```
+
+## License
+
+`chatbot_nam685` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
