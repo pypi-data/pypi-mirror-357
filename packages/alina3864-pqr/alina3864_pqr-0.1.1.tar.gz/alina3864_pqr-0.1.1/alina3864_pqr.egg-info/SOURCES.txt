@@ -1,0 +1,6 @@
+setup.py
+alina3864_pqr.egg-info/PKG-INFO
+alina3864_pqr.egg-info/SOURCES.txt
+alina3864_pqr.egg-info/dependency_links.txt
+alina3864_pqr.egg-info/top_level.txt
+pqr/__init__.py
