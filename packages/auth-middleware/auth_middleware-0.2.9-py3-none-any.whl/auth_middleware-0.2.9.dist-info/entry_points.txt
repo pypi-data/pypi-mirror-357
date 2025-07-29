@@ -1,0 +1,3 @@
+[console_scripts]
+authcli=auth_middleware.cli:cli
+
