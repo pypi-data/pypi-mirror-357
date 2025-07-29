@@ -1,0 +1,12 @@
+GenerativeProteomics/__init__.py,sha256=L2ySO_ToUKMKEInZNR_vQdRuuseftVg6aZZpO6pmHgo,1302
+GenerativeProteomics/dataset.py,sha256=69sZNmDb-9dTsqkSACW_-ltuMU8qs-CFUYHFOQDPiCI,2550
+GenerativeProteomics/hypers.py,sha256=QJMCzdI9HbgxY76WTMFR92wyfl8-dqyXfYYzuIipBGc,2293
+GenerativeProteomics/model.py,sha256=x4vn1n6Jmm7BUOopy06JosyLCble1VhZAbCoPSHDfe8,13813
+GenerativeProteomics/output.py,sha256=oo7v9D4UtQ00bqReZ0PSU3sxxJ18MgS7D6gMYRbwwto,1811
+GenerativeProteomics/protogain.py,sha256=_CMyFWRCGuqWQ2-GG5CC4j9hWX_xfqoyoSGX6NK9-1M,6595
+GenerativeProteomics/utils.py,sha256=B1nQ-AA8nuTuB2JW8pZl_4iOr6YEq5zt4UCcAtQxANE,3582
+GenerativeProteomics-0.2.1.dist-info/LICENSE,sha256=NC1iyT5vHFl-qjvGRe3nVkXUPF7wzlWYIBAe6iABBDU,1556
+GenerativeProteomics-0.2.1.dist-info/METADATA,sha256=Ks7GRU2XU9iJC2OD5EYc59NYHsHAXLDWSyUQmCAPQ8Y,4856
+GenerativeProteomics-0.2.1.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
+GenerativeProteomics-0.2.1.dist-info/top_level.txt,sha256=X80An4109RutVBezznKzfeR6qVWRUqaQXUEQ1YnLX44,21
+GenerativeProteomics-0.2.1.dist-info/RECORD,,
