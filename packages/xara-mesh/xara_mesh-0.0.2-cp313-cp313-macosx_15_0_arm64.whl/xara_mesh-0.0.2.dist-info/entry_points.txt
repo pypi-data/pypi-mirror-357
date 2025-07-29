@@ -1,0 +1,3 @@
+[console_scripts]
+xara_mesh = xara_mesh.__main__:main
+
