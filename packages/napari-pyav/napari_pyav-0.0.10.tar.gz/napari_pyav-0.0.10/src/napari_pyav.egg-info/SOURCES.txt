@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/napari_pyav/__init__.py
+src/napari_pyav/_reader.py
+src/napari_pyav/napari.yaml
+src/napari_pyav.egg-info/PKG-INFO
+src/napari_pyav.egg-info/SOURCES.txt
+src/napari_pyav.egg-info/dependency_links.txt
+src/napari_pyav.egg-info/entry_points.txt
+src/napari_pyav.egg-info/requires.txt
+src/napari_pyav.egg-info/top_level.txt
+src/napari_pyav/_tests/__init__.py
+src/napari_pyav/_tests/test_reader.py

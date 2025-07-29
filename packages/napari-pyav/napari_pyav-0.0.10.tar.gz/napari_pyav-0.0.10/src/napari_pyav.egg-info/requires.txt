@@ -1,0 +1,7 @@
+numpy
+av<14
+
+[testing]
+tox
+pytest
+pytest-cov

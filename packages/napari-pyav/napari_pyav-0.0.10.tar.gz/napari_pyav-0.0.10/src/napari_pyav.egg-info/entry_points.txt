@@ -1,0 +1,2 @@
+[napari.manifest]
+napari-pyav = napari_pyav:napari.yaml
