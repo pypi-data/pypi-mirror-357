@@ -1,0 +1,17 @@
+jaxlib
+jax
+blackjax<=1.2.3
+
+[docs]
+numpy
+scipy
+pandas
+numba
+jaxopt
+diffrax
+matplotlib
+seaborn
+myst_nb
+sphinx_rtd_theme
+jupytext
+jupyter
