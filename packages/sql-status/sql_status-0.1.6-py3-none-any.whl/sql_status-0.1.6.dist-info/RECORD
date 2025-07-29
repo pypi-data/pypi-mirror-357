@@ -1,0 +1,8 @@
+sql_status/__init__.py,sha256=gqfYPlQ9aM8r1Z5WuqZQKIUeUpEIn2izcVpjeZVBnQ0,44
+sql_status/__main__.py,sha256=npe8bIt1oga_BmbUG1BPRQ-Jrre7jp9xq-doegYuGYk,456
+sql_status/unpack.py,sha256=rwWG68vnOocIDvfIBxFnldtJ5VB5_sCjfYoGts3vLHU,897
+sql_status-0.1.6.dist-info/METADATA,sha256=TLtI8fg42Phqjas9ybYgj72PSyE_Y2t8dt74mXzJnos,291
+sql_status-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+sql_status-0.1.6.dist-info/entry_points.txt,sha256=_jzgGLHvu5d-jbm7v7am2mfY-ZSgq_Mk_sY3g47qm68,60
+sql_status-0.1.6.dist-info/top_level.txt,sha256=-QoCuDt0MoZ-gO3SqYOjqBcJEPAHYethNyW4AUsx0ZM,11
+sql_status-0.1.6.dist-info/RECORD,,
