@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.rst
+example1.py
+example2.py
+setup.py
+logstash/__init__.py
+logstash/formatter.py
+logstash/handler_amqp.py
+logstash/handler_tcp.py
+logstash/handler_udp.py
+python_logstash_tradingstrategy.egg-info/PKG-INFO
+python_logstash_tradingstrategy.egg-info/SOURCES.txt
+python_logstash_tradingstrategy.egg-info/dependency_links.txt
+python_logstash_tradingstrategy.egg-info/top_level.txt
