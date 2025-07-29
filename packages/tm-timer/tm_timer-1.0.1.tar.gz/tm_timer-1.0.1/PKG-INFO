@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: tm-timer
+Version: 1.0.1
+Summary: Terminal timer with pause/resume and alert
+Author: ph4nt01
+Classifier: Programming Language :: Python :: 3
+Classifier: Environment :: Console
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-python
+Dynamic: summary
