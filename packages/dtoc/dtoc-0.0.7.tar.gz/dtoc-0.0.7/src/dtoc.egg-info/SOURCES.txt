@@ -1,0 +1,16 @@
+LICENSE
+README.rst
+pyproject.toml
+src/dtoc/__init__.py
+src/dtoc/dtb_platdata.py
+src/dtoc/fdt.py
+src/dtoc/fdt_util.py
+src/dtoc/main.py
+src/dtoc/setup.py
+src/dtoc/src_scan.py
+src/dtoc.egg-info/PKG-INFO
+src/dtoc.egg-info/SOURCES.txt
+src/dtoc.egg-info/dependency_links.txt
+src/dtoc.egg-info/entry_points.txt
+src/dtoc.egg-info/requires.txt
+src/dtoc.egg-info/top_level.txt

@@ -1,0 +1,2 @@
+pylibfdt
+u_boot_pylib>=0.0.6
