@@ -1,0 +1,2 @@
+[console_scripts]
+banger = banger.cli:main
