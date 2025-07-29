@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: project-ingest-mcp
+Version: 1.0.2
+Summary: project ingest mcp server that provides project info including file content, directory structure and other metadata
+License-File: LICENSE
+Requires-Python: >=3.11
+Requires-Dist: fastmcp>=2.8.0
+Requires-Dist: gitingest>=0.1.4
+Requires-Dist: hatchling>=1.27.0
+Requires-Dist: httpx>=0.28.1
+Description-Content-Type: text/markdown
+
+# project-ingest-mcp
+project ingest mcp
