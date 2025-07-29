@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+iterfuncs/__init__.py
+iterfuncs/asyncio.py
+iterfuncs/cache.py
+iterfuncs/itertools.py
+iterfuncs/typing.py
+iterfuncs.egg-info/PKG-INFO
+iterfuncs.egg-info/SOURCES.txt
+iterfuncs.egg-info/dependency_links.txt
+iterfuncs.egg-info/top_level.txt
