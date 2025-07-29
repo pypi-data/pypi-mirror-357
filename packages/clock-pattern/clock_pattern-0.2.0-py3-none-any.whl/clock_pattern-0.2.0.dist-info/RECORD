@@ -1,0 +1,11 @@
+clock_pattern/__init__.py,sha256=FVHPBGkfhbQDi_z3v0PiKJrXXqXOx0vGW_1VaqNJi7U,22
+clock_pattern/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clock_pattern/clocks/__init__.py,sha256=_FSrz98ZkE_4GVQ6NAuHVZMWT7L7f-gKanaIOeHPcjE,120
+clock_pattern/clocks/system_clock.py,sha256=JmUdwVu9gAfH84-JY-suQUClvR8JMuujF84lccJ-BP0,3055
+clock_pattern/clocks/utc_clock.py,sha256=-P2bf4tFNL3S0IiH01C035pq_IO252Txs4RCozmxXXY,714
+clock_pattern/models/__init__.py,sha256=Q3O6MR-aEh4SeDQY4Tgsy24i-Ne4ZSQL4HY5rIhOCe8,47
+clock_pattern/models/clock.py,sha256=RUb2TNy4BAOne1GdAZ4DlTRhfGzjco6E9NY-u-O654o,1147
+clock_pattern-0.2.0.dist-info/METADATA,sha256=ikCeilHyZ7WL8vVK3A01_ilCLJ-1HF63sPk44Ru5EWg,3723
+clock_pattern-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+clock_pattern-0.2.0.dist-info/licenses/LICENSE.md,sha256=k3Sxbijlj46RildqRYKoeS0MNBAMcIOMdlixIyMxZ74,1071
+clock_pattern-0.2.0.dist-info/RECORD,,
