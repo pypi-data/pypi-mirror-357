@@ -1,0 +1,2 @@
+[console_scripts]
+forgekit-cli = app.main:app
