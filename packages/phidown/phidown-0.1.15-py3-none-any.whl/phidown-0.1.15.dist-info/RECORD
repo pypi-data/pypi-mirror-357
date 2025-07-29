@@ -1,0 +1,14 @@
+phidown-0.1.15.dist-info/METADATA,sha256=18d5Cu15jkZJtgRrMiWhrex58UUd3y8bcG8prUbVtkM,617
+phidown-0.1.15.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+phidown-0.1.15.dist-info/entry_points.txt,sha256=6OYgBcLyFCUgeqLgnvMyOJxPCWzgy7se4rLPKtNonMs,34
+phidown-0.1.15.dist-info/licenses/LICENSE,sha256=YF6QR6Vjxcg5b_sYIyqkME7FZYau5TfEUGTG-0JeRK0,35129
+phidown/__init__.py,sha256=LJqAYqAl71ypiTkv4MVcd4KVS4ixsrqVO-hFn76MZgA,945
+phidown/__main__.py,sha256=27IZo52j6DF5vAVlAAAbUiBeskP_UfttZj2HOAJGNPw,277
+phidown/config.json,sha256=yIs6Ss_aIlDHREyXl57buAVDHYU_7qmoPYVDkidzPIU,9630
+phidown/downloader.py,sha256=ZF7jdWS7QELWD7PxOJNiaFT5sGRJDK08waZNs5tn1JQ,678
+phidown/downloader_boto3_deprecated.py,sha256=QqTjogTdyYv-IcF9AWyPX0sabNkA_6Z7Q0FqBHBBkFg,36969
+phidown/interactive_tools.py,sha256=jqpYwJjW_MzuVYudg1lits0PR3LFomm-Mj-yxKGUtkg,22725
+phidown/s5cmd_utils.py,sha256=5VDdg_dssDc1fy_V7g-aaSz8hUShr2wjDfb97kJ-Kzk,6493
+phidown/search.py,sha256=fgVIRAeBu2D1Vd5h9sYCnGoJxmTl6LWRtRGKCQpThos,29869
+phidown/viz.py,sha256=nPzNKxknOLJwr5AJpPOyphCj4nd99sVgjEEhDojGmdk,2226
+phidown-0.1.15.dist-info/RECORD,,
