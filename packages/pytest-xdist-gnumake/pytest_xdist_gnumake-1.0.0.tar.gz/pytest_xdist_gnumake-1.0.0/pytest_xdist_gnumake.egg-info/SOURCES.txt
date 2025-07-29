@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+pytest_xdist_gnumake/__init__.py
+pytest_xdist_gnumake/jobserver_client.py
+pytest_xdist_gnumake/plugin.py
+pytest_xdist_gnumake.egg-info/PKG-INFO
+pytest_xdist_gnumake.egg-info/SOURCES.txt
+pytest_xdist_gnumake.egg-info/dependency_links.txt
+pytest_xdist_gnumake.egg-info/entry_points.txt
+pytest_xdist_gnumake.egg-info/requires.txt
+pytest_xdist_gnumake.egg-info/top_level.txt

@@ -1,0 +1,39 @@
+[project]
+name = 'pytest-xdist-gnumake'
+version = '1.0.0'
+dependencies = [
+    'pytest',
+    'pytest-xdist',
+    'gnumake-tokenpool',
+]
+authors = [
+    { name='Volker Braun', email='vbraun.name@gmail.com' },
+]
+description = 'A small example package'
+readme = 'README.md'
+requires-python = '>=3.11'
+classifiers = [
+    'Programming Language :: Python :: 3',
+    'Operating System :: OS Independent',
+]
+license = "Apache-2.0"
+license-files = ['LICEN[CS]E*']
+
+
+[project.urls]
+Homepage = 'https://github.com/vbraun/pytest-xdist-gnumake'
+
+
+[project.entry-points.'pytest11']
+tracker = 'pytest_xdist_gnumake.plugin'
+
+
+[project.optional-dependencies]
+dev = [
+    'mypy',
+    'filelock',
+]
+
+
+[tool.setuptools]
+packages = ['pytest_xdist_gnumake']

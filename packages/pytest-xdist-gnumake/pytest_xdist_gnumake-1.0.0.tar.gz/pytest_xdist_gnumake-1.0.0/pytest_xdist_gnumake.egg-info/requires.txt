@@ -1,0 +1,7 @@
+pytest
+pytest-xdist
+gnumake-tokenpool
+
+[dev]
+mypy
+filelock
