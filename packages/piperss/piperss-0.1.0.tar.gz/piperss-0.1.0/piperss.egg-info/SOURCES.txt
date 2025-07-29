@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+piperss/__init__.py
+piperss/main.py
+piperss.egg-info/PKG-INFO
+piperss.egg-info/SOURCES.txt
+piperss.egg-info/dependency_links.txt
+piperss.egg-info/entry_points.txt
+piperss.egg-info/requires.txt
+piperss.egg-info/top_level.txt
