@@ -1,0 +1,2 @@
+[console_scripts]
+bosskit = bosskit.__main__:main

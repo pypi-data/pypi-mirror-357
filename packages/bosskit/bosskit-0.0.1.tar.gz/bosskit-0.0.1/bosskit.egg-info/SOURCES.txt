@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+bosskit/__init__.py
+bosskit/__main__.py
+bosskit/_version.py
+bosskit/main.py
+bosskit.egg-info/PKG-INFO
+bosskit.egg-info/SOURCES.txt
+bosskit.egg-info/dependency_links.txt
+bosskit.egg-info/entry_points.txt
+bosskit.egg-info/top_level.txt
