@@ -1,0 +1,71 @@
+Metadata-Version: 2.4
+Name: fingest
+Version: 0.0.2
+Summary: This Pytest plugin allows you to easily define data-driven fixtures based on external files. It supports `JSON`, `CSV`, and `XML` data sources, and can automatically instantiate Python classes or functions using this data.
+Project-URL: Homepage, https://github.com/0x68/fingest
+Project-URL: Issues, https://github.com/0x68/fingest/issues
+Author-email: Tim Fiedler <tim@0x68.de>
+License-File: LICENSE
+Classifier: Framework :: Pytest
+Requires-Python: >=3.11
+Requires-Dist: lxml<6.0.0,>=5.4.0
+Requires-Dist: pytest-cov<7.0.0,>=6.2.1
+Requires-Dist: pytest<9.0.0,>=8.3.5
+Description-Content-Type: text/markdown
+
+# Pytest Fingest Fixture Plugin
+
+This Pytest plugin allows you to easily define data-driven fixtures based on external files. It supports `JSON`, `CSV`, and `XML` data sources, and can automatically instantiate Python classes or functions using this data.
+
+## Features
+
+- Automatic registration of data-backed fixtures
+- Supports JSON, CSV, and XML file formats
+- Optional descriptions for improved debugging
+- Configurable base data path via `pytest.ini`
+
+---
+
+## Installation
+
+Place the plugin code inside your project (e.g. in `conftest.py`) or install it as a standalone plugin.
+
+---
+
+## Configuration
+
+Add the following to your `pytest.ini`:
+
+```ini
+[pytest]
+fingest_fixture_path = data  # Base directory for fixture data files
+
+```
+
+## Example JSON
+
+```python
+
+from plugin import data_fixture
+
+@data_fixture("users.json", description="Example user list")
+class UserData:
+    def __init__(self, data):
+        self.users = data
+
+
+
+def test_user_count(UserData):
+    assert len(UserData.users) > 0
+
+```
+
+## Example CSV
+
+```python
+
+@data_fixture("products.csv", description="Product list")
+def product_list(data):
+    return [p for p in data if p["available"] == "true"]
+
+```
