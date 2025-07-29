@@ -1,0 +1,4 @@
+dist
+notebooks
+randatoms
+test
