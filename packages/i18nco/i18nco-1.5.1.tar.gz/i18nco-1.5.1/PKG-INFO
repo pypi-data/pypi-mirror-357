@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: i18nco
+Version: 1.5.1
+Summary: This is a simple and easy to use Python i18n library.
+Home-page: https://github.com/numlinka/pyi18nco
+Author: numlinka
+Author-email: numlinka@163.com
+License: LGPLv3
+Description: # pyi18nco
+        
+        _This is a simple and easy to use Python i18n library._
+        
+        For more information about the project, please visit [GitHub](https://github.com/numlinka/pyi18nco).
+        
+Keywords: sample,i18n
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown

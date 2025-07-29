@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+src/i18nco/__init__.py
+src/i18nco/constants.py
+src/i18nco/internationalization.py
+src/i18nco/typeins.py
+src/i18nco/utils.py
+src/i18nco.egg-info/PKG-INFO
+src/i18nco.egg-info/SOURCES.txt
+src/i18nco.egg-info/dependency_links.txt
+src/i18nco.egg-info/top_level.txt
