@@ -1,0 +1,12 @@
+botnetics/__init__.py,sha256=ob8uDyIFyxIszfhdITeAaKaHUraeBUbycy017oNhIvI,167
+botnetics/app.py,sha256=fnlkII0SYXNY4-tmOG3zbno8RjtqvjYL9s4jtBedMw4,1867
+botnetics/cli.py,sha256=AFMhyJ3ACKsHtUKbKESXgzOXUq4YgyNBn2zrO_W5Mvg,3020
+botnetics/models.py,sha256=KxjngXGzRhWOkUvj5Uy3G49jR4NORii3yj7vJ7743WY,664
+botnetics/urls.py,sha256=r8FABEK7sAm9XgFZvzFZUtipKpYUZwvj15jfDpyM0Jw,130
+botnetics/views.py,sha256=AC8pGHzH07rl1dGhmMixIjv487qSZsEF_kAp1MFJVX0,4434
+botnetics_agent-0.1.6.dist-info/licenses/LICENSE,sha256=OphKV48tcMv6ep-7j-8T6nycykPT0g8ZlMJ9zbGvdPs,1066
+botnetics_agent-0.1.6.dist-info/METADATA,sha256=eeZMTNOKMJAdm1lhUJEBPaH84Vvx04NppzBn_MmbzjI,1949
+botnetics_agent-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+botnetics_agent-0.1.6.dist-info/entry_points.txt,sha256=dH3w6UZc-vBpyUXczm8ki0IXKlV1kn3fbZzwpnjr-yc,49
+botnetics_agent-0.1.6.dist-info/top_level.txt,sha256=CpYHjDJey028qpLAMYaBDSwb0KMwKwXoCAmm8vX5XKU,10
+botnetics_agent-0.1.6.dist-info/RECORD,,
