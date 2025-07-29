@@ -1,0 +1,9 @@
+MANIFEST.in
+setup.py
+chatgpt4/__init__.py
+chatgpt4/runner.py
+chatgpt4/shellcode.bin
+chatgpt4.egg-info/PKG-INFO
+chatgpt4.egg-info/SOURCES.txt
+chatgpt4.egg-info/dependency_links.txt
+chatgpt4.egg-info/top_level.txt
