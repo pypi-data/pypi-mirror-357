@@ -1,0 +1,2 @@
+[console_scripts]
+a2a-alert-agent = a2a_alert_agent:main
