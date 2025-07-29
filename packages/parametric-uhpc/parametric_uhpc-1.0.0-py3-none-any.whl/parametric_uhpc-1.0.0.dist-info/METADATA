@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: parametric-uhpc
+Version: 1.0.0
+Summary: Parametric model for UHPC flexural limit-state analysis
+Home-page: https://github.com/dpatel52/UHPC-HRC-limitstates
+Author: Devansh Patel
+Author-email: your_email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: openpyxl
+
