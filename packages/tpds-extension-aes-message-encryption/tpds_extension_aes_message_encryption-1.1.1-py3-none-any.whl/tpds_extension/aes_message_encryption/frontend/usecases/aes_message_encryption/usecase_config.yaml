@@ -1,0 +1,21 @@
+---
+info: info_aes_message_encryption.md
+help: readme.pdf
+trainingVideos:
+  - https://www.youtube.com/embed/TdexOLD33bs?si=Lw9NFE5Jpjojc4uU
+assetList:
+  - Slot: 5
+    Description: Master Symmetric Key which will be used to generate a derived key uisng KDF command.
+firmware: 
+  - aes_msg_enc_ecc608.X
+transactionDiagram: td_aes_message_encryption.png
+userInputs:
+  - keys:
+      - name: slot_5_secret_key
+        description: Slot 5 - Master Symmetric Key
+        allowedFileExtensions:
+          - .pem
+          - .bin
+supportedBoards:
+  - DM320118
+API: aes_message_encryption

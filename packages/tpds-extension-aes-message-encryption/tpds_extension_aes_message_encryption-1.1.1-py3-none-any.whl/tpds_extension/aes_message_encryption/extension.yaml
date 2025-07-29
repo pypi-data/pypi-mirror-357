@@ -1,0 +1,19 @@
+name: spg_aes_message_enc
+
+backend:
+  path: backend
+  routers:
+    - usecase
+
+frontend:
+  entrypoints:
+    - name: aes_message_encryption
+      title: AES Message encryption
+      description: Usecase to showcase AES message encryption on HOST
+      entry: frontend/usecases/aes_message_encryption/usecase_config.yaml
+      applications:
+        - IoT
+      devices:
+        - ATECC608-TFLXTLS
+      boards:
+        - DM320118

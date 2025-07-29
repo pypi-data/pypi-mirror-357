@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: tpds-extension-aes-message-encryption
+Version: 1.1.1
+Summary: Microchip(SPG) Trust Platform - AES message encryption Usecase
+Home-page: https://www.microchip.com/TrustPlatform
+Author: Microchip Technology
+Author-email: SPG.Tools@microchip.com
+Classifier: License :: Other/Proprietary License
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# Trust Platform Design Suite - AES Message Encryption Extension
+
+This module contains the frontend and backend services required for AES message encryption extension.
+
+## Release Notes
+
+### 1.1.1
+    - Usecase updates to accept both pem and bin files for symmetric keys
+
+### 1.1.0
+    - Usecase updated to Improved UI framework
+
+### 1.0.x
+    - Initial public release
