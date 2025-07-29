@@ -1,0 +1,6 @@
+setup.py
+src/emailkit.egg-info/PKG-INFO
+src/emailkit.egg-info/SOURCES.txt
+src/emailkit.egg-info/dependency_links.txt
+src/emailkit.egg-info/requires.txt
+src/emailkit.egg-info/top_level.txt
