@@ -1,0 +1,8 @@
+opensees
+pyyaml
+scipy
+numpy
+npx
+xara
+matplotlib
+shps>=0.0.26
