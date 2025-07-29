@@ -1,0 +1,151 @@
+{
+    "entity": {
+        "climate": {
+            "driver_temp": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "off": "Gn\u00e1th"
+                        }
+                    }
+                }
+            }
+        },
+        "select": {
+            "climate_state_seat_heater_left": {
+                "state": {
+                    "high": "Ard",
+                    "low": "\u00cdseal",
+                    "medium": "Me\u00e1nach"
+                }
+            },
+            "climate_state_seat_heater_rear_center": {
+                "state": {
+                    "high": "Ard",
+                    "low": "\u00cdseal",
+                    "medium": "Me\u00e1nach"
+                }
+            },
+            "climate_state_seat_heater_rear_left": {
+                "state": {
+                    "high": "Ard",
+                    "low": "\u00cdseal",
+                    "medium": "Me\u00e1nach"
+                }
+            },
+            "climate_state_seat_heater_rear_right": {
+                "state": {
+                    "high": "Ard",
+                    "low": "\u00cdseal",
+                    "medium": "Me\u00e1nach"
+                }
+            },
+            "climate_state_seat_heater_right": {
+                "state": {
+                    "high": "Ard",
+                    "low": "\u00cdseal",
+                    "medium": "Me\u00e1nach"
+                }
+            },
+            "climate_state_seat_heater_third_row_left": {
+                "state": {
+                    "high": "Ard",
+                    "low": "\u00cdseal",
+                    "medium": "Me\u00e1nach"
+                }
+            },
+            "climate_state_seat_heater_third_row_right": {
+                "state": {
+                    "high": "Ard",
+                    "low": "\u00cdseal",
+                    "medium": "Me\u00e1nach"
+                }
+            },
+            "climate_state_steering_wheel_heat_level": {
+                "state": {
+                    "high": "Ard",
+                    "low": "\u00cdseal"
+                }
+            }
+        },
+        "sensor": {
+            "battery_energy_exported": {
+                "name": "Ceallra\u00ed easp\u00f3rt\u00e1ilte"
+            },
+            "battery_energy_imported_from_generator": {
+                "name": "Ceallra\u00ed allmhairithe \u00f3n nginead\u00f3ir"
+            },
+            "battery_energy_imported_from_grid": {
+                "name": "Ceallra\u00ed allmhairithe \u00f3n eangach"
+            },
+            "battery_energy_imported_from_solar": {
+                "name": "Ceallra\u00ed allmhairithe \u00f3 ghr\u00e9ine"
+            },
+            "charge_state_charging_state": {
+                "state": {
+                    "charging": "Muirear\u00fa",
+                    "stopped": "Stoptha"
+                }
+            },
+            "consumer_energy_imported_from_battery": {
+                "name": "Tomhalt\u00f3ir allmhairithe \u00f3 cheallra\u00ed"
+            },
+            "consumer_energy_imported_from_generator": {
+                "name": "Tomhalt\u00f3ir allmhairithe \u00f3 ghinead\u00f3ir"
+            },
+            "consumer_energy_imported_from_grid": {
+                "name": "Tomhalt\u00f3ir allmhairithe \u00f3n eangach"
+            },
+            "consumer_energy_imported_from_solar": {
+                "name": "Tomhalt\u00f3ir\u00ed allmhairithe \u00f3 ghr\u00e9ine"
+            },
+            "generator_energy_exported": {
+                "name": "Ginead\u00f3ir onnmhairithe"
+            },
+            "grid_energy_exported_from_battery": {
+                "name": "Eangach a easp\u00f3rt\u00e1il \u00f3n gceallra\u00ed"
+            },
+            "grid_energy_exported_from_generator": {
+                "name": "Eangach a easp\u00f3rt\u00e1il \u00f3n nginead\u00f3ir"
+            },
+            "grid_energy_exported_from_solar": {
+                "name": "Eangach a onnmhair\u00edtear \u00f3n ngrian"
+            },
+            "grid_energy_imported": {
+                "name": "Eangach allmhairithe"
+            },
+            "grid_services_energy_exported": {
+                "name": "Seirbh\u00eds\u00ed eanga\u00ed a onnmhairi\u00fa"
+            },
+            "grid_services_energy_imported": {
+                "name": "Seirbh\u00eds\u00ed eanga\u00ed allmhairithe"
+            },
+            "solar_energy_exported": {
+                "name": "Gr\u00e9ine a onnmhairi\u00fa"
+            },
+            "storm_mode_active": {
+                "name": "Faire Stoirme gn\u00edomhach"
+            },
+            "total_battery_charge": {
+                "name": "Ceallra\u00ed luchtaithe"
+            },
+            "total_battery_discharge": {
+                "name": "Ceallra\u00ed urscaoilte"
+            },
+            "total_grid_energy_exported": {
+                "name": "Eangach easp\u00f3rt\u00e1ilte"
+            },
+            "total_home_usage": {
+                "name": "\u00das\u00e1id sa bhaile"
+            },
+            "total_solar_generation": {
+                "name": "Ginte gr\u00e9ine"
+            }
+        },
+        "switch": {
+            "charge_state_charging_state": {
+                "name": "Muirear"
+            }
+        }
+    }
+}

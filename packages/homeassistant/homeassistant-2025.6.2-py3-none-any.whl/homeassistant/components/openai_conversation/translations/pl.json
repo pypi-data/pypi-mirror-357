@@ -1,0 +1,113 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Nie mo\u017cna nawi\u0105za\u0107 po\u0142\u0105czenia",
+            "invalid_auth": "Niepoprawne uwierzytelnienie",
+            "unknown": "Nieoczekiwany b\u0142\u0105d"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "Klucz API"
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "invalid_config_entry": {
+            "message": "Podano nieprawid\u0142owy wpis konfiguracyjny. Otrzymano {config_entry}"
+        }
+    },
+    "options": {
+        "error": {
+            "model_not_supported": "Ten model nie jest obs\u0142ugiwany, prosz\u0119 wybra\u0107 inny model",
+            "web_search_not_supported": "Wyszukiwanie w internecie nie jest obs\u0142ugiwane przez ten model"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "chat_model": "Model",
+                    "llm_hass_api": "Kontroluj Home Assistant",
+                    "max_tokens": "Maksymalna liczba token\u00f3w do zwr\u00f3cenia w odpowiedzi",
+                    "reasoning_effort": "Wysi\u0142ek rozumowania",
+                    "recommended": "Zalecane ustawienia modelu",
+                    "search_context_size": "Rozmiar kontekstu wyszukiwania",
+                    "temperature": "Temperatura",
+                    "top_p": "Top P",
+                    "user_location": "Uwzgl\u0119dnij lokalizacj\u0119 domu",
+                    "web_search": "W\u0142\u0105cz wyszukiwanie w internecie"
+                },
+                "data_description": {
+                    "prompt": "Poinstruuj, jak model LLM powinien odpowiada\u0107. Mo\u017ce to by\u0107 szablon.",
+                    "reasoning_effort": "Ile token\u00f3w rozumowania powinien wygenerowa\u0107 model przed utworzeniem odpowiedzi na podpowied\u017a (dla niekt\u00f3rych modeli rozumowania)",
+                    "search_context_size": "Og\u00f3lne wskaz\u00f3wki dotycz\u0105ce ilo\u015bci miejsca w oknie kontekstowym do wykorzystania podczas wyszukiwania",
+                    "user_location": "Doprecyzuj wyniki wyszukiwania na podstawie lokalizacji geograficznej",
+                    "web_search": "Pozw\u00f3l modelowi na przeszukiwanie internetu w poszukiwaniu najnowszych informacji przed wygenerowaniem odpowiedzi"
+                }
+            }
+        }
+    },
+    "selector": {
+        "reasoning_effort": {
+            "options": {
+                "high": "wysoki",
+                "low": "niski",
+                "medium": "\u015bredni"
+            }
+        },
+        "search_context_size": {
+            "options": {
+                "high": "wysoki",
+                "low": "niski",
+                "medium": "\u015bredni"
+            }
+        }
+    },
+    "services": {
+        "generate_content": {
+            "description": "Wysy\u0142a zapytanie konwersacyjne do ChatGPT, w tym wszelkie za\u0142\u0105czone pliki obraz\u00f3w lub PDF",
+            "fields": {
+                "config_entry": {
+                    "description": "Wpis konfiguracyjny u\u017cywany dla tej akcji",
+                    "name": "Wpis konfiguracji"
+                },
+                "filenames": {
+                    "description": "Lista plik\u00f3w do przes\u0142ania",
+                    "name": "Pliki"
+                },
+                "prompt": {
+                    "description": "Zapytanie do wys\u0142ania",
+                    "name": "Zapytanie"
+                }
+            },
+            "name": "Generuj tre\u015b\u0107"
+        },
+        "generate_image": {
+            "description": "Zamienia zapytanie w obraz",
+            "fields": {
+                "config_entry": {
+                    "description": "Wpis konfiguracyjny u\u017cywany dla tej akcji",
+                    "name": "Wpis konfiguracji"
+                },
+                "prompt": {
+                    "description": "Tekst do przekszta\u0142cenia w obraz",
+                    "example": "Zdj\u0119cie psa",
+                    "name": "Zapytanie"
+                },
+                "quality": {
+                    "description": "Jako\u015b\u0107 obrazu, kt\u00f3ry zostanie wygenerowany",
+                    "name": "Jako\u015b\u0107"
+                },
+                "size": {
+                    "description": "Rozmiar obrazu do wygenerowania",
+                    "name": "Rozmiar"
+                },
+                "style": {
+                    "description": "Styl wygenerowanego obrazu",
+                    "name": "Styl"
+                }
+            },
+            "name": "Wygeneruj obraz"
+        }
+    }
+}

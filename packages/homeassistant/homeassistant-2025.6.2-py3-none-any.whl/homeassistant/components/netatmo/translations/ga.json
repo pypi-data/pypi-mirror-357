@@ -1,0 +1,20 @@
+{
+    "entity": {
+        "button": {
+            "preferred_position": {
+                "name": "Seasamh is fearr leat"
+            }
+        },
+        "climate": {
+            "thermostat": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "L\u00e1mhleabhar"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
