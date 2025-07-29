@@ -1,0 +1,23 @@
+Metadata-Version: 2.3
+Name: flutterby
+Version: 0.0.0
+Summary: Flutterby
+License: MIT
+Author: Steampunk Wizard
+Author-email: flutterby@steamwiz.io
+Requires-Python: >=3.11,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: wizlib (>=3.1.4,<4.0.0)
+Description-Content-Type: text/markdown
+
+# Flutterby
+
+## Keep track of the amazing people in your life (WIP)
+
+_Under active development_
+
+[Butterfly icon by Freepik-Flaticon](https://www.flaticon.com/free-icons/butterfly)
+
