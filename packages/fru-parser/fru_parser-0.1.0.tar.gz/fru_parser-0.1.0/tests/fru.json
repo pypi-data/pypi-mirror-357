@@ -1,0 +1,129 @@
+{
+    "internal": "010203040A0B0C0D00000000000000",
+    "chassis": {
+        "type": 10,
+        "pn": {
+            "type": "6bitascii",
+            "data": "CHAS-C00L-12"
+        },
+        "serial": {
+            "type": "bcdplus",
+            "data": "45678"
+        },
+        "custom": [
+            {
+                "type": "text",
+                "data": "Auto-typed text custom field"
+            },
+            {
+                "type": "binary",
+                "data": "B14A87"
+            },
+            {
+                "type": "bcdplus",
+                "data": "1234"
+            },
+            {
+                "type": "6bitascii",
+                "data": "1234"
+            },
+            {
+                "type": "text",
+                "data": "1234"
+            }
+        ]
+    },
+    "board": {
+        "date": "20/5/2025 07:55:00",
+        "mfg": {
+            "type": "text",
+            "data": "Biggest International Corp."
+        },
+        "pname": {
+            "type": "text",
+            "data": "Some Cool Product"
+        },
+        "serial": {
+            "type": "bcdplus",
+            "data": "123456"
+        },
+        "pn": {
+            "type": "6bitascii",
+            "data": "BRD-PN-345"
+        },
+        "file": {
+            "type": "text",
+            "data": "example1.json"
+        },
+        "custom": [
+            {
+                "type": "binary",
+                "data": "0123DEADBABE"
+            },
+            {
+                "type": "text",
+                "data": "This is a text custom field"
+            },
+            {
+                "type": "text",
+                "data": "This is test2"
+            }
+        ]
+    },
+    "product": {
+        "lang": 1,
+        "mfg": {
+            "type": "text",
+            "data": "Super OEM Company"
+        },
+        "pname": {
+            "type": "text",
+            "data": "Label-engineered Super Product"
+        },
+        "pn": {
+            "type": "6bitascii",
+            "data": "PRD-PN-1234 "
+        },
+        "ver": {
+            "type": "text",
+            "data": "v1.1"
+        },
+        "serial": {
+            "type": "6bitascii",
+            "data": "OEM12345"
+        },
+        "atag": {
+            "type": "text",
+            "data": "Accounting Dept."
+        },
+        "file": {
+            "type": "text",
+            "data": "example2.json"
+        },
+        "custom": [
+            {
+                "type": "text",
+                "data": "Product Custom 1"
+            },
+            {
+                "type": "6bitascii",
+                "data": "PRDCSTM "
+            },
+            {
+                "type": "6bitascii",
+                "data": "PRDCSTM2"
+            },
+            {
+                "type": "binary",
+                "data": "C001BEEF"
+            }
+        ]
+    },
+    "multirecord": [
+        {
+            "type": "management",
+            "subtype": "uuid",
+            "uuid": "9bd70799-ccf0-4915-a7f9-7ce7d64385cf"
+        }
+    ]
+}

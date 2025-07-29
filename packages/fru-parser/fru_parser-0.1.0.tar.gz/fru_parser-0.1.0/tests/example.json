@@ -1,0 +1,58 @@
+{
+	/* The internal use area, if specified, must list all the data as hex string,
+	   the length is calculated automatically */
+	"internal" : "010203040A0B0C0D",
+	"chassis" : {
+		"type": 10,
+		"pn" : "CHAS-C00L-12",
+		/* Fields may be given explicit types by setting to object with keys `type` and `data`*/
+		/* Supported types are: "bcdplus", "6bitascii" and "text" */
+		"serial": {
+		    "type": "bcdplus",
+		    "data": "45678"
+		},
+		"custom" : [
+			{ "data" : "Auto-typed text custom field" },
+			{ "type" : "binary", "data": "B14A87" },
+			/* For explicit text types range is not checked, so be careful */
+			{ "type" : "bcdplus", "data": "1234" },
+			{ "type" : "6bitascii", "data": "1234" },
+			{ "type" : "text", "data": "1234" }
+		]
+	},
+	"board" : {
+		/* The date, if not specified, will be taken automatically from
+		 * the current system time. You may specify the `-u` option to
+		 * `frugen` in order to leave the date 'Unspecified' */
+		/* "date" : "1/10/2016 3:00:45",*/
+		"mfg" : "Biggest International Corp.",
+		"pname" : "Some Cool Product",
+		"serial" : "123456",
+		"pn" : "BRD-PN-345",
+		"file" : "example1.json",
+		"custom" : [
+			{ "type" : "binary", "data" : "0123DEADBABE" },
+			{ "type" : "auto",   "data" : "This is a text custom field" },
+			{ "type" : "auto",   "data" : "This is test2" }
+		]
+	},
+	"product" : {
+		"lang": 1,
+		"mfg" : "Super OEM Company",
+		"pn" : "PRD-PN-1234",
+		"pname" : "Label-engineered Super Product",
+		"serial" : "OEM12345",
+		"atag" : "Accounting Dept.",
+		"ver" : "v1.1",
+		"file" : "example2.json",
+		"custom" : [
+			{ "type" : "auto",   "data" : "Product Custom 1" },
+			{ "type" : "auto",   "data" : "PRDCSTM" },
+			{ "type" : "auto",   "data" : "PRDCSTM2" },
+			{ "type" : "binary", "data" : "C001BEEF" }
+		]
+	},
+	"multirecord" : [
+		{ "type" : "management", "subtype" : "uuid", "uuid" : "9bd70799-ccf0-4915-a7f9-7ce7d64385cf" }
+	]
+}

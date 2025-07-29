@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: fru-parser
+Version: 0.1.0
+Summary:  parses a binary FRU (Field Replaceable Unit) file and extracts information from it.
+Author-email: Jack Lin <farwill@gmail.com>
+Requires-Python: >=3.9
