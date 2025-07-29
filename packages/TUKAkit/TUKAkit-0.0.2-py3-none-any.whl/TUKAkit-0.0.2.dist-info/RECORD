@@ -1,0 +1,15 @@
+TUKAkit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+TUKAkit/parse.py,sha256=shFlicZNCZxCCnLw0sN5aaO5qBx6pj0mPKzCR9d_EIc,2814
+TUKAkit/_pd_cache/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+TUKAkit/_util/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+TUKAkit/_util/_critera.py,sha256=IIkPkdYSYvGSqCEVRaNyj4piyK0Cpt510weCnvBjcb8,14395
+TUKAkit/testing/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+TUKAkit/testing/_test.py,sha256=_8kM26DEv_LJJhf0lsknz46UrzjsEXZCT_izzccoHbM,1651
+TUKAkit/testing/data/Ac2IrRh.cif,sha256=c-RdwUGFcT94u8fKdorDyDpucH_hPH4mVSiZ_G1Uh_c,5402
+TUKAkit/testing/data/CaO2.cif,sha256=fTEBRP5jB5893y3tiQnv_4L_fq5T1HtIaLaVDsyAL-E,1564
+TUKAkit/testing/data/Na2O2.cif,sha256=HPF-i7yZ8LdYfxpiJKffFeYeN-0-oabScLVBg5BOUIY,1143
+TUKAkit/testing/data/NaCaO3.cif,sha256=cq5a4pRuXiqxP6D46v1rMgHk-J0JIPs7Pd_uX5gGYeY,1723
+TUKAkit-0.0.2.dist-info/METADATA,sha256=ptpkxgD4OUf6rsjI0lXQb13FXC-tVJLsSQSnjFFuO2M,1663
+TUKAkit-0.0.2.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+TUKAkit-0.0.2.dist-info/top_level.txt,sha256=7R2USwlwbnLJHcIZp0PXLG-cawuNx1VQy0yrw2ztuV8,8
+TUKAkit-0.0.2.dist-info/RECORD,,
