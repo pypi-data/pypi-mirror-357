@@ -1,0 +1,1 @@
+from .middlewares import bearer_token_middleware
