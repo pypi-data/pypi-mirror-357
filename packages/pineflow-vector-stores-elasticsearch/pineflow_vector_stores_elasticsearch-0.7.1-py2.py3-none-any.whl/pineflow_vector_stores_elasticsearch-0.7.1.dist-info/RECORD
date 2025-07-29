@@ -1,0 +1,5 @@
+pineflow/vector_stores/elasticsearch/__init__.py,sha256=YO9b8oBWRphYOJB_mgli5Ypnvvy5kHNmBxlSH4erl20,119
+pineflow/vector_stores/elasticsearch/base.py,sha256=nyNjyAUOn88WqpBLuB73_c7SxBXlRm1A8q2O5Inbiro,9748
+pineflow_vector_stores_elasticsearch-0.7.1.dist-info/METADATA,sha256=x2vrxM1zqR6JkaDfet2eyM6VjpaxJDZ-vnYNVwId_CI,1107
+pineflow_vector_stores_elasticsearch-0.7.1.dist-info/WHEEL,sha256=5druYqcII7zHXzX7qmN0TH895Jg3yuTtfjMgJIVBrKE,92
+pineflow_vector_stores_elasticsearch-0.7.1.dist-info/RECORD,,
