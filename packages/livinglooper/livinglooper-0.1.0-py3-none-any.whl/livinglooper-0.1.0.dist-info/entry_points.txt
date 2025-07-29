@@ -1,0 +1,3 @@
+[console_scripts]
+livinglooper=livinglooper.__main__:_main
+

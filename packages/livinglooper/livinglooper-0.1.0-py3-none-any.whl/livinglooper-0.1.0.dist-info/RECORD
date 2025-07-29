@@ -1,0 +1,14 @@
+livinglooper/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+livinglooper/__main__.py,sha256=u_HdbH25suLy8l1mHVz80OBcN7Anlil46lxhW1UbZ-8,424
+livinglooper/dummy.py,sha256=yDbLL5x7as2Ry47wprjSvYUTzE2qgVZlEYaLxIrGfKA,3084
+livinglooper/export.py,sha256=At4Nm1UxUPAJB2l_IDPl9Qz-Rlf5x52GG12ULyTSeCk,18748
+livinglooper/loop.py,sha256=bgGRyEZqBGBoAiekvzPWLQYMTrKVrSgmi5dEnsH9rDM,6294
+livinglooper/model.py,sha256=06nrcUkOKpeQMM3wQJR1961YcRA5CGKU1U0Le4XTvdw,34588
+livinglooper/representation.py,sha256=Y7jVhC398KXeAJU5lZO7etPuomKRq-gTW08bysmzjiI,9294
+livinglooper/tfr.py,sha256=Xr8FdzbCKlbMhNZOdc3-vvESYgivpBC3lx4L6xC-9Ec,4410
+livinglooper/transform.py,sha256=ikw4S26T0pjoMzJXbJVVgVuVSqhKvecDH2Uy2Vvcj2U,947
+livinglooper-0.1.0.dist-info/LICENSE,sha256=hIahDEOTzuHCU5J2nd07LWwkLW7Hko4UFO__ffsvB-8,34523
+livinglooper-0.1.0.dist-info/METADATA,sha256=-qFFoPpLENnqKtVfcqr23yGGJ6AHGNMJ_yC2aic_AoU,2958
+livinglooper-0.1.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+livinglooper-0.1.0.dist-info/entry_points.txt,sha256=o-UWDWs73kO3yhpH6nQvdv7amaDyty9odOjjprrbirI,60
+livinglooper-0.1.0.dist-info/RECORD,,
