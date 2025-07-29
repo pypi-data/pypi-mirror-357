@@ -1,0 +1,503 @@
+Metadata-Version: 2.4
+Name: debugtrace
+Version: 1.5.0
+Summary: Output trace logs when debugging Python programs
+Home-page: https://github.com/MasatoKokubo/DebugTrace-py
+Author: Masato Kokubo
+Author-email: masatokokubo@gmail.com
+Maintainer: Masato Kokubo
+Maintainer-email: masatokokubo@gmail.com
+License: MIT
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: summary
+
+# DebugTrace-py
+
+[Japanese](README_ja.md)
+
+**DebugTrace-py** is a library that outputs trace logs
+when debugging your Python programs.
+It supports Python 3.7 or later.
+By embedding "`_ = debugtrace.enter()`" at the start of the method,
+you can output the execution status of the program under development.
+
+## 1. Features
+
+* Automatically outputs the method name, source file name and line number
+  of invokers of `debugtrace.enter` function.
+* Also outputs end logs when the scope ends.
+* Indents logs automatically with nested methods and objects.
+* Automatically line breaks in value output.
+* Uses reflection to output content even for objects of classes
+  that do not implement the `__str__` method.
+* You can customize output contents by setting `debugtrace.ini` file.
+* You can select sys.stdout, sys.stderr or logging.Logger to output.
+
+## 2. Install
+
+`pip install debugtrace`
+
+## 3. How to use
+
+Do the following for the debug target and related functions and methods:
+
+* Insert "`_ = debugtrace.enter()`" at the beginning of functions and methods.
+* Insert "`debugtrace.print('foo', foo)`" to output variables to the log if necessary.
+
+The following is an example of a Python program using DebugTrace-py and a log when it is executed.
+
+```python:readme_example.py
+# readme_example.py
+import datetime
+import debugtrace
+
+# Contact class
+class Contact(object):
+    def __init__(self, id: int, firstName: str, lastName: str, birthday: datetime.date) -> None:
+        _ = debugtrace.enter(self)
+        self.id = id
+        self.firstName = firstName
+        self.lastName  = lastName
+        self.birthday  = birthday
+
+def func2():
+    _ = debugtrace.enter()
+    contact = [
+        Contact(1, 'Akane' , 'Apple', datetime.date(1991, 2, 3)),
+        Contact(2, 'Yukari', 'Apple', datetime.date(1992, 3, 4))
+    ]
+    debugtrace.print('contact', contact)
+
+def func1():
+    _ = debugtrace.enter()
+    debugtrace.print('Hello, World!')
+    func2()
+
+func1()
+```
+
+Log output contents:
+```log
+2025-06-01 20:52:25.578627+0900 DebugTrace-py 1.5.0 on Python 3.13.2
+2025-06-01 20:52:25.580427+0900   config file path: Tests/debugtrace.ini
+2025-06-01 20:52:25.581744+0900   logger: File: 'Tests/logs/debugtrace.log', append: False
+2025-06-01 20:52:25.582618+0900 
+2025-06-01 20:52:25.583340+0900 ______________________________ MainThread #140621705785856 ______________________________
+2025-06-01 20:52:25.584029+0900 
+2025-06-01 20:52:25.585793+0900 Enter func1 (readme_example.py:22) <- (readme_example.py:26)
+2025-06-01 20:52:25.586647+0900 | Hello, World! (readme_example.py:23)
+2025-06-01 20:52:25.587471+0900 | Enter func2 (readme_example.py:14) <- (readme_example.py:24)
+2025-06-01 20:52:25.588197+0900 | | Enter Contact.__init__ (readme_example.py:7) <- (readme_example.py:16)
+2025-06-01 20:52:25.588852+0900 | | Leave Contact.__init__ (readme_example.py:7) duration: 0:00:00.000009
+2025-06-01 20:52:25.589701+0900 | | 
+2025-06-01 20:52:25.590445+0900 | | Enter Contact.__init__ (readme_example.py:7) <- (readme_example.py:17)
+2025-06-01 20:52:25.591155+0900 | | Leave Contact.__init__ (readme_example.py:7) duration: 0:00:00.000023
+2025-06-01 20:52:25.592112+0900 | | 
+2025-06-01 20:52:25.592785+0900 | | contacts = [
+2025-06-01 20:52:25.593440+0900 | |   (__main__.Contact){
+2025-06-01 20:52:25.594087+0900 | |   birthday: 1991-02-03, firstName: 'Akane', id: 1, lastName: 'Apple'
+2025-06-01 20:52:25.594773+0900 | |   },
+2025-06-01 20:52:25.595472+0900 | |   (__main__.Contact){
+2025-06-01 20:52:25.596132+0900 | |   birthday: 1992-03-04, firstName: 'Yukari', id: 2, lastName: 'Apple'
+2025-06-01 20:52:25.596794+0900 | |   }
+2025-06-01 20:52:25.597437+0900 | | ] (readme_example.py:19)
+2025-06-01 20:52:25.598082+0900 | | 
+2025-06-01 20:52:25.598823+0900 | Leave func2 (readme_example.py:14) duration: 0:00:00.010653
+2025-06-01 20:52:25.599625+0900 Leave func1 (readme_example.py:22) duration: 0:00:00.013041
+```
+
+## 4. Functions
+
+There are mainly the following functions.
+
+<table>
+  <caption>Function list<caption>
+  <tr><th>Name</th><th>Discription</th></tr>
+  <tr>
+    <td><code>enter</code></td>
+    <td>
+      Outputs an entering log<br>
+      Also outputs a leaving log at the end of the code block.<br>
+      <br>
+      <i>Arguments:</i><br>
+      <ul>
+        <code><b>invoker</b> (object, optional)</code>: Pass the <code>self</code> or <code>cls</code> of the invoker.
+      </ul>
+      <i>Examples:</i><br>
+      <ul>
+        <code>   _ = debugtrace.enter(self)<br>
+  _ = debugtrace.enter(cls)<br>
+  _ = debugtrace.enter()</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>print</code></td>
+    <td>
+      Outputs the variable name and value<br>
+      <br>
+      <i>Arguments:</i><br>
+      <code><b>name</b> (str)</code>: Variable name, etc<br>
+      <code><b>value</b> (object, optional)</code>: Value to output (output only name if omitted)<br>
+      <br>
+      The following are keyword arguments<br>
+      <br>
+      <code><b>reflection</b> (bool, optional)</code>: If <code>True</code>, outputs using reflection even if it has a <code>__str__</code> or <code>__repr__</code> method (default: <code>False</code>)<br>
+      <code><b>output_private</b> (bool, optional)</code>: If <code>True</code>, also outputs private members when using reflection (default: <code>False</code>)<br>
+      <code><b>output_method</b> (bool, optional)</code>: If <code>True</code>, also outputs method members when using reflection (default: <code>False</code>)<br>
+      <code><b>collection_limit</b> (int, optional)</code>: The limit value of elements such as <code>list</code>, <code>tuple</code> and <code>dict</code> to output (default: <code>-1</code>)<br>
+      <code><b>bytes_limit</b> (int, optional)</code>: The limit value of elements for <code>bytes</code> and <code>bytearray</code> to output (default: <code>-1</code>)<br>
+      <code><b>string_limit</b> (int, optional)</code>: The limit value of characters for string to output (default: <code>-1</code>)<br>
+      <code><b>reflection_limit</b> (int, optional)</code>: The The limit value for reflection nesting (default: <code>-1</code>)<br>
+      <br>
+      <i>Examples:</i><br>
+      <code>   debugtrace.print('Hellow')<br>
+  debugtrace.print('foo', foo)<br>
+  debugtrace.print('foo', foo, reflection=<code>True</code>)<br>
+  debugtrace.print('foos', foos, collection_limit=1024)</code>
+    </td>
+  </tr>
+</table>
+
+## 5. Options that can be specified in the configuration file
+
+DebugTrace-py reads the file specified by the environment variable `DEBUGTRACE_CONFIG` or the `debugtrace.ini` file in the current directory as a configuration file at initialization.
+The section in the configuration file is `[debugtrace]`.
+
+You can specify the following options in the configuration file.
+
+<table>
+  <caption>debugtrace.ini<caption>
+  <tr>
+    <th style="text-align:center">Option Name</th>
+    <th style="text-align:center">Description</th>
+  </tr>
+  <tr>
+    <td><code>logger</code></td>
+    <td>
+      The logger used by debugtrace<br>
+      <small><b>Examples:</b></small>
+      <ul>
+        <code>stdout</code> - Output to <code>sys.stdout</code><br>
+        <code>stderr</code> - Output to <code>sys.stderr</code><br>
+        <code>logger</code> - Output using <code>logging</code> package<br>
+        <code>file:</code>< log file path> - Output directly to the file
+      </ul>
+      <small><b>Default Value:</b></small>
+      <ul>
+         <code>stderr</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>logging_config_file</code></td>
+    <td>
+      The configuration file name specified in logging package<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>logging.conf</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>logging_logger_name</code></td>
+    <td>
+      The logger name when using the logging package
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>debugtrace</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>log_datetime_format</code></td>
+    <td>
+      Log date and time format when <code>logger</code> is <code>StdOut</code> or <code>StdErr</code><br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>%Y-%m-%d %H:%M:%S.%f%z</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>enabled</code></td>
+    <td>
+      Enables logging if <code>true</code>,disables logging if <code>false</code><br>
+      <small><b>Examples:</b></small>
+      <ul>
+        <code>False</code>: Log output is disabled<br>
+        <code>True</code>: Log output is enabled
+      </ul>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>True</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>enter_format</code></td>
+    <td>
+      The format string of log output when entering functions or methods<br>
+      <small><b>Parameters:</b></small>
+      <ul>
+        <code>{0}</code>: The function or method name<br>
+        <code>{1}</code>: The file name<br>
+        <code>{2}</code>: The line number<br>
+        <code>{3}</code>: The file name of the caller<br>
+        <code>{4}</code>: The line number of the caller
+      </ul>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>Enter {0} ({1}:{2}) <- ({3}:{4})</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>leave_format</code></td>
+    <td>
+      The format string of log output when leaving functions or methods<br>
+      <small><b>Parameters:</b></small>
+      <ul>
+        <code>{0}</code>: The function or method name<br>
+        <code>{1}</code>: The file name<br>
+        <code>{2}</code>: The line number<br>
+        <code>{3}</code>: The time since entered
+      </ul>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>Leave {0} ({1}:{2}) duration: {3}</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>thread_boundary_format</code></td>
+    <td>
+      The format string of logging at threads boundary<br>
+      <small><b>Parameters:</b></small>
+      <ul>
+        <code>{0}</code>: The thread name<br>
+        <code>{1}</code>: The thread ID
+      </ul>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <small><code>______________________________ {0} #{1} ______________________________</code></small>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>maximum_indents</code></td>
+    <td>
+      The maximum number of indents<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>32</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>indent_string</code></td>
+    <td>
+      The indentation string for code<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>\s</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>data_indent_string</code></td>
+    <td>
+      The indentation string for data<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>\s\s</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>limit_string<code></td>
+    <td>
+      The string to represent that it has exceeded the limit<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>...</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>non_output_string</code><br>(Currently unused)</td>
+    <td>
+      The string to be output instead of not outputting value<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>...</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>circular_reference_string</code></td>
+    <td>
+      The string to represent that the cyclic reference occurs<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>*** Cyclic Reference ***</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>varname_value_separator</code></td>
+    <td>
+      The separator string between the variable name and value<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>\s=\s</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>key_value_separator</code></td>
+    <td>
+      The separator string between the key and value of dictionary and between the attribute name and value<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>:\s</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>print_suffix_format<c/ode></td>
+    <td>
+      The format string of <code>print</code> method suffix<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+         <code>\s({1}:{2})</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>count_format</code></td>
+    <td>
+      The format string of the number of elements for <code>list</code>, <code>tuple</code> and <code>dict</code><br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>count:{}</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>minimum_output_count</code></td>
+    <td>
+      The minimum value to output the number of elements for <code>list</code>, <code>tuple</code> and <code>dict</code><br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>128</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>length_format</code></td>
+    <td>
+      The format string of the length of string and <code>bytes</code><br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>length:{}</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>minimum_output_length</code></td>
+    <td>
+      The minimum value to output the length of string and <code>bytes</code><br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>256</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>data_output_width</code></td>
+    <td>
+      The maximum output width of data<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>70</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>bytes_count_in_line</code></td>
+    <td>
+      The count in line of <code>bytes</code><br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>16</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>collection_limit</code></td>
+    <td>
+      The limit value of elements for <code>list</code>, <code>tuple</code> and <code>dict</code> to output<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>128</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>bytes_limit</code></td>
+    <td>
+      The limit value of elements for <code>bytes</code> and <code>bytearray</code> to output<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>256</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>string_limit</code></td>
+    <td>
+      The limit value of characters for string to output<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>256</code>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>reflection_limit</code></td>
+    <td>
+      The The limit value for reflection nesting<br>
+      <small><b>Default Value:</b></small>
+      <ul>
+        <code>4</code>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+*Converts* `\s` *to space.*
+
+## 6. CHANGELOG
+
+[CHANGELOG](CHANGELOG.md)
+
+## 7. License
+
+[MIT License (MIT)](LICENSE)
+
+*&copy; 2020 Masato Kokubo*
