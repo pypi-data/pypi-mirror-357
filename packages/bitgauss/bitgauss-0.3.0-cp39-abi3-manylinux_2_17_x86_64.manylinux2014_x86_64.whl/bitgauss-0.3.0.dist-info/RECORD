@@ -1,0 +1,7 @@
+bitgauss-0.3.0.dist-info/METADATA,sha256=T9cWn6X1uyKuOnnFQUpgf53ySEyahaOMTdEdV6wxRJo,1488
+bitgauss-0.3.0.dist-info/WHEEL,sha256=PIrgejj-ECGHqsnD0cdJB_3sMM7AbRS1MJ6FiceSm7w,127
+bitgauss/__init__.py,sha256=m_CVkKqfsNgJExbOPnerhTVPcFXl_MNhVuOFyJ3LwvY,115
+bitgauss/__init__.pyi,sha256=WahQg1UmqNsr33GwrDONGGyMcPmYCJDAyvYcEtoIOnw,10268
+bitgauss/bitgauss.abi3.so,sha256=SuFNmny9mIH1yNGDgY_Dq27G9PTpoSZ16DOWmHQXxic,795488
+bitgauss/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bitgauss-0.3.0.dist-info/RECORD,,
