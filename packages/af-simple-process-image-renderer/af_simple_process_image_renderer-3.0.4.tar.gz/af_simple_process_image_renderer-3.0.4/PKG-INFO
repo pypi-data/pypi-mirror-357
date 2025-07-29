@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: af_simple_process_image_renderer
+Version: 3.0.4
+Summary: AristaFlow BPM SimpleProcessImageRenderer/SimpleProcessImageRenderer REST Client
+Home-page: 
+Author: AristaFlow GmbH
+Author-email: info@aristaflow.com
+Keywords: Swagger,AristaFlowREST/SimpleProcessImageRenderer
+License-File: LICENSE
+Requires-Dist: urllib3>=1.15
+Requires-Dist: six>=1.10
+Requires-Dist: certifi
+Requires-Dist: python-dateutil
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
+
+AristaFlow BPM REST Client library for connecting to the SimpleProcessImageRenderer/SimpleProcessImageRenderer endpoint. https://pypi.org/project/aristaflowpy/ provides APIs on top of the AristaFlow BPM REST endpoints for many use cases, so using aristaflowpy is recommended.
