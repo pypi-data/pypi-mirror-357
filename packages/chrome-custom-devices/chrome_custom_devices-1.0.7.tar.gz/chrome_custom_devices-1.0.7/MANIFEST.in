@@ -1,0 +1,14 @@
+include README.md
+include LICENSE
+include requirements.txt
+include quick-install.sh
+include demo.sh
+include install.sh
+include homebrew-formula.rb
+recursive-include bin *
+recursive-include scripts *
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .DS_Store
+global-exclude *.backup_*
+global-exclude backup_*.json

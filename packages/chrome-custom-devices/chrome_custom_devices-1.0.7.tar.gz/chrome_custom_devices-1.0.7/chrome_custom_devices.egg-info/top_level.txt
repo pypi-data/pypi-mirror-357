@@ -1,0 +1,2 @@
+chrome_devices_manager
+devices

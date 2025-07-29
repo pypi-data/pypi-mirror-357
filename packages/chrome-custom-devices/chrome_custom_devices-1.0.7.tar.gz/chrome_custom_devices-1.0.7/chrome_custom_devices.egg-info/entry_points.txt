@@ -1,0 +1,2 @@
+[console_scripts]
+chrome-devices = chrome_devices_manager:main
