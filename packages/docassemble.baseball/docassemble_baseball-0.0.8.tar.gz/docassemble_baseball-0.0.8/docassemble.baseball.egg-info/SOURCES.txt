@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+docassemble.baseball.egg-info/PKG-INFO
+docassemble.baseball.egg-info/SOURCES.txt
+docassemble.baseball.egg-info/dependency_links.txt
+docassemble.baseball.egg-info/not-zip-safe
+docassemble.baseball.egg-info/top_level.txt
+docassemble/baseball/__init__.py
+docassemble/baseball/data/questions/pitch.yml
+docassemble/baseball/data/sources/README.md
+docassemble/baseball/data/static/README.md
+docassemble/baseball/data/templates/README.md

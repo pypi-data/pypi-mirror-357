@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: docassemble.baseball
+Version: 0.0.8
+Summary: A docassemble extension.
+Home-page: https://docassemble.org
+Author: Jonathan Pyle
+Author-email: Jonathan Pyle <admin@admin.com>
+License-Expression: MIT
+Project-URL: Homepage, https://docassemble.org
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+
+This is not a real docassemble extension, it is just a package for testing docassemble's PyPI upload capabilities.
