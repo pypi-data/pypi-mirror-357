@@ -1,0 +1,13 @@
+deepseek_agent/__init__.py,sha256=GUtHcJUeSi1mggYOnpaalEdKrTjJlyy-7YuoysU946o,245
+deepseek_agent/agent.py,sha256=G4AIqP_QyEdIFUNZC5T-xx9t-j8MTcrwLyD0zBC8mR0,12289
+deepseek_agent/config/Config.py,sha256=CZl1O5y--HtNXhy_5WSsfSiG7pk40Oj4pcuOy7kqNpI,380
+deepseek_agent/config/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+deepseek_agent/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+deepseek_agent/utils/schema/__init__.py,sha256=-POTRg7cpoH6n74kDkt-pXZ_lUUsDjR_Js6jgoEpJ_U,324
+deepseek_agent/utils/schema/generator.py,sha256=m0l11KFnVpRTsWUwtaCQI3y7qv6lKEzyXeKbs3cxWlE,4838
+deepseek_agent/utils/schema/parameter_config.py,sha256=bbk8nEjGtdqxF6YDbFjGUgrywqmR4eh0NxLXKeq10sk,721
+deepseek_agent/utils/schema/validator.py,sha256=UrSu95x_gOLY7wqdK7bq01REZN3bXS9p3Cudlg4TCos,2644
+deepseek_calling_functions-0.1.0.dist-info/METADATA,sha256=tnjADu9hg0POnI3gwKYYde7iHssIzt2WiMXRE1Cpn5Y,15868
+deepseek_calling_functions-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+deepseek_calling_functions-0.1.0.dist-info/top_level.txt,sha256=WTP9Y_LNEDdGkghiUoLiB51a8Oux9qrawWrXTH_JEm4,15
+deepseek_calling_functions-0.1.0.dist-info/RECORD,,
