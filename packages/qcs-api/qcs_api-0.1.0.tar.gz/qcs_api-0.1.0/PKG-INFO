@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: qcs_api
+Version: 0.1.0
+Author: TUM QCS
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: requests
