@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: ergolog
+Version: 0.1.0
+Summary: A minimal, ergonomic python logging wrapper
+Author-email: David Kincaid <daelonsuzuka@gmail.com>
+License-Expression: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# lg
+A minimal but ergonomic python logging wrapper
