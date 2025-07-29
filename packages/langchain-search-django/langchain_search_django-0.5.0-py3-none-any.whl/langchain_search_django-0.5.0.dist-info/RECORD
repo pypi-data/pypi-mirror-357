@@ -1,0 +1,10 @@
+langchain_search/__init__.py,sha256=XZEKlinjCnZzHgH7wuWsHiHxGH6bQebKsmFH-Vv9hXg,171
+langchain_search/apps.py,sha256=fLVerfdxtZC-13koO8Emqj7hIqqmF0lSLcEikKphm3c,538
+langchain_search/util/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+langchain_search/util/django.py,sha256=FmRiePc0pTTZslk1rismGPSQVuo3L0TbgpQUHBKvN4g,1539
+langchain_search/util/langchain.py,sha256=mainGOo_w1ODyBJ9_lFBVnuCJUwHUV97DYaLkqKr2Ew,2857
+langchain_search/util/mixins.py,sha256=kh2BlKrsmcB3zcJkrSfsguJpt40Pf7bpTt8x3SmN1-8,566
+langchain_search_django-0.5.0.dist-info/METADATA,sha256=aysu7jmRmeHbe3yNSvBBv4-2GqjdPLhcw1dcGujAVmA,1029
+langchain_search_django-0.5.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+langchain_search_django-0.5.0.dist-info/top_level.txt,sha256=oloexNREknwZfjjf3Z0qhMvGj1ZqEhSSazA0HMn3sJk,17
+langchain_search_django-0.5.0.dist-info/RECORD,,
