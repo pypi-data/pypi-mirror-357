@@ -1,0 +1,8 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+ejercicio13_martarope.egg-info/PKG-INFO
+ejercicio13_martarope.egg-info/SOURCES.txt
+ejercicio13_martarope.egg-info/dependency_links.txt
+ejercicio13_martarope.egg-info/top_level.txt
