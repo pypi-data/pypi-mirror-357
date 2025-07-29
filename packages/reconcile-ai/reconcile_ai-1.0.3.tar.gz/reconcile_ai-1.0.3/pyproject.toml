@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reconcile-ai"
+version = "1.0.3"
+description = "AI-powered headless merge conflict resolver"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Kailash Elumalai", email = "ckailash@stanford.edu"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Version Control :: Git",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "GitPython>=3.1.0",
+    "openai>=1.0.0",
+]
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6.0"]
+dev = [
+    "pytest>=6.0",
+    "black",
+    "flake8",
+    "mypy",
+]
+
+[project.urls]
+Homepage = "https://github.com/kailashchanel/reconcile-ai"
+Repository = "https://github.com/kailashchanel/reconcile-ai"
+Issues = "https://github.com/kailashchanel/reconcile-ai/issues"
+
+[project.scripts]
+reconcile = "reconcile:main"
+
+[tool.setuptools]
+packages = ["reconcile"]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.md", "*.yml", "*.yaml", "*.json", "*.cfg", "*.ini"] 
