@@ -1,0 +1,16 @@
+CHANGELOG.md
+DOCUMENTATION.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+git_stream/__init__.py
+git_stream/__main__.py
+git_stream/py.typed
+git_stream.egg-info/PKG-INFO
+git_stream.egg-info/SOURCES.txt
+git_stream.egg-info/dependency_links.txt
+git_stream.egg-info/entry_points.txt
+git_stream.egg-info/requires.txt
+git_stream.egg-info/top_level.txt
+tests/test_main.py
