@@ -1,0 +1,2 @@
+[console_scripts]
+idleuserextend = idleuserextend:check_installed

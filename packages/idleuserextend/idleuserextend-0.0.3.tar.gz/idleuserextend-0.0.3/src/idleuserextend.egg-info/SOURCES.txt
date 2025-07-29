@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/idleuserextend/__init__.py
+src/idleuserextend.egg-info/PKG-INFO
+src/idleuserextend.egg-info/SOURCES.txt
+src/idleuserextend.egg-info/dependency_links.txt
+src/idleuserextend.egg-info/entry_points.txt
+src/idleuserextend.egg-info/requires.txt
+src/idleuserextend.egg-info/top_level.txt
+tests/test_init.py
