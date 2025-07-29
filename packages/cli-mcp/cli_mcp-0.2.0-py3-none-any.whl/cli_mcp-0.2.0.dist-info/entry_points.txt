@@ -1,0 +1,2 @@
+[console_scripts]
+cli-mcp = remote_mcp_cli:main

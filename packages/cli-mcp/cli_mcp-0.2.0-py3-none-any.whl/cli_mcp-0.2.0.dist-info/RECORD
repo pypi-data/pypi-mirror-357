@@ -1,0 +1,9 @@
+remote_mcp_cli/__init__.py,sha256=d0iB8sOdwXbzRwqwUw6MZJlOS9mfKT_4BF6YpEfDGYA,30239
+remote_mcp_cli/__main__.py,sha256=-rZqVdZ99EcZkv1890jeGmqvBuGmmxbq2rSKdtSUOr4,57
+remote_mcp_cli/config.py,sha256=2kZ9hLoq17Dz4b5ZA2jTkuYJH5C25eq_gguJZkUyVuQ,3897
+remote_mcp_cli/stdio.py,sha256=7M65fR8rqVLSB-ljKJ6HvPGLW2olMdMx4EqdkjqZE5c,6909
+cli_mcp-0.2.0.dist-info/METADATA,sha256=5rN4xUN7K4QEkXVt2qoO8SMRh0Hjiq6MuFWqMfSzw-k,7843
+cli_mcp-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cli_mcp-0.2.0.dist-info/entry_points.txt,sha256=TAZiSBNmMS-aBHk0mXFlB8rwvsN0FPuT0H30-qajvYc,48
+cli_mcp-0.2.0.dist-info/top_level.txt,sha256=ZkmANXHP2vgodoxwXIDuRDaas-e2X-6UTBE9xboMahM,15
+cli_mcp-0.2.0.dist-info/RECORD,,
