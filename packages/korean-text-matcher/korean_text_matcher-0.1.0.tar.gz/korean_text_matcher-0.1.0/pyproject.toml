@@ -1,0 +1,31 @@
+# korean_text_matcher_package/pyproject.toml
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "korean-text-matcher" 
+version = "0.1.0"           
+authors = [
+  { name="Kim Jeonhee", email="jeonhee.kim@powergen.ai" }, 
+]
+description = "A Python package for phonetic Korean text matching with enhanced first-character weighting."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Natural Language :: Korean",
+    "Topic :: Text Processing",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["korean", "text matching", "similarity", "한글", "유사도", "phonetic"]
+
+[project.urls]
+Homepage = "https://github.com/powergen5067/korean-text-matcher"
+"Bug Tracker" = "https://github.com/powergen5067/korean-text-matcher/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["korean_text_matcher*"]

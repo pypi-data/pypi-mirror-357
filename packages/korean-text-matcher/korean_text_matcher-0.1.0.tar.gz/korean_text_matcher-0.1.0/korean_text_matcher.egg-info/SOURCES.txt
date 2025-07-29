@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+korean_text_matcher/__init__.py
+korean_text_matcher/similarity_matcher.py
+korean_text_matcher.egg-info/PKG-INFO
+korean_text_matcher.egg-info/SOURCES.txt
+korean_text_matcher.egg-info/dependency_links.txt
+korean_text_matcher.egg-info/top_level.txt
