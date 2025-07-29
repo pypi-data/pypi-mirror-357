@@ -1,0 +1,28 @@
+name: Type Checking
+on: [push]
+jobs:
+  type-check:
+    name: 👨‍⚕️ Type Checking
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔔 Check out
+        uses: actions/checkout@v3
+
+      - name: 🏗️ python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: ⬇️ Python PDM
+        uses: pdm-project/setup-pdm@v4
+        with:
+          cache: true
+
+      - name: ⬇️ Python Dependencies
+        run: pdm sync -G:all
+
+      - name: 🚂 Activate environment
+        run: echo "$(pdm venv --path in-project)/bin" >> $GITHUB_PATH
+
+      - name: 🏃 mypy
+        run: mypy src

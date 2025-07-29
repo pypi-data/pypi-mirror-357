@@ -1,0 +1,40 @@
+title: Bocoel
+author: RenChu Wang
+copyright: '2024'
+logo: assets/logo.svg
+icon: assets/logo.svg
+
+exclude_patterns: [_build]
+only_build_toc_files: true
+
+repository:
+  url: https://github.com/rentruewang/bocoel
+
+html:
+  use_repository_button: true
+
+execute:
+  execute_notebooks: force
+
+sphinx:
+  extra_extensions: [
+    sphinx.ext.autodoc,
+    sphinx.ext.githubpages,
+    sphinx.ext.intersphinx,
+    sphinx.ext.napoleon,
+    sphinx.ext.todo,
+    sphinx.ext.viewcode,
+    sphinxcontrib.mermaid,
+  ]
+  myst_fence_as_directive: [mermaid]
+  config:
+    intersphinx_mapping:
+      python: ["https://docs.python.org/3", null]
+      numpy: ["http://docs.scipy.org/doc/numpy", null]
+      pandas: ["http://pandas.pydata.org/pandas-docs/dev", null]
+      torch: ["https://pytorch.org/docs/main", null]
+    todo_include_todos: true
+    autodoc_default_options:
+      members: true
+      member-order: bysource
+      special-members: __init__

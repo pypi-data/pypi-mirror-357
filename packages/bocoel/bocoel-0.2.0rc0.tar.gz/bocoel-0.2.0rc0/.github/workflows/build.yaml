@@ -1,0 +1,37 @@
+name: Build Pages
+on: [push]
+jobs:
+  build-and-deploy:
+    name: 📃 Website Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔔 Check out
+        uses: actions/checkout@v3
+
+      - name: 🏗️ python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: ⬇️ Python PDM
+        uses: pdm-project/setup-pdm@v4
+        with:
+          cache: true
+
+      - name: ⬇️ Python Dependencies
+        run: pdm sync -G:all
+
+      - name: 🚂 Activate environment
+        run: echo "$(pdm venv --path in-project)/bin" >> $GITHUB_PATH
+
+      - name: 🚧 Jupyter build
+        run: jupyter book build docs
+
+      - name: 📰 Publish docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: ./docs/_build/html
+          git-config-name: "github-actions[bot]"
+          git-config-email: "github-actions[bot]@users.noreply.github.com"
+          commit-message: 🎉 Site built
