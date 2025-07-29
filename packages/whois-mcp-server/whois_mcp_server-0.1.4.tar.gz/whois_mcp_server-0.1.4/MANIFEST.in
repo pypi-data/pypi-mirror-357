@@ -1,0 +1,7 @@
+include README.md
+include pyproject.toml
+recursive-include whois_mcp *.py
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .git*
+global-exclude .vscode 

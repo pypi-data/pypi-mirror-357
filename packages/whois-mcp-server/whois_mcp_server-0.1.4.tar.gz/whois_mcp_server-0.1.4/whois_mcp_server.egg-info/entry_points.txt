@@ -1,0 +1,2 @@
+[console_scripts]
+whois-mcp-server = whois_mcp.__main__:main
