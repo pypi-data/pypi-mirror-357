@@ -1,0 +1,3 @@
+[console_scripts]
+gencloud=gencloud.cli:run
+
