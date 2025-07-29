@@ -1,0 +1,1 @@
+"""Test suite for afcli - Airflow CLI wrapper"""
