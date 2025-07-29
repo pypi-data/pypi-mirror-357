@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+hexrgb/__init__.py
+hexrgb/main.py
+hexrgb.egg-info/PKG-INFO
+hexrgb.egg-info/SOURCES.txt
+hexrgb.egg-info/dependency_links.txt
+hexrgb.egg-info/entry_points.txt
+hexrgb.egg-info/top_level.txt
+tests/test_main.py
