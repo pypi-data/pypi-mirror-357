@@ -1,0 +1,3 @@
+[console_scripts]
+pyapple-mcp = pyapple_mcp.server:main
+pyapple-mcp-setup = pyapple_mcp.setup_helper:main
