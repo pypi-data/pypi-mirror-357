@@ -1,0 +1,13 @@
+pefile
+requests
+yara-python
+oletools
+cryptography
+
+[:platform_system != "Windows"]
+readline
+python-magic
+
+[:platform_system == "Windows"]
+pyreadline3
+python-magic-bin
