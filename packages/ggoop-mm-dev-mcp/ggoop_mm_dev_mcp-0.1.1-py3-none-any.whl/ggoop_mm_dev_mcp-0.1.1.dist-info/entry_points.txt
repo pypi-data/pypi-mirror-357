@@ -1,0 +1,2 @@
+[console_scripts]
+ggoop-mm-dev-mcp = mm_dev_mcp.server:main
