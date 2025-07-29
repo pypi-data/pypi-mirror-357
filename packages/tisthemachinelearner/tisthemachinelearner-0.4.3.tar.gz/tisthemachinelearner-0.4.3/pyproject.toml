@@ -1,0 +1,15 @@
+[project]
+name = "tisthemachinelearner"
+version = "0.4.3"
+description = "Lightweight interface to scikit-learn, with 2 classes"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["nnetsauce"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.setuptools.packages.find]
+where = ["src"]  # list of folders that contain the packages (["."] by default)
+include = ["tisthemachinelearner*"]  # package names should match these glob patterns
