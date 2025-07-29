@@ -1,0 +1,10 @@
+README.md
+setup.py
+qcs_data/__init__.py
+qcs_data/downloader.py
+qcs_data/filter.py
+qcs_data.egg-info/PKG-INFO
+qcs_data.egg-info/SOURCES.txt
+qcs_data.egg-info/dependency_links.txt
+qcs_data.egg-info/requires.txt
+qcs_data.egg-info/top_level.txt
