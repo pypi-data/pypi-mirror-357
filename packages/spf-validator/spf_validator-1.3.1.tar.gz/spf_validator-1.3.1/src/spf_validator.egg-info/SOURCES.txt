@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/spf_validator/__init__.py
+src/spf_validator/validator.py
+src/spf_validator.egg-info/PKG-INFO
+src/spf_validator.egg-info/SOURCES.txt
+src/spf_validator.egg-info/dependency_links.txt
+src/spf_validator.egg-info/requires.txt
+src/spf_validator.egg-info/top_level.txt
+tests/test_validator.py
