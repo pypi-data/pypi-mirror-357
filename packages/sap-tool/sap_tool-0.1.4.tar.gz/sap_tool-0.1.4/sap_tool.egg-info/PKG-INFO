@@ -1,0 +1,48 @@
+Metadata-Version: 2.4
+Name: sap-tool
+Version: 0.1.4
+Summary: A simple tool class for schema generation. Helps agents create schemas for methods/functions easily.
+Author: Your Name
+Author-email: rabeeqiblawi <rabeeqiblawi@gmail.com>
+License-Expression: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# sap-tool
+
+A simple Python package that helps agents create JSON schemas for methods/functions in a very simple way. This is useful for building agent tools, APIs, or any system that needs to describe callable functions in a structured format.
+
+## Installation
+
+```bash
+pip install sap-tool
+```
+
+## Usage
+
+```python
+from sap_tool import Tool
+
+def foo(a: int, b: str):
+    pass
+
+tool = Tool(foo, "foo", "A test function.")
+schema = tool.formulate_tool_schema()
+# Example print output from the package:
+# {'a': {'type': 'integer'}, 'b': {'type': 'string'}}
+# {'type': 'function', 'function': {'name': 'foo', 'description': 'A test function.', 'parameters': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'string'}}, 'required': ['a', 'b']}}}
+print(schema)
+```
+
+## What does it do?
+
+- Automatically generates a JSON schema for any Python function's parameters and types.
+- Makes it easy to describe agent tools and methods for LLMs or other automation systems.
+- Minimal, easy-to-use API.
+
+## Example Output
+
+```
+{'a': {'type': 'integer'}, 'b': {'type': 'string'}}
+{'type': 'function', 'function': {'name': 'foo', 'description': 'A test function.', 'parameters': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'string'}}, 'required': ['a', 'b']}}}
+```

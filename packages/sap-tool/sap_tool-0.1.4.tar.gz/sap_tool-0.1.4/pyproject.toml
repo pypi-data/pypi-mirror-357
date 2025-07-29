@@ -1,0 +1,14 @@
+[project]
+name = "sap-tool"
+version = "0.1.4"
+description = "A simple tool class for schema generation. Helps agents create schemas for methods/functions easily."
+authors = [
+  { name = "rabeeqiblawi", email = "rabeeqiblawi@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
