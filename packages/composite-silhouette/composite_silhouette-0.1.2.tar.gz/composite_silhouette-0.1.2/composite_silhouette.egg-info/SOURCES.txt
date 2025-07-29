@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+composite_silhouette/__init__.py
+composite_silhouette/composite_silhouette.py
+composite_silhouette.egg-info/PKG-INFO
+composite_silhouette.egg-info/SOURCES.txt
+composite_silhouette.egg-info/dependency_links.txt
+composite_silhouette.egg-info/requires.txt
+composite_silhouette.egg-info/top_level.txt
