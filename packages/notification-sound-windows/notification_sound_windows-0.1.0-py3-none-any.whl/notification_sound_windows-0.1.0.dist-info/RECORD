@@ -1,0 +1,10 @@
+notification_sound_windows/__init__.py,sha256=Csoz7NDCWgoy_9gmIxNhDgi7xqnFxRr6SmcJ861yBqk,861
+notification_sound_windows/__main__.py,sha256=A9Ncpuv3_iNxZlOWy8xgGkxLJHh6fW7jsqRp49VCYek,1650
+notification_sound_windows/audio_player.py,sha256=eU_X2Sp0fNI5bRBtYa58CTWD2Gd9yNrIzm3MxZbXmRo,22452
+notification_sound_windows/config.py,sha256=LH36TPkjjzZmMK0xJKZ9V2-nLfIzy3-L0N-Ld95k__Q,8789
+notification_sound_windows/server.py,sha256=QKP3wTTq5UrWRsyzQ8FT4WfEeDr8Bi_2_0jQ5Ntb0XU,11250
+notification_sound_windows-0.1.0.dist-info/METADATA,sha256=gGbU_jDRJMSpmoIUzxJY_nDnk7Tp1zoJqlao1obqc54,4642
+notification_sound_windows-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+notification_sound_windows-0.1.0.dist-info/entry_points.txt,sha256=d9LpQ-Soq4UBR_xR0dYoV5eat5xB4MX_xR1d7tdt2BI,88
+notification_sound_windows-0.1.0.dist-info/licenses/LICENSE,sha256=dbyd12C1xZM1guKBDlbWabT1ShE8-QkO_cesFooKsHw,1112
+notification_sound_windows-0.1.0.dist-info/RECORD,,

@@ -1,0 +1,2 @@
+[console_scripts]
+notification-sound-windows = notification_sound_windows.__main__:main
