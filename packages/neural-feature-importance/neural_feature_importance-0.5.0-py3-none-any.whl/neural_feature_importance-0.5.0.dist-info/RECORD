@@ -1,0 +1,8 @@
+neural_feature_importance/__init__.py,sha256=z3Rve0a7QTAhEpCesDhSdbkOwfSsNZgiwDVep1Is_c0,566
+neural_feature_importance/callbacks.py,sha256=HMHsmVaqZOzy5NSbxN-8CWvq82vzgZgZD53zqp2nAz0,4811
+neural_feature_importance/utils/__init__.py,sha256=dMjBUCx8DCoJKAEAnjj_daXfEu9Q5va1k8XupmWdZiE,114
+neural_feature_importance/utils/monitors.py,sha256=LTz7oE0-WgZ50DHyHDnTwfzWSSWMnjWd0xlwt7BWKuU,1763
+neural_feature_importance-0.5.0.dist-info/METADATA,sha256=Uo5R11NK7P-XXpeu3VWIl7I1w5K0l_30y0gp_J5GR-k,346
+neural_feature_importance-0.5.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+neural_feature_importance-0.5.0.dist-info/top_level.txt,sha256=yP0Q-BG7hDLLu1H1_x5bGEKwkCso5NxxvScnlmICb-o,26
+neural_feature_importance-0.5.0.dist-info/RECORD,,
