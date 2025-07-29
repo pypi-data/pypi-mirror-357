@@ -1,0 +1,42 @@
+# =================================================================
+# == pyproject.toml
+# == 说明：这是项目的配置文件和依赖项列表。
+# =================================================================
+[project]
+name = "nonebot-plugin-binance"
+version = "0.0.9"
+description = "一个币安(Binance)插件，提供行情、交易、资产查询和实时价格预警功能。"
+authors = [
+    { name = "newcovid", email = "280310454@qq.com" },
+]
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["nonebot", "nonebot2", "binance", "crypto", "trade", "finance"]
+dependencies = [
+    "nonebot2>=2.3.0",
+    "nonebot-adapter-onebot>=2.3.0",
+    "nonebot-plugin-htmlrender>=0.3.0",
+    "nonebot-plugin-localstore>=0.7.0",
+    "aiohttp>=3.8.0",
+    "cryptography>=41.0.0",
+    "websockets>=11.0.0",
+    "pydantic>=1.10.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/newcovid/nonebot-plugin-binance"
+Documentation = "https://github.com/newcovid/nonebot-plugin-binance#readme"
+
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["nonebot_plugin_binance"]
+
+[tool.setuptools.package-data]
+"nonebot_plugin_binance" = [
+    "handlers/**/*",
+    "templates/**/*",
+]

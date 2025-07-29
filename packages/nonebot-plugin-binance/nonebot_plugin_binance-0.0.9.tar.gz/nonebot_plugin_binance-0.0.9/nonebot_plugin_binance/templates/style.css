@@ -1,0 +1,338 @@
+/* ======================================== */
+/* == templates/style.css                == */
+/* == 说明：所有HTML模板的通用样式表。   == */
+/* ======================================== */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #1a1b1e;
+    color: #d1d4dc;
+    padding: 24px;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 752px;
+    box-sizing: border-box;
+}
+
+/* 通用容器 */
+.container {
+    background: #232529;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid #363940;
+}
+
+/* 通用头部 */
+.header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #363940;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+}
+
+/* 涨跌颜色 */
+.positive {
+    color: #16c784;
+}
+
+.negative {
+    color: #ea3943;
+}
+
+.positive-bg {
+    background-color: rgba(22, 199, 132, 0.15);
+}
+
+.negative-bg {
+    background-color: rgba(234, 57, 67, 0.15);
+}
+
+/* --- 数据表格样式 --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #2a2c30;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.data-table th {
+    font-weight: 600;
+    color: #848e9c;
+}
+
+.data-table td {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- 信息卡片/网格样式 --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+}
+
+.item-card {
+    background-color: #2c2f33;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #3a3f44;
+    transition: all 0.2s ease-in-out;
+}
+
+.item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #4f545c;
+}
+
+.item-card .name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #58a6ff;
+}
+
+.item-card .desc {
+    font-size: 14px;
+    color: #848e9c;
+    margin-top: 4px;
+    min-height: 18px;
+}
+
+.item-card .example {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    color: #c9d1d9;
+    background-color: #363940;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-top: 10px;
+    display: inline-block;
+    word-break: break-all;
+}
+
+/* --- 无数据提示 --- */
+.no-data {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 16px;
+    color: #848e9c;
+}
+
+/* --- 账户通用样式 --- */
+.snapshot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account-section {
+    margin-bottom: 25px;
+}
+
+.account-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e0e0e0;
+    margin: 0 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #3a3f44;
+}
+
+.total-asset-label {
+    font-size: 14px;
+    color: #848e9c;
+}
+
+.total-asset-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: #f0b90b;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.asset-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #363940;
+}
+
+.asset-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+}
+
+.asset-cell {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.total-value {
+    font-weight: 600;
+    color: #fff;
+}
+
+.col-asset {
+    width: 34%;
+}
+
+.col-balance {
+    width: 22%;
+}
+
+.col-profit {
+    width: 22%;
+}
+
+/* --- 账户状态 (status.html) 特定样式 --- */
+.status-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c2f33;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #3a3f44;
+}
+
+.status-label {
+    font-size: 16px;
+    color: #d1d4dc;
+}
+
+.status-value {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* --- 挂单表格 (orders.html) 列宽优化 --- */
+.data-table.orders-table td {
+    font-size: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.orders-table .col-symbol {
+    width: 20%;
+}
+
+.orders-table .col-side {
+    width: 12%;
+}
+
+.orders-table .col-type {
+    width: 15%;
+}
+
+.orders-table .col-price {
+    width: 18%;
+}
+
+.orders-table .col-amount {
+    width: 15%;
+}
+
+.orders-table .col-id {
+    width: 20%;
+}
+
+/* --- 多市场行情 (multi_ticker.html) 样式 --- */
+.market-section {
+    margin-bottom: 25px;
+    background-color: #2c2f33;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #3a3f44;
+}
+
+.market-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.market-name {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+}
+
+.price {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.change {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin-left: 12px;
+    display: inline-block;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.stats-item {
+    padding: 12px;
+    background-color: #1a1b1e;
+    /* 恢复背景色 */
+    border: 1px solid #3a3f44;
+    /* 恢复边框 */
+    border-radius: 8px;
+    /* 添加圆角 */
+}
+
+.stats-item .desc {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.stats-item .value {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}

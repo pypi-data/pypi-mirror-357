@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}全账户实时资产{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="header snapshot-header">
+        <h1>全账户实时资产</h1>
+        <div class="right-align">
+            <div class="total-asset-label">总资产估值 (USDT)</div>
+            <div class="total-asset-value">≈ {{ "%.2f"|format(data.total_usdt_value|float) }}</div>
+        </div>
+    </div>
+
+    <div style="text-align: center; font-size: 13px; color: #848e9c; padding: 0 0 20px 0;">
+        总资产仅为现货、资金、杠杆及合约账户估算总和，非官方数据。
+    </div>
+
+    {% for account in data.accounts %}
+    <div class="account-section">
+        <h2 class="account-title">
+            {{ account.type_display }}
+        </h2>
+
+        {# 渲染现货/杠杆/资金类资产 #}
+        {% if account.balances and account.balances|length > 0 %}
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th class="col-asset">资产</th>
+                    <th class="right-align col-balance">可用</th>
+                    <th class="right-align col-balance">冻结</th>
+                    <th class="right-align col-balance">总计</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asset in account.balances %}
+                <tr>
+                    <td>
+                        <div class="asset-cell">
+                            <img src="{{ asset.icon_path }}" class="asset-icon" alt="{{ asset.asset }}">
+                            <span class="asset-name">{{ asset.asset }}</span>
+                        </div>
+                    </td>
+                    <td class="right-align">{{ asset.free_str }}</td>
+                    <td class="right-align">{{ asset.locked_str }}</td>
+                    <td class="right-align total-value">{{ asset.total_str }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+
+        {# 渲染合约类资产 #}
+        {% if account.assets and account.assets|length > 0 %}
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th class="col-asset">资产</th>
+                    <th class="right-align col-balance">钱包余额</th>
+                    <th class="right-align col-profit">未实现盈亏</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asset in account.assets %}
+                <tr>
+                    <td>
+                        <div class="asset-cell">
+                            <img src="{{ asset.icon_path }}" class="asset-icon" alt="{{ asset.asset }}">
+                            <span class="asset-name">{{ asset.asset }}</span>
+                        </div>
+                    </td>
+                    <td class="right-align">{{ "%.4f"|format(asset.walletBalance|float) }}</td>
+                    <td class="right-align {{ 'positive' if asset.unrealizedProfit|float >= 0 else 'negative' }}">
+                        {{ "%.4f"|format(asset.unrealizedProfit|float) }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

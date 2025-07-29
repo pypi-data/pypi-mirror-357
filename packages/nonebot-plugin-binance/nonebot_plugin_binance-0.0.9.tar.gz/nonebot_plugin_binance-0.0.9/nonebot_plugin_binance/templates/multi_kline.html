@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}多市场K线 - {{ data.symbol_display }} ({{ data.interval }}){% endblock %}
+
+{% block content %}
+<!-- 1. 引入 ECharts 库 -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+
+<div class="container" style="padding: 24px;">
+    <div class="header" style="padding-bottom: 16px; margin-bottom: 20px;">
+        <span style="font-size: 28px; font-weight: 700; color: #fff;">{{ data.symbol_display }}</span>
+        <span style="font-size: 22px; color: #848e9c; font-weight: 500;">({{ data.interval }})</span>
+    </div>
+
+    {% if not data.markets %}
+    <div class="no-data">
+        未能查询到 {{ data.symbol_display }} 在任何市场的K线数据。
+    </div>
+    {% else %}
+    <!-- 2. 图表容器 (循环创建) -->
+    <div class="kline-grid" style="display: grid; gap: 20px;">
+        {% for market in data.markets %}
+        <div class="chart-container" style="background-color: #1a1b1e; border-radius: 12px; overflow: hidden;">
+            <div id="chart-{{ loop.index }}" style="width: 752px; height: 450px;"></div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+<!-- 3. 将所有市场数据存储在一个专门的script标签中 -->
+<script id="markets-json-data" type="application/json">
+    {{ data.markets | tojson | safe }}
+</script>
+
+<!-- 4. ECharts 初始化脚本 -->
+<script type="text/javascript">
+    // 从DOM中安全地获取数据
+    const marketsDataElement = document.getElementById('markets-json-data');
+    const marketsData = JSON.parse(marketsDataElement.textContent || '[]');
+
+    // 针对每个市场的数据初始化一个图表
+    marketsData.forEach((market, index) => {
+        const chartId = `chart-${index + 1}`;
+        const chartDom = document.getElementById(chartId);
+        if (!chartDom) return;
+
+        const myChart = echarts.init(chartDom, 'dark');
+
+        // 直接从解析后的数据中获取K线
+        const rawData = market.klines || [];
+
+        function processData(rawData) {
+            let dates = [];
+            let values = [];
+            let volumes = [];
+            let lastData = {};
+
+            if (!Array.isArray(rawData) || rawData.length === 0) {
+                return { dates, values, volumes, lastData: { close: 0 } };
+            }
+
+            for (let i = 0; i < rawData.length; i++) {
+                dates.push(echarts.format.formatTime('yyyy-MM-dd\nhh:mm', rawData[i][0]));
+                const open = parseFloat(rawData[i][1]);
+                const close = parseFloat(rawData[i][4]);
+                const low = parseFloat(rawData[i][3]);
+                const high = parseFloat(rawData[i][2]);
+                values.push([open, close, low, high]);
+                const volume = parseFloat(rawData[i][5]);
+                volumes.push([i, volume, open > close ? -1 : 1]);
+                if (i === rawData.length - 1) {
+                    lastData = { open, high, low, close };
+                }
+            }
+            return { dates, values, volumes, lastData };
+        }
+
+        const chartData = processData(rawData);
+
+        const option = {
+            backgroundColor: '#1a1b1e',
+            animation: false,
+            title: {
+                text: market.name,
+                left: 'center',
+                top: 15,
+                textStyle: { color: '#efefef', fontSize: 20 },
+                subtext: `收: ${chartData.lastData.close.toFixed(4)}`, // 增加小数位数以适应小币种
+                subtextStyle: { color: '#848e9c', fontSize: 14 },
+                itemGap: 10
+            },
+            grid: [
+                { left: '80px', right: '90px', top: '20%', height: '55%' },
+                { left: '80px', right: '90px', top: '80%', height: '10%' },
+            ],
+            xAxis: [
+                { type: 'category', data: chartData.dates, boundaryGap: false, axisLine: { show: false }, axisLabel: { color: '#848e9c' }, min: 'dataMin', max: 'dataMax' },
+                { type: 'category', gridIndex: 1, data: chartData.dates, boundaryGap: false, axisLine: { show: false }, axisTick: { show: false }, axisLabel: { show: false }, min: 'dataMin', max: 'dataMax' },
+            ],
+            yAxis: [
+                { scale: true, axisLabel: { color: '#848e9c', formatter: (v) => v.toLocaleString() }, splitLine: { lineStyle: { color: '#2a2e39' } } },
+                { scale: true, gridIndex: 1, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { show: false } },
+            ],
+            dataZoom: [{ type: 'inside', xAxisIndex: [0, 1], start: 50, end: 100 }],
+            tooltip: { show: false },
+            series: [
+                {
+                    name: 'K线', type: 'candlestick', data: chartData.values,
+                    itemStyle: { color: '#26a69a', color0: '#ef5350', borderColor: '#26a69a', borderColor0: '#ef5350' },
+                    markLine: {
+                        symbol: ['none', 'none'],
+                        label: { show: true, position: 'end', formatter: (p) => parseFloat(p.value).toFixed(4), fontSize: 12, color: '#D1D4DC', backgroundColor: '#1a1b1e', padding: [3, 8], borderRadius: 4, borderWidth: 1, borderColor: '#555' },
+                        lineStyle: { type: 'dashed', color: '#848e9c' },
+                        data: [{ yAxis: chartData.lastData.close, name: '最新价' }],
+                    },
+                },
+                { name: '成交量', type: 'bar', xAxisIndex: 1, yAxisIndex: 1, data: chartData.volumes, itemStyle: { color: (p) => (p.data[2] === 1 ? '#26a69a' : '#ef5350') } },
+            ],
+        };
+
+        myChart.setOption(option);
+    });
+</script>
+{% endblock %}
