@@ -1,0 +1,11 @@
+tulips/__init__.py,sha256=pDRxJPdH5Gd4dZvBb1RfajA7TNQBCGtuwqxgjpM3goI,967
+tulips/blackbody.py,sha256=ZqYOvr2mcT_jTjrM1pYdyvvWdgxGY3bxq2yYQFqfZ54,6950
+tulips/ciexyz.py,sha256=ndsDrwv-8x_42lNK6VaP_5mpGlIkt4rg8WRA-KN-NJM,43133
+tulips/colormodels.py,sha256=_higm1u6cUA9OrifPxrNPZ4I-n80wFrVrApuwD_Qy5w,31576
+tulips/test_plots.py,sha256=N1HG-1Hn3NmZQlPRfrj8jgSc3uZtxE9v8Xr3Cq3d8PA,5288
+tulips/tulips.py,sha256=XFyI0KmIC3uMnJwKx2RsRZRJR_2qI_qPJqJCBEY3a54,80503
+astro_tulips-1.0.3.dist-info/LICENSE.rst,sha256=5X8cMguM-HmKfS_4Om-eBqM6A1hfbgZf6pfx2G24QFI,35150
+astro_tulips-1.0.3.dist-info/METADATA,sha256=hxTX0L2tNrZF2AmkONk0MyRnlUm1Fb0cstinS5Q64QE,4585
+astro_tulips-1.0.3.dist-info/WHEEL,sha256=Ll72iyqtt6Rbxp-Q7FSafYA1LeRv98X15xcZWRsFEmY,109
+astro_tulips-1.0.3.dist-info/top_level.txt,sha256=gQ9LIVczeBQU0RYk2TVL_gRrOhOldvYwxdNSEeJwZZo,7
+astro_tulips-1.0.3.dist-info/RECORD,,

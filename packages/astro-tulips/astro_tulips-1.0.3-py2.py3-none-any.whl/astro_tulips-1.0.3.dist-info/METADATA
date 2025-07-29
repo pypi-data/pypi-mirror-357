@@ -1,0 +1,95 @@
+Metadata-Version: 2.1
+Name: astro-tulips
+Version: 1.0.3
+Summary: Creates diagrams of stellar structures and their evolution
+Home-page: https://bitbucket.org/elaplace/tulips/
+Author: Eva Laplace
+Author-email: eva.laplace67@gmail.com
+License: GPLv3+
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.rst
+Requires-Dist: numpy>=1.16
+Requires-Dist: matplotlib>=3.3.2
+Requires-Dist: mesaPlot>=1.1.0
+Requires-Dist: tqdm
+Requires-Dist: astropy>=4.0
+Requires-Dist: imageio-ffmpeg>=0.2.0
+Requires-Dist: ipywidgets
+Requires-Dist: cmasher>=1.6.2
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+
+![logo_with_text](https://bitbucket.org/elaplace/tulips/raw/153ff99cad7cf514414969b85895892f05ee492a/tulips/logo/Tulips_acronym_text_transparent.png)
+
+[![Documentation Status](https://readthedocs.org/projects/astro-tulips/badge/?version=latest)](https://astro-tulips.readthedocs.io/en/latest/?badge=latest)
+[![PyPI version](https://badge.fury.io/py/astro-tulips.svg)](https://badge.fury.io/py/astro-tulips)
+[![ASCL badge](https://img.shields.io/badge/ascl-2110.004-blue.svg?colorB=262255)](https://ascl.net/2110.004) 
+[![ADS Badge](https://img.shields.io/badge/ADS-2022A%26C....3800516L-blue)](https://ui.adsabs.harvard.edu/abs/2022A%26C....3800516L/abstract)
+
+`tulips` creates diagrams of the structure and evolution of stars. It creates plots and movies based on output from 
+the [MESA](http://mesa.sourceforge.net/) stellar evolution code. 
+`tulips` represents stars as circles of varying size and color. 
+`tulips`' capabilities include visualizing the size and perceived color of stars, their interior 
+mixing and nuclear burning processes, their chemical composition, and comparing different MESA models.
+![example_gif](https://bitbucket.org/elaplace/tulips/raw/153ff99cad7cf514414969b85895892f05ee492a/tulips/MESA_DIR_EXAMPLE/test_single_M10.5_movie.gif "Example mearings movie showing the evolution of 
+a 10Msun star")
+
+## Installation
+#### General
+To install tulips run
+```
+pip install astro-tulips
+```
+For more information, please have a look at the dedicated 
+[installage page](https://astro-tulips.readthedocs.io/en/latest/installation.html) of the `tulips` documentation.
+
+**Note**: Python 2 is not supported
+
+#### Development version
+The latest development version is available directly at [bitbucket](https://bitbucket.org/elaplace/tulips)
+```
+git clone https://bitbucket.org/elaplace/tulips.git
+cd tulips
+pip install -e .
+```
+
+## Documentation
+More details, examples, and tutorials can be found in the tulips [documentation](https://astro-tulips.readthedocs.io)
+
+## Citing TULIPS
+
+**If you use `tulips` for your research, please cite this article** 
+[![ADS Badge](https://img.shields.io/badge/ADS-2022A%26C....3800516L-blue)](https://ui.adsabs.harvard.edu/abs/2022A%26C....3800516L/abstract)
+.
+  
+## License
+This work is distributed under a GNU general public license, version 3.
+
+## Contributing
+If you wish to submit a new feature or bug fix please don't hesitate to send a pull request or to submit an issue.
+
+## Acknowledgments
+tulips makes use of the open-source python modules [mesaPlot](https://github.com/rjfarmer/mesaplot) by R. Farmer, 
+[colorpy](http://markkness.net/colorpy/ColorPy.html) by M. Kness, [CMasher](https://cmasher.readthedocs.io), [numpy](https://numpy.org/), 
+[astropy](https://www.astropy.org/),[matplotlib](https://matplotlib.org/), and of [ipython/jupyter](https://jupyter.org).
+Logo design: A. Faber. Documentation: I. de Langen. Created and developed by [E. Laplace](https://evalaplace.github.io/).
+
+## Funding
+This project was funded by the European Unions Horizon 2020
+research and innovation program from the European Research
+Council (ERC, grant agreement No.715063) and the Netherlands
+Organisation for Scientific Research (NWO) as part of the Vidi
+research program BinWaves with project number 639.042.728.
+The [ET Outreach award](https://khmw.nl/et-outreach-award/) of the Royal Holland Society of Sciences and Humanities and its
+sponsors E. van Dishoek and T. de Zeeuw are gratefully acknowledged for
+making it possible to fund the work of I. de Langen on the TULIPS
+documentation and tutorials.
