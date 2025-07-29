@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: chariot-ds
+Version: 0.1
+Summary: chariot-ds is a distributed heterogeneous cache system that supports pooled caching across HBM, DDR, and SSD, along with asynchronous, high-efficiency data transmission for NPUs.
+Home-page: https://gitee.com/mindspore/chariot-ds
+Author: chariot-ds Team
+License: Apache 2.0
+Requires-Python: >=3.8
+Dynamic: author
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
