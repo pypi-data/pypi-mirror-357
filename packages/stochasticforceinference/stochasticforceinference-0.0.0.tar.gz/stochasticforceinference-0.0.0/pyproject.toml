@@ -1,0 +1,6 @@
+[project]
+name = "stochasticforceinference"
+version = "0.0.0"
+description = "Reserved name for Stochastic Force Inference."
+
+
