@@ -1,0 +1,19 @@
+[project]
+name = "metools"
+version = "0.0.2"
+description = "常用小工具"
+license = {text = "MIT"}
+readme = "README.md"
+urls = { Homepage = "https://github.com/111hgx/metools" }
+authors = [
+    { name = "haogaoxing", email = "jjx000@qq.com" }
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.scripts]
+metools = "metools:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
