@@ -1,0 +1,3 @@
+[console_scripts]
+aiotorrent=aiotorrent.core.cli:main
+
