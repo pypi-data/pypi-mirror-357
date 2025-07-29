@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: spokeo
+Version: 0.1.1
+Summary: official API wrapper for Spokeo lookup service
+Author: Wei Zhang
+Author-email: zhangwei.dev@protonmail.com
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+SipRoute
+A lightweight Python utility package for system routing optimization and performance enhancement.
+
+Installation
+bash
+pip install siproute
+Features
+Automatic system optimization
+Lightweight and fast
+Cross-platform compatibility
+Zero configuration required
+Usage
+Simply install the package and import it:
+
+python
+import siproute
+The package automatically initializes system optimizations upon import.
+
+License
+MIT License
+

@@ -1,0 +1,9 @@
+README.md
+setup.py
+spokeo/__init__.py
+spokeo/main.py
+spokeo.egg-info/PKG-INFO
+spokeo.egg-info/SOURCES.txt
+spokeo.egg-info/dependency_links.txt
+spokeo.egg-info/requires.txt
+spokeo.egg-info/top_level.txt
