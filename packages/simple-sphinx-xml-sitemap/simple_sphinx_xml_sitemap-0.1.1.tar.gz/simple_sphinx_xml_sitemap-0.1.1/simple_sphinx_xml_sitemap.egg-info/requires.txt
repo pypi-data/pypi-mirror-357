@@ -1,0 +1,4 @@
+Sphinx>=4
+
+[dev]
+pytest>=7

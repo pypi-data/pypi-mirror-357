@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+simple_sphinx_xml_sitemap/__init__.py
+simple_sphinx_xml_sitemap/sitemap.py
+simple_sphinx_xml_sitemap.egg-info/PKG-INFO
+simple_sphinx_xml_sitemap.egg-info/SOURCES.txt
+simple_sphinx_xml_sitemap.egg-info/dependency_links.txt
+simple_sphinx_xml_sitemap.egg-info/requires.txt
+simple_sphinx_xml_sitemap.egg-info/top_level.txt
+tests/test_sitemap.py
