@@ -1,0 +1,2 @@
+[console_scripts]
+trigslink-tunnel = trigslink.tunnel:tunnel

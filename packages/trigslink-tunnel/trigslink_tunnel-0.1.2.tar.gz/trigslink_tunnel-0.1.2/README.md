@@ -1,0 +1,84 @@
+Here’s the complete `README.md` formatted for direct copying:
+
+```markdown
+# Trigslink Tunnel CLI
+
+**Trigslink Tunnel** is a lightweight command-line interface (CLI) tool that allows MCP (Model Context Protocol) service providers to expose their locally running services (e.g., `http://localhost:9000`) to the public internet via a secure Cloudflare tunnel.
+
+This tool is part of the [Trigslink Platform](https://trigslink.io) ecosystem, enabling seamless Web3 + AI-powered agent deployment.
+
+
+## 🚀 Features
+
+- Instantly creates a **Cloudflare Tunnel** to expose your local MCP service.
+- One-line setup and launch.
+- CLI tool built for ease-of-use and seamless Trigslink integration.
+- Ideal for developers running agents locally for registration and public access.
+
+
+## 📦 Installation
+
+### 🔹 Prerequisites
+
+- Python 3.7+
+- `cloudflared` installed and available in your system `PATH`.
+
+To install `cloudflared`:  
+[Cloudflared installation guide](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/)
+
+### 🔹 Install via pip
+
+```bash
+git clone https://github.com/your-org/trigslink-tunnel.git
+cd trigslink-tunnel
+pip install .
+```
+
+## ⚙️ Usage
+
+```bash
+trigslink-tunnel 8080
+```  
+*(This will expose `http://localhost:8080` via a secure public URL.)*
+
+
+## 💡 Example Output
+
+```plaintext
+🚀 Starting tunnel on port 9000...
+Cloudflare Tunnel URL:
+https://cool-agent-123.trycloudflare.com
+
+Copy this URL and paste it into the “Service URL” field in the Trigslink MCP Registration Form.
+```
+
+## 🧩 Trigslink Integration
+
+Once your MCP service is exposed via Cloudflare, the tunnel URL can be submitted via the UI form to complete your MCP registration.
+
+
+## 🛠 Development
+
+To test changes locally:
+```bash
+pip install -e .
+```
+
+To uninstall:
+```bash
+pip uninstall trigslink-tunnel
+```
+
+## 🔒 Security
+
+- This tool exposes your local server to the internet.
+- Ensure the backend service you’re exposing is secured.
+- Tunnel URLs are random and ephemeral, but use at your own discretion.
+
+## 📄 License
+
+MIT License. © 2025 Trigslink Team.
+
+
+
+```
