@@ -1,0 +1,28 @@
+[package]
+name = "argon2-hasher"
+authors      = ["Malaa Technologies <engineering@malaa.tech>"]
+description  = "Fast Argon2id password hashing via Rust (SIMD, no knobs)."
+license      = "MIT"
+edition      = "2024"
+repository   = "https://github.com/malaa-tech/argon2-hasher"
+readme       = "README.md"
+keywords     = ["argon2", "password", "hash", "rust", "pyo3"]
+categories   = ["cryptography", "security"]
+
+
+
+[dependencies]
+# Argon2 with high-speed features; no default features so we pick what we want
+argon2     = { version = "0.5.3" }
+num_cpus = "1.17.0"
+once_cell = "1.21.3"
+
+pyo3 = { version = "0.25.1", features = ["extension-module"] }
+rand = { version = "0.8", default-features = false, features = ["std"] }
+
+[lib]
+name = "argon2_hasher"
+crate-type = ["cdylib"]  # Required for Python bindings
+
+[tool.maturin]
+include = ["src", "argon2_hasher.pyi"]
