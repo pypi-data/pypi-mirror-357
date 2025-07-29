@@ -1,0 +1,2 @@
+[console_scripts]
+textfission = textfission.cli:main
