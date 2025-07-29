@@ -1,0 +1,12 @@
+cryptography!=3.4.0,>=3.1
+
+[dev]
+black
+isort
+mypy
+types-freezegun
+
+[test]
+pytest~=6.0
+pytest-cov
+freezegun
