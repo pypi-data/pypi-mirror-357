@@ -1,0 +1,25 @@
+{
+    "config": {
+        "flow_title": "{username}"
+    },
+    "entity": {
+        "binary_sensor": {
+            "bluetooth": {
+                "name": "Bluetooth"
+            }
+        },
+        "notify": {
+            "announce": {
+                "name": "\u041e\u0431\u0458\u0430\u0432\u0438"
+            },
+            "speak": {
+                "name": "\u0417\u0431\u043e\u0440\u0443\u0432\u0430\u0458"
+            }
+        },
+        "switch": {
+            "do_not_disturb": {
+                "name": "\u041d\u0435 \u0432\u043e\u0437\u043d\u0435\u043c\u0438\u0440\u0443\u0432\u0430\u0458"
+            }
+        }
+    }
+}
