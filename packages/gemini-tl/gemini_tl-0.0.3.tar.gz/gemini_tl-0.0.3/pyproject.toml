@@ -1,0 +1,30 @@
+[project]
+name = "gemini-tl"
+version = "0.0.3"
+authors = [
+  { name="FlippFuzz" },
+]
+description = "Generate and translate English and Japanese subtitles using Google Gemini AI."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pysubs2",
+    "google-genai",
+    "static-ffmpeg",
+    "pymediainfo",
+    "json-repair",
+    "pathvalidate",
+    "pydantic",
+    "retrying",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/FlippFuzz/gemini-tl"
+"Bug Tracker" = "https://github.com/FlippFuzz/gemini-tl/issues"
+
+[project.scripts]
+gemini-tl = "gemini_tl.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
