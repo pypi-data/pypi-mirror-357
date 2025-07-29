@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: spear-ai-sqlfluff-config
+Version: 2.0.2
+Summary: Spear AI’s SQLFluff config
+Project-URL: Changelog, https://github.com/spear-ai/citizen/tree/main/packages/sqlfluff-config/CHANGELOG.md
+Project-URL: Documentation, https://github.com/spear-ai/citizen/tree/main/packages/sqlfluff-config
+Project-URL: Repository, https://github.com/spear-ai/citizen.git
+Author-email: Spear AI <org@spear.ai>
+License: MIT
+Keywords: SQLFluff,Spear AI,config
+Requires-Python: <3.13,>=3.10
+Requires-Dist: sqlfluff==3.0.6
+Description-Content-Type: text/markdown
+
+# @spear-ai/sqlfluff-config
+
+A [SQLFluff](https://sqlfluff.com) config.
+
+## Installation
+
+```shell
+uv add --dev spear_ai_sqlfluff_config
+```
+
+## Usage
+
+Copy the following to your `.sqluff` file:
+
+```shell
+cp ./.venv/lib/python3.11/site-packages/spear-ai-sqlfluff-config/.sqlfluff .sqlfluff
+```
