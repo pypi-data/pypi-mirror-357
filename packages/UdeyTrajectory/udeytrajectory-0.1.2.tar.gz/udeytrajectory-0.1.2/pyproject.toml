@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-data = { "UdeyTrajectory" = ["*.json"] }
+
+[project]
+name = "UdeyTrajectory"
+version = "0.1.2"
+description = "A short description of your module"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+  { name="Your Name", email="your@email.com" }
+]
+dependencies = [
+  "requests",                      # example dependency
+]

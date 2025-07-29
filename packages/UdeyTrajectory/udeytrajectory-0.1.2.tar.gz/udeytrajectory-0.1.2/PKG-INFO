@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: UdeyTrajectory
+Version: 0.1.2
+Summary: A short description of your module
+Author: Dennis Bunch
+Author-email: Your Name <your@email.com>
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Dynamic: author
+
+This is Humaniize trajectorry calculation module
