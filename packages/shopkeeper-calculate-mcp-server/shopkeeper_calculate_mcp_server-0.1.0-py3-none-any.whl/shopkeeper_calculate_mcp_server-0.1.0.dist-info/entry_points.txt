@@ -1,0 +1,2 @@
+[console_scripts]
+shopkeeper-calculate-mcp-server = shopkeeper_calculate_mcp_server:main
