@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+pyevil/__init__.py
+pyevil/_evil.c
+pyevil/evil.py
+pyevil.egg-info/PKG-INFO
+pyevil.egg-info/SOURCES.txt
+pyevil.egg-info/dependency_links.txt
+pyevil.egg-info/top_level.txt
