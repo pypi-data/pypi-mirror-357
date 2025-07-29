@@ -1,0 +1,7 @@
+gpt_agents_py/__init__.py,sha256=2YhxYsYPfHe1Wxb8f7hTstjSSXrEujyJAoz5Bm36MRo,360
+gpt_agents_py/extensions/anthropic_llm_caller.py,sha256=UfNTIoDo2Q5u3PzGriO1YGRIA0b8lztZVxh0OmX88BQ,6794
+gpt_agents_py/gpt_agents.py,sha256=5EzQzFJMralu_sP86DbYM5BWER6mRdScvkpK08KTNYU,38731
+gpt_agents_py-0.1.12.dist-info/LICENSE,sha256=WIvN46jFZHbu1YcgobU0f0U4LTqmuoN4lazv5zHVIXQ,1087
+gpt_agents_py-0.1.12.dist-info/METADATA,sha256=QbZ2TFFi4DNWMPfrf2NiaiK5nl1JsLRDZdLI8FffthA,8708
+gpt_agents_py-0.1.12.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+gpt_agents_py-0.1.12.dist-info/RECORD,,
