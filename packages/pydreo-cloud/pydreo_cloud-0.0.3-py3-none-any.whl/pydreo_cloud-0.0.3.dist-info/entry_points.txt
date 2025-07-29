@@ -1,0 +1,2 @@
+[console_scripts]
+dreo = dreo.cli:cli
