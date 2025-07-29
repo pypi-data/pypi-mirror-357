@@ -1,0 +1,3 @@
+[console_scripts]
+dds = dynamic_data_set.cli:app
+dynamic-data-set = dynamic_data_set.cli:app

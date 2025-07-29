@@ -1,0 +1,10 @@
+dynamic_data_set/__init__.py,sha256=CppP8z5i4SynKtP4Ge4y38DqeTNPuMhVZfW01ooGzNw,252
+dynamic_data_set/__main__.py,sha256=J4xdzCJLzQ77IMfj8ELOHGY5z9L4LQh5k6DyLyaUNC8,120
+dynamic_data_set/cli.py,sha256=2aUSdzXKWigvyRG3D2BASFLLsplVQLLZNA01NUnqdzI,2800
+dynamic_data_set/converter.py,sha256=c4UIS8GubFohkM89OfX0IiKrZLBbJRU7v5vfmKx9VUQ,5878
+dynamic_data_set/formatter.py,sha256=2Qmz8drj8_h8QQoXyEEWjSn-k9mPW1sXW64L4aL7wR4,2669
+dynamic_data_set-0.1.0.dist-info/METADATA,sha256=xr6uQzg3EbQCm86aDf8ktyPaCxnaeMnd_gQe5qev5vE,7240
+dynamic_data_set-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+dynamic_data_set-0.1.0.dist-info/entry_points.txt,sha256=5ZMNs2Glk91w2iw85zZ6JPu2hnbrW3vALq_RscFq6tI,93
+dynamic_data_set-0.1.0.dist-info/licenses/LICENSE,sha256=cFQFwSNfyWdU8voPvqs8D--jaoRnobjKJiz54uTpmms,1081
+dynamic_data_set-0.1.0.dist-info/RECORD,,
