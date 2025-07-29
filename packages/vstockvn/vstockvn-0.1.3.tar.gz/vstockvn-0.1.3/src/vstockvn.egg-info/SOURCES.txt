@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/__init__.py
+src/main.py
+src/stock_vn.py
+src/vstockvn.egg-info/PKG-INFO
+src/vstockvn.egg-info/SOURCES.txt
+src/vstockvn.egg-info/dependency_links.txt
+src/vstockvn.egg-info/requires.txt
+src/vstockvn.egg-info/top_level.txt
