@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: aiozip
+Version: 0.0.1
+Summary: This is an asynchronous library that provides APIs for compressing or decompressing files.
+Author-email: uoduodihs <6379ok@gmail.com>
+Project-URL: Homepage, https://github.com/6379ok/aiozip
+Project-URL: Bug Tracker, https://github.com/6379ok/aiozip/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown

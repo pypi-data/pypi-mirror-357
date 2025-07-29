@@ -1,0 +1,6 @@
+pyproject.toml
+aiozip.egg-info/PKG-INFO
+aiozip.egg-info/SOURCES.txt
+aiozip.egg-info/dependency_links.txt
+aiozip.egg-info/top_level.txt
+uoduod/__init__.py

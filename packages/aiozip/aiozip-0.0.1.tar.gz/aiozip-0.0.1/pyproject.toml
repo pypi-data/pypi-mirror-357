@@ -1,0 +1,23 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=65.5.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aiozip"
+version = "0.0.1"
+authors = [
+  { name="uoduodihs", email="6379ok@gmail.com" },
+]
+description = "This is an asynchronous library that provides APIs for compressing or decompressing files."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/6379ok/aiozip"
+"Bug Tracker" = "https://github.com/6379ok/aiozip/issues"
