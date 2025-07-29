@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+prologix_netfinder/__init__.py
+prologix_netfinder/getifaddrs.py
+prologix_netfinder/nfcli.py
+prologix_netfinder/nfutil.py
+prologix_netfinder.egg-info/PKG-INFO
+prologix_netfinder.egg-info/SOURCES.txt
+prologix_netfinder.egg-info/dependency_links.txt
+prologix_netfinder.egg-info/entry_points.txt
+prologix_netfinder.egg-info/top_level.txt
