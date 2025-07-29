@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=65.5.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "abc4d" # pip install
+version = "0.1.0"
+description = "..."
+readme = "README.md" # 可选, 如果你有 README.md 文件
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"} # 或者你的许可证
+authors = [
+    {name = "Yuyao Huang (Sam)", email = "huangyuyao@outlook.com"},
+]
+dependencies = [
+    "cloudpickle",
+    "omegaconf",
+    "iopath",
+    "hydra-core",
+    "scipy",
+    "pydantic",
+    "jaxtyping",
+    "lzip",
+    "colorlog",
+    "rich",
+    "thop",
+]
+
+[tool.setuptools]
+py-modules = ["abcd"]
+
+# 包含非 Python 文件
+# [tool.setuptools.package-data]
+# "package.path" = ["*.json"]
+
+# 命令行程序入口
+# [project.scripts]
+# script-name = "module.path:function"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "pytest-mock",
+]

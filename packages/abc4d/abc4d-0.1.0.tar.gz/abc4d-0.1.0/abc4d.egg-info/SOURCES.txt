@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+abc4d.egg-info/PKG-INFO
+abc4d.egg-info/SOURCES.txt
+abc4d.egg-info/dependency_links.txt
+abc4d.egg-info/requires.txt
+abc4d.egg-info/top_level.txt
