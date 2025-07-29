@@ -1,0 +1,13 @@
+
+[dev]
+build
+pytest>=8.0
+twine
+
+[keywords]
+text
+letters
+regex
+unicode
+extractor
+NLP
