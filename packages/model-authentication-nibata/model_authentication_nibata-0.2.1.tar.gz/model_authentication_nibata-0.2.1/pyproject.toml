@@ -1,0 +1,10 @@
+[project]
+name = "model-authentication-nibata"
+version = "0.2.1"
+description = "Add your description here"
+requires-python = ">=3.13"
+dependencies = [
+    "sqlmodel>=0.0.24",
+    "pydantic[email]",
+    "twine>=6.1.0",
+]
