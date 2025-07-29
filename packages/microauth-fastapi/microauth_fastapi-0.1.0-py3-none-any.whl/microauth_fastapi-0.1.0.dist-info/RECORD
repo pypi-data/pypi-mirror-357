@@ -1,0 +1,9 @@
+microauth_fastapi/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+microauth_fastapi/auth.py,sha256=193G00-ISQ1RGMjk4qohvLZlJlA0Yi7ZYJzyZuiLNso,1660
+microauth_fastapi/config.py,sha256=RJ9W6pRR9uY3ph5RxzldLN2lbgpXHWlC4Gcat6H6LnU,954
+microauth_fastapi/dependencies.py,sha256=U_xQ1ENIc-wEuvaqDwjE4XyjPzaLPdAcAT8KpYI3y_8,1108
+microauth_fastapi/jwks.py,sha256=BFY2nEabpUzfK4aed6VBDo_oruSGtS745FL5wYXeiVs,643
+microauth_fastapi-0.1.0.dist-info/METADATA,sha256=japKGFN6v9blUJv4zY3_AJYw3keZ3TSc05rzn9GJgrI,627
+microauth_fastapi-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+microauth_fastapi-0.1.0.dist-info/top_level.txt,sha256=PFhDXpDFLd7TqmRUySjPFsGpcfcPpM1_ONsq8DdYAOk,18
+microauth_fastapi-0.1.0.dist-info/RECORD,,
