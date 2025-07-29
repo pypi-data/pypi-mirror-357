@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: pybezier
+Version: 0.1.4
+Summary: A simple Python package to manipulate Bézier curves
+Home-page: https://github.com/TobiaMarcucci/pybezier
+Author: Tobia Marcucci
+Author-email: tobiam@mit.edu
+License: MIT
+License-File: LICENSE
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
