@@ -1,0 +1,15 @@
+README.md
+setup.py
+mantra/__init__.py
+mantra/__main__.py
+mantra/ast_nodes.py
+mantra/cli.py
+mantra/interpreter.py
+mantra/lexer.py
+mantra/parser.py
+mantra_lang.egg-info/PKG-INFO
+mantra_lang.egg-info/SOURCES.txt
+mantra_lang.egg-info/dependency_links.txt
+mantra_lang.egg-info/entry_points.txt
+mantra_lang.egg-info/requires.txt
+mantra_lang.egg-info/top_level.txt
