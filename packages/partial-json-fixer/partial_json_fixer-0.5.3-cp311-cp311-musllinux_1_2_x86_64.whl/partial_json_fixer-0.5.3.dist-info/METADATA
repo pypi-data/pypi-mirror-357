@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: partial-json-fixer
+Version: 0.5.3
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+## partial-json-fixer
+
+Github: https://github.com/maheshbansod/partial-json-fixer
+
+This project fixes any partial json.
+
+It's lenient in some cases so **do not rely on this for checking JSON**.
+
+This package is intended to be used to complete partial JSONs coming from
+streams.
+
+
+### Usage
+
+```python
+from partial_json_fixer import fix_json_string
+
+assert fix_json_string("{\"key\": \"value") == "{\"key\": \"value\"}"
+```
+
+
