@@ -1,0 +1,6 @@
+gthelp/__init__.py,sha256=tjgiNxf5Pb0y8nFo5LsG3vCh5v39YiVwWwoLFFl-hX0,70
+gthelp/gthelp.py,sha256=9zvDm3igYihcX-6l9SqQZy1osq9I8fi9oG9jnIA2Mvg,2746
+gthelp/assets/arm64-v8a/libhelper,sha256=11lERWbpmGHT7DirwrGpsp9_CroajJHhff6G7HhdYgs,470992
+gthelp-1.0.15.dist-info/METADATA,sha256=2aEXYaH65qakxUoxyNwSjaEd4OmWVZHsC8MMJuVwBT8,162
+gthelp-1.0.15.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+gthelp-1.0.15.dist-info/RECORD,,
