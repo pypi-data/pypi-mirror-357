@@ -1,0 +1,3 @@
+[console_scripts]
+matrixgen=matrixgen.cli:main
+
