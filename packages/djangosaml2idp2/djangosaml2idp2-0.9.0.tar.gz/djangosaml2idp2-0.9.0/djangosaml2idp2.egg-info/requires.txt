@@ -1,0 +1,4 @@
+django>=4.2
+pysaml2>=6.5.1
+pytz
+arrow
