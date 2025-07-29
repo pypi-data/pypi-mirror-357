@@ -1,0 +1,29 @@
+[project]
+name = "rgrow"
+dependencies = ["numpy ~= 2.0", "attrs ~= 23.2", "matplotlib ~= 3.9", "typing_extensions", "tqdm"]
+requires-python = ">=3.9"
+dynamic = ["version"]
+
+[project.optional-dependencies]
+
+testing = [
+    "pytest",
+    "hypothesis"
+]
+
+[build-system]
+requires = ["maturin~=1.4"]
+build-backend = "maturin"
+
+[tool.pytest.ini_options]
+norecursedirs = [
+    "dist",
+    "build",
+    ".tox"]
+testpaths = ["tests"]
+
+[tool.maturn]
+bindings = "pyo3"
+
+[tool.maturin]
+manifest-path = "py-rgrow/Cargo.toml"
