@@ -1,0 +1,8 @@
+mvupkg_rstanic/__init__.py,sha256=tE2z5fuyGLa7i7pYFVB3v4nYBEs8OXUhQqwnIbNmDCw,16223
+mvupkg_rstanic/mvupkg_rstanic.ctf,sha256=naqpemhZhu_nBSDetet8Zmp7W8o4tMLcdZIIDSLlPWE,487718
+mvupkg_rstanic/algorithms/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mvupkg_rstanic/algorithms/mvu.py,sha256=iUq4Z_6r5zk6czHbAjwP5BQl8XLfQ3-QrozqJB1vDVk,5330
+mvupkg_rstanic-2.4.dist-info/METADATA,sha256=V1ZFU8DvXtYNxNNBFUuSPZwSzl-f838TFiciYruMkSg,186
+mvupkg_rstanic-2.4.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
+mvupkg_rstanic-2.4.dist-info/top_level.txt,sha256=jfPirPrmiq_o16pv933HDuIuuAiaChAggHHADeA1okE,15
+mvupkg_rstanic-2.4.dist-info/RECORD,,
