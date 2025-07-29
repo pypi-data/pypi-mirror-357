@@ -1,0 +1,7 @@
+kapil_bhai.py
+pyproject.toml
+kapil_bhai.egg-info/PKG-INFO
+kapil_bhai.egg-info/SOURCES.txt
+kapil_bhai.egg-info/dependency_links.txt
+kapil_bhai.egg-info/requires.txt
+kapil_bhai.egg-info/top_level.txt
