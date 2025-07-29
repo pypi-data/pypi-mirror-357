@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.py
+src/organizer/__init__.py
+src/organizer/__main__.py
+src/organizer/engine.py
+src/organizer/interface.py
+src/organizer/utils.py
+src/tidybit2.egg-info/PKG-INFO
+src/tidybit2.egg-info/SOURCES.txt
+src/tidybit2.egg-info/dependency_links.txt
+src/tidybit2.egg-info/entry_points.txt
+src/tidybit2.egg-info/requires.txt
+src/tidybit2.egg-info/top_level.txt
