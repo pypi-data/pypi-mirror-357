@@ -1,0 +1,4 @@
+[console_scripts]
+digy=digy.cli:main
+digy-load=digy.loader:load_command
+

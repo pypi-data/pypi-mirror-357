@@ -1,0 +1,11 @@
+digy/__init__.py,sha256=SuNe1YeBtaoygcM1fWmtH2eMPpqx9Il8U7qxHnNGlgc,431
+digy/cli.py,sha256=53srRc1J8RomaUvmWjpGP7lIChbRhQC0m5mogIv9mLM,5206
+digy/deployer.py,sha256=MNd_RBYgG_5_aetekwHRJ1k0aS7V6Me8iUAQUL4PW6M,8268
+digy/interactive.py,sha256=-x2Iv77iYEEYUqDvxE73Kz0_aqbdjv-rBWhLILnpPG8,13429
+digy/loader.py,sha256=NrteMIxjQ2JsyVFQ0lDdgp7nFbJsMRxJqneNEHXv1RQ,7200
+digy/version.py,sha256=C8rDiUCzcj3wsoZhk12h6yWUd46HP70I5o0s2PbvxEs,221
+digy-0.1.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+digy-0.1.1.dist-info/METADATA,sha256=B7h-SSORRpf1XqdYmz5OgPPl1j8BTBgByfngFTgSDjI,7491
+digy-0.1.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+digy-0.1.1.dist-info/entry_points.txt,sha256=2BWQXmYefShODNDtmEQvM3KqYL9o08gcadY3yVaMka8,73
+digy-0.1.1.dist-info/RECORD,,
