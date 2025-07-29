@@ -1,0 +1,2 @@
+[console_scripts]
+ucarball = ucarball.command_line:main
