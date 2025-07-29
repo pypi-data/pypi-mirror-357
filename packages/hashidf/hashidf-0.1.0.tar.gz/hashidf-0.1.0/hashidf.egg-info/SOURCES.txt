@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+hashidf/__init__.py
+hashidf/data.txt
+hashidf.egg-info/PKG-INFO
+hashidf.egg-info/SOURCES.txt
+hashidf.egg-info/dependency_links.txt
+hashidf.egg-info/requires.txt
+hashidf.egg-info/top_level.txt
