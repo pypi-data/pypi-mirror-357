@@ -1,0 +1,211 @@
+Metadata-Version: 2.4
+Name: RsLogMod
+Version: 1.2.0
+Summary: A versatile logging module for Python projects
+Home-page: https://github.com/D-3-X/RsLogMod/
+Author: D-3-X
+Author-email: felix.dxlan@gmail.com
+License: MIT
+Project-URL: Bug Tracker, https://github.com/D-3-X/RsLogMod/issues
+Project-URL: Documentation, https://github.com/D-3-X/RsLogMod#readme
+Project-URL: Source Code, https://github.com/D-3-X/RsLogMod
+Keywords: logging,log rotation,python logging,programmable customization
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-python
+Dynamic: summary
+
+# RsLogMod
+
+
+*RsLogMod* is a flexible and powerful Python logging module designed to manage log files with features such as log rotation, customizable paths, and various log levels. It is easy to use yet offers extensive customization options.
+
+
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Default Behavior](#default-behavior)
+- [Log Levels & Prefixes](#log-levels--prefixes)
+- [Customization](#customization)
+  - [Set Log Folder Path](#set-log-folder-path)
+  - [Set Archive Folder Path](#set-archive-folder-path)
+  - [Set Maximum Log Size](#set-maximum-log-size)
+  - [Enable or Disable Log Rotation](#enable-or-disable-log-rotation)
+  - [Enable or Disable Verbose Mode](#enable-or-disable-verbose-mode)
+  - [Display Configuration](#display-configuration)
+- [Configuration](#configuration)
+- [Changelog](#changelog)
+- [License](#license)
+
+## Installation
+
+Install RsLogMod using `pip`:
+
+```bash
+pip install rslogmod
+```
+
+Then import the module:
+
+```python
+from RsLogMod import rlog, RsConfig
+```
+
+## Getting Started
+
+Here’s a simple example:
+
+```python
+from RsLogMod import rlog, RsConfig
+
+# Set log folder path (only needed once, saved in config)
+RsConfig.set_log_folder_path('path/to/log/folder')
+
+# Log a message
+rlog(log_name='my_log', log_level=1, log_entry='This is a log entry.')
+```
+
+### Explanation
+- **`log_name`**: Name of the log file (e.g., `my_log`).
+- **`log_level`**: Log level (`1` for INFO, `2` for ERROR, etc.).
+- **`log_entry`**: The message to log.
+- **`verbose`**: Optionally set `verbose=True` to print the message to the terminal as well.
+
+## Default Behavior
+
+1. **Log Rotation**: Enabled by default (log files rotate when they reach the set max size).
+2. **Log to File and Terminal**: Logs are written to the file, and verbose mode controls whether they are printed to the terminal.
+3. **Config Persistence**: Once paths are set, they are stored in a config file for future sessions.
+
+## Log Levels & Prefixes
+
+RsLogMod supports the following log levels, each with its own prefix:
+
+- **0**: `[DEBUG]` - Detailed debug information.
+- **1**: `[INFO]` - General program execution info.
+- **2**: `[ERROR]` - Errors encountered during execution.
+- **3**: `[CRITICAL]` - Critical issues that need attention.
+- **4**: `[SEC-ALERT]` - Security-related alerts.
+- **5**: `[SEC-BREACH]` - Security breaches or serious issues.
+
+## Customization
+
+### Set Log Folder Path
+
+```python
+RsConfig.set_log_folder_path('/path/to/logs')
+```
+
+### Set Archive Folder Path
+
+```python
+RsConfig.set_archive_path('/path/to/archive')
+```
+
+### Set Maximum Log Size
+
+```python
+RsConfig.set_log_file_max_size(50)  # Max size is set in MB
+```
+
+### Enable or Disable Log Rotation
+
+```python
+RsConfig.enable_log_rotation(True)  # Enable or disable log rotation
+```
+
+### Enable or Disable Verbose Mode
+
+Verbose mode controls whether logs are printed to the terminal. It can be controlled globally via the config or for each individual `rlog()` call.
+
+#### Global Verbose Mode
+
+Enable verbose globally, applying to all future log entries unless overridden:
+
+```python
+RsConfig.enable_verbose(True)  # Enable terminal printing for all logs
+```
+
+#### Per-Entry Verbose Mode
+
+Control verbosity per log entry by using the `verbose` parameter in `rlog()`:
+
+```python
+rlog(log_name='my_log', log_level=1, log_entry='This will print to terminal', verbose=True)
+```
+
+### Verbose Mode Behavior
+
+- If `verbose` is passed in `rlog()`, it overrides the global config.
+- If not passed (`None`), it falls back to the config file setting.
+- If both are unset (`None`), logs will only be written to the file.
+
+#### Example Configuration:
+
+```json
+{
+    "log_rotation": true,
+    "verbose": null,
+    "max_size_in_mega_bytes": 50,
+    "log_folder": "path/to/logs",
+    "archive_folder": "path/to/archive"
+}
+```
+
+- **`"verbose": true`**: Logs print to terminal and file.
+- **`"verbose": false`**: Logs are only written to the file.
+- **`"verbose": null`**: Behavior is controlled by the individual `rlog()` calls.
+
+### Display Configuration
+
+```python
+RsConfig.display()  # Display the current configuration in JSON format
+```
+
+## Configuration
+
+RsLogMod stores its settings in a `configs.json` file:
+
+```json
+{
+  "log_rotation": true,
+  "verbose": null,
+  "max_size_in_mega_bytes": 50,
+  "log_folder": "/path/to/logs",
+  "archive_folder": "/path/to/logs/archived"
+}
+```
+
+- **`log_rotation`**: Enables or disables log rotation.
+- **`verbose`**: Controls whether logs are printed to the terminal.
+- **`log_folder`**: Directory where logs are saved.
+- **`archive_folder`**: Directory where archived logs are stored.
+
+
+## Changelog
+
+### [Jan 15, 2025]
+- **Class Name Change**: Renamed the `Configure` class to `RsConfig` for better clarity and consistency in the codebase.
+- **Deprecation Warning**: The `Configure` class is still functional but **deprecated**. It will be removed in **version 2**. A deprecation warning will appear when using the old class name.
+- **Action Required**: Start using `RsConfig` in your code to avoid issues in future releases. The old class (`Configure`) will NOT be available in version 2.
+
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/D-3-X/Rodent-REPO/blob/main/licenses/MIT_License.txt). See the LICENSE file for details.

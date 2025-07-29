@@ -1,0 +1,7 @@
+{
+    "log_rotation": true,
+    "verbose": false,
+    "max_size_in_mega_bytes": 10,
+    "log_folder": "logs",
+    "archive_folder": "archive"
+}
