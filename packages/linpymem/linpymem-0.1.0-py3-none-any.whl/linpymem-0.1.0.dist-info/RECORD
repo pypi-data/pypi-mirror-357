@@ -1,0 +1,8 @@
+linpymem/__init__.py,sha256=9Xfp21Evj7nGS2pxromFByCDZNH3FcEyUIIvMCrT3Kg,43
+linpymem/core.py,sha256=rqL8ajKQCirCPDizabpA5lptozBsNsSPAFeGwZT8XtA,26928
+tests/integration_test.py,sha256=TeGzj4-3xXovd4s3A3NDMQFqQUkZcfpgGPDqBxn9PIg,2107
+linpymem-0.1.0.dist-info/LICENSE,sha256=agJGOo2CsutcgUezf6aY2W_y-wyKFRl-6bEtUxrcSDA,1065
+linpymem-0.1.0.dist-info/METADATA,sha256=rMRUpvqqzpKeBYHmqole1i9bI2zeB66O3NH-oX81aok,4704
+linpymem-0.1.0.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+linpymem-0.1.0.dist-info/top_level.txt,sha256=M-eoG3YQAYOYjKHxqgqH2y57hcel-ri4F8_zWb_PTnI,15
+linpymem-0.1.0.dist-info/RECORD,,
