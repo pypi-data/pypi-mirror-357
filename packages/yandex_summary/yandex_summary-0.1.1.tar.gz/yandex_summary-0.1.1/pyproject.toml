@@ -1,0 +1,20 @@
+[project]
+name = "yandex_summary"
+version = "0.1.1"
+description = "Asynchronous YandexGPT summary API client"
+readme = "README.md"
+authors = [
+    { name = "Herman Guilliman", email = "hermanguilliman@proton.me" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "aiohttp>=3.12.13",
+    "bs4>=0.0.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = []
