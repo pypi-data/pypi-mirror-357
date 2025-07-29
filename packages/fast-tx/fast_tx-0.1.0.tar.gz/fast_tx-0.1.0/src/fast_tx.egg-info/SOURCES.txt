@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/fast_tx/__init__.py
+src/fast_tx/core.py
+src/fast_tx.egg-info/PKG-INFO
+src/fast_tx.egg-info/SOURCES.txt
+src/fast_tx.egg-info/dependency_links.txt
+src/fast_tx.egg-info/requires.txt
+src/fast_tx.egg-info/top_level.txt
+tests/test_basics.py

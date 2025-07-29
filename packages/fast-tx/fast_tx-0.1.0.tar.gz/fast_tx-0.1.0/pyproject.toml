@@ -1,0 +1,11 @@
+[project]
+name = "fast-tx"
+version = "0.1.0"
+description = "Fast row and column transformations for pandas."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numba>=0.57.0",
+    "numpy>=2.2.6",
+    "pandas>=2.3.0",
+]
