@@ -1,0 +1,2 @@
+class GroupTrait:
+    pass
