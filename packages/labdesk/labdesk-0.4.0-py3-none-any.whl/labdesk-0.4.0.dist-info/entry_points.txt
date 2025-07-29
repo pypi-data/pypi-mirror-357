@@ -1,0 +1,5 @@
+[console_scripts]
+labd=labdesk.cli.main:main
+labd-manager=labdesk.scripts.manager:main
+labd-runner=labdesk.scripts.runner:main
+
