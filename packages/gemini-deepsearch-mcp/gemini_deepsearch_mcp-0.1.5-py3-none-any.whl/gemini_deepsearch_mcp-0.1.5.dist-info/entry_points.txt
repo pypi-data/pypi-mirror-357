@@ -1,0 +1,2 @@
+[console_scripts]
+gemini-deepsearch-mcp = gemini_deepsearch_mcp.main:main

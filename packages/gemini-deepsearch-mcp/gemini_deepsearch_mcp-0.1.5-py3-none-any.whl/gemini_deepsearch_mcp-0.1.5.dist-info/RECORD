@@ -1,0 +1,15 @@
+gemini_deepsearch_mcp/__init__.py,sha256=6fh8O8FV4E6XIzUgHtF-kwG4uKZQpmN6sGB-wsGVcX4,60
+gemini_deepsearch_mcp/app.py,sha256=dSRDpdE5wmHS7qDC2E_aEoKtU4drPNebsAXuTNddgV8,2869
+gemini_deepsearch_mcp/main.py,sha256=jNTak-8ar7PxwCCtSSjzZqgAqGDFNuCFSHwqVFKOFIU,3407
+gemini_deepsearch_mcp/agent/__init__.py,sha256=U1_zJ7wlm_HNbFT1kzCkOzANS9ZbiJ5eHQpHpqAMajo,46
+gemini_deepsearch_mcp/agent/configuration.py,sha256=fUt8oOEmEIyx2SXeY61dTRJOgjsqIjZIrQLBac6oFiM,2019
+gemini_deepsearch_mcp/agent/graph.py,sha256=P2kIWQAPfjcAcynMnOpEYUn2sSdmXjaemIaF5zuxQPE,10699
+gemini_deepsearch_mcp/agent/prompts.py,sha256=epmDem2n0-IxqiPjzvRosMA2t2OwsUugVY79AZfKTFU,4688
+gemini_deepsearch_mcp/agent/state.py,sha256=6KwRVV5WoTciobQ49B3z3CXS6OrT5hNunLcUhMVTk1I,1067
+gemini_deepsearch_mcp/agent/tools_and_schemas.py,sha256=UWGPFluqARyMNtY0Yo35MCvPmxDmGLI1CjSAYZmOheY,770
+gemini_deepsearch_mcp/agent/utils.py,sha256=WoX4IA8GqDbabn6H4zG4nBoLZyE7G34ZiUzKcG6FRK8,7109
+gemini_deepsearch_mcp-0.1.5.dist-info/METADATA,sha256=WBdnJvTq8tNLqgu9XBmNuOXxzPpYPw3hi-fLAn9BIyI,5401
+gemini_deepsearch_mcp-0.1.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gemini_deepsearch_mcp-0.1.5.dist-info/entry_points.txt,sha256=_OsOrnX5m5STrw31gAzaqTFFKGoSVPbDXw6Y-2OGbZg,74
+gemini_deepsearch_mcp-0.1.5.dist-info/top_level.txt,sha256=i-rrDB2mQvbsF72R5kqt84PQKK2jEPO6dGG6Ptpgc_M,22
+gemini_deepsearch_mcp-0.1.5.dist-info/RECORD,,
