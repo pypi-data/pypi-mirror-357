@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "pycontrolaudacity-cli"
+version = "0.1.5"
+description = "Cria rótulos e atualiza o timestamp de uma trilha de áudio no Audacity, possibilitando seu posterior particionamento em fragmentos."
+authors = ["dUnIO <dunio.dev@gmail.com>"]
+maintainers = ["dUnIO <dunio.dev@gmail.com>"]
+license = "GPLv3 License"
+readme = "README.md"
+packages = [{include = "pycontrolaudacity_cli"}]
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "Environment :: Console",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Development Status :: 5 - Production/Stable",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+
+
+[tool.poetry.urls]
+"Documentação" = "https://pycontrolaudacity-cli.readthedocs.io/pt-br/latest/"
+"Código" = "https://salsa.debian.org/dunio.dev/pycontrolaudacity-cli"
+"Bug Tracker" = "https://salsa.debian.org/dunio.dev/pycontrolaudacity-cli/isuues"
+
+
+[tool.poetry.scripts]
+PyControlAudacity-cli = "pycontrolaudacity_cli.cli:cmd_parser"
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.13.0"
+
+
+[tool.poetry.group.doc.dependencies]
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.5.38"
+mkdocstrings = "^0.26.1"
+mkdocstrings-python = "^1.11.1"
+
+
+[tool.taskipy.tasks]
+docs = "mkdocs serve"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
