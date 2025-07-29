@@ -1,0 +1,3 @@
+[console_scripts]
+mcp-file-lens=mcp_file_lens.__main__:main
+
