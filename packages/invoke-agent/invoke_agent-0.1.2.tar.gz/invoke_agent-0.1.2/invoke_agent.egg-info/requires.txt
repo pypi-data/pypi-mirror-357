@@ -1,0 +1,7 @@
+requests
+python-dotenv
+tldextract
+pyyaml
+langchain-core
+langchain
+authlib
