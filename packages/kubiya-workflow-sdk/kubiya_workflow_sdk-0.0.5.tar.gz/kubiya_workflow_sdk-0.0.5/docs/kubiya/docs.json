@@ -1,0 +1,192 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Kubiya Platform Docs",
+  "logo": {
+    "dark": "Kubiya Platform Docs",
+    "light": "Kubiya Platform Docs"
+  },
+  "favicon": "/assets/favicon.ico",
+  "colors": {
+    "primary": "#0EA5E9",
+    "light": "#38BDF8",
+    "dark": "#0284C7"
+  },
+  "topbarLinks": [
+    {
+      "name": "Platform",
+      "url": "https://app.kubiya.ai"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/kubiya-sandbox/workflows"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://app.kubiya.ai",
+    "style": "roundedRectangle"
+  },
+  "tabs": [
+    {
+      "name": "Documentation",
+      "url": "/"
+    },
+    {
+      "name": "API Reference",
+      "url": "/api-reference"
+    },
+    {
+      "name": "SDK",
+      "url": "/sdk"
+    }
+  ],
+  "primaryTab": {
+    "name": "Documentation"
+  },
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.gg/kubiya"
+    },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://kubiya.ai/blog"
+    },
+    {
+      "name": "Changelog",
+      "icon": "clock",
+      "url": "/changelog"
+    }
+  ],
+  "navigation": {
+    "groups": [
+      {
+        "group": "Introduction",
+        "pages": [
+          "getting-started/welcome",
+          "getting-started/installation", 
+          "getting-started/quickstart"
+        ]
+      },
+      {
+        "group": "Core Concepts",
+        "pages": [
+          "concepts/platform-overview",
+          "concepts/workflows",
+          "concepts/runners",
+          "concepts/integrations",
+          "concepts/deterministic-workflows",
+          "concepts/why-kubiya",
+          "concepts/agent-frameworks-comparison"
+        ]
+      },
+      {
+        "group": "Workflows",
+        "pages": [
+          "workflows/overview",
+          "workflows/architecture",
+          "workflows/dsl-reference",
+          "workflows/examples",
+          "workflows/advanced"
+        ]
+      },
+      {
+        "group": "AI & Automation",
+        "pages": [
+          "providers/overview",
+          "providers/adk/getting-started",
+          "providers/adk/agents",
+          "providers/adk/streaming"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
+          "mcp/overview",
+          "servers/overview"
+        ]
+      },
+      {
+        "group": "SDK Reference",
+        "pages": [
+          "sdk/overview",
+          "sdk/api-reference",
+          "sdk/examples",
+          "sdk/contributing",
+          "sdk/changelog"
+        ]
+      },
+      {
+        "group": "API Reference",
+        "pages": [
+          "api-reference/compose"
+        ]
+      },
+      {
+        "group": "Deployment",
+        "pages": [
+          "deployment/helm-chart"
+        ]
+      },
+      {
+        "group": "Tutorials",
+        "pages": [
+          "tutorials/ai-powered-automation"
+        ]
+      },
+      {
+        "group": "Resources",
+        "pages": [
+          "changelog",
+          "migration-guide",
+          "updates"
+        ]
+      }
+    ]
+  },
+  "footerSocials": {
+    "github": "https://github.com/kubiyabot",
+    "linkedin": "https://www.linkedin.com/company/kubiya-ai",
+    "twitter": "https://twitter.com/kubiya_ai"
+  },
+  "backgroundImage": "/assets/background.png",
+  "search": {
+    "prompt": "Search documentation..."
+  },
+  "metadata": {
+    "og:title": "Kubiya Documentation",
+    "og:description": "Build intelligent automation workflows with Kubiya's powerful SDK",
+    "og:image": "/assets/og-image.png",
+    "twitter:card": "summary_large_image"
+  },
+  "analytics": {
+    "gtm": {
+      "tagId": "GTM-XXXXXXX"
+    }
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": true
+  },
+  "modeToggle": {
+    "default": "light",
+    "isHidden": false
+  },
+  "custom": {
+    "css": ["/style.css"]
+  },
+  "theme": "mint",
+  "redirects": [
+    {
+      "source": "/providers/adk",
+      "destination": "/providers/adk/getting-started"
+    },
+    {
+      "source": "/api",
+      "destination": "/api-reference/compose"
+    }
+  ]
+}

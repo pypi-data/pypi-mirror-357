@@ -1,0 +1,631 @@
+---
+title: "Advanced Workflows"
+description: "Deep dive into advanced workflow features, streaming, custom providers, and production deployment"
+icon: "rocket"
+---
+
+# Advanced Workflows
+
+Master the advanced features of Kubiya workflows for production-grade automation.
+
+## Advanced Step Types
+
+### 1. **Shell Steps**
+
+Execute shell commands in any container:
+
+```python
+from kubiya_workflow_sdk.dsl import step
+
+result = (
+    step("process-data")
+    .docker(
+        image="alpine:latest",
+        command="""
+echo "Processing..."
+cat input.json | jq '.data[]' > output.json
+"""
+    )
+    .env(API_KEY="${secrets.API_KEY}")
+)
+```
+
+### 2. **Python Steps**
+
+Run Python scripts with full ecosystem:
+
+```python
+from kubiya_workflow_sdk.dsl import step
+
+analysis = (
+    step("analyze-metrics")
+    .docker(
+        image="python:3.11-slim",
+        command="python",
+        content="""
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('/data/metrics.csv')
+summary = df.describe()
+print(summary.to_json())
+"""
+    )
+    # Note: Package installation should be handled in Dockerfile or script
+    # Volume mounting is handled at the runner level
+)
+```
+
+### 3. **Container Steps**
+
+Run any containerized application:
+
+```python
+from kubiya_workflow_sdk.dsl import step
+
+server = (
+    step("web-server")
+    .docker(
+        image="nginx:alpine",
+        command="nginx -g 'daemon off;'"
+    )
+    # Note: Port mapping, volumes, and health checks are configured
+    # at the runner/platform level, not in the workflow definition
+)
+```
+
+### 4. **Inline Agent Steps**
+
+Embed AI decision-making:
+
+```python
+from kubiya_workflow_sdk.dsl import step
+
+decision = (
+    step("deployment-decision")
+    .inline_agent(
+        message="Analyze these metrics and decide if we should deploy: ${metrics}",
+        agent_name="deploy-analyzer",
+        ai_instructions="You are a deployment expert. Analyze metrics and return JSON with deploy_safe: boolean",
+        runners=["kubiya-hosted"],
+        llm_model="gpt-4o",
+        is_debug_mode=True,
+        tools=[
+            {
+                "name": "check-metrics",
+                "type": "docker",
+                "image": "alpine:latest",
+                "content": "#!/bin/sh\necho 'Checking metrics...'\ncat /metrics.json",
+                "args": []
+            }
+        ]
+    )
+)
+```
+
+## Streaming and Real-Time Updates
+
+### SSE Streaming
+
+```python
+from kubiya_workflow_sdk import KubiyaClient
+from kubiya_workflow_sdk.dsl import workflow
+import json
+
+client = KubiyaClient(api_key="your-key")
+
+# Create workflow
+wf = workflow("streaming-demo")
+wf.step("process", "echo 'Processing...'")
+
+# Execute with streaming
+execution_id = client.execute_workflow_yaml(wf.to_yaml())
+
+# Stream logs (if supported by your Kubiya instance)
+# Note: Streaming implementation depends on your Kubiya platform version
+```
+
+### Event Processing
+
+```python
+from kubiya_workflow_sdk import KubiyaClient
+
+class WorkflowEventProcessor:
+    def __init__(self, client: KubiyaClient):
+        self.client = client
+        self.steps_completed = 0
+        self.logs = []
+        
+    def process_execution(self, execution_id: str):
+        # Poll for status updates
+        while True:
+            status = self.client.get_execution_status(execution_id)
+            
+            if status['state'] == 'completed':
+                print(f"Workflow completed: {status}")
+                break
+            elif status['state'] == 'failed':
+                print(f"Workflow failed: {status}")
+                break
+                
+            # Process running state
+            print(f"Progress: {status}")
+            time.sleep(5)  # Poll interval
+```
+
+## Custom Providers
+
+### Creating a Custom Provider
+
+```python
+from kubiya_workflow_sdk.providers import BaseProvider
+from typing import Dict, Any, Optional
+
+class CustomLLMProvider(BaseProvider):
+    """Custom provider for workflow generation"""
+    
+    def __init__(self, client=None, config: Optional[Dict[str, Any]] = None):
+        super().__init__(client, config)
+        self.api_key = config.get("api_key") if config else None
+        self.model = config.get("model", "custom-model") if config else "custom-model"
+        
+    async def compose(
+        self, 
+        task: str,
+        mode: str = "plan",
+        context: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
+        """Generate workflow from natural language"""
+        # Your LLM logic here
+        workflow_code = await self._generate_workflow(task, context)
+        
+        return {
+            "success": True,
+            "workflow_code": workflow_code,
+            "workflow_yaml": self._convert_to_yaml(workflow_code),
+            "metadata": {"model": self.model}
+        }
+    
+    async def _generate_workflow(self, task: str, context: Dict[str, Any]) -> str:
+        # Implement your LLM call here
+        return f"""
+from kubiya_workflow_sdk.dsl import workflow
+
+wf = workflow("generated-workflow")
+wf.step("example", "echo 'Generated from: {task}'")
+"""
+```
+
+### Registering Custom Provider
+
+```python
+from kubiya_workflow_sdk.providers import register_provider, get_provider
+
+# Register your provider
+register_provider("custom-llm", CustomLLMProvider)
+
+# Use it
+provider = get_provider("custom-llm", config={"api_key": "..."})
+result = await provider.compose("Deploy my app")
+print(result["workflow_yaml"])
+```
+
+## Kubernetes Deployment
+Simply create a local runner on the Kubiya platform web interface, REST API, or CLI to get a manifest, give your runner a name - and deploy it on your cluster
+-> You can now reference this runner string for workflow execution
+
+### Local Testing
+
+```python
+# test_workflow.py
+import pytest
+from kubiya_workflow_sdk.dsl import workflow, step
+from kubiya_workflow_sdk import KubiyaClient
+
+def test_data_pipeline():
+    # Create workflow
+    wf = workflow("test-pipeline")
+    wf.step("fetch", "curl -o data.json https://api.example.com/data")
+    wf.step("process", "jq '.items[]' data.json > processed.json")
+    wf.step("validate", "python validate.py processed.json")
+    
+    # Use client with your test runner
+    client = KubiyaClient(api_key="test-key")
+    result = client.execute_workflow_yaml(
+        wf.to_yaml(),
+        runner="your-test-runner"  # Created via Kubiya platform
+    )
+    assert result['success']
+    assert len(result.get('steps', [])) == 3
+```
+
+### Debug Mode
+
+```python
+from kubiya_workflow_sdk.dsl import workflow, step
+
+# Create workflow with detailed error handling
+wf = workflow("debug-workflow")
+
+# Add steps with debug output
+for i in range(3):
+    s = (
+        step(f"step-{i}")
+        .shell(f"echo 'Executing step {i}' && sleep 1")
+        .output(f"STEP_{i}_OUTPUT")
+    )
+    wf.data["steps"].append(s.to_dict())
+
+# Execute with detailed logging
+client = KubiyaClient()
+result = client.execute_workflow_yaml(wf.to_yaml())
+
+# Inspect results
+print(f"Execution ID: {result.get('execution_id')}")
+print(f"Status: {result.get('status')}")
+for step_result in result.get('steps', []):
+    print(f"Step {step_result['name']}: {step_result['status']}")
+```
+
+## Production Best Practices
+
+### 1. **Error Handling**
+
+```python
+from kubiya_workflow_sdk.dsl import workflow, step
+
+def create_production_pipeline():
+    wf = workflow("production-pipeline")
+    
+    # Fetch with retry and fallback
+    fetch = (
+        step("fetch-critical-data")
+        .docker(
+            image="alpine:latest",
+            command="wget https://api.example.com/critical-data"
+        )
+        .retry(limit=3, exponential_base=2.0)
+        .timeout(300)  # 5 minutes
+        .output("DATA")
+    )
+    
+    # Fallback step if fetch fails
+    fallback = (
+        step("fetch-cached-data")
+        .shell("cat /cache/last-known-good.json")
+        .depends("fetch-critical-data")
+        .preconditions("${fetch-critical-data.exit_code} != 0")
+        .output("DATA")
+    )
+    
+    # Alert on fallback
+    alert = (
+        step("alert-team")
+        .docker(
+            image="curlimages/curl",
+            command="curl -X POST https://alerts.example.com/webhook -d '{\"alert\": \"Using cached data\"}'"
+        )
+        .depends("fetch-cached-data")
+    )
+    
+    wf.data["steps"].extend([
+        fetch.to_dict(),
+        fallback.to_dict(),
+        alert.to_dict()
+    ])
+    
+    return wf
+```
+
+### 2. **Monitoring & Observability**
+
+```python
+# Add monitoring through external services
+monitoring_step = (
+    step("send-metrics")
+    .docker(
+        image="datadog/agent:latest",
+        command="datadog-agent metric send workflow.step.duration ${STEP_DURATION}"
+    )
+    .env(
+        DD_API_KEY="${secrets.DATADOG_API_KEY}",
+        STEP_DURATION="${previous_step.duration}"
+    )
+)
+```
+
+### 3. **Secrets Management**
+
+```python
+# Use environment variables for secrets
+secure_step = (
+    step("database-operation")
+    .docker(
+        image="postgres:15",
+        command="psql -c 'SELECT * FROM users'"
+    )
+    .env(
+        PGPASSWORD="${DB_PASSWORD}",  # Set via Kubiya platform
+        PGUSER="${DB_USER}",
+        PGHOST="${DB_HOST}"
+    )
+)
+
+# Or use Kubiya secrets
+api_step = (
+    step("secure-api-call")
+    .docker(
+        image="curlimages/curl",
+        command="curl -H 'Authorization: Bearer ${API_TOKEN}' https://api.example.com"
+    )
+    # API_TOKEN should be configured in Kubiya platform
+)
+```
+
+### 4. **Caching & Artifacts**
+
+```python
+# Output artifacts for later use
+generate = (
+    step("generate-report")
+    .docker(
+        image="python:3.11",
+        command="python generate_report.py"
+    )
+    .stdout("/tmp/report.pdf")  # Redirect output to file
+    .output("REPORT_PATH")
+)
+
+# Use artifacts in subsequent steps
+upload = (
+    step("upload-report")
+    .docker(
+        image="amazon/aws-cli",
+        command="aws s3 cp /tmp/report.pdf s3://reports/latest.pdf"
+    )
+    .depends("generate-report")
+)
+```
+
+## Advanced Patterns
+
+### Dynamic DAG Generation
+
+```python
+from kubiya_workflow_sdk.dsl import workflow, step
+
+def create_dynamic_pipeline(regions: list):
+    wf = workflow("dynamic-pipeline")
+    
+    # Generate steps dynamically
+    process_steps = []
+    for region in regions:
+        region_step = (
+            step(f"process-{region}")
+            .docker(
+                image="processor:latest",
+                command=f"python process.py --region {region}"
+            )
+            .env(REGION=region)
+            .output(f"{region}_RESULT")
+        )
+        process_steps.append(region_step.to_dict())
+    
+    # Add all regional steps
+    wf.data["steps"].extend(process_steps)
+    
+    # Aggregate results
+    aggregate = (
+        step("aggregate-results")
+        .docker(
+            image="python:3.11",
+            command="python aggregate.py"
+        )
+        .depends([f"process-{r}" for r in regions])
+    )
+    
+    wf.data["steps"].append(aggregate.to_dict())
+    return wf
+```
+
+### Conditional Workflows
+
+```python
+from kubiya_workflow_sdk.dsl import workflow, step
+
+def create_conditional_deployment():
+    wf = workflow("conditional-deployment")
+    
+    # Run tests
+    test = (
+        step("run-tests")
+        .docker(image="python:3.11", command="pytest")
+        .output("TEST_RESULT")
+    )
+    
+    # Deploy to production if tests pass with high coverage
+    deploy_prod = (
+        step("deploy-production")
+        .docker(image="kubectl:latest", command="kubectl apply -f prod.yaml")
+        .depends("run-tests")
+        .preconditions(
+            "${TEST_RESULT.exit_code} == 0",
+            "${TEST_RESULT.coverage} > 80"
+        )
+    )
+    
+    # Deploy to staging if tests pass with lower coverage
+    deploy_staging = (
+        step("deploy-staging")
+        .docker(image="kubectl:latest", command="kubectl apply -f staging.yaml")
+        .depends("run-tests")
+        .preconditions(
+            "${TEST_RESULT.exit_code} == 0",
+            "${TEST_RESULT.coverage} <= 80"
+        )
+    )
+    
+    # Rollback if tests fail
+    rollback = (
+        step("rollback")
+        .docker(image="kubectl:latest", command="kubectl rollout undo deployment/app")
+        .depends("run-tests")
+        .preconditions("${TEST_RESULT.exit_code} != 0")
+    )
+    
+    # Create incident if tests fail
+    incident = (
+        step("create-incident")
+        .docker(
+            image="curlimages/curl",
+            command="curl -X POST https://pagerduty.com/incidents -d '{\"title\": \"Deployment failed\"}'"
+        )
+        .depends("rollback")
+    )
+    
+    wf.data["steps"].extend([
+        test.to_dict(),
+        deploy_prod.to_dict(),
+        deploy_staging.to_dict(),
+        rollback.to_dict(),
+        incident.to_dict()
+    ])
+    
+    return wf
+```
+
+### Map-Reduce Patterns
+
+```python
+from kubiya_workflow_sdk.dsl import workflow
+
+def create_map_reduce_analysis():
+    wf = workflow("map-reduce-analysis")
+    
+    # Split data into chunks
+    split = wf.step("split-data", "python split_data.py --chunks 10")
+    
+    # Map phase - use parallel_steps
+    wf.parallel_steps(
+        "process-chunks",
+        items=list(range(10)),  # Process 10 chunks
+        command="python process_chunk.py chunk_${ITEM}.data",
+        max_concurrent=5
+    )
+    
+    # Reduce phase
+    wf.step(
+        "merge-results",
+        "python merge_results.py"
+    ).depends("process-chunks")
+    
+    return wf
+```
+
+## Troubleshooting
+
+### Common Issues
+
+<AccordionGroup>
+  <Accordion title="Step Timeout">
+    ```python
+    # Increase timeout for long-running steps
+    step.long_operation(
+        timeout="30m",  # Default is 5m
+        grace_period="5m"  # Time to cleanup after timeout
+    )
+    ```
+  </Accordion>
+  
+  <Accordion title="Memory Issues">
+    ```python
+    # Set appropriate memory limits
+    step.memory_intensive(
+        resources={"limits": {"memory": "32Gi"}},
+        swap_limit="64Gi"
+    )
+    ```
+  </Accordion>
+  
+  <Accordion title="Network Issues">
+    ```python
+    # Configure network policies
+    step.external_api_call(
+        network_mode="host",
+        dns_servers=["8.8.8.8", "8.8.4.4"],
+        extra_hosts={"api.internal": "10.0.0.100"}
+    )
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Performance Optimization
+
+### 1. **Parallel Execution**
+
+```python
+# Use parallel_steps for maximum parallelism
+wf = workflow("parallel-workflow")
+wf.parallel_steps(
+    "parallel-tasks",
+    items=list(range(20)),
+    command="python task.py ${ITEM}",
+    max_concurrent=10  # Limit concurrent executions
+)
+```
+
+### 2. **Resource Optimization**
+
+```python
+# Optimize container usage
+lightweight_step = (
+    step("lightweight-task")
+    .docker(
+        image="alpine:latest",  # Use minimal images
+        command="sh -c 'echo Processing && sleep 1'"
+    )
+)
+
+# For heavy processing, use appropriate images
+heavy_step = (
+    step("heavy-processing")
+    .docker(
+        image="apache/spark:3.4",
+        command="spark-submit --master local[*] process.py"
+    )
+)
+```
+
+### 3. **Caching Strategies**
+
+```python
+# Use outputs to pass data between steps
+fetch = step("fetch-data").shell("wget data.csv").output("DATA_PATH")
+process = step("process").shell("python process.py ${DATA_PATH}").depends("fetch-data")
+
+# For build caching, use appropriate Docker strategies in your images
+build = (
+    step("build-image")
+    .docker(
+        image="docker:dind",
+        command="docker build --cache-from registry/base:latest -t myapp:latest ."
+    )
+)
+```
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="API Reference" icon="code" href="/api-reference/compose">
+    Complete API documentation
+  </Card>
+  <Card title="Examples" icon="lightbulb" href="/workflows/examples">
+    Real-world workflow patterns
+  </Card>
+  <Card title="Getting Started" icon="wrench" href="/getting-started/quickstart">
+    Quick start guide
+  </Card>
+  <Card title="Community" icon="users" href="https://discord.gg/kubiya">
+    Get help from the community
+  </Card>
+</CardGroup> 
