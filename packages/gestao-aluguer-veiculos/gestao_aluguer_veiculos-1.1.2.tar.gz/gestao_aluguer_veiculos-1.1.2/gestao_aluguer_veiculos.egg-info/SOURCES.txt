@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+gestao_aluguer/__init__.py
+gestao_aluguer/gestao_aluguer.py
+gestao_aluguer_veiculos.egg-info/PKG-INFO
+gestao_aluguer_veiculos.egg-info/SOURCES.txt
+gestao_aluguer_veiculos.egg-info/dependency_links.txt
+gestao_aluguer_veiculos.egg-info/top_level.txt
