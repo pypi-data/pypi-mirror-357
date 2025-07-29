@@ -1,0 +1,3 @@
+[console_scripts]
+liteboty-stream=liteboty_stream.cli:cli
+
