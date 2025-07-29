@@ -1,0 +1,9 @@
+LICENSE
+README.md
+publish.py
+pyproject.toml
+livekit_plugins_chinese.egg-info/PKG-INFO
+livekit_plugins_chinese.egg-info/SOURCES.txt
+livekit_plugins_chinese.egg-info/dependency_links.txt
+livekit_plugins_chinese.egg-info/requires.txt
+livekit_plugins_chinese.egg-info/top_level.txt

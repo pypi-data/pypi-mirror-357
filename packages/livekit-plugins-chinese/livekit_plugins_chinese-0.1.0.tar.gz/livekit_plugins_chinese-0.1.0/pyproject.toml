@@ -1,0 +1,41 @@
+[project]
+name = "livekit-plugins-chinese"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = ["livekit-agents==1.1.2"]
+
+[tool.uv]
+constraint-dependencies = ['onnxruntime<1.20.0; python_version == "3.9"']
+
+[tool.uv.sources]
+livekit-plugins-volcengine = { workspace = true }
+livekit-plugins-xunfei = { workspace = true }
+livekit-plugins-baidu = { workspace = true }
+livekit-plugins-tencent = { workspace = true}
+livekit-plugins-minimax = { workspace = true}
+livekit-plugins-zhipu = { workspace = true}
+livekit-plugins-dify = { workspace = true}
+livekit-plugins-flashtts = { workspace = true}
+livekit-plugins-aliyun = { workspace = true}
+
+[tool.uv.workspace]
+members = ["livekit-plugins/*"]
+
+[dependency-groups]
+dev = [
+    "python-dotenv>=1.0.1",
+    "mypy",
+    "pytest",
+    "ruff",
+    "pytest-asyncio>=0.25.3",
+    "jiwer>=3.1.0",
+    "ipykernel>=6.29.5",
+    "livekit-plugins-silero>=1.0.17",
+    "websockets>=15.0.1",
+    "jsonargparse",
+    "pyaudio>=0.2.14",
+]
+
+[[tool.uv.index]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
