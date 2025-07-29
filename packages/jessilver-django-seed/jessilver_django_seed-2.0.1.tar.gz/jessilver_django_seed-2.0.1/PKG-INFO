@@ -1,0 +1,160 @@
+Metadata-Version: 2.4
+Name: jessilver_django_seed
+Version: 2.0.1
+Summary: A library to facilitate the creation of fake data (seeds) in Django projects.
+Home-page: https://github.com/jessilver/django_seed
+Author: Jesse Silva
+Author-email: jesse1eliseu@gmail.com
+License: MIT License
+Project-URL: Documentation, https://github.com/jessilver/django_seed#readme
+Project-URL: Source, https://github.com/jessilver/django_seed
+Project-URL: Tracker, https://github.com/jessilver/django_seed/issues
+Keywords: django,seed,fake data,testing,development
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Django
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Django>=3.2
+Requires-Dist: astor>=0.8.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# jessilver_django_seed
+
+A library to facilitate the creation of fake data (seeds) in Django projects, with custom management commands, modularization, selective seeder execution, and easy integration.
+
+## Installation
+
+Install from PyPI:
+```bash
+pip install jessilver_django_seed
+```
+
+## Requirements
+- Python 3.7+
+- Django >= 3.2
+
+## Configuration
+
+1. Add `'jessilver_django_seed'` to your `INSTALLED_APPS`.
+2. In your `settings.py`, define:
+   ```python
+   SEEDER_APPS = [
+       'your_app_name',
+       # ...other apps
+   ]
+   ```
+   Each app directory should contain a `seeders/` folder with your seeder files.
+
+## Seeder Structure
+
+Create Python files in the `seeders/` folder of your app. Example:
+
+```python
+# myapp/seeders/UserSeeder.py
+from jessilver_django_seed.seeders.BaseSeeder import BaseSeeder
+from myapp.models import User
+
+class UserSeeder(BaseSeeder):
+    @property
+    def seeder_name(self):
+        return "UserSeeder"
+    def seed(self):
+        for i in range(10):
+            User.objects.create(username=f'user{i}')
+        self.succes("10 users created!")
+```
+
+## Seed Command
+
+Run all seeders:
+```bash
+python manage.py seed
+```
+
+### Selective Execution
+Run only specific seeders:
+```bash
+python manage.py seed --only UserSeeder,ProductSeeder
+```
+
+## Seeder Creation via CLI
+
+You can create a new seeder file automatically using the management command:
+
+```bash
+python manage.py seed --create UserSeeder --app myapp
+```
+- This will create a file `myapp/seeders/UserSeeder.py` with a template class if it does not already exist.
+- If the app is not listed in `SEEDER_APPS` in your `settings.py`, it will be added automatically.
+- The command validates the seeder class name and ensures no duplicates.
+
+## How it works
+- The library looks for all apps listed in `SEEDER_APPS`.
+- For each app, it dynamically loads all Python files in the `seeders/` folder.
+- It searches for classes ending with `Seeder` (exemple `UserSeeder`).
+
+### Seed Command
+- Argument `--only`: Runs only the seeders whose class names are provided.
+- Interactive confirmation before execution.
+- Status messages and summary at the end.
+
+## Seeder Execution Order
+
+Seeders are loaded and executed in alphabetical order based on their filename. You can control the execution order by naming your seeder files with numeric or alphabetical prefixes, e.g.:
+
+```
+01_UserSeeder.py
+02_ProductSeeder.py
+```
+
+This ensures that seeders run in the desired sequence.
+
+## Compatibility
+
+All file and directory operations use Python's `os.path.join` and standard library functions, ensuring compatibility across Linux, Windows, and MacOS. No hardcoded path separators are used.
+
+## Examples
+
+### Product Seeder
+```python
+# myapp/seeders/ProductSeeder.py
+from jessilver_django_seed.seeders.BaseSeeder import BaseSeeder
+from myapp.models import Product
+
+class ProductSeeder(BaseSeeder):
+    @property
+    def seeder_name(self):
+        return "ProductSeeder"
+    def seed(self):
+        for i in range(5):
+            Product.objects.create(name=f'Product {i}')
+        self.succes("5 products created!")
+```
+
+### Running only the UserSeeder
+```bash
+python manage.py seed --only UserSeeder
+```
+
+## Contributing
+
+Pull requests are welcome! Open issues for suggestions or problems.
+
+## License
+MIT
