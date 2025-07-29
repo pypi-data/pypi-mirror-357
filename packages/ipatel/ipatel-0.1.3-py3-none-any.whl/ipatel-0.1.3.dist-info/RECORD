@@ -1,0 +1,11 @@
+ipatel/__init__.py,sha256=TNhbtltfTkX4pQbstFHPL7Z7p1y36KQduu3qIOTHa_8,481
+ipatel/asn.py,sha256=ag50QevgzD_voas8q6zwrozCmXG6A0rJjwYwg7_2HAw,4255
+ipatel/cli.py,sha256=Z6P6mcyTubDnRW2AwVnZJ6ppbqPl3xnX3omCT4t9jP8,6504
+ipatel/enrich.py,sha256=keEVL6z2ylAQcytvrWOlHDpVuChHg9busHiLQzICmPc,350
+ipatel/utils.py,sha256=3N9jlTib2RSyWqvGuRzT767vRbJmEGR-XvUcRyUJVsA,1013
+ipatel-0.1.3.dist-info/licenses/LICENSE,sha256=XN4UMzP0KKRpaZz1FBNIYLBm0cGy-qDuYnyPIN0ci8c,1172
+ipatel-0.1.3.dist-info/METADATA,sha256=Td42oU-DjnckHCQtM06WMpprKGdQW6qOQDXH1hLJU2k,3907
+ipatel-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ipatel-0.1.3.dist-info/entry_points.txt,sha256=8_41vUjEkkg-6UN8gTF6tEjWXFZMhTecd7T1hlWxNxA,89
+ipatel-0.1.3.dist-info/top_level.txt,sha256=EieOrwgPt-pgA4X18XHX6HJVtHEFGZ5Qu8RjBWpvObs,7
+ipatel-0.1.3.dist-info/RECORD,,
