@@ -1,0 +1,2 @@
+nakala_client
+o_nakala_core
