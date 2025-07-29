@@ -1,0 +1,6 @@
+web3>=6.0.0
+requests>=2.28.0
+solana==0.36.7
+anchorpy>=0.21.0
+solders
+httpx==0.28.1
