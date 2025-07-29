@@ -1,0 +1,16 @@
+vroid/__init__.py,sha256=9UlHPG088JIeFx6hchwdhciG8NFgHMZUp-olj-mpJKw,607
+vroid/client.py,sha256=GVtRUoISB4tjkeVdtEuaPzZbefO33Gif_D1sQax5Phw,2904
+vroid/domain/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vroid/domain/character.py,sha256=9aaVvVi4UAmx0f30uEEyRNx9eER49vagGSR0oFWnV-E,3525
+vroid/domain/character_model_verison.py,sha256=oY5X0KEI4iI4J6GhmDCgQ0aGSbb9J9bjBvt1tgiKfv0,2553
+vroid/domain/image.py,sha256=Gzehffk_Pkx_zYDx0tTt9zzpTihPS_UMb_9BezsveBE,518
+vroid/domain/user.py,sha256=FGjFVVis4uYx4mkzTjbMKmK2MQH2HBOPnQhAFzUK3lU,1137
+vroid/exception.py,sha256=Sr1KmAzM3nFYZmuDXhqwTZXQ5tCbGKZ_IMPWzvuvqQ8,91
+vroid/oauth.py,sha256=ZesqzMBF2RYSlDt0zHJooFvaPlu0WAe15PPDD3ZFgGM,2721
+vroid/parameter.py,sha256=4tJxuI3dr6Hi-z3wndBlCS36IsPMGcZqxuwNDrC8X0I,1872
+vroid/request.py,sha256=TxieQ9Aw0cB_efkQZi0J74Y504e51abrWbyMQyzIajg,1229
+vroid/route.py,sha256=T7njxkDGH0NMvqidFtfbxR2ZIfNouZDPxIkbLS7352g,836
+vroid-0.1.1.dist-info/LICENSE,sha256=awOCsWJ58m_2kBQwBUGWejVqZm6wuRtCL2hi9rfa0X4,1211
+vroid-0.1.1.dist-info/METADATA,sha256=T7A3KdNih45_AH4iz6bpAT6A7g3V5k82wtsb_TincTU,3007
+vroid-0.1.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+vroid-0.1.1.dist-info/RECORD,,
