@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: imgrit
+Version: 0.1.1
+Summary: A tiny image processing library with k-means and Voronoi diagram.
+Project-URL: Homepage, https://github.com/tsjshg/imgrit
+Project-URL: Issues, https://github.com/tsjshg/imgrit/issues
+Author-email: Shingo TSUJI <shingo.tsuji@gmail.com>
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Requires-Dist: numpy>=2.3.1
+Requires-Dist: pillow>=11.2.1
+Requires-Dist: scipy>=1.15.3
+Description-Content-Type: text/markdown
+
+# imgrit
+A tiny image processing library with k-means and Voronoi diagram.
