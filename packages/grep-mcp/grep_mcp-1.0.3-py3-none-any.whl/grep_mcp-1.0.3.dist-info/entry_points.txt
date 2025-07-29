@@ -1,0 +1,2 @@
+[console_scripts]
+grep-mcp = grep_mcp:main
