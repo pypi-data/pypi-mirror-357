@@ -1,0 +1,303 @@
+# SSH Anywhere
+
+[![CI](https://github.com/wbx13/ssh/actions/workflows/ci.yml/badge.svg)](https://github.com/wbx13/ssh/actions/workflows/ci.yml)
+[![Coverage](https://codecov.io/gh/wbx13/ssh/branch/main/graph/badge.svg)](https://codecov.io/gh/wbx13/ssh)
+[![Python](https://img.shields.io/pypi/pyversions/ssh-anywhere.svg)](https://pypi.org/project/ssh-anywhere/)
+[![License](https://img.shields.io/github/license/wbx13/ssh.svg)](https://github.com/wbx13/ssh/blob/main/LICENSE)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+A high-performance SSH library with unified API for direct and jump host connections.
+
+## ✨ Features
+
+- **🔀 Unified API**: Single `SSHClient` class for both direct and jump host connections
+- **⚡ Control Master Support**: Automatic SSH multiplexing for improved performance
+- **🔗 Jump Host Chaining**: Support for multiple jump hosts in sequence
+- **🔐 Authentication Methods**: Both password and key-based authentication
+- **💻 Interactive Sessions**: Full PTY support for interactive SSH sessions
+- **📋 Command Execution**: Clean command output with automatic pagination handling
+- **🧹 Resource Management**: Automatic cleanup of SSH control sockets
+- **🏗️ Sequential Commands**: Execute multiple commands while preserving session state
+
+## 🚀 Quick Start
+
+### Installation
+
+#### From PyPI (Recommended)
+
+```bash
+pip install ssh-anywhere
+```
+
+#### From Source
+
+```bash
+git clone https://github.com/wbx13/ssh.git
+cd ssh
+pip install -e .
+```
+
+#### For Development
+
+```bash
+git clone https://github.com/wbx13/ssh.git
+cd ssh
+poetry install
+```
+
+### Basic Usage
+
+#### Direct Connection
+
+```python
+from ssh import SSHClient
+
+# Create client for direct connection
+client = SSHClient(
+    hostname="example.com",
+    username="user",
+    private_key_path="~/.ssh/id_rsa"
+)
+
+# Execute command
+result = client.exec_cmd("hostname")
+print(result.stdout)
+
+# Start interactive session
+client.interact()
+```
+
+#### Jump Host Connection
+
+```python
+from ssh import SSHClient
+
+# Create jump host client
+jump_host = SSHClient(
+    hostname="jump.example.com",
+    username="jump_user",
+    private_key_path="~/.ssh/id_rsa"
+)
+
+# Create target client through jump host
+target = SSHClient(
+    hostname="10.0.0.100",
+    username="target_user",
+    password="password",
+    jump_host=jump_host  # Pass the jump host client
+)
+
+# Execute command on target through jump host
+result = target.exec_cmd("get system status")
+print(result.stdout)
+```
+
+#### Multi-hop Chaining
+
+```python
+# Chain multiple jump hosts
+jump1 = SSHClient(hostname="jump1.example.com", username="user")
+jump2 = SSHClient(hostname="jump2.example.com", username="user", jump_host=jump1)
+target = SSHClient(hostname="target.example.com", username="user", jump_host=jump2)
+
+# Execute commands through the chain
+result = target.exec_cmd("hostname")
+```
+
+#### Sequential Commands with State Preservation
+
+For configuration workflows that require maintaining session state:
+
+```python
+from ssh import SSHClient
+
+client = SSHClient(
+    hostname="firewall.example.com",
+    username="admin",
+    password="password"
+)
+
+# Execute multiple commands while preserving state
+commands = [
+    'config system interface',
+    'show',
+    'edit port1',
+    'set description "Updated via SSH"',
+    'show',
+    'end'
+]
+
+results = client.exec_sequential_commands(commands, timeout=60)
+
+# Each command gets its own CommandResult
+for i, (cmd, result) in enumerate(zip(commands, results)):
+    print(f"Command {i+1}: {cmd}")
+    print(f"Success: {result.success}")
+    print(f"Output: {result.stdout[:100]}...")  # First 100 chars
+```
+
+## 📚 API Reference
+
+### SSHClient
+
+The main class for SSH connections.
+
+#### Constructor Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `hostname` | `str` | Required | Target hostname or IP address |
+| `username` | `str` | Current user | SSH username |
+| `port` | `int` | 22 | SSH port |
+| `password` | `str` | None | Password for authentication |
+| `private_key_path` | `str` | None | Path to private key file |
+| `jump_host` | `SSHClient` | None | Another SSHClient instance to use as jump host |
+| `ssh_options` | `dict` | None | Additional SSH options |
+| `establish_master` | `bool` | True | Whether to establish control master on init |
+
+#### Methods
+
+| Method | Description |
+|--------|-------------|
+| `exec_cmd(command, timeout=30)` | Execute a command and return CommandResult |
+| `exec_sequential_commands(commands, timeout=60, command_delay=0.5)` | Execute multiple commands sequentially while maintaining session state |
+| `interact(escape_char='~')` | Start an interactive SSH session |
+
+### CommandResult
+
+Result object returned by `exec_cmd()`.
+
+#### Properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `returncode` | `int` | Exit code of the command |
+| `stdout` | `str` | Standard output as string |
+| `stderr` | `str` | Standard error as string |
+| `success` | `bool` | Boolean indicating if command succeeded (returncode == 0) |
+
+### Utility Functions
+
+| Function | Description |
+|----------|-------------|
+| `cleanup_ssh_sockets()` | Clean up all SSH control sockets |
+
+## 🎯 Examples
+
+### Run the Demo Script
+
+```bash
+# If installed as package
+ssh-demo
+
+# Or run directly
+python examples/unified_demo.py
+```
+
+### Environment Configuration
+
+Create a `.env` file for the demo:
+
+```bash
+JUMP_HOST=jump.example.com
+JUMP_USERNAME=jump_user
+JUMP_KEY_PATH=~/.ssh/jump_key
+
+TARGET_HOST=target.example.com
+TARGET_USERNAME=target_user
+TARGET_PASSWORD=target_password
+```
+
+## 🛠️ Development
+
+### Setup Development Environment
+
+```bash
+# Clone the repository
+git clone https://github.com/wbx13/ssh.git
+cd ssh
+
+# Install with Poetry
+poetry install
+
+# Install pre-commit hooks
+poetry run pre-commit install
+
+# Run tests
+poetry run pytest
+
+# Run linting
+poetry run black src/ tests/ examples/
+poetry run isort src/ tests/ examples/
+poetry run flake8 src/ tests/ examples/
+```
+
+### Running Tests
+
+```bash
+# All tests
+poetry run pytest
+
+# With coverage
+poetry run pytest --cov=src --cov-report=html
+
+# Specific test file
+poetry run pytest tests/test_client.py -v
+```
+
+## 📋 Requirements
+
+### System Requirements
+
+- **Python 3.8+**
+- **SSH client** (`ssh` command) - Usually pre-installed on Unix systems
+- **expect command** - For password authentication through jump hosts
+  - Ubuntu/Debian: `sudo apt install expect`
+  - macOS: `brew install expect` (or use built-in version)
+  - RHEL/CentOS: `sudo yum install expect`
+
+### Python Dependencies
+
+All Python dependencies are managed through Poetry and specified in `pyproject.toml`.
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Quick Contribution Checklist
+
+- [ ] Fork the repository
+- [ ] Create a feature branch
+- [ ] Make your changes
+- [ ] Add tests for new functionality
+- [ ] Run the test suite
+- [ ] Run linting and formatting
+- [ ] Submit a pull request
+
+## 🔒 Security
+
+Please see our [Security Policy](SECURITY.md) for information on reporting security vulnerabilities.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built on top of OpenSSH for reliable SSH connectivity
+- Inspired by the need for a unified SSH client interface
+- Thanks to all contributors and users of the library
+
+## 📈 Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a detailed list of changes and version history.
+
+---
+
+<div align="center">
+
+**[Documentation](https://github.com/wbx13/ssh#readme) • [Issues](https://github.com/wbx13/ssh/issues) • [Discussions](https://github.com/wbx13/ssh/discussions)**
+
+Made with ❤️ for the Python community
+
+</div> 
