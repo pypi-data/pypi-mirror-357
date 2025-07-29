@@ -1,0 +1,17 @@
+deepgraph/__init__.py,sha256=8M05J-T3q8OGQl-aPE4fyee-He_Xwqj6LSYr3wOy5sk,2990
+deepgraph/_find_selected_indices.c,sha256=6vc--zWWnv0J8yPhVnDFn9hb4iPLSEbQzug63zfTk1s,505627
+deepgraph/_find_selected_indices.cp39-win_amd64.pyd,sha256=yyAE-eB9ymnqKl_lhsZxustj3pfY1nxMNvgF_U5mFO0,57856
+deepgraph/_find_selected_indices.pyx,sha256=Ejs74nUlrul9U37VBtOluHL7zFMGc6mAUIi8SzkPknw,1308
+deepgraph/_triu_indices.c,sha256=eFbkX0KpsipEEjOjohVskO19xHJqaMJR0c9G3LpSppQ,597585
+deepgraph/_triu_indices.cp39-win_amd64.pyd,sha256=4OTckIXCjHX8hFaZgOZICb8xXZ04R_n1Krk3LQ9aSjY,75264
+deepgraph/_triu_indices.pyx,sha256=Ybsog3HBULxmMGnMWi-Z-B0Gu4fAXRxB89bjDsG9h_Q,5050
+deepgraph/connector_selector_implementations.py,sha256=UrII_l-9-4qRHU4W3EJC9mOU1ay6FrEaO9BbIRHx7DY,1634
+deepgraph/connectors_and_selectors.py,sha256=7m0MF4AZmE7rZex3rMpRA78uvpa3wvvKIe-smxkuglQ,9383
+deepgraph/deepgraph.py,sha256=2CNR5xJNYgRKgUVbvCKNtRcw8CAptlooC85q6fzDLzw,156334
+deepgraph/iterators_and_indexers.py,sha256=cGyXgA5RsNVb006rDK3CowdctRiw4B909_TXz_AjL3k,23769
+deepgraph/utils.py,sha256=SYBLV4o_Obzl7C1BfdlU8dREsvSNADD4b7syDPvOLnM,1383
+deepgraph-1.1.0.dist-info/licenses/LICENSE,sha256=MSy5ss5fnXMhH14L2YBj5s5ezdRDJmeIS_icmpUceBs,1742
+deepgraph-1.1.0.dist-info/METADATA,sha256=cl2Xbr55psKD2YKaxSoUr7nQss0xAVhCEXw9GDm5fvM,11083
+deepgraph-1.1.0.dist-info/WHEEL,sha256=XkFE14KmFh7mutkkb-qn_ueuH2lwfT8rLdfc5xpQ7wE,99
+deepgraph-1.1.0.dist-info/top_level.txt,sha256=2GpqyZBRf2wmfkcND4h8AdL-KIAHWMceR5KNxqksLiw,10
+deepgraph-1.1.0.dist-info/RECORD,,
