@@ -1,0 +1,101 @@
+Metadata-Version: 2.4
+Name: Sex_API
+Version: 1.3.2
+Summary: A Python API for the Porn Site Sex.com/pins
+Home-page: https://github.com/EchterAlsFake/Sex_API
+Author: Johannes Habel
+Author-email: EchterAlsFake@proton.me
+License: LGPLv3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Programming Language :: Python
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: eaf_base_api
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
+
+<h1 align="center">Sex.com API</h1> 
+
+<div align="center">
+    <a href="https://pepy.tech/project/sex_api"><img src="https://static.pepy.tech/badge/sex_api" alt="Downloads"></a>
+    <a href="https://github.com/EchterAlsFake/sex_api/workflows/"><img src="https://github.com/EchterAlsFake/sex_api/workflows/CodeQL/badge.svg" alt="CodeQL Analysis"/></a>
+    <a href="https://github.com/EchterAlsFake/sex_api/workflows/"><img src="https://github.com/EchterAlsFake/sex_api/actions/workflows/tests.yml/badge.svg" alt="API Tests"/></a>
+</div>
+
+# Description
+Sex API is a Python API dedicated to Sex.com/pins. It allows you to download Pins, fetch information about Pins, Users and Boards.
+You can also perform a search with filters.
+
+> [!IMPORTANT]
+> The Sex API is in violation of the Terms of Services of Sex.com. Usage is on your own risk!
+> This API is related to sex.com/pins. This API does NOT support downloading videos from Sex.com nor video clips from sex.com/pins.
+> The Videos are DRM locked, and the video clips need Javascript to be loaded.
+
+
+# Quickstart
+### Have a look at the [Documentation](https://github.com/EchterAlsFake/API_Docs/blob/master/Porn_APIs/Sex_API.md) for more details
+
+- Install the library with `pip install sex_api`
+- Or with: `pip install git+https://github.com/EchterAlsFake/sex_api` for the latest fixes / features
+
+```python
+from sex_api.api import Client
+
+client = Client()
+
+# Fetch a Pin
+pin = client.get_pin("<URL>")
+pin.download("<PATH (Directory)>")
+
+# Print some attributes:
+print(pin.name)
+print(pin.publish_date) # See Docs for more
+
+# Fetch a User:
+user = client.get_user("URL")
+
+# Get users Pins:
+pins = user.get_pins()
+pins_liked = user.get_liked_pins()
+
+for pin in pins:
+    pin.download("<path>")
+    # ....... 
+    
+# The features are nearly endless. See Documentation for more :)
+```
+
+> [!NOTE]
+> Sex API can also be run from the command line. Just execute: "sex_api -h" to get started.
+
+# Changelog
+See [Changelog](https://github.com/EchterAlsFake/sex_api/blob/master/README/Changelog.md) for more details.
+
+# Support (Donations)
+I am developing all my projects entirely for free. I do that because I have fun and I don't want
+to charge 30€ like other people do.
+
+However, if you find my work useful, please consider donating something. A tiny amount such as 1€
+means a lot to me.
+
+Paypal: https://paypal.me/EchterAlsFake
+<br>XMR (Monero): `42XwGZYbSxpMvhn9eeP4DwMwZV91tQgAm3UQr6Zwb2wzBf5HcuZCHrsVxa4aV2jhP4gLHsWWELxSoNjfnkt4rMfDDwXy9jR`
+
+
+# Contribution
+Do you see any issues or having some feature requests? Simply open an Issue or talk
+in the discussions.
+
+Pull requests are also welcome.
+
+# License
+Licensed under the LGPLv3 License
+<br>Copyright (C) 2023–2025 Johannes Habel
