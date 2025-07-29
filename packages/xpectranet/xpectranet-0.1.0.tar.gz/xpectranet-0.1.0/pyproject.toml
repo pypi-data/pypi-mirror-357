@@ -1,0 +1,68 @@
+# =============================================================================
+# FILE: pyproject.toml
+# PROJECT: XpectraNet SDK
+#
+# SPDX-License-Identifier: BSL-1.1-XD
+# Copyright (c) 2025 Xpectra Data Technologies Ltd.
+#
+# DESCRIPTION:
+# ------------
+# Project metadata and build system configuration for XpectraNet SDK monorepo.
+# =============================================================================
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xpectranet"
+version = "0.1.0"
+description = "Protocol-grade symbolic memory and cognition infrastructure for agents, LLMs, and mesh systems."
+readme = "README.md"
+license = { file = "LICENSE.md" }
+requires-python = ">=3.8"
+authors = [
+    { name = "Xpectra Data Technologies Ltd.", email = "support@xpectradata.com" }
+]
+maintainers = [
+    { name = "Xpectra Data Technologies Ltd.", email = "support@xpectradata.com" }
+]
+keywords = ["cognition", "agents", "symbolic memory", "LLM", "mesh", "protocol", "audit", "remix"]
+classifiers = [
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Development Status :: 3 - Alpha",
+]
+dependencies = [
+    "numpy>=1.23",
+    # add any other required packages here
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "build",
+    "twine"
+]
+docs = [
+    "mkdocs",
+    "mkdocs-material"
+]
+
+[project.urls]
+Homepage = "https://xpectranet.com"
+Documentation = "https://xpectranet.com/sdk/docs"
+Source = "https://github.com/XpectraData/xpectranet"
+Changelog = "https://github.com/XpectraData/xpectranet/releases"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["xpectranet"]
+
+# Optional: Entry points, scripts, or plugin interfaces can be added here.

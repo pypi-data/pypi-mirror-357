@@ -1,0 +1,260 @@
+Metadata-Version: 2.4
+Name: xpectranet
+Version: 0.1.0
+Summary: Protocol-grade symbolic memory and cognition infrastructure for agents, LLMs, and mesh systems.
+Author-email: "Xpectra Data Technologies Ltd." <support@xpectradata.com>
+Maintainer-email: "Xpectra Data Technologies Ltd." <support@xpectradata.com>
+License: # LICENSE & INTELLECTUAL PROPERTY NOTICE
+        
+        **Effective Date:** June 16, 2025  
+        **Version:** 1.0
+        
+        ---
+        
+        **Author & Inventor:** The Founder of Xpectra Data Technologies Ltd  
+        **Copyright Owner & Publisher:** Xpectra Data Technologies Ltd, Scotland, United Kingdom
+        
+        All rights, inventions, protocol models, and standards described herein are authored and invented by the Founder of Xpectra Data Technologies Ltd, and are the exclusive property of Xpectra Data Technologies Ltd, Scotland, United Kingdom.
+        
+        This license and notice apply to all intellectual property owned or published by Xpectra Data Technologies Ltd, including but not limited to inventions, documentation, protocol specifications, software, source code, SDKs, APIs, demo scripts, diagrams, terminology, models, and all related materials authored by its Founder.
+        
+        ---
+        
+        ## 1. Copyright & Trademark
+        
+        © 2025 Xpectra Data Technologies Ltd, Scotland, United Kingdom. All rights reserved.  
+        **XPECTRANET®** and all related product names (including **XPDT**, **DiFusion**, **SVAF**, **Xpectra Knowledge Ontology (XKO)**) are registered trademarks or proprietary marks of Xpectra Data Technologies Ltd.
+        
+        ## 2. Scope of Protection
+        
+        This license and notice apply to:
+        - All protocol specifications and documentation (White Paper, Yellow Paper, technical appendices, FAQs)
+        - All source code, SDKs, APIs, demos, example scripts, and sample data
+        - All website and marketing content, diagrams, models, protocol flows, and terminology
+        - All related UX, UI, and design systems
+        
+        ## 3. License Terms
+        
+        Except where otherwise explicitly stated, **all materials are licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/).**
+        
+        You are permitted to:
+        - Share, download, and redistribute the materials in unmodified form for personal, academic, or non-commercial use **with clear attribution**:  
+          > Powered by XpectraNet — © 2025 Xpectra Data Technologies Ltd
+        
+        You are **not permitted** to:
+        - Create, develop, publish, distribute, or commercialize any derivative work, fork, extension, re-implementation, or competing protocol/product/service based in whole or in part on these materials, including:
+            - Protocol forks or adaptations
+            - Competing agent frameworks or mesh cognition protocols
+            - Any SDK, API, product, or service implementing the described protocol or cognitive flow
+        - Use the materials for commercial purposes (including SaaS, consulting, enterprise tools, integrations, or on-chain/XPDT-based deployments) without a paid, written commercial license
+        - Remove or obscure any copyright, trademark, or attribution notice
+        
+        **All software (SDK, APIs, etc.)** is dual-licensed under BSL-1.1-XD (XpectraNet Derivative License) and subject to the same commercial and derivative work restrictions.  
+        See: [XpectraNet SDK License — BSL-1.1-XD](https://xpectranet.com/license)
+        
+        ## 4. No Derivative Protocols, Products, or Services
+        
+        Without **explicit written permission** from Xpectra Data Technologies Ltd, you may not:
+        - Fork, clone, or derive new protocols, agent frameworks, or mesh cognition engines from XpectraNet concepts, models, or documentation
+        - Use any of the terminology, symbolic field structures, memory flows, or system architectures described in these materials as the basis for new software, protocols, or commercial products—even if substantially modified
+        - Re-implement or reverse-engineer the protocol or any part of its symbolic memory model, SDK, or core flow
+        
+        ## 5. Academic & Reference Use
+        
+        You may quote, cite, or review these materials in academic research or technical analysis, provided you:
+        - Include clear and prominent attribution to:  
+          > XpectraNet White Paper (or relevant doc), © 2025 Xpectra Data Technologies Ltd (https://xpectranet.com)
+        - Do not use these materials to develop, commercialize, or publish any derivative protocol, SDK, or competing product
+        
+        ## 6. Third-Party Trademarks
+        
+        This protocol and SDK may reference or interoperate with third-party frameworks (e.g., [LangGraph](https://github.com/langchain-ai/langgraph)), whose trademarks remain property of their respective owners. No endorsement or affiliation is implied unless explicitly stated.
+        
+        ## 7. Enforcement & Jurisdiction
+        
+        **Any violation** (including unlicensed commercial use, omission of attribution, creation of derivative protocols, reverse engineering, or unauthorized SDK forks) will result in immediate license termination and legal action under the laws of Scotland and applicable international treaties.  
+        All disputes arising from this License shall be subject to the exclusive jurisdiction of the Scottish courts.
+        
+        **This LICENSE is governed by the laws of Scotland and the English version shall prevail in case of conflict.**
+        
+        ## 8. Contact & Commercial Licensing
+        
+        To request a commercial or protocol license, report suspected infringement, or request clarification, contact:  
+        licensing@xpectradata.com  
+        Apply online: https://xpectradata.com/license
+        
+        ## 9. TL;DR (for developers and partners)
+        
+        - **No forks. No derivatives. No re-implementations. No commercial use without a license.**
+        - Academic review is allowed **with attribution**.
+        - **All protocol, SDK, docs, and content are protected and enforced under international IP law.**
+        
+        ---
+        
+        © 2025 Xpectra Data Technologies Ltd, Scotland, United Kingdom. All rights reserved.  
+        All rights, inventions, protocol models, and standards described herein are authored and invented by the Founder of Xpectra Data Technologies Ltd, and are the exclusive property of Xpectra Data Technologies Ltd, Scotland, United Kingdom.
+        
+Project-URL: Homepage, https://xpectranet.com
+Project-URL: Documentation, https://xpectranet.com/sdk/docs
+Project-URL: Source, https://github.com/XpectraData/xpectranet
+Project-URL: Changelog, https://github.com/XpectraData/xpectranet/releases
+Keywords: cognition,agents,symbolic memory,LLM,mesh,protocol,audit,remix
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+License-File: NOTICE
+Requires-Dist: numpy>=1.23
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: build; extra == "dev"
+Requires-Dist: twine; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: mkdocs; extra == "docs"
+Requires-Dist: mkdocs-material; extra == "docs"
+Dynamic: license-file
+
+# 🧠 XpectraNet SDK
+
+> The XpectraNet® Protocol is the first symbolic infrastructure for mesh cognition — enabling agents to think, align, and evolve through canonical memory and remixable insight.
+
+---
+
+## Turn Any App Into a Cognitive Agent
+
+**Symbolic memory. Diffused state. Mesh-aware remixing.**
+
+XpectraNet is the memory and cognition layer for agents, apps, and LLMs — enabling symbolic understanding, protocol-driven alignment, and resumption across time and context.
+
+---
+
+## 🚀 Why XpectraNet?
+
+- **Structured Symbolic Memory**  
+  Every input is minted as a CognitiveMemoryBlock (CMB): intent, emotion, commitment, abstraction layer, and more.
+
+- **Diffused State Reconstruction**  
+  Instantly reconstructs protocol-grade cognitive context at any point — not just token replay.
+
+- **Conflict & Drift Resolution**  
+  Built-in protocols detect contradiction, clarify ambiguity, and realign cognition.
+
+- **Mesh-Aware Remixing & Canonization**  
+  Fork, remix, and canonize memory trails — making every reasoning step auditable and reusable.
+
+**No re-architecture required. Plug XpectraNet into any agent, LLM, or workflow.**
+
+---
+
+## ⚡ Quick Start
+
+```python
+from xpectranet import mint_insight, diffuse_state
+
+# Mint a symbolic memory block from user input
+cmb = mint_insight("Where is my shipment?", role="user")
+
+# Reconstruct protocol-level cognitive state
+state = diffuse_state([], cmb)
+
+print(state["intent"])      # → 'escalate'
+print(state["emotion"])     # → 'concern'
+print(state["commitment"])  # → 'resolve_delivery'
+print(state["layer"])       # → 'L2'    # (Layer 2: Operations)
+````
+
+---
+
+## 🛠️ Key SDK API
+
+| Function                                  | Purpose                                       |
+| ----------------------------------------- | --------------------------------------------- |
+| `mint_insight(text, role)`                | Mint a CognitiveMemoryBlock (CMB)             |
+| `diffuse_state(trail, cmb)`               | Reconstruct current symbolic cognitive state  |
+| `collapse_state(trail)`                   | Detect & resolve contradiction in memory      |
+| `clarifier_agent(trail)`                  | Clarify ambiguity or drift in cognitive state |
+| `remix_from_state(state, new_text, role)` | Fork/remix new CMB from prior state           |
+| `canonize_state(state)`                   | Commit resolved state as immutable checkpoint |
+
+---
+
+## 🤖 Example: Customer Support Insight Trail
+
+```python
+from xpectranet import mint_insight, diffuse_state
+
+# Step 1: Capture a customer's issue as protocol insight
+customer_issue = mint_insight(
+    "My order was supposed to arrive yesterday but hasn't shown up.",
+    role="user"
+)
+
+# Step 2: Agent and system add protocol-grade events to the trail
+trail = [
+    customer_issue,
+    mint_insight("We're sorry for the delay. Let me check your order status.", role="agent"),
+    mint_insight("Order is delayed due to courier backlog. Estimated delivery: tomorrow.", role="system"),
+    mint_insight("Please notify the customer and offer a discount.", role="policy"),
+    mint_insight("Your order is scheduled for delivery tomorrow. As an apology, we've issued a discount.", role="agent"),
+    mint_insight("Thank you for the update and the discount.", role="user")
+]
+
+# Step 3: Reconstruct final symbolic state for audit and compliance
+final_state = diffuse_state(trail, trail[-1])
+print("Intent:", final_state["intent"])          # → 'resolve'
+print("Commitment:", final_state["commitment"])  # → 'fulfill_order_and_compensate'
+print("Emotion:", final_state["emotion"])        # → 'relieved'
+print("Layer:", final_state["layer"])            # → 'L2'
+```
+
+---
+
+## 🏆 Feature Highlights
+
+* 🧠 **Structured Symbolic Memory:** Not just text — capture meaning, intention, and focus.
+* 🔄 **Cognitive State Reconstruction:** True protocol context, not token lists.
+* 🛡️ **Conflict & Drift Resolution:** Agents self-correct and align.
+* 🔗 **Auditable Mesh Memory:** Every step is traceable, remixable, and canonizable.
+
+---
+
+## 🧪 Why Not Just Logs or Vectors?
+
+| Capability                    | Logs & Vectors | XpectraNet SDK |
+| ----------------------------- | :------------: | :------------: |
+| Persistent state              |        ✅       |        ✅       |
+| Symbolic tagging (intent etc) |        ❌       |        ✅       |
+| Conflict/drift detection      |        ❌       |        ✅       |
+| Protocol-driven correction    |        ❌       |        ✅       |
+| Mesh-scale auditability       |        ❌       |        ✅       |
+
+---
+
+## 📚 Learn More
+
+* [SDK Docs](https://xpectranet.com/sdk/docs)
+* [Quick Start Guide](https://xpectranet.com/sdk/docs/quick_start)
+* [Protocol Lifecycle](https://xpectranet.com/white-paper#section-5)
+* [Audit & Replay Tutorial](https://xpectranet.com/sdk/docs/tutorials/how_to_audit_symbolic_memory.md)
+
+---
+
+## 🔐 License
+
+Licensed under [BSL-1.1-XD](https://xpectranet.com/license).
+
+* Free for non-commercial use.
+* Commercial, SaaS, or forked use requires a paid protocol license.
+
+© 2025 Xpectra Data Technologies Ltd.
+*Symbolic Cognition. Protocol Memory. Mesh Intelligence.*
+
+---
