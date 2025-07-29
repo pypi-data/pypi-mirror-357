@@ -1,0 +1,3 @@
+[console_scripts]
+gev-converter = geviewer.converter:main
+geviewer = geviewer.geviewer:main
