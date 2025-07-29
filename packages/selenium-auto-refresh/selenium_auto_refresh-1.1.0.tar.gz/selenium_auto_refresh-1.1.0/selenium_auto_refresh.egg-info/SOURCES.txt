@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements_dev.txt
+setup.py
+selenium_auto_refresh/__init__.py
+selenium_auto_refresh/refresher.py
+selenium_auto_refresh.egg-info/PKG-INFO
+selenium_auto_refresh.egg-info/SOURCES.txt
+selenium_auto_refresh.egg-info/dependency_links.txt
+selenium_auto_refresh.egg-info/not-zip-safe
+selenium_auto_refresh.egg-info/top_level.txt
+tests/__init__.py
+tests/test_refresher.py
