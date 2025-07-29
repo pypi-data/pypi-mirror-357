@@ -1,0 +1,3 @@
+[console_scripts]
+crontabula=crontabula.cli:cli
+
