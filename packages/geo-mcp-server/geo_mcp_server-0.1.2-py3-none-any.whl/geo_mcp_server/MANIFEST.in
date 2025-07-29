@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+include config_template.json
+include CLAUDE_INTEGRATION.md
+include pyproject.toml
+include requirements.txt
+recursive-include geo_mcp_server *.py
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co] 

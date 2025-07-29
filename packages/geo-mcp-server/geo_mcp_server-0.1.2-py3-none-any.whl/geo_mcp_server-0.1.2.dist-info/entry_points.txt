@@ -1,0 +1,2 @@
+[console_scripts]
+geo-mcp-server = geo_mcp_server.main:main
