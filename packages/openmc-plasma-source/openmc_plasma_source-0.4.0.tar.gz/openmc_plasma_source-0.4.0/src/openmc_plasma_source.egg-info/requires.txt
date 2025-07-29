@@ -1,0 +1,10 @@
+numpy>=1.9
+matplotlib>=3.2.2
+NeSST>=1.1.0
+
+[tests]
+pytest>=5.4.3
+pytest-cov
+hypothesis
+NeSST>=1.1.0
+openmc_source_plotter
