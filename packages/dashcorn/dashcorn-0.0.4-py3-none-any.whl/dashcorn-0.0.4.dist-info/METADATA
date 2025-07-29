@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: dashcorn
+Version: 0.0.4
+Summary: A dashboard for FastAPI/Uvicorn
+Home-page: https://github.com/dashcorn/dashcorn
+Download-URL: https://github.com/dashcorn/dashcorn/downloads
+Author: acegik
+License: GPL-3.0
+Keywords: tools
+Requires-Python: >=3.9
+
