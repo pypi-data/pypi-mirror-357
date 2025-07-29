@@ -1,0 +1,6 @@
+typer
+PyYAML
+rich
+requests
+platformdirs
+python-dotenv
