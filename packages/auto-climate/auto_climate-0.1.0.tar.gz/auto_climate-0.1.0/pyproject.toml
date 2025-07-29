@@ -1,0 +1,17 @@
+[project]
+name = "auto-climate"
+version = "0.1.0"
+description = "An Application for customisable climate control, ideal for reptile enclosures."
+readme = "README.md"
+authors = [
+    { name = "Adam Pratley", email = "adampratley1@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+auto-climate = "auto_climate:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"

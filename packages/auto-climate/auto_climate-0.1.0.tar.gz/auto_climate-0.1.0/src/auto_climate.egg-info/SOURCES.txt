@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/auto_climate/__init__.py
+src/auto_climate.egg-info/PKG-INFO
+src/auto_climate.egg-info/SOURCES.txt
+src/auto_climate.egg-info/dependency_links.txt
+src/auto_climate.egg-info/entry_points.txt
+src/auto_climate.egg-info/top_level.txt
