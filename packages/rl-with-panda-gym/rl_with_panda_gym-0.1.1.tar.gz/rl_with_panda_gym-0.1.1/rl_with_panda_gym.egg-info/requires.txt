@@ -1,0 +1,9 @@
+tensorflow
+panda-gym
+gymnasium[classic-control]
+numpy
+matplotlib
+tensorflow_probability
+seaborn
+tf_keras
+h5py
