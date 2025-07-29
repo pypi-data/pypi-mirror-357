@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: json-loader-with-include
+Version: 0.3.2
+Summary: ⚠️ DEPRECATED: Use 'json-plus' instead. Enhanced JSON processing with includes.
+Home-page: https://github.com/PypayaTech/json-loader-with-include
+Author: PypayaTech
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Dynamic: author
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: summary
+
+# json-loader-with-include
+A simple package that allows you to include (fragments of) external JSON files within a JSON file.
+
+## Installation
+
+```
+pip install git+https://github.com/PypayaTech/json-loader-with-include.git
+```
