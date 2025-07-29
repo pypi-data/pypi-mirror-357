@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/idleopenline/__init__.py
+src/idleopenline/extension.py
+src/idleopenline/py.typed
+src/idleopenline/utils.py
+src/idleopenline.egg-info/PKG-INFO
+src/idleopenline.egg-info/SOURCES.txt
+src/idleopenline.egg-info/dependency_links.txt
+src/idleopenline.egg-info/entry_points.txt
+src/idleopenline.egg-info/requires.txt
+src/idleopenline.egg-info/top_level.txt
+tests/test_extension.py
+tests/test_utils.py
