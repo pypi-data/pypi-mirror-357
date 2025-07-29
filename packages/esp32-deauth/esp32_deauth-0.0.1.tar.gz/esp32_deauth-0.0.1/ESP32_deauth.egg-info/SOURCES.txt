@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+ESP32-deauth/__init__.py
+ESP32_deauth.egg-info/PKG-INFO
+ESP32_deauth.egg-info/SOURCES.txt
+ESP32_deauth.egg-info/dependency_links.txt
+ESP32_deauth.egg-info/requires.txt
+ESP32_deauth.egg-info/top_level.txt
