@@ -1,0 +1,15 @@
+Proprietary License
+
+Copyright (c) 2025 Kaena
+
+This software is proprietary and confidential. All rights reserved.
+
+You are allowed to use, copy, and modify this software under the following conditions:
+
+1. You must credit the original author ("Kaena") in any use or derivative work.
+2. Commercial use is allowed only with explicit permission from the author.
+3. The author reserves the right to revoke the license at any time and for any reason.
+
+Unauthorized redistribution or sublicensing is strictly prohibited.
+
+This software is provided "as is" without warranty of any kind.

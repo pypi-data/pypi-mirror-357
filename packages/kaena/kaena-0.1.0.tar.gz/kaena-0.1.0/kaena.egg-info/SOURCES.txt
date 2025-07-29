@@ -1,0 +1,11 @@
+LICENSE.txt
+MANIFEST.in
+pyproject.toml
+setup.py
+kaena/__init__.py
+kaena/tape.py
+kaena.egg-info/PKG-INFO
+kaena.egg-info/SOURCES.txt
+kaena.egg-info/dependency_links.txt
+kaena.egg-info/not-zip-safe
+kaena.egg-info/top_level.txt
