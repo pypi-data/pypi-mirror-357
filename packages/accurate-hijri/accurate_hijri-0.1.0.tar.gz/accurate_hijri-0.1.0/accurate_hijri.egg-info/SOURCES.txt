@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+accurate_hijri/__init__.py
+accurate_hijri/converter.py
+accurate_hijri.egg-info/PKG-INFO
+accurate_hijri.egg-info/SOURCES.txt
+accurate_hijri.egg-info/dependency_links.txt
+accurate_hijri.egg-info/top_level.txt
+accurate_hijri/data/umm_al_qura.csv
+tests/test_converter.py
