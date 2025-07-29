@@ -1,0 +1,2 @@
+[console_scripts]
+miflp = miflpaquete.core:main
