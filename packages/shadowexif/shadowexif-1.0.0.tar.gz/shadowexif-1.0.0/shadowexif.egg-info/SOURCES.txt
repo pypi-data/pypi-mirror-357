@@ -1,0 +1,11 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+shadowexif/__init__.py
+shadowexif/__main__.py
+shadowexif/cli.py
+shadowexif/core.py
