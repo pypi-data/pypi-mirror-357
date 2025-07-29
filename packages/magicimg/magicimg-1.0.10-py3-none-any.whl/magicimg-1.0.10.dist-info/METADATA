@@ -1,0 +1,498 @@
+Metadata-Version: 2.1
+Name: magicimg
+Version: 1.0.10
+Summary: Thư viện xử lý và tiền xử lý ảnh cho OCR
+Home-page: https://github.com/magicimg/magicimg
+Author: MagicImg Team
+Author-email: MagicImg Team <contact@magicimg.com>
+License: MIT
+Project-URL: Homepage, https://github.com/magicimg/magicimg
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: opencv-python>=4.5.0
+Requires-Dist: numpy>=1.19.0
+Requires-Dist: matplotlib>=3.3.0
+Requires-Dist: Pillow>=8.0.0
+Requires-Dist: pytesseract>=0.3.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.2.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.12.0; extra == "dev"
+Requires-Dist: black>=21.5b2; extra == "dev"
+Requires-Dist: isort>=5.9.1; extra == "dev"
+Requires-Dist: flake8>=3.9.2; extra == "dev"
+
+# MagicImg - Thư viện xử lý ảnh thông minh
+
+[![Version](https://img.shields.io/badge/version-1.0.8-blue.svg)](https://pypi.org/project/magicimg/)
+[![Python](https://img.shields.io/badge/python-3.7%2B-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+MagicImg là thư viện Python mạnh mẽ cho xử lý và tiền xử lý ảnh, được tối ưu cho OCR và computer vision.
+
+## 🚀 Tính năng mới trong v1.0.8
+
+- ✅ **Logging Control**: Hoàn toàn kiểm soát được logging levels (DEBUG/INFO/WARNING)
+- ✅ **Custom Logging**: Hỗ trợ custom format và log to file
+- ✅ **Silent Mode**: Chế độ WARNING level để tắt progress messages
+- ✅ **Debug Flexibility**: Debug riêng từng module
+- ✅ **User Preference**: Tôn trọng logging configuration của user
+
+## 📦 Cài đặt
+
+### Cài đặt cơ bản
+```bash
+pip install magicimg
+```
+
+### Cài đặt Tesseract OCR
+
+#### Windows
+```bash
+# Sử dụng winget
+winget install UB-Mannheim.TesseractOCR
+
+# Thêm vào PATH
+set PATH=%PATH%;C:\Program Files\Tesseract-OCR
+```
+
+#### Ubuntu/Debian
+```bash
+sudo apt-get update
+sudo apt-get install tesseract-ocr tesseract-ocr-vie
+```
+
+#### macOS
+```bash
+brew install tesseract
+```
+
+## 🎯 Sử dụng nhanh
+
+### Basic Usage
+```python
+import magicimg
+
+# Xử lý ảnh cơ bản với preserve color
+result = magicimg.process_image("input.jpg", "output.jpg", preserve_color=True)
+print(f"Success: {result.success}")
+print(f"Processing steps: {result.processing_steps}")
+
+# Kiểm tra chất lượng ảnh
+is_good, quality_info, enhanced = magicimg.check_image_quality("input.jpg")
+print(f"Quality score: {quality_info['quality_score']}")
+
+# Tăng cường ảnh
+enhanced = magicimg.enhance_image("input.jpg", "enhanced.jpg")
+
+# Preprocessing cho OCR (tối ưu cho text recognition)
+result = magicimg.preprocess_for_ocr("input.jpg", "output.jpg", preserve_color=False)
+```
+
+### API Mode (cho Google, Anthropic, Local API)
+```python
+import magicimg
+
+# Preprocessing cho Google Vision API
+success, info, output_path = magicimg.preprocess_image_for_api(
+    "input.jpg", 
+    provider="google",
+    output_dir="./output/",
+    min_quality_score=0.3
+)
+
+print(f"Success: {success}")
+print(f"Output: {output_path}")
+print(f"Processing steps: {info['processing_steps']}")
+```
+
+## 📚 API Reference
+
+### Core Functions
+
+#### `process_image(image_path, output_path=None, auto_rotate=True, preserve_color=True)`
+Xử lý ảnh hoàn chỉnh với tất cả các bước tối ưu.
+
+**Parameters:**
+- `image_path` (str | np.ndarray): Đường dẫn ảnh hoặc numpy array
+- `output_path` (str, optional): Đường dẫn lưu kết quả
+- `auto_rotate` (bool): Tự động xoay ảnh (default: True)
+- `preserve_color` (bool): Giữ nguyên màu sắc (default: True)
+
+**Returns:**
+- `ProcessingResult`: Object chứa kết quả xử lý
+
+#### `check_image_quality(image_path)`
+Kiểm tra chất lượng ảnh và đánh giá các metrics.
+
+**Returns:**
+- `tuple(bool, dict, np.ndarray)`: (is_good, quality_info_dict, enhanced_image)
+
+#### `preprocess_image_for_api(image_path, provider="google")`
+Tiền xử lý ảnh tối ưu cho các API nhà cung cấp.
+
+**Parameters:**
+- `provider`: "google", "anthropic", hoặc "local"
+
+**Returns:**
+- `tuple(bool, dict, str)`: (success, processing_info, output_path)
+
+### Quality Enhancement Functions
+
+#### `enhance_image(image_path, output_path=None)`
+Tăng cường chất lượng ảnh một cách nhẹ nhàng.
+
+#### `enhance_image_for_ocr(image_path, output_path=None)`
+Tối ưu ảnh đặc biệt cho OCR (chuyển binary).
+
+### Orientation & Skew Functions
+
+#### `detect_skew(image_path)`
+Phát hiện góc nghiêng của ảnh.
+
+#### `correct_skew(image_path, angle=None)`
+Sửa góc nghiêng của ảnh.
+
+#### `rotate_image(image_path, angle)`
+Xoay ảnh theo góc cho trước.
+
+## ⚙️ Cấu hình nâng cao
+
+### Quality Thresholds
+```python
+# Cấu hình ngưỡng chất lượng
+config = {
+    "min_blur_index": 100.0,      # Tăng yêu cầu độ nét
+    "min_brightness": 200.0,      # Tăng yêu cầu độ sáng
+    "min_contrast": 60.0,         # Tăng yêu cầu độ tương phản
+    "min_resolution": (1200, 1600) # Tăng độ phân giải tối thiểu
+}
+
+processor = ImageProcessor(config=config)
+```
+
+### Processing Modes
+
+#### High Quality Mode (cho ảnh quan trọng)
+```python
+config = {
+    "min_blur_index": 120.0,
+    "min_brightness": 220.0,
+    "min_contrast": 70.0,
+    "min_resolution": (1500, 2000)
+}
+result = magicimg.process_image("input.jpg", config=config, preserve_color=True)
+```
+
+#### Fast Processing Mode (cho batch processing)
+```python
+config = {
+    "min_blur_index": 60.0,
+    "min_brightness": 160.0,
+    "min_contrast": 40.0,
+    "skip_rotation": True
+}
+result = magicimg.process_image("input.jpg", config=config)
+```
+
+#### OCR Optimization Mode
+```python
+result = magicimg.preprocess_for_ocr("input.jpg", preserve_color=False)
+```
+
+## 🔍 Debug Mode
+
+### Bật chế độ DEBUG
+```python
+import logging
+import magicimg
+
+# Cách 1: Bật debug trước khi import
+logging.basicConfig(level=logging.DEBUG)
+import magicimg  # Import sau khi set DEBUG
+
+# Cách 2: Bật debug sau khi import
+logging.getLogger().setLevel(logging.DEBUG)
+```
+
+### Các level logging
+```python
+import logging
+import magicimg
+
+# 1. DEBUG - Hiển thị tất cả thông tin
+logging.basicConfig(level=logging.DEBUG)
+# Sẽ hiển thị:
+# - Chi tiết cấu hình
+# - Các bước xử lý
+# - Quality metrics
+# - Line detection parameters
+# - Skew detection details
+
+# 2. INFO - Chỉ hiển thị tiến trình (mặc định)
+logging.basicConfig(level=logging.INFO)
+# Sẽ hiển thị:
+# - 🔄 Đang xử lý: input.jpg
+# - ✅ Hoàn thành: output.jpg
+
+# 3. WARNING - Silent mode (chỉ warnings)
+logging.basicConfig(level=logging.WARNING)
+# Chỉ hiển thị warnings và errors
+
+# 4. ERROR - Chỉ hiển thị errors
+logging.basicConfig(level=logging.ERROR)
+```
+
+### Custom Debug Output
+```python
+import logging
+
+# Log ra file
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.FileHandler('magicimg_debug.log')]
+)
+
+# Custom format
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='[%(levelname)s] %(message)s'
+)
+
+# Multiple handlers
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(message)s',
+    handlers=[
+        logging.FileHandler('debug.log'),
+        logging.StreamHandler()  # Console output
+    ]
+)
+```
+
+### Debug Quality Metrics
+```python
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
+# Hiển thị chi tiết quality metrics
+result = magicimg.process_image("input.jpg")
+# DEBUG: Quality metrics:
+#   - Blur index: 85.3
+#   - Dark ratio: 0.15
+#   - Brightness: 195.2
+#   - Contrast: 55.8
+#   - Resolution: (1200, 1600)
+```
+
+### Debug Processing Steps
+```python
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
+# Hiển thị chi tiết các bước xử lý
+result = magicimg.process_image("input.jpg")
+# DEBUG: Processing steps:
+#   1. Loading image
+#   2. Checking quality
+#   3. Detecting orientation
+#   4. Correcting skew (2.5 degrees)
+#   5. Enhancing contrast
+#   6. Saving result
+```
+
+### Tips khi debug
+1. **Set DEBUG trước khi import**: Để capture tất cả log messages
+2. **Log to file**: Khi cần analyze logs sau
+3. **Custom format**: Thêm timestamps hoặc log levels
+4. **WARNING level**: Khi chỉ quan tâm issues
+5. **DEBUG specific modules**: 
+```python
+# Debug chỉ magicimg.core
+logging.getLogger('magicimg.core').setLevel(logging.DEBUG)
+```
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+#### 1. Tesseract error
+```bash
+# Windows: Thêm Tesseract vào PATH
+set PATH=%PATH%;C:\Program Files\Tesseract-OCR
+
+# Linux: Cài đặt Tesseract
+sudo apt-get install tesseract-ocr
+```
+
+#### 2. Memory errors với ảnh lớn
+```python
+# Giảm batch_size
+config = {
+    "batch_size": 2
+}
+processor = magicimg.ImageProcessor(config=config)
+```
+
+#### 3. Debug logs không hiển thị
+```python
+# Đảm bảo set DEBUG trước khi import
+import logging
+logging.basicConfig(level=logging.DEBUG)  # ĐẶT TRƯỚC import!
+
+import magicimg  # Import sau
+
+# Hoặc set level sau import
+logging.getLogger().setLevel(logging.DEBUG)
+```
+
+### System Information
+```python
+import magicimg
+magicimg.print_system_info()
+# In thông tin hệ thống và dependencies
+```
+
+## 📊 Performance Tips
+
+### 1. Batch Processing
+```python
+from magicimg import ImageProcessor
+
+processor = ImageProcessor(config={"batch_size": 8})
+
+# Xử lý nhiều ảnh cùng lúc
+image_paths = ["img1.jpg", "img2.jpg", "img3.jpg"]
+for path in image_paths:
+    result = processor.process_image(path)
+    print(f"Processed {path}: {result.success}")
+```
+
+### 2. Preserve Color vs OCR Mode
+```python
+# Cho ảnh cần giữ chất lượng cao
+result = magicimg.process_image("photo.jpg", preserve_color=True)
+
+# Cho text recognition
+result = magicimg.preprocess_for_ocr("document.jpg", preserve_color=False)
+```
+
+## 🧪 Testing
+
+### Run API Consistency Tests
+```bash
+# Test tất cả API functions
+python -c "
+import magicimg
+print('Testing basic APIs...')
+result1 = magicimg.check_image_quality('input.jpg')
+result2 = magicimg.process_image('input.jpg')
+result3 = magicimg.preprocess_image_for_api('input.jpg')
+print('All APIs working correctly!')
+"
+```
+
+### Performance Benchmark
+```python
+import time
+import magicimg
+
+start = time.time()
+result = magicimg.process_image("test.jpg")
+end = time.time()
+
+print(f"Processing time: {end-start:.2f}s")
+print(f"Success: {result.success}")
+```
+
+## 📝 Examples
+
+### Complete Processing Pipeline
+```python
+import magicimg
+
+def process_document(input_path, output_dir="./output/"):
+    """Xử lý document hoàn chỉnh"""
+    
+    # 1. Kiểm tra chất lượng
+    is_good, quality_info, enhanced = magicimg.check_image_quality(input_path)
+    print(f"Quality score: {quality_info['quality_score']:.2f}")
+    
+    # 2. Xử lý với preserve color
+    result = magicimg.process_image(
+        input_path, 
+        output_path=f"{output_dir}/processed.jpg",
+        preserve_color=True
+    )
+    
+    # 3. Tạo version cho OCR
+    ocr_result = magicimg.preprocess_for_ocr(
+        input_path,
+        output_path=f"{output_dir}/ocr_ready.jpg", 
+        preserve_color=False
+    )
+    
+    # 4. API processing
+    api_success, api_info, api_path = magicimg.preprocess_image_for_api(
+        input_path,
+        provider="google",
+        output_dir=output_dir
+    )
+    
+    return {
+        "quality": quality_info,
+        "processed": result.success,
+        "ocr_ready": ocr_result.success,
+        "api_ready": api_success,
+        "steps": result.processing_steps
+    }
+
+# Sử dụng
+results = process_document("document.jpg")
+print(results)
+```
+
+## 🆕 Changelog v1.0.8
+
+### Fixed
+- ✅ Sửa lỗi logging interference với user configuration
+- ✅ Sửa lỗi DEBUG logs hiển thị khi không cần
+- ✅ Cải thiện logging initialization
+- ✅ Sửa lỗi logging handlers bị ghi đè
+
+### Improved
+- 🚀 Tối ưu logging system với nhiều levels
+- 🚀 Thêm custom logging format support
+- 🚀 Cải thiện debug output readability
+- 🚀 Silent mode cho production environment
+
+### Added
+- ➕ Comprehensive logging documentation
+- ➕ Debug mode examples
+- ➕ Logging level control
+- ➕ Module-specific debugging
+
+## 🤝 Contributing
+
+1. Fork repository
+2. Tạo feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Tạo Pull Request
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 🙋‍♂️ Support
+
+- 📧 Email: shumi2011@gmail.com
+- 🐛 Issues: [GitHub Issues](https://github.com/magicimg/magicimg/issues)
+- 📖 Documentation: [Full Docs](https://magicimg.readthedocs.io/)
+
+---
+
+**Made with ❤️ by MagicImg Team** 
