@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: guardrouter
+Version: 0.0.1
+Summary: An interface for LLM safety layer (Placeholder)
+Author-email: The GuardRouter Team <info@guardrouter.com>
+Keywords: llm,ai,guardrails,security,framework,safety
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Security
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# GuardRouter
+
+**An interface for LLM safety layer.**
+
+---
+
+**Project Status: PyPI Placeholder - Active Development Underway!**
+
+This is an initial placeholder package for the `guardrouter` project on PyPI. We are actively developing the core library to provide a comprehensive and extensible solution for managing safety, security, and compliance policies across various Large Language Models.
+
+We are excited to bring GuardRouter to the open-source community soon!
+
+---
+
+Thank you for your interest in GuardRouter!

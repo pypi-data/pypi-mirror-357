@@ -1,0 +1,7 @@
+LICENSE
+README.md
+pyproject.toml
+guardrouter.egg-info/PKG-INFO
+guardrouter.egg-info/SOURCES.txt
+guardrouter.egg-info/dependency_links.txt
+guardrouter.egg-info/top_level.txt
