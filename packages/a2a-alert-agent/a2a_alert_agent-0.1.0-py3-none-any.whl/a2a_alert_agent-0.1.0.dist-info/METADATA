@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: a2a-alert-agent
+Version: 0.1.0
+Summary: Add your description here
+Author-email: Kilsoo Kang <kilsoo75@gmail.com>
+Requires-Python: >=3.12
+Requires-Dist: a2a-sdk>=0.2.8
+Requires-Dist: click>=8.2.1
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: langchain-anthropic>=0.3.15
+Requires-Dist: langchain-google-genai>=2.1.5
+Requires-Dist: langchain-mcp-adapters>=0.1.7
+Requires-Dist: langchain-openai>=0.3.24
+Requires-Dist: langgraph>=0.4.8
+Requires-Dist: mcp>=1.9.4
+Requires-Dist: pydantic-settings>=2.10.0
+Requires-Dist: pydantic>=2.11.7
+Requires-Dist: uvicorn>=0.34.3
