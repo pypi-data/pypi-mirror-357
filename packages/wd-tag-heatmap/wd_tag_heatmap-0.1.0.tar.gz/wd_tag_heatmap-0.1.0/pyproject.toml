@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wd-tag-heatmap"
+version = "0.1.0"
+description = "Generate attention heatmaps for WD Tagger models - visualize which parts of an image contribute to each tag"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "WD Tag Heatmap Contributors"}
+]
+maintainers = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = ["image-tagging", "heatmap", "attention-visualization", "wd-tagger", "anime", "booru"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Graphics",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "timm>=0.9.0",
+    "pillow>=9.0.0",
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+    "huggingface-hub>=0.16.0",
+    "safetensors>=0.3.0",
+    "colorcet>=3.0.0",
+    "matplotlib>=3.5.0",
+    "tqdm>=4.62.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "ruff>=0.0.260",
+    "mypy>=0.990",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/wd-tag-heatmap"
+Documentation = "https://github.com/yourusername/wd-tag-heatmap#readme"
+Repository = "https://github.com/yourusername/wd-tag-heatmap"
+"Bug Tracker" = "https://github.com/yourusername/wd-tag-heatmap/issues"
+
+[project.scripts]
+wd-tag-heatmap = "wd_tag_heatmap.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+wd_tag_heatmap = ["py.typed"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+select = ["E", "F", "I", "N", "W", "B", "RUF"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
