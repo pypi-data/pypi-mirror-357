@@ -1,0 +1,4 @@
+include CherrySQL/*.ico
+include CherrySQL/*.png
+include CherrySQL/*.sql
+include CherrySQL/*.xlsx

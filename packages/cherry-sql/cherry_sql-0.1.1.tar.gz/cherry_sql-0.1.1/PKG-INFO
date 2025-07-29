@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: cherry-sql
+Version: 0.1.1
+Summary: Библиотека для работы с SQL и вспомогательными файлами
+Home-page: https://pypi.org/project/cherry-sql/
+Author: shareofpie
+Author-email: your@email.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# CherrySQL
+
+Библиотека для работы с SQL и вспомогательными файлами.
+
+## Установка
+
+```bash
+pip install cherry-sql
+```
+
+## Использование
+
+```python
+from CherrySQL import ... # ваш импорт
+```
