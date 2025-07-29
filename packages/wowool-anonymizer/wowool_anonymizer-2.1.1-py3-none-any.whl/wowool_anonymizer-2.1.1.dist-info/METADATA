@@ -1,0 +1,340 @@
+Metadata-Version: 2.4
+Name: wowool-anonymizer
+Version: 2.1.1
+Summary: Wowool Anonymizer
+Home-page: https://www.wowool.com/
+Author: Wowool
+Author-email: info@wowool.com
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: Faker==36.1.0
+Requires-Dist: jsonargparse
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Ensuring data privacy
+
+The anonymizer app detects and redacts personally identifiable information (PII) and sensitive entities from unstructured text. Its goal is to preserve privacy while retaining the utility of the original content for downstream processing or analysis.
+
+## Options
+
+#### AnonymizerOptions
+
+```typescript
+interface AnonymizerOptions {
+    annotations?: string[];
+    pseudonyms?: Record<string, string[]>;
+    formatters?: Record<string, string>;
+}
+```
+
+with
+
+| Property      | Description                                                                                       |
+|---------------|---------------------------------------------------------------------------------------------------|
+| `annotations` | List of annotations to anonymize. If not provided, all annotations will be anonymized             |
+| `pseudonyms`  | Mapping from entity URI, such as `Person` or `Company`, to names associated with that entity type |
+| `formatters`  | Mapping from entity URI and the corresponding formatter (f-string like) to convert the input data |
+
+#### Formatters
+
+Predefined variables can be used to format the input data:
+
+| Property     | Description                                                                 |
+|--------------|-----------------------------------------------------------------------------|
+| `uri `       | URI of the entity                                                           |
+| `literal`    | Literal text of the entity                                                  |
+| `canonical`  | Normalized or canonicalized text, e.g. <q>John Doe</q> instead of <q>he</q> |
+| `concept`    | Concept that you can use to anonymize (e.g. concept.gender )                |
+| `anonymized` | Converted data                                                              |
+
+For example, consider the following formatters:
+
+```json
+"formatters": {
+    "Person": "#{uri}-{concept.position}-#{nr}",
+    "PersonalIdentificationNumber": "#{\"*\"* (len(literal)-3)}{literal[-2:]}",
+    "default": "{'.'*len(literal)}"
+}
+```
+
+* The first formatter will replace `Person` with the URI, the position and a counter. For instance, <q>John Doe</q> will be redacted as <q>#Person-Lawyer-#3</q>
+* The second will create a mask using the literal's length. For instance, <q>11-22-333</q> will be masked as <q>*******33</q>
+* The last one, which corresponds with the default formatter, will mask the whole length of the literal using dots. For instance, <q>Ikea</q> will be entirely redacted as <q>....</q>
+
+## Results
+
+#### AnonymizerResults
+
+```typescript
+interface AnonymizerResults {
+    text: string;
+    locations: Location[];
+}
+```
+
+with:
+
+| Property    | Description                                               |
+|-------------|-----------------------------------------------------------|
+| `text`      | Anonymized text                                           |
+| `locations` | Structured information of the changes that have been made |
+
+#### Location
+
+```typescript
+interface Location {
+    uri: string;
+    text: string;
+    anonymized: string;
+    begin_offset: number;
+    end_offset: number;
+    byte_begin_offset: number;
+    byte_end_offset: number;
+}
+```
+
+with:
+
+| Property            | Description                                                       |
+|---------------------|-------------------------------------------------------------------|
+| `uri`               | URI of the entity that was anonymized, e.g. `Person` or `Company` |
+| `text`              | Original text segment that was anonymized                         |
+| `anonymized`        | Anonymized or pseudonymized version of the original text          |
+| `begin_offset`      | Starting character offset in the input document                   |
+| `end_offset`        | Ending character offset in the input document                     |
+| `byte_begin_offset` | Starting byte offset in the input document                        |
+| `byte_end_offset`   | Ending byte offset in the input document                          |
+
+## Examples
+
+<sample data-uuid="anonymizer"></sample>
+
+# Ensuring data privacy
+
+The anonymizer app detects and redacts personally identifiable information (PII) and sensitive entities from unstructured text. Its goal is to preserve privacy while retaining the utility of the original content for downstream processing or analysis.
+
+## Options
+
+#### AnonymizerOptions
+
+```typescript
+interface AnonymizerOptions {
+    annotations?: string[];
+    pseudonyms?: Record<string, string[]>;
+    formatters?: Record<string, string>;
+}
+```
+
+with
+
+| Property      | Description                                                                                       |
+|---------------|---------------------------------------------------------------------------------------------------|
+| `annotations` | List of annotations to anonymize. If not provided, all annotations will be anonymized             |
+| `pseudonyms`  | Mapping from entity URI, such as `Person` or `Company`, to names associated with that entity type |
+| `formatters`  | Mapping from entity URI and the corresponding formatter (f-string like) to convert the input data |
+
+#### Formatters
+
+Predefined variables can be used to format the input data:
+
+| Property     | Description                                                                 |
+|--------------|-----------------------------------------------------------------------------|
+| `uri `       | URI of the entity                                                           |
+| `literal`    | Literal text of the entity                                                  |
+| `canonical`  | Normalized or canonicalized text, e.g. <q>John Doe</q> instead of <q>he</q> |
+| `concept`    | Concept that you can use to anonymize (e.g. concept.gender )                |
+| `anonymized` | Converted data                                                              |
+
+For example, consider the following formatters:
+
+```json
+"formatters": {
+    "Person": "#{uri}-{concept.position}-#{nr}",
+    "PersonalIdentificationNumber": "#{\"*\"* (len(literal)-3)}{literal[-2:]}",
+    "default": "{'.'*len(literal)}"
+}
+```
+
+* The first formatter will replace `Person` with the URI, the position and a counter. For instance, <q>John Doe</q> will be redacted as <q>#Person-Lawyer-#3</q>
+* The second will create a mask using the literal's length. For instance, <q>11-22-333</q> will be masked as <q>*******33</q>
+* The last one, which corresponds with the default formatter, will mask the whole length of the literal using dots. For instance, <q>Ikea</q> will be entirely redacted as <q>....</q>
+
+## Results
+
+#### AnonymizerResults
+
+```typescript
+interface AnonymizerResults {
+    text: string;
+    locations: Location[];
+}
+```
+
+with:
+
+| Property    | Description                                               |
+|-------------|-----------------------------------------------------------|
+| `text`      | Anonymized text                                           |
+| `locations` | Structured information of the changes that have been made |
+
+#### Location
+
+```typescript
+interface Location {
+    uri: string;
+    text: string;
+    anonymized: string;
+    begin_offset: number;
+    end_offset: number;
+    byte_begin_offset: number;
+    byte_end_offset: number;
+}
+```
+
+with:
+
+| Property            | Description                                                       |
+|---------------------|-------------------------------------------------------------------|
+| `uri`               | URI of the entity that was anonymized, e.g. `Person` or `Company` |
+| `text`              | Original text segment that was anonymized                         |
+| `anonymized`        | Anonymized or pseudonymized version of the original text          |
+| `begin_offset`      | Starting character offset in the input document                   |
+| `end_offset`        | Ending character offset in the input document                     |
+| `byte_begin_offset` | Starting byte offset in the input document                        |
+| `byte_end_offset`   | Ending byte offset in the input document                          |
+
+# API
+
+## Examples
+
+You will need to install the english language module to run the sample. `pip install wowool-english` 
+
+### Anonymize known entities
+
+This script finds entities in a sentence and replaces each character of those entities with a dot, then prints the anonymized output and structured information.
+
+DefaultWriter(formatters={"default": "{'.'*len(literal)}"}) sets up a writer that replaces each character of any entity with a dot (.), matching the entity’s length.
+
+```python
+from wowool.sdk import Pipeline
+from wowool.anonymizer import Anonymizer, DefaultWriter
+from json import dumps
+
+# replace all characters of a entities with dot's
+english = Pipeline("english,entity")
+document = english("John Smith works for Ikea.")
+writer = DefaultWriter(formatters={"default": "{'.'*len(literal)}"})
+writer = DefaultWriter(formatters={"default": "###{anonymized_literal}"})
+anonymizer = Anonymizer(writer=writer)
+document = anonymizer(document)
+results = document.results(Anonymizer.ID)
+print(dumps(results, indent=2))
+
+```
+
+results:
+
+```json
+{
+  "text": ".......... works for .....",
+  "locations": [
+    {
+      "begin_offset": 0,
+      "end_offset": 10,
+      "text": "John Smith",
+      "uri": "Person",
+      "anonymized": "..........",
+      "byte_begin_offset": 0,
+      "byte_end_offset": 10
+    },
+    {
+      "begin_offset": 21,
+      "end_offset": 25,
+      "text": "IKEA",
+      "uri": "Company",
+      "anonymized": "....",
+      "byte_begin_offset": 21,
+      "byte_end_offset": 25
+    }
+  ]
+}
+```
+
+### Custom pseudonyms
+
+This script replaces detected person and company names in the text with your chosen pseudonyms, then prints the anonymized result
+
+```python
+from wowool.sdk import Pipeline
+from wowool.anonymizer import Anonymizer, DefaultWriter
+
+# note you can use the default pseudonyms if you want
+# from wowool.anonymizer.core.anonymizer_config import DEFAULT_PSEUDONYMS
+from json import dumps
+
+# replace all characters of a entities with dot's
+english = Pipeline("english,entity")
+document = english("John Smith works for Ikea.")
+pseudonyms = {
+    "Person": ["Badman"],
+    "Company": ["Monster Inc."],
+}
+writer = DefaultWriter(pseudonyms)
+anonymizer = Anonymizer(writer=writer)
+document = anonymizer(document)
+results = document.results(Anonymizer.ID)
+print(dumps(results, indent=2))
+
+```
+
+results:
+
+```json
+{
+  "text": "Badman works for Monster Inc..",
+  "locations": [
+    {
+      "begin_offset": 0,
+      "end_offset": 6,
+      "text": "John Smith",
+      "uri": "Person",
+      "anonymized": "Badman",
+      "byte_begin_offset": 0,
+      "byte_end_offset": 10
+    },
+    {
+      "begin_offset": 17,
+      "end_offset": 29,
+      "text": "IKEA",
+      "uri": "Company",
+      "anonymized": "Monster Inc.",
+      "byte_begin_offset": 21,
+      "byte_end_offset": 25
+    }
+  ]
+}
+```
+
+
+
+## License
+
+In both cases you will need to acquirer a license file at https://www.wowool.com
+
+### Non-Commercial
+
+    This library is licensed under the GNU AGPLv3 for non-commercial use.  
+    For commercial use, a separate license must be purchased.  
+
+### Commercial license Terms
+
+    1. Grants the right to use this library in proprietary software.  
+    2. Requires a valid license key  
+    3. Redistribution in SaaS requires a commercial license.  
