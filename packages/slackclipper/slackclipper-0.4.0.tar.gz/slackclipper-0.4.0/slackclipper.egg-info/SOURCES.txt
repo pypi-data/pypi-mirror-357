@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+slackclipper.py
+slackclipper_runner.py
+slackclipper.egg-info/PKG-INFO
+slackclipper.egg-info/SOURCES.txt
+slackclipper.egg-info/dependency_links.txt
+slackclipper.egg-info/entry_points.txt
+slackclipper.egg-info/requires.txt
+slackclipper.egg-info/top_level.txt
