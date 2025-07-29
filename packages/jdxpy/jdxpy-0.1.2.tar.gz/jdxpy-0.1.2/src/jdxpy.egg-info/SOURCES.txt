@@ -1,0 +1,14 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/jdxpy/__init__.py
+src/jdxpy/core.py
+src/jdxpy.egg-info/PKG-INFO
+src/jdxpy.egg-info/SOURCES.txt
+src/jdxpy.egg-info/dependency_links.txt
+src/jdxpy.egg-info/requires.txt
+src/jdxpy.egg-info/top_level.txt
+tests/__init__.py
+tests/test_core.py
