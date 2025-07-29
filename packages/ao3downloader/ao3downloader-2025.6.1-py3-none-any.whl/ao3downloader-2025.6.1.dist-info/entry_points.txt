@@ -1,0 +1,2 @@
+[console_scripts]
+ao3downloader = ao3downloader:main.ao3downloader
