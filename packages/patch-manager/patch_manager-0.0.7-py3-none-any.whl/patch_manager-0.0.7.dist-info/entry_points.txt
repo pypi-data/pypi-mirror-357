@@ -1,0 +1,2 @@
+[console_scripts]
+patman = patman.__main__:run_patman
