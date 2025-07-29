@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: cell-load
+Version: 0.7.1
+Summary: Dataloaders for training models on huge single-cell datasets
+Author-email: Abhinav Adduri <abhinav.adduri@arcinstitute.org>, Yusuf Roohani <yusuf.roohani@arcinstitute.org>, Noam Teyssier <noam.teyssier@arcinstitute.org>
+License-File: LICENSE
+Requires-Python: <3.13,>=3.10
+Requires-Dist: anndata>=0.9.1
+Requires-Dist: lightning>=2.0.0
+Requires-Dist: toml>=0.10.2
+Requires-Dist: torch>=1.13.0
+Description-Content-Type: text/markdown
+
+# cell-load
+
+> Dataloaders for state-sets models
+
+## Installation
+
+Distributed via [`uv`](https://docs.astral.sh/uv).
+
+```bash
+uv pip install cell-load
+```
+
+## Data Module Usage
+
+This is currently set up to do context generalization - users can specify multiple AnnData files,
+and can identify specific cell lines to add to the test set. For those test cell lines, users can
+identify specific perturbations to hold out for testing.
+
+For example usage please see the [`State`](https://github.com/ArcInstitute/state) repository.
