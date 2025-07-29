@@ -1,0 +1,7 @@
+lifegraph/__init__.py,sha256=KRt5NkF2pz5MozttP1ukA33OrOPzECWwU-GORIf05v0,138
+lifegraph/configuration.py,sha256=lRpxNDj-L5hifYVnYXlTJAxoc6h9VICwsFk8sBTdBkE,52615
+lifegraph/lifegraph.py,sha256=H0FTkDmEmDixcoWoKs4_sE0aoGXHe4TxuYRNpDE-GYo,39455
+lifegraph-0.1.0.dist-info/licenses/LICENSE,sha256=aXiWnZ_W04euNDBeB2d0tgkAZqEZAUXbDjfa6F95Q-c,1068
+lifegraph-0.1.0.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+lifegraph-0.1.0.dist-info/METADATA,sha256=MbnpOX-VRlguCvrSwQdIA6JLDsBsvOj_zDljjid2A6M,10864
+lifegraph-0.1.0.dist-info/RECORD,,
