@@ -1,0 +1,70 @@
+{
+  "// Welcome to Airpilot Project Configuration": "This file allows you to override VSCode workspace settings at the project level",
+  "// All settings are optional - remove any you don't want to override": "",
+  "enabled": true,
+  "source": ".air/rules/",
+  "sourceIsDirectory": true,
+  "indexFileName": "index.md",
+  "defaultFormat": "markdown",
+  "autoSync": true,
+  "showStatus": true,
+  "vendors": {
+    "augment": {
+      "enabled": false,
+      "path": ".augment/guidelines/",
+      "format": "markdown",
+      "isDirectory": true
+    },
+    "claude": {
+      "enabled": true,
+      "path": ".claude/",
+      "format": "markdown",
+      "isDirectory": true
+    },
+    "cline": {
+      "enabled": false,
+      "path": ".clinerules/rules/",
+      "format": "markdown",
+      "isDirectory": true
+    },
+    "codex": {
+      "enabled": false,
+      "path": ".codex/",
+      "format": "markdown",
+      "isDirectory": true
+    },
+    "copilot": {
+      "enabled": true,
+      "path": ".github/copilot-instructions/",
+      "format": "markdown",
+      "isDirectory": true
+    },
+    "cursor": {
+      "enabled": false,
+      "path": ".cursor/rules/",
+      "format": "markdown",
+      "isDirectory": true
+    },
+    "roo": {
+      "enabled": false,
+      "path": ".roo/rules/",
+      "format": "markdown",
+      "isDirectory": true
+    },
+    "warpdeck": {
+      "enabled": false,
+      "path": ".warpdeck/rules/",
+      "format": "markdown",
+      "isDirectory": true
+    },
+    "windsurf": {
+      "enabled": false,
+      "path": ".windsurf/rules/",
+      "format": "markdown",
+      "isDirectory": true
+    }
+  },
+  "customVendors": {
+    "vendors": {}
+  }
+}
