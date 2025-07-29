@@ -1,0 +1,2 @@
+[console_scripts]
+servequery = servequery.cli:app
