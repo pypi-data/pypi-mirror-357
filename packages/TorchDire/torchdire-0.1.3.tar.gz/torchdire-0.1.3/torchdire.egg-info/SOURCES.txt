@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+torchdire.egg-info/PKG-INFO
+torchdire.egg-info/SOURCES.txt
+torchdire.egg-info/dependency_links.txt
+torchdire.egg-info/requires.txt
+torchdire.egg-info/top_level.txt
