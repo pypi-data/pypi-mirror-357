@@ -1,0 +1,51 @@
+name: PR Tests
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.11", "3.12"]  # Test fewer versions on PRs for speed
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+      with:
+        version: "latest"
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      run: uv python install ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: uv sync --extra test
+    
+    - name: Run linting (ruff)
+      run: |
+        uv add --dev ruff
+        uv run ruff check afcli/
+        uv run ruff format --check afcli/
+    
+    - name: Run type checking (mypy)
+      run: |
+        uv add --dev mypy
+        uv run mypy afcli/ || echo "Type checking failed, but continuing..."
+    
+    - name: Run tests
+      run: uv run pytest --cov=afcli --cov-report=term-missing
+    
+    - name: Check minimum coverage
+      run: |
+        COVERAGE=$(uv run pytest --cov=afcli --cov-report=term | grep "TOTAL" | awk '{print $4}' | sed 's/%//')
+        echo "Current coverage: ${COVERAGE}%"
+        if [ "${COVERAGE%.*}" -lt 85 ]; then
+          echo "❌ Coverage ${COVERAGE}% is below minimum 85%"
+          exit 1
+        else
+          echo "✅ Coverage ${COVERAGE}% meets minimum requirement"
+        fi
