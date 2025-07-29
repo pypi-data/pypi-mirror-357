@@ -1,0 +1,2 @@
+[console_scripts]
+enigmaenhanced = enigma_enhanced.engine:cli
