@@ -1,0 +1,9 @@
+[console_scripts]
+lorry = lorrystream.cli:cli
+
+[streamz.sinks]
+dataframe_to_sql = lorrystream.streamz.sinks:dataframe_to_sql
+
+[streamz.sources]
+from_amqp = lorrystream.streamz.sources:from_amqp
+from_mqtt_plus = lorrystream.streamz.sources:from_mqtt_plus

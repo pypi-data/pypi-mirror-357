@@ -1,0 +1,122 @@
+Metadata-Version: 2.4
+Name: lorrystream
+Version: 0.0.7
+Summary: A lightweight and polyglot stream-processing library, to be used as a data backplane-, message relay-, or pipeline-subsystem.
+Author-email: Andreas Motl <andreas.motl@panodata.org>, Richard Pobering <richard.pobering@panodata.org>
+License: LGPL 3, EUPL 1.2
+Project-URL: Changelog, https://lorrystream.readthedocs.io/changes.html
+Project-URL: Documentation, https://lorrystream.readthedocs.io/
+Project-URL: Homepage, https://lorrystream.readthedocs.io/
+Project-URL: Issues, https://github.com/daq-tools/lorrystream/issues
+Project-URL: Repository, https://github.com/daq-tools/lorrystream
+Keywords: amqp,data,export,import,kinesis,mqtt,pandas,rdbms,sql,stream
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Customer Service
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Manufacturing
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Telecommunications Industry
+Classifier: License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Adaptive Technologies
+Classifier: Topic :: Communications
+Classifier: Topic :: Database
+Classifier: Topic :: Documentation
+Classifier: Topic :: Education
+Classifier: Topic :: Internet
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Office/Business
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development :: Embedded Systems
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Object Brokering
+Classifier: Topic :: Software Development :: Pre-processors
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Version Control
+Classifier: Topic :: System :: Archiving
+Classifier: Topic :: System :: Benchmark
+Classifier: Topic :: System :: Clustering
+Classifier: Topic :: System :: Distributed Computing
+Classifier: Topic :: System :: Hardware
+Classifier: Topic :: System :: Logging
+Classifier: Topic :: System :: Monitoring
+Classifier: Topic :: System :: Networking
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Utilities
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: boltons
+Requires-Dist: click<9
+Requires-Dist: colorama<1
+Requires-Dist: colorlog
+Requires-Dist: commons-codec==0.0.22
+Requires-Dist: dask
+Requires-Dist: funcy
+Requires-Dist: influxdb
+Requires-Dist: influxdb-client[ciso]
+Requires-Dist: orjson
+Requires-Dist: paho-mqtt
+Requires-Dist: pandas<2.3
+Requires-Dist: pika<1.4
+Requires-Dist: simplejson<4
+Requires-Dist: sqlalchemy-cratedb>=0.38.0
+Requires-Dist: streamz
+Requires-Dist: tomli
+Requires-Dist: toolz
+Provides-Extra: all
+Requires-Dist: lorrystream[carabas]; extra == "all"
+Provides-Extra: carabas
+Requires-Dist: async-kinesis<3; extra == "carabas"
+Requires-Dist: aws-lambda-layer<0.6; extra == "carabas"
+Requires-Dist: cottonformation<1.2; extra == "carabas"
+Requires-Dist: localstack[base-runtime]<3.8; extra == "carabas"
+Provides-Extra: develop
+Requires-Dist: black<25; extra == "develop"
+Requires-Dist: mypy<1.12; extra == "develop"
+Requires-Dist: pika-stubs<0.2; extra == "develop"
+Requires-Dist: poethepoet<1; extra == "develop"
+Requires-Dist: pyproject-fmt<3; extra == "develop"
+Requires-Dist: ruff<0.12; extra == "develop"
+Requires-Dist: validate-pyproject<1; extra == "develop"
+Provides-Extra: docs
+Requires-Dist: furo==2024.1.29; extra == "docs"
+Requires-Dist: myst-parser[linkify]<5,>=0.18; extra == "docs"
+Requires-Dist: sphinx-autobuild==2021.3.14; extra == "docs"
+Requires-Dist: sphinx-copybutton; extra == "docs"
+Requires-Dist: sphinx-design-elements<1; extra == "docs"
+Requires-Dist: sphinxcontrib-mermaid<1; extra == "docs"
+Requires-Dist: sphinxext-opengraph<1; extra == "docs"
+Provides-Extra: ingestr
+Requires-Dist: async-kinesis<3; extra == "ingestr"
+Provides-Extra: release
+Requires-Dist: build<2; extra == "release"
+Requires-Dist: twine<6; extra == "release"
+Provides-Extra: test
+Requires-Dist: cratedb-toolkit[testing]>=0.0.20; extra == "test"
+Requires-Dist: localstack-utils<1.1; extra == "test"
+Requires-Dist: pytest<9; extra == "test"
+Requires-Dist: pytest-asyncio-cooperative<0.30; extra == "test"
+Requires-Dist: pytest-cov<7; extra == "test"
+Requires-Dist: pytest-mock<4; extra == "test"
+Requires-Dist: pytest-mqtt<0.5,>=0.4.2; extra == "test"
+Requires-Dist: testcontainer-python-rabbitmq==0.4.*; extra == "test"
+Dynamic: license-file
