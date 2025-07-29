@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "read_tables"
+version = "0.1.1"
+description = "Una librería de ejemplo"
+authors = ["Pablo Ramirez A <pramireza@payutic.pro>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "tools_tables", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.11.7"
+# requests = "^2.25"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
