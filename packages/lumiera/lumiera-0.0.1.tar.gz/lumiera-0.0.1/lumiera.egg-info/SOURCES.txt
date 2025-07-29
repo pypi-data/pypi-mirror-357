@@ -1,0 +1,7 @@
+pyproject.toml
+setup.cfg
+lumiera/__init__.py
+lumiera.egg-info/PKG-INFO
+lumiera.egg-info/SOURCES.txt
+lumiera.egg-info/dependency_links.txt
+lumiera.egg-info/top_level.txt
