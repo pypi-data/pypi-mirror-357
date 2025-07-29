@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: piperss
+Version: 0.1.1
+Summary: PipeRSS is minimalistic terminal-based RSS reader.
+Author: Keith Henderson
+License: MIT
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: feedparser
+Requires-Dist: requests
+Requires-Dist: readability-lxml
+Requires-Dist: rich
+Requires-Dist: html2text
+Dynamic: author
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
