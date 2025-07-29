@@ -1,0 +1,14 @@
+kajson/__init__.py,sha256=NrAh7--jfHjOHcLI8QwMQSdgWa492dEdAcrQBXANs24,927
+kajson/class_registry.py,sha256=IxcPgwUc_7oYwaT-ATVLE6HxRGJL1r2_souuLw2DBeI,5804
+kajson/class_registry_abstract.py,sha256=pH2gBUa7_4O0jMshKMO1tLH6uzEe6XiJSbD4yncpskw,1568
+kajson/exceptions.py,sha256=wtEq3ieXhADHv2-CDvAroJ7GxiRSBdTSY1A62EN1gVU,508
+kajson/json_decoder.py,sha256=KLZ9piAFjN0DraVBVmmXsqWfjYEfP3qnYErxULKyNGA,10995
+kajson/json_encoder.py,sha256=C6bz4NuP1zAqQMwDAWXCSrD4HEoTiu_80wuUz5T4BJ8,9689
+kajson/kajson.py,sha256=035RtILV6ztFHQr2G7EcyAyz4AC7WyUJripknetJ08k,7715
+kajson/kajson_manager.py,sha256=S5zPvgZAwUGk0SXvmtoEhxomk__3_Eva7WV7ilX5MGI,1134
+kajson/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+kajson/pyproject.toml,sha256=8OW8d6jeDPisv1lGAUGu-jgvxbwanFD5VLtIqNlmFII,6393
+kajson-0.2.0.dist-info/METADATA,sha256=-nGm-ijd6LdZiTNQK7M7LQMbcXEmzR2CD9lKTD537hM,12885
+kajson-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+kajson-0.2.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+kajson-0.2.0.dist-info/RECORD,,
