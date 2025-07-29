@@ -1,0 +1,14 @@
+branch_calculation/__init__.py,sha256=yMF6Bc04cCYNpo4duYT14urtj07GCwa7StxL5sUSRcs,197
+branch_calculation/add_source_row_to_results_dataframe.py,sha256=_Sa3Tgbx-G_rtmIqdT7RRMoitzyFfo9li-DlutKWG_k,740
+branch_calculation/analysis.py,sha256=R4vNxdv4bJXUs7PZVr-Cp9E800MKz-oVL1zBgcyNKVU,7635
+branch_calculation/build_df_model.py,sha256=z-e9hc42Wli11foOwiLA5GqUfhVU34RGdnffXrvmCMY,2924
+branch_calculation/cons.py,sha256=iQlppPTo5E7elqcY_-2fSQJYVWiGJynWuvoT0ihp7FM,577
+branch_calculation/hydraulics.py,sha256=JwnqSzcMNQMHBG6yE7dEmOS57L_123XoY6XfxtbbGa4,1690
+branch_calculation/network.py,sha256=GkT4FNJNm4L7JkzRFwQvRKZDncpE5N7VH2VtNumWAtg,4741
+branch_calculation/optimizer.py,sha256=BX3-LcxC-kjtYUEjYq6FTYQTmFozM6aQahAwKSJh9MI,18735
+branch_calculation/plots.py,sha256=L0QOlcoSCOCqx5U-p9wFnTMUtGcbMDGphOhJLxmOqig,5621
+branch_network_hydraulics-0.1.0.dist-info/licenses/LICENSE,sha256=fSrfIlhDzSpF1_NX2PFbI1nNEd6eui8VGpVJJ2gIKLs,361
+branch_network_hydraulics-0.1.0.dist-info/METADATA,sha256=BQc20GE2tCyFK0w9WA_MTHy-Gx5nE5_x_yP217yiwfg,3633
+branch_network_hydraulics-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+branch_network_hydraulics-0.1.0.dist-info/top_level.txt,sha256=LsI571WXxhgBMPFSSY7RrUyWJqsbCg-NgN3XCEFKWzY,19
+branch_network_hydraulics-0.1.0.dist-info/RECORD,,
