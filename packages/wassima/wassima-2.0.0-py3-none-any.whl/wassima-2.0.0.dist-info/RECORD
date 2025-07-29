@@ -1,0 +1,12 @@
+wassima/__init__.py,sha256=lbvakft5qiKuELOm71fHS85MtJ4Kx2WQ-01sB5rA4ts,3554
+wassima/_version.py,sha256=p9epe7QELKzPjMO0TdfTGno8yweqPNhNDjtJm_rO8fw,91
+wassima/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wassima/_os/__init__.py,sha256=svMRPlk8KByXDN8ZT69tBLt6Y-c3z2DAZb5xorV3_BE,799
+wassima/_os/_embed.py,sha256=x3c4IUmr8h9FisrML7CF0DUsYXiGPfUSGnXs2uBCj50,239509
+wassima/_os/_linux.py,sha256=38ZorLhC5txTUhsr9dqlMr3JS3KzQWWy0JmM5AHU4Hw,2838
+wassima/_os/_macos.py,sha256=yDac8hHpDV84tJmyiSWVUJb8__drFGZWPcPms7ib2fo,5018
+wassima/_os/_windows.py,sha256=GkAVIWO07DLfcTf9OBpb3HH7d1Si-gKJE2RfTTTZMAM,1267
+wassima-2.0.0.dist-info/METADATA,sha256=VbASRfXhyevMQYEp6e-rp2tbvWxeGYqHiQHLDqiH28g,3866
+wassima-2.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+wassima-2.0.0.dist-info/licenses/LICENSE,sha256=NGXFXgRjE2Cqp5NkCR1Bl51461xsjmwVts1VtipHEfU,1066
+wassima-2.0.0.dist-info/RECORD,,
