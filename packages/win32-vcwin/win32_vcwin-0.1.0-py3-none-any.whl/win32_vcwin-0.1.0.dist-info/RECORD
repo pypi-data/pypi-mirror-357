@@ -1,0 +1,9 @@
+win32_vcwin/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+win32_vcwin/main.py,sha256=dk9n2srkHYA_jUTGzqs-yxf472gjoarJHeO2k1U9y8s,278
+win32_vcwin/vcwin_worker.exe,sha256=W0dmoF2BDN7883UCUwcOeGPdnUm1twbLPIsutKuidsc,5658112
+win32_vcwin-0.1.0.dist-info/LICENSE,sha256=owV2xQFnASe8fvOJHML5LbzhiSxRvKj_xhC3mpYy1qo,1087
+win32_vcwin-0.1.0.dist-info/METADATA,sha256=j53NQRAn8RD-FAqNgMSKMMLCr6GZi7a07tSQBWqc7_E,3990
+win32_vcwin-0.1.0.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+win32_vcwin-0.1.0.dist-info/entry_points.txt,sha256=KVjvLcmEOocguzdLtCFJsYvCh0muhmWQHDenJ3gZeKU,48
+win32_vcwin-0.1.0.dist-info/top_level.txt,sha256=djQT4L1aC4Wo5yry08Q3FRLBfpRl52AG7y1OIc2ZZU0,12
+win32_vcwin-0.1.0.dist-info/RECORD,,
