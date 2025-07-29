@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/dfutil/__init__.py
+src/dfutil/core.py
+src/dfutil.egg-info/PKG-INFO
+src/dfutil.egg-info/SOURCES.txt
+src/dfutil.egg-info/dependency_links.txt
+src/dfutil.egg-info/requires.txt
+src/dfutil.egg-info/top_level.txt

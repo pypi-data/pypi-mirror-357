@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dfutil"
+version = "0.1.0"
+authors = [{name = "Leon151101"}]
+description = "A lightweight package to analyze and prepare pandas DataFrames"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+keywords = ["pandas", "dataframe"]
+
+dependencies = [
+  "pandas>=2.0"
+]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
