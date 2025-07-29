@@ -1,0 +1,9 @@
+zerocut/__init__.py,sha256=D3onOMs4kjgnaUTqBPQHtUPq46YsdkMJQw1ddl70Wts,90
+zerocut/core.py,sha256=Xa3uL_tyz9OzqRwMS2RMrS6H5n_7spxkGwU21uHEF1k,1499
+zerocut/frame.py,sha256=AQghz9fy5fhPXFglGGhJO-Ns_yW8LSEsCOEbrW1Oi_g,623
+zerocut/frames/sample.py,sha256=57pfGxpunogYSFJg1DpZ2Of_bmI4GRiPCOaJ_iFNd_k,774
+zerocut/frames/samples/black.png,sha256=2fmc2IvPaaf3Q98wRYKsIYdqg9w_T8GoybMIGNJn95U,43101
+zerocut/frames/samples/white.png,sha256=oB0pltY0vn0EOmA06ebVvOYq5P0u7fxcEZFgFrFoXiA,37605
+zerocut-0.1.5.dist-info/METADATA,sha256=QFmsdrrbhvqPjMEcBF4JoyqK-JhYubqgBctfFR2MSp0,1055
+zerocut-0.1.5.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+zerocut-0.1.5.dist-info/RECORD,,
