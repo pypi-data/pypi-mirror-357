@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: langchain-search-django
+Version: 0.2.0
+Summary: A Django app for integrating LangChain with search capabilities
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: django>=5.2.3
+Requires-Dist: langchain==0.3.25
+Requires-Dist: langchain-community==0.3.24
+Requires-Dist: openai==1.85.0
+Requires-Dist: langchain-openai==0.3.21
+Requires-Dist: faker<26.0.0,>=25.0.0
+Requires-Dist: pydantic==2.11.5
+
+# Installation
+
+
+This project runs with `uv`.
+```
+pip install uv
+uv sync --frozen
+```
+
+To add to your django project
+Add this to apps: `'langchain_search'`
+
+# Usage example
+
+```
+from .models import Job
+from rest_framework import generics
+from .serializers import JobSerializer
+from langchain_search import LangChainSearchMixin
+
+# Add mixin here
+class JobListAPI(LangChainSearchMixin, generics.ListAPIView):
+    queryset = Job.objects.all()
+    serializer_class = JobSerializer
+
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+```
