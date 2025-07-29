@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hosha-network"
+version = "1.0.0"
+description = "A Python library to construct detailed pedestrian-vehicle layered networks from macro-level road data."
+authors = [
+    { name="Hiroyuki Hasada", email="important83d@email.com" }
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pandas",
+    "geopandas",
+    "numpy",
+    "networkx",
+    "shapely"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "build",
+    "twine"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.urls]
+"Homepage" = "https://github.com/hasada83d/hosha-network"
+"Repository" = "https://github.com/hasada83d/hosha-network"
+"Issue Tracker" = "https://github.com/hasada83d/hosha-network/issues"
