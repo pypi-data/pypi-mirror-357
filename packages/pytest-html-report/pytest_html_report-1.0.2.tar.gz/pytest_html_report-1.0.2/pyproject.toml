@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytest-html-report"
+version = "1.0.2"
+description = "Enhanced HTML reporting for pytest with categories, specifications, and detailed logging"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Fardin Chowdhury", email = "fabdullah230@gmail.com"},
+]
+maintainers = [
+    {name = "Fardin Chowdhury", email = "fabdullah230@gmail.com"},
+]
+keywords = ["pytest", "testing", "html", "report", "test-report"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: Pytest",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Testing",
+]
+
+dependencies = [
+    "pytest>=6.0",
+    "pyyaml>=5.3",
+    "beautifulsoup4>=4.9",
+]
+
+[project.urls]
+Homepage = "https://gitlab.com/fabdullah230/pytest-html-report"
+Repository = "https://gitlab.com/fabdullah230/pytest-html-report"
+Issues = "https://gitlab.com/fabdullah230/pytest-html-report/-/issues"
+Documentation = "https://gitlab.com/fabdullah230/pytest-html-report/-/blob/main/README.md"
+
+[project.entry-points.pytest11]
+pytest_html_report = "pytest_html_report.plugin"
