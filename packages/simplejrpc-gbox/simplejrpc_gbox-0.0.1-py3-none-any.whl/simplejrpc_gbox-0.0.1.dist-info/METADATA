@@ -1,0 +1,35 @@
+Metadata-Version: 2.3
+Name: simplejrpc_gbox
+Version: 0.0.1
+Summary: GM tools box
+License: MIT
+Author: yao
+Author-email: 1125564921@qq.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: psutil (>=7.0.0,<8.0.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Description-Content-Type: text/markdown
+
+[![Latest Version](https://img.shields.io/pypi/v/simplejrpc_gbox.svg)](https://pypi.python.org/pypi/simplejrpc_gbox/)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/simplejrpc_gbox.svg)](https://pypi.python.org/pypi/simplejrpc_gbox/)
+[![Downloads](https://img.shields.io/pypi/dm/simplejrpc_gbox.svg)](https://pypi.org/project/simplejrpc_gbox/)
+
+simplejrpc_gbox
+==========
+
+# 1. Getting Started Quickly
+
+### 1.1 Install SDK
+
+Install the SDK using pip:
+
+```bash
+pip3 install simplejrpc_gbox
+```
+
