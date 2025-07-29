@@ -1,0 +1,27 @@
+[build-system]
+requires = [
+    "setuptools",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docassemble.baseball"
+version = "0.0.7"
+description = "A docassemble extension."
+readme = "README.md"
+authors = [
+    { name = "Jonathan Pyle", email = "admin@admin.com" },
+]
+license = "MIT"
+license-files = [
+    "LICENSE",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://docassemble.org"
+
+[tool.setuptools.packages.find]
+where = [
+    ".",
+]
