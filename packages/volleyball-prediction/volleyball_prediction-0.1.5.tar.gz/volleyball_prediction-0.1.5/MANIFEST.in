@@ -1,0 +1,3 @@
+include volley_model.pkl
+
+recursive-include src/volleyball_prediction/frontend *.html
