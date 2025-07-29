@@ -1,0 +1,14 @@
+aiohttp<4
+beautifulsoup4<5
+
+[dev]
+black
+flake
+packaging
+
+[lint]
+flake8>=7.1.1
+black>=24.1.0
+
+[video]
+yt-dlp
