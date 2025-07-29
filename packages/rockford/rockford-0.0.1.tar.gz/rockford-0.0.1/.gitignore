@@ -1,0 +1,51 @@
+# Build
+_build/
+build/
+dist/
+!docs/build/
+eggs/
+*.egg-info
+sdist/
+wheels/
+
+# Caches
+.idea/
+*.pytest_cache
+__pycache__
+tests/__pycache__
+*_version.py
+
+# Databases
+*.sqlite*
+
+# MacOS
+.DS_Store
+
+# Private
+env/
+*.env*
+*.envrc*
+*.secret*
+*.pem
+google_client_secret.json
+
+# Test
+cover/
+.coverage
+**coverage.xml
+htmlcov/
+.pytest_cache/
+**/coverage/html/
+
+# Tooling-specific files
+pyrightconfig.json
+*.sublime-project
+*.sublime-workspace
+
+# Reference/Sandbox
+input/
+legal/
+reference/
+research/
+notes.text
+temp.py

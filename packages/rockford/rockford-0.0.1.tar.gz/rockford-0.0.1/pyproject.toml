@@ -1,0 +1,101 @@
+
+[project]
+name = "rockford"
+description = "Rockford is forensic kit for email"
+dynamic = ["version"]
+authors = [
+    {name = "Brian Farrell", email = "brian.farrell@me.com"},
+]
+license = {text = "AGPLv3"}
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.12"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = ["forensics", "email"]
+
+dependencies = [
+    ##### app #####
+    # Python logging made (supidly) simple
+    "loguru>=0.7.2",
+    # Extensions to the standard Python datetime module
+    "python-dateutil"
+]
+
+[project.optional-dependencies]
+dev = [
+    # A simple, correct Python build frontend.
+    "build[virtualenv]",
+    # A fully-featured, actively-maintained, and stable library designed to facilitate packaging Python projects.
+    "setuptools",
+    # The blessed package to manage your versions by scm tags
+    "setuptools-scm[toml]",
+    # A utility for publishing Python packages on PyPI.
+    "twine"
+]
+
+doc = [
+    # Unleash the power of Mkdocs static website generator, with the use of variables and macros.
+    "mkdocs-macros-plugin",
+    # A powerful documentation framework on top of MkDocs
+    "mkdocs-material[recommended,imaging]",
+    # Automatic documentation from sources for MkDocs
+    "mkdocstrings[python]",
+    # Manage multiple versions of your MkDocs-powered documentation
+    "mike"
+]
+
+test = [
+    # Tool for measuring code coverage of Python programs
+    "coverage[toml]",
+    # Useful comparisons for unit testing
+    "dirty-equals",
+    # Simple powerful testing with Python
+    "pytest",
+    # Enhanced support when using pytest with coverage
+    "pytest-cov",
+    # pytest plugin that enables you to set environment variables in a pytest.ini or pyproject.toml file.
+    "pytest-env",
+]
+
+[project.scripts]
+# Create a Console Script for the `rockford` command.
+rockford = "src.__main__:main"
+
+[project.urls]
+repository = "https://gitlab.com/brianfarrell/rockford/"
+documentation = "https://brianfarrell.gitlab.io/rockford/"
+
+[build-system]
+requires = ["build[virtualenv]", "setuptools", "setuptools-scm[toml]", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.setuptools_scm]
+# include arbitrary keyword arguments in that section to be supplied to get_version().
+version_scheme = "python-simplified-semver"
+write_to = "src/_version.py"
+
+[tool.coverage.run]
+source = [ "src" ]
+omit = [ "src/_version.py", "tests/*" ]
+
+[tool.coverage.html]
+directory = "reports/coverage/html"
+
+[tool.coverage.xml]
+output = "reports/coverage/coverage.xml"
+
+[tool.pytest.ini_options]
+testpaths = [ "tests" ]
+filterwarnings = [
+    "ignore::DeprecationWarning"
+]
+
+[tool.pytest_env]
+ROCKFORD_DEPLOYMENT_STAGE="TEST"

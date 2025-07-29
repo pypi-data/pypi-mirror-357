@@ -1,0 +1,2 @@
+[console_scripts]
+rockford = src.__main__:main
