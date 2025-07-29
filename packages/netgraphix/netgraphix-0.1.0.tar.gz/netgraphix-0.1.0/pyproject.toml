@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netgraphix"
+version = "0.1.0"
+description = "A real-time local network analyzer with live graphs and CLI features."
+readme = "README.md"
+requires-python = ">=3.6"
+license = {text = "MIT"}
+authors = [
+  {name = "Adam Alcander et Eden", email = "aeden6877@gmail.com"}
+]
+dependencies = [
+  "matplotlib",
+  "numpy",
+  "colorama",
+  "psutil",
+  "requests",
+  "tqdm",
+  "pyfiglet",
+  "scapy",
+  "rich",
+  "pandas",
+  "click",
+  "tabulate",
+  "py-cpuinfo"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/EdenGithhub/netgraphix"
+"Source" = "https://github.com/EdenGithhub/netgraphix"
+"Issues" = "https://github.com/EdenGithhub/netgraphix/issues"

@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+netgraphix/__init__.py
+netgraphix/core.py
+netgraphix.egg-info/PKG-INFO
+netgraphix.egg-info/SOURCES.txt
+netgraphix.egg-info/dependency_links.txt
+netgraphix.egg-info/requires.txt
+netgraphix.egg-info/top_level.txt

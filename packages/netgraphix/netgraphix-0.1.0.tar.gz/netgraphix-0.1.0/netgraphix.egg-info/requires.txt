@@ -1,0 +1,13 @@
+matplotlib
+numpy
+colorama
+psutil
+requests
+tqdm
+pyfiglet
+scapy
+rich
+pandas
+click
+tabulate
+py-cpuinfo
