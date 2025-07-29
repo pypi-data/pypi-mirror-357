@@ -1,0 +1,4 @@
+[console_scripts]
+mitmdump-addon-launcher = mitmproxy_addon_launcher:main_dump
+mitmproxy-addon-launcher = mitmproxy_addon_launcher:main
+mitmweb-addon-launcher = mitmproxy_addon_launcher:main_web

@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: mitmproxy-addon-launcher
+Version: 0.1.2
+Summary: Load mitmproxy/mitmweb addons from entry points
+Project-URL: github, https://github.com/davidszotten/mitmproxy-addon-launcher
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: mitmproxy
+Description-Content-Type: text/markdown
+
+# mitmproxy-addon-launcher
+
+Load mitmproxy/mitmweb addons from entry points
+
+## Usage:
+
+For mitmproxy cli:
+
+```
+uvx --with=<library-with-addon> mitmproxy-addon-launcher <any args to mitmproxy>
+```
+
+or for `mitmweb`/`mitmdump`:
+
+```
+uvx \
+    --from=mitmproxy-addon-launcher \
+    --with=<library-with-addon> \
+    mitmweb-addon-launcher <any args to mitmproxy>
+```
+
+## Creating an addon packege
+
+Create an addon as usual. Include it into a library and add an entry-point with the group `mitmproxy_addon_launcher.addon_script`
+
+In `pyproject.toml`:
+
+```
+[project.entry-points."mitmproxy_addon_launcher.addon_script"]
+my_addon = 'my_addon_package.addon_module'
+```
