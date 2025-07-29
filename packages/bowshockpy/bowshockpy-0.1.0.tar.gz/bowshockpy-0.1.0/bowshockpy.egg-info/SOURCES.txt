@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+bowshockpy/__init__.py
+bowshockpy/_header_default.py
+bowshockpy/bsmodels.py
+bowshockpy/comass.py
+bowshockpy/genbow.py
+bowshockpy/moments.py
+bowshockpy/utils.py
+bowshockpy.egg-info/PKG-INFO
+bowshockpy.egg-info/SOURCES.txt
+bowshockpy.egg-info/dependency_links.txt
+bowshockpy.egg-info/entry_points.txt
+bowshockpy.egg-info/requires.txt
+bowshockpy.egg-info/top_level.txt
