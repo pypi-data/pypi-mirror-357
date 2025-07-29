@@ -1,0 +1,2 @@
+[console_scripts]
+metools = metools:main
