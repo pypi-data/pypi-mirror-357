@@ -1,0 +1,19 @@
+# -*- coding:utf-8 -*-
+"""
+@Time : 2022/4/25 2:09 PM
+@Author: binkuolo
+@Des: redis
+"""
+
+import redis
+from descartcan.service.core import config
+
+
+async def sys_cache() -> redis.asyncio.Redis:
+    sys_cache_pool = redis.asyncio.ConnectionPool.from_url(
+        f"redis://{config.REDIS_HOST}:{config.REDIS_PORT}",
+        db=config.REDIS_DB,
+        encoding="utf-8",
+        decode_responses=True,
+    )
+    return redis.asyncio.Redis(connection_pool=sys_cache_pool)
