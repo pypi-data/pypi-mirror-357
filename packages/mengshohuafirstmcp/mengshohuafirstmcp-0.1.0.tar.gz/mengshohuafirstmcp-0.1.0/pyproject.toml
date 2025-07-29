@@ -1,0 +1,19 @@
+[project]
+name = "mengshohuafirstmcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Your Name", email = "you@example.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=1.9.4",
+]
+
+[project.scripts]
+mengshohuafirstmcp = "mengshohuafirstmcp:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
