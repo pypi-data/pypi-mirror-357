@@ -1,0 +1,5 @@
+[console_scripts]
+pyp6-activities = pyp6.scripts.activities:main
+pyp6-obs = pyp6.scripts.obs:main
+pyp6-roles = pyp6.scripts.roles:main
+pyp6-wbs = pyp6.scripts.wbs:main
