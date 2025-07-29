@@ -1,0 +1,9 @@
+govinfo/__init__.py,sha256=8KFGEH3eQ4-2Is2asZiLl4jxzgP3uqYIHmv0fFbrNPQ,39
+govinfo/client.py,sha256=m0shoAFiKIRWXIzo99HWCxm2HznIF34GB3rX-wxiSCQ,6986
+govinfo/config.py,sha256=o8vHKWuAWssXZSYIeD2ZYTKgvCDsfKbgGBHdvVUpXYA,235
+govinfo/exceptions.py,sha256=Nl7NeeyR6ocGuTkDvuzv7_LwkpxyhJgGhXTcTyTZxpQ,44
+govinfo/models.py,sha256=USo5AeLeLJ1cv2DACqr4Frsjeb0zrPtxrqTj1kbJYcg,632
+govinfo/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+govinfo-0.2.1.dist-info/METADATA,sha256=u-U4Dxb_Fj0mvAW9WHX33O_7WB0L7Fh1tzN-_Hlt8eE,446
+govinfo-0.2.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+govinfo-0.2.1.dist-info/RECORD,,
