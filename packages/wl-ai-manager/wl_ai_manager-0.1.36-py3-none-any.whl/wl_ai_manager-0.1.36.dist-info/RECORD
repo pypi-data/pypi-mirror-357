@@ -1,0 +1,16 @@
+wl_ai_manager/__init__.py,sha256=aqQekgPn_C_xsKC_AVYRThyhp0_sR_yLB7ouz5DlvTc,426
+wl_ai_manager/ai_manager.py,sha256=E386wprNEu_gDm73EWpQvxPnBxrvqOMXC3QxqTv_htA,19566
+wl_ai_manager/chat.py,sha256=OMbGYSDEvjUoloYEluSNU1IaLT4UJwrvZzQt3TU28Hs,2964
+wl_ai_manager/image_generation.py,sha256=Vlv3_gVHRTdbuWm7mYgYXogPbFCb8NQujE0s1QOnj7g,7248
+wl_ai_manager/music_generation.py,sha256=zG7Eg7ZF43-ytmSJ4--BMT0J9bsgckQW3m4kks1kroA,10753
+wl_ai_manager/openai.py,sha256=94kCekimTpY6R0Q8mfO2sPgIKxVJW9Iw720HNtbW66Y,663
+wl_ai_manager/prompts.py,sha256=nv4Rd1mBb-IrVr7umaPCrquG4ka3mOgMdJ2M42ew0o8,6103
+wl_ai_manager/schema_validator.py,sha256=Xm6yAn8_CGDliOE93tVAe5UdfkpLZLOuaTUc0hMrSwk,12918
+wl_ai_manager/text_to_speech.py,sha256=m3K7R38SR0cKgxYzm7O6lNwJqXhDVFsI0JR2bnc_i5k,1595
+wl_ai_manager/transcribe.py,sha256=bHuSTgbUpHPgzFIlXQpdRY9_Px7LcH2yrCNbblHZSuY,2992
+wl_ai_manager/video_generation.py,sha256=-QCd8s762mZ6IVoqjRt6kQ_QlOUQazwEbKeEah4TKZA,9206
+wl_ai_manager-0.1.36.dist-info/LICENSE,sha256=R_G-Pd2AQwBsCNGK-9HfGLRVhtBeGMbJW_tmNMUrZ40,1500
+wl_ai_manager-0.1.36.dist-info/METADATA,sha256=ZP9qxAL8BZ1dJzHEu7STXhksMO8MTzoM1zfkG6oZ57U,9224
+wl_ai_manager-0.1.36.dist-info/WHEEL,sha256=pL8R0wFFS65tNSRnaOVrsw9EOkOqxLrlUPenUYnJKNo,91
+wl_ai_manager-0.1.36.dist-info/top_level.txt,sha256=3W8CkJcpJYRKexAbnHB10Su9iWyqZyYst4YCIQ3_TwU,14
+wl_ai_manager-0.1.36.dist-info/RECORD,,
