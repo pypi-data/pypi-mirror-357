@@ -1,0 +1,7 @@
+pandas
+numpy
+scipy
+patsy
+plotnine
+twine
+joblib
