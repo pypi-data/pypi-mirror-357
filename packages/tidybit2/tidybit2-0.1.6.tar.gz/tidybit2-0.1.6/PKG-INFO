@@ -1,0 +1,119 @@
+Metadata-Version: 2.4
+Name: tidybit2
+Version: 0.1.6
+Summary: A CLI tool to organize files into system and custom folders
+Author: Kelly Forge
+Author-email: Kelly <your.email@example.com>
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: questionary
+Requires-Dist: colorama
+Dynamic: author
+Dynamic: requires-python
+
+
+# 📁 TidyBit 2
+
+**TidyBit 2** is a sleek, interactive command-line tool that brings order to chaos—automatically sorting your messy directories into proper **system folders** like `Pictures`, `Documents`, and `Videos`, or custom folders like `Archives`.
+
+✨ Designed with an intuitive CLI experience, complete with interactive folder selection, preview mode, and final confirmation.
+
+---
+
+## 🚀 Features
+
+- 🧭 **Interactive folder selection** with arrow keys (powered by [`questionary`](https://github.com/tmbo/questionary))
+- 🔍 **Preview moves** before committing (`example.jpg → Pictures`)
+- ✅ **Confirmation prompt** to avoid accidents
+- 🗂️ Intelligent file mapping:
+  - `.jpg`, `.png`, `.jpeg` → `Pictures`
+  - `.pdf`, `.docx`, `.txt` → `Documents`
+  - `.mp4`, `.mov`, `.avi` → `Videos`
+- 📦 Unmatched formats like `.zip`, `.rar`, `.7z` go to `Archives`
+- 🧠 Auto-creates destination folders if missing
+- 💻 Works on **Windows**, **Linux**, and **macOS**
+
+---
+
+## 🛠️ Installation
+
+Install directly from PyPI:
+
+```bash
+pip install tidybit2
+````
+
+> If `pip` isn’t recognized, try:
+>
+> ```bash
+> python -m pip install tidybit2
+> ```
+>
+> Or on Linux/macOS:
+>
+> ```bash
+> pip3 install tidybit2
+> ```
+
+All dependencies (like `questionary`) are installed automatically.
+
+---
+
+## 🧪 Example Usage
+
+```bash
+organize
+```
+
+You’ll be prompted to:
+
+1. Select a directory to organize
+2. Preview how files will be moved
+3. Confirm the action
+
+---
+
+## 📂 How It Works
+
+TidyBit 2 classifies files by extension and moves them to appropriate folders, keeping your system neat and uncluttered. Everything is interactive, reversible, and user-friendly.
+
+---
+
+## 🧰 Tech Stack
+
+* Python 3.7+
+* [`questionary`](https://github.com/tmbo/questionary)
+* Cross-platform file system operations
+
+---
+
+## 🤝 Contributing
+
+Got ideas? Issues? Wanna add support for more file types or OS features?
+
+1. Fork this repo
+2. Create a feature branch
+3. Submit a pull request
+
+
+The repo is: https://github.com/A96-45/tidybit2.git
+
+PRs are welcome like a `.jpg` in your `Downloads` folder since 2019.
+
+---
+
+## 📄 License
+
+MIT License © 2025 — \[YourName or Org]
+
+---
+
