@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: wispylib
+Version: 0.1.8
+Summary: A link scraping and redirect-checking utility
+Author: Ryu saiki
+Author-email: you@none.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.7
+License-File: LICENCE
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
