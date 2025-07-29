@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: ict-agent
+Version: 1.1.2
+Summary: ict编程组件Python sdk
+Home-page: https://github.com/pypa/sampleproject
+Author: air
+Author-email: 273918037@qq.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# Example Package
+#在此文件内，可使用markdown撰写对包的详细介绍和说明，便于别人熟悉和使用，在此不再赘述
+This is a simple example package. You can use
+[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+to write your content.
+
