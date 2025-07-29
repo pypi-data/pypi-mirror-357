@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cleanslay"
+version = "0.1.0"
+description = "Safe JSON serializer for complex Python objects (Pydantic, Pandas, NumPy, etc.)"
+authors = [{ name = "Phragman", email = "a@staphi.com" }]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = []
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "numpy",
+    "pandas",
+    "pydantic"
+]

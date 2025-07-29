@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+cleanslay/__init__.py
+cleanslay/json_sanitizer.py
+cleanslay.egg-info/PKG-INFO
+cleanslay.egg-info/SOURCES.txt
+cleanslay.egg-info/dependency_links.txt
+cleanslay.egg-info/requires.txt
+cleanslay.egg-info/top_level.txt
+tests/test_json_sanitizer.py
