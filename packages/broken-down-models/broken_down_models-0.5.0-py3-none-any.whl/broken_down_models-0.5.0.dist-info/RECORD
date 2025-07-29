@@ -1,0 +1,9 @@
+bdmodels/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bdmodels/apps.py,sha256=MP4fD0yTNT-hTiDpGLwgdr4m8yWlMfogHoyafgmDOO8,91
+bdmodels/fields.py,sha256=otMI_PsrJVkpiexLMbM-7V2esAPCgiU6UWcK-_akgfU,9943
+bdmodels/migration_ops.py,sha256=IXzQFzw4-vffvbyir8Z_7cguhIzKiA0i4buMHv45W3I,6071
+bdmodels/models.py,sha256=tG2hIT4-hpTeawWLyipIDai23KNoYRxao_lu5H4Z9Y4,25775
+broken_down_models-0.5.0.dist-info/LICENSE,sha256=Rf4TqmUeg-E_UVnarL_uJLQpDwbc-u4oGeYkJ0rrqPU,1064
+broken_down_models-0.5.0.dist-info/METADATA,sha256=fm16H-t1_mwC4J_PNKMU76A4lFuX5Hc0_m1XikbmNmY,3846
+broken_down_models-0.5.0.dist-info/WHEEL,sha256=7Z8_27uaHI_UZAc4Uox4PpBhQ9Y5_modZXWMxtUi4NU,88
+broken_down_models-0.5.0.dist-info/RECORD,,
