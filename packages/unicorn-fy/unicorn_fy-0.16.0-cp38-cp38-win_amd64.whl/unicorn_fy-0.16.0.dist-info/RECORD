@@ -1,0 +1,13 @@
+unicorn_fy/__init__.c,sha256=BfM7lXyeSNVdLeg65Nwufl_aQ6Jxv5tM76Q3NV0KbsU,196982
+unicorn_fy/__init__.cp38-win_amd64.pyd,sha256=TU7OBN4wL8AMbC1VveI-yvy_dvHBEkz7QInN_J4VncY,17408
+unicorn_fy/__init__.py,sha256=LS_NNr9iIPZQ56bDVu3iVrQr2H5IRVZN5MVIBmPH758,35
+unicorn_fy/__init__.pyi,sha256=uaCzuB2vzOj8BfFG8W1UN9AbMSKP4kAP6b-vEmBP9Dk,48
+unicorn_fy/unicorn_fy.c,sha256=sFvUR27Wib5E2GSCznFfZ_a7ca4U5dRYz5awM5iU8AA,1648493
+unicorn_fy/unicorn_fy.cp38-win_amd64.pyd,sha256=_dsZ13oQRkKKeNubdoynRQ7LAQJD2UDsEmtv-8bhO_w,259072
+unicorn_fy/unicorn_fy.py,sha256=VD4iEhrC8CDAxaev2hbDO4dq4MadLv4G79_z3cBLCpA,75146
+unicorn_fy/unicorn_fy.pyi,sha256=vNwKm39ZevItAPOwDdhuze0LbHY03_c405KOw4N2b1g,1726
+unicorn_fy-0.16.0.dist-info/LICENSE,sha256=oieNEREsAGq5IDKeJW6rDK0FPxTiRGvVkMdyLpLP_xU,1155
+unicorn_fy-0.16.0.dist-info/METADATA,sha256=_dpJ3eIWfTzlAn8652dN8DZ0fnU2KKtXO4nMvkVi6js,22166
+unicorn_fy-0.16.0.dist-info/WHEEL,sha256=2M046GvC9RLU1f1TWyM-2sB7cRKLhAC7ucAFK8l8f24,99
+unicorn_fy-0.16.0.dist-info/top_level.txt,sha256=IIZOosVTzDhthbwShXIR6lEHPRakyPZ_Psllv2arFGQ,11
+unicorn_fy-0.16.0.dist-info/RECORD,,
