@@ -1,0 +1,12 @@
+fabricatio-0.13.0.data/scripts/tdown,sha256=RQozNCtfW1vORxOSs8gI_Jo8JRdwGuc9Wb6cJg0ru-A,5141088
+fabricatio-0.13.0.dist-info/METADATA,sha256=BTExr7e-vBVzUHgxcBWeM5irTr6l8RGOovvz-qki_8E,8560
+fabricatio-0.13.0.dist-info/WHEEL,sha256=jLp2duqf8HdGR38ANSTZasShrLQst0e8KGzZrz_xSn8,108
+fabricatio-0.13.0.dist-info/licenses/LICENSE,sha256=yDZaTLnOi03bi3Dk6f5IjhLUc5old2yOsihHWU0z-i0,1067
+fabricatio/__init__.py,sha256=4a_7gabZhl9dzonBxcF-8peCGTLNxYJSDfInf1VhRsY,568
+fabricatio/actions/__init__.py,sha256=i2aGE3ZtNV2CTcYCAydlAKZq5fcQBRKlR3IL39weLEI,2243
+fabricatio/capabilities/__init__.py,sha256=qPjRnuw3gqmWOd5wmohC79l-IP3o8Hqga-MBdSvpwlM,2940
+fabricatio/models/__init__.py,sha256=VabxgFlOqcl29QtYH74lzDyKpFQTgbmdSgx0ZhbA504,1602
+fabricatio/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fabricatio/rust.cpython-313-x86_64-linux-gnu.so,sha256=y-j9-plUB_W8OD6uW2DO2QIOyEoZgX90Jr3bkujtnuI,513088
+fabricatio/workflows/__init__.py,sha256=sr-0tgpNPdN5t2pDQa-gp-KUE7K0QDtjP9QGvWYLZ9A,305
+fabricatio-0.13.0.dist-info/RECORD,,
