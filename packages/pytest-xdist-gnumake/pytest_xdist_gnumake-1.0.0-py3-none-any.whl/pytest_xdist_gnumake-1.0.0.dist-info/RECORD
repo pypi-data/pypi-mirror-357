@@ -1,0 +1,9 @@
+pytest_xdist_gnumake/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytest_xdist_gnumake/jobserver_client.py,sha256=GCw7PPbJPitkZcNBuVTkRnA_yjHyydbTsDUdBrErV6o,2582
+pytest_xdist_gnumake/plugin.py,sha256=d-1KOEZhwDHtazOL1FipXnjwM5nijGZFD-cAQoqYCI8,334
+pytest_xdist_gnumake-1.0.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+pytest_xdist_gnumake-1.0.0.dist-info/METADATA,sha256=mtYozaouJkR1RzaXKpu4h3V1gPUPMOfrmVU3FuG4UdA,2997
+pytest_xdist_gnumake-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pytest_xdist_gnumake-1.0.0.dist-info/entry_points.txt,sha256=ChY_q8SJFaIQIrOemmm80pMPqacg0lTulfOAHHF9JeI,49
+pytest_xdist_gnumake-1.0.0.dist-info/top_level.txt,sha256=Zo_tbQ1zm4eas_3Z0mmPgq6rG6OrojAMOIkSppLMalA,21
+pytest_xdist_gnumake-1.0.0.dist-info/RECORD,,
