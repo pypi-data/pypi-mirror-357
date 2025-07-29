@@ -1,0 +1,16 @@
+README.md,sha256=bBo8AM5mXCntRGjqf8H6dJBADptjEx4K76pP0tl4Jk4,7237
+bdct/__init__.py,sha256=aYW5L07YDh0gYBgXzjuWJBaChvd1yLVy9755VPAqiGI,181
+bdct/bd_model.py,sha256=kmXCQyQgN8R63h8nyo2x9TtMRCVv88UWHAmhbKP3rPE,11086
+bdct/bdct_model.py,sha256=tDTdUG6NSFji5NW64c3QfN6L4Kk-GElzPwBPOcf5Ps4,30613
+bdct/bdsky_model.py,sha256=mkvKAI4H8qtAX6LRs1gMvNhM4Jj_yfMWpW159a7vcyA,23844
+bdct/formulas.py,sha256=o6p8-_kteuWjzrKn-o7cD4xIaBFypC0ABogFfxdAKQo,6585
+bdct/model_distinguisher.py,sha256=Z0nKOEIJXUlzuiaTrukbADDW9MRXltbstWNUr4cloGU,7676
+bdct/model_distinguisher2.py,sha256=GFvGkqHt6Vpvs7s4HxfvvTFuueb68TjDZDWLEXVtMbU,10870
+bdct/parameter_estimator.py,sha256=2wbYvMy8UTOo3KADUxMvZU8YkdeIMm_RrNs7__IDJyE,7853
+bdct/tree_manager.py,sha256=aJ7uo62ECudWrm3s5OZbgd8C2Poef4Wuunm_-uR5h1A,6820
+bdct-0.1.26.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+bdct-0.1.26.dist-info/METADATA,sha256=veUl23AmlH5FkzsDqGDW2SZXjddvnu0GxzwV9YPNblI,8402
+bdct-0.1.26.dist-info/WHEEL,sha256=In9FTNxeP60KnTkGw7wk6mJPYd_dQSjEZmXdBdMCI-8,91
+bdct-0.1.26.dist-info/entry_points.txt,sha256=OC7Ct9ULNY3r3uaoD9zjSKuIOtaRwjCvMg_HHDOuEaw,324
+bdct-0.1.26.dist-info/top_level.txt,sha256=BML3qpbraI1VBFEiZ-P3bxURAUH3RTzBtak3L0RkjEo,5
+bdct-0.1.26.dist-info/RECORD,,
