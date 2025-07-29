@@ -1,0 +1,2 @@
+[console_scripts]
+ultraqueue-cli = shohanc.cli:main
