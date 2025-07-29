@@ -1,0 +1,2 @@
+u_boot_pylib>=0.0.6
+aiohttp>=3.9.1
