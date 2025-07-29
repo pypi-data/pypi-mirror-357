@@ -1,0 +1,10 @@
+torch_delaunay/_C.cpython-310-x86_64-linux-gnu.so,sha256=UDWRQ3-WmpAQfqTtNB52tsEpNIjkSQShBCbEwFtsLf0,25690192
+torch_delaunay/functional.py,sha256=peVVtUK0MA33VmMlCbelo6m0VtJ9WoEiJxodibYsqjM,3324
+torch_delaunay/functional_test.py,sha256=zAjI2-Bdh2_tvbgaRkvuQMnl9WhIOsL6b8PwJDKX95A,1662
+torch_delaunay/__init__.py,sha256=k15E2wnBMO_ceG3VMb2chav9usnM66zogZpDQUK4IWQ,60
+torch_delaunay/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+torch_delaunay-1.2.0.dist-info/WHEEL,sha256=-wdbF42uEDqyK3Oo1Xe0P8Ss8ux7axbac4IJpS3CCHY,114
+torch_delaunay-1.2.0.dist-info/top_level.txt,sha256=_G7i-lBLJDX2nRdQ5nFENgWIw7DyajsLZCYB4bzRdOU,15
+torch_delaunay-1.2.0.dist-info/RECORD,,
+torch_delaunay-1.2.0.dist-info/LICENSE,sha256=3xbNanDsCvT8184ICtSiD057BT_u0Coof5KUl8eeysw,35066
+torch_delaunay-1.2.0.dist-info/METADATA,sha256=4d_GeNA5htrp3h0pf8hf-aiR9mkx55823_02MANi7BQ,4259
