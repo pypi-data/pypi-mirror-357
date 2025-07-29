@@ -1,0 +1,10 @@
+tsdiag/__init__.py,sha256=7_NI1vE-DB_GAuU9RleZOuCJy5SsF4OJQm3nxOmYphc,1423
+tsdiag/api.py,sha256=y4WzTKWU6fGWMWSVy3PHcPXn80W_G0RwJ21pFE2HZwM,9048
+tsdiag/cli.py,sha256=_BSXt6QqQuBdtEf0pBS6tqlwReC6g-uin8aCpPyWmqk,8488
+tsdiag/core.py,sha256=9PxbnFhibYqlh4D9HM7XGJmXFZXLhYaWjkrRg9xhBvk,7475
+tsdiag/invertibility.py,sha256=-xsAUBAiHpC7OMa09KrUlFiNcxK3QbisoYS4w4YfwmA,7968
+tsdiag/stationarity.py,sha256=f7XfKNlVCZRVdBMDcIbgRQTwkzXASmLwfDjySpp_E38,6718
+time_series_model_analysis_and_diagnostic_tool-0.1.0.dist-info/METADATA,sha256=Hw_-0n0Aw8iAGYkBp-GvcNcLxZtPJSAO3hgs60MqVRs,7519
+time_series_model_analysis_and_diagnostic_tool-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+time_series_model_analysis_and_diagnostic_tool-0.1.0.dist-info/entry_points.txt,sha256=Tuu1PdAOsGbntMWIFN9wYPn7-sDAY90RMBE2I0FQrHY,43
+time_series_model_analysis_and_diagnostic_tool-0.1.0.dist-info/RECORD,,
