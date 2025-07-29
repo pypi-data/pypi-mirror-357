@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+calimetrics.egg-info/PKG-INFO
+calimetrics.egg-info/SOURCES.txt
+calimetrics.egg-info/dependency_links.txt
+calimetrics.egg-info/requires.txt
+calimetrics.egg-info/top_level.txt
