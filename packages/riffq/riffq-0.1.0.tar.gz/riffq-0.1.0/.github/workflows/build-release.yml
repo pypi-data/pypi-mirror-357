@@ -1,0 +1,71 @@
+name: build-release
+
+on:
+  push:
+    tags:
+      - 'release-*'
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: set-version
+      shell: bash
+      run: |
+        VERSION=${GITHUB_REF_NAME#release-}
+        python - "$VERSION" <<'PY'
+        import re, sys, pathlib
+        v = sys.argv[1]
+        p = pathlib.Path("Cargo.toml")
+        p.write_text(re.sub(r'^version\s*=.*$', f'version = "{v}"', p.read_text(), flags=re.M))
+        PY
+
+    - uses: PyO3/maturin-action@v1
+      with:
+        command: build
+        args: --release
+    - uses: actions/upload-artifact@v4
+      with:
+        name: wheels-${{ matrix.os }}
+        path: target/wheels/*.whl
+
+  sdist:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: |
+        VERSION=${GITHUB_REF_NAME#release-}
+        sed -i "s/^version = .*/version = \"${VERSION}\"/" Cargo.toml
+    - uses: PyO3/maturin-action@v1
+      with:
+        command: sdist
+    - uses: actions/upload-artifact@v4
+      with:
+        name: sdist
+        path: target/wheels/*.tar.gz
+
+  publish-pypi:
+    needs: [build, sdist]
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        pattern: "wheels-*"
+    - uses: actions/download-artifact@v4
+      with:
+        pattern: "sdist"
+    - run: |
+        mkdir dist
+        find . -name '*.whl' -exec cp {} dist/ \;
+        find . -name '*.tar.gz' -exec cp {} dist/ \;
+    - uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        skip-existing: true
