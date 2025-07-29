@@ -1,0 +1,52 @@
+# Include essential files
+include README.md
+include vme_client.yaml
+include vme
+
+# Include source code
+recursive-include src *.py
+
+# Exclude development and test files
+exclude test_*.py
+exclude *_test.py
+recursive-exclude tests *
+recursive-exclude test_* *
+recursive-exclude session_logs *
+recursive-exclude integration_test_logs *
+recursive-exclude test_session_logs *
+
+# Exclude development scripts and configs
+exclude *.sh
+exclude .env*
+exclude debug_*.py
+exclude diagnostic_*.py
+exclude integration_test_*.py
+exclude critical_fix_test_results.json
+exclude test_results_*.json
+exclude test_cases.json
+exclude phase_*.py
+exclude phase_*.md
+exclude demonstrate_*.py
+exclude quick_*.py
+exclude real_*.py
+exclude basic_test.py
+exclude sound.py
+exclude simple_*.py
+exclude capture_*.sh
+exclude kill_*.sh
+exclude fix_*.py
+exclude issue_*.py
+exclude tool_name_config.py
+exclude example_*.py
+exclude nonexistent.yaml
+
+# Exclude backup and temporary files
+exclude *_backup.md
+exclude README_backup.md
+exclude *.log
+exclude *.tmp
+
+# Exclude git and CI files (these are automatically excluded but being explicit)
+exclude .gitignore
+exclude .github/
+recursive-exclude .github *

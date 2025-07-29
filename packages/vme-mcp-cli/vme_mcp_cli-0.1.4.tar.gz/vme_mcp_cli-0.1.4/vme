@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+"""
+VME CLI Tool - Main Entry Point
+"""
+
+import click
+import sys
+from pathlib import Path
+import shutil
+
+# Add project root to path
+sys.path.insert(0, str(Path(__file__).parent))
+
+from src.clients.textual_cli.config.settings import get_default_config_file, get_default_config_dir
+
+@click.group()
+def vme():
+    """VME Infrastructure Management CLI Tool"""
+    pass
+
+@vme.command()
+@click.option('--config', '-c', help='Config file path (default: ~/.config/vme-cli/config.yaml)')
+@click.option('--anthropic-key', envvar='ANTHROPIC_API_KEY', help='Anthropic API key')
+@click.option('--openai-key', envvar='OPENAI_API_KEY', help='OpenAI API key')
+@click.option('--server-path', help='Path to VME server script')
+@click.option('--debug', is_flag=True, help='Enable debug mode (same as --debug-level 1)')
+@click.option('--debug-level', type=int, default=0, help='Debug level: 0=off, 1=basic, 2=detailed, 3=verbose')
+def cli(config, anthropic_key, openai_key, server_path, debug, debug_level):
+    """Start the VME chat interface"""
+    
+    # Load .env file first
+    from src.clients.textual_cli.main import load_dotenv_file
+    load_dotenv_file()
+    
+    try:
+        from src.clients.textual_cli.ui.app import VMEChatApp
+        from src.clients.textual_cli.config.settings import ClientConfig
+        
+        # Set debug level (--debug flag sets level 1)
+        final_debug_level = max(debug_level, 1 if debug else 0)
+        
+        # Use default config location if none specified
+        if not config:
+            config = str(get_default_config_file())
+        
+        client_config = ClientConfig(
+            config_file=config,
+            anthropic_key=anthropic_key,
+            openai_key=openai_key,
+            server_path=server_path,
+            debug=final_debug_level > 0,
+            debug_level=final_debug_level
+        )
+        
+        app = VMEChatApp(client_config)
+        app.run()
+        
+    except Exception as e:
+        click.echo(f"Error: {e}", err=True)
+        sys.exit(1)
+
+@vme.command()
+@click.option('--force', is_flag=True, help='Overwrite existing config file')
+def config(force):
+    """Copy default configuration to user config directory"""
+    
+    default_template = Path(__file__).parent / "vme_client.yaml"
+    user_config_file = get_default_config_file()
+    user_config_dir = get_default_config_dir()
+    
+    # Check if default template exists
+    if not default_template.exists():
+        click.echo(f"Error: Default config template not found: {default_template}", err=True)
+        sys.exit(1)
+    
+    # Check if user config already exists
+    if user_config_file.exists() and not force:
+        click.echo(f"Config file already exists: {user_config_file}")
+        click.echo("Use --force to overwrite")
+        sys.exit(1)
+    
+    # Create config directory if it doesn't exist
+    user_config_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Copy default config to user location
+    try:
+        shutil.copy2(default_template, user_config_file)
+        click.echo(f"✅ Default configuration copied to: {user_config_file}")
+        click.echo("📝 Edit this file to customize your settings")
+        click.echo("🚀 Run 'vme cli' to start the chat interface")
+    except Exception as e:
+        click.echo(f"Error copying config: {e}", err=True)
+        sys.exit(1)
+
+if __name__ == '__main__':
+    vme()
