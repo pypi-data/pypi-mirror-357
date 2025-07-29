@@ -1,0 +1,18 @@
+# MANIFEST.in
+
+# Include top-level metadata files
+include LICENSE
+include README.md
+
+# This is the most important line for Ultron's functionality.
+# It tells setuptools to look inside the 'ultron/autonomous/prompts' directory
+# and include all markdown (.md) files found within it.
+recursive-include ultron/autonomous/prompts *.md
+
+# Good practice: Exclude temporary and development-only files
+# from the final package that users will download.
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .DS_Store
+prune tests/
+prune venv/
