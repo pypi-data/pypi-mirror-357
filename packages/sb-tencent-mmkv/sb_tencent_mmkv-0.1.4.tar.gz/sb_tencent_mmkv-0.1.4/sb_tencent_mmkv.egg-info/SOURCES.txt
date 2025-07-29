@@ -1,0 +1,10 @@
+README.md
+setup.py
+mmkv/__init__.py
+mmkv/core.py
+mmkv/helper.py
+sb_tencent_mmkv.egg-info/PKG-INFO
+sb_tencent_mmkv.egg-info/SOURCES.txt
+sb_tencent_mmkv.egg-info/dependency_links.txt
+sb_tencent_mmkv.egg-info/not-zip-safe
+sb_tencent_mmkv.egg-info/top_level.txt
