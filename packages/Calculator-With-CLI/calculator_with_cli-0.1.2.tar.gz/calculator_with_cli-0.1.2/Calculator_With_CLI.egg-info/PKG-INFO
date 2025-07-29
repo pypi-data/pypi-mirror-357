@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: Calculator_With_CLI
+Version: 0.1.2
+Summary: A simple calculator package with CLI support
+Author: Ahmed
+Author-email: ahmed.mca18@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# Calculator With CLI
+
+A simple and flexible Python calculator package with both function-based and command-line interface (CLI) support.
+
+## 🔧 Features
+
+- Add, subtract, multiply, divide
+- Power, modulus, square root
+- Works as both an importable Python module and CLI tool
+- Handles multiple arguments
+- Error handling and logging
+
+## 📦 Installation
+
+```bash
+pip install calculator-with-cli

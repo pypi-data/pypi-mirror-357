@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+Calculator_With_CLI.egg-info/PKG-INFO
+Calculator_With_CLI.egg-info/SOURCES.txt
+Calculator_With_CLI.egg-info/dependency_links.txt
+Calculator_With_CLI.egg-info/entry_points.txt
+Calculator_With_CLI.egg-info/top_level.txt
+calculator_cli/__init__.py
+calculator_cli/calculator.py
+calculator_cli/cli.py
