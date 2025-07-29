@@ -1,0 +1,330 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools>=42", # At least v42 of setuptools required.
+  "versioningit",
+]
+
+[project]
+name = "lorrystream"
+description = "A lightweight and polyglot stream-processing library, to be used as a data backplane-, message relay-, or pipeline-subsystem."
+readme = "README.rst"
+keywords = [
+  "amqp",
+  "data",
+  "export",
+  "import",
+  "kinesis",
+  "mqtt",
+  "pandas",
+  "rdbms",
+  "sql",
+  "stream",
+]
+license = { text = "LGPL 3, EUPL 1.2" }
+authors = [
+  { name = "Andreas Motl", email = "andreas.motl@panodata.org" },
+  { name = "Richard Pobering", email = "richard.pobering@panodata.org" },
+]
+requires-python = ">=3.9"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Customer Service",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "Intended Audience :: End Users/Desktop",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: Manufacturing",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: System Administrators",
+  "Intended Audience :: Telecommunications Industry",
+  "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+  "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
+  "Operating System :: MacOS :: MacOS X",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: Unix",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Adaptive Technologies",
+  "Topic :: Communications",
+  "Topic :: Database",
+  "Topic :: Documentation",
+  "Topic :: Education",
+  "Topic :: Internet",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Office/Business",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Software Development :: Embedded Systems",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Object Brokering",
+  "Topic :: Software Development :: Pre-processors",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: Software Development :: Testing",
+  "Topic :: Software Development :: Version Control",
+  "Topic :: System :: Archiving",
+  "Topic :: System :: Benchmark",
+  "Topic :: System :: Clustering",
+  "Topic :: System :: Distributed Computing",
+  "Topic :: System :: Hardware",
+  "Topic :: System :: Logging",
+  "Topic :: System :: Monitoring",
+  "Topic :: System :: Networking",
+  "Topic :: System :: Systems Administration",
+  "Topic :: Text Processing",
+  "Topic :: Utilities",
+]
+dynamic = [
+  "version",
+]
+dependencies = [
+  "boltons",
+  "click<9",
+  "colorama<1",
+  "colorlog",
+  "commons-codec==0.0.22",
+  "dask",
+  "funcy",
+  "influxdb",
+  "influxdb-client[ciso]",
+  "orjson",
+  "paho-mqtt",
+  "pandas<2.3",
+  "pika<1.4",
+  "simplejson<4",
+  "sqlalchemy-cratedb>=0.38.0",
+  "streamz",
+  "tomli",
+  "toolz",
+]
+optional-dependencies.all = [
+  "lorrystream[carabas]",
+]
+optional-dependencies.carabas = [
+  "async-kinesis<3",
+  "aws-lambda-layer<0.6",
+  "cottonformation<1.2",
+  "localstack[base-runtime]<3.8",
+]
+optional-dependencies.develop = [
+  "black<25",
+  "mypy<1.12",
+  "pika-stubs<0.2",
+  "poethepoet<1",
+  "pyproject-fmt<3",
+  "ruff<0.12",
+  "validate-pyproject<1",
+]
+optional-dependencies.docs = [
+  "furo==2024.1.29",
+  "myst-parser[linkify]>=0.18,<5",
+  "sphinx-autobuild==2021.3.14",   # Newer versions stopped "watching" appropriately?
+  "sphinx-copybutton",
+  "sphinx-design-elements<1",
+  "sphinxcontrib-mermaid<1",
+  "sphinxext-opengraph<1",
+]
+optional-dependencies.ingestr = [
+  "async-kinesis<3",
+]
+optional-dependencies.release = [
+  "build<2",
+  "twine<6",
+]
+optional-dependencies.test = [
+  "cratedb-toolkit[testing]>=0.0.20",
+  "localstack-utils<1.1",
+  "pytest<9",
+  "pytest-asyncio-cooperative<0.30",
+  "pytest-cov<7",
+  "pytest-mock<4",
+  "pytest-mqtt>=0.4.2,<0.5",
+  "testcontainer-python-rabbitmq==0.4.*",
+]
+urls.Changelog = "https://lorrystream.readthedocs.io/changes.html"
+urls.Documentation = "https://lorrystream.readthedocs.io/"
+urls.Homepage = "https://lorrystream.readthedocs.io/"
+urls.Issues = "https://github.com/daq-tools/lorrystream/issues"
+urls.Repository = "https://github.com/daq-tools/lorrystream"
+scripts.lorry = "lorrystream.cli:cli"
+entry-points."streamz.sinks".dataframe_to_sql = "lorrystream.streamz.sinks:dataframe_to_sql"
+entry-points."streamz.sources".from_amqp = "lorrystream.streamz.sources:from_amqp"
+entry-points."streamz.sources".from_mqtt_plus = "lorrystream.streamz.sources:from_mqtt_plus"
+
+[tool.setuptools.packages.find]
+namespaces = false
+
+# ===================
+# Tasks configuration
+# ===================
+
+[tool.black]
+line-length = 120
+force-exclude = '''
+  lorrystream/streamz/amqp.py
+| lorrystream/carabas/aws/cf/.*\.py
+'''
+
+[tool.ruff]
+line-length = 120
+
+extend-exclude = [
+  "amqp-to-mqtt.py",
+  "dms_next\\.py$",
+  "lorrystream/carabas/aws/cf/*.py",
+  "lorrystream/streamz/amqp_async.py",
+  "lorrystream/streamz/amqp_blocking.py",
+  "workbench.py",
+]
+
+lint.select = [
+  # Builtins
+  "A",
+  # Bugbear
+  "B",
+  # comprehensions
+  "C4",
+  # Pycodestyle
+  "E",
+  # eradicate
+  "ERA",
+  # Pyflakes
+  "F",
+  # isort
+  "I",
+  # pandas-vet
+  "PD",
+  # return
+  "RET",
+  # Bandit
+  "S",
+  # print
+  "T20",
+  "W",
+  # flake8-2020
+  "YTT",
+]
+
+lint.extend-ignore = [
+  # zip() without an explicit strict= parameter
+  "B905",
+  # df is a bad variable name. Be kinder to your future self.
+  "PD901",
+  # Unnecessary variable assignment before `return` statement
+  "RET504",
+  # Unnecessary `elif` after `return` statement
+  "RET505",
+]
+
+lint.per-file-ignores."amazon_kclpy_helper.py" = [ "T201" ]    # Allow `print`
+lint.per-file-ignores."examples/*" = [ "T201" ]                # Allow `print`
+lint.per-file-ignores."lorrystream/util/about.py" = [ "T201" ] # Allow `print`
+lint.per-file-ignores."test_*.py" = [ "S101" ]                 # Use of `assert` detected
+lint.per-file-ignores."tests/*" = [ "S101" ]                   # Use of `assert` detected
+
+[tool.pytest.ini_options]
+# Because synchronous and asynchronous tests are mixed,
+# and maybe because of woes with pytest fixtures, the
+# test suite must turn off concurrency.
+addopts = """
+  -rA --verbosity=3
+  --max-asyncio-tasks=1 --asyncio-task-timeout=30
+  --cov --cov-report=term-missing --cov-report=xml
+"""
+minversion = "2.0"
+log_level = "DEBUG"
+log_cli_level = "DEBUG"
+log_format = "%(asctime)-15s [%(name)-24s] %(levelname)-8s: %(message)s"
+testpaths = [
+  "lorrystream",
+  "tests",
+]
+xfail_strict = true
+markers = [
+  "slow",
+]
+
+[tool.coverage.run]
+branch = false
+omit = [
+  "tests/*",
+  "lorrystream/carabas/aws/function/zip.py",
+  "lorrystream/spike/*",
+  # It is tested, but code coverage tracking does not work well.
+  "lorrystream/process/kinesis_cratedb_lambda.py",
+]
+source = [ "lorrystream" ]
+
+[tool.coverage.report]
+fail_under = 0
+show_missing = true
+
+[tool.mypy]
+packages = [ "lorrystream" ]
+exclude = [
+  "dms_next.py",
+  "lorrystream/streamz/amqp_async.py",
+  "lorrystream/streamz/amqp_blocking.py",
+]
+check_untyped_defs = true
+ignore_missing_imports = true
+implicit_optional = true
+install_types = true
+non_interactive = true
+
+[[tool.mypy.overrides]]
+module = "lorrystream.carabas.aws.cf.*"
+follow_imports = "silent"
+
+[tool.versioningit.vcs]
+method = "git"
+default-tag = "0.0.0"
+
+# ===================
+# Tasks configuration
+# ===================
+
+[tool.poe.tasks]
+
+check = [
+  "lint",
+  "test",
+]
+
+docs-autobuild = [
+  { cmd = "sphinx-autobuild --open-browser --watch lorrystream doc doc/_build" },
+]
+docs-html = [
+  { cmd = "sphinx-build -W --keep-going doc doc/_build" },
+]
+docs-linkcheck = [
+  { cmd = "sphinx-build -W --keep-going -b linkcheck doc doc/_build" },
+]
+
+format = [
+  { cmd = "black ." },
+  # Configure Ruff not to auto-fix (remove!):
+  # unused imports (F401), unused variables (F841), `print` statements (T201), and commented-out code (ERA001).
+  { cmd = "ruff check --fix --ignore=ERA --ignore=F401 --ignore=F841 --ignore=T20 --ignore=ERA001 ." },
+  { cmd = "pyproject-fmt --keep-full-version pyproject.toml" },
+]
+
+lint = [
+  { cmd = "ruff check ." },
+  { cmd = "black --check ." },
+  { cmd = "validate-pyproject pyproject.toml" },
+  { cmd = "mypy" },
+]
+
+release = [
+  { cmd = "python -m build" },
+  { cmd = "twine upload --skip-existing dist/*" },
+]
+
+test = { cmd = "pytest" }
