@@ -1,0 +1,183 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Simple API SAM Template
+
+Parameters:
+  DatabaseConnectionString:
+    Type: String
+    Default: ""
+
+Conditions:
+  IsDatabaseConnectionStringProvided: !Not [!Equals [!Ref DatabaseConnectionString, ""]]
+  
+Globals:
+  Function:
+    Timeout: 3
+    MemorySize: 128
+    Runtime: python3.12
+    Architectures:
+      - arm64
+
+Resources:
+  Vpc:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: MyVpc
+
+  Subnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      CidrBlock: 10.0.0.0/24
+      AvailabilityZone: !Select [0, !GetAZs ""]
+      Tags:
+        - Key: Name
+          Value: MySubnet
+
+  SubnetDB1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: !Select [0, !GetAZs ""]
+      Tags:
+        - Key: Name
+          Value: MyDBSubnet1
+
+  SubnetDB2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: !Select [1, !GetAZs ""]
+      Tags:
+        - Key: Name
+          Value: MyDBSubnet2
+          
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      VpcId: !Ref Vpc
+      GroupDescription: MySecurityGroup
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 5432
+          ToPort: 5432
+          CidrIp: 10.0.0.0/16
+      Tags:
+        - Key: Name
+          Value: MySecurityGroup
+
+  DBSubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
+    Properties:
+      DBSubnetGroupDescription: Subnet group for Aurora PostgreSQL
+      SubnetIds:
+        - !Ref SubnetDB1
+        - !Ref SubnetDB2
+      Tags:
+        - Key: Name
+          Value: MyDBSubnetGroup
+
+  AuroraDBCluster:
+    Type: AWS::RDS::DBCluster
+    Properties:
+      Engine: aurora-postgresql
+      EngineVersion: "16.1"
+      MasterUsername: postgres
+      MasterUserPassword: mysecretpassword
+      DatabaseName: mydb
+      DBSubnetGroupName: !Ref DBSubnetGroup
+      VpcSecurityGroupIds:
+        - !Ref SecurityGroup
+      BackupRetentionPeriod: 1
+      PreferredBackupWindow: "03:00-04:00"
+      PreferredMaintenanceWindow: "sun:04:00-sun:05:00"
+      Tags:
+        - Key: Name
+          Value: MyAuroraCluster
+
+  AuroraDBInstance:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      DBClusterIdentifier: !Ref AuroraDBCluster
+      DBInstanceClass: db.t3.medium
+      Engine: aurora-postgresql
+      Tags:
+        - Key: Name
+          Value: MyAuroraInstance
+  
+
+  MyApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      Cors:
+        AllowMethods: "'GET,POST,OPTIONS'"
+        AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+        AllowOrigin: "'*'"
+
+  ApiHandler:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: api_handler/
+      Handler: app.lambda_handler
+      Environment:
+        Variables:
+          DB_CONNECTION_STRING: !If [
+            IsDatabaseConnectionStringProvided, 
+            !Ref DatabaseConnectionString, 
+            !Sub "postgresql://postgres:mysecretpassword@${AuroraDBCluster.Endpoint.Address}:${AuroraDBCluster.Endpoint.Port}/mydb"
+          ]
+      VpcConfig:
+        SecurityGroupIds:
+          - !Ref SecurityGroup
+        SubnetIds:
+          - !Ref Subnet
+      Events:
+        ListUsers:
+          Type: Api
+          Properties:
+            RestApiId: !Ref MyApi
+            Path: /list-users
+            Method: get
+        CreateUser:
+          Type: Api
+          Properties:
+            RestApiId: !Ref MyApi
+            Path: /create-user
+            Method: post
+
+  MigrationFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: migration/
+      Handler: migration.lambda_handler
+      FunctionName: Migration
+      Environment:
+        Variables:
+          DB_CONNECTION_STRING: !If [
+            IsDatabaseConnectionStringProvided, 
+            !Ref DatabaseConnectionString, 
+            !Sub "postgresql://postgres:mysecretpassword@${AuroraDBCluster.Endpoint.Address}:${AuroraDBCluster.Endpoint.Port}/mydb"
+          ]
+      VpcConfig:
+        SecurityGroupIds:
+          - !Ref SecurityGroup
+        SubnetIds:
+          - !Ref Subnet
+      Policies:
+        - AWSLambdaVPCAccessExecutionRole
+
+  DatabaseMigration:
+    Type: Custom::DatabaseMigration
+    DependsOn: 
+      - AuroraDBInstance
+    Properties:
+      ServiceToken: !GetAtt MigrationFunction.Arn
+      DatabaseEndpoint: !GetAtt AuroraDBCluster.Endpoint.Address
