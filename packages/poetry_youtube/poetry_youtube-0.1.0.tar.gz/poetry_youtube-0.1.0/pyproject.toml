@@ -1,0 +1,22 @@
+[project]
+name = "poetry_youtube"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "ZeeshanZk09",email = "mzeeshankhan0988@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "request2 (>=0.2,<0.3)",
+    "requests (>=2.32.4,<3.0.0)",
+    "pytest (>=8.4.1,<9.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "poetry_youtube", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
