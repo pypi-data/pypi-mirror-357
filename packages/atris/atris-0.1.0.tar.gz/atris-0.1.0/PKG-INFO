@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: atris
+Version: 0.1.0
+Summary: A seamless ensemble and evaluation library for ML models
+Author: Your Name
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: scikit-learn
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: xgboost
+Requires-Dist: lightgbm
+Requires-Dist: catboost
+Requires-Dist: pyod
+Dynamic: author
+Dynamic: classifier
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
