@@ -1,0 +1,96 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gridit"
+dynamic = ["version"]
+authors = [
+    {name = "Mike Taves", email = "mwtoews@gmail.com"},
+]
+description = "Spatial tools to translate raster or vector geometry data to regular grids"
+readme = "README.md"
+keywords = ["rasterize", "grid", "regular grid"]
+license = {text = "BSD 3-Clause"}
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+]
+
+[project.optional-dependencies]
+dev = ["gridit[test,optional]", "pre-commit", "ruff"]
+optional = [
+    "fiona",
+    "flopy",
+    "matplotlib",
+    "netCDF4",
+    "geopandas",
+    "rasterio",
+    "scipy",
+    "shapely",
+    "xarray",
+]
+test = [
+    "pytest",
+    "pytest-cov",
+    "pytest-xdist",
+]
+
+[project.scripts]
+gridit = "gridit.__main__:cli_main"
+
+[project.urls]
+Repository = "https://github.com/mwtoews/gridit"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/gridit/_version.py"
+
+[tool.hatch.build.targets.sdist]
+only-include = ["src", "tests"]
+
+[tool.hatch.build.targets.wheel]
+sources = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+filterwarnings = [
+    "ignore:distutils Version classes are deprecated:DeprecationWarning:numexpr",
+    "ignore:numpy.ndarray size changed:RuntimeWarning",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle
+    "F",    # Pyflakes
+    "I",    # isort
+    "NPY",  # NumPy-specific
+    "RET",  # flake8-return
+    "RUF",  # Ruff-specific rules
+    "UP",   # pyupgrade
+]
+ignore = [
+    "RUF005",  # Consider iterable unpacking instead of concatenation
+    "RUF012",  # Mutable class attributes should be annotated with ...
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/{tests}/*" = ["D", "ANN"]
+
+[tool.codespell]
+skip = "*grb"
+check-filenames = true
+ignore-words-list = [
+    "nam",
+    "delt",
+]
