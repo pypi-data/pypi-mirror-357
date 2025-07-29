@@ -1,0 +1,9 @@
+lazybam-0.2.0.dist-info/METADATA,sha256=ox8CFfPSFRZpjGAWEOmBXd5uqmsBB8bxrDiunDjqgzY,340
+lazybam-0.2.0.dist-info/WHEEL,sha256=nMUxrbCLp2Pz0D_O51GdD6kxOduzt3YdQAdKdi8KaTw,90
+lazybam/__init__.py,sha256=IHwQtIZqbgikYuBhQ8MciyIEDFAfEQclkg9e5svVx3Y,699
+lazybam/error.py,sha256=GY5kFzTRCO2E1d7YITe5vKA_qvPuov6jpTFt9hD-As4,125
+lazybam/header.py,sha256=DteFqNy-UJJz791Me8zEVv2nhUQkNzab9BKLea3jYHQ,5620
+lazybam/lazybam.cp39-win32.pyd,sha256=f58Xubb0xCeI-xhV81oR7s1jnA3SttypMLhXoRqqJpI,938496
+lazybam/lazybam.pyi,sha256=ftKMTyi8-fp837GUq2k3P3--WYVbYu02cDGHPqDhXs4,4362
+lazybam/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lazybam-0.2.0.dist-info/RECORD,,
