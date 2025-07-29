@@ -1,0 +1,16 @@
+browser_launcher/__init__.py,sha256=Fz_wzkBwGuUNdQzmkrMi3rKVUKdyHnpkMwVo1OpP4Fs,356
+browser_launcher/alt_browsers_tab.py,sha256=Vv7Pm00yy6c3xaXlrFR8-P4f80hKE9alzcjnNpf2uAk,4343
+browser_launcher/alternative_browser_manager.py,sha256=s6hBpROC0IRqtPLR_h5b04aSRrMf29trXJHSY5IqWUc,9706
+browser_launcher/browser_tab.py,sha256=U3FFRUO7rZ7onfx9CON357bamqGm0JfBontBazed6Vo,11791
+browser_launcher/chrome_tab.py,sha256=fAvBVP_kZiA4-Nnp8sA7H_5O21Nt6kOFVb6dRYLT0NI,4327
+browser_launcher/cli.py,sha256=fjXPu-eHU1vbZO2xzuQCHod4YTY1-Go2wB0Hac62uec,3154
+browser_launcher/components.py,sha256=5xHfj5NnGnOJkhOO3elEeY0TwcHesuVcbO0viV4KA0o,3840
+browser_launcher/firefox_tab.py,sha256=xFwc44FNVueMkGRXpzbyrt5JDTSECi-OLqlJ5FMdkPI,4342
+browser_launcher/profile_manager.py,sha256=V99KQ0Uoflsj9Aoyw3sfNe1WA0R-jiCMgmtDS6ldVxw,22473
+browser_launcher/styles.py,sha256=fKhxIKyGXBfRGUGICOpt_Q7Qm-p8mw72P7aX2aBGpPY,3899
+browser_launcher-0.0.1.dist-info/licenses/LICENSE,sha256=x23WQ7b_qD1GLnxecrogeGCpkDN8sk2RuyMcR7kyi8U,1067
+browser_launcher-0.0.1.dist-info/METADATA,sha256=81_6xDwbEoS9GenCD0SYrof4oe_grKxLDugGNUy6Bs4,2613
+browser_launcher-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+browser_launcher-0.0.1.dist-info/entry_points.txt,sha256=sTG08Of0xfxSzRWgBl8Pr_jdQKPL59fzSHH1NcSxOKk,63
+browser_launcher-0.0.1.dist-info/top_level.txt,sha256=hguauKjvVIgCH_oFwVHcxdTvTMGqC_7qvRbTdEd2d0g,17
+browser_launcher-0.0.1.dist-info/RECORD,,
