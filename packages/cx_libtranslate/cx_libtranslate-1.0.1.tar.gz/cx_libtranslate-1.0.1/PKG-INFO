@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: cx_libtranslate
+Version: 1.0.1
+Summary: This is python version of cx-libtranslate library, which could be
+Author-email: Cixo Develop <cixo@cixoelectronic.pl>
+Description-Content-Type: text/markdown
+License-Expression: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Project-URL: Homepage, https://git.cixoelectronic.pl/cixo-electronic/cx-libtranslate-python
+Project-URL: Issues, https://git.cixoelectronic.pl/cixo-electronic/cx-libtranslate-python/issues
+
+# cx-libtranslate-python
+
+This is library, which could be used to translate apps.

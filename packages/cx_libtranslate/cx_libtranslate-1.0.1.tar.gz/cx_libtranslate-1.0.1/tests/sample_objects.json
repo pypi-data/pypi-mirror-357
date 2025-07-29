@@ -1,0 +1,13 @@
+{
+    "objects": {
+        "a": {
+            "b": "result"
+        }
+    },
+    
+    "phrases": {
+        "sample": "Prosto.",
+        "example": "Przykład.",
+        "for example": "Na przykład."
+    }
+}

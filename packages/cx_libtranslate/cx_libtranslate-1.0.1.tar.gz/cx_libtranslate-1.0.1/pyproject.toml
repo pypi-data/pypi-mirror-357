@@ -1,0 +1,23 @@
+[build-system]
+requires = ["flit_core >=3.11,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "cx_libtranslate"
+authors = [
+    {name = "Cixo Develop", email = "cixo@cixoelectronic.pl"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+readme = "README.md"
+version = "1.0.1"
+license = "MIT"
+license-files = ["LICENSE"]
+dynamic = ["description"]
+
+[project.urls]
+Homepage = "https://git.cixoelectronic.pl/cixo-electronic/cx-libtranslate-python"
+Issues = "https://git.cixoelectronic.pl/cixo-electronic/cx-libtranslate-python/issues"
+
