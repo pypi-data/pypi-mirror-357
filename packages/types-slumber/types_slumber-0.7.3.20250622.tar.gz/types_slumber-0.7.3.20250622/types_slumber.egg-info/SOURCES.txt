@@ -1,0 +1,17 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+slumber-stubs/METADATA.toml
+slumber-stubs/__init__.pyi
+slumber-stubs/exceptions.pyi
+slumber-stubs/py.typed
+slumber-stubs/serialize.pyi
+slumber-stubs/utils.pyi
+types_slumber.egg-info/PKG-INFO
+types_slumber.egg-info/SOURCES.txt
+types_slumber.egg-info/dependency_links.txt
+types_slumber.egg-info/requires.txt
+types_slumber.egg-info/top_level.txt
