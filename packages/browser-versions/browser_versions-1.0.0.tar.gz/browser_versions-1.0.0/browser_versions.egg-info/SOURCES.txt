@@ -1,0 +1,11 @@
+LICENSE
+README.md
+browser_versions.py
+pyproject.toml
+browser_versions.egg-info/PKG-INFO
+browser_versions.egg-info/SOURCES.txt
+browser_versions.egg-info/dependency_links.txt
+browser_versions.egg-info/entry_points.txt
+browser_versions.egg-info/requires.txt
+browser_versions.egg-info/top_level.txt
+tests/test_browser_versions.py
