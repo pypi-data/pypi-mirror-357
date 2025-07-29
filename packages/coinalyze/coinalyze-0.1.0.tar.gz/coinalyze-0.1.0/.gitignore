@@ -1,0 +1,27 @@
+# Environment variables
+.env
+
+# Environments
+.venv
+uv.lock
+.python-version
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Distribution / packaging
+dist/
+build/
+
+# Unit test / coverage reports
+.coverage
+htmlcov/
+.tox/
+.coverage.*
+.cache
+
+# Jupyter Notebook
+.ipynb_checkpoints
