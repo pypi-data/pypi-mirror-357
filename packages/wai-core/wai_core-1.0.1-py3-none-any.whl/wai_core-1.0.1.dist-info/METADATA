@@ -1,0 +1,409 @@
+Metadata-Version: 2.1
+Name: wai-core
+Version: 1.0.1
+Summary: WAI: World AI format aligning various 3D datasets
+Author: Norman Mueller
+Author-email: normanm@meta.com
+Requires-Python: >=3.10.0
+Description-Content-Type: text/markdown
+Requires-Dist: einops
+Requires-Dist: imageio
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: opencv-python==4.10.0.84
+Requires-Dist: pillow
+Requires-Dist: pip
+Requires-Dist: plyfile
+Requires-Dist: python-box
+Requires-Dist: scipy
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: tqdm
+Requires-Dist: iopath
+Requires-Dist: argconf>=0.3.3
+Requires-Dist: omegaconf==2.4.0.dev3
+Requires-Dist: spod
+Requires-Dist: ruff
+Requires-Dist: pre-commit
+Requires-Dist: orjson
+
+<img src="assets/wai_logo.png" height="64" align="right">
+
+# WorldAI format (wai)
+Standardized format extending the commonly used [Nerfstudio](https://docs.nerf.studio/quickstart/data_conventions.html) format.
+
+# Functionality
+- Conversion to WAI
+  - ✅ ScanNet++ v2 (with GT depth from meshed Lidar scan)
+  - ✅ DL3DV-10K
+  - ✅ Dioptra (from Navvis VLX, no GT depth for Navvis)
+  - ✅ Hyperscape (undistorted rflib datasets, with GT depth from iPhone lidar)
+  - ✅ Hyperscape (original rflib datasets, with GT depth from iPhone lidar)
+  - ✅ RE10K
+  - ✅ XRooms with (with synthetic GT depth)
+  - ✅ TartanAirV2 (with synthetic GT depth)
+  - ✅ Eyeful Tower dataset
+  - ✅ ASE (with synthetic GT depth)
+  - ⬜ BlendedMVS (with synthetic GT depth)
+  - ⬜ uCO3D (with estimated point clounds)
+  - ⬜ MegaDepth (with colmap)
+  - ⬜ Spring (with synthetic GT)
+- Shared processing scripts that can be applied to any dataset after conversion
+  - ✅ Undistortion
+  - ✅ Estimated depth
+  - ✅ Mesh rendering
+  - ✅ Metric alignment
+  - ✅ Co-visibility scores
+- Batch launcher
+  -  ✅ Slurm
+- Exploratory (To be moved into wai conversion if proven to be useful)
+  - ✅ Explore learning-based SfM like Mast3r SfM or AnyMap, objectives
+    - ✅ Get estimated poses quickly
+    - ⬜ Get co-visibility scores, compare the quality and speed of this approach against the current approach of checking the overlap of unprojected depth maps
+  - ⬜ Explore usage of the legion dataset (SSTK portion)
+    - ⬜ Milestone 1: Handpick good videos and transform to WAI --> Get initial assessment of usefulness
+    - ⬜ If useful: Develop full pipeline similar to the Cosmos or MovieGen preprocessing pipeline, detailed design TBD
+
+# Install
+Create an environment with python 3.12.9, for example with conda:
+```bash
+conda create -n wai python=3.12.9 -y
+conda activate wai
+```
+(Recommended option) Full install of wai in editable mode for convenient development:
+```bash
+cd wai
+pip install -e ".[all]"
+```
+(Other option) Lightweight install for reading and writing wai data only, no data processing with scripts, no development, no support for profiling loading speed and no support for rendering meshes (e.g. for ScanNet++):
+```bash
+cd wai
+pip install .
+```
+If you plan to use the [SLURM batch launch functionality](#slurm), you will also need to [install spod](https://ghe.oculus-rep.com/mb-research/spod/tree/main?tab=readme-ov-file#setup) afterwards.
+
+## (Optional) MASt3R wrapper installation
+mast3r wrapper requires the compilation of packages (for instance asmk) and the installation process is optionnaly available using the following command:
+```bash
+python setup.py install_mast3r
+```
+This will make sure your virtual env contains all the dependencies and compilation needed to run mast3r
+
+# How to run
+```bash
+# Run a conversion script (dataset specific)
+python -m wai.scripts.conversion.scannetppv2 \
+  $WAI_CONFIG_PATH/conversion/scannetppv2.yaml \
+  original_root=/xr_maps_research/raw_datasets/scannetpp_v2/data/ \
+  root=/xr_maps_research/wai/scannetpp_v2/
+
+# Run undistortion (modalities can be dataset specific)
+python -m wai.scripts.undistort \
+  $WAI_CONFIG_PATH/undistortion/scannetppv2.yaml
+
+# Run metric3dv2 (general -> requires setting the root folder)
+python -m wai.scripts.run_metric3dv2 \
+  root=/fsx/normanm/snpp_wai
+```
+
+# WAI dataset format
+## Folder structure
+We largely follow the data structure from [nerfstudio](https://docs.nerf.studio/quickstart/)
+and extend it by some additional modalities that are needed for our projects.
+The general folder and file structure is as follows:
+```
+<WAI dataset name>
+├── <scene id>
+│   ├── scene_meta.json OR scene_meta_distorted.json
+│   ├── images or images_distorted
+│   │   ├── <frame_id_1>.[png|jpg]
+│   │   ├── ... more frames
+│   │   └── <frame_id_n>.[png|jpg]
+│   ├── [Optional] <depth> (named according to scene_meta.json)
+│   │   ├── <frame_id_1>.exr
+│   │   ├── ... more frames
+│   │   └── <frame_id_n>.exr
+│   ├── [Optional] masks
+│   │   ├── <frame_id_1>.png
+│   │   ├── ... more frames
+│   │   └── <frame_id_n>.png
+│   └── [Optional] Any extra modlalities as specified in scene_meta.json
+├── <more scenes with the same layout>
+└── <last scene id>
+```
+
+
+## scene_meta format
+The `scene_meta.json` format is an extension of nerfstudio's [transforms.json](https://docs.nerf.studio/quickstart/data_conventions.html).
+
+The general structure is:
+```json5
+{
+  "scene_name": "00dd871005", // unique scene name
+  "dataset_name": "scannetppv2", // unique dataset name
+  "version": "0.1", // wai format version
+  "last_modified":  "2025-02-10T09:43:48.232022", // last modification date in ISO format
+  "shared_intrinsics": True/False // same intrinsics for all cameras?
+  "camera_model": "PINHOLE", // we convert into PINHOLE for simplicity supporting OPENCV, OPENCV_FISHEYE
+  "camera_convention": "opencv", // camera convention used for cam2world extrinsics, used for nerfstudio parser - only "opencv" is supported
+  <camera_coeff_name>: // camera coefficients like fl_x, cx, h,...
+  "frames": // ... per-frame intrinsics and extrinsics parameters
+  "scene_modalities": // ... dict of scene-level modalities with default mapping information like gt_points3D -> pts3d.npy)
+  "frame_modalities": // ... dict of frame-level modalities with default mapping information like (pred_depth -> metric3dv2)
+  "_applied_transform": // transform applied on original poses to obtain the poses stored in `frames`
+  "_applied_transforms": // dict of all the transforms applied to get from the original poses to the poses stored in `frames`
+}
+```
+Per-frame intrinsics can also be defined in the `frames` field.
+`frames` is a lists with following structure:
+```json5
+{
+  "frames": [
+    {
+      "frame_name": // unique name to identify a frame
+      "file_path": "<images>/<frame_name>.<ext>", // required for nerfstudio compatibility
+      "transform_matrix": // 4x4 flatten list of extrinsics in OPENCV format
+      <modality>_path: "<modality_path>/<frame_name>.<ext>" // relative path to frame modality
+      [OPTIONAL] "camera_model": "PINHOLE",
+      [OPTIONAL] <camera_coeff_name>: // camera coefficients like fl_x, cx, h,...
+    }
+  ]
+}
+```
+Example:
+```json5
+{
+  "scene_name": "00dd871005", // unique scene name
+  "dataset_name": "scannetppv2", // unique dataset name
+  "version": "0.1",
+  "last_modified":  "2025-02-10T09:43:48.232022",
+  "camera_model": "PINHOLE", // camera model type [PINHOLE, OPENCV, OPENCV_FISHEYE]
+  "camera_convention": "opencv", // camera convention used for cam2world extrinsics, used for nerfstudio parser
+  "fl_x": 1072.0, // focal length x
+  "fl_y": 1068.0, // focal length y
+  "cx": 1504.0, // principal point x
+  "cy": 1000.0, // principal point y
+  "w": 3008, // image width
+  "h": 2000, // image height
+  "frames": [
+    {
+      "frame_name": "000000",
+      "file_path": "images/000000.png", // required by nerfstudio
+      "transform_matrix": [
+        [1.0, 0.0, 0.0, 0.0],
+        [0.0, 1.0, 0.0, 0.0],
+        [0.0, 0.0, 1.0, 0.0],
+        [0.0, 0.0, 0.0, 1.0]
+      ], // required by nerfstudio
+      "image": "images/000000.png", // same as file_path
+      "metric3dv2_depth": "metric3dv2/v0/depth/000000.png",
+      "metric3dv2_depth_conf": "metric3dv2/v0/depth_confidence/000000.exr",
+      "fl_x": 1234, // specific focal length for this frame
+      "w": 1000 // specific width for this frame
+    },
+    ...
+  ],
+  "scene_modalities": {
+    "gt_pts3d": {
+        "path": "global_pts3d.npy", //path to a scene_level point cloud
+        "format": "numpy"
+    }
+  },
+  "frame_modalities": {
+    "pred_depth": {
+        "frame_key": "metric3dv2_depth", //default mapping of pred_depth to frame modality
+        "format": "depth"
+    },
+    "image": {
+        "frame_key": "image", //default mapping of pred_depth to modality
+        "format": "image",
+    },
+    "depth_confidence": {
+        "frame_key": "metric3dv2_depth_conf",
+        "format": "scalar"
+    }
+  },
+  "_applied_transformation": [ // e.g. the transformation from opengl to opencv
+        [1.0, 0.0, 0.0, 0.0],
+        [0.0, -1.0, 0.0, 0.0],
+        [0.0, 0.0, -1.0, 0.0],
+        [0.0, 0.0, 0.0, 1.0]
+  ],
+  "_applied_transformations": {
+    "opengl2opencv": [ // e.g. applied from opengl to opencv before
+        [1.0, 0.0, 0.0, 0.0],
+        [0.0, -1.0, 0.0, 0.0],
+        [0.0, 0.0, -1.0, 0.0],
+        [0.0, 0.0, 0.0, 1.0]
+  ]}
+}
+```
+
+
+# Code structure
+```
+wai
+├── wai.py                   # main script for dealing with wai data
+├── wai_dataset.py           # tiny dataset definition to batch-load wai data
+├── scripts
+│   ├── conversion           # dataset specific conversion script
+│   │   ├── scannetppv2.py   # SNPPv2 -> wai format
+│   │   ├── ...
+│   ├── model_wrapper        # Wrapper to some third-party models
+│   │   ├── metric3dv2.py    # Metric3dv2 depth/normal model
+│   │   ├── ...
+│   ├── undistort.py         # Undistortion for wai data
+│   ├── run_metric3dv2.py    # run Metric3dv2 depth/normals on wai data
+│   ├── ...
+├── configs                  # configs for processing
+│   ├── conversion           # per-dataset conversion config
+│   │   ├── scannetppv2.yaml # config for SNPPv2 conversion
+│   │   ├── ...
+│   ├── undistortion         # some datasets might require specific undistortion
+│   │   ├── default.yaml     # default undistortion config
+│   │   ├── scannetppv2.yaml # undistort image, anon_mask (and depth)
+│   │   ├── ...
+│   ├── metric3dv2.yaml      # config for running metric3dv2
+│   ├── ...
+├── utils                    # set of utility functions (WIP!)
+│   ├── m_ops.py             # batch-parallized operations like unprojection
+│   ├── io.py                # input/output utils (see data format)
+│   ├── scene_frame.py       # helper for creating dict: <scene_name> -> [<frame_names>]
+│   ├── conversion.py        # camera/data conversions
+│   ├── constants.py         # constants like camera coefficients
+│   ├── ...
+├──────────────────────────  # TESTING/PROFILING (WIP!)
+├── profiling                # profiling scripts
+│   ├── ...                  # measure throughput etc
+├── tests                    # testing scripts
+│   ├── ...                  # (visual) sanity checks for scripts
+└── readme.json              # WIP readme for discussion
+```
+# Standard formats (WIP!)
+We provide a set of default read-/write functions for the following data types:
+- `image`: using `pillow` for reading/writing
+- `depth`: depth images stored as exr-files using `opencv`
+- `normals`:  normals images stored as exr-files using `opencv`
+- `scalar`: scalar images stored as exr-files using `opencv`
+- `readable`: json/yaml using `orjson`/`yaml` for reading/writing
+- `numpy`: load stored (compressed) numpy arrays
+- `binary`: binary mask stored as 1-bit or 8-bit image
+- `ptz`: load/store compressed Pytorch files
+- `mmap`: memory-mapped numpy array for fast random-access
+- `scene_meta`: load and store our default scene-level info file (see scene_meta format)
+
+All these formats can be conveniently loaded and stored using `load_data`, `store_data`:
+
+```python
+from wai import load_data, store_data
+
+# --- load modalities ---
+scene_meta = load_data(<path_to_scene_meta.json>, "scene_meta")
+info = load_data(<path_to_readable.json>)
+image = load_data(<path_to_image.png>) # suffix resolves format to "image"
+depth = load_data(<path_to_depth_image.exr>, "depth")
+confidences = load_data(<path_to_image.exr>, "scalar")
+normals = load_data(<path_to_image.exr>, "normals")
+mask = load_data(<path_to_mask.png>, "binary")
+array = load_data(<path_to_image.npy>, "numpy")
+data = load_data(<path_to_ptz.ptz>) # suffix resolves format to "ptz"
+# ...
+
+# --- store modalities ---
+store_data(<target_path.json>, scene_meta, "scene_meta")
+store_data(<target_path.json>, info) # default for json: readable
+store_data(<target_path.png>, image) # default for png: 'image'
+store_data(<target_path.exr>, depth_img, "depth")
+store_data(<target_path.exr>, confidences, "scalar")
+store_data(<target_path.exr>, normals, "normals")
+store_data(<target_path.png>, mask, "binary")
+store_data(<target_path.npy>, array, "numpy")
+store_data(<target_path.ptz>, data) # suffix resolves format to "ptz"
+# ...
+
+```
+Implementation details can be found in `utils.io`.
+
+# VSCode Settings
+We follow the formatter settings of FBsource (T215237437) using "Ruff":
+1. Install the "Ruff" VSCode extension.
+2. You you can configure Ruff to format, fix, and organize imports on-save via the following addition to your VSCode settings.json:
+```
+"[python]": {
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "charliermarsh.ruff"
+}
+```
+
+# Inspect
+## Train a nerfstudio model with WAI data
+To run a nerfstudio reconstruction, just add `--camera-convention opencv` since nerfstudio uses `opengl`:
+```
+ns-train nerfacto \
+  --pipeline.model.camera-optimizer.mode off \
+  nerfstudio-data \
+  --data=/fsx/normanm/data/snpp_wai/00777c41d4/scene_meta.json \
+  --camera-convention opencv
+```
+## Visualize a scene of a WAI dataset with rerun
+To sanity check a processed WAI dataset we provide a rerun based visualizer that shows the camera poses with rgb images as well as unprojected depth from these poses (either colorized by rgb pixel color or with a color encoding for the depth from that specific view). This visualizer can be used as follows:
+1. If you are working on a remote machine make sure that the ports 9081, 9082 and 9083 are forwarded to your local machine.
+2. Start the rerun server on your remote machine by running:
+```
+conda activate wai  # Make sure that you are in an env where wai is installed
+RUST_LOG=info rerun --serve-web --port 9081 --ws-server-port 9082 --web-viewer-port 9083
+```
+3. On your local machine access the rerun viewer at http://localhost:9083/?url=ws://localhost:9082 .
+4. Start the script to log the camera poses to the rerun viewer. Example command (for all options please consult wai/configs/debug_visualize/debug_viz_final.yaml):
+```
+python -m  wai.viz.visualize_wai ~/code/wai/wai/configs/debug_visualize/debug_viz_final.yaml root=~/dryrun/scannetppv2 every_nth_sample=60 n_samples=3 depth_name="pred_depth"
+```
+And in the rerun web viewer you should see a visualization like this:
+<img src="assets/rerun_example_viz.png">
+
+## Dashboard
+A simple dashboard for an overview of the current process state:
+```bash
+python -m wai.dashboard.app
+```
+
+Access the dashboard at 127.0.0.1:5124 (port-forward to local if needed, auto-refreshes every 30 seconds).
+If you want to display all the stages (even if not launched on specific dataset), set ```show_all_stages``` to ```true```.
+
+# Lauching batch jobs
+
+## SLURM
+The basic rule for all processing is that only one job works on a stage for one scene at a time.
+We parallelize between scenes and datasets but perform stages sequentially.
+For each dataset, there is a configuration file `configs/launch/<dataset_name>.yaml` that defines the available stages along with their hardware requirements.
+Any flag set within a stage will overwrite the global flag value (e.g., `gpus: 1` in `metric3dv2` overwrites the default `gpus: 0`).
+Allocating resources per stage prevents idling GPUs (e.g., the hyperscape conversion only needs CPUs).
+To launch the different stages, we use `spod`, a simple wrapper to create an `sbatch` file and launch it for convenience.
+From the SLURM job node, navigate to `<wai_repo_path>` and launch:
+```
+python -m wai.launch.slurm_stage configs/launch/<dataset_name>.yaml \
+  conda_env=<name_of_your_conda_env> \
+  stage=<stage according to the config> \
+  launch_on_slurm=true
+```
+Full example:
+```
+python -m wai.launch.slurm_stage configs/launch/hyperscape.yaml \
+  conda_env=norm stage=conversion \
+  launch_on_slurm=true
+```
+If you want that all the associated jobs for a given stage launched by spod share a common locked version of the code, you can pass the ```locked=true``` argument to the command above. This will make sure that even if you edit the code, the jobs will point to a shared and locked version, and not your local one, avoiding potential discrepencies. 
+> [!WARNING]
+> Batch-launching is risky and if wrongly configured can triggered 100s of SLURM jobs at once, we thus recommend to always run first with `launch_on_slurm=false`, which will just print the config that would be passed to spod instead of starting the job using spod, and only run the job with `launch_on_slurm=true` after inspecting the printed output.
+
+# Contributing
+To keep code quality high, we recommend to run these commands before committing code or filing a pull request:
+```
+ruff format wai/
+ruff check wai/ --output-format=github
+```
+<!-- TODO: Once we have more tests, add cli command that runs all tests that also the CI runs   -->
