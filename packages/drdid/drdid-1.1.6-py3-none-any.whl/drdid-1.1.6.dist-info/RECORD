@@ -1,0 +1,11 @@
+drdid/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+drdid/_version_.py,sha256=dh8J4El9b4iqphBgXLgnpBBahiEA-LUwKZYLjWS-x3c,17
+drdid/drdid.py,sha256=Ii5qQ0lInYHLSsGXEEpobhlMq1BFUK3LiZP73lHBifw,13156
+drdid/ipwd_did.py,sha256=vrnEyCg9jsZabsjcp_S8KzPuRt-eaXOlF_72TFavZcE,6273
+drdid/reg_did.py,sha256=IX5x7MLXsL7qhCtcBL3bVDPuPemN5QEVW50soEQ3G5k,7039
+drdid/utils.py,sha256=DLz3zfaJBtkQH72t_Ks5dUeZCqUf5HAz--iDkPIh5OY,2154
+drdid-1.1.6.dist-info/licenses/LICENSE,sha256=074-9zp7UvJPkvubrgLWw_JB4EgZiYCjAtzpgi9es_I,1142
+drdid-1.1.6.dist-info/METADATA,sha256=nT8P01tCuh9uwMNrDABO1pVTcCt3VaAnO6etBj8GlfY,690
+drdid-1.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+drdid-1.1.6.dist-info/top_level.txt,sha256=xRabzMBAiGz5Aks1Wcebo_WtauCRbYgkHYo3DQ-G1eM,6
+drdid-1.1.6.dist-info/RECORD,,
