@@ -1,0 +1,142 @@
+# SeizureKit
+
+[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PyPI version](https://badge.fury.io/py/seizurekit.svg)](https://badge.fury.io/py/seizurekit)
+[![Build Status](https://github.com/Mr-TalhaIlyas/seizurekit/actions/workflows/python-package.yml/badge.svg)](https://github.com/Mr-TalhaIlyas/seizurekit/actions)
+
+A Python toolkit for the robust evaluation and analysis of seizure detection models.
+
+## Overview
+
+SeizureKit provides a suite of tools designed for researchers and developers working on seizure detection algorithms. It simplifies the process of evaluating model performance at both the epoch and event levels, offering standardized metrics, statistical tests, and post-processing utilities.
+
+## Key Features
+
+- **Epoch-Level Metrics:** Calculate standard classification metrics like F1-score, precision, recall, and specificity on a per-window (epoch) basis.
+- **Event-Level Metrics:** Evaluate performance based on seizure events, measuring detection latency, F1-score, and other event-based statistics.
+- **Post-Processing:** Includes temporal smoothing and hysteresis thresholding to improve the stability and accuracy of predictions.
+- **Statistical Analysis:** Perform statistical significance testing with tools like Bootstrapping and DeLong's test for comparing ROC curves.
+- **Visualization (Upcoming):** Tools for plotting ground truth, model probabilities, and predictions.
+
+## Installation
+
+You can install SeizureKit directly from PyPI (once published):
+
+```bash
+pip install seizurekit
+```
+
+Alternatively, for the latest development version, you can install it from the source:
+
+```bash
+git clone https://github.com/Mr-TalhaIlyas/seizurekit.git
+cd seizurekit
+pip install -e .
+```
+
+## Usage
+
+SeizureKit can be used both as a command-line tool for quick evaluations and as a library in your Python projects for more complex workflows.
+
+### As a Command-Line Tool
+
+After installation, you can use the `seizurekit` command to evaluate your model's predictions. You need a ground truth file and a model probabilities file (either `.npy` or `.csv`).
+
+```bash
+# Display help and all available options
+seizurekit --help
+
+# Example: Run a full evaluation
+seizurekit path/to/ground_truth.npy path/to/model_probabilities.npy --smoothing_window 5 --hyst_high 0.7 --hyst_low 0.3
+```
+
+### As a Python Library
+
+Integrate SeizureKit's functions directly into your analysis scripts.
+
+```python
+import numpy as np
+from seizurekit.eval_epochs import calculate_classification_metrics
+from seizurekit.eval_events import calculate_event_level_metrics
+
+# 1. Load or create your data
+y_true = np.array([0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1])
+y_prob_1 = np.array([0.1, 0.2, 0.8, 0.9, 0.4, 0.3, 0.1, 0.4, 0.85, 0.95, 0.2, 0.1, 0.3, 0.99, 0.98, 0.97, 0.5])
+y_prob_2 = np.array([0.05, 0.15, 0.75, 0.85, 0.35, 0.25, 0.05, 0.35, 0.8, 0.9, 0.15, 0.05, 0.25, 0.95, 0.9, 0.92, 0.45])
+
+all_targets = y_true
+all_probs = {'my_model': y_prob_1,
+              'my_model_2': y_prob_2}
+eval_config = {'window_duration': 10, 'detection_tolerance': 30}
+
+# 2. Run epoch-level evaluation
+print("--- Epoch-Level Metrics ---")
+epoch_results = calculate_classification_metrics(
+    all_probs,
+    all_targets,
+    eval_config,
+    smoothing_window=3,
+    hysteresis_high=0.5,
+    hysteresis_low=0.5
+)
+
+# 3. Run event-level evaluation
+print("\n--- Event-Level Metrics ---")
+event_results = calculate_event_level_metrics(
+    all_probs,
+    all_targets,
+    eval_config,
+    smoothing_window=3,
+    hysteresis_high=0.5,
+    hysteresis_low=0.5
+)
+```
+Running above code produces output below;
+```shell
+--- Epoch-Level Metrics ---
+========================================================================================================================
+Modality             Recall (CI)          Precision (CI)       F1-Score (CI)        Specificity NPV        AUROC (CI)           AP (CI)             
+------------------------------------------------------------------------------------------------------------------------
+my_model             0.941 [0.824,1.000]     0.948 [0.872,1.000]     0.941 [0.820,1.000]   1.000      0.889      1.000 [1.000,1.000]     1.000 [1.000,1.000]
+my_model_2           0.882 [0.706,1.000]     0.906 [0.837,1.000]     0.882 [0.706,1.000]   1.000      0.800      1.000 [1.000,1.000]     1.000 [1.000,1.000]
+========================================================================================================================
+
+Modality             TN         FP         FN         TP        
+my_model             8          0          1          8         
+my_model_2           8          0          2          7         
+================================================================================
+
+Total Duration: 0.05 hours
+Modality             False Alarms/h 
+my_model             0.00            FPR/h
+my_model_2           0.00            FPR/h
+================================================================================
+
+--- Event-Level Metrics ---
+========================================================================================================================
+Event-Level Detection Metrics:
+------------------------------------------------------------------------------------------------------------------------
+Modality             | #Events  | TP    | FN    | FP    | Sens   | Lat (s)  | FA/h   | Cov.   | Burden (min/h) 
+------------------------------------------------------------------------------------------------------------------------
+my_model             | 3        | 3     | 0     | 0     | 1.0000 | 0.0000   | 0.0000 | 0.8889 | 28.2353        
+my_model_2           | 3        | 3     | 0     | 0     | 1.0000 | 0.0000   | 0.0000 | 0.7778 | 24.7059        
+========================================================================================================================
+Coverage(Cov.): Fraction of true seizure time detected by AI.
+Burden: Time AI believes seizure is occurring, scaled to minutes/hour.
+========================================================================================================================
+```
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request.
+
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/your-feature-name`).
+3.  Make your changes.
+4.  Commit your changes (`git commit -m 'Add some feature'`).
+5.  Push to the branch (`git push origin feature/your-feature-name`).
+6.  Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. You should create a `LICENSE` file in your project root with the MIT

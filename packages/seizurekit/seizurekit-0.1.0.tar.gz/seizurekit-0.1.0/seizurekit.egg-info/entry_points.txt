@@ -1,0 +1,2 @@
+[console_scripts]
+seizurekit = seizurekit.__main__:main

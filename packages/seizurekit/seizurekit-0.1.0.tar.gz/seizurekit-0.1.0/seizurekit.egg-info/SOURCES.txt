@@ -1,0 +1,16 @@
+README.md
+setup.py
+seizurekit/__init__.py
+seizurekit/eval_epochs.py
+seizurekit/eval_events.py
+seizurekit/eval_utils.py
+seizurekit.egg-info/PKG-INFO
+seizurekit.egg-info/SOURCES.txt
+seizurekit.egg-info/dependency_links.txt
+seizurekit.egg-info/entry_points.txt
+seizurekit.egg-info/requires.txt
+seizurekit.egg-info/top_level.txt
+seizurekit/stats/__init__.py
+seizurekit/stats/stat.py
+seizurekit/viz/__init__.py
+seizurekit/viz/toy_example.py
