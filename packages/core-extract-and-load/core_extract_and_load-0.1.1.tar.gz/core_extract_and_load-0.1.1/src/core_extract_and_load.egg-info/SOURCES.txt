@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+src/core_extract_and_load.egg-info/PKG-INFO
+src/core_extract_and_load.egg-info/SOURCES.txt
+src/core_extract_and_load.egg-info/dependency_links.txt
+src/core_extract_and_load.egg-info/not-zip-safe
+src/core_extract_and_load.egg-info/requires.txt
+src/core_extract_and_load.egg-info/top_level.txt
