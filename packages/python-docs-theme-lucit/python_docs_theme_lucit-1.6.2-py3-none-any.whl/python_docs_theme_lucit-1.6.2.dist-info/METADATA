@@ -1,0 +1,64 @@
+Metadata-Version: 2.4
+Name: python-docs-theme-lucit
+Version: 1.6.2
+Summary: The Sphinx theme for the CPython docs and related projects
+Author-email: LUCIT <info@lucit.tech>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: Sphinx :: Theme
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Python Software Foundation License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Documentation
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+License-File: LICENSE
+Project-URL: Code, https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit
+Project-URL: Download, https://pypi.org/project/python-docs-theme-lucit/
+Project-URL: Homepage, https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit
+Project-URL: Issue tracker, https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit/issues
+
+[![GitHub Release](https://img.shields.io/github/release/LUCIT-Systems-and-Development/python-docs-theme-technopathy.svg?label=github)](https://github.com/LUCIT-Systems-and-Development/python-docs-theme-technopathy/releases)
+[![PyPi Release](https://img.shields.io/pypi/v/python-docs-theme-technopathy?color=blue)](https://pypi.org/project/python-docs-theme-technopathy/)
+[![Downloads](https://pepy.tech/badge/python-docs-theme-technopathy)](https://pepy.tech/project/python-docs-theme-technopathy)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/python-docs-theme-technopathy.svg) 
+![PyPI - Status](https://img.shields.io/pypi/status/python-docs-theme-technopathy.svg) 
+[![Github](https://img.shields.io/badge/source-github-orange)](https://github.com/LUCIT-Systems-and-Development/python-docs-theme-technopathy)
+
+# Python Docs Sphinx Theme (LUCIT Edition)
+Forked from https://github.com/python/python-docs-theme
+
+## Installation
+
+To use the theme, install it into your docs build environment via `pip`:
+```
+pip install python-docs-theme-lucit
+```
+https://pypi.org/project/python-docs-theme-lucit
+
+## Howto
+https://www.technopathy.club/2019/11/03/use-python-sphinx-on-github-pages-with-html-and-an-indivdual-theme/
+
+## Documentation
+Settings for source/conf.py:
+```
+html_theme = 'python_docs_theme_lucit'
+html_context = {'github_repo_name': 'unicorn-binance-suite',
+                'github_user_name': 'LUCIT-Systems-and-Development',
+                'project_name': project}
+```
+Demo conf.py: https://github.com/LUCIT-Systems-and-Development/python-simplemachinesforum/blob/master/sphinx/source/conf.py
+
+### Elements are inherited by:
+- https://github.com/sphinx-doc/sphinx/tree/master/sphinx/themes/default
+- https://github.com/sphinx-doc/sphinx/tree/master/sphinx/themes/basic
+
+
