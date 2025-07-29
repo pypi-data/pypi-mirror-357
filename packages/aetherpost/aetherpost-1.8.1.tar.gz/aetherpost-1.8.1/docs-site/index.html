@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AetherPost v1.7.1 - Social Media Automation for Developers</title>
+    <meta name="description" content="Terraform-style social media automation with profile generation, multi-platform support, and AI content creation. Perfect for developers promoting their apps.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <style>
+        /* Enhanced modern styling */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1d4ed8;
+            --accent-color: #10b981;
+            --background-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem !important;
+                text-align: center;
+            }
+        }
+
+        .nav-brand h1 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .nav-brand .tagline {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* New Features Section */
+        .new-features {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+        }
+
+        .new-features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .feature-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .new-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Quick Start Section */
+        .quick-start {
+            padding: 4rem 0;
+            background: var(--background-light);
+        }
+
+        .quick-start h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .install-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .install-steps {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .install-steps {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        .step-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            font-family: 'Fira Code', monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        /* Platform Support */
+        .platforms {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .platforms h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .platform-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .platform-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        .platform-card {
+            background: var(--background-light);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .platform-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #94a3b8;
+        }
+
+        /* Responsive Grid Classes */
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            
+            .responsive-grid-2 {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .cost-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+        }
+
+        /* Additional mobile optimizations */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .step-card, .feature-card, .platform-card {
+                padding: 1.5rem;
+            }
+            
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .code-block {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Comprehensive Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            /* Code blocks - critical for mobile */
+            .code-block {
+                font-size: 0.7rem !important;
+                padding: 0.75rem !important;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .code-block pre {
+                white-space: pre;
+                word-wrap: normal;
+                overflow-x: auto;
+                max-width: 100%;
+            }
+            
+            /* Force smaller code blocks on very small screens */
+            div[style*="font-size: 0.85rem"] .code-block,
+            div[style*="font-size: 0.8rem"] .code-block {
+                font-size: 0.65rem !important;
+            }
+            
+            /* Tables */
+            table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+                font-size: 0.85rem;
+            }
+            
+            th, td {
+                padding: 0.5rem !important;
+                font-size: 0.8rem !important;
+            }
+            
+            /* Platform cards */
+            .platform-card {
+                padding: 1rem !important;
+            }
+            
+            .platform-card .code-block {
+                font-size: 0.65rem !important;
+                padding: 0.5rem !important;
+            }
+            
+            /* Feature cards */
+            .feature-card {
+                padding: 1.5rem !important;
+            }
+            
+            /* Long text wrapping */
+            p, li, div {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+            
+            /* Grid adjustments */
+            .feature-grid, .platform-grid, .install-steps {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            /* Section padding */
+            section {
+                padding: 2rem 0 !important;
+            }
+            
+            /* Headers */
+            h2 {
+                font-size: 1.75rem !important;
+            }
+            
+            h3 {
+                font-size: 1.25rem !important;
+            }
+            
+            /* Buttons */
+            .btn {
+                padding: 0.6rem 1.2rem !important;
+                font-size: 0.9rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Ultra-mobile optimizations */
+            .container {
+                padding: 0 10px !important;
+            }
+            
+            .hero h1 {
+                font-size: 1.75rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            .hero .subtitle {
+                font-size: 0.95rem !important;
+            }
+            
+            /* Critical code block fixes for small screens */
+            .code-block {
+                font-size: 0.6rem !important;
+                padding: 0.5rem !important;
+                margin: 0.5rem -10px !important;
+                border-radius: 0 !important;
+            }
+            
+            .code-block pre {
+                font-size: 0.6rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            /* API credential code blocks need special handling */
+            div[style*="overflow-x: auto"] {
+                margin: 0 -10px !important;
+            }
+            
+            /* Platform cards */
+            .platform-card {
+                margin: 0.5rem 0 !important;
+                border-radius: 0.5rem !important;
+            }
+            
+            /* Feature cards */
+            .feature-card {
+                padding: 1rem !important;
+                margin: 0.5rem 0 !important;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.1rem !important;
+            }
+            
+            .feature-card p {
+                font-size: 0.85rem !important;
+            }
+            
+            /* Step cards */
+            .step-card {
+                padding: 1rem !important;
+            }
+            
+            .step-number {
+                width: 2.5rem !important;
+                height: 2.5rem !important;
+                font-size: 1rem !important;
+            }
+            
+            /* Cost grid */
+            .cost-grid {
+                gap: 0.75rem !important;
+            }
+            
+            /* Version badge */
+            .version-badge {
+                font-size: 0.8rem !important;
+                padding: 0.4rem 0.8rem !important;
+            }
+            
+            /* Footer */
+            .footer-content {
+                text-align: center !important;
+            }
+            
+            /* Hide decorative elements */
+            .new-badge {
+                font-size: 0.7rem !important;
+                padding: 0.2rem 0.5rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <h1>🚀 AetherPost</h1>
+                <div class="tagline">Promotion as Code</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#quickstart">Quick Start</a></li>
+                <li><a href="#platforms">Platforms</a></li>
+                <li><a href="profile-management.html">Profile Generation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="version-badge">✨ NEW: v1.7.1 with Profile Generation</div>
+            <h1>Ultimate Social Media Automation<br>for Developers</h1>
+            <p class="subtitle">
+                One setup, full automation. Terraform-style workflow with 4 simple commands. 
+                Intelligent profile generation, content creation, and posting across 5 platforms - completely automated.
+            </p>
+            <div class="hero-buttons">
+                <a href="#quickstart" class="btn btn-primary">
+                    ⚡ Get Started
+                </a>
+                <a href="profile-management.html" class="btn btn-secondary">
+                    🎭 Generate Profiles
+                </a>
+                <a href="https://github.com/fununnn/aetherpost" class="btn btn-secondary" target="_blank">
+                    📚 GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-features">
+        <div class="container">
+            <h2>🆕 What's New in v1.7.1</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="new-badge">SIMPLIFIED</div>
+                    <h3>⚡ 4-Command Workflow</h3>
+                    <p>Terraform-style simplicity. One interactive setup generates campaign.yaml, then plan and apply. Profile generation, content creation, and posting - all automated.</p>
+                    <div class="code-block" style="font-size: 0.85rem;">
+<pre>aetherpost init   # Interactive setup → campaign.yaml
+aetherpost plan   # Preview content
+aetherpost apply  # Deploy & automate</pre>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="new-badge">NEW</div>
+                    <h3>🌐 Bluesky Integration</h3>
+                    <p>Full native support for Bluesky social platform. Decentralized social media with free posting and no API restrictions.</p>
+                    <div class="code-block" style="font-size: 0.85rem;">
+<pre>platforms:
+  - bluesky  # Free, decentralized
+  - twitter  # Requires paid plan</pre>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="new-badge">SMART</div>
+                    <h3>🔍 Auto-Detection</h3>
+                    <p>Pre-created campaign.yaml + .env.aetherpost? AetherPost auto-detects and skips interactive setup. Perfect for Claude Code and AI development workflows.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="new-badge">COMPLETE</div>
+                    <h3>🎯 Full Automation</h3>
+                    <p>Profile generation, icon creation, content posting, and continuous promotion - all automated. Set it once, promote forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quickstart" class="quick-start">
+        <div class="container">
+            <h2>⚡ Quick Start</h2>
+            <div class="install-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Install AetherPost</h3>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyToClipboard('pip install aetherpost')">Copy</button>
+<pre>pip install aetherpost</pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>One-Time Setup</h3>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyToClipboard('aetherpost init')">Copy</button>
+<pre>aetherpost init</pre>
+                    </div>
+                    <p>Interactive setup generates campaign.yaml + creates profiles automatically</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Deploy & Automate</h3>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyToClipboard('aetherpost plan\naetherpost apply')">Copy</button>
+<pre>aetherpost plan
+aetherpost apply</pre>
+                    </div>
+                    <p>Preview content, then deploy. Continuous automation begins instantly.</p>
+                </div>
+            </div>
+
+            <!-- Claude Code & AI Tools Setup -->
+            <div style="background: linear-gradient(135deg, #e0f2fe 0%, #f3e5f5 100%); padding: 3rem; border-radius: 1rem; margin-top: 3rem;">
+                <h3>🤖 For Claude Code & AI Tools</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;"><strong>Two setup approaches available:</strong> Interactive (guided) or Automated (pre-configured files)</p>
+                
+                <!-- Setup Method Tabs -->
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                    <button onclick="showSetupMethod('interactive')" id="interactive-tab" style="background: #2563eb; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; cursor: pointer; font-weight: 600;">📋 Interactive Setup</button>
+                    <button onclick="showSetupMethod('automated')" id="automated-tab" style="background: #6b7280; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; cursor: pointer; font-weight: 600;">🚀 Automated Setup</button>
+                </div>
+
+                <!-- Interactive Setup -->
+                <div id="interactive-setup" class="setup-method">
+                    <div style="background: rgba(37, 99, 235, 0.1); padding: 2rem; border-radius: 0.75rem; border-left: 4px solid #2563eb;">
+                        <h4>📋 Interactive Setup (One-time configuration)</h4>
+                        <div class="code-block">
+<pre>pip install aetherpost
+aetherpost init
+
+# Single interactive session handles everything:
+# 1. Project details → campaign.yaml generation
+# 2. Platform selection → automated profile creation
+# 3. API authentication → continuous automation setup
+# 4. Then: plan → apply → fully automated promotion</pre>
+                        </div>
+                        <p><strong>✅ One setup, full automation</strong> - One setup, lifetime automation<br>
+                        <strong>✅ Smart generation</strong> - Profiles, content, posting schedules<br>
+                        <strong>✅ Zero maintenance</strong> - Runs continuously after init</p>
+                    </div>
+                </div>
+
+                <!-- Automated Setup -->
+                <div id="automated-setup" class="setup-method" style="display: none;">
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 2rem; border-radius: 0.75rem; border-left: 4px solid #10b981;">
+                        <h4>🚀 Auto-Detection Setup (Perfect for Claude Code)</h4>
+                        <p>Pre-create files and AetherPost auto-detects them, skipping all interactive prompts:</p>
+                        
+                        <div class="responsive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                            <!-- Mobile responsive fix -->
+                            <style>
+                                @media (max-width: 768px) {
+                                    .responsive-grid {
+                                        grid-template-columns: 1fr !important;
+                                        gap: 1rem !important;
+                                    }
+                                    .code-block {
+                                        font-size: 0.7rem !important;
+                                        padding: 1rem !important;
+                                    }
+                                }
+                            </style>
+                            <!-- Required Files -->
+                            <div>
+                                <h5 style="color: #dc2626; margin-bottom: 1rem;">🔴 Required Files</h5>
+                                <div style="background: rgba(220, 38, 38, 0.1); padding: 1.5rem; border-radius: 0.5rem; border-left: 3px solid #dc2626;">
+                                    <p><strong>campaign.yaml</strong> - Project configuration</p>
+                                    <div class="code-block" style="font-size: 0.8rem;">
+<pre>name: "MyAwesomeApp"
+concept: "Revolutionary productivity tool for developers"
+description: "Transform your workflow with intelligent automation"
+urls:
+  main: "https://myapp.com"
+  github: "https://github.com/user/myapp"
+  docs: "https://docs.myapp.com"
+platforms:
+  - twitter
+  - bluesky
+content:
+  style: friendly
+  action: "Try it now!"
+  language: en</pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h5 style="color: #dc2626; margin-bottom: 1rem;">🔴 Required for API Access</h5>
+                                <div style="background: rgba(220, 38, 38, 0.1); padding: 1.5rem; border-radius: 0.5rem; border-left: 3px solid #dc2626;">
+                                    <p><strong>.env.aetherpost</strong> - API credentials</p>
+                                    <div class="code-block" style="font-size: 0.75rem; overflow-x: auto; white-space: pre-wrap; word-break: break-all;">
+<pre># ===== AI PROVIDERS (Choose one) =====
+# OpenAI (Required for content generation)
+OPENAI_API_KEY=sk-proj-your-openai-key-here
+
+# Alternative AI Providers (Optional)
+ANTHROPIC_API_KEY=your-anthropic-key
+COHERE_API_KEY=your-cohere-key
+
+# ===== SOCIAL MEDIA PLATFORMS (Choose any combination) =====
+# Configure only the platforms you want to use
+
+# Twitter
+TWITTER_API_KEY=your-twitter-api-key
+TWITTER_API_SECRET=your-twitter-api-secret
+TWITTER_ACCESS_TOKEN=your-twitter-access-token
+TWITTER_ACCESS_TOKEN_SECRET=your-twitter-access-token-secret
+TWITTER_BEARER_TOKEN=your-bearer-token
+
+# Bluesky
+BLUESKY_HANDLE=username.bsky.social
+BLUESKY_PASSWORD=your-app-password
+
+# Instagram
+INSTAGRAM_ACCESS_TOKEN=your-instagram-access-token
+INSTAGRAM_BUSINESS_ACCOUNT_ID=your-business-account-id
+
+# YouTube
+YOUTUBE_CLIENT_ID=your-youtube-client-id
+YOUTUBE_CLIENT_SECRET=your-youtube-client-secret
+YOUTUBE_REFRESH_TOKEN=your-refresh-token
+
+# Mastodon
+MASTODON_ACCESS_TOKEN=your-mastodon-token
+MASTODON_INSTANCE_URL=https://mastodon.social
+
+# ===== AETHERPOST CONFIGURATION =====
+AETHERPOST_LOG_LEVEL=INFO
+AETHERPOST_CACHE_DIR=.aetherpost/cache
+AETHERPOST_MAX_RETRIES=3
+AETHERPOST_TIMEOUT=30
+AETHERPOST_SAFE_MODE=false
+
+# ===== CONTENT GENERATION =====
+CONTENT_STYLE=friendly
+CONTENT_LANGUAGE=en
+CONTENT_MAX_LENGTH=280
+
+# ===== SCHEDULING (Future Feature) =====
+SCHEDULE_TIMEZONE=UTC
+SCHEDULE_ENABLED=false</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Automated Command -->
+                        <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
+                            <h5>🎯 Auto-Detection Flow</h5>
+                            <div class="code-block">
+<pre># Files detected → instant setup:
+pip install aetherpost
+aetherpost init  # 🔍 Auto-detects campaign.yaml + .env.aetherpost
+                 # ✅ Generates profiles automatically
+                 # ✅ Creates workspace instantly
+aetherpost plan  # Preview AI-generated content
+aetherpost apply # Deploy & begin automation</pre>
+                            </div>
+                            <p><strong>✅ Smart file detection</strong> - No manual configuration<br>
+                            <strong>✅ Claude Code optimized</strong> - Perfect for AI workflows<br>
+                            <strong>✅ Enterprise ready</strong> - CI/CD and automation friendly</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- File Priority Matrix -->
+                <div style="background: white; padding: 2rem; border-radius: 0.75rem; margin-top: 2rem;">
+                    <h4>📊 File Requirements Matrix</h4>
+                    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem -1rem 0 -1rem;">
+                        <table style="width: 100%; min-width: 500px; border-collapse: collapse; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0;">
+                                    <th style="padding: 0.75rem; text-align: left; white-space: nowrap;">File</th>
+                                    <th style="padding: 0.75rem; text-align: left; white-space: nowrap;">Interactive Setup</th>
+                                    <th style="padding: 0.75rem; text-align: left; white-space: nowrap;">Automated Setup</th>
+                                    <th style="padding: 0.75rem; text-align: left;">Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.75rem; white-space: nowrap;"><strong>campaign.yaml</strong></td>
+                                    <td style="padding: 0.75rem;">🔄 Created during setup</td>
+                                    <td style="padding: 0.75rem;">🔴 Required upfront</td>
+                                    <td style="padding: 0.75rem;">Project config, platforms, URLs</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem; white-space: nowrap;"><strong>.env.aetherpost</strong></td>
+                                    <td style="padding: 0.75rem;">🔄 Created during setup</td>
+                                    <td style="padding: 0.75rem;">🔴 Required upfront</td>
+                                    <td style="padding: 0.75rem;">API keys and credentials</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Profile Generation Example -->
+                <div style="background: rgba(16, 185, 129, 0.1); padding: 2rem; border-radius: 0.75rem; margin-top: 2rem; border-left: 4px solid #10b981;">
+                    <h4>🎭 Profile Generation Example</h4>
+                    <p><em>Example of AI-generated profiles based on your campaign.yaml settings:</em></p>
+                    <div class="code-block">
+<pre>Based on campaign.yaml with:
+  name: "TaskMaster Pro"
+  concept: "AI-powered project management"
+
+AetherPost generates natural profiles like:
+
+🐦 Twitter Profile:
+"Building TaskMaster Pro - an AI-powered project management tool that actually gets you! 
+Helping teams ship faster with intelligent task prioritization. 
+🚀 https://taskmaster.app"
+
+🦋 Bluesky Profile: 
+"Creator of TaskMaster Pro - revolutionizing how teams manage projects with AI. 
+Currently shipping v2.0 with smart notifications! 
+Always excited to connect with fellow builders."
+
+🐘 Mastodon Profile:
+"Independent developer creating TaskMaster Pro. 
+Passionate about building tools that enhance human productivity. 
+Open source advocate and coffee enthusiast."</pre>
+                    </div>
+                    <p><strong>✅ Your branding, ✅ Your URLs, ✅ Your message, ❌ No AetherPost mentions</strong></p>
+                </div>
+            </div>
+
+            <script>
+                function showSetupMethod(method) {
+                    // Hide all setup methods
+                    document.querySelectorAll('.setup-method').forEach(el => el.style.display = 'none');
+                    
+                    // Show selected method
+                    document.getElementById(method + '-setup').style.display = 'block';
+                    
+                    // Update tab styling
+                    document.querySelectorAll('[id$="-tab"]').forEach(tab => {
+                        tab.style.background = '#6b7280';
+                    });
+                    document.getElementById(method + '-tab').style.background = '#2563eb';
+                }
+                
+                // Show interactive by default
+                showSetupMethod('interactive');
+            </script>
+        </div>
+    </section>
+
+    <section id="platforms" class="platforms">
+        <div class="container">
+            <h2>🌐 Platform Support & API Requirements</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem; color: var(--text-light);">
+                Choose any combination of platforms. Start small and expand as needed.
+            </p>
+            
+            <div class="platform-grid">
+                <div class="platform-card" style="border-left: 4px solid #1d9bf0;">
+                    <div class="platform-icon">🐦</div>
+                    <h3>Twitter</h3>
+                    <p>160-character optimized tweets with engagement features</p>
+                    <div style="background: rgba(255, 193, 7, 0.1); padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <strong>API Requirements:</strong><br>
+                        <code>TWITTER_API_KEY</code><br>
+                        <code>TWITTER_API_SECRET</code><br>
+                        <code>TWITTER_ACCESS_TOKEN</code><br>
+                        <code>TWITTER_ACCESS_TOKEN_SECRET</code>
+                    </div>
+                    <div style="background: rgba(255, 87, 51, 0.1); padding: 0.75rem; border-radius: 0.5rem; margin-top: 0.5rem; font-size: 0.85rem; overflow-wrap: break-word;">
+                        <strong>Current Status (2025):</strong><br>
+                        • Free tier: Read-only access only<br>
+                        • Basic ($100/month): 10K tweets read, 1.5K writes<br>
+                        • Pro ($5,000/month): 1M tweets read, 300K writes<br>
+                        • Enterprise: Custom pricing
+                    </div>
+                    <small style="color: #f59e0b; font-weight: 600;">💰 Requires paid Basic plan ($100/month minimum)</small>
+                </div>
+
+                <div class="platform-card" style="border-left: 4px solid #00bcd4;">
+                    <div class="platform-icon">🦋</div>
+                    <h3>Bluesky</h3>
+                    <p>Decentralized social media with 256-character limit</p>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <strong>API Requirements:</strong><br>
+                        <code>BLUESKY_HANDLE</code> (username.bsky.social)<br>
+                        <code>BLUESKY_PASSWORD</code> (app password)
+                    </div>
+                    <div style="background: rgba(16, 185, 129, 0.15); padding: 0.75rem; border-radius: 0.5rem; margin-top: 0.5rem; font-size: 0.85rem;">
+                        <strong>Current Status (2025):</strong><br>
+                        • Completely free API access<br>
+                        • No rate limits on posting<br>
+                        • Open-source AT Protocol<br>
+                        • Growing user base (15M+ users)
+                    </div>
+                    <small style="color: #10b981; font-weight: 600;">✅ Free API access - Recommended</small>
+                </div>
+
+                <div class="platform-card" style="border-left: 4px solid #e4405f;">
+                    <div class="platform-icon">📸</div>
+                    <h3>Instagram</h3>
+                    <p>Visual content optimization and profile management</p>
+                    <div style="background: rgba(228, 64, 95, 0.1); padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <strong>API Requirements:</strong><br>
+                        <code>INSTAGRAM_ACCESS_TOKEN</code><br>
+                        <code>INSTAGRAM_BUSINESS_ACCOUNT_ID</code>
+                    </div>
+                    <div style="background: rgba(251, 191, 36, 0.1); padding: 0.75rem; border-radius: 0.5rem; margin-top: 0.5rem; font-size: 0.85rem;">
+                        <strong>Current Status (2025):</strong><br>
+                        • Basic Display API: Free (profile only)<br>
+                        • Graph API: Free for basic features<br>
+                        • Requires Facebook Page connection<br>
+                        • Business account verification needed
+                    </div>
+                    <small style="color: #6b7280;">⚠️ Business account + Facebook Page required</small>
+                </div>
+
+                <div class="platform-card" style="border-left: 4px solid #6364ff;">
+                    <div class="platform-icon">🐘</div>
+                    <h3>Mastodon</h3>
+                    <p>Decentralized open-source social network with community focus</p>
+                    <div style="background: rgba(99, 100, 255, 0.1); padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <strong>API Requirements:</strong><br>
+                        <code>MASTODON_ACCESS_TOKEN</code><br>
+                        <code>MASTODON_INSTANCE_URL</code>
+                    </div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 0.5rem; margin-top: 0.5rem; font-size: 0.85rem;">
+                        <strong>Current Status (2025):</strong><br>
+                        • Completely free API access<br>
+                        • No corporate restrictions<br>
+                        • Choose your own instance<br>
+                        • Open-source community platform
+                    </div>
+                    <small style="color: #10b981; font-weight: 600;">✅ Free and open-source</small>
+                </div>
+
+                <div class="platform-card" style="border-left: 4px solid #ff0000;">
+                    <div class="platform-icon">📺</div>
+                    <h3>YouTube</h3>
+                    <p>Channel optimization and content strategy</p>
+                    <div style="background: rgba(255, 0, 0, 0.1); padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <strong>API Requirements:</strong><br>
+                        <code>YOUTUBE_CLIENT_ID</code><br>
+                        <code>YOUTUBE_CLIENT_SECRET</code><br>
+                        <code>YOUTUBE_REFRESH_TOKEN</code> (optional)
+                    </div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 0.5rem; margin-top: 0.5rem; font-size: 0.85rem;">
+                        <strong>Current Status (2025):</strong><br>
+                        • Free quota: 10,000 units/day<br>
+                        • Read operations: 1 unit each<br>
+                        • Write operations: 50-1600 units<br>
+                        • OAuth 2.0 authentication required
+                    </div>
+                    <small style="color: #10b981; font-weight: 600;">✅ Free quota (10,000 units/day)</small>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="features" style="padding: 4rem 0; background: var(--background-light);">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">🚀 Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🤖 AI-Powered Content</h3>
+                    <p>GPT-powered content generation with platform-specific optimization and intelligent hashtag selection.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🎯 4-Command Simplicity</h3>
+                    <p>Pure Terraform workflow: init → plan → apply → destroy. No complex sub-commands or confusing options.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔍 Smart Auto-Detection</h3>
+                    <p>Pre-existing campaign.yaml? AetherPost detects it instantly and skips interactive setup. Perfect for automation.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>♾️ Complete Automation</h3>
+                    <p>One setup, full automation. Profile generation, content creation, posting schedules - fully automated after init.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔒 Type Safe</h3>
+                    <p>95% type coverage with comprehensive type hints and structured error responses.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🧪 100% Tested</h3>
+                    <p>Comprehensive test suite with real API validation ensuring production reliability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="getting-started.html">Getting Started</a></li>
+                        <li><a href="profile-management.html">Profile Generation</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                        <li><a href="configuration.html">Configuration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#platforms">Platform Support</a></li>
+                        <li><a href="#quickstart">Quick Start</a></li>
+                        <li><a href="installation.html">Installation</a></li>
+                        <li><a href="developer-onboarding.html">Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/fununnn/aetherpost">GitHub</a></li>
+                        <li><a href="https://github.com/fununnn/aetherpost/issues">Issues</a></li>
+                        <li><a href="contributing.html">Contributing</a></li>
+                        <li><a href="https://github.com/fununnn/aetherpost/discussions">Discussions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="https://github.com/fununnn/aetherpost/blob/main/LICENSE">MIT License</a></li>
+                        <li><a href="#quickstart">Latest: v1.7.1</a></li>
+                        <li><a href="https://pypi.org/project/aetherpost/">PyPI Package</a></li>
+                        <li><a href="https://aether-post.com">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AetherPost v1.7.1. Released under the MIT License.</p>
+                <p>Social media automation for developers. Built with ❤️ by the open source community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Could add visual feedback here
+                console.log('Copied to clipboard: ' + text);
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
