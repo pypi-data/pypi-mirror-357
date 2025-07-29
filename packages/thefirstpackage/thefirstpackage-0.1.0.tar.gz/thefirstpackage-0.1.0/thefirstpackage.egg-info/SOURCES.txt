@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+thefirstpackage/__init__.py
+thefirstpackage/todo.py
+thefirstpackage/utils.py
+thefirstpackage.egg-info/PKG-INFO
+thefirstpackage.egg-info/SOURCES.txt
+thefirstpackage.egg-info/dependency_links.txt
+thefirstpackage.egg-info/top_level.txt
