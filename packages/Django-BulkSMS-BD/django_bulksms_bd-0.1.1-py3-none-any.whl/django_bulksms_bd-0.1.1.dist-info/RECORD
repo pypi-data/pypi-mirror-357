@@ -1,0 +1,15 @@
+bulksms/__init__.py,sha256=cG-a1eQRv5pVCFw9_5AAQ-nxjB6gSxJN2xzC8jTNIuk,658
+bulksms/apps.py,sha256=oQnAN151OlEqice0cqEzJ5tbvwsLG_OSvdCt5UqhKsM,464
+bulksms/client.py,sha256=nhYauUTFEKJIzImIwd_KvdWWQW20GIknBa8xJvy4ThM,12190
+bulksms/exceptions.py,sha256=YDTZFqlrtSkcHVk52mEHZ1WfEMSAGE51469n_OZYgeo,3324
+bulksms/models.py,sha256=aPEqm10oy6YbXkdY2-0DutrfHoUq_aPkb45pXLuFMDE,9604
+bulksms/utils.py,sha256=SqddM3T64Lm0fRJt8oTHCSk7aOgk2HLy8ZvRZjnl6vw,7693
+bulksms/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bulksms/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bulksms/management/commands/test_sms.py,sha256=twBc5oPi4HlTzZHlF26aDKVQZlOwbrH3qBNwX6zXSGg,4825
+django_bulksms_bd-0.1.1.dist-info/licenses/LICENSE,sha256=3UaMa1P9gB9Hj84IXsn2EIuZ9xeykxv1jnMkujhhH88,1074
+django_bulksms_bd-0.1.1.dist-info/METADATA,sha256=u8P6XmdkeD-NR8Z34Ea1mz8KXvGJKw45CmNVZNUcreA,12903
+django_bulksms_bd-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_bulksms_bd-0.1.1.dist-info/entry_points.txt,sha256=ooHQYFX18r-wjNYXrX7GMOCbsYN_1qveXUJAbaxhK9c,55
+django_bulksms_bd-0.1.1.dist-info/top_level.txt,sha256=n_D8YJHO8N8qlekgApCUZxnWW9FCNROFmmwf100JCLQ,8
+django_bulksms_bd-0.1.1.dist-info/RECORD,,
