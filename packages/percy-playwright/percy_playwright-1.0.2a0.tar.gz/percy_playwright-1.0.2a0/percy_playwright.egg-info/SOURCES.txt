@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+percy/__init__.py
+percy/cache.py
+percy/page_metadata.py
+percy/screenshot.py
+percy/version.py
+percy_playwright.egg-info/PKG-INFO
+percy_playwright.egg-info/SOURCES.txt
+percy_playwright.egg-info/dependency_links.txt
+percy_playwright.egg-info/not-zip-safe
+percy_playwright.egg-info/requires.txt
+percy_playwright.egg-info/top_level.txt
+tests/test_cache.py
+tests/test_page_metadata.py
+tests/test_screenshot.py
