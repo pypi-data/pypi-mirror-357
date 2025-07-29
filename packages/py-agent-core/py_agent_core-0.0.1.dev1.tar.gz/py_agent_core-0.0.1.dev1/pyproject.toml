@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-agent-core"
+version = "0.0.1.dev1"  
+authors = [
+  { name="Federico Monfasani", email="fmonfasani@gmail.com" },
+]
+description = "Placeholder for the official Python SDK for the Intelligent Agents Platform (MCP). Coming soon!"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Programming Language :: Python :: 3",    
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/fmonfasani/intelligent-agents-platform" 
+"Bug Tracker" = "https://github.com/fmonfasani/intelligent-agents-platform/issues" 
