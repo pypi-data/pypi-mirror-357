@@ -1,0 +1,11 @@
+airpilot_blackbox/__init__.py,sha256=D2fSFR7QuLvU6Qax0u5oN-zPAu6ibTAgSCCHua4xTuc,76
+airpilot_blackbox/analytics.py,sha256=tBaBxXyaK9j7k8Nosz2HVCeXPjz12E75vVYYMQZMZ7A,8750
+airpilot_blackbox/cli.py,sha256=vH5CChHoNDt_fRjfd_gnh_VMCsmsMnrxBYWIGXuTxTg,54447
+airpilot_blackbox/parser.py,sha256=SuNDkwvLnZ5ItdXqt3BoDU-_dDLqj1Z_RyfZFH4_Lco,10729
+airpilot_blackbox/pricing.py,sha256=prbGOQX7KzBr-4HAI5OMWVgq3YsTWY1PX8FYDdWMlN8,9268
+airpilot_blackbox/pricing_fetcher.py,sha256=gbsyxohiwYSdWxv3F9C7f8H-5iSs1brwpAzKImOKHsY,8647
+airpilot_blackbox-0.1.0.dist-info/METADATA,sha256=vcpOggjn43WL0tIZgfIHZoKxURiyzPMoWulv79KMPhQ,8389
+airpilot_blackbox-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+airpilot_blackbox-0.1.0.dist-info/entry_points.txt,sha256=YfHZ7-C-vK8CGV6CkKL1iBJMS2oUsznOWqUkaWlMEiM,103
+airpilot_blackbox-0.1.0.dist-info/licenses/LICENSE,sha256=8_DUKdJl-Z-CkT_ukcmV3G9mZB9s9UV7pvaIw_6eN-8,1073
+airpilot_blackbox-0.1.0.dist-info/RECORD,,
