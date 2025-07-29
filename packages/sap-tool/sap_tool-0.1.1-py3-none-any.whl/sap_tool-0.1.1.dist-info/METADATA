@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: sap-tool
+Version: 0.1.1
+Summary: A simple tool class for schema generation.
+Author-email: rabeeqiblawi <rabeeqiblawi@gmail.com>
+License-Expression: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# sap-tool
+
+A simple Python tool class for schema generation from function signatures.
+
+## Installation
+
+```bash
+pip install sap-tool
+```
+
+## Usage
+
+```python
+from sap_tool import Tool
+
+def foo(a: int, b: str):
+    pass
+
+tool = Tool(foo, "foo", "A test function.")
+schema = tool.formulate_tool_schema()
+print(schema)
+```
