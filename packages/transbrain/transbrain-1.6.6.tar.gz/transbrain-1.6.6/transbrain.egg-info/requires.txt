@@ -1,0 +1,13 @@
+matplotlib
+matplotlib-inline
+nibabel
+nilearn
+numpy
+openpyxl
+pandas
+scikit-learn
+scipy
+seaborn
+six
+tqdm
+ipykernel

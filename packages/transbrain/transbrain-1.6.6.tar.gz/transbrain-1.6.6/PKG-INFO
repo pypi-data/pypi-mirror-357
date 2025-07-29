@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: transbrain
+Version: 1.6.6
+Summary: TransBrain is an integrated computational framework for bidirectional translation of brain-wide phenotypes between humans and mice.
+Home-page: https://github.com/ibpshangzheng/transbrain
+Author: Shangzheng Huang
+Author-email: huangshangzheng@ibp.ac.cn
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8,<3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: matplotlib-inline
+Requires-Dist: nibabel
+Requires-Dist: nilearn
+Requires-Dist: numpy
+Requires-Dist: openpyxl
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: seaborn
+Requires-Dist: six
+Requires-Dist: tqdm
+Requires-Dist: ipykernel
