@@ -1,0 +1,167 @@
+Metadata-Version: 2.4
+Name: modflow-devtools
+Version: 1.7.0
+Summary: Python tools for MODFLOW development
+Project-URL: Documentation, https://modflow-devtools.readthedocs.io/en/latest/
+Project-URL: Bug Tracker, https://github.com/MODFLOW-ORG/modflow-devtools/issues
+Project-URL: Source Code, https://github.com/MODFLOW-ORG/modflow-devtools
+Author-email: "Joseph D. Hughes" <modflow@usgs.gov>, Michael Reno <mreno@ucar.edu>, Mike Taves <mwtoews@gmail.com>, Wes Bonelli <wbonelli@ucar.edu>
+Maintainer-email: "Joseph D. Hughes" <modflow@usgs.gov>
+License: CC0
+License-File: LICENSE.md
+Keywords: MODFLOW,development,groundwater,hydrogeology,utilities
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering :: Hydrology
+Requires-Python: >=3.10
+Provides-Extra: build
+Requires-Dist: build; extra == 'build'
+Requires-Dist: twine; extra == 'build'
+Provides-Extra: dev
+Requires-Dist: boltons; extra == 'dev'
+Requires-Dist: codespell[toml]; extra == 'dev'
+Requires-Dist: coverage; extra == 'dev'
+Requires-Dist: filelock; extra == 'dev'
+Requires-Dist: flaky; extra == 'dev'
+Requires-Dist: meson!=0.63.0; extra == 'dev'
+Requires-Dist: mypy; extra == 'dev'
+Requires-Dist: myst-parser; extra == 'dev'
+Requires-Dist: ninja; extra == 'dev'
+Requires-Dist: numpy; extra == 'dev'
+Requires-Dist: pandas; extra == 'dev'
+Requires-Dist: pooch; extra == 'dev'
+Requires-Dist: pytest!=8.1.0; extra == 'dev'
+Requires-Dist: pytest-cov; extra == 'dev'
+Requires-Dist: pytest-dotenv; extra == 'dev'
+Requires-Dist: pytest-xdist; extra == 'dev'
+Requires-Dist: pyyaml; extra == 'dev'
+Requires-Dist: ruff; extra == 'dev'
+Requires-Dist: sphinx; extra == 'dev'
+Requires-Dist: sphinx-rtd-theme; extra == 'dev'
+Requires-Dist: syrupy; extra == 'dev'
+Requires-Dist: tomli; extra == 'dev'
+Requires-Dist: tomli-w; extra == 'dev'
+Provides-Extra: dfn
+Requires-Dist: boltons; extra == 'dfn'
+Requires-Dist: tomli; extra == 'dfn'
+Requires-Dist: tomli-w; extra == 'dfn'
+Provides-Extra: docs
+Requires-Dist: myst-parser; extra == 'docs'
+Requires-Dist: sphinx; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme; extra == 'docs'
+Provides-Extra: lint
+Requires-Dist: codespell[toml]; extra == 'lint'
+Requires-Dist: mypy; extra == 'lint'
+Requires-Dist: ruff; extra == 'lint'
+Provides-Extra: models
+Requires-Dist: boltons; extra == 'models'
+Requires-Dist: filelock; extra == 'models'
+Requires-Dist: pooch; extra == 'models'
+Requires-Dist: tomli; extra == 'models'
+Requires-Dist: tomli-w; extra == 'models'
+Provides-Extra: test
+Requires-Dist: codespell[toml]; extra == 'test'
+Requires-Dist: coverage; extra == 'test'
+Requires-Dist: filelock; extra == 'test'
+Requires-Dist: flaky; extra == 'test'
+Requires-Dist: meson!=0.63.0; extra == 'test'
+Requires-Dist: mypy; extra == 'test'
+Requires-Dist: ninja; extra == 'test'
+Requires-Dist: numpy; extra == 'test'
+Requires-Dist: pandas; extra == 'test'
+Requires-Dist: pytest!=8.1.0; extra == 'test'
+Requires-Dist: pytest-cov; extra == 'test'
+Requires-Dist: pytest-dotenv; extra == 'test'
+Requires-Dist: pytest-xdist; extra == 'test'
+Requires-Dist: pyyaml; extra == 'test'
+Requires-Dist: ruff; extra == 'test'
+Requires-Dist: syrupy; extra == 'test'
+Description-Content-Type: text/markdown
+
+# MODFLOW developer tools
+
+[![CI](https://github.com/MODFLOW-ORG/modflow-devtools/actions/workflows/ci.yml/badge.svg)](https://github.com/MODFLOW-ORG/modflow-devtools/actions/workflows/ci.yml)
+[![Documentation Status](https://readthedocs.org/projects/modflow-devtools/badge/?version=latest)](https://modflow-devtools.readthedocs.io/en/latest/?badge=latest)
+[![GitHub contributors](https://img.shields.io/github/contributors/MODFLOW-ORG/modflow-devtools)](https://img.shields.io/github/contributors/MODFLOW-ORG/modflow-devtools)
+[![GitHub tag](https://img.shields.io/github/tag/MODFLOW-ORG/modflow-devtools.svg)](https://github.com/MODFLOW-ORG/modflow-devtools/tags/latest)
+
+[![PyPI License](https://img.shields.io/pypi/l/modflow-devtools)](https://pypi.python.org/pypi/modflow-devtools)
+[![PyPI Status](https://img.shields.io/pypi/status/modflow-devtools.png)](https://pypi.python.org/pypi/modflow-devtools)
+[![PyPI Format](https://img.shields.io/pypi/format/modflow-devtools)](https://pypi.python.org/pypi/modflow-devtools)
+[![PyPI Version](https://img.shields.io/pypi/v/modflow-devtools.png)](https://pypi.python.org/pypi/modflow-devtools)
+[![PyPI Versions](https://img.shields.io/pypi/pyversions/modflow-devtools.png)](https://pypi.python.org/pypi/modflow-devtools)
+
+[![Anaconda License](https://anaconda.org/conda-forge/modflow-devtools/badges/license.svg)](https://anaconda.org/conda-forge/modflow-devtools/badges/license.svg)
+[![Anaconda Version](https://anaconda.org/conda-forge/modflow-devtools/badges/version.svg)](https://anaconda.org/conda-forge/modflow-devtools)
+[![Anaconda Updated](https://anaconda.org/conda-forge/modflow-devtools/badges/latest_release_date.svg)](https://anaconda.org/conda-forge/modflow-devtools)
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+Python development tools for MODFLOW 6 and related projects.
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Documentation](#documentation)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Features
+
+* a minimal GitHub API client for release info/assets
+* a `ZipFile` subclass that [preserves file permissions](https://stackoverflow.com/questions/39296101/python-zipfile-removes-execute-permissions-from-binaries) (workaround for [Python #15795](https://bugs.python.org/issue15795))
+* pytest fixtures including "keepable" temporary directories and snapshot testing utilities
+* pytest markers to skip test cases conditional on operating system, installed packages, or available executables
+* a parser for MODFLOW 6 [definition files](https://modflow6.readthedocs.io/en/stable/_dev/dfn.html)
+* a models API for streamlined access to MODFLOW 6 (and other) models in
+  - [`MODFLOW-ORG/modflow6-examples`](https://github.com/MODFLOW-ORG/modflow6-examples)
+  - [`MODFLOW-ORG/modflow6-testmodels`](https://github.com/MODFLOW-ORG/modflow6-testmodels)
+  - [`MODFLOW-ORG/modflow6-largetestmodels`](https://github.com/MODFLOW-ORG/modflow6-largetestmodels)
+
+## Requirements
+
+Python3.10+, dependency-free by default.
+
+Several optional dependency groups are available, oriented around specific use cases:
+
+- `dfn`: MF6 definition file parsing
+- `test`: pytest fixtures/extensions
+- `models`: example model access
+
+## Installation
+
+`modflow-devtools` is available on PyPI and can be installed with pip:
+
+```shell
+pip install modflow-devtools
+```
+
+To install an optional dependency group:
+
+```shell
+pip install "modflow-devtools[test]"
+```
+
+To install from source and set up a development environment please see the [developer documentation](DEVELOPER.md).
+
+To use the `pytest` fixtures provided by `modflow-devtools`, add the following to a test file or `conftest.py` file:
+
+```python
+pytest_plugins = [ "modflow_devtools.fixtures" ]
+```
+
+**Note**: this must be a top-level `conftest.py`, which nested `conftest.py` files may then override or extend.
+
+## Documentation
+
+Docs are available at [modflow-devtools.readthedocs.io](https://modflow-devtools.readthedocs.io/en/latest/).
+
+For more info on MODFLOW 6 see [the USGS overview](https://water.usgs.gov/ogw/modflow/).
