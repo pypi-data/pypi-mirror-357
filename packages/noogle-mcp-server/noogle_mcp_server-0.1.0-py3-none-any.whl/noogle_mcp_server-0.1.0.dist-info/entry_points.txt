@@ -1,0 +1,2 @@
+[console_scripts]
+noogle_mcp_server = noogle_mcp_server.main:main
