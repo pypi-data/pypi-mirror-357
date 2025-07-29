@@ -1,0 +1,10 @@
+savantaudio/__init__.py,sha256=CYKybpvNqPzGugye0Acua7fP5mI_j--rv_2lf9uFktE,120
+savantaudio/__version__.py,sha256=yGlIgOTmohlC3qNQYvAdTd1oJWWdhY633NUSt0QAc6I,388
+savantaudio/client.py,sha256=PzKHtKdYw1Z7jZDvfIeUo4Pn-Ez69NrukATGi-vNgiI,15103
+savantaudio/entry_points.py,sha256=ESWyx9T6ciCL4N4fBfrA7Oh8v93DUxW9y-ZopCrvZc0,2814
+savantaudio_client-1.0.1.dist-info/licenses/LICENSE,sha256=bcQt0To883EtydXZJ4xb1gkzPu96DFxxj9FL3FdNkNs,547
+savantaudio_client-1.0.1.dist-info/METADATA,sha256=pX_Evt_sdJcRLfBEpfQzzKZ8OcneHpKR1PWB6EphLlo,2049
+savantaudio_client-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+savantaudio_client-1.0.1.dist-info/entry_points.txt,sha256=KN39sT-37uba7weA1aEjv6GQ2iYDo9CS3TLwUe0TZSQ,69
+savantaudio_client-1.0.1.dist-info/top_level.txt,sha256=X-6qhSWmt7uXVH2RDAe9DAN5n6RiZQ8JvplqG4sizy4,12
+savantaudio_client-1.0.1.dist-info/RECORD,,
