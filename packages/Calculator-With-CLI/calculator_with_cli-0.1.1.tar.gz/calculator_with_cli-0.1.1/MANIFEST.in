@@ -1,0 +1,8 @@
+# Exclude test files and folders
+exclude tests/*
+exclude tests/**
+
+# Exclude cache and compiled files
+global-exclude __pycache__ *.py[cod]
+
+
