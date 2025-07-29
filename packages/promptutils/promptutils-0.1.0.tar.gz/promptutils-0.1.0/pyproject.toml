@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "promptutils"
+version = "0.1.0"
+description = "Utilities for working with LLM prompts"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+  { name = "testycool", email = "left@testy.cool" }
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/testy-cool/promptutils"
+Repository = "https://github.com/testy-cool/promptutils" 
+
+[dependency-groups]
+dev = [
+    "build>=1.2.2.post1",
+    "twine>=6.1.0",
+]
