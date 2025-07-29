@@ -1,0 +1,14 @@
+stata_mcp/__init__.py,sha256=7QfUVom8tOlR_1MuDogbwtm7x_kyuPDN__rw6Jprp0A,26866
+stata_mcp/gen_stata_code_MCP.py,sha256=wMDvIZcSFz4tYxOOP4YMliOIqalz5oIlq0Tzv7B5DZM,88785
+stata_mcp/usable.py,sha256=iIdvG3eiWEIqvIt8zge_RdXHsaYZV5YyAspXHjCAiJQ,7758
+stata_mcp/utils/StataFinder.py,sha256=Vji0QNIx9lkyxJiIbn4Cysb2tXfaeEEPva1SD9Rt2oU,4825
+stata_mcp/utils/__init__.py,sha256=hwgdwG_6DlO4QuEfKa_ob3QuRbcK57Ap6r6GrUY888I,138
+stata_mcp/utils/installer.py,sha256=Mv2Rt0hvHdysDvkbnemq1ChIsfvhj_2blYNJPjMv9Qs,2862
+stata_mcp/utils/Prompt/__init__.py,sha256=bCg3j1ZjlBGdeqmLnvZMm2C5aRyIR-jWP7ezxNsxQXM,1804
+stata_mcp/utils/Prompt/string.py,sha256=_n6WaDe9rfLdRNc8V5QjMdRuQPWoZTG85kSI-HxgF_s,4825
+stata_mcp/utils/windows/__init__.py,sha256=fo_ylrRRE8IFfXFHl4cCCAQnzyhxzaQpIF2VA8AkTu0,1023
+stata_mcp-1.4.1.dist-info/METADATA,sha256=twNLvISJHuw7EdW2BPgRxz0-Mncdn-fUfPXBPh4uXwQ,5889
+stata_mcp-1.4.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+stata_mcp-1.4.1.dist-info/entry_points.txt,sha256=r70LGFjKDKqJU-0_R7hMTz0kEcRo27Ied2WOqog7HU4,45
+stata_mcp-1.4.1.dist-info/licenses/LICENSE,sha256=eMFMOe79eECcwYb7IMxhtN9wnfFjr_m5zjmZKuTl394,12672
+stata_mcp-1.4.1.dist-info/RECORD,,
