@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "awesome-environment-manager"
+description = "A Python utility for automatically managing environment variables with type safety and easy configuration."
+version = "1.0.0"
+authors = [
+    { name = "Christian Heinisch", email = "christian.heinisch@protonmail.com" },
+]
+readme = { file = "README.md", content-type = "text/markdown" }
+license = "EUPL-1.2"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.urls]
+# documentation = 'https://github.com/Cloud500/awesome-environment-manager'
+repository = 'https://github.com/Cloud500/awesome-environment-manager'
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+    "python-dotenv>=1.1.0",
+]
+build = [
+    "build>=1.2.2.post1",
+]
+
+[tool.semantic_release]
+commit_parser = "conventional"
+version_toml = ["pyproject.toml:project.version"]
+build_command = "curl -LsSf https://astral.sh/uv/install.sh | sh && PATH=\"/github/home/.local/bin:$PATH\" && uv build"
+
+
+[tool.semantic_release.changelog.default_templates]
+changelog_file = "CHANGELOG.md"
+output_format = "md"
+
+[tool.semantic_release.changelog]
+exclude_commit_patterns = [
+    '''chore(?:\([^)]*?\))?: .+''',
+    '''ci(?:\([^)]*?\))?: .+''',
+    '''refactor(?:\([^)]*?\))?: .+''',
+    '''style(?:\([^)]*?\))?: .+''',
+    '''test(?:\([^)]*?\))?: .+''',
+    '''build\((?!deps\): .+)''',
+    '''Initial [Cc]ommit.*''',
+]
+
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --junitxml=reports/test-results.xml --cov=src/ --cov-report=xml --cov-report=html"
+testpaths = [
+    "tests/",
+]
+junit_family = 'xunit2'
+
+
+[tool.ruff]
+line-length = 120
+extend-select = []
+

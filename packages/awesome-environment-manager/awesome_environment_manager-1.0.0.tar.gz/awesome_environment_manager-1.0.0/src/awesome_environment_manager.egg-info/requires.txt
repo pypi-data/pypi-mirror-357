@@ -1,0 +1,8 @@
+
+[build]
+build>=1.2.2.post1
+
+[test]
+pytest>=8.4.1
+pytest-cov>=6.2.1
+python-dotenv>=1.1.0
