@@ -1,0 +1,112 @@
+Metadata-Version: 2.4
+Name: dkdc
+Version: 0.48.0
+Summary: don't know, don't care
+Author-email: Cody <cody@dkdc.dev>
+License-File: LICENSE
+Requires-Python: >=3.13
+Requires-Dist: cryptography>=45.0.4
+Requires-Dist: duckdb==1.3.1
+Requires-Dist: fsspec[gcs]>=2023.12.0
+Requires-Dist: ibis-framework[duckdb,sqlite]>=10.6.0
+Requires-Dist: ipython>=9.3.0
+Requires-Dist: panel>=1.7.1
+Requires-Dist: plotly>=6.1.2
+Requires-Dist: pyperclip>=1.9.0
+Requires-Dist: rich>=14.0.0
+Requires-Dist: typer>=0.16.0
+Requires-Dist: watchfiles>=1.0.5
+Description-Content-Type: text/markdown
+
+# dkdc
+
+***don't know, don't care***.
+
+> [!WARNING]
+> ***Work in progress***.
+
+## Setup
+
+### Prerequisites
+
+[Install uv](https://docs.astral.sh/uv/getting-started/installation):
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+### Installation
+
+Install `dkdc`:
+
+```bash
+uv tool install dkdc
+```
+
+## Usage
+
+Use `dkdc --help` for more information.
+
+Enter a dev REPL connected to your datalake:
+
+```bash
+dkdc dev
+```
+
+Archive a directory to your datalake:
+
+```bash
+dkdc archive
+```
+
+Work in a virtual filesystem:
+
+```bash
+dkdc files
+```
+
+## Development
+
+Clone the repository:
+
+> [!WARNING]
+> Install `gh`.
+
+```bash
+gh repo clone lostmygithubaccount/dkdc
+cd dkdc
+```
+
+Set up the development environment:
+
+```bash
+./bin/setup.sh
+```
+
+Run code checks (lint & format):
+
+```bash
+./bin/check.sh
+```
+
+Run the development REPL:
+
+```bash
+uv run dkdc dev
+```
+
+## Organization
+
+Code is organized:
+
+- [`py/`](py): Python source code
+- [`rs/`](rs): Rust source code
+- [`go/`](go): Go source code
+- [`bin/`](bin): Repository utilities
+- [`tasks/`](tasks): Markdown tasks
+- [`dotfiles/`](dotfiles): Dotfiles
+- [`websites/`](websites): Static websites
+
+## Rust CLIs
+
+See [`dkdc-links`](rs/dkdc-links/README.md) for bookmarks in your terminal.
