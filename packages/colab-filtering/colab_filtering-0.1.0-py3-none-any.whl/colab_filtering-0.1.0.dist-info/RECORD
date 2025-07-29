@@ -1,0 +1,10 @@
+colab_filtering/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+colab_filtering/norm/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+colab_filtering/norm/mean.py,sha256=GV2rr69f93rAS5JFCHTEUO8VXu2BAidFz23PhpZiDDE,166
+colab_filtering/similarity/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+colab_filtering/similarity/cosine.py,sha256=KfKueXPDt7omig1meNReljA37IRMbsu0eSM2hZnErKE,705
+colab_filtering/similarity/jaccard.py,sha256=K6WhNWGr3TW08anf4b6MxIEjhb0ZZfqonaLJj0K_vRg,451
+colab_filtering-0.1.0.dist-info/METADATA,sha256=SZHY7oKqihGdBPi16mlHN37qYXvyOBQ54PGTgMWvsHM,3779
+colab_filtering-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+colab_filtering-0.1.0.dist-info/licenses/LICENSE.txt,sha256=4ybYALejZXe_9WceKlx5UxdiVLyR6Imks-z2fbqHpMM,1071
+colab_filtering-0.1.0.dist-info/RECORD,,
