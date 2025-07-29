@@ -1,0 +1,11 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+generic_repo.py
+pyproject.toml
+generic_repo.egg-info/PKG-INFO
+generic_repo.egg-info/SOURCES.txt
+generic_repo.egg-info/dependency_links.txt
+generic_repo.egg-info/requires.txt
+generic_repo.egg-info/top_level.txt
