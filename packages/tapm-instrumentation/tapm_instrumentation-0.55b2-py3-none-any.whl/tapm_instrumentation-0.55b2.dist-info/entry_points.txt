@@ -1,0 +1,2 @@
+[console_scripts]
+tapm-bootstrap = opentelemetry.instrumentation.bootstrap:run
