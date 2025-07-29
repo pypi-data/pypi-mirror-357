@@ -1,0 +1,5 @@
+requests
+pydantic
+prometheus_client
+retry
+pytcs-tecnoalarm
