@@ -1,0 +1,18 @@
+
+### 5. 测试文件
+在 `tests` 文件夹中，你可以编写测试代码来验证你的分词函数是否正常工作。
+
+```python
+# tests/test_tokenizer.py
+
+import unittest
+from zeule import tokenize
+
+class TestTokenizer(unittest.TestCase):
+    def test_tokenize(self):
+        text = "This is a sample text for economics."
+        expected = ["This", "is", "a", "sample", "text", "for", "economics"]
+        self.assertEqual(tokenize(text), expected)
+
+if __name__ == '__main__':
+    unittest.main()

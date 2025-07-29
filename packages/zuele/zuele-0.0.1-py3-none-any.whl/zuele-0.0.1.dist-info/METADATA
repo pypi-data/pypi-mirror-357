@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: zuele
+Version: 0.0.1
+Summary: Jieba in economy
+Author: ikun
+Author-email: 2206490823@qq.com
+License-File: License
+Dynamic: author
+Dynamic: author-email
+Dynamic: license-file
+Dynamic: summary
