@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: jama-client-certic
+Version: 0.0.34
+Summary: Jama client for Python
+License: CECILL-C
+Author: Mickaël Desfrênes
+Author-email: mickael.desfrenes@unicaen.fr
+Requires-Python: >=3.9.4
+Classifier: License :: CeCILL-C Free Software License Agreement (CECILL-C)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: argh (>=0.29.4,<0.30.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Jama client library
+
+## Installation
+
+Use pip to install:
+
+    pip install jama-client-CERTIC
+
+## Quick start
+
+    from jama_client import Client, ServiceError
+    client = Client("https://acme.tld/rpc/", "secretapikeyhere")
+    try:
+        file_id = client.upload("/path/to/some/file.jpg")
+        collection_id = client.add_collection("title of the collection")
+        client.add_file_to_collection(file_id, collection_id)
+    except ServiceError as e:
+        print(e.message)
+
+Refer to your local Jama instance endpoint for complete API documentation.
+
