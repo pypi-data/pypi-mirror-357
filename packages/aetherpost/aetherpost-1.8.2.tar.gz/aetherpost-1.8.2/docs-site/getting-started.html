@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started - AetherPost Documentation</title>
+    <meta name="description" content="Quick start guide for AetherPost">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <style>
+        /* Mobile-First Responsive Design for Getting Started */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem !important;
+            }
+            
+            .doc-page {
+                padding: 0 !important;
+                overflow-x: hidden;
+            }
+            
+            h1, h2, h3, h4 {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            h1 {
+                font-size: 1.75rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            h2 {
+                font-size: 1.4rem !important;
+                margin: 1.5rem 0 1rem 0 !important;
+            }
+            
+            h3 {
+                font-size: 1.2rem !important;
+                margin: 1rem 0 0.75rem 0 !important;
+            }
+            
+            h4 {
+                font-size: 1.1rem !important;
+                margin: 0.75rem 0 0.5rem 0 !important;
+            }
+            
+            /* Code blocks critical fix */
+            pre {
+                font-size: 0.7rem !important;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: pre;
+                word-wrap: normal;
+                max-width: calc(100vw - 2rem);
+                margin: 0.5rem -1rem !important;
+                padding: 0.75rem 1rem !important;
+                border-radius: 0 !important;
+            }
+            
+            code {
+                font-size: 0.75rem !important;
+                word-break: break-all;
+                overflow-wrap: break-word;
+                white-space: pre-wrap;
+            }
+            
+            /* Table responsiveness */
+            table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+                font-size: 0.8rem !important;
+                margin: 0.5rem -1rem !important;
+                width: calc(100vw - 1rem);
+            }
+            
+            th, td {
+                padding: 0.4rem !important;
+                font-size: 0.75rem !important;
+                white-space: nowrap;
+            }
+            
+            /* List optimization */
+            ul, ol {
+                padding-left: 1.2rem !important;
+            }
+            
+            li {
+                font-size: 0.9rem !important;
+                line-height: 1.4 !important;
+                margin-bottom: 0.4rem !important;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            /* Paragraph optimization */
+            p {
+                font-size: 0.9rem !important;
+                line-height: 1.5 !important;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                margin-bottom: 1rem !important;
+            }
+            
+            /* Badge and link optimization */
+            a {
+                word-break: break-all;
+                overflow-wrap: break-word;
+            }
+            
+            strong, em {
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            /* Background div optimization */
+            div[style*="background:"] {
+                padding: 0.75rem !important;
+                margin: 0.75rem -1rem !important;
+                border-radius: 0.5rem !important;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.5rem !important;
+            }
+            
+            h1 {
+                font-size: 1.5rem !important;
+            }
+            
+            h2 {
+                font-size: 1.25rem !important;
+            }
+            
+            h3 {
+                font-size: 1.1rem !important;
+            }
+            
+            h4 {
+                font-size: 1rem !important;
+            }
+            
+            pre {
+                font-size: 0.6rem !important;
+                margin: 0.5rem -0.5rem !important;
+                padding: 0.5rem !important;
+                max-width: calc(100vw - 1rem);
+            }
+            
+            code {
+                font-size: 0.65rem !important;
+            }
+            
+            table {
+                font-size: 0.7rem !important;
+                margin: 0.5rem -0.5rem !important;
+                width: calc(100vw - 0.5rem);
+            }
+            
+            th, td {
+                padding: 0.3rem !important;
+                font-size: 0.65rem !important;
+            }
+            
+            li, p {
+                font-size: 0.85rem !important;
+            }
+            
+            div[style*="background:"] {
+                padding: 0.5rem !important;
+                margin: 0.5rem -0.5rem !important;
+                border-radius: 0 !important;
+            }
+            
+            /* Force all text to wrap properly */
+            * {
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+                hyphens: auto;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1><a href="../index.html">🚀 AetherPost</a></h1>
+                <span class="tagline">Promotion as Code</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="getting-started.html">Getting Started</a></li>
+                <li><a href="api-reference.html">API Reference</a></li>
+                <li><a href="contributing.html">Contributing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="doc-page">
+                <h1>AetherPost - Promotion as Code</h1>
+<p>🚀 <strong>AI-powered social media automation for developers</strong></p>
+<p>AetherPost automates your app promotion across social media platforms using AI-generated content and Infrastructure-as-Code principles.</p>
+<a href="https://img.shields.io/badge/License-MIT-yellow.svg">![License: MIT</a>](https://opensource.org/licenses/MIT)
+<a href="https://img.shields.io/badge/python-3.8+-blue.svg">![Python 3.8+</a>](https://www.python.org/downloads/)
+<h2>✨ Features</h2>
+<h3>OSS Edition (Free)</h3>
+<ul><li>🎯 <strong>Declarative configuration</strong> - Define campaigns in YAML</li></ul>
+<ul><li>🤖 <strong>AI-generated content</strong> - [AI Service]/OpenAI powered posts</li></ul>
+<ul><li>📱 <strong>Multi-platform support</strong> - Twitter, Reddit, YouTube (production tested)</li></ul>
+<ul><li>🔒 <strong>Secure</strong> - Encrypted credential storage</li></ul>
+<ul><li>⚡ <strong>Idempotent</strong> - Safe to run multiple times</li></ul>
+<ul><li>📊 <strong>Basic analytics</strong> - Track post performance</li></ul>
+<ul><li>🎨 <strong>Style options</strong> - Casual, professional, technical, humorous</li></ul>
+<ul><li>📝 <strong>Usage limits</strong> - 50 posts/day, 5 campaigns</li></ul>
+<h3>Enterprise Edition</h3>
+<ul><li>🚀 <strong>Unlimited usage</strong> - No limits on posts or platforms</li></ul>
+<ul><li>🤖 <strong>AI Autopilot</strong> - Fully automated content generation</li></ul>
+<ul><li>📈 <strong>Advanced analytics</strong> - Real-time dashboards and insights</li></ul>
+<ul><li>👥 <strong>Team management</strong> - Collaboration and approval workflows</li></ul>
+<ul><li>🔍 <strong>Monitoring</strong> - Comprehensive system monitoring</li></ul>
+<ul><li>🎯 <strong>Priority support</strong> - Dedicated support team</li></ul>
+<h2>🚀 Quick Start - Two Setup Modes</h2>
+
+<h3>🤖 Mode 1: Auto Setup (Claude Code & AI Tools)</h3>
+<p><strong>For automated project initialization with pre-configured files</strong></p>
+<pre><code class="language-bash"># 1. Install AetherPost
+pip install aetherpost
+
+# 2. Pre-create configuration files:
+#    - campaign.yaml (project settings)
+#    - .env.aetherpost (API keys)
+
+# 3. Auto-initialize (detects existing files, no prompts)
+aetherpost init
+
+# 4. Preview and deploy
+aetherpost plan
+aetherpost apply
+</code></pre>
+
+<h3>📝 Mode 2: Interactive Setup (Manual Configuration)</h3>
+<p><strong>For step-by-step guided setup with prompts</strong></p>
+<pre><code class="language-bash"># 1. Install AetherPost
+pip install aetherpost
+
+# 2. Interactive setup (asks for project details, platforms, language, API keys, etc.)
+aetherpost init
+
+# 3. Preview and deploy
+aetherpost plan
+aetherpost apply
+</code></pre>
+
+<div style="background: #e8f5e8; padding: 1rem; border-radius: 0.5rem; margin: 1rem 0; border-left: 4px solid #10b981;">
+<p><strong>💡 Auto-Detection Logic:</strong></p>
+<ul>
+<li>If <code>campaign.yaml</code> exists → Auto Setup Mode (no prompts)</li>
+<li>If <code>campaign.yaml</code> missing → Interactive Setup Mode (guided prompts)</li>
+</ul>
+</div>
+
+<h2>📋 Configuration Examples</h2>
+
+<h3>🤖 Auto Setup Files</h3>
+
+<h4>campaign.yaml</h4>
+<pre><code class="language-yaml">name: "my-awesome-app"
+concept: "AI-powered task manager that learns your habits"
+url: "https://github.com/user/my-awesome-app"
+platforms: 
+  - bluesky
+  - reddit
+  - youtube
+
+content:
+  style: professional
+  action: "Try it free!"
+  language: en
+  hashtags:
+    - "#AI"
+    - "#ProductivityTool"
+    - "#OpenSource"
+
+limits:
+  free_tier: true
+  max_posts_per_day: 50
+
+notifications:
+  enabled: true
+  auto_apply: false  # Set to true for full automation
+
+# Optional: Specify template for advanced features
+template: "production"
+</code></pre>
+
+<h4>.env.aetherpost</h4>
+<pre><code class="language-bash"># AI Services
+OPENAI_API_KEY=sk-proj-your_openai_key_here
+
+# Bluesky (Recommended - Free)
+BLUESKY_HANDLE=your_handle.bsky.social
+BLUESKY_PASSWORD=your_app_password_here
+
+# Twitter/X (Requires Paid Plan - $100/month minimum)
+TWITTER_API_KEY=your_twitter_api_key_here
+TWITTER_API_SECRET=your_twitter_api_secret_here
+TWITTER_ACCESS_TOKEN=your_twitter_access_token_here
+TWITTER_ACCESS_TOKEN_SECRET=your_twitter_access_token_secret_here
+
+# Reddit
+REDDIT_CLIENT_ID=your_reddit_client_id_here
+REDDIT_CLIENT_SECRET=your_reddit_client_secret_here
+REDDIT_USERNAME=your_reddit_username_here
+REDDIT_PASSWORD=your_reddit_password_here
+
+# YouTube (optional)
+YOUTUBE_CLIENT_ID=your_youtube_client_id_here
+YOUTUBE_CLIENT_SECRET=your_youtube_client_secret_here
+
+# Notifications (optional)
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/your/webhook/url
+</code></pre>
+<h2>🔧 Commands (Terraform-style)</h2>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+<thead>
+<tr style="background: #f8f9fa;">
+<th style="padding: 0.75rem; border: 1px solid #dee2e6; text-align: left;">Command</th>
+<th style="padding: 0.75rem; border: 1px solid #dee2e6; text-align: left;">Description</th>
+<th style="padding: 0.75rem; border: 1px solid #dee2e6; text-align: left;">Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;"><code>aetherpost init</code></td>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;">Initialize workspace (auto-detects existing config)</td>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;">Auto/Interactive</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;"><code>aetherpost plan</code></td>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;">Preview AI-generated content for all platforms</td>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;">Both</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;"><code>aetherpost apply</code></td>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;">Execute campaign (respects notification settings)</td>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;">Both</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;"><code>aetherpost status</code></td>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;">Check campaign status and analytics</td>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;">Both</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;"><code>aetherpost auth</code></td>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;">Manage API authentication</td>
+<td style="padding: 0.75rem; border: 1px solid #dee2e6;">Both</td>
+</tr>
+</tbody>
+</table>
+
+<div style="background: #fff3cd; padding: 1rem; border-radius: 0.5rem; margin: 1rem 0; border-left: 4px solid #ffc107;">
+<p><strong>⚡ Notification Modes:</strong></p>
+<ul>
+<li><strong>Preview Mode</strong> (notifications.enabled: true) - Sends preview notification before posting</li>
+<li><strong>Auto Mode</strong> (notifications.auto_apply: true) - Posts immediately without confirmation</li>
+</ul>
+</div>
+
+<h2>🔑 API Requirements & Setup</h2>
+
+<p>AetherPost uses a tiered setup approach - start simple and expand as needed. The <code>aetherpost init</code> command will guide you through this process interactively.</p>
+
+<h3>📊 Setup Levels</h3>
+
+<h4>🚀 Starter Level (Recommended for beginners)</h4>
+<p><strong>Setup time:</strong> ~10 minutes<br>
+<strong>Monthly cost:</strong> $5-10 (Bluesky is free!)</p>
+
+<p><strong>Required APIs:</strong></p>
+<ul>
+<li><strong>OpenAI API Key</strong>
+  <ul>
+    <li>Purpose: AI content generation</li>
+    <li>Cost: $0.002-0.06 per 1K tokens</li>
+    <li>Setup: <a href="https://platform.openai.com/api-keys" target="_blank">Get API key</a></li>
+    <li>Format: <code>sk-proj-...</code></li>
+  </ul>
+</li>
+<li><strong>Bluesky API (Recommended)</strong>
+  <ul>
+    <li>Purpose: Post to the decentralized social network</li>
+    <li>Cost: Completely free</li>
+    <li>Setup: <a href="https://bsky.app" target="_blank">Create Bluesky account</a> + generate app password</li>
+    <li>Required: Handle, App Password</li>
+  </ul>
+</li>
+</ul>
+
+<div style="background: #fff3cd; padding: 1rem; border-radius: 0.5rem; margin: 1rem 0; border-left: 4px solid #ffc107;">
+<p><strong>⚠️ Twitter/X Note:</strong> Twitter now requires a paid API plan starting at $100/month. We recommend starting with Bluesky (free) for social media automation.</p>
+</div>
+
+<h4>⭐ Recommended Level (Best value)</h4>
+<p><strong>Setup time:</strong> ~20 minutes<br>
+<strong>Monthly cost:</strong> $5-10 (Both Bluesky and Reddit are free!)</p>
+
+<p><strong>Additional APIs:</strong></p>
+<ul>
+<li><strong>Reddit API</strong>
+  <ul>
+    <li>Purpose: Post to subreddits</li>
+    <li>Cost: Free (60 requests/minute)</li>
+    <li>Setup: <a href="https://www.reddit.com/prefs/apps" target="_blank">Reddit App Preferences</a></li>
+    <li>Required: Client ID, Client Secret, Username, Password</li>
+  </ul>
+</li>
+</ul>
+
+<p><strong>Optional:</strong></p>
+<ul>
+<li><strong>Slack Webhook</strong> - Preview notifications (Free)
+  <ul>
+    <li>Setup: <a href="https://api.slack.com/apps" target="_blank">Slack API Apps</a></li>
+    <li>Format: <code>https://hooks.slack.com/services/...</code></li>
+  </ul>
+</li>
+</ul>
+
+<h4>🎯 Advanced Level (Multi-platform)</h4>
+<p><strong>Setup time:</strong> ~30 minutes<br>
+<strong>Monthly cost:</strong> $10-25</p>
+
+<p><strong>Additional APIs:</strong></p>
+<ul>
+<li><strong>YouTube Data API v3</strong>
+  <ul>
+    <li>Purpose: Video management and community posts</li>
+    <li>Cost: Free quota + $0.002 per 100 units</li>
+    <li>Setup: <a href="https://console.cloud.google.com/apis" target="_blank">Google Cloud Console</a></li>
+    <li>Required: OAuth2 Client ID, Client Secret</li>
+  </ul>
+</li>
+</ul>
+
+<h4>🌟 Complete Level (Full power)</h4>
+<p><strong>Setup time:</strong> ~45 minutes<br>
+<strong>Monthly cost:</strong> $15-35</p>
+
+<p><strong>Additional APIs:</strong></p>
+<ul>
+<li><strong>Twitter/X API</strong> - Requires paid plan ($100/month minimum)</li>
+<li><strong>Instagram Basic Display</strong> - Photo/story posting</li>
+<li><strong>LINE Notify</strong> - Mobile notifications (Free)</li>
+</ul>
+
+<h3>🛠️ Interactive Setup Process</h3>
+
+<p>Don't worry about collecting all these APIs manually! When you run <code>aetherpost init</code>, it will:</p>
+
+<ol>
+<li>Ask about your project and goals</li>
+<li>Recommend the best setup level for your needs</li>
+<li>Guide you through API key collection step-by-step</li>
+<li>Provide direct links to each API setup page</li>
+<li>Validate your API keys automatically</li>
+<li>Save everything securely to <code>.env.aetherpost</code></li>
+<li>Let you start simple and expand later</li>
+</ol>
+
+<div style="background: #f8fafc; border-left: 4px solid #10b981; padding: 1rem; margin: 1rem 0; border-radius: 0 0.5rem 0.5rem 0;">
+<p><strong>💡 Pro Tip:</strong> Start with the Starter level (OpenAI + Bluesky) to get familiar with the workflow. Bluesky is completely free, while Twitter now requires a paid plan ($100/month minimum). You can always add more platforms later by running <code>aetherpost auth setup [platform]</code>.</p>
+</div>
+
+<h2>📖 Documentation</h2>
+<ul><li><a href="docs/installation.md">Installation Guide</a></li></ul>
+<ul><li><a href="docs/configuration.md">Configuration Reference</a></li></ul>
+<ul><li><a href="docs/platforms.md">Platform Setup</a></li></ul>
+<ul><li><a href="docs/ai-providers.md">AI Provider Setup</a></li></ul>
+<ul><li><a href="docs/examples.md">Examples</a></li></ul>
+<h2>🤝 Contributing</h2>
+<p>We welcome contributions! See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> for guidelines.</p>
+<h2>📄 License</h2>
+<p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+<h2>🙏 Acknowledgments</h2>
+<ul><li>Inspired by Terraform's Infrastructure-as-Code approach</li></ul>
+<ul><li>Built with <a href="https://typer.tiangolo.com/">Typer</a> and <a href="https://rich.readthedocs.io/">Rich</a></li></ul>
+<ul><li>AI content generation powered by advanced language models and <a href="https://openai.com/">OpenAI</a></li></ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>AetherPost</h3>
+                    <p>Making social media automation accessible to developers.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Documentation</h4>
+                        <ul>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="api-reference.html">API Reference</a></li>
+                            <li><a href="configuration.html">Configuration</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="contributing.html">Contributing</a></li>
+                            <li><a href="https://github.com/fununnn/aetherpost">GitHub</a></li>
+                            <li><a href="https://github.com/fununnn/aetherpost/issues">Issues</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AetherPost. Licensed under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
