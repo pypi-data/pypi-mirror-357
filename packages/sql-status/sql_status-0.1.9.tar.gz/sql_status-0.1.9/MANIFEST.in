@@ -1,0 +1,7 @@
+# Включаем все .sql, .ico, .xlsx файлы и всё из models и windows
+recursive-include sql_status *.sql
+recursive-include sql_status *.ico
+recursive-include sql_status *.xlsx
+recursive-include sql_status/gia/src *.py
+recursive-include sql_status/gia/src/models *.py
+recursive-include sql_status/gia/src/windows *.py
