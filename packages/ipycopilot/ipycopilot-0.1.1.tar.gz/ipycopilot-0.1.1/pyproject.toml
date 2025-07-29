@@ -1,0 +1,60 @@
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# ────────────────────────────────────────────────────────────────
+# Project metadata
+# ────────────────────────────────────────────────────────────────
+[project]
+name            = "ipycopilot"
+version         = "0.1.1"
+description     = "Desktop landing page for ipycopilot – PyWebview + React with particles.js"
+authors         = [{ name = "Your Name", email = "you@example.com" }]
+readme          = "README.md"
+requires-python = ">=3.8"
+
+# ‣ Custom licence: point to the file you ship in the repo/wheel
+license         = { file = "LICENSE" }
+classifiers     = [
+  "License :: Other/Proprietary License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Operating System :: OS Independent",
+]
+
+# ────────────────────────────────────────────────────────────────
+# Runtime dependencies
+# ────────────────────────────────────────────────────────────────
+# • pin <5 so ipycopilot’s imports still find `webview.exceptions`
+# • include the Qt wheels + thin shim so users get a GUI backend
+dependencies = [
+  "pywebview>=4,<5",
+  "pywebview[qt]",
+  "qtpy",
+]
+
+# Optional: let packagers choose GTK instead of Qt on Linux
+[project.optional-dependencies]
+gtk = [
+  "pywebview[gtk]"        # still needs system GTK/WebKit on Linux
+]
+
+# Console entry-point
+[project.scripts]
+ipycopilot = "ipycopilot.app:run"
+
+# ────────────────────────────────────────────────────────────────
+# Packaging data – include static front-end & licence files
+# ────────────────────────────────────────────────────────────────
+[tool.setuptools.package-data]
+"ipycopilot" = [
+  "static/**/*",
+  "../LICENSE",        # main custom licence
+  "../licenses/*",     # any third-party licences (LGPL, etc.)
+]
+
+# (optional) explicit package discovery rules
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["ipycopilot*"]
+exclude = ["tests*"]

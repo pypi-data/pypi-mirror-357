@@ -1,0 +1,6 @@
+pywebview<5,>=4
+pywebview[qt]
+qtpy
+
+[gtk]
+pywebview[gtk]
