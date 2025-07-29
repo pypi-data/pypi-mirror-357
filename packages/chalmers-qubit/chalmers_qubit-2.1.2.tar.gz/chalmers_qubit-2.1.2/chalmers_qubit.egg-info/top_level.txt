@@ -1,0 +1,5 @@
+chalmers_qubit
+dist
+docs
+scripts
+tests
