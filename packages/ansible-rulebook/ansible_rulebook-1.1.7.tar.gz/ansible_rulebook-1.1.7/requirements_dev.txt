@@ -1,0 +1,18 @@
+-r requirements_test.txt
+-r requirements_lint.txt
+-r docs/requirements.txt
+
+setuptools_scm
+
+# Packaging / distribution
+twine
+build
+
+# Testing
+tox
+coverage
+
+# For building DEs
+ansible-builder
+
+pre-commit

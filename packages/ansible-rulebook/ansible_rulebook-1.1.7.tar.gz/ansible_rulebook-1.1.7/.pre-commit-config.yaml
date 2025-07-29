@@ -1,0 +1,40 @@
+---
+exclude: "^docs/"
+repos:
+  - repo: https://github.com/psf/black
+    rev: 22.6.0
+    hooks:
+      - id: black
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+  - repo: https://github.com/pycqa/flake8
+    rev: 4.0.1
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          - flake8-bugbear
+  - repo: local
+    hooks:
+      - id: ajv
+        name: ajv
+        description: Validate JSON schema
+        language: node
+        types: [json]
+        files: ^ansible_rulebook/schema/ruleset_schema.json$
+        additional_dependencies:
+          - ajv-cli
+        entry: ajv compile -s
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: pretty-format-json
+        language_version: python3
+        args: ['--autofix', '--no-sort-keys', '--indent', '4']
+  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v9.5.0
+    hooks:
+      - id: commitlint
+        additional_dependencies: ['@commitlint/config-conventional']
+        stages: [commit-msg]

@@ -1,0 +1,35 @@
+---
+- name: Host Rules Perf
+  hosts: all
+  sources:
+    - name: range
+      range:
+        limit: 5
+  rules:
+    - name: r1
+      condition: event.i == 1
+      action:
+        set_fact:
+          fact:
+            j: 1
+    - name: r2
+      condition: event.i == 2
+      action:
+        run_playbook:
+          name: ./hello_playbook1.yml
+    - name: r3
+      condition: event.i == 3
+      action:
+        retract_fact:
+          fact:
+            j: 3
+    - name: r4
+      condition: event.i == 4
+      action:
+        post_event:
+          event:
+            j: 4
+    - name: r5
+      condition: event.j is defined
+      action:
+        none:

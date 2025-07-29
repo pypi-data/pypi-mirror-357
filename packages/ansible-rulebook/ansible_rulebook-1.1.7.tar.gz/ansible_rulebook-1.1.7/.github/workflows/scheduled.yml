@@ -1,0 +1,84 @@
+name: Scheduled full tests
+
+on:
+  schedule:
+    # Run at 10:00 AM/PM UTC
+    - cron: "0 10,22 * * *"
+  workflow_dispatch:
+
+jobs:
+  flake8:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: run flake
+        uses: ./.github/actions/run-flake
+
+  isort:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: run isort
+        uses: ./.github/actions/run-isort
+
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: black
+        uses: psf/black@stable
+        with:
+          version: "22.12.0"
+
+  common-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version:
+          - "3.9"
+          - "3.10"
+          - "3.11"
+          - "3.12"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup
+        uses: ./.github/actions/setup
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: All tests
+        uses: ./.github/actions/all-tests
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          env_vars: OS,PYTHON
+          fail_ci_if_error: false
+          files: ./coverage.xml
+          flags: "unittests-${{ matrix.python-version }}"
+          name: codecov-umbrella
+          verbose: true
+
+      - name: Notify to slack if failure
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: GH Slack Notifier for EDA
+          SLACK_TITLE: Failure of scheduled tests for ansible-rulebook
+          SLACK_MESSAGE: |
+            Scheduled tests for ansible-rulebook failed.
+            Id: ${{ github.run_id }}"
+            Workflow: ${{ github.workflow }}

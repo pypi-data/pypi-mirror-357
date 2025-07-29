@@ -1,0 +1,4 @@
+flake8==5.0.4
+flake8-bugbear
+isort
+black==22.12.0
