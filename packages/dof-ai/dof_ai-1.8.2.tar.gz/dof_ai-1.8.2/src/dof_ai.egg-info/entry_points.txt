@@ -1,0 +1,2 @@
+[console_scripts]
+dof-ai = dof.cli:app
