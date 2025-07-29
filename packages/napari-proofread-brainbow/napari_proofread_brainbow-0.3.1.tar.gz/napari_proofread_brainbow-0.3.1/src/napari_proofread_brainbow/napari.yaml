@@ -1,0 +1,19 @@
+name: napari-proofread-brainbow
+display_name: Proofread Brainbow
+# use 'hidden' to remove plugin from napari hub search results
+visibility: public
+# see https://napari.org/stable/plugins/technical_references/manifest.html#fields for valid categories
+categories: ["Annotation"]
+contributions:
+  commands:
+    - id: napari-proofread-brainbow.make_qwidget
+      python_name: napari_proofread_brainbow._widget:MainWidget
+      title: Make main proofreading widget
+    - id: napari-proofread-brainbow.threshold_prob
+      python_name: napari_proofread_brainbow._widget:threshold_prob
+      title: Make threshold widget
+  widgets:
+    - command: napari-proofread-brainbow.make_qwidget
+      display_name: Proofread Brainbow
+    - command: napari-proofread-brainbow.threshold_prob
+      display_name: Threshold probability (csv)
