@@ -1,0 +1,1 @@
+import{b as o,a as n}from"../chunks/disclose-version.Z8eGN920.js";import{n as r}from"../chunks/runtime.cJOh_ioU.js";function p(e){r();var t=o("will be overriden by mkdocs, need for sveltekit build");n(e,t)}export{p as component};
