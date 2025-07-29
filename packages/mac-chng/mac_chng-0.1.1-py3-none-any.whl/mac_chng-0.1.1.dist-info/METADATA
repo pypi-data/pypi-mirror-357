@@ -1,0 +1,17 @@
+Metadata-Version: 2.3
+Name: mac-chng
+Version: 0.1.1
+Summary: This script changes the style of writing the mac address in accordance with the requirements of various vendors of network equipment
+Author: Andrey Koblov
+Author-email: koblov-am@mail.ru
+Requires-Python: >=3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: requests (>=2.32.4,<3.0.0)
+Description-Content-Type: text/markdown
+
+# mac-chng
+
+This script changes the style of writing the MAC address in accordance with the requirements of various vendors of network equipment.
