@@ -1,0 +1,11 @@
+gchatbot/__init__.py,sha256=kUHWherBMenluGPUL2qhePFcGE1R6D9Ok-3KMUIM1o0,972
+gchatbot/main.py,sha256=e_BA5C5xQHcERaq8Hd3WwbpTd7a3pQ22lkWIj9ivxnQ,18574
+gchatbot/parser.py,sha256=4lvuS6fWZ7fVaO-ZaNG2bB-BV-Jx3cZMp3aiC7BMRFc,12335
+gchatbot/processor.py,sha256=UPilwOtuZgz5EsTkUI6wrPfHLv-BM6vk1aMaYBE_9v4,5640
+gchatbot/response.py,sha256=UWmKt91FHJfaFS8D0LjHu5QN9OEXNPzFOrcZYLvUn7g,2985
+gchatbot/types.py,sha256=1CU46H5QVbd8MuYhfO3GyKxyHWZNeOVA4M_bGRkFHG0,7617
+gchatbot-0.3.1.dist-info/licenses/LICENSE,sha256=DKAKHhj08X2mO7XfMFlcF6vkFcPWiemGz5QXvHd3AgA,1089
+gchatbot-0.3.1.dist-info/METADATA,sha256=IvqA9n8tD_abJNr-v-u5AOUEEFxVdItJ9Gf54Bjmle4,13249
+gchatbot-0.3.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gchatbot-0.3.1.dist-info/top_level.txt,sha256=z_IA7X1_HVTMW9yT45OzTmjyGVkdAI9-YPW38PxIiT8,9
+gchatbot-0.3.1.dist-info/RECORD,,
