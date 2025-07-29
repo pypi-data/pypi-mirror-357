@@ -1,0 +1,9 @@
+adaptivenms/__init__.py,sha256=MK5um9-joSvb78w80ZZCcqdF8kUzVfBk-sp7p06MCQc,70
+adaptivenms/square_covering_adaptive_nms.cpython-313-x86_64-linux-gnu.so,sha256=bz4rGCti5U-iI8DHdL6k73UDOja4Ow-0qkh1ymPTw3o,2187096
+adaptivenms/square_covering_adaptive_nms.pyi,sha256=ccitJVMhZy896XuE3T6Zaw-jVLLtXcwpRWpilV6awyg,374
+adaptivenms/square_covering_adaptive_nms.pyx,sha256=_3jif7QRZ-OyHeb-Zft74-Xinati3WUQSEpdKTZuivU,7146
+adaptive_nms-1.0.0a2.dist-info/METADATA,sha256=Kx4ZbnBAsrKsFhgHlYcG4yRGf-MtqxEpTJfe5VtRo_E,4282
+adaptive_nms-1.0.0a2.dist-info/WHEEL,sha256=6_JqD2WUvSzhpAM5fA1Og7JrJ2ryUwUo85Dhg1Hamn0,152
+adaptive_nms-1.0.0a2.dist-info/top_level.txt,sha256=idh_7Nq8w5zZu7MMTBjUIbAwTuI_lw3BUsMVl5n69wc,12
+adaptive_nms-1.0.0a2.dist-info/RECORD,,
+adaptive_nms-1.0.0a2.dist-info/licenses/LICENSE,sha256=4m2uwBDYt1Bz6J39VN8-5U26TQpQe2HnL38mNdR0_qM,1073
