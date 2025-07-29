@@ -1,0 +1,31 @@
+.coverage
+MANIFEST
+
+*.jpg
+
+__pycache__/
+.mypy_cache/
+.pytype/
+.venv/
+audiolibrarian.egg-info/
+dist/
+htmlcov/
+library/
+new_library/
+workdir/
+venv/
+
+NOTES.md
+
+# MkDocs build output
+site/
+.cache/
+
+# Local development
+.mkdocs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*~
