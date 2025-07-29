@@ -1,0 +1,940 @@
+#!/bin/bash
+
+# -----------------------------------------------------------------------------
+# Init Script for the '{{ project_name }}' project
+#
+# This script provides a centralized place to manage the development
+# environment, including Docker services, testing, and other utilities.
+# -----------------------------------------------------------------------------
+
+# --- Configuration ---
+PROJECT_NAME="{{ project_name }}"
+
+# --- Theme & Colors ---
+C_RESET='\033[0m'
+C_BLACK='\033[0;30m'
+C_RED='\033[0;31m'
+C_GREEN='\033[0;32m'
+C_YELLOW='\033[0;33m'
+C_BLUE='\033[0;34m'
+C_PURPLE='\033[0;35m'
+C_CYAN='\033[0;36m'
+C_WHITE='\033[0;37m'
+C_BOLD='\033[1m'
+
+# --- Helper Functions ---
+
+# Load environment variables from .env file if it exists
+function load_env() {
+  if [ -f ".env" ]; then
+    export $(cat .env | grep -v '^#' | xargs)
+    success "Loaded environment variables from .env"
+  fi
+}
+
+# Check for required API keys
+function check_api_keys() {
+  local missing_keys=()
+  local has_mcp_config=false
+  
+  # Check if MCP configuration exists
+  if [[ -f ".mcp.json" ]] || [[ -f ".mcp-secrets.json" ]]; then
+    has_mcp_config=true
+  fi
+  
+  # Check for Perplexity API key if MCP is configured
+  if [[ "$has_mcp_config" == true ]] && [[ -f ".mcp-secrets.json" ]] && grep -q "perplexity-mcp" .mcp-secrets.json 2>/dev/null; then
+    if [[ -z "${PERPLEXITY_API_KEY}" ]]; then
+      missing_keys+=("PERPLEXITY_API_KEY")
+    fi
+  fi
+  
+  if [[ ${#missing_keys[@]} -gt 0 ]]; then
+    error "Missing required API keys:"
+    printf '  - %s\n' "${missing_keys[@]}"
+    echo ""
+    info "To fix this:"
+    echo "  1. Copy .env.sample to .env: cp .env.sample .env"
+    echo "  2. Edit .env and add your API keys"
+    echo "  3. Run this script again"
+    echo ""
+    echo "  Get your Perplexity API key from: https://www.perplexity.ai/settings/api"
+    return 1
+  fi
+  
+  success "All required API keys are configured"
+  return 0
+}
+
+# Setup MCP configuration if needed
+function setup_mcp() {
+  if [[ -f ".mcp-secrets.json.sample" ]] && [[ ! -f ".mcp-secrets.json" ]]; then
+    info "Setting up MCP configuration..."
+    
+    # Create .mcp-secrets.json from sample
+    cp .mcp-secrets.json.sample .mcp-secrets.json
+    
+    # Replace environment variables in the file
+    if command -v envsubst &> /dev/null; then
+      envsubst < .mcp-secrets.json.sample > .mcp-secrets.json
+      success "Created .mcp-secrets.json with environment variables"
+    else
+      info "envsubst not found - you'll need to manually update .mcp-secrets.json"
+    fi
+  fi
+  
+  # Create agent memory directory if it doesn't exist
+  if [[ ! -d ".agent-memory" ]]; then
+    info "Creating agent memory directory..."
+    mkdir -p .agent-memory
+    success "Created .agent-memory directory"
+  fi
+}
+
+function show_animated_banner() {
+    local text="$1"
+    local subtitle="${2:-AI-Driven Development Framework}"
+    
+    # ANSI codes
+    local CLEAR_LINE='\033[2K'
+    local HIDE_CURSOR='\033[?25l'
+    local SHOW_CURSOR='\033[?25h'
+    
+    # Neon colors
+    local NEON_YELLOW='\033[38;5;226m'
+    local BRIGHT_NEON='\033[38;5;228m'
+    local EXTRA_BRIGHT='\033[38;5;229m'
+    
+    # Convert text to uppercase
+    text="${text^^}"
+    
+    # Hide cursor
+    echo -ne "$HIDE_CURSOR"
+    
+    # Simple block text (3 lines high)
+    local line1=""
+    local line2=""
+    local line3=""
+    
+    # Build block letters
+    for (( i=0; i<${#text}; i++ )); do
+        local char="${text:i:1}"
+        case "$char" in
+            A) line1+="█████  "; line2+=" ███   "; line3+="█   █  " ;;
+            G) line1+="█████  "; line2+="█  ██  "; line3+="█████  " ;;
+            E) line1+="█████  "; line2+="███    "; line3+="█████  " ;;
+            N) line1+="█   █  "; line2+="██  █  "; line3+="█   █  " ;;
+            T) line1+="█████  "; line2+="  █    "; line3+="  █    " ;;
+            I) line1+="█████  "; line2+="  █    "; line3+="█████  " ;;
+            C) line1+="█████  "; line2+="█      "; line3+="█████  " ;;
+            S) line1+="█████  "; line2+=" ███   "; line3+="█████  " ;;
+            R) line1+="████   "; line2+="████   "; line3+="█   █  " ;;
+            U) line1+="█   █  "; line2+="█   █  "; line3+="█████  " ;;
+            M) line1+="█   █  "; line2+="█████  "; line3+="█   █  " ;;
+            " ") line1+="   "; line2+="   "; line3+="   " ;;
+            *) line1+="███ "; line2+="█ █ "; line3+="███ " ;;
+        esac
+    done
+    
+    # Animation variables
+    local width=${#line1}
+    local lines=("$line1" "$line2" "$line3")
+    
+    # Print empty lines
+    echo && echo && echo
+    
+    # Move cursor back up
+    echo -ne "\033[3A"
+    
+    # Scan effect
+    for (( x=0; x<=width; x++ )); do
+        for (( y=0; y<3; y++ )); do
+            local line="${lines[$y]}"
+            local output=""
+            
+            for (( i=0; i<${#line}; i++ )); do
+                if (( i < x )); then
+                    local char="${line:i:1}"
+                    if [[ "$char" != " " ]]; then
+                        output+="${NEON_YELLOW}${char}${C_RESET}"
+                    else
+                        output+=" "
+                    fi
+                else
+                    output+=" "
+                fi
+            done
+            
+            echo -ne "\r${CLEAR_LINE}${output}"
+            if (( y < 2 )); then echo; fi
+        done
+        
+        if (( x < width )); then
+            echo -ne "\033[2A"
+        fi
+        
+        sleep 0.01
+    done
+    
+    # Pulse effect
+    echo
+    for (( pulse=0; pulse<2; pulse++ )); do
+        for color in "$NEON_YELLOW" "$BRIGHT_NEON" "$EXTRA_BRIGHT"; do
+            echo -ne "\033[3A"
+            for line in "${lines[@]}"; do
+                echo -ne "\r${CLEAR_LINE}"
+                for (( i=0; i<${#line}; i++ )); do
+                    local char="${line:i:1}"
+                    if [[ "$char" != " " ]]; then
+                        echo -ne "${color}${char}${C_RESET}"
+                    else
+                        echo -ne " "
+                    fi
+                done
+                echo
+            done
+            sleep 0.05
+        done
+    done
+    
+    # Add subtitle
+    echo
+    echo -e "${C_YELLOW}════════════ ${subtitle} ════════════${C_RESET}"
+    echo
+    
+    # Show cursor
+    echo -ne "$SHOW_CURSOR"
+}
+
+function header() {
+  # Check if animation is disabled
+  if [[ "$NO_ANIMATION" == "true" ]] || [[ "$1" == "--no-animation" ]]; then
+    # Fall back to static banner
+    echo -e "${C_PURPLE}${C_BOLD}"
+    echo "    ___    __  __   ____   _____   ____    ___    _   _ "
+    echo "   / __|  |  \/  | |  _ \  | ____| |  _ \  / __|  | | | |"
+    echo "  | |     | |\/| | | |_) | |  _|   | |_) | \_ \  | |_| |"
+    echo "  | |___  | |  | | |  __/  | |___  |  _ <  |___/  |  _  |"
+    echo "   \___|  |_|  |_| |_|     |_____| |_| \_\ ____/  |_| |_|"
+    echo ""
+    echo -e "      >> Welcome to the ${PROJECT_NAME} Environment Manager <<      "
+    echo -e "${C_RESET}"
+  else
+    # Show animated banner
+    show_animated_banner "${PROJECT_NAME}"
+  fi
+}
+
+function info() {
+  echo -e "${C_BLUE}${C_BOLD}INFO:${C_RESET} $1"
+}
+
+function success() {
+  echo -e "${C_GREEN}${C_BOLD}SUCCESS:${C_RESET} $1"
+}
+
+function error() {
+  echo -e "${C_RED}${C_BOLD}ERROR:${C_RESET} $1"
+}
+
+# --- Core Functions ---
+function start_services() {
+  info "Starting Docker services in detached mode..."
+  if docker-compose up -d --build; then
+    success "Services are up and running."
+  else
+    error "Failed to start Docker services."
+    exit 1
+  fi
+}
+
+function stop_services() {
+  info "Stopping Docker services..."
+  if docker-compose down; then
+    success "Services have been stopped."
+  else
+    error "Failed to stop Docker services."
+  fi
+}
+
+function show_logs() {
+  info "Tailing logs for all services. Press Ctrl+C to exit."
+  docker-compose logs -f
+}
+
+function run_tests() {
+  info "Running tests inside the app container..."
+  # Modify 'app' and the test command as needed
+  if docker-compose exec app pytest; then
+    success "All tests passed."
+  else
+    error "Tests failed."
+  fi
+}
+
+# --- AgenticScrum Framework Integration ---
+
+function find_agentic_framework() {
+  # Try to locate AgenticScrum framework installation
+  local framework_paths=(
+    # Check if agentic-scrum-setup is available as command
+    "$(command -v agentic-scrum-setup 2>/dev/null)"
+    # Check common development locations
+    "../AgenticScrum"
+    "../../AgenticScrum"
+    "../../../AgenticScrum"
+    "~/proj/AgenticScrum"
+    "~/Projects/AgenticScrum"
+    "~/AgenticScrum"
+  )
+  
+  # Try agentic-patch command first (most reliable)
+  if command -v agentic-patch &> /dev/null; then
+    echo "agentic-patch"
+    return 0
+  fi
+  
+  # Try main CLI command
+  if command -v agentic-scrum-setup &> /dev/null; then
+    echo "agentic-scrum-setup"
+    return 0
+  fi
+  
+  # Check for local framework installations
+  for path in "${framework_paths[@]}"; do
+    if [[ -n "$path" ]] && [[ -d "$path" ]] && [[ -f "$path/init.sh" ]]; then
+      echo "$path/init.sh"
+      return 0
+    fi
+  done
+  
+  return 1
+}
+
+function run_framework_patch() {
+  local operation="$1"
+  shift
+  local framework_cmd
+  
+  framework_cmd=$(find_agentic_framework)
+  if [[ $? -ne 0 ]]; then
+    error "AgenticScrum framework not found!"
+    echo ""
+    echo "To use patch commands, ensure AgenticScrum is:"
+    echo "  1. Installed via pip: pip install agentic-scrum-setup"
+    echo "  2. Or accessible in a parent directory"
+    echo "  3. Or run from within the AgenticScrum framework directory"
+    return 1
+  fi
+  
+  info "Found AgenticScrum: $framework_cmd"
+  echo ""
+  
+  case "$framework_cmd" in
+    "agentic-patch")
+      agentic-patch "$operation" "$@"
+      ;;
+    "agentic-scrum-setup")
+      agentic-scrum-setup patch "$operation" "$@"
+      ;;
+    *.sh)
+      "$framework_cmd" patch "$operation" "$@"
+      ;;
+    *)
+      error "Unknown framework command type: $framework_cmd"
+      return 1
+      ;;
+  esac
+}
+
+function show_help() {
+  header
+  echo "Usage: ./init.sh [command]"
+  echo ""
+  echo "Project Commands:"
+  echo -e "  ${C_YELLOW}up${C_RESET}         - Build and start all Docker services."
+  echo -e "  ${C_YELLOW}down${C_RESET}       - Stop and remove all Docker services."
+  echo -e "  ${C_YELLOW}logs${C_RESET}       - Tail the logs from all running services."
+  echo -e "  ${C_YELLOW}test${C_RESET}       - Run the test suite within the Docker container."
+  echo -e "  ${C_YELLOW}setup${C_RESET}      - Setup environment variables and MCP configuration."
+  echo -e "  ${C_YELLOW}verify-keys${C_RESET} - Check if all required API keys are configured."
+  echo -e "  ${C_YELLOW}test-mcp${C_RESET}   - Test MCP server connections (memory/search)."
+  echo ""
+  echo "Framework Commands:"
+  echo -e "  ${C_YELLOW}patch${C_RESET} <operation> - Apply patches to AgenticScrum framework"
+  echo -e "  ${C_YELLOW}patch-status${C_RESET}      - Show AgenticScrum patching system status"
+  echo ""
+  echo "Background Agent Commands:"
+  echo -e "  ${C_YELLOW}agent-run${C_RESET} <type> <id> <prompt> - Run story in background agent"
+  echo -e "  ${C_YELLOW}agent-status${C_RESET}      - Show background agent status"
+  echo -e "  ${C_YELLOW}agent${C_RESET} list        - List active background agents"
+  echo -e "  ${C_YELLOW}agent${C_RESET} queue       - Show task queue"
+  echo -e "  ${C_YELLOW}agent${C_RESET} assign      - Assign story to agent"
+  echo -e "  ${C_YELLOW}agent${C_RESET} terminate   - Terminate agent session"
+  echo ""
+  echo "QA Validation Commands:"
+  echo -e "  ${C_YELLOW}qa-status${C_RESET}         - Show QA system status and queue information"
+  echo -e "  ${C_YELLOW}qa-validate${C_RESET} <story> [type] - Queue story for QA validation"
+  echo -e "  ${C_YELLOW}qa-reports${C_RESET} [type] - View QA validation reports"
+  echo -e "  ${C_YELLOW}qa-queue${C_RESET} [action] - Manage QA validation queue"
+  echo ""
+  echo -e "  ${C_YELLOW}help${C_RESET}              - Show this help message."
+  echo ""
+  echo "Patch Operations:"
+  echo -e "  ${C_CYAN}update-all${C_RESET}   - Apply comprehensive project update (recommended)"
+  echo -e "  ${C_CYAN}status${C_RESET}       - Show patching system status"
+  echo -e "  ${C_CYAN}history${C_RESET}      - View patch history"
+  echo -e "  ${C_CYAN}add-template${C_RESET} - Add new agent templates"
+  echo -e "  ${C_CYAN}update-mcp${C_RESET}   - Update MCP configurations"
+  echo -e "  ${C_CYAN}fix-cli${C_RESET}      - Apply CLI fixes"
+  echo -e "  ${C_CYAN}sync-changes${C_RESET} - Sync changes back to framework"
+  echo ""
+}
+
+function setup_environment() {
+  header
+  info "Setting up development environment..."
+  
+  # Check if .env exists, create from sample if not
+  if [[ ! -f ".env" ]] && [[ -f ".env.sample" ]]; then
+    info "Creating .env from .env.sample..."
+    cp .env.sample .env
+    echo ""
+    error "Please edit .env and add your API keys before continuing."
+    echo "  Get your Perplexity API key from: https://www.perplexity.ai/settings/api"
+    return 1
+  fi
+  
+  # Load environment variables
+  load_env
+  
+  # Check API keys
+  if ! check_api_keys; then
+    return 1
+  fi
+  
+  # Setup MCP if needed
+  setup_mcp
+  
+  success "Environment setup complete!"
+}
+
+# --- Test MCP Servers ---
+function test_mcp_servers() {
+  local server="${1:-all}"
+  
+  # Check if MCP is configured
+  if [[ ! -f ".mcp.json" ]]; then
+    error "MCP is not configured for this project"
+    echo "  Run with --enable-mcp flag when creating the project"
+    return 1
+  fi
+  
+  echo "Testing MCP server connections..."
+  
+  if [[ "$server" == "all" || "$server" == "memory" ]]; then
+    # Test memory server
+    echo -n "Testing memory server... "
+    if command -v npx >/dev/null 2>&1; then
+      # Check if memory files exist
+      if [[ -d ".agent-memory" ]]; then
+        success "Memory directory exists"
+      else
+        error "Memory directory not found"
+      fi
+    else
+      error "npx not found - install Node.js 16+"
+    fi
+  fi
+  
+  if [[ "$server" == "all" || "$server" == "search" ]]; then
+    # Test search server
+    echo -n "Testing search server... "
+    if [[ -n "$PERPLEXITY_API_KEY" ]]; then
+      success "API key configured"
+    else
+      error "PERPLEXITY_API_KEY not set"
+    fi
+  fi
+}
+
+# --- QA Validation Functions ---
+function qa_status() {
+  info "QA System Status"
+  echo ""
+  
+  # Check if QA system is enabled
+  {% if qa.enabled %}
+  success "QA System: Enabled"
+  
+  # Show validation queue status
+  echo -e "${C_BOLD}Validation Queue Status:${C_RESET}"
+  if [[ -f "qa/queue/pending_validation.json" ]]; then
+    local pending_count=$(jq length qa/queue/pending_validation.json 2>/dev/null || echo "0")
+    echo "  Pending Validations: $pending_count"
+  else
+    echo "  Pending Validations: 0"
+  fi
+  
+  if [[ -f "qa/queue/active_qa_sessions.json" ]]; then
+    local active_count=$(jq length qa/queue/active_qa_sessions.json 2>/dev/null || echo "0")
+    echo "  Active Sessions: $active_count"
+  else
+    echo "  Active Sessions: 0"
+  fi
+  
+  if [[ -f "qa/queue/bugfix_queue.json" ]]; then
+    local bugfix_count=$(jq length qa/queue/bugfix_queue.json 2>/dev/null || echo "0")
+    echo "  Bugfix Queue: $bugfix_count"
+  else
+    echo "  Bugfix Queue: 0"
+  fi
+  
+  echo ""
+  echo -e "${C_BOLD}Background QA Agents:${C_RESET}"
+  if command -v claude >/dev/null 2>&1; then
+    claude -p "Show QA background agents status" \
+      --allowedTools "mcp__agent_monitor__list_agents" \
+      --mcp-config .mcp.json \
+      --output-format json 2>/dev/null | jq -r '.result | select(. != null)' || \
+      echo "  No active QA agents or MCP server not running"
+  else
+    echo "  Claude Code CLI not found"
+  fi
+  
+  {% else %}
+  error "QA System: Disabled"
+  info "Enable QA system by adding --enable-qa when creating the project"
+  {% endif %}
+}
+
+function qa_validate() {
+  local story_id="${1}"
+  local validation_type="${2:-full}"
+  
+  {% if qa.enabled %}
+  if [[ -z "$story_id" ]]; then
+    error "Usage: ./init.sh qa-validate <story_id> [validation_type]"
+    echo ""
+    echo "Validation types:"
+    echo "  full        - Complete 4-layer validation (default)"
+    echo "  code        - Code quality validation only"
+    echo "  functional  - Functional testing only"
+    echo "  integration - Integration testing only"
+    echo "  ux          - User experience testing only"
+    return 1
+  fi
+  
+  info "Starting QA validation for $story_id..."
+  echo "  Validation Type: $validation_type"
+  echo ""
+  
+  # Add validation task to queue
+  local validation_task="{
+    \"id\": \"$(date +%s)-$story_id\",
+    \"story_id\": \"$story_id\",
+    \"validation_type\": \"$validation_type\",
+    \"priority\": \"medium\",
+    \"status\": \"pending\",
+    \"created_at\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",
+    \"agent_type\": \"qaa\"
+  }"
+  
+  # Create queue file if it doesn't exist
+  mkdir -p qa/queue
+  if [[ ! -f "qa/queue/pending_validation.json" ]]; then
+    echo "[]" > qa/queue/pending_validation.json
+  fi
+  
+  # Add task to queue
+  local temp_file=$(mktemp)
+  jq ". += [$validation_task]" qa/queue/pending_validation.json > "$temp_file" && \
+    mv "$temp_file" qa/queue/pending_validation.json
+  
+  success "Validation task queued for $story_id"
+  echo ""
+  echo "Monitor progress with:"
+  echo "  ./init.sh qa-status"
+  echo "  ./init.sh qa-reports"
+  echo "  tail -f logs/qa/validation_$(date +%Y%m%d).log"
+  
+  {% else %}
+  error "QA System is not enabled for this project"
+  info "Enable QA system by recreating project with --enable-qa flag"
+  {% endif %}
+}
+
+function qa_reports() {
+  local report_type="${1:-recent}"
+  
+  {% if qa.enabled %}
+  info "QA Validation Reports"
+  echo ""
+  
+  case "$report_type" in
+    recent)
+      echo -e "${C_BOLD}Recent Validation Reports:${C_RESET}"
+      if [[ -d "qa/reports" ]]; then
+        find qa/reports -name "validation_report_*.md" -type f -mtime -7 | \
+          sort -t_ -k3 -r | \
+          head -10 | \
+          while read -r report; do
+            local story_id=$(basename "$report" | sed 's/validation_report_//;s/_[0-9]*\.md$//')
+            local timestamp=$(basename "$report" | sed 's/.*_\([0-9]*\)\.md$/\1/')
+            local date_str=$(date -r "$timestamp" '+%Y-%m-%d %H:%M' 2>/dev/null || echo "Unknown")
+            echo "  - $story_id ($date_str)"
+          done
+      else
+        echo "  No reports directory found"
+      fi
+      ;;
+    
+    summary)
+      echo -e "${C_BOLD}QA Summary Statistics:${C_RESET}"
+      if [[ -d "qa/reports" ]]; then
+        local total_reports=$(find qa/reports -name "validation_report_*.md" -type f | wc -l)
+        local recent_reports=$(find qa/reports -name "validation_report_*.md" -type f -mtime -7 | wc -l)
+        echo "  Total Reports: $total_reports"
+        echo "  Reports (Last 7 days): $recent_reports"
+        
+        # Count bug reports
+        local bug_reports=$(find qa/reports -name "bug_report_*.md" -type f | wc -l)
+        local recent_bugs=$(find qa/reports -name "bug_report_*.md" -type f -mtime -7 | wc -l)
+        echo "  Total Bug Reports: $bug_reports"
+        echo "  Bug Reports (Last 7 days): $recent_bugs"
+      else
+        echo "  No reports available"
+      fi
+      ;;
+    
+    bugs)
+      echo -e "${C_BOLD}Recent Bug Reports:${C_RESET}"
+      if [[ -d "qa/reports" ]]; then
+        find qa/reports -name "bug_report_*.md" -type f -mtime -7 | \
+          sort -t_ -k3 -r | \
+          head -10 | \
+          while read -r report; do
+            local bug_id=$(basename "$report" | sed 's/bug_report_//;s/_[0-9]*\.md$//')
+            local timestamp=$(basename "$report" | sed 's/.*_\([0-9]*\)\.md$/\1/')
+            local date_str=$(date -r "$timestamp" '+%Y-%m-%d %H:%M' 2>/dev/null || echo "Unknown")
+            echo "  - $bug_id ($date_str)"
+          done
+      else
+        echo "  No bug reports found"
+      fi
+      ;;
+    
+    *)
+      error "Unknown report type: $report_type"
+      echo "Usage: ./init.sh qa-reports [recent|summary|bugs]"
+      return 1
+      ;;
+  esac
+  
+  {% else %}
+  error "QA System is not enabled for this project"
+  {% endif %}
+}
+
+function qa_queue() {
+  local action="${1:-status}"
+  local item_id="${2}"
+  
+  {% if qa.enabled %}
+  case "$action" in
+    status)
+      info "QA Queue Status"
+      echo ""
+      
+      echo -e "${C_BOLD}Pending Validations:${C_RESET}"
+      if [[ -f "qa/queue/pending_validation.json" ]]; then
+        jq -r '.[] | "  - \(.story_id) (\(.priority)) - \(.validation_type)"' qa/queue/pending_validation.json 2>/dev/null || \
+          echo "  No pending validations"
+      else
+        echo "  No pending validations"
+      fi
+      
+      echo ""
+      echo -e "${C_BOLD}Active Sessions:${C_RESET}"
+      if [[ -f "qa/queue/active_qa_sessions.json" ]]; then
+        jq -r '.[] | "  - \(.story_id) (Agent: \(.agent_id)) - \(.status)"' qa/queue/active_qa_sessions.json 2>/dev/null || \
+          echo "  No active sessions"
+      else
+        echo "  No active sessions"
+      fi
+      
+      echo ""
+      echo -e "${C_BOLD}Bugfix Queue:${C_RESET}"
+      if [[ -f "qa/queue/bugfix_queue.json" ]]; then
+        jq -r '.[] | "  - \(.bug_id) (\(.severity)) - \(.status)"' qa/queue/bugfix_queue.json 2>/dev/null || \
+          echo "  No bugs in queue"
+      else
+        echo "  No bugs in queue"
+      fi
+      ;;
+    
+    clear)
+      if [[ -z "$item_id" ]]; then
+        info "Clearing completed items from all queues..."
+        
+        # Clear completed validations
+        if [[ -f "qa/queue/pending_validation.json" ]]; then
+          jq '[.[] | select(.status != "completed")]' qa/queue/pending_validation.json > qa/queue/pending_validation.json.tmp && \
+            mv qa/queue/pending_validation.json.tmp qa/queue/pending_validation.json
+        fi
+        
+        # Clear completed sessions
+        if [[ -f "qa/queue/active_qa_sessions.json" ]]; then
+          jq '[.[] | select(.status != "completed")]' qa/queue/active_qa_sessions.json > qa/queue/active_qa_sessions.json.tmp && \
+            mv qa/queue/active_qa_sessions.json.tmp qa/queue/active_qa_sessions.json
+        fi
+        
+        success "Cleared completed items from queues"
+      else
+        info "Removing specific item: $item_id"
+        # Implementation for removing specific item would go here
+        error "Specific item removal not yet implemented"
+      fi
+      ;;
+    
+    *)
+      error "Unknown queue action: $action"
+      echo "Usage: ./init.sh qa-queue [status|clear] [item_id]"
+      return 1
+      ;;
+  esac
+  
+  {% else %}
+  error "QA System is not enabled for this project"
+  {% endif %}
+}
+
+# --- Background Agent Functions ---
+function manage_background_agents() {
+  local cmd="$1"
+  shift
+  
+  case "$cmd" in
+    list)
+      info "Listing background agents..."
+      if command -v claude >/dev/null 2>&1; then
+        claude -p "List all background agents" \
+          --allowedTools "mcp__agent_monitor__list_agents" \
+          --mcp-config .mcp.json \
+          --output-format json 2>/dev/null | jq -r '.result' || \
+          error "Failed to list agents"
+      else
+        error "Claude Code CLI not found. Install with: npm install -g @anthropic-ai/claude-code"
+      fi
+      ;;
+    
+    queue)
+      info "Showing task queue..."
+      if command -v claude >/dev/null 2>&1; then
+        claude -p "Show task queue with pending and active tasks" \
+          --allowedTools "mcp__agent_queue__list_tasks,mcp__agent_queue__get_queue_stats" \
+          --mcp-config .mcp.json \
+          --output-format json 2>/dev/null | jq -r '.result' || \
+          error "Failed to show queue"
+      else
+        error "Claude Code CLI not found"
+      fi
+      ;;
+    
+    assign)
+      local story_id="$1"
+      local agent_type="$2"
+      if [[ -z "$story_id" || -z "$agent_type" ]]; then
+        error "Usage: ./init.sh agent assign <story_id> <agent_type>"
+        return 1
+      fi
+      
+      info "Assigning $story_id to $agent_type..."
+      if command -v claude >/dev/null 2>&1; then
+        claude -p "Assign story $story_id to agent type $agent_type" \
+          --allowedTools "mcp__agent_queue__assign_story" \
+          --mcp-config .mcp.json \
+          --output-format json 2>/dev/null | jq -r '.result' || \
+          error "Failed to assign story"
+      else
+        error "Claude Code CLI not found"
+      fi
+      ;;
+    
+    terminate)
+      local session_id="$1"
+      if [[ -z "$session_id" ]]; then
+        error "Usage: ./init.sh agent terminate <session_id>"
+        return 1
+      fi
+      
+      info "Terminating agent $session_id..."
+      if command -v claude >/dev/null 2>&1; then
+        claude -p "Terminate agent session $session_id" \
+          --allowedTools "mcp__agent_monitor__terminate_agent" \
+          --mcp-config .mcp.json \
+          --output-format json 2>/dev/null | jq -r '.result' || \
+          error "Failed to terminate agent"
+      else
+        error "Claude Code CLI not found"
+      fi
+      ;;
+    
+    *)
+      error "Unknown agent command: $cmd"
+      echo "Usage: ./init.sh agent [list|queue|assign|terminate]"
+      ;;
+  esac
+}
+
+function run_background_agent() {
+  local agent_type="$1"
+  local story_id="$2"
+  local story_prompt="$3"
+  
+  if [[ -z "$agent_type" || -z "$story_id" || -z "$story_prompt" ]]; then
+    error "Usage: ./init.sh agent-run <agent_type> <story_id> <story_prompt>"
+    echo ""
+    echo "Example:"
+    echo "  ./init.sh agent-run deva_python STORY_001 'Implement user authentication'"
+    return 1
+  fi
+  
+  # Check if runner script exists
+  local runner_script="scripts/run_background_agent.sh"
+  if [[ ! -f "$runner_script" ]]; then
+    error "Background agent runner not found at $runner_script"
+    info "Run './init.sh patch update-all' to get the latest framework updates"
+    return 1
+  fi
+  
+  info "Starting background agent..."
+  echo "  Agent Type: $agent_type"
+  echo "  Story ID: $story_id"
+  echo "  Story: $story_prompt"
+  echo ""
+  
+  # Run in background with nohup
+  nohup "$runner_script" "$agent_type" "$story_id" "$story_prompt" > /dev/null 2>&1 &
+  local pid=$!
+  
+  success "Background agent started with PID $pid"
+  echo ""
+  echo "To monitor progress:"
+  echo "  ./init.sh agent-status"
+  echo "  ./init.sh agent list"
+  echo "  tail -f logs/background_agents/${agent_type}_${story_id}_*.log"
+}
+
+function show_agent_status() {
+  info "Background Agent Status"
+  echo ""
+  
+  # Show active agents
+  echo -e "${C_BOLD}Active Agents:${C_RESET}"
+  if command -v claude >/dev/null 2>&1; then
+    claude -p "Show active background agents with their current status" \
+      --allowedTools "mcp__agent_monitor__list_agents" \
+      --mcp-config .mcp.json \
+      --output-format json 2>/dev/null | jq -r '.result' || \
+      echo "  No active agents or MCP server not running"
+  else
+    echo "  Claude Code CLI not found"
+  fi
+  
+  echo ""
+  echo -e "${C_BOLD}Queue Statistics:${C_RESET}"
+  if command -v claude >/dev/null 2>&1; then
+    claude -p "Show queue statistics" \
+      --allowedTools "mcp__agent_queue__get_queue_stats" \
+      --mcp-config .mcp.json \
+      --output-format json 2>/dev/null | jq -r '.result' || \
+      echo "  No queue data available"
+  else
+    echo "  Claude Code CLI not found"
+  fi
+}
+
+# --- Main Dispatcher ---
+function main() {
+  # Always load environment variables if available
+  load_env
+  
+  case "$1" in
+    up)
+      # Check API keys before starting services
+      if check_api_keys; then
+        start_services
+      else
+        error "Please run './init.sh setup' first to configure API keys."
+      fi
+      ;;
+    down)
+      stop_services
+      ;;
+    logs)
+      show_logs
+      ;;
+    test)
+      run_tests
+      ;;
+    setup)
+      setup_environment
+      ;;
+    verify-keys)
+      check_api_keys && success "All required API keys are configured!" || error "Some API keys are missing"
+      ;;
+    test-mcp)
+      test_mcp_servers "$2"
+      ;;
+    patch)
+      # Forward to AgenticScrum framework patching system
+      shift
+      run_framework_patch "$@"
+      ;;
+    patch-status)
+      # Quick status check
+      info "{{ project_name }} - AgenticScrum Framework Patching Status"
+      echo ""
+      run_framework_patch status
+      ;;
+    agent)
+      # Background agent management
+      shift
+      manage_background_agents "$@"
+      ;;
+    agent-run)
+      # Run a specific story in background
+      shift
+      run_background_agent "$@"
+      ;;
+    agent-status)
+      # Quick agent status check
+      show_agent_status
+      ;;
+    qa-status)
+      # QA system status check
+      qa_status
+      ;;
+    qa-validate)
+      # Queue story for QA validation
+      shift
+      qa_validate "$@"
+      ;;
+    qa-reports)
+      # View QA validation reports
+      shift
+      qa_reports "$@"
+      ;;
+    qa-queue)
+      # Manage QA validation queue
+      shift
+      qa_queue "$@"
+      ;;
+    help|*)
+      show_help
+      ;;
+  esac
+}
+
+main "$@"
