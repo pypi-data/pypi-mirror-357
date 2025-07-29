@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/gcc_slycooper50/arpack.zip
+src/gcc_slycooper50/fltk-1.4.3-source.tar.gz
+src/gcc_slycooper50/qrupdate-1.1.2.tar.gz
+src/gcc_slycooper50/texinfo-7.2.tar.gz
+src/gcc_slycooper50.egg-info/PKG-INFO
+src/gcc_slycooper50.egg-info/SOURCES.txt
+src/gcc_slycooper50.egg-info/dependency_links.txt
+src/gcc_slycooper50.egg-info/top_level.txt
