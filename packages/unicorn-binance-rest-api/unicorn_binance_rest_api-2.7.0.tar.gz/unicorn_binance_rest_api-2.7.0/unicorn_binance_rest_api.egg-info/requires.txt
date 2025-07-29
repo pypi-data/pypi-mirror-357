@@ -1,0 +1,11 @@
+certifi>=2023.7.22
+colorama
+cryptography>=42.0.4
+dateparser
+pyOpenSSL
+requests>=2.31.0
+service-identity
+ujson
+regex
+PySocks
+Cython

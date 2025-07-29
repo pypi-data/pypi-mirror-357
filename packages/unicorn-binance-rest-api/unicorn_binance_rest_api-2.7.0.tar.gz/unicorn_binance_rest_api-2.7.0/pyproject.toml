@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "unicorn-binance-rest-api"
+version = "2.7.0"
+description = "A Python SDK to use the Binance REST API`s (com+testnet, com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, us, tr) in a simple, fast, flexible, robust and fully-featured way."
+authors = ["Oliver Zehentleitner"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/oliver-zehentleitner/unicorn-binance-rest-api"
+documentation = "https://oliver-zehentleitner.github.io/unicorn-binance-rest-api"
+repository = "https://github.com/oliver-zehentleitner/unicorn-binance-rest-api"
+
+[tool.poetry.urls]
+'Howto' = 'https://github.com/oliver-zehentleitner/unicorn-binance-rest-api#howto'
+'Documentation' = 'https://oliver-zehentleitner.github.io/unicorn-binance-rest-api'
+'Wiki' = 'https://github.com/oliver-zehentleitner/unicorn-binance-rest-api/wiki'
+'Author' = 'https://www.linkedin.com/in/oliver-zehentleitner'
+'Changes' = 'https://oliver-zehentleitner.github.io/unicorn-binance-rest-api/changelog.html'
+'License' = 'https://oliver-zehentleitner.github.io/unicorn-binance-rest-api/license.html'
+'Issue Tracker' = 'https://github.com/oliver-zehentleitner/unicorn-binance-rest-api/issues'
+'Telegram' = 'https://t.me/unicorndevs'
+
+[tool.poetry.dependencies]
+python = ">=3.8.0"
+Cython = "*"
+requests = ">=2.31.0"
+simplejson = "*"
+certifi = ">=2023.7.22"
+colorama = "*"
+cryptography = ">=42.0.4"
+dateparser = "*"
+pyopenssl = "*"
+pysocks = "*"
+regex = "*"
+service-identity = "*"
+ujson = "*"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["setuptools", "wheel", "Cython", "pip", "mypy"]
+build-backend = "setuptools.build_meta"
+
+[tool.poetry.scripts]
+
+[tool.poetry.package_data]
+unicorn_binance_rest_api = ["*.so", "*.dll", "*.py", "*.pyd", "*.pyi"]
