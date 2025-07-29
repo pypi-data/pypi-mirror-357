@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "calicropyield"
+version = "0.1.2"
+description = "A multi-modal data downloader and processing library for California crop yield benchmarking"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Hamid Kamangir", email = "hamid.kamangir@gmail.com" }
+]
+dependencies = [
+  "pandas",
+  "xarray",
+  "rasterio",
+  "geopandas",
+  "shapely",
+  "gdown",
+  "numpy"
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[project.urls]
+Homepage = "https://github.com/plant-ai-biophysics-lab/calicropyield-dev"
+Repository = "https://github.com/plant-ai-biophysics-lab/calicropyield-dev"

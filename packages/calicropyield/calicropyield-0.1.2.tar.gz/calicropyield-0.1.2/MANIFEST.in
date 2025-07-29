@@ -1,0 +1,2 @@
+include calicropyield/service_account.json
+include calicropyield/token.pickle
