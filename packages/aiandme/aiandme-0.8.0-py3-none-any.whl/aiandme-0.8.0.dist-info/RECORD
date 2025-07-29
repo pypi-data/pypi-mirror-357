@@ -1,0 +1,15 @@
+aiandme/__init__.py,sha256=oUhWZcG7dJI1KtMbnYjzAKarTwLzr7Y7yCRbGdUMUUE,250
+aiandme/firewall.py,sha256=BSAxxgMK4pVKAxk9GWbdDQF7QOeIVMqFpz4xX8U91R0,3205
+aiandme/firewalloss.py,sha256=IF1jWqeT4C6QtI8qQDI08KZEqQVJBHqQcWuRRYA_s7Q,13061
+aiandme/model_providers/__init__.py,sha256=EwdJfl4ZX-ZScHe_44iu4Y-e_gSu3Gf3NBMjW0zZ4-c,118
+aiandme/model_providers/azureopenai.py,sha256=y_YnwUFqykS-v6NPNM_albTIIfv77TVMCota-8pQsas,1303
+aiandme/model_providers/openai.py,sha256=0iiamqmtwSUpbpApEBwjXEnHYE7Cj6HBub8YG_h9Fts,1168
+aiandme/schemas/__init__.py,sha256=JLBlrp6-fAfApA5FpZGUem9vsZkuUgEPpIgM42YXTQg,101
+aiandme/schemas/agent.py,sha256=GePUlJ0PxazKqARihZA9RgufysCpDP6zlVVOV6WZpjQ,272
+aiandme/schemas/firewall.py,sha256=KgPwXvAZuGWdKA0rR8747R_yf9g4oLa9gjNEk1CJepQ,222
+aiandme/schemas/logs.py,sha256=XEhZxmIsG_bik1kh4ELurC7-NXUFjovIlgvPrddA3UY,244
+aiandme-0.8.0.dist-info/licenses/LICENSE,sha256=et9wcdqbMSxhtRXf5RlazaljFu0FnCdu8HV2Z1smkGI,1064
+aiandme-0.8.0.dist-info/METADATA,sha256=BxllwbSlzGL60-IDGAJVrKa0PwWpIMz4XKanPcnS6iI,12984
+aiandme-0.8.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+aiandme-0.8.0.dist-info/top_level.txt,sha256=hROkXFnUkGnYoeVtqRAjmAqMq3J-0VxXWqSNhi41IRo,8
+aiandme-0.8.0.dist-info/RECORD,,
