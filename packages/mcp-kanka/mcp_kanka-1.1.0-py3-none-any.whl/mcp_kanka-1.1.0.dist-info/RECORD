@@ -1,0 +1,16 @@
+mcp_kanka/__init__.py,sha256=-_CQzmfb3362SF-vwGe4PVoaNUU8oRSEfoEcZvbuzrM,2370
+mcp_kanka/__main__.py,sha256=zWwdp4u5AQi5zKFlTt7JvNBB9LWNuXzU_THFBI-Vng0,17576
+mcp_kanka/_version.py,sha256=LGVQyDsWifdACo7qztwb8RWWHds1E7uQ-ZqD8SAjyw4,22
+mcp_kanka/cli.py,sha256=bk7wFXziMpIimT6936lA1UzGTgn2DzjXOsWJ-3ATj04,300
+mcp_kanka/converter.py,sha256=bP43dWZnK3Flb0K7C9ocg0Y3dX4TBbREtMy6DY9yO2U,7845
+mcp_kanka/operations.py,sha256=QuDqQk0sw3FXrB_shfFzAs8n6gRiNwgdlUlo0UZ65Qk,27067
+mcp_kanka/resources.py,sha256=HyugKH64R7kR29akDoQmzjEMKMYwANtf-rtB8nx3SYI,2251
+mcp_kanka/service.py,sha256=cDxWyRICH05jWs3DDIZnuvU20-9jv6VE7u_p2jBmDVo,29088
+mcp_kanka/tools.py,sha256=jzm6gK8xL6syf9reqvM32YjWG3pSMgU4lIWJTuo2-ks,4795
+mcp_kanka/types.py,sha256=vWbw99kGRQ2FHIBaPlR5Sq-L277svdQE_CWTOv9IYmQ,7048
+mcp_kanka/utils.py,sha256=Mz02XvcH-mZIZcG0xA-HdIttimgOn1dv5_2xJipejGg,6969
+mcp_kanka-1.1.0.dist-info/METADATA,sha256=qihO5VEbnhHxcCimfrblhfVhwTnt6pkPDPwtMBa6pfk,11931
+mcp_kanka-1.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_kanka-1.1.0.dist-info/entry_points.txt,sha256=Q8W8mUixn3d6QA-lIWsychiiLsAF4JXsaz8B5fRreA4,48
+mcp_kanka-1.1.0.dist-info/licenses/LICENSE,sha256=zxYilI3QoZMLRG4vgTBuXjHeDtdB2Ox_YK446S_L3Ds,1066
+mcp_kanka-1.1.0.dist-info/RECORD,,
