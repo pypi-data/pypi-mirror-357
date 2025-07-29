@@ -1,0 +1,132 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leon-mediacrawler"
+authors = [
+    {name = "Bradleon", email = "bradleon91@gmail.com"},
+]
+version = "0.1.3"
+description = "A social media crawler project, support Xiaohongshu, Weibo, Zhihu, Bilibili, Douyin, BaiduTieBa etc."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+keywords = ["crawler", "spider", "social media", "xiaohongshu", "douyin", "weibo", "zhihu", "bilibili"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "aiofiles~=23.2.1",
+    "aiomysql==0.2.0",
+    "fastapi==0.110.2",
+    "httpx==0.27.0",
+    "jieba==0.42.1",
+    "matplotlib==3.9.0",
+    "opencv-python",
+    "pandas==2.2.3",
+    "parsel==1.9.1",
+    "pillow==10.0.0",
+    "playwright==1.42.0",
+    "pydantic==2.5.2",
+    "pyexecjs==1.5.1",
+    "python-dotenv==1.0.1",
+    "redis~=4.6.0",
+    "requests==2.32.3",
+    "tenacity==8.2.2",
+    "uvicorn==0.29.0",
+    "wordcloud==1.9.3",
+    "supabase==2.15.2",
+    "packaging>=20.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/BradLeon/MediaCrawler"
+Documentation = "https://nanmicoder.github.io/MediaCrawler/"
+Repository = "https://github.com/BradLeon/MediaCrawler"
+Issues = "https://github.com/BradLeon/MediaCrawler/issues"
+
+[project.scripts]
+leon-mediacrawler = "main:cli_main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "black",
+    "flake8",
+    "mypy",
+]
+
+[tool.setuptools]
+include-package-data = true
+packages = [
+    "leon_mediacrawler",
+    "leon_mediacrawler.base",
+    "leon_mediacrawler.cache",
+    "leon_mediacrawler.cmd_arg",
+    "leon_mediacrawler.config",
+    "leon_mediacrawler.constant",
+    "leon_mediacrawler.media_platform",
+    "leon_mediacrawler.media_platform.bilibili",
+    "leon_mediacrawler.media_platform.douyin",
+    "leon_mediacrawler.media_platform.kuaishou",
+    "leon_mediacrawler.media_platform.tieba",
+    "leon_mediacrawler.media_platform.weibo",
+    "leon_mediacrawler.media_platform.xhs",
+    "leon_mediacrawler.media_platform.zhihu",
+    "leon_mediacrawler.model",
+    "leon_mediacrawler.proxy",
+    "leon_mediacrawler.proxy.providers",
+    "leon_mediacrawler.store",
+    "leon_mediacrawler.store.bilibili",
+    "leon_mediacrawler.store.douyin",
+    "leon_mediacrawler.store.kuaishou",
+    "leon_mediacrawler.store.tieba",
+    "leon_mediacrawler.store.weibo",
+    "leon_mediacrawler.store.xhs",
+    "leon_mediacrawler.store.zhihu",
+    "leon_mediacrawler.tools",
+    "leon_mediacrawler.utils"
+]
+
+[tool.setuptools.package-dir]
+"leon_mediacrawler" = "."
+"leon_mediacrawler.base" = "base"
+"leon_mediacrawler.cache" = "cache"
+"leon_mediacrawler.cmd_arg" = "cmd_arg"
+"leon_mediacrawler.config" = "config"
+"leon_mediacrawler.constant" = "constant"
+"leon_mediacrawler.media_platform" = "media_platform"
+"leon_mediacrawler.media_platform.bilibili" = "media_platform/bilibili"
+"leon_mediacrawler.media_platform.douyin" = "media_platform/douyin"
+"leon_mediacrawler.media_platform.kuaishou" = "media_platform/kuaishou"
+"leon_mediacrawler.media_platform.tieba" = "media_platform/tieba"
+"leon_mediacrawler.media_platform.weibo" = "media_platform/weibo"
+"leon_mediacrawler.media_platform.xhs" = "media_platform/xhs"
+"leon_mediacrawler.media_platform.zhihu" = "media_platform/zhihu"
+"leon_mediacrawler.model" = "model"
+"leon_mediacrawler.proxy" = "proxy"
+"leon_mediacrawler.proxy.providers" = "proxy/providers"
+"leon_mediacrawler.store" = "store"
+"leon_mediacrawler.store.bilibili" = "store/bilibili"
+"leon_mediacrawler.store.douyin" = "store/douyin"
+"leon_mediacrawler.store.kuaishou" = "store/kuaishou"
+"leon_mediacrawler.store.tieba" = "store/tieba"
+"leon_mediacrawler.store.weibo" = "store/weibo"
+"leon_mediacrawler.store.xhs" = "store/xhs"
+"leon_mediacrawler.store.zhihu" = "store/zhihu"
+"leon_mediacrawler.tools" = "tools"
+"leon_mediacrawler.utils" = "utils"
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
