@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+st_dataframe_paginator/__init__.py
+st_dataframe_paginator/example.py
+st_dataframe_paginator.egg-info/PKG-INFO
+st_dataframe_paginator.egg-info/SOURCES.txt
+st_dataframe_paginator.egg-info/dependency_links.txt
+st_dataframe_paginator.egg-info/top_level.txt
+st_dataframe_paginator/frontend/dist/index.html
+st_dataframe_paginator/frontend/dist/assets/index-BwZ67_Ci.css
+st_dataframe_paginator/frontend/dist/assets/index-BxH-SksS.js
