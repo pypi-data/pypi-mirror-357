@@ -1,0 +1,3 @@
+[llm]
+llm_tools_readonly_fs = llm_tools_readonly_fs.llm_tools_readonly_fs
+
