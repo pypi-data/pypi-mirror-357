@@ -1,0 +1,14 @@
+durc_is_crud/__init__.py,sha256=hYZeJOaK-NO92JZdEOrJ2oX9fc-9I9BeE5CoBN7ll28,88
+durc_is_crud/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+durc_is_crud/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+durc_is_crud/management/commands/durc_compile.py,sha256=kR2sN1AstV_rY8tuCc0eYT2xYXRa5gEVQFtjT2ZFKbE,2726
+durc_is_crud/management/commands/durc_mine.py,sha256=SqfRcqCD9LDiQr1mxjidcDH49nMt8udjaTR2Eo0MLYo,2251
+durc_is_crud/management/commands/durc_utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+durc_is_crud/management/commands/durc_utils/data_type_mapper.py,sha256=gWtbruwPUPCRBK7dPY3OZs28Yfm9E0Y_sSCrXEokbq4,1821
+durc_is_crud/management/commands/durc_utils/include_pattern_parser.py,sha256=yqPaL5ZKVqSdgI2eEwB_mFB-oMYnjEIMnbfAH9TiY9M,1784
+durc_is_crud/management/commands/durc_utils/relational_model_extractor.py,sha256=xvTijYg9iWMTrwu4HCAlXgfdJBQgZ6FawnYURFRPAu4,25848
+durc_is_crud-0.1.0.dist-info/licenses/LICENSE,sha256=ogEPNDSH0_dhiv_lT3ifVIdgIzHAqNA_SemnxUfPBJk,7048
+durc_is_crud-0.1.0.dist-info/METADATA,sha256=o4iJTOIBfGvF1TC5tSXGOR_ZUAjujVlyPGlWasqSdeY,4170
+durc_is_crud-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+durc_is_crud-0.1.0.dist-info/top_level.txt,sha256=XN6nCiaI1gOtuRNp-yrP1Pu80hJesjL-6jiLNNzeDzY,13
+durc_is_crud-0.1.0.dist-info/RECORD,,
