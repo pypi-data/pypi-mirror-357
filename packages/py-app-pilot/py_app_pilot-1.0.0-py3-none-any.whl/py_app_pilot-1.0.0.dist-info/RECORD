@@ -1,0 +1,12 @@
+py_app_pilot/__init__.py,sha256=wtsZrDhsWFARaSwd5YCE8gmGk1JzxVxKokQtRyPyuvs,383
+py_app_pilot/py_app_pilot.py,sha256=Xr4r18PHPD9xQarr4Z9PTEIl8N1NhZ_hD9cGBuE2AGg,67228
+py_app_pilot/resources/author_rc.py,sha256=Ur_SX66Xzdf3YYHSVXCBI4tRh3OhBV8tySS37e-WpWM,1362559
+py_app_pilot/resources/logo_rc.py,sha256=xVfWIQxCIsgMSnL3KnM7axaOYTIMY1jdXfF00X-v64E,1769540
+py_app_pilot/utils/database.py,sha256=rmYyiuBaOfVwdkEKsCF6YMSw7caq8MA40DE5-nhbHao,2577
+py_app_pilot/utils/eunm.py,sha256=wyF0jVtzZ5MQiYpGEQuvt7-fqBmM9TvV566ZwkyXeiI,446
+py_app_pilot/utils/log_util.py,sha256=Ubaj20QGikgJ2cmH9BtFDLD7SCMxiuqejRYZ2fRN5zo,320
+py_app_pilot-1.0.0.dist-info/licenses/LICENSE,sha256=ryqbiUnQFUSV2rK_RvIAIjyhUjiEBeASQyx-9WE338o,1084
+py_app_pilot-1.0.0.dist-info/METADATA,sha256=E7jbO7q1EDQ1vXpdlJm2lCze65Ctfl58TdPZXOAg1qY,2849
+py_app_pilot-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+py_app_pilot-1.0.0.dist-info/top_level.txt,sha256=CzWKmHt54V6GIlycN-flT70u0I_s-zlo_SHueRsoeLQ,13
+py_app_pilot-1.0.0.dist-info/RECORD,,
