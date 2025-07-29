@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: gestao_aluguer_veiculos
+Version: 1.1.4
+Summary: Sistema de gestão de aluguer de veículos
+Author: Diogo Fernandes, João Braga, Gonçalo Condesso, Victor Ramos
+Author-email: Diogo-Nandes <diogonandes731@email.com>
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-python
+
+# TIWM-MADS-Projeto1
