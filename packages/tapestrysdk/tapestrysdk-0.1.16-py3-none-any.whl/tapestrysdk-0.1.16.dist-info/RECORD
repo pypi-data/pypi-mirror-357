@@ -1,0 +1,10 @@
+tapestrysdk/__init__.py,sha256=14q2SgPoqQwIxG8s24Jo5kWl1F_L_RVEo4mEU00mWj8,96
+tapestrysdk/db.py,sha256=lxyCH40bCs7t8mGVMtBSLrMEUDqDdgqmkistkWdMaIE,402
+tapestrysdk/image_to_text.py,sha256=mEU7M7r7mFu41wkdLb6jsViRmW1YCCvRVY-pR_5R0jY,3810
+tapestrysdk/main.py,sha256=xl5Z9iDWtbLTnxZVG0MKKZa23ktI2lxmDauvip8Az9k,1582
+tapestrysdk/helper/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tapestrysdk/helper/decrypt_ai_key.py,sha256=tfr97YU_DLE8AC-3KaxbhBwjXga7_9Gws2OF0IawMak,1310
+tapestrysdk-0.1.16.dist-info/METADATA,sha256=MnFhV4zDC_C9PphQoGn4sOSBg1iyoKhC9uEr1cZhhDs,59
+tapestrysdk-0.1.16.dist-info/WHEEL,sha256=jB7zZ3N9hIM9adW7qlTAyycLYW9npaWKLRzaoVcLKcM,91
+tapestrysdk-0.1.16.dist-info/top_level.txt,sha256=8c_dPksStJ5-vpumYguKtK4cKamRCdHsp4jFnwS0kvo,12
+tapestrysdk-0.1.16.dist-info/RECORD,,
