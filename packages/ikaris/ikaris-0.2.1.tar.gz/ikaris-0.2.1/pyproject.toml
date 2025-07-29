@@ -1,0 +1,26 @@
+[project]
+name = "ikaris"
+version = "0.2.1"
+description = "Ikaris - Open-source Hugging Face model & python package safety checker"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Apache 2.0"}
+authors = [{ name = "Haydar Miezanie Abdul Jamil", email = "haydarsaja@gmail.com" }]
+keywords = ["huggingface", "python package", "security", "model & package scanner", "AI safety", "clean package"]
+dependencies = [
+    "huggingface_hub",
+    "colorama",
+    "requests"
+    ]
+
+[project.scripts]
+ikaris = "ikaris.main:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/haydarmiezanie/ikaris"
+Repository = "https://github.com/haydarmiezanie/ikaris"
+Bug_Tracker = "https://github.com/haydarmiezanie/ikaris/issues"
