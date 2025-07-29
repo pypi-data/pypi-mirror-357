@@ -1,0 +1,16 @@
+LICENSE.md
+NOTICE.md
+README.md
+setup.py
+ete_ts/__init__.py
+ete_ts/metrics.py
+ete_ts.egg-info/PKG-INFO
+ete_ts.egg-info/SOURCES.txt
+ete_ts.egg-info/dependency_links.txt
+ete_ts.egg-info/requires.txt
+ete_ts.egg-info/top_level.txt
+testing/__init__.py
+testing/assertance_check.py
+testing/features_correlation_rank.py
+testing/test_complexity.py
+testing/test_easyts.py
