@@ -1,0 +1,10 @@
+[asreview.entry_points]
+makita = asreviewcontrib.makita.entrypoint:MakitaEntryPoint
+
+[asreview.makita.templates]
+arfi = asreviewcontrib.makita.template_arfi:TemplateARFI
+basic = asreviewcontrib.makita.template_basic:TemplateBasic
+modelmatrix = asreviewcontrib.makita.template_modelmatrix:TemplateModelMatrix
+multimodel = asreviewcontrib.makita.template_modelmatrix:TemplateModelMatrix
+multiple_models = asreviewcontrib.makita.template_modelmatrix:TemplateModelMatrix
+prior = asreviewcontrib.makita.template_prior:TemplatePrior
