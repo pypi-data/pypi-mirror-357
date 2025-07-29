@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: mydemocalculator
+Version: 0.1.0
+Summary: sample demo calculator
+Author-email: Sathishmahi <sathishmahi433@gmail.com>
+Requires-Python: >=3.10
