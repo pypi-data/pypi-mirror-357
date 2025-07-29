@@ -1,0 +1,315 @@
+# Cue
+
+Simple audio orchestration for immersive experiences.
+
+
+## Overview
+
+Cue is a Python library for MQTT-controlled audio systems.
+
+It provides declarative audio clip management with real-time mixing,
+polyphonic playback, and automatic device detection.
+
+Perfect for escape rooms, interactive installations, theater tech,
+and any application requiring responsive spatial audio on a budget.
+
+
+## Features
+
+- Declarative audio clip configuration
+- MQTT integration for remote triggering
+- Stereo and 5.1 surround sound support  
+- Polyphonic audio with instance limits
+- Automatic audio device detection
+- Graceful error handling and recovery
+- Real-time audio mixing with fade support
+- Choke groups for mutually exclusive sounds
+
+
+## Quick Start
+
+```python
+from Cue import AudioController, AudioClip
+
+# Create audio controller
+audio = AudioController(
+    channels="stereo",
+    mqtt_broker="192.168.1.100", 
+    mqtt_credentials=("username", "password")
+)
+
+# Register audio clips
+audio.register_clip("thunder", AudioClip(
+    file="thunder.wav",
+    volume=1.0,
+    mqtt_triggers={"storm/thunder": "play"}
+))
+
+audio.register_clip("rain", AudioClip(
+    file="rain.wav",
+    loop=True,
+    auto_play=True
+))
+
+# Start the system
+audio.start()
+```
+
+
+## API Reference
+
+
+### AudioController
+
+Main controller class for managing audio system and MQTT connections.
+
+```python
+AudioController(
+    channels="stereo",
+    device="default", 
+    mqtt_broker=None,
+    mqtt_credentials=None,
+    mqtt_port=1883
+)
+```
+
+**Parameters:**
+
+- `channels` (str): Audio channel configuration
+  - `"stereo"` - 2 channel stereo output
+  - `"5.1"` - 6 channel surround sound
+  
+- `device` (str): Audio output device selection
+  - `"default"` - Use system default audio device
+  - Device name - Specify exact device name
+  
+- `mqtt_broker` (str, optional): MQTT broker IP address or hostname
+  - `None` - Disable MQTT functionality
+  - IP/hostname - Enable MQTT with specified broker
+  
+- `mqtt_credentials` (tuple, optional): MQTT authentication
+  - `None` - No authentication required
+  - `("username", "password")` - MQTT credentials tuple
+  
+- `mqtt_port` (int): MQTT broker port number
+  - Default: `1883`
+
+
+**Methods:**
+
+```python
+register_clip(name, clip)
+```
+Register an AudioClip instance with unique identifier.
+
+```python
+start()
+```
+Start the audio system and MQTT client. Blocks until interrupted.
+
+```python
+stop()
+```
+Gracefully stop audio system and disconnect MQTT.
+
+
+### AudioClip
+
+Declarative audio clip configuration class.
+
+```python
+AudioClip(
+    file,
+    volume=1.0,
+    fade_out=0.0,
+    fade_in=0.0,
+    length=None,
+    choke_group=None,
+    mqtt_triggers=None,
+    loop=False,
+    auto_play=False,
+    routing=None,
+    poly=False,
+    max_poly=4
+)
+```
+
+**Parameters:**
+
+- `file` (str): Path to audio file (WAV format, stereo)
+
+- `volume` (float): Playback volume level
+  - Range: `0.0` to `2.0`
+  - Default: `1.0`
+
+- `fade_in` (float): Fade in duration in seconds
+  - Default: `0.0` (no fade in)
+
+- `fade_out` (float): Fade out duration in seconds  
+  - Default: `0.0` (no fade out)
+
+- `length` (float, optional): Maximum playback duration
+  - `None` - Play full file duration
+  - Seconds - Stop after specified duration
+
+- `choke_group` (str, optional): Mutual exclusion group
+  - `None` - No choke group
+  - Group name - Only one clip in group plays at time
+
+- `mqtt_triggers` (dict, optional): MQTT topic bindings
+  - `None` - No MQTT triggers
+  - `{"topic": "action"}` - Map topics to actions
+  - Actions: `"play"`, `"stop"`
+
+- `loop` (bool): Enable continuous looping
+  - `False` - Play once and stop
+  - `True` - Loop indefinitely until stopped
+
+- `auto_play` (bool): Start playing on system startup
+  - `False` - Manual triggering only
+  - `True` - Begin playback immediately
+
+- `routing` (dict, optional): Speaker channel routing
+  - `None` - Default stereo routing
+  - `{"left": "left", "right": "right"}` - Custom routing map
+  - Channels: `"left"`, `"right"`
+  - Speakers: `"left"`, `"right"`, `"front_left"`, `"front_right"`, 
+    `"center"`, `"subwoofer"`, `"rear_left"`, `"rear_right"`
+
+- `poly` (bool): Enable polyphonic playback
+  - `False` - Monophonic (one instance at a time)
+  - `True` - Polyphonic (multiple simultaneous instances)
+
+- `max_poly` (int): Maximum polyphonic instances
+  - Default: `4`
+  - Only applies when `poly=True`
+
+
+## Configuration Examples
+
+
+### Basic MQTT Triggered Audio
+
+```python
+clip = AudioClip(
+    file="doorbell.wav",
+    volume=0.8,
+    mqtt_triggers={"house/doorbell": "play"}
+)
+```
+
+
+### Looping Ambient Sound
+
+```python
+ambient = AudioClip(
+    file="forest.wav",
+    volume=0.5,
+    loop=True,
+    auto_play=True,
+    fade_in=2.0
+)
+```
+
+
+### Polyphonic Sound Effects
+
+```python
+footsteps = AudioClip(
+    file="step.wav",
+    volume=0.7,
+    poly=True,
+    max_poly=6,
+    mqtt_triggers={"player/step": "play"}
+)
+```
+
+
+### 5.1 Surround Routing
+
+```python
+explosion = AudioClip(
+    file="boom.wav",
+    volume=1.0,
+    routing={
+        "left": "front_left",
+        "right": "front_right", 
+    }
+)
+```
+
+
+### Choke Groups
+
+```python
+# Only one voice clip can play at a time
+voice1 = AudioClip(
+    file="voice1.wav",
+    choke_group="dialogue",
+    mqtt_triggers={"npc/speak1": "play"}
+)
+
+voice2 = AudioClip(
+    file="voice2.wav", 
+    choke_group="dialogue",
+    mqtt_triggers={"npc/speak2": "play"}
+)
+```
+
+
+## MQTT Integration
+
+Cue subscribes to specified MQTT topics and triggers audio actions
+based on incoming messages.
+
+
+### Topic Structure
+
+```
+your/topic/structure
+```
+
+Direct topic binding via `mqtt_triggers` parameter.
+
+
+### Message Format
+
+Topic-bound triggers expect any message payload.
+Action is determined by `mqtt_triggers` configuration.
+
+
+### Connection Resilience
+
+- Automatic reconnection on connection loss
+- Audio continues playing during MQTT outages
+- Graceful error handling with status logging
+
+
+## Error Handling
+
+Cue follows "fail gracefully" principles:
+
+- Missing audio files generate warnings, not crashes
+- MQTT connection failures don't stop audio playback  
+- Invalid configurations log errors and continue
+- Thread-safe operations prevent race conditions
+
+
+## Requirements
+
+- Python 3.8+
+- PyAudio
+- paho-mqtt  
+- numpy
+
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+
+## License
+
+MIT License 
