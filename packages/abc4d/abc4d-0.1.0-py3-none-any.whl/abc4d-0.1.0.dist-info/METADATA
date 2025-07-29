@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: abc4d
+Version: 0.1.0
+Summary: ...
+Author-email: "Yuyao Huang (Sam)" <huangyuyao@outlook.com>
+License: Apache-2.0
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: cloudpickle
+Requires-Dist: omegaconf
+Requires-Dist: iopath
+Requires-Dist: hydra-core
+Requires-Dist: scipy
+Requires-Dist: pydantic
+Requires-Dist: jaxtyping
+Requires-Dist: lzip
+Requires-Dist: colorlog
+Requires-Dist: rich
+Requires-Dist: thop
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: pytest-mock; extra == "dev"
+Dynamic: license-file
+
+# abcd
+
+**A**/**B** Test **C**ontinuous Training for **D**eep Learning R&D
