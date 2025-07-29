@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/supervisord_mcp/__init__.py
+src/supervisord_mcp/cli.py
+src/supervisord_mcp/main.py
+src/supervisord_mcp/manager.py
+src/supervisord_mcp/mcp_server.py
+src/supervisord_mcp.egg-info/PKG-INFO
+src/supervisord_mcp.egg-info/SOURCES.txt
+src/supervisord_mcp.egg-info/dependency_links.txt
+src/supervisord_mcp.egg-info/entry_points.txt
+src/supervisord_mcp.egg-info/requires.txt
+src/supervisord_mcp.egg-info/top_level.txt
+tests/test_manager.py
