@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: pcapana
+Version: 0.1.0
+Summary: Analyze PCAP files for protocol stats, bandwidth, and domains.
+Home-page: https://github.com/12hms12/pcapana
+Author: Harsh M Shah
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyshark
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# pcapana
+A cli tool to analyze pcap files using python (pyshark)
