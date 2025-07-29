@@ -1,0 +1,16 @@
+digy/__init__.py,sha256=KUJ_XmCARo0MSqRfCoc0nfBbKnsT-qqLMYdL83E8490,462
+digy/auth.py,sha256=QU3pxTKXCBaBXZDc7Jy8ddInFupeH6fYnK4hN267c1w,9174
+digy/cli.py,sha256=2zeEu92L-62UabAItdpe5r4r5BzFijaMWJJ1nkQXvMk,18543
+digy/deployer.py,sha256=8615Y0erOJ0TpYjYSDNSmfh4pEcN0aoU-yTjtTNchnk,10025
+digy/environment.py,sha256=_ybOmr4-TFlo3X0MN45cnKlSq6UMpD821DYTdnKqUxg,7881
+digy/file_utils.py,sha256=lY1oLhINL8DZ8KyQPHvE7AnGeXM7agEKQYllSIQpAdw,5052
+digy/interactive.py,sha256=L4H-CU0ZZNYjQVMN7l4QXfzZ-yC46WkqKmKTrRPHG34,13869
+digy/loader.py,sha256=1eVGbJwCG_3KThriPTK8rfwq_3Jz6_bHtCddDptipjg,29245
+digy/manifest.yml,sha256=2bolQWzZBxS7mWMKTQ2dgbjK-2bc6HKp1ebvH2R7vMI,1436
+digy/templates/Dockerfile.template,sha256=Ww8UO5SyJPYnjI0e6merPoeA2ZM6Ojc44r-nlPS7E7M,414
+digy/version.py,sha256=7llZEqvmwV7EJLEiDyGFVToHQslgnwBfZUIzjF5gi40,230
+digy-0.2.8.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+digy-0.2.8.dist-info/METADATA,sha256=_QGPH0SqDdJlRv0_GZK3G6jeVriaiKRWv0_0fizJjYI,22838
+digy-0.2.8.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+digy-0.2.8.dist-info/entry_points.txt,sha256=C788aS5Mg2UYrRtELDXYPH8qhRbEuF2C39DnTZvWo5U,38
+digy-0.2.8.dist-info/RECORD,,
