@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: libsgfdata
+Version: 0.0.23
+Summary: Parser for Swedish Geotechnical Society data format
+Home-page: https://github.com/emerald-geomodelling/libsgfdata
+Author: Egil Moeller
+Author-email: em@emrld.no
+License: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Provides-Extra: cmd
+Provides-Extra: dtm
+License-File: LICENSE
+
+Parser for data from geotechnical field
+    investigations in the data format specified in Report 3:2012E from
+    the Swedish Geotechnical Society, see
+    http://www.sgf.net/web/page.aspx?refid=2678 for how to download
+    this report.
+
