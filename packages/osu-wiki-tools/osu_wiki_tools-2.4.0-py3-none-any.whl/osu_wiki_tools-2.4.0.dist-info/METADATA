@@ -1,0 +1,69 @@
+Metadata-Version: 2.4
+Name: osu-wiki-tools
+Version: 2.4.0
+Summary: Various tools for osu! wiki contributors
+Home-page: https://github.com/Walavouchey/osu-wiki-tools
+Author: Walavouchey
+Author-email: wala@yui.tv
+Project-URL: Bug Tracker, https://github.com/Walavouchey/osu-wiki-tools/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENCE.md
+Requires-Dist: PyYAML==6.0.1
+Requires-Dist: types-PyYAML==6.0.12.12
+Requires-Dist: yamllint==1.33.0
+Requires-Dist: braceexpand==0.1.7
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# osu! wiki tools
+
+A collection of various tools that may be useful for [osu! wiki](https://osu.ppy.sh/wiki/) contributors
+
+## Installation
+
+```sh
+pip install osu-wiki-tools
+```
+
+## Testing
+
+### Setup
+
+Install Python C API headers (required for building the `pynput` dependency):
+
+```sh
+apt install python3-dev
+```
+
+Create the virtual enviroment:
+
+```sh
+python3 -m venv ./venv
+source ./venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Headless tests
+
+```sh
+pytest --mypy
+```
+
+### Visual tests
+
+```sh
+./run_visual_tests.py
+```
