@@ -1,0 +1,2 @@
+[console_scripts]
+redshift = redshift.__main__:main
