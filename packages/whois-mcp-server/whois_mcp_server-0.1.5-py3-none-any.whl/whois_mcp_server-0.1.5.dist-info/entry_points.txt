@@ -1,0 +1,3 @@
+[console_scripts]
+whois-mcp-server = whois_mcp.__main__:main
+whois-query = whois_mcp.cli:main
