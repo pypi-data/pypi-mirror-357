@@ -1,0 +1,10 @@
+{
+    "mcpServers": {
+      "geo-mcp": {
+        "command": "geo-mcp-server",
+        "env": {
+          "CONFIG_PATH": "/Users/YOUR_USERNAME/.geo-mcp/config.json"
+        }
+      }
+    }
+  } 
