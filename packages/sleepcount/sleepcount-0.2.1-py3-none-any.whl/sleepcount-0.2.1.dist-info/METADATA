@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: sleepcount
+Version: 0.2.1
+Summary: just as a simple 'sleep' CLI util but with options for countdown and HH:MM:SS target time
+Project-URL: repository, https://github.com/actionless/sleepcount
+Author-email: Yauheni Kirylau <actionless.loveless@gmail.com>
+License-File: LICENSE
+Keywords: count,countdown,sleep,time
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Other Audience
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# sleepcount
+
+just as a simple `sleep` CLI util but with options for countdown and HH:MM:SS target time
