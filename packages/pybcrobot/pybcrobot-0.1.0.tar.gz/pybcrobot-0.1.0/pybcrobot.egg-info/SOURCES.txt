@@ -1,0 +1,9 @@
+README.md
+setup.py
+pybcrobot.egg-info/PKG-INFO
+pybcrobot.egg-info/SOURCES.txt
+pybcrobot.egg-info/dependency_links.txt
+pybcrobot.egg-info/requires.txt
+pybcrobot.egg-info/top_level.txt
+pycrobot/__init__.py
+pycrobot/bot.py
