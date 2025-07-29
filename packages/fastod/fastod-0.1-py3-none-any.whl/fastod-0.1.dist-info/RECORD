@@ -1,0 +1,11 @@
+fastod/__init__.py,sha256=dHSBNK4nMMeWS7gwVd0otn0jSfxrfHyl-2Rei519Mt4,26
+fastod/push_project.py,sha256=rzxPf4VoddzQnjQvH_gaTSiRGMt1GZxaQve-hiNKqkA,210
+fastod/tools.py,sha256=ZeXsjnZ4wYSa8JJdFih50Ru5KSs4AjtXbvNlqwQfBbU,2315
+fastod/_test/connect_mysql.py,sha256=31g-MtcpDp34ZbksLsvJjAo4K-KQKzkRls4m-mIplw8,298
+fastod/core/__init__.py,sha256=B48q3h2tukvVAV_S-zc4uUGAHYmv9wHnOLxVUGF_ypQ,69
+fastod/core/db.py,sha256=MzPhTIsifbCnKvl2XFyHDNi-VrGLAOvnnxPD30oXE80,9059
+fastod/core/table.py,sha256=YJxQGt9WO18Boo52WAxED6GNiu-8dQQoW0lvtI1P3jY,9662
+fastod-0.1.dist-info/METADATA,sha256=VxrhUn_XcYGynw8YxH9OnnOoInGvUApq0ZsC6-Shkhw,355
+fastod-0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fastod-0.1.dist-info/top_level.txt,sha256=3k2RcOcJMujXuZwmukQZsOFzM43_wqleVy-AXVHj1do,7
+fastod-0.1.dist-info/RECORD,,
