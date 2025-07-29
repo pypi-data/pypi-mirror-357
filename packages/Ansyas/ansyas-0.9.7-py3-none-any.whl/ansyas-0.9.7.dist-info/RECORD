@@ -1,0 +1,16 @@
+Ansyas/MAS_models.py,sha256=mL5-0h3FzI7azeWdJn_4ZPlE6SB7iIAcjQeeY8QM7J0,224016
+Ansyas/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+Ansyas/ansyas.py,sha256=qHC1ZBaQ6Ex982RQpQyN5te2UJBOp3qblsfG8X2CTFg,17775
+Ansyas/ansyas_mas_loader.py,sha256=BuY4rWu9yocDvZFRlU-katQ-mF50Pns1oeOzH8HJvbM,2271
+Ansyas/ansyas_utils.py,sha256=CkN4w-bg9ng_Fhb0IawYgzd5lGfaCHxC3IHgs94lc-Q,3528
+Ansyas/bobbin.py,sha256=95njgYxMBcnhVxrVQhIRQyS1rEgoOo2g_XwQIpVn5b8,6151
+Ansyas/coil.py,sha256=sq4t6Zc_bGC_R8Uk7C5jpSw0N7IgCowejysqawcSaRc,46656
+Ansyas/cooling.py,sha256=XiI19Rd01TUgh_OIUjMKKrFkWn-p0UvKuS9rDzYXrY0,1345
+Ansyas/core.py,sha256=_hV4X8O9DtPZGcjnz7qcuoMQgUyHB4Ry8vc9y8KCKsM,10748
+Ansyas/excitation.py,sha256=wm8I97yD8gfKnqiAisD5phcV_a_EZSMjAkEBgqabZ7M,11503
+Ansyas/mas_autocomplete.py,sha256=K7XGR8wh1VGWv92KyjUEf2szPbrg7hIXq8txORZ0_50,2241
+Ansyas/outputs.py,sha256=rlF8r-fVBYGRt_NSOVJGbgLU3n6G3Xpj3zOkBvUQGgE,3775
+ansyas-0.9.7.dist-info/METADATA,sha256=ZHwPggTNczNu2BzyQIzHpQpO6QyoMSdeCOuWvoKnboQ,1286
+ansyas-0.9.7.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ansyas-0.9.7.dist-info/licenses/LICENSE,sha256=IanLTN1ayAoQefxxJM0e9XU6FxAhNhm2BMZi3IGJxys,1115
+ansyas-0.9.7.dist-info/RECORD,,
