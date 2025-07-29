@@ -1,0 +1,15 @@
+crazyagent/__init__.py,sha256=KL034GbgenAcH5ryCwXKWZ8ETUVF2bZzuEOQBgHmQjs,69
+crazyagent/_response.py,sha256=jM3lt-13wBR6nG2DuSwFm5MlXGEBK37I7NAGpwWfdy8,2019
+crazyagent/chat.py,sha256=ohtbz-TpkgGw0Ach0UrUUFMKH4_XHZExtKCDp6Ipv8Q,17278
+crazyagent/memory.py,sha256=jCYOggwMfSRhj12w3i_aY0pRd7e2ou8kl4bwMalyxuc,5571
+crazyagent/pretty_prompts.py,sha256=Y-Lf_e0UMzvDYn4zBR0fcjNCzK4JoJndNiWBAP7vpdQ,4947
+crazyagent/utils.py,sha256=lfXE9_4eQyIJRHm961N5JZT12Yju31kgcAcGgU376ss,1290
+crazyagent/toolkit/__init__.py,sha256=GabtmlL6kcMK1DsqTnTqN0cXgRzLvmICNq9NfBd91ps,493
+crazyagent/toolkit/_external.py,sha256=iMZyqIc-N2yolkJXUgGmVPlwcW-qbZO6x0uWoB-qKyA,3601
+crazyagent/toolkit/_private.py,sha256=fGlE_yRBHVnvNrHs1TjEAmCcbyZ_jc7N9ntZf1MDI1k,5832
+crazyagent/toolkit/core.py,sha256=rvnNpYkkXzNhol5uVcn1wy-B4JBASn5SgOU5JgiIc7w,6439
+crazyagent-1.1.1.dist-info/licenses/LICENSE,sha256=a0Vx9m1eFtLcpFsUxYElAlXIAp7rHTKNlN-QGEKkFsI,1066
+crazyagent-1.1.1.dist-info/METADATA,sha256=_oF_Er5amAL15fYTSBF3OjRnj2Jp284NL5YP0sXmxaQ,15419
+crazyagent-1.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+crazyagent-1.1.1.dist-info/top_level.txt,sha256=Ol3N166zBYlIIbr3WVSnGmqvuStCK4ZQa4BdWaB5yTA,11
+crazyagent-1.1.1.dist-info/RECORD,,
