@@ -1,0 +1,50 @@
+[project]
+name = "forgekit-cli"
+version = "0.2.1"
+description = "AI-assisted project scaffolding CLI"
+authors = [{ name = "Mitchell Long", email = "mitchelltlong@gmail.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+
+dependencies = [
+    "annotated-types==0.7.0",
+    "anyio==4.9.0",
+    "beautifulsoup4==4.13.4",
+    "bs4==0.0.2",
+    "certifi==2025.6.15",
+    "charset-normalizer==3.4.2",
+    "click==8.2.1",
+    "distro==1.9.0",
+    "dotenv==0.9.9",
+    "duckdb==1.3.0",
+    "h11==0.16.0",
+    "httpcore==1.0.9",
+    "httpx==0.28.1",
+    "idna==3.10",
+    "jiter==0.10.0",
+    "markdown-it-py==3.0.0",
+    "mdurl==0.1.2",
+    "ollama==0.5.1",
+    "openai==1.88.0",
+    "pydantic==2.11.7",
+    "pydantic_core==2.33.2",
+    "Pygments==2.19.1",
+    "python-dotenv==1.1.0",
+    "requests==2.32.4",
+    "rich==14.0.0",
+    "shellingham==1.5.4",
+    "sniffio==1.3.1",
+    "soupsieve==2.7",
+    "typer==0.16.0",
+    "typing-inspection==0.4.1",
+    "typing_extensions==4.14.0",
+    "urllib3==2.5.0"
+]
+
+[project.scripts]
+forgekit-cli = "app.main:app"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
