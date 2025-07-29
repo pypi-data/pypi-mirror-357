@@ -1,0 +1,8 @@
+numpy
+astropy
+astroquery
+astroplan
+cartopy
+matplotlib
+scipy
+pytz
