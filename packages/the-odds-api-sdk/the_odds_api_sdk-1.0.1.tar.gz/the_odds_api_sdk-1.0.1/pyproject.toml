@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "the-odds-api-sdk"
+version = "1.0.1"
+description = "Unofficial Python SDK for The Odds API"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "Christian J. Starr", email = "christianjstarr@icloud.com"},
+]
+keywords = ["odds", "sports", "betting", "api", "sdk"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "requests>=2.25.0",
+    "typing-extensions>=4.0.0; python_version<'3.8'",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+    "mypy>=1.0.0",
+    "isort>=5.10.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ChristianJStarr/the-odds-api-sdk-python"
+Documentation = "https://the-odds-api.com/liveapi/guides/v4/"
+Repository = "https://github.com/ChristianJStarr/the-odds-api-sdk-python.git"
+"Bug Tracker" = "https://github.com/ChristianJStarr/the-odds-api-sdk-python/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["the_odds_api_sdk*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true 
