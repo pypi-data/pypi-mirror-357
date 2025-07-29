@@ -1,0 +1,2 @@
+[console_scripts]
+nber-cli = nber_cli:main
