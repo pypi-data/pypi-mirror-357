@@ -1,0 +1,12 @@
+parq_blockmodel/__init__.py,sha256=iYBr-2wIyb8ANdYh6NXn_yVoPyFepjUa6-4VFL7ir74,303
+parq_blockmodel/blockmodel.py,sha256=-ZCAKAVu9WMOeuRdsppyOvbPakJA5yORpO4b1X18qrw,17782
+parq_blockmodel/geometry.py,sha256=e1PshJ2_PcXQE5318ZZVYhL17sb6HJpgC9D5F0GQAM4,18756
+parq_blockmodel/utils/__init__.py,sha256=lzHYzwNsmpSqrezXrp7R1TLX69XYcMBJTvybFr7RdOU,193
+parq_blockmodel/utils/demo_block_model.py,sha256=osxmixjm9beefXBGF5NQxtqBrjunOjT9vnEMDoUjt-c,2585
+parq_blockmodel/utils/geometry_utils.py,sha256=Aiie8oW0r0wQG8djMaudCG4adHqVlxHmK09BGapWyus,4853
+parq_blockmodel/utils/pyvista_utils.py,sha256=jeIPi7OIgL17WyXy-1jCtdYNtlK0ts3_RULY1DE9Q1I,5601
+parq_blockmodel/utils/spatial_encoding.py,sha256=Ng0PdPHl28Cc1edymYD6GiL8YSgVU4Xb-rB8gkVWzjQ,2870
+parq_blockmodel-0.1.1.dist-info/LICENSE,sha256=L6GNOxIoh0DoEqf26AO52WU55e_2n0sCOd2vwWA5iI0,1069
+parq_blockmodel-0.1.1.dist-info/METADATA,sha256=KqzoPZg2Fi1z7cLU066XNe-mr0HO45cqjuXapRnKfuM,2532
+parq_blockmodel-0.1.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+parq_blockmodel-0.1.1.dist-info/RECORD,,
