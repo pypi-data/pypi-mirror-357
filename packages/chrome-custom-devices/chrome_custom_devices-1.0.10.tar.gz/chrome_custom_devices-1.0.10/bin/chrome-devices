@@ -1,0 +1,108 @@
+#!/usr/bin/env node
+
+const { execSync, spawn } = require('child_process');
+const path = require('path');
+const fs = require('fs');
+
+function showHelp() {
+    console.log(`
+🚀 Chrome Custom Devices Manager
+
+Usage:
+  chrome-devices                   Install devices to all Chrome profiles
+  chrome-devices --install        Install to selected profile
+  chrome-devices --install-all    Install to all profiles
+  chrome-devices --list-profiles  List Chrome profiles
+  chrome-devices --help           Show this help message
+
+This tool adds 22+ desktop device presets to Chrome DevTools:
+• MacBook models (12", 13", 15", 16") from 2014-2021  
+• iMac 24" - 2021
+• MacBook Air models
+• Notebooks with touch and HiDPI screens
+• Dell Latitude, Microsoft Surface Duo
+• Generic notebook
+
+Perfect for testing responsive designs on actual desktop resolutions!
+
+Repository: https://github.com/hatimmakki/chrome-custom-devices
+`);
+}
+
+function checkPython() {
+    const pythonCommands = ['python3', 'python'];
+    
+    for (const cmd of pythonCommands) {
+        try {
+            execSync(`${cmd} --version`, { stdio: 'pipe' });
+            return cmd;
+        } catch (error) {
+            continue;
+        }
+    }
+    return null;
+}
+
+function runPythonScript(args = []) {
+    console.log('🚀 Chrome Custom Devices - npm Package');
+    console.log('=======================================\n');
+    
+    // Check for Python
+    const pythonCmd = checkPython();
+    if (!pythonCmd) {
+        console.error('❌ Python not found!');
+        console.log('Please install Python 3.6+ and try again.');
+        console.log('Download from: https://www.python.org/downloads/');
+        process.exit(1);
+    }
+    
+    console.log(`✅ Found Python: ${pythonCmd}`);
+    
+    try {
+        // Install the package via pip if not already installed
+        console.log('📦 Installing chrome-custom-devices via pip...');
+        execSync(`${pythonCmd} -m pip install chrome-custom-devices --upgrade`, { 
+            stdio: 'pipe' 
+        });
+        console.log('✅ Package installed successfully!');
+        
+        // Run the Python tool
+        console.log('🔄 Running Chrome Custom Devices...\n');
+        
+        // Default to --install-all if no args provided
+        const finalArgs = args.length === 0 ? ['--install-all'] : args;
+        
+        const process = spawn(pythonCmd, ['-m', 'chrome_devices_manager', ...finalArgs], {
+            stdio: 'inherit'
+        });
+        
+        process.on('close', (code) => {
+            if (code === 0) {
+                console.log('\n✨ Installation complete!');
+                console.log('🔄 Restart Chrome to see your new devices in DevTools > Settings > Devices');
+            } else {
+                console.log('\n⚠️  Process completed with warnings. Check output above.');
+            }
+        });
+        
+    } catch (error) {
+        console.error('\n❌ Installation failed:', error.message);
+        console.log('\n💡 Alternative installation methods:');
+        console.log('   pip install chrome-custom-devices');
+        console.log('   python -m chrome_devices_manager --install-all');
+        console.log('   curl -sSL https://raw.githubusercontent.com/hatimmakki/chrome-custom-devices/main/quick-install.sh | bash');
+        process.exit(1);
+    }
+}
+
+// Parse command line arguments
+const args = process.argv.slice(2);
+
+// Show help
+if (args.includes('--help') || args.includes('-h')) {
+    showHelp();
+    process.exit(0);
+}
+
+// Run the installer
+runPythonScript(args);
