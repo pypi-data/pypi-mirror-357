@@ -1,0 +1,9 @@
+cryptography>=3.0
+
+[:python_version < "3.8"]
+typing-extensions
+
+[dev]
+pytest>=6.0
+build
+twine
