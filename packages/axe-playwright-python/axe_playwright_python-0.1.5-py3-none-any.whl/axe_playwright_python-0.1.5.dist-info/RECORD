@@ -1,0 +1,10 @@
+axe_playwright_python/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+axe_playwright_python/async_playwright.py,sha256=yFMeDMi3RFQacsKgrg5mxHUpxUUXM2EuztaRFtqFoCg,1279
+axe_playwright_python/axe.min.js,sha256=PANtZrbZDJY7Ac91c-FSPT_PqIqTyOFyz8i0mT8Q1YY,553447
+axe_playwright_python/base.py,sha256=TLte_vWpFhItDKDLFuuV00eu8elSGbuL8Ki6etKp-GU,4356
+axe_playwright_python/sync_playwright.py,sha256=40qmdSPpRD0Uu8XwQqSiDmubB2b7uon81exa_OhvBRw,1257
+axe_playwright_python/violations.txt,sha256=WCXgOoDCGIUh9eqkcJG9nVNuQzWWzxmnZIqqWPliSXQ,115
+axe_playwright_python-0.1.5.dist-info/LICENSE,sha256=agamXPJ7P2a1_K4nQ_mpWPrWl0nh-0y9PQmqWsM2c7o,1081
+axe_playwright_python-0.1.5.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+axe_playwright_python-0.1.5.dist-info/METADATA,sha256=7WJyUgStOykstuwqpouLVt2qN7my9IcPn7Hlj6EJ50U,3464
+axe_playwright_python-0.1.5.dist-info/RECORD,,
