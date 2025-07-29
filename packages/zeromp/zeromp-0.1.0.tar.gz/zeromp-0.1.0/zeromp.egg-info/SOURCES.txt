@@ -1,0 +1,7 @@
+README.md
+main.py
+pyproject.toml
+zeromp.egg-info/PKG-INFO
+zeromp.egg-info/SOURCES.txt
+zeromp.egg-info/dependency_links.txt
+zeromp.egg-info/top_level.txt
