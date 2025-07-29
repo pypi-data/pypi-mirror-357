@@ -1,0 +1,7 @@
+pyproject.toml
+setup.cfg
+drio/__init__.py
+drio.egg-info/PKG-INFO
+drio.egg-info/SOURCES.txt
+drio.egg-info/dependency_links.txt
+drio.egg-info/top_level.txt
