@@ -1,0 +1,2 @@
+[console_scripts]
+buildman = buildman.main:run_buildman
