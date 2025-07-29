@@ -1,0 +1,16 @@
+./.gitignore,sha256=sdHj2fr1lv8HxmDhpAOTfnqcLHtYGeGpC2mBevNC81g,274
+./LICENSE,sha256=Lxkm1piHLC7ZPkRlTn1dvOHMsJwdlYKvNxmxx5MmekM,1085
+./PKG-INFO,sha256=g3IjExVdW7NamOPb_XybwiaHT5VHETMVF0QNYNXD-QI,4663
+./README.md,sha256=GOCcbSpNdifXnwUqiZtOwiTMjQCz_Ohctg8onqjIl6I,4388
+./__init__.py,sha256=P6PH3l7fy5t1OWdcXmQlxIPx-A6KH00qwtSk1yhMJXA,22
+./api_clients.py,sha256=LfOdYBD3E-WNENhFqtWYM-0nP4b7sSvTVuu8JZKSo7g,8376
+./bluesky_search.py,sha256=PMOF-eWDBefSdIiOVyGLksbtGYAhojQINFhDqgUlFc4,10373
+./pyproject.toml,sha256=Gh29hUx0DUIfZst0ElAKRu3CCb25meFTnotzctBbnZQ,599
+./reddit_search.py,sha256=8PSfo3c9j_CG-LQ8j9UWaQQ1Sx63M65OWbF0yqnzzzk,6571
+./search_assistant.py,sha256=D4l1Un3pWAoi2rhexSay2JluP8iwuZnRwPjns1pzUy0,22451
+./socialsearch_cli.py,sha256=dhG_KyzAcxehiQUgzpHlTNT-k_dtYawKUDC0HStr838,577
+vociro-0.1.0.dist-info/METADATA,sha256=g3IjExVdW7NamOPb_XybwiaHT5VHETMVF0QNYNXD-QI,4663
+vociro-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+vociro-0.1.0.dist-info/entry_points.txt,sha256=KGsoGDt2UoUp6YOKtvKBO4u0XS3hOgc5wLmAu4oyu1U,49
+vociro-0.1.0.dist-info/licenses/LICENSE,sha256=Lxkm1piHLC7ZPkRlTn1dvOHMsJwdlYKvNxmxx5MmekM,1085
+vociro-0.1.0.dist-info/RECORD,,
