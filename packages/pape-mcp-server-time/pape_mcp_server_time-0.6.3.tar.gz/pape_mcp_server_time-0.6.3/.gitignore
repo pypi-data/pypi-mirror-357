@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+.Python
+.pytest_cache/
+
+# Distribution / packaging
+.eggs/
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# uv lock file
+uv.lock
+
+# Test coverage
+.coverage
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Memory Bank (agent-specific documentation)
+memory-bank/
