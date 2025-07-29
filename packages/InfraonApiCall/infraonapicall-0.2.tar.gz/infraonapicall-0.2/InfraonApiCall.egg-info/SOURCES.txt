@@ -1,0 +1,6 @@
+setup.py
+InfraonApiCall.egg-info/PKG-INFO
+InfraonApiCall.egg-info/SOURCES.txt
+InfraonApiCall.egg-info/dependency_links.txt
+InfraonApiCall.egg-info/requires.txt
+InfraonApiCall.egg-info/top_level.txt
