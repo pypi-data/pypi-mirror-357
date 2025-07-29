@@ -1,0 +1,2 @@
+[console_scripts]
+turkish-tokenizer = turkish_tokenizer.cli:main
