@@ -1,0 +1,2 @@
+[console_scripts]
+browser-launcher = browser_launcher.cli:main

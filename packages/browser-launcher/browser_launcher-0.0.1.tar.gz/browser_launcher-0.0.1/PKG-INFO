@@ -1,0 +1,95 @@
+Metadata-Version: 2.4
+Name: browser_launcher
+Version: 0.0.1
+Summary: A utility for launching browsers with specific profiles, URLs, and incognito mode from Python or the command line.
+Author-email: Yusef Ulum <yusef314159@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/mexyusef/browser_launcher
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# browser_launcher
+
+A utility for launching browsers (Chrome, Firefox, and alternatives) with specific profiles, URLs, and incognito/private mode from Python or the command line.
+
+## Features
+- Launch Chrome or Firefox with a specific user profile and URL
+- Support for incognito/private mode
+- List available browser profiles
+- List available browsers (including alternatives like Edge, Opera, Brave, etc.)
+- Simple command-line interface (CLI)
+- Usable as a Python library
+
+## Installation
+
+```bash
+pip install browser_launcher
+```
+
+Or install from source:
+
+```bash
+git clone https://github.com/mexyusef/browser_launcher.git
+cd browser_launcher
+pip install .
+```
+
+## Usage
+
+### Command Line
+
+List Chrome profiles:
+```bash
+browser-launcher list-profiles --browser chrome
+```
+
+List Firefox profiles:
+```bash
+browser-launcher list-profiles --browser firefox
+```
+
+List all available browsers:
+```bash
+browser-launcher list-browsers
+```
+
+Launch Firefox with a specific profile and URL (incognito):
+```bash
+browser-launcher launch --browser firefox --profile myprofile --url https://gmail.com --incognito
+```
+
+Launch Chrome with a specific profile and URL:
+```bash
+browser-launcher launch --browser chrome --profile "Profile 1" --url https://example.com
+```
+
+### Python Library
+
+```python
+from browser_launcher.profile_manager import BrowserProfileManager, LaunchOptions
+
+mgr = BrowserProfileManager()
+options = LaunchOptions(incognito=True)
+mgr.launch_browser(
+    browser_type="firefox",
+    profile="myprofile",
+    url="https://gmail.com",
+    options=options
+)
+```
+
+## License
+
+MIT License. See LICENSE file for details.

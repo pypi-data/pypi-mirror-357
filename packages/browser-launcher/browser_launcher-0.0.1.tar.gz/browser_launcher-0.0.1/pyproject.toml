@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "browser_launcher"
+version = "0.0.1"
+license = "MIT"
+description = "A utility for launching browsers with specific profiles, URLs, and incognito mode from Python or the command line."
+readme = "README.md"
+authors = [
+  { name = "Yusef Ulum", email = "yusef314159@gmail.com" }
+]
+#license = { file = "LICENSE" }
+requires-python = ">=3.8"
+dependencies = []
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: End Users/Desktop",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: MacOS",
+  "Topic :: Utilities"
+]
+
+[project.urls]
+Homepage = "https://github.com/mexyusef/browser_launcher"
+
+[project.scripts]
+browser-launcher = "browser_launcher.cli:main"
