@@ -1,0 +1,17 @@
+./BUILD_GUIDE.md,sha256=cSq1tfS6lKVhSIyvW3MRIa6iHPz2JkLORKwPU2cW7_o,3412
+./LICENSE,sha256=SxPQ2A1KCW8_45Dxo2PzwNiNPy2UYr5dAKXm-LGjlf0,1068
+./PKG-INFO,sha256=dRMZBqi_hE8bHX0PJH7PfKcsfuyFpzYsilEVtFYrC-8,11499
+./README.md,sha256=QRlSlXaEJI4F-FX2CkfTxGhGoQ8FExnGQqEQ8n2E3Ec,10121
+./ai_interface.py,sha256=_JfAlNfHNNEpXUombM5oLAReY-qcTfTsL_4QaFmrDfk,7830
+./config.py,sha256=joQW-ELiVcxA_pzUhiD-DmECpO-kEcY5KhcWFnGJhYw,6293
+./git_diff_analyzer.py,sha256=z4G8Y-UJPPdU1ASML4n6b89Sr2RX7mubw6VkMlKhDsk,12916
+./gui_main.py,sha256=sk_3N19UvZ3iFqM4a6vSSIYSBlsTAIgzz9-uyriW2t0,24198
+./image-1.png,sha256=ht7YbsNSGd2PDHGmS8eAf5UgG2Gb-x23ot6BCpHKJ20,408887
+./image.png,sha256=JOZjN1ERDx341KLKa4MDvnsmt6IeatMnE7ZAcf2rXh0,115267
+./pyproject.toml,sha256=EaK1bXtZXxDWiKNi2Cqy3p_h0Co5mtfNwWoC7ehrsOE,1917
+./utils.py,sha256=ERw-tFwGwlahV75CQt9NoDAmIuIYjQqIZKB-Gsil7Lw,10557
+git_ai_commit_gui-0.2.0.dist-info/METADATA,sha256=dRMZBqi_hE8bHX0PJH7PfKcsfuyFpzYsilEVtFYrC-8,11499
+git_ai_commit_gui-0.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+git_ai_commit_gui-0.2.0.dist-info/entry_points.txt,sha256=lM0ynuYqjh0QrJUMm97pQNQ_swp2Erzc7sBmQLzV9qU,52
+git_ai_commit_gui-0.2.0.dist-info/licenses/LICENSE,sha256=SxPQ2A1KCW8_45Dxo2PzwNiNPy2UYr5dAKXm-LGjlf0,1068
+git_ai_commit_gui-0.2.0.dist-info/RECORD,,
