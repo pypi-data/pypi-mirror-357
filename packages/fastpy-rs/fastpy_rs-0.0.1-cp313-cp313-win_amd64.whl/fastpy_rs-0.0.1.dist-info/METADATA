@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: fastpy_rs
+Version: 0.0.1
+Summary: 
+Keywords: rust,python,pyo3,maturin
+Home-Page: https://github.com/evgenyigumnov/fastpy-rs
+Author: Evgeny Igumnov <igumnovnsk@gmail.com>
+Author-email: Evgeny Igumnov <igumnovnsk@gmail.com>
+License: MIT
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Source Code, https://github.com/evgenyigumnov/fastpy-rs
+
+# fastpy-rs
