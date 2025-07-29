@@ -1,0 +1,38 @@
+[project]
+name = "hica"
+version = "0.2.0"
+description = "Highly Customizable Agent Library for maximal visibility and control for your Agentic workflows"
+authors = [{ name = "Sandipan Haldar", email = "work@sandipanhaldar.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "instructor",
+    "pydantic",
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+    "structlog",
+    "fastmcp",
+    "openai"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.20",
+]
+examples = [
+    "streamlit",
+    "requests",
+]
+
+[project.scripts]
+hica = "hica.cli:run_cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/hica/__init__.py"
