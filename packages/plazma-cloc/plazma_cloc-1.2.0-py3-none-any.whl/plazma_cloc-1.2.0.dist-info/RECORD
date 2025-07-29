@@ -1,0 +1,8 @@
+cloc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cloc/__main__.py,sha256=5bJSij9i45GexGK94W6elu2ddl6Ja3P6Lx7EN78ceio,6008
+cloc/languages.json,sha256=jEidJDcNjUN_N8Xsg4TUSW97eA6Rp2gJRiALM1TUDiI,4068
+plazma_cloc-1.2.0.dist-info/licenses/LICENSE,sha256=V9QQAHUVR4cAH_4AuhtJklZj4omsWEHk58l-WCXCk00,1071
+plazma_cloc-1.2.0.dist-info/METADATA,sha256=bZ6Bs7ZYCvEO-5-a8sktzPqmshzaL5-j7qgpC9Q6FjA,4827
+plazma_cloc-1.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+plazma_cloc-1.2.0.dist-info/top_level.txt,sha256=8GIDL2CHGP6YPing95zTIcEPpTAsuVuIsTSFLE-NY_g,5
+plazma_cloc-1.2.0.dist-info/RECORD,,
