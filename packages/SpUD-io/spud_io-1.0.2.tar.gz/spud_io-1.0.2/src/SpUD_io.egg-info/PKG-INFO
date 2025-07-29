@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: SpUD_io
+Version: 1.0.2
+Summary: A package that interprets Spectrum XXI output files and uploads data to the NOAA Spectrum Usage Database application
+Author-email: Owen Crandall <crandallowen@gmail.com>
+License-Expression: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: psycopg[c]
+Dynamic: license-file

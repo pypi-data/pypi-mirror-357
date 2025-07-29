@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/SpUD_io/RFA.py
+src/SpUD_io/SpUD_upload.py
+src/SpUD_io/__init__.py
+src/SpUD_io.egg-info/PKG-INFO
+src/SpUD_io.egg-info/SOURCES.txt
+src/SpUD_io.egg-info/dependency_links.txt
+src/SpUD_io.egg-info/requires.txt
+src/SpUD_io.egg-info/top_level.txt
