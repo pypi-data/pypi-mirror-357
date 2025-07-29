@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/isoark/__init__.py
+src/isoark.egg-info/PKG-INFO
+src/isoark.egg-info/SOURCES.txt
+src/isoark.egg-info/dependency_links.txt
+src/isoark.egg-info/top_level.txt

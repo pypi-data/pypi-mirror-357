@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=80.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "isoark"
+version = "0.0.0dev0"
+description = "A Python package for templating projects."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+authors = [
+  { name = "mesotron.dev", email = "mail@mesotron.dev" },
+]
+maintainers = [
+  { name = "mesotron.dev", email = "mail@mesotron.dev" },
+]
+keywords = [ 
+    "Python",
+    "template",
+    "skeleton",
+    "scaffolding",
+    "Jinja2",
+    "package",
+    "packaging",
+    "project", 
+    "project templates",
+]
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Build Tools",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+  "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/nortosem/isoark" 
+Documentation = "https://github.com/nortosem/isoark/blob/trunk/README.md"
