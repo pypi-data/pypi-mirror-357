@@ -1,0 +1,12 @@
+.env.example
+MANIFEST.in
+README.md
+pyproject.toml
+server.py
+img/jewei-cat.jpg
+wx_article_mcp.egg-info/PKG-INFO
+wx_article_mcp.egg-info/SOURCES.txt
+wx_article_mcp.egg-info/dependency_links.txt
+wx_article_mcp.egg-info/entry_points.txt
+wx_article_mcp.egg-info/requires.txt
+wx_article_mcp.egg-info/top_level.txt
