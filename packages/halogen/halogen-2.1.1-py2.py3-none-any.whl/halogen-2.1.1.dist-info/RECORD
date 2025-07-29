@@ -1,0 +1,12 @@
+halogen/__init__.py,sha256=pT3CqzuqyGio3Jmt76A1Wyj2oTYnjwCsP5kFhxnWCyk,567
+halogen/exceptions.py,sha256=3Sq0p4XguDPRfomTg9YoM-WIrGMwsq4E-x416g6A-TI,1424
+halogen/schema.py,sha256=JxMjflI4DHGOPx8BIFHhqsqonkWAobqMhPGkdzOfcN8,18096
+halogen/types.py,sha256=25Lrjqalo1GYzqdy8VJB_QV9t0Xw4bs432s-K55LhqE,12614
+halogen/validators.py,sha256=uhbA8l1WJ10hle0YUz3PwOPPwL4nlSvvA4UrXLrUOcQ,5867
+halogen/vnd/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+halogen/vnd/error.py,sha256=T3SbbSNCXuO1d6SiBUwY2MN20p9saNZip9ih9BmLujo,2076
+halogen-2.1.1.dist-info/licenses/LICENSE.txt,sha256=hQc-At60WHpY5CPmWOmvNGy41eDg6zKO3MPkRqPpe90,1061
+halogen-2.1.1.dist-info/METADATA,sha256=qCWN0UIgPlMj6n9SBai7tUf-fxe7IJO0Uanj85NZcok,34855
+halogen-2.1.1.dist-info/WHEEL,sha256=JNWh1Fm1UdwIQV075glCn4MVuCRs0sotJIq-J6rbxCU,109
+halogen-2.1.1.dist-info/top_level.txt,sha256=9pZNT3i10x0sqx7RNdLxRyLJiJFzgZrmdapPXFpIpnI,8
+halogen-2.1.1.dist-info/RECORD,,
