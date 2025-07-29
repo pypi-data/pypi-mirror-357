@@ -1,0 +1,73 @@
+Metadata-Version: 2.4
+Name: canvas_ux
+Version: 3.9.6
+Summary: Modular data science components
+Home-page: https://github.com/satishlokkoju/deepview
+Author: Satish Lokkoju
+Author-email: satish.lokkoju@gmail.com
+License: Apache 2.0
+Keywords: Jupyter,Widgets,IPython
+Platform: Linux
+Platform: Mac OS X
+Platform: Windows
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Framework :: Jupyter
+Classifier: Framework :: Jupyter :: JupyterLab
+Classifier: Framework :: Jupyter :: JupyterLab :: 3
+Classifier: Framework :: Jupyter :: JupyterLab :: 4
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions :: Prebuilt
+Requires-Python: >3.9
+Description-Content-Type: text/markdown
+Requires-Dist: ipywidgets>=7.0.0
+Requires-Dist: jupyter_packaging>=0.7.9
+Requires-Dist: jupyterlab>=3.6.8
+Provides-Extra: widgets
+Requires-Dist: canvas_data_map; extra == "widgets"
+Requires-Dist: canvas_list; extra == "widgets"
+Requires-Dist: canvas_scatterplot; extra == "widgets"
+Requires-Dist: canvas_summary; extra == "widgets"
+Requires-Dist: canvas_familiarity; extra == "widgets"
+Requires-Dist: canvas_duplicates; extra == "widgets"
+Provides-Extra: examples
+Requires-Dist: tensorflow; extra == "examples"
+Requires-Dist: opencv-python; extra == "examples"
+Requires-Dist: gitpython; extra == "examples"
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-mock; extra == "test"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: platform
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Canvas
+
+`canvas_ux` ties together a collection of interactive visualizations that let you explore data. It is designed to be extensible and thus can integrate different [components](../widgets). If you are interested in creating you own component, take a look at our [cookiecutter](../widget-cookiecutter/).
+
+## Installation
+
+```bash
+pip install canvas_ux
+```
+
+## Usage
+
+To learn how to use Canvas, see the [documentation](https://satishlokkoju.github.io/deepview/).
+
