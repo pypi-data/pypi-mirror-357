@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: git-stream
+Version: 2.0.2
+Summary: Git Stream Implementation
+Keywords: git,programming,utilities
+Author-email: "Jeffery G. Smith" <web@pobox.com>
+Requires-Python: ~=3.12
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: Natural Language :: English
+License-File: LICENSE
+Requires-Dist: BatCave
+Requires-Dist: bumpver ; extra == "dev"
+Requires-Dist: vjer ; extra == "dev"
+Project-URL: changelog, https://github.com/arisilon/git-stream/blob/main/CHANGELOG.md
+Project-URL: documentation, https://git-stream.readthedocs.io
+Project-URL: homepage, https://github.com/arisilon/git-stream/
+Project-URL: repository, https://github.com/arisilon/git-stream/
+Provides-Extra: dev
+Provides-Extra: test
+
+# git-stream Python Module
+
+A command line tool to implement streams in Git.

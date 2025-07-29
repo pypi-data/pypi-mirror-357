@@ -1,0 +1,3 @@
+[console_scripts]
+git-stream=git_stream.__main__:main
+
