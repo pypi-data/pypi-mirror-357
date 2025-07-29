@@ -1,0 +1,110 @@
+[tool.poetry]
+name = "oktoberfest"
+version = "0.10.0"  # <<COOKIETEMPLE_FORCE_BUMP>>
+description = "Public repo oktoberfest"
+authors = ["Wilhelmlab at Technical University of Munich"]
+license = "MIT"
+readme = "README.rst"
+homepage = "https://github.com/wilhelm-lab/oktoberfest"
+repository = "https://github.com/wilhelm-lab/oktoberfest"
+documentation = "https://oktoberfest.readthedocs.io"
+packages = [
+    { include = "oktoberfest" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<3.13.0"
+click = ">=8.0.0"
+rich = ">=10.3.0"
+PyYAML = ">=5.4.1"
+anndata = "^0.10.5post1"
+array-api-compat = "1.12.0"
+matplotlib = "^3.6.3"
+mokapot = ">=0.9.1,<0.11.0"
+numpy = ">=1.26.4"
+seaborn = ">=0.12.2,<0.14.0"
+spectrum-fundamentals = ">=0.9.0,<0.10.0"
+spectrum-io = ">=0.8.0,<0.9.0"
+picked_group_fdr = ">=0.9.0"
+#dlomix = {extras = ["rltl-report", "wandb"], url="https://github.com/wilhelm-lab/dlomix/tarball/feature/bmpc", optional = true}
+#tensorflow = {version = ">=2.13,<2.16", extras = ["and-cuda"], optional = true}
+#wandb = {version = "^0.17.5", optional = true}
+koinapy = ">=0.0.7,<0.0.11"
+spectrum-utils = "^0.4.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=6.2.3"
+coverage = {extras = ["toml"], version = ">=5.3"}
+safety = ">=1.9.0"
+typeguard = ">=2.12.0"
+xdoctest = {extras = ["colors"], version = ">=0.15.0"}
+sphinx = ">=4.0.2"
+sphinx-autobuild = ">=2021.3.14"
+pre-commit = ">=2.11.1"
+flake8 = ">=3.8.4"
+black = ">=20.8b1"
+flake8-bandit = ">=2.1.2"
+flake8-bugbear = ">=21.4.3"
+flake8-docstrings = ">=1.5.0"
+flake8-rst-docstrings = ">=0.2.3"
+pep8-naming = ">=0.11.1"
+darglint = ">=1.5.8"
+pre-commit-hooks = ">=4.0.1"
+sphinx-rtd-theme = ">=1.0.0"
+sphinx-click = ">=3.0.0"
+Pygments = ">=2.8.1"
+pyteomics = ">=4.7.3"
+types-requests = ">=2.25.2"
+types-attrs = ">=19.1.0"
+Jinja2 = ">=3.0.1"
+mypy = ">=0.910"
+pyupgrade = ">=2.31.0"
+openpyxl = ">=3.0.10"
+
+[tool.poetry.scripts]
+oktoberfest = "oktoberfest.__main__:main"
+
+#[tool.poetry.extras]
+#dlomix = ["dlomix", "tensorflow"]
+
+[tool.black]
+line-length = 120
+
+[tool.mypy]
+strict = false
+pretty = true
+show_column_numbers = true
+show_error_codes = true
+show_error_context = true
+ignore_missing_imports = true
+
+[tool.isort]
+multi_line_output=3
+include_trailing_comma=true
+balanced_wrapping=true
+line_length=120
+profile = "black"
+
+[tool.coverage.paths]
+source = ["oktoberfest", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["oktoberfest"]
+
+[tool.coverage.report]
+show_missing = true
+exclude_also = [
+    "if TYPE_CHECKING:"
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.setuptools_scm]
