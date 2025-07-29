@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: af_worklist_manager
+Version: 6.0.4
+Summary: AristaFlow BPM WorklistManager/WorklistManager REST Client
+Home-page: 
+Author: AristaFlow GmbH
+Author-email: info@aristaflow.com
+Keywords: Swagger,AristaFlowREST/WorklistManager
+License-File: LICENSE
+Requires-Dist: urllib3>=1.15
+Requires-Dist: six>=1.10
+Requires-Dist: certifi
+Requires-Dist: python-dateutil
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
+
+AristaFlow BPM REST Client library for connecting to the WorklistManager/WorklistManager endpoint. https://pypi.org/project/aristaflowpy/ provides APIs on top of the AristaFlow BPM REST endpoints for many use cases, so using aristaflowpy is recommended.
