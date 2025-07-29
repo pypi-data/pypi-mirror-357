@@ -1,0 +1,2 @@
+[console_scripts]
+qwitch = qwitch.qwitch:main
