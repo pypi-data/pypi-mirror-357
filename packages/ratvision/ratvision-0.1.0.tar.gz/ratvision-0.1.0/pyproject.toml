@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ratvision"
+version = "0.1.0"
+authors = [
+  { name="Marco P. Abrate", email="marcopietro.abrate@gmail.com" },
+]
+description = "A simple package for rat vision rendering simulation."
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "matplotlib",
+    "pillow",
+    'importlib-resources; python_version<"3.9"',
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["vision", "rat", "simulation", "rendering"]
+
+[project.urls]
+Homepage = "https://github.com/marcoabrate/ratvision"
+"Bug Tracker" = "https://github.com/marcoabrate/ratvision/issues"
+Documentation = "https://github.com/marcoabrate/ratvision#readme"
+
+[tool.setuptools]
+packages = ["ratvision"]
+
+[tool.setuptools.package-data]
+"ratvision" = [
+    "environments/**",
+]
+
