@@ -1,0 +1,20 @@
+[project]
+name = "django-typed-settings"
+version = "0.1.0"
+description = "Type validation for bare django configuration settings system"
+authors = [{ name = "Kirill Zhosul", email = "<kirillzhosul@yandex.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.poetry]
+packages = [{ include = "django_typed_settings" }]
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.12.0"
+pytest = "^8.4.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

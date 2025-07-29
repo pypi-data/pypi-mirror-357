@@ -1,0 +1,32 @@
+Metadata-Version: 2.3
+Name: django-typed-settings
+Version: 0.1.0
+Summary: Type validation for bare django configuration settings system
+License: MIT
+Author: Kirill Zhosul
+Author-email: <kirillzhosul@yandex.com
+Requires-Python: >=3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+
+# Django Typed Settings
+
+Type validation for bare django configuration settings system.
+Alternative to `django-environ` and somehow `pydantic`
+
+## Example
+
+```python
+# /settings.py
+
+# Default Django way
+TIMEOUT = 80                             # Hardcoded
+TIMEOUT = os.environ.get("TIMEOUT", 80). # Environment, non-type safe
+
+# Django Typed Settings
+TIMEOUT = env_key('TIMEOUT', as_type=int, default=80) # Runtime checkable, type safe
+```
+
