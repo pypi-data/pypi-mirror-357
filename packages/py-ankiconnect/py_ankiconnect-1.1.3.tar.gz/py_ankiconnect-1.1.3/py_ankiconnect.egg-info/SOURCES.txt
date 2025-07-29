@@ -1,0 +1,15 @@
+.gitignore
+LICENSE
+README.md
+bumpver.toml
+setup.py
+py_ankiconnect/__init__.py
+py_ankiconnect/__main__.py
+py_ankiconnect/help.py
+py_ankiconnect/py_ankiconnect.py
+py_ankiconnect.egg-info/PKG-INFO
+py_ankiconnect.egg-info/SOURCES.txt
+py_ankiconnect.egg-info/dependency_links.txt
+py_ankiconnect.egg-info/entry_points.txt
+py_ankiconnect.egg-info/requires.txt
+py_ankiconnect.egg-info/top_level.txt
