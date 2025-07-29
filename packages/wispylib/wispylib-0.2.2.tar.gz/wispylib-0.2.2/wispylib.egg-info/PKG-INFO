@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: wispylib
+Version: 0.2.2
+Summary: A link scraping and redirect-checking utility
+Author: Ryu saiki
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Requires-Dist: tldextract
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# wispylib
+A prototype for a crawling module
+
+
+<h3>USAGE:</h3>
+
+```python
+from wispylib import cringio, cringio_cli
+
+# Simple single URL scan, send both http+https to one webhook:
+cringio("https://example.com", webhook="https://myhook.site/abcdef")
+
+# Customizable infinite scan with file + separate webhooks:
+cringio_cli(url_file="urls.txt", max_workers=20, infinite=True, delay=10,
+            http_webhook="https://hook1.site/abc", https_webhook="https://hook2.site/xyz")
+```
+
