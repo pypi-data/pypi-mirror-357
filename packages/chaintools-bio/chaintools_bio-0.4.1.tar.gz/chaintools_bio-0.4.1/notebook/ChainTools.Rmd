@@ -1,0 +1,35 @@
+---
+title: "ChainTools"
+author: "Nae-Chyun"
+date: "2/10/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include}
+library(pafr)
+library(ggplot2)
+```
+
+```{r test}
+ali <- read_paf("../data/chm13v2-grch38-2.paf")
+dotplot(ali)
+
+ali.chrY <- subset(ali, qname == "chrY" & tname == "chrY")
+dotplot(ali.chrY)
+
+ggplot(ali, aes(alen)) + 
+    geom_histogram(colour="black", fill="steelblue", bins=20) + 
+    theme_bw(base_size=16) + 
+    ggtitle("Distribution of alignment lengths") +
+    scale_x_log10("Alignment-length")
+
+mid_ali <- subset(ali, alen > 1e3)
+plot_synteny(mid_ali, q_chrom="chrY", t_chrom="chrY")
+
+long_ali <- subset(ali, alen > 1e7)
+plot_coverage(long_ali, fill='qname')
+```
