@@ -1,0 +1,202 @@
+# README
+
+[![PyPI](https://img.shields.io/pypi/v/delimux.svg)](https://pypi.org/project/delimux/)
+
+
+
+## Installation
+
+`pip install mumobo`
+
+## Help
+
+
+Python Library Documentation: class MuMoBo in module mumobo
+
+```python
+class MuMoBo(builtins.object)
+ |  MuMoBo(host: str, port: int = 80, timeout: float = 20.0, verbose: bool = False)
+ |  
+ |  Client for communicating with MuMoBo microcontrollers over a persistent TCP socket.
+ |  
+ |  This class sends control commands (e.g., ping, move, change ID) to servos grouped by axis
+ |  via a TCP socket connection to a microcontroller server. It maintains a persistent connection
+ |  and parses newline-terminated, comma-separated responses into lists of integers.
+ |  
+ |  Attributes
+ |  ----------
+ |  host : str
+ |      Hostname or IP address of the target microcontroller server.
+ |  port : int
+ |      Port number on which the server listens.
+ |  timeout : float
+ |      Socket timeout in seconds for connect and receive operations.
+ |  verbose : bool
+ |      Whether to print detailed logs during communication.
+ |  client_socket : socket.socket or None
+ |      The active socket object (if connected).
+ |  response_buffer : str
+ |      Internal buffer for accumulating incoming data.
+ |  
+ |  Methods defined here:
+ |  
+ |  __del__(self)
+ |      Ensure socket is closed on object deletion.
+ |  
+ |  __init__(self, host: str, port: int = 80, timeout: float = 20.0, verbose: bool = False)
+ |      Initialize the MuMoBo client with connection parameters.
+ |      
+ |      Parameters
+ |      ----------
+ |      host : str
+ |          Target server hostname or IP.
+ |      port : int, optional
+ |          Server port (default is 80).
+ |      timeout : float, optional
+ |          Timeout for socket operations in seconds.
+ |      verbose : bool, optional
+ |          Enables verbose printing for debugging.
+ |  
+ |  changeID(self, AXIS, SERVO_ID, NEW_ID)
+ |      Change the ID of a given servo.
+ |      
+ |      Parameters
+ |      ----------
+ |      AXIS : int
+ |          Target axis.
+ |      SERVO_ID : int
+ |          Current ID of the servo.
+ |      NEW_ID : int
+ |          New ID to assign.
+ |      
+ |      Returns
+ |      -------
+ |      list of list of int or None
+ |          Server response, if any.
+ |  
+ |  close(self)
+ |      Manually close the socket connection.
+ |  
+ |  move_motor_by(self, AXIS, SERVO_ID, STEPS)
+ |      Move a servo by a given number of steps.
+ |      
+ |      Parameters
+ |      ----------
+ |      AXIS : int
+ |          Axis of the servo.
+ |      SERVO_ID : int
+ |          ID of the servo.
+ |      STEPS : int
+ |          Number of steps to move (positive or negative).
+ |      
+ |      Returns
+ |      -------
+ |      list of list of int or None
+ |          Server response or None if input invalid.
+ |  
+ |  ping(self, AXIS, SERVO_ID)
+ |      Ping a servo to check if it is responsive.
+ |      
+ |      Parameters
+ |      ----------
+ |      AXIS : int
+ |          The axis on which the servo resides (1 or 2).
+ |      SERVO_ID : int
+ |          ID of the target servo.
+ |      
+ |      Returns
+ |      -------
+ |      list of list of int or None
+ |          Parsed response if successful, otherwise None.
+ |  
+ |  scan(self, AXIS, start: int = 1, stop: int = 253)
+ |      Scan for all available servo IDs on the given axis.
+ |      
+ |      Parameters
+ |      ----------
+ |      AXIS : int
+ |          The axis to scan.
+ |      start : int, optional
+ |          Starting servo ID (inclusive).
+ |      stop : int, optional
+ |          Ending servo ID (inclusive).
+ |      
+ |      Returns
+ |      -------
+ |      list of int
+ |          List of servo IDs that responded to a ping.
+ |  
+ |  step_Mode(self, AXIS, SERVO_ID)
+ |      Put a servo into step mode (for relative movements).
+ |      
+ |      Parameters
+ |      ----------
+ |      AXIS : int
+ |          Axis of the servo.
+ |      SERVO_ID : int
+ |          ID of the servo.
+ |      
+ |      Returns
+ |      -------
+ |      list of list of int
+ |          Response from the server.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+```
+
+## Usage
+
+The mumobo infrastructure allows to control a set of servos via a socket server running on a microcontroller. This python API facilitates the setup and communication with the servo motors. Currently, the microcontroller can operate two independent sets of motors, each of these sets are called an axis, where the intention is that each axis will operate two to three motors on one mirror mount. For each axis there is a patch cable jack available to route the communication from the mumobo to the mirror mount. At the site of the mirror mount, a small breakout board is used to hook up the servos. 
+
+### How to take servos into operation
+
+Servos are adressed by their unique ID. Before the communication with more than one servo over a shared line can be used they have to be given a unique address. Moreover, one typically wants to operate those servos in step mode, i.e., one wants to tell the servo motor to move by a given number of steps. To stage those motors for operation, the following procedure is foreseen
+```python
+import mumobo
+mmb=mumobo.MuMoBo('hostname-of-microcontroller')
+# 1. Plug ONLY ONE motor at a time into the breakout board connected to AXIS=1 or 2.
+# 2. Find servo-ID: 
+alive=mmb.scan(AXIS)
+# alive is a list with online servos. 
+# 3. Change ID from old ID to new ID if the it already exists
+mmb.changeID(AXIS, SERVO_ID, NEW_ID)
+# 4. Check if the renaming worked 
+mmb.ping(AXIS, SERVO_ID)
+# 5. Switch the motor to Step-mode (this will. like the SERVO_ID be persistantly stored on the servo) 
+mmb.Step_Mode(AXIS, SERVO_ID)
+```
+This step is to be repeated for all motors in use. After this, they can be addressed with their AXIS and newly assigned ID.
+
+## How to turn the servo
+
+```python
+import mumobo
+mmb=mumobo.MuMoBo('hostname-of-microcontroller')
+AXIS = 1 
+Servo_ID = 1
+step = 100 
+# Number from -10000 (anticlockwise) to  10000 (clockwise). A step of 4096 corresponds to a 360° turn
+mmb.move_moto_by(AXIS, Servo_ID, step)
+```
+
+## Error Codes
+
+If something went wrong in the communication (not on the servo itself), the following error codes are used:
+
+| Code   | Meaning                                                              |
+|--------|----------------------------------------------------------------------|
+| `0x00` | The reply message on the bus did not start with `0xFF 0xFF`          |
+| `0x01` | The number of bytes in the answer of the servo did not match expectations |
+| `0x02` | The servo ID in the answer did not match expectations                |
+| `0x03` | Checksum was incorrect                                               |
+| `0x04` | Handling the instruction from the socket client failed               |
+| `0x05` | Parsing the instruction from the socket client failed                |
+| `0x06` | Message length from socket client was too long                       |
+| `0x07` | Timeout from the socket client                                       |
