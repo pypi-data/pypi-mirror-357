@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: sb_tencent_mmkv
+Version: 0.1.5.1
+Summary: Cross-platform MMKV Python binding
+Author: Zhangxiaolong
+Author-email: lxc.rudy@gamil.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# MMKV Python Package
+
+This is a cross-platform Python binding for MMKV.
+
+## Installation
+
+```bash
+pip install sb_tencent_mmkv
