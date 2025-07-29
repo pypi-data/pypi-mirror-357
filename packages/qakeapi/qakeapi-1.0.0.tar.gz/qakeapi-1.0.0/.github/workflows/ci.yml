@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install "pytest>=7.0.0" "pytest-asyncio>=0.18.0" "pytest-cov>=3.0.0" "httpx>=0.25.0"
+          python -m pip install "python-jose[cryptography]>=3.3.0" "passlib[bcrypt]>=1.7.4"
+          python -m pip install "uvicorn>=0.15.0" "pydantic>=2.0.0" "python-multipart>=0.0.5" "aiofiles>=0.8.0"
+          python -m pip install "PyJWT>=2.0.0"
+          python -m pip install -e .
+
+      - name: Show environment info
+        run: |
+          python --version
+          pip list
+          python -c "import qakeapi; print(f'qakeapi location: {qakeapi.__file__}')"
+
+      - name: Run tests
+        run: |
+          python -m pytest tests/ -v --disable-warnings
+
+  docs:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs mkdocs-material
+
+      - name: Build docs
+        run: mkdocs build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 

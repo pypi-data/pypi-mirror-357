@@ -1,0 +1,29 @@
+site_name: QakeAPI Documentation
+site_description: Documentation for QakeAPI Framework
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+
+nav:
+  - Home: index.md
+  - User Guide:
+    - Installation: installation.md
+    - Quick Start: quickstart.md
+    - Middleware: middleware.md
+    - Security: security.md
+  - API Reference:
+    - Core: api/core.md
+    - Middleware: api/middleware.md
+    - Security: api/security.md
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - admonition
+  - toc:
+      permalink: true
+
+plugins:
+  - search 
