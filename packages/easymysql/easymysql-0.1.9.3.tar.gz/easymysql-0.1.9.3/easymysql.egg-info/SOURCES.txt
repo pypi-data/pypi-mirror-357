@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+easymysql/__init__.py
+easymysql/mysql.py
+easymysql.egg-info/PKG-INFO
+easymysql.egg-info/SOURCES.txt
+easymysql.egg-info/dependency_links.txt
+easymysql.egg-info/requires.txt
+easymysql.egg-info/top_level.txt
