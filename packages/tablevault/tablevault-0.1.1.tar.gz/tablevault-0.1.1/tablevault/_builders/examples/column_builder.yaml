@@ -1,0 +1,25 @@
+builder_type: ColumnBuilder
+
+changed_columns: [COLUMN_NAMES] # output columns
+
+python_function: FUNCTION_NAME
+code_module: MODULE_NAME
+
+arguments:
+  ARGUMENT_NAME_1: ARG_VALUE
+  ARGUMENT_NAME_2: <<TABLE_NAME.COLUMN1[COLUMN2::self.COLUMN[index]]>>
+n_threads: 1
+
+is_custom: false # Optional
+return_type: dataframe # Optional: [row-wise, dataframe, generator]
+
+dtypes: # Optional datatype for columns
+  COLUMN_NAME_1: Int64
+  COLUMN_NAME_2: Float64
+  COLUMN_NAME_3: artifact_string
+
+dependencies: null # Optionally specifies table dependencies (required if ambiguous)
+
+
+# Example TableReference
+# <<stories(base).{artifact_name, story_id}[paper_name::0:self.paper_name[index]]>>

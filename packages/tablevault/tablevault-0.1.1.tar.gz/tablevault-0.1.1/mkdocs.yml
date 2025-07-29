@@ -1,0 +1,61 @@
+site_name: TableVault
+theme:
+  name: material
+  palette:
+    primary: red
+    accent: blue
+  icon:
+    repo: fontawesome/brands/github
+    logo: fontawesome/solid/stapler
+  favicon: assets/favicon.png
+  features:
+    - content.code.copy
+    - content.code.select
+extra:
+  generator: false
+repo_url: https://github.com/j2zhao/tablevault
+repo_name: tablevault
+markdown_extensions:
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+nav:
+  - Home: index.md
+  - Core Concepts: 
+    - Repository Structure: core_concepts/structure.md
+    - Operations: core_concepts/operations.md
+    - Builders, Python Functions, TableReferences, Artifacts: core_concepts/execution.md
+  - Concrete Workflows:
+    - Basic Workflow: workflows/workflow.md
+    - Workflow with Artifacts: workflows/workflow_artifacts.md
+    - Handling Execution Errors: workflows/errors.md
+    - Workflow with Agents [Future]: workflows/agents.md
+  - Colab Notebook Examples:
+    - OpenAI API Call: https://colab.research.google.com/drive/1vHg5Vb8r1Zax2pKLOX6phPEuIDVhFctC
+    - Local LLM Execution: https://colab.research.google.com/drive/1X4tFpPSfMnQ_Ch0nSNUTmiEcT0Eo40Uj
+  - API and Guides:
+    - TableVault Python Interface API: api/core_api.md
+    - TableVault Command Line Interface API: api/core_cli_api.md
+    - Builder and Python Function Guide: api/builders.md
+    - TableReference String Guide: api/table_references.md
+    - Default Code Functions API: api/code_functions.md
+  - Advanced:
+    - Metadata Documentation: advanced/metadata.md
+    - Operating System Differences: advanced/os.md
+    - Comparisons: advanced/comparisons.md
+
+  - About TableVault: auxillary/about.md

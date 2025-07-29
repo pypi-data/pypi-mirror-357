@@ -1,0 +1,61 @@
+name: CI
+on:                       # events that trigger the job
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        python-version: [ "3.11", "3.12", "3.13" ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install ".[dev]"
+      - name: Lint
+        run: |
+          # Run Ruff in “check” mode (exit code != 0 if any issues are found)
+          ruff check tablevault
+      - name: Tests
+        run: pytest -q -m "not remote"
+
+  deploy-docs:
+    name: Deploy MkDocs to GitHub Pages
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    
+    # Add this permissions block to grant write access to the GITHUB_TOKEN
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+          cache: pip
+
+      - name: Install project + docs deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install ".[dev]"
+
+      - name: Build & Publish MkDocs
+        run: |
+          mkdocs gh-deploy --force --clean

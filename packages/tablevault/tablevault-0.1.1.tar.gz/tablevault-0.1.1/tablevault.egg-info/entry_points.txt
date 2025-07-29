@@ -1,0 +1,2 @@
+[console_scripts]
+tablevault = tablevault.cli:main
