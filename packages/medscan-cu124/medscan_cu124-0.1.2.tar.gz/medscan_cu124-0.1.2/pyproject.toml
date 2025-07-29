@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medscan-cu124"
+version = "0.1.2"
+description = "Medscan with CUDA 12.4 (PyTorch GPU support)"
+readme = "README.md"
+requires-python = ">=3.10"
+
+authors = [
+  { name = "Cristo van den Berg", email = "cristo99@live.nl" }
+]
+
+dependencies = [
+  "pandas==2.2.3",
+  "pyyaml==6.0.2",
+  "scikit-learn==1.6.1",
+  "scipy==1.15.3",
+  "numpy==2.1.2",
+  "matplotlib==3.10.3",
+  "torch==2.6.0+cu124",
+  "torchvision==0.21.0+cu124",
+  "torchaudio==2.6.0+cu124",
+  "triton==3.2.0,<4.0.0",
+  "fsspec==2024.6.1",
+  "pillow==11.0.0",
+  "openpyxl==3.1.5",
+  "joblib==1.5.1",
+  "networkx==3.3"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2",
+  "ipykernel",
+  "jupyter_client",
+  "debugpy",
+  "pre-commit"
+]
+
+[project.urls]
+Homepage = "https://github.com/CristovdBerg/medscan"
+
+[tool.setuptools.packages.find]
+where = ["."]
