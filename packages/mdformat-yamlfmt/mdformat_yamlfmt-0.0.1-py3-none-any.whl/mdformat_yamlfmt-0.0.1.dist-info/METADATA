@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: mdformat-yamlfmt
+Version: 0.0.1
+Summary: Mdformat plugin to format yaml code blocks using yamlfmt.
+Author-email: Bagard Hoel <hoel.bagard.hy@hitachi-hightech.com>
+License-File: LICENSE
+Requires-Python: >=3.7
+Requires-Dist: ruff
+Description-Content-Type: text/markdown
+
+# Mdformat yamlfmt
+
+Mdformat plugin to format yaml code blocks using [yamlfmt](https://github.com/google/yamlfmt).
+
+## Installation
+
+The package is available on PyPI [here](https://pypi.org/project/mdformat-yamlfmt/), you can install it with:
+
+```bash
+pip install mdformat-yamlfmt
+```

@@ -1,0 +1,2 @@
+[mdformat.codeformatter]
+yaml = mdformat_yamlfmt:format_yaml
