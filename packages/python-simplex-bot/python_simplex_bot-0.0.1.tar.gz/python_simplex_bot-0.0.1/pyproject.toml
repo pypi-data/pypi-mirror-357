@@ -1,0 +1,23 @@
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling >= 1.26"]
+
+[project]
+authors = [
+  {name = "maxzhiv", email = "mz79765@gmail.com"},
+]
+dependencies = [
+  "websockets>=15.0.1",
+  "pydantic>=2.11.7",
+]
+description = "High-level Python interface for Simplex API"
+license = {text = "MIT-0"}
+name = "python-simplex-bot"
+readme = "README.md"
+requires-python = ">=3.10"
+version = "0.0.1"
+
+[project.urls]
+Documentation = "https://github.com/maxzhiv/python-simplex-bot/blob/main/docs/README.md"
+Homepage = "https://github.com/maxzhiv/python-simplex-bot"
+Issues = "https://github.com/maxzhiv/python-simplex-bot/issues"
