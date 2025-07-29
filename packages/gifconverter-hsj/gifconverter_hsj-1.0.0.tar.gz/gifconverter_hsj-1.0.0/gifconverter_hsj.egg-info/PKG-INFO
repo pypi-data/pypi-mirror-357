@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: gifconverter-hsj
+Version: 1.0.0
+Summary: Test package for distribution
+Home-page: 
+Download-URL: 
+Author: algento
+Author-email: tromberx@gmail.com
+Keywords: GIFCONVERTER,gifconverter
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pillow
+
+# pygifconvt
+
+## Table of Contents
+  * [Installation](#installation)
+  * [Quick start](#quick-start)
+  * [Features](#features)
+  
+## Installation
+
+Download using pip via pypi.
+
+```bash
+$ pip install 'package' --upgrade
+  or
+$ pip install git+'repository'
+```
+(Mac/homebrew users may need to use ``pip3``)
+
+
+## Quick start
+```python
+ >>> from pygifconvt.converter import GifConverter
+ >>> c = GifConverter("your original images path", 'your gif output path', (320,240))
+ >>> c.convert_gif()
+```
+
+## Features
+  * Python library to convert single oder multiple frame gif images
+  * OpenCV does not support gif images.

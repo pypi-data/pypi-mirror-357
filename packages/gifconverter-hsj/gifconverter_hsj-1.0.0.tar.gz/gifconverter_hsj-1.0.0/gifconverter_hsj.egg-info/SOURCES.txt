@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.cfg
+setup.py
+gifconverter_hsj/__init__.py
+gifconverter_hsj/converter.py
+gifconverter_hsj.egg-info/PKG-INFO
+gifconverter_hsj.egg-info/SOURCES.txt
+gifconverter_hsj.egg-info/dependency_links.txt
+gifconverter_hsj.egg-info/not-zip-safe
+gifconverter_hsj.egg-info/requires.txt
+gifconverter_hsj.egg-info/top_level.txt

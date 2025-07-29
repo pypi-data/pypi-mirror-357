@@ -1,0 +1,4 @@
+[build-system]
+# twine을 통과하기 위해서 메타데이터 버전을 맞추기 위해 setuptools 버전을 고정해야 함.
+requires = ["setuptools~=68.2", "wheel"]
+build-backend = "setuptools.build_meta"
