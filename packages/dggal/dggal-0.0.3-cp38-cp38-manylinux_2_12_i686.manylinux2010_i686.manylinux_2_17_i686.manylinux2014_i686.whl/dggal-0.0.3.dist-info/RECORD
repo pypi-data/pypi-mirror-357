@@ -1,0 +1,16 @@
+_pydggal.cpython-38-i386-linux-gnu.so,sha256=5fN8yWekQUrzZeedBwaqgWbUczBtZ_B_wxNAJfX_9Fo,227728
+dggal/__init__.py,sha256=LiRCpNcD-Nn2UV4Lxi2wlT459LnATZ_KINM-0OYwe7U,841
+dggal/dggal.py,sha256=yqOxTR1eVifzZUyGfY9eBKWQ3RYwIg0YE-Rq37OpGGU,76177
+dggal/bin/dgg,sha256=O_oUdwQqKSgA-TmF1WPewkEz4Xuo8fY-RlImgs26Rbc,71012
+dggal/bin/dgg_wrapper.py,sha256=mnrAUMf-xy3beidzOEgl1x_5Wsyz1iNBalfnS9cn75Q,306
+dggal/examples/geom.py,sha256=kMQmUMFSgJKl87ZMB3v5hiwDHkgIkFd-QnCF8vfq6vw,3093
+dggal/examples/info.py,sha256=3rawi7xAMLf9OgqrfG0sOwzdJ3b_NBjSH4-2baiGGcs,2602
+dggal/examples/togeo.py,sha256=n16mAdHeC5C2VAjzKw8mK6oi_hnRTLlwgb5CDvq-bxE,3582
+dggal/examples/togeo_json.py,sha256=BuxgCzJSySazPGuK7WNNBeQhoehFed1pb5MGVlvSqlE,4388
+dggal/examples/togeo_text.py,sha256=gBnnzS589pY6TQPS7UQDCdembT-M-z4tpQVKIz_hgx8,5573
+dggal/lib/libdggal.so,sha256=u2--S_YQfOaudy8zoSA0iQ_y89F4rgT-MqdYsi94IL8,286048
+dggal-0.0.3.dist-info/METADATA,sha256=1VfiwEr9R7hkJJG-ER_sgYbt4cD3rGohc8pZ0Jbrv54,26727
+dggal-0.0.3.dist-info/WHEEL,sha256=L4kvaJcamXRGJIfg4XswMTcoNAKgoL_yKkUKhaJah1I,212
+dggal-0.0.3.dist-info/entry_points.txt,sha256=RfwzbEIX2rt8ue10B3pwe8q0Dn2FHFDY3Eb_HXW3RYE,51
+dggal-0.0.3.dist-info/top_level.txt,sha256=AFKhgeZXmPabkcTet2OJ5o4r5GHO_famYjjhw-3-yeg,15
+dggal-0.0.3.dist-info/RECORD,,
