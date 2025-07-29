@@ -1,0 +1,7 @@
+README.md
+main.py
+pyproject.toml
+zerocpy.egg-info/PKG-INFO
+zerocpy.egg-info/SOURCES.txt
+zerocpy.egg-info/dependency_links.txt
+zerocpy.egg-info/top_level.txt
