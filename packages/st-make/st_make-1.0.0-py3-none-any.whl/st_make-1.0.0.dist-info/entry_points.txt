@@ -1,0 +1,3 @@
+[console_scripts]
+st-make = sinol_make:main
+stm = sinol_make:main
