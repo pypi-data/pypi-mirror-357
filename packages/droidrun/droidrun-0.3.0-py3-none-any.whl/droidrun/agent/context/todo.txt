@@ -1,0 +1,4 @@
+Task 1: Precondition: None. Goal: Open the notification shade to find the settings button.
+Status: pending
+Agent: Default
+----------------------------------------
