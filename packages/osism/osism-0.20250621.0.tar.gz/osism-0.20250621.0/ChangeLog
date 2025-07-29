@@ -1,0 +1,7 @@
+CHANGES
+=======
+
+v0.20250621.0
+-------------
+
+* Add first-time configuration hints to SONiC sync output (#1490)
