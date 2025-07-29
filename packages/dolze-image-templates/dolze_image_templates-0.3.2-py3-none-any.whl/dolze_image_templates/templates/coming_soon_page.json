@@ -1,0 +1,48 @@
+{
+  "name": "coming_soon_page",
+  "description": "Minimalistic Coming Soon design with elegant typography and subtle decorative elements",
+  "size": { "width": 1080, "height": 1080 },
+  "use_base_image": false,
+  "components": [
+    {
+      "type": "rectangle",
+      "position": { "x": 0, "y": 0 },
+      "size": { "width": 1080, "height": 1080 },
+      "fill_color": "#f9f5f0"
+    },
+    {
+      "type": "text",
+      "text": "Coming",
+      "position": { "x": 540, "y": 440 },
+      "font_path": "OpenSans-Regular.ttf",
+      "font_size": 120,
+      "color": "#000000",
+      "alignment": "center"
+    },
+    {
+      "type": "text",
+      "text": "SOON.",
+      "position": { "x": 540, "y": 580 },
+      "font_path": "OpenSans-Regular.ttf",
+      "font_size": 160,
+      "color": "#000000",
+      "alignment": "center"
+    },
+    {
+      "type": "text",
+      "text": "STAY TUNED",
+      "position": { "x": 540, "y": 720 },
+      "font_path": "CormorantGaramond-Medium",
+      "font_size": 40,
+      "color": "#000000",
+      "alignment": "center"
+    },
+    {
+      "type": "rectangle",
+      "position": { "x": 640, "y": 730 },
+      "size": { "width": 160, "height": 4 },
+      "fill_color": "#000000",
+      "border_radius": 2
+    }
+  ]
+}

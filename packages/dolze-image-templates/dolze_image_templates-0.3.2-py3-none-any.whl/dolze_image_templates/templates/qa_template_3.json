@@ -1,0 +1,127 @@
+{
+  "name": "qa_template_3",
+  "description": "Vibrant playful Q&A template with enhanced confetti, dynamic polaroid layers, and animated accents",
+  "size": { "width": 2560, "height": 2560 },
+  "use_base_image": false,
+  "components": [
+    {
+      "type": "rectangle",
+      "position": { "x": 0, "y": 0 },
+      "size": { "width": 2560, "height": 2560 },
+      "fill_color": "${theme_color}",
+      "border_radius": 0,
+      "background_effect": "confetti-large"
+    },
+
+    {
+      "type": "polygon",
+      "points": [
+        [2000, 2100],
+        [2560, 2560],
+        [1700, 2560]
+      ],
+      "position": { "x": 0, "y": 0 },
+      "fill_color": [253, 186, 116, 0.1],
+      "opacity": 0.85
+    },
+    {
+      "type": "rectangle",
+      "position": { "x": 340, "y": 620 },
+      "size": { "width": 1860, "height": 1120 },
+      "fill_color": [255, 255, 255, 0.96],
+      "border_radius": 42,
+      "rotation_angle": -3.5,
+      "z_index": 2,
+      "outline_color": "#111111",
+      "outline_width": 2
+    },
+    {
+      "type": "rectangle",
+      "position": { "x": 430, "y": 900 },
+      "size": { "width": 1860, "height": 1120 },
+      "fill_color": [255, 255, 255, 0.96],
+      "border_radius": 42,
+      "outline_color": "#111111",
+      "outline_width": 2,
+      "rotation_angle": 4,
+      "z_index": 1
+    },
+    {
+      "type": "image",
+      "image_url": "${logo_url}",
+      "position": { "x": 180, "y": 180 },
+      "size": { "width": 320, "height": 320 },
+      "frame_shape": "hexagon",
+      "circle_crop": true,
+      "animation_glow": [236, 72, 153, 0.35],
+      "shadow": {
+        "color": [236, 72, 153, 0.1],
+        "offset_x": 0,
+        "offset_y": 15,
+        "blur_radius": 24
+      }
+    },
+    {
+      "type": "text",
+      "text": "${question}",
+      "position": { "x": 490, "y": 650 },
+      "font_path": "Fredoka-Bold",
+      "font_size": 165,
+      "color": [71, 21, 134, 1],
+      "max_width": 1560,
+      "line_spacing": 1.25,
+      "align": "center"
+    },
+
+    {
+      "type": "text",
+      "text": "${answer}",
+      "position": { "x": 580, "y": 1020 },
+      "font_path": "Outfit-Medium",
+      "font_size": 98,
+      "color": [75, 85, 99, 1],
+      "max_width": 1500,
+      "line_spacing": 1.6,
+      "line_height": 1.6,
+      "align": "center"
+    },
+    {
+      "type": "rectangle",
+      "position": { "x": 520, "y": 1780 },
+      "size": { "width": 1680, "height": 4 },
+      "fill_color": [253, 186, 116, 0.18],
+      "border_radius": 2
+    },
+    {
+      "type": "path",
+      "position": { "x": 360, "y": 1960 },
+      "path_data": "M0,40 Q450,-50 1100,40 Q1700,120 2140,60 L2140,180 Q1700,230 1100,170 Q450,200 0,160 Z",
+      "fill_color": [251, 191, 36, 1],
+      "ribbon_style": "curved",
+      "shadow": {
+        "color": [0, 0, 0, 0.08],
+        "offset_x": 4,
+        "offset_y": 8,
+        "blur_radius": 10
+      }
+    },
+    {
+      "type": "text",
+      "text": "${website_url}",
+      "position": { "x": 780, "y": 2100 },
+      "font_path": "Outfit-Bold",
+      "font_size": 76,
+      "color": [255, 255, 255, 1],
+      "max_width": 1400,
+      "line_spacing": 1.2,
+      "align": "center",
+      "font_style": "italic",
+      "shadow": {
+        "color": [124, 58, 237, 0.1],
+        "offset_x": 0,
+        "offset_y": 5,
+        "blur_radius": 8
+      }
+    }
+  ]
+}
