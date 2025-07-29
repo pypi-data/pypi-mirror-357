@@ -1,0 +1,12 @@
+mantra/__init__.py,sha256=4Lk0yJkilpVVPwD95fsvqHjkPZSAwWFHCPu8jnUOK18,2475
+mantra/__main__.py,sha256=tNRwP_A6m-COmC5YMmUYpY8V_WgWfeAgx4HyLUO11lw,206
+mantra/ast_nodes.py,sha256=MktuPbWaWppZ81IwWA-Gd2UnO14eJZpHNyn_DOPOi1E,21817
+mantra/cli.py,sha256=4nyT2DiSugBO4J81kE2HJbwrlp_V5KeV6LyJArFnsAc,2814
+mantra/interpreter.py,sha256=36vTUUVO5xtb_3vrk6hNlnjoLbxF5cThCvuTgsFG7C4,18395
+mantra/lexer.py,sha256=ZX6gsH1CPwJKXi9dAMAiyW5OPRURNdNEfNebwKpYJ6E,7707
+mantra/parser.py,sha256=4N98-9ziLvu8VTMWLiTzp6ITUdpsdhFtW8wnQFqOkr0,16293
+mantra_lang-0.1.0.dist-info/METADATA,sha256=sAbT6gDp9gU9PYoKeFHI8jjn-UETXrsS0nCDYxRdaJc,9976
+mantra_lang-0.1.0.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+mantra_lang-0.1.0.dist-info/entry_points.txt,sha256=71RE4eIVljv8FyHUZSUfoQPrAmBou6FNOUmENRFlFps,43
+mantra_lang-0.1.0.dist-info/top_level.txt,sha256=7zjYKXg6Eagfu6gPbmOPoyTvSHgc9emP10kXbv8u5Ys,7
+mantra_lang-0.1.0.dist-info/RECORD,,
