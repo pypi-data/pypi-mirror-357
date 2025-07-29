@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: SAUIGeo
+Version: 1.3.4
+Summary: My Own UI Library
+Author-email: Geomedge <wieczorekr463@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/Geomedge/SAU
+Project-URL: Issues, https://github.com/Geomedge/SAU/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# SAUI 1.03
+Documentation:
