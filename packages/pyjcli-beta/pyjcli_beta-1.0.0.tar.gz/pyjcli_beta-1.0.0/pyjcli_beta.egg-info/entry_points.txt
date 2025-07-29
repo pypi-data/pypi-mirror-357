@@ -1,0 +1,2 @@
+[console_scripts]
+pydb = pydb.cli:main

@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+pydb/__init__.py
+pydb/database.py
+pyjcli_beta.egg-info/PKG-INFO
+pyjcli_beta.egg-info/SOURCES.txt
+pyjcli_beta.egg-info/dependency_links.txt
+pyjcli_beta.egg-info/entry_points.txt
+pyjcli_beta.egg-info/top_level.txt
