@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+damuta/damuta.egg-info/PKG-INFO
+damuta/damuta.egg-info/SOURCES.txt
+damuta/damuta.egg-info/dependency_links.txt
+damuta/damuta.egg-info/top_level.txt
+tests/test_base.py
+tests/test_model_init.py
+tests/test_model_opt_method.py
