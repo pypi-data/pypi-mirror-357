@@ -1,0 +1,2 @@
+[console_scripts]
+wd-tag-heatmap = wd_tag_heatmap.cli:main
