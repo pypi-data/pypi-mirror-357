@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+cartinese/__init__.py
+cartinese.egg-info/PKG-INFO
+cartinese.egg-info/SOURCES.txt
+cartinese.egg-info/dependency_links.txt
+cartinese.egg-info/top_level.txt
