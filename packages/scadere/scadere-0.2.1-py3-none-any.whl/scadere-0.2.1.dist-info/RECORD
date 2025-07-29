@@ -1,0 +1,10 @@
+scadere/__init__.py,sha256=WSuBWZmUmiqMjQdUFmeqw0Y-fMdvlM_PlFpU9whBlo0,4217
+scadere/atom2xhtml.xslt,sha256=uV7yPPAsDH-99QXrDjCliQztKvp5Vmx7Olwvlk4B4G8,1547
+scadere/check.py,sha256=1BGVcMoOjyruOe_qrXvXE2Ji7IHdhRSI_D5E3dYV3CI,4871
+scadere/listen.py,sha256=NbtxGPJkoArlXzD1gRiaMYp-pokR8H8-3TRD_M7341w,14145
+scadere-0.2.1.dist-info/entry_points.txt,sha256=WI9tsTuMAlnYF-y9bcemLfFEe0Qttsdabr-MXs7qSA8,87
+scadere-0.2.1.dist-info/licenses/LICENSES/AGPL-3.0-or-later.txt,sha256=hIahDEOTzuHCU5J2nd07LWwkLW7Hko4UFO__ffsvB-8,34523
+scadere-0.2.1.dist-info/licenses/LICENSES/CC0-1.0.txt,sha256=ogEPNDSH0_dhiv_lT3ifVIdgIzHAqNA_SemnxUfPBJk,7048
+scadere-0.2.1.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+scadere-0.2.1.dist-info/METADATA,sha256=pqgPdKYhpyeuAune7dUTk6GqfXgyKvzMMbAPdQH6vjo,4942
+scadere-0.2.1.dist-info/RECORD,,
