@@ -1,0 +1,6 @@
+[console_scripts]
+dun=dun.__main__:main
+format=scripts.format:main
+lint=scripts.lint:main
+test=scripts.test:main
+
