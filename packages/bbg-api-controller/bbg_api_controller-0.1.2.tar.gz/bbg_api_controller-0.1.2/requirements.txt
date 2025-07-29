@@ -1,0 +1,8 @@
+pdblp
+pandas
+tqdm
+python-dotenv
+canonical_transformer
+string_date_controller
+shining_pebbles
+mongodb_controller
