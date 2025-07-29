@@ -1,0 +1,47 @@
+[project]
+name = "vme-mcp-cli"
+version = "0.1.2"
+description = "VME Infrastructure Management CLI Tool - Chat interface with voice commands"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.54.0",
+    "openai>=1.0.0",
+    "fastmcp>=2.8.1",
+    "click>=8.0.0",
+    "textual==0.85.2",
+    "rich>=13.0.0",
+    "pyyaml>=6.0.2",
+    "python-dotenv>=1.1.0",
+    "websockets<14.0",
+    "httpx>=0.25.0",
+]
+
+[project.scripts]
+vme = "vme:vme"
+
+[project.urls]
+Homepage = "https://github.com/frippe75/vme-fastmcp-server-v2"
+Repository = "https://github.com/frippe75/vme-fastmcp-server-v2"
+Issues = "https://github.com/frippe75/vme-fastmcp-server-v2/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+]
+audio = [
+    "sounddevice>=0.4.0",
+    "soundfile>=0.12.0",
+    "numpy>=1.20.0", # Lower requirement for better compatibility
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "vme"]
+exclude = ["tests*", "test_*", "*_test*"]
