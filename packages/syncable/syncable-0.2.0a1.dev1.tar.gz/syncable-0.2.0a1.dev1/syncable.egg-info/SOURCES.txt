@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+syncable/__init__.py
+syncable/main.py
+syncable.egg-info/PKG-INFO
+syncable.egg-info/SOURCES.txt
+syncable.egg-info/dependency_links.txt
+syncable.egg-info/requires.txt
+syncable.egg-info/top_level.txt
