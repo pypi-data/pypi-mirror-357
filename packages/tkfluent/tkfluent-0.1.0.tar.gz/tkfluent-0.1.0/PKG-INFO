@@ -1,0 +1,83 @@
+Metadata-Version: 2.3
+Name: tkfluent
+Version: 0.1.0
+Summary: Fluent Design for Tkinter
+License: MIT
+Keywords: tkfluent,tksvg,tkinter,fluent,modern,UI,interface
+Author: XiangQinxi
+Author-email: xiangqinxi@outlook.com
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: MacOS X
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Environment :: X11 Applications
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Tcl
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: easydict (>=1.13,<2.0)
+Requires-Dist: numpy (>=2.3.1,<3.0.0)
+Requires-Dist: pillow (>=10.2.0,<11.0.0)
+Requires-Dist: svgwrite (>=1.4.3,<2.0.0)
+Requires-Dist: tkdeft (>=0.0.9,<0.0.10)
+Requires-Dist: tkextrafont (>=0.6.3,<0.7.0)
+Requires-Dist: tksvg (>=0.7.4,<0.8.0)
+Project-URL: Documentation, https://tkfluent.netlify.app
+Description-Content-Type: text/markdown
+
+# tkfluent
+
+`tkinter`现代化组件库。设计来于`Fluent` `WinUI3` 设计
+
+![](https://learn.microsoft.com/zh-cn/windows/apps/images/logo-winui.png)
+
+## 依赖图
+```bash
+PS .\tkfluent> poetry show --tree                                                                                                                                                                                        
+easydict 1.13 Access dict values as attributes (works recursively).
+pillow 10.4.0 Python Imaging Library (Fork)
+svgwrite 1.4.3 A Python library to create SVG drawings.
+tkdeft 0.0.9 使用tkinter+tksvg开发的现代化界面库
+├── easydict >=1.13,<2.0
+├── pillow >=10.2.0,<11.0.0
+├── svgwrite >=1.4.3,<2.0.0
+├── tkextrafont >=0.6.3,<0.7.0
+│   └── scikit-build *
+│       ├── distro *
+│       ├── packaging *
+│       ├── setuptools >=42.0.0
+│       ├── tomli *
+│       └── wheel >=0.32.0
+└── tksvg >=0.7.4,<0.8.0
+    └── scikit-build *
+        ├── distro *
+        ├── packaging *
+        ├── setuptools >=42.0.0
+        ├── tomli *
+        └── wheel >=0.32.0
+tkextrafont 0.6.3 Fonts loader for Tkinter
+└── scikit-build *
+    ├── distro *
+    ├── packaging *
+    ├── setuptools >=42.0.0
+    ├── tomli *
+    └── wheel >=0.32.0
+tksvg 0.7.4 SVG support for PhotoImage in Tk 8.6
+└── scikit-build *
+    ├── distro *
+    ├── packaging *
+    ├── setuptools >=42.0.0
+    ├── tomli *
+    └── wheel >=0.32.0
+```
