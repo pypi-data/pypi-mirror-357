@@ -1,0 +1,10 @@
+[console_scripts]
+juice-phs-opl2cov=phs.cli:obs_plan_to_coverage
+juice-phs-opl2itl=phs.cli:obs_plan_to_timeline
+juice-phs-opl2otc=phs.cli:cli_opl_to_otc
+juice-phs-opl2otl=phs.cli:cli_opl_to_otl
+juice-phs-opl2ptr=phs.cli:cli_opl_to_ptr
+juice-phs-ptr-check=phs.cli:ptr_check
+juice-phs-ptr2opl=phs.cli:cli_ptr_to_opl
+juice-phs-rpwi-lp=phs.cli:rpwi_langmuir_probe_illumination
+
