@@ -1,0 +1,14 @@
+django_hls/__init__.py,sha256=ubam9o-3QmPi15YZm0CfsXcCw0_3UYl3-eg3Tbi0qi8,54
+django_hls/admin.py,sha256=KDinuFOB7j8aGSpXcZa77ydeEXOGyOwQY7fL0-B-cL4,32
+django_hls/apps.py,sha256=lyF2y9_g6ylJHSjgdvX7LyoJ0owjz-Phr9eDdcnARaY,1204
+django_hls/conf.py,sha256=ZBvdno4rE-McLmtlOyzuXkL16K5rOAQeU07pzTMxuNw,309
+django_hls/models.py,sha256=uOWfAo47JXD9v4Jn8hSKRNGZ3goItnpf15IRSxDpv2g,1895
+django_hls/tasks.py,sha256=iMLZ9pkt4Ve-Vw8stbffX1ooqUMyJgWaNiE6SmMkpA8,582
+django_hls/tests.py,sha256=2uDafv3Ns6f7Vy1ekUtgYxCZEi1KRyesZDTAFhYcX-E,63
+django_hls/utils.py,sha256=One5guUTwdPOy733dO6l4SaKT-VOORH5-nL2gin-ymI,685
+django_hls/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_hls-1.2.0.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_hls-1.2.0.dist-info/METADATA,sha256=jGShdd5Q5NdOfz0Nw4-in_fsHoRxo7m5l5eZ4rIzo1Q,1820
+django_hls-1.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_hls-1.2.0.dist-info/top_level.txt,sha256=dvMoghn7m8FURekt_yc_7ByxJzumCAcrv-0HuKEZ6QY,11
+django_hls-1.2.0.dist-info/RECORD,,
