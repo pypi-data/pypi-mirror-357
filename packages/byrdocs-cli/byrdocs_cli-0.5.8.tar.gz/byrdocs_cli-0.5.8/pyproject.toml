@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "byrdocs_cli"
+version = "0.5.8"
+authors = [
+  { name="Rikka", email="rikka@byrdocs.org" },
+]
+license = {text = "MIT License"}
+description = "A simple command line tool for BYR Docs"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests>=2.25.1",
+    "boto3==1.35.62",
+    "botocore==1.35.62",
+    "argcomplete==3.5.1",
+    "tqdm==4.67.0",
+    "InquirerPy==0.3.4",
+    "pyyaml==6.0.2",
+    "isbnlib==3.10.14",
+    "pinyin==0.4.0",
+    "yaspin==3.1.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/byrdocs/byrdocs-cli"
+
+[project.scripts]
+byrdocs = "byrdocs:main"
