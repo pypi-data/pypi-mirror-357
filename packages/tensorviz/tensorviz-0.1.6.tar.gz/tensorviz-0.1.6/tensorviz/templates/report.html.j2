@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TensorViz Report</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    h1 { color: #444; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 10px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f2f2f2; }
+    summary { font-weight: bold; cursor: pointer; margin-top: 10px; }
+    details { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <h1>TensorViz Model Report</h1>
+  <p>Total layers: {{ logs|length }}</p>
+
+  {% set current_group = None %}
+  {% for log in logs %}
+    {% if log.group != current_group %}
+      {% if current_group is not none %}
+          </tbody>
+        </table>
+      </details>
+      {% endif %}
+
+      <details open>
+        <summary>Group: {{ log.group or 'Ungrouped' }}</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Input Shape</th>
+              <th>Output Shape</th>
+              <th>Data Type</th>
+              <th>Gradient (mean ± std)</th>
+            </tr>
+          </thead>
+          <tbody>
+      {% set current_group = log.group %}
+    {% endif %}
+
+    <tr>
+      <td>{{ log.name }}</td>
+      <td>{{ log.input_shape }}</td>
+      <td>{{ log.output_shape }}</td>
+      <td>{{ log.dtype }}</td>
+      <td>
+        {% if log.grad %}
+          {{ "%.4f"|format(log.grad.mean) }} ± {{ "%.4f"|format(log.grad.std) }}
+        {% else %}
+          N/A
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody></table></details>
+
+  <h2>Model Graph</h2>
+  <div style="border:1px solid #ccc; padding:10px; overflow-x:auto;">
+    {{ model_svg | safe }}
+
+  </div>
+
+</body>
+</html>

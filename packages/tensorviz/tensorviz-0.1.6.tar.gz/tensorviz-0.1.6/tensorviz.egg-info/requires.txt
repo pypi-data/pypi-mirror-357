@@ -1,0 +1,6 @@
+torch
+graphviz
+rich
+jinja2
+typer
+torchview

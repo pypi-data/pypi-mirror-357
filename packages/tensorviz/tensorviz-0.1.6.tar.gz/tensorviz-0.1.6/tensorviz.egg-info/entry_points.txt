@@ -1,0 +1,2 @@
+[console_scripts]
+tensorviz = tensorviz.cli:app

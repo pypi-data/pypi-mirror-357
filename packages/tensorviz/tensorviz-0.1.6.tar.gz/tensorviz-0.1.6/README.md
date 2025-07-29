@@ -1,0 +1,209 @@
+# 🧠 TensorViz
+
+> Visualize, debug, and inspect your PyTorch models like never before.
+
+**TensorViz** is an AI-powered Python package that automatically logs and visualizes the internals of PyTorch models during forward/backward passes — including input/output shapes, data types, gradients, and more. It generates an interactive HTML report with collapsible groups, Graphviz diagrams, and a clean structure for inspecting every layer.
+
+---
+
+## 🚀 Features
+
+- ✅ Auto-log layer name, input/output shape, data type
+- ✅ Optional gradient stats (mean ± std) after `.backward()`
+- ✅ Collapsible `<details>` sections for layer groups
+- ✅ Inline SVG diagram via Graphviz
+- ✅ Lightweight, minimal dependencies
+- ✅ Python API + CLI
+- ✅ Works with all `torch.nn.Module`s
+
+---
+
+## 📦 Installation
+
+```bash
+pip install tensorviz
+```
+
+You’ll also need [Graphviz](https://graphviz.org/) for the SVG model diagram:
+
+```bash
+# Ubuntu/Debian
+sudo apt install graphviz
+
+# macOS (via Homebrew)
+brew install graphviz
+
+# Optional Python binding
+pip install graphviz
+```
+
+---
+
+## ✨ Quick Start
+
+### Python API
+
+```python
+import torch
+import torchvision.models as models
+from tensorviz import visualize_model
+
+model = models.resnet18()
+input_tensor = torch.randn(1, 3, 224, 224)
+
+visualize_model(model, input_tensor, save_dir="tensorviz_report")
+```
+
+### CLI
+
+```bash
+tensorviz report model.pt --input-shape 1 3 224 224
+```
+
+This generates:
+
+- `tensorviz_report/logs.json`
+- `tensorviz_report/graph.svg`
+- `tensorviz_report/report.html`
+
+---
+
+## 🧰 Usage Options
+
+```python
+visualize_model(
+    model,
+    input_tensor=torch.randn(1, 3, 224, 224),
+    output_file="tensorviz_report/report.html",
+    include_grad=True,         # Capture gradient statistics
+    include_graph=True,        # Include Graphviz model diagram
+    html_template=None         # Optional: custom HTML template path
+)
+```
+
+---
+
+## 🔍 How It Works
+
+TensorViz is built on:
+
+- PyTorch **forward hooks** for real-time logging
+- **Backward hooks** for optional `.grad` capture
+- **Jinja2** for HTML templating
+- **Graphviz** via `torchviz` (or manual tracing)
+- Native HTML5 tags (`<details>`, `<summary>`) for collapsibility
+
+---
+
+## 📁 Project Structure
+
+```plaintext
+tensorviz/
+├── __init__.py
+├── hooks.py               # Layer hooks (forward/backward)
+├── render.py              # HTML generation logic
+├── svg_generator.py       # Graphviz export logic
+├── cli.py                 # CLI entry point
+├── templates/
+│   └── report.html.j2     # HTML report template
+├── static/                # Optional CSS/assets
+tests/
+examples/
+setup.py
+README.md
+LICENSE
+```
+
+---
+
+## 📜 License
+
+TensorViz is released under the **MIT License**.
+
+```text
+MIT License
+
+Copyright (c) 2025 Divyansh Saraswat
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+...
+```
+
+See [LICENSE](./LICENSE) for the full legal terms.
+
+### 👇 Optional License Alternatives
+
+If your organization or project requires a different license, the following alternatives are compatible:
+
+- [Apache License 2.0](https://opensource.org/licenses/Apache-2.0)
+- [BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause)
+- [GNU GPL v3.0](https://www.gnu.org/licenses/gpl-3.0.html) *(strict copyleft)*
+
+Please fork and adapt the license header accordingly if needed.
+
+---
+
+## 👥 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests (`pytest`)
+5. Submit a pull request with a clear description
+
+---
+
+## 🧪 Testing
+
+Run tests using:
+
+```bash
+pytest tests/
+```
+
+Or run a manual test:
+
+```bash
+python examples/run_resnet.py
+```
+
+---
+
+## 🙋 FAQ
+
+**Q: Does it work with custom layers?**  
+Yes. Any `torch.nn.Module` subclass will be traced automatically.
+
+**Q: Does it work with HuggingFace Transformers?**  
+Yes. TensorViz supports `torchvision`, `transformers`, and custom networks.
+
+**Q: Is Graphviz optional?**  
+Yes. The HTML report works without it, but the model diagram will be skipped.
+
+---
+
+## ✨ Acknowledgments
+
+- [PyTorch](https://pytorch.org/)
+- [Graphviz](https://graphviz.org/)
+- [Jinja2](https://jinja.palletsprojects.com/)
+- [Torchviz](https://github.com/szagoruyko/pytorchviz)
+
+---
+
+## 🔗 Related Projects
+
+- [`torchsummary`](https://github.com/sksq96/pytorch-summary)
+- [`torchviz`](https://github.com/szagoruyko/pytorchviz)
+- [`tensorboard`](https://pytorch.org/docs/stable/tensorboard.html)
+
+---
+
+Made with ❤️ by [Divyansh Saraswat](https://github.com/divyanshsaraswat)

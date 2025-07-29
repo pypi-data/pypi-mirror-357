@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tensorviz"
+version = "0.1.6"
+description = "Visualize and debug PyTorch model tensors"
+authors = [
+  { name = "Divyansh Saraswat" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "torch",
+  "graphviz",
+  "rich",
+  "jinja2",
+  "typer",
+  "torchview"
+]
+
+[project.scripts]
+tensorviz = "tensorviz.cli:app"
+
+[tool.setuptools]
+packages = ["tensorviz"]
+
+[tool.setuptools.package-data]
+"tensorviz" = ["templates/*.j2"]
