@@ -1,0 +1,4 @@
+requests
+simpleeval
+pyperclip
+art
