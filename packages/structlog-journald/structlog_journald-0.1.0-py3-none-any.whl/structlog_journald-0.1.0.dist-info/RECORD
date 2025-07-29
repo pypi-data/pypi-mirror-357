@@ -1,0 +1,8 @@
+structlog_journald/__init__.py,sha256=meUIEBZj8jy1U93zh3xZKexSb_Id9AQtrH9JXNo25Go,197
+structlog_journald/consts.py,sha256=pfFe2AtgdRHZ9G9KISRCoXnDcoHhUecT17C-3IHCuWU,1744
+structlog_journald/detect.py,sha256=FPGWdRo91axfDWUgUgIX-1Kj-Qh7GBnQZnHBkCksyK0,437
+structlog_journald/processors.py,sha256=g3LbqRRWFPGwAljY1XllDS5xI97RHCUX7vfsypnXqsk,4327
+structlog_journald/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+structlog_journald-0.1.0.dist-info/METADATA,sha256=n0bfT4SmtwUDbnDhVhXRXSNw3wAWsR67d5y3RP7ZQhk,1936
+structlog_journald-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+structlog_journald-0.1.0.dist-info/RECORD,,
