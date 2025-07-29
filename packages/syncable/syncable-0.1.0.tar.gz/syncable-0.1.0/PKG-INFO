@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: syncable
+Version: 0.1.0
+Summary: Simple decorator for executing an asynchronous Python callable in a synchronous context.
+Home-page: https://github.com/fullstackfarm/syncable
+Author: Fullstack Farm
+Author-email: aj@fullstackfarm.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: twine>=6.1.0; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-python
+Dynamic: summary
+
+# syncable
+Simple decorator for executing an asynchronous Python callable in a synchronous context.
