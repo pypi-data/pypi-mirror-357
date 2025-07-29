@@ -1,0 +1,17 @@
+include README.md
+include README.rst
+include LICENSE.txt
+include CHANGELOG.md
+include pyproject.toml
+include tox.ini
+include CLAUDE.md
+recursive-include tests *.py
+recursive-include tests/data *.txt *.png
+exclude tests/bin
+prune tests/__pycache__
+prune cpbd/__pycache__
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.swp
+global-exclude .DS_Store
+global-exclude __pycache__
