@@ -1,0 +1,2 @@
+[console_scripts]
+woodwork = woodwork.__main__:run_as_standalone_app
