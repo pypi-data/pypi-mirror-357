@@ -1,0 +1,234 @@
+# MCP Auto Backup
+
+A lightweight backup tool for AI Agents built with Model Context Protocol (MCP). Simpler than Git, focused on quick backup needs.
+
+## Features
+
+- **Single File & Folder Backup**: Backup individual files or entire directories
+- **Automatic Safety Backups**: Creates safety backups before restore operations
+- **Checksum Verification**: SHA256 verification for data integrity
+- **Compressed Archives**: Efficient folder backup using gzip compression
+- **Cross-Platform**: Works on Windows, Linux, and macOS
+- **Async Operations**: Non-blocking operations for large files
+- **MCP Protocol**: Full Model Context Protocol compliance for AI integration
+
+## Installation
+
+### From PyPI (Recommended)
+
+```bash
+pip install mcp-auto-backup
+```
+
+### From Source
+
+```bash
+git clone https://github.com/yourusername/mcp-auto-backup.git
+cd mcp-auto-backup
+pip install -e .
+```
+
+## Quick Start
+
+### 1. Initialize the backup system
+
+```bash
+mcp-auto-backup init
+```
+
+### 2. Start the MCP server
+
+```bash
+mcp-auto-backup serve
+```
+
+### 3. Use with your AI agent
+
+The server provides 8 MCP tools for backup operations:
+
+- `backup_create` - Backup a single file
+- `backup_list` - List backups for a file
+- `backup_restore` - Restore a file backup
+- `backup_folder_create` - Backup a folder
+- `backup_folder_list` - List folder backups
+- `backup_folder_restore` - Restore a folder backup
+- `backup_list_all` - List all backups
+- `backup_cancel` - Cancel active operations
+
+## MCP Tools Reference
+
+### File Operations
+
+#### backup_create(file_path, context_description=None)
+Create a backup of a single file.
+
+```python
+# Example usage in AI agent
+result = await call_tool("backup_create", {
+    "file_path": "/path/to/important_file.py",
+    "context_description": "Before refactoring"
+})
+```
+
+#### backup_list(file_path)
+List all backups for a specific file.
+
+```python
+backups = await call_tool("backup_list", {
+    "file_path": "/path/to/important_file.py"
+})
+```
+
+#### backup_restore(backup_id, target_path=None)
+Restore a file backup (creates safety backup first).
+
+```python
+result = await call_tool("backup_restore", {
+    "backup_id": "uuid-here",
+    "target_path": "/optional/custom/path.py"
+})
+```
+
+### Folder Operations
+
+#### backup_folder_create(folder_path, include_patterns=None, exclude_patterns=None, max_depth=None, context_description=None)
+Create a backup of a folder with optional filtering.
+
+```python
+result = await call_tool("backup_folder_create", {
+    "folder_path": "/path/to/project",
+    "exclude_patterns": ["*.tmp", "__pycache__", ".git"],
+    "context_description": "Project milestone backup"
+})
+```
+
+#### backup_folder_list(folder_path)
+List all backups for a specific folder.
+
+#### backup_folder_restore(backup_id, target_path)
+Restore a folder backup.
+
+### Global Operations
+
+#### backup_list_all()
+List all backups in the system.
+
+#### backup_cancel(operation_id)
+Cancel an active backup operation.
+
+## Configuration
+
+Configure via environment variables or `.env` file:
+
+```bash
+# Backup storage location
+MCP_BACKUP_BACKUP_ROOT=/custom/backup/path
+
+# Security settings
+MCP_BACKUP_ENABLE_ENCRYPTION=true
+MCP_BACKUP_ENCRYPTION_KEY=your-key-here
+
+# Performance settings
+MCP_BACKUP_MAX_FILE_SIZE=104857600  # 100MB
+MCP_BACKUP_MAX_CONCURRENT_OPERATIONS=3
+
+# Cleanup settings
+MCP_BACKUP_AUTO_CLEANUP_DAYS=30
+
+# Logging
+MCP_BACKUP_LOG_LEVEL=INFO
+MCP_BACKUP_LOG_FILE=/path/to/backup.log
+```
+
+## CLI Commands
+
+### Server Management
+
+```bash
+# Start server with custom settings
+mcp-auto-backup serve --backup-root /custom/path --log-level DEBUG
+
+# Show system information
+mcp-auto-backup info
+
+# Initialize backup system
+mcp-auto-backup init --backup-root /custom/path
+```
+
+## Storage Structure
+
+```
+.mcp_backups/
+├── metadata.json              # Global metadata
+├── files/                     # File backups
+│   └── {file_hash}/
+│       ├── {backup_id}.data   # Backup data
+│       └── {backup_id}.meta   # Backup metadata
+└── folders/                   # Folder backups
+    └── {folder_hash}/
+        ├── {backup_id}.tar.gz # Compressed backup
+        └── {backup_id}.meta   # Backup metadata
+```
+
+## Safety Features
+
+- **Automatic Safety Backups**: Before any restore operation, the current file/folder is automatically backed up
+- **Checksum Verification**: All backups are verified with SHA256 checksums
+- **Atomic Operations**: Operations are atomic - they either complete fully or are rolled back
+- **Path Validation**: Prevents path traversal and other security issues
+
+## Development
+
+### Setup Development Environment
+
+```bash
+git clone https://github.com/yourusername/mcp-auto-backup.git
+cd mcp-auto-backup
+pip install -e ".[dev]"
+```
+
+### Run Tests
+
+```bash
+pytest
+```
+
+### Code Quality
+
+```bash
+# Format code
+black src tests
+
+# Lint code
+ruff check src tests
+
+# Type checking
+mypy src
+```
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Run quality checks
+6. Submit a pull request
+
+## Support
+
+- GitHub Issues: [Report bugs or request features](https://github.com/yourusername/mcp-auto-backup/issues)
+- Documentation: [Full documentation](https://github.com/yourusername/mcp-auto-backup#readme)
+
+## Changelog
+
+### v0.1.0
+- Initial release
+- Core backup and restore functionality
+- MCP protocol compliance
+- CLI interface
+- Cross-platform support
