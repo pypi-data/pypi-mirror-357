@@ -1,0 +1,113 @@
+[tool.poetry]
+name = "qsar-modi"
+version = "0.1.0"
+description = "Package for calculating the Modelability Index (MODI) of a QSAR dataset"
+
+
+license = "MIT"
+
+authors = [
+    "James Wellnitz <wellnitz.james@gmail.com>",
+]
+maintainers = [
+    "James Wellnitz <wellnitz.james@gmail.com>",
+]
+readme = "README.md"
+repository = "https://github.com/molecularmodelinglab/modi"
+classifiers = [
+    "Natural Language :: English",
+    "Operating System :: OS Independent"
+]
+packages = [
+    { include = "qsar_modi", from = "src"},
+    { include = "qsar_modi/py.typed", from = "src"},
+]
+requires-poetry = ">=2.0"
+
+[tool.poetry.scripts]
+modi = "qsar_modi.modi_cli:modi_cli"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+click = "^8.1.3"
+rdkit = "^2025.3.3"
+numpy = "~2.3.1"
+scipy = "~1.15.3"
+tqdm = "^4.66.1"
+psutil = "^7.0.0"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.2.0"
+mypy = "^1.8.0"
+poetry = "^2.1.3"
+poetry-bumpversion = "^0.3.1"
+ruff = "^0.5.5"
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest = "~7.2.0"
+pytest-cov = "~4.0.0"
+pytest-html = "^3.2.0"
+pytest-xdist = "^3.5.0"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry_bumpversion.file."src/qsar_modi/__init__.py"]
+search = '__version__ = "{current_version}"'
+replace = '__version__ = "{new_version}"'
+
+[[tool.mypy.overrides]]
+module = ["untyped_package.*"]
+follow_untyped_imports = true
+
+[tool.mypy]
+files = ["src"]
+
+[tool.coverage.report]
+fail_under = 75
+
+[tool.pytest.ini_options]
+addopts = """
+    --color=yes
+    --html=test-results/unit-tests-results.html
+"""
+markers = [
+    "unit: marks tests as unit tests",
+    "functional: marks test as functional tests",
+]
+testpaths = ["tests"]
+
+[tool.ruff]
+lint.select = [
+    "F",
+    "E",
+    "W",
+    "I001",
+    "I002",
+    "B",
+    "D"
+]
+src = ["src", "tests"]
+line-length = 99
+lint.ignore = [
+    "D400",
+    "D401",
+    "D200"
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
