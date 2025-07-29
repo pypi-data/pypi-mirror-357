@@ -1,0 +1,3 @@
+[console_scripts]
+mark-mate = mark_mate.cli.main:main
+mark-mate-gui = mark_mate.gui.main:main
