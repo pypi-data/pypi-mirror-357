@@ -1,0 +1,7 @@
+yta_audio_transcription/__init__.py,sha256=ka2lt7r4tZzQ3pQbbHHSg1EAU9DLByO7k-EGLIo1lQQ,6778
+yta_audio_transcription/objects.py,sha256=BfwBWgeCN2evfhUWqcPLRFCMnoIZoBZ6-msZsRxtKhI,4487
+yta_audio_transcription/whisper.py,sha256=Zg6L15FQfvTsBPdY2t6rhFxPz3gjmjAyaLo9ydMJMxs,12065
+yta_audio_transcription-0.0.3.dist-info/LICENSE,sha256=6kbiFSfobTZ7beWiKnHpN902HgBx-Jzgcme0SvKqhKY,1091
+yta_audio_transcription-0.0.3.dist-info/METADATA,sha256=EDyrQlZ4mwzuOYmHv3-Up6BAtmy9hQsIBH3StfVCdsY,811
+yta_audio_transcription-0.0.3.dist-info/WHEEL,sha256=XbeZDeTWKc1w7CSIyre5aMDU_-PohRwTQceYnisIYYY,88
+yta_audio_transcription-0.0.3.dist-info/RECORD,,
