@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "unicorn-binance-websocket-api"
+version = "2.9.1"
+description = "A Python SDK to use the Binance Websocket API`s (com+testnet, com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, com-coin_futures, us, tr, dex/chain+testnet) in a simple, fast, flexible, robust and fully-featured way."
+authors = ["Oliver Zehentleitner"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api"
+documentation = "https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api"
+repository = "https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api"
+
+[tool.poetry.urls]
+'Howto' = 'https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api#howto'
+'Documentation' = 'https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api'
+'Wiki' = 'https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api/wiki'
+'Author' = 'https://www.linkedin.com/in/oliver-zehentleitner'
+'Changes' = 'https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api/changelog.html'
+'License' = 'https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api/license.html'
+'Issue Tracker' = 'https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api/issues'
+'Telegram' = 'https://t.me/unicorndevs'
+
+[tool.poetry.dependencies]
+python = ">=3.8.0"
+cheroot = "*"
+colorama = "*"
+Cython = "*"
+flask = "*"
+flask_restful = "*"
+orjson = "*"
+psutil = "*"
+PySocks = "*"
+requests = ">=2.31.0"
+simplejson = "*"
+unicorn-fy = ">=0.15.0"
+unicorn-binance-rest-api = ">=2.7.0"
+websocket-client = "*"
+websockets = "11.0.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["setuptools", "wheel", "Cython", "pip", "mypy"]
+build-backend = "setuptools.build_meta"
+
+[tool.poetry.package_data]
+"unicorn_binance_websocket_api" = ["*.so", "*.dll", "*.py", "*.pyd", "*.pyi"]
