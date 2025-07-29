@@ -1,0 +1,12 @@
+jinja2
+render-engine-tailwindcss>=2024.1.1a2
+render-engine-markdown
+render-engine>=2025.6.1a1
+
+[dev]
+axe-playwright-python
+playwright
+pytest
+pytest-mock
+pytest-playwright
+ruff
