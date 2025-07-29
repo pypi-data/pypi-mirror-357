@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+tests/test_treels.py
+treels/__init__.py
+treels/main.py
+treels_cli.egg-info/PKG-INFO
+treels_cli.egg-info/SOURCES.txt
+treels_cli.egg-info/dependency_links.txt
+treels_cli.egg-info/entry_points.txt
+treels_cli.egg-info/requires.txt
+treels_cli.egg-info/top_level.txt
