@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: markdown-format-ruff
+Version: 1.0.0
+Summary: Mdformat plugin to run ruff on Python code blocks.
+Author-email: Bagard Hoel <hoel.bagard.hy@hitachi-hightech.com>
+License-File: LICENSE
+Requires-Python: >=3.7
+Requires-Dist: ruff
+Description-Content-Type: text/markdown
+
+# Markdown Format Ruff
+
+[![PyPI](https://img.shields.io/pypi/v/markdown-format-ruff?color=green&style=flat)](https://pypi.org/project/markdown-format-ruff)
+[![License](https://img.shields.io/pypi/l/mono-stubs?style=flat)](https://opensource.org/licenses/MIT)
+
+Mdformat plugin to run ruff on Python code blocks.
+
+## Installation
+
+The package is available on pypi [here](https://pypi.org/project/markdown-format-ruff/), you can install it with:
+
+```bash
+pip install markdown-format-ruff
+```
