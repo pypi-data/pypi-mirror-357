@@ -1,0 +1,206 @@
+Metadata-Version: 2.4
+Name: territories-dashboard-lib
+Version: 0.1.4
+Summary: Librairie pour la visualisation d'indicateurs territoriaux.
+Author-email: Bastien <bastien@prune.sh>
+License: LICENCE OUVERTE 2.0/OPEN LICENCE 2.0
+        Réutilisation de l’« Information » sous cette licence
+        
+        Le « Concédant » concède au « Réutilisateur » un droit non exclusif et gratuit de libre « Réutilisation » de l’« Information » objet de la présente licence, à des fins commerciales ou non, dans le monde entier et pour une durée illimitée, dans les conditions exprimées ci-dessous.
+        
+        Le « Réutilisateur » est libre de réutiliser l’« Information » :
+        
+            de la communiquer, la reproduire, la copier ;
+            de l’adapter, la modifier, l’extraire et la transformer, notamment pour créer des « Informations dérivées » ;
+            de la diffuser, la redistribuer, la publier et la transmettre, de l’exploiter à titre commercial, par exemple en la combinant avec d’autres informations, ou en l’incluant dans votre propre produit ou application.
+        
+        Sous réserve de :
+        
+            mentionner la paternité de l’«Information» : sa source (a minima le nom du « Concédant ») et la date de la dernière mise à jour de l’« Information » réutilisée.
+        
+        Le « Réutilisateur » peut notamment s’ acquitter de cette condition en indiquant l’adresse (URL) renvoyant vers « l’Information » et assurant une mention effective de sa paternité.
+        
+        Par exemple :
+        
+        Dans le cas d’une réutilisation de la base SIRENE de l’INSEE, mentionner l’URL du « Concédant » : www.insee.fr + la date de dernière mise à jour de l’Information réutilisée.
+        
+        Cette mention de paternité ne doit ni conférer un caractère officiel à la « Réutilisation » de l’« Information », ni suggérer une quelconque reconnaissance ou caution par le « Concédant », ou par toute autre entité publique, du « Réutilisateur » ou de sa « Réutilisation ».
+        Données à caractère personnel
+        
+        L’« Information » mise à disposition peut contenir des « Données à caractère personnel » pouvant faire l’objet d’une « Réutilisation ». Alors, le « Concédant » informe le « Réutilisateur » (par tous moyens) de leur présence, l’ « Information » peut être librement réutilisée, sans faire obstacle aux libertés accordées par la présente licence, à condition de respecter le cadre légal relatif à la protection des données à caractère personnel.
+        Droits de propriété intellectuelle
+        
+        Il est garanti au « Réutilisateur » que l’ « Information » ne contient pas de « Droits de propriété intellectuelle » appartenant à des tiers qui pourraient faire obstacle aux libertés qui lui sont accordées par la présente licence.
+        
+        Les éventuels « Droits de propriété intellectuelle » détenus par le « Concédant » sur l’ « Information » ne font pas obstacle aux libertés qui sont accordées par la présente licence. Lorsque le « Concédant » détient des « Droits de propriété intellectuelle » » sur l’ « Information », il les cède au « Réutilisateur » de façon non exclusive, à titre gracieux, pour le monde entier, pour toute la durée des « Droits de propriété intellectuelle », et le « Réutilisateur » peut en faire tout usage conformément aux libertés et aux conditions définies par la présente licence.
+        Responsabilité
+        
+        L’ «Information» est mise à disposition telle que produite ou reçue, sans autre garantie expresse ou tacite qui n’est pas prévue par la présente licence. L’absence de défauts ou d’erreurs éventuellement contenues dans l’ «Information», comme la fourniture continue de l’ « Information » n’est pas garantie par le «Concédant». Il ne peut être tenu pour responsable de toute perte, préjudice ou dommage de quelque sorte causé à des tiers du fait de la « Réutilisation ».
+        
+        Le « Réutilisateur » est seul responsable de la « Réutilisation » de l’« Information ».
+        
+        La « Réutilisation » ne doit pas induire en erreur des tiers quant au contenu de l’« Information », sa source et sa date de mise à jour.
+        Droit applicable
+        
+        La présente licence est régie par le droit français.
+        Compatibilité de la présente licence
+        
+        Elle a été conçue pour être compatible avec toute licence libre qui exige a minima la mention de paternité. Elle est notamment compatible avec la version antérieure de la présente licence ainsi qu’avec les licences « Open Government Licence » (OGL) du Royaume-Uni, « Creative Commons Attribution » (CC-BY) de Creative Commons et « Open Data Commons Attribution » (ODC-BY) de l’Open Knowledge Foundation.
+        Définitions
+        
+        Sont considérés, au sens de la présente licence comme :
+        
+            Le « Concédant » : toute personne concédant un droit de « Réutilisation » sur l’« Information » dans les libertés et les conditions prévues par la présente licence.
+            L’« Information » :
+                toute information publique figurant dans des documents communiqués ou publiés par une administration mentionnée au premier alinéa de l’article L.300-2 du CRPA ;
+                toute information mise à disposition par toute personne selon les termes et conditions de la présente licence.
+            La « Réutilisation » : l’utilisation de l’« Information » à d’autres fins que celles pour lesquelles elle a été produite ou reçue.
+            Le « Réutilisateur » : toute personne qui réutilise les « Informations »  conformément aux conditions de la présente licence.
+            Des « Données à caractère personnel » : toute information se rapportant à une personne physique identifiée ou identifiable, pouvant être identifiée directement ou indirectement. Leur « Réutilisation » est subordonnée au respect du cadre juridique en vigueur.
+            Une « Information dérivée » : toute nouvelle donnée ou information créées directement à partir de l’« Information » ou à partir d’une combinaison de l’ « Information » et d’autres données ou informations non soumises à cette licence.
+            Les « Droits de propriété intellectuelle » : tous droits identifiés comme tels par le Code de la propriété intellectuelle (droit d’auteur, droits voisins au droit d’auteur, droit sui generis des producteurs de bases de données).
+        
+        À propos de cette licence
+        
+        La présente licence a vocation à être utilisée par les administrations pour la réutilisation de leurs informations publiques. Elle peut également être utilisée par toute personne souhaitant mettre à disposition de l’« Information » dans les conditions définies par la présente licence.
+        
+        La France est dotée d’un cadre juridique global visant à une diffusion spontanée par les administrations de leurs informations publiques afin d’en permettre la plus large réutilisation.
+        
+        Le droit de la « Réutilisation » de l’« Information » des administrations est régi par le code des relations entre le public et l’administration (CRPA) et, le cas échéant, le code du patrimoine (livre II relatif aux archives).
+        
+        Cette licence facilite la réutilisation libre et gratuite des informations publiques et figure parmi les licences qui peuvent être utilisées par l’administration en vertu du décret pris en application de l’article L.323-2 du CRPA.
+        
+        Etalab est la mission chargée, sous l’autorité du Premier ministre, d’ouvrir le plus grand nombre de données publiques des administrations de l’État et de ses établissements publics. Elle a réalisé la Licence Ouverte pour faciliter la réutilisation libre et gratuite de ces informations publiques, telles que définies par l’article L321-1 du CRPA.
+        
+        Cette licence est une version 2.0 de la Licence Ouverte.
+        
+        Etalab se réserve la faculté de proposer de nouvelles versions de la Licence Ouverte. Cependant, les « Réutilisateurs » pourront continuer à réutiliser les informations disponibles sous cette licence s’ils le souhaitent.
+        
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: Other/Proprietary License
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
+# Tableau de bord des indicateurs territoriaux
+
+## Présentation
+
+Bienvenue dans ce projet visant à faciliter la création de tableaux de bord territoriaux interactifs à partir de données d’indicateurs. Ce dispositif est composé de deux briques complémentaires :
+
+### 1. `territories_dashboard_lib`
+
+Une **librairie Django** réutilisable, contenant des applications modulaires pour afficher rapidement un tableau de bord d'indicateurs territoriaux. Elle permet d’analyser des données à différentes mailles géographiques : nationale, régionale, départementale, et communale.  
+Elle comprend des fonctionnalités prêtes à l'emploi pour visualiser des données sur des thématiques comme la **mobilité durable**, la **rénovation énergétique** ou d'autres indicateurs liés au développement territorial.
+
+### 2. `territories_dashboard_template`
+
+Un **template de projet Django clef en main**, conçu pour permettre à des équipes techniques de démarrer rapidement leur propre tableau de bord. Ce template utilise la librairie `territories_dashboard_lib` comme fondation.  
+Les utilisateurs peuvent cloner ce dépôt, l’adapter à leurs besoins, et configurer leur tableau de bord directement depuis l’interface d’administration (titre, organisme, pages de contenu statique, indicateurs à afficher...).
+
+Le template constitue un **point de départ standard**, mais n’impose aucune restriction technique en dehors du choix de Django comme framework. Les développeurs sont libres d'étendre ou de modifier les composants selon leurs besoins.
+
+### Prérequis
+
+Pour utiliser la librairie ou le template, vous devez disposer de :
+
+-   Une base de données PostgreSQL contenant les données des indicateurs territoriaux.
+-   Une capacité à déployer une application Django (hébergement, serveur web, etc.).
+
+Pour obtenir des informations détaillées sur les prérequis techniques ou les données :
+
+-   **Marina Ribeiro** – Directrice de projet Mission Connaissance  
+    marina.ribeiro@developpement-durable.gouv.fr
+-   **Louise Columelli** – ECOLAB  
+    louise.columelli@developpement-durable.gouv.fr
+-   **Olivier Rousseau** – Expert données  
+    olivier.rousseau@i-carre.net
+-   **Bastien** – Développeur web  
+    bastien@prune.sh
+
+### Exemples de projets utilisant ce dispositif
+
+-   [Tableau de bord des mobilités durables](https://mobilite-durable-tdb.din.developpement-durable.gouv.fr)
+-   [Boussole énergétique de la rénovation des logements](https://boussole-renovation.din.developpement-durable.gouv.fr)
+
+L’objectif de ce projet est d’**encourager la réutilisation** et l’**essaimage** de nouveaux tableaux de bord territoriaux, en mettant à disposition un socle technique commun, facilement adaptable et extensible.
+
+## Structure de la librairie
+
+La librairie est composée de plusieurs **applications Django** indépendantes et complémentaires :
+
+### `website_lib`
+
+Contient le code principal d’affichage des pages du tableau de bord :
+
+-   **Templates HTML Django** : dans `website_lib/templates`, organisés par page.
+-   **Fichiers statiques** (JS, CSS) : dans `website_lib/static`. Le JS est modulaire grâce à l’extension `.mjs`.
+-   **Vues Django** : dans `website_lib/views`, associées aux templates et fichiers statiques.
+
+### `tracking_lib`
+
+Gère le **tracking backend** : enregistrement en base de données des visites de pages, avec leurs paramètres (indicateur sélectionné, territoire, etc.) pour permettre des analyses d’usage.
+
+### `superset_lib`
+
+Permet d’**intégrer des dashboards Superset** dans les pages du site.  
+Superset est un outil permettant à des utilisateurs non techniques de construire des visualisations depuis une base de données.
+
+### `geo_lib`
+
+Permet d’**ajouter des couches géographiques** personnalisées (points, lignes, polygones) à la carte :
+
+-   Points : ex. stationnements vélo.
+-   Lignes : ex. pistes cyclables.
+-   Polygones : ex. zones ZFE.
+
+### `indicators_lib`
+
+Contient le code pour l’accès et la requête des **données d’indicateurs** dans la base PostgreSQL dédiée.
+
+### Composants React
+
+Certaines visualisations complexes sont développées en **React** (ex. cartes interactives, diagrammes de Sankey).
+
+-   Les composants sont dans `website_lib/react-components/`.
+-   Le bundling est effectué via **Webpack**
+-   Les composants React sont ensuite inclus dans les templates Django.
+-   `cd website_lib/react-components && npm install && npm run webpack`
+
+## Installation
+
+La librairie est publiée sur PyPI. Elle s’installe dans un projet Django via le package manager uv :
+
+`uv add territories_dashboard_lib`
+
+### Figer la version en production
+
+Pour éviter les mises à jour inattendues, il est conseillé de figer la version dans le fichier pyproject.toml :
+
+```
+# Par exemple :
+territories_dashboard_lib == 1.0.3
+```
+
+### Développement local
+
+Pour tester une version locale de la librairie (ex : modifications en cours) :
+
+`uv add --editable ~/territories-dashboard/territories-dashboard-lib`
+
+## Publication PyPI
+
+Pour builder la librairie avant publication :
+
+`uv run python -m build`
+
+Pour déployer sur PyPI, vous devez :
+
+1. Avoir un compte PyPI.
+
+2. Être membre du projet sur PyPI.
+
+3. Lancer : `uv run twine upload dist/*`
