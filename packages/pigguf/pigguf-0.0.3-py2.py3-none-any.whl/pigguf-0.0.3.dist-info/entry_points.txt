@@ -1,0 +1,3 @@
+[console_scripts]
+pig-d=pigguf.d:main
+
