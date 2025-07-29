@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: pyvinorm
+Version: 0.1.0
+Summary: Add your description here
+Author-email: hoang1007 <hoangvuhuy1007@gmail.com>
+Requires-Python: >=3.10
+Requires-Dist: regex>=2024.11.6

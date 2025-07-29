@@ -1,0 +1,25 @@
+[project]
+name = "pyvinorm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "hoang1007", email = "hoangvuhuy1007@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "regex>=2024.11.6",
+]
+
+[project.scripts]
+pyvinorm = "pyvinorm.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.0",
+    "pytest-cov>=6.2.1",
+]
