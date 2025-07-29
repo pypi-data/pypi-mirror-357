@@ -1,0 +1,196 @@
+Metadata-Version: 2.4
+Name: libertem-ui
+Version: 0.0.1
+Summary: Panel+Bokeh-based GUI Toolkit for LiberTEM
+Project-URL: Repository, https://github.com/LiberTEM/LiberTEM-panel-ui
+Author-email: the LiberTEM team <libertem-dev@googlegroups.com>
+License: Copyright (c) 2022- Matthew Bryan and others
+        
+        Permission is hereby granted, free of charge, to any person obtaining
+        a copy of this software and associated documentation files (the
+        "Software"), to deal in the Software without restriction, including
+        without limitation the rights to use, copy, modify, merge, publish,
+        distribute, sublicense, and/or sell copies of the Software, and to
+        permit persons to whom the Software is furnished to do so, subject to
+        the following conditions:
+        
+        The above copyright notice and this permission notice shall be
+        included in all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+        EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+        NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+        LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+        OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+        WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+License-File: LICENSE
+Keywords: electron,gui,microscopy,notebook
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.10
+Requires-Dist: bidict
+Requires-Dist: bokeh>=3.4.0
+Requires-Dist: colorcet
+Requires-Dist: datashader
+Requires-Dist: humanize
+Requires-Dist: numba
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: panel>=1
+Requires-Dist: scikit-image
+Requires-Dist: scipy
+Requires-Dist: strenum
+Requires-Dist: tifffile
+Requires-Dist: typing-extensions
+Requires-Dist: xarray
+Provides-Extra: libertem
+Requires-Dist: libertem; extra == 'libertem'
+Requires-Dist: libertem-live; extra == 'libertem'
+Provides-Extra: notebook
+Requires-Dist: ipython; extra == 'notebook'
+Requires-Dist: ipywidgets; extra == 'notebook'
+Requires-Dist: jupyter-bokeh; extra == 'notebook'
+Requires-Dist: notebook; extra == 'notebook'
+Description-Content-Type: text/x-rst
+
+
+LiberTEM-panel-ui
+=================
+
+.. |binder| image:: https://mybinder.org/badge_logo.svg
+.. _binder: https://mybinder.org/v2/gh/LiberTEM/LiberTEM-panel-ui/HEAD?labpath=examples%2FDemo.ipynb
+
+.. |github| image:: https://img.shields.io/badge/GitHub-MIT-informational
+.. _github: https://github.com/LiberTEM/LiberTEM-panel-ui
+
+.. |precommit| image:: https://results.pre-commit.ci/badge/github/LiberTEM/LiberTEM-panel-ui/main.svg
+.. _precommit: https://results.pre-commit.ci/latest/github/LiberTEM/LiberTEM-panel-ui/main
+
+.. |pypi| image:: https://badge.fury.io/py/libertem-ui.svg
+.. _pypi: https://pypi.org/project/libertem-ui/
+
+|binder|_ |github|_ |precommit|_ |pypi|_
+
+
+Widget-based web GUI package intended to support the
+`LiberTEM <https://github.com/LiberTEM/LiberTEM/>`_
+library for electron microscopy data analysis. The primary
+usage environment is from within Jupyter Notebooks. Built using
+the `Panel <https://panel.holoviz.org/>`_ and `Bokeh <https://bokeh.org/>`_
+frameworks.
+
+Runs LiberTEM User Defined Functions (UDFs) in interactive
+panels, which simplies adjustment of parameters and exploring
+data.
+
+The framework is capable of running certain analyses on top of the
+`LiberTEM-live <https://github.com/LiberTEM/LiberTEM-live/>`_
+framework, allowing for interactive live acquisitions
+in a Jupyter Notebook.
+
+There are two ways to use the UI tools:
+
+* as standalone analysis windows connected to a dataset
+* through a :code:`UIContext` window manager, which can
+  dynamically add and remove windows as required
+
+The standalone case (where :code:`ctx`, :code:`ds` are
+LiberTEM `Context` and `DataSet` objects):
+
+.. code-block:: python
+
+    from libertem_ui.windows.com import CoMImagingWindow
+    # Create the window using a context and dataset
+    com_window = CoMImagingWindow.using(ctx, ds)
+    # Display the window itself
+    com_window.layout()
+    # Results from the window are stored in a dataframe-based results manager
+    # This provides a GUI result browser using a .layout() method
+    com_window.results_manager.layout()
+    # Results in the manager can be extracted into Python objects using methods
+    result_id = '3kd9sn'
+    rc = com_window.results_manager.get_result_container(result_id)
+    assert isinstance(rc.data, np.ndarray)
+
+.. image:: https://raw.githubusercontent.com/LiberTEM/LiberTEM-panel-ui/refs/heads/main/examples/com_window.png
+
+A second standalone window can be linked to the first,
+and will share the data and LiberTEM resources. Results from
+both windows will appear in the same :code:`results_manager`.
+
+.. code-block:: python
+
+    from libertem_ui.windows.imaging import VirtualDetectorWindow
+    # Create new window linked to the previous window
+    v_window = VirtualDetectorWindow.linked_to(com_window)
+    # Display the new window
+    v_window.layout()
+
+When two-or-more windows are linked, certain results can be displayed
+in other windows to help navigate the data. For example, a log-sum over
+all frames generated by the :code:`FrameImagingWindow` can be displayed
+in the :code:`VirtualDetectorWindow` frame plot, to help parametrize an
+annular darkfield analysis.
+
+For a more tightly-integrated experience, the managed :code:`UIContext`
+can dynamically add and remove windows, as well as run analyses
+from multiple windows in parallel:
+
+.. code-block:: python
+
+    from libertem_ui.api import UIContext
+
+    # Create the UIContext object
+    # This orchestrates:
+    #  - add/remove analysis windows
+    #  - providing work to the LiberTEM Context
+    #  - managing and saving results from analyses
+    ui_context = UIContext.for_offline(ctx, ds)
+    # Display main window for running analyses
+    ui_context.layout()
+    # Display table / dataframe-based results manager
+    ui_context.results_manager.layout()
+
+.. image:: https://raw.githubusercontent.com/LiberTEM/LiberTEM-panel-ui/refs/heads/main/examples/ui_context.png
+
+see :code:`examples/` for some more complete example use cases.
+
+Installation
+------------
+
+:code:`libertem_ui` requires Python 3.10 or greater.
+
+As always, it is advisable to use a virtual or conda environment
+for testing packages.
+
+.. code-block:: bash
+
+    pip install libertem-ui
+
+The optional dependencies `libertem-ui[libertem]` and `libertem-ui[notebook]`
+install the necessary components to run LiberTEM windows and Jupyter notebooks,
+respectively.
+
+
+Disclaimer
+----------
+
+:code:`LiberTEM-panel-ui` is at an early proof-of-concept stage. All interfaces
+and functionality is subject to change in the future. Notably, the primary usage
+environment is in a Jupyter Notebook - standalone usage as a web app through
+:code:`panel serve` is not well tested.
+
+If you are interested in the project and would like to see it taken further,
+please don't hesitate to get in touch by posting an
+`Issue <https://github.com/LiberTEM/LiberTEM-panel-ui/issues>`_.
