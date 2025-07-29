@@ -1,0 +1,177 @@
+Metadata-Version: 2.4
+Name: chunkhound
+Version: 1.2.0
+Summary: Local-first semantic code search with vector and regex capabilities for AI assistants via MCP
+Project-URL: Homepage, https://github.com/chunkhound/chunkhound
+Project-URL: Repository, https://github.com/chunkhound/chunkhound
+Project-URL: Issues, https://github.com/chunkhound/chunkhound/issues
+Project-URL: Documentation, https://github.com/chunkhound/chunkhound#readme
+Project-URL: Changelog, https://github.com/chunkhound/chunkhound/releases
+Author: Ofri Wolfus
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Internet :: WWW/HTTP :: Indexing/Search
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: Indexing
+Requires-Python: >=3.10
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: click>=8.0.0
+Requires-Dist: duckdb>=0.8.0
+Requires-Dist: loguru>=0.6.0
+Requires-Dist: mcp>=1.0.0
+Requires-Dist: openai>=1.0.0
+Requires-Dist: psutil>=5.8.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: pyyaml>=6.0.0
+Requires-Dist: tiktoken>=0.9.0
+Requires-Dist: tree-sitter-language-pack>=0.7.3
+Requires-Dist: tree-sitter-markdown
+Requires-Dist: tree-sitter-python>=0.20.0
+Requires-Dist: tree-sitter>=0.20.0
+Requires-Dist: watchdog>=4.0.0
+Provides-Extra: dev
+Requires-Dist: black>=23.0.0; extra == 'dev'
+Requires-Dist: mypy>=1.6.0; extra == 'dev'
+Requires-Dist: pytest-asyncio>=0.21.0; extra == 'dev'
+Requires-Dist: pytest>=7.4.0; extra == 'dev'
+Requires-Dist: ruff>=0.1.0; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# ChunkHound
+
+**Semantic and Regex search for your codebase via MCP.**
+
+Enable AI assistants to search your code with natural language and regex patterns.
+
+## Installation
+
+### Python Package
+```bash
+# Install with uv (recommended)
+uv tool install chunkhound
+
+# Or with pip
+pip install chunkhound
+```
+
+### Binary
+Download from [GitHub Releases](https://github.com/ofriw/chunkhound/releases) - zero dependencies required.
+
+## Quick Start
+
+```bash
+# Index your codebase
+chunkhound run .
+
+# Start MCP server for AI assistants
+chunkhound mcp
+```
+
+## AI Assistant Setup
+
+### Claude Desktop
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+```json
+{
+  "mcpServers": {
+    "chunkhound": {
+      "command": "chunkhound",
+      "args": ["mcp"],
+      "env": {
+        "OPENAI_API_KEY": "sk-your-key-here"
+      }
+    }
+  }
+}
+```
+
+### VS Code
+Add to `.vscode/mcp.json` in your project:
+```json
+{
+  "servers": {
+    "chunkhound": {
+      "command": "chunkhound",
+      "args": ["mcp"]
+    }
+  }
+}
+```
+
+### Cursor
+Add to `.cursor/mcp.json` in your project:
+```json
+{
+  "chunkhound": {
+    "command": "chunkhound",
+    "args": ["mcp"]
+  }
+}
+```
+
+## What You Get
+
+- **Semantic search** - "Find database connection code"
+- **Regex search** - Find exact patterns like `async def.*error`
+- **Code context** - AI assistants understand your codebase structure
+- **Multi-language** - Python, TypeScript, Java, C#, JavaScript, Markdown
+
+## Language Support
+
+| Language | Extensions | Extracted Elements |
+|----------|------------|-------------------|
+| **Python** | `.py` | Functions, classes, methods, async functions |
+| **Java** | `.java` | Classes, methods, interfaces, constructors |
+| **C#** | `.cs` | Classes, methods, interfaces, properties |
+| **TypeScript** | `.ts`, `.tsx` | Functions, classes, interfaces, React components |
+| **JavaScript** | `.js`, `.jsx` | Functions, classes, React components |
+| **Markdown** | `.md` | Headers, code blocks, documentation |
+
+## Configuration
+
+### Environment Variables
+```bash
+# Required for semantic search
+export OPENAI_API_KEY="sk-your-key-here"
+
+# Optional: Database location
+export CHUNKHOUND_DB_PATH="/path/to/chunkhound.db"
+
+# Optional: Custom embedding model
+export CHUNKHOUND_EMBEDDING_MODEL="text-embedding-3-small"
+```
+
+## Requirements
+
+- **Python**: 3.10+
+- **OpenAI API key**: Required for semantic search (regex works without)
+- **Platforms**: macOS, Linux
+
+## How It Works
+
+1. **Scan** - Finds code files in your project
+2. **Parse** - Extracts functions, classes, methods using tree-sitter
+3. **Index** - Stores code chunks in local SQLite database
+4. **Embed** - Creates AI embeddings for semantic search
+5. **Search** - AI assistants query via MCP protocol
+
+## Origin Story
+
+*Built completely by a language model with human supervision.*
+
+ChunkHound was assembled by an AI coding agent in two weeks through a self-improving process: design → code → test → review → commit. The agent even used ChunkHound to search its own code while building it.
+
+## License
+
+MIT
