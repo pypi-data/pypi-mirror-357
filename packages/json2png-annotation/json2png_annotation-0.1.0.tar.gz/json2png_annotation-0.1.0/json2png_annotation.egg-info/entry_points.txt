@@ -1,0 +1,2 @@
+[console_scripts]
+json2png = json2png_annotation.cli:main
