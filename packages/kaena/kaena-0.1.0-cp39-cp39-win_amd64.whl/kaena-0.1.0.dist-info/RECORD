@@ -1,0 +1,7 @@
+kaena/__init__.py,sha256=vwa6dAzfglVNkOazIU-Tg1zPfZaIVLW3qguWvBfO1DA,91
+kaena/ctape.cp39-win_amd64.pyd,sha256=ozefMzHGYXKt9FqB2VOgg0IZYUQxhwM8pAC2J78i4Ms,27136
+kaena/tape.py,sha256=WxffODpXo4gVjEErFCdgDW0DMoxYRfAwlhGI-GrtuIY,313
+kaena-0.1.0.dist-info/METADATA,sha256=AS2bRfI3dkIfMzBb949pB5AVs2ZJJy_382_ObfPuqDM,425
+kaena-0.1.0.dist-info/WHEEL,sha256=XkFE14KmFh7mutkkb-qn_ueuH2lwfT8rLdfc5xpQ7wE,99
+kaena-0.1.0.dist-info/top_level.txt,sha256=TAlxHqnSLokfXcFPP6lbm8DV-ErqQ16jfD9DpK9KJNE,6
+kaena-0.1.0.dist-info/RECORD,,
