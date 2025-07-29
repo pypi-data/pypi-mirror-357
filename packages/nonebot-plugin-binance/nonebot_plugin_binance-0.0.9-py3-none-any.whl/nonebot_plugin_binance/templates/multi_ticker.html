@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}多市场行情 - {{ data.symbol_display }}{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 24px;">
+    <div class="header"
+        style="padding-bottom: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 32px; font-weight: 700; color: #fff;">{{ data.symbol_display }}</span>
+        <span style="font-size: 14px; color: #848e9c;">多市场行情</span>
+    </div>
+
+    {% for market in data.markets %}
+    <div class="market-section">
+        <div class="market-header">
+            <h2 class="market-name">{{ market.name }}</h2>
+            <div>
+                {% set price_val = market.lastPrice|float %}
+                {% set precision = 4 if (price_val < 10) else 2 %} <span
+                    class="price {{ 'positive' if market.priceChangePercent|float >= 0 else 'negative' }}">
+                    ${{ "%.*f"|format(precision, price_val) }}
+                    </span>
+                    <span
+                        class="change {{ 'positive-bg positive' if market.priceChangePercent|float >= 0 else 'negative-bg negative' }}">
+                        {{ '+' if market.priceChangePercent|float >= 0 else '' }}{{
+                        "%.2f"|format(market.priceChangePercent|float) }}%
+                    </span>
+            </div>
+        </div>
+        <div class="stats-grid">
+            <div class="item-card stats-item">
+                <div class="desc">24h 最高价</div>
+                <div class="value">${{ "%.*f"|format(precision, market.highPrice|float) }}</div>
+            </div>
+            <div class="item-card stats-item">
+                <div class="desc">24h 最低价</div>
+                <div class="value">${{ "%.*f"|format(precision, market.lowPrice|float) }}</div>
+            </div>
+            <div class="item-card stats-item">
+                <div class="desc">24h 涨跌额</div>
+                <div class="value {{ 'positive' if market.priceChange|float >= 0 else 'negative' }}">
+                    {{ "%.*f"|format(precision, market.priceChange|float) }}
+                </div>
+            </div>
+            <div class="item-card stats-item">
+                <div class="desc">24h 成交量 ({{ data.symbol_display.split('-')[0] }})</div>
+                <div class="value">{{ "{:,.2f}".format(market.volume|float) }}</div>
+            </div>
+            <div class="item-card stats-item">
+                <div class="desc">24h 成交额 (USDT)</div>
+                <div class="value">${{ "{:,.0f}".format(market.quoteVolume|float) }}</div>
+            </div>
+            <div class="item-card stats-item">
+                {% if market.openInterest %}
+                <div class="desc">持仓量 (张)</div>
+                <div class="value">{{ "{:,.0f}".format(market.openInterest|float) }}</div>
+                {% else %}
+                <div class="desc">24h 成交数</div>
+                <div class="value">{{ "{:,}".format(market.count) }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% if not data.markets %}
+    <div class="no-data">
+        未能查询到 {{ data.symbol_display }} 的任何市场行情。
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

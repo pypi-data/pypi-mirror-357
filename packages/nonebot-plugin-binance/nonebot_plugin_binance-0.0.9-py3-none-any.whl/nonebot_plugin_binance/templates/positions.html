@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}合约持仓{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="header">
+        <h1>合约持仓</h1>
+    </div>
+
+    {% for group in data.position_groups %}
+    <div class="account-section">
+        <h2 class="account-title">{{ group.name }}</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">交易对</th>
+                    <th class="right-align">数量</th>
+                    <th class="right-align">开仓均价</th>
+                    <th class="right-align">标记价格</th>
+                    <th class="right-align">未实现盈亏</th>
+                    <th class="right-align">杠杆</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pos in group.positions %}
+                <tr>
+                    <td>
+                        <div class="asset-cell">
+                            <img src="{{ pos.icon_path }}" class="asset-icon" alt="{{ pos.symbol or pos.pair }}">
+                            <span class="asset-name">{{ pos.symbol or pos.pair }}</span>
+                        </div>
+                    </td>
+                    <td class="right-align {{ 'positive' if pos.positionAmt|float > 0 else 'negative' }}">
+                        {{ pos.positionAmt|float }}
+                    </td>
+                    <td class="right-align">{{ pos.entryPrice|float|round(4) }}</td>
+                    <td class="right-align">{{ pos.markPrice|float|round(4) }}</td>
+                    <td class="right-align {{ 'positive' if pos.unRealizedProfit|float >= 0 else 'negative' }}">
+                        {{ "%.2f"|format(pos.unRealizedProfit|float) }}
+                    </td>
+                    <td class="right-align">{{ pos.leverage }}x</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+
+    {% if not data.position_groups %}
+    <div class="no-data">您当前没有任何合约持仓。</div>
+    {% endif %}
+</div>
+{% endblock %}

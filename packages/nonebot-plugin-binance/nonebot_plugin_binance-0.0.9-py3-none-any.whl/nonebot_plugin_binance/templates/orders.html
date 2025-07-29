@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}当前挂单{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="header">
+        <h1>当前挂单</h1>
+    </div>
+    {% if not data.order_groups %}
+    <div class="no-data">没有找到相关订单</div>
+    {% else %}
+    {% for group in data.order_groups %}
+    <div class="account-section">
+        <h2 class="account-title">{{ group.name }}</h2>
+        {# 添加 'orders-table' 类以应用新样式 #}
+        <table class="data-table orders-table">
+            <thead>
+                <tr>
+                    <th class="col-symbol">交易对</th>
+                    <th class="col-side">方向</th>
+                    <th class="col-type">类型</th>
+                    <th class="right-align col-price">价格</th>
+                    <th class="right-align col-amount">数量</th>
+                    <th class="right-align col-id">订单ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in group.orders %}
+                <tr>
+                    <td>{{ order.symbol }}</td>
+                    <td class="{{ 'positive' if order.side == 'BUY' else 'negative' }}" style="font-weight: 500;">
+                        {{ '买入' if order.side == 'BUY' else '卖出' }}
+                    </td>
+                    <td>{{ order.type | replace('_', ' ') }}</td>
+                    <td class="right-align">{{ order.price|float|round(6) }}</td>
+                    <td class="right-align">{{ order.origQty|float|round(4) }}</td>
+                    <td class="right-align">{{ order.orderId }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

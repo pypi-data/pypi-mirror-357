@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入通用字体和样式表 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- 允许每个页面定义自己的标题 -->
+    <title>{% block title %}BN小助手{% endblock %}</title>
+</head>
+
+<body>
+    <!-- 定义一个内容块，子模板将在这里填充内容 -->
+    {% block content %}{% endblock %}
+</body>
+
+</html>

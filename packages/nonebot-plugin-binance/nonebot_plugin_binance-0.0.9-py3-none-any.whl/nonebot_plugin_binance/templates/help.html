@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}BN小助手 功能指南{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="header">
+        <img src="https://bin.bnbstatic.com/static/images/common/logo.png" alt="Binance Logo"
+            style="width: 48px; height: 48px; margin-right: 16px;">
+        <h1>BN小助手 功能指南</h1>
+    </div>
+
+    <!-- 核心指令 -->
+    <div class="category">
+        <h2 class="category-title">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="margin-right: 12px; width: 24px; height: 24px; color: #848e9c;">
+                <path d="m12 14 4-4"></path>
+                <path d="M3.34 19a10 10 0 1 1 17.32 0"></path>
+            </svg>
+            核心指令
+        </h2>
+        <div class="grid">
+            <div class="item-card">
+                <div class="name">bn [币种]</div>
+                <div class="desc">一站式查询行情。默认查该币种对USDT在现货、U本位合约等市场的价格。</div>
+                <div class="example">bn btc</div>
+                <div class="example">bn eth-busd</div>
+            </div>
+            <div class="item-card">
+                <div class="name">bn k [币种] [周期]</div>
+                <div class="desc">获取多市场K线图。默认周期为`1d`。</div>
+                <div class="example">bn k btc 1h</div>
+                <div class="example">bn k eth</div>
+            </div>
+            <div class="item-card">
+                <div class="name">bn bal</div>
+                <div class="desc">查询全账户资产总览，包括现货、合约、杠杆等。</div>
+                <div class="example">bn bal</div>
+            </div>
+            <div class="item-card">
+                <div class="name">bn pos</div>
+                <div class="desc">查看您在U本位和币本位合约的当前持仓。</div>
+                <div class="example">bn pos</div>
+            </div>
+        </div>
+        <div
+            style="background-color: rgba(255, 255, 255, 0.05); padding: 12px 16px; border-radius: 8px; margin-top: 16px; font-size: 14px; color: #848e9c;">
+            <strong>K线周期:</strong> <code>m</code>=分钟, <code>h</code>=小时, <code>d</code>=天, <code>w</code>=周,
+            <code>M</code>=月. (例如: <code>15m</code>, <code>4h</code>, <code>1d</code>)
+        </div>
+    </div>
+
+    <!-- 账户管理 -->
+    <div class="category">
+        <h2 class="category-title">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="margin-right: 12px; width: 24px; height: 24px; color: #848e9c;">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            账户管理
+        </h2>
+        <div class="grid">
+            <div class="item-card">
+                <div class="name">bn bind</div>
+                <div class="desc">【私聊】绑定您的API密钥。请在您绝对信任机器人提供方的情况下绑定！</div>
+                <div class="example">bn bind [key] [secret]</div>
+            </div>
+            <div class="item-card">
+                <div class="name">bn unbind</div>
+                <div class="desc">解绑并删除您已存储的API密钥。</div>
+                <div class="example">bn unbind</div>
+            </div>
+            <div class="item-card">
+                <div class="name">bn status</div>
+                <div class="desc">查询绑定状态和API密钥权限（现货、合约等）。</div>
+                <div class="example">bn status</div>
+            </div>
+            <div class="item-card">
+                <div class="name">bn help</div>
+                <div class="desc">显示此帮助信息。</div>
+                <div class="example">bn help</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 交易操作 -->
+    <div class="category">
+        <h2 class="category-title">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="margin-right: 12px; width: 24px; height: 24px; color: #848e9c;">
+                <path d="M20 7h-9"></path>
+                <path d="M14 17H5"></path>
+                <circle cx="17" cy="17" r="3"></circle>
+                <circle cx="7" cy="7" r="3"></circle>
+            </svg>
+            交易操作
+        </h2>
+        <div class="grid">
+            <div class="item-card">
+                <div class="name">bn open</div>
+                <div class="desc">查询所有市场的当前挂单 (可指定市场)。</div>
+                <div class="example">bn open</div>
+                <div class="example">bn open spot / um / cm</div>
+            </div>
+            <div class="item-card">
+                <div class="name">bn cancel</div>
+                <div class="desc">【暂不开放】为防止误操作，撤单功能默认关闭。</div>
+                <div class="example">bn cancel ...</div>
+            </div>
+            <div class="item-card">
+                <div class="name">bn order</div>
+                <div class="desc">【暂不开放】为防止误操作，下单功能默认关闭。</div>
+                <div class="example">bn order ...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 价格预警 -->
+    <div class="category" style="margin-bottom: 0;">
+        <h2 class="category-title">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="margin-right: 12px; width: 24px; height: 24px; color: #848e9c;">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            价格预警
+        </h2>
+        <div class="grid">
+            <div class="item-card">
+                <div class="name">bn alert add</div>
+                <div class="desc">【群聊】添加价格预警。市场可选: `spot`(现货), `um`(U本位), `cm`(币本位)。</div>
+                <div class="example">bn alert add um btc-usdt >90000</div>
+                <div class="example">bn alert add btc-usdt <80000 (默认现货)</div>
+                </div>
+                <div class="item-card">
+                    <div class="name">bn alert list</div>
+                    <div class="desc">查看我设置的所有预警。</div>
+                    <div class="example">bn alert list</div>
+                </div>
+                <div class="item-card">
+                    <div class="name">bn alert remove</div>
+                    <div class="desc">移除指定ID的价格预警。</div>
+                    <div class="example">bn alert remove [预警ID]</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

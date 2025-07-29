@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}账户状态{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="header">
+        <h1>账户状态</h1>
+    </div>
+    {% if not data.bound %}
+    <div class="no-data">您尚未绑定API密钥</div>
+    <div style="font-size: 13px; color: #6c757d; text-align: center; margin-top: 24px;">
+        请私聊机器人使用 `bn bind [API Key] [Secret Key]` 进行绑定
+    </div>
+    {% else %}
+    <div class="status-grid">
+        <div class="status-item">
+            <span class="status-label">API Key 绑定状态</span>
+            <span class="status-value positive">✓ 已绑定</span>
+        </div>
+        {% if data.error %}
+        <div class="status-item">
+            <span class="status-label">API Key 连接状态</span>
+            <span class="status-value negative">✕ {{ data.error }}</span>
+        </div>
+        {% else %}
+        <div class="status-item">
+            <span class="status-label">账户现货交易</span>
+            {% if data.permissions.spot_trade %}
+            <span class="status-value positive">✓ 已开启</span>
+            {% else %}
+            <span class="status-value negative">✕ 未开启</span>
+            {% endif %}
+        </div>
+        <div class="status-item">
+            <span class="status-label">账户杠杆交易</span>
+            {% if data.permissions.margin_trade %}
+            <span class="status-value positive">✓ 已开启</span>
+            {% else %}
+            <span class="status-value negative">✕ 未开启</span>
+            {% endif %}
+        </div>
+        <div class="status-item">
+            <span class="status-label">账户合约交易</span>
+            {% if data.permissions.futures_trade %}
+            <span class="status-value positive">✓ 已开启</span>
+            {% else %}
+            <span class="status-value negative">✕ 未开启</span>
+            {% endif %}
+        </div>
+        <div class="status-item">
+            <span class="status-label">账户允许提现</span>
+            {% if data.permissions.withdraw %}
+            <span class="status-value positive">✓ 已开启</span>
+            {% else %}
+            <span class="status-value negative">✕ 未开启</span>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+    <div style="font-size: 13px; color: #848e9c; text-align: center; margin-top: 24px; line-height: 1.6;">
+        上方显示的是您币安 账户本身 的权限状态，而非您绑定的 API Key 的权限。<br>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
