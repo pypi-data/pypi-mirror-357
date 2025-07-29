@@ -1,0 +1,6 @@
+README.md
+setup.py
+testpackageclaim.egg-info/PKG-INFO
+testpackageclaim.egg-info/SOURCES.txt
+testpackageclaim.egg-info/dependency_links.txt
+testpackageclaim.egg-info/top_level.txt
