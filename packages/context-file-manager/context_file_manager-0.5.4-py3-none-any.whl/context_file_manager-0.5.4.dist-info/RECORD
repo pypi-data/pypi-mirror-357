@@ -1,0 +1,12 @@
+cfm_package/__init__.py,sha256=ABiSi9qczQ3gASjD0EEkHczokOPzsZ-2rpYt7k16ciY,254
+cfm_package/__main__.py,sha256=XYEYPBJlt6eRTvHVe12ZtiQ6QUEn5ZjQuhtQ7gqcMRs,110
+cfm_package/cfm_mcp_server.py,sha256=gYHNzQ3y-jmY8D9T-FM_CPTjEVdBZTZEFeB-ZJDvdjA,8131
+cfm_package/cli.py,sha256=JVlAcdZMVG81tPK8jWjUDErA7lovaU8ZYlNMsVC9VhA,7766
+cfm_package/main.py,sha256=2gnKX8zXtZIG3jECl0OEFPsR_oB8G20Ob8zUb2IDYS0,18505
+cfm_package/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+context_file_manager-0.5.4.dist-info/licenses/LICENSE,sha256=9bwvaWpg0nx_GDwtdhrQOjfIb61LUvFNbC1LUSEYUoc,1067
+context_file_manager-0.5.4.dist-info/METADATA,sha256=d3gdbEoNsVtpHA-W64hPY2YIxrVKs2lepxMcvx5JeO8,7870
+context_file_manager-0.5.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+context_file_manager-0.5.4.dist-info/entry_points.txt,sha256=kIE_UlP0fOUmJto3xWGldOcrqNTxCUyrmkRezYT-HlA,87
+context_file_manager-0.5.4.dist-info/top_level.txt,sha256=aybWYv48Uw31deAzd7EU7vwBwvNPjUmm9ot1A5T6Uwg,12
+context_file_manager-0.5.4.dist-info/RECORD,,
