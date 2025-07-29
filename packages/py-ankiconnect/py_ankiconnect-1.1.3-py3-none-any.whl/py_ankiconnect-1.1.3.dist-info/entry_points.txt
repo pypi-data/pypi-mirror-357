@@ -1,0 +1,2 @@
+[console_scripts]
+py_ankiconnect = py_ankiconnect.__init__:cli_launcher
