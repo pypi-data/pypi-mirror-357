@@ -1,0 +1,85 @@
+Metadata-Version: 2.4
+Name: py-agent-core
+Version: 0.0.2.dev1
+Summary: Placeholder for the official Python SDK for the Intelligent Agents Platform (IAP). Coming soon!
+Author-email: Federico Monfasani <fmonfasani@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/fmonfasani/intelligent-agents-platform
+Project-URL: Bug Tracker, https://github.com/fmonfasani/intelligent-agents-platform/issues
+Project-URL: Documentation, https://github.com/fmonfasani/intelligent-agents-platform/wiki
+Project-URL: Repository, https://github.com/fmonfasani/intelligent-agents-platform
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# 🏗️ py-agent-core
+
+**Foundation of the Intelligent Agents Platform**
+
+[![PyPI](https://img.shields.io/pypi/v/py-agent-core)](https://pypi.org/project/py-agent-core/)
+[![Python](https://img.shields.io/pypi/pyversions/py-agent-core)](https://pypi.org/project/py-agent-core/)
+[![Status](https://img.shields.io/badge/Status-In%20Development-orange)](https://pypi.org/project/py-agent-core/)
+
+## 🚧 Currently Under Development
+
+**py-agent-core** provides the foundational components for the **Intelligent Agents Platform (IAP)**. This package contains shared utilities, base classes, and core MCP protocol implementations.
+
+## 🎯 What's Coming
+
+- ⚡ Core MCP protocol implementation
+- 🔧 Shared utilities and base classes
+- 🔌 Connection management and transport layers
+- 📊 Monitoring and metrics infrastructure
+- 🛡️ Security and authentication frameworks
+
+## 🚀 Get Started Now
+
+While **py-agent-core** is under development, start building with:
+
+```bash
+pip install py-agent-client
+```
+
+## 🏗️ Part of IAP Ecosystem
+
+```
+py-agent-core      🚧 Foundation (In Development)
+├── py-agent-client     ✅ Available Now!
+├── py-agent-server     🚧 Coming Soon
+├── py-agent-tool       🚧 Coming Soon
+└── py-agent-resources  🚧 Coming Soon
+```
+
+## 📅 Development Status
+
+| Component | Status | Expected |
+|-----------|--------|----------|
+| Core Protocol | 🚧 In Progress | Q1 2025 |
+| Transport Layer | 📋 Planned | Q1 2025 |
+| Base Classes | 🚧 In Progress | Q1 2025 |
+
+## 📚 Resources
+
+- 📖 **[Documentation](https://github.com/fmonfasani/intelligent-agents-platform/wiki)**
+- 🔗 **[GitHub Repository](https://github.com/fmonfasani/intelligent-agents-platform)**
+- 🐛 **[Report Issues](https://github.com/fmonfasani/intelligent-agents-platform/issues)**
+
+## 📧 Contact
+
+**Federico Monfasani** - fmonfasani@gmail.com
+
+---
+
+**🚀 Big things are coming to the Intelligent Agents Platform!**
