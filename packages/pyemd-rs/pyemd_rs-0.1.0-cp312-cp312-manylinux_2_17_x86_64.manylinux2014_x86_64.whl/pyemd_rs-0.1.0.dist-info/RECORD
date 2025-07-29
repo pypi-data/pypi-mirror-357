@@ -1,0 +1,10 @@
+pyemd_rs-0.1.0.dist-info/METADATA,sha256=EMrhyD8YQQF8PJfyJ4fhhSHAuf004HFJ03Ois0lc-ig,646
+pyemd_rs-0.1.0.dist-info/WHEEL,sha256=sHbe-buKq8_ts0_sQBGScRHFdVVbj4Kz13IdzUnsDlk,129
+pyemd_rs-0.1.0.dist-info/licenses/LICENSE,sha256=1BQ8oo4zAsxuVkvhIg881vCV38JEmR97oLFCAZSphXQ,1071
+pyemd_rs/__init__.py,sha256=2s-cMZHzVoEsG6Xw5A_dInJT4_OTaYj1TQW9iEBIx34,148
+pyemd_rs/_pyemd_rs.cpython-312-x86_64-linux-gnu.so,sha256=d4PFPKFTnMyijXknfPYfi5zf91zm5IEisJ_btNmtO5c,1693320
+pyemd_rs/_pyemd_rs.pyi,sha256=lXKymY4beSaJZJpK0FFFw6yRBWGwRAQR6gU1qUROJbY,2430
+pyemd_rs/_testing.py,sha256=n-tifr1oExnjtBZFUpC-_231oLwO1yYq1Raxj7eZGvs,414
+pyemd_rs/emd.py,sha256=EEudCRQ-LiKB2mDsvlrRkcfvzQfqlN2eUIDaA-q5_vg,27
+pyemd_rs/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyemd_rs-0.1.0.dist-info/RECORD,,
