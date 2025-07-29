@@ -1,0 +1,7 @@
+cbr_dws_client/__init__.py,sha256=6KiPauLx3l4mvU3LaHFtsxoJ6PCVBMOChkYGcju9SZk,99
+cbr_dws_client/base.py,sha256=EmMB_6iQ5WYwoEYPsmDAYfmzI5pW4dy3I6MmTjA1Iog,5944
+cbr_dws_client/mixins.py,sha256=aW9DEjL9q7QXWBkj52zzH1GGkbnV9EWEHGO-3v_GTbg,1304
+cbr_dws_client-0.0.2.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+cbr_dws_client-0.0.2.dist-info/METADATA,sha256=CLjpR7VOwHFNM7zqTEvaLdIjW909R8TStYOAg9rl1ls,2211
+cbr_dws_client-0.0.2.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+cbr_dws_client-0.0.2.dist-info/RECORD,,
