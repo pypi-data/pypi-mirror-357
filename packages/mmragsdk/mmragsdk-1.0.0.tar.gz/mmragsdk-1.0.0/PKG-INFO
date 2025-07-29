@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: mmragsdk
+Version: 1.0.0
+Summary: A simple SDK for the mmRag Application, the github for the app can be found here: https://github.com/marcoslashpro/multimodal-rag.git
+License-File: LICENSE
+Requires-Python: >=3.11
+Requires-Dist: langchain>=0.3.25
+Requires-Dist: pydantic>=2.11.7
+Requires-Dist: python-dotenv>=1.1.0
+Requires-Dist: requests>=2.32.4
