@@ -1,0 +1,5 @@
+Flask>=3.0.0
+semver>=3.0.0
+
+[redis]
+redis>=5.0.0
