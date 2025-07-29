@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-seniverse-weather-mqslllddyy-1"
+version = "1.0.0"
+description = "Weather Forecast MCP Server Powered by Seniverse"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.9.4",
+    "requests>=2.32.4",
+]
+
+[project.scripts]
+mcp-seniverse-weather-mqslllddyy-1 = "mcp_seniverse_weather_mqslllddyy_1:main"
