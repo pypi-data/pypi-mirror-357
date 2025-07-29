@@ -1,0 +1,10 @@
+fastcommit/__init__.py,sha256=ZIHy7f9UC5TRItoN00_Fk_BCQyMR1aqg_6xieh9sRMQ,306
+fastcommit/__main__.py,sha256=Nqnn8clbgv-5l0PgxcTOldg8mkMKrFn4TvPL-rYUUGg,1
+fastcommit/config.py,sha256=jEOr_707emQvoZ0XB0S2xqRP_0DQ8kqT-1O8Xw2JUH4,9416
+fastcommit/core.py,sha256=4ZF47rLwLiiMys6Pg5_6NTROxBAZ8avGQfOJbEw0gsE,15096
+fastcommit/main.py,sha256=UzRxexL4Kbwga6aJ9wLvBiyGiXJtS3GhovbIKUYt9XE,12566
+fastcommit-0.0.6.dist-info/LICENSE,sha256=JUxsZSJQlwP-w6m5VgwCEXNvIO0yh8mBLlz77Ne3X6k,1064
+fastcommit-0.0.6.dist-info/METADATA,sha256=kFrLgkLwF0ct70Ff6FETaNFH3gFIqwRrKU84wOvnK1g,4955
+fastcommit-0.0.6.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+fastcommit-0.0.6.dist-info/entry_points.txt,sha256=Jd8Z-XfmvjXp5tA3ckSbcxi5oM9WNhXOAVqr1E8NuPg,44
+fastcommit-0.0.6.dist-info/RECORD,,
