@@ -1,0 +1,112 @@
+[project]
+name = "apichainer"
+version = "0.1.0"
+description = "A declarative Python library for building chained HTTP request workflows using a fluent interface."
+authors = [
+    {name = "David AF.", email = "knot1025@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+keywords = ["api", "requests", "chain", "workflow", "automation", "aiohttp", "async"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.31.0,<3.0.0",
+    "aiohttp>=3.9.5,<4.0.0",
+    "aiofiles>=23.2.1,<24.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/No0key/apichainer"
+Repository = "https://github.com/No0key/apichainer"
+Issues = "https://github.com/No0key/apichainer/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.2,<9.0.0",
+    "pytest-asyncio>=0.23.7,<1.0.0",
+    "requests-mock>=1.12.1,<2.0.0",
+    "pytest-aiohttp>=1.0.5,<2.0.0",
+    "pytest-cov>=4.0.0,<5.0.0",
+    "flake8>=6.0.0,<7.0.0",
+    "black>=23.0.0,<24.0.0",
+    "isort>=5.12.0,<6.0.0",
+]
+
+[tool.poetry]
+packages = [{include = "apichainer"}]
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.2.2,<9.0.0"
+pytest-asyncio = ">=0.23.7,<1.0.0"
+requests-mock = ">=1.12.1,<2.0.0"
+pytest-aiohttp = ">=1.0.5,<2.0.0"
+pytest-cov = ">=4.0.0,<5.0.0"
+flake8 = ">=6.0.0,<7.0.0"
+black = ">=23.0.0,<24.0.0"
+isort = ">=5.12.0,<6.0.0"
+
+
+
+[tool.black]
+line-length = 127
+target-version = ['py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 127
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.coverage.run]
+source = ["apichainer"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError"
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
