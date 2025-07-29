@@ -1,0 +1,55 @@
+Metadata-Version: 2.4
+Name: meshctl
+Version: 0.1.3
+Summary: A CLI tool for meshtastic operations
+Project-URL: Homepage, https://github.com/mangelajo/meshctl
+Project-URL: Repository, https://github.com/mangelajo/meshctl
+Author-email: Miguel Angel Ajo Pelayo <miguelangel@ajo.es>
+Requires-Python: >=3.8
+Requires-Dist: click>=8.0.0
+Requires-Dist: meshtastic>=2.3.14
+Requires-Dist: rich>=13.0.0
+Description-Content-Type: text/markdown
+
+# meshcli
+
+A CLI tool for mesh operations.
+
+## Installation
+
+```bash
+uv pip install -e .
+```
+
+## Usage
+
+```bash
+meshcli --help
+```
+
+## Development
+
+Install development dependencies:
+
+```bash
+uv sync --dev
+```
+
+Run tests:
+
+```bash
+uv run pytest
+```
+
+Format code:
+
+```bash
+uv run black .
+```
+
+Lint code:
+
+```bash
+uv run flake8
+```
+# meshcli
