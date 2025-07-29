@@ -1,0 +1,34 @@
+[project]
+name = "mailsend"
+dynamic = ["version"]
+urls = { homepage = "https://hg.sr.ht/~olly/mailsend" }
+license = { "text"="BSD-3-Clause" }
+authors = [
+    {name="Oliver Cope", email='oliver@redgecko.org' },
+    {name='Rick Harris', email='rconradharris@gmail.com' }
+]
+description="Fork of tinysmtp with bug fixes and Python 3 compatibility"
+readme="README.rst"
+dependencies =[
+    "envparse>=0.2"
+]
+classifiers=[
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">= 3.9"
+keywords = ["tinymtp", "flask-mail", "mail", "smtp"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ['mailsend']
+
+[tool.setuptools.dynamic]
+version = { attr = "mailsend.__version__" }
