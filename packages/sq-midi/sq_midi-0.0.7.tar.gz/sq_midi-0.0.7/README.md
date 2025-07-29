@@ -1,0 +1,245 @@
+Library to control Allen & Heath SQ Mixers via MIDI
+
+# Installation & Setup
+```bash
+pip install sq-midi
+```
+
+On the mixer, go to Utility -> General -> MIDI and set 'NRPN Fader Law' to _Audio Taper_. This is currently the only supported option, however the linear taper may be added in the future.
+
+# Usage
+To connect to the mixer's MIDI interface, the [Allen & Heath MIDI Control](https://www.allen-heath.com/hardware/controllers/midi-control/) application can be used. When in *MIDI Thru* mode, two virtual MIDI ports will be created, one input and one output, both named *MIDI Control 1*.
+This allows a connection to the mixer either via a physical USB cable, or over a network connection using TCP.
+
+## Basic Example
+```python
+from sq_midi import Mixer
+
+# Initialise mixer
+mixer = Mixer()
+
+# Get Input 1 (Ip1)
+ip1 = mixer.inputs.ip1 # or mixer.inputs[1]
+
+# Mute
+ip1.mute()
+
+# Set level to 100% (0dB)
+ip1.level = 100
+
+```
+
+## Detailed Usage
+The `Mixer` class is the starting point, and handles the connection to the mixer, as well as providing interfaces for the various channels and mixes.
+
+Each channel or mix has various attributes, including _assignments_, _levels_, and _panning_, which can be used to set the appropriate parameters on the mixer. Please note that not all mixes have all parameters.
+
+To get/set specific parameter, the appropriate interface should be used e.g. `mixer.inputs[1].assignments.aux[1]`. All indexes refer to the channel/mix numbers, so `aux[1]` refers to Aux 1.
+
+### Mixer setup
+
+```python
+from sq_midi import Mixer
+
+mixer = Mixer(
+    input_name = "MIDI Control 1", # Input MIDI port name
+    output_name = "MIDI Control 1", # Output MIDI port name
+    channel = 0, # MIDI channel to use
+    debug = False # Enable debug logging
+)
+```
+### Input channels
+
+Each input channel can be accessed using the `mixer.inputs` interface. They can be accessed either by name e.g. `mixer.inputs.ip14` or by number e.g. `mixer.inputs[14]`.
+
+* Number of channels: ### 48### 
+* Channel prefix: ### ip### , e.g ### ip34### 
+
+* Available options:
+  * `level` - master level
+  * `pan` - master panning
+  * `assignments` - assignments
+    * `aux` - auxes
+    * `groups` - groups
+    * `fx`- FX Sends
+    * `lr` - LR (default for `level` and `pan`)
+  * `panning` - panning
+    * `aux`
+    * `groups`
+    * `fx`
+    * `lr`
+
+Example:
+```python
+ip1 = mixer.inputs.ip1 # or ...inputs[1]
+
+print(ip1.name) # Ip1
+print(ip1.number) # 1
+
+# Mute
+ip1.mute()
+ip1.unmute()
+print(ip1.muted) # True or False
+ip1.muted = True # Same as ip1.mute()
+
+# Master Level
+ip1.level = 100 # range [0 to 200] % equivalent to [-inf to +10] dB
+
+# Master Panning
+print(ip1.pan) # -100 to 100
+ip1.pan = 0 # Center
+ip1.center() # Same as ip1.pan = 0
+ip1.pan = 100 # Full right
+ip1.pan = -100 # Full left
+
+# Routing Assignments - available: aux, groups, fx, lr 
+print(ip1.assignments.aux[3]) # True / False
+ip1.assignments.aux[1] = True # Assign to Aux1
+ip1.assignments.groups[3] = True # Assign to Grp3
+ip1.assignments.fx[1] = True # Assign to FX1Send
+ip1.assignments.lr = False # Unassign from LR
+```
+### Main LR Output
+
+The main LR channel can be accessed using `mixer.lr`.
+
+Available options:
+* `level` - master level
+* `mute`
+* `pan`
+* `assignments` - assignments
+  * `mtx` - matrices
+* `panning`
+  * `lr` - (default)
+
+Example:
+```python
+lr = mixer.lr
+
+# Assignments - available: mtx (Matrices)
+lr.assignments.mtx[1] = True # Assign to Matrix 1
+```
+
+### Groups
+
+Example:
+```python
+grp1 = mixer.groups[1]
+
+# Assignments - available: lr, mtx, fx, aux
+grp1.assignments.aux[1] = True # Assign to aux1
+```
+
+
+### Auxes
+
+Example:
+```python
+"""Aux"""
+aux1 = mixer.aux[1]
+
+# Levels
+aux1.levels.lr = 100 # Same as aux1.level = 100
+
+# Assignments - available: mtx (Matrices)
+aux1.assignments.mtx[3] = True # Assign to Matrix 3
+```
+
+### DCAs
+
+DCA channels use the `mixer.dca` interface, and allow the 'remote' control of multiple channels. The MIDI protocol allows the level and mute of a DCA to be controlled.
+
+Available options:
+* `level` - DCA level
+* `mute` - DCA mute
+
+
+Example:
+```python
+dca1 = mixer.dca.[1]
+
+dca1.level = 100
+```
+
+### FX Sends
+
+FX Sends can be accessed using `mixer.fxsends`.
+
+Available options:
+* `level` - level
+* `mute` - mute
+
+Example:
+```python
+fx1send = mixer.fxsends[1]
+
+# Level
+fx1send.level = 50 # 50%
+```
+### FX Returns
+
+FX Returns can be accessed using `mixer.fxreturns`.
+
+Available options:
+* `level`
+* `mute`
+* `pan`
+* `assignments`
+  * `lr`
+  * `aux`
+  * `groups`
+* `panning`
+  * `lr` (default)
+  * `aux`
+* `levels`
+  * `lr` - (default)
+  * `aux`
+
+Example:
+```python
+fx1return = mixer.fxreturns[1]
+
+# Levels
+fx1return.level = 200 # 200% (+10dB)
+fx1return.levels.aux[4] = 100 # 100% (0dB)
+
+# Assignments
+fx1return.assignments.aux[4] = True
+
+# Panning
+fx1return.panning.aux[4] = 100
+```
+### Matrices
+
+Available options:
+
+* `mute`
+* `level`
+* `pan`
+
+Example:
+```python
+mtx1 = mixer.matrices[1]
+
+# Level
+mtx1.level = 100
+
+# Panning
+mtx1.panning = -100 # Full left
+```
+### Mute Groups
+
+Mute groups are accessed using `mixer.mutegroups`. The assignment of channels to a mute group must be defined within the mixer, using 'Routing' -> 'Mute Assign' for the desired channels.
+
+Available options:
+
+* `mute`
+
+Example:
+```python
+"""Mute group"""
+mgrp1 = mixer.mutegroups[1]
+
+mgrp1.mute()
+mgrp1.unmute()
+```
