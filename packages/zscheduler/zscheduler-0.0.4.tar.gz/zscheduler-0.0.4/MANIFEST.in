@@ -1,0 +1,28 @@
+include README.md
+include LICENSE
+include requirements.txt
+include run.py
+include *.bat
+
+# Include application assets
+recursive-include zscheduler_app/assets *
+recursive-include zscheduler_app/themes *
+
+# Include library files
+recursive-include zscheduler_lib/zscheduler *
+
+# Exclude unwanted files
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *~
+global-exclude __pycache__
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+
+# Exclude development and example files
+exclude examples/*
+exclude images/*
+exclude _legacy/*
+exclude test_*.py
+exclude schedule_firefox*.py
+exclude *_SUMMARY.md

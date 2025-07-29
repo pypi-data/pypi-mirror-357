@@ -1,0 +1,3 @@
+@echo off
+echo Running ZScheduler CLI...
+python -m zscheduler_app.cli.cli %*
