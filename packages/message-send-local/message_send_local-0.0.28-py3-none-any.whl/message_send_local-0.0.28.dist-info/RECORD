@@ -1,0 +1,7 @@
+message_send_local/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+message_send_local/campaign_message_send.py,sha256=Q0rswLSJaLY7DW2KjE4SM-8vnqbRpVqwAKynRqmuPQY,12538
+message_send_local/constants.py,sha256=nkQX-4rk8dVak6YLDUF180lrx6xLGI-ZWjGiUI_gSbk,1234
+message_send_local-0.0.28.dist-info/METADATA,sha256=Yfkdz-cfhTnvYZikbJ2k4ENLJooMYw4jFOWI535-2i0,769
+message_send_local-0.0.28.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+message_send_local-0.0.28.dist-info/top_level.txt,sha256=9gkPsqTeK1D-LycpdjExYJsq-Mm4QghA5imHoQ0hbXM,19
+message_send_local-0.0.28.dist-info/RECORD,,
