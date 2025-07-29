@@ -1,0 +1,12 @@
+perekrestok_api/__init__.py,sha256=O0dmoe-613WHv6t5BhnHs-fC996ubk0EiiGz4F6vV48,380
+perekrestok_api/abstraction.py,sha256=v4kqfKNK108OHZNoqYNbjW1IYT7y8ir6FHJH0nHTttk,15708
+perekrestok_api/manager.py,sha256=uUJ4BFdRMr3GMOa-TGoAZQIa1XTgdykUQ5H3xZ8MK64,5315
+perekrestok_api/endpoints/advertising.py,sha256=IazDYJGtnrjXZF1C98VZBnVJF2DgJGnaREuITFBCgvU,893
+perekrestok_api/endpoints/catalog.py,sha256=-_97jcs3f_Ao0eZVVONRoezFRof7WqCxf9yLaTq-qxo,7717
+perekrestok_api/endpoints/general.py,sha256=On3H09TA9FsL22pjbyKUABQSqNl2q8CbIuvS-T1NY7Y,1052
+perekrestok_api/endpoints/geolocation.py,sha256=Y1zAhYyD88Kc_YLjBSnFqVQboMz_CEQj-tSECTdDbzU,3516
+perekrestok_api-0.1.6.1.dist-info/licenses/LICENSE,sha256=1HRFdSzlJ4BtHv6U7tZun3iCArjbCnm5NUowE9hZpNs,1071
+perekrestok_api-0.1.6.1.dist-info/METADATA,sha256=KldXPUvawadukCelYMVekMpRRSEbdVlBxoBsreHTpqY,11168
+perekrestok_api-0.1.6.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+perekrestok_api-0.1.6.1.dist-info/top_level.txt,sha256=oNHMi3GzhIlucWLXOkuPYLQ6ZMJhtgBVLWAjt_vs6ZQ,16
+perekrestok_api-0.1.6.1.dist-info/RECORD,,
