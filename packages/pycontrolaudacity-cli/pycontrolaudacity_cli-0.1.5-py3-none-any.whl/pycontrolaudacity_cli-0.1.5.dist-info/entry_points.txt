@@ -1,0 +1,3 @@
+[console_scripts]
+PyControlAudacity-cli=pycontrolaudacity_cli.cli:cmd_parser
+
