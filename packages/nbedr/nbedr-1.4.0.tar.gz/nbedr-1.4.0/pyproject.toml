@@ -1,0 +1,230 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nbedr"
+version = "1.4.0"
+description = "nBedR - RAG Embedding Toolkit - Tools for creating and managing embedding databases for Retrieval Augmented Generation"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+authors = [
+    {name = "RAG Embeddings Team"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.0.0,<2.0.0",
+    "python-dotenv>=1.0.0,<2.0.0",
+    "pydantic>=2.0.0,<3.0.0",
+    "tqdm>=4.65.0,<5.0.0",
+    "pandas>=2.0.0,<3.0.0",
+    "pyarrow>=14.0.1,<15.0.0",
+    "tiktoken>=0.5.1,<1.0.0",
+    "pdfplumber>=0.10.0,<1.0.0",
+    "python-pptx>=0.6.22,<1.0.0",
+    "langchain-text-splitters>=0.0.1,<1.0.0",
+    "sentence-transformers>=3.1.0,<4.0.0",
+    "langchain-openai>=0.0.2,<1.0.0",
+    "scikit-learn>=1.3.0,<2.0.0",
+    "numpy>=1.24.0,<2.0.0",
+    "faiss-cpu>=1.7.4,<2.0.0",
+    "chromadb>=0.4.15,<1.0.0",
+    "pinecone-client>=3.0.0,<4.0.0",
+]
+
+[project.optional-dependencies]
+cloud = [
+    "boto3>=1.34.0,<2.0.0",
+    "botocore>=1.34.0,<2.0.0",
+    "requests>=2.31.0,<3.0.0",
+    "requests-oauthlib>=1.3.0,<2.0.0",
+    "msal>=1.24.0,<2.0.0",
+    "azure-identity>=1.15.0,<2.0.0",
+    "azure-storage-blob>=12.19.0,<13.0.0",
+]
+local = [
+    "aiohttp>=3.8.0,<4.0.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-mock>=3.10.0",
+    "pytest-asyncio>=0.21.0",
+    "httpx>=0.24.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "flake8>=6.0.0",
+    "bandit>=1.7.0",
+    "types-requests>=2.31.0",
+]
+all = [
+    # Cloud dependencies
+    "boto3>=1.34.0,<2.0.0",
+    "botocore>=1.34.0,<2.0.0",
+    "requests>=2.31.0,<3.0.0",
+    "requests-oauthlib>=1.3.0,<2.0.0",
+    "msal>=1.24.0,<2.0.0",
+    "azure-identity>=1.15.0,<2.0.0",
+    "azure-storage-blob>=12.19.0,<13.0.0",
+    # Local provider dependencies
+    "aiohttp>=3.8.0,<4.0.0",
+    # Dev dependencies
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-mock>=3.10.0",
+    "pytest-asyncio>=0.21.0",
+    "httpx>=0.24.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "flake8>=6.0.0",
+    "bandit>=1.7.0",
+    "types-requests>=2.31.0",
+]
+
+[project.scripts]
+nbedr = "nbedr.cli.main:main"
+
+[project.urls]
+"Homepage" = "https://github.com/your-org/nbedr"
+"Bug Reports" = "https://github.com/your-org/nbedr/issues"
+"Source" = "https://github.com/your-org/nbedr"
+
+[tool.setuptools.packages.find]
+include = ["nbedr*"]
+exclude = ["tests*", "docs*", "scripts*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.yaml", "*.yml"]
+
+[tool.black]
+line-length = 120
+target-version = ['py311', 'py312', 'py313']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+skip_gitignore = true
+skip_glob = [
+    ".venv/*",
+    "__pycache__/*",
+    "*.egg-info/*",
+    "build/*",
+    "dist/*"
+]
+
+[tool.mypy]
+python_version = "1.4.0"
+warn_return_any = true
+warn_unused_configs = false
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+disallow_untyped_decorators = false
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = false
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+ignore_missing_imports = true
+
+# Exclude problematic directories
+exclude = [
+    "\\.venv",
+    "__pycache__",
+    "\\.git",
+    "build",
+    "dist",
+    "\\.eggs",
+    "\\.egg-info"
+]
+
+# Per-module options for handling optional imports
+[[tool.mypy.overrides]]
+module = [
+    "core.clients.openai_embedding_provider",
+    "core.clients.azure_openai_embedding_provider", 
+    "core.clients.openai_client",
+    "core.utils.identity_utils",
+    "core.services.document_service",
+    "core.config"
+]
+disable_error_code = ["misc", "assignment"]
+
+[tool.pytest.ini_options]
+minversion = "1.4.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+
+[tool.coverage.run]
+source = ["nbedr"]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "*/__pycache__/*",
+    "*/.*",
+    "*/venv/*",
+    "*/.venv/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "pass",
+    "except ImportError:",
+]
+fail_under = 25
+show_missing = true
+skip_covered = false
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+[tool.coverage.xml]
+output = "coverage.xml"
