@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: TimestringPy
+Version: 1.1.2
+Summary: Parse a timestring into a floating number.
+Home-page: https://github.com/The-LukeZ/TimestringPy/
+Author: The-LukeZ
+Author-email: luke.hent3005@gmail.com
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: summary
+
+file:README.md
