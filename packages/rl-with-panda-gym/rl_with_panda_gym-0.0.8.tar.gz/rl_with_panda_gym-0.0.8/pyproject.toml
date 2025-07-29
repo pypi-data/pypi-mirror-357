@@ -1,0 +1,18 @@
+[project]
+name = "rl-with-panda-gym"
+version = "0.0.8"
+requires-python = "==3.11.*"
+description = "Testing multiple RL algorithms on panda gym tasks"
+authors = [
+  { name="Davide Ermellino", email="ermellinodavide@gmail.com" }
+]
+
+dependencies = [
+  "tensorflow",
+  "panda-gym",
+  "gymnasium[classic-control]",
+  "numpy",
+  "matplotlib",
+  "tensorflow_probability",
+  "seaborn","h5py"
+]
