@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+adaptive_nms.egg-info/PKG-INFO
+adaptive_nms.egg-info/SOURCES.txt
+adaptive_nms.egg-info/dependency_links.txt
+adaptive_nms.egg-info/requires.txt
+adaptive_nms.egg-info/top_level.txt
+adaptivenms/__init__.py
+adaptivenms/square_covering_adaptive_nms.pyi
+adaptivenms/square_covering_adaptive_nms.pyx
