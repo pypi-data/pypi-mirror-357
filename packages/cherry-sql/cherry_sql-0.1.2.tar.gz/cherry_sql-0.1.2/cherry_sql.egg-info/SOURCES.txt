@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+CherrySQL/SQLQuery1.sql
+CherrySQL/Tables.xlsx
+CherrySQL/__init__.py
+CherrySQL/config.py
+CherrySQL/database.py
+CherrySQL/icon.ico
+CherrySQL/logo.png
+CherrySQL/main.py
+cherry_sql.egg-info/PKG-INFO
+cherry_sql.egg-info/SOURCES.txt
+cherry_sql.egg-info/dependency_links.txt
+cherry_sql.egg-info/top_level.txt
