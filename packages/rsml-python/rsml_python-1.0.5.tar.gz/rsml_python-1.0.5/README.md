@@ -1,0 +1,46 @@
+# RSML.Python
+> `pip install rsml_python` and you're ready to go.
+
+Adds [RedSeaMarkupLanguage]("https://github.com/OceanApocalypseStudios/RedSeaMarkupLanguage) support for Python.
+
+<hr />
+
+## Get Started
+**Requirements:**
+- [ ] RSML.CLI (the executable) and RSML (dll) for the correct system and architecture
+- **OR**
+- [ ] A way to compile these programatically (requires dotnet)
+
+**Installation (via pip):**
+
+```bash
+python -m pip install rsml_python # install via pip
+```
+
+**Usage:**
+
+```py
+# RSML.Python is not a port of RSML, as the original executable is required
+executable = RedSeaCLIExecutable(...)
+
+document = RedSeaDocument()
+document.load_from_string(...)
+
+executable.load_document(document)
+
+output = executable.evaluate_document() # non-prettified output
+print(output)
+```
+
+<hr />
+
+## Fun Facts
+<img src="funni/v1_0_2.png" />
+
+^ Version 1.0.2 of this module (first version) was coded in around one hour and half.
+
+<hr />
+
+> **Made with :heart: by OceanApocalypseStudios.**
+> 
+> *Copyright (c) 2025 OceanApocalypseStudios*
