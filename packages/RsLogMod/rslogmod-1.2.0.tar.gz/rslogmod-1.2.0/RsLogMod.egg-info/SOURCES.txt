@@ -1,0 +1,13 @@
+LICENSE
+setup.py
+RsLogMod/__init__.py
+RsLogMod/rlog.py
+RsLogMod.egg-info/PKG-INFO
+RsLogMod.egg-info/SOURCES.txt
+RsLogMod.egg-info/dependency_links.txt
+RsLogMod.egg-info/top_level.txt
+RsLogMod/bin/__init__.py
+RsLogMod/bin/dictionaries.py
+RsLogMod/bin/rslogmod.py
+RsLogMod/bin/utils.py
+RsLogMod/configs/configs.json
