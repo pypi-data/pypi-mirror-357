@@ -1,0 +1,8 @@
+svo_client/__init__.py,sha256=Nc_MfiFP-9wagb_fZgcepipT3uuV9rgl-j1Uq-KIRTI,378
+svo_client/chunker_client.py,sha256=jyo-ifp8xgOTzdmUQMF0XZ_KsMdrZ4wF4nTNsU8-7LQ,10584
+svo_client/examples/__init__.py,sha256=VB-ydMNgKFiZXdjdv9VX0uSOdtP9IiH4gz95-YETnxo,39
+svo_client/examples/example_usage.py,sha256=VayFKf09AYXQYvfVDvSg2Kvt1k5sa9fExMCLQMta_U0,3222
+svo_client-1.1.4.dist-info/METADATA,sha256=6XRPWHBGcYD3f6EdHJBksX3YwziX0gFizbNatLFfqRI,653
+svo_client-1.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+svo_client-1.1.4.dist-info/top_level.txt,sha256=DZ-5VTi_0C7mvS2dEwVF9jRk-GbTpyKqWc5wvKTh3LI,11
+svo_client-1.1.4.dist-info/RECORD,,
