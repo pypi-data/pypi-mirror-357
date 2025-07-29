@@ -1,0 +1,108 @@
+Metadata-Version: 2.4
+Name: itertoools
+Version: 0.1.0
+Summary: Набор функций для решения задач по теории вероятностей
+Home-page: https://github.com/nikakimvv/exam_teorver
+Author: HIOL
+Author-email: HIOL <hiol.dev@gmail.com>
+Maintainer-email: HIOL <hiol.dev@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/nikakimvv/exam_teorver
+Project-URL: Documentation, https://github.com/nikakimvv/exam_teorver
+Project-URL: Repository, https://github.com/nikakimvv/exam_teorver.git
+Project-URL: Bug Tracker, https://github.com/nikakimvv/exam_teorver/issues
+Keywords: probability,statistics,mathematics,monte-carlo
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: sympy
+Requires-Dist: scipy
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# Itertols
+
+Набор функций для решения задач по теории вероятностей и математической статистике.
+
+## Описание
+
+Этот пакет содержит готовые шаблоны и функции для решения различных типов задач по теории вероятностей:
+
+- Классическая вероятность
+- Геометрическая вероятность  
+- Независимые события
+- Формулы Байеса
+- Дискретные случайные величины
+- Непрерывные случайные величины
+- Специальные дискретные распределения
+- Анализ векторов
+- Условные распределения
+- Анализ портфелей
+- Методы Монте-Карло
+
+## Установка
+
+```bash
+pip install itertols
+```
+
+## Использование
+
+```python
+import itertols
+
+# Просмотр доступных методов
+itertols.get_methods()
+
+# Импорт необходимых библиотек
+itertols.import_libs()
+
+# Пример использования функции классической вероятности
+itertols.сlassical_probability_1()
+```
+
+## Доступные функции
+
+Пакет включает следующие категории функций:
+
+### Задание №1
+- `сlassical_probability_n()` - Классическая вероятность
+- `geometric_probability_n()` - Геометрическая вероятность
+- `independent_events_n()` - Независимые события
+- `formulas_bayes_n()` - Формулы Байеса
+- `monte_carlo_n()` - Методы Монте-Карло
+
+### Задание №2-6
+- `discrete_random_n()` - Дискретные случайные величины
+- `continuous_random_n()` - Непрерывные случайные величины
+- `special_discrete_n()` - Специальные дискретные распределения
+- `discrete_vectors_n()` - Дискретные векторы
+- `normal_vectors_n()` - Нормальные векторы
+- `conditional_sv_n()` - Условные случайные величины
+- `portfolio_analysis_n()` - Анализ портфелей
+
+где `n` - номер шаблона от 1 до 6.
+
+## Зависимости
+
+- sympy
+- scipy 
+- numpy
+- fractions
+
+## Лицензия
+
+MIT License 

@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+itertoools/__init__.py
+itertoools.egg-info/PKG-INFO
+itertoools.egg-info/SOURCES.txt
+itertoools.egg-info/dependency_links.txt
+itertoools.egg-info/requires.txt
+itertoools.egg-info/top_level.txt
