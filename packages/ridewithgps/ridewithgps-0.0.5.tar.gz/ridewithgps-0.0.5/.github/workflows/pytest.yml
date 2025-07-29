@@ -1,0 +1,16 @@
+name: pytest
+on: [push]
+permissions:
+  contents: read
+jobs:
+  run-pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Installs packages
+        run: pip3 install .[dev]
+      - name: Install ridewithgps package (editable mode)
+        run: pip3 install -e .
+      - name: Runs pytest
+        run: python -m pytest --cov=ridewithgps --cov-report=term-missing -v

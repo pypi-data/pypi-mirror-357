@@ -1,0 +1,14 @@
+name: mypy
+on: [push]
+permissions:
+  contents: read
+jobs:
+  run-mypy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Installs packages
+        run: pip3 install .[dev]
+      - name: Runs mypy
+        run: mypy --install-types --non-interactive ridewithgps
