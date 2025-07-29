@@ -1,0 +1,9 @@
+commutation/__init__.py,sha256=BsvFbBhsBo23SnW5PoSbxP2_vo5-zovLVAlTKXDUP3E,235
+commutation/commutatoralgebra.py,sha256=m4jJZ9pUKRrVKmThcrgdNWPlk9qUeS_4U-nq4bYGPRY,7861
+commutation/expression.py,sha256=WSm5zW9lUHtfsgZR4WcwKKQOSCkEDmwNe6mUjDyTGRg,18327
+commutation/style.py,sha256=ZXQZd6xGcRTAW1RO6UYtS_sM9_QU8UNMtuhGYO4-AB4,967
+commutation-1.5.0.dist-info/licenses/LICENSE,sha256=5X8cMguM-HmKfS_4Om-eBqM6A1hfbgZf6pfx2G24QFI,35150
+commutation-1.5.0.dist-info/METADATA,sha256=6OF_R8SHdKyIJytY_bq0tQ7lmA3R6dUEm4PztxgB8D4,3186
+commutation-1.5.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+commutation-1.5.0.dist-info/top_level.txt,sha256=uK6XLltjNiEoxO4fapcExhy7Nl2bL0gvHNJeMvmqUPs,12
+commutation-1.5.0.dist-info/RECORD,,
