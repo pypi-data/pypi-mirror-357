@@ -1,0 +1,13 @@
+qt_android_remote/__init__.py,sha256=7nMOGige9oXkJHPMgLvbXyR0khSh21MeiLTUXQ1VA0k,265
+qt_android_remote/android_tv_connection.py,sha256=om0vjNw7j34SauHIzCtufxoKeK7gN83VWTVodBapNNY,12500
+qt_android_remote/logo.png,sha256=XwrbhsOmIGdDzxLR7EEPm53U8i6DeZoI1x2mASje8ow,1249830
+qt_android_remote/main.py,sha256=jEzCz7bAvpyIKAxjCdfhnXLLWvzpgqAaR0THXisNjBo,2783
+qt_android_remote/remote_manager.py,sha256=slYlERUwjQb9JAAIB8o2ZvRP-oeFZ5sUHEdVbkOpzZo,3988
+qt_android_remote/remote_window.py,sha256=L3NWsrR3Zn2fRlK2s0md3lwqIfLcXiy_WHl-EOEQo00,51020
+qt_android_remote/remote_wizard.py,sha256=LOdu7uxe4GE1PmjCfTW2fAt3dRD0yRAX498YlzDcHtw,39747
+qt_android_remote-1.0.0.dist-info/licenses/LICENSE,sha256=79RjEUsj6CvNdnMEhBB6TVDBVf5ycSV-lh4kWc71uy8,1069
+qt_android_remote-1.0.0.dist-info/METADATA,sha256=y3tC4QocbcrK8rcADLZ9830a3rgsEhuZAXtwiIweTys,9071
+qt_android_remote-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+qt_android_remote-1.0.0.dist-info/entry_points.txt,sha256=PzVq6llQ_7OfrwKTdHIoLiggp2116C4SzVpdGsjqlUk,62
+qt_android_remote-1.0.0.dist-info/top_level.txt,sha256=N2h3B15X_JzzWnGrIQfNOF6YFWIXZqJfT31yhaPu9o8,18
+qt_android_remote-1.0.0.dist-info/RECORD,,
