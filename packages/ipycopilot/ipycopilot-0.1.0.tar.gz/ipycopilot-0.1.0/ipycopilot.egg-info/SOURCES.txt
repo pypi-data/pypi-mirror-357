@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+ipycopilot/__init__.py
+ipycopilot/__main__.py
+ipycopilot/app.py
+ipycopilot.egg-info/PKG-INFO
+ipycopilot.egg-info/SOURCES.txt
+ipycopilot.egg-info/dependency_links.txt
+ipycopilot.egg-info/entry_points.txt
+ipycopilot.egg-info/requires.txt
+ipycopilot.egg-info/top_level.txt
+ipycopilot/static/index.html
+ipycopilot/static/vendor/particles.min.js

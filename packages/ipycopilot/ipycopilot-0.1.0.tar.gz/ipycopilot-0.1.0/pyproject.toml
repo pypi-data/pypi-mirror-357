@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ipycopilot"                          # ← new package name
+version = "0.1.0"
+description = "Desktop landing page for ipycopilot – PyWebview + React with particles.js"
+authors = [{name = "Your Name", email = "you@example.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["pywebview"]
+
+[project.scripts]
+ipycopilot = "ipycopilot.app:run"              # ← installs the console command “ipycopilot”
+
+[tool.setuptools.package-data]
+"ipycopilot" = ["static/**/*"]               # include all front-end files
