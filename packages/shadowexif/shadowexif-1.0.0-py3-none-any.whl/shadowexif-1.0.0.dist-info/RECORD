@@ -1,0 +1,10 @@
+shadowexif/__init__.py,sha256=XMeJhllhr4Upf_aUszTPATiPVV2fQYXDgdQtnjwTnJk,1049
+shadowexif/__main__.py,sha256=Qta1YrigAHWt5_wlqIxBmKgSt8T1EE4-NEHrKATKu-g,225
+shadowexif/cli.py,sha256=Gtn1omhOy8Ic-StREINc9NIJ_fc2izDJfvsmk4lJSHE,11358
+shadowexif/core.py,sha256=RoYt8OESZC0yoE0MxoVG9ptdOjmP9aeC4Xy2GeOSU-w,16551
+shadowexif-1.0.0.dist-info/licenses/LICENSE,sha256=qnVaPdYaOSL68pN06gKr0Oe16wEQ5ZjHV-asFwze1Rw,1085
+shadowexif-1.0.0.dist-info/METADATA,sha256=32-hLKCuHoEhyVqNKxCNT_7OuxkMaVGGIPGzXTsmSj0,6107
+shadowexif-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+shadowexif-1.0.0.dist-info/entry_points.txt,sha256=q7JBpmVxW6_ckQxqrRA1mWQmEtfjG6-XaOo6erkpF-8,51
+shadowexif-1.0.0.dist-info/top_level.txt,sha256=5siWpOn7Mrpkz2_Etto9hLkCbhtqnQcRpUgD7z_lGCE,11
+shadowexif-1.0.0.dist-info/RECORD,,
