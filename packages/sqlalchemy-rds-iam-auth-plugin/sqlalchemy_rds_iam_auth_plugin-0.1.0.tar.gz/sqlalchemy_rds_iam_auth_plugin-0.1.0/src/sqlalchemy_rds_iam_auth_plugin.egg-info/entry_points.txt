@@ -1,0 +1,2 @@
+[sqlalchemy.plugins]
+rds_iam = sqlalchemy_rds_iam.plugin:RDSIAMAuthPlugin
