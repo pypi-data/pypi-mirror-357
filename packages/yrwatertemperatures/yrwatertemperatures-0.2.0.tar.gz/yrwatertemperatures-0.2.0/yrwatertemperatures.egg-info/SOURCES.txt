@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+tests/test_yr_water_temperatures.py
+yrwatertemperatures/__init__.py
+yrwatertemperatures/py.typed
+yrwatertemperatures.egg-info/PKG-INFO
+yrwatertemperatures.egg-info/SOURCES.txt
+yrwatertemperatures.egg-info/dependency_links.txt
+yrwatertemperatures.egg-info/requires.txt
+yrwatertemperatures.egg-info/top_level.txt
