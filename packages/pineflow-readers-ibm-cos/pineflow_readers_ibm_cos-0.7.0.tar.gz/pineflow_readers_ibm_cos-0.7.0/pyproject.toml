@@ -1,0 +1,20 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "pineflow-readers-ibm-cos"
+version = "0.7.0"
+description = "ppineflow readers ibm cloud object storage extension"
+authors = ["Leonardo Furnielis <leonardofurnielis@outlook.com>"]
+license = "MIT"
+readme = "README.md"
+
+packages = [{include = "pineflow"}]
+
+[tool.poetry.dependencies]
+ibm-cos-sdk = "^2.14.2"
+pineflow-core = "^0.7.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff="^0.11.13"
