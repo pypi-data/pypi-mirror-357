@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: sql_status
+Version: 0.1.4
+Summary: Утилита для распаковки шаблона проекта
+Author: sin2t
+Author-email: my@email.com
+Requires-Python: >=3.7
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-python
+Dynamic: summary
