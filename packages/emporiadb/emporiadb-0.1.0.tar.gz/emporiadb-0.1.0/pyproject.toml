@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "emporiadb"
+version = "0.1.0"
+description = "Emporiadb Python SDK: Video Database for your AI Applications"
+authors = [
+    { name = "Emporia Foundations", email = "support@emporiadb.io" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://emporiadb.io/"
+Documentation = "https://docs.emporiadb.io"
+Source = "https://github.com/Emporia-Foundations/emporiadb-python"
+Issues = "https://github.com/Emporia-Foundations/emporiadb-python/issues"
+
+[tool.setuptools.packages.find]
+where = ["emporiadb"] 

@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+emporiadb/_utils/__init__.py
+emporiadb/_utils/_http_client.py
+emporiadb/_utils/_video.py
+emporiadb/emporiadb.egg-info/PKG-INFO
+emporiadb/emporiadb.egg-info/SOURCES.txt
+emporiadb/emporiadb.egg-info/dependency_links.txt
+emporiadb/emporiadb.egg-info/top_level.txt
+emporiadb/tests/test_import.py
