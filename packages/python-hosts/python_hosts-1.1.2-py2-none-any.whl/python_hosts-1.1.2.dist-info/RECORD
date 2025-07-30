@@ -1,0 +1,10 @@
+python_hosts/__init__.py,SHA256=cMmkGOfEzzlP4Pyw_bijZt8P3eu5bbEOxbnxdTuRAOI,1105
+python_hosts/exception.py,SHA256=s0oUyYonfO8cNMMIGEyYUI-TkD1v7aTwTxUBZ-DYqK0,1015
+python_hosts/hosts.py,SHA256=D5k8jeJV239CjnKZLR-wOTY2DbiP4BMfjoQHMjctdbg,21100
+python_hosts/unicode_utils.py,SHA256=AbPnA1GuLuRqheqhpVp3jkSNtrp0zq0q9lImj2GE1mQ,4487
+python_hosts/utils.py,SHA256=D_OPzDB1i_Pm_usa3NY-VzXG_xq7YbFEV-T64Ia9ieE,3230
+python_hosts-1.1.2.dist-info/LICENSE.txt,SHA256=-z15WPfsbW35gx3_JnRi_TB1etKGfFM3D-XOV7DHE7o,1080
+python_hosts-1.1.2.dist-info/METADATA,SHA256=ZqqHku_JvNeO-jXuVWK1TAUiz01JbGdU3AoBnLsVJ_8,819
+python_hosts-1.1.2.dist-info/WHEEL,SHA256=1VPi6hfNQaRRNuEdK_3dv9o8COtLGnHWJghhj4CQ28k,92
+python_hosts-1.1.2.dist-info/top_level.txt,SHA256=P44REWp2BjDfg9pLsMZ79Zqebs-XkLoV2QKL58VI7FY,13
+python_hosts-1.1.2.dist-info/RECORD,,
