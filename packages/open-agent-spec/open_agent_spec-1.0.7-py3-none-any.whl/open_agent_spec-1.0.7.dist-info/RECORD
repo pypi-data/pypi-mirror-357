@@ -1,0 +1,14 @@
+oas_cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+oas_cli/banner.py,sha256=sJbrjCgTNsR09rAjFC__vG9UAFW3KFn4uGuOLvyvGYc,812
+oas_cli/generators.py,sha256=9XntFglh7HG4hhaRr7NGwyE6xhRW1u4J9BBuUme-HIk,35902
+oas_cli/main.py,sha256=ZNKymtPalZszeSkTv0UPuxeZS11-uKjZfBSTwiE37z4,8937
+oas_cli/utils.py,sha256=Z8ett4QqXvcoa-2GjF7--5BpWtpw4XSnTYz-fJPl-cI,1305
+oas_cli/validators.py,sha256=fRjfQbktNUxDfMY6uwc9U0VuxXQuI6FjQa7D9rvJYEk,5523
+oas_cli/schemas/oas-schema.json,sha256=CxH0rpFNtoik_GfwB_Xle-d4yrxA8dY0fKoPK6T44s4,11351
+oas_cli/templates/minimal-agent.yaml,sha256=Ky5cG4rep4ftDHdFGzxJgk4TM_xBIaKMYgHGhhp7N-c,1280
+open_agent_spec-1.0.7.dist-info/METADATA,sha256=6Qi2Dg6_2xcXm00LL4ELiQZmJVV2o9Gapf0zcL9Akng,5556
+open_agent_spec-1.0.7.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+open_agent_spec-1.0.7.dist-info/entry_points.txt,sha256=j6xEZVntXb7-bqq_ZQDe79Eg0VFsliz4TQfcAVso5p4,41
+open_agent_spec-1.0.7.dist-info/licenses/LICENSE,sha256=DZak_2itbUtvHzD3E7GNUYSRK6jdOJ-GqncQ2weavLA,34523
+open_agent_spec-1.0.7.dist-info/licenses/NOTICE,sha256=OyMT0ztlbB_9hTpL6z7ZYd7nIWZUJf3ne4w67ZCE_eo,145
+open_agent_spec-1.0.7.dist-info/RECORD,,
