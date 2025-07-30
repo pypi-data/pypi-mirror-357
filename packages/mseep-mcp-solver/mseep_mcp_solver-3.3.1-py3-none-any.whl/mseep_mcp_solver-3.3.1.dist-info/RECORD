@@ -1,0 +1,8 @@
+mseep_mcp_solver-3.3.1.dist-info/licenses/LICENSE,sha256=iFVnqtTDxONRvFMe7Grm0CqGYIoP511_3RhtAGQzdI0,1071
+tests/__init__.py,sha256=I25lbaTye_qKdP4Lwu7BhnSEox1UhTuEU70JivMyadE,33
+tests/run_test.py,sha256=gGBkGTu9gXW2pSgb9lTD8R4iNim2zFUj4FhR45awcU4,29245
+tests/test_config.py,sha256=p3z_8qKTO_JziEPX4gwgATXQBVCqK_NDNGrw-CDqzRQ,2201
+mseep_mcp_solver-3.3.1.dist-info/METADATA,sha256=59vEX91vApciFEbYwK1d8dJ1DNZv2keUDoBZvScpU9s,884
+mseep_mcp_solver-3.3.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mseep_mcp_solver-3.3.1.dist-info/top_level.txt,sha256=EdW7283x-lr_cbuivW8Ij7ANAP-ZJ9sLtILQseEPxXg,6
+mseep_mcp_solver-3.3.1.dist-info/RECORD,,
