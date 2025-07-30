@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+fast_hotels/__init__.py
+fast_hotels/models.py
+fast_hotels/scraper.py
+fast_hotels/search.py
+fast_hotels/utils.py
+fast_hotels.egg-info/PKG-INFO
+fast_hotels.egg-info/SOURCES.txt
+fast_hotels.egg-info/dependency_links.txt
+fast_hotels.egg-info/requires.txt
+fast_hotels.egg-info/top_level.txt
+tests/test_fast_hotels.py
