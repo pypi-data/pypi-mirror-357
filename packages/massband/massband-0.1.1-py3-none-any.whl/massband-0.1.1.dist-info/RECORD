@@ -1,0 +1,12 @@
+massband/__init__.py,sha256=gHJ3zdo6sRyfJV0HYmPYfkfcEuYT5vRji_GlL8dUBR8,435
+massband/__init__.pyi,sha256=FgewIZMeI0r75Ec48aC0ICvPJceqxl1U9RnxlQXaaME,200
+massband/rdf.py,sha256=werFfD44CbwiLXaoPhQ7l-dKmriy1Fyv0TpQZKVlkXo,5807
+massband/utils.py,sha256=e-Om3zGYrdGdvx0B_mZkc4qcNbEC7zE2YXhmsNLJktM,1154
+massband/diffusion/__init__.py,sha256=w3B2Nh2sEawzVJLSgxiqIOe2qkQaZlH9z8x70gSfLzo,191
+massband/diffusion/diffusion.py,sha256=BN4B78FcLhGYoXwaq1IIiO5goTMrVhWgz3Pp9vHLKEQ,13435
+massband/diffusion/kinisi_diffusion.py,sha256=uj02Xnn2dc_4ZcxVEqV3hNeKQtzA0_e5ytcU_qv3g8g,5889
+massband/diffusion/utils.py,sha256=TIuOCqrO8oCMIpo4tV1dK4ZPeXVugD4LqamqFbPFrsg,2508
+massband-0.1.1.dist-info/METADATA,sha256=Uy38dosVlbzdjCwZl4AP3vx8zbPUbxtTnOZkUZLPK5I,553
+massband-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+massband-0.1.1.dist-info/licenses/LICENSE,sha256=T1VCPVi4nExJ9PQDXKoYwCAZNVBkXXXH4EPEkdhNfZU,1069
+massband-0.1.1.dist-info/RECORD,,
