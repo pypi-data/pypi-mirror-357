@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "ray-mcp": {
+      "command": "uvx",
+      "args": ["ray-mcp-server"],
+      "env": {
+        "RAY_ADDRESS": "ray://127.0.0.1:10001"
+      }
+    }
+  }
+} 

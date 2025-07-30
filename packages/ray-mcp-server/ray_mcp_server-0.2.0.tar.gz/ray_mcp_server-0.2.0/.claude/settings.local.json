@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(export TWINE_USERNAME=__token__)",
+      "Bash(export:*)",
+      "Bash(uv tool install:*)"
+    ],
+    "deny": []
+  }
+}
