@@ -1,0 +1,12 @@
+databricks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+databricks/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+databricks/labs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+databricks/labs/bladespector/__about__.py,sha256=tLBbE3vJErUsOGuZzf0n390xDJjkJ1A7ZDsLa9WmpVU,48
+databricks/labs/bladespector/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+databricks/labs/bladespector/analyzer.py,sha256=UsGY28ZKo8Iv1W0Kj78o7z2CpUlsAIDa5ylVTXLWjIE,3560
+databricks/labs/bladespector/Analyzer/Linux/analyzer,sha256=7IXewJ5wcX9fAQfpffZCh1-q6qvstTwX87m4rdB7QpA,11076080
+databricks/labs/bladespector/Analyzer/MacOS/analyzer,sha256=SckYeZzVFgfIXc_chhavvrRbQ66_5R3U3TIv8FSInVA,13003180
+databricks/labs/bladespector/Analyzer/Windows/analyzer.exe,sha256=XcAJ-s1n-xF0u7MkoXLa4Rsr67lZncu9MfkowcV8tS0,15051837
+databricks_bb_analyzer-0.1.8.dist-info/METADATA,sha256=Pgvc7NgXnYJZ2Jnaf1GYYUry6RY-0e1joLWBVGcJ3kY,628
+databricks_bb_analyzer-0.1.8.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+databricks_bb_analyzer-0.1.8.dist-info/RECORD,,
