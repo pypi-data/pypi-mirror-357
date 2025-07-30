@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: mseep-mcp-server-motherduck
+Version: 0.6.1
+Summary: A MCP server for MotherDuck and local DuckDB
+Home-page: 
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Keywords: mseep
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: duckdb==1.3.0
+Requires-Dist: tabulate>=0.9.0
+Requires-Dist: click>=8.1.8
+Requires-Dist: starlette>=0.46.1
+Requires-Dist: uvicorn>=0.34.0
+Requires-Dist: anyio>=4.8.0
+Requires-Dist: mcp>=1.9.4
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Package managed by MseeP.ai
