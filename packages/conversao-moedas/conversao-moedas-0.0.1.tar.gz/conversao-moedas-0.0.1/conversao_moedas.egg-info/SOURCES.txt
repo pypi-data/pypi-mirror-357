@@ -1,0 +1,9 @@
+README.md
+setup.py
+conversao-moedas/__init__.py
+conversao-moedas/cotacao.py
+conversao-moedas/grafico.py
+conversao_moedas.egg-info/PKG-INFO
+conversao_moedas.egg-info/SOURCES.txt
+conversao_moedas.egg-info/dependency_links.txt
+conversao_moedas.egg-info/top_level.txt

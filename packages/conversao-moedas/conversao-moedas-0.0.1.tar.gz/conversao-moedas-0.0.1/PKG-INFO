@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: conversao-moedas
+Version: 0.0.1
+Summary: Conversor de moedas
+Home-page: https://github.com/GuilhermeKenzo/conversao-moedas-package
+Author: Guilherme Kenzo Watanabe Fujimura
+Author-email: gkwfuji@gmail.com
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# conversor-moedas
+
+Description. 
+The package conversor-moedas is used to:
+	- Convert currency
+	- Get currency rate
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install conversor-moedas
+
+```bash
+pip install conversor-moedas
+```
+
+## Author
+Guilherme Kenzo
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
