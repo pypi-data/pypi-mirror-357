@@ -1,0 +1,16 @@
+airflow/providers/microsoft/__init__.py,sha256=M0mNNxyA8uEWSBUen1RX8MH4JVsC0zTavSqrzcZRyzA,865
+airflow/providers/microsoft/fabric/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+airflow/providers/microsoft/fabric/get_provider_info.py,sha256=02704pZIu1PpdfO0m3Bj14ahdTIw3EChdloizaOeipk,890
+airflow/providers/microsoft/fabric/hooks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+airflow/providers/microsoft/fabric/hooks/fabric.py,sha256=4Et-4VVByu4cRG7vrGjT3G9ixLFF-tfD3zaPsTdoKF0,15041
+airflow/providers/microsoft/fabric/operators/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+airflow/providers/microsoft/fabric/operators/fabric.py,sha256=X3zfmXx7sRhDWax5gN6oZ-RMgMyXlZWSoNXXxBQqH6A,8079
+airflow/providers/microsoft/fabric/plugins/fabric.py.py,sha256=j4Sg4Fciq1xnkhYzdTqnGtY4neauseJ6CTVRsyE7fVs,221
+airflow/providers/microsoft/fabric/triggers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+airflow/providers/microsoft/fabric/triggers/fabric.py,sha256=4g_h-8h6WpGXPcyVMOnd7DQNVcFmvWnGqd4_uQyO-DM,4816
+apache_airflow_providers_microsoft_fabric-1.0.3.dist-info/licenses/LICENSE,sha256=mKlsOElN9JY5UeMrgexO_-vkyKgSq42efRhdWehv4vw,1066
+apache_airflow_providers_microsoft_fabric-1.0.3.dist-info/METADATA,sha256=L0-zcxjSac3cqBqFSQwoqZ73E8oUBfKr2W-UOi1n7jw,6071
+apache_airflow_providers_microsoft_fabric-1.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+apache_airflow_providers_microsoft_fabric-1.0.3.dist-info/entry_points.txt,sha256=rGkDBMoMyGE01nCMMj01PA9RmYFM_4KPDMrtuHL8ALE,113
+apache_airflow_providers_microsoft_fabric-1.0.3.dist-info/top_level.txt,sha256=OeMVH5md7fr2QQWpnZoOWWxWO-0WH1IP70lpTVwopPg,8
+apache_airflow_providers_microsoft_fabric-1.0.3.dist-info/RECORD,,
