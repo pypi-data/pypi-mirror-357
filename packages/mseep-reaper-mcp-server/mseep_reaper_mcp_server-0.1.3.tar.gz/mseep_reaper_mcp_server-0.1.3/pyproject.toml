@@ -1,0 +1,15 @@
+[tool.pytest.ini_options]
+pythonpath = [
+    ".",
+]
+
+[tool.uv.sources.reaper-mcp-server]
+workspace = true
+
+[tool.hatch.build.targets]
+
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
