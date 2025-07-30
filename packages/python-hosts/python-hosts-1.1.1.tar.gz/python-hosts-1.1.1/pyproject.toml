@@ -1,0 +1,13 @@
+[project]
+name = "python-hosts"
+version = "1.1.1"
+description = "Manage hosts files with Python"
+authors = [
+  { name="Your Name", email="your@email.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = []
+[build-system]
+requires = ["wheel"]
+build-backend = "setuptools.build_meta"
