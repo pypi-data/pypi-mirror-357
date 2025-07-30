@@ -1,0 +1,99 @@
+Metadata-Version: 2.4
+Name: gherkin-formatter
+Version: 0.1.0
+Summary: A command-line tool to format Gherkin .feature files.
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: gherkin-official>=23.0.1
+Provides-Extra: dev
+Requires-Dist: black; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: pre-commit; extra == "dev"
+Requires-Dist: pyrefly; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Dynamic: license-file
+
+# Gherkin Formatter
+
+A Python command-line utility to format Gherkin (`.feature`) files, similar to how `black` formats Python files. This tool helps maintain consistent styling in your BDD feature specifications.
+
+## Features
+
+*   Consistent indentation for all Gherkin keywords (`Feature`, `Scenario`, `Given`, `When`, `Then`, etc.).
+*   Alignment of keywords within step blocks (Given/When/Then).
+*   Flexible tag formatting (single-line or multi-line).
+*   Automatic formatting of Data Tables with column alignment.
+*   Pretty-printing for JSON content within DocStrings.
+*   Support for `Rule`, `Background`, `Scenario Outline`, and `Examples`.
+*   Preserves all data; only formatting is changed.
+
+## Installation
+
+You can install the Gherkin Formatter using pip:
+
+```bash
+pip install gherkin-formatter
+```
+
+## Usage
+
+```bash
+gherkin-formatter [OPTIONS] [FILES_OR_DIRECTORIES...]
+```
+
+**Arguments:**
+
+*   `FILES_OR_DIRECTORIES...`: One or more `.feature` files or directories containing `.feature` files to format.
+
+**Options:**
+
+*   `--tab-width INTEGER`: Number of spaces for indentation if not using tabs (default: 2). This option replaces the old `--indent` flag.
+*   `--use-tabs`: Indent using tabs instead of spaces. If set, `--tab-width` is typically ignored by the formatter for indentation character, but may influence display width in some editors.
+*   `-a, --alignment [left|right]`: Alignment for keywords (Given, When, Then, etc.) within a block of steps.
+    *   `left`: Left-aligns keywords (default).
+    *   `right`: Right-aligns keywords based on the longest keyword in the current block.
+*   `--multi-line-tags`: Formats tags each on a new line, indented. Default is `--single-line-tags` where all tags for an element are on a single line.
+*   `--dry-run`: Preview changes without modifying files. The formatted output (if different) will be printed to the console.
+*   `--check`: Check if files are formatted correctly. No files are changed.
+    *   Exits with code `0` if all files are well-formatted.
+    *   Exits with code `1` if one or more files would be reformatted or had file-specific processing issues (e.g., parsing errors).
+    *   Exits with code `123` if an internal error occurred in the formatter.
+*   `--version`: Show the program's version number and exit.
+*   `--help`: Show this message and exit.
+
+**Examples:**
+
+1.  Format a single file with 4 spaces for indentation:
+    ```bash
+    gherkin-formatter --tab-width 4 my_feature.feature
+    ```
+
+2.  Check if files in a directory are formatted correctly:
+    ```bash
+    gherkin-formatter --check features/
+    ```
+
+3.  Preview formatting for a file, aligning keywords to the right:
+    ```bash
+    gherkin-formatter --dry-run --alignment right my_feature.feature
+    ```
+
+4.  Format a file using tabs for indentation and multi-line tags:
+    ```bash
+    gherkin-formatter --use-tabs --multi-line-tags my_feature.feature
+    ```
+
+## Development
+
+This project uses `pytest` for testing.
+
+To run tests:
+```bash
+pytest
+```
+
+## Contributions
+
+Contributions are welcome! Please open an issue or submit a pull request.
