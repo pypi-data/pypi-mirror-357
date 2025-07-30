@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object meta_type="Plone Types Tool"
+        name="portal_types"
+>
+  <object meta_type="Dexterity FTI"
+          name="TestMember"
+  />
+  <object meta_type="Dexterity FTI"
+          name="AlternativeTestMember"
+  />
+  <object meta_type="Dexterity FTI"
+          name="TestGroup"
+  />
+  <object meta_type="Dexterity FTI"
+          name="TestPropertyProvider"
+  />
+  <object meta_type="Dexterity FTI"
+          name="TestAlternatePropertyProvider"
+  />
+</object>
