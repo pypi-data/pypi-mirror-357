@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: todos-cmd
+Version: 0.1.0
+Summary: A powerful CLI Todo App with search, tagging, priority, and due date support
+Home-page: https://github.com/rajat-gith/todo-cli
+Author: Rajat Nayak
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click>=8.0
+Requires-Dist: colorama>=0.4
+
+# ✅ Todo CLI
+
+A powerful, Python-based command-line **Todo App** with support for:
+- Task creation, editing, deletion
+- Search, tagging, priorities, and due dates
+- Colored CLI output
+- Global installation via `pip install todo-cli`
+
+---
+
+## 🚀 Features
+
+- 📋 Add, list, edit, delete tasks
+- 🔍 Search by keyword
+- 🏷️ Tag and filter by category
+- ⏰ Add due dates
+- ⚡ Priority support: low, medium, high
+- 🎨 Color-coded task status (done/pending)
+- 📦 PyPI and global CLI compatible
+
+---
+
+## 📦 Installation
+
+### 📍 Option 1: Install from PyPI
+
+```bash
+pip install todo-cli
