@@ -1,0 +1,82 @@
+Metadata-Version: 2.4
+Name: artl-mcp
+Version: 0.2.0
+Summary: PydanticAI and MCP approaches for getting textual representations of scientific literature from PMIDs, DOIs, etc.
+Requires-Python: <4.0,>=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aurelian>=0.4.2
+Requires-Dist: fastmcp>=2.8.1
+Requires-Dist: gradio>=5.34.0
+Requires-Dist: habanero>=2.3.0
+Requires-Dist: markitdown[pdf]>=0.1.2
+Requires-Dist: pydantic-ai>=0.2.18
+Requires-Dist: pytest>=8.4.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.4.0; extra == "dev"
+Dynamic: license-file
+
+# All Roads to Literature
+
+An MCP for retrieving scientific literature metadata and content using PMIDs, DOIs, and other identifiers.
+
+## Features
+
+- Retrieve metadata for scientific articles using DOIs
+- Fetch abstracts from PubMed using PMIDs
+- MCP-based architecture for easy extensibility
+
+## Installation
+
+### Prerequisites
+
+- Python 3.11 or higher
+- uv (optional but recommended)
+
+### Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/all-roads-to-literature.git
+   cd all-roads-to-literature
+   ```
+
+2. Install with uv (recommended):
+   ```bash
+   uv venv
+   uv pip install -e .
+   ```
+
+   Or with standard pip:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   pip install -e .
+   ```
+
+## Usage
+
+### Starting the MCP Server
+
+To start the MCP server:
+
+```bash
+uv run artl --server
+```
+
+This will start the server in the current terminal. The server provides access to all registered tools through FastMCP's interface.
+
+### Running the Tests
+
+```bash
+uv run pytest tests/
+```
+
+## Architecture
+
+The project follows this structure:
+
+- `main.py`: Entry point that creates and configures the MCP server
+- `tools.py`: Contains the tool implementations that the MCP server exposes
+
+
