@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_openfga_mcp.egg-info/PKG-INFO
+mseep_openfga_mcp.egg-info/SOURCES.txt
+mseep_openfga_mcp.egg-info/dependency_links.txt
+mseep_openfga_mcp.egg-info/requires.txt
+mseep_openfga_mcp.egg-info/top_level.txt
+tests/__init__.py
+tests/integration/__init__.py
+tests/integration/seed_fga.py
+tests/integration/test_mcp_integration.py
+tests/unit/__init__.py
+tests/unit/test_openfga.py
+tests/unit/test_server.py
