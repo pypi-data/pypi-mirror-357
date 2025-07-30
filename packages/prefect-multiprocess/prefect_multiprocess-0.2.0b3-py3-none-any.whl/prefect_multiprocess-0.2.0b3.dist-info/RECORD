@@ -1,0 +1,10 @@
+prefect_multiprocess/__init__.py,sha256=B5G8rU4ZLf_9FjCfCq19EJWFgoMl4TTBvg22mc1Wcto,130
+prefect_multiprocess/_build_info.py,sha256=-9fMva92RsQrhhan7Pw4Ad-Jh0da12todj1J3N_RbVE,182
+prefect_multiprocess/_version.py,sha256=F_qhWrFOea4gfBmbhUnCfsxy-o7nRl4BJPEfRGCF_hw,23150
+prefect_multiprocess/task_runners.py,sha256=MHPHm9JfrwAufuad8Pv8o89-PK_UrZl3DPPNUbxJHHw,12302
+prefect_multiprocess/utilities/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+prefect_multiprocess/utilities/remote.py,sha256=6JW4TLpa_cXBqOASIeL252xgb3j1AtYz8pjhDXpXEy8,1092
+prefect_multiprocess-0.2.0b3.dist-info/METADATA,sha256=aROLqpSEyWyr_umBjW8_2Upho296ag1DD339A11dLcc,4182
+prefect_multiprocess-0.2.0b3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+prefect_multiprocess-0.2.0b3.dist-info/licenses/LICENSE,sha256=tLKlrmr0sOnPybm5TUmA2SBT-cYajF3kILQME85pqpQ,11356
+prefect_multiprocess-0.2.0b3.dist-info/RECORD,,
