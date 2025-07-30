@@ -1,0 +1,5 @@
+dist
+etc
+pre_SuriCon_2024
+scripts
+suricatalog
