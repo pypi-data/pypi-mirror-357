@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/pacote_ajuda_mhr.egg-info/PKG-INFO
+src/pacote_ajuda_mhr.egg-info/SOURCES.txt
+src/pacote_ajuda_mhr.egg-info/dependency_links.txt
+src/pacote_ajuda_mhr.egg-info/requires.txt
+src/pacote_ajuda_mhr.egg-info/top_level.txt
+src/primeiro_pacote_mz/__init__.py
+src/primeiro_pacote_mz/core.py

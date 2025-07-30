@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"] # ou "hatchling", "flit", etc.
+build-backend = "setuptools.build_meta"
+[project] # PEP 621
+name = "pacote-ajuda-mhr"
+version = "0.0.1" # mude SEMPRE que fizer novo upload
+description = "Exemplo de biblioteca."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Mateus", email = "mateus.hrosa09@gmail.com" }]
+license = { file = "LICENSE" }
+dependencies = ["requests>=2.31"]
