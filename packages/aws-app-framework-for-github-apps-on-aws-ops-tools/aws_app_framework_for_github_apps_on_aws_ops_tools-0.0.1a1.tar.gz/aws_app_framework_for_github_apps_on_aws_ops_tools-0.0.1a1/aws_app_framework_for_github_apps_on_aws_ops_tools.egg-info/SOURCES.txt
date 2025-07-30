@@ -1,0 +1,6 @@
+MANIFEST.in
+setup.py
+aws_app_framework_for_github_apps_on_aws_ops_tools.egg-info/PKG-INFO
+aws_app_framework_for_github_apps_on_aws_ops_tools.egg-info/SOURCES.txt
+aws_app_framework_for_github_apps_on_aws_ops_tools.egg-info/dependency_links.txt
+aws_app_framework_for_github_apps_on_aws_ops_tools.egg-info/top_level.txt
