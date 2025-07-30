@@ -1,0 +1,13 @@
+python_weaver-0.1.0.dist-info/licenses/LICENSE,sha256=Ug2rmtml3vxTgxWNUqdGm3NaIQRkpkVTdjHyWU8bd4w,1070
+weaver/__init__.py,sha256=OgwXmBHKfjjhSDCZrBe9LPhXEm2kXieeosXTbrwFCGs,99
+weaver/agent.py,sha256=P1SnNGKWBuuluwZsGPeCjsamPn_p0vBjbdcUzC_oerM,4351
+weaver/blueprint.py,sha256=WSVbBjloujWJMd-KGX_DQByb9JxYCD89VRNye5tfBaI,8810
+weaver/cli.py,sha256=CeskJp1aNqiKSxqNokE126VlgfF1JA6qrzyLDS8-78o,2917
+weaver/config.py,sha256=ZgFdvWNVDShb13ZJ4Bl48MB0yA09hH0dvI5gc8lSB38,1043
+weaver/exceptions.py,sha256=T2drcFjnWGSvZzZ2LPULOgAAfMej3OizZYigBbkCmgA,318
+weaver/project.py,sha256=McvKShqoq3CWU7H0N2qVmy3W608YtE1dskWtZ07pk4E,7296
+python_weaver-0.1.0.dist-info/METADATA,sha256=NZKd3UTDOuOjlFHLz4IALtzd99VUcgkDR23i1IKZl1U,862
+python_weaver-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+python_weaver-0.1.0.dist-info/entry_points.txt,sha256=K-0hNREcGYyAaIDao1DT12zSol5VPoNxvpPA7s4VOBE,43
+python_weaver-0.1.0.dist-info/top_level.txt,sha256=LEjOvpn94BvlypCz3uKW4oKwg28al-eNLgXilExkcJE,7
+python_weaver-0.1.0.dist-info/RECORD,,
