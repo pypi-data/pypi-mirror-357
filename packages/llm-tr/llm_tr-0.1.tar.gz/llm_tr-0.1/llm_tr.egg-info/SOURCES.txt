@@ -1,0 +1,11 @@
+LICENSE
+README.md
+llm_tr.py
+pyproject.toml
+llm_tr.egg-info/PKG-INFO
+llm_tr.egg-info/SOURCES.txt
+llm_tr.egg-info/dependency_links.txt
+llm_tr.egg-info/entry_points.txt
+llm_tr.egg-info/requires.txt
+llm_tr.egg-info/top_level.txt
+tests/test_tr.py
