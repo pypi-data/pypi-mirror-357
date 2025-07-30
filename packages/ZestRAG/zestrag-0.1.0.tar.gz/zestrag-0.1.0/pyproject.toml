@@ -1,0 +1,30 @@
+[project]
+name = "ZestRAG"
+version = "0.1.0"
+description = "A lightweight RAG framework forked from ZestRAG(forked from LightRAG)"
+authors = [{ name = "liqisheng", email = "liqisheng2016@sina.com" }]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp",
+    "configparser",
+    "future",
+    "pandas>=2.0.0",
+    "pipmaster",
+    "pydantic",
+    "python-dotenv",
+    "pyuca",
+    "setuptools",
+    "tenacity",
+    "tiktoken",
+    "xlsxwriter>=3.1.0",
+    # 添加你实际用到的依赖
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["zestrag"]
