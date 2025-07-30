@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: iterfuncs
+Version: 1.0.1
+Summary: Collection of iteration, caching and async tools
+Home-page: https://github.com/Quartz-Vision/python-iterfuncs
+Author: liava
+Author-email: liava@tuta.io
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# iterfuncs
+
+A collection of tools of async and sync iteration/caching and some funcitonal stuff
+
+## Installation
+
+`pip install iterfuncs`
+
+## Requirements:
+
+- Python 3.12
+
+## Development
+
+- clone the repo
+- create and invoke a venv: `python -m venv .venv` | `. .venv/bin/activate`
+- install the requirements: `pip install -r requirements.txt`
+- install pre-commit and execute `pre-commit install`
+
+## Deployment
+
+- go to `setup.py` and increase the version
+- commit your changes and push them to a new branch
+
+## IMPORTANT
+
+- DON'T DO `pip freeze > requirements.txt` - it can cause issues with the lambdas etc.
+
+  Just add the packages to requirements manually, specifying versions if necessary
