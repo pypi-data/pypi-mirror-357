@@ -1,0 +1,299 @@
+Metadata-Version: 2.4
+Name: docuquery-ai
+Version: 0.1.0
+Summary: A powerful document query system using RAG and LLM technologies
+Author-email: DocuQuery AI Team <contact@docuquery-ai.com>
+Maintainer-email: DocuQuery AI Team <contact@docuquery-ai.com>
+License: MIT
+Project-URL: Homepage, https://github.com/saichowdary007/docu-query
+Project-URL: Documentation, https://github.com/saichowdary007/docu-query/blob/main/README.md
+Project-URL: Repository, https://github.com/saichowdary007/docu-query.git
+Project-URL: Issues, https://github.com/saichowdary007/docu-query/issues
+Project-URL: Changelog, https://github.com/saichowdary007/docu-query/blob/main/CHANGELOG.md
+Keywords: ai,llm,rag,document-processing,nlp,vector-search,langchain,google-vertex-ai,pdf-parser,machine-learning
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: Linguistic
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi>=0.100.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: pydantic-settings>=2.0.0
+Requires-Dist: langchain>=0.1.0
+Requires-Dist: langchain-community>=0.0.10
+Requires-Dist: langchain-google-vertexai>=0.1.0
+Requires-Dist: langchain-text-splitters>=0.0.1
+Requires-Dist: google-cloud-aiplatform>=1.38.0
+Requires-Dist: faiss-cpu>=1.7.4
+Requires-Dist: pandas>=1.5.0
+Requires-Dist: xlrd>=2.0.1
+Requires-Dist: openpyxl>=3.1.0
+Requires-Dist: python-docx>=0.8.11
+Requires-Dist: python-pptx>=0.6.21
+Requires-Dist: pypdf>=3.15.0
+Requires-Dist: markdown>=3.4.0
+Requires-Dist: requests>=2.28.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: python-jose[cryptography]>=3.3.0
+Requires-Dist: passlib[bcrypt]>=1.7.4
+Requires-Dist: bcrypt>=4.0.0
+Requires-Dist: email-validator>=2.0.0
+Requires-Dist: sqlalchemy>=2.0.0
+Requires-Dist: click>=8.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black==23.12.1; extra == "dev"
+Requires-Dist: isort==5.12.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: mypy==1.6.1; extra == "dev"
+Requires-Dist: pre-commit>=3.0.0; extra == "dev"
+Requires-Dist: types-requests>=2.31.0.20240417; extra == "dev"
+Requires-Dist: types-Markdown>=3.5.0.20240215; extra == "dev"
+Provides-Extra: web
+Requires-Dist: uvicorn[standard]>=0.23.0; extra == "web"
+Requires-Dist: gunicorn>=21.0.0; extra == "web"
+Requires-Dist: python-multipart>=0.0.6; extra == "web"
+Provides-Extra: gpu
+Requires-Dist: faiss-gpu>=1.7.4; extra == "gpu"
+Dynamic: license-file
+
+# DocuQuery AI
+
+[![PyPI version](https://badge.fury.io/py/docuquery-ai.svg)](https://badge.fury.io/py/docuquery-ai)
+[![Python Support](https://img.shields.io/pypi/pyversions/docuquery-ai.svg)](https://pypi.org/project/docuquery-ai/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A powerful document query system that combines RAG (Retrieval-Augmented Generation) with structured data handling capabilities. Upload documents and interact with them through natural language queries.
+
+## Features
+
+- **Document Processing**: Supports PDF, DOCX, PPTX, TXT, MD files
+- **Structured Data**: Handles CSV, XLS, XLSX with direct data operations
+- **Vector Search**: Automatic text chunking and embedding with FAISS
+- **Natural Language Queries**: RAG for unstructured documents
+- **Google Vertex AI**: Integration with Google's LLM and embedding models
+- **CLI Interface**: Command-line tool for easy document management
+- **Python API**: Clean programmatic interface for integration
+
+## Installation
+
+Install from PyPI:
+
+```bash
+pip install docuquery-ai
+```
+
+For development with optional dependencies:
+
+```bash
+pip install docuquery-ai[dev,web]
+```
+
+For GPU acceleration (if you have CUDA):
+
+```bash
+pip install docuquery-ai[gpu]
+```
+
+## Quick Start
+
+### 1. Set up Google Cloud credentials
+
+```bash
+export GOOGLE_API_KEY="your-google-api-key"
+export GOOGLE_PROJECT_ID="your-google-project-id"
+```
+
+### 2. Python API Usage
+
+```python
+from docuquery_ai import DocumentQueryClient
+
+# Initialize the client
+client = DocumentQueryClient(
+    google_api_key="your-api-key",
+    google_project_id="your-project-id"
+)
+
+# Upload a document
+result = client.upload_document("path/to/document.pdf")
+print(f"Uploaded: {result['filename']}")
+
+# Query the document
+response = client.query("What are the main topics discussed?")
+print(f"Answer: {response.answer}")
+
+# List all documents
+documents = client.list_documents()
+for doc in documents:
+    print(f"- {doc['filename']} ({doc['file_type']})")
+```
+
+### 3. CLI Usage
+
+Initialize DocuQuery AI:
+
+```bash
+docuquery init
+```
+
+Upload a document:
+
+```bash
+docuquery upload document.pdf
+```
+
+Query your documents:
+
+```bash
+docuquery query "What are the key findings?"
+```
+
+List uploaded documents:
+
+```bash
+docuquery list
+```
+
+Get help:
+
+```bash
+docuquery --help
+```
+
+## Supported File Types
+
+- **Text Documents**: PDF, DOCX, PPTX, TXT, MD
+- **Structured Data**: CSV, XLS, XLSX
+- **Archives**: Processing of multiple files
+
+## Advanced Usage
+
+### Custom Configuration
+
+```python
+from docuquery_ai import DocumentQueryClient
+
+client = DocumentQueryClient(
+    google_api_key="your-api-key",
+    google_project_id="your-project-id",
+    vector_store_path="./custom_vector_db",
+    temp_upload_folder="./custom_temp"
+)
+```
+
+### Query Specific Files
+
+```python
+# Upload multiple files
+file1_result = client.upload_document("report1.pdf")
+file2_result = client.upload_document("data.xlsx")
+
+# Query specific files
+response = client.query(
+    "Compare the metrics between reports",
+    file_ids=[file1_result['file_id'], file2_result['file_id']]
+)
+```
+
+### Using with Different Users
+
+```python
+# Upload documents for different users
+client.upload_document("doc1.pdf", user_id="user_123")
+client.upload_document("doc2.pdf", user_id="user_456")
+
+# Query documents for specific user
+response = client.query("Summarize the content", user_id="user_123")
+```
+
+## Architecture
+
+The system uses a hybrid approach:
+
+- **RAG Pipeline**: For unstructured documents (PDF, DOCX, etc.)
+- **Direct Data Operations**: For structured files (CSV, Excel)
+- **Vector Store**: FAISS for semantic search
+- **LLM Integration**: Google Vertex AI for query understanding and response generation
+- **Database**: SQLite for metadata and file tracking
+
+## CLI Commands
+
+- `docuquery init` - Initialize configuration
+- `docuquery upload <file>` - Upload and process a document
+- `docuquery query "<question>"` - Query uploaded documents
+- `docuquery list` - List all uploaded documents
+- `docuquery delete <file_id>` - Delete a document
+- `docuquery --help` - Show help information
+
+## Development
+
+### Installing for Development
+
+```bash
+git clone https://github.com/saichowdary007/DocuQuery-AI.git
+cd DocuQuery-AI
+pip install -e .[dev]
+```
+
+### Running Tests
+
+```bash
+pytest
+```
+
+### Code Formatting
+
+```bash
+black src/
+isort src/
+```
+
+## Requirements
+
+- Python 3.8+
+- Google Cloud credentials (API key or service account)
+- Internet connection for Google Vertex AI API calls
+
+## Environment Variables
+
+- `GOOGLE_API_KEY` - Google API key for Vertex AI
+- `GOOGLE_PROJECT_ID` - Google Cloud project ID
+- `GOOGLE_LOCATION` - Google Cloud location (default: us-central1)
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+- [GitHub Issues](https://github.com/saichowdary007/DocuQuery-AI/issues)
+- [Documentation](https://github.com/saichowdary007/DocuQuery-AI/blob/main/README.md)
+
+## Acknowledgments
+
+- [LangChain](https://github.com/hwchase17/langchain) for RAG implementation
+- [Google Vertex AI](https://cloud.google.com/vertex-ai) for ML capabilities
+- [FAISS](https://github.com/facebookresearch/faiss) for vector search
+- [FastAPI](https://fastapi.tiangolo.com/) for the web framework
