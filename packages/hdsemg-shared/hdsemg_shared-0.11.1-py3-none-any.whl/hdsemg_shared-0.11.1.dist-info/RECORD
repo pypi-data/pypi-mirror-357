@@ -1,0 +1,14 @@
+hdsemg_shared/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+hdsemg_shared/fileio/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hdsemg_shared/fileio/file_io.py,sha256=8dEPryFiP6p__C0ZSK0lHSEsvGxgD1hg5vnomYxEo6o,8366
+hdsemg_shared/fileio/matlab_file_io.py,sha256=mHBuDg8uBJJNHUdktU96MtswABEt_UTRv6pyh8qsG94,1477
+hdsemg_shared/fileio/otb_4_file_io.py,sha256=woNuTIOlIVrk_2qNy4S1AsNZMDuGFYjO0UrtDffv-aE,12549
+hdsemg_shared/fileio/otb_plus_file_io.py,sha256=DDa-9y-owcsBBogmD4eyh1HRgZJUNtZndP4_5xELon4,9832
+hdsemg_shared/filters/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hdsemg_shared/filters/bandpass.py,sha256=FcPAAOM6vyVjelNwhNrtJyu5gbhQRWk3tIl-b4DMkCs,2269
+hdsemg_shared/preprocessing/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hdsemg_shared/preprocessing/differential.py,sha256=Av3Udij9PEiwCvo-yZQGdlB0Nvf1cZMR4QRwwa7RKRk,2363
+hdsemg_shared-0.11.1.dist-info/METADATA,sha256=7DpicmqtllChBP-dx3nWHg670_8hIMrWk-oYtkCo3Ls,2556
+hdsemg_shared-0.11.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+hdsemg_shared-0.11.1.dist-info/top_level.txt,sha256=WjwqHEakA2iqHbozGVBbCW0iLIAfQcOAh7lbxXZkwIQ,14
+hdsemg_shared-0.11.1.dist-info/RECORD,,
