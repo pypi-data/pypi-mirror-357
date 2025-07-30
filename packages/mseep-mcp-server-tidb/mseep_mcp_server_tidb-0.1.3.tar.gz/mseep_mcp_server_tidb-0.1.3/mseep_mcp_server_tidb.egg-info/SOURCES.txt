@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_mcp_server_tidb.egg-info/PKG-INFO
+mseep_mcp_server_tidb.egg-info/SOURCES.txt
+mseep_mcp_server_tidb.egg-info/dependency_links.txt
+mseep_mcp_server_tidb.egg-info/requires.txt
+mseep_mcp_server_tidb.egg-info/top_level.txt
