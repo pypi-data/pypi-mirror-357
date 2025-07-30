@@ -1,0 +1,12 @@
+mseep_openfga_mcp-1.0.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/integration/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/integration/seed_fga.py,sha256=sB74LfU0X1QP81hwDO5-OZjf1GRxpDXQVQvAlhMRE58,5767
+tests/integration/test_mcp_integration.py,sha256=OuK0XbArN9qK-Mvu1qv-tdu4E2cZ0Y-mZqPIx2xTdD4,30821
+tests/unit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/unit/test_openfga.py,sha256=KoTHjUBwJiEVyS520pbVNSGxY5RakrTG1E5KWTod6X4,10810
+tests/unit/test_server.py,sha256=NGlMwy6tN7UK_9_Dkl_TP2WrTEAv_JGyLdfAoLdjOnc,73801
+mseep_openfga_mcp-1.0.0.dist-info/METADATA,sha256=bXLmFckuZvIfDqL0P8XPtgwm0Z4AC1hPiDQmSC_UMBk,959
+mseep_openfga_mcp-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mseep_openfga_mcp-1.0.0.dist-info/top_level.txt,sha256=EdW7283x-lr_cbuivW8Ij7ANAP-ZJ9sLtILQseEPxXg,6
+mseep_openfga_mcp-1.0.0.dist-info/RECORD,,
