@@ -1,0 +1,6 @@
+clickhouse-df>=0.1.5
+dynaconf>=3.2.11
+polars>=1.31.0
+sqlparse>=0.5.3
+xcals>=0.0.4
+ygo>=1.1.4
