@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: fdv-deploy
+Version: 0.1.0
+Summary: FDV打包部署工具
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: mcp[cli]>=1.9.4
+Requires-Dist: paramiko>=3.5.1
