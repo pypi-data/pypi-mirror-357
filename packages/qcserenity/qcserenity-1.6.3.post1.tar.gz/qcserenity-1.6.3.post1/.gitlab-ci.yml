@@ -1,0 +1,251 @@
+stages:
+  - static
+  - build
+  - test
+
+.install-dependencies: &install-dependencies
+  - echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+  - apt-get update && apt-get install -y wget gpg-agent make cmake git libeigen3-dev python3-pip libboost-all-dev libhdf5-dev doxygen graphviz libomp-dev doxygen gcc clang
+  - wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --dearmor | tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
+  - echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" | tee /etc/apt/sources.list.d/oneAPI.list
+  - apt-get update && apt-get install -y intel-oneapi-mkl-devel=2024.2.1-103
+  - pip3 install gcovr numpy
+  - source /opt/intel/oneapi/setvars.sh
+
+  # Define a reusable script for checking remainders
+.check-remainders: &check-remainders |
+  echo "Checking for remainders in the current directory..."
+  results=$(find . -maxdepth 1 -mindepth 1 \( -type f -o -type d \) -print)
+  results_array=($results)
+  echo "Search results are: $results"
+  for item in "${results_array[@]}"; do
+    if [ -d "$item" ]; then
+      echo "Contents of folder '$item':"
+      ls -la "$item"
+    fi
+  done
+  if (( ${#results_array[@]} > 0 )); then
+    echo "Error! The tests left behind some remainders."
+    exit 1
+  fi
+
+# base image, all settings can be overridden in the inheriting jobs
+.ubuntu:
+  stage: build
+  image: ubuntu:22.04
+  tags:
+    - serenity-1.1
+  before_script:
+    - *install-dependencies
+
+
+static:file_headers:
+  stage: static
+  tags: 
+    - serenity-1.1
+  script:
+    - python3 dev/scripts/checkFileDoc.py src/
+
+static:formatting:
+  extends: .ubuntu
+  stage: static
+  before_script:
+    - echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+    - apt-get update && apt-get install -y clang-format-15
+  script:
+    - bash dev/scripts/formatting.sh src -m check -f
+
+build:doc:
+  extends: .ubuntu
+  needs: []
+  script:
+    - cmake -S . -B docbuild
+    - cmake --build docbuild --target doc
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - doc/html/
+
+build:manual:
+  stage: build
+  needs: []
+  tags:
+    - latex
+  script:
+    - cd manual
+    - pdflatex -interaction=nonstopmode SerenityUserManual.tex
+    - bibtex SerenityUserManual
+    - pdflatex -interaction=nonstopmode SerenityUserManual.tex
+    - cd ..
+    - cp manual/SerenityUserManual.pdf .
+  artifacts:
+    expire_in: 1 day
+    name: SerenityUserManual
+    paths:
+    - SerenityUserManual.pdf
+
+build:clang:
+  extends: .ubuntu
+  except:
+    - release
+    - tags
+  needs: []
+  script:
+    - export CC=/usr/bin/clang
+    - export CXX=/usr/bin/clang++
+    - cmake -S . -B build -DWERROR=ON -DCMAKE_BUILD_TYPE=Release -DSERENITY_PYTHON_BINDINGS=ON -DSERENITY_USE_LAPLACE_MINIMAX=ON
+    - cmake --build build -j8
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build/
+      - serenity.sh
+      - qcserenity/
+
+build:gcc:
+  extends: .ubuntu
+  needs: []
+  script:
+    - cmake -S . -B build -DWERROR=ON -DGCC_COVERAGE=ON -DCMAKE_BUILD_TYPE=Release -DSERENITY_PYTHON_BINDINGS=ON -DSERENITY_USE_LAPLACE_MINIMAX=ON
+    - cmake --build build -j8
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build/
+      - serenity.sh
+      - qcserenity/
+  allow_failure: false
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH != "master" && $CI_PIPELINE_SOURCE != "merge_request_event"'
+      when: manual
+    - if: '$CI_COMMIT_BRANCH != "master" && $CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+
+
+# Define a reusable job template for clang tests
+.clang-template: &clang-template
+  stage: test
+  extends: .ubuntu
+  needs:
+    - job: build:clang
+      artifacts: true
+  script:
+    - export OMP_NUM_THREADS=${THREADS}
+    - source serenity.sh
+    - cat build/CMakeCache.txt
+    - ln -s build/lib lib
+    - mkdir testfolder
+    - cd testfolder
+    - ../build/bin/serenity_tests --gtest_output="xml:report.xml"
+    - mv report.xml ..
+    - *check-remainders
+    - cd ..
+  artifacts:
+    expire_in: 1 day
+    reports:
+      junit: report.xml
+
+# Define a reusable job template for gcc tests (with coverage)
+.gcc-template: &gcc-template
+  stage: test
+  extends: .ubuntu
+  needs:
+    - job: build:gcc
+      artifacts: true
+  script:
+    - export OMP_NUM_THREADS=${THREADS}
+    - source serenity.sh
+    - cat build/CMakeCache.txt
+    - ln -s build/lib lib
+    - mkdir testfolder
+    - cd testfolder
+    - ../build/bin/serenity_tests --gtest_output="xml:report.xml"
+    - mv report.xml ..
+    - *check-remainders
+    - cd ..
+    - python3 -m gcovr -r $(pwd)/src --sort uncovered-number --gcov-ignore-parse-errors=suspicious_hits.warn --object-directory=$(pwd)/build/CMakeFiles/serenity.dir/src --gcov-ignore-errors=no_working_dir_found --exclude='.*_python.*' --exclude='.*_test.*' --exclude='.*__TEST_SUPPLY.*' --exclude='.*DummyTask.*'
+  artifacts:
+    expire_in: 1 day
+    reports:
+      junit: report.xml
+  coverage: '/^TOTAL.*\s+(\d+\%)$/'
+
+# Define a reusable job template for Python tests
+.test-python-template: &test-python-template
+  stage: test
+  extends: .ubuntu
+  script:
+    - export OMP_NUM_THREADS=${THREADS}
+    - source serenity.sh
+    - ln build/lib/serenipy.so qcserenity/serenipy.so
+    - mkdir testfolder
+    - cd testfolder
+    - python3 -m unittest discover ../qcserenity/tests/ -v
+    - *check-remainders
+
+#=========================#
+
+# Parallel test jobs
+test:clang:
+  extends: .clang-template
+  variables:
+    THREADS: 4
+
+test:clang-python:
+  extends: .test-python-template
+  needs:
+    - job: build:clang
+      artifacts: true
+  variables:
+    THREADS: 4
+
+# Serial test jobs for master branch
+test:clang-serial:
+  extends: .clang-template
+  only:
+    - master
+  variables:
+    THREADS: 1
+
+test:clang-python-serial:
+  extends: .test-python-template
+  only:
+    - master
+  needs:
+    - job: build:clang
+      artifacts: true
+  variables:
+    THREADS: 1
+
+# Parallel test jobs
+test:gcc:
+  extends: .gcc-template
+  variables:
+    THREADS: 4
+
+test:gcc-python:
+  extends: .test-python-template
+  needs:
+    - job: build:gcc
+      artifacts: true
+  variables:
+    THREADS: 4
+
+# Serial test jobs for master branch
+test:gcc-serial:
+  extends: .gcc-template
+  only:
+    - master
+  variables:
+    THREADS: 1
+
+test:gcc-python-serial:
+  extends: .test-python-template
+  only:
+    - master
+  needs:
+    - job: build:gcc
+      artifacts: true
+  variables:
+    THREADS: 1
