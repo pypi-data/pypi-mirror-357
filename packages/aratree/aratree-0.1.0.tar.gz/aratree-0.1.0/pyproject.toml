@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aratree"
+version = "0.1.0"
+description = "Time Series Forecasting with a touch of spiders and decision trees"
+authors = [{ name="C5m7b4", email="C5m7b4@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib"
+]
