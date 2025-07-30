@@ -1,0 +1,13 @@
+popstock/PopulationOmegaGW.py,sha256=slGsWDlpRUEHdD2QeWxLPY1nzeRSeGUqmQ2neyI-3hs,30686
+popstock/__init__.py,sha256=o8wzUDZnJ-RTcv_3rCd-NWBhcBezy9t9tjAlYZaGPQE,113
+popstock/_version.py,sha256=UoNvMtd4wCG76RwoSpNCUtaFyTwakGcZolfjXzNVSMY,511
+popstock/constants.py,sha256=9v2RYAiEE6Tjo04fBbTXXDq2hk3Tsq-GVDQYuzyxFz4,1234
+popstock/util.py,sha256=lkiS6xmyxeXsi1jLnF0POtQO13T98us9-UuiROYG2rw,6574
+popstock-0.2.1.data/scripts/population_O3,sha256=0aVp4xWZuLv3DIHFGsAuZlnaTmXCE6pdx6rDgwsVnRo,6267
+popstock-0.2.1.data/scripts/population_O3_fixed_samples,sha256=bDWzUeWZTDJ_pY9mOfwaQcPtMDz7MBFGXpI7QAKnz5w,6251
+popstock-0.2.1.data/scripts/population_O3_new_draws,sha256=ZvOp0WVsXKmPXoY70yD_xf4aL06g5f0gyMYVgEkFE54,3714
+popstock-0.2.1.dist-info/licenses/LICENSE,sha256=kcYahiAJPN9yRSvoWuNyD7UH981UGap08XfgP_3gBs4,1076
+popstock-0.2.1.dist-info/METADATA,sha256=14VkARvJksivytNC3zIHpVehvR8sDNEoqEnCFy0vqCM,1345
+popstock-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+popstock-0.2.1.dist-info/top_level.txt,sha256=EDW2oSWDii-4r5m2zH8YbxboYrJNbk3_DHyleYG_OLo,9
+popstock-0.2.1.dist-info/RECORD,,
