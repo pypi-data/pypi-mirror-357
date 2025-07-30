@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling~=1.26.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "havsalt-little-termite"
+version = "0.1.0"
+description = "Terminate command output, by controlling this little hungry and human-looking termite"
+authors = [
+    { name = "Havsalt", email = "77575424+Havsalt@users.noreply.github.com" }
+]
+dependencies = [
+    "charz[keyboard]~=0.1.0",
+]
+readme = "README.md"
+requires-python = ">= 3.13"
+license = { file = "LICENSE" }
+
+[project.scripts]
+little-termite = "little_termite:main"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/little_termite"]
