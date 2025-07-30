@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: valis-wsi
+Version: 1.2.0
+Author-Email: Chandler Gatenbee <chandlergatenbee@gmail.com>
+License: MIT
+Requires-Python: >=3.9
+Requires-Dist: beautifulsoup4<5.0.0,>=4.11.1
+Requires-Dist: scyjava<2.0.0,>=1.8.1
+Requires-Dist: colorama<1.0.0,>=0.4.6
+Requires-Dist: colour-science>0.4.2
+Requires-Dist: fastcluster<2.0.0,>=1.2.6
+Requires-Dist: jpype1<2.0.0,>=1.4.1
+Requires-Dist: matplotlib<4.0.0,>=3.6.3
+Requires-Dist: numpy<2.0.0,>1.23
+Requires-Dist: ome-types<1.0.0,>=0.3.2
+Requires-Dist: opencv-contrib-python-headless==4.9.0.80
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: pillow>=10.3.0
+Requires-Dist: scikit-learn<2.0.0,>=1.2.0
+Requires-Dist: scipy<2.0.0,>=1.10.0
+Requires-Dist: shapely<3.0.0,>=2.0.0
+Requires-Dist: tqdm<5.0.0,>=4.64.1
+Requires-Dist: weightedstats<1.0.0,>=0.4.1
+Requires-Dist: pqdm<1.0.0,>=0.2.0
+Requires-Dist: markupsafe<3.0.0,>=2.0.0
+Requires-Dist: aicspylibczi<4.0.0,>=3.1.2
+Requires-Dist: setuptools>=69.0.3
+Requires-Dist: scikit-image<1.0.0,>=0.24.0
+Requires-Dist: kornia<1.0.0,>=0.7.3
+Requires-Dist: einops<1.0.0,>=0.8.0
+Requires-Dist: torchvision<1.0.0,>=0.20.1
+Requires-Dist: openpyxl<4.0.0,>=3.1.5
+Requires-Dist: simpleitk<3.0.0,>=2.4.1
+Requires-Dist: lxml>=5.4.0
+Requires-Dist: pyvips>2.2.1
+Requires-Dist: torch>=2.7.1
+
