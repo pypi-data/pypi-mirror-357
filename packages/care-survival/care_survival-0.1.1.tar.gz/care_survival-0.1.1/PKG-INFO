@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: care-survival
+Version: 0.1.1
+Summary: Upgrading survival models with CARE
+Requires-Python: >=3.10
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy>=1.15.3
+Description-Content-Type: text/markdown
+
+# care-survival
+
+This package is a work in progress.
+
+## Usage with uv
+
+To run the main entry point
+
+`uv run bin/main.py`
+
+To build the Python package
+
+`uv build`
+
+To publish to TestPyPI
+
+`uv publish --index testpypi --token <token>`
+
+To publish to PyPI
+
+`uv publish --token <token>`
+
+To add a new package as a dependency
+
+`uv add <package>; uv lock`, then reload the nix development environment
