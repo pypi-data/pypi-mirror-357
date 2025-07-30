@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "curvewalk"
+version = "0.3.0"
+description = ""
+authors = ["Mark Goodall <mark.goodall@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+pyright = "^1.1.402"
+pytest = "^8.4.1"
+commitizen = "^4.8.3"
+ruff = "^0.12.0"
+pytest-cov = "^6.2.1"
+hypothesis = "^6.135.14"
+numpy = "^2.3.1"
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.6.14"
+mkdocstrings = {extras = ["python"], version = "^0.29.1"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "v$version"
+version_scheme = "semver2"
+version_provider = "poetry"
+update_changelog_on_bump = true
+major_version_zero = true
+
+[tool.pyright]
+typeCheckingMode = "basic"
+# Use the venv directory for type checking so the types exist
+venvPath = "."
+venv = ".venv"
+
+[tool.interrogate]
+exclude = ["tests"]
+ignore-module = true
+omit-covered-files = true
