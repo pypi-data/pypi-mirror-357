@@ -1,0 +1,23 @@
+---
+title: "Read"
+---
+
+This page shows how to read SEGY data using **pysegy**.
+
+```{python}
+import pysegy as seg
+
+# path to a SEGY file shipped with the repository
+path = "../data/overthrust_2D_shot_1_20.segy"
+
+# load the file into memory
+block = seg.segy_read(path)
+
+# file header information
+print(block.fileheader.bfh.ns)
+```
+
+Use [pysegy.segy_read](reference/pysegy.qmd#segy_read) to read an entire
+file in one call. The returned
+[pysegy.SeisBlock](reference/pysegy.qmd#SeisBlock) contains the file
+header, trace headers and data array.

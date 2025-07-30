@@ -1,0 +1,7 @@
+numpy<3,>=2
+fsspec>=2024.3
+cloudpickle>=3
+
+[dev]
+flake8
+flake8-pyproject

@@ -1,0 +1,66 @@
+project:
+  type: website
+  output-dir: _site
+
+metadata-files:
+  - _sidebar.yml
+
+website:
+  title: "pysegy"
+  navbar:
+    left:
+      - text: "Read"
+        href: read.qmd
+      - text: "Write"
+        href: write.qmd
+      - text: "Scan"
+        href: scan.qmd
+      - text: "Tutorial"
+        href: bp_scan_tutorial.ipynb
+      - text: "API"
+        href: reference/index.qmd
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: cyborg
+    toc: true
+    link-external-newwindow: True
+    code-copy: true
+    code-fold: false
+    execute: 
+      enabled: false
+  ipynb: default
+
+quartodoc:
+  style: pkgdown
+  sidebar: _sidebar.yml
+  package: pysegy
+  dir: reference
+  source_dir: ..
+
+  options:
+    signature_name: short
+
+  renderer:
+    style: markdown
+    display_name: name
+
+  dynamic: true
+
+  sections:
+    - title: "pysegy"
+      desc: ""
+      contents:
+        - ShotRecord
+        - SegyScan
+        - SeisBlock
+        - segy_scan
+        - segy_read
+        - segy_write
+        - save_scan
+        - load_scan
+        - BinaryFileHeader
+        - BinaryTraceHeader
+        - FileHeader
