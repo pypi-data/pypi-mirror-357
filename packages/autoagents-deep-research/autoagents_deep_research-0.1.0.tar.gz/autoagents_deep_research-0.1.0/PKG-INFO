@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: autoagents-deep-research
+Version: 0.1.0
+Summary: Add your description here
+Author-email: Hehua Fan <forhheart5532@gmail.com>
+Requires-Python: >=3.11
+Requires-Dist: mcp[cli]>=1.9.4
+Requires-Dist: pydantic>=2.11.7
