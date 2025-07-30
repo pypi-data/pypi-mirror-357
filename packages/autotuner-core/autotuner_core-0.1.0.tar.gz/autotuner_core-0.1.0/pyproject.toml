@@ -1,0 +1,32 @@
+[project]
+name = "autotuner_core"  # ✅ You control this name!
+version = "0.1.0"
+description = "AutoTuner: A Self-Optimizing Algorithm Engine"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "MIT" }
+
+authors = [
+  { name="Koushik Mahamkali", email="mahamkalikoushik0@gmail.com" }
+]
+
+dependencies = [
+  "numpy",
+  "matplotlib",
+  "networkx",
+  "mplcyberpunk",
+  "pandas",
+  "seaborn"
+]
+
+[project.urls]
+Homepage = "https://github.com/koushik-mahamkali/autotuner"
+Documentation = "https://github.com/koushik-mahamkali/autotuner#readme"
+Source = "https://github.com/koushik-mahamkali/autotuner"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["autotuner_core", "autotuner_core.*"]
