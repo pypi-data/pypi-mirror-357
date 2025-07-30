@@ -1,0 +1,8 @@
+python-dateutil>=2.6.1
+requests>=2.18.1
+tenacity
+
+[test]
+pytest>=3.2.3
+pytest-responses>=0.4.0
+versioneer
