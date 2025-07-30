@@ -1,0 +1,29 @@
+"""Various utilities for parts."""
+
+from functools import lru_cache
+
+import requests
+
+from app.constants import ApiPaths, API_KEY_NAME, API_REQUEST_TIMEOUT_SEC
+
+
+@lru_cache()
+def get_part_number_and_lot_from_part_key(
+    api_endpoint: str, api_key: str, part_key: str
+) -> tuple[str, str]:
+    """For a given part_key, get the part number and lot number.
+
+    As this information is constant, we can cache it for performance.
+
+    Showing the part number and lot number is useful for display purposes.
+    """
+    part_details_url = f'{api_endpoint}{ApiPaths.PARTS}'
+    # We need to lookup the part details from the item key
+    part_details = requests.get(
+        f'{part_details_url}{part_key}',
+        headers={API_KEY_NAME: api_key},
+        timeout=API_REQUEST_TIMEOUT_SEC,
+    )
+    part_details.raise_for_status()
+    part = part_details.json()
+    return part['part_number'], part['lot_number']
