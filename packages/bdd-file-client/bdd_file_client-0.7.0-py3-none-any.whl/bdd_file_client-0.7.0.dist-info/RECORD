@@ -1,0 +1,10 @@
+bdd_file/__init__.py,sha256=KRmmTsV30xtHw3Pxb4S_Fx0N6vK7jh1xam9GCBMKwfY,340
+bdd_file/client.py,sha256=jm53E_ukjJK4X3iJ7FUefcKeWcj0b-BVlWJbgA56mFU,11526
+bdd_file/exception.py,sha256=A1FCesddPKuK7eT18pXSLWrWdL2dhnNCfPnolO6nWH8,40
+bdd_file/invoke_api.py,sha256=Vba5uWfwzL13vP_YylgkqKVVprvMJEAeuJSwjTcsj-c,6975
+bdd_file/models.py,sha256=YVPlygysDxuK4in8_QAnMDzGa30R87jIhJofhv5O1dA,2054
+bdd_file/settings.py,sha256=PnZPgyIU9iI3qd87vFtrGT4v41JPGJ5Jdj3lCqr9CIY,485
+bdd_file_client-0.7.0.dist-info/METADATA,sha256=0AYHh6TGIkgzzA27TVsHKBu3XSXXcgetSEmafx_9nMw,6657
+bdd_file_client-0.7.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+bdd_file_client-0.7.0.dist-info/licenses/LICENSE,sha256=eldle7KIulSouHnj3AQ5SFWX0h7YRhHK7O-hKrTkYdE,1067
+bdd_file_client-0.7.0.dist-info/RECORD,,
