@@ -1,0 +1,24 @@
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+packages = [
+    "src",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src",
+]
+
+[tool.black]
+line-length = 127
+target-version = [
+    "py310",
+    "py311",
+]
+include = "\\.pyi?$"
+extend-exclude = "/(\n    \\.git\n  | \\.hg\n  | \\.mypy_cache\n  | \\.tox\n  | \\.venv\n  | _build\n  | buck-out\n  | build\n  | dist\n  | venv\n)/\n"
