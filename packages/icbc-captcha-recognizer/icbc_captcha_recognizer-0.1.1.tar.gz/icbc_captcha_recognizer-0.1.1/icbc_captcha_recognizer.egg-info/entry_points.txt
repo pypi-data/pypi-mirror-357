@@ -1,0 +1,2 @@
+[console_scripts]
+captcha-predict = captcha_recognizer.cli:main
