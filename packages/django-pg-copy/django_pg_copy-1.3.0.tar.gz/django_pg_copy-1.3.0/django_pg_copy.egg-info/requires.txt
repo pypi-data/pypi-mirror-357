@@ -1,0 +1,7 @@
+Django
+django-click
+
+[dev]
+ipython
+ruff
+pytest-coverage
