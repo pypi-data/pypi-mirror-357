@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: SheetSense
+Version: 0.1.0
+Summary: Convert Excel sheet data into clean JSON using OpenAI
+Author-email: Mahdi Jaffri <mahdijaffri5@email.com>
+License: MIT
+Project-URL: Homepage, https://github.com/MahdiJaffery/DataExtractor
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: openai
+Requires-Dist: python-dotenv
+Dynamic: license-file
+
+#   Structured Data Extractor
+
+This tool converts messy Excel Sheets into structured JSON using OpenAI
+
+##  Installation
+
+```bash
+pip install .
+```
+
+# Usage
+```python
+from .Excel_Json_Converter import StructuredDataExtractor
+
+extractor = StructuredDataExtractor
+extractor.extract("ExcelFile.xlsx")
+
+```
+
+---
+
+#   Requirements
+
+```txt
+pandas
+openai
+python-dotenv
+```
