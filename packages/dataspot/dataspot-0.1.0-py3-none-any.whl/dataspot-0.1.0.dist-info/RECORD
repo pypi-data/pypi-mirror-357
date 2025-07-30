@@ -1,0 +1,8 @@
+dataspot/__init__.py,sha256=BshZMOA19LWqgB5mEVlciHRIIIeVsFyXY489Un8erSs,1257
+dataspot/core.py,sha256=BMmZDGPeRZA_vqg0CYqoX2NfzxP0BHDcOQZ32Ym3Lsk,12561
+dataspot/exceptions.py,sha256=GveD3tZT03mNWlmhgp3plqU6Gv6pNfUNiGJxh9Q9s9o,527
+dataspot/query.py,sha256=huwhKtx9sDPoV5TLOxGF7qzYzLCoui4OibpZ5kf7oNQ,11219
+dataspot-0.1.0.dist-info/METADATA,sha256=KDfip1-w0gPFNwVWnfDBo9M0w9FLo5Xm9EkPXF4i1Bg,11429
+dataspot-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+dataspot-0.1.0.dist-info/licenses/LICENSE,sha256=CYDqeGIzJo9ytwogftpxxsuAqyBVScL5KZiyrllH-kI,1067
+dataspot-0.1.0.dist-info/RECORD,,
