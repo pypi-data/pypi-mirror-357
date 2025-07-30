@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f0ad2af2-7111-4b53-a26e-9c1dcd52735a" name="Changes" comment="rename project again">
+      <change afterPath="$PROJECT_DIR$/restless_dungeon/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restless_dungeon/scripts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restless_dungeon/scripts/rooms/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/restless_dungeon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/restless_dungeon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/restless_dungeon/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/restless_dungeon/scripts/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/rooms/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/restless_dungeon/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/rooms/empty_room.py" beforeDir="false" afterPath="$PROJECT_DIR$/restless_dungeon/scripts/rooms/empty_room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/rooms/explosives_room.py" beforeDir="false" afterPath="$PROJECT_DIR$/restless_dungeon/scripts/rooms/explosives_room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/rooms/rest_room.py" beforeDir="false" afterPath="$PROJECT_DIR$/restless_dungeon/scripts/rooms/rest_room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/rooms/stranger_room.py" beforeDir="false" afterPath="$PROJECT_DIR$/restless_dungeon/scripts/rooms/stranger_room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/rooms/walls_closing_room.py" beforeDir="false" afterPath="$PROJECT_DIR$/restless_dungeon/scripts/rooms/walls_closing_room.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/rooms/zombie_room.py" beforeDir="false" afterPath="$PROJECT_DIR$/restless_dungeon/scripts/rooms/zombie_room.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Dekoder-py"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:Dekoder-py/restless_dungeon.git",
+    "accountId": "26ae7ed3-bdff-4d91-9a80-12d418c3a9d0"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2yzWanXgreyn6oa90xKU6B80vWT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/kyleb/Coding/SummerOfMaking/restless_dungeon"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/restless_dungeon" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-9f8e2b94138c-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26094.141" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f0ad2af2-7111-4b53-a26e-9c1dcd52735a" name="Changes" comment="" />
+      <created>1750837947855</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750837947855</updated>
+      <workItem from="1750837948971" duration="874000" />
+    </task>
+    <task id="LOCAL-00001" summary="rename project again">
+      <option name="closed" value="true" />
+      <created>1750837994705</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1750837994705</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="rename project again" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename project again" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/restless_dungeon$main.coverage" NAME="main Coverage Results" MODIFIED="1750838181639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/restless_dungeon" />
+  </component>
+</project>
