@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: kvo-dates-mcp
+Version: 0.1.0
+Summary: MCP server with datetime tools
+License-File: LICENSE
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.13
+Requires-Dist: mcp[cli]>=1.7.1
+Requires-Dist: python-dateutil>=2.9.0.post0
+Requires-Dist: typer>=0.15.3
