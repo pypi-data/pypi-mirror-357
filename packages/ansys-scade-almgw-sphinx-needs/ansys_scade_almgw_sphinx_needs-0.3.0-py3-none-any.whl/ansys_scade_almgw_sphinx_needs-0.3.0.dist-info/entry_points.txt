@@ -1,0 +1,14 @@
+[ansys.almgw.connector]
+exe=ansys.scade.almgw_sphinx_needs:exe
+
+[ansys.scade.registry]
+register=ansys.scade.almgw_sphinx_needs.register:register
+srg=ansys.scade.almgw_sphinx_needs:srg
+unregister=ansys.scade.almgw_sphinx_needs.unregister:unregister
+
+[console_scripts]
+ansys_scade_almgw_sphinx_needs=ansys.scade.almgw_sphinx_needs.sphinx_needs:main
+register_ansys_scade_almgw_sphinx_needs=ansys.scade.almgw_sphinx_needs.register:main
+setup_ansys_scade_almgw_sphinx_needs=ansys.scade.almgw_sphinx_needs.setup:main
+unregister_ansys_scade_almgw_sphinx_needs=ansys.scade.almgw_sphinx_needs.unregister:main
+
