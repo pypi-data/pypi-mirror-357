@@ -1,0 +1,36 @@
+name: 'Sync version text of Dart Sass'
+
+on:
+  pull_request:
+    paths:
+      - 'aqua.yaml'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: ~/.local/share/aquaproj-aqua
+          key: v2-aqua-installer-${{runner.os}}-${{runner.arch}}-${{hashFiles('aqua.yaml')}}
+          restore-keys: |
+            v2-aqua-installer-${{runner.os}}-${{runner.arch}}-
+      - uses: aquaproj/aqua-installer@9ebf656952a20c45a5d66606f083ff34f58b8ce0  # v4.0.0
+        with:
+          aqua_version: v2.53.3
+      - name: 'Configure dependencies'
+        run: |
+          uv sync --frozen --all-extras
+      - name: 'Try sync'
+        run: |
+          uv run tools/sync-current-sass.py
+      - name: 'Pre push and commit'
+        run: |
+          git fetch
+          git checkout origin/${{ github.event.pull_request.head.ref }} -b ${{ github.event.pull_request.head.ref }}
+      - uses: 'actions-js/push@v1.5'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: 'feat: Sync version text of Dart Sass'
+          branch: ${{ github.event.pull_request.head.ref }}
