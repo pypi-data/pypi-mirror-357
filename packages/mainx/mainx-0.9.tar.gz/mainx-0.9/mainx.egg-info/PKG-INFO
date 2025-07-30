@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: mainx
+Version: 0.9
+Summary: Educational bug simulation tool with network, encryption, and system info features
+Author: Your Name
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: requests
+Requires-Dist: discord.py>=2.0.0
+Requires-Dist: pycryptodome
+Requires-Dist: cryptography
+Requires-Dist: pywin32; platform_system == "Windows"
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# BugCheck
+
+**BugCheck** is a Python-based educational utility designed for use in lab environments to collect system data and simulate post-exploitation analysis scenarios. It is used by cybersecurity learners and researchers to study how system-level information can be extracted and analyzed after a compromise.
+
+> ⚠️ This tool is intended **strictly for educational purposes only** in **authorized lab environments**.
+
+---
+
+## 🔍 Purpose
+
+BugCheck performs the following tasks:
+
+- Detects system platform type
+- Gathers system and network information (e.g., hostname, IP, user, OS version)
+- Demonstrates AES decryption workflows using PBKDF2
+- Simulates common behavior seen in threat analysis reports
+
+It does **not** exploit vulnerabilities or modify system settings.
+
+---
+
+## 🚀 Installation
+
