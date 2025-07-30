@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+pyproject.toml
+setup.py
+fractlons/__init__.py
+fractlons.egg-info/PKG-INFO
+fractlons.egg-info/SOURCES.txt
+fractlons.egg-info/dependency_links.txt
+fractlons.egg-info/requires.txt
+fractlons.egg-info/top_level.txt
