@@ -1,0 +1,66 @@
+# Base configuration - shared across all environments
+# Non-sensitive configuration values go here
+
+app_name: "MyMicroservice"
+version: "1.0.0"
+debug: false
+
+# Database configuration
+database:
+  _target_: "examples.production_config_demo.models.Database"
+  host: "localhost"
+  port: 5432
+  database: "myapp_db"
+  username: "app_user"
+  # password comes from environment: APP_DATABASE__PASSWORD
+  pool_size: 10
+  timeout: 30
+
+# Redis cache configuration
+redis:
+  _target_: "examples.production_config_demo.models.RedisCache"
+  host: "localhost"
+  port: 6379
+  db: 0
+  # password comes from environment: APP_REDIS__PASSWORD
+  ssl: false
+  cluster_mode: false
+
+# S3 storage configuration
+storage:
+  _target_: "examples.production_config_demo.models.S3Storage"
+  bucket: "myapp-uploads"
+  region: "us-east-1"
+  # AWS credentials from environment:
+  # - APP_STORAGE__ACCESS_KEY_ID
+  # - APP_STORAGE__SECRET_ACCESS_KEY
+  use_ssl: true
+
+# External API configuration
+external_api:
+  _target_: "examples.production_config_demo.models.APIClient"
+  base_url: "https://api.example.com/v1"
+  # API credentials from environment:
+  # - APP_EXTERNAL_API__API_KEY
+  # - APP_EXTERNAL_API__API_SECRET
+  timeout: 30
+  retry_count: 3
+  rate_limit: 100
+
+# Logging configuration
+logger:
+  _target_: "examples.production_config_demo.models.Logger"
+  name: "myapp"
+  level: "INFO"
+  format: "json"
+  output: "stdout"
+  buffer_size: 1000
+
+# Monitoring configuration
+monitoring:
+  _target_: "examples.production_config_demo.models.SentryMonitoring"
+  # DSN from environment: APP_MONITORING__DSN
+  environment: "development"
+  sample_rate: 1.0
+  traces_sample_rate: 0.1
+  debug: false

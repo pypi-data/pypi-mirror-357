@@ -1,0 +1,21 @@
+# Top level settings
+app_name: "Simple Demo"
+
+# --- Configuration for a data-only object ---
+# This section will be parsed into the `DatabaseConfig` model.
+# Notice we are NOT providing `_target_` because we don't intend
+# to instantiate a `DatabaseClient` directly from this file's perspective.
+# We treat it as pure configuration data.
+db:
+    host: "db.production.server"
+    port: 5432
+    user: "admin"
+    # Password is intentionally omitted; it will come from the `.env` file. But do see schema of our settings class, it must have password field!
+
+# --- Configuration for an instantiable object ---
+# This section will be parsed into the `OptimizerConfig` model.
+optimizer:
+    # _target_ is the recipe for what class to create. But we use it later.
+    # _target_: "my_app.components.Optimizer"
+    algorithm: "AdamW"
+    learning_rate: 0.001

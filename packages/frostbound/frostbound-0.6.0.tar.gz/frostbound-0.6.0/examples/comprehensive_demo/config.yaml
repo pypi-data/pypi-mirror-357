@@ -1,0 +1,66 @@
+# Main configuration file
+metadata:
+  app_name: "PydantiConf Demo"
+  version: "2.0.0"
+  environment: "production"
+  debug: false
+
+database:
+  _target_: "services.Database"
+  host: "db.production.com"
+  port: 5432
+  username: "prod_user"
+  # password will come from environment variable APP_DATABASE__PASSWORD
+  pool_size: 50
+
+cache:
+  _target_: "services.RedisCache"
+  host: "redis.production.com"
+  port: 6380
+  db: 1
+  ttl: 7200
+  max_connections: 100
+
+email:
+  _target_: "services.EmailService"
+  smtp_host: "smtp.company.com"
+  smtp_port: 465
+  # username and password from env vars
+  use_tls: true
+
+api_client:
+  _target_: "services.APIClient"
+  # Using positional arguments
+  _args_:
+    - "https://api.production.com"
+    - "prod-api-key-12345"
+  timeout: 60
+
+# Optional backup database
+backup_database:
+  _target_: "services.Database"
+  host: "backup.production.com"
+  port: 5433
+  username: "backup_user"
+  pool_size: 20
+
+# Nested service configuration
+main_service:
+  _target_: "services.Service"
+  name: "ProductionService"
+  database:
+    _target_: "services.Database"
+    host: "service-db.production.com"
+    port: 5432
+    username: "service_user"
+    pool_size: 30
+  cache:
+    _target_: "services.RedisCache"
+    host: "service-redis.production.com"
+    port: 6379
+    db: 2
+  logger:
+    _target_: "services.Logger"
+    name: "production_service"
+    level: "WARNING"
+    format: "structured"

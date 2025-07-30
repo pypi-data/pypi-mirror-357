@@ -1,0 +1,14 @@
+app_name: "MyApp-FromYAML"
+port: 9000
+database:
+  host: "yaml-db-host"
+  port: 5432
+  pool_size: 20
+  timeout: 30
+cache:
+  enabled: true
+  ttl: 3600
+  host: "redis://localhost:6379"
+features:
+  new_ui: true
+  experimental: false

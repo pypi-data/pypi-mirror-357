@@ -1,0 +1,51 @@
+# Production environment overrides
+# These values override base.yaml for production
+
+debug: false
+
+# Production RDS database
+database:
+  _target_: "examples.production_config_demo.models.Database"
+  host: "prod-db.aws-region.rds.amazonaws.com"
+  database: "myapp_prod"
+  username: "prod_app_user"
+  pool_size: 20  # Larger pool for production
+  timeout: 10  # Faster timeout in prod
+
+# Production Redis cluster
+redis:
+  _target_: "examples.production_config_demo.models.RedisCache"
+  host: "prod-redis.aws-region.cache.amazonaws.com"
+  port: 6379
+  ssl: true
+  cluster_mode: true
+
+# Production S3 bucket
+storage:
+  _target_: "examples.production_config_demo.models.S3Storage"
+  bucket: "mycompany-prod-uploads"
+  region: "us-west-2"
+  # No endpoint_url - use real AWS
+
+# Production API endpoint
+external_api:
+  _target_: "examples.production_config_demo.models.APIClient"
+  base_url: "https://api.partner.com/v1"
+  timeout: 10  # Stricter timeout
+  retry_count: 5  # More retries for reliability
+
+# Production logging
+logger:
+  _target_: "examples.production_config_demo.models.Logger"
+  level: "WARNING"  # Less verbose in production
+  format: "json"
+  output: "cloudwatch"  # or another log aggregator
+
+# Production monitoring
+monitoring:
+  _target_: "examples.production_config_demo.models.SentryMonitoring"
+  environment: "production"
+  release: "${APP_VERSION}"  # From environment/CI
+  debug: false
+  sample_rate: 0.1  # Sample 10% of errors
+  traces_sample_rate: 0.01  # Sample 1% of traces

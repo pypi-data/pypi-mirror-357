@@ -1,0 +1,16 @@
+# Base configuration shared across all environments
+metadata:
+  app_name: "MultiEnv Demo"
+  version: "1.0.0"
+
+database:
+  _target_: "services.Database"
+  port: 5432
+  username: "app_user"
+  pool_size: 10
+
+cache:
+  _target_: "services.RedisCache"
+  port: 6379
+  db: 0
+  ttl: 3600

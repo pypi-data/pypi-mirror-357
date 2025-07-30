@@ -1,0 +1,12 @@
+# Production environment overrides
+metadata:
+  environment: "production"
+  debug: false
+
+database:
+  host: "db.production.com"
+  pool_size: 50
+
+cache:
+  host: "redis.production.com"
+  max_connections: 100

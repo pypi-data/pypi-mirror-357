@@ -1,0 +1,28 @@
+# Environment files with secrets - NEVER commit these!
+.env
+.env.*
+!.env.example
+
+# Local configuration overrides
+config/local.yaml
+config/*.local.yaml
+
+# IDE
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db

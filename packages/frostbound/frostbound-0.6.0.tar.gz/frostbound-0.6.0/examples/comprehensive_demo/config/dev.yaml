@@ -1,0 +1,10 @@
+# Development environment overrides
+metadata:
+  environment: "development"
+  debug: true
+
+database:
+  host: "localhost"
+
+cache:
+  host: "localhost"
