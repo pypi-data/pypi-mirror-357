@@ -1,0 +1,7 @@
+CHANGES
+=======
+
+1.9.4
+-----
+
+* fix write conflict when first creating dbt\_temp schema (#584)
