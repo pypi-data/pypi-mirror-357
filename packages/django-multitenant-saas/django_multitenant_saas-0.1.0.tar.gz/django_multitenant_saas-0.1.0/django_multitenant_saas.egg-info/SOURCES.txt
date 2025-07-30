@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+django_multitenant_saas.egg-info/PKG-INFO
+django_multitenant_saas.egg-info/SOURCES.txt
+django_multitenant_saas.egg-info/dependency_links.txt
+django_multitenant_saas.egg-info/requires.txt
+django_multitenant_saas.egg-info/top_level.txt
+multitenant/__init__.py
+multitenant/managers.py
+multitenant/middleware.py
+multitenant/models.py
+multitenant/utils.py
