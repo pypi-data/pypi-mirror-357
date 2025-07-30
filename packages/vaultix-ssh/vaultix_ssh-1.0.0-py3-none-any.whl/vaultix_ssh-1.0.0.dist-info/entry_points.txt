@@ -1,0 +1,2 @@
+[console_scripts]
+vaultix = vaultix.cli:main
