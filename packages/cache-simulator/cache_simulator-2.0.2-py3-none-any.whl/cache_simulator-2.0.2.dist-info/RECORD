@@ -1,0 +1,13 @@
+cache_simulator-2.0.2.dist-info/licenses/LICENSE.txt,sha256=3l25AHBxAMpdZmKNwjqn9B9ks9ttB8jX7Bv4t8L0W4U,1083
+cachesimulator/__main__.py,sha256=jjdG3ipkls8o2r6aCA5mXhOSXrWat8xzoK52aJgNs9s,1368
+cachesimulator/bin_addr.py,sha256=Ly03bZwLH5nvQ5Xvi-HY5Gih2R0WZSZXNWXr0rcuHW4,2008
+cachesimulator/cache.py,sha256=vo3SBHdS1vAHeZkA93yQX-QdswqLct12pbZPPMSVwYY,3832
+cachesimulator/reference.py,sha256=WqOp7LVklR7lWnu-snkCLGNdvrwJCwQJyVzwZ3cXOrI,1519
+cachesimulator/simulator.py,sha256=PR9_1AxP0rasqVAf_BjLhcQBt_AYDi_kguQxF5UYMoQ,4531
+cachesimulator/table.py,sha256=BXZx7u0nGeVht4LuKhsmJV-9JQ3c631CG886L_UiwGA,1300
+cachesimulator/word_addr.py,sha256=qJxwCWqHPQW-0qIlcziYni8TupBxCSODl3CcqGBnZjU,314
+cache_simulator-2.0.2.dist-info/METADATA,sha256=CYKpTcbim33rg2IZHBhJbTY5xsa8CGKzAi4cU8v_ab4,4678
+cache_simulator-2.0.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cache_simulator-2.0.2.dist-info/entry_points.txt,sha256=SUGoZwWZYhEeFl6VwbwZZjquEvWNYbTT70xvSCXEDAY,65
+cache_simulator-2.0.2.dist-info/top_level.txt,sha256=hymY4d_KCRorSnBL6vGlMy_covWt0n-DWaRDK9KMokA,15
+cache_simulator-2.0.2.dist-info/RECORD,,
