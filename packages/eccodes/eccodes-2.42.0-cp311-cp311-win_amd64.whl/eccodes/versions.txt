@@ -1,0 +1,6 @@
+git https://github.com/Microsoft/vcpkg.git 7e7032a82d7c0674a6e7e399a0bad928c44af473
+vcpkg libpng 1.6.47
+pip dll-diagnostics 0.0.18
+git https://github.com/MathisRosenhauer/libaec.git 58677dbbf080bac17bbb8717d32e63feb4e20115
+git https://github.com/ecmwf/ecbuild.git a112e0a645f861f78999019868bb0c26b5adf75f
+git https://github.com/ecmwf/eccodes.git 597e8fd6fdd01d4b1fb0018a6226a59c2fa492a5
