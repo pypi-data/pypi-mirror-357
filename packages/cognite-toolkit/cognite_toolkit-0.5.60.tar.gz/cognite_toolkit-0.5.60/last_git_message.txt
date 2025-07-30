@@ -1,0 +1,25 @@
+[prep CDF-24921] 🧮 Raw row count (#1621)
+
+# Description
+
+<del>Stacked on #1620 </del>
+
+This adds a function for counting number of rows in a raw table. It will
+be used as part of the `cdf profile raw` command.
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Fixed
+
+- Function Loader All scoped capability to Dataset scoped capabilities
+for files
+
+## templates
+
+No changes.
