@@ -1,0 +1,43 @@
+Metadata-Version: 2.3
+Name: fm-tools
+Version: 1.0.0
+Author-email: Henrik Wachowitz <henrik.wachowitz@ifi.lmu.de>
+Maintainer-email: Henrik Wachowitz <henrik.wachowitz@ifi.lmu.de>, Dirk Beyer <dirk.beyer@sosy-lab.org>
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+Requires-Dist: benchexec>=3.27
+Requires-Dist: httpx[http2]>=0.26
+Requires-Dist: pyyaml
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: tomli>=2.0; python_version <= '3.10'
+Requires-Dist: tqdm>=4.66
+Requires-Dist: werkzeug>=3.0
+Description-Content-Type: text/markdown
+
+<!--
+This file is part of lib-fm-tools, a library for interacting with FM-Tools files:
+https://gitlab.com/sosy-lab/benchmarking/fm-tools
+
+SPDX-FileCopyrightText: 2024 Dirk Beyer <https://www.sosy-lab.org>
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
+# fm-tools
+
+Parse, use, and modify fm-tools metadata. It is meant to be used with fm-data files from the [fm-tools repository](https://gitlab.com/sosy-lab/benchmarking/fm-tools).
+
+## Description
+
+This library provides convenient access to fm-data through a simple API.
+
+The fm-data file format specifies the download location, maintainers, command-line options,
+as well as other related information. An fm-data file for a specific tool is a YAML document with a
+precisely defined set of keys (a schema for the metadata of formal-methods tools is available in the repository).
+
+fm-actor can also download and unzip tools specified in the fm-tools repository.
