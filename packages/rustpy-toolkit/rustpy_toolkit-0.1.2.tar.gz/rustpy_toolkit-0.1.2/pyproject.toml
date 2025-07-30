@@ -1,0 +1,32 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "rustpy-toolkit"
+version = "0.1.2"
+description = "Rust toolkit for Python"
+readme = "README.md"
+authors = [{ name = "bellanda", email = "gustavocasadeibellanda@gmail.com" }]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Rust",
+]
+requires-python = ">=3.8"
+dependencies = ["polars>=1.8.2"]
+
+[project.optional-dependencies]
+polars = ["polars>=0.20.0"]
+
+[tool.maturin]
+python-source = "python"
+module-name = "rustpy_toolkit"
