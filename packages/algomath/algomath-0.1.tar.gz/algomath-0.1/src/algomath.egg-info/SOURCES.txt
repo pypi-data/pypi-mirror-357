@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/algomath.egg-info/PKG-INFO
+src/algomath.egg-info/SOURCES.txt
+src/algomath.egg-info/dependency_links.txt
+src/algomath.egg-info/top_level.txt
