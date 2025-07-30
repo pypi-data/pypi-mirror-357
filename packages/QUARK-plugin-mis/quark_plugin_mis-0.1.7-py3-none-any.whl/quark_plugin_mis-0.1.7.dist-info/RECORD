@@ -1,0 +1,9 @@
+quark_plugin_mis/__init__.py,sha256=-zIMBcw0EMgtd9OS1xUl-jtTvyQdOHE-kShNFQl9xpY,587
+quark_plugin_mis/classical_mis_solver.py,sha256=mq4cTxtGYIM5waKyXerE2owYb7B2D4XlB06G524APIs,582
+quark_plugin_mis/mis_graph_provider.py,sha256=egu3zNi0azbYjOAOMbW_bhEV6LKTDHQdqHjl6-sqvkQ,7513
+quark_plugin_mis-0.1.7.dist-info/licenses/LICENSE,sha256=mBSg1RUz4kbDrNcragwoIGmn2KDVbbYK5e84mu1pSv4,11351
+quark_plugin_mis-0.1.7.dist-info/licenses/NOTICE,sha256=vUvrtd6bkwNg4Tq9_KoLXHbUhVIKo56NdlwRv3SlJ8Q,155
+quark_plugin_mis-0.1.7.dist-info/METADATA,sha256=NyH0TgB97GPGzDie1OTCxTbW7KvmC9ZS1sMWiG5MjQU,881
+quark_plugin_mis-0.1.7.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+quark_plugin_mis-0.1.7.dist-info/top_level.txt,sha256=Ndm1st4RrPne-cFjS60lPmvoU6IJ_MSfvUfTubj8FTw,17
+quark_plugin_mis-0.1.7.dist-info/RECORD,,
