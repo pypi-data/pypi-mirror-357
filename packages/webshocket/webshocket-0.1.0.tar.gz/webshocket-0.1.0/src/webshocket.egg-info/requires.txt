@@ -1,0 +1,9 @@
+pydantic>=2.11.7
+websockets>=15.0.1
+
+[dev]
+pytest
+pytest-asyncio
+ruff
+black
+poethepoet
