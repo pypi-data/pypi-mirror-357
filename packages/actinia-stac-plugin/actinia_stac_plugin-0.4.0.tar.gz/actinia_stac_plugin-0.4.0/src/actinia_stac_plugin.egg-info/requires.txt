@@ -1,0 +1,14 @@
+actinia-api>=3.7.0
+colorlog>=4.2.1
+Flask
+Flask-Cors
+Flask-RESTful
+flask-restful-swagger-2
+python-json-logger
+rasterio
+stac-validator>=2.2.0
+
+[test]
+pytest
+pytest-cov
+pwgen
