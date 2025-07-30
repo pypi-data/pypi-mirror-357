@@ -1,0 +1,497 @@
+# QBox Factor API
+
+一个用于查询实时市场因子数据的高性能Python API，专为量化策略开发而设计。
+
+## 🎯 这是什么？
+
+QBox Factor API 提供实时的中国A股市场因子数据，包括：
+
+- **市场状态数据** - 实时价格、涨跌幅、成交量、涨跌停状态等
+- **因子数据** - 市场概览、涨跌停统计、连板分析、接力率等各类量化因子
+- **市场微观结构** - 涨停板统计、连板分析、市场情绪指标
+
+**适用场景：**
+- 📈 量化策略开发
+- 🔍 市场监控分析  
+- 💹 实时交易决策
+- 📊 风险管理评估
+
+## 🚀 快速开始
+
+### 安装
+
+```bash
+# 安装客户端 (包含pandas支持)
+pip install qbox-factor-client
+
+# 可选：安装额外分析工具
+pip install qbox-factor-client[analysis]
+```
+
+### 基础用法
+
+```python
+from qbox_factor_client import FactorClient
+
+# 初始化客户端
+client = FactorClient("http://your-api-endpoint.com", token="your_token")
+
+# 获取最新因子数据 (DataFrame格式)
+factors_df = client.get_latest_factors(df=True)
+print(f"获取到 {len(factors_df)} 条因子数据")
+
+# 筛选大涨股票 (涨幅>3%)
+gainers_df = client.query_stocks(pct_change_gt=0.03, df=True)
+print(f"大涨股票: {len(gainers_df)} 只")
+```
+
+## 📊 核心功能
+
+### 1. 市场状态查询
+
+获取个股的实时市场状态信息：
+
+```python
+# 查询所有股票的市场状态
+market_df = client.query_stocks(df=True)
+
+# 筛选涨停股票
+limit_up_df = client.query_stocks(is_limit_up=True, df=True)
+
+# 筛选昨日涨停今日调整的股票 (反转机会)
+reversal_df = client.query_stocks(
+    was_limit_up_yesterday=True,
+    is_limit_up=False,
+    df=True
+)
+
+# 筛选大跌股票 (跌幅<-5%)
+losers_df = client.query_stocks(pct_change_lt=-0.05, df=True)
+
+# 查询特定日期的市场状态
+historical_df = client.query_stocks(tdate="2024-01-15", df=True)
+```
+
+**市场状态字段：**
+
+| 字段 | 描述 | 类型 |
+|------|------|------|
+| `symbol` | 股票代码 | String |
+| `last_price` | 最新价 | Float |
+| `pct_change` | 涨跌幅 (%) | Float |
+| `volume` | 成交量 | Int |
+| `high` | 当日最高价 | Float |
+| `low` | 当日最低价 | Float |
+| `open` | 开盘价 | Float |
+| `prev_close` | 昨收价 | Float |
+| `turnover` | 成交额 | Float |
+| `upper_limit` | 涨停价 | Float |
+| `lower_limit` | 跌停价 | Float |
+| `is_limit_up` | 是否涨停 | Boolean |
+| `is_limit_down` | 是否跌停 | Boolean |
+| `was_limit_up_yesterday` | 昨日是否涨停 | Boolean |
+| `was_limit_down_yesterday` | 昨日是否跌停 | Boolean |
+| `consecutive_limit_up_streak_yesterday` | 昨日连板天数 | Int |
+| `is_st` | 是否ST股票 | Boolean |
+| `asset_name` | 股票名称 | String |
+| `last_update_time` | 最后更新时间 | DateTime |
+
+### 2. 因子数据查询
+
+获取各类量化因子数据：
+
+```python
+# 获取所有因子
+all_factors_df = client.get_latest_factors(df=True)
+
+# 按因子集筛选 - 获取市场概览统计
+market_stats_df = client.get_latest_factors(
+    set_names=["market_summary_stats", "limit_hit_stats"], 
+    df=True
+)
+
+# 按具体因子名筛选 - 获取关键市场指标
+key_factors_df = client.get_latest_factors(
+    factor_names=["limit_up_count", "follow_through_rate", "bounce_ratio"], 
+    df=True
+)
+```
+
+**因子数据字段：**
+
+| 字段 | 描述 | 类型 |
+|------|------|------|
+| `tdate` | 交易日期 | Date |
+| `ttime` | 计算时间 | DateTime |
+| `set_name` | 因子集名称 | String |
+| `factor_name` | 因子名称 | String |
+| `symbol` | 股票代码 (可选，部分因子为市场级别) | String |
+| `value` | 因子值 | Float |
+
+**完整因子集列表：**
+
+#### 1. 市场概览统计 (`market_summary_stats`)
+提供整个市场的宏观统计信息，帮助了解市场整体情绪
+
+| 因子名称 | 类型 | 描述 | 应用场景 |
+|---------|------|------|----------|
+| `total_symbols` | Int | 参与计算的总股票数量 | 市场覆盖度评估 |
+| `up_count` | Int | 上涨股票数量（涨跌幅 > 0） | 市场情绪判断 |
+| `down_count` | Int | 下跌股票数量（涨跌幅 < 0） | 市场情绪判断 |
+| `flat_count` | Int | 平盘股票数量（涨跌幅 == 0） | 市场活跃度评估 |
+
+#### 2. 市场成交统计 (`market_volume`, `market_turnover`)
+| 因子名称 | 类型 | 描述 |
+|---------|------|------|
+| `total_market_volume` | Int | 整个市场的实时累计成交量 |
+| `total_market_turnover` | Float | 整个市场的实时累计成交额 |
+
+#### 3. 涨跌停统计 (`limit_hit_stats`)
+统计当前触及或接近涨跌停板的股票数量
+
+| 因子名称 | 类型 | 描述 |
+|---------|------|------|
+| `limit_up_count` | Int | 当前处于涨停状态的股票数量 |
+| `limit_down_count` | Int | 当前处于跌停状态的股票数量 |
+| `near_limit_up_count` | Int | 接近涨停的股票数量 |
+| `near_limit_down_count` | Int | 接近跌停的股票数量 |
+
+#### 4. 涨停强度分析 (`limit_up_strength`)
+分析涨停股的内部强度和质量
+
+| 因子名称 | 类型 | 描述 | 意义 |
+|---------|------|------|------|
+| `limit_up_with_volume` | Int | 有成交量的涨停股数量 | 涨停的真实性 |
+| `limit_up_avg_volume` | Float | 涨停股的平均成交量 | 涨停的活跃度 |
+| `limit_up_total_turnover` | Float | 所有涨停股的总成交额 | 涨停的资金关注度 |
+
+#### 5. 连续涨停统计 (`consecutive_limit_stats`)
+追踪市场的连板梯队情况
+
+| 因子名称 | 类型 | 描述 |
+|---------|------|------|
+| `consecutive_limit_up_{N}d_count` | Int | 今日达成 N 连板的股票数量 |
+
+#### 6. 昨日涨停股表现 (`prev_day_limit_up_performance`)
+分析昨日涨停股票的延续性，衡量市场情绪的持续性
+
+| 因子名称 | 类型 | 描述 |
+|---------|------|------|
+| `yesterday_limit_up_count` | Int | T-1 日涨停的股票总数 |
+| `positive_follow_count` | Int | T-1 日涨停股中，今日涨幅为正的数量 |
+| `negative_follow_count` | Int | T-1 日涨停股中，今日涨幅为负的数量 |
+| `still_limit_up_count` | Int | T-1 日涨停股中，今日仍然涨停的数量 |
+| `follow_through_rate` | Float | **接力率** - 衡量涨停板效应的延续性 |
+| `continuation_strength` | Float | **连板强度** - 衡量连续涨停的概率 |
+
+#### 7. 昨日跌停股表现 (`prev_day_limit_down_performance`)
+分析昨日跌停股票的反弹情况
+
+| 因子名称 | 类型 | 描述 |
+|---------|------|------|
+| `yesterday_limit_down_count` | Int | T-1 日跌停的股票总数 |
+| `count_bounce_follow` | Int | T-1 日跌停股中，今日涨幅为正的数量（反弹） |
+| `count_continued_decline` | Int | T-1 日跌停股中，今日涨幅为负的数量（持续下跌） |
+| `bounce_ratio` | Float | **反弹率** - 衡量超跌反弹的概率 |
+
+#### 8. 昨日非涨跌停股表现 (`prev_day_non_limit_performance`)
+作为市场情绪的参照基准
+
+| 因子名称 | 类型 | 描述 |
+|---------|------|------|
+| `non_limit_count` | Int | T-1 日未触及涨跌停的股票总数 |
+| `non_limit_up_movers` | Int | T-1 日非涨跌停股中，今日上涨的数量 |
+| `non_limit_down_movers` | Int | T-1 日非涨跌停股中，今日下跌的数量 |
+
+#### 9. 价格变动区间统计 (`price_change_range_stats`)
+按涨跌幅区间统计股票分布
+
+**上涨区间：**
+| 因子名称 | 区间 | 描述 |
+|---------|------|------|
+| `up_gt_9_pct_count` | > 9% | 大幅上涨股票数量 |
+| `up_7_to_9_pct_count` | 7% ~ 9% | 较大幅度上涨股票数量 |
+| `up_5_to_7_pct_count` | 5% ~ 7% | 中等幅度上涨股票数量 |
+| `up_1_to_5_pct_count` | 1% ~ 5% | 小幅上涨股票数量 |
+| `up_0_to_1_pct_count` | 0% ~ 1% | 微涨股票数量 |
+
+**下跌区间：**
+| 因子名称 | 区间 | 描述 |
+|---------|------|------|
+| `down_gt_9_pct_count` | < -9% | 大幅下跌股票数量 |
+| `down_7_to_9_pct_count` | -9% ~ -7% | 较大幅度下跌股票数量 |
+| `down_5_to_7_pct_count` | -7% ~ -5% | 中等幅度下跌股票数量 |
+| `down_1_to_5_pct_count` | -5% ~ -1% | 小幅下跌股票数量 |
+| `down_0_to_1_pct_count` | -1% ~ 0% | 微跌股票数量 |
+
+**特殊指标：**
+| 因子名称 | 描述 |
+|---------|------|
+| `flat_count` | 涨幅为 0 的股票数量 |
+| `extreme_volatility_count` | 极端波动股票统计（涨跌幅 > 9% 或 < -9%） |
+
+### 3. 环境变量配置
+
+支持环境变量配置，便于部署：
+
+```bash
+# 设置环境变量
+export FACTOR_ENDPOINT="http://your-api-endpoint.com"
+export FACTOR_TOKEN="your_authentication_token"
+```
+
+```python
+# 自动从环境变量读取配置
+client = FactorClient()  # 无需传参
+data_df = client.get_latest_factors(df=True)
+```
+
+## 💡 实战示例
+
+### 动量反转策略
+
+```python
+from qbox_factor_client import FactorClient
+
+def limit_up_analysis_strategy():
+    client = FactorClient()
+    
+    # 1. 获取涨停相关因子
+    limit_factors_df = client.get_latest_factors(
+        set_names=["prev_day_limit_up_performance", "limit_up_strength"], 
+        df=True
+    )
+    
+    # 2. 获取市场状态  
+    market_df = client.query_stocks(df=True)
+    
+    # 3. 合并数据
+    strategy_df = limit_factors_df.merge(market_df, on='symbol', how='right')
+    
+    # 4. 策略筛选 - 寻找高质量的涨停延续机会
+    # 获取接力率数据
+    follow_through_rate = limit_factors_df[
+        limit_factors_df['factor_name'] == 'follow_through_rate'
+    ]['value'].iloc[0] if len(limit_factors_df) > 0 else 0.5
+    
+    selected = strategy_df[
+        (strategy_df['pct_change'] >= 0) &                              # 今日上涨
+        (strategy_df['pct_change'] <= 0.07) &                          # 涨幅适中
+        (~strategy_df['is_limit_up']) &                                 # 非涨停
+        (strategy_df['was_limit_up_yesterday']) &                       # 昨日涨停
+        (follow_through_rate > 0.6)                                     # 市场接力率良好
+    ]
+    
+    return selected[['symbol', 'pct_change', 'volume', 'was_limit_up_yesterday']].head(10)
+
+# 执行策略
+recommendations = limit_up_analysis_strategy()
+print(recommendations)
+```
+
+### 市场监控面板
+
+```python
+def market_dashboard():
+    client = FactorClient()
+    
+    # 市场概览
+    market_df = client.query_stocks(df=True)
+    
+    print("📊 市场概览")
+    print(f"总股票数: {len(market_df)}")
+    print(f"上涨股票: {(market_df['pct_change'] > 0).sum()}")
+    print(f"下跌股票: {(market_df['pct_change'] < 0).sum()}")
+    print(f"平均涨跌幅: {market_df['pct_change'].mean():.2%}")
+    
+    # 涨停板分析
+    limit_up_df = client.query_stocks(is_limit_up=True, df=True)
+    print(f"\n🔴 涨停股票: {len(limit_up_df)} 只")
+    
+    # 连板分析
+    consecutive_df = client.query_stocks(
+        is_limit_up=True,
+        was_limit_up_yesterday=True, 
+        df=True
+    )
+    print(f"💎 连板股票: {len(consecutive_df)} 只")
+    
+    # 反转机会
+    reversal_df = client.query_stocks(
+        was_limit_up_yesterday=True,
+        is_limit_up=False,
+        pct_change_gt=0,
+        df=True
+    )
+    print(f"⭐ 反转机会: {len(reversal_df)} 只")
+
+market_dashboard()
+```
+
+## 🔧 API 参考
+
+### FactorClient
+
+```python
+class FactorClient:
+    def __init__(self, endpoint: str = "", token: str = "")
+```
+
+**参数：**
+- `endpoint`: API服务地址，可通过环境变量`FACTOR_ENDPOINT`设置
+- `token`: 认证令牌，可通过环境变量`FACTOR_TOKEN`设置
+
+### 主要方法
+
+#### get_latest_factors()
+
+```python
+def get_latest_factors(
+    set_names: Optional[List[str]] = None,
+    factor_names: Optional[List[str]] = None,
+    limit: Optional[int] = None,
+    df: bool = False
+) -> Union[Dict[str, List[Any]], pd.DataFrame]
+```
+
+**参数：**
+- `set_names`: 因子集名称列表
+- `factor_names`: 具体因子名称列表  
+- `limit`: 返回结果数量限制，None表示使用默认限制(1000)，最大3000
+- `df`: 是否直接返回DataFrame格式
+
+#### query_stocks()
+
+```python
+def query_stocks(
+    tdate: Optional[str] = None,
+    pct_change_gt: Optional[float] = None,
+    pct_change_lt: Optional[float] = None,
+    is_limit_up: Optional[bool] = None,
+    was_limit_up_yesterday: Optional[bool] = None,
+    is_limit_down: Optional[bool] = None,
+    was_limit_down_yesterday: Optional[bool] = None,
+    limit: Optional[int] = None,
+    df: bool = False
+) -> Union[Dict[str, List[Any]], pd.DataFrame]
+```
+
+**参数：**
+- `tdate`: 交易日期，格式YYYY-MM-DD，默认为今日
+- `pct_change_gt/lt`: 涨跌幅大于/小于指定值
+- `is_limit_up/down`: 当前是否涨停/跌停
+- `was_limit_up/down_yesterday`: 昨日是否涨停/跌停
+- `limit`: 返回结果数量限制，None表示使用默认限制(1000)，最大3000
+- `df`: 是否直接返回DataFrame格式
+
+#### health_check()
+
+```python
+def health_check() -> Dict[str, str]
+```
+
+检查API服务状态，无需认证。
+
+## 📖 API 文档
+
+QBox Factor API 提供了完整的自描述式API文档：
+
+- **📊 完整因子清单** - 所有9个因子集的详细说明，包含每个因子的含义和应用场景
+- **🎯 策略示例** - 针对动量、反转、情绪分析等策略的即用型HTTP查询示例  
+- **🌍 双语支持** - 英文和中文说明，适配中国市场语境
+- **🔍 参数指导** - 详细的参数说明、示例和取值范围
+- **📈 实战案例** - 可直接复制粘贴的查询语句
+
+**访问方式：**
+```bash
+# 启动API服务后访问
+http://your-api-endpoint.com/docs
+```
+
+所有API端点都包含完整的参数说明、响应格式和使用示例，无需外部文档即可快速上手。
+
+## ⚡ 性能优化
+
+### 1. 使用df=True参数
+
+```python
+
+# ✅ 高效方式  
+df = client.get_latest_factors(df=True)
+```
+
+### 2. 客户端复用
+
+```python
+# ✅ 推荐：初始化一次，重复使用
+client = FactorClient()
+
+for i in range(100):
+    data = client.get_latest_factors(df=True)  # 复用连接
+```
+
+### 3. 合理设置limit
+
+```python
+# 小数据集，获取默认数量
+data = client.get_latest_factors(df=True)  # 默认limit=1000
+
+# 需要更多数据时，明确指定 (最大3000)
+large_data = client.get_latest_factors(limit=3000, df=True)
+```
+
+## 🔐 安全配置
+
+### 环境变量设置
+
+```bash
+# .env 文件
+FACTOR_ENDPOINT=https://your-secure-api.com
+FACTOR_TOKEN=your_secure_token_here
+```
+
+### 认证管理
+
+```python
+# 动态更新token
+client = FactorClient(endpoint="https://api.example.com")
+client.set_token("new_token")
+```
+
+## 🚨 错误处理
+
+```python
+import httpx
+from qbox_factor_client import FactorClient
+
+try:
+    client = FactorClient()
+    data = client.get_latest_factors(df=True)
+except httpx.HTTPStatusError as e:
+    if e.response.status_code == 401:
+        print("认证失败，请检查token")
+    elif e.response.status_code == 404:
+        print("API端点不存在")
+    else:
+        print(f"HTTP错误: {e}")
+except httpx.RequestError as e:
+    print(f"网络连接错误: {e}")
+except Exception as e:
+    print(f"未知错误: {e}")
+```
+
+## 🛠️ 开发环境
+
+```bash
+# 克隆项目
+cd qbox-factor-api
+
+# 安装开发依赖 (使用uv)
+uv sync --extra dev
+
+# 运行测试
+python -m pytest tests/
+
+# 运行示例
+python examples/basic_usage.py
+```
