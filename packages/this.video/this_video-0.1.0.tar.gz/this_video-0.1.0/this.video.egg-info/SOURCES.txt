@@ -1,0 +1,6 @@
+README.md
+setup.py
+this.video.egg-info/PKG-INFO
+this.video.egg-info/SOURCES.txt
+this.video.egg-info/dependency_links.txt
+this.video.egg-info/top_level.txt
