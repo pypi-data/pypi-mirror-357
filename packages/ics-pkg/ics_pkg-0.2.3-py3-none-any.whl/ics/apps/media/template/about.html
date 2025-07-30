@@ -1,0 +1,77 @@
+<%!
+def inherit( context ):
+    return context.get('base_template','basewithmenu.html')
+%>
+<%inherit file="${inherit(context)}"/>
+<div class="w3-container">
+    <h2>About</h2>
+    <p><i>"${name}"</i> is a software that implements a number of tools for the creation and use of automatic text
+        classifiers.</p>
+    <p>The software includes a web user interface and a web service API.</p>
+    <p>The public interface of the service publishes a set of selected classifiers.</p>
+    <p>Classification requests are limited to a maximum hourly rate. The counter for the limit is reset every
+        hour.</p>
+
+    <h2>Source code and publications</h2>
+
+    <p>The source code of <i>${name}</i> is published on <a href="https://github.com/aesuli/ics">GitHub</a>.<br/>
+        You can cite the code by referring to its <a href="https://doi.org/10.5281/zenodo.6586244">Zenodo record</a>.</p>
+    <pre>
+    @software{esuli_ics_code_2022,
+      author       = {Andrea Esuli},
+      title        = {ICS: Interactive Classification System},
+      year         = 2022,
+      publisher    = {Zenodo},
+      doi          = {10.5281/zenodo.6586244},
+      url          = {https://github.com/aesuli/ics}
+    }
+    </pre>
+
+    <p>This paper describes the system:<br/>
+        Andrea Esuli, <a href="https://doi.org/10.1109/ACCESS.2022.3184009">"<b>ICS:
+        Total Freedom in Manual Text Classification Supported by Unobtrusive Machine Learning</b>"</a>, IEEE Access, 2022.</p>
+
+    <pre>
+    @article{esuli_ics_2022,
+      author={Esuli, Andrea},
+      title={ICS: Total Freedom in Manual Text Classification Supported by Unobtrusive Machine Learning},
+      journal={IEEE Access},
+      year={2022},
+      volume={10},
+      pages={64741-64760},
+      doi={10.1109/ACCESS.2022.3184009}
+    }
+    </pre>
+    <h2>License - copyright</h2>
+    <pre>BSD 3-Clause License
+
+Copyright (c) 2022-2023 Andrea Esuli (andrea@esuli.it)
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1 Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+2 Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+3 Neither the name of the copyright holder nor the names of its
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</pre>
+
+</div>
