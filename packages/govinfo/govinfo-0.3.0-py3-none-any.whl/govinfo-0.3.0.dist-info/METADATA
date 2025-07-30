@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: govinfo
+Version: 0.3.0
+Summary: A wrapper for the Government Publishing Office's GovInfo API
+Author-email: William Blackerby <wmblackerby@gmail.com>
+Requires-Python: >=3.13
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: pydantic>=2.11.4
+Requires-Dist: pytest>=8.4.0
+Description-Content-Type: text/markdown
+
+# API client for GovInfo
+
+## TODO:
+- testing (including mock API calls)
+- documentation
+- CI/CD release workflow
+- refactoring
+
