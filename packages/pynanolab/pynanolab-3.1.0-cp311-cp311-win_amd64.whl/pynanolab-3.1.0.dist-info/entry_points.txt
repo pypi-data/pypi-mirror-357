@@ -1,0 +1,4 @@
+[console_scripts]
+nanoporetoolbox = pynanolab.widget.nanoporetoolbox.start:run
+pnl-shortcut = pynanolab.scripts.makeshortcut:create_shortcut2
+pynanolab = pynanolab.start:run
