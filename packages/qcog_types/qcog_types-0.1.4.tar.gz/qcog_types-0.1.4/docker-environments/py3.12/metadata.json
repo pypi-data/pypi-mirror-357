@@ -1,0 +1,6 @@
+{
+    "instance": "cpu",
+    "python_version": "3.12",
+    "cuda_version": null,
+    "version": "0.0.1"
+}

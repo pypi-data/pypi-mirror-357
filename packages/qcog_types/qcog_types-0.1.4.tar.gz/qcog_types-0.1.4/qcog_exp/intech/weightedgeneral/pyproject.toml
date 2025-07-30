@@ -1,0 +1,46 @@
+[project]
+name = "weighted-general"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "boto3>=1.34.0",
+    "lightning>=2.5.1",
+    "pandas>=2.2.3",
+    "pydantic>=2.0.0",
+    "qcog-torch>=1.1.9",
+    "torch>=2.6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "mypy",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+show_error_codes = true
+exclude = ["build/", "dist/", "__pycache__/"]
+explicit_package_bases = true
+namespace_packages = true
+
+[tool.uv.sources]
+qcog_torch = { index = "gemfury" }
+hone-utils = { index = "gemfury" }
+
+[[tool.uv.index]]
+name = "gemfury"
+url = "https://pypi.fury.io/qognitive"
+authenticate = "always"
+explicit=true
