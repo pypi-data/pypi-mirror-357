@@ -1,0 +1,20 @@
+thermoml_fair/Code Citations.md,sha256=4aAjA3ZhJQLE-5RESiDHJDPZP2w5fRtm9ptWrS6kjow,2122
+thermoml_fair/__init__.py,sha256=NH6KrPLyd6BzohIKVUihUewMqZbG2ZaRti5PvqROLMk,494
+thermoml_fair/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+thermoml_fair/core/chemistry_utils.py,sha256=bRhqWt1q3rYdsu8IjxaNk5NzN4WE0aKjjqn5wfRPdgI,3234
+thermoml_fair/core/config.py,sha256=oLoy1jH1MOAvbyWa9ZevqRRf4tf9ufUZK5USaTohRdk,944
+thermoml_fair/core/extract.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+thermoml_fair/core/parser.py,sha256=76qL43L6JufXz_qNKq9Y1spaBashdDMKiPT4bUaJI7A,14703
+thermoml_fair/core/schema.py,sha256=0V3nhzzmTwEyrhnHJNn9MuxuMT9XXEuyff3FC0F6U5s,873
+thermoml_fair/core/update_archive.py,sha256=210yEurzywaUTJBAQcF3YeRx_1Dr5YAsJmOnLD8p_gM,15151
+thermoml_fair/core/utils.py,sha256=Wq1Y9mLU9LBxrjmaE1e6wIax9xaPltzKhj1fwmNwmTM,14281
+thermoml_fair/data/ThermoML.xsd,sha256=XJlFzgfCoMTXvSSbpNH3a0o366C4cvHx9mVrTfJHq4k,128779
+thermoml_fair/scripts/__init__.py,sha256=qYTgDC4okkf5G2yQz4MNawENswvyb0SJT2wNWLMnRLI,9
+thermoml_fair/scripts/cli.py,sha256=UzIXP93BrGHBcm7MDC80ne63yDKZV-6qXEmQduY1V-w,52268
+thermoml_fair/scripts/update_archive.py,sha256=ViF7o6_rqTiyvvEJgn6i55ZmDjZ-OwB-hrtPPA6ZEBI,245
+thermoml_fair-1.0.12.dist-info/licenses/LICENSE,sha256=5Rjy4Qz5d6C6oEt02RnI1nx8cjqL6vaeQievmPilH2w,18367
+thermoml_fair-1.0.12.dist-info/METADATA,sha256=Ed9VScxfxk-5PSA4kFoAGSg0nJFO9QSBn3k3b_C_H4g,10603
+thermoml_fair-1.0.12.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+thermoml_fair-1.0.12.dist-info/entry_points.txt,sha256=-jwpYj_xJhndTaJkkmcKrStO4T2K9AZhXL3Sory46Vg,64
+thermoml_fair-1.0.12.dist-info/top_level.txt,sha256=L0iitxlrr4hK2ay_pCEDiJTDPw0UjPi3dk964VO-ZP8,14
+thermoml_fair-1.0.12.dist-info/RECORD,,
