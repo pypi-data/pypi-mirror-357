@@ -1,0 +1,16 @@
+pnorm/__init__.py,sha256=0mVF7K6IQTLSk2tOEqXYpNqeKhutCdIgN8gByVWIdVw,714
+pnorm/async_client.py,sha256=uLwVWp_SwPiPp0MeEMM90TW9rsHBwkhkYW0n1daK8fw,22566
+pnorm/async_cursor.py,sha256=p2Igp96s9reI7RBDeZDKvr1hf7PftvXREMZw2wEAS-A,1866
+pnorm/credentials.py,sha256=iZSoaXHJIyZw8Dy5ZMdF-w3S63qXskIR9cCDjKJwxhI,925
+pnorm/exceptions.py,sha256=i-BQC1isinHa1O14K7LNqTb7IuO-PZMRHCRBxB4iiXM,891
+pnorm/mapping_utilities.py,sha256=RVf8qMtM_B6Zy2sgp11Olg-IoqVA7J2cZiefd4bXQD8,3419
+pnorm/pnorm_types.py,sha256=z4Qbg0wlTOH7NhV0xHAQq9yFZiPe-Y2kFZT1GnfcCoU,992
+pnorm/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pnorm/sync_client.py,sha256=yHEXo2kKTwSbdjymk93hhlpRzmlReD9Wzk88L0s04Zw,14409
+pnorm/hooks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pnorm/hooks/base.py,sha256=4DLSf8i3t1j1clnngYN47BiNZlMt9DiykOVgcaQaKpU,573
+pnorm/hooks/opentelemetry.py,sha256=1Y6di3UmETVhvehr_NQSphJ6EY6_Y3Thtfbc9OLLKQU,8883
+pnorm-0.0.2.dist-info/METADATA,sha256=8l3DvztCQ8UsaI9OTe_c29E80g-ChH00QGPNqYs6qBw,2769
+pnorm-0.0.2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pnorm-0.0.2.dist-info/licenses/LICENSE,sha256=tAkwu8-AdEyGxGoSvJ2gVmQdcicWw3j1ZZueVV74M-E,11357
+pnorm-0.0.2.dist-info/RECORD,,
