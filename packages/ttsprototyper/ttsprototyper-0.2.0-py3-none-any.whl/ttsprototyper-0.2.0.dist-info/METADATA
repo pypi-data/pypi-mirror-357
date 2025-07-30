@@ -1,0 +1,33 @@
+Metadata-Version: 2.3
+Name: ttsprototyper
+Version: 0.2.0
+Summary: 
+License: GNU GPL v3.0
+Author: Nils P. Kujath
+Author-email: 63961429+NilsKujath@users.noreply.github.com
+Requires-Python: >=3.11
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Requires-Dist: pandas (>=2.3.0,<3.0.0)
+Description-Content-Type: text/markdown
+
+
+---
+
+**DISCLAIMER**
+
+THE INFORMATION PROVIDED IS FOR EDUCATIONAL AND INFORMATIONAL PURPOSES ONLY. IT DOES NOT CONSTITUTE FINANCIAL, INVESTMENT, OR TRADING ADVICE. TRADING INVOLVES SUBSTANTIAL RISK, AND YOU MAY LOSE MORE THAN YOUR INITIAL INVESTMENT.
+
+THIS SOFTWARE AND ITS DOCUMENTATION PAGES ARE PROVIDED "AS IS," WITHOUT ANY WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. THE AUTHORS AND COPYRIGHT HOLDERS ASSUME NO LIABILITY FOR ANY CLAIMS, DAMAGES, OR OTHER LIABILITIES ARISING FROM THE USE OR DISTRIBUTION OF THIS SOFTWARE OR DOCUMENTATION PAGES. USE AT YOUR OWN RISK. THIS SOFTWARE AND ITS DOCUMENTATION PAGES ARE LICENSED UNDER THE GNU GENERAL PUBLIC LICENSE V3.0 (GPL-3.0). SEE THE GPL-3.0 FOR DETAILS.
+
+---
+
+# Technical Trading Strategy Prototyper (`ttsprototyper`)
+
+## Purpose
+
+TA-based trading is a visual endeavour and should be practiced as such.
+The `TTSPrototyper` class provides the means to chart each round-trip trade from a backtest, allowing you to refine your strategy directly based on charts and thus remain in the visual workflow that defines technical analysis.
