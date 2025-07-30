@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.py
+workspace_generator/__init__.py
+workspace_generator/cli.py
+workspace_generator/generator.py
+workspace_generator.egg-info/PKG-INFO
+workspace_generator.egg-info/SOURCES.txt
+workspace_generator.egg-info/dependency_links.txt
+workspace_generator.egg-info/entry_points.txt
+workspace_generator.egg-info/top_level.txt

@@ -1,0 +1,33 @@
+# Workspace Generator
+
+Generate VS Code workspace files for multi-package projects.
+
+## Installation
+
+```bash
+pip install workspace-generator
+```
+
+## Usage
+
+```bash
+# Generate workspace file for current directory (auto-detect workspace root)
+generate-workspace
+
+# Generate workspace file for specific directory
+generate-workspace /path/to/workspace
+```
+
+## What it does
+
+- Scans the `src/` directory for packages
+- Creates a `.code-workspace` file with folder configurations
+- Includes debug configuration for Python remote debugging
+
+## Remote Debugging Setup
+
+To use the remote debugger configuration, add this code to your Python script:
+
+```python
+import debugpy; debugpy.listen(5678);print("🛑 Waiting for debugger to attach on port 5678...");debugpy.wait_for_client()
+```
