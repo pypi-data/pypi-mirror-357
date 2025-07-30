@@ -1,0 +1,199 @@
+Metadata-Version: 2.4
+Name: adamet
+Version: 2.0.10
+Summary: AdaMet: Adaptive Metropolis for Bayesian Analysis
+Home-page: https://purl.org/cappellari/software
+Author: Michele Cappellari
+Author-email: michele.cappellari@physics.ox.ac.uk
+License: Other/Proprietary License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/x-rst
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: plotbin
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+The AdaMet Package
+==================
+
+**Adaptive Metropolis for Bayesian Analysis**
+
+.. image:: https://img.shields.io/pypi/v/adamet.svg
+        :target: https://pypi.org/project/adamet/
+.. image:: https://img.shields.io/badge/arXiv-1208.3522-orange.svg
+    :target: https://arxiv.org/abs/1208.3522
+.. image:: https://img.shields.io/badge/DOI-10.1093/mnras/stt562-green.svg
+    :target: https://doi.org/10.1093/mnras/stt562
+
+AdaMet is a well-tested Python implementation by 
+`Cappellari et al. (2013) <https://ui.adsabs.harvard.edu/abs/2013MNRAS.432.1709C>`_ 
+of the Adaptive Metropolis algorithm by
+`Haario H., Saksman E., Tamminen J. (2001) <https://doi.org/10.2307/3318737>`_.
+It was used in several published papers in the astrophysics literature.
+
+.. contents:: :depth: 2
+
+Attribution
+-----------
+
+If you use this software for your research, please cite at least
+`Cappellari et al. (2013)`_ where the implementation was introduced. 
+The BibTeX entry for the paper is::
+
+    @ARTICLE{Cappellari2013a,
+        author = {{Cappellari}, M. and {Scott}, N. and {Alatalo}, K. and
+            {Blitz}, L. and {Bois}, M. and {Bournaud}, F. and {Bureau}, M. and
+            {Crocker}, A.~F. and {Davies}, R.~L. and {Davis}, T.~A. and {de Zeeuw},
+            P.~T. and {Duc}, P.-A. and {Emsellem}, E. and {Khochfar}, S. and
+            {Krajnovi{\'c}}, D. and {Kuntschner}, H. and {McDermid}, R.~M. and
+            {Morganti}, R. and {Naab}, T. and {Oosterloo}, T. and {Sarzi}, M. and
+            {Serra}, P. and {Weijmans}, A.-M. and {Young}, L.~M.},
+        title = "{The ATLAS$^{3D}$ project - XV. Benchmark for early-type
+            galaxies scaling relations from 260 dynamical models: mass-to-light
+            ratio, dark matter, Fundamental Plane and Mass Plane}",
+        journal = {MNRAS},
+        eprint = {1208.3522},
+        year = 2013,
+        volume = 432,
+        pages = {1709-1741},
+        doi = {10.1093/mnras/stt562}
+    }
+
+Installation
+------------
+
+install with::
+
+    pip install adamet
+
+Without writing access to the global ``site-packages`` directory, use::
+
+    pip install --user adamet
+
+Documentation
+-------------
+
+The documentation is in the docstring of the file ``adamet.py``
+or on `PyPi <https://pypi.org/project/adamet/>`_.
+
+###########################################################################
+
+
+AdaMet
+======
+
+AdaMet Purpose
+--------------
+This is the implementation by
+`Cappellari et al. (2013) <https://ui.adsabs.harvard.edu/abs/2013MNRAS.432.1709C>`_
+of the Adaptive Metropolis algorithm by
+`Haario H., Saksman E., Tamminen J. (2001) <https://doi.org/10.2307/3318737>`_
+for Bayesian analysis.
+
+Usage Example
+-------------
+To learn how to use ``AdaMet`` run the example program in the
+``adamet/examples`` directory, within the main package installation
+folder inside ``site-packages``, and read the detailed documentation
+in the docstring of the file ``adamet.py`` or on
+`PyPi <https://pypi.org/project/adamet/>`_.
+
+Note: For dimensions = 1 to 6, the optimal acceptance rates are
+`rate = [0.441, 0.352, 0.316, 0.279, 0.275, 0.266]`
+and the asymptotic value for many parameters is 23%
+
+Calling Sequence
+----------------
+.. code-block:: python
+
+    pars, lnprob = adamet(lnprob_fun, pars, sigpars, bounds, nstep, 
+        fignum=None, inline=True, labels=None, labels_scaling=1, 
+        nprint=100, plot=True, quiet=False, seed=None, args=(), kwargs={}):
+
+Parameters
+----------
+lnprob_fun: callable
+    This function returns the natural logarithm of the conditional
+    probability of the model, given the data. The probability does not need
+    to be normalized as only relative probabilities matter. For this
+    reason, inclusion of an arbitrary additive constant in  ``lnprob_fun``
+    leaves the output of ``AdaMet`` unaffected::
+
+        P(model | data) ~ P(data | model)*P(model)
+
+pars0: array_like, shape (n,)
+    vector with the mean of the multivariate Gaussian describing the
+    proposal distribution from which samples are drawn.
+    For maximum efficiency, this initial Gaussian should approximate the
+    posterior distribution. This suggests adopting as ``pars0`` an initial
+    guess for the model best-fitting parameters.
+sigpars0: array_like, shape (n,)
+    vector with the dispersion ``sigma`` of the multivariate Gaussian
+    describing the proposal distribution.
+    For maximum efficiency, this initial Gaussian should approximate the
+    posterior distribution. This suggests adopting as ``sigpars`` an
+    initial guess of the uncertainty in the model parameters ``pars``.
+bounds: 2-tuple of array_like
+    Lower and upper bounds on independent variables. Each array must match
+    the size of ``pars``. The model probability is set to zero outside the
+    bounds. This keyword is also used to define the plotting ranges.
+nsteps: integer
+    Number of attempted moves in the chain. Typical numbers are a few
+    thousands ``nsteps``.
+
+Other Parameters
+----------------
+fignum: integer, optional
+    Specifies the figure number for the plot.
+inline: boolean, optional
+    Specifies whether to show a plot of the results inline or in a window.
+labels: array_like, shape (n,)
+    String labels for each parameter to be used in the ``corner_plot``
+labels_scaling: float
+    Relative scaling for the plotting labels.
+nprint: integer
+    Specifies the frequency for the intermediate plots, in moves.
+    A typical value could be ``nstep/10``.
+plot: boolean, optional
+    Specifies whether to show a plot of the results or not.
+quiet: boolean, optional
+    Suppress the printing of the progress of the algorithm.
+seed: integer
+    Seed for the random generator. Specify this value for a repeatable
+    random sequence.
+args, kwargs: tuple and dict, optional
+    Additional arguments passed to ``lnprob_fun``. Both empty by default.
+    The calling signature is ``lnprob_fun(x, *args, **kwargs)``.
+
+Returns
+-------
+pars: array_like, shape (nsteps, n)
+    Posterior distribution for the model parameters
+lnprob: array_like, shape (nsteps, n)
+    Logarithm of the probbaility of the model, given the data, for each set
+    of parameters in the posterior distribution ``pars``.
+
+
+License
+=======
+
+Other/Proprietary License
+
+Copyright (c) 2012-2025 Michele Cappellari
+
+This software is provided as is with no warranty. You may use it for
+non-commercial purposes and modify it for personal or internal use, as long
+as you include this copyright and disclaimer in all copies. You may not
+redistribute the code.

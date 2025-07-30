@@ -1,0 +1,15 @@
+setup.py
+adamet/LICENSE.txt
+adamet/README.rst
+adamet/__init__.py
+adamet/adamet.py
+adamet/corner_plot.py
+adamet.egg-info/PKG-INFO
+adamet.egg-info/SOURCES.txt
+adamet.egg-info/dependency_links.txt
+adamet.egg-info/requires.txt
+adamet.egg-info/top_level.txt
+adamet.egg-info/zip-safe
+adamet/examples/__init__.py
+adamet/examples/adamet_example.py
+adamet/examples/adamet_reference_output.txt
