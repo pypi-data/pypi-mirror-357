@@ -1,0 +1,13 @@
+numpy>=1.24.0
+matplotlib>=3.7.0
+click>=8.1.0
+
+[dev]
+pytest>=7.4.0
+black>=23.10.0
+flake8>=6.1.0
+mypy>=1.6.0
+pre-commit>=3.3.3
+sphinx>=7.1.2
+sphinx-rtd-theme>=1.2.0
+numpydoc>=1.5.0
