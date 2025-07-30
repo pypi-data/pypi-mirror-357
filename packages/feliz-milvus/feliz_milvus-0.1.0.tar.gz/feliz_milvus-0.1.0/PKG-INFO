@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: feliz_milvus
+Version: 0.1.0
+Summary: A Python package for Milvus Git integration
+Home-page: https://github.com/nexuni/feliz_milvus.git
+Author: nexuni
+Author-email: chewei.lee@nexuni.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: pymilvus>=2.3.0
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
