@@ -1,0 +1,138 @@
+[build-system]
+requires = ["maturin>=1,<2"]
+build-backend = "maturin"
+
+[project]
+name = "swiflow"
+# Must be consistent with Cargo.toml
+version = "0.0.1"
+description = "Rust binding of generalized and pauli flow finding algorithms."
+license-files = ["LICENSE"]
+readme = "README.md"
+authors = [
+  { name = "S.S.", email = "66886825+EarlMilktea@users.noreply.github.com" },
+]
+maintainers = [
+  { name = "S.S.", email = "66886825+EarlMilktea@users.noreply.github.com" },
+  { name = "thierry-martinez", email = "thierry.martinez@inria.fr" },
+  { name = "Shinichi Sunami", email = "shinichi.sunami@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Free Threading :: 1 - Unstable",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Rust",
+  "Topic :: Scientific/Engineering :: Physics",
+  "Typing :: Typed",
+]
+requires-python = ">=3.9,<3.14"
+dependencies = ["networkx", "typing-extensions"]
+
+[project.optional-dependencies]
+dev = [
+  "maturin>=1,<2",
+  "mypy",
+  "pyright",
+  "pytest",
+  "pytest-cov",
+  "ruff",
+  "types-networkx",
+]
+doc = ["furo", "sphinxcontrib-bibtex", "sphinx"]
+
+[tool.maturin]
+exclude = [
+  "Pipfile",
+  "docs/**",
+  "examples/**",
+  "rustfmt.toml",
+  "tests/**",
+  ".github/**",
+  ".gitignore",
+]
+features = ["pyo3/extension-module"]
+module-name = "swiflow._impl"
+python-source = "python"
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+files = ["docs/source/conf.py", "python", "tests"]
+
+[tool.ruff]
+extend-include = ["*.ipynb"]
+line-length = 120
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+preview = true
+select = ["ALL"]
+ignore = [
+  # Conflicts with ruff format
+  "COM812",
+  "COM819",
+  "D206",
+  "D300",
+  "E111",
+  "E114",
+  "E117",
+  "ISC001",
+  "ISC002",
+  "Q000",
+  "Q001",
+  "Q002",
+  "Q003",
+  "W191",
+
+  # Not necessary for this project
+  "AIR",
+  "ASYNC",
+  "DJ",
+  "PD",
+
+  # Manually-disabled (lints)
+  "CPY",
+  "DOC",
+  "ERA",
+  "FIX",
+
+  # Manually-disabled (rules)
+  "D105", # undocumented-magic-method
+]
+
+[tool.ruff.lint.isort]
+required-imports = ["from __future__ import annotations"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.per-file-ignores]
+"docs/**/*.py" = [
+  "D1",  # undocumented-XXX
+  "INP",
+]
+"examples/**/*.py" = [
+  "INP",
+  "S101", # assert
+]
+"tests/*.py" = [
+  "D1",      # undocumented-XXX
+  "PLC2701", # import-private-name
+  "PLR2004", # magic-value-comparison
+  "PLR6301", # no-self-use
+  "S101",    # assert
+]
+
+[tool.coverage.report]
+omit = ["tests/*"]
+exclude_also = ["if TYPE_CHECKING:"]

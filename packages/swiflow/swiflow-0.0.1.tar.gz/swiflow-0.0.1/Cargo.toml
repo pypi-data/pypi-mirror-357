@@ -1,0 +1,33 @@
+[package]
+name = "swiflow"
+description = "Rust binding of generalized and pauli flow finding algorithms."
+homepage = "https://github.com/TeamGraphix/swiflow"
+repository = "https://github.com/TeamGraphix/swiflow"
+# Must be consistent with pyproject.toml
+version = "0.0.1"
+authors = ["S.S <66886825+EarlMilktea@users.noreply.github.com>"]
+edition = "2021"
+license = "Apache-2.0"
+readme = "README.md"
+keywords = ["mbqc", "quantum-computing", "quantum"]
+
+[lib]
+name = "swiflow"
+crate-type = ["cdylib"]
+
+[dependencies]
+fixedbitset = "0.5"
+hashbrown = "0.15"
+itertools = "0.14"
+pyo3 = { version = "0.25", features = ["abi3-py39", "hashbrown"] }
+thiserror = "2"
+tracing = "0.1"
+
+[dev-dependencies]
+rand = "0.9"
+rstest = "0.25"
+rstest_reuse = "0.7"
+test-log = { version = "0.2", features = ["trace"] }
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(tarpaulin_include)'] }
