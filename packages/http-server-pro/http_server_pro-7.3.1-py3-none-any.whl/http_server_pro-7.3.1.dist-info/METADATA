@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: http_server_pro
+Version: 7.3.1
+Summary: A Local HTTP File Server with ngrok & QR support
+Home-page: https://github.com/kdiitg/http_server_pro
+Author: Kuldeep Singh
+License: MIT
+Project-URL: Documentation, https://github.com/kdiitg/http_server_pro
+Project-URL: Source, https://github.com/kdiitg/http_server_pro
+Project-URL: Bug Tracker, https://github.com/kdiitg/http_server_pro/issues
+Keywords: http server local file-sharing ngrok QR tkinter gui
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet :: File Transfer Protocol (FTP)
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Pillow
+Requires-Dist: qrcode
+Requires-Dist: requests
+
+# 📡 HTTP Server PRO (V7.2)
+
+**HTTP Server PRO** is a simple GUI-based file-sharing app built with Python and Tkinter that lets you:
+
+- Serve a local folder over HTTP instantly
+- Generate a QR code for easy mobile access
+- Share your folder globally using ngrok
+- No coding needed — just run and share
+
+---
+
+## 🚀 Features
+
+✅ Share any folder over HTTP  
+✅ Works on LAN (local IP)  
+✅ One-click support for ngrok (public sharing)  
+✅ Automatically generates QR code  
+✅ Shows real-time server status  
+✅ Tkinter-based GUI for ease of use  
+✅ Works cross-platform (Windows, Linux, macOS)
+
+---
+
+## 📦 Installation
+```bash
+pip install http_server_pro
+```
+## 🧠 Usage
+
+### Option 1: From Python code
+
+```python
+import http_server_pro
+http_server_pro.start()
+```
+### Option 2: From terminal
+```bash
+http_server_pro
+
