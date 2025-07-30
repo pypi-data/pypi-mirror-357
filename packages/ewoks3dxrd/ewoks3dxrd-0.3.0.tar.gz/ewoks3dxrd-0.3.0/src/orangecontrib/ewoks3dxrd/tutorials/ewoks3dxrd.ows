@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="3DXRD workflow" description="A workflow to process 3DXRD data with ewoks3dxrd">
+	<nodes>
+		<node id="0" name="Peaks Segmentation" qualified_name="orangecontrib.ewoks3dxrd.segmenter_frame.OWFrameSegmenter" project_name="ewoks3dxrd" version="" title="Peaks Segmentation" position="(207.0, 240.0)" />
+		<node id="1" name="Detector Correction" qualified_name="orangecontrib.ewoks3dxrd.detector_correction.OWDetectorCorrection" project_name="ewoks3dxrd" version="" title="Detector Correction" position="(416.0, 233.0)" />
+		<node id="2" name="Geometry Transformation" qualified_name="orangecontrib.ewoks3dxrd.geometry_transformation.OWGeometryTransformation" project_name="ewoks3dxrd" version="" title="Geometry Transformation" position="(591.0, 227.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="segmented_peaks_url" sink_channel="segmented_peaks_url" enabled="true" source_channel_id="segmented_peaks_url" sink_channel_id="segmented_peaks_url" />
+		<link id="1" source_node_id="1" sink_node_id="2" source_channel="spatial_corrected_data_url" sink_channel="spatial_corrected_data_url" enabled="true" source_channel_id="spatial_corrected_data_url" sink_channel_id="spatial_corrected_data_url" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'_ewoks_default_inputs': {}, '_ewoks_execinfo': {}, '_ewoks_task_options': {}, '_ewoks_varinfo': {}, 'controlAreaVisible': True, 'default_inputs': {}, 'savedWidgetGeometry': None, '__version__': 1}</properties>
+		<properties node_id="1" format="literal">{'_ewoks_default_inputs': {}, '_ewoks_execinfo': {}, '_ewoks_task_options': {}, '_ewoks_varinfo': {}, 'controlAreaVisible': True, 'default_inputs': {}, 'savedWidgetGeometry': None, '__version__': 1}</properties>
+		<properties node_id="2" format="literal">{'_ewoks_default_inputs': {}, '_ewoks_execinfo': {}, '_ewoks_task_options': {}, '_ewoks_varinfo': {}, 'controlAreaVisible': True, 'default_inputs': {}, 'savedWidgetGeometry': None, '__version__': 1}</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
