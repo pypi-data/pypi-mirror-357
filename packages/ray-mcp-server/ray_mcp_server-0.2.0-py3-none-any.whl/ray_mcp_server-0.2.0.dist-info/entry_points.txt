@@ -1,0 +1,2 @@
+[console_scripts]
+ray-mcp-server = ray_mcp.main:run_server
