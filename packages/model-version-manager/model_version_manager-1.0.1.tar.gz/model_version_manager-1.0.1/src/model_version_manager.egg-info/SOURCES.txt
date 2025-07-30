@@ -1,0 +1,8 @@
+README.md
+setup.py
+src/model_version_manager/__init__.py
+src/model_version_manager/version.py
+src/model_version_manager.egg-info/PKG-INFO
+src/model_version_manager.egg-info/SOURCES.txt
+src/model_version_manager.egg-info/dependency_links.txt
+src/model_version_manager.egg-info/top_level.txt
