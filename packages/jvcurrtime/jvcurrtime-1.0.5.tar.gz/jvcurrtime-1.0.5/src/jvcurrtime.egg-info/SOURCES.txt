@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/jvcurrtime/__init__.py
+src/jvcurrtime/currtime.py
+src/jvcurrtime.egg-info/PKG-INFO
+src/jvcurrtime.egg-info/SOURCES.txt
+src/jvcurrtime.egg-info/dependency_links.txt
+src/jvcurrtime.egg-info/requires.txt
+src/jvcurrtime.egg-info/top_level.txt
