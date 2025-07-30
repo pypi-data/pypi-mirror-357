@@ -1,0 +1,2 @@
+[console_scripts]
+pg-idempotent = pg_idempotent.cli:app
