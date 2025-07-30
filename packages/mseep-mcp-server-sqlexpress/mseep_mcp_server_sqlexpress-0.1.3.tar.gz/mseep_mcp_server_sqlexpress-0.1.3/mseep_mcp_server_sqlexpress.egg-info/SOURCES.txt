@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mcp_server_sqlexpress/__init__.py
+mcp_server_sqlexpress/server.py
+mseep_mcp_server_sqlexpress.egg-info/PKG-INFO
+mseep_mcp_server_sqlexpress.egg-info/SOURCES.txt
+mseep_mcp_server_sqlexpress.egg-info/dependency_links.txt
+mseep_mcp_server_sqlexpress.egg-info/requires.txt
+mseep_mcp_server_sqlexpress.egg-info/top_level.txt
