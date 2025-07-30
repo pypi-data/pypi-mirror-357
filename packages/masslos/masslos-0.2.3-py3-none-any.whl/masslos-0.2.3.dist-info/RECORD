@@ -1,0 +1,11 @@
+masslos/__init__.py,sha256=NjboSkl63UBvA6XNOijd7pq6Hofw3P0vPDhK3NCm2qs,233
+masslos/distance.py,sha256=p_lYhjkboo9xR79SFj11SciRFNzud1cpvRb6JaEGKJg,3391
+masslos/measure.py,sha256=nKjt3_98Y1dIzRRYnGbOSEf1dkZi78RW7Nu2cHILQDY,5844
+masslos/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+masslos/speed.py,sha256=4fLs7fc4qRJ47xt0wMew2RiFOlqxRBWWdE43jb9hKn8,2519
+masslos/unit.py,sha256=qEOf7W5HT0ZTei5h_PAIzXM2KUX4Tu6A9vTnPnsKJWE,1598
+masslos/weight.py,sha256=Zuk6qUzTHD4JwRe7fwKeJlAal1T4W6aEAlbtmtu0_Zg,2131
+masslos-0.2.3.dist-info/METADATA,sha256=dHTT70Jkh_TIIXlGcQ0KmoGfJ3QwKlRGUSnMEjio5sA,3373
+masslos-0.2.3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+masslos-0.2.3.dist-info/licenses/LICENSE,sha256=7EI8xVBu6h_7_JlVw-yPhhOZlpY9hP8wal7kHtqKT_E,1074
+masslos-0.2.3.dist-info/RECORD,,
