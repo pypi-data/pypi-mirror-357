@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+cliptext/__init__.py
+cliptext/core.py
+cliptext.egg-info/PKG-INFO
+cliptext.egg-info/SOURCES.txt
+cliptext.egg-info/dependency_links.txt
+cliptext.egg-info/top_level.txt
+tests/test_core.py
