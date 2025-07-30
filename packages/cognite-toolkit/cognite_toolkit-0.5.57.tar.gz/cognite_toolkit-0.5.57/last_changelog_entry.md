@@ -1,0 +1,14 @@
+## cdf 
+
+### Fixed
+
+- Raised the lower bound of the `cognite-sdk` to `7.75.3`. This have
+support for `AppConfig` capability and will thus no longer give a
+warning when deploying a Group with this dependency.
+
+## templates
+
+### Added
+
+- Added the capability `AppConfig` to the groups in the
+`cdf_auth_readwrite_all` module.
