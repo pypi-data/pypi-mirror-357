@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: SpokeoAPI
+Version: 0.1.2
+Summary: official API wrapper for Spokeo lookup service
+Home-page: https://github.com/zhangxinxu
+Author: Wei Zhang
+Author-email: zhangwei.api@protonmail.com
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: tls_client
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+spokeoAPI
+
+**spokeoAPI** is an unofficial Python API wrapper and command-line tool for automating USA directory resigstory look ups.  
+Designed for security researchers, pentesters, and OSINT professionals who need to automate people search and account enumeration tasks.
+
+
+
+## Installation
+
+```bash
+pip install spokeoAPI
