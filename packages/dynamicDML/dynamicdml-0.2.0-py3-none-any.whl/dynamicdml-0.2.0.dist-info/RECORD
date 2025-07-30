@@ -1,0 +1,10 @@
+dynamicDML/__init__.py,sha256=8s_cRMa-4qcZB35wz1pzNYgPU3u2LdXk6jiw0IbpHxU,9063
+dynamicDML/_base.py,sha256=wwRY6xrIFqihJCKi8q6EgMYLU56yZvz0YiPYEHbXex8,61115
+dynamicDML/_example_data.py,sha256=AMAUa38nuasYewHz2oIzLVG0MWr7ED84s41KwnXF5mQ,5681
+dynamicDML/_flaml_estimators.py,sha256=ldpQLk92P8sTzYXxKH1-GCZNrQBjZFWJeNTJBKfi2-4,4720
+dynamicDML/dml2periods.py,sha256=hcT2dBYRQlKznkTCq1Me2lZyIiee-pn-6WQs3VWEVmw,85255
+dynamicdml-0.2.0.dist-info/licenses/LICENSE.txt,sha256=7PbIfU6i2bvECKJFE-OygQzv5m5D0ezkoYUXrsgUFzY,1087
+dynamicdml-0.2.0.dist-info/METADATA,sha256=p9uFupWESkeyQn6l2EuL7YP2hNnlmVvIOxnUNoY3oBc,4957
+dynamicdml-0.2.0.dist-info/WHEEL,sha256=lTU6B6eIfYoiQJTZNc-fyaR6BpL6ehTzU3xGYxn2n8k,91
+dynamicdml-0.2.0.dist-info/top_level.txt,sha256=iyRKOYOsD2rYL3ItqAY7MwuzcPHhi-LrQXRH8XQekvE,11
+dynamicdml-0.2.0.dist-info/RECORD,,
