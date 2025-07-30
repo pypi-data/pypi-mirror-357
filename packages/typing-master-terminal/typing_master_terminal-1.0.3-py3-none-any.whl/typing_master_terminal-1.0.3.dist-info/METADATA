@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: typing_master_terminal
+Version: 1.0.3
+Summary: A terminal-based typing game with animations and score tracking
+Author: Aditya
+Author-email: spliots09@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# Typing Master Terminal 🎮
+
+A fun and interactive typing speed game in the terminal!
+
+## Features
+- Beginner to Advanced difficulty levels
+- Animated UI using `rich`
+- Live stats (WPM, Accuracy, Score)
+- Scoreboard saving
+
+## Usage
+```bash
+typing-master
