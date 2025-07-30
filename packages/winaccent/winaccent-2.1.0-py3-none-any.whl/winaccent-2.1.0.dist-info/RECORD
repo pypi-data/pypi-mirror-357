@@ -1,0 +1,10 @@
+winaccent/__init__.py,sha256=HrgT3cbM-TD7xTty9_-ZVFiItDX8fCjTd0UByPBBlng,8737
+winaccent/__main__.py,sha256=bLRQMxv74ereSopDE5u9v1QmI2ow07l3UECi48lK1H4,14595
+winaccent/_utils.py,sha256=EfeO9l47KoZCJqFv-yHv4Cztz5goedjkXd4FLRvhJeQ,3411
+winaccent/_win_10.py,sha256=KhxZ-er0O7DamD_WTt8kj-BMnL07eEaRQEW-InEHJIc,12667
+winaccent/_win_8.py,sha256=eDvxctDqS40-6urBpkBbHGFlcieNy7Uv1DSgQ7qwNzU,8011
+winaccent-2.1.0.dist-info/LICENSE,sha256=frvKv_Vzt_ic65yaoapzvw_UchlqqACXrCnOMFiKWHw,1088
+winaccent-2.1.0.dist-info/METADATA,sha256=_k854FHWzAucb7Z3lE0rIFzOXZ6GpVXnqHeeyJUWsRE,13831
+winaccent-2.1.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+winaccent-2.1.0.dist-info/top_level.txt,sha256=vT1fw4gdyf9CZsQGOvl4_xRxPK8MMH7puN0XPrVh-Mk,10
+winaccent-2.1.0.dist-info/RECORD,,
