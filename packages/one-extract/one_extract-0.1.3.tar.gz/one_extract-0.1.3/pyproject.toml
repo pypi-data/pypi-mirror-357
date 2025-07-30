@@ -1,0 +1,123 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "one-extract"
+dynamic = ["version"]
+description = "Simple extractor for OneNote files."
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = [
+  "onenote", "extractor"
+]
+authors = [
+  { name = "Threat Intel", email = "threatintel@volexity.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: BSD License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "msoffcrypto-tool~=5.0",
+]
+
+[project.scripts]
+one-extract = "one_extract.cli:run"
+
+[project.urls]
+Documentation = "https://github.com/volexity/one-extract/blob/main/README.md"
+Issues = "https://github.com/volexity/one-extract/issues"
+Source = "https://github.com/volexity/one-extract"
+
+[envs.hatch-static-analysis]
+config-path = "none"
+
+[tool.coverage.paths]
+one_extract = ["src/one_extract", "*/one-extract/src/one_extract"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[tool.coverage.run]
+source_pkgs = ["one_extract", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/one_extract/_version.py",
+]
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/one_extract/_version.py"
+
+[tool.hatch.envs.default]
+extra-dependencies = [
+  "mypy~=1.0",
+]
+
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/one_extract}"
+
+[tool.hatch.envs.hatch-static-analysis]
+config-path = "none"
+dependencies = ["ruff~=0.12"]
+
+[tool.hatch.envs.hatch-test]
+extra-dependencies = []
+
+[[tool.hatch.envs.hatch-test.matrix]]
+python = ["3.12", "3.11", "3.10", "3.9", "3.8"]
+
+[tool.hatch.version]
+source = "vcs"
+
+[[tool.mypy.overrides]]
+module = [
+  "msoffcrypto.*",
+  "pytest.*",
+]
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "C901",
+  "COM812",
+  "ERA001",
+  "FIX001",
+  "FIX002",
+  "FIX003",
+  "FIX004",
+  "ISC001",
+  "PLR0912",
+  "PLR0913",
+  "PLR2004",
+  "TD001",
+  "TD002",
+  "TD003"
+]
+pydocstyle = { convention = 'google' }
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**/*" = [
+  "D",
+  "S",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["one_extract"]
