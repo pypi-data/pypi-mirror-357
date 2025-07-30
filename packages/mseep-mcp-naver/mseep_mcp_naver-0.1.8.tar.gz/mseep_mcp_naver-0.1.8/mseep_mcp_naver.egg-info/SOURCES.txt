@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mcp_naver/__init__.py
+mcp_naver/server.py
+mcp_naver/hosts/__init__.py
+mcp_naver/hosts/claude_desktop.py
+mcp_naver/hosts/cursor.py
+mseep_mcp_naver.egg-info/PKG-INFO
+mseep_mcp_naver.egg-info/SOURCES.txt
+mseep_mcp_naver.egg-info/dependency_links.txt
+mseep_mcp_naver.egg-info/requires.txt
+mseep_mcp_naver.egg-info/top_level.txt
