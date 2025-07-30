@@ -1,0 +1,14 @@
+trdi_adcp_readers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+trdi_adcp_readers/readers.py,sha256=x8m09dEtQOLIVedDit6XzDpgw199olOUQRUmU63aaYE,1515
+trdi_adcp_readers/pd0/__init__.py,sha256=daEdpEyAJIa8b2VkCqSKcw8PaExcB6Qro80XNes_sHA,2
+trdi_adcp_readers/pd0/pd0_parser.py,sha256=bc2Twu2HFKHQRm9FLojJCXc_OZCuMWTAx91FTrRCqZs,11054
+trdi_adcp_readers/pd15/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+trdi_adcp_readers/pd15/pd0_converters.py,sha256=-9L8GzNKFESZyGdLHBIm94IJ-aMQ1mQcTGEC3mOx2os,2428
+trdi_adcp_readers/scripts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+trdi_adcp_readers/scripts/convert_trdi.py,sha256=yLGuBoVjFEvwj1-KkzwA2otGqbYJ7_5mUkdl_6LsFbo,1426
+trdi_adcp_readers/scripts/convert_trdi_uhi.py,sha256=Y7FAylBc5rcAyG9P_51VLaZLHy7H7ZixOJ0QIbwr8wc,12930
+trdi_adcp_readers-25.6.4.dist-info/METADATA,sha256=JiMOjLiboQu5-EBDaijV61u409hBzimn2u4emGroMiA,3394
+trdi_adcp_readers-25.6.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+trdi_adcp_readers-25.6.4.dist-info/entry_points.txt,sha256=KCLIx-2vutkqMwesMKF3RBDTExj68QKLJOT3EuhdrPI,144
+trdi_adcp_readers-25.6.4.dist-info/licenses/LICENSE.txt,sha256=ITZu91LAx_v5HEb_FjIS05kcbzHPXt0hZGeWbFB4Pn4,1088
+trdi_adcp_readers-25.6.4.dist-info/RECORD,,
