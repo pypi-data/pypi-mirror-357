@@ -1,0 +1,44 @@
+
+name = ""
+name_format = "{project}_{version}"
+project_root = ""
+output_dir = ""
+clear = true
+files_cache = ""
+
+versions = []
+files = []
+
+[sources]
+exclude = [
+	"*.class",
+	"*.ctxt",
+	".DS_Store",
+	"Thumbs.db",
+	"*.iml",
+	".vscode",
+	".eclipse",
+]
+include = ["*.java"]
+encoding = "utf-8"
+keep_empty_files = true
+keep_empty_dirs = true
+
+[zip]
+create = true
+only_zip = false
+dir = ""
+
+[tasks]
+open = "/*aufg*"
+close = "*aufg*/"
+line.prefix = ""
+line.replace = ""
+
+[solutions]
+delete = false
+open = "//ml*"
+close = "//*ml"
+suffix = "ML"
+line.prefix = ""
+line.replace = ""
