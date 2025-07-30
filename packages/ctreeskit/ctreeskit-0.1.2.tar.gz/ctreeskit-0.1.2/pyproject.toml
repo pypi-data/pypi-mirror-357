@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ctreeskit"
+version = "0.1.2"
+description = """
+CTrees toolkit for geospatial analysis and forest carbon monitoring.
+Core features include xarray-based analysis tools.
+"""
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+keywords = ["xarray", "geospatial", "zonal-statistics", "carbon", "biomass"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+authors = [
+    { name = "Naomi Provost", email = "nprovost@ctrees.org" },
+]
+
+
+dependencies = [
+    "xarray>=2025.03.1",
+    "rioxarray>=0.15.0",
+    "numpy>=1.26.2",
+    "pandas>=2.1.4",
+    "geopandas>=0.14.1",
+    "shapely>=2.0.2",
+    "pyproj>=3.6.1",
+    "scipy>=1.7.3",
+    "s3fs>=2025.3.0",
+    "cf_xarray>=0.10.0",
+    "arraylake>=0.15.0",
+    "python-dotenv>=1.0.0",
+    "icechunk>=0.2.2",
+]
+
+[project.optional-dependencies]
+interactive = [
+    "ipykernel>=6.27.1",
+    "ipyleaflet>=0.17.4",
+]
+parallel = [
+    "dask>=2023.12.1",
+    "distributed>=2023.12.1",
+]
+
+all = [
+    "ctreeskit[interactive,parallel]",
+]
+
+[project.urls]
+Homepage = "https://github.com/ctrees-products/ctreeskit"
+Repository = "https://github.com/ctrees-products/ctreeskit.git"
+Documentation = "https://github.com/ctrees-products/ctreeskit#readme"
+"Bug Tracker" = "https://github.com/ctrees-products/ctreeskit/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+pythonpath = ["src"]  # Add this to ensure tests can import package
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ctreeskit"]  
+
+[tool.hatch.build]
+packages = ["ctreeskit"]
