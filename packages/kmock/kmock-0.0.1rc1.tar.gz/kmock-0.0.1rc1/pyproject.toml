@@ -1,0 +1,70 @@
+[project]
+name = "kmock"
+version = "0.0.1rc1"
+description = "Kubernetes Mock Server in Python"
+authors = [
+    {name = "Sergey Vasilyev",email = "nolar@nolar.info"}
+]
+license = {text = "MIT"}
+keywords = [ "tests", "mock", "kubernetes", "kopf" ]
+classifiers = [
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Testing :: Mocking",
+    "Topic :: Software Development :: Testing :: Unit",
+    "Framework :: AsyncIO",
+    "Framework :: Pytest",
+    "Framework :: aiohttp",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Typing :: Typed",
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "attrs",
+    "yarl",
+    "aiohttp>=3.9.0b0",
+]
+
+[project.urls]
+homepage = "https://github.com/nolar/kmock"
+repository = "https://github.com/nolar/kmock"
+documentation = "https://kmock.readthedocs.org/"
+"Bug Tracker" = "https://github.com/nolar/kmock/issues"
+
+[tool.poetry.plugins."pytest11"]
+kmock = "kmock.pytest"
+
+[tool.poetry.group.dev.dependencies]
+aresponses = "^3.0.0"
+import-linter = "^2.3"
+isort = "^6.0.1"
+mypy = "1.15.0"
+pre-commit = "^4.2.0"
+pytest = "^8.3.5"
+pytest-aiohttp = "^1.1.0"
+pytest-asyncio = "^0.26.0"
+pytest-mock = "^3.14.0"
+pytest-timeout = "^2.3.1"
+
+[tool.poetry.group.docs.dependencies]
+sphinx = ">=8.2.3"
+sphinx-autobuild = "^2024.10.3"
+sphinx-rtd-theme = ">=3.0.2"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
