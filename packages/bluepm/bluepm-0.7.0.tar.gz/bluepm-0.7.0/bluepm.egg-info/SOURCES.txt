@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+bluepm/__init__.py
+bluepm/client.py
+bluepm/schema.py
+bluepm.egg-info/PKG-INFO
+bluepm.egg-info/SOURCES.txt
+bluepm.egg-info/dependency_links.txt
+bluepm.egg-info/requires.txt
+bluepm.egg-info/top_level.txt
