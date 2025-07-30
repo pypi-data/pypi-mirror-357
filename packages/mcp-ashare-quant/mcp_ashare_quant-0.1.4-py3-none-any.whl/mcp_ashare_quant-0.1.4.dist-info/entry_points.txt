@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-ashare-quant = mcp_ashare_quant.server:main
