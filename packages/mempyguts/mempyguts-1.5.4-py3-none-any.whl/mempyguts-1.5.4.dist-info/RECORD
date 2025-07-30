@@ -1,0 +1,10 @@
+mempy/__init__.py,sha256=q1BQ1qhZUdp0XEesTYzbsOUKJZlt5_Kh3xcPt5uRfdg,222
+mempy/fit.py,sha256=sQfFUuOoy9lPu4EkYDn6y8BHZsAb8lFToeDpUjdUhMs,23196
+mempy/input_data.py,sha256=kIFX_SNmwcmtaSkP1o5t_gTsMYSlvuF_8r5EAOsw1so,8744
+mempy/model.py,sha256=AR3L3sqbPEKWg6jN0GxeSGeUIMMnE65qYsqEX6f73Yo,67737
+mempy/survival_models.py,sha256=UmHNS96hzzkG7YLqakWJzxks01jDjafl4_yMaogZmQY,8984
+mempyguts-1.5.4.dist-info/licenses/LICENSE,sha256=JHGO2cd5SWdDTLID8zsFJwV7nTdYSPu_kj8N_jNllpg,34520
+mempyguts-1.5.4.dist-info/METADATA,sha256=Jz6rp3UDmdyaRxgKUrj7aCuoxbejhqKC5pFMKKlt09s,43575
+mempyguts-1.5.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mempyguts-1.5.4.dist-info/top_level.txt,sha256=OIhYEamoOMcL_-GdUVEUqcfUN3wrmuMFoCuqYksfqCQ,6
+mempyguts-1.5.4.dist-info/RECORD,,
