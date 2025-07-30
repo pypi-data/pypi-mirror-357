@@ -1,0 +1,75 @@
+Metadata-Version: 2.4
+Name: romanicize
+Version: 0.1.2
+Summary: Roman Numeral Conversion Utilities
+Home-page: https://github.com/fictive-kin/romanicize
+Author: Fictive Kin LLC
+Author-email: hello@fictivekin.com
+Maintainer: Fictive Kin LLC
+Maintainer-email: hello@fictivekin.com
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development
+Requires-Python: >=3.6
+License-File: LICENSE.txt
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-python
+Dynamic: summary
+
+
+Roman Numeral Conversion Utilities
+==================================
+
+This is a utility module for converting from and to Roman numerals. It supports
+numbers upto 3,999,999, using the vinculum_ to denote multiplication by
+``1000``. (i.e.: ``X`` is ``10`` while ``X̅`` is ``10000``.) The only letter
+that this does not apply to is ``I``, as ``M`` already existed for ``1000``.
+
+Special credit goes to Paul M. Winkler, for the original basis for a large
+chunk of the core converter functions as written in the `Python Cookbook`_.
+
+
+Quick Start
+-----------
+
+Install the package::
+
+    pip3 install romanicize
+
+Once installed, a command line utility is available to your shell::
+
+    $ romanicize 2021
+    MMXXI
+    $ romanicize MMXIX
+    2019
+
+With a Python script, convert from an integer to a Roman numeral::
+
+    from romanicize import to_numeral
+
+    print(to_numeral(2021))  # Outputs: MMXXI
+
+Within a Python script, convert from a Roman numeral to an integer::
+
+    from romanicize import to_int
+
+    print(to_int('MV̅DLXXVIII'))  # Outputs: 4578
+
+.. _vinculum: https://en.wikipedia.org/wiki/Roman_numerals#Vinculum
+.. _Python Cookbook: https://www.oreilly.com/library/view/python-cookbook/0596001673/ch03s24.html

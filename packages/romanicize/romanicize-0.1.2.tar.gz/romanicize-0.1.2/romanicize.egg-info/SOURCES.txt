@@ -1,0 +1,12 @@
+LICENSE.txt
+README.rst
+setup.py
+bin/romanicize
+romanicize/__init__.py
+romanicize/constants.py
+romanicize/converter.py
+romanicize.egg-info/PKG-INFO
+romanicize.egg-info/SOURCES.txt
+romanicize.egg-info/dependency_links.txt
+romanicize.egg-info/top_level.txt
+tests/test_conversion.py
