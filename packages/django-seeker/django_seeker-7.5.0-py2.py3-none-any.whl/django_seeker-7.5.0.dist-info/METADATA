@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: django-seeker
+Version: 7.5.0
+Summary: A python package for mapping and querying Django models in Elasticsearch/OpenSearch.
+Project-URL: Homepage, https://github.com/imsweb/django-seeker
+Author-email: Dan Watson <watsond@imsweb.com>
+Maintainer-email: Brad Rutten <ruttenb@imsweb.com>, Jacob Tomlinson <tomlinsonj@imsweb.com>
+License-Expression: BSD-2-Clause
+License-File: LICENSE
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Utilities
+Requires-Dist: bleach
+Requires-Dist: elasticsearch-dsl~=7.0.0
+Requires-Dist: opensearch-dsl~=2.0.1
+Requires-Dist: snowballstemmer
+Description-Content-Type: text/markdown
+
+Requirements
+============
+
+  * Django 1.8 or later
+
+
+Documentation
+=============
+
+To build the documentation, go into the docs directory and type:
+
+    make html
+
+The documentation will be built with an index of docs/_build/index.html
