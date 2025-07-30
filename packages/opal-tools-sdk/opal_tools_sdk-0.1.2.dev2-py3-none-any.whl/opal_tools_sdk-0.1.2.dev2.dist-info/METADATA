@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: opal_tools_sdk
+Version: 0.1.2.dev2
+Summary: SDK for creating Opal-compatible tools services
+Home-page: https://github.com/optimizely/opal-tools-sdk
+Author: Optimizely
+Author-email: opal-team@optimizely.com
+Keywords: opal,tools,sdk,ai,llm
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi >=0.100.0
+Requires-Dist: pydantic >=2.0.0
+Requires-Dist: httpx >=0.24.1
+Requires-Dist: deprecated >=1.2.18
+
+# Opal Tools SDK for Python
+
+This SDK simplifies the creation of tools services compatible with the Opal Tools Management Service.
+
+## Features
+
+- Easy definition of tool functions with decorators
+- Automatic generation of discovery endpoints
+- Parameter validation and type checking
+- Authentication helpers
+- FastAPI integration
+
+## Installation
+
+```bash
+pip install opal-tools-sdk
+```
+
+## Usage
+
+```python
+from opal_tools_sdk import ToolsService, tool
+from pydantic import BaseModel
+from fastapi import FastAPI
+
+app = FastAPI()
+tools_service = ToolsService(app)
+
+class WeatherParameters(BaseModel):
+    location: str
+    units: str = "metric"
+
+@tool("get_weather", "Gets current weather for a location")
+async def get_weather(parameters: WeatherParameters):
+    # Implementation...
+    return {"temperature": 22, "condition": "sunny"}
+
+# Discovery endpoint is automatically created at /discovery
+```
+
+## Documentation
+
+See full documentation for more examples and configuration options.
