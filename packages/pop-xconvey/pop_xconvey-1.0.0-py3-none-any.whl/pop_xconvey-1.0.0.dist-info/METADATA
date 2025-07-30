@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: pop-xconvey
+Version: 1.0.0
+Summary: XConvey Pop
+Author: hanback
+Author-email: support@hanback.co.kr
+Keywords: xconvey
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: build
+Requires-Dist: setuptools
+Requires-Dist: wheel
+Requires-Dist: paho-mqtt<2.0.0
+
