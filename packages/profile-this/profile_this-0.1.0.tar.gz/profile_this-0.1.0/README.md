@@ -1,0 +1,37 @@
+# profile-this
+
+Sometimes you need sophisticated line-by-line profiling for optimizing my Python code. Other times, you just want a basic temporal line plot showing memory allocation.
+
+There are plenty of tools for the former use-case, e.g. `py-spy` or `vprof`. But I am not aware of any tools for the latter use-case -- probably because no one wants to release something so basic.
+
+`profile-this` is a stupid simple memory profiler for people who just want a basic memory profiling plot without writing one from scratch.
+
+### Example
+
+Install it like this:
+
+```bash
+pip install profile-this
+```
+
+Do this:
+
+```python
+from random import randint
+from profile_this import ProfileThis
+
+def func(n=10_000_000):
+    return sum([randint(0, i + 1) for i in range(n)])
+
+profiler = ProfileThis()
+profiler.start()
+func()
+profiler.stop()
+profiler.plot(
+    title="Profile for func", path="docs/func.png"
+)
+```
+
+To get this:
+
+![func image](docs/func.png)
