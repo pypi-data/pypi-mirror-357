@@ -1,0 +1,78 @@
+### Usage 
+
+```python
+from pipecat.audio.vad.vad_analyzer import VADParams
+from connexity.metrics.pipecat import ConnexityTwilioObserver
+from twilio.rest import Client
+
+# build your VADParams once
+vad_params = VADParams(
+    confidence=0.5,
+    min_volume=0.6,
+    start_secs=0.2,
+    stop_secs=0.8,
+)
+
+# assume you’ve already created/started your TwilioClient somewhere:
+#    twilio_client = Client(account_sid, auth_token)
+#    twilio_client.calls(call_sid).recordings.create()
+# and you want to inject that manager into the observer
+
+observer = ConnexityTwilioObserver()
+await observer.initialize(
+    agent_id="YOUR_AGENT_ID",
+    api_key="YOUR_CONNEXITY_API_KEY",
+    sid=call_sid,
+    phone_call_provider="twilio",
+    user_phone_number=from_number,
+    agent_phone_number=to_number,
+
+    # <<< now using DI of client instead of creds >>>
+    twilio_client=twilio_client.client,
+
+    voice_provider="11labs",
+    llm_provider="openai",
+    llm_model="gpt-4o",
+    call_type="inbound",
+    transcriber="deepgram",
+    vad_params=vad_params,
+    env="development",          # or "production"
+    vad_analyzer="silero",      # your chosen VAD engine name
+)
+
+pipeline.register_observer(observer)
+```
+
+# CHANGELOG
+
+
+v0.0.8.9 — 2025-06-24
+### Minor Fixes
+- **Ger recording from region specific twillio account**
+
+
+v0.0.8.8 — 2025-06-24
+### Breaking Changes
+- **Twilio DI instead of credentials**
+
+Removed twilio_account_sid and twilio_auth_token parameters from initialize(...).
+
+Now you must pass a twilio_client: TwilioClient instance via the twilio_client argument.
+Action required: construct and start your own TwilioClient, then inject it into the observer.
+
+
+v0.0.8.7 — 2025-06-20
+### Breaking Changes
+- **Removed built-in Twilio call recording**  
+  Recording is no longer performed by this package.  
+  **Action required:** start your Twilio recording on the app side as soon as the WebSocket connection is established.
+
+
+v0.0.8.6 — 2025-06-13
+## New Features
+### VAD compensation
+
+- Configurable via VADParams
+- Pass vad_params into initialize(...)
+- Environment & analyzer tags
+- Added env and vad_analyzer metadata fields to register_call
