@@ -1,0 +1,15 @@
+timecopilot/__init__.py,sha256=eJcCKTms4-WH4JhMTyu5SGJY4ePdLg5y39d_NZ9uepk,58
+timecopilot/_cli.py,sha256=fzR-OWT52YvWlDhzafqDj7AQ6wslXRYaF48trKOnY1o,970
+timecopilot/agent.py,sha256=VlsM1S1ZXwmwCeT5HjchqqodPcd8CHdzazY6NvsSJ4Y,16436
+timecopilot/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+timecopilot/models/benchmarks/__init__.py,sha256=ta471Uekp45YsZ4-Qvk1uzfy9C0oyL3-JDuoXhLiszA,384
+timecopilot/models/benchmarks/stats.py,sha256=pmpNJ_eaMMcjHVfeM9d4K0UpRx3g_3M20FmVYIP7OQs,6510
+timecopilot/models/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+timecopilot/models/utils/forecaster.py,sha256=Owf2es2zcJzuINFD9WgZX-X26K7Zq4fDRl6sQXQUSes,2843
+timecopilot/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+timecopilot/utils/experiment_handler.py,sha256=nnL1SR3aOBnBOi1_1oRu9RsTY_OWrKdq20LFOvLu0LM,5688
+timecopilot-0.0.4.dist-info/METADATA,sha256=o9lGgdPBLs15h7r_LOH6dPsbtbirvNUWj-CPY0uiuSI,3427
+timecopilot-0.0.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+timecopilot-0.0.4.dist-info/entry_points.txt,sha256=eH-dvAC7LCoXrF7w1_fuK-uP5fE3aH8KrVfsPIdE9H8,54
+timecopilot-0.0.4.dist-info/licenses/LICENSE,sha256=A_22FjAuojPSvnYeBzonDnsvwZBdJwbKhILT948Clao,1067
+timecopilot-0.0.4.dist-info/RECORD,,
