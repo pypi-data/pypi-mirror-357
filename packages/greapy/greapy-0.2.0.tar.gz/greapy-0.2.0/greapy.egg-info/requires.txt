@@ -1,0 +1,10 @@
+numpy
+scipy
+typer
+
+[all]
+greapy[extra]
+
+[extra]
+matplotlib
+cobaya
