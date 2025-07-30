@@ -1,0 +1,10 @@
+haystack/__init__.py,sha256=roFPi9VHPFxaRH6K93DDb0YUyVJaEJpdHHz3RfIjVNM,87
+haystack/aws_client.py,sha256=FtBR8O1sLrxTion74kSUYpC1-S22nQNFjy8jR7IRsRw,27078
+haystack/cli.py,sha256=ncRpCVr1MG8hZg2yBlbZbI073JWBh5yk-V78sbILEDI,3553
+haystack/config.py,sha256=QtcHFMRQSoT2Gi5eMDggars1i5aDDCtmoNvWgk2sQbc,2423
+haystack/stack_finder.py,sha256=3E-qoemxUroHbTCLTX_Dwd1BW0Ge2hiUbRlFbvL-9ww,8435
+aws_haystack-0.1.0.dist-info/METADATA,sha256=Q0Q0JBrc6kiuphe0zNIHnr7moX8Lh3TneDapIq4yc3A,4835
+aws_haystack-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+aws_haystack-0.1.0.dist-info/entry_points.txt,sha256=QalkQHGByZqHMols59w64wvJJdS0vTwYxs5AEswbZBY,47
+aws_haystack-0.1.0.dist-info/licenses/LICENSE,sha256=PM_kpozGREglHMjTMMzZh8INkc-Aa700KT49NfC_I_Q,1069
+aws_haystack-0.1.0.dist-info/RECORD,,
