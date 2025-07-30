@@ -1,0 +1,10 @@
+[project]
+name = "tantpy"
+version = "0.1.0"
+description = "I should probably write a description here. Tant pis."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["setuptools", "wheel"]

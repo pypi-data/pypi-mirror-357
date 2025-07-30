@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+tantpy.py
+tantpy.egg-info/PKG-INFO
+tantpy.egg-info/SOURCES.txt
+tantpy.egg-info/dependency_links.txt
+tantpy.egg-info/top_level.txt

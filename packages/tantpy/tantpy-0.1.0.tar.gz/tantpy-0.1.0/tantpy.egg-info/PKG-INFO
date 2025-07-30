@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: tantpy
+Version: 0.1.0
+Summary: I should probably write a description here. Tant pis.
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+
+```python
+from tantpy import tantpy
+
+
+@tantpy
+def risky_division(a, b):
+    return a / b
+
+result = risky_division(10, 0)
+# Something went wrong: division by zero
+# Tant pis. The code moves on, like a river past a fallen tree.
+print(f"{result=}")
+# result=None
+```
+
