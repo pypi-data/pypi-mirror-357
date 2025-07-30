@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: PostgresLite
+Version: 0.2.0
+Summary: Python SQLite combined with syntax compared to asyncpg progject.
+Author-email: AlexFlipnote <root@alexflipnote.dev>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/AlexFlipnote/PostgresLite
+Project-URL: Repository, https://github.com/AlexFlipnote/PostgresLite
+Keywords: asyncpg,sqlite,postgres,lite,database,sql
+Requires-Python: >=3.11.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pyright>=1.1.401; extra == "dev"
+Requires-Dist: ruff>=0.11.13; extra == "dev"
+Requires-Dist: toml>=0.10.2; extra == "dev"
+Dynamic: license-file
+
+# PostgresLite
+Python SQLite combined with syntax compared to asyncpg progject
+
+This project is stillw in the early WIP ages, don't expect too much
+
+# Install
+pip install postgreslite

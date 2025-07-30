@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+PostgresLite.egg-info/PKG-INFO
+PostgresLite.egg-info/SOURCES.txt
+PostgresLite.egg-info/dependency_links.txt
+PostgresLite.egg-info/requires.txt
+PostgresLite.egg-info/top_level.txt
+postgreslite/__init__.py
+postgreslite/handler.py
+postgreslite/pool.py
+tests/test_file.py
