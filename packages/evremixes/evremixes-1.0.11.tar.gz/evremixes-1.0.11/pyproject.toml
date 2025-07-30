@@ -1,0 +1,49 @@
+[project]
+name = "evremixes"
+version = "1.0.11"
+description = "Evanescence Remix Downloader"
+authors = [{ name = "Danny Stewart", email = "danny@stewart.cc" }]
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = [
+    "halo (>=0.0.31)",
+    "inquirer (>=3.4.0,<4.0.0)",
+    "mutagen (>=1.47.0,<2.0.0)",
+    "pillow (>=11.2.1,<12.0.0)",
+    "polykit (>=0.12.0b1)",
+    "requests (>=2.32.4,<3.0.0)",
+    "types-requests (>=2.32.4.20250611,<3.0.0.0)",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Artistic Software",
+    "Topic :: Internet",
+    "Topic :: Multimedia",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Multimedia :: Sound/Audio :: Conversion",
+]
+
+[project.urls]
+Homepage = "https://music.dannystewart.com/evanescence/"
+Repository = "https://github.com/dannystewart/evremixes/"
+
+[tool.poetry.group.dev.dependencies]
+mypy = ">=1.16.1"
+pre-commit = ">=4.2.0"
+ruff = ">=0.12.0"
+polykit = { path = "../polykit", develop = true }
+
+[build-system]
+requires = ["poetry-core>=2.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project.scripts]
+evremixes = "evremixes.main:main"
