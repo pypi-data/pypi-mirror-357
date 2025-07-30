@@ -1,0 +1,9 @@
+pyproject.toml
+PqQt4.egg-info/PKG-INFO
+PqQt4.egg-info/SOURCES.txt
+PqQt4.egg-info/dependency_links.txt
+PqQt4.egg-info/requires.txt
+PqQt4.egg-info/top_level.txt
+PyQt4/__init__.py
+PyQt4/module.py
+PyQt4/texts.py
