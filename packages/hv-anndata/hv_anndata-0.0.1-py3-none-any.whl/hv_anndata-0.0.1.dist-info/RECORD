@@ -1,0 +1,8 @@
+hv_anndata/__init__.py,sha256=Zee8Bvm_ncDduhg9C1rKspMRUH_SGUklxHrPzYiYdsg,336
+hv_anndata/interface.py,sha256=6K11tlB03a4b-biFfBuQBKDvxPc7O1i_UhZKVDHwW7Q,3358
+hv_anndata/manifoldmap.py,sha256=pjHcy9vltQYb5gHHNlpix3NYMvP7UBt_AKDYSOXfpR0,20928
+hv_anndata/plotting.py,sha256=nO2fibKbqqaoWUYkYM8iAKKzaZTLPaU6FqVzm2MmVT0,9323
+hv_anndata-0.0.1.dist-info/METADATA,sha256=R9d8RLbfwstY9XoNLykRQNVCsY2GwhdhMZxr-QOl6jM,853
+hv_anndata-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+hv_anndata-0.0.1.dist-info/licenses/LICENSE,sha256=mP8nXPH6UVdOfZ6dxlPT-lkdD6SNjJBbMgkWzZkwqqE,1501
+hv_anndata-0.0.1.dist-info/RECORD,,
