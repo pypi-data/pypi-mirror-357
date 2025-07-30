@@ -1,0 +1,2 @@
+[console_scripts]
+fsscan = src.main:main
