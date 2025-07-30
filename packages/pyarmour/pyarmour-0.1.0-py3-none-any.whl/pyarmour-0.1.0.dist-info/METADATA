@@ -1,0 +1,69 @@
+Metadata-Version: 2.3
+Name: pyarmour
+Version: 0.1.0
+Summary: Zero-configuration adversarial robustness testing for ML models
+License: MIT
+Author: PyArmour Team
+Author-email: team@pyarmour.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: click (>=8.1.0,<9.0.0)
+Requires-Dist: matplotlib (>=3.7.0,<4.0.0)
+Requires-Dist: numpy (<2.0.0)
+Requires-Dist: pytest (>=7.4.0,<8.0.0)
+Requires-Dist: tensorflow (>=2.13.0,<3.0.0)
+Requires-Dist: torch (>=2.0.0,<3.0.0)
+Description-Content-Type: text/markdown
+
+# PyArmour
+
+[![PyPI](https://img.shields.io/pypi/v/pyarmour.svg)](https://pypi.org/project/pyarmour/)
+[![License](https://img.shields.io/github/license/pyarmour/pyarmour)](https://github.com/pyarmour/pyarmour/blob/main/LICENSE)
+[![CI](https://github.com/pyarmour/pyarmour/actions/workflows/ci.yml/badge.svg)](https://github.com/pyarmour/pyarmour/actions)
+
+Zero-configuration adversarial robustness testing for ML models using pytest.
+
+## Installation
+
+```bash
+pip install pyarmour
+```
+
+## Quick Start
+
+### Decorator Usage
+
+```python
+import pytest
+from pyarmour import adversarial_test
+
+@adversarial_test(model, attacks=["fgsm", "pgd"], epsilons=[0.03, 0.1])
+def test_my_model(model, x, y):
+    assert model(x).argmax() == y
+```
+
+### CLI Usage
+
+```bash
+pyarmour run --model-path model.pth --data-path test_data/ --output report.html
+```
+
+## Features
+
+- Zero-configuration adversarial testing via pytest
+- Pure NumPy implementation - no framework dependencies
+- Built-in attacks: FGSM, PGD, DeepFool
+- Visual diagnostics for vision models
+- Text diff reports for NLP models
+
+## Documentation
+
+Full documentation available at [pyarmour.readthedocs.io](https://pyarmour.readthedocs.io)
+
