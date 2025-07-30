@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: unreal-qt
+Version: 0.0.3
+Summary: A Qt manager for Unreal that enables the use of PyQt & PySide in Unreal Engine
+Author: Hannes D
+Project-URL: Homepage, https://github.com/hannesdelbeke/unreal-qt
+Project-URL: Source, https://github.com/hannesdelbeke/unreal-qt
+Keywords: application,unreal,pyside,pyqt,qt,engine,unrealengine
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.4
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: importlib-metadata; python_version < "3.7"
+Requires-Dist: PySide6
+Requires-Dist: unreal-stylesheet
+Dynamic: license-file
