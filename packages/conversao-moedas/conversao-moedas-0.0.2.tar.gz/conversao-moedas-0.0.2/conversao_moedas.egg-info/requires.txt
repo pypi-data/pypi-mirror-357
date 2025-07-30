@@ -1,0 +1,5 @@
+requests>=2.28.1
+numpy==1.26.4
+pandas==2.1.4
+plotly.graph_objects==5.15.0
+plotly.express==5.15.0
