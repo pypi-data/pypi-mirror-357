@@ -1,0 +1,28 @@
+[build-system]
+requires = [
+    "chardet",
+    "packaging",
+    "rich",
+    "setuptools >= 77.0.3"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tretool"
+version = "0.2.1"
+authors = [
+  { name="Jemy", email="sh_ljr_2013@163.com" },
+]
+description = "一个有着许多功能的Python工具库"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
