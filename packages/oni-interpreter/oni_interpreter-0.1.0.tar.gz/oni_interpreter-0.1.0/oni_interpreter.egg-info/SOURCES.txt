@@ -1,0 +1,8 @@
+README.md
+oni_interpreter.py
+setup.py
+oni_interpreter.egg-info/PKG-INFO
+oni_interpreter.egg-info/SOURCES.txt
+oni_interpreter.egg-info/dependency_links.txt
+oni_interpreter.egg-info/entry_points.txt
+oni_interpreter.egg-info/top_level.txt
