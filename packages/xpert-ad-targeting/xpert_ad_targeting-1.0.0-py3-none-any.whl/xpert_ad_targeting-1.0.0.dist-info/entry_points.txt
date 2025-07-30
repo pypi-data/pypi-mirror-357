@@ -1,0 +1,2 @@
+[console_scripts]
+xpert-ad-targeting = Project_Xpert:run

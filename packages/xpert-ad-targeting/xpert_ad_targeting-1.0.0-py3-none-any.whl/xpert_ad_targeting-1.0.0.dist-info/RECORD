@@ -1,0 +1,12 @@
+Project_Xpert/__init__.py,sha256=TO5-kYK9P5mGd5DmEBHogcQny6Id_oD9b44-A7u1cLs,607
+Project_Xpert/__main__.py,sha256=TjMc1ZQQWxPihp1U4RbqrNzXWgPUNhewLhuxQoB9N1A,423
+Project_Xpert/autorun.py,sha256=Wo-SfF0HFAsUCZQ0-ssMeQTalNzpl4GQj6jMXi6kt9E,1048
+Project_Xpert/capture.py,sha256=YB-2_j3rIxzcKI-hDloWOoMR2OABGTNKd8dED_5NfWM,4869
+Project_Xpert/cleanup.py,sha256=NpHhPXx8aAIUnHc8j0me2tzr4WeR6fzwh2wTl7PcLUs,1540
+Project_Xpert/main.py,sha256=-Bho-UZ1eOPm4ZJQbkTDLpOatxBKAOMoY_zXo7gzkDM,37409
+Project_Xpert/ocr_export.py,sha256=guYmX5ZiPM51EV_IH3UXZgFS_7QUrvXi8sXqGZoFvoI,18095
+xpert_ad_targeting-1.0.0.dist-info/METADATA,sha256=UZ6FlE5avpg6ITl7EWK-ADjZW6dMRAZXMUqc0eKHTyY,5862
+xpert_ad_targeting-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+xpert_ad_targeting-1.0.0.dist-info/entry_points.txt,sha256=02bYhpQk22qZ2pq2cSZgCHPBXvhCcpnZjRJLvqf1Zzs,57
+xpert_ad_targeting-1.0.0.dist-info/top_level.txt,sha256=CemGUNogKHGNoH0I3McFWY47OjC0CM73cCzK2M6fYo4,14
+xpert_ad_targeting-1.0.0.dist-info/RECORD,,
