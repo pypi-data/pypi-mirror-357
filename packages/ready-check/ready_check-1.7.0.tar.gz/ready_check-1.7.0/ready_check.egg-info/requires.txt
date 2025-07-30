@@ -1,0 +1,4 @@
+thttp
+tld
+beautifulsoup4
+cryptography
