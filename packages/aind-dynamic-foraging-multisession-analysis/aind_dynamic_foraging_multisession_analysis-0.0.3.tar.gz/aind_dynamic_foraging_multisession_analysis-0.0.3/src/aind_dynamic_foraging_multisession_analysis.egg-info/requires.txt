@@ -1,0 +1,11 @@
+aind-dynamic-foraging-data-utils
+aind-dynamic-foraging-basic-analysis>=0.3.13
+
+[dev]
+black
+coverage
+flake8
+interrogate
+isort
+Sphinx
+furo
