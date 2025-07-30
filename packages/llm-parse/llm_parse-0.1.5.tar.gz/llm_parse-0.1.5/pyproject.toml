@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "llm-parse"
+version = "0.1.5"
+description = "Parse data from documents optimised for downstream llm tasks."
+authors = ["tanchangsheng <tancs1994@hotmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pymupdf = "^1.24.2"
+pypdf = "^4.3.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.0"
+ipykernel = "^6.29.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
