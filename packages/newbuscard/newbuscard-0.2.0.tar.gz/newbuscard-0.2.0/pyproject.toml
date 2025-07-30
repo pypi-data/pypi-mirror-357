@@ -1,0 +1,25 @@
+[project]
+name = "newbuscard"
+version = "0.2.0"
+description = "A Business Card Management App built with CustomTkinter"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+
+authors = [
+    { name = "Jongwhan Kang", email = "hotjwk@email.com" }
+]
+
+dependencies = [
+    "customtkinter>=5.2.2",
+    "pillow>=11.2.1",
+    "python-decouple>=3.8",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["newbuscard*"]
+

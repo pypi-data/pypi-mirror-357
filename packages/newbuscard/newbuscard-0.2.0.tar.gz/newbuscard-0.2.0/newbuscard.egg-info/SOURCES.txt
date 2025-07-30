@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+pyproject.toml
+newbuscard/__init__.py
+newbuscard/buscardm.png
+newbuscard/main.py
+newbuscard.egg-info/PKG-INFO
+newbuscard.egg-info/SOURCES.txt
+newbuscard.egg-info/dependency_links.txt
+newbuscard.egg-info/requires.txt
+newbuscard.egg-info/top_level.txt
