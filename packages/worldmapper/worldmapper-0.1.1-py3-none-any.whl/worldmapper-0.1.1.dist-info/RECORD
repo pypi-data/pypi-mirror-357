@@ -1,0 +1,10 @@
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_worldmapper.py,sha256=E18eWrFHQDg5MpbmHOgCqPprBmMmMVFBZl--0fdmZno,924
+worldmapper/__init__.py,sha256=eF9pZjunVse0F3xXo_lLf4AttymjJ1hzj_R1SGQFUfU,246
+worldmapper/data.py,sha256=D0PMoYWsaFmg7tf3UyKzXK8EIavvS32W_7SJhfgjhvA,3396
+worldmapper/world.json,sha256=zlEMrngKHiSVuwZ05ySOtyYjdDcYO1RoxDg9GxLkc7o,4444867
+worldmapper-0.1.1.dist-info/licenses/LICENSE,sha256=pDj35eXI-0q30fWAlJl430eBXvvBp4_QpDzRJ7TZH1w,1071
+worldmapper-0.1.1.dist-info/METADATA,sha256=_jtRuD-0UUFw9ltkD9hmTEYS0ipMgzcWtWqHKGjl_rE,1470
+worldmapper-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+worldmapper-0.1.1.dist-info/top_level.txt,sha256=oHlvWEVNPOvWrDSs-7B9SHii4J4-0z127pEhZU885t4,18
+worldmapper-0.1.1.dist-info/RECORD,,
