@@ -1,0 +1,36 @@
+title: Intently NLU Docs
+description: Documentation for the Intently NLU library.
+repository: encrystudio/intently-nlu
+remote_theme: just-the-docs/just-the-docs
+
+search_enabled: true
+enable_copy_code_button: true
+heading_anchors: true
+nav_enabled: true
+nav_error_report: true
+
+back_to_top: true
+back_to_top_text: "Back to top"
+footer_content: "Intently NLU"
+last_edit_timestamp: true
+
+gh_edit_link: false
+
+color_scheme: dark
+
+plugins:
+  - jekyll-relative-links
+  - jekyll-remote-theme
+  - jemoji
+
+relative_links:
+  enabled: true
+
+search:
+  heading_level: 4
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  rel_url: true
+  button: false
+  focus_shortcut_key: 'k'
