@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/wowsunpack/__init__.py
+src/wowsunpack/__main__.py
+src/wowsunpack/params.py
+src/wowsunpack/wowsunpack.exe
+src/wowsunpack.egg-info/PKG-INFO
+src/wowsunpack.egg-info/SOURCES.txt
+src/wowsunpack.egg-info/dependency_links.txt
+src/wowsunpack.egg-info/requires.txt
+src/wowsunpack.egg-info/top_level.txt
