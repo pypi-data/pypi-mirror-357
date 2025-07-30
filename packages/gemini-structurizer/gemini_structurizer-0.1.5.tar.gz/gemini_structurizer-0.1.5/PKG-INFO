@@ -1,0 +1,254 @@
+Metadata-Version: 2.4
+Name: gemini-structurizer
+Version: 0.1.5
+Summary: A tool that uses the Gemini API to convert files into structured JSON.
+Author-email: zhanngpenng <zhanngpenng@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 zionpi
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.9.21
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: google-genai>=1.20.0
+Requires-Dist: PyYAML>=6.0
+Dynamic: license-file
+
+# Gemini Structurizer
+
+**Transform unstructured files into structured JSON using the Google Gemini API.**
+
+Gemini Structurizer is a Python library and command-line tool that leverages the power of Google's Gemini models to parse various file types (e.g., `.txt`, `.pdf`) and extract information into a user-defined JSON schema. It's designed to be flexible and configurable, allowing users to define the extraction logic through prompts and schemas.
+
+## Key Features
+
+*   **AI-Powered Structure Extraction**: Utilizes Gemini's multimodal capabilities to understand file content.
+*   **Configurable Processing**: Define extraction logic using a YAML configuration file.
+*   **File Upload & Management**: Automatically handles uploading files to the Gemini API and cleaning them up afterward.
+*   **Flexible Input**: Process files specified via a configuration file, command-line arguments, or directly within your Python scripts.
+*   **Dynamic Prompts**: Supports using placeholders in your prompts and passing variables at runtime for more flexible and reusable tasks.
+*   **Automatic Output Naming**: Output JSON files are conveniently named based on the input file.
+*   **Skip Existing Files**: By default, avoids reprocessing files if the target JSON output already exists (can be overridden).
+*   **Library & CLI**: Can be used both as a Python library in your projects and as a standalone command-line tool.
+
+## ⚠️ Breaking Changes in Version 0.1.5
+
+This version introduces significant updates to improve usability and stay current with the latest Google AI tools. Please review the following changes:
+
+*   **Configuration Format Changed to YAML:** The configuration file format has been switched from JSON (`.json`) to **YAML (`.yaml`)**.
+    *   **Reason:** YAML is more human-readable, supports comments, and handles multi-line strings gracefully, making configurations much easier to write and maintain.
+    *   **Action Required:** You must convert your existing `.json` config files to the new `.yaml` format. Run `gemini-structurize init` to generate a new template and see the correct structure.
+
+*   **Upgraded to Latest Google GenAI SDK:** The library now depends on **`google-genai>=1.20.0`**, the latest official Python SDK for the Gemini API.
+    *   **Benefit:** This modernizes all internal API calls, ensuring better stability, performance, and compatibility with the newest features and models released by Google. While this is an internal change, it is a significant upgrade to the core engine of the tool.
+
+## Installation
+
+### Prerequisites
+
+*   Python 3.9+
+*   A Google Cloud Project with the Gemini API enabled.
+*   A Gemini API key. Set this key to an environment variable named `GOOGLE_API_KEY`.
+
+```bash
+export GOOGLE_API_KEY="YOUR_API_KEY_HERE"
+```
+
+### From PyPI
+
+```bash
+pip install gemini-structurizer
+```
+
+## Usage
+
+### As a Command-Line Tool
+
+The CLI is a primary way to interact with the tool and operates with two main subcommands: `init` and `run`.
+
+1.  **Initialize (`init`)**
+
+    First, use the `init` command to create a sample configuration file named `config.yaml` in your current directory. This gives you a great starting point for the new format.
+
+    ```bash
+    gemini-structurize init
+    ```
+    You can also specify a different output path: `gemini-structurize init --output my_task.yaml`
+
+2.  **Edit the Configuration File (`config.yaml`)**
+
+    Next, edit the generated YAML file to match your specific task.
+
+    ```yaml
+    # Gemini Structurizer Configuration (YAML)
+    # ==========================================
+
+    # (Required) Specify the name of the Gemini model to use.
+    # Examples: "gemini-1.5-pro-latest", "gemini-1.5-flash-latest"
+    model_name: "gemini-1.5-flash-latest"
+
+    # (Optional) System-level instructions for the model, defining its role and behavior.
+    system_instruction: "You are an AI assistant specialized in extracting character lines from a script."
+
+    # (Required) Specific instructions for processing the file.
+    # You can use placeholders like {placeholder}, which can be filled at runtime.
+    # {filename} is a built-in, always-available placeholder.
+    user_prompt_for_file_processing: |
+      Please carefully read the content of the file '{filename}'.
+      My objective is to extract all lines spoken by the character '{character_name}'.
+      Please return the result strictly according to the JSON schema provided below.
+
+    # (Required) The definition of the desired output JSON structure.
+    # Paste your JSON Schema as a multi-line string directly here.
+    output_json_schema: |
+      {
+        "type": "object",
+        "properties": {
+          "character_name": { "type": "string" },
+          "dialogues": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["character_name", "dialogues"]
+      }
+    ```
+
+3.  **Run the Process (`run`)**
+
+    Once your config file is ready, use the `run` command to process your file.
+
+    ```bash
+    # -c specifies the config file, -i specifies the input file
+    gemini-structurize run -c config.yaml -i path/to/your/input.txt
+    ```
+    After processing, a `.json` file with the same name as your input file will appear in the same directory.
+
+    *   **To overwrite existing output**:
+        ```bash
+        gemini-structurize run -c config.yaml -i input.txt --overwrite
+        ```
+
+### As a Python Library
+
+You can achieve greater flexibility by using `gemini-structurizer` directly in your Python projects.
+
+#### Example 1: Basic Usage
+
+This is the most straightforward use case, executing a task by providing a config file and an input file.
+
+```python
+import gemini_structurizer
+import os
+
+# Ensure GOOGLE_API_KEY is set in your environment
+# os.environ['GOOGLE_API_KEY'] = "YOUR_API_KEY" # For testing only, not recommended for production
+
+input_doc_path = "path/to/your/document.txt"
+config_path = "path/to/your/task_config.yaml"
+
+# Ensure the config file (task_config.yaml) and input file (document.txt) are created as needed.
+
+json_output_path = gemini_structurizer.structure_file_with_gemini(
+    input_filepath=input_doc_path,
+    config_path=config_path,
+    overwrite_existing_output=True
+)
+
+if json_output_path:
+    print(f"Processing successful! Output is at: {json_output_path}")
+    # You can now read and use the file at json_output_path
+else:
+    print("Processing failed.")
+```
+
+#### Example 2: Using Dynamic Variables in the Prompt
+
+This is a very powerful feature. You can define placeholders in your `user_prompt_for_file_processing` within the config file and then pass the actual values at runtime.
+
+Assume your `config.yaml` prompt is: `"...extract all lines for the character '{character_name}'..."`
+
+```python
+# ...continuing from above...
+
+# Define a dictionary where the keys match the placeholders in your prompt
+prompt_variables = {
+    "character_name": "Bob"
+}
+
+# Pass the dictionary using the template_variables parameter
+json_output_path = gemini_structurizer.structure_file_with_gemini(
+    input_filepath="dialogue.txt",
+    config_path="dialogue_config.yaml",
+    template_variables=prompt_variables, # <--- The magic happens here
+    overwrite_existing_output=True
+)
+
+if json_output_path:
+    print(f"Successfully extracted lines for character: '{prompt_variables['character_name']}'!")
+# ...
+```
+
+#### Example 3: Multi-Tasking & Direct Config Injection
+
+Instead of relying on a file, you can pass a Python dictionary directly as the configuration. This is very useful for managing multiple tasks.
+
+```python
+import yaml # To load multiple task configs from a single large YAML file
+
+# Assume you have a multi_task_config.yaml file defining several tasks
+with open("multi_task_config.yaml", 'r', encoding='utf-8') as f:
+    all_tasks = yaml.safe_load(f)
+
+# Select the configuration for one of the tasks
+user_profile_task_config = all_tasks['tasks']['extract_user_profile']
+
+# Pass the config dictionary directly to the config_data parameter
+json_output_path = gemini_structurizer.structure_file_with_gemini(
+    input_filepath="user_profile.txt",
+    config_data=user_profile_task_config, # <--- Pass the dictionary directly
+    overwrite_existing_output=True
+)
+
+if json_output_path:
+    print("User profile extraction task complete!")
+# ...
+```
+
+## How It Works
+
+1.  The tool loads a YAML configuration file that defines the Gemini model, system instructions, user prompt (how to process the file), and the desired output JSON schema.
+2.  The specified input file is uploaded to the Gemini API.
+3.  The Gemini model processes the file content based on your prompts and attempts to generate a JSON output that conforms to your provided schema.
+4.  The resulting JSON is saved to a file.
+
+## License
+
+Distributed under the MIT License. See the `LICENSE` file for more information.
+
+## Contact
+
+zionpi - zhanngpenng@gmail.com

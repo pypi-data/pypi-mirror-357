@@ -1,0 +1,38 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=64.0", "wheel"]
+build-backend = "setuptools.build_meta"
+#backend-path = ["."] 
+
+[project]
+name = "gemini-structurizer"
+version = "0.1.5"
+description = "A tool that uses the Gemini API to convert files into structured JSON."
+readme = "README.md" 
+authors = [
+    { name = "zhanngpenng", email = "zhanngpenng@gmail.com" }
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.9.21"
+
+dependencies = [
+    "google-genai>=1.20.0",
+    "PyYAML>=6.0"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    "Intended Audience :: Developers",
+]
+
+# [project.urls]
+# "Homepage" = "https://github.com/ZionPi/gemini-structurizer"
+# "Bug Tracker" = "https://github.com/ZionPi/gemini-structurizer/issues"
+
+[project.scripts]
+gemini-structurize = "gemini_structurizer.processor:main_cli_entry"
