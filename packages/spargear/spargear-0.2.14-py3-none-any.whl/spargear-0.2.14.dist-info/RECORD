@@ -1,0 +1,11 @@
+spargear/__init__.py,sha256=4hUOv2vnq39N8r3E9iQ2bQwhx3bcTxasL8N8a7hJnf0,633
+spargear/_typing.py,sha256=qOC69uUWw1U1aYHfvduOlIlQYWJKqR57cwuFp6JYq5k,7716
+spargear/argspec.py,sha256=YiHAFy5XsQBIuTe4_WXZ9L_xtA3kN7Zexe2XjzCo26I,6752
+spargear/arguments.py,sha256=Rlax_K_6VX8xQiL2qXP_lI9eAAZtNAbRhyBXz7DPjwI,893
+spargear/base.py,sha256=yHlYYSEl0roFkI9cWZfiEVV02hw1bIYqJIQpKA1wEk4,27592
+spargear/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spargear/subcommand.py,sha256=Rm1PBy8dREzqOi4V5H1xcxevJgz2ocia2tPOGWhqSmU,6916
+spargear-0.2.14.dist-info/METADATA,sha256=6DNMMo8vIVa6GOlTtkyxzI2B-_lFw1qjixTsQY1XlTw,9233
+spargear-0.2.14.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+spargear-0.2.14.dist-info/top_level.txt,sha256=CuIXrNRneidBZxuUcMblCWz_Pju5lgA3XoScvj1BPJk,9
+spargear-0.2.14.dist-info/RECORD,,
