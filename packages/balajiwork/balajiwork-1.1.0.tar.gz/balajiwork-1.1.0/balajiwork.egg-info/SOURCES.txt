@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+balajiwork/__init__.py
+balajiwork/ifc2xlsx.py
+balajiwork/slowprint.py
+balajiwork.egg-info/PKG-INFO
+balajiwork.egg-info/SOURCES.txt
+balajiwork.egg-info/dependency_links.txt
+balajiwork.egg-info/entry_points.txt
+balajiwork.egg-info/requires.txt
+balajiwork.egg-info/top_level.txt
