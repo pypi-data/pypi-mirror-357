@@ -1,0 +1,7 @@
+
+[develop]
+build
+twine
+
+[test]
+pytest
