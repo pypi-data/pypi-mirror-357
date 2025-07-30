@@ -1,0 +1,10 @@
+README.md
+setup.py
+autotestify/__init__.py
+autotestify/cli.py
+autotestify/generator.py
+autotestify.egg-info/PKG-INFO
+autotestify.egg-info/SOURCES.txt
+autotestify.egg-info/dependency_links.txt
+autotestify.egg-info/entry_points.txt
+autotestify.egg-info/top_level.txt
