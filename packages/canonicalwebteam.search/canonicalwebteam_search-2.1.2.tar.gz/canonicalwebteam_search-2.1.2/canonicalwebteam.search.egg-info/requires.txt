@@ -1,0 +1,3 @@
+canonicalwebteam.flask-base>=2.0.0
+user-agents>=2.0.0
+Flask-Limiter>=3.8.0
