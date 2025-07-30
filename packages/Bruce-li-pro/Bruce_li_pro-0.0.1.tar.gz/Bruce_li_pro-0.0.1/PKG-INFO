@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: Bruce_li_pro
+Version: 0.0.1
+Summary: 高效数据处理与API集成工具库
+Home-page: https://github.com/bruce-li/Bruce_li_pro
+Author: Bruce Li
+Author-email: bruce.li@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: full
