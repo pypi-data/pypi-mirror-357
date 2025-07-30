@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: a2one
+Version: 1.0.2
+Summary: Thalaivar's personal metadata module
+Home-page: https://github.com/thalaivar96/
+Author: Thalaivar
+Author-email: t96halaivar@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# a2one
+
+`a2one` is a personal Python module created by **Thalaivar** that stores metadata such as name, date of birth, email, location, and GitHub profile.
+
+## Usage
+
+```python
+from a2one import thalaivar
+
+print(thalaivar.profile())
