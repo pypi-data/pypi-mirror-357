@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Oxygen unit conversions &#8212; pyrotoolbox  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
+    
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pH Calculation Tools" href="pH%20Calculation%20Tools.html" />
+    <link rel="prev" title="Load AquapHOx-L data and recalculate dissolved oxygen with different salinity" href="Demo2.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pH%20Calculation%20Tools.html" title="pH Calculation Tools"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Demo2.html" title="Load AquapHOx-L data and recalculate dissolved oxygen with different salinity"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyrotoolbox  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Oxygen%20Calculation%20Tools.html" accesskey="U">Oxygen Calculation Tools</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Oxygen unit conversions</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="Oxygen-unit-conversions">
+<h1>Oxygen unit conversions<a class="headerlink" href="#Oxygen-unit-conversions" title="Link to this heading">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrotoolbox.parsers</span> <span class="kn">import</span> <span class="n">parse</span>
+<span class="kn">from</span> <span class="nn">pyrotoolbox.oxygen</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<section id="Load-data">
+<h2>Load data<a class="headerlink" href="#Load-data" title="Link to this heading">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="s1">&#39;datademo4/A_Firesting Pro (4 Channels)_(A Ch.1)_Oxygen.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">80</span><span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="convert-input-unit-(%O2)-to-hPa">
+<h2>convert input unit (%O2) to hPa<a class="headerlink" href="#convert-input-unit-(%O2)-to-hPa" title="Link to this heading">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_hPa&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i_only_think_in_hpa</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<section id="alternative:">
+<h3>alternative:<a class="headerlink" href="#alternative:" title="Link to this heading">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_hPa_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">convert_to_hPa</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_%O2&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;oxygen_%O2&#39;</span><span class="p">,</span>
+                                   <span class="n">temperature</span><span class="o">=</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;settings&#39;</span><span class="p">][</span><span class="s1">&#39;temperature&#39;</span><span class="p">],</span>
+                                   <span class="n">pressure</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="convert-hPa-to-all-other-oxygen-units">
+<h2>convert hPa to all other oxygen units<a class="headerlink" href="#convert-hPa-to-all-other-oxygen-units" title="Link to this heading">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_torr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hPa_to_torr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_hPa&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_%O2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hPa_to_percentO2</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_hPa&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_</span><span class="si">%a</span><span class="s1">irsat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hPa_to_percent_airsat</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_hPa&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">],</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_mgL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hPa_to_mgL</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_hPa&#39;</span><span class="p">],</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">salinity</span><span class="o">=</span><span class="mf">7.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_uM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hPa_to_uM</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oxygen_hPa&#39;</span><span class="p">],</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">salinity</span><span class="o">=</span><span class="mf">7.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="unit-conversion-mg/L-for-different-environmental-conditions">
+<h2>unit conversion mg/L for different environmental conditions<a class="headerlink" href="#unit-conversion-mg/L-for-different-environmental-conditions" title="Link to this heading">¶</a></h2>
+<p>Example: user has logged data with a fixed-T setting of 37°C and salinity of 7.5g/L, but the real temperature was 32°C and real salinity was 11g/L.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">po2</span> <span class="o">=</span> <span class="n">i_only_think_in_hpa</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+<span class="n">hPa_to_mgL</span><span class="p">(</span><span class="n">po2</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">salinity</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+date_time
+2023-04-03 13:16:28.485    0.247168
+2023-04-03 13:16:29.486    1.704633
+2023-04-03 13:16:30.486    2.777244
+2023-04-03 13:16:31.486    3.508465
+2023-04-03 13:16:32.486    3.947728
+2023-04-03 13:16:33.485    4.229732
+2023-04-03 13:16:34.485    4.379028
+2023-04-03 13:16:35.485    4.378365
+2023-04-03 13:16:36.485    4.379360
+2023-04-03 13:16:37.485    4.419836
+2023-04-03 13:16:38.485    4.491167
+2023-04-03 13:16:39.486    4.563492
+2023-04-03 13:16:40.487    4.635486
+Name: oxygen_hPa, dtype: float64
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Oxygen unit conversions</a><ul>
+<li><a class="reference internal" href="#Load-data">Load data</a></li>
+<li><a class="reference internal" href="#convert-input-unit-(%O2)-to-hPa">convert input unit (%O2) to hPa</a><ul>
+<li><a class="reference internal" href="#alternative:">alternative:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#convert-hPa-to-all-other-oxygen-units">convert hPa to all other oxygen units</a></li>
+<li><a class="reference internal" href="#unit-conversion-mg/L-for-different-environmental-conditions">unit conversion mg/L for different environmental conditions</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="Demo2.html"
+                          title="previous chapter">Load AquapHOx-L data and recalculate dissolved oxygen with different salinity</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="pH%20Calculation%20Tools.html"
+                          title="next chapter">pH Calculation Tools</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Demo4 O2 unit conversion.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pH%20Calculation%20Tools.html" title="pH Calculation Tools"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Demo2.html" title="Load AquapHOx-L data and recalculate dissolved oxygen with different salinity"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyrotoolbox  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Oxygen%20Calculation%20Tools.html" >Oxygen Calculation Tools</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Oxygen unit conversions</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, PyroScience GmbH.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>
