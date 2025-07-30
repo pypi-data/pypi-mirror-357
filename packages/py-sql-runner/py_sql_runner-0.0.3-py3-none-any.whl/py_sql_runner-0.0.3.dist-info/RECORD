@@ -1,0 +1,11 @@
+sql_runner/__init__.py,sha256=gU469Cyg3QwowUfnzYnzTBdK40X9BSNISslKbodFR1c,380
+sql_runner/clickhouse_runner.py,sha256=93qIr6_Z9t8YLxFcrYQ1jVvsa-7TQGBC1Qqcw_o_c0M,1506
+sql_runner/core.py,sha256=zgGQgTIb1K8J1bW3yKfmzdnvEQrirgC_dZCrvexp11Q,2117
+sql_runner/psycopg3_runner.py,sha256=U_if9LRR1kzrJpFC7HmsRWJPnqMhJT-mrSgXdgbhHy8,2930
+sql_runner/redshift_runner.py,sha256=cDgju9qKaFznloSKLvSw-dF4cHdj_DMFdzVHIKRaEoE,3008
+sql_runner/trino_runner.py,sha256=vKj8GA7Hy2SvKvWyqxPWL5a9PHW3ewFg7w_K51DXthU,3472
+sql_runner/utils.py,sha256=bSdemQmwH-M13ueXpLKPjrgVFma9HLq-iwBIQZ6mBWc,4546
+py_sql_runner-0.0.3.dist-info/METADATA,sha256=vPDGanGvdgp1rxuJrEGMvNc6tqO1GPnup1oKv4RA15I,825
+py_sql_runner-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+py_sql_runner-0.0.3.dist-info/top_level.txt,sha256=xhLwncmZjtfh4eZav5P0HkV8GWuQT-kU_LU14IKqcEE,11
+py_sql_runner-0.0.3.dist-info/RECORD,,
