@@ -1,0 +1,2 @@
+[console_scripts]
+cloc = cloc.__main__:main
