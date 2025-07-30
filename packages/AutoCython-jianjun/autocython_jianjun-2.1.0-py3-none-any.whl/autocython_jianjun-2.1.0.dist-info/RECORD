@@ -1,0 +1,11 @@
+AutoCython/AutoCython.py,sha256=W2CbQPfnuzdYpcjY-HEJ3B-dc7G-aoa53n6fV1MYMx4,1448
+AutoCython/__init__.py,sha256=2xslPLSbPwW011FSqI08t-YCe5lnZoZ_a1DEn14qZsU,134
+AutoCython/compile.py,sha256=4QM7PDjeuHwEvI5UBKEggWEu1o0V5dxZhB6yqvkubFs,4428
+AutoCython/run_tasks.py,sha256=eWJVumNRPkfWSbzUv3f3-z3xJAia077tYxLBP2UpSSs,12567
+AutoCython/tools.py,sha256=Uv9hMv-Lqq4stNrC4RQza28lO4r9NqoicLeNIkctP0M,6442
+autocython_jianjun-2.1.0.dist-info/licenses/LICENSE,sha256=GBEWF9P22k7kxVc7ackYMJ6JCdU8MVPEhgFU2kQrIOU,1089
+autocython_jianjun-2.1.0.dist-info/METADATA,sha256=JtF7X4B43iS9-kRWHGnKXqey6qURSXMaL8C836K2U0o,4290
+autocython_jianjun-2.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+autocython_jianjun-2.1.0.dist-info/entry_points.txt,sha256=SAjj1DmjNpqzPRe272fFbax9MC30O9ubtrDLA9Km8rU,47
+autocython_jianjun-2.1.0.dist-info/top_level.txt,sha256=_B4NXFOsu2ESTdJa78Gy3EXr0xyFuq4P_yD1uLmnVXo,11
+autocython_jianjun-2.1.0.dist-info/RECORD,,

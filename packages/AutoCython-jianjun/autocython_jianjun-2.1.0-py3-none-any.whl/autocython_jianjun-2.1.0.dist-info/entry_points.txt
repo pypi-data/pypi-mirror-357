@@ -1,0 +1,2 @@
+[console_scripts]
+AutoCython = AutoCython:main
