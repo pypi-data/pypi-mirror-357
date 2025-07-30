@@ -1,0 +1,56 @@
+Metadata-Version: 2.4
+Name: hitesh-fastapi-starter
+Version: 1.1.5
+Summary: Generate a FastAPI starter project structure
+Home-page: https://github.com/your_github/hitesh-fastapi-starter
+Author: Hitesh Ladumor
+Author-email: your_email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# hitesh-fastapi-starter
+
+ðŸŽ¯ **A CLI tool to instantly generate a modern and scalable FastAPI project structure.**
+
+---
+
+## ðŸ“¦ Features
+
+- Generate a modular `FastAPI` project layout
+- Pre-defined structure for:
+  - `user` and `account` apps
+  - `common`, `shared`, `websocket`, `middleware`, and `config` directories
+- Pre-created `main.py` with:
+  - CORS support
+  - Logging integration
+- Clean and production-ready code
+- Just one CLI command to bootstrap everything
+
+---
+
+## ðŸš€ Installation
+
+Install directly from [PyPI](https://pypi.org/project/hitesh-fastapi-starter):
+
+## Usage
+After installing the CLI tool, generate a new FastAPI project using: 
+hitesh-fastapi-starter <your_project_name>
+
+```bash
+pip install hitesh-fastapi-starter
+
