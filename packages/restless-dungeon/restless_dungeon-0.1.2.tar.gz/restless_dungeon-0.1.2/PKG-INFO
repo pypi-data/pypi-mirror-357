@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: restless-dungeon
+Version: 0.1.2
+Summary: A text-based dungeon adventure game.
+Project-URL: Repository, https://github.com/Dekoder-py/restless_dungeon
+Author-email: Dekoder-py <kyleyesmariam@icloud.com>
+License-Expression: MIT
+Keywords: adventure,cli,dungeon,game,interactive
+Requires-Python: >=3.7
+Requires-Dist: rich
+Description-Content-Type: text/markdown
+
+# The Restless Dungeon
+
+A Text-based dungeon adventure game.
+
+## Installation
+
+Clone the repo and install required dependencies:
+
+```bash
+pip install restless-dungeon
+```
+
+## Usage
+
+Run the main file:
+
+```bash
+python3 -m restless-dungeon
+```
+
+
+### AI Usage
+
+I used AI for coming up with the name for the game, writing a couple of the commit messages, and helping with debugging when my eyes couldn't find the problems.
