@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+data/org.precice.config_visualizer.desktop
+data/org.precice.config_visualizer.metainfo.xml
+data/org.precice.config_visualizer.svg
+precice_config_visualizer_gui.egg-info/PKG-INFO
+precice_config_visualizer_gui.egg-info/SOURCES.txt
+precice_config_visualizer_gui.egg-info/dependency_links.txt
+precice_config_visualizer_gui.egg-info/entry_points.txt
+precice_config_visualizer_gui.egg-info/requires.txt
+precice_config_visualizer_gui.egg-info/top_level.txt
+preciceconfigvisualizer/gui/__init__.py
+preciceconfigvisualizer/gui/gui.py
+preciceconfigvisualizer/gui/window.py

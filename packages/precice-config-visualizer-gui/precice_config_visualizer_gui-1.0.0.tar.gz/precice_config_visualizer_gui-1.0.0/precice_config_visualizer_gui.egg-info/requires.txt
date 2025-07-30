@@ -1,0 +1,3 @@
+xdot
+PyGObject
+precice-config-visualizer>=1

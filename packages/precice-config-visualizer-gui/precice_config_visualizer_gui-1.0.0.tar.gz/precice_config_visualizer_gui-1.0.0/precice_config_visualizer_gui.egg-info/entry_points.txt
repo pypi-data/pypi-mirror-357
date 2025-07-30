@@ -1,0 +1,2 @@
+[gui_scripts]
+precice-config-visualizer-gui = preciceconfigvisualizer.gui:main
