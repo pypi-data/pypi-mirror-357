@@ -1,0 +1,7 @@
+scrapy_rnet/__init__.py,sha256=NLbymOiKxxP3U7jEcQQX0yizNeEChdSH8Me9tVL0BaA,18
+scrapy_rnet/handler.py,sha256=NoIzIOEBibEESJwRzExbjkhIAiQGa3oFHCfAHsLTCBU,1989
+scrapy_rnet/parser.py,sha256=ey0acDSlNsgR79ldlE8Puzpj1rYyfsspU5y3DbEFVjo,3190
+scrapy_rnet-0.0.5.dist-info/METADATA,sha256=39w1yHivRy8iQ8JaLaI69ZZQr5j4HlNowSJI2hHVBCo,136
+scrapy_rnet-0.0.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+scrapy_rnet-0.0.5.dist-info/top_level.txt,sha256=8aKu6WNjSUD0onWhsMeOK6Y5aZ5dvFHMY38572GvUX4,12
+scrapy_rnet-0.0.5.dist-info/RECORD,,
