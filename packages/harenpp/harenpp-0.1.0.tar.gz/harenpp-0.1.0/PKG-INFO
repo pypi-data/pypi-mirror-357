@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: harenpp
+Version: 0.1.0
+Summary: HAREN++: Hybrid Associative Retrieval Engine with Nullified Worst-Case
+Author: Harsith S
+Author-email: harsithharsith217@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
