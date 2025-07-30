@@ -1,0 +1,18 @@
+[PYG-394] ☺ Fix avoid appending to existing (#489)
+
+# Description
+
+Currently when pygen appends to the `ClientName` it can lead to a large
+header if the client is initialized multiple times.
+
+## Bump
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## Changelog
+### Fixed
+
+- [alpha] The `QueryExecutor` no longer prefix the `client_name` in the
+`CogniteClient` if it is already set.
