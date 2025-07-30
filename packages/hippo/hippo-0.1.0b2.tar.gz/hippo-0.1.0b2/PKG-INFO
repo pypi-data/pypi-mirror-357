@@ -1,0 +1,101 @@
+Metadata-Version: 2.3
+Name: hippo
+Version: 0.1.0b2
+Summary: Hippo is a lightweight machine-learning framework that unifies declarative preprocessing pipelines, automatic hyperparameter optimisation, and local experiment tracking behind a single, friendly CLI.
+License: MIT
+Author: Alexey
+Author-email: axbelenkov@gmail.com
+Requires-Python: >=3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: PyYAML (>=6.0)
+Requires-Dist: joblib (>=1.4)
+Requires-Dist: optuna (>=3.6)
+Requires-Dist: scikit-learn (>=1.5)
+Requires-Dist: xgboost (>=2.0)
+Description-Content-Type: text/markdown
+
+# hippo
+
+*Lightweight ML workflow engine: declarative preprocessing ▸ hyper-parameter optimisation ▸ experiment tracking*
+
+<img src="https://i.ibb.co/69jrJSv/CA30-BEF0-6-D8-B-4-FD4-A7-E8-D18427-D94-F87.png" width="220" alt="hippo logo">
+
+`hippo` brings together three everyday ML chores under one friendly roof:
+
+| What you need                                      | How hippo helps |
+|----------------------------------------------------|-----------------|
+| **Clean, consistent data**                         | Build declarative preprocessing pipelines with Sklearn primitives |
+| **Good hyper-parameters without the grind**        | Run Optuna-powered Bayesian optimisation (TPE, CMA-ES, …) |
+| **Remember what actually worked**                  | Log parameters & metrics to a local SQLite DB with zero setup |
+
+**Why hippo?**
+
+* ⚡ **Efficient** – sensible defaults, parallel Optuna trials  
+* 🛡️ **Reliable** – minimal dependencies, 100 % typed codebase  
+* 🔌 **Extensible** – register your own models or transformations in a single line  
+* 🐚 **Simple CLI** – `hippo train config.yml` is all you need
+
+## Installation
+
+```bash
+pip install hippo
+```
+
+## Quick Start
+
+```python
+from sklearn.datasets import load_breast_cancer
+from hippo.data.preprocessing import build_pipeline
+from hippo.models import get_model
+from hippo.tuning import optimise
+from optuna import Trial
+
+# 1  Load toy data
+data = load_breast_cancer(as_frame=True)
+X, y = data.data, data.target
+
+# 2  Preprocessing pipeline
+pipe = build_pipeline(num_feats=X.columns.tolist(), cat_feats=[])
+
+# 3  Objective builder for Optuna
+def make_objective(trial: Trial):
+    n_estimators = trial.suggest_int("n_estimators", 50, 400)
+    max_depth = trial.suggest_int("max_depth", 3, 10)
+
+    model = get_model("rf", n_estimators=n_estimators, max_depth=max_depth, random_state=0)
+
+    def objective(trial_: Trial):
+        from sklearn.model_selection import cross_val_score
+        score = cross_val_score(model, pipe.fit_transform(X), y, cv=3).mean()
+        return score
+    return objective
+
+study = optimise(make_objective, n_trials=50, direction="maximize")
+print("Best accuracy:", study.best_value)
+```
+
+Or the same via CLI:
+
+```bash
+python -m hippo.cli train config.yml
+```
+
+`config.yml` example:
+
+```yaml
+run_name: demo_rf
+data:
+  path: cancer.joblib         # joblib-dumped DataFrame
+  target: target
+  numerical: [mean radius, mean area, ...]
+  categorical: []
+model:
+  name: rf
+  params:
+    n_estimators: 200
+```

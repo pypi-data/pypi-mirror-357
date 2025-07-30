@@ -1,0 +1,25 @@
+[project]
+name = "hippo"
+version = "0.1.0.b2"
+description = "Hippo is a lightweight machine-learning framework that unifies declarative preprocessing pipelines, automatic hyperparameter optimisation, and local experiment tracking behind a single, friendly CLI."
+authors = [
+    {name = "Alexey",email = "axbelenkov@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "scikit-learn>=1.5",
+    "optuna>=3.6",
+    "xgboost>=2.0",
+    "PyYAML>=6.0",
+    "joblib>=1.4",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project.scripts]
+hippo = "hippo.cli:train"
