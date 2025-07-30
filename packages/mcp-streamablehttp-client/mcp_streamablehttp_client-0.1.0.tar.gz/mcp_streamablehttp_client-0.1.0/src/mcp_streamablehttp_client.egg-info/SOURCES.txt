@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/mcp_streamablehttp_client/__init__.py
+src/mcp_streamablehttp_client/cli.py
+src/mcp_streamablehttp_client/config.py
+src/mcp_streamablehttp_client/oauth.py
+src/mcp_streamablehttp_client/proxy.py
+src/mcp_streamablehttp_client/py.typed
+src/mcp_streamablehttp_client.egg-info/PKG-INFO
+src/mcp_streamablehttp_client.egg-info/SOURCES.txt
+src/mcp_streamablehttp_client.egg-info/dependency_links.txt
+src/mcp_streamablehttp_client.egg-info/entry_points.txt
+src/mcp_streamablehttp_client.egg-info/requires.txt
+src/mcp_streamablehttp_client.egg-info/top_level.txt
