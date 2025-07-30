@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: pdf2imgdocx
+Version: 0.0.1
+Summary: Convert multi-page PDFs into Word documents with full-page images.
+Author-email: Peter Schneider-Kamp <petersk@imada.sdu.dk>
+License: MIT
+License-File: LICENSE
+Requires-Python: >=3.12
+Requires-Dist: click
+Requires-Dist: pdf2image
+Requires-Dist: pillow
+Requires-Dist: pypdf2
+Requires-Dist: python-docx
+Requires-Dist: tqdm
+Description-Content-Type: text/markdown
+
+# pdf2imgdocx
+Convert multi-page PDFs into Word documents with full-page images.
