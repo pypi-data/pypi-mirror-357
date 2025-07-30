@@ -1,0 +1,235 @@
+# OmniParser MCP Server
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![MCP](https://img.shields.io/badge/MCP-Compatible-green.svg)](https://modelcontextprotocol.io/)
+
+一個基於Microsoft OmniParser模型的MCP (Model Context Protocol) Server，用於UI自動化和屏幕解析。
+
+## 🌟 功能特性
+
+- 🖥️ **屏幕截圖解析**: 使用OmniParser模型解析UI截圖，識別可交互元素
+- 🖱️ **鍵鼠模擬**: 支持鍵盤和滑鼠操作模擬
+- 🪟 **視窗管理**: 連接和管理特定應用程式視窗
+- 🌐 **多平台支持**: 支持桌面應用、瀏覽器和遊戲
+- 🔧 **MCP協議**: 完全兼容MCP協議，可與支持MCP的AI助手集成
+
+## 📋 系統要求
+
+- Python 3.10+
+- Windows 10/11 (推薦，完整功能支持)
+- CUDA支持的GPU (推薦)
+- 8GB+ RAM
+- 5GB+ 可用磁盤空間
+
+## 🚀 快速開始
+
+### 1. 克隆項目
+
+```bash
+git clone https://github.com/yourusername/omniparser-mcp-server.git
+cd omniparser-mcp-server
+```
+
+### 2. 安裝依賴
+
+```bash
+# 創建虛擬環境 (推薦)
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# 或 venv\Scripts\activate  # Windows
+
+# 安裝依賴
+pip install -r requirements.txt
+pip install -e .
+
+# Windows 用戶需要額外安裝
+pip install pywin32 psutil
+```
+
+### 3. 下載OmniParser模型
+
+```bash
+# 下載模型權重 (需要先安裝 huggingface-cli)
+pip install huggingface_hub
+
+# 下載到 weights 目錄
+mkdir -p weights
+for f in icon_detect/{train_args.yaml,model.pt,model.yaml} icon_caption/{config.json,generation_config.json,model.safetensors}; do
+    huggingface-cli download microsoft/OmniParser-v2.0 "$f" --local-dir weights
+done
+mv weights/icon_caption weights/icon_caption_florence
+```
+
+### 4. 配置設定
+
+編輯 `config.json` 確保模型路徑正確，然後啟動服務器：
+
+```bash
+omniparser-mcp-server
+```
+
+## 🔧 MCP 配置
+
+### 安裝MCP服務器
+
+```bash
+# 使用 uvx 安裝（推薦）
+uvx install mcp-server-omniparser
+
+# 或從源碼安裝
+uvx install git+https://github.com/win10ogod/omniparser-mcp-server.git
+```
+
+### Claude Desktop 配置
+
+在 Claude Desktop 配置文件中添加：
+
+**配置文件位置：**
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+
+**基本配置：**
+```json
+{
+  "mcpServers": {
+    "omniparser": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-omniparser"
+      ]
+    }
+  }
+}
+```
+
+### 服務器配置
+
+創建 `config.json` 文件來配置服務器行為:
+
+```json
+{
+    "omniparser": {
+        "som_model_path": "weights/icon_detect/model.pt",
+        "caption_model_name": "florence2",
+        "caption_model_path": "weights/icon_caption_florence",
+        "box_threshold": 0.05
+    },
+    "automation": {
+        "screenshot_delay": 0.1,
+        "action_delay": 0.5
+    }
+}
+```
+
+更多配置選項請參考 `mcp_config_examples.json` 文件。
+
+## MCP工具
+
+### 屏幕解析工具
+
+- `parse_screen`: 解析當前屏幕或指定視窗
+- `get_elements`: 獲取屏幕上的可交互元素列表
+- `find_element`: 根據描述查找特定元素
+
+### 操作工具
+
+- `click_element`: 點擊指定元素
+- `type_text`: 輸入文字
+- `drag_element`: 拖拽元素
+- `scroll`: 滾動頁面
+
+### 視窗管理工具
+
+- `list_windows`: 列出所有可用視窗
+- `focus_window`: 聚焦到指定視窗
+- `capture_window`: 截取指定視窗
+
+## 開發
+
+### 項目結構
+
+```
+omniparser-mcp/
+├── src/
+│   └── omniparser_mcp/
+│       ├── __init__.py
+│       ├── server.py          # MCP服務器主入口
+│       ├── omniparser_client.py  # OmniParser模型客戶端
+│       ├── automation/        # 自動化操作模組
+│       ├── window_manager/    # 視窗管理模組
+│       └── tools/            # MCP工具定義
+├── tests/
+├── config.json
+├── pyproject.toml
+└── README.md
+```
+
+### 運行測試
+
+```bash
+pytest tests/
+```
+
+## 📖 文檔
+
+- [安裝指南](INSTALL.md) - 詳細的安裝和配置說明
+- [API文檔](docs/API.md) - MCP工具API參考 (即將推出)
+- [示例代碼](examples/) - 使用示例和演示
+
+## 🤝 貢獻
+
+我們歡迎所有形式的貢獻！
+
+### 如何貢獻
+
+1. Fork 這個倉庫
+2. 創建您的功能分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 開啟一個 Pull Request
+
+### 開發設置
+
+```bash
+# 克隆您的 fork
+git clone https://github.com/yourusername/omniparser-mcp-server.git
+cd omniparser-mcp-server
+
+# 安裝開發依賴
+pip install -e ".[dev]"
+
+# 運行測試
+pytest tests/ -v
+
+# 代碼格式化
+black src/ tests/
+isort src/ tests/
+```
+
+## 🐛 問題報告
+
+如果您發現了bug或有功能請求，請：
+
+1. 檢查 [Issues](https://github.com/yourusername/omniparser-mcp-server/issues) 確認問題尚未被報告
+2. 創建新的 Issue 並提供詳細信息：
+   - 操作系統和Python版本
+   - 錯誤信息和堆棧跟踪
+   - 重現步驟
+   - 預期行為
+
+## 📄 許可證
+
+本項目採用 MIT 許可證 - 查看 [LICENSE](LICENSE) 文件了解詳情。
+
+## 🙏 致謝
+
+- [Microsoft OmniParser](https://github.com/microsoft/OmniParser) - 核心UI解析模型
+- [Model Context Protocol](https://modelcontextprotocol.io/) - MCP協議規範
+- 所有貢獻者和用戶
+
+## ⭐ Star History
+
+如果這個項目對您有幫助，請給我們一個 ⭐！
+
+[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/omniparser-mcp-server&type=Date)](https://star-history.com/#yourusername/omniparser-mcp-server&Date)
