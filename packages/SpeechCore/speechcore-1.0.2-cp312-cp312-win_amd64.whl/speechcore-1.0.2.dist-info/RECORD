@@ -1,0 +1,14 @@
+speech_core/PCTKUSR64.dll,sha256=QVww02_O9W9cT-xhbzjzz0EkqTJvwdvdN7yzqGiNiQw,113512
+speech_core/SAAPI64.dll,sha256=XnJW3khvqR9f19PTZQ5_bmC3W2pgsJUlrYysDUvOKas,85984
+speech_core/SpeechCore.cp312-win_amd64.pyd,sha256=F_sBbqgEo3dNBiOcQ7AVfEb3SYLHUnjGKUKqTogwUYA,399872
+speech_core/ZDSRAPI_x64.dll,sha256=uUyYBDCrBM5Y7iSsa0-kVZe-ugKqAGZTjEyEG-syyN8,264536
+speech_core/__init__.py,sha256=kOUAT0oyQ9uRg-C2UJ9fvCstSdxXH0McXD8_Yq8Gn98,3739
+speech_core/__speech_common.py,sha256=weonmVy8kw8CrBBRFUuObTX9D549d5wGSBPf0xCMz4Q,1345
+speech_core/__speech_sapi.py,sha256=_7buu6XXqfX7BV5pNUF6JjjCDHRxfZyYcDKYB5FoiC0,2856
+speech_core/jfwapi64.dll,sha256=wUd0dF_mCDWTlaMmtiULNBvRj3y8BFlTN9v37Pvhqyc,88344
+speech_core/nvdaControllerClient64.dll,sha256=ZKm9Id0BGNLyIFu76s2l-RceAzaOD3CpLIqE6JkmPe0,250416
+speechcore-1.0.2.dist-info/licenses/LICENSE,sha256=fxw1t10x3joYvN2XweZ9gRLkjyvO6g-rXrcOu4DcdJA,1091
+speechcore-1.0.2.dist-info/METADATA,sha256=8M1TnQTju4K8VtcXIuPdT5kTY5x3vlgRcouBrAezXJg,10004
+speechcore-1.0.2.dist-info/WHEEL,sha256=8UP9x9puWI0P1V_d7K2oMTBqfeLNm21CTzZ_Ptr0NXU,101
+speechcore-1.0.2.dist-info/top_level.txt,sha256=TdP6k1aSCdUBU-4sjhk739mhKcw91416hb-5F9uCkCs,12
+speechcore-1.0.2.dist-info/RECORD,,
