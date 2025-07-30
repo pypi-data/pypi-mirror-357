@@ -1,0 +1,70 @@
+---
+title: catfact
+jupyter: python3
+---
+
+```{python}
+# | echo: false
+
+import polars as pl
+import re
+
+
+def strip_style_tags(html: str):
+    # remove everything between <style>...</style> tags
+    return re.sub(r"<style.*?>.*?</style>", "", html, flags=re.DOTALL)
+
+
+html_formatter = get_ipython().display_formatter.formatters["text/html"]
+_ = html_formatter.for_type(
+    pl.DataFrame,
+    lambda df: strip_style_tags(df._repr_html_()),
+)
+```
+
+Categorical wrangling for Python. Supports both Polars and Pandas. Enables categorical and ordinal scales in plotting tools like Plotnine.
+
+catfact addresses some common challenges when working categorical data. Categorical data is useful when you want to display your data in a specific way, like alphabetical, most frequent first, or along a scale. It is a port of the popular R package forcats.
+
+## Installation
+
+```bash
+pip install catfact
+```
+
+## Basic example
+
+```{python}
+import polars as pl
+import catfact as fct
+from catfact.polars.data import starwars
+
+(
+    starwars
+    .group_by("eye_color")
+    .agg(pl.len())
+    .sort("len", descending=True)
+)
+```
+
+```{python}
+from plotnine import ggplot, aes, geom_bar, coord_flip
+
+(
+    ggplot(starwars, aes("eye_color"))
+    + geom_bar()
+    + coord_flip()
+)
+```
+
+```{python}
+(
+    starwars
+    .with_columns(
+        fct.infreq(pl.col("eye_color"))
+    )
+    >> ggplot(aes("eye_color"))
+    + geom_bar()
+    + coord_flip()
+)
+```
