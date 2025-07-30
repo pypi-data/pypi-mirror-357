@@ -1,0 +1,10 @@
+playtest2/__about__.py,sha256=LvTCv3gRsT3s22Fo0KcgYwnOtJ0pbL8Pp8Omuoeg7vo,131
+playtest2/__init__.py,sha256=-WcmjLkxro0bA-4GshYbXn2W75K13Z8p41yviu1uY8k,109
+playtest2/gauge_table.py,sha256=AmMNfPqFWc3hOnoUOr6tqUbCju14R-NGYyRq_sv_4P8,362
+playtest2/steps/__init__.py,sha256=LkHF-BKSyIdoqBtTAJqTYnAaRaqSBkwJuK_LKtAh8tM,953
+playtest2/steps/core.py,sha256=4hdxbOGf6W18kYS5z4Zeg55akQvzVtnP_uCJH2XoVbU,2583
+playtest2/steps/http.py,sha256=W22DJYmvRFpvOmWfRVWDsWz94dj3R0Vwgsbqidyh-kU,1785
+playtest2-0.0.4.dist-info/METADATA,sha256=MyjVtnh_1zUlcEm1mUpEtZyK_Ks6WNdXyPYrd40lbC4,3128
+playtest2-0.0.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+playtest2-0.0.4.dist-info/licenses/LICENSE.txt,sha256=Rk01cUcHZi02UHwYzf_Oan3ciDBHACQ1USWmaFLngPs,1101
+playtest2-0.0.4.dist-info/RECORD,,
