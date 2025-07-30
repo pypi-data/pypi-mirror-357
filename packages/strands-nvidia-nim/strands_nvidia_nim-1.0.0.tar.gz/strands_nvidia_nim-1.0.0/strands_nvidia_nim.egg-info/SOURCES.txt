@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+strands_nvidia_nim/__init__.py
+strands_nvidia_nim/provider.py
+strands_nvidia_nim.egg-info/PKG-INFO
+strands_nvidia_nim.egg-info/SOURCES.txt
+strands_nvidia_nim.egg-info/dependency_links.txt
+strands_nvidia_nim.egg-info/requires.txt
+strands_nvidia_nim.egg-info/top_level.txt

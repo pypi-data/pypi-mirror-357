@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "strands-nvidia-nim"
+version = "1.0.0"
+description = "Nvidia NIM provider for Strands Agents SDK"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+keywords = ["strands", "nvidia", "nim", "llm", "ai", "agents"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "strands>=0.1.0",
+    "litellm>=1.0.0",
+    "typing-extensions>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "black>=22.0",
+    "flake8>=4.0",
+    "mypy>=0.900",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/strands-nvidia-nim"
+Repository = "https://github.com/yourusername/strands-nvidia-nim"
+Issues = "https://github.com/yourusername/strands-nvidia-nim/issues"
+Documentation = "https://github.com/yourusername/strands-nvidia-nim#readme"
