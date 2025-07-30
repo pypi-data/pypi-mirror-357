@@ -1,0 +1,148 @@
+site_name: Perceptrain
+repo_url: "https://github.com/pasqal-io/perceptrain/"
+site_url: "https://pasqal-io.github.io/perceptrain/"
+repo_name: "perceptrain"
+
+nav:
+  - Home: index.md
+
+  - Getting started:
+    - Installation: getting_started/installation.md
+    - Development & Info:
+      - Contributing: getting_started/CONTRIBUTING.md
+      - Code of conduct: getting_started/CODE_OF_CONDUCT.md
+      - License: getting_started/LICENSE.md
+
+  - Tutorials:
+    - tutorials/index.md
+    - Training:
+      - tutorials/training/intro.md
+      - Loss Functions: tutorials/training/loss.md
+      - Tracking: tutorials/training/tracking.md
+      - Optimization Type: tutorials/training/gradient.md
+      - Training Stages Hooks: tutorials/training/hooks.md
+      - Examples: tutorials/training/examples.md
+
+
+    - Data & Configuration:
+      - tutorials/dataconfig/intro.md
+      - TrainConfig: tutorials/dataconfig/config.md
+      - Data: tutorials/dataconfig/data.md
+      - Experiment Tracking: tutorials/dataconfig/tracking.md
+
+    - Callbacks:
+      - tutorials/callbacks/intro.md
+      - List of Callbacks: tutorials/callbacks/default.md
+      - Callbacks with Trainer: tutorials/callbacks/trainer_callbacks.md
+      - Custom Callbacks: tutorials/callbacks/custom.md
+
+    - Distributed Training:
+      - tutorials/distributed/intro.md
+      - Accelerator: tutorials/distributed/accelerator_doc.md
+      - CPU Training:
+        - tutorials/distributed/CPU.md
+        - Single Process: tutorials/distributed/single_cpu.md
+        - Multi Process: tutorials/distributed/multi_cpu.md
+      - GPU Training:
+        - tutorials/distributed/GPU.md
+        - Single GPU: tutorials/distributed/single_gpu.md
+        - Multi GPU: tutorials/distributed/multi_gpu.md
+        - Multi Node: tutorials/distributed/multinode_gpu.md
+
+  - API:
+    - Trainer: api/trainer.md
+    - Configurations: api/config.md
+    - Models: api/models.md
+    - Loss functions: api/loss.md
+    - Accelerator: api/accelerator.md
+    - Callbacks: api/callback.md
+    - Information Content: api/information.md
+
+
+  - Contact: https://github.com/pasqal-io/perceptrain/discussions
+
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  custom_dir: docs/extras/overrides/
+  logo: extras/assets/logo/perceptrain_logo_small_white.svg
+  features:
+  - content.code.annotate
+  - navigation.tabs
+  - navigation.indexes
+  - navigation.sections
+  - content.code.copy
+  - content.code.annotate
+
+  palette:
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: custom
+    accent: custom
+    toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: black
+    accent: custom
+    toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+markdown_extensions:
+- admonition  # for notes
+- footnotes
+- pymdownx.arithmatex: # for mathjax
+    generic: true
+- pymdownx.highlight:
+    anchor_linenums: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- pymdownx.details
+- pymdownx.superfences:
+    custom_fences:
+    - name: python
+      class: python
+      validator: "!!python/name:markdown_exec.validator"
+      format: "!!python/name:markdown_exec.formatter"
+
+plugins:
+- search
+- section-index
+- mkdocstrings:
+    default_handler: python
+    handlers:
+      python:
+        selection:
+          filters:
+            - "!^_"  # exlude all members starting with _
+            - "^__init__$"  # but always include __init__ modules and methods
+            - "^__new__$"  # but always include __init__ modules and methods
+        options:
+          show_root_toc_entry: false
+          heading_level: 3
+          merge_init_into_class: true
+          docstring_section_style: spacy
+
+- markdown-exec
+
+extra:
+ version:
+   provider: mike
+
+# To get nice tabs
+extra_css:
+- extras/css/mkdocstrings.css
+- extras/css/colors.css
+- extras/css/home.css
+
+# For mathjax
+extra_javascript:
+  - extras/javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+watch:
+- perceptrain
