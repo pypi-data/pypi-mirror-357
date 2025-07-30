@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "picept"
+version = "0.1.1"
+description = "AI Agent Reliability Platform - Simulate, test, and optimize AI agents"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Cyrus Azamfar", email = "cyrus@picept.ai"}
+]
+maintainers = [
+    {name = "Cyrus Azamfar", email = "cyrus@picept.ai"}
+]
+keywords = ["ai", "agents", "reliability", "testing", "optimization", "simulation", "failure-detection", "observability"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: System :: Monitoring",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "opentelemetry-api>=1.20.0",
+    "opentelemetry-sdk>=1.20.0",
+    "opentelemetry-exporter-otlp-proto-grpc>=1.20.0",
+    "openinference-instrumentation-langchain>=0.1.0",
+    "opentelemetry-instrumentation-threading>=0.44b0",
+    "opentelemetry-instrumentation-asyncio>=0.44b0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "mypy"]
+
+[project.urls]
+"Homepage" = "https://picept.ai"
+"Documentation" = "https://docs.picept.ai"
+"Repository" = "https://github.com/Picept/picept"
+"Bug Reports" = "https://github.com/Picept/picept/issues"
+"Source" = "https://github.com/Picept/picept"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
