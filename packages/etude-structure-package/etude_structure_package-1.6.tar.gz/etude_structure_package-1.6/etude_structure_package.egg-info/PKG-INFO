@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: etude_structure_package
+Version: 1.6
+Summary: Un package destiné à montrer la structure d'un package
+Author: Georges CAPLANDE
+Author-email: georges.caplande@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
