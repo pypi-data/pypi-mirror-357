@@ -1,0 +1,2 @@
+[console_scripts]
+termnautica=havsalt_termnautica:main
