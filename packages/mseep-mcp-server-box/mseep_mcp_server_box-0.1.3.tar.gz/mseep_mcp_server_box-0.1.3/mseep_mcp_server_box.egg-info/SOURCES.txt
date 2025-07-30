@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+setup.py
+mseep_mcp_server_box.egg-info/PKG-INFO
+mseep_mcp_server_box.egg-info/SOURCES.txt
+mseep_mcp_server_box.egg-info/dependency_links.txt
+mseep_mcp_server_box.egg-info/requires.txt
+mseep_mcp_server_box.egg-info/top_level.txt
+tests/test_box_api_ai.py
+tests/test_box_api_basic.py
+tests/test_box_api_file_ops.py
+tests/test_box_api_folder_ops.py
+tests/test_box_api_read.py
+tests/test_box_api_search.py
+tests/test_box_auth.py

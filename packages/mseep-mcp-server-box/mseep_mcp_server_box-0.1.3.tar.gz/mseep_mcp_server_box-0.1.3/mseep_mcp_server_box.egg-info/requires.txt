@@ -1,0 +1,4 @@
+box-ai-agents-toolkit>=0.0.42
+box-sdk-gen>=1.13.0
+mcp[cli]>=1.6.0
+python-dotenv>=1.1.0
