@@ -1,0 +1,3 @@
+[console_scripts]
+defectpl=defectpl.cli:main
+
