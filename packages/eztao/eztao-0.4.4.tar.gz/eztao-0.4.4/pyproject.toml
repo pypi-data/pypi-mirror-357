@@ -1,0 +1,77 @@
+[tool.poetry]
+name = "eztao"
+version = "0.4.4"
+description = "A toolkit for Active Galactic Nuclei (AGN) time-series analysis."
+authors = ["Weixiang Yu <astro.flyfish@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/ywx649999311/EzTao"
+include = [
+    "LICENSE",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+celerite = ">= 0.3.0"
+matplotlib = "^3.3.0"
+scipy = ">= 1.5"
+numba = ">= 0.57.0"
+importlib-metadata = ">= 2.0.0"
+emcee = ">=3.0.0"
+docutils = "^0.21.2"
+numpy = "^1.26"
+
+[tool.poetry.group.dev.dependencies]
+# pandas = "^1.1.4"
+pre-commit = "^3.5.0"
+black = "^25.0.0"
+ruff = "^0.1.6"
+ipykernel = "^6.29.5"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^6.0.1"
+pytest-cov = "^2.10.1"
+nox = "^2023.4.22"
+nox-poetry = "^1.0.3"
+poetry-plugin-export = "^1.6.0"
+joblib = ">=1.2.0"
+
+[tool.poetry.group.docs.dependencies]
+toml = "^0.10.1"
+Sphinx = "^3.4.1"
+sphinx-rtd-theme = "^0.5.0"
+nbsphinx = ">=0.8.6"
+sphinx-copybutton = "^0.3.1"
+
+[tool.black]
+target-version = ["py39"]
+line-length = 88
+
+[tool.ruff]
+target-version = "py39"
+line-length = 88
+ignore-init-module-imports = true
+ignore = [
+    "E741",    # Allow ambiguous variable names
+    "PLR0911", # Allow many return statements
+    "PLR0913", # Allow many arguments to functions
+    "PLR0915", # Allow many statements
+    "PLR2004", # Allow magic numbers in comparisons
+    "F401", # unused imports
+    "F403", # import *
+    "F405", # undefined import due to F403
+    "F841",
+    "E722",
+    "E731",
+]
+exclude=["docs/conf.py"]
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning",
+]
