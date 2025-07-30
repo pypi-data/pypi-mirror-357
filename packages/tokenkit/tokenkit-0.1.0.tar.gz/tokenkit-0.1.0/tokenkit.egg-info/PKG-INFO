@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: tokenkit
+Version: 0.1.0
+Summary: Calculate and visualize fertility and parity metrics for tokenizers
+Author-email: Ada Zhang <abz200026@gmail.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: transformers
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Dynamic: license-file
+
+# TokenKit
+
+A Python library for computing fertility and parity metrics for language models and translations using tokenizers like LLaMA, T5, and Gemma.
+
+## Install
+
+```bash
+pip install .
+```
+
+## Usage
+
+```python
+from tokenkit import fertilize, paritize, TokenMetrics
+```
