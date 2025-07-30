@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+eq_quizgen.egg-info/PKG-INFO
+eq_quizgen.egg-info/SOURCES.txt
+eq_quizgen.egg-info/dependency_links.txt
+eq_quizgen.egg-info/requires.txt
+eq_quizgen.egg-info/top_level.txt
