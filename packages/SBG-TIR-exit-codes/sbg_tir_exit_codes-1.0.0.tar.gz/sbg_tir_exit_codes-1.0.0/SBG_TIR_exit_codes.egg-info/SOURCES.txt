@@ -1,0 +1,16 @@
+.gitignore
+LICENSE
+README.md
+makefile
+pyproject.toml
+.github/workflows/ci.yml
+.github/workflows/python-publish.yml
+SBG_TIR_exit_codes/SBG_TIR_exit_codes.py
+SBG_TIR_exit_codes/__init__.py
+SBG_TIR_exit_codes/version.txt
+SBG_TIR_exit_codes.egg-info/PKG-INFO
+SBG_TIR_exit_codes.egg-info/SOURCES.txt
+SBG_TIR_exit_codes.egg-info/dependency_links.txt
+SBG_TIR_exit_codes.egg-info/requires.txt
+SBG_TIR_exit_codes.egg-info/top_level.txt
+tests/test_import_SBG_TIR_exit_codes.py
