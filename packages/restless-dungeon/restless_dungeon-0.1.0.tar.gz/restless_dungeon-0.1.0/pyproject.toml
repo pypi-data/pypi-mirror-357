@@ -1,0 +1,16 @@
+[project]
+name = "restless-dungeon"
+version = "0.1.0"
+description = "A text-based dungeon adventure game."
+authors = [{ name = "Dekoder-py", email = "kyleyesmariam@icloud.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.7"
+dependencies = ["rich"]
+
+[project.scripts]
+restless-dungeon = "restless_dungeon.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
