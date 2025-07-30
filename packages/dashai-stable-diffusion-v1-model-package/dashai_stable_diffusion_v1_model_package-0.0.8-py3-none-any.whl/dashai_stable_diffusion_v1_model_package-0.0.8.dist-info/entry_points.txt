@@ -1,0 +1,2 @@
+[dashai.plugins]
+StableDiffusionV1Model = dashai_stable_diffusion_v1_model_package.stable_diffusion_v1_model:StableDiffusionV1Model
