@@ -1,0 +1,119 @@
+Metadata-Version: 2.4
+Name: subnetcalc
+Version: 1.0.0
+Summary: A lightweight and efficient Python tool to perform subnetting operations on IPv4 addresses. It can be used both as a standalone CLI utility and as a reusable module in your Python projects.
+Home-page: https://github.com/recuer0
+Author: recuero
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: summary
+
+# 🧮 SubnetCalc – Fast IP Subnetting Calculator
+
+A lightweight and efficient Python tool to perform subnetting operations on IPv4 addresses.  
+It can be used both as a standalone CLI utility and as a reusable module in your Python projects.
+
+---
+
+## 📦 Features
+
+- Accepts IP addresses with or without CIDR notation (e.g. `192.168.1.1` or `192.168.1.1/24`)
+- Calculates:
+  - IP address
+  - CIDR prefix
+  - Binary and decimal netmask
+  - Network ID
+  - Broadcast address
+  - First and last usable IPs
+  - All usable IPs in the subnet (as a generator)
+- Built with static conversion methods (binary ↔ decimal), reusable without class instantiation
+- Fully functional from the command line or as an importable Python class
+
+---
+
+## 🚀 Usage
+
+### 1. CLI (Command-Line Interface)
+
+```bash
+python3 subnetcalc.py -i 192.168.1.1/24
+[+] IP --> 192.168.1.1
+[+] CIDR --> 24
+[+] Netmask --> 255.255.255.0
+[+] Network ID --> 192.168.1.0
+[+] Broadcast --> 192.168.1.255
+[+] Min / Max IP --> ('192.168.1.1', '192.168.1.254')
+```
+### 2. Import as a Module
+```python
+from subnetcalc import Ip
+
+my_ip = Ip("10.0.0.1/26")
+print(my_ip.network_ip)       # 10.0.0.0
+print(my_ip.broadcast)        # 10.0.0.63
+print(list(my_ip.available_ips))  # List of usable IPs
+```
+***
+## 🔧 Class & Methods
+
+### Class: `Ip`
+
+#### Constructor
+``` python
+ip_instance = Ip("192.168.1.0/24")
+```
+Creates a new subnet object from an IP address string, with or without CIDR.
+##### Attributes
+
+- `ip` → base IP address (string)
+    
+- `cidr` → subnet prefix (e.g. `'24'`)
+    
+- `netmask` → human-readable subnet mask (e.g. `'255.255.255.0'`)
+    
+- `network_ip` → network ID
+    
+- `broadcast` → broadcast address
+    
+- `min_max_ip` → tuple of (first usable, last usable) IPs
+    
+- `available_ips` → generator that yields all usable IPs in the subnet
+
+***
+### Static Methods
+
+These can be called without creating an object:
+
+#### `ip_to_bin(ip: str) → str`
+
+Converts a dotted-decimal IP to its 32-bit binary representation.
+
+#### `bin_to_ip(bin: str) → str`
+
+Converts a 32-bit binary string back to a dotted-decimal IP.
+
+#### `ip_to_dec(ip: str) → int`
+
+Converts a dotted-decimal IP to a 32-bit integer.
+
+#### `dec_to_ip(entero: int) → str`
+
+Converts a 32-bit integer to a dotted-decimal IP.
+***
+## 📁 Example:
+``` python
+from subnetcalc import Ip
+
+ip = Ip("172.16.5.9/28")
+print("Netmask:", ip.netmask)
+print("First usable IP:", ip.min_max_ip[0])
+print("Broadcast:", ip.broadcast)
+
+# Iterate through usable IPs
+for host in ip.available_ips:
+    print(host)
+```
+
