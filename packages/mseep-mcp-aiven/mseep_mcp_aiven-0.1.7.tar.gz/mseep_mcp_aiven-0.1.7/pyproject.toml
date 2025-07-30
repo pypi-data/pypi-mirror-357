@@ -1,0 +1,13 @@
+[tool.hatch.build.targets.wheel]
+packages = [
+    "mcp_aiven",
+]
+
+[tool.ruff]
+line-length = 101
+
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"

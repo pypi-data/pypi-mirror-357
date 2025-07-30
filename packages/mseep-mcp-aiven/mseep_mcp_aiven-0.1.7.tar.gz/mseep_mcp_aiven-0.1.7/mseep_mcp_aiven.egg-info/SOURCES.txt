@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_mcp_aiven.egg-info/PKG-INFO
+mseep_mcp_aiven.egg-info/SOURCES.txt
+mseep_mcp_aiven.egg-info/dependency_links.txt
+mseep_mcp_aiven.egg-info/requires.txt
+mseep_mcp_aiven.egg-info/top_level.txt
+tests/test_example.py
