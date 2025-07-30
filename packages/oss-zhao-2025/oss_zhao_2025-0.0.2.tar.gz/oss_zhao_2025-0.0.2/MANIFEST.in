@@ -1,0 +1,5 @@
+# 把根目录下的所有 .py 都包括进 sdist
+include *.py
+
+# 包含 chromedriver 目录及其所有 zip
+recursive-include chromedriver *.zip
