@@ -1,0 +1,2 @@
+[console_scripts]
+mm-cryptography = mm_cryptography.cli.main:app

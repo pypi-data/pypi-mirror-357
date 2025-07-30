@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: mm-cryptography
+Version: 0.1.0
+Summary: Python cryptography library with two independent modules: OpenSSL-compatible AES-256-CBC encryption and Fernet symmetric encryption
+Requires-Python: >=3.13
+Requires-Dist: cryptography~=45.0.4
+Provides-Extra: cli
+Requires-Dist: typer~=0.16.0; extra == 'cli'
