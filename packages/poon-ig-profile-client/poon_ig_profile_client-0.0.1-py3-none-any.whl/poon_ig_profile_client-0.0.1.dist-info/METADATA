@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: poon-ig-profile-client
+Version: 0.0.1
+Summary: Some description
+Home-page: https://github.com/username/repo.git
+Author: username
+Author-email: email@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 3 - Alpha
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary

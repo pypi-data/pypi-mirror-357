@@ -1,0 +1,10 @@
+IgProfileClient/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+IgProfileClient/client.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+IgProfileClient/version.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+poon_ig_profile_client-0.0.1.dist-info/licenses/LICENSE.md,sha256=G0B8OQ7od-UHSpxSe1BiAH-3ZgsI6bovoiHrcYPgaIU,1088
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_get_common_profile.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+poon_ig_profile_client-0.0.1.dist-info/METADATA,sha256=lEyEftnlD03crXJF28R58N0yZo_hMxaUGKDqTw9shok,645
+poon_ig_profile_client-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+poon_ig_profile_client-0.0.1.dist-info/top_level.txt,sha256=xLPCJsnJFH4vJ-ZTqvCoF3ageojp8fKwt0KM-plYFTE,22
+poon_ig_profile_client-0.0.1.dist-info/RECORD,,
