@@ -1,0 +1,155 @@
+.taskdetails {
+  font-family: sans-serif;
+  margin: 10px;
+}
+
+.taskdetails .error {
+  display: none;
+}
+
+.taskdetails .finish {
+  display: none;
+}
+
+.taskdetails .metricdata {
+  display: none;
+}
+
+.taskdetails rect.scheduler-delay-proportion {
+  fill: #80b1d3;
+  stroke: #6b94b0;
+}
+
+.taskdetails rect.deserialization-time-proportion {
+  fill: #fb8072;
+  stroke: #d26b5f;
+}
+
+.taskdetails rect.shuffle-read-time-proportion {
+  fill: #fdb462;
+  stroke: #d39651;
+}
+
+.taskdetails rect.executor-runtime-proportion {
+  fill: #b3de69;
+  stroke: #95b957;
+}
+
+.taskdetails rect.shuffle-write-time-proportion {
+  fill: #ffed6f;
+  stroke: #d5c65c;
+}
+
+.taskdetails rect.serialization-time-proportion {
+  fill: #bc80bd;
+  stroke: #9d6b9e;
+}
+
+.taskdetails rect.getting-result-time-proportion {
+  fill: #8dd3c7;
+  stroke: #75b0a6;
+}
+
+.taskdetails .taskbarsvg {
+  height: 40px;
+  width: 100%;
+  box-shadow: 0 0 11px 0 rgb(119 119 119 / 36%);
+}
+
+.legend-area {
+  font-size: small;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.task-dialog {
+  padding: 0;
+  box-shadow: 0 0 6px 0 rgb(128 128 128 / 83%);
+}
+
+.task-dialog .ui-corner-all {
+  border-radius: 0;
+}
+
+.task-dialog .ui-dialog-content.ui-widget-content {
+  padding: 0;
+}
+
+.task-dialog .ui-widget-header {
+  border: 1px solid rgb(243 118 0);
+  background: #f37600;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.taskdetails td {
+  text-align: center;
+  border: 1px solid #e4e4e4;
+  padding: 5px 20px;
+}
+
+.taskdetails th {
+  text-align: center;
+  border: 1px solid #e4e4e4;
+  padding: 5px 20px;
+}
+
+.taskdetails .tasktitle {
+  font-size: medium;
+  text-align: center;
+}
+
+.taskdetails .tasktitlestage {
+  padding: 10px;
+  font-size: small;
+}
+
+.taskdetails table {
+  width: 100%;
+}
+
+.taskdetails .running {
+  background-color: #42a5f5;
+}
+
+.taskdetails .failed {
+  background-color: #db3636;
+}
+
+.taskdetails .killed {
+  background-color: #db3636;
+}
+
+.taskdetails .completed {
+  background-color: #20b520;
+}
+
+.taskdetails .success {
+  display: none;
+  background-color: #20b520;
+}
+
+.taskdetails .unknown {
+  background-color: #9c27b0;
+}
+
+.taskdetails .completed,
+.taskdetails .failed,
+.taskdetails .killed,
+.taskdetails .running,
+.taskdetails .unknown,
+.taskdetails .success {
+  font-size: 75%;
+  padding: 4px 8px;
+  color: white;
+  border-radius: 2px;
+}
+
+.taskdetails .legend-area table td:nth-of-type(1) {
+  width: 20px;
+}
+
+.taskdetails .legend-area svg {
+  height: 15px;
+}
