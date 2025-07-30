@@ -1,0 +1,3 @@
+dist
+docs
+intel_sphinx_theme
