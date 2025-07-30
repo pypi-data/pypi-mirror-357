@@ -1,0 +1,68 @@
+Metadata-Version: 2.4
+Name: Persistify
+Version: 1.0
+Summary: Library for saving Python data structures as Python code.
+Author: SuperWhiteDev
+License: MIT License
+        
+        Copyright (c) 2025 SuperWhite
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Keywords: persistence,python-code,serialization
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: pycryptodome>=3.10.1
+Description-Content-Type: text/markdown
+
+# Persistify
+
+Persistify is a Python library for saving Python data structures and user-defined classes as valid Python code.  
+It allows you to serialize various data types (lists, dictionaries, sets, custom objects, etc.) into a human‐readable string format that can later be evaluated back into the original Python objects.
+
+## Features
+
+- **Data Serialization:** Converts common Python data structures into executable Python code.
+- **Custom Object Support:** Automatically handles serialization of custom objects with simple constructor signatures.
+- **Readable Format:** The generated code is formatted in a way that makes it easy to understand and modify if necessary.
+- **Secure Persistence (Optional):** With additional secure functions (e.g. using encryption), you have the option to safely store sensitive data.
+
+## Installation
+
+Clone the repository and install the package:
+
+## Examples
+
+You can find examples of using Persistify in the 'example' folder.
+
+## Download
+
+First method is Gihub:
+```bash
+git clone https://github.com/SuperWhiteDev/Persistify.git
+cd Persistify
+pip install .
+```
+
+From PyPI:
+```bash
+pip install Persistify
+```
