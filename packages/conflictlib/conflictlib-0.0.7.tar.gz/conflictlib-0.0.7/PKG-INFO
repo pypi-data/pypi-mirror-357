@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: conflictlib
+Version: 0.0.7
+Summary: Reusable engine for resource conflict detection
+Author: Your Name
+Author-email: Wade Tait <wade.tait@braingu.com>
+License-Expression: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: rule-engine>=4.5.0
+
+# conflictlib
+
+Reusable Python library for checking resource allocation conflicts.
+
+### Developer Setup
+
+```bash
+# Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install the local package in editable mode
+pip install -e .
+
+# Run tests and linting
+make test
+make lint
+```
