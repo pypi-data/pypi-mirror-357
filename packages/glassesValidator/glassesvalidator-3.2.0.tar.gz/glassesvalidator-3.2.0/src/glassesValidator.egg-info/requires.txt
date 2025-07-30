@@ -1,0 +1,10 @@
+glassesTools[GUI]~=1.23.1
+aiosqlite
+pathvalidate
+pebble
+
+[:sys_platform != "win32"]
+uvloop
+
+[:sys_platform == "darwin"]
+pyobjc-framework-Cocoa
