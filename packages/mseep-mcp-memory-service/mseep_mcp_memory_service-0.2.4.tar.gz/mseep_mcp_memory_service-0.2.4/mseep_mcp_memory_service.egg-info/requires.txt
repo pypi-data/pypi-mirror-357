@@ -1,0 +1,4 @@
+chromadb==0.5.23
+sentence-transformers
+tokenizers==0.20.3
+mcp<2.0.0,>=1.0.0
