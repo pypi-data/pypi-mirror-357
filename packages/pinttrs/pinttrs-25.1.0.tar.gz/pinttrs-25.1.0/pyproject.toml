@@ -1,0 +1,91 @@
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[project]
+authors = [{ name = "Vincent Leroy", email = "vincent.leroy@rayference.eu" }]
+classifiers = [
+  "Development Status :: 6 - Mature",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = ["attrs>=21.3", "pint>=0.16"]
+description = "Pint meets attrs."
+keywords = []
+license = { file = "LICENSE" }
+name = "pinttrs"
+readme = "README.md"
+requires-python = ">=3.8"
+version = "25.1.0"
+
+[project.urls]
+Changelog = "https://github.com/rayference/pinttrs/blob/main/CHANGELOG.md"
+Documentation = "https://pinttrs.readthedocs.io"
+Homepage = "https://github.com/rayference/pinttrs"
+Issues = "https://github.com/rayference/pinttrs/issues"
+Repository = "https://github.com/rayference/pinttrs"
+
+[tool.coverage.html]
+directory = "./reports/coverage/html"
+
+[tool.coverage.json]
+output = "./reports/coverage/coverage.json"
+
+[tool.coverage.paths]
+equivalent = ["src/", "__pypackages__/"]
+
+[tool.coverage.report]
+omit = ["src/*/__init__.py", "src/*/_version.py"]
+precision = 2
+show_missing = true
+skip_covered = true
+
+[tool.coverage.run]
+branch = true
+parallel = true
+source = ["src/"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pinttrs", "src/pinttr"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pytest.ini_options]
+addopts = "--doctest-glob='*.rst'"
+norecursedirs = [".git", ".env", "dist", "build", "__pypackages__"]
+python_files = ["test_*.py", "*_test.py", "tests.py"]
+testpaths = ["tests", "docs"]
+
+[tool.ruff.lint]
+select = ["I", "E", "F"]
+
+[tool.ruff.lint.isort]
+relative-imports-order = "closest-to-furthest"
+
+[dependency-groups]
+dev = [
+  "furo>=2023",
+  "myst-parser>=0.16",
+  "pytest-cov>=3.0",
+  "pytest>=6.2",
+  "sphinx-autobuild>=2021.3",
+  "sphinx-autodoc-typehints",
+  "sphinx-copybutton>=0.4",
+  "sphinx>=7",
+  "xdoctest>=0.15.0",
+  "setuptools>=69.1.1",
+  "taskipy>=1.10",
+]
+
+[tool.taskipy.tasks]
+docs = "sphinx-build -b html docs docs/_build/html"
+docs-clean = "rm -rf docs/_build/"
+docs-serve = "sphinx-autobuild docs docs/_build/html"
+test = "pytest"
