@@ -1,0 +1,2 @@
+[console_scripts]
+git_blame_search = git_blame_tool:cli
