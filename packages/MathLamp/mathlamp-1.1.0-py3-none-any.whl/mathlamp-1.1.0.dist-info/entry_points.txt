@@ -1,0 +1,3 @@
+[console_scripts]
+lamp=mathlamp.main:app
+

@@ -1,0 +1,11 @@
+mathlamp/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mathlamp/main.py,sha256=HuxqhRRygysaWuBLh-P2UWqp04jeg_DSzCkPymrUV6E,14108
+mathlamp/stdlamp/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mathlamp/stdlamp/grammar.lark,sha256=P_N0AtC6GoWBNZja6oLM6o3NGBe_hktAkbng6zwXsnc,1926
+mathlamp-1.1.0.dist-info/entry_points.txt,sha256=LRSkBst8pCLHzNK79UEYCqI9JzaREXztQKOCHWjYpKk,42
+mathlamp-1.1.0.dist-info/LICENSE,sha256=pktfB9zyoBiRi06UXTNlodGnIGGOt2FOoP41sbluwnk,1098
+mathlamp-1.1.0.dist-info/LICENSES/lark-LICENSE,sha256=LFfWFbPxSHW8BQIk-Y9oZGFh1v-FRlzXSxyR4VVHKoc,1071
+mathlamp-1.1.0.dist-info/LICENSES/typer-LICENSE,sha256=VMSD7-HEoWXL7lrIXNYjLrZ8PwCgElUhF1b1Np5VuHU,1105
+mathlamp-1.1.0.dist-info/METADATA,sha256=nfOiVDPPb9WRQbkTNePEnJEqtxZN6iGP7EcZEOXrJWI,1801
+mathlamp-1.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+mathlamp-1.1.0.dist-info/RECORD,,
