@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+setup.py
+mseep_mcp_server_code_assist.egg-info/PKG-INFO
+mseep_mcp_server_code_assist.egg-info/SOURCES.txt
+mseep_mcp_server_code_assist.egg-info/dependency_links.txt
+mseep_mcp_server_code_assist.egg-info/requires.txt
+mseep_mcp_server_code_assist.egg-info/top_level.txt
+tests/__init__.py
+tests/test_base_tools.py
+tests/test_dir_tools.py
+tests/test_file_operations.py
+tests/test_git_tools.py
+tests/test_server.py
+tests/test_xml_parser.py

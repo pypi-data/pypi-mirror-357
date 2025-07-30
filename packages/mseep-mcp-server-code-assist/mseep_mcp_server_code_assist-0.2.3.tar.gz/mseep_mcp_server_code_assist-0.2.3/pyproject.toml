@@ -1,0 +1,52 @@
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "src",
+]
+asyncio_mode = "strict"
+testpaths = [
+    "tests",
+]
+
+[tool.ruff]
+line-length = 200
+indent-width = 4
+fix = true
+preview = true
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "W",
+    "C90",
+    "C",
+    "ISC",
+    "T10",
+    "A",
+    "UP",
+]
+ignore = [
+    "C416",
+    "C408",
+]
+fixable = [
+    "ALL",
+]
+unfixable = []
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.hatch.build.targets]
