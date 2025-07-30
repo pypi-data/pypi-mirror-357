@@ -1,0 +1,7 @@
+gaia2_pytorch/__init__.py,sha256=XPePg3sv-e_ooDMPOf2U-ykKc3KIAxE5X2WB3Nl8lng,90
+gaia2_pytorch/gaia2.py,sha256=pAiTC6SxXxufhDhrcfVBIGAE-aBVc7Xl1Cvlf717x4k,32276
+gaia2_pytorch/tensor_typing.py,sha256=2aUeDq34TmWeurXF9E93Gj_be3houMePK1ZsJuV3-d4,447
+gaia2_pytorch-0.0.29.dist-info/METADATA,sha256=_gg-o6CThtJUJ40DjeCYUQr5XqP3ve0wBlC0FY9cx1w,5521
+gaia2_pytorch-0.0.29.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+gaia2_pytorch-0.0.29.dist-info/licenses/LICENSE,sha256=1yCiA9b5nhslTavxPjsQAO-wpOnwJR9-l8LTVi7GJuk,1066
+gaia2_pytorch-0.0.29.dist-info/RECORD,,
