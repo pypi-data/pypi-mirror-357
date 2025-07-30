@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+slugify_fr/__init__.py
+slugify_fr/core.py
+slugify_fr.egg-info/PKG-INFO
+slugify_fr.egg-info/SOURCES.txt
+slugify_fr.egg-info/dependency_links.txt
+slugify_fr.egg-info/top_level.txt
+tests/test_slugify.py

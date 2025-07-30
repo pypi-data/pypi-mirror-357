@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slugify-fr"
+version = "0.1.0"
+description = "Générateur de slugs URL-friendly optimisé pour le français"
+readme = "README.md"
+authors = [
+    {name = "attoisse", email = "attoissemohamed@gmail.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing",
+]
+keywords = ["slug", "url", "french", "francais", "text-processing"]
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/ATTOISSE"
+Repository = "https://github.com/ATTOISSE/slugify-fr"
+Issues = "https://github.com/ATTOISSE/slugify-fr/issues"
+
+[tool.setuptools.packages.find]
+include = ["slugify_fr*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
