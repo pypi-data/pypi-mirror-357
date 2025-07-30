@@ -1,0 +1,18 @@
+[project]
+name = "nvat"  # ✅ fix spelling from "adden" to "addon"
+version = "1.0.1"
+description = "An NVDA addon creator tool"
+authors = [{name = "Ashu Choudhury", email = "ashu@ashuchoudhury.in"}]
+dependencies = ["requests"]
+requires-python = ">=3.8"
+readme = "README.md"
+
+[project.scripts]
+nvat = "nvat.main:main"
+
+[tool.setuptools]
+packages = ["nvat"]
+include-package-data = true  # ✅ this enables non-code file inclusion
+
+[tool.setuptools.package-data]
+nvat = ["template/**/*"]  # ✅ recursively include everything under template/
