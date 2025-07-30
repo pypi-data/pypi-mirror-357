@@ -1,0 +1,10 @@
+numpy
+pandas
+openpyxl
+tqdm
+pyteomics[XML]
+biopython
+biopandas
+
+[gui]
+streamlit
