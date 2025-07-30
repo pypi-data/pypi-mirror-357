@@ -1,0 +1,15 @@
+symm_learning/linalg.py,sha256=JUxEGaNmNHoDLbIl1nS2RR88r5akFoyywQaLYQvJLls,11216
+symm_learning/representation_theory.py,sha256=XIWSsj7NBe8Oh1XdevMJja6d35L1v4_LKqwwnms18l4,22917
+symm_learning/stats.py,sha256=Exy5pi2AnuxqMoQQO31Pef7JoBU364C2Jws__8_OVO8,12573
+symm_learning/utils.py,sha256=VxtXzJFAPlbjyuhUhaVePI-KpySfE3r2Yw6fbPxMIUs,297
+symm_learning/models/__init__.py,sha256=AsNifGqTERaTJTLjjj5A7PZ4N-CvzfmtwtWF0vmxAow,99
+symm_learning/models/emlp.py,sha256=KFclXoOR1xA5bdtyWB0WAln6qxJSMrJmJvqNxkdLc8k,8635
+symm_learning/models/imlp.py,sha256=xV5fmxLla9cweyf64VDzyDs6uBoO-mLUgH79gZ7wOHU,3835
+symm_learning/nn/__init__.py,sha256=0dUrePYN_qamDvZNLGrc4UZznGiCMutq-Kg7kRep-AA,409
+symm_learning/nn/conv.py,sha256=Z-2AxJR-9R4HNl9R58N6XgzsZt1xF1dkKb7dK2wD5l4,14675
+symm_learning/nn/disentangled.py,sha256=_6LcKoONWnIqMDjhrXN2XTb-v2Ds6mVCkL6z-pkMir8,2920
+symm_learning/nn/equiv_multivariate_normal.py,sha256=sMM-7cMeVXb_-Y7zFCn-ZuN1-eChOT5XVxeUkLEJP7c,10539
+symm_learning/nn/pooling.py,sha256=2pgX-ifsS4fmhel4KUd5Si1reOjQN33nkOFTaglKrhY,5839
+symm_learning-0.2.6.dist-info/METADATA,sha256=AZ4fWmMFqR5I8dUM-k3EnRjdmgTreJ9EDV7MsLwfgdA,6457
+symm_learning-0.2.6.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+symm_learning-0.2.6.dist-info/RECORD,,
