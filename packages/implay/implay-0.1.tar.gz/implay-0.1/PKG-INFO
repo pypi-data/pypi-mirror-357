@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: implay
+Version: 0.1
+Home-page: https://subinek.com/
+Author: subin erattakulangara
+Requires-Dist: ipywidgets
+Requires-Dist: opencv-python
+Requires-Dist: IPython
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-dist
