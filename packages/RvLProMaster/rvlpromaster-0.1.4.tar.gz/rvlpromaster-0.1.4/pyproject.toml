@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "RvLProMaster"
+version = "0.1.4"
+description = "A Telegram Bot API for Python"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Yudho Patrianto", email = "kydh01123@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp[speedups]",
+    "python-dotenv",
+    "telegraph",
+    "openai",
+    "google-genai",
+    "markdown",
+    "yt-dlp",
+    "Pillow"
+]
+
+[project.urls]
+Homepage = "https://github.com/YudhoPRJKT-Teams/RvLProMaster"
+Source = "https://github.com/YudhoPRJKT-Teams/RvLProMaster"
+Issues = "https://github.com/YudhoPRJKT-Teams/RvLProMaster/issues"
