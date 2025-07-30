@@ -1,0 +1,29 @@
+marks:
+- auth
+stages:
+- name: Get auth token
+  request:
+    data:
+      password: '{password}'
+      username: '{username}'
+    method: POST
+    url: '{host}/auth/token'
+  response:
+    save:
+      json:
+        token: access_token
+    status_code: 200
+- name: Import a project
+  request:
+    headers:
+      Authorization: Bearer {token}
+    json:
+      id: proj-123
+      title: Urban Heat Island Mitigation Plan
+    method: POST
+    url: '{host}/v2/api/projects/import'
+  response:
+    status_code:
+    - 200
+    - 409
+test_name: import_project_v2_api_projects_import_post

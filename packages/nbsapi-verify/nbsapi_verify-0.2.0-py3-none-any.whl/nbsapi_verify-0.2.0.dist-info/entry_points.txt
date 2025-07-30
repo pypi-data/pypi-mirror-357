@@ -1,0 +1,2 @@
+[console_scripts]
+nbsapi_verify = nbsapi_verify.cli:cli
