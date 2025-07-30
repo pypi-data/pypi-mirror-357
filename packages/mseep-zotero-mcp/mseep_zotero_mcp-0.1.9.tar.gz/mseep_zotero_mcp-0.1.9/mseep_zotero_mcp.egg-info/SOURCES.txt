@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_zotero_mcp.egg-info/PKG-INFO
+mseep_zotero_mcp.egg-info/SOURCES.txt
+mseep_zotero_mcp.egg-info/dependency_links.txt
+mseep_zotero_mcp.egg-info/requires.txt
+mseep_zotero_mcp.egg-info/top_level.txt
+tests/__init__.py
+tests/conftest.py
+tests/test_client.py
+tests/test_item_operations.py
+tests/test_search.py
