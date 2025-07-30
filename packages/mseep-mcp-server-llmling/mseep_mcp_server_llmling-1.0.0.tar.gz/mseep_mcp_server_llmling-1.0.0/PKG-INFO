@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: mseep-mcp-server-llmling
+Version: 1.0.0
+Summary: MCP (Model context protocol) server with LLMling backend
+Home-page: 
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Keywords: mseep
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: fastapi[standard]>=0.115.6
+Requires-Dist: universal-pathlib>=0.2.5
+Requires-Dist: uvicorn
+Requires-Dist: llmling>=1.0.0
+Requires-Dist: mcp>=1.1.0
+Requires-Dist: pydantic
+Requires-Dist: logfire>=2.6.2
+Requires-Dist: websockets>=14.1
+Requires-Dist: upathtools[httpx]
+Requires-Dist: fastmcp>=2.3.4
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Package managed by MseeP.ai
