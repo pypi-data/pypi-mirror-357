@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_BigGo_MCP_Server.egg-info/PKG-INFO
+mseep_BigGo_MCP_Server.egg-info/SOURCES.txt
+mseep_BigGo_MCP_Server.egg-info/dependency_links.txt
+mseep_BigGo_MCP_Server.egg-info/requires.txt
+mseep_BigGo_MCP_Server.egg-info/top_level.txt
+test/__init__.py
+test/helper.py
+test/test_api_ret.py
+test/test_responses.py
+test/test_services.py
+test/test_setting.py
+test/test_tools.py
