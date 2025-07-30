@@ -1,0 +1,13 @@
+zodic/__init__.py,sha256=bl_kfkJR0OektBrLUhwGFzBDwqfLDEK6T_KsMulHZ5s,1249
+zodic/core/__init__.py,sha256=Xs1tYzqWOQiRm8kmcFFJL4awBh6d0fDogFe8DFOvY1k,317
+zodic/core/base.py,sha256=geBY-kfKU3mgW9daWMZ1uZtg2NjvdpA7BhvFTfxBtso,6321
+zodic/core/errors.py,sha256=jAQ7LcrQ5k4U67ea2O9Myg4WbLj-x6wpTRGyofr4KWo,3519
+zodic/core/types.py,sha256=o0XWd2OJiidDyd33BoftaBG_OiyrKkV550A5idXQs_0,2659
+zodic/schemas/__init__.py,sha256=J0T2-lRX_gYqY2edliGMxlzMDNE1Z6Lnp7zst0yWcBk,444
+zodic/schemas/collections.py,sha256=I8OzrMMx3vAL8eytVJn-j3JIwzH0vijh7YGbQWhenxI,8071
+zodic/schemas/primitives.py,sha256=RWiwmSQPBISOp3yPPXHvD8u1a-NwMXXATxiD3nAk8FE,6733
+zodic/schemas/special.py,sha256=lLV5hCi6ZjA3k5JUVrHojQh1Y1B9PE9w3FbuSX8IE-Y,2900
+zodic-0.1.0.dist-info/LICENSE,sha256=RNq2fjHCxpaYhvg1PVEBBUQ12C3gVGiz8aRxDFo9T2w,1094
+zodic-0.1.0.dist-info/METADATA,sha256=cQgMjgHtM1CZllOkpzJBC9JI8vHoqeTSpRXR1zaz3B8,7349
+zodic-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+zodic-0.1.0.dist-info/RECORD,,
