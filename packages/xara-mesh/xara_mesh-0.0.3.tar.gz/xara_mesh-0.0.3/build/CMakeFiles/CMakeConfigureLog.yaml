@@ -1,0 +1,218 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Darwin - 24.5.0 - arm64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /Users/claudio/miniforge3/envs/py313/bin/arm64-apple-darwin20.0.0-clang 
+      Build flags: -ftree-vectorize;-fPIC;-fstack-protector-strong;-O2;-pipe;-isystem;/Users/claudio/miniforge3/envs/py313/include
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /Users/claudio/packages/xara_mesh/build/CMakeFiles/4.0.1/CompilerIdC/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/Users/claudio/packages/xara_mesh/build/CMakeFiles/CMakeScratch/TryCompile-r18HnL"
+      binary: "/Users/claudio/packages/xara_mesh/build/CMakeFiles/CMakeScratch/TryCompile-r18HnL"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-ftree-vectorize -fPIC -fstack-protector-strong -O2 -isystem /Users/claudio/miniforge3/envs/py313/include"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/claudio/miniforge3/envs/py313/lib -L/Users/claudio/miniforge3/envs/py313/lib"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "15.0"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/claudio/packages/xara_mesh/build/CMakeFiles/CMakeScratch/TryCompile-r18HnL'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3cfca/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3cfca.dir/build.make CMakeFiles/cmTC_3cfca.dir/build
+        Building C object CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o
+        /Users/claudio/miniforge3/envs/py313/bin/arm64-apple-darwin20.0.0-clang   -ftree-vectorize -fPIC -fstack-protector-strong -O2 -isystem /Users/claudio/miniforge3/envs/py313/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=15.0   -v -Wl,-v -MD -MT CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        clang version 18.1.8
+        Target: arm64-apple-darwin20.0.0
+        Thread model: posix
+        InstalledDir: /Users/claudio/miniforge3/envs/py313/bin
+        arm64-apple-darwin20.0: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+         (in-process)
+         "/Users/claudio/miniforge3/envs/py313/bin/clang-18" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=14.4 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fbuiltin-headers-in-system-modules -fdefine-target-os-macros -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +complxnum -target-feature +fp-armv8 -target-feature +fullfp16 -target-feature +fp16fml -target-feature +jsconv -target-feature +lse -target-feature +pauth -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/claudio/packages/xara_mesh/build/CMakeFiles/CMakeScratch/TryCompile-r18HnL -target-linker-version 951.9 -v -fcoverage-compilation-dir=/Users/claudio/packages/xara_mesh/build/CMakeFiles/CMakeScratch/TryCompile-r18HnL -resource-dir /Users/claudio/miniforge3/envs/py313/lib/clang/18 -dependency-file CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -sys-header-deps -isystem /Users/claudio/miniforge3/envs/py313/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Users/claudio/miniforge3/envs/py313/lib/clang/18/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -O2 -ferror-limit 19 -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target arm64-apple-darwin24.5.0
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /Users/claudio/miniforge3/envs/py313/include
+         /Users/claudio/miniforge3/envs/py313/lib/clang/18/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
+        End of search list.
+        Linking C executable cmTC_3cfca
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3cfca.dir/link.txt --verbose=1
+        clang version 18.1.8
+        Target: arm64-apple-darwin20.0.0
+        Thread model: posix
+        InstalledDir: /Users/claudio/miniforge3/envs/py313/bin
+         "/Users/claudio/miniforge3/envs/py313/bin/arm64-apple-darwin20.0.0-ld" -demangle -lto_library /Users/claudio/miniforge3/envs/py313/lib/libLTO.18.1.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 14.4 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_3cfca -L/Users/claudio/miniforge3/envs/py313/lib -search_paths_first -headerpad_max_install_names -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/claudio/miniforge3/envs/py313/lib -v CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -lSystem /Users/claudio/miniforge3/envs/py313/lib/clang/18/lib/darwin/libclang_rt.osx.a
+        @(#)PROGRAM:ld  PROJECT:ld64-951.9
+        BUILD 22:08:22 Feb  3 2025
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+        Library search paths:
+        	/Users/claudio/miniforge3/envs/py313/lib
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+        Framework search paths:
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/
+        /Users/claudio/miniforge3/envs/py313/bin/arm64-apple-darwin20.0.0-clang -ftree-vectorize -fPIC -fstack-protector-strong -O2 -isystem /Users/claudio/miniforge3/envs/py313/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=15.0 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/claudio/miniforge3/envs/py313/lib -L/Users/claudio/miniforge3/envs/py313/lib -v -Wl,-v CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -o cmTC_3cfca
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:122 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Effective list of requested architectures (possibly empty)  : ""
+      Effective list of architectures found in the ABI info binary: "arm64"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:191 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/Users/claudio/miniforge3/envs/py313/include]
+          add: [/Users/claudio/miniforge3/envs/py313/lib/clang/18/include]
+          add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        end of search list found
+        collapse include dir [/Users/claudio/miniforge3/envs/py313/include] ==> [/Users/claudio/miniforge3/envs/py313/include]
+        collapse include dir [/Users/claudio/miniforge3/envs/py313/lib/clang/18/include] ==> [/Users/claudio/miniforge3/envs/py313/lib/clang/18/include]
+        collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        implicit include dirs: [/Users/claudio/miniforge3/envs/py313/include;/Users/claudio/miniforge3/envs/py313/lib/clang/18/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/Users/claudio/packages/xara_mesh/build/CMakeFiles/CMakeScratch/TryCompile-r18HnL']
+        ignore line: []
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3cfca/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3cfca.dir/build.make CMakeFiles/cmTC_3cfca.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/Users/claudio/miniforge3/envs/py313/bin/arm64-apple-darwin20.0.0-clang   -ftree-vectorize -fPIC -fstack-protector-strong -O2 -isystem /Users/claudio/miniforge3/envs/py313/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=15.0   -v -Wl -v -MD -MT CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang version 18.1.8]
+        ignore line: [Target: arm64-apple-darwin20.0.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Users/claudio/miniforge3/envs/py313/bin]
+        ignore line: [arm64-apple-darwin20.0: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+        ignore line: [ (in-process)]
+        ignore line: [ "/Users/claudio/miniforge3/envs/py313/bin/clang-18" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=14.4 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fbuiltin-headers-in-system-modules -fdefine-target-os-macros -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +complxnum -target-feature +fp-armv8 -target-feature +fullfp16 -target-feature +fp16fml -target-feature +jsconv -target-feature +lse -target-feature +pauth -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/claudio/packages/xara_mesh/build/CMakeFiles/CMakeScratch/TryCompile-r18HnL -target-linker-version 951.9 -v -fcoverage-compilation-dir=/Users/claudio/packages/xara_mesh/build/CMakeFiles/CMakeScratch/TryCompile-r18HnL -resource-dir /Users/claudio/miniforge3/envs/py313/lib/clang/18 -dependency-file CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -sys-header-deps -isystem /Users/claudio/miniforge3/envs/py313/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Users/claudio/miniforge3/envs/py313/lib/clang/18/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -O2 -ferror-limit 19 -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target arm64-apple-darwin24.5.0]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /Users/claudio/miniforge3/envs/py313/include]
+        ignore line: [ /Users/claudio/miniforge3/envs/py313/lib/clang/18/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_3cfca]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3cfca.dir/link.txt --verbose=1]
+        ignore line: [clang version 18.1.8]
+        ignore line: [Target: arm64-apple-darwin20.0.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Users/claudio/miniforge3/envs/py313/bin]
+        link line: [ "/Users/claudio/miniforge3/envs/py313/bin/arm64-apple-darwin20.0.0-ld" -demangle -lto_library /Users/claudio/miniforge3/envs/py313/lib/libLTO.18.1.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 14.4 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_3cfca -L/Users/claudio/miniforge3/envs/py313/lib -search_paths_first -headerpad_max_install_names -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/claudio/miniforge3/envs/py313/lib -v CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -lSystem /Users/claudio/miniforge3/envs/py313/lib/clang/18/lib/darwin/libclang_rt.osx.a]
+          arg [/Users/claudio/miniforge3/envs/py313/bin/arm64-apple-darwin20.0.0-ld] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-lto_library] ==> ignore, skip following value
+          arg [/Users/claudio/miniforge3/envs/py313/lib/libLTO.18.1.dylib] ==> skip value of -lto_library
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-platform_version] ==> ignore
+          arg [macos] ==> ignore
+          arg [15.0.0] ==> ignore
+          arg [14.4] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk] ==> ignore
+          arg [-mllvm] ==> ignore
+          arg [-enable-linkonceodr-outlining] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_3cfca] ==> ignore
+          arg [-L/Users/claudio/miniforge3/envs/py313/lib] ==> dir [/Users/claudio/miniforge3/envs/py313/lib]
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-dead_strip_dylibs] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/Users/claudio/miniforge3/envs/py313/lib] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lSystem] ==> lib [System]
+          arg [/Users/claudio/miniforge3/envs/py313/lib/clang/18/lib/darwin/libclang_rt.osx.a] ==> lib [/Users/claudio/miniforge3/envs/py313/lib/clang/18/lib/darwin/libclang_rt.osx.a]
+        ignore line: [@(#)PROGRAM:ld  PROJECT:ld64-951.9]
+        ignore line: [BUILD 22:08:22 Feb  3 2025]
+        ignore line: [configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)]
+        ignore line: [Library search paths:]
+        ignore line: [	/Users/claudio/miniforge3/envs/py313/lib]
+        ignore line: [	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        ignore line: [Framework search paths:]
+        ignore line: [	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/]
+        ignore line: [/Users/claudio/miniforge3/envs/py313/bin/arm64-apple-darwin20.0.0-clang -ftree-vectorize -fPIC -fstack-protector-strong -O2 -isystem /Users/claudio/miniforge3/envs/py313/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=15.0 -Wl -search_paths_first -Wl -headerpad_max_install_names -Wl -headerpad_max_install_names -Wl -dead_strip_dylibs -Wl -rpath /Users/claudio/miniforge3/envs/py313/lib -L/Users/claudio/miniforge3/envs/py313/lib -v -Wl -v CMakeFiles/cmTC_3cfca.dir/CMakeCCompilerABI.c.o -o cmTC_3cfca]
+        ignore line: []
+        ignore line: []
+        Library search paths: [;/Users/claudio/miniforge3/envs/py313/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/]
+        remove lib [System]
+        remove lib [/Users/claudio/miniforge3/envs/py313/lib/clang/18/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/Users/claudio/miniforge3/envs/py313/lib] ==> [/Users/claudio/miniforge3/envs/py313/lib]
+        collapse library dir [/Users/claudio/miniforge3/envs/py313/lib] ==> [/Users/claudio/miniforge3/envs/py313/lib]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: [/Users/claudio/miniforge3/envs/py313/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+      
+      
+...

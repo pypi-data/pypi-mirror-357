@@ -1,0 +1,7 @@
+/Users/claudio/packages/xara_mesh/build/CMakeFiles/triangle_lib.dir
+/Users/claudio/packages/xara_mesh/build/CMakeFiles/edit_cache.dir
+/Users/claudio/packages/xara_mesh/build/CMakeFiles/rebuild_cache.dir
+/Users/claudio/packages/xara_mesh/build/CMakeFiles/list_install_components.dir
+/Users/claudio/packages/xara_mesh/build/CMakeFiles/install.dir
+/Users/claudio/packages/xara_mesh/build/CMakeFiles/install/local.dir
+/Users/claudio/packages/xara_mesh/build/CMakeFiles/install/strip.dir
