@@ -1,0 +1,2 @@
+[console_scripts]
+arclength_continuation = arclength_continuation.__main__:main
