@@ -1,0 +1,67 @@
+Metadata-Version: 2.4
+Name: sphinxcontrib-ansi-rai
+Version: 0.7.0.dev20250623
+Summary: Sphinx extension ansi
+Home-page: https://github.com/sphinx-contrib/ansi
+Download-URL: http://pypi.org/project/sphinxcontrib-ansi
+Author: Sebastian Wiesner
+Author-email: lunaryorn@googlemail.com
+License: BSD
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Documentation
+Classifier: Topic :: Utilities
+License-File: LICENSE
+Requires-Dist: sphinx>=1.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: platform
+Dynamic: requires-dist
+Dynamic: summary
+
+####################
+sphinxcontrib-ansi
+####################
+
+https://packages.python.org/sphinxcontrib-ansi
+
+A Sphinx_ extension, which turns ANSI color sequences in Sphinx documents
+into colored HTML output.
+
+
+Installation
+------------
+
+This extension can be installed from the Python Package Index::
+
+   pip install sphinxcontrib-ansi
+
+Alternatively, you can clone the `sphinx-contrib/ansi`_ repository,
+and install the extension directly from the repository::
+
+   git clone https://github.com/sphinx-contrib/ansi sphinxcontrib-ansi
+   cd sphinxcontrib-ansi
+   python setup.py install
+
+
+Usage
+-----
+
+Please refer to the documentation_ for further information.
+
+
+.. _`Sphinx`: https://sphinx-doc.org/latest
+.. _`sphinx-contrib/ansi`: https://github.com/sphinx-contrib/ansi
+.. _documentation: https://packages.python.org/sphinxcontrib-ansi
