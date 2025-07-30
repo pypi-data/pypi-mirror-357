@@ -1,0 +1,11 @@
+todo_cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+todo_cli/cli.py,sha256=BaN5oflCTtNdhZt5nXiSemqqSt6Vink44FjlpH-F6ic,1316
+todo_cli/core.py,sha256=_Y3LERJ3NeegDH7nZ_9mV6Cur6Q0VfrwhBKigVjHUvQ,2292
+todo_cli/storage.py,sha256=Vp6QCYCDRqEuf5HEIi14XCy5xOmW7AP8Ab9TpDiuf6A,307
+todo_cli/utils.py,sha256=bY7T8Bzrv0N4CKyCmCatqlDszCltpAB-vp85kDZOW8k,1254
+todos_cmd-0.1.1.dist-info/LICENSE,sha256=QsypVdi8sF4U6dLnE54OdKo3abXX0dUcXM6D7Iu5660,1168
+todos_cmd-0.1.1.dist-info/METADATA,sha256=lKt3o4p1q075v4q6-JogXcm_atHoT_aR9X3MX7cDMXU,7075
+todos_cmd-0.1.1.dist-info/WHEEL,sha256=iAkIy5fosb7FzIOwONchHf19Qu7_1wCWyFNR5gu9nU0,91
+todos_cmd-0.1.1.dist-info/entry_points.txt,sha256=tbLFspxat4zitLAWOPfWh7DJ_QgTNeKxfwkPKFSPb8s,43
+todos_cmd-0.1.1.dist-info/top_level.txt,sha256=4xaZBzARTw98acNbgoe3IQa-PJJJiui84HlCJ5jJKUs,9
+todos_cmd-0.1.1.dist-info/RECORD,,
