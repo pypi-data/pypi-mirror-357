@@ -1,0 +1,16 @@
+rhymetagger/__init__.py,sha256=HCudL6F21VXLaSpWBzPK8BbFg63VSI4OMLsCbsXhMOw,43
+rhymetagger/tagger.py,sha256=Hdrd4YfjIyt9Y1t22Mu1uGowDPwLSO_0g6P5-6S2C2Y,44883
+rhymetagger/models/cs.json,sha256=9hvPz54ClnqKc9cwq8yx01PmPDf5bHQkUoLj2bDtfHc,2385574
+rhymetagger/models/de.json,sha256=uJ_Q8FidjfXEUlB8Dt5k2xS6eGYLKpUksOSVHu2ne3k,1233832
+rhymetagger/models/en.json,sha256=fIjha3i3tQNOlHvAZevSWM5GirVsVZhNTw-bsVsmiU0,1376457
+rhymetagger/models/es.json,sha256=GckCfo-YTntb8w9H1Jn7qpOzC1oUE-X3WHP8H-0CPx0,75247
+rhymetagger/models/fr.json,sha256=3GN-eWbIwLRec6e5-rv7LNLDyckJZ4hHt715H3nMMMk,807805
+rhymetagger/models/it.json,sha256=-AdAHMvviLwFI_Y87Xdd5X9H0KbjnbGWP-POTdN7SBY,647199
+rhymetagger/models/pt.json,sha256=JT8aELWV7guEdJcX10O7bS30DTwKd8MGytM008sCGpk,206656
+rhymetagger/models/ru.json,sha256=BNUowPKfTbXUu_uiecQyys8dr5-okFm3aPKM4jSXQdU,3372719
+rhymetagger/models/sl.json,sha256=xMmJmOhrtDJodMOvbWKZPY9DgU5WOkPHD3tkrKBki_Q,218079
+rhymetagger-1.0.0.dist-info/licenses/LICENSE.txt,sha256=hY1_bfNkvr7enCSVUKOEpr7yfFxm59ckyWV2vPX-G9s,1065
+rhymetagger-1.0.0.dist-info/METADATA,sha256=4b9s-GKrtQGnMvznlQBhEvKwDzYCTe5D37IZoZIEXGc,7840
+rhymetagger-1.0.0.dist-info/WHEEL,sha256=CmyFI0kx5cdEMTLiONQRbGQwjIoR1aIYB7eCAQ4KPJ0,91
+rhymetagger-1.0.0.dist-info/top_level.txt,sha256=E2OExz4aKfKzbJ-yMI6We1Lpnt_x3Fbsu01YrfaSLIM,12
+rhymetagger-1.0.0.dist-info/RECORD,,
