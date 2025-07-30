@@ -1,0 +1,5 @@
+mcp>=1.0.0
+astroid>=2.14.2
+radon>=5.1.0
+networkx>=3.0
+chardet>=4.0.0
