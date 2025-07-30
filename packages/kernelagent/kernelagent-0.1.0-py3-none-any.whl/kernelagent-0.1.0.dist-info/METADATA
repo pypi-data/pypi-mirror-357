@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: kernelagent
+Version: 0.1.0
+Summary: A toy kernel agent package
+Author: Your Name
+Author-email: your.email@example.com
+Requires-Python: >=3.8
+Description-Content-Type: text/plain
+
+A simple toy package for kernel agent functionality
