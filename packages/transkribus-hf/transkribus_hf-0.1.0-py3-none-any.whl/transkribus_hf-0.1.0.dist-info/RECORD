@@ -1,0 +1,12 @@
+transkribus_hf/__init__.py,sha256=Vg9h3NJZcWobrvyXfA3vg9itJfxblkmPMN6df6W0Qzo,510
+transkribus_hf/__version__.py,sha256=P6PH3l7fy5t1OWdcXmQlxIPx-A6KH00qwtSk1yhMJXA,22
+transkribus_hf/cli.py,sha256=41bh2uxwKkaXVnhd5ln9QU6Y8hneELHx4sY6_WJvB6o,4826
+transkribus_hf/converter.py,sha256=VOhUD60g9UvrFp103ePcpyqdJRMQgQfE7iuMEAl7g9E,7153
+transkribus_hf/exporters.py,sha256=n8JESfTbZhegxyiZ6msWe_7_hbFlWtXgdfTPdrrjNLw,17895
+transkribus_hf/parser.py,sha256=RVKvQhLmbJZ4jgreDV3V-LOO2wFSFma8p0tEaPxgwok,11048
+transkribus_hf-0.1.0.dist-info/licenses/LICENSE,sha256=7wWl0XEaTO2Z-oSxu1GRFXIWoNhN39zOoPqYBhLGHUU,1074
+transkribus_hf-0.1.0.dist-info/METADATA,sha256=tlOh8uKlT74LcE9PB2Va5Osw6fLCVS57xHFHBTWVp2U,8941
+transkribus_hf-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+transkribus_hf-0.1.0.dist-info/entry_points.txt,sha256=fcSrzvc6-rWfuOGlTBT4UcVnYDnXFiWO2Q2SBO7cCx4,59
+transkribus_hf-0.1.0.dist-info/top_level.txt,sha256=wu4vcBJ03aQwYPdHNxQSIjei-J-84EzbKT_hz9rX7Dw,15
+transkribus_hf-0.1.0.dist-info/RECORD,,
