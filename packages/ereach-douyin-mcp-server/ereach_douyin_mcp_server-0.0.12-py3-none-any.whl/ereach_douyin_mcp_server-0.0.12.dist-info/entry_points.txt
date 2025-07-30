@@ -1,0 +1,2 @@
+[console_scripts]
+ereach_douyin_mcp_server = ereach_douyin_mcp_server.mcp_server:main
