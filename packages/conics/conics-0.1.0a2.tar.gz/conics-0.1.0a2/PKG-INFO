@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: conics
+Version: 0.1.0a2
+Summary: Conic sections library
+Project-URL: Documentation, https://conics.readthedocs.io
+Project-URL: Issues, https://github.com/sergiud/conics/issues
+Project-URL: Source, https://github.com/sergiud/conics
+Author-email: Sergiu Deitsch <sergiu.deitsch@gmail.com>
+License-Expression: Apache-2.0
+License-File: LICENSE
+Keywords: circle,ellipse,hyperbola,parabola
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Requires-Dist: numpy>=1.25
+Requires-Dist: scipy>=1.13.1
+Description-Content-Type: text/markdown
+
+# Conics
+
+![Linux](https://github.com/sergiud/conics/actions/workflows/linux.yml/badge.svg)
+[![codecov](https://codecov.io/gh/sergiud/conics/graph/badge.svg?token=89OIQDFWHV)](https://codecov.io/gh/sergiud/conics)
+[![Documentation Status](https://readthedocs.org/projects/conics/badge/?version=latest)](https://conics.readthedocs.io/en/latest/?badge=latest)
+![PyPI - Version](https://img.shields.io/pypi/v/conics)
+
+
+Conics is a library for managing conic sections (or simply *conics*).
+
+## Features
+
+* Conics construction and transformation
+* Algebraic and geometric fitting and conditioning
+* Computing intersections of conics
+* 5 DoF pose estimation of the supporting plane of an ellipse
+
+## License
+
+The library is provided under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
