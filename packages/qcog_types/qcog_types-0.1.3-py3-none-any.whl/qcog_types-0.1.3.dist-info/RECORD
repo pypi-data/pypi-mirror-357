@@ -1,0 +1,12 @@
+qcog_types/__init__.py,sha256=o3Wy0UfE8B-043CDJhKiVUFU-S8HFqi4_1_31ZlLFYs,142
+qcog_types/_version.py,sha256=NIzzV8ZM0W-CSLuEs1weG4zPrn_-8yr1AwwI1iuS6yo,511
+qcog_types/intech/__init__.py,sha256=xbPrjXF3U0CIiAi9psamQLPUiLq390R_asLBl-MWZxI,61
+qcog_types/intech/weightedgeneral/__init__.py,sha256=3kCQrpzLFjkdShZQPE4A2TyWwmLA19hFCbSNgdcUU7A,132
+qcog_types/intech/weightedgeneral/hyperparameters.py,sha256=4-D5n2jFlVs0mdhU4fHcyponpYMJMFdzlrmpd8-JF8U,279
+qcog_types/pytorch_models/__init__.py,sha256=jmNdMFkGkTn_wUgDj58-8MmaiLdB6TQMTL0nPw0y64c,550
+qcog_types/pytorch_models/hyperparameters.py,sha256=w51bp4ZPG8biBBeABeN7ajQYPZrrzniuJTR7R0xQBcw,18553
+qcog_types/pytorch_models/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+qcog_types-0.1.3.dist-info/METADATA,sha256=SS2UVj-TT22DrUnPgJRELAqL1l1zkF54qc0LPq0c5hA,414
+qcog_types-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+qcog_types-0.1.3.dist-info/top_level.txt,sha256=iPR_AQQzCTNQhryS8cByJnQShzlH22ZXeostQt1YLyM,11
+qcog_types-0.1.3.dist-info/RECORD,,
