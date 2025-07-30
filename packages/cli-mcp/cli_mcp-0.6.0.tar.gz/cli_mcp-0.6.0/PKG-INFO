@@ -1,0 +1,270 @@
+Metadata-Version: 2.4
+Name: cli-mcp
+Version: 0.6.0
+Summary: Minimal MCP client CLI
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: click
+Requires-Dist: httpx
+
+# cli-mcp
+
+A minimal command-line MCP client that makes it easy to call tools from local (stdio) and remote (Streamable HTTP) MCP servers using terminal commands. This project was created to add MCP support for coding agents like OpenAI's Codex.
+
+Works with your project's existing Cursor `mcp.json` config file.
+
+## Quick Start
+
+### 1. Set up your MCP config file
+
+Create `./.cursor/mcp.json` (or `./mcp.json` at project root) with your MCP servers:
+
+```json
+{
+  "mcpServers": {
+    "context7": {
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "ref": {
+      "command": "bunx",
+      "args": ["-y", "ref-tools-mcp@latest"],
+      "env": {
+        "REF_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### 2. (Optional) Set environment variables
+
+If your environment variables are already in your `mcp.json` file, you can skip this step. They will automatically be parsed and added to the environment.
+
+```bash
+export REF_API_KEY="your-actual-api-key"
+```
+
+### 3. Go!
+
+```bash
+# Reads config and creates/updates mcp_tools.txt with all available tools, schemas, and example commands.
+uvx cli-mcp init
+
+# List tools by server alias
+uvx cli-mcp list context7
+
+# Call tools by server alias - no URLs or API keys needed!
+uvx cli-mcp call context7 resolve-library-id '{"libraryName":"react"}'
+uvx cli-mcp call ref ref_search_documentation '{"query":"nextjs caching"}'
+```
+
+### Traditional Installation
+
+You can also install traditionally with [uv](https://github.com/astral-sh/uv):
+
+```bash
+uv pip install cli-mcp
+```
+
+> **💡 Tip**: The simplified interface works great with AI assistants! Tell your agent to read `mcp_tools.txt` to understand which tools are available, and it can call tools using commands like `uvx cli-mcp call context7 resolve-library-id '{"libraryName":"react"}'`
+
+## CLI Architecture
+
+**cli-mcp** features a clean 4-command interface:
+
+1. **`init`** - Discovers all servers from your MCP config and generates `mcp_tools.txt` with all available tools, schemas, and example commands.
+2. **`list <server-alias>`** - Lists available tools for a single server from mcp.json
+3. **`call <server-alias> <tool-name> <args>`** - Call a tool
+4. **`direct`** - Direct URL access for remote servers (no config needed)
+
+### Config File Discovery
+
+The CLI automatically finds your MCP config in this priority order:
+1. `.cursor/mcp.json` (Cursor IDE projects)
+2. `mcp.json` (global fallback)
+3. `--configpath` (explicit path)
+
+If none of these are found, the init command will fail.
+
+### Server Types Supported
+
+**Remote MCP servers** (Modern MCP 2025-06-18 spec):
+- **Zero setup**: Just add the URL to your config
+- **Automatic transport**: Supports both modern Streamable HTTP and legacy REST
+- **Built-in auth**: Headers and bearer tokens from config
+- **Examples**: Context7, ref-tools, custom HTTP servers
+
+**Local MCP servers** (stdio):
+- **npx/bunx integration**: Automatically spawns and manages processes
+- **Environment security**: Validates required env vars are set in terminal
+- **Auto-detection**: Tries HTTP first, falls back to stdio if needed
+- **Examples**: Any `bunx` or `npx` MCP package
+
+## Features
+
+- **🎯 Simplified Interface**: Use server aliases instead of URLs and API keys
+- **🔒 Environment Security**: Validates API keys are set in terminal environment
+- **📁 Config Discovery**: Automatically finds `.cursor/mcp.json` or `mcp.json`
+- **🚀 Auto Transport**: Detects HTTP vs stdio and chooses the best transport
+- **📋 Tool Discovery**: `init` command generates `mcp_tools.txt` with all available tools
+- **⚡ Modern MCP**: Full support for MCP Streamable HTTP transport (2025-06-18 spec)
+- **🔄 Legacy Support**: Automatically falls back to older REST endpoints
+- **🎨 Rich Schemas**: Shows parameter names, types, and required fields
+
+## Usage
+
+### Core Commands
+
+```bash
+# Initialize all tools from MCP config into mcp_tools.txt
+uvx cli-mcp init
+
+# List tools by server alias (from config)
+uvx cli-mcp list <server-alias>
+
+# Call tools by server alias (from config)
+uvx cli-mcp call <server-alias> <tool-name> <json-args>
+
+# Direct URL access (no config needed)
+uvx cli-mcp direct list --url <server-url>
+uvx cli-mcp direct call --url <server-url> <tool-name> <json-args>
+```
+
+### Config-Based Examples
+
+**Step 1: Initialize tools from config**
+```bash
+uvx cli-mcp init
+# ✓ Processed 2 servers successfully
+# → mcp_tools.txt written with 5 tools total
+```
+
+**Step 2: Use simplified interface**
+```bash
+# List tools by alias
+uvx cli-mcp list context7
+
+# Call tools by alias - credentials come from environment
+uvx cli-mcp call context7 resolve-library-id '{"libraryName":"react"}'
+uvx cli-mcp call ref ref_search_documentation '{"query":"nextjs"}'
+```
+
+**Generated mcp_tools.txt** shows all available tools:
+```
+### Server: context7  (https://mcp.context7.com/mcp)
+- resolve-library-id: Resolves a package/product name to a Context7-compatible library ID...
+  Parameters: *libraryName(string)
+  (* = required)
+  Example: uvx cli-mcp call context7 resolve-library-id '{"libraryName": "VALUE"}'
+
+### Server: ref  (local npx, stdio)
+- ref_search_documentation: A powerful search tool to check technical documentation...
+  Parameters: *query(string)
+  (* = required)
+  Example: uvx cli-mcp call ref ref_search_documentation '{"query": "VALUE"}'
+```
+
+### Configuration File Format
+
+**Remote servers** (HTTP/HTTPS):
+```json
+{
+  "mcpServers": {
+    "context7": {
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "authenticated-server": {
+      "url": "https://api.example.com/mcp",
+      "headers": {
+        "Authorization": "Bearer your-token",
+        "x-api-key": "your-key"
+      }
+    }
+  }
+}
+```
+
+**Local servers** (stdio):
+```json
+{
+  "mcpServers": {
+    "ref": {
+      "command": "bunx",
+      "args": ["-y", "ref-tools-mcp@latest"],
+      "env": {
+        "REF_API_KEY": "ref_1234567890abcdef"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/files"]
+    }
+  }
+}
+```
+
+**Environment Variable Security**: The CLI validates that environment variables (like `REF_API_KEY`) are actually set in your terminal before connecting. This prevents accidentally using placeholder values from the config file.
+
+### Direct URL Access (No Config)
+
+For one-off usage without setting up a config file, use the `direct` command:
+
+```bash
+# List tools directly
+uvx cli-mcp direct list --url https://mcp.deepwiki.com/mcp
+
+# Call tools directly with authentication
+uvx cli-mcp direct call \
+  --url https://api.ref.tools/mcp \
+  --header "x-ref-api-key: YOUR_KEY" \
+  read_documentation \
+  '{"query": "nextjs routing"}'
+
+# Bearer token authentication
+uvx cli-mcp direct list \
+  --url https://secure-server.com/mcp \
+  --bearer "your-token"
+```
+
+### Transport Priority
+
+The CLI automatically detects and tries transports in this order:
+1. **Streamable HTTP** (modern MCP 2025-06-18 spec)
+2. **Legacy REST** (older `/manifest`, `/call_tool` endpoints)
+3. **Stdio JSON-RPC** (for local spawned servers)
+
+## Help & Support
+
+```bash
+# Get overall help
+uvx cli-mcp --help
+
+# Help for specific commands
+uvx cli-mcp init --help
+uvx cli-mcp list --help
+uvx cli-mcp call --help
+uvx cli-mcp direct --help
+```
+
+## Development
+
+### Building and Publishing
+
+To build and publish the package with `uv`:
+
+```bash
+uv build
+uv pip install --system twine
+uv twine upload dist/*
+```
+
+## MCP Protocol Support
+
+This CLI implements:
+- MCP Protocol Version: 2025-06-18
+- JSON-RPC 2.0 message format over stdio
+- Streamable HTTP transport with SSE support
+- Session management via `Mcp-Session-Id` headers
+- Proper initialization handshake
+- Tool discovery and execution
+- Environment variable validation for security
