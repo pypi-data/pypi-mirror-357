@@ -1,0 +1,123 @@
+Metadata-Version: 2.4
+Name: pgtui
+Version: 0.21.1
+Summary: PostgreSQL terminal user interface
+Author-email: Ivan Habunek <ivan@habunek.com>
+License: Copyright 2024 pgtui contributors
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy of
+        this software and associated documentation files (the “Software”), to deal in
+        the Software without restriction, including without limitation the rights to
+        use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+        of the Software, and to permit persons to whom the Software is furnished to do
+        so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://codeberg.org/ihabunek/pgtui
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Console
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click
+Requires-Dist: pgcli
+Requires-Dist: psycopg[binary]
+Requires-Dist: sqlparse
+Requires-Dist: textual-fspicker~=0.1
+Requires-Dist: textual[syntax]~=3.4
+Requires-Dist: tree-sitter-sql==0.3.7
+Dynamic: license-file
+
+pgtui
+=====
+
+Terminal user interface for PostgreSQL.
+
+Project status: in development, things will change, but usable.
+
+Install from pypi, preferably using [pipx](https://github.com/pypa/pipx):
+
+```
+pipx install pgtui
+```
+
+## Screenshots
+
+![](images/query.svg)
+
+Autocomplete:
+
+![](images/autocomplete.svg)
+
+Data export:
+
+![](images/export.svg)
+
+
+## Key bindings
+
+In app, press **F1** to see all key bindings.
+
+Default bindings rely a lot on the Alt+key combinations which may not work in all terminals. They seem to not work in gnome terminal, but work in Kitty, Alacritty and Foot.
+
+You can override default key binding by creating a settings file at:
+* `~/.config/pgtui/settings.toml` (Linux & co.)
+* `%APPDATA%\pgtui\settings.toml` (Windows)
+
+Within the settings add a `[bindings]` section and you can override the key bindings there.
+
+Here's all the bindings at the time of writing:
+
+```toml
+[bindings]
+
+# General
+show_help = "f1"
+open_file = "alt+o"
+exit = "alt+q"
+save = "alt+s"
+select_database = "alt+d"
+
+# Editor
+execute_query = "alt+enter"
+autocomplete_open = "alt+space"
+autocomplete_close = "escape"
+autocomplete_apply = "tab,enter"
+format_query = "alt+f"
+format_all = "alt+shift+f"
+select_query = "alt+shift+s"
+copy_selection = "alt+c"
+switch_layout = "alt+x"
+
+# Results
+export = "alt+e"
+toggle_cursor = "alt+s"
+
+# Tabs
+new_tab = "alt+n"
+close_tab = "alt+w"
+next_tab = "alt+tab,alt+pagedown"
+prev_tab = "alt+shift+tab,alt+pageup"
+show_tab_1 = "alt+1"
+show_tab_2 = "alt+2"
+show_tab_3 = "alt+3"
+show_tab_4 = "alt+4"
+show_tab_5 = "alt+5"
+show_tab_6 = "alt+6"
+show_tab_7 = "alt+7"
+show_tab_8 = "alt+8"
+show_tab_9 = "alt+9"
+show_tab_10 = "alt+0"
+```

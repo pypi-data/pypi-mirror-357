@@ -1,0 +1,7 @@
+click
+pgcli
+psycopg[binary]
+sqlparse
+textual-fspicker~=0.1
+textual[syntax]~=3.4
+tree-sitter-sql==0.3.7
