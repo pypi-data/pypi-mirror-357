@@ -1,0 +1,13 @@
+pybeepop_plus.libs/libstdc++-496613c0.so.6.0.32,sha256=AwZhL5WFT99I2Q6vIxXOhW7qddfuOZ1xecxiP9QTVY4,3494361
+pybeepop_plus.libs/libgcc_s-a3a07607.so.1,sha256=5ptIUeAzZweNZrFehN0_Bb5B0FcJgux7NbAFoU8vwwo,148041
+pybeepop_plus-0.1.3.dist-info/WHEEL,sha256=D7kMZrZ30h2p93ZiRledHRUC2pSsXAWdDvA80Jwm8bs,107
+pybeepop_plus-0.1.3.dist-info/RECORD,,
+pybeepop_plus-0.1.3.dist-info/LICENSE,sha256=MxBEOQkJPsjje9GE63U8kbxw7S9xeF-LdpkMDRlddW4,1093
+pybeepop_plus-0.1.3.dist-info/METADATA,sha256=KRlcRUld5mEOgrVMqMgLL4Kw3cELx27J4Z86aaG3rWY,8909
+pybeepop/__init__.py,sha256=T0_hIsk_cgq5RMTyxai4Ofj-JcPbGpZcJRsoNzbvWeY,31
+pybeepop/pybeepop.py,sha256=06iDTVRWZZhh0QVk7GWEdLxySWqYVI0M9n6OS7m9r38,12571
+pybeepop/tools.py,sha256=yPsI-7ROkNaH27gjRzwYbcCujLioyexgehEHveOdsvI,11154
+pybeepop/plots.py,sha256=cqz0ccSerkLV8u9SCEvkFfA1NPn3vG0OvK9oeraCgWo,1286
+pybeepop/data/BeePop_exposed_parameters.csv,sha256=5pzsjgx-87RjQ-4xmLxTie-eZxAeBlNK22qr6gjsVMM,11239
+pybeepop/lib/beepop_linux.so,sha256=xfL_ajbhyLebzmQodP-s_tipS9UZHDasEHRLNcJD6LM,1002201
+pybeepop/lib/beepop_win64.dll,sha256=qRHdJiSpvxs4dR4Sz0-uVnPAPmalidFmfubYqbqCTKk,276992
