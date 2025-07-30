@@ -1,0 +1,4 @@
+[console_scripts]
+hippycampus-cli=hippycampus.cli:main
+hippycampus-server=hippycampus.mcp_server:main
+
