@@ -1,0 +1,10 @@
+README.md
+setup.py
+vscode_config_generator/__init__.py
+vscode_config_generator/cli.py
+vscode_config_generator/generator.py
+vscode_config_generator.egg-info/PKG-INFO
+vscode_config_generator.egg-info/SOURCES.txt
+vscode_config_generator.egg-info/dependency_links.txt
+vscode_config_generator.egg-info/entry_points.txt
+vscode_config_generator.egg-info/top_level.txt
