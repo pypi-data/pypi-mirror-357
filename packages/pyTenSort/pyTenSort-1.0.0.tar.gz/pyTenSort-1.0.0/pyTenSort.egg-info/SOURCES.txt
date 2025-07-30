@@ -1,0 +1,6 @@
+README.md
+setup.py
+pyTenSort.egg-info/PKG-INFO
+pyTenSort.egg-info/SOURCES.txt
+pyTenSort.egg-info/dependency_links.txt
+pyTenSort.egg-info/top_level.txt
