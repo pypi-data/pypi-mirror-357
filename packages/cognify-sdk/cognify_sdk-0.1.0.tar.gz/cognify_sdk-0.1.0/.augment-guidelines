@@ -1,0 +1,315 @@
+# Cognify Python SDK - Project Guidelines
+
+## 🎯 **PROJECT-SPECIFIC CUSTOMIZATION COMPLETE**
+
+**✅ CUSTOMIZED FOR**: Cognify Python SDK Development
+**📍 Repository**: `/Users/tuan/Develop/personal/cognify-docs/cognify-py-sdk`
+**🛠️ Technology**: Python 3.11+, httpx, pydantic, pytest
+**👤 Team**: Solo development
+**📅 Last Updated**: 2025-06-24
+
+---
+
+## 🏗️ **PROJECT ARCHITECTURE AWARENESS RULES**
+
+### **Rule 1: Project Structure Understanding**
+**CRITICAL**: Always understand Cognify Python SDK project structure:
+
+1. **Repository Strategy**: Single repository for Python SDK client library
+   - **Primary Repository**: `/Users/tuan/Develop/personal/cognify-docs/cognify-py-sdk`
+   - **Purpose**: Create comprehensive Python SDK for Cognify API platform
+   - **No Submodules**: Self-contained SDK package
+
+2. **Directory Organization**:
+   - **Planning Directory**: `./plans/` - Implementation plans and specifications
+   - **Source Directory**: `./cognify_sdk/` - Python SDK source code
+   - **Documentation Directory**: `./docs/` - Technical documentation and guides
+   - **Tests Directory**: `./tests/` - Comprehensive test suites
+   - **Examples Directory**: `./examples/` - Usage examples and tutorials
+
+### **Rule 2: Implementation Location Verification**
+**BEFORE ANY WORK**:
+```bash
+# ALWAYS verify location and structure first
+pwd  # Should show: /Users/tuan/Develop/personal/cognify-docs/cognify-py-sdk
+ls -la  # Should show: plans/, cognify_sdk/, tests/, docs/, examples/
+```
+
+**CORRECT Paths for Cognify Python SDK**:
+- ✅ `./cognify_sdk/` - Main SDK implementation
+- ✅ `./plans/` - Implementation plans and documentation
+- ✅ `./tests/` - Test suites
+- ✅ `./docs/` - Documentation
+- ✅ `./examples/` - Usage examples
+- ❌ Any work outside project root
+- ❌ Implementation in wrong directories
+
+## 📋 **PLANNING WORKFLOW RULES**
+
+### **Rule 3: Pre-Planning Analysis**
+**MANDATORY steps before any planning**:
+
+1. **Read project documentation**:
+   - `codebase.md` - Project overview and status
+   - `implement.md` - Implementation tracking
+   - `openapi-docs.json` - Cognify API specification
+   - Existing plans in `plans/` directory
+
+2. **Understand current state**:
+   - Review existing plans and their status
+   - Check current implementation progress in `implement.md`
+   - Identify dependencies between modules
+   - Verify Cognify API compatibility
+
+3. **Verify scope alignment**:
+   - Confirm work matches current project phase
+   - Check against 8 defined implementation plans
+   - Validate against Cognify API capabilities
+   - Ensure Python SDK best practices
+
+### **Rule 4: Systematic Planning Approach**
+**STRUCTURED planning process**:
+
+1. **Create detailed plans** in `./plans/` with numbered files:
+   - Use consistent naming: `01_`, `02_`, `03_`, etc.
+   - Follow established pattern: `XX_module_name.md`
+
+2. **Each plan must include**:
+   - **Scope & Objectives**: Clear goals and deliverables
+   - **Technology Stack**: Python 3.11+, httpx, pydantic, pytest
+   - **Implementation Strategy**: Step-by-step approach
+   - **Dependencies**: Prerequisites and blockers
+   - **Success Criteria**: Measurable outcomes (90%+ test coverage)
+   - **Timeline**: Realistic estimates
+   - **API Design**: Python SDK interface examples
+
+3. **Supporting documentation** in `./docs/`:
+   - API reference documentation
+   - Usage guides and tutorials
+   - Architecture decisions
+   - Performance benchmarks
+
+### **Rule 5: Plan Review and Validation**
+**QUALITY assurance for plans**:
+
+1. **Self-review checklist**:
+   - [ ] Plan aligns with Cognify API specification
+   - [ ] All dependencies identified and documented
+   - [ ] Timeline is realistic for solo development
+   - [ ] Success criteria are measurable (90%+ test coverage, 100% type hints)
+   - [ ] Python SDK design follows best practices
+   - [ ] Integration with existing plans verified
+
+2. **Stakeholder review** (Solo development):
+   - Technical self-review for architecture compliance
+   - API compatibility verification
+   - Performance requirements validation
+
+## 🔄 **DOCUMENTATION MANAGEMENT RULES**
+
+### **Rule 6: Documentation Organization**
+**SYSTEMATIC documentation structure**:
+
+1. **Master Index**: `codebase.md` - Project overview and status
+2. **Implementation Plans**: `plans/` - 8 detailed execution plans
+3. **Implementation Tracking**: `implement.md` - Progress tracking
+4. **Technical Documentation**: `docs/` - API reference and guides
+5. **Project Structure**: Always up-to-date in `codebase.md`
+
+### **Rule 7: Documentation Lifecycle**
+**CONTINUOUS documentation maintenance**:
+
+1. **Before planning**: Create plan in `plans/` directory
+2. **During planning**: Update progress in `implement.md`
+3. **After completion**: Move completed plans to `plans/implemented/`
+4. **Structure changes**: Update `codebase.md` immediately
+5. **Testing completion**: Document results in `implement.md`
+6. **Quality validation**: Ensure 90%+ test coverage before archiving
+
+### **Rule 8: Cross-Reference Management**
+**MAINTAIN documentation connections**:
+
+1. **Link related documents**: Clear navigation between plans
+2. **Update references**: When moving files, update all references
+3. **Version control**: Track changes in git
+4. **Plan dependencies**: Maintain dependency graph in `codebase.md`
+
+## 🚨 **SAFETY AND VERIFICATION RULES**
+
+### **Rule 9: Command Execution Safety**
+**BEFORE executing any command**:
+
+```bash
+# ALWAYS verify location and contents first
+pwd  # Must be: /Users/tuan/Develop/personal/cognify-docs/cognify-py-sdk
+ls -la  # Verify project structure
+```
+
+**CRITICAL**: This prevents work in wrong location and avoids accidental changes.
+
+### **Rule 10: Scope and Phase Compliance**
+**RESPECT Cognify Python SDK development approach**:
+
+1. **Current Phase**: Foundation Development (Phase 1)
+   - Focus: Core client architecture and authentication
+   - Timeline: Week 1 of development
+   - Constraints: Must follow 8-plan implementation sequence
+   - Dependencies: Plans must be implemented in order
+
+2. **Future Phases**:
+   - Phase 2: Core modules (Documents, Query/Search)
+   - Phase 3: Advanced features (RAG, Agents, Conversations)
+   - Phase 4: Polish and documentation
+   - **DO NOT** work on future phase features during current phase
+
+### **Rule 11: Quality Gates**
+**Each plan must meet Cognify Python SDK standards**:
+
+1. **Scope compliance**: Work matches current project phase
+2. **Architecture compliance**: Follows Python SDK best practices
+3. **Documentation compliance**: All required docs updated
+4. **Review compliance**: Self-review process followed
+5. **Testing compliance**: 90%+ test coverage, 100% type hints
+6. **Performance compliance**: <100ms SDK overhead
+7. **Implementation validation**: All deliverables functional and tested
+8. **API compatibility**: Full compatibility with Cognify API v1.0.0
+
+## 📊 **SUCCESS CRITERIA AND MONITORING**
+
+### **Rule 12: Plan Validation**
+**MEASURABLE success criteria for Cognify Python SDK**:
+
+1. **Completion metrics**:
+   - 100% deliverable achievement per plan
+   - All functional requirements implemented
+   - All acceptance criteria met per module
+
+2. **Quality metrics**:
+   - Test pass rate: 90%+ for production (target: 95%+)
+   - Type hint coverage: 100% throughout codebase
+   - Documentation completeness: 100% API coverage
+
+3. **Performance metrics**:
+   - SDK overhead: <100ms per API call
+   - Memory usage: Efficient connection pooling
+   - Response time: <500ms for complex operations
+
+4. **Timeline metrics**: Track against 4-week development plan
+5. **API coverage**: 100% of Cognify API endpoints supported
+
+### **Rule 13: Continuous Improvement**
+**LEARN and adapt for Cognify Python SDK**:
+
+1. **Lessons learned**: Document what worked and what didn't
+2. **Process improvement**: Update guidelines based on experience
+3. **Performance optimization**: Continuous benchmarking
+4. **API evolution**: Track Cognify platform updates
+
+---
+
+## 📋 **QUICK REFERENCE CHECKLIST**
+
+### **Before Any Planning**:
+- [ ] Read `codebase.md` for current project status
+- [ ] Verify location: `/Users/tuan/Develop/personal/cognify-docs/cognify-py-sdk`
+- [ ] Understand current phase: Foundation Development
+- [ ] Review existing plans in `plans/` directory
+- [ ] Check `implement.md` for current progress
+
+### **During Planning**:
+- [ ] Work in `plans/` directory with numbered files
+- [ ] Follow Python SDK architecture patterns
+- [ ] Update progress in `implement.md`
+- [ ] Create supporting documentation in `docs/`
+- [ ] Ensure 90%+ test coverage planning
+
+### **After Planning**:
+- [ ] Update `codebase.md` with completion status
+- [ ] Archive completed plans to `plans/implemented/`
+- [ ] Update project structure if needed
+- [ ] Document test results and performance metrics
+- [ ] Conduct lessons learned review
+- [ ] Validate all quality gates are met
+
+---
+
+## 🧪 **TESTING AND QUALITY ASSURANCE RULES**
+
+### **Rule 14: Comprehensive Testing Strategy**
+**TESTING requirements for Cognify Python SDK**:
+
+1. **Test Coverage Requirements**:
+   - **Unit Tests**: 90%+ coverage for core business logic
+   - **Integration Tests**: Full API workflow validation
+   - **Performance Tests**: SDK overhead and response time validation
+   - **Error Handling Tests**: Edge cases and failure scenarios
+
+2. **Quality Thresholds**:
+   - **Test Pass Rate**: 95%+ for production release
+   - **Performance Targets**: <100ms SDK overhead, <500ms complex operations
+   - **Memory Management**: Efficient connection pooling and cleanup
+   - **Type Safety**: 100% type hint coverage
+
+3. **Testing Infrastructure**:
+   - **Test Environment**: Mock Cognify API responses
+   - **Test Data Management**: Automated setup and cleanup
+   - **Performance Monitoring**: Response time measurement
+   - **Continuous Testing**: pytest with async support
+
+### **Rule 15: Performance Excellence Standards**
+**PERFORMANCE requirements for Cognify Python SDK**:
+
+1. **Response Time Targets**:
+   - **Simple API calls**: <100ms SDK overhead
+   - **Complex operations**: <500ms total time
+   - **File uploads**: Efficient streaming with progress tracking
+   - **Streaming responses**: <100ms first token latency
+
+2. **Scalability Requirements**:
+   - **Concurrent requests**: Support for parallel operations
+   - **Memory usage**: Efficient connection pooling
+   - **Resource utilization**: Minimal CPU and memory footprint
+
+3. **Performance Validation**:
+   - **Load Testing**: Simulate realistic usage patterns
+   - **Benchmarking**: Compare against baseline metrics
+   - **Profiling**: Identify and optimize bottlenecks
+
+---
+
+## 🎯 **COGNIFY PYTHON SDK SPECIFIC RULES**
+
+### **Rule 16: API Integration Standards**
+**Cognify API specific requirements**:
+
+1. **Authentication**: Support JWT tokens and API keys
+2. **Response Format**: Handle standardized Cognify response format
+3. **Error Handling**: Map Cognify error codes to Python exceptions
+4. **Rate Limiting**: Respect API rate limits and implement backoff
+5. **Streaming**: Support server-sent events for real-time responses
+
+### **Rule 17: Python SDK Best Practices**
+**Python-specific development standards**:
+
+1. **Code Style**: Follow PEP 8 with black formatting
+2. **Type Hints**: 100% coverage with mypy validation
+3. **Async Support**: Full async/await support alongside sync methods
+4. **Documentation**: Comprehensive docstrings with examples
+5. **Packaging**: Proper setup.py/pyproject.toml configuration
+
+### **Rule 18: Module Dependencies**
+**Cognify SDK module implementation order**:
+
+1. **Foundation**: Core client and authentication (Plans 01-03)
+2. **Core Features**: Documents and query modules (Plans 04-05)
+3. **Advanced Features**: RAG, agents, conversations (Plans 06-07)
+4. **Multi-tenant**: Collections and organizations (Plan 08)
+5. **DO NOT** implement modules out of dependency order
+
+---
+
+**Guidelines Version**: 1.0.0 (Cognify Python SDK)
+**Last Updated**: 2025-06-24
+**Status**: Project-Specific - Fully Customized
+**Source**: Customized from universal template for Cognify Python SDK
+**Project Phase**: Foundation Development (Phase 1)
