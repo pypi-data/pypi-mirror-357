@@ -1,0 +1,14 @@
+conflictlib/__init__.py,sha256=K_Bih6WpsBUVHgcfGqk2FHdPupYieMsVcK0UWlHKPTk,19
+conflictlib/engine.py,sha256=peGfdpqmKlx_UW0VPpnKOXL3Deon1XnTG001IDPhEQU,1675
+conflictlib/rules.py,sha256=MOriNHbHwXSn38POoO1QczlcIJrMk4A96YguHrEAIQU,763
+conflictlib/functions/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+conflictlib/functions/base.py,sha256=fvMRXdv1u3I-EEhmPq0_B8MJ9r8TyxToDGyRdHhTzqI,629
+conflictlib/functions/builtins.py,sha256=eTcP88lXKIrPrqkGYu5Tv5lcc3ZlqhTATA2iqEq54Es,1773
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/benchmarking.py,sha256=fL2O1dLvQrAWYLpID8EyPJvgmazEq5lmyrYPF5xvIoE,561
+tests/test_conflict_engine.py,sha256=BtyEYho3Gw0vHrhvO0Cw8K7Ks7Dbeqe7ORkx6XtoZI4,1440
+tests/utils.py,sha256=AKfHUgK4BFyJNV4to_1JHhfO5NkqnvZVe-e9K6zVwY4,2438
+conflictlib-0.0.7.dist-info/METADATA,sha256=P6y6FCk87oKrri8CChOqImExtSe2T3JJs3kNkaXIfKk,714
+conflictlib-0.0.7.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+conflictlib-0.0.7.dist-info/top_level.txt,sha256=nHBOdB949CMtsR6QSuo1NkCht1XUHB0mg0XX4js20A8,18
+conflictlib-0.0.7.dist-info/RECORD,,
