@@ -1,0 +1,6 @@
+agno
+asyncio
+exa-py
+python-dotenv
+mcp
+groq
