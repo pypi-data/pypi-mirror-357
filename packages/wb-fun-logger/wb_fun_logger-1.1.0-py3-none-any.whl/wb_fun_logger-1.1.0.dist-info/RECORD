@@ -1,0 +1,12 @@
+wb_fun_logger-1.1.0.dist-info/licenses/LICENSE,sha256=YQ2jqVd2Nz94zvnxkuFC9-Gj2jYNsAwitIw9xTafWqM,1070
+webhook_logger/__init__.py,sha256=r2pdZqujvVDSzQhbl8Hf5pjcUjKINOR-igbhXyCG_Jo,139
+webhook_logger/config.py,sha256=kPen3k115KQ0VVr0Hid8vd_bYbeNB3FFHKkQkTDyaIY,560
+webhook_logger/function_logger.py,sha256=dbtD3Jp8z3fBhaHlzxWzYvVekBgprBfRWtCD9NWeD5I,3585
+webhook_logger/schemas/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+webhook_logger/utils/__init__.py,sha256=zmjUfFJTza_mI5AeP8MvImzPIGgEnA_OPerUWpbwzSA,85
+webhook_logger/utils/config_loader.py,sha256=cNgz2AX10ues_qIDd2iJkhdfOgm3k8P8mMsX3srzx9A,992
+webhook_logger/utils/create_webhook_data.py,sha256=ke_wjxz8QVtPkzFkLZI5Xk3qh2BsJl9WLeHSwEoXb5Q,4670
+wb_fun_logger-1.1.0.dist-info/METADATA,sha256=uGjdT7CkSQb7Ybk6aALqx6zBPeEW6D7_bc_SF01pVC8,6707
+wb_fun_logger-1.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+wb_fun_logger-1.1.0.dist-info/top_level.txt,sha256=-t6kIwmWQVW19qRrNUTyC1YHaKILDEcD0cmtE5NOygM,15
+wb_fun_logger-1.1.0.dist-info/RECORD,,
