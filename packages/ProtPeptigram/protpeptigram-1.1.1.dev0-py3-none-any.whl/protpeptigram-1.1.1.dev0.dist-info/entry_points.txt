@@ -1,0 +1,2 @@
+[console_scripts]
+protpeptigram = ProtPeptigram.main:main
