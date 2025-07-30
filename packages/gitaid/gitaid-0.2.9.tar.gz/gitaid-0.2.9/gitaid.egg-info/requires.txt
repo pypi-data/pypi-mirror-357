@@ -1,0 +1,6 @@
+click
+openai
+keyring
+pyyaml
+loguru
+vllm
