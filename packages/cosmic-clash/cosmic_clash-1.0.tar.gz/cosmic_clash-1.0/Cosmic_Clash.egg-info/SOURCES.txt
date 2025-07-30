@@ -1,0 +1,7 @@
+README.md
+setup.py
+Cosmic_Clash.egg-info/PKG-INFO
+Cosmic_Clash.egg-info/SOURCES.txt
+Cosmic_Clash.egg-info/dependency_links.txt
+Cosmic_Clash.egg-info/requires.txt
+Cosmic_Clash.egg-info/top_level.txt
