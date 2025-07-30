@@ -1,0 +1,15 @@
+core_packages/__init__.py,sha256=6iQCsjmCAxjDSI-CZbwVaeBSn3CV74thzo3-vL3zQ9I,272
+core_packages/service.py,sha256=CefOXQKR77KU_cyGv2tFkgjSju5xJmsVVMGWg99ffR0,2915
+core_packages/db/__init__.py,sha256=ce7LLI8CXfUeIHPUEVRqAeXoPA-hP6XLgMSGxs7nujU,136
+core_packages/db/base.py,sha256=x-nbcTITJPVbKsRRxWimVzOFjNOebkhvdxEJ3qqiDhw,70
+core_packages/db/config.py,sha256=hr7v0tu7FYbU1ELExaiv6Jms5jo-e2zkNbi_arxu1YM,837
+core_packages/db/session.py,sha256=L1wXGNWGJKn8IQ0jnhSWRQai4uiaTYKPOjIXQTOGFaQ,452
+core_packages/models/__init__.py,sha256=c_-qMxeE22hwDNJ-NZL9atIqg81sqhWxC8DEaSOQSFc,206
+core_packages/models/application.py,sha256=gvWK3WYyxHwRI7SqGk-_cycDvtpscfhrADNQHLm1Asg,1262
+core_packages/models/user.py,sha256=a-Z8pxlPAcBy8Q6bwfhI2-lo9YsVt-X6wKNVLwdxg2g,2510
+core_packages/models/user_gpa.py,sha256=Y2YvJQEpqRv4_7BJiKdnsgMZEOEYWXO9CiC1DaHVL3g,877
+core_packages/models/user_subject.py,sha256=1jA7M6emkJ21S0jm6rnCz5zPEPAIL2goU1A4bO1Oo7I,685
+student_portal_models-0.1.0.dist-info/METADATA,sha256=Hh1nEHtWa9rfrRGwxt3_UdU50_DPhwyDBQ3MchQvKrk,506
+student_portal_models-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+student_portal_models-0.1.0.dist-info/top_level.txt,sha256=iid-Q6RzHvVmqH74vRefupPHJO6AdS2Ji48rWMLRQlM,14
+student_portal_models-0.1.0.dist-info/RECORD,,
