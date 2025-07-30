@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: dashai_deepseek_model_package
+Version: 0.0.2
+Summary: DeepSeek Model for DashAI
+Project-URL: Homepage, https://github.com/DashAISoftware/DashAI
+Project-URL: Issues, https://github.com/DashAISoftware/DashAI/issues
+Author: DashAI team
+Author-email: dashaisoftware@gmail.com
+Keywords: DashAI,Model
+Requires-Python: >=3.8
+Requires-Dist: huggingface-hub>=0.29.1
+Requires-Dist: llama-cpp-python>=0.2.90
+Description-Content-Type: text/markdown
+
+# DeepSeek LLM model for DashAI 
+
+This includes DeepSeek LLM model.
