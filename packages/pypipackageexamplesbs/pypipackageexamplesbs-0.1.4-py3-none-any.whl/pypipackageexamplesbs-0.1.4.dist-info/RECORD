@@ -1,0 +1,11 @@
+economypackage/__init__.py,sha256=UoSWTQp7j6eFtIRkpXiiwGtpqkuUukEEocrKfbLgUtI,41
+economypackage/mathseconomy/__init__.py,sha256=N5GDLXyJvRUAeUdRqkTOj3eQSf9BorFAvlHJjGvqJqE,47
+economypackage/mathseconomy/mathsadvancefunction.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+economypackage/mathseconomy/mymathsUtils.py,sha256=EHaZ7wpcNv3ygKbZvn2eE1Z7GRGOntcxH3oOYN6LeSU,146
+economypackage/utilseconomy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+economypackage/utilseconomy/myeconomyutils.py,sha256=Co9DYP3Lc_wrmlwdHuCiGUy1UOCNLlq9oJ3F6jIBxiE,179
+pypipackageexamplesbs-0.1.4.dist-info/licenses/LICENSE,sha256=aM2c2cFvNS2wtm9A5R0yBjI8pV4CmTIxa8DVk87jqbw,24
+pypipackageexamplesbs-0.1.4.dist-info/METADATA,sha256=5vJHc4arDuL3Ml_EncnACBeHKmRFtoVix_skamrNN4c,427
+pypipackageexamplesbs-0.1.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pypipackageexamplesbs-0.1.4.dist-info/top_level.txt,sha256=5jKWZtMUtQIQJYNZXHg7zQ5Y0S5Apq4BHzb3uV0mQJg,15
+pypipackageexamplesbs-0.1.4.dist-info/RECORD,,
