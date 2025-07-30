@@ -1,0 +1,9 @@
+cufinufft-2.4.0.dist-info/RECORD,,
+cufinufft-2.4.0.dist-info/METADATA,sha256=bF28imCI8-bOYhwoxZhreflF121nAAs8BhdWCd6jr2Y,2009
+cufinufft-2.4.0.dist-info/WHEEL,sha256=3t_Zq6ECxJZGsmLuSyxDOyQ7lqBIMPwvBk45TcdcriQ,150
+cufinufft/libcufinufft.so,sha256=1eR_XJmFfmzibOFCHNGjdErbouGl2UR56WIaiOZ_sWE,82834856
+cufinufft/__init__.py,sha256=9EW7AjbpcdcbjKAJcBbbVyaxMVSDNn90LWUvk2-d8Qk,304
+cufinufft/_simple.py,sha256=DRXB8nq1GWezx0ylOCuDhh3MLfMD5eo205sTUg5LV60,7301
+cufinufft/_compat.py,sha256=Tw3dD0Co_7EtHSu62E7lprPc8zY21ekbpoE33AfAzn4,2749
+cufinufft/_plan.py,sha256=9GtbDXtNYxuoun6zoYEA1oFET0xv85L4FV_YlFHIONk,15279
+cufinufft/_cufinufft.py,sha256=czbDqTfpNRVJQlc7dP0apZ_U7UUV9ya1_cn5PsOblHQ,4068
