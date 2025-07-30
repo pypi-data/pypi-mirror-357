@@ -1,0 +1,2 @@
+[console_scripts]
+slide-stream = slide_stream.cli:app
