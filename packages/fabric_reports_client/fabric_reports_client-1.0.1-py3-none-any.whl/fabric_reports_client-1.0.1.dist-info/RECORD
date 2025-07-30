@@ -1,0 +1,6 @@
+fabric_reports_client/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fabric_reports_client/reports_api.py,sha256=cldzXS0exqqHOHUyK3rGGk6X8zI7GHY2wPzvPctG-BY,37767
+fabric_reports_client-1.0.1.dist-info/LICENSE,sha256=lhIEP813x-4d3q9fgpi6Y394Xo9nqU8S_B2faQClrFA,1071
+fabric_reports_client-1.0.1.dist-info/WHEEL,sha256=rSgq_JpHF9fHR1lx53qwg_1-2LypZE_qmcuXbVUq948,81
+fabric_reports_client-1.0.1.dist-info/METADATA,sha256=HbttqBnFfMdjaSOtIKhGCCskrXwG4-q3PBOdoid_JtE,238
+fabric_reports_client-1.0.1.dist-info/RECORD,,
