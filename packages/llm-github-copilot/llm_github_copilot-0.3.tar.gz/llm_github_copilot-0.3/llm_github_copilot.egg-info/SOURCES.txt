@@ -1,0 +1,11 @@
+README.md
+llm_github_copilot.py
+pyproject.toml
+llm_github_copilot.egg-info/PKG-INFO
+llm_github_copilot.egg-info/SOURCES.txt
+llm_github_copilot.egg-info/dependency_links.txt
+llm_github_copilot.egg-info/entry_points.txt
+llm_github_copilot.egg-info/requires.txt
+llm_github_copilot.egg-info/top_level.txt
+tests/test_github_copilot.py
+tests/test_github_copilot_cli.py

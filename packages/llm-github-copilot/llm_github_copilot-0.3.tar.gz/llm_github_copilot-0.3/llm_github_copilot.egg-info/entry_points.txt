@@ -1,0 +1,2 @@
+[llm]
+github_copilot = llm_github_copilot
