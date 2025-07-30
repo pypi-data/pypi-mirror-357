@@ -1,0 +1,25 @@
+# guardrouter/pyproject.toml
+[project]
+name = "guardrouter"
+version = "0.0.2"
+license = "Apache-2.0"
+authors = [
+  { name="GuardRouter Project Contributors", email="info@guardrouter.com" },
+]
+description = "An interface for LLM safety layer (Placeholder)"
+readme = "README.md"
+requires-python = ">=3.8" # A common minimum Python version
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["llm", "ai", "guardrails", "security", "framework", "safety"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
