@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dinstar-uc-api"
+version = "0.1.0"
+description = "A modern Python wrapper for the Dinstar UC Gateway HTTP API (latest version)."
+readme = "README.md"
+authors = [
+  { name = "Vadim Tigin", email = "moucester@gmail.com" }
+]
+license = { text = "MIT" }
+keywords = ["dinstar", "gateway", "sms", "ussd", "api", "telecom"]
+
+dependencies = [
+  "requests>=2.25",
+  "python-decouple>=3.6",
+  "pydantic>=1.10",
+]
+
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/moucester/Dinstar-UC-API"
+Repository = "https://github.com/moucester/Dinstar-UC-API"
+Documentation = "https://github.com/moucester/Dinstar-UC-API#readme"
+
+[tool.setuptools]
+packages = ["dinstar"]
+include-package-data = true
