@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+crawlquest/__init__.py
+crawlquest/core.py
+crawlquest.egg-info/PKG-INFO
+crawlquest.egg-info/SOURCES.txt
+crawlquest.egg-info/dependency_links.txt
+crawlquest.egg-info/requires.txt
+crawlquest.egg-info/top_level.txt
+tests/test_core.py
