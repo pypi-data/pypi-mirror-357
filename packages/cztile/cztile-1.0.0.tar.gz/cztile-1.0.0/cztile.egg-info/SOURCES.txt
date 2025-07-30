@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+NOTICE.txt
+README.md
+setup.cfg
+setup.py
+cztile/__init__.py
+cztile/fixed_total_area_strategy.py
+cztile/tiling_strategy.py
+cztile.egg-info/PKG-INFO
+cztile.egg-info/SOURCES.txt
+cztile.egg-info/dependency_links.txt
+cztile.egg-info/top_level.txt
