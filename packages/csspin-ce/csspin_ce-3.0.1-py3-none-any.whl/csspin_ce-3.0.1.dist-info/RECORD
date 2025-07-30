@@ -1,0 +1,15 @@
+csspin_ce/ce_services.py,sha256=lUxlmT18VaUoBwnAzP8CCFF-5g7wrBqf_tbmngjHGJY,16558
+csspin_ce/ce_services_schema.yaml,sha256=mTYXRCam7K8BdCYwaZ55SdEjznPrc-IxVti4aJJZwXo,4095
+csspin_ce/ce_support_tools.py,sha256=ArrXenMy8-e4ii3fck0x36wBn_WS85HoOZB-0BmIY2Y,1678
+csspin_ce/ce_support_tools_schema.yaml,sha256=wkW84WpAsPWgJLkzFZxZe5vUaVS2-xRQkq6YHbMMHA0,185
+csspin_ce/localization.py,sha256=DbXM6C2_r7CvpOq8s77EFtBuEGgsQHhJ1uzBshqWCEY,1871
+csspin_ce/localization_schema.yaml,sha256=JZQwS_leocHHbQsEhcVkI9njOqGQkeMoMbeMkm8B1zg,460
+csspin_ce/mkinstance.py,sha256=v58XyeVXz-8aEcDXoDgB20Gq--gZgwctNEcXPVGovUc,6230
+csspin_ce/mkinstance_schema.yaml,sha256=fB4OJhQo3Wjasy3i7kstOnv_exVT-5aKqXs5aEHkOHQ,5873
+csspin_ce/pkgtest.py,sha256=6Kez3nQIIIFDHUBoOB5dnhMTAUrk4mAtV2L7daZXNr0,2520
+csspin_ce/pkgtest_schema.yaml,sha256=vfTeYA_EwUYRRtgVDHrOtkbH7B17QEP31DzmmhSJLaA,1382
+csspin_ce-3.0.1.dist-info/licenses/LICENSE,sha256=4MAecetnRTQw5DlHtiikDSzKWO1xVLwzM5_DsPMYlnE,10172
+csspin_ce-3.0.1.dist-info/METADATA,sha256=M5FfRm9o9aFF2JAFhGisuYLkqxId5gOmiLlcx84Sbnw,3727
+csspin_ce-3.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+csspin_ce-3.0.1.dist-info/top_level.txt,sha256=jiYvEPkzHmpimwyW9oU474f932zXLF-d1lMRutQXcbY,10
+csspin_ce-3.0.1.dist-info/RECORD,,
