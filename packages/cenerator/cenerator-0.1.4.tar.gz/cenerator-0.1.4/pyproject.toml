@@ -1,0 +1,30 @@
+[project]
+name = "cenerator"
+authors = [
+    { name = "Zakru", email = "me@zakru.fi" },
+]
+description = "A Minecraft data pack creation utility"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Libraries",
+]
+license = "MIT"
+license-files = ["LICENSE"]
+dynamic = ["version"]
+
+[project.urls]
+"Source Code" = "https://github.com/Zakru/cenerator"
+"Issue Tracker" = "https://github.com/Zakru/cenerator/issues"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+version = {attr = "cenerator.__version__"}
