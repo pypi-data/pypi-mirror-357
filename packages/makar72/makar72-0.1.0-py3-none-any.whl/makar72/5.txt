@@ -1,0 +1,434 @@
+5
+----------------------------------------------------------------------------------
+
+CREATE TABLE material_types (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL,
+    waste_percent NUMERIC(5,2) NOT NULL CHECK (waste_percent >= 0)
+);
+
+CREATE TABLE materials (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    type_id INT REFERENCES material_types(id) ON DELETE CASCADE,
+    unit VARCHAR(20) NOT NULL,
+    quantity_stock NUMERIC(10,2) DEFAULT 0 CHECK (quantity_stock >= 0),
+    min_quantity NUMERIC(10,2) NOT NULL CHECK (min_quantity >= 0),
+    cost_per_unit NUMERIC(10,2) NOT NULL CHECK (cost_per_unit >= 0)
+);
+
+CREATE TABLE product_types (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL,
+    coefficient NUMERIC(5,2) NOT NULL CHECK (coefficient > 0)
+);
+
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    type_id INT REFERENCES product_types(id) ON DELETE CASCADE,
+    article VARCHAR(20) UNIQUE NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    min_cost NUMERIC(10,2) NOT NULL CHECK (min_cost >= 0)
+);
+
+CREATE TABLE product_materials (
+    product_id INT REFERENCES products(id) ON DELETE CASCADE,
+    material_id INT REFERENCES materials(id) ON DELETE CASCADE,
+    quantity NUMERIC(10,2) NOT NULL CHECK (quantity > 0),
+    PRIMARY KEY (product_id, material_id)
+);
+
+
+----------------------------------------------------------------------------------
+
+pip install pandas openpyxl sqlalchemy psycopg2-binary
+
+----------------------------------------------------------------------------------
+
+
+import tkinter as tk
+from tkinter import ttk, messagebox
+import pandas as pd
+from sqlalchemy import create_engine, Column, Integer, String, Numeric, ForeignKey
+from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import sessionmaker, relationship
+import os
+import logging
+from sqlalchemy import func
+
+# Настройка логирования
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+Base = declarative_base()
+
+class MaterialType(Base):
+    __tablename__ = 'material_types'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(50), unique=True, nullable=False)
+    waste_percent = Column(Numeric(5, 2), nullable=False)
+    materials = relationship("Material", back_populates="material_type")
+
+class Material(Base):
+    __tablename__ = 'materials'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(100), nullable=False)
+    type_id = Column(Integer, ForeignKey('material_types.id'), nullable=False)
+    unit = Column(String(20), nullable=False)
+    quantity_stock = Column(Numeric(10, 2), default=0)
+    min_quantity = Column(Numeric(10, 2), nullable=False)
+    cost_per_unit = Column(Numeric(10, 2), nullable=False)
+    material_type = relationship("MaterialType", back_populates="materials")
+    product_materials = relationship("ProductMaterial", back_populates="material")
+
+class ProductType(Base):
+    __tablename__ = 'product_types'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(50), unique=True, nullable=False)
+    coefficient = Column(Numeric(5, 2), nullable=False)
+    products = relationship("Product", back_populates="product_type")
+
+class Product(Base):
+    __tablename__ = 'products'
+    id = Column(Integer, primary_key=True)
+    type_id = Column(Integer, ForeignKey('product_types.id'), nullable=False)
+    article = Column(String(20), unique=True, nullable=False)
+    name = Column(String(100), nullable=False)
+    min_cost = Column(Numeric(10, 2), nullable=False)
+    product_type = relationship("ProductType", back_populates="products")
+    product_materials = relationship("ProductMaterial", back_populates="product")
+
+class ProductMaterial(Base):
+    __tablename__ = 'product_materials'
+    product_id = Column(Integer, ForeignKey('products.id'), primary_key=True)
+    material_id = Column(Integer, ForeignKey('materials.id'), primary_key=True)
+    quantity = Column(Numeric(10, 2), nullable=False)
+    product = relationship("Product", back_populates="product_materials")
+    material = relationship("Material", back_populates="product_materials")
+
+def import_excel_data(engine):
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    
+    try:
+        # Проверка наличия данных
+        if session.query(Material).count() == 0:
+            logging.info("База данных пуста. Начинается импорт данных...")
+            
+            # Импорт типов материалов
+            df = pd.read_excel('Material_type_import.xlsx')
+            for _, row in df.iterrows():
+                # Обработка NaN и очистка строки
+                material_type = row['Тип материала']
+                waste_percent_str = str(row['Процент потерь сырья ']).strip()
+                
+                if pd.isna(waste_percent_str) or waste_percent_str == '':
+                    waste_percent = 0.0
+                else:
+                    # Удаление символа %, замена запятой на точку и преобразование в float
+                    waste_percent = float(waste_percent_str.replace('%', '').replace(',', '.').strip())
+                
+                mt = MaterialType(
+                    name=material_type,
+                    waste_percent=waste_percent
+                )
+                session.add(mt)
+            
+            # Импорт материалов
+            df = pd.read_excel('Materials_import.xlsx')
+            for _, row in df.iterrows():
+                mt = session.query(MaterialType).filter_by(name=row['Тип материала']).first()
+                if not mt:
+                    raise ValueError(f"Не найден тип материала: {row['Тип материала']}")
+                
+                m = Material(
+                    name=row['Наименование материала'],
+                    type_id=mt.id,
+                    unit=row['Единица измерения'],
+                    quantity_stock=float(row['Количество на складе']),
+                    min_quantity=float(row['Минимальное количество']),
+                    cost_per_unit=float(row['Цена единицы материала'])
+                )
+                session.add(m)
+            
+            # Импорт типов продукции
+            df = pd.read_excel('Product_type_import.xlsx')
+            for _, row in df.iterrows():
+                pt = ProductType(
+                    name=row['Тип продукции'],
+                    coefficient=1.0
+                )
+                session.add(pt)
+            
+            # Импорт продукции
+            df = pd.read_excel('Products_import.xlsx')
+            for _, row in df.iterrows():
+                pt = session.query(ProductType).filter_by(name=row['Тип продукции']).first()
+                if not pt:
+                    raise ValueError(f"Не найден тип продукции: {row['Тип продукции']}")
+                
+                p = Product(
+                    type_id=pt.id,
+                    article=row['Артикул'],
+                    name=row['Наименование продукции'],
+                    min_cost=float(row['Минимальная стоимость для партнера'])
+                )
+                session.add(p)
+            
+            # Импорт связей продукт-материал
+            df = pd.read_excel('Material_products__import.xlsx')
+            processed_pairs = set()  # Для отслеживания уже обработанных пар
+
+            for _, row in df.iterrows():
+                product_name = row['Продукция'].strip()
+                material_name = row['Наименование материала'].strip()
+                
+                # Нормализация имен (удаление пробелов, приведение к нижнему регистру)
+                product_name = product_name.strip().lower()
+                material_name = material_name.strip().lower()
+                
+                # Поиск продукта и материала
+                p = session.query(Product).filter(func.lower(func.trim(Product.name)) == product_name).first()
+                m = session.query(Material).filter(func.lower(func.trim(Material.name)) == material_name).first()
+                
+                if p and m:
+                    # Проверка на уникальность
+                    if (p.id, m.id) not in processed_pairs:
+                        pm = session.query(ProductMaterial).filter_by(product_id=p.id, material_id=m.id).first()
+                        if not pm:
+                            pm = ProductMaterial(
+                                product_id=p.id,
+                                material_id=m.id,
+                                quantity=float(row['Необходимое количество материала'])
+                            )
+                            session.add(pm)
+                            processed_pairs.add((p.id, m.id))
+                    else:
+                        logging.warning(f"Дубликат: {p.name} - {m.name}")
+            
+            session.commit()
+            logging.info("Импорт данных завершен")
+        else:
+            logging.info("Данные уже существуют в БД. Импорт пропущен")
+        
+    except Exception as e:
+        session.rollback()
+        logging.error(f"Ошибка импорта данных: {e}")
+        messagebox.showerror("Ошибка", f"Ошибка импорта данных: {e}")
+    finally:
+        session.close()
+
+class MaterialApp:
+    def __init__(self, root):
+        self.engine = create_engine('postgresql://postgres:NikitaStillSLATT@localhost/warehouse')
+        Base.metadata.create_all(self.engine)
+        self.Session = sessionmaker(bind=self.engine)
+        
+        # Выполняем импорт данных один раз
+        import_excel_data(self.engine)
+        
+        self.root = root
+        self.root.title("Управление складом материалов")
+        self.create_main_window()
+
+    def create_main_window(self):
+        self.tree = ttk.Treeview(self.root, columns=("name", "type", "unit", "stock", "min", "cost"))
+        self.tree.heading("#0", text="ID")
+        self.tree.column("#0", width=50)
+        self.tree.heading("name", text="Наименование")
+        self.tree.column("name", width=200)
+        self.tree.heading("type", text="Тип")
+        self.tree.column("type", width=100)
+        self.tree.heading("unit", text="Ед.изм.")
+        self.tree.column("unit", width=60)
+        self.tree.heading("stock", text="На складе")
+        self.tree.column("stock", width=80)
+        self.tree.heading("min", text="Минимум")
+        self.tree.column("min", width=80)
+        self.tree.heading("cost", text="Цена")
+        self.tree.column("cost", width=80)
+        self.tree.pack(padx=10, pady=10)
+        
+        self.refresh_materials()
+        
+        btn_frame = ttk.Frame(self.root)
+        btn_frame.pack(pady=5)
+        
+        ttk.Button(btn_frame, text="Добавить", command=self.add_material).pack(side=tk.LEFT, padx=5)
+        ttk.Button(btn_frame, text="Редактировать", command=self.edit_material).pack(side=tk.LEFT, padx=5)
+        ttk.Button(btn_frame, text="Продукция", command=self.show_products).pack(side=tk.LEFT, padx=5)
+        
+    def refresh_materials(self):
+        for i in self.tree.get_children():
+            self.tree.delete(i)
+        
+        session = self.Session()
+        materials = session.query(Material).all()
+        for m in materials:
+            self.tree.insert("", "end", iid=m.id, text=str(m.id), values=(
+                m.name, m.material_type.name, m.unit, 
+                f"{m.quantity_stock:.2f}", f"{m.min_quantity:.2f}", 
+                f"{m.cost_per_unit:.2f}"
+            ))
+        session.close()
+        
+    def add_material(self):
+        session = self.Session()
+        self.edit_window = tk.Toplevel(self.root)
+        self.edit_window.title("Новый материал")
+        # Передаём session в create_edit_form
+        self.create_edit_form(self.edit_window, None, session)
+        
+    def edit_material(self):
+        selected = self.tree.selection()
+        if not selected:
+            messagebox.showwarning("Ошибка", "Выберите материал для редактирования")
+            return
+        
+        session = self.Session()
+        m = session.query(Material).get(selected[0])
+        if not m:
+            messagebox.showerror("Ошибка", "Материал не найден в БД")
+            session.close()
+            return
+
+        self.edit_window = tk.Toplevel(self.root)
+        self.edit_window.title("Редактировать материал")
+        # Передаём и материал, и сессию
+        self.create_edit_form(self.edit_window, m, session)
+        
+    def create_edit_form(self, window, material, session):
+        fields = [
+            ("Тип материала", "material_type"),
+            ("Наименование", "name"),
+            ("Ед.изм.", "unit"),
+            ("Количество", "quantity_stock"),
+            ("Минимум", "min_quantity"),
+            ("Цена", "cost_per_unit")
+        ]
+        self.values = {}
+        # Используем переданную сессию для получения типов
+        types = session.query(MaterialType).all()
+        row = 0
+        for label, key in fields:
+            ttk.Label(window, text=label).grid(row=row, column=0, sticky="w", padx=5, pady=2)
+            if key == "material_type":
+                combo = ttk.Combobox(window, values=[t.name for t in types])
+                if material:
+                    combo.set(material.material_type.name)
+                else:
+                    combo.set(types[0].name if types else "")
+                self.values[key] = combo
+                combo.grid(row=row, column=1, padx=5, pady=2)
+            else:
+                entry = ttk.Entry(window)
+                if material:
+                    entry.insert(0, str(getattr(material, key)))
+                self.values[key] = entry
+                entry.grid(row=row, column=1, padx=5, pady=2)
+            row += 1
+        # Кнопка «Сохранить» передаёт ссылку на сессию и существующий объект (None или объект)
+        ttk.Button(window, text="Сохранить", command=lambda: self.save_material(material, window, session)).grid(
+            row=row, column=0, columnspan=2, pady=10)
+        
+    def save_material(self, existing, window, session):
+        try:
+            mt_name = self.values["material_type"].get()
+            mt = session.query(MaterialType).filter_by(name=mt_name).first()
+            if not mt:
+                raise ValueError(f"Тип материала '{mt_name}' не найден")
+
+            # Считываем и проверяем поля
+            name = self.values["name"].get().strip()
+            unit = self.values["unit"].get().strip()
+            quantity_stock_str = self.values["quantity_stock"].get().strip()
+            min_quantity_str = self.values["min_quantity"].get().strip()
+            cost_per_unit_str = self.values["cost_per_unit"].get().strip()
+
+            if not (name and unit and quantity_stock_str and min_quantity_str and cost_per_unit_str):
+                raise ValueError("Заполните все поля")
+
+            quantity_stock = float(quantity_stock_str)
+            min_quantity = float(min_quantity_str)
+            cost_per_unit = float(cost_per_unit_str)
+
+            if any(v < 0 for v in [quantity_stock, min_quantity, cost_per_unit]):
+                raise ValueError("Значения не могут быть отрицательными")
+
+            params = {
+                "name": name,
+                "type_id": mt.id,
+                "unit": unit,
+                "quantity_stock": quantity_stock,
+                "min_quantity": min_quantity,
+                "cost_per_unit": cost_per_unit
+            }
+
+            if existing:
+                # Обновляем поля существующего объекта
+                for k, v in params.items():
+                    setattr(existing, k, v)
+            else:
+                # Создаём новый объект
+                new_material = Material(**params)
+                session.add(new_material)
+
+            session.commit()
+            window.destroy()
+            self.refresh_materials()
+            messagebox.showinfo("Успех", "Материал сохранен")
+        except Exception as e:
+            session.rollback()
+            messagebox.showerror("Ошибка", str(e))
+        finally:
+            # Закрываем сессию после всего
+            session.close()
+        
+    def show_products(self):
+        selected = self.tree.selection()
+        if not selected:
+            messagebox.showwarning("Ошибка", "Выберите материал")
+            return
+            
+        session = self.Session()
+        material = session.query(Material).get(selected[0])
+        products = session.query(Product).join(ProductMaterial).filter(
+            ProductMaterial.material_id == material.id
+        ).all()
+        session.close()
+        
+        win = tk.Toplevel(self.root)
+        win.title(f"Продукция для {material.name}")
+        tree = ttk.Treeview(win, columns=("product", "quantity"))
+        tree.heading("#0", text="ID")
+        tree.column("#0", width=50)
+        tree.heading("product", text="Продукт")
+        tree.column("product", width=300)
+        tree.heading("quantity", text="Кол-во")
+        tree.column("quantity", width=100)
+        tree.pack(padx=10, pady=10)
+        
+        for p in products:
+            pm = session.query(ProductMaterial).filter_by(product_id=p.id, material_id=material.id).first()
+            tree.insert("", "end", iid=p.id, text=str(p.id), values=(p.name, f"{pm.quantity:.2f}"))
+            
+    def calculate_production(self, product_type_id, material_type_id, raw_quantity, param1, param2):
+        session = self.Session()
+        try:
+            product_type = session.query(ProductType).get(product_type_id)
+            material_type = session.query(MaterialType).get(material_type_id)
+            
+            if not product_type or not material_type:
+                return -1
+                
+            required_per_unit = param1 * param2 * product_type.coefficient
+            adjusted_quantity = raw_quantity / (1 + material_type.waste_percent / 100)
+            return int(adjusted_quantity // required_per_unit)
+        except:
+            return -1
+        finally:
+            session.close()
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = MaterialApp(root)
+    root.mainloop()
