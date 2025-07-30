@@ -1,0 +1,9 @@
+rustpy_toolkit-0.1.1.dist-info/METADATA,sha256=gciJQDHXDzqAklW7PAqRzG_nHrfvvbLMu6la_jHgHDY,8857
+rustpy_toolkit-0.1.1.dist-info/WHEEL,sha256=fUMUCU57hCqRM9lAdoyg0PVMCOUk2MQLaFVqt4-GBRk,94
+rustpy_toolkit-0.1.1.dist-info/licenses/LICENSE,sha256=CXm9Kcl6Jj9xTSdszEmus1l0-Jcyqf6zLn1Won54zMM,1102
+rustpy_toolkit/__init__.py,sha256=PM2Dz-e2Kb0qOVkpFHo0WADpoa6lYzSxknawwAEVXbA,877
+rustpy_toolkit/_internal.pyd,sha256=Zh4vEi210UVIOoAqL76b_ZTTgQtr2t1_pfcRMlFivZs,18872320
+rustpy_toolkit/cpf_cnpj.py,sha256=zOWyQHLStf7utluv7qUTo-wC2UZHxvw6umd4LymNT5M,2346
+rustpy_toolkit/phone.py,sha256=R20pm5HT651C8d_2JeRsdnxuovrsLaEGWK2d4tFhhcY,2436
+rustpy_toolkit/text_utils.py,sha256=9ZLwilxgH07eQ9LSQc80ri1L6FLzeoEGWXAEJj3gBgE,2240
+rustpy_toolkit-0.1.1.dist-info/RECORD,,
