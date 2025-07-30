@@ -1,0 +1,4 @@
+2025-06-25 11:42:28,835 - data_entry_logger - DEBUG - 161 - environment --> dev
+2025-06-25 11:42:28,836 - data_entry_logger - DEBUG - 166 - sheet_path --> c:/temp/magic_center/sheets
+2025-06-25 11:42:28,836 - data_entry_logger - DEBUG - 167 - limit is --> 100
+2025-06-25 11:42:28,901 - data_entry_logger - DEBUG - 170 - Generated 100以内比较大小 exercises successfully!
