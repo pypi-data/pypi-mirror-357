@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools_scm]
+version_file = "csvformatmail/_version.py"
+
+[project]
+name = "csvformatmail"
+dynamic = ["version"]
+description = "A tool to send many mails from csv and a template"
+readme = "README.md"
+license = {text = "MIT License"}
+requires-python = ">=3.10"
+keywords = []
+authors = [
+  {name = "Jean-Benoist Leger", email = "jbleger@hds.utc.fr"},
+]
+maintainers = [
+  {name = "Jean-Benoist Leger", email = "jbleger@hds.utc.fr"},
+]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python",
+]
+
+dependencies = [
+  "argcomplete",
+  "csvspoon>=1.1.3",
+  "numpy",
+  "cryptography",
+  "jinja2",
+]
+
+[project.urls]
+homepage = "https://gitlab.com/jbleger/csvformatmail"
+
+[project.scripts]
+csvformatmail = "csvformatmail._cli:main"

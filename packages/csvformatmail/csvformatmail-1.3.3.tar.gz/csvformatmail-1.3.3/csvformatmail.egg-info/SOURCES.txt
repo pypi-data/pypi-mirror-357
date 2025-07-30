@@ -1,0 +1,15 @@
+.gitignore
+.gitlab-ci.yml
+LICENSE
+README.md
+pyproject.toml
+csvformatmail/__init__.py
+csvformatmail/_cli.py
+csvformatmail/_version.py
+csvformatmail/mail.py
+csvformatmail.egg-info/PKG-INFO
+csvformatmail.egg-info/SOURCES.txt
+csvformatmail.egg-info/dependency_links.txt
+csvformatmail.egg-info/entry_points.txt
+csvformatmail.egg-info/requires.txt
+csvformatmail.egg-info/top_level.txt

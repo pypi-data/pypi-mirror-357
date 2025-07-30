@@ -1,0 +1,5 @@
+argcomplete
+csvspoon>=1.1.3
+numpy
+cryptography
+jinja2
