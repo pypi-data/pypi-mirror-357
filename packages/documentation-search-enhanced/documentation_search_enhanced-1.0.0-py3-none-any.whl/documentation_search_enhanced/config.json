@@ -1,0 +1,300 @@
+{
+    "cache": {
+        "ttl_hours": 24,
+        "max_entries": 1000,
+        "enabled": true
+    },
+    "docs_urls": {
+        "python": {
+            "url": "https://docs.python.org/3/",
+            "category": "language",
+            "learning_curve": "moderate",
+            "tags": ["programming-language", "backend", "data-science", "ai"]
+        },
+        "javascript": {
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+            "category": "language",
+            "learning_curve": "moderate",
+            "tags": ["programming-language", "frontend", "backend"]
+        },
+        "react": {
+            "url": "https://react.dev/reference/react",
+            "category": "frontend-framework",
+            "learning_curve": "moderate",
+            "tags": ["frontend", "ui", "javascript", "spa"]
+        },
+        "typescript": {
+            "url": "https://www.typescriptlang.org/docs/",
+            "category": "language",
+            "learning_curve": "moderate",
+            "tags": ["programming-language", "javascript", "static-typing", "frontend", "backend"]
+        },
+        "svelte": {
+            "url": "https://svelte.dev/docs",
+            "category": "frontend-framework",
+            "learning_curve": "easy",
+            "tags": ["frontend", "ui", "javascript", "spa", "reactive"]
+        },
+        "tailwind": {
+            "url": "https://tailwindcss.com/docs",
+            "category": "css-framework",
+            "learning_curve": "easy",
+            "tags": ["css", "utility-first", "styling", "frontend", "design"]
+        },
+        "fastapi": {
+            "url": "https://fastapi.tiangolo.com/",
+            "category": "web-framework",
+            "learning_curve": "easy",
+            "tags": ["python", "api", "async", "modern"]
+        },
+        "django": {
+            "url": "https://docs.djangoproject.com/en/4.2/",
+            "category": "web-framework",
+            "learning_curve": "steep",
+            "tags": ["python", "web", "orm", "full-stack"]
+        },
+        "langchain": {
+            "url": "https://python.langchain.com/docs/get_started/introduction/",
+            "category": "ai-framework",
+            "learning_curve": "moderate",
+            "tags": ["ai", "llm", "python", "chains"]
+        },
+        "nodejs": {
+            "url": "https://nodejs.org/api/documentation.html",
+            "category": "runtime",
+            "learning_curve": "moderate",
+            "tags": ["javascript", "runtime", "backend", "npm"]
+        },
+        "flask": {
+            "url": "https://flask.palletsprojects.com/en/2.3.x/",
+            "category": "web-framework",
+            "learning_curve": "easy",
+            "tags": ["python", "web", "lightweight", "flexible"]
+        },
+        "express": {
+            "url": "https://expressjs.com/en/api.html",
+            "category": "web-framework",
+            "learning_curve": "easy",
+            "tags": ["javascript", "nodejs", "web", "api"]
+        },
+        "aws": {
+            "url": "https://docs.aws.amazon.com/index.html",
+            "category": "cloud-platform",
+            "learning_curve": "steep",
+            "tags": ["cloud", "infrastructure", "devops", "scalability"]
+        },
+        "google-cloud": {
+            "url": "https://cloud.google.com/docs",
+            "category": "cloud-platform",
+            "learning_curve": "steep",
+            "tags": ["cloud", "infrastructure", "devops", "ai", "ml"]
+        },
+        "azure": {
+            "url": "https://docs.microsoft.com/en-us/azure/",
+            "category": "cloud-platform",
+            "learning_curve": "steep",
+            "tags": ["cloud", "infrastructure", "devops", "microsoft", "enterprise"]
+        },
+        "docker": {
+            "url": "https://docs.docker.com/reference/",
+            "category": "devops-tool",
+            "learning_curve": "moderate",
+            "tags": ["containers", "devops", "deployment", "infrastructure"]
+        },
+        "kubernetes": {
+            "url": "https://kubernetes.io/docs/home/",
+            "category": "devops-tool",
+            "learning_curve": "steep",
+            "tags": ["orchestration", "containers", "devops", "scaling"]
+        },
+        "pandas": {
+            "url": "https://pandas.pydata.org/docs/",
+            "category": "data-science",
+            "learning_curve": "moderate",
+            "tags": ["python", "data-analysis", "data-science", "dataframes"]
+        },
+        "streamlit": {
+            "url": "https://docs.streamlit.io/en/stable/",
+            "category": "data-science",
+            "learning_curve": "easy",
+            "tags": ["python", "data-apps", "visualization", "prototyping"]
+        },
+        "openai": {
+            "url": "https://platform.openai.com/docs/api-reference/introduction",
+            "category": "ai-service",
+            "learning_curve": "easy",
+            "tags": ["ai", "llm", "gpt", "api"]
+        },
+        "anthropic": {
+            "url": "https://docs.anthropic.com/en/docs/api-reference/overview",
+            "category": "ai-service",
+            "learning_curve": "easy",
+            "tags": ["ai", "llm", "claude", "api"]
+        },
+        "promptflow": {
+            "url": "https://microsoft.github.io/promptflow/",
+            "category": "ai-framework",
+            "learning_curve": "moderate",
+            "tags": ["ai", "llm", "workflows", "microsoft", "python"]
+        },
+        "autogen": {
+            "url": "https://microsoft.github.io/autogen/",
+            "category": "ai-framework",
+            "learning_curve": "moderate",
+            "tags": ["ai", "multi-agent", "llm", "microsoft", "python"]
+        },
+        "numpy": {
+            "url": "https://numpy.org/doc/stable/",
+            "category": "data-science",
+            "learning_curve": "moderate",
+            "tags": ["python", "numerical", "arrays", "scientific-computing"]
+        },
+        "matplotlib": {
+            "url": "https://matplotlib.org/stable/contents.html",
+            "category": "data-science",
+            "learning_curve": "moderate",
+            "tags": ["python", "visualization", "plotting", "charts"]
+        },
+        "scikit-learn": {
+            "url": "https://scikit-learn.org/stable/user_guide.html",
+            "category": "ai-framework",
+            "learning_curve": "moderate",
+            "tags": ["python", "machine-learning", "ml", "algorithms"]
+        },
+        "transformers": {
+            "url": "https://huggingface.co/docs/transformers/index",
+            "category": "ai-framework",
+            "learning_curve": "moderate",
+            "tags": ["ai", "nlp", "transformers", "huggingface", "pytorch"]
+        },
+        "datasets": {
+            "url": "https://huggingface.co/docs/datasets/index",
+            "category": "ai-framework",
+            "learning_curve": "easy",
+            "tags": ["ai", "data", "huggingface", "ml-datasets"]
+        },
+        "accelerate": {
+            "url": "https://huggingface.co/docs/accelerate/index",
+            "category": "ai-framework",
+            "learning_curve": "moderate",
+            "tags": ["ai", "pytorch", "distributed", "huggingface"]
+        },
+        "spacy": {
+            "url": "https://spacy.io/usage/spacy-101",
+            "category": "ai-framework",
+            "learning_curve": "moderate",
+            "tags": ["nlp", "python", "text-processing", "linguistics"]
+        },
+        "networkx": {
+            "url": "https://networkx.org/documentation/stable/",
+            "category": "data-science",
+            "learning_curve": "moderate",
+            "tags": ["python", "graphs", "networks", "analysis"]
+        },
+        "requests": {
+            "url": "https://requests.readthedocs.io/en/latest/",
+            "category": "python-library",
+            "learning_curve": "easy",
+            "tags": ["python", "http", "api", "web-requests"]
+        },
+        "pillow": {
+            "url": "https://pillow.readthedocs.io/en/stable/",
+            "category": "python-library",
+            "learning_curve": "easy",
+            "tags": ["python", "image-processing", "pil", "graphics"]
+        },
+        "pymupdf": {
+            "url": "https://pymupdf.readthedocs.io/en/latest/",
+            "category": "python-library",
+            "learning_curve": "moderate",
+            "tags": ["python", "pdf", "document-processing", "text-extraction"]
+        },
+        "faiss-cpu": {
+            "url": "https://faiss.ai/",
+            "category": "ai-framework",
+            "learning_curve": "steep",
+            "tags": ["ai", "vector-search", "similarity", "facebook"]
+        },
+        "rank-bm25": {
+            "url": "https://github.com/dorianbrown/rank_bm25",
+            "category": "ai-framework",
+            "learning_curve": "easy",
+            "tags": ["python", "information-retrieval", "ranking", "search"]
+        },
+        "tqdm": {
+            "url": "https://tqdm.github.io/",
+            "category": "python-library",
+            "learning_curve": "easy",
+            "tags": ["python", "progress-bar", "utilities", "cli"]
+        },
+        "ipywidgets": {
+            "url": "https://ipywidgets.readthedocs.io/en/stable/",
+            "category": "data-science",
+            "learning_curve": "easy",
+            "tags": ["python", "jupyter", "widgets", "interactive"]
+        },
+        "rdflib": {
+            "url": "https://rdflib.readthedocs.io/en/stable/",
+            "category": "python-library",
+            "learning_curve": "steep",
+            "tags": ["python", "semantic-web", "rdf", "knowledge-graphs"]
+        },
+        "pyvis": {
+            "url": "https://pyvis.readthedocs.io/en/latest/",
+            "category": "data-science",
+            "learning_curve": "easy",
+            "tags": ["python", "network-visualization", "graphs", "interactive"]
+        },
+        "duckdb": {
+            "url": "https://duckdb.org/docs/",
+            "category": "database",
+            "learning_curve": "easy",
+            "tags": ["python", "database", "sql", "analytics", "olap", "data-analysis"]
+        },
+        "papermill": {
+            "url": "https://papermill.readthedocs.io/en/latest/",
+            "category": "data-science",
+            "learning_curve": "moderate",
+            "tags": ["python", "jupyter", "notebooks", "automation", "parameterization"]
+        },
+        "openpyxl": {
+            "url": "https://openpyxl.readthedocs.io/en/stable/",
+            "category": "python-library",
+            "learning_curve": "easy",
+            "tags": ["python", "excel", "xlsx", "spreadsheet", "data-processing"]
+        },
+        "boto3": {
+            "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/index.html",
+            "category": "cloud-library",
+            "learning_curve": "moderate",
+            "tags": ["python", "aws", "cloud", "sdk", "s3", "ec2", "lambda"]
+        },
+        "jupysql": {
+            "url": "https://jupysql.ploomber.io/en/latest/",
+            "category": "data-science",
+            "learning_curve": "easy",
+            "tags": ["python", "jupyter", "sql", "database", "notebooks", "analytics"]
+        },
+        "protobuf": {
+            "url": "https://protobuf.dev/getting-started/pythontutorial/",
+            "category": "python-library",
+            "learning_curve": "moderate",
+            "tags": ["python", "serialization", "protocol-buffers", "data-format", "google"]
+        }
+    },
+    "categories": {
+        "language": ["python", "javascript", "typescript"],
+        "web-framework": ["fastapi", "django", "flask", "express"],
+        "frontend-framework": ["react", "svelte"],
+        "css-framework": ["tailwind"],
+        "ai-framework": ["langchain", "promptflow", "autogen", "scikit-learn", "transformers", "datasets", "accelerate", "spacy", "faiss-cpu", "rank-bm25"],
+        "ai-service": ["openai", "anthropic"],
+        "runtime": ["nodejs"],
+        "cloud-platform": ["aws", "google-cloud", "azure"],
+        "cloud-library": ["boto3"],
+        "devops-tool": ["docker", "kubernetes"],
+        "database": ["duckdb"],
+        "data-science": ["pandas", "streamlit", "numpy", "matplotlib", "networkx", "ipywidgets", "pyvis", "papermill", "jupysql"],
+        "python-library": ["requests", "pillow", "pymupdf", "tqdm", "rdflib", "openpyxl", "protobuf"]
+    }
+} 
