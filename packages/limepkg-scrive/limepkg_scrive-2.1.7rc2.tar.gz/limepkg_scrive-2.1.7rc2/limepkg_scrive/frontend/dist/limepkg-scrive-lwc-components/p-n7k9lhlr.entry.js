@@ -1,0 +1,1 @@
+import{r as o}from"./p-abc8c9af.js";const c=class{constructor(c){o(this,c)}componentWillLoad(){}componentDidUnload(){}};export{c as lwc_limepkg_scrive_loader};
