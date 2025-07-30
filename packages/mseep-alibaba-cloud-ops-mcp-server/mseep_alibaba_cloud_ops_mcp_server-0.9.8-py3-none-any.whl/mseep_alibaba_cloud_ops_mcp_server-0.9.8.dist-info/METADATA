@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: mseep-alibaba-cloud-ops-mcp-server
+Version: 0.9.8
+Summary: A MCP server for Alibaba Cloud
+Home-page: 
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Keywords: mseep
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: alibabacloud-cms20190101>=3.1.4
+Requires-Dist: alibabacloud-ecs20140526>=6.1.0
+Requires-Dist: alibabacloud-oos20190601>=3.4.1
+Requires-Dist: alibabacloud_oss_v2>=1.1.0
+Requires-Dist: alibabacloud-credentials>=1.0.0
+Requires-Dist: click>=8.1.8
+Requires-Dist: fastmcp>=2.8.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Package managed by MseeP.ai
