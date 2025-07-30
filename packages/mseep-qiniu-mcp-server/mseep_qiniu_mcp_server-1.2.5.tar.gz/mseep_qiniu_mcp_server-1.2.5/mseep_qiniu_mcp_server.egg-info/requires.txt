@@ -1,0 +1,8 @@
+aioboto3>=13.2.0
+fastjsonschema>=2.21.1
+httpx>=0.28.1
+mcp[cli]>=1.0.0
+openai>=1.66.3
+pip>=25.0.1
+python-dotenv>=1.0.1
+qiniu>=7.16.0

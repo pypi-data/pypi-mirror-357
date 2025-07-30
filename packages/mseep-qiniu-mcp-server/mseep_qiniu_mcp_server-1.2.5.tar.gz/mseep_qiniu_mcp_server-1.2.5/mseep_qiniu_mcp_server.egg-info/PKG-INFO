@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: mseep-qiniu-mcp-server
+Version: 1.2.5
+Summary: A MCP server project of Qiniu.
+Home-page: 
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Keywords: mseep,qiniu,mcp,llm
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: aioboto3>=13.2.0
+Requires-Dist: fastjsonschema>=2.21.1
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: mcp[cli]>=1.0.0
+Requires-Dist: openai>=1.66.3
+Requires-Dist: pip>=25.0.1
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: qiniu>=7.16.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Package managed by MseeP.ai
