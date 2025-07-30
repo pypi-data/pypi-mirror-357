@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_mcp_server_ccxt.egg-info/PKG-INFO
+mseep_mcp_server_ccxt.egg-info/SOURCES.txt
+mseep_mcp_server_ccxt.egg-info/dependency_links.txt
+mseep_mcp_server_ccxt.egg-info/requires.txt
+mseep_mcp_server_ccxt.egg-info/top_level.txt
+src/__init__.py
+src/server.py
