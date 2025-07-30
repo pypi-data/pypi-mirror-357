@@ -1,0 +1,16 @@
+Metadata-Version: 2.2
+Name: pypipackageexamplesbs
+Version: 0.1.4
+Summary: A simple example package for PyPI
+Home-page: https://github.com/TiagoBe0/PYPIPACKAGEEXAMPLE.git
+Author: TiagodBe
+Author-email: santiagobergamin@gmail.com
+License: MIT
+License-File: LICENSE
+Requires-Dist: scikit-learn
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
