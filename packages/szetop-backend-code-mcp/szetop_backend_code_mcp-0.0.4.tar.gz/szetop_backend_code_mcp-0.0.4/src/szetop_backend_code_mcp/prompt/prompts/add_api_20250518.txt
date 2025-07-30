@@ -1,0 +1,29 @@
+# 任务：生成`<title></title>`新增\编辑接口
+
+## 请求参数
+<request_params>
+{{param_prompt}}
+</request_params>
+
+## 响应参数
+<response_fields>
+-返回主表的主键id
+</response_fields>
+
+## 涉及数据库表结构
+<table_structures>
+{{table_ddl}}
+</table_structures>
+
+## 示例
+用户扩展表对象功能（UserExtendController.java、UserExtendService.java、UserExtendServiceImpl.java、UserExtendDTO.java、UserExtendVO.java、UserExtendMapper.java、UserExtendMapper.xml）
+
+## 业务规则
+1、参考项目示例，生成或更新controller、service、dto、mapper、vo对象，统一加前缀：GxrcProjectInfo。
+2、填报日期对应gxrc_project_info.create_time字段。
+3、实现分页和排序功能（排序字段见查询条件参数说明）。
+4、免租期处理：
+-SQL查询：免租期类型字段(free_period_type)=1，则free_period_min={查询参数}，免租期类型字段(free_period_type)=2，则{查询参数}>=free_period_min and {查询参数}<free_period_max。
+-Service层处理：免租期类型free_period_type=1，返回则free_period_min，免租期类型free_period_type=2，返回free_period_min~free_period_max，使用stripTrailingZeros.toPlainString()格式化。
+5、免租期后优惠租金处理：参考免租期处理逻辑。
+6、项目类型和项目状态处理，如项目类型：Service层使用枚举(ProjectType，不存在则创建)处理，返回字符串。
