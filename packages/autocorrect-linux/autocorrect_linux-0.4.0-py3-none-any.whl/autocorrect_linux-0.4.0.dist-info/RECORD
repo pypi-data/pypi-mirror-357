@@ -1,0 +1,12 @@
+autocorrect_linux/__init__.py,sha256=jJ2sxRfA1qVLEjUT_7GENNGgpD5bhZStr3jDKpb8nRI,93
+autocorrect_linux/__main__.py,sha256=lIOBiJmi8X-EWXVIx_OoxSgUZ0FYKlZI8hXVnLUYTJQ,61
+autocorrect_linux/main.py,sha256=I_59GyWfIaZ83DvUO8yhQASzuFkd7EcSy1dG4vZdr4M,1333
+autocorrect_linux/core/core.py,sha256=shVWcKAO9umjpVRG5qDUu7jZVq7Cqk9Oax2EOdAYrtI,4770
+autocorrect_linux/core/gui.py,sha256=yOEie0o1RjPvXHp05oJoPbHr5csX9SMf3y54lKXCME8,1387
+autocorrect_linux/core/predict.py,sha256=rOD8J9GJkGPniCTHTH7n1ZNwU5_MZ2iUUvavDOh1qBY,1847
+autocorrect_linux/core/utils.py,sha256=hWeKPytuEKP138B8U7_Vzc2RJKRxeu8JP0N4KujXbY0,4133
+autocorrect_linux-0.4.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+autocorrect_linux-0.4.0.dist-info/METADATA,sha256=OcB-lyYR8_J32rAoCuV58F5jgyq64fwSIBM4SJRwC48,3168
+autocorrect_linux-0.4.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+autocorrect_linux-0.4.0.dist-info/top_level.txt,sha256=7-3JbkRLJXGQNwO5rEHtL-m90HQflW2DSVQ4WRf1X-0,18
+autocorrect_linux-0.4.0.dist-info/RECORD,,
