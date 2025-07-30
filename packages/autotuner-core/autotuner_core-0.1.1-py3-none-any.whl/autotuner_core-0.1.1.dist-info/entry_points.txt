@@ -1,0 +1,3 @@
+[console_scripts]
+autotuner-graph = autotuner_core.cli.graph_cli:main
+autotuner-sort = autotuner_core.cli.sort_cli:main
