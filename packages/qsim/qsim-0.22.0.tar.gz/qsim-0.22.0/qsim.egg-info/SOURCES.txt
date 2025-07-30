@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+qsim.egg-info/PKG-INFO
+qsim.egg-info/SOURCES.txt
+qsim.egg-info/dependency_links.txt
+qsim.egg-info/requires.txt
+qsim.egg-info/top_level.txt

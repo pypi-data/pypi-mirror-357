@@ -1,0 +1,24 @@
+# Summary: creates placeholder for project "qsim" on PyPI.
+
+[build-system]
+requires = ["setuptools >= 75.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qsim"
+version = "0.22.0"
+dependencies = ["qsimcirq==0.22.0"]
+authors = [
+    {name = "Quantum AI team and collaborators", email = "quantum-oss-maintainers@google.com"}
+]
+maintainers = [
+    {name = "Google Quantum AI open-source maintainers", email = "quantum-oss-maintainers@google.com"}
+]
+description = "High-performance quantum circuit simulation library"
+readme = "README.md"
+requires-python = ">=3.10.0"
+
+[project.urls]
+homepage = "https://quantumai.google/qsim"
+source = "https://github.com/quantumlib/qsim"
+issues = "https://github.com/quantumlib/qsim/issues"
