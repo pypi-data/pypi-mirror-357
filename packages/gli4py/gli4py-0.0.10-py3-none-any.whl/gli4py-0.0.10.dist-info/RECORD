@@ -1,0 +1,9 @@
+gli4py/__init__.py,sha256=EFXEzDJwYCi_WqA9htm5F6l_S8hpgsgdO4ssOV1glX8,98
+gli4py/enums.py,sha256=xPRPyqhFw38Dg2d1zMldQIniC8rGTt24eE_tzv2EfPM,165
+gli4py/error_codes.json,sha256=TAwYtdrx0bcwjBlLgvMyMsNclFEAH2yRWcvoQlvgZuw,280
+gli4py/error_handling.py,sha256=7dEU69CpVqn8X2WvHxsNSuOqMXklaxSj2jjH8xO5ftU,1937
+gli4py/glinet.py,sha256=wiF3ca337iYbYZO0YIksMSdpZhQebizcuD1PdQ0wa4Q,14842
+gli4py-0.0.10.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+gli4py-0.0.10.dist-info/METADATA,sha256=8HCxqGGS8HvRJ1H1xl0VfPFQ5SoNMtdsKUJH7jejs4A,2047
+gli4py-0.0.10.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+gli4py-0.0.10.dist-info/RECORD,,
