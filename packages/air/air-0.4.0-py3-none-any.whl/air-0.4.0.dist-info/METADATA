@@ -1,0 +1,105 @@
+Metadata-Version: 2.4
+Name: air
+Version: 0.4.0
+Summary: Add your description here
+Author-email: "Audrey M. Roy Greenfeld" <audrey@feldroy.com>
+Project-URL: homepage, https://github.com/feldroy/air
+Project-URL: bugs, https://github.com/feldroy/air/issues
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development
+Classifier: Typing :: Typed
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: FastAPI
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.115.12
+Requires-Dist: fastapi-tags>=0.4.0
+Requires-Dist: Jinja2==3.1.4
+Requires-Dist: markdown==3.6
+Requires-Dist: typer>=0.16.0
+Provides-Extra: dev
+Requires-Dist: coverage>=7.8.2; extra == "dev"
+Requires-Dist: httpx>=0.28.1; extra == "dev"
+Requires-Dist: ipdb>=0.13.13; extra == "dev"
+Requires-Dist: mypy>=1.16.0; extra == "dev"
+Requires-Dist: pytest>=8.4.0; extra == "dev"
+Requires-Dist: ruff>=0.11.13; extra == "dev"
+Requires-Dist: types-Markdown>=3.8.0; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: mkdocs-material; extra == "docs"
+
+# Air
+
+> A breath of fresh air in python web development. Built on top of FastAPI and pydantic.
+
+Current Features 
+
+- Designed to work with FastAPI so you can have your API and web pages server from one app
+- HTML generation from jinja2 or Python classes. Pick one or both!
+- ⁠Shortcut Response  class and fastapi tags
+- Built from the beginning with ⁠HTMX in mind
+- ⁠Shortcut utility functions galore
+- Static site generation
+- ⁠Serious documentation powered by material-for-mkdocs
+- Lots of tests
+
+Planned features
+
+- ⁠pydantic-powered html forms
+- ⁠Shortcut Response class for jinja2
+
+
+## Installation
+
+```sh
+pip install air
+```
+
+## Use with fastapi tags
+
+```python
+from fastapi import FastAPI
+from air.responses import TagResponse
+from air import tags as tg
+
+app = FastAPI()
+
+
+@app.get("/", response_class=TagResponse)
+async def index():
+    return tg.Html(tg.H1("Hello, world!", style="color: blue;"))
+```
+
+## Generate HTML and API
+
+```python
+from fastapi import FastAPI
+from air.responses import TagResponse
+from air import tags as tg
+
+app = FastAPI()
+
+
+@app.get("/", response_class=TagResponse)
+async def index():
+    return tg.Html(
+        tg.H1("Hello, world!", style="color: blue;"),
+        tg.A("Go to API docs", href="/docs"),
+    )
+
+
+@app.get("/api")
+async def api_root():
+    return {}
+```
