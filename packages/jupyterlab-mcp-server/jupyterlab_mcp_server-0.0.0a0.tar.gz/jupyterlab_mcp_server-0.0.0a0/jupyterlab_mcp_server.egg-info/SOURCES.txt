@@ -1,0 +1,5 @@
+setup.py
+jupyterlab_mcp_server.egg-info/PKG-INFO
+jupyterlab_mcp_server.egg-info/SOURCES.txt
+jupyterlab_mcp_server.egg-info/dependency_links.txt
+jupyterlab_mcp_server.egg-info/top_level.txt
