@@ -1,0 +1,10 @@
+openadp/__init__.py,sha256=xJxvbpMPbYJNjM940v_ZpEHqbm22sAbe2-fjSrAy5rE,4618
+openadp/client.py,sha256=jJB_Q8IVKA6xWeMRUdxcZZ9Eyufo2UrUd1bSL9gMDjc,51595
+openadp/crypto.py,sha256=fnVQU_NxG_dTGoDBBP_IdjWIkWRQ69YfXf49aL9rt2I,14790
+openadp/keygen.py,sha256=0qwk8PVgKD9c8hB-V1ESx0jP5rjcAnNluo_cL85lLPo,19349
+openadp/ocrypt.py,sha256=b2knI77TPaGFUGvwOyEqPt9-TQP1fBJoX53t1btunnI,19551
+openadp-1.0.0.dist-info/METADATA,sha256=4eKMAkar8BLUprS09iolgMFbHTvUT85lg6HWRStEt_w,11046
+openadp-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+openadp-1.0.0.dist-info/entry_points.txt,sha256=CY1dGM7aIjj8G8wkZ2cCyAKlJKENayweGuDH4bUvVfo,58
+openadp-1.0.0.dist-info/top_level.txt,sha256=0T5H18PMhWZyYKojxMR5NJEygwpUsrtFYh14Eq9zhvQ,8
+openadp-1.0.0.dist-info/RECORD,,
