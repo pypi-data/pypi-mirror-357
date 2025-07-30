@@ -1,0 +1,36 @@
+# Core dependencies
+inquirer>=2.9.0
+rich>=12.0.0
+psutil>=5.9.0  # For system monitoring
+python-daemon>=2.3.0  # For running scheduler as daemon
+
+# Machine learning libraries
+torch>=1.10.0
+transformers>=4.37.0  # Updated for better compatibility with newer models
+datasets>=2.0.0
+accelerate>=0.20.0  # Updated for better stability
+peft>=0.7.0  # Updated for newer features
+bitsandbytes>=0.41.0  # Updated for QLoRA improvements
+evaluate>=0.4.0  # For model evaluation
+sentencepiece>=0.1.99  # Required for Gemma and many modern tokenizers (updated)
+tiktoken>=0.5.0  # Required for various tokenizers including Qwen
+llama-cpp-python
+# Database dependencies
+sqlalchemy>=1.4.0
+lancedb>=0.3.0  # Specified version
+
+# Optional dependencies
+tqdm>=4.62.0
+pydantic>=1.9.0
+matplotlib>=3.5.0
+openai>=1.0.0  # Major version update for OpenAI
+tenacity>=8.0.0
+google-generativeai>=0.3.0  # Proper package name
+backoff>=2.0.0
+python-dotenv>=1.0.0
+
+# For benchmarking
+pytest>=7.0.0
+
+# For reporting
+pandas>=1.5.0
