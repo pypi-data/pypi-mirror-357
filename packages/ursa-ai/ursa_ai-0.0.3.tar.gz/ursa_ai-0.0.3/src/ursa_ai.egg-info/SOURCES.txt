@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/ursa/__init__.py
+src/ursa/py.typed
+src/ursa_ai.egg-info/PKG-INFO
+src/ursa_ai.egg-info/SOURCES.txt
+src/ursa_ai.egg-info/dependency_links.txt
+src/ursa_ai.egg-info/top_level.txt

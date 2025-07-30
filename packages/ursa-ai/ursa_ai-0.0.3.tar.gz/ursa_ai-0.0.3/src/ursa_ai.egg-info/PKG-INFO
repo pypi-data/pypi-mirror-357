@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: ursa-ai
+Version: 0.0.3
+Summary: Add your description here
+Author-email: Mike Grosskopf <mikegros@lanl.gov>, Arthur Lui <alui@lanl.gov>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown

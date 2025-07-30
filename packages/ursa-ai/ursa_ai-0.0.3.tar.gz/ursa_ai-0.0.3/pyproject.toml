@@ -1,0 +1,33 @@
+[project]
+name = "ursa-ai"
+dynamic = ["version"]
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Mike Grosskopf", email = "mikegros@lanl.gov" },
+    { name = "Arthur Lui", email = "alui@lanl.gov" }
+]
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=61", "setuptools-git-versioning"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools-git-versioning]
+enabled = true
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+ignore = ["D100", "F401"]
+extend-select = ["I", "W505"] # "D"
+extend-unsafe-fixes = ["F401"]
+pydocstyle.convention = "google"
+pycodestyle.max-doc-length = 80
+
+[dependency-groups]
+dev = [
+    "bump-cli>=0.3.1",
+]
