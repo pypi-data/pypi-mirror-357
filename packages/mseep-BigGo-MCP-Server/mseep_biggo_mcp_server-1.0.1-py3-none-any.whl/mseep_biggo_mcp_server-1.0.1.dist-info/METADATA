@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: mseep-BigGo-MCP-Server
+Version: 1.0.1
+Summary: A Model Context Protocol (MCP) server that provides product search, price history tracking, and specification search capabilities.
+Home-page: 
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Keywords: mseep
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: aiohttp>=3.11.11
+Requires-Dist: async-lru>=2.0.4
+Requires-Dist: async-timeout>=5.0.1
+Requires-Dist: elasticsearch8[async]>=8.17.1
+Requires-Dist: mcp[cli]>=1.2.1
+Requires-Dist: typing-extensions>=4.12.2
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Package managed by MseeP.ai

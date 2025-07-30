@@ -1,0 +1,12 @@
+mseep_biggo_mcp_server-1.0.1.dist-info/licenses/LICENSE,sha256=h0kdf6JDoB1tHBS5YQW-JJGdIG1NeQe2qGa-MjzxrHo,1059
+test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test/helper.py,sha256=gHqyW53ZuGJzPKICrfXaWMIPIQr1SXPS5C9ZsTeHvQk,1801
+test/test_api_ret.py,sha256=QTO6F3c3fW748UxBiP6Pug9wyMtg5VZUvd3AGAZ5Vr8,537
+test/test_responses.py,sha256=1RKb94Lk1600vYjRDz-vLpGY0g82aQV-PyfHTpU-mEw,925
+test/test_services.py,sha256=BGOILe_VGD7CDiFoWU87LmBwf-pIpCJKnx4dD3fX-bE,1230
+test/test_setting.py,sha256=DLjChBRe60IJ8__Qf_WKytO5ozxke_O6qMtKTEHPauY,531
+test/test_tools.py,sha256=TJiuVlR7NHLXXUC0P4MU8Nein3iMn1ZEl_PSBDkox5c,1686
+mseep_biggo_mcp_server-1.0.1.dist-info/METADATA,sha256=iqFKa6N6ZprKKlri0c26t-voboETocr495YSmrYLwTc,1074
+mseep_biggo_mcp_server-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mseep_biggo_mcp_server-1.0.1.dist-info/top_level.txt,sha256=8sobtsfpB9Btr-Roflefznazfk6Tt2BQItpS5szCb9I,5
+mseep_biggo_mcp_server-1.0.1.dist-info/RECORD,,
