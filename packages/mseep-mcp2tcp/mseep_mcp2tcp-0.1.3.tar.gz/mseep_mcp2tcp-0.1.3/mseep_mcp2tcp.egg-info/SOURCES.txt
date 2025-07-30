@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_mcp2tcp.egg-info/PKG-INFO
+mseep_mcp2tcp.egg-info/SOURCES.txt
+mseep_mcp2tcp.egg-info/dependency_links.txt
+mseep_mcp2tcp.egg-info/requires.txt
+mseep_mcp2tcp.egg-info/top_level.txt
+tests/__init__.py
+tests/tcp_server.py
+tests/test_server.py
