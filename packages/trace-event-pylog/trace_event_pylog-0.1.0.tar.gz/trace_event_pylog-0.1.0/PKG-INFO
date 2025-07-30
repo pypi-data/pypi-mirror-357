@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: trace_event_pylog
+Version: 0.1.0
+Summary: Asynchronous trace event logger with JSON output for performance analysis
+Author-email: Matthew Khouzam <matthew.khouzam@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/TheMatthew/pylog
+Project-URL: Bug Tracker, https://github.com/TheMatthew/pylog/issues
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ujson>=5.0.0
+Dynamic: license-file
+
+# pylog
+Python Logger library
+
+An asynchronous trace event logger using Python's logging system. Outputs Chrome-compatible trace event JSON logs.
+
+
+## Example
+
+```python
+from async_trace_logger import configure_logger, log_scope
+
+logger, handler = configure_logger()
+
+@log_scope
+def my_function():
+    logger.info("Running something...")
+
+my_function()
+handler.stop()

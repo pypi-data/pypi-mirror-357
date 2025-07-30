@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+tests/test_looger.py
+trace_event_pylog/__init__.py
+trace_event_pylog/logger.py
+trace_event_pylog.egg-info/PKG-INFO
+trace_event_pylog.egg-info/SOURCES.txt
+trace_event_pylog.egg-info/dependency_links.txt
+trace_event_pylog.egg-info/requires.txt
+trace_event_pylog.egg-info/top_level.txt

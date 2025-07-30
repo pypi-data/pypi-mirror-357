@@ -1,0 +1,21 @@
+[project]
+name = "trace_event_pylog"
+version = "0.1.0"
+description = "Asynchronous trace event logger with JSON output for performance analysis"
+readme = "README.md"
+authors = [
+    { name="Matthew Khouzam", email="matthew.khouzam@gmail.com" }
+]
+license = {text = "MIT"}
+dependencies = [
+    "ujson>=5.0.0"
+]
+requires-python = ">=3.8"
+
+[project.urls]
+"Homepage" = "https://github.com/TheMatthew/pylog"
+"Bug Tracker" = "https://github.com/TheMatthew/pylog/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
