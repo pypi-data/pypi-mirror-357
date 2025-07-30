@@ -1,0 +1,119 @@
+digraph memory_graph {
+	node [shape=plaintext]
+	node92207600 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0" BGCOLOR="seagreen3" PORT="table">
+    <TR><TD BORDER="0"> </TD></TR>
+</TABLE>
+> xlabel=type]
+	node124238232052864 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="lightcoral" PORT="table">
+    <TR><TD BORDER="0"><font color="#505050">0</font></TD><TD BORDER="1"> 57 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">1</font></TD><TD BORDER="1"> 86 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">2</font></TD><TD BORDER="1"> 93 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">3</font></TD><TD BORDER="1"> 173 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">4</font></TD><TD BORDER="1"> 315 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">5</font></TD><TD BORDER="1"> 369 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">6</font></TD><TD BORDER="1"> 685 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">7</font></TD><TD BORDER="1"> 753 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">8</font></TD><TD BORDER="1"> 828 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">9</font></TD><TD BORDER="1"> 855 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">10</font></TD><TD BORDER="1"> 869 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">11</font></TD><TD BORDER="1"> 874 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">12</font></TD><TD BORDER="1"> 883 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">13</font></TD><TD BORDER="1"> 970 </TD></TR>
+    <TR><TD BORDER="0"><font color="#505050">14</font></TD><TD BORDER="1"> 978 </TD></TR>
+</TABLE>
+> xlabel=list]
+	node124238228316992 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="#60a5ff" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> List_View </TD><TD BORDER="1" STYLE="ROUNDED"> n </TD><TD BORDER="1" STYLE="ROUNDED"> data </TD><TD BORDER="1" STYLE="ROUNDED"> value </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1"> 15 </TD><TD BORDER="1" PORT="ref1"> </TD><TD BORDER="1"> 315 </TD></TR>
+</TABLE>
+> xlabel=dict]
+	node124238228316992:ref0 -> node92207600:table [style=solid]
+	node124238228316992:ref1 -> node124238232052864:table [style=solid]
+	node124238230628944 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="seagreen1" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> lst </TD><TD BORDER="1" STYLE="ROUNDED"> begin </TD><TD BORDER="1" STYLE="ROUNDED"> end </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1"> 0 </TD><TD BORDER="1"> 15 </TD></TR>
+</TABLE>
+> xlabel=List_View]
+	node124238230628944:ref0 -> node124238232052864:table [style=solid]
+	node124238228317504 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="#60a5ff" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> view </TD><TD BORDER="1" STYLE="ROUNDED"> value </TD><TD BORDER="1" STYLE="ROUNDED"> mid </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1"> 315 </TD><TD BORDER="1"> 7 </TD></TR>
+</TABLE>
+> xlabel=dict]
+	node124238228317504:ref0 -> node124238230628944:table [style=solid]
+	node124238229351440 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="seagreen1" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> lst </TD><TD BORDER="1" STYLE="ROUNDED"> begin </TD><TD BORDER="1" STYLE="ROUNDED"> end </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1"> 0 </TD><TD BORDER="1"> 7 </TD></TR>
+</TABLE>
+> xlabel=List_View]
+	node124238229351440:ref0 -> node124238232052864:table [style=solid]
+	node124238228317632 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="#60a5ff" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> view </TD><TD BORDER="1" STYLE="ROUNDED"> value </TD><TD BORDER="1" STYLE="ROUNDED"> mid </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1"> 315 </TD><TD BORDER="1"> 3 </TD></TR>
+</TABLE>
+> xlabel=dict]
+	node124238228317632:ref0 -> node124238229351440:table [style=solid]
+	node124238229351760 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="seagreen1" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> lst </TD><TD BORDER="1" STYLE="ROUNDED"> begin </TD><TD BORDER="1" STYLE="ROUNDED"> end </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1"> 3 </TD><TD BORDER="1"> 7 </TD></TR>
+</TABLE>
+> xlabel=List_View]
+	node124238229351760:ref0 -> node124238232052864:table [style=solid]
+	node124238228317760 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="#60a5ff" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> view </TD><TD BORDER="1" STYLE="ROUNDED"> value </TD><TD BORDER="1" STYLE="ROUNDED"> mid </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1"> 315 </TD><TD BORDER="1"> 5 </TD></TR>
+</TABLE>
+> xlabel=dict]
+	node124238228317760:ref0 -> node124238229351760:table [style=solid]
+	node124238228129648 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="seagreen1" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> lst </TD><TD BORDER="1" STYLE="ROUNDED"> begin </TD><TD BORDER="1" STYLE="ROUNDED"> end </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1"> 3 </TD><TD BORDER="1"> 5 </TD></TR>
+</TABLE>
+> xlabel=List_View]
+	node124238228129648:ref0 -> node124238232052864:table [style=solid]
+	node124238228317888 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="#60a5ff" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> view </TD><TD BORDER="1" STYLE="ROUNDED"> value </TD><TD BORDER="1" STYLE="ROUNDED"> mid </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1"> 315 </TD><TD BORDER="1"> 4 </TD></TR>
+</TABLE>
+> xlabel=dict]
+	node124238228317888:ref0 -> node124238228129648:table [style=solid]
+	node124238228129952 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="seagreen1" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> lst </TD><TD BORDER="1" STYLE="ROUNDED"> begin </TD><TD BORDER="1" STYLE="ROUNDED"> end </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1"> 4 </TD><TD BORDER="1"> 5 </TD></TR>
+</TABLE>
+> xlabel=List_View]
+	node124238228129952:ref0 -> node124238232052864:table [style=solid]
+	node124238228318016 [label=<
+<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="#60a5ff" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> view </TD><TD BORDER="1" STYLE="ROUNDED"> value </TD><TD BORDER="1" STYLE="ROUNDED"> mid </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1"> 315 </TD><TD BORDER="1"> 4 </TD></TR>
+</TABLE>
+> xlabel=dict]
+	node124238228318016:ref0 -> node124238228129952:table [style=solid]
+	node124238228291040 [label=<
+<TABLE BORDER="3" CELLBORDER="1" CELLSPACING="5" CELLPADDING="0" BGCOLOR="khaki" PORT="table">
+    <TR><TD BORDER="1" STYLE="ROUNDED"> 0: &lt;module&gt; </TD><TD BORDER="1" STYLE="ROUNDED"> 1: bin_search </TD><TD BORDER="1" STYLE="ROUNDED"> 2: bin_search </TD><TD BORDER="1" STYLE="ROUNDED"> 3: bin_search </TD><TD BORDER="1" STYLE="ROUNDED"> 4: bin_search </TD><TD BORDER="1" STYLE="ROUNDED"> 5: bin_search </TD></TR>
+    <TR><TD BORDER="1" PORT="ref0"> </TD><TD BORDER="1" PORT="ref1"> </TD><TD BORDER="1" PORT="ref2"> </TD><TD BORDER="1" PORT="ref3"> </TD><TD BORDER="1" PORT="ref4"> </TD><TD BORDER="1" PORT="ref5"> </TD></TR>
+</TABLE>
+> xlabel=call_stack]
+	node124238228291040:ref0 -> node124238228316992:table [style=solid]
+	node124238228291040:ref1 -> node124238228317504:table [style=solid]
+	node124238228291040:ref2 -> node124238228317632:table [style=solid]
+	node124238228291040:ref3 -> node124238228317760:table [style=solid]
+	node124238228291040:ref4 -> node124238228317888:table [style=solid]
+	node124238228291040:ref5 -> node124238228318016:table [style=solid]
+subgraph { rank=same; node124238228316992 -> node124238228317504 -> node124238228317632 -> node124238228317760 -> node124238228317888 -> node124238228318016[weight=10, style=invis]; }
+subgraph { rank=same; node92207600 -> node124238232052864 -> node124238230628944 -> node124238229351440 -> node124238229351760 -> node124238228129648 -> node124238228129952[weight=10, style=invis]; }
+}
