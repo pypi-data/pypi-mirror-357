@@ -1,0 +1,14 @@
+[project]
+name = "securepass"
+version = "0.0.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Felipe R. de Almeida", email = "feliperalmeida@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
