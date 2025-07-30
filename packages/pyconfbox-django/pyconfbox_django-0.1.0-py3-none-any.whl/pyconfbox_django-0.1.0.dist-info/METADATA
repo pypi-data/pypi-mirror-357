@@ -1,0 +1,99 @@
+Metadata-Version: 2.4
+Name: pyconfbox-django
+Version: 0.1.0
+Summary: Django integration plugin for PyConfBox
+Project-URL: Homepage, https://github.com/dan1901/pyconfbox
+Project-URL: Documentation, https://github.com/dan1901/pyconfbox/tree/main/docs
+Project-URL: Repository, https://github.com/dan1901/pyconfbox
+Project-URL: Issues, https://github.com/dan1901/pyconfbox/issues
+Author-email: Gabriel Ki <edc1901@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 K
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+Classifier: Framework :: Django :: 5.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.8
+Requires-Dist: django>=3.2
+Requires-Dist: pyconfbox>=0.1.0
+Description-Content-Type: text/markdown
+
+# PyConfBox Django Plugin
+
+Django 애플리케이션에서 PyConfBox를 사용할 수 있게 해주는 플러그인입니다.
+
+## 설치
+
+```bash
+pip install pyconfbox-django
+```
+
+## 사용법
+
+### Django 설정에 미들웨어 추가
+
+```python
+# settings.py
+MIDDLEWARE = [
+    'pyconfbox_django.middleware.PyConfBoxMiddleware',
+    # ... 다른 미들웨어들
+]
+
+# PyConfBox 설정
+PYCONFBOX = {
+    'default_storage': 'environment',
+    'fallback_storage': 'memory',
+    'env_prefix': 'DJANGO_',
+}
+```
+
+### Django 저장소 사용
+
+```python
+from pyconfbox_django import DjangoStorage
+from pyconfbox import Config
+
+# Django 설정과 연동
+django_storage = DjangoStorage()
+config = Config(default_storage=django_storage)
+
+# Django 설정에 자동 반영
+config.set('DEBUG', True, scope='django')
+config.set('SECRET_KEY', 'your-secret-key', scope='django')
+```
+
+## 라이선스
+
+MIT License 
