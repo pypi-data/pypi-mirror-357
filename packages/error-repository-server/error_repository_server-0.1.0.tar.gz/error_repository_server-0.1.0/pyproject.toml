@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "error-repository-server"
+version = "0.1.0"
+description = "MCP server for error repository that answers questions about error codes and solutions"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = ["mcp", "error-repository", "error-codes", "debugging", "model-context-protocol"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Systems Administration",
+]
+requires-python = ">=3.8"
+license = {text = "MIT"}
+readme = "README.md"
+dependencies = [
+    "mcp>=1.0.0",
+    "pandas>=2.0.0",
+    "openpyxl>=3.1.0",
+    "pydantic>=2.0.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/error-repository-server"
+"Repository" = "https://github.com/yourusername/error-repository-server"
+"Bug Tracker" = "https://github.com/yourusername/error-repository-server/issues"
+"Documentation" = "https://github.com/yourusername/error-repository-server/blob/main/README.md"
+
+[project.scripts]
+error-repository-server = "error_repository_server.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/error_repository_server"]
+
+[tool.hatch.envs.default]
+dependencies = [
+    "pytest",
+    "mypy",
+    "ruff"
+]

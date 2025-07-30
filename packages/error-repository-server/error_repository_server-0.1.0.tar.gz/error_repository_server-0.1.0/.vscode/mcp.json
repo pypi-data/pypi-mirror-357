@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "error-repository-server": {
+      "type": "stdio",
+      "command": "C:/Users/cupadhyay/SampleAmSeaPee/.venv/Scripts/python.exe",
+      "args": ["-m", "error_repository_server.server"]
+    }
+  }
+}
