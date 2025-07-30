@@ -1,0 +1,21 @@
+[project]
+name = "quda"
+version = "1.0.0b0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.12"
+license="MIT"
+dependencies = [
+    "dynaconf>=3.2.11",
+    "polars>=1.31.0",
+    "sqlparse>=0.5.3",
+    "ygo>=1.1.4",
+]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["quda", "quda.*"]
