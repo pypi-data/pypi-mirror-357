@@ -1,0 +1,10 @@
+include README.md
+include README_ZH.md
+recursive-include assets *
+global-include *.png
+global-include *.gif
+global-include *.jpg
+global-include *.jpeg
+global-include *.svg
+global-include *.ico
+global-include *.md
