@@ -1,0 +1,15 @@
+mkl_devel_dpcpp-2025.2.0.data/data/Library/lib/mkl_sycl.lib,sha256=HQHJa5L37zap4afdt2t-VXjJpNuxZrnUq2Xl8WvOOXM,1252594318
+mkl_devel_dpcpp-2025.2.0.data/data/Library/lib/mkl_sycl_blas_dll.lib,sha256=7L1A2KRefqYtzLouqUksHqmeujU5NePSvlI4ZBHlhkw,2379594
+mkl_devel_dpcpp-2025.2.0.data/data/Library/lib/mkl_sycl_data_fitting_dll.lib,sha256=X5aRnURCtc-L8R-8f4UmpIonqGYhJ52oOgGqeB4JfUo,77790
+mkl_devel_dpcpp-2025.2.0.data/data/Library/lib/mkl_sycl_dft_dll.lib,sha256=ZvVVgGbpberVahxnSgyaDxy9doFfaRoSsdOKJHLKFsk,292994
+mkl_devel_dpcpp-2025.2.0.data/data/Library/lib/mkl_sycl_dll.lib,sha256=jng5GwP1NPHKl3raPrYp0WHJlg-TRCtnWgQ3heDUdoE,822
+mkl_devel_dpcpp-2025.2.0.data/data/Library/lib/mkl_sycl_lapack_dll.lib,sha256=nAvRPK_-ARCZFZ4NhPBOUTLRRxMjUA-JATIvyNURuXI,629946
+mkl_devel_dpcpp-2025.2.0.data/data/Library/lib/mkl_sycl_rng_dll.lib,sha256=lZCMHQA-jRUherLRyZeeLuq0Si4kfoWZMMp8yn3muwk,6190772
+mkl_devel_dpcpp-2025.2.0.data/data/Library/lib/mkl_sycl_sparse_dll.lib,sha256=xpN4vc_gesMxl9HCvuTMaiRkP-vBfEamdGsC1jNrkEc,181314
+mkl_devel_dpcpp-2025.2.0.data/data/Library/lib/mkl_sycl_stats_dll.lib,sha256=y9Q0uv8N8F93ekTyfJk74KWfeMdRbvIrduvkR1hyTnA,228544
+mkl_devel_dpcpp-2025.2.0.data/data/Library/lib/mkl_sycl_vm_dll.lib,sha256=PD1x3Z8M9WE-T3OCEnZgtPIKldYZAcZSb7_4G5FPrO4,4688250
+mkl_devel_dpcpp-2025.2.0.dist-info/LICENSE.txt,sha256=dyFjPQ3f9D-uJev9QF-BZqDOcwy87ETy862dXrismm8,4105
+mkl_devel_dpcpp-2025.2.0.dist-info/METADATA,sha256=kE22NmN_gLGitu953xuduzmyVpMTG99vX46mMvmzo74,1491
+mkl_devel_dpcpp-2025.2.0.dist-info/WHEEL,sha256=AicHu81jYIhU5ObukFKUZOOinzdgDNwF05fPW9oDLwY,122
+mkl_devel_dpcpp-2025.2.0.dist-info/top_level.txt,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+mkl_devel_dpcpp-2025.2.0.dist-info/RECORD,,
