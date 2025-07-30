@@ -1,0 +1,3 @@
+[console_scripts]
+smart-code=smart_code.cli:main
+
