@@ -1,0 +1,36 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "mcp-salesforce-lite"
+version = "0.1.0"
+description = "Simple and lightweight Salesforce MCP server for connecting AI assistants to Salesforce data"
+authors = [{name = "Your Name", email = "your.email@example.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+    "simple-salesforce>=1.12.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+mcp-salesforce-lite = "mcp_salesforce_lite.server:main"
+
+[tool.poetry]
+name = "mcp-salesforce-lite"
+version = "0.1.0"
+description = "Simple and lightweight Salesforce MCP server for connecting AI assistants to Salesforce data"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "mcp_salesforce_lite", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+mcp = "^1.0.0"
+simple-salesforce = "^1.12.0"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.scripts]
+mcp-salesforce-lite = "mcp_salesforce_lite.server:main"
