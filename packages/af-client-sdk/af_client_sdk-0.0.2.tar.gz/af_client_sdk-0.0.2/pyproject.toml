@@ -1,0 +1,24 @@
+# pyproject.toml
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "af_client_sdk"
+version = "0.0.2"
+description = "ActiveFence Client SDK"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "aiohttp~=3.12",
+    "requests~=2.32"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio", "aioresponses", "responses"]
+
+[project.urls]
+repository = "https://github.com/ActiveFence/ActiveFence-Guardrails-Python-SDK"
