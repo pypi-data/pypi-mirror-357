@@ -1,0 +1,2 @@
+[console_scripts]
+robot-eval-logger = robot_eval_logger.cli:main
