@@ -1,0 +1,13 @@
+mseep_pbixray_mcp_server-0.1.3.dist-info/licenses/LICENSE,sha256=0FyNSQQ1pMtei5Qbs46CJ_VgZbEboMyokHrg9ARdX7U,1066
+src/__init__.py,sha256=HoGiSzbrUD254NZD87w4Px-Xr9RL-_5uyfmywFCYVlY,193
+src/pbixray_server.py,sha256=UxpR5zerj7C3DjFNR_kHh1yQVuBOM5ovXu5B9QP9bC0,31795
+tests/__init__.py,sha256=u-LBuJNxmiV7ZiC8vTb-RpeYX4DaWglRUUwTHAyHsqM,45
+tests/conftest.py,sha256=-HO5Cpqca2ZLgG5L23ofI0E_w8g00GCKjqUYPWoCveE,1060
+tests/test_filtered_table_contents.py,sha256=rlEyElbfmCI0fP39j2jVae5zrrkX-MAQikLq2mhwHOg,13753
+tests/test_server.py,sha256=7m0IeW3FM_PQuyfxudts5dw26k-VqobvgWhjMUuJDUc,12691
+tests/test_with_sample.py,sha256=IOIB9Jt6VUBijxJq7uQui-CG4G58V4toQTnakDFkPMo,2761
+tests/test_with_sample_filtered.py,sha256=TWCpd6ugl6l_I_5atGglrQdH26VgwQPBYeZm3cNKuvA,6613
+mseep_pbixray_mcp_server-0.1.3.dist-info/METADATA,sha256=VnlvkaJyKeCuSGeG_J3lo-zz8Tn97ydfoOtbKtSf_y4,1012
+mseep_pbixray_mcp_server-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mseep_pbixray_mcp_server-0.1.3.dist-info/top_level.txt,sha256=KW3xgkz9NLMTcmmzgKvW8RFpCFkRIQ085qzq2diFf68,10
+mseep_pbixray_mcp_server-0.1.3.dist-info/RECORD,,
