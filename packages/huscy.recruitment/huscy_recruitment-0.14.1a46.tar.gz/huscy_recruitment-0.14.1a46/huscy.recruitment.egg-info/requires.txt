@@ -1,0 +1,13 @@
+huscy.appointments
+huscy.attributes
+huscy.bookings
+huscy.participations
+huscy.project_design
+python-dateutil
+
+[development]
+psycopg2-binary
+
+[testing]
+tox
+watchdog
