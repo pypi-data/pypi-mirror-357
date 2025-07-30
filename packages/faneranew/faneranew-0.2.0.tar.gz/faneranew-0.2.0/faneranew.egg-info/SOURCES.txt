@@ -1,0 +1,9 @@
+pyproject.toml
+faneranew/__init__.py
+faneranew/module.py
+faneranew/texts.py
+faneranew.egg-info/PKG-INFO
+faneranew.egg-info/SOURCES.txt
+faneranew.egg-info/dependency_links.txt
+faneranew.egg-info/requires.txt
+faneranew.egg-info/top_level.txt
