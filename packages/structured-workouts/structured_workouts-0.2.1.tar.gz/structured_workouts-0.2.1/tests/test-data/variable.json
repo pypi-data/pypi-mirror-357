@@ -1,0 +1,58 @@
+{
+  "version": "0.1.0",
+  "content": [
+    {
+      "type": "interval",
+      "volume": {
+        "type": "constant",
+        "quantity": "duration",
+        "value": {
+          "reference": "parameter",
+          "value": 1.0,
+          "parameter": "interval_volume_variable"
+        }
+      },
+      "intensity": {
+        "type": "range",
+        "quantity": "power",
+        "min": {
+          "reference": "parameter",
+          "value": 0.8,
+          "parameter": "interval_intensity_variable"
+        },
+        "max": {
+          "reference": "parameter",
+          "value": 1.0,
+          "parameter": "interval_intensity_variable"
+        }
+      }
+    },
+    {
+      "type": "interval",
+      "volume": {
+        "type": "constant",
+        "quantity": "distance",
+        "value": {
+          "reference": "parameter",
+          "value": 1.0,
+          "parameter": "interval_volume_variable"
+        }
+      },
+      "intensity": {
+        "type": "ramp",
+        "quantity": "power",
+        "start": {
+          "reference": "parameter",
+          "value": 0.6,
+          "parameter": "RAMP_VARIABLE"
+        },
+        "end": {
+          "reference": "parameter",
+          "value": 1.0,
+          "parameter": "RAMP_VARIABLE"
+        }
+      }
+    }
+  ],
+  "title": "Workout with variable"
+}

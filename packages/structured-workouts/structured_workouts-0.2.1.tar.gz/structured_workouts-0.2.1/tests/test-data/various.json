@@ -1,0 +1,95 @@
+{
+  "version": "0.1.0",
+  "title": "Workout A",
+  "content": [
+    {
+      "type": "interval",
+      "volume": {
+        "type": "constant",
+        "quantity": "duration",
+        "value": {
+          "reference": "absolute",
+          "value": 10.0
+        }
+      },
+      "intensity": {
+        "type": "range",
+        "quantity": "power",
+        "min": {
+          "reference": "absolute",
+          "value": 100.0
+        },
+        "max": {
+          "reference": "absolute",
+          "value": 150.0
+        }
+      }
+    },
+    {
+      "type": "repeat",
+      "count": {
+        "type": "constant",
+        "quantity": "number",
+        "value": {
+          "reference": "absolute",
+          "value": 3
+        }
+      },
+      "content": [
+        {
+          "type": "instruction",
+          "text": "Don't push too hard"
+        },
+        {
+          "type": "interval",
+          "volume": {
+            "type": "constant",
+            "quantity": "distance",
+            "value": {
+              "reference": "parameter",
+              "value": 1.0,
+              "parameter": "x"
+            }
+          },
+          "intensity": {
+            "type": "ramp",
+            "quantity": "speed",
+            "start": {
+              "reference": "absolute",
+              "value": 5.0
+            },
+            "end": {
+              "reference": "absolute",
+              "value": 10.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "name": "Cool Down",
+      "content": [
+        {
+          "type": "interval",
+          "volume": {
+            "type": "constant",
+            "quantity": "duration",
+            "value": {
+              "reference": "absolute",
+              "value": 5.0
+            }
+          },
+          "intensity": {
+            "type": "range",
+            "quantity": "speed",
+            "max": {
+              "reference": "absolute",
+              "value": 5.0
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

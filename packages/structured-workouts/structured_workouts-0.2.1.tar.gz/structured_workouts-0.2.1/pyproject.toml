@@ -1,0 +1,24 @@
+[project]
+name = "structured-workouts"
+version = "0.2.1"
+description = "A Python library for creating, parsing, and converting structured workout formats with support for parametrization."
+readme = "README.md"
+authors = [
+    { name = "Aart Goossens", email = "aart@sweatstack.no" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.0.0",
+]
+
+[project.scripts]
+structured-workouts = "structured_workouts:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.0",
+]

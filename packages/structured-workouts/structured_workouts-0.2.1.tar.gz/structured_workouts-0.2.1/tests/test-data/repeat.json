@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0",
+  "content": [
+    {
+      "type": "repeat",
+      "count": {
+        "type": "constant",
+        "quantity": "number",
+        "value": {
+          "reference": "absolute",
+          "value": 3
+        }
+      },
+      "content": []
+    }
+  ],
+  "title": "Workout with repeat"
+}

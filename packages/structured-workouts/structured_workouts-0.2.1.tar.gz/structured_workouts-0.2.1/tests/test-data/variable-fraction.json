@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "content": [
+    {
+      "type": "interval",
+      "volume": {
+        "type": "constant",
+        "quantity": "duration",
+        "value": {
+          "reference": "absolute",
+          "value": 120
+        }
+      },
+      "intensity": {
+        "type": "constant",
+        "quantity": "power",
+        "value": {
+          "reference": "parameter",
+          "value": 0.5,
+          "parameter": "threshold"
+        }
+      }
+    },
+    {
+      "type": "interval",
+      "volume": {
+        "type": "constant",
+        "quantity": "distance",
+        "value": {
+          "reference": "parameter",
+          "value": 1.0,
+          "parameter": "INTERVAL_VOLUME_VARIABLE"
+        }
+      },
+      "intensity": {
+        "type": "range",
+        "quantity": "power",
+        "min": {
+          "reference": "parameter",
+          "value": 0.8,
+          "parameter": "INTERVAL_INTENSITY_VARIABLE"
+        },
+        "max": {
+          "reference": "parameter",
+          "value": 1.0,
+          "parameter": "INTERVAL_INTENSITY_VARIABLE"
+        }
+      }
+    }
+  ],
+  "title": "Workout with variable fraction"
+}

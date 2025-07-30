@@ -1,0 +1,99 @@
+{
+  "version": "0.1.0",
+  "content": [
+    {
+      "type": "section",
+      "content": [
+        {
+          "type": "interval",
+          "volume": {
+            "type": "constant",
+            "quantity": "duration",
+            "value": {
+              "reference": "absolute",
+              "value": 600
+            }
+          },
+          "intensity": {
+            "type": "constant",
+            "quantity": "power",
+            "value": {
+              "reference": "absolute",
+              "value": 100
+            }
+          }
+        }
+      ],
+      "name": "warm up"
+    },
+    {
+      "type": "section",
+      "content": [
+        {
+          "type": "repeat",
+          "count": {
+            "type": "constant",
+            "quantity": "number",
+            "value": {
+              "reference": "absolute",
+              "value": 6
+            }
+          },
+          "content": [
+            {
+              "type": "interval",
+              "volume": {
+                "type": "constant",
+                "quantity": "duration",
+                "value": {
+                  "reference": "absolute",
+                  "value": 360
+                }
+              },
+              "intensity": {
+                "type": "constant",
+                "quantity": "power",
+                "value": {
+                  "reference": "absolute",
+                  "value": 200
+                }
+              }
+            },
+            {
+              "type": "instruction",
+              "text": "Rest for 60 seconds"
+            }
+          ]
+        }
+      ],
+      "name": "main set"
+    },
+    {
+      "type": "section",
+      "content": [
+        {
+          "type": "interval",
+          "volume": {
+            "type": "constant",
+            "quantity": "duration",
+            "value": {
+              "reference": "absolute",
+              "value": 600
+            }
+          },
+          "intensity": {
+            "type": "constant",
+            "quantity": "power",
+            "value": {
+              "reference": "absolute",
+              "value": 100
+            }
+          }
+        }
+      ],
+      "name": "cool down"
+    }
+  ],
+  "title": "6x6 minutes at FTP",
+  "description": "This workout begins with a warm-up to prepare your body, followed by six intervals of six minutes at your FTP, interspersed with one minute of rest between each. Finally, a cool down."
+}

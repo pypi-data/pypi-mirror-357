@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv sync:*)",
+      "Bash(make test:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(uv run:*)",
+      "Bash(grep:*)",
+      "Bash(python:*)",
+      "Bash(PYTHONPATH=src uv run pytest tests/test_parsers.py::TestIntervalsICUTextParser -v)",
+      "Bash(PYTHONPATH=src uv run pytest tests/test_parsers.py::TestIntervalsICUAPIParser -v)",
+      "Bash(PYTHONPATH=src uv run pytest tests/ -v)",
+      "Bash(PYTHONPATH=src uv run pytest tests/test_parsers.py::TestIntervalsICUAPIParser::test_basic_api_import -v -s)",
+      "Bash(rm:*)"
+    ],
+    "deny": []
+  }
+}

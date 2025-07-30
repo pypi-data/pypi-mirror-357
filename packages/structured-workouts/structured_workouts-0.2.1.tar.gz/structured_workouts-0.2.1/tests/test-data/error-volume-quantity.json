@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0",
+  "content": [
+    {
+      "type": "interval",
+      "volume": {
+        "type": "constant",
+        "quantity": "power",
+        "value": {
+          "reference": "absolute",
+          "value": 10.0
+        }
+      },
+      "intensity": {
+        "type": "constant",
+        "quantity": "power",
+        "value": {
+          "reference": "absolute",
+          "value": 100.0
+        }
+      }
+    }
+  ],
+  "title": "Workout with erronous volume quantity"
+}
