@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: yuclid
+Version: 0.1.0
+Summary: A Python project.
+Author-email: Your Name <your.email@example.com>
+Project-URL: Homepage, https://github.com/fsossai/yuclid
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# Yuclid
+
+*Combinatorially explode your experiments*
+
+- **`yuclid run`**: Run experiments with with all combination of registered parameters.
+- **`yuclid plot`**: Interactively visualizes the results produced by `yuclid run`.
