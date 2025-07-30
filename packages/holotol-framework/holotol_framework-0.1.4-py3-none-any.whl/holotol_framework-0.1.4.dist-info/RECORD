@@ -1,0 +1,9 @@
+holotol_framework/__init__.py,sha256=IM3rhcn71FdoGtVPu2Nd3KEPuNeKGLaeA6_UyMFZhBU,529
+holotol_framework/data_loader.py,sha256=DQccXFVSWrJ0BI48Lcs1ZF0k_req6z7R5HNPVL7Jd9s,2773
+holotol_framework/data_processor.py,sha256=2tCeiYYK3R9igewfWaCnWGskP4sn5c9aenyxOSof6bQ,2585
+holotol_framework/framework.py,sha256=o78npv6AJ0JeMzcGS6TXCNuUPxfn3-P6X2lMXiFh2Co,8917
+holotol_framework/pipeline.py,sha256=dusN2-PPlEG6zYBgCssQbyfE3cDa0IVPcmHW0EjgDVU,4726
+holotol_framework-0.1.4.dist-info/METADATA,sha256=DBfE34o1gve2l1Ax9B7yLvYviwqn_3f1ZRmxerCBLqg,5945
+holotol_framework-0.1.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+holotol_framework-0.1.4.dist-info/licenses/LICENSE,sha256=1LaOzsla0gMkdeVHZZxMR7RAaU-j4hGtLwhJNEE9WOs,1071
+holotol_framework-0.1.4.dist-info/RECORD,,
