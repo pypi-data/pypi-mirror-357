@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "kafkaesque-pylib"
+version = "0.0.4"
+description = ""
+authors = [
+    "Stefan Heigl stefan.heigl90@gmail.com"
+]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+confluent-kafka = {extras = ["avro", "schemaregistry"], version = "^2.8.2"}
+isodate = "^0.7"
+pyyaml = "^6.0.2"
+murmurhash2 = "^0.2.10"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.4.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
