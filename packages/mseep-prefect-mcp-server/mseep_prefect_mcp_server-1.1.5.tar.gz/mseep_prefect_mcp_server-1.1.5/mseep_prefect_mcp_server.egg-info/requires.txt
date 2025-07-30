@@ -1,0 +1,3 @@
+mcp[cli]
+httpx>=0.24.0
+prefect>=3.0.0
