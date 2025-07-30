@@ -1,0 +1,16 @@
+webshocket/__init__.py,sha256=Dm7Dx89OeH-ITbiiT2nSJEhr7QeVGYNTUEXHC0Ojefw,859
+webshocket/connection.py,sha256=rQUyM1TuyhNps1zB4FZ2RaOTkgcIBcatpRTkztdpbXM,6617
+webshocket/connection.pyi,sha256=JWN3grmerVHo-3l5k8zAp4V-pJ9ZmMbgGq3thRgLasM,1067
+webshocket/enum.py,sha256=HRzTI-xbZcVldfVZ-88GJfheog7cs2QUUv0mXcRXY-g,1273
+webshocket/exceptions.py,sha256=7Iew1x2doo4Q2iGf37AxGJjpNSOoU9XBkOdUY74GtN8,560
+webshocket/handler.py,sha256=aIJzmgh_lxTfTUODTPWEf-yUTFLYtp_SVfB9ZpXk55s,5260
+webshocket/packets.py,sha256=mCa-UyF7wNFUiGLo_O-dAhEmyzxZNcIPdxE_3zR39fo,764
+webshocket/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+webshocket/typing.py,sha256=L6c63Irmxp8e8JaOr8yBkgRWuOUr2i59Ab_VD1dtsQo,338
+webshocket/websocket.py,sha256=3ibJI44drxBOTWvq1zEs7Dx3HcF6kUGH3mKxvg3Yge0,16732
+webshocket/websocket.pyi,sha256=QJIodVcYavf2l1aF3sJDiE10de9u_B9DGq7qv48SLdc,3167
+webshocket-0.1.0.dist-info/licenses/LICENSE,sha256=s8pmwf6J2Ub0qqO-9B7azAB0C9UA6Jbn4YCi5YHAzuo,1091
+webshocket-0.1.0.dist-info/METADATA,sha256=1fRtGNfjPAe2P961VBtn5gBn-1bp0PZc8Fs6OxRTAKw,5635
+webshocket-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+webshocket-0.1.0.dist-info/top_level.txt,sha256=Kdo7SUbumYSeHuZ6fVC5RXn7EkKMeBqXKZpJsiKjVvw,11
+webshocket-0.1.0.dist-info/RECORD,,
