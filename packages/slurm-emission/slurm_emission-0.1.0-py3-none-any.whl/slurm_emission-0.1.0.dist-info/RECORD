@@ -1,0 +1,7 @@
+slurm_emission/__init__.py,sha256=n6tGrrZuvYQlnmmlBVaxctfEsbBFMc7BUm84LSYk8sI,58
+slurm_emission/submit_jobs.py,sha256=fkT7uPv7lZwSQOi_lEpf6acfRHQyOhJRTQQwjhr2sjg,5751
+slurm_emission-0.1.0.dist-info/licenses/LICENSE,sha256=e28Rd4eqriIgPh_nuK1OPVCjmV4Eb4EF3LFlDC1byWw,1098
+slurm_emission-0.1.0.dist-info/METADATA,sha256=d_6iSawH3MzdPWwn7JAz2k_a3QmeuFh4xw96VXD3Ayg,5623
+slurm_emission-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+slurm_emission-0.1.0.dist-info/top_level.txt,sha256=k1ZvjvSsdapsIrmm3oZqZXBzqkaQ1XogFmkgHDdIEWo,15
+slurm_emission-0.1.0.dist-info/RECORD,,
