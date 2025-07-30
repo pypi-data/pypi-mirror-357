@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+pypi_redme.md
+setup.py
+apit/__init__.py
+apit/calc.py
+apit_lk.egg-info/PKG-INFO
+apit_lk.egg-info/SOURCES.txt
+apit_lk.egg-info/dependency_links.txt
+apit_lk.egg-info/top_level.txt
+tests/__init__.py
+tests/test_calc.py
