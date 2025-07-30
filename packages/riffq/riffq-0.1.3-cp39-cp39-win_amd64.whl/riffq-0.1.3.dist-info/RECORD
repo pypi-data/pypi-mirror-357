@@ -1,0 +1,9 @@
+riffq-0.1.3.dist-info/METADATA,sha256=N4TyOvZhOEluZLb1vA4OXCllsBzZ2bkxffiK_h4NjUU,8620
+riffq-0.1.3.dist-info/WHEEL,sha256=SqgFUQC3rmJBHv6XKhA7wOKmU2ih3aAfz0FSmR1FvyM,94
+riffq-0.1.3.dist-info/licenses/LICENSE-APACHE,sha256=KKYo4Z0sr6PNSOxoWvbvhzEA3tnreq4vhU6OIGkWcJs,11055
+riffq-0.1.3.dist-info/licenses/LICENSE-MIT,sha256=WEUEcxgmRf-tBva4WdAajGzKJ5WI2B3qMmhd3mP1ji4,1118
+riffq/__init__.py,sha256=7qDy5HzxOtSnQKHLUmCaGlzqWdpbu19GpoHLftubU50,207
+riffq/_riffq.cp39-win_amd64.pyd,sha256=DFtDpjK0rjg1U5hgN2u4GPd0B9S5Ltz54mceoTLN1NU,109714432
+riffq/connection.py,sha256=_u545olnC9K3yLEpePcqpJ6StcDRwlfPLQQL0BzCvjA,3458
+riffq/helpers.py,sha256=vgBUCa-nInBC8h8iJsLuwLM0wvWxOduqX6yho2PJLOg,659
+riffq-0.1.3.dist-info/RECORD,,
