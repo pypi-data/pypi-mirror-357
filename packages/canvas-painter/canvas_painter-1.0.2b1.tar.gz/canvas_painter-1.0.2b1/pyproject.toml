@@ -1,0 +1,18 @@
+[project]
+name = "canvas-painter"
+version = "1.0.2b1"
+description = "Canvas is a simple Python graphics library using SFML."
+authors = [
+    { name = "Vasu Jayendra", email = "vasujayendra57@gmail.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=42", "wheel", "pybind11"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true

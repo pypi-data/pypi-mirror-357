@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+dlls/sfml-graphics-2.dll
+dlls/sfml-system-2.dll
+dlls/sfml-window-2.dll
+src/bindings.cpp
+src/canvas_painter.egg-info/PKG-INFO
+src/canvas_painter.egg-info/SOURCES.txt
+src/canvas_painter.egg-info/dependency_links.txt
+src/canvas_painter.egg-info/top_level.txt
