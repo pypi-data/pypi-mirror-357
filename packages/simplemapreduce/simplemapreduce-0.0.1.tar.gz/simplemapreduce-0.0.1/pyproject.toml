@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "simplemapreduce"
+dynamic = ["version"]
+description = "A simple map reduce multithreaded library"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+authors = [
+  { name = "Yiannis Giannelos", email = "johngiannelos@gmail.com" },
+]
+dependencies = []
+
+[tool.hatch.version]
+path = "src/simplemapreduce/__about__.py"
+
+[tool.hatch.envs.default]
+dependencies = [
+    "pytest",
+    "pytest-cov",
+    "black",
+    "isort",
+    "flake8",
+    "mypy",
+]
+
+[tool.hatch.envs.test]
+dependencies = [
+  "pytest"
+]
+
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+test-cov = "pytest --cov=src/simplemapreduce --cov-report=html --cov-report=term {args:tests}"
+lint = [
+    "flake8 src tests",
+    "black --check --diff src tests",
+    "isort --check-only --diff src tests",
+]
+format = [
+    "black src tests",
+    "isort src tests",
+]
+type-check = "mypy src"
+all = [
+    "format",
+    "lint",
+    "type-check",
+    "test-cov",
+]
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.9", "3.10", "3.11", "3.12"]
