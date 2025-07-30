@@ -1,0 +1,244 @@
+Metadata-Version: 2.4
+Name: directory-mcp
+Version: 0.5.0
+Summary: Complete entity graph MCP server with smart relationships
+Author-email: Olivier Debeuf De Rijcker <olivier@markov.surge-holdings.com>
+License: MIT
+Project-URL: Homepage, https://github.com/markov-ai/directory-mcp
+Project-URL: Documentation, https://github.com/markov-ai/directory-mcp/wiki
+Project-URL: Bug Tracker, https://github.com/markov-ai/directory-mcp/issues
+Keywords: mcp,claude,entity-resolution,knowledge-graph,gemini
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mcp>=1.9.0
+Requires-Dist: aiosqlite>=0.19.0
+Requires-Dist: google-generativeai>=0.3.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: faiss-cpu>=1.7.4
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: click>=8.0.0
+Requires-Dist: aiofiles>=23.0.0
+Requires-Dist: rich>=13.0.0
+Requires-Dist: python-dateutil>=2.8.0
+Dynamic: license-file
+
+# Directory MCP
+
+A comprehensive Model Context Protocol (MCP) server for managing people, companies, channels, and projects with rich relationships and intelligent entity resolution powered by Google Gemini embeddings.
+
+[![PyPI Version](https://img.shields.io/pypi/v/directory-mcp.svg)](https://pypi.org/project/directory-mcp/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/directory-mcp.svg)](https://pypi.org/project/directory-mcp/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## 🌟 Features
+
+- 🧠 **Intelligent Entity Resolution**: Gemini embeddings understand natural queries like "John from TechCorp" or "backend team Discord"
+- 🔗 **Rich Relationship Management**: Track who works where, project assignments, channel memberships with roles
+- 🎯 **Powerful Search**: Multi-criteria filtering, fuzzy matching, and semantic search
+- 📊 **Network Analysis**: Visualize connections, find colleagues, discover team relationships
+- 🚀 **Zero Setup**: SQLite database with automatic initialization
+- 🔄 **Auto Updates**: Always get the latest version with automated configuration updates
+- ⚡ **Fast Performance**: <200ms response times, efficient caching, optimized queries
+
+## 📦 Installation
+
+### Quick Start with Claude Code
+
+```bash
+# Install and configure in one command
+claude mcp add directory \
+  --type stdio \
+  --command uvx \
+  --args directory-mcp \
+  --env GEMINI_API_KEY=your-key-here
+
+# Get your free Gemini API key at:
+# https://makersuite.google.com/app/apikey
+```
+
+### Manual Installation
+
+```bash
+# Install via pip
+pip install directory-mcp
+
+# Or run directly with uvx (recommended)
+uvx directory-mcp
+
+# Configure environment
+export GEMINI_API_KEY="your-api-key-here"
+```
+
+## 🚀 Quick Start Examples
+
+### Creating Entities
+
+```
+"Create Alice Johnson as Senior Engineer at TechCorp, email alice@techcorp.com"
+"Add a new company called StartupAI in San Francisco, 50-100 employees"
+"Create a project called 'AI Research Initiative' starting January 2025"
+"Add a Slack channel #ai-research for the AI team"
+```
+
+### Finding People
+
+```
+"Find all Python developers in San Francisco"
+"Who works at TechCorp?"
+"Search for data scientists with machine learning skills"
+"Find people named Sarah"
+```
+
+### Managing Relationships
+
+```
+"Add Alice to the AI Research Initiative project as lead"
+"Link John Doe to TechCorp as Software Engineer"
+"Add Sarah to the #ai-research channel as moderator"
+"Show Alice's network connections"
+```
+
+### Network Analysis
+
+```
+"Show me John's complete professional network"
+"How are Alice and Bob connected?"
+"Who are all the people working on AI projects?"
+"Get company overview for TechCorp"
+```
+
+## 🛠️ MCP Tools Reference
+
+### System Tools
+- **get_directory_status** - Check server health and statistics
+
+### Entity Creation
+- **create_person** - Add new person with details (name, email, skills, location, etc.)
+- **create_company** - Add new company (name, domain, industry, size, etc.)
+- **create_project** - Add new project (name, description, status, dates)
+- **create_channel** - Add communication channel (Slack, Discord, Teams, etc.)
+
+### Entity Retrieval
+- **get_person_details** - Get comprehensive person information
+- **get_company_overview** - Get company details with people, projects, and channels
+
+### Search & Discovery
+- **search_people** - Full-text search across all person data
+- **find_people_by_criteria** - Filter by company, skills, location, title
+
+### Relationship Management
+- **link_person_to_company** - Employment relationships with roles
+- **assign_person_to_project** - Project assignments with allocation
+- **add_person_to_channel** - Channel membership with roles
+
+### Network Analysis
+- **get_person_network** - Visualize all connections for a person
+
+## 🏗️ Architecture
+
+Directory MCP uses a modular architecture optimized for maintainability:
+
+```
+src/directory_mcp/
+├── server.py           # Main MCP server (88 lines)
+├── database/           # Database layer
+│   ├── manager.py      # Core database operations
+│   └── schema.sql      # SQLite schema with FTS5
+├── tools/              # MCP tool implementations
+│   ├── system.py       # System status tools
+│   ├── entities/       # CRUD operations per entity
+│   ├── search.py       # Search and discovery
+│   ├── relationships.py # Entity linking
+│   └── analysis.py     # Network analysis
+└── utils/              # Shared utilities
+    ├── embedder.py     # Gemini embedding generation
+    ├── resolver.py     # Entity resolution logic
+    └── serialization.py # JSON serialization helpers
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+- `GEMINI_API_KEY` - Required. Your Google Gemini API key
+- `GEMINI_MODEL` - Optional. Default: `gemini-1.5-flash-latest`
+- `GEMINI_EMBEDDING_MODEL` - Optional. Default: `text-embedding-004`
+- `DATABASE_PATH` - Optional. Default: `~/.config/directory-mcp/directory.db`
+
+### Database Location
+
+The SQLite database is automatically created at:
+- macOS/Linux: `~/.config/directory-mcp/directory.db`
+- Windows: `%APPDATA%/directory-mcp/directory.db`
+
+## 📊 Performance
+
+- **Response Times**: All operations complete in <200ms
+- **Embedding Generation**: ~100ms per entity
+- **Search Operations**: <50ms average
+- **Concurrent Support**: Thread-safe SQLite operations
+- **Caching**: Intelligent embedding cache for repeated queries
+
+## 🐛 Known Limitations
+
+1. **FTS5 Special Characters**: Search doesn't handle `@`, `'`, `#`, `-` well
+   - Workaround: Search by name instead of email
+   
+2. **Duplicate Detection**: No automatic duplicate person prevention
+   - Workaround: Search before creating
+   
+3. **Channel Names**: Hyphens in channel names cause SQL errors
+   - Workaround: Use underscores or spaces
+
+## 🔄 Version History
+
+- **v0.4.28** - Current stable release with comprehensive testing
+- **v0.4.0** - Major refactoring to modular architecture
+- **v0.3.0** - Added Gemini embeddings for intelligent search
+- **v0.2.0** - Relationship management features
+- **v0.1.0** - Initial release with basic CRUD
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/markov-ai/directory-mcp.git
+cd directory-mcp
+
+# Install in development mode
+pip install -e ".[dev]"
+
+# Run tests
+pytest tests/
+
+# Run with debug logging
+LOG_LEVEL=DEBUG uvx directory-mcp
+```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with [FastMCP](https://github.com/jlowin/fastmcp) framework
+- Powered by [Google Gemini](https://deepmind.google/technologies/gemini/) for embeddings
+- Inspired by the need for better professional network management
+
+## 📞 Support
+
+- **Issues**: [GitHub Issues](https://github.com/markov-ai/directory-mcp/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/markov-ai/directory-mcp/discussions)
+- **PyPI**: [directory-mcp](https://pypi.org/project/directory-mcp/)
