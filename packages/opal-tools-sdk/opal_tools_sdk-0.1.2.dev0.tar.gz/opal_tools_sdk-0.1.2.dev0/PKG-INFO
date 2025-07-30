@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: opal_tools_sdk
+Version: 0.1.2.dev0
+Summary: SDK for creating Opal-compatible tools services
+Home-page: https://github.com/optimizely/opal-tools-sdk
+Author: Optimizely
+Author-email: opal-team@optimizely.com
+Keywords: opal,tools,sdk,ai,llm
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.10
+Requires-Dist: fastapi>=0.100.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: httpx>=0.24.1
+Requires-Dist: deprecated>=1.2.18
