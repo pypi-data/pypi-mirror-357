@@ -1,0 +1,73 @@
+.canvas-container {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #f4f4f4 25%, transparent 25%), linear-gradient(-45deg, #f4f4f4 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f4f4f4 75%), linear-gradient(-45deg, transparent 75%, #f4f4f4 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    border: 2px solid #b1b1b1;
+}
+.canvas-overlay {
+    width: 100%;
+    position: relative;
+    height: 500px;
+    resize: vertical;
+    overflow: auto;
+}
+
+.canvas-header {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    align-items: self-start;
+    justify-content: space-between;
+    gap: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.canvas-title {
+    display: block;
+    text-align: end;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.canvas-hint-text {
+    display: block;
+    text-align: end;
+    color: rgb(128,128,128);
+}
+
+.canvas-btn {
+    border-radius: 5px;
+    border: 2px solid #b1b1b1;
+    background-color: #eaeaea;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+}
+.canvas-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.popover-sensor-alert {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.canvas-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}

@@ -1,0 +1,445 @@
+{% extends "base.html" %}
+{% load custom_tags_and_filters %}
+{% block extrahead %}
+    {% load static %}
+    <script type="text/javascript" src="{% static "floor_plan/floor_plan_canvas.js" %}"></script>
+    <script type="text/javascript" src="{% static "floor_plan/hammer.min.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "floor_plan/floor_plan_canvas.css" %}" />
+    <style>
+		html {
+			height: 100%;
+		}
+		body {
+			height: 100%;
+		}
+	
+    </style>
+{% endblock %}
+{% block title %}Floor Plan Editor{% endblock %}
+{% block body %}
+    {% if loaded_floor_plan %}
+        <div style="height: calc(100vh - 90px); padding: 20px 40px;" id="fp">
+            <div id="canvas-overlay" style="height: 100%; position:relative;">
+                <div class="canvas-container" id="canvas-container">
+                    <div class="canvas-header">
+                        <div class="canvas-buttons">
+                            <button class="canvas-btn" id="zoom-in">+</button>
+                            <button class="canvas-btn" id="zoom-out">-</button>
+                        </div>
+                        <div>
+                            <span class="canvas-title">{{ loaded_floor_plan.name }}</span>
+                            <span class="canvas-hint-text"><i class="glyphicon glyphicon-info-sign"></i> Click and drag to move</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="canvas-footer">
+                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                        <div>
+                            <input type="checkbox" id="show_sensor_text_value" name="show_sensor_text_value">
+                            <label style="margin: 0;" for="show_sensor_text_value">Show Sensor Value</label>
+                        </div>
+                        <div id="refresh-interval-container">
+                            <label style="margin: 0;" for="refresh-interval">Refresh Interval</label>
+                            <select id="refresh-interval" name="refresh_interval">
+                                <option value="0">No refresh</option>
+                                <option value="5">5 seconds</option>
+                                <option value="10">10 seconds</option>
+                                <option value="30">30 seconds</option>
+                                <option value="60">1 minute</option>
+                            </select>
+                            <div id="refresh-indicator"
+                                 style="display: inline-flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        gap: 5px">
+                                <div class="glyphicon glyphicon-repeat normal-right-spinner"></div>
+                                <strong>Fetching Sensor Values</strong>
+                            </div>
+                        </div>
+                    </div>
+                    {% if is_staff %}
+                        <div>
+                            {% url 'floor_plan_edit' loaded_floor_plan.id as edit_url %}
+                            {% button size="small" type="edit" value="Edit" url=edit_url %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="container" id="list">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <h3>Floor Plans List</h3>
+            {% admin_add_url 'NEMO_floor_plans' 'floorplan' request.path as add_floor_plan_url %}
+            {% if add_floor_plan_url %}
+                {% button size="small" type="add" value="Add" url=add_floor_plan_url %}
+            {% endif %}
+        </div>
+        {% block before_pagination %}{% endblock %}
+        {% block pagination_header %}
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                <div style="flex-grow: 1;">
+                    <div class="input-group">
+                        <input value="{{ search|default:'' }}"
+                               type="text"
+                               class="form-control"
+                               id="search"
+                               name="search"
+                               aria-label="search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" onclick="search()">Search</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="pagination pull-right" style="clear: both">
+                    <select id="results_per_page"
+                            onchange="window.location = '?search={{ search }}&o={{ paginator.order_by }}&p={{ page.number }}&pp='+this.value">
+                        <option value="5" {% if paginator.per_page == 5 %}selected{% endif %}>5</option>
+                        <option value="25" {% if paginator.per_page == 25 %}selected{% endif %}>25</option>
+                        <option value="50" {% if paginator.per_page == 50 %}selected{% endif %}>50</option>
+                        <option value="100" {% if paginator.per_page == 100 %}selected{% endif %}>100</option>
+                        <option value="0" {% if paginator.per_page == paginator.count %}selected{% endif %}>All</option>
+                    </select>
+                    <label for="results_per_page">results per page</label>
+                </div>
+            </div>
+        {% endblock %}
+        <div class="table-responsive" style="width: 100%">
+            {% block pagination_content %}
+                <table class="table table-bordered table-align-middle table-striped table-hover thead-light"
+                       style="margin-bottom: 0">
+                    <thead>
+                        <tr>
+                            <th class="sticky">
+                                {% include 'pagination/pagination_column.html' with order_by='name' extra_params='search='|add:search name='Floor Plan List' %}
+                            </th>
+                            <th class="text-right button-column-minimum">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for floor_plan in page %}
+                            <tr class="default">
+                                <td class="sticky">
+                                    <div style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; width: 100%;">
+                                        <img src="{{ floor_plan.image.url }}" height="50px" alt="floor plan {{ floor_plan.name }} thumbnail">
+                                        <span style="font-weight: bold;">{{ floor_plan.name }}</span>
+                                    </div>
+                                </td>
+                                <td class="text-right text-nowrap">
+                                    <div style="display: flex; align-items: center; justify-content: flex-end; gap: 5px;">
+                                        {% with request.GET.urlencode as query_params %}
+                                            {% url 'floor_plan' floor_plan.id as view_url %}
+                                            {% button size="small" type="view" value="Open" url=view_url|add:"?"|add:query_params %}
+                                        {% endwith %}
+                                        {% if is_staff %}
+                                            {% url 'floor_plan_edit' floor_plan.id as edit_url %}
+                                            {% button size="small" type="edit" value="Edit" url=edit_url %}
+                                            {% if floor_plan.is_default %}
+                                                <form method="post">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="btn btn-sm btn-warning" name="remove_default" value="{{ floor_plan.id }}">
+                                                        Remove Default
+                                                    </button>
+                                                </form>
+                                            {% else %}
+                                                <form method="post">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="btn btn-sm btn-primary" name="set_default" value="{{ floor_plan.id }}">
+                                                        Set Default
+                                                    </button>
+                                                </form>
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endblock %}
+        </div>
+        {% block pagination_footer %}
+            <div class="pagination pull-right" style="margin-bottom: 0">
+                <span class="step-links">
+                    {% if page.has_previous %}
+                        <a href="?search={{ search }}&o={{ paginator.order_by }}&p=1&pp={{ paginator.per_page }}">&laquo; first</a>
+                        <a href="?search={{ search }}&o={{ paginator.order_by }}&p={{ page.previous_page_number }}&pp={{ paginator.per_page }}">previous</a>
+                    {% endif %}
+                    <span class="current">Page {{ page.number }} of {{ paginator.num_pages }}</span>
+                    {% if page.has_next %}
+                        <a href="?search={{ search }}&o={{ paginator.order_by }}&p={{ page.next_page_number }}&pp={{ paginator.per_page }}">next</a>
+                        <a href="?search={{ search }}&o={{ paginator.order_by }}&p={{ paginator.num_pages }}&pp={{ paginator.per_page }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+        {% endblock %}
+        {% block after_pagination %}{% endblock %}
+    </div>
+    {#	Markers List as JSON #}
+    {{ node_list|json_script:"marker-list-data" }}
+    <script type="text/javascript">
+            function search() {
+                const search = $('#search').val();
+                window.location = `?search=${search}&o={{ paginator.order_by }}&p={{ page.number }}&pp={{ paginator.per_page }}`;
+            }
+
+        {% if loaded_floor_plan %}
+
+			// Clicking outside the canvas will close popover
+			document.addEventListener('click', function(e)
+			{
+				if (!document.getElementById('canvas-container').contains(e.target)) {
+					remove_popover();
+				}
+			});
+            const markers = JSON.parse(document.getElementById('marker-list-data').textContent);
+            const refresh_indicator = $('#refresh-indicator');
+            refresh_indicator.hide();
+            init_show_sensor_text_value();
+            init_refresh_interval();
+
+            const container = document.getElementById('canvas-container');
+            let timeoutId = undefined;
+			const fp = new FloorPlanCanvas(
+				container,
+				{
+					img_url: "{{ loaded_floor_plan.image.url }}",
+					markers,
+					show_sensor_value: true,
+					show_sensor_alert: true,
+					marker_on_click: function(node) {
+						if(node) {
+							const x = node.canvas_points.x1 + (node.canvas_points.x2 - node.canvas_points.x1) / 2;
+							const y = node.canvas_points.y1;
+							create_popover(node, x, y);
+						} else {
+							remove_popover();
+						}
+					},
+					marker_on_dbl_click: function(node, e) {
+						if(node.type === "Sensor") {
+							window.location.pathname = "/sensor_details/" + node.sensor_id;
+						} else {
+							window.location.pathname = "/floor_plans/" + node.portal_id;
+						}
+					},
+					marker_on_hover: function(node, e) {
+					},
+					on_zoom: function() {
+						remove_popover();
+					},
+					on_drag: function() {
+						remove_popover();
+					},
+                    on_floor_plan_load: function (fp) {
+                        hook_show_sensor_text_value(fp);
+                        const refresh_indicator = $('#refresh-indicator');
+                        fetch_nodes(fp, refresh_indicator).then(_ => {
+                            hook_refresh_interval(fp);
+                        }).catch(_ => {
+                            hook_refresh_interval(fp);
+                        });
+                    },
+				}
+			);
+
+            function init_refresh_interval() {
+                const refresh_interval = $('#refresh-interval');
+                if(has_value('fp_refresh_interval')) {
+                    refresh_interval.val(parseInt(get_value('fp_refresh_interval')));
+                } else {
+                    refresh_interval.val(0);
+                }
+                refresh_interval.on('change', function() {
+                    save_value('fp_refresh_interval', refresh_interval.val());
+                });
+            }
+
+            function hook_refresh_interval(fp) {
+                const refresh_interval = $('#refresh-interval');
+                const refresh_indicator = $('#refresh-indicator');
+                refresh_indicator.hide();
+                set_refresh_interval(fp, parseInt(refresh_interval.val()), refresh_indicator);
+                refresh_interval.on('change', function() {
+                    save_value('fp_refresh_interval', refresh_interval.val());
+                    set_refresh_interval(fp, parseInt(refresh_interval.val()), refresh_indicator);
+                });
+            }
+
+            function init_show_sensor_text_value() {
+                const show_sensor_text_value = $('#show_sensor_text_value');
+                if(has_value('fp_show_sensor_text_value')) {
+                    show_sensor_text_value.attr('checked', get_value('fp_show_sensor_text_value') === 'true');
+                } else {
+                    show_sensor_text_value.attr('checked', true);
+                }
+                show_sensor_text_value.on('change', function() {
+                    save_value('fp_show_sensor_text_value', show_sensor_text_value.is(":checked"));
+                });
+            }
+
+            function hook_show_sensor_text_value(fp) {
+                const show_sensor_text_value = $('#show_sensor_text_value');
+                fp.set_show_sensor_value(show_sensor_text_value.is(":checked"));
+                show_sensor_text_value.on('change', function() {
+                    save_value('fp_show_sensor_text_value', show_sensor_text_value.is(":checked"));
+                    fp.set_show_sensor_value(show_sensor_text_value.is(":checked"));
+                });
+            }
+
+            function set_refresh_interval(fp, interval, indicator) {
+                if(timeoutId) {
+                    clearTimeout(timeoutId);
+                }
+                if(interval > 0) {
+                    timeoutId = setTimeout(() => {
+                        fetch_nodes(fp, indicator)
+                                .then(_ => {
+                                    set_refresh_interval(fp, interval, indicator);
+                                })
+                                .catch(_ => {
+                                    set_refresh_interval(fp, interval, indicator);
+                                });
+                    }, interval * 1000);
+                }
+            }
+
+            function fetch_nodes(fp, indicator) {
+                indicator.show();
+                return fetch("{% url 'floor_plan_nodes' loaded_floor_plan.id %}")
+                    .then(response => {
+                        const reader = response.body.getReader();
+                        const decoder = new TextDecoder();
+                        let buffer = '';
+
+                        function process_chunk({done, value}) {
+                            if(done) {
+                                process_part(buffer);
+                                return;
+                            }
+
+                            buffer += decoder.decode(value, {stream: true});
+                            const parts = buffer.split('\x1E');
+                            buffer = parts.pop();
+
+                            parts.forEach(process_part);
+
+                            return reader.read().then(process_chunk);
+                        }
+
+                        function process_part(part) {
+                            if(part.trim()) {
+                                try {
+                                    const node = JSON.parse(part);
+                                    update_node(fp, node);
+                                } catch (e) {}
+                            }
+                        }
+
+                        return reader.read().then(process_chunk);
+                    })
+                    .then(_ => {
+                        indicator.hide();
+                    })
+                    .catch(_ => {
+                        indicator.hide();
+                    });
+            }
+
+            function update_node(fp, node) {
+                fp.set_markers(fp.get_markers().map(marker => {
+                    if(marker.id !== node.id) {
+                        return marker;
+                    } else {
+                        marker.value_loaded = true;
+                        return Object.assign({}, marker, node);
+                    }
+                }));
+            }
+
+			function create_popover(node, x, y)
+			{
+				const canvas_overlay =$('#canvas-overlay');
+				remove_popover();
+				const title = node.type === "Sensor" ? node.sensor_name : node.portal_name;
+				const canvas_popover = $(`<div id="canvas-popover" style="display: none;" role="tooltip" title="${title}"></div>`);
+				canvas_overlay.append(canvas_popover);
+				canvas_popover.popover({
+					trigger: 'manual',
+					placement: 'top',
+					html: false,
+					template: node.type === "Sensor" ? get_sensor_popover_template(node) : get_portal_popover_template(node),
+				});
+				canvas_popover.css({
+					position: 'absolute',
+					top: y + 'px',
+					left: x + 'px',
+					display: 'block'
+				});
+				canvas_popover.popover('show');
+			}
+
+			function get_sensor_popover_template(node)
+			{
+				const template = $(`
+					<div class="popover" role="tooltip">
+						<div class="arrow"></div>
+						<h3 class="popover-title"></h3>
+						<div style="padding: 10px; display: flex; flex-direction: column; gap: 5px;" class="${node.sensor_alert ? ' popover-sensor-alert' : ''}">
+							<div id="canvas-sensor-popover-value" style="font-size: 1.3em; font-weight: bold;"></div>
+							<div id="canvas-sensor-popover-date"></div>
+							<a class="btn btn-primary" id="canvas-popover-link" style="margin-top: 10px;">View Sensor</a>
+						</div>
+					</div>
+				`);
+				template.find('#canvas-popover-link').attr('href', "/sensor_details/" + node.sensor_id);
+				template.find('#canvas-sensor-popover-value').text(node.sensor_value || (node.value_loaded ? 'No Value' : 'Loading Value ...'));
+                if (node.sensor_datetime)
+                {
+                    template.find('#canvas-sensor-popover-date').text('Last value on ' + node.sensor_datetime);
+				}
+				return template.prop('outerHTML');
+			}
+
+			function get_portal_popover_template(node)
+			{
+				const template = $(`
+					<div class="popover" role="tooltip">
+						<div class="arrow"></div>
+						<div style="padding: 10px; display: flex; flex-direction: column; gap: 5px;">
+							<div style="display: flex; align-items: center; gap: 10px;">
+								<div id="canvas-sensor-popover-value" style="font-weight: bold;"></div>
+							</div>
+							<a class="btn btn-success" id="canvas-popover-link" style="margin-top: 10px;">Open</a>
+						</div>
+					</div>
+				`);
+				template.find('#canvas-popover-link').attr('href', "/floor_plans/" + node.portal_id);
+				template.find('#canvas-sensor-popover-value').text(node.portal_name);
+				return template.prop('outerHTML');
+			}
+
+			function remove_popover()
+			{
+				const canvas_overlay = $('#canvas-overlay');
+				const canvas_popover = canvas_overlay.find('#canvas-popover');
+				if(canvas_popover) {
+					canvas_popover.popover('destroy');
+					canvas_popover.remove();
+				}
+			}
+
+            function save_value(key, value) {
+                localStorage.setItem(key, value);
+            }
+
+            function get_value(key) {
+                return localStorage.getItem(key);
+            }
+
+            function has_value(key) {
+                return localStorage.getItem(key) !== null;
+            }
+        {% endif %}
+    </script>
+{% endblock %}
