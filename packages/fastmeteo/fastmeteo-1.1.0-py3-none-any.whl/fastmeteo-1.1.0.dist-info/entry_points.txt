@@ -1,0 +1,3 @@
+[console_scripts]
+fastmeteo-server = fastmeteo.network.server:main
+fastmeteo-sync = fastmeteo.cli.sync:main
