@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/main.py
+src/upload_to_gcs.egg-info/PKG-INFO
+src/upload_to_gcs.egg-info/SOURCES.txt
+src/upload_to_gcs.egg-info/dependency_links.txt
+src/upload_to_gcs.egg-info/entry_points.txt
+src/upload_to_gcs.egg-info/requires.txt
+src/upload_to_gcs.egg-info/top_level.txt
