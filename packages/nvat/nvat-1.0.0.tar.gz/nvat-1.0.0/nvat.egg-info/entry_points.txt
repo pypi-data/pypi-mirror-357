@@ -1,0 +1,2 @@
+[console_scripts]
+nvat = nvat.main:main
