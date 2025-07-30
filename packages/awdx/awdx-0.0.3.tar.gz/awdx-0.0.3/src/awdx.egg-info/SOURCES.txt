@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/awdx/__main__.py
+src/awdx/cli.py
+src/awdx.egg-info/PKG-INFO
+src/awdx.egg-info/SOURCES.txt
+src/awdx.egg-info/dependency_links.txt
+src/awdx.egg-info/entry_points.txt
+src/awdx.egg-info/requires.txt
+src/awdx.egg-info/top_level.txt
+src/awdx/profilyze/__init__.py
+src/awdx/profilyze/profile_commands.py
