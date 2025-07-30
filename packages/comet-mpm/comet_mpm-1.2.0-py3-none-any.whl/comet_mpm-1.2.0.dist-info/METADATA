@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: comet_mpm
+Version: 1.2.0
+Summary: Comet MPM SDK
+Home-page: https://www.comet.ml
+Author: Comet ML Inc.
+Author-email: mail@comet.ml
+License: Proprietary
+Keywords: comet_mpm
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: typing_extensions>=3.7.4
+Requires-Dist: aiohttp
+Requires-Dist: pydantic
+Requires-Dist: pydantic-settings
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Python SDK for [Comet Model Production Monitoring](https://www.comet.ml/site/comet-mpm/)
