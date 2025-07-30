@@ -1,0 +1,215 @@
+html,
+body {
+    height: 100dvh;
+    width: 100dvw;
+}
+
+html {
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.page {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.page .header,
+.page .work-area {
+    padding: 1em;
+}
+
+.page .header h1 {
+    margin: 0;
+}
+
+.work-area {
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 1em;
+}
+
+.work-area .file-manager {
+    min-width: 15em;
+    max-width: 15em;
+}
+
+.work-area .editor-area {
+    flex: 1;
+    overflow: hidden;
+    padding: 0.1em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0.5em;
+}
+
+.work-area .editor {
+    flex: 1;
+}
+
+.editor-controls {
+    height: 2.2em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+
+.editor-controls .editor-control {
+    height: 2em;
+}
+
+.editor-controls .editor-control-active-file {
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.editor-controls .editor-control-active-file .seletced-label {
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+
+.loading-container {
+    position: relative;
+}
+
+.loading-container .loading {
+    z-index: 100;
+
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #80808082;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-container .loading img {
+    width: 50%;
+
+    animation: rotation 4s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+/* File Tree - BEGIN */
+
+.file-tree {
+    cursor: pointer;
+    font-family: monospace;
+    user-select: none;
+}
+
+.file-tree > .file-tree-dirents > .file-tree-dirent {
+    display: list-item;
+}
+
+.file-tree .file-tree-dirent {
+    display: none;
+}
+
+.file-tree .open > .file-tree-dirents > .file-tree-dirent {
+    display: list-item;
+}
+
+.file-tree .file-tree-dir {
+    list-style-type: '🗀 '
+}
+
+.file-tree .file-tree-dir.open {
+    list-style-type: '🗁 '
+}
+
+.file-tree .file-tree-file {
+    list-style-type: '🗎 '
+}
+
+.file-tree .file-tree-file.file-tree-file-image {
+    list-style-type: '🖻 '
+}
+
+.file-tree .file-tree-file.file-tree-file-application[data-mime='application/pdf'] {
+    list-style-type: '🖺 '
+}
+
+/* File Tree - END */
+
+/* Code Editor - BEGIN */
+
+.code-editor {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.file img {
+    max-width: 100%;
+}
+
+.file object,
+.file.html-wrap,
+.file.html-wrap iframe,
+.file.file-application_pdf {
+    width: 100%;
+    height: 100%;
+}
+
+.file.html-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.file.html-wrap iframe {
+    border: 0;
+}
+
+.file.html-wrap .hidden {
+    display: none;
+}
+
+.file.html-wrap .html-wrap-controls {
+    padding: 0.25em;
+}
+
+.file.html-wrap .html-wrap-controls button {
+    height: 2em;
+}
+
+/* Code Editor - END */
