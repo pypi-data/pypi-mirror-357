@@ -1,0 +1,10 @@
+dataclasses>=0.6
+pydantic>=2.11.7
+python-socks[asyncio]>=2.7.1
+websockets>=15.0.1
+
+[vad]
+noisereduce>=3.0.3
+numpy>=2.2.6
+webrtcvad>=2.0.10
+setuptools<81,>=80.9.0
