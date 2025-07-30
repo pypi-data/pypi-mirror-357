@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_flights_mcp.egg-info/PKG-INFO
+mseep_flights_mcp.egg-info/SOURCES.txt
+mseep_flights_mcp.egg-info/dependency_links.txt
+mseep_flights_mcp.egg-info/requires.txt
+mseep_flights_mcp.egg-info/top_level.txt
+tests/__init__.py
+tests/test_duffel_api.py
