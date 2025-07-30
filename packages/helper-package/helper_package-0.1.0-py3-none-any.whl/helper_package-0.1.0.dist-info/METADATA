@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: helper-package
+Version: 0.1.0
+Summary: A helper module with symbol finding logic
+Author: Your Name
+Author-email: Your Name <your@email.com>
+Project-URL: Homepage, https://example.com
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
