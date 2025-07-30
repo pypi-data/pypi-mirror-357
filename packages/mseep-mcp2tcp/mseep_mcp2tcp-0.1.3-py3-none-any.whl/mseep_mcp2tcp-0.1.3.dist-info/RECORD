@@ -1,0 +1,8 @@
+mseep_mcp2tcp-0.1.3.dist-info/licenses/LICENSE,sha256=nNwySYRk_LMDfL7RC1-ee93pZsutGF-KChCWFSgimtQ,1071
+tests/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+tests/tcp_server.py,sha256=rVtmQ5hcAnlagVSPTSa3oLYM1g6qSP-43nOBfHF0ogc,3946
+tests/test_server.py,sha256=7_r21mm69I_QQgkhnIOW3SoRN410uW4yBewc1W-35TU,744
+mseep_mcp2tcp-0.1.3.dist-info/METADATA,sha256=06xeqOTaA82ySV0OTNw4EUpap9K8wswxiYDNWpuu16g,852
+mseep_mcp2tcp-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mseep_mcp2tcp-0.1.3.dist-info/top_level.txt,sha256=EdW7283x-lr_cbuivW8Ij7ANAP-ZJ9sLtILQseEPxXg,6
+mseep_mcp2tcp-0.1.3.dist-info/RECORD,,
