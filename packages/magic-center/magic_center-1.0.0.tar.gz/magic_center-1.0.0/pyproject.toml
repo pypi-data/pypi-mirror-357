@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "magic-center"
+version = "1.0.0"
+description = "生成小学数学题"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.9.4",
+    "requests>=2.32.4",
+    "numpy",
+    "xlwt"
+]
+
+[project.scripts]
+magic-center = "magic_center:data_entry.py"
