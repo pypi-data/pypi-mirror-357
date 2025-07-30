@@ -1,0 +1,7 @@
+setup.py
+palindrometool/__init__.py
+palindrometool/palindrometool.py
+palindrometool.egg-info/PKG-INFO
+palindrometool.egg-info/SOURCES.txt
+palindrometool.egg-info/dependency_links.txt
+palindrometool.egg-info/top_level.txt
