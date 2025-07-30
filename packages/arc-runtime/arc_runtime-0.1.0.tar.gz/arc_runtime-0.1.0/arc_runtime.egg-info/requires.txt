@@ -1,0 +1,10 @@
+wrapt>=1.14.0
+
+[dev]
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+openai>=1.0.0
+grpcio>=1.50.0
+
+[telemetry]
+grpcio>=1.50.0
