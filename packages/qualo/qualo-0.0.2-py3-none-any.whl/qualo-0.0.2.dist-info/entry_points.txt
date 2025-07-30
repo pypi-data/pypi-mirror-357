@@ -1,0 +1,2 @@
+[console_scripts]
+qualo = qualo.cli:main
