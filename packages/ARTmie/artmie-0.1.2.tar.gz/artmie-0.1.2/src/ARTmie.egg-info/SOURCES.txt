@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/ARTmie.cpp
+src/ARTmie.egg-info/PKG-INFO
+src/ARTmie.egg-info/SOURCES.txt
+src/ARTmie.egg-info/dependency_links.txt
+src/ARTmie.egg-info/requires.txt
+src/ARTmie.egg-info/top_level.txt
+src/cpp_amos/ARTmie_amos.cpp
+tests/test_artmie.py
