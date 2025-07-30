@@ -1,0 +1,268 @@
+Metadata-Version: 2.4
+Name: smart-api-integrations
+Version: 0.2.0
+Summary: Connect to any API and receive webhooks with minimal code. Turn API docs into Python functions and handle incoming events easily.
+Author-email: Ananda Behera <behera.anand1@gmail.com>
+Maintainer-email: Ananda Behera <behera.anand1@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/behera116/smart-api-integrations
+Project-URL: Documentation, https://github.com/behera116/smart-api-integrations/tree/main/docs
+Project-URL: Repository, https://github.com/behera116/smart-api-integrations
+Project-URL: Bug Tracker, https://github.com/behera116/smart-api-integrations/issues
+Project-URL: Changelog, https://github.com/behera116/smart-api-integrations/blob/main/CHANGELOG.md
+Keywords: api,integration,webhook,client,rest,automation,sdk,http,requests,type-safe,cli
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: httpx>=0.23.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: requests>=2.28.0
+Requires-Dist: pydantic<3.0.0,>=1.8.0
+Requires-Dist: click>=8.0.0
+Provides-Extra: django
+Requires-Dist: django>=3.2.0; extra == "django"
+Provides-Extra: flask
+Requires-Dist: flask>=2.0.0; extra == "flask"
+Provides-Extra: fastapi
+Requires-Dist: fastapi>=0.68.0; extra == "fastapi"
+Requires-Dist: uvicorn>=0.15.0; extra == "fastapi"
+Provides-Extra: ai
+Requires-Dist: openai>=1.0.0; extra == "ai"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: isort>=5.10.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: pre-commit>=2.20.0; extra == "dev"
+Requires-Dist: twine>=4.0.0; extra == "dev"
+Requires-Dist: build>=0.8.0; extra == "dev"
+Provides-Extra: test
+Requires-Dist: pytest>=7.0.0; extra == "test"
+Requires-Dist: pytest-cov>=4.0.0; extra == "test"
+Requires-Dist: pytest-mock>=3.10.0; extra == "test"
+Requires-Dist: responses>=0.22.0; extra == "test"
+Provides-Extra: docs
+Requires-Dist: mkdocs>=1.4.0; extra == "docs"
+Requires-Dist: mkdocs-material>=8.5.0; extra == "docs"
+Requires-Dist: mkdocstrings[python]>=0.19.0; extra == "docs"
+Provides-Extra: all
+Requires-Dist: smart-api-integrations[ai,django,fastapi,flask]; extra == "all"
+Dynamic: license-file
+
+# 🚀 Smart API Integrations
+
+**Connect to any API and receive webhooks with minimal code.**
+
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## What This Package Does
+
+Smart API Integrations eliminates boilerplate code for:
+
+1. **API Integration** - Connect to third-party APIs with simple function calls
+2. **Webhook Handling** - Process incoming events from external services
+
+## Before vs After
+
+### API Integration
+
+**Before Smart API Integrations:**
+```python
+import requests
+import os
+
+# Set up authentication
+token = os.environ.get("GITHUB_TOKEN")
+headers = {"Authorization": f"Bearer {token}"}
+
+# Make the request
+response = requests.get("https://api.github.com/users/octocat", headers=headers)
+
+# Handle the response
+if response.status_code == 200:
+    user = response.json()
+    print(f"User: {user['name']}")
+else:
+    print(f"Error: {response.status_code}")
+    print(response.text)
+```
+
+**After Smart API Integrations:**
+```python
+from smart_api_integrations import GithubAPIClient
+
+# Create client (automatically uses GITHUB_TOKEN from environment)
+github = GithubAPIClient()
+
+# Make the request
+user = github.get_user(username='octocat')
+print(f"User: {user.data['name']}")
+```
+
+### Webhook Handling
+
+**Before Smart API Integrations:**
+```python
+from flask import Flask, request, jsonify
+import hmac
+import hashlib
+import os
+
+app = Flask(__name__)
+
+@app.route('/webhooks/stripe', methods=['POST'])
+def stripe_webhook():
+    # Verify signature
+    signature = request.headers.get('Stripe-Signature')
+    secret = os.environ.get('STRIPE_WEBHOOK_SECRET')
+    
+    if not signature or not secret:
+        return jsonify({"error": "Missing signature"}), 400
+        
+    # Compute expected signature
+    payload = request.data
+    expected_sig = hmac.new(
+        secret.encode(),
+        payload,
+        hashlib.sha256
+    ).hexdigest()
+    
+    # Verify signature
+    if not hmac.compare_digest(expected_sig, signature):
+        return jsonify({"error": "Invalid signature"}), 401
+    
+    # Process the event
+    event_data = request.json
+    event_type = event_data.get('type')
+    
+    if event_type == 'payment_intent.succeeded':
+        # Handle payment success
+        amount = event_data['data']['object']['amount'] / 100
+        print(f"Payment received: ${amount}")
+    elif event_type == 'payment_intent.payment_failed':
+        # Handle payment failure
+        print("Payment failed")
+    
+    return jsonify({"status": "success"})
+
+if __name__ == '__main__':
+    app.run(port=5000)
+```
+
+**After Smart API Integrations:**
+```python
+from flask import Flask
+from smart_api_integrations.webhooks import smart_webhook_handler
+from smart_api_integrations.frameworks.flask import register_webhook_routes
+
+app = Flask(__name__)
+
+@smart_webhook_handler('stripe', 'payment_intent.succeeded')
+def handle_payment(event):
+    amount = event.payload['data']['object']['amount'] / 100
+    print(f"Payment received: ${amount}")
+    return {"status": "processed"}
+
+@smart_webhook_handler('stripe', 'payment_intent.payment_failed')
+def handle_payment_failure(event):
+    print("Payment failed")
+    return {"status": "handled"}
+
+# Register all webhook routes
+register_webhook_routes(app)
+
+if __name__ == '__main__':
+    app.run(port=5000)
+```
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+pip install smart-api-integrations
+```
+
+### API Integration
+
+```python
+from smart_api_integrations import UniversalAPIClient
+
+# Create a client for any configured API provider
+github = UniversalAPIClient('github')  # Uses GITHUB_TOKEN from environment
+
+# Call methods based on the provider's configuration
+user = github.get_user(username='octocat')
+print(f"User: {user.data['name']}")
+```
+
+### Webhook Integration
+
+```python
+from smart_api_integrations.webhooks import smart_webhook_handler
+
+@smart_webhook_handler('stripe', 'payment_intent.succeeded')
+def handle_payment(event):
+    amount = event.payload['data']['object']['amount'] / 100
+    print(f"Payment received: ${amount}")
+    return {"status": "processed"}
+```
+
+## 📚 Documentation
+
+### Getting Started
+- [Quick Start Guide](docs/quick-start-guide.md)
+- [API Client Guide](docs/api-client-guide.md)
+- [Webhook Integration](docs/webhook_integration.md)
+
+### API Integration
+- [Adding New Providers](docs/adding-new-providers.md)
+- [OpenAPI Integration](docs/openapi_integration.md)
+- [Type Safety Guide](docs/type-safety-guide.md)
+
+### Webhook Integration
+- [Webhook System Overview](docs/webhook-system-overview.md)
+- [Webhook Handler Guide](docs/webhook-handler-guide.md)
+- [Framework Integration Guide](docs/framework-integration-guide.md)
+
+### Reference
+- [CLI Reference](docs/cli-reference.md)
+- [Provider Configuration Guide](docs/provider-priority-guide.md)
+- [Package Setup Guide](docs/package-setup-guide.md)
+
+### Examples
+- [API Examples](examples/github_basic_example.py)
+- [Webhook Examples](examples/webhook_integration_example.py)
+- [Framework Examples](examples/flask_webhook_example.py)
+
+## 🔧 Key Features
+
+- ✅ **Zero Boilerplate**: Define endpoints once, use everywhere
+- ✅ **Type Safety**: Full IDE support with generated type stubs
+- ✅ **Smart Parameters**: Automatic handling of path/query/body parameters
+- ✅ **Framework Integration**: Works with Flask, FastAPI, and Django
+- ✅ **Webhook Support**: Easily handle incoming webhook events
+- ✅ **OpenAPI Support**: Generate clients from API documentation
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+---
+
+**Stop writing API boilerplate. Start building features.** 🚀
