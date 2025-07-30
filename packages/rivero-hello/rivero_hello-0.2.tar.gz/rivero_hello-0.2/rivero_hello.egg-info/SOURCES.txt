@@ -1,0 +1,9 @@
+README.md
+setup.py
+rivero_hello/__init__.py
+rivero_hello/main.py
+rivero_hello.egg-info/PKG-INFO
+rivero_hello.egg-info/SOURCES.txt
+rivero_hello.egg-info/dependency_links.txt
+rivero_hello.egg-info/entry_points.txt
+rivero_hello.egg-info/top_level.txt

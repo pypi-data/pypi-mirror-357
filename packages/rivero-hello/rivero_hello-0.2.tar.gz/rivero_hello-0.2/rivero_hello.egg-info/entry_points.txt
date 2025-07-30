@@ -1,0 +1,3 @@
+[console_scripts]
+rivero-hello = rivero_hello:hello
+
