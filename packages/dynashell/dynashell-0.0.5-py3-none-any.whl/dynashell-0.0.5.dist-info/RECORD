@@ -1,0 +1,11 @@
+dynashell/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dynashell/check.py,sha256=fnbGmmbMr-eb0U_aPG61VRLpf4Ler7dU_KNPi1niNa8,1673
+dynashell/classes.py,sha256=dTsnCedKSGMZhcPg486A0lVgap7gw6hD1-o6sXRKQ_c,17179
+dynashell/const.py,sha256=2W5VeJcm0hepjyazbh4pDQsMnwH4Jih44ILWQTN0N4s,15
+dynashell/main.py,sha256=PxwoQURBjLfVIPwZapIeXbce9LQXnqtpRFIsJ5B39II,149
+dynashell/utils.py,sha256=B7zRWG36Zb2IY6H4D6tAhcJ3Hn1Pn_lFaaqy47Z7wY0,4152
+dynashell-0.0.5.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+dynashell-0.0.5.dist-info/METADATA,sha256=8W8RLTo49iUsefw97kh99_jiiEgI4n0mD2oyI2UvthY,778
+dynashell-0.0.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dynashell-0.0.5.dist-info/top_level.txt,sha256=LfAsMaFEWWFdgOD1oM7HddDH2dcQFwHqQTQRusU5aF4,10
+dynashell-0.0.5.dist-info/RECORD,,
