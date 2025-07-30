@@ -1,0 +1,2 @@
+[console_scripts]
+hitesh-fastapi-starter = hitesh_fastapi_starter.generator:create_fastapi_project_cli
