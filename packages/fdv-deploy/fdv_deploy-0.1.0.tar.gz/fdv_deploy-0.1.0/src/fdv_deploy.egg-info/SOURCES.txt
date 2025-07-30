@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/fdv_deploy/__init__.py
+src/fdv_deploy/deploy.py
+src/fdv_deploy.egg-info/PKG-INFO
+src/fdv_deploy.egg-info/SOURCES.txt
+src/fdv_deploy.egg-info/dependency_links.txt
+src/fdv_deploy.egg-info/requires.txt
+src/fdv_deploy.egg-info/top_level.txt
