@@ -1,0 +1,16 @@
+LICENSE.md
+README.md
+pyproject.toml
+requirements.development.txt
+requirements.distribution.txt
+requirements.txt
+source/classicist/__init__.py
+source/classicist/version.txt
+source/classicist.egg-info/PKG-INFO
+source/classicist.egg-info/SOURCES.txt
+source/classicist.egg-info/dependency_links.txt
+source/classicist.egg-info/requires.txt
+source/classicist.egg-info/top_level.txt
+source/classicist.egg-info/zip-safe
+tests/test_classproperty.py
+tests/test_hybridmethod.py
