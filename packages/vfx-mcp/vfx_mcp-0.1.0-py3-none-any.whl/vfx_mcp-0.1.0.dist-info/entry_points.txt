@@ -1,0 +1,2 @@
+[console_scripts]
+vfx-mcp = vfx_mcp.core.server:main
