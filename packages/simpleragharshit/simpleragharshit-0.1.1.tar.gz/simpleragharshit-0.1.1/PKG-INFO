@@ -1,0 +1,25 @@
+Metadata-Version: 2.3
+Name: simpleragharshit
+Version: 0.1.1
+Summary: My first python package, used to implement simple RAG.
+License: MIT
+Author: Harshit Karnani
+Author-email: harshitkarnani1@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: cohere (>=5.15.0,<6.0.0)
+Requires-Dist: faiss-cpu (>=1.11.0,<2.0.0)
+Requires-Dist: langchain (>=0.3.26,<0.4.0)
+Requires-Dist: pypdf (>=5.6.1,<6.0.0)
+Requires-Dist: pytest (>=8.4.1,<9.0.0)
+Requires-Dist: python-dotenv (>=1.1.1,<2.0.0)
+Requires-Dist: setuptools (>=80.9.0,<81.0.0)
+Description-Content-Type: text/markdown
+
+Hi ! I am Harshit Karnani.
+This is my first python package. It can be used to implement simple RAG.

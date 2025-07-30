@@ -1,0 +1,26 @@
+[project]
+name = "simpleragharshit"
+version = "0.1.1"
+description = "My first python package, used to implement simple RAG."
+authors = [
+    {name = "Harshit Karnani",email = "harshitkarnani1@gmail.com"}
+]
+packages = [{ include = "simpleragharshit", from = "src" }]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "python-dotenv (>=1.1.1,<2.0.0)",
+    "langchain (>=0.3.26,<0.4.0)",
+    "setuptools (>=80.9.0,<81.0.0)",
+    "pypdf (>=5.6.1,<6.0.0)",
+    "cohere (>=5.15.0,<6.0.0)",
+    "faiss-cpu (>=1.11.0,<2.0.0)",
+    "pytest (>=8.4.1,<9.0.0)"
+]
+[project.scripts]
+simpleragharshit = "simpleragharshit.pipeline:cli"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
