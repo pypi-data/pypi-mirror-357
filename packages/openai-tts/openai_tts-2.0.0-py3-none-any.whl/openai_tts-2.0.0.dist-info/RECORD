@@ -1,0 +1,12 @@
+openai_tts/__init__.py,sha256=iwlVaAsiukjl0PMN9m0nASl4P2aw6aqTg3dvzVzdkMc,336
+openai_tts/config.py,sha256=HEZw6pVW1M0_Lyy6S-HISBd_usxkjGg8g1iKCLwOEKk,884
+openai_tts/exceptions.py,sha256=4xqQ4NEvM174U3SBsP84Oa982tEPyI0Wkx7feTqRXlU,264
+openai_tts/utils.py,sha256=AHSnCxxy16ZTal1DtsKKlQ0Z7O7vhXsCn2eGcvluDL8,10167
+openai_tts/providers/__init__.py,sha256=1FJEmdLhZKigzxaNooKoQlWbKlgndhbEZiLdHo-v0Qw,181
+openai_tts/providers/base.py,sha256=GVgiRo9X5nKSvLzblbMjR2AN6J1JG_-mSLVCcpagPGQ,919
+openai_tts/providers/openai.py,sha256=dx-IwUMqsTtuimRVm0qGxO7f4iPB1PlLYZFZsCj8bYk,6348
+openai_tts-2.0.0.dist-info/LICENSE,sha256=ca3tJuePVj8dnVgNGMVP5bzAiJYl66AJcFzvTu_yh-8,1092
+openai_tts-2.0.0.dist-info/METADATA,sha256=UPfSPjLtK6_RZYnk3o8XiUDvARhp9PINIlauDT3Vtvs,7773
+openai_tts-2.0.0.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+openai_tts-2.0.0.dist-info/top_level.txt,sha256=4a0siQDk2d9FN6sUyLsPJ6JIPg1jGqhC_UgUg9AN-WY,11
+openai_tts-2.0.0.dist-info/RECORD,,
