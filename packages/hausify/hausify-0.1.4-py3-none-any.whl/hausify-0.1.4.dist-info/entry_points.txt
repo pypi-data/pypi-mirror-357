@@ -1,0 +1,4 @@
+[console_scripts]
+hausify=hausify.main:main
+hausify-lsp=hausify.server:run_server
+
