@@ -1,0 +1,13 @@
+tallyfy/README.md,sha256=kwsWh6N6FoYbh4hrfF27H3akFzem5eKJ9PJem39g5Y8,21368
+tallyfy/__init__.py,sha256=E4eHCzUwVOD9r3PQBXHdJv0KYPSNe-2lH7h1yKdUHQ8,492
+tallyfy/core.py,sha256=9xA4KbrnrjUbZ_FdxoXVNlz2EobWKr-fdL-wjq2UnUk,16343
+tallyfy/form_fields_management.py,sha256=-ifTFKQuA3pcftKfPAyNCV840DOJPqRvJPsBCDNXbWU,24223
+tallyfy/models.py,sha256=zIcJdvzB0ms8j8KWIHoMxLPllVILIVH42US2csO9g6U,36240
+tallyfy/task_management.py,sha256=DIfhbo8qU3DWzuLKBZtwPlFta_D6Ip9HH3PUltr3T2o,14785
+tallyfy/template_management.py,sha256=Eg2zxcSorcXeSnhMltwu2McG0tt7omL9OUF7lzWK85k,120174
+tallyfy/user_management.py,sha256=R7L8Nsszm7htvZDRou7C0zQvgFx0pbNmcjHHyWYbl3g,8581
+tallyfy-1.0.1.dist-info/licenses/LICENSE,sha256=8HUsrXnc3l2sZxhPV9Z1gYinq76Q2Ym7ahYJy57QlLc,1063
+tallyfy-1.0.1.dist-info/METADATA,sha256=YzZFApKAmX6uiFfNt7v_5D5W64E6RMeOL1DcniUU_Vc,23252
+tallyfy-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+tallyfy-1.0.1.dist-info/top_level.txt,sha256=yIycWbR61EZJD0MYRPwUQjOS2XZw5B5jCWx1IP73KcM,8
+tallyfy-1.0.1.dist-info/RECORD,,
