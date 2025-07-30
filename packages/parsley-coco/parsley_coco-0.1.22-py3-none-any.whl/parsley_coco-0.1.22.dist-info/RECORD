@@ -1,0 +1,13 @@
+parsley_coco/__init__.py,sha256=56ySaoK0nbyB-yeXLltXT51ZC_X3J5b3U-BuKAKa7SM,498
+parsley_coco/alternative_dataclasses.py,sha256=POvvz7GJsFJf2s6UlI5q5Fe8peLomns1EiY3rq4JrE8,8785
+parsley_coco/factory.py,sha256=MIq8RJqPAtME_X-SAGoDijWpO5-tLV89KnzZWlug8Kw,3152
+parsley_coco/logger.py,sha256=pA-QybYCq-l6homkXZl7ebo98x00oZ7A3QkUosjuG6I,843
+parsley_coco/parser.py,sha256=NtXUHPYPFS85P28GCGb7qKM0roZErrkaio0vVw8m7DM,11825
+parsley_coco/recursive_dataclass_with_path_to_yaml.py,sha256=SpdP7bLMXTfrPTdtJHGneiN2qvhm7l8jjZXd5T72Zgk,13517
+parsley_coco/sentinels.py,sha256=O0sbEFl45ZVO7eqAzAUAeL9bNZL4nrr34LePyI3-hVc,517
+parsley_coco/utils.py,sha256=MfpwUsGfAO6vQDgeJym5iHcn4ilnID6vklfpg3l6cDo,13175
+parsley_coco-0.1.22.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+parsley_coco-0.1.22.dist-info/METADATA,sha256=L12_AZnW7HmGArgvJfhaZVjY8wyJUpjCpuTHbiQWjIU,60299
+parsley_coco-0.1.22.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+parsley_coco-0.1.22.dist-info/top_level.txt,sha256=JO-PqCv0hMqMdiqYoGXxyIFJWnl9Gdv23bgrhPoafLM,13
+parsley_coco-0.1.22.dist-info/RECORD,,
