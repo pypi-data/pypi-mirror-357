@@ -1,0 +1,13 @@
+django_admin_groupby/__init__.py,sha256=prGBab97cC4qVo_rbU2YZnUsk3ookqtUd4Kdc2-iDTU,161
+django_admin_groupby/admin.py,sha256=F_XAaBjoIXAXQ2jV9TXWLtwxNZwPdbwUpeZnmBX21II,18771
+django_admin_groupby/aggregations.py,sha256=ibV_VpGoYBKAgDAaJPNOLiL9wWTeV7N9tD7SvJYh7Os,867
+django_admin_groupby/apps.py,sha256=Nk9bl2IoaNW28PgH1JeLgvNtcd0YInokw_VZb8DWpok,154
+django_admin_groupby/templates/admin/group_by_filter.html,sha256=S2pRLhTBu1gqNAwA1B_nCEkhX43Syp29Y3SDmt744LU,266
+django_admin_groupby/templates/admin/grouped_change_list.html,sha256=U-kSFe3cxVq7w4Sl44y3iLjmBCwgzheH2H5LH5F4oxk,7399
+django_admin_groupby/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_admin_groupby/templatetags/django_admin_groupby.py,sha256=Ga-X82xgCfIP-ucCgajLOKkW6YjJAf_s-UDq99_Lg2c,1035
+django_admin_groupby-1.0.1.dist-info/licenses/LICENSE,sha256=1qH4ZK4SLIzRYSVby9-l9o8pywCvUWsKuJNutEKGHrU,1069
+django_admin_groupby-1.0.1.dist-info/METADATA,sha256=1P9tvcSP9XTQUcnlAi3PfuWuSItC87uEaGWiwbP0O2g,5307
+django_admin_groupby-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_admin_groupby-1.0.1.dist-info/top_level.txt,sha256=7fgvCcLNBLs5TQK7a7ZiTeTwQTC3XjX_3qGNZJlWB6A,21
+django_admin_groupby-1.0.1.dist-info/RECORD,,
