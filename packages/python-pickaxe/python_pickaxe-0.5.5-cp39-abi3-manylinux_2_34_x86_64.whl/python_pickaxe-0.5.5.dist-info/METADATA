@@ -1,0 +1,92 @@
+Metadata-Version: 2.4
+Name: python-pickaxe
+Version: 0.5.5
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Summary: HTML data extraction library
+Author: Tim Pogue <tim@emergentmethods.ai>
+Author-email: Tim Pogue <tim@emergentmethods.ai>
+License: MIT
+Requires-Python: >=3.10, <4.0
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: repository, https://gitlab.com/emergentmethods/pickaxe
+
+# Pickaxe
+
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/python-pickaxe?style=flat-square)
+![PyPI - Version](https://img.shields.io/pypi/v/python-pickaxe?style=flat-square)
+
+Pickaxe is a Python package for structured data extraction from HTML documents. It provides a simple and intuitive API for parsing HTML documents, and automatically extracting structured data from them.
+
+## Features
+
+- **Written in Rust**: Pickaxe is written in Rust, which makes it fast and memory-efficient.
+- **Robust**: Pickaxe uses the `html5ever` and `selectors` crate for browser-grade HTML parsing and CSS selector matching.
+- **CSS Selectors & XPath**: Pickaxe supports both CSS selectors and (simple) XPath expressions for querying HTML documents.
+
+## Quick Start
+
+### Python
+
+#### Installation
+
+```bash
+pip install python-pickaxe
+```
+
+#### Basic Usage
+
+```python
+from pickaxe import HtmlDocument
+
+# Parse an HTML document
+document = HtmlDocument.from_str("<html><body><h1>Hello, World!</h1></body></html>")
+
+# Access elements using CSS selectors or XPath expressions
+heading = document.find("h1")
+print(heading.inner_text)  # Output: Hello, World!
+
+heading = document.find_xpath("//h1")
+print(heading.inner_text)  # Output: Hello, World!
+```
+
+### Rust
+
+#### Installation
+
+```bash
+cargo add rust-pickaxe
+```
+
+#### Basic Usage
+
+```rust
+use pickaxe::HtmlDocument;
+
+fn main() {
+    // Parse an HTML document
+    let document = HtmlDocument::from_str("<html><body><h1>Hello, World!</h1></body></html>").unwrap();
+
+    // Access elements using CSS selectors or XPath expressions
+    let heading = document.find("h1").unwrap();
+    println!("{}", heading.inner_text());  // Output: Hello, World!
+
+    let heading = document.find_xpath("//h1").unwrap();
+    println!("{}", heading.inner_text());  // Output: Hello, World!
+}
+```
+
+
+## License
+This project is licensed under MIT License.
+
+## Support & Feedback
+If you encounter any issues or have feedback, please open an issue. We'd love to hear from you!
+
+Made with ❤️ by Emergent Methods
+
+
+
+
+
