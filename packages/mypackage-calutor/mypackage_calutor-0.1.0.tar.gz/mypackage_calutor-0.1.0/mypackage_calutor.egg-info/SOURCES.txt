@@ -1,0 +1,7 @@
+README.md
+setup.py
+mypackage_calutor.egg-info/PKG-INFO
+mypackage_calutor.egg-info/SOURCES.txt
+mypackage_calutor.egg-info/dependency_links.txt
+mypackage_calutor.egg-info/entry_points.txt
+mypackage_calutor.egg-info/top_level.txt
