@@ -1,0 +1,26 @@
+# Project information -- not used kept for readability
+[tool.poetry]
+name = "circe-py"
+version = "0.3.8"
+description = "Circe: Package for building co-accessibility networks from ATAC-seq data."
+authors = ["Rémi Trimbour <remi.trimbour@pasteur.fr>"]
+packages = [{include = "circe"}]
+license = "GPL-3.0-only"
+readme = "README.md"
+
+# Build dependencies
+[build-system]
+requires = ["wheel", "setuptools>=0.64", "numpy<2.0", "cython"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+
+[tool.isort]
+include_trailing_comma = true
+line_length = 100
+multi_line_output = 3
+
+[tool.cython]
+language_level = 3
