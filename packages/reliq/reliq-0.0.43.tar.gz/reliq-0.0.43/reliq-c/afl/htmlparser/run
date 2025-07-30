@@ -1,0 +1,3 @@
+#!/bin/sh
+
+../runner input "$1" ../../reliq -f ./1.reliq

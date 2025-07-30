@@ -1,0 +1,965 @@
+.TH RELIQ 1 reliq\-VERSION
+
+.SH NAME
+reliq - simple html searching tool
+
+.SH SYNOPSIS
+.B reliq
+.RI [ OPTION .\|.\|.]\&
+.I PATTERNS
+.RI [ FILE .\|.\|.]\&
+.br
+
+.SH DESCRIPTION
+.B reliq
+searches for
+.I PATTERNS
+in each
+.IR FILE .
+Typically
+.I PATTERNS
+should be quoted when reliq is used in shell command.
+.PP
+When
+.I FILE
+isn't specified
+.I FILE
+will become standard input.
+
+.SH OPTIONS
+.SS "Generic Program Information"
+.TP
+.B \-h ", " --help
+Output a usage message and exit.
+.TP
+.BR \-v ", " --version
+Output the version number of
+.B reliq
+and exit.
+
+.SS "Modes of execution"
+.TP
+.BR \--html
+execute expression on provided html (default)
+.TP
+.BR \--urljoin
+join urls passed in arguments with first argument url
+.TP
+.BR \-f ", " --file "\fI FILE\fR"
+Obtain pattern from
+.IR FILE.
+The empty file contains zero patterns, and therefore matches nothing.
+.TP
+.BR \-e ", " --expression "\fI PATTERN\fR"
+use
+.IR PATTERN
+instead of first input argument
+.TP
+.BR \--encode
+encode '\fB&\fR', '\fB<\fR', '\fB>\fR', '\fB"\fR', '\fB\\'\fR' to html entities in input files
+.TP
+.BR \--encode-full
+encode all possible characters to html entities in input files
+.TP
+.BR \--decode
+decode html entities, while translating &nbsp; to space in input files
+.TP
+.BR \--decode-exact
+decode html entities in input files
+
+
+.SS "General Output Control"
+.TP
+.BR \-o ", " --output " \fIFILE\fR"
+Change output to a
+.IR FILE
+instead of stdout.
+
+.TP
+.BI \-E ", " --error-file " \fIFILE\fR"
+Change output of errors to a
+.IR FILE
+instead of stderr.
+
+.SS "File and Directory Selection"
+.TP
+.BR \-r ", " --recursive
+Read all files under each directory, recursively.
+.TP
+.BR \-R ", " --dereference-recursive
+Read all files under each directory, recursively.
+Follow all symbolic links, unlike
+.BR \-r .
+.SS "Other Options"
+.TP
+.B \-l ", " --list-structure
+set
+.IR PATTERN
+to '| "%n%Ua - desc(%c) lvl(%L) size(%s) pos(%I)\\n"'.
+
+.SH SYNTAX
+.SS PATTERN
+Consists of text that can be specified in ' and " brackets.
+
+It can be preceded by characters specifying the way of matching ended with '>' character. By default it's set to "tWfncs".
+
+After '>' character a range might be specified, which will match the number of characters in matched string. In such case specifying text is not mandatory.
+
+If unquoted text is set to a single '*' character matching of text will be omitted, leaving only matching by range.
+
+.nf
+\&
+.in +4m
+\fBTEXT\fR
+\fB"TEXT"\fR
+\fB'TEXT'\fR
+\fB>'TEXT'\fR
+\fB>TEXT\fR             - match TEXT, same as above
+\fB[a-z]>TEXT\fR        - match TEXT depending on options
+\fB[a-z]>[URANGE]TEXT\fR
+\fB*\fR                 - match to everything
+\fB>*\fR                - same as above
+\fB>[URANGE]"TEXT"\fR
+\fB>[URANGE]\fR          - match length of pattern
+\fB>[URANGE]*\fR         - same as above
+.in
+\&
+
+Matching options:
+
+.nf
+\&
+.in +4m
+\fBt\fR - Match \fIt\fRrimmed
+\fBu\fR - Match \fIu\fRntrimmed
+
+\fBc\fR - Be \fIc\fRase sensitive
+\fBi\fR - Be case \fIi\fRnsensitive
+
+\fBv\fR - In\fIv\fRert matching
+\fBn\fR - Match \fIn\fRormally, without inversion
+
+\fBa\fR - Match if it occurs at \fIa\fRny position
+\fBf\fR - Match if it \fIf\fRully matches
+\fBb\fR - Match if it matches at the \fIb\fRegining
+\fBe\fR - Match if it matches at the \fIe\fRnd
+
+\fBw\fR - Match it to any of the \fIw\fRords in it
+\fBW\fR - Match it to the \fIW\fRhole thing
+
+\fBs\fR - Use \fIs\fRtring matching
+\fBB\fR - Use \fIB\fRRE matching
+\fBE\fR - Use \fIE\fRRE matching
+.in
+\&
+
+.SS ATTRIBUTE_NAME
+Attribute's name \fBPATTERN\fR. Starting by '+' or '-' will ensure that it will be treated as attribute, but in most cases can be omitted. '-' signifies its negation. It can be followed by \fB[RANGE]\fR which matches attribute's position in tag.
+
+\fBATTRIB_NAME\fR has 'uWnsfi' pattern flags, \fBPATTERN\fR has 'tWncfs'.
+
+Attribute name can be shortened to '.' or '#' (see below).  \fBATTRIB_NAME\fR flags to 'uWnsfi' and 'uwncsf' for \fBPATTERN\fR.
+.nf
+\&
+.in +4m
+\fBPATTERN\fR          - existing attribute
+\fB+PATTERN\fR         - existing attribute
+\fB-PATTERN\fR         - non existing attribute
+\fB.PATTERN\fR         - same as i>class=w>PATTERN
+\fB#PATTERN\fR         - same as i>id=w>PATTERN
+\fB[RANGE]PATTERN\fR   - existing attribute at position determined by RANGE
+\fB-[RANGE]PATTERN\fR
+\fB+.PATTERN\fR
+\fB-[RANGE]#PATTERN\fR
+.in
+\&
+.SS ATTRIBUTE
+Consists of \fBATTRIBUTE_NAME\fR followed by '=' and \fBPATTERN\fR of attribute's value. Specifying only \fBATTRIBUTE_NAME\fR  without specifying its value equals to ignoring its value.
+
+.nf
+\&
+.in +4m
+\fBATTRIBUTE\fR - ignore value of attribute
+\fBATTRIBUTE_NAME=PATTERN\fR
+.in
+\&
+.SS RANGE
+Is always embedded in square brackets. Consists of groups of four numbers separated by ':', that can be practically endlessly separated by ',' if any of the matching succeedes the matching will stop.
+
+Specifying only one value equals to matching only to that value.
+
+Specifying two values equals to matching range between, and of them.
+
+If '!' is found before the first value the matching will be inversed.
+
+Empty values will be treated as infinity.
+
+Specifying three values additionally matches only values of which modulo of third value is equal to 0. Forth value is an offset to value from which modulo is calculated from.
+
+.SS RRANGE
+
+Relative range matches arrays. Putting '-' before two first values (even if they are not specified) makes them subtracted from the maximal value.
+
+.nf
+\&
+.in +4m
+\fB[x1,!x2,x3,x4]\fR        - match to x1 or anything that isn't x2 or x3 or x4.
+\fB[x1:y1,x2:y2,!x3:y4]\fR  - match to values between, and x1 and y1 or ...
+\fB[x:]\fR                  - match values that are x or higher
+\fB[:y]\fR                  - match values that are y or lower
+\fB[:]\fR                   - match everything
+\fB[-]\fR                   - match to last index of the array
+\fB[-x]\fR                  - match to last index of the array subtracted by x
+\fB[:-y]\fR                 - match to range from 0 to y'th value from end
+\fB[::w]\fR                 - match to values from which modulo of w is equal to 0
+\fB[x:y:w]\fR               - match to range from x to y from which modulo of w is equal to 0
+\fB[x:y:w:z]\fR             - match to range from x to y with value increased by z from which modulo of w is equal to 0
+\fB[::2:1]\fR               - match to uneven values
+.in
+\&
+
+.SS URANGE
+
+Unsigned range matches unsigned integers. Putting '-' before first value is the same as '0', before the second value is the same as matching to infinity.
+
+.nf
+\&
+.in +4m
+
+\fB[x1,x1:y]\fR             - match to x1 or between, and x1 and y
+\fB[-x]\fR                  - match to nothing
+\fB[-x:-y]\fR               - match to everything
+\fB[-x:y]\fR                - match from 0 to y
+\fB[:y]\fR                  - match from 0 to y
+\fB[x:-y]\fR                - match from x to infinity
+\fB[x:]\fR                  - match from x to infinity
+\fB[x::2]\fR                - match to even values starting from x
+.in
+\&
+
+.SS SRANGE
+
+Signed range matches signed integers.
+
+.nf
+\&
+.in +4m
+\fB[-x,-y]\fR               - match from -x to -y
+\fB[:-y]\fR                 - match from negative infinity to -y
+\fB[:y]\fR                  - match from negative infinity to y
+\fB[x:]\fR                  - match from x to infinity
+\fB[:-1:2:1]\fR             - match to uneven values until -1
+.in
+\&
+
+.SS HOOK
+Begins with a name of function followed by '@' and ended with argument which can be a \fBRANGE\fR, \fBEXPRESSION\fR, \fBPATTERN\fR or nothing.
+
+Name of matching hook can be preceded with '+' or '-' character. If it's '-' matching of hook will be inverted.
+
+.nf
+\&
+.in +4m
+\fBNAME@PATTERN\fR
+\fBNAME@[RANGE]\fR
+\fBNAME@"EXPRESSION"\fR
+\fBNAME@\fR
+\fB+NAME@[RANGE]\fB
+\fB-NAME@"EXPRESSION"\fR
+.in
+\&
+
+List of implemented hooks:
+
+Global hooks, which can be used for any type:
+
+.TP
+.BR L ",  " level " " \fI[URANGE]\fR
+Get nodes that are on level within \fIURANGE\fR.
+.TP
+.BR l ",  " levelrelative " " \fI[SRANGE]\fR
+Get nodes that are on level relative to parent within the \fISRANGE\fR.
+.TP
+.BR c ",  " count " " \fI[URANGE]\fR
+Get nodes with count of descending tag nodes that is within the \fIURANGE\fR.
+.TP
+.BR Ct ",  " counttext " " \fI[URANGE]\fR
+Get nodes with count of descending text nodes that is within the \fIURANGE\fR.
+.TP
+.BR Cc ",  " countcomments " " \fI[URANGE]\fR
+Get nodes with count of descending comment nodes that is within the \fIURANGE\fR.
+.TP
+.BR Ca ",  " countall " " \fI[URANGE]\fR
+Get nodes with count of descending nodes that is within the \fIURANGE\fR.
+.TP
+.BR P ",  " position " " \fI[URANGE]\fR
+Get nodes with position within \fIURANGE\fR.
+.TP
+.BR p ",  " positionrelative " " \fI[SRANGE]\fR
+Get nodes with position relative to parent within \fISRANGE\fR.
+.TP
+.BR I ",  " index " " \fI[URANGE]\fR
+Get nodes with starting index of tag in file that is within \fIURANGE\fR.
+.TP
+
+Hooks for tag type:
+
+.TP
+.BR A ",  " all " " \fI"PATTERN"\fR
+Get tags with text creating them matching to \fIPATTERN\fR.
+Pattern flags set to "uWcnas".
+.TP
+.BR i ",  " insides " " \fI"PATTERN"\fR
+Get tags with insides that match \fIPATTERN\fR.
+Pattern flags set to "tWncas".
+.TP
+.BR S ",  " start " " \fI"PATTERN"\fR
+Get tags which head tag matches to \fIPATTERN\fR.
+Pattern flags set to "uWcnas".
+.TP
+.BR e ",  " endstrip " " \fI"PATTERN"\fR
+Get tags which tail tag stripped from <> matches to \fIPATTERN\fR.
+Pattern flags set to "tWcnfs".
+.TP
+.BR E ",  " end " " \fI"PATTERN"\fR
+Get tags which tail tag matches to \fIPATTERN\fR.
+Pattern flags set to "uWcnas".
+.TP
+.BR n ",  " name " " \fI"PATTERN"\fR
+Get tags which name matches \fIPATTERN\fR. Used as \fBTAG\fR matcher.
+Pattern flags set to "uWinfs".
+.TP
+.BR a ",  " attributes " " \fI[URANGE]\fR
+Get tags with attributes that are within the \fIURANGE\fR.
+.TP
+.BR has " " \fI"EXPRESSION"\fR
+Get tags in which chained \fIEXPRESSION\fR matches at least one of its children.
+.TP
+
+Hooks for comment type:
+
+.TP
+.BR A ",  " all " " \fI"PATTERN"\fR
+Get comments with text creating them matching to \fIPATTERN\fR. Used as \fBTAG\fR matcher.
+Pattern flags set to "tWncas".
+.TP
+.BR i ",  " insides " " \fI"PATTERN"\fR
+Get comments with insides that match \fIPATTERN\fR.
+Pattern flags set to "tWncas".
+.TP
+
+Hooks for text types:
+
+.TP
+.BR A ",  " all " " \fI"PATTERN"\fR
+Get text matching to \fIPATTERN\fR. Used as \fBTAG\fR matcher.
+Pattern flags set to "tWncas".
+.TP
+
+Access hooks specify what nodes will be matched, specifying multiple will not preserve order:
+
+.TP
+.BR @
+Specifying hook with no name is the same as \fBself@\fR
+.TP
+.BR full
+Matches node itself and everything below it (set by default).
+.TP
+.BR self
+Matches only node itself (similar to \fBl@[0]\fR).
+.TP
+.BR child
+Matches nodes that are only one level higher then self (similar to \fBl@[1]\fR).
+.TP
+.BR desc ",    " descendant
+Matches nodes that are lower than self (similar to \fBl@[1:]\fR).
+.TP
+.BR ancestor
+Matches nodes that are ancestors of self, relative level of 0 matches to parent.
+.TP
+.BR parent
+Matches node that is a parent of self.
+.TP
+.BR rparent ", " relative_parent
+Matches node that matched self in script e.g. \fB'TAG1; TAG2; * rparent@'\fR will return \fBTAG1\fR.
+.TP
+.BR sibl ",    " sibling
+Matches siblings of self.
+.TP
+.BR spre ",    " sibling_preceding.
+Matches preceding siblings of self.
+.TP
+.BR ssub ",    " sibling_subsequent
+Matches subsequent siblings of self.
+.TP
+.BR fsibl ",   " full_sibling
+Matches siblings of self and nodes below them.
+.TP
+.BR fspre ",   " full_sibling_preceding
+Matches preceding siblings of self and nodes below them.
+.TP
+.BR fssub ",   " full_sibling_subsequent
+Matches subsequent siblings of self and nodes below them.
+.TP
+.BR everything
+Matches every node possible
+.TP
+.BR preceding
+Matches nodes before current that are not it's ancestors
+.TP
+.BR before
+Matches nodes before current
+.TP
+.BR subsequent
+Matches nodes after current that are not it's descendants
+.TP
+.BR after
+Matches nodes after current
+.TP
+
+Type hooks:
+
+.TP
+.BR tag
+Matches tag nodes.
+.TP
+.BR comment
+Matches comment nodes.
+.TP
+.BR text
+Matches text nodes that are not of textempty type.
+.TP
+.BR textempty
+Matches text nodes consisting of only whitespaces.
+.TP
+.BR texterr
+Matches text nodes in which error parsing html has occurred
+.TP
+.BR textnoerr
+Matches text nodes that are not textempty or texterr
+.TP
+.BR textall
+Matches all text nodes
+
+.SS TAG
+At the begining each \fBTAG\fR must contain \fBPATTERN\fR of html tag and that can be followed by a number of \fBATTRIBUTE\fRs and \fBHOOK\fRs.
+
+Range separated by spaces will match the position of results relative to parent nodes, or if specified before tag \fBPATTERN\fR absolute to all results.
+
+.nf
+\&
+.in +4m
+\fBPATTERN\fR
+\fBPATTERN ATTRIBUTE... HOOK... [RANGE]\fR - match RANGE to results relative to parent nodes
+\fB[RANGE] PATTERN\fR - match RANGE to results
+.in
+\&
+
+\fBTAG\fR, \fBATTRIBUTE\fRs and \fBHOOK\fRs can be grouped in '(' ')' brackets. ')' has to be preceded by space otherwise it will be treated as part of argument.
+
+.nf
+\&
+.in +4
+    \fB(... )\fR - correct
+    \fB( ... )\fR - correct
+    \fB( ...)\fR - incorrect
+    \fB( ( ... )(... ))\fR - correct
+.in
+\&
+
+If brackets are 'touching' themselves they will match if at least one of them matches. Groups cannot contain position or access hooks definitions. If \fBTAG\fR pattern is not specified before any groups then all of the first groups will specify it.
+
+.nf
+\&
+.in +4m
+    \fBTAG ( ATTRIB1 HOOK )( ATTRIB2 ( ATTRIB3 ATTRIB4 )( ATTRIB5 ) )\fR - TAG having either ATTRIB1 with HOOK or ATTRIB2 which has ATTRIB3 and ATTRIB4 or ATTRIB5
+    \fBTAG ( ATTRIB1 ) ( ATTRIB2 )\fR - TAG having both ATTRIB1 and ATTRIB2. Since groups have space in between they are not 'touching'.
+    \fB( TAG1 HOOK )( TAG2 ) ATTRIB\fR - either TAG1 with HOOK or TAG2 both having ATTRIB.
+.in
+\&
+
+To match multiple types you have to specify type hooks as the first thing in the group. You can specify multiple types but only if they are in separate groups or can be inherited from each other.
+
+.nf
+\&
+.in +4m
+    \fB( div )( comment@ DOCTYPE )( text@ have ) l@[0]\fR - this matches to multiple types, since l@ is a global hook it can be specified outside the groups
+    \fBtextall@ have ( @text seen )( texterr@ you )\fR - text and texterr inherit from textall
+    \fB(( p )( tag@ li ))( textall@ li ( text@ look ( textnoerr@ list )( texterr@ raise ))( textempty@ "  " ))
+.in
+\&
+
+.SS TAG_FORMAT
+It has to be specified in '"' or '\\'' quotes.
+
+If format is not specified it will be set to "%C\\n".
+
+\fIi\fR, \fIt\fR, \fIT\fR, \fIC\fR, \fIa\fR, \fIv\fR \fIS\fR, \fIE\fR, \fIe\fR directives can be preceded with '\fIU\fR' and '\fID\fR' characters that change their output e.g. '%Ui', '%(href)DUa', '%1UDa'. '\fIU\fR' causes output to be untrimmed (by default they are trimmed), '\fID\fR' decodes html escape codes.
+
+Prints output according to \fBFORMAT\fR interpreting '\e' escapes and `%' directives. The escapes and directives are:
+.RS
+.IP \ea
+Alarm bell.
+.IP \eb
+Backspace.
+.IP \ef
+Form feed.
+.IP \en
+Newline.
+.IP \er
+Carriage return.
+.IP \et
+Horizontal tab.
+.IP \ev
+Vertical tab.
+.IP \e0
+ASCII NUL.
+.IP \e0\fIXXX\fR
+Byte in octal.
+.IP \ex\fIXX\fR
+Byte in hexadecimal.
+.IP \eu\fIXXXX\fR
+UTF-8 character (uses hexadecimal digits).
+.IP \eU\fIXXXXXXXX\fR
+UTF-8 character (uses hexadecimal digits).
+.IP \e\e
+A literal backslash (`\e').
+.IP %%
+A literal percent sign.
+.IP %l
+Level in html structure relative to parent.
+.IP %L
+Level in html structure.
+.IP %P
+Position of node.
+.IP %p
+Position of node relative to parent.
+.IP %I
+Index of node's starting position in file.
+.IP %c
+Node's count of tags nodes descending.
+.IP %Ct
+Node's count of text nodes descending.
+.IP %Cc
+Node's count of comment nodes descending.
+.IP %Ca
+Node's count of descendants, basically sum of the previous ones.
+.IP %A
+Contents of node.
+.IP %i
+Node's insides.
+.IP %n
+Tag's name.
+.IP %S
+Starting tag.
+.IP %E
+Ending tag.
+.IP %e
+Stripped ending tag.
+.IP %t
+Tag's text.
+.IP %T
+Tag's text, recursive.
+.IP %s
+Node's size.
+.IP %a
+All of the tag's attributes.
+.IP %v
+Values of tag's attributes separated with '"'.
+.IP %\fIk\fPv
+Value of tag's attribute, where \fIk\fP is its position counted from zero.
+.IP %(\fIk\fP)v
+Value of tag's attribute, where \fIk\fP is its case insensitive name.
+
+.SS FUNCTION
+Begins with name followed by arguments separated by whitespaces.
+
+\fBFUNCTION\fR can have up to 4 arguments that are clearly defined in [] brackets or in "",'' quotes.
+
+.nf
+\&
+.in +4m
+\fBNAME\fR - function with no arguments
+\fBNAME [list] "text1" "text2"\fR - function with first argument as a list, and second and third as text
+.in
+\&
+
+List of implemented functions:
+
+.B line \fI[SELECTED]\fR \fI"DELIM"\fR
+.IP
+Return selected lines.
+
+Lines are separated by \fIDELIM\fR (by default '\\n').
+.TP
+
+.B trim \fI"DELIM"\fR
+.IP
+Trim whitespaces at the beginning and end of the whole input.
+
+Input can be split by \fIDELIM\fR and trimmed separately.
+.TP
+
+.B sort \fI"FLAGS"\fR \fI"DELIM"\fR
+.IP
+Sort input delimited by \fIDELIM\fR (by default '\\n').
+
+Flags:
+    r - reverse the results of comparison
+    u - omit repeated lines
+.TP
+
+.B uniq \fI"DELIM"\fR
+.IP
+Filter out repeating lines from input delimited by \fIDELIM\fR (by default '\\n').
+.TP
+
+.B echo \fI"TEXT1"\fR \fI"TEXT2"\fR
+.IP
+Print \fITEXT1\fR before the input and \fITEXT2\fR after.
+.TP
+
+.B tr \fI"STR1"\fR \fI"STR2"\fR \fI"FLAGS"\fR
+.IP
+Translate characters in \fISTR1\fR to \fISTR2\fR.
+
+If \fISTR2\fR is not specified characters in \fISTR1\fR will be deleted.
+
+Special STR syntax:
+    \fBCHAR1-CHAR2\fR - all characters from CHAR1 to CHAR2 in descending order
+    \fB[CHAR*REPEAT]\fR - REPEAT copies of CHAR
+    \fB[:space:]\fR - support for common character types, written in lower case
+
+Flags:
+    s - replace repeating sequences of characters with only one
+    c - use the complement of \fISTR1\fR
+.TP
+
+.B cut \fI[SELECTED]\fR \fI"DELIMS"\fR \fI"FLAGS"\fR \fI"DELIM"\fR
+.IP
+Return selected parts from input delimited by \fIDELIM\fR (by default '\\n').
+
+\fIDELIMS\fR specifies delimiters for fields and selects fields, if none are specified selection is based on bytes.
+
+\fIDELIMS\fR have the same syntax as \fBtr\fR \fISTR\fR.
+
+Flags:
+    s - do not return lines with no delimiters
+    c - complement \fILIST\fR
+    z - sets \fIDELIM\fR to '\\0'
+.TP
+
+.B sed \fI"SCRIPT"\fR \fI"FLAGS"\fR \fI"DELIM"\fR
+.IP
+Implementation of \fBsed\fR(1).
+
+Lines are delimited by \fIDELIM\fR (by default '\\n').
+
+Flags:
+    n - suppress automatic printing of pattern space
+    z - set \fIDELIM\fR to '\\0'
+    E - use extended regexp
+
+Deviations from standard:
+    \fBi\fR \fBc\fR \fBa\fR commands do nothing even though they take arguments
+    \fBl\fR \fBr\fR \fBR\fR \fBQ\fR \fBw\fR \fBW\fR are not implemented
+.TP
+
+.B rev \fI"DELIM"\fR
+.IP
+Reverse order of characters in every line delimited by \fIDELIM\fR (by default '\\n').
+.TP
+
+.B tac \fI"DELIM"\fR
+.IP
+Reverse order of input lines delimited by \fIDELIM\fR (by default '\\n').
+.TP
+
+.B wc \fI"FLAGS"\fR \fI"DELIM"\fR
+.IP
+Print count of lines, words, bytes.
+
+Input is delimited by \fIDELIM\fR (by default '\\n').
+
+Flags:
+    l - lines count
+    w - words count
+    c - bytes count
+    L - size of the longest line
+
+If multiple values are returned each will be separated with '\\t'.
+
+If no flags are given then flags are set to "lwc".
+.TP
+
+.B decode \fI"FLAGS"\fR
+.IP
+Decode html entities while translating &nbsp; to space.
+
+Flags:
+    e - decode &nbsp; correctly
+.TP
+
+.B encode \fI"FLAGS"\fR
+.IP
+Encode '&', '<', '>', '"', '\\'' to html entities
+
+Flags:
+    f - encode all possible characters to html entities
+
+.SS FORMAT
+Consists of \fBFUNCTION\fRs separated by whitespace. Output of the tag is passed to \fBFUNCTION\fR, and its output is passed to the next until the last one which will print it.
+
+If specified after '|' \fBFORMAT\fR will be executed separately for each matched tag.
+
+If after '/' \fBFORMAT\fR will be executed for the whole output.
+
+.nf
+\&
+.in +4m
+\fBFUNCTION FUNCTION...\fR
+.in
+\&
+
+.SS NODE
+Consists of \fBTAG\fRs and \fBEXPRESSION\fRs separated by ';' which makes them pass result from previous node to the next.
+
+Output \fBFORMAT\fR can be specified after '|' and '/' characters, everything after it will be taken as \fBFORMAT\fR.
+
+.nf
+\&
+.in +4m
+\fBTAG1; TAG2; NODE\fR - matches results of TAG1 by TAG2 and by NODE
+\fBNODE1; NODE2\fR - process the results of NODE1 by NODE2
+.in
+\&
+
+.SS EXPRESSION
+Consists of \fBNODE\fRs separated by ',' and grouped in '{' '}' brackets (which accumulate their output and increases their level).
+.nf
+\&
+.in +4m
+\fBNODE1, NODE2\fR - two expressions
+\fBEXPRESSION1; { EXPRESSION2; {EXPRESSION3, EXPRESSION4}, EXPRESSION5}; EXPRESSION6\fR
+.in
+\&
+
+.SS OUTPUT_FORMAT
+
+Is changed based on output \fBFORMAT\fR and can be specified only to the last \fBEXPRESSION\fRs, or if they are children of groups having \fBFORMAT\fR.
+
+Output \fBFORMAT\fR can be specified after '|' and '/' characters, everything after it will be taken as \fBFORMAT\fR.
+
+If the first thing in \fBFORMAT\fR specified after '|' character of a node is a \fI"TEXT"\fR it will be used as \fBTAG_FORMAT\fR.
+
+\fBFORMAT\fR after '|' character is executed on each element matched, and after '/' to the whole result.
+
+Groups with format after '|' will execute their \fBEXPRESSION\fRs for each element in input independently, contrary to normal behavior where the child processes all the input at once before going to the next.
+
+.nf
+\&
+.in +4m
+\fBNODE1; NODE2 | TAG_FORMAT FORMAT1 / FORMAT2\fR - matches NODE2 to results of NODE1, then prints them one by one with TAG_FORMAT and processes WITH FORMAT1, then processes everything by FORMAT2
+\fBNODE1 | FORMAT, NODE2 / FORMAT\fR
+\fBNODE1; { NODE1 | FORMAT, NODE2 / FORMAT }\fR
+\fBNODE1; { NODE1 | FORMAT, NODE2 / FORMAT } / FORMAT\fR - process results of GROUP
+\fBNODE1; { NODE1 | FORMAT, NODE2 / FORMAT } | FORMAT / FORMAT\fR - process results of GROUP one by one, and then as a whole
+.in
+\&
+
+.SS OUTPUT_FIELD
+
+Accumulates output and prints it in json format.
+
+Begins before \fBEXPRESSION\fR, starts with '.' character and is followed by name, which can be defined as [A-Za-z0-9_-]+.
+
+If field doesn't have a name it will be a protected field i.e. if the \fBEXPRESSION\fR matches nothing a newline will be printed (deprecated feature that will be removed in the future).
+
+To specify type of field the name has to be followed by '.' and type name, the same rules of naming apply as to the field names.
+
+List of types:
+
+    \fI.s\fR             string, returns the exact input, set by default for fields without types
+    \fI.s(uint)\fR       string that has size greater than first argument
+    \fI.s(uint,uint)\fR  string that has size within range of first and second argument
+
+    \fI.b\fR             boolean value, return true only if first found non whitespace character is 'y', 'Y', 't', 'T' or number higher than 0, otherwise returns false. Fails only if input is empty
+
+    \fI.n\fR             number, return the first found floating point number, if none found or input is empty fails with 0
+    \fI.n(num)\fR        same as above but found number is greater than the first argument
+    \fI.n(num,num)\fR    same as above but found number is within range of first and second arguments
+
+    \fI.i\fR             integer, analogous to \fI.n\fR
+    \fI.i(int)\fR
+    \fI.i(int,int)\fR
+
+    \fI.u\fR             unsigned integer, analogous to \fI.n\fR
+    \fI.u(uint)\fR
+    \fI.u(uint,uint)\fR
+
+    \fI.d\fR             date, fails returning input
+    \fI.d(str...)\fR     date, fails if input doesn't match to any of arguments that are \fBstrptime\fR(3) format otherwise converts it into iso 8081 date
+
+    \fI.U\fR             url, join url in input with main url specified by \fB--url\fR option
+    \fI.U(str)\fR        url, join url in input with argument
+
+    \fI.N\fR             null, never fails
+
+    \fI.e\fR             error, never fails
+    \fI.e(...)\fR        error, arguments are used for annotation
+
+    \fI.a\fR             array, of strings, delimited by '\\n'
+    \fI.a("\\t")\fR      array of strings, delimited by the first character in the argument, i.e. '\\t'
+    \fI.a.type\fR        array of type, delimited by '\\n'
+    \fI.a("-").type\fR   array of type, delimited by the first character in the argument (only one can be specified)
+
+Examples:
+
+    if field doesn't return to a field is globally available, and even if \fBdiv .author\fR is not found the fields will be printed.
+    \fB.title h2, div .author; { .image img, .bolded b }\fR
+    \fI{"title":"...","image":"...","bolded":"..."}\fR
+
+    if field has fields as an input it is an object.
+    \fB.title h2, .author div .author; { .image img, .bolded b }\fR
+    \fI{"title":"...","author":{"image":"...","bolded":"..."}}\fR
+
+    if field has fields as an input and expressions without fields, first it prints out result of expressions, and then prints the object.
+    \fBdiv .author; { .image img, .bolded b, a }\fR
+    \fI<a objects>\fR
+    \fI{"author":{"image":"...","bolded":"..."}}\fR
+
+    blocks ended with '|' character are treated as arrays. If such block has no input it returns "[]".
+    \fB.authors div .author; { .images img, .bolded b } |\fR
+    \fI{"authors":[{"images":"...","bolded":"..."}]}\fR
+
+If after type name is '|' character another type can be specified. In this case if field fails type after it is attempted. If input expression matched to nothing type will always fail and output of the last type in such chain will be returned.
+
+Examples:
+
+    .tag2 and .tag3 have results of num and null types failing since expression did not match to anything
+    \fB.tag.s nothing, .tag2.s|n nothing, .tag3.s|N nothing\fR
+    \fI{"tag":"","tag2":0,"tag3":null}\fR
+
+    .title2 is matched by int since title input doesn't fit the assertion
+    \fB.title.s(1)|N h2, .title2.s(10,50)|i h2\fR
+    \fI{"title":"...","title2":-123}\fR
+
+    after specifying type for array all alternative types will be assigned for array's elements since array can't fail
+    \fB.title.s(9999)|a("\\t").s(2,5)|u|N h2\fR
+    \fI{"title":[52,"...","...",null,0]}\fR
+
+If immediately after field a string in '\\'' or '"' brackets is specified it'll be treated as annotation e.g. '.u"annotation"', '.t.n(12)|N"annotation"'
+
+.SS COMMENTS
+
+Basic C style comments are implemented, although they have to be preceded by whitespace.
+
+Since sed quite often has \fB's/ *//g'\fR, haskell comments are implemented, they also have to be preceded by whitespace.
+
+.SS CONDITIONALS
+
+Are placed in between expressions and have to be surrounded by whitespace. They influence execution of the second expression based on success of the first.
+
+.nf
+\&
+.in +4m
+\fB&\fR - execute second expression if first succeeds
+\fB&&\fR - execute second expression if first succeeds and ignore output of the first
+\fB||\fR - execute second expression if first fails
+\fB^&\fR
+\fB^&&\fR
+\fB^||\fR
+.in
+\&
+
+Expression succeeds if anything inside of it matches html, e.g. \fB{ div, li | "" } && tr | "%i"\fR will print insides of \fBtr\fR tag if either div or \fBli\fR tags are found, even though li tag outputs nothing it will match because only matching html matters.
+
+If the described conditionals are preceded by '\fB^\fR' they will succeed only if everything matches, e.g. \fB{ div, li | "" } ^&& tr | "%i"\fR both \fBdiv\fR and \fBli\fR would have to match for \fBtr | "%li"\fR to happen.
+
+Output fields take precedence over conditionals so \fB.name a .user | "%i" / tr "\\n" || h1 | "%i"\fR is the same as \fB.name { a .user | "%i" / tr "\\n" || h1 | "%i" }\fR.
+
+Output fields cannot be embedded in conditionals e.g. \fB{ .likes.u * #likes | "%i" } & { .dlikes.u * #dislikes | "%i" }\fR.
+
+.SH NOTES
+
+UTF-8 \fI\eu\fR and \fI\eU\fR escape directives don't work in any place where delimiter is to be specified i.e. array separator in fields, in translation tables of \fBtr\fR, in \fIy\fR \fBsed\fR command, in delimiters of \fBsed\fR, \fBtr\fR, \fBline\fR, \fBtrim\fR, \fBuniq\fR, \fBsort\fR, \fBecho\fR, \fBcut\fR, \fBrev\fR, \fBtac\fR, \fBwc\fR commands.
+
+.SH EXAMPLES
+Get tags 'a' with attribute 'href' at position 0 of value ending with '.org' or '.com', from result of matching tags 'div' with attribute 'id', and without attribute 'class', from file 'index.html'.
+.nf
+\&
+.in +4m
+.B $ reliq 'div id \-class; a [0]href=E>".*\\\\.(org|com)"' index.html
+.in
+\&
+Get tags that don't have any tags inside them
+.nf
+\&
+.in +4m
+.B $ reliq '* c@[0]' index.html
+.in
+\&
+Get empty tags.
+.nf
+\&
+.in +4m
+.B $ reliq '* m@>[0]' index.html
+.in
+\&
+Get hyperlinks from level greater or equal to 6 (counting from zero).
+.nf
+\&
+.in +4m
+.B $ reliq 'a href @l[6:] | "%(href)v\\\\n"' index.html
+.in
+\&
+Get all urls from 'a' and 'img' tags, where images end with '.png'.
+.nf
+\&
+.in +4m
+.B $ reliq 'img src=e>.png | "%(src)v\\\\n", a href | "%(href)v\\\\n"' index.html
+.in
+\&
+Get all urls in div with class 'index' or ul both with title attribute.
+.nf
+\&
+.in +4m
+.B $ reliq '( div .index )( ul ) title; a href | "%(href)v\\\\n' index.html
+.in
+\&
+Decode html entities from index.html
+.nf
+\&
+.in +4m
+.B $ reliq --decode index.html
+.in
+\&
+Join urls with 'https://wikipedia.com/'
+.nf
+\&
+.in +4m
+.B $ reliq --urljoin 'https://wikipedia.com/' '/' 'index.html' './name/../../list/genres/a.html'
+.in
+\&
+
+.SH EXIT STATUS
+.sp
+\fB0\fP
+.RS 4
+success
+.RE
+\fB5\fP
+.RS 4
+system call failure
+.RE
+\fB10\fP
+.RS 4
+mangled html
+.RE
+\fB15\fP
+.RS 4
+incorrect script
+.RE
+
+.SH AUTHOR
+Dominik Stanisław Suchora <hexderm@gmail.com>
