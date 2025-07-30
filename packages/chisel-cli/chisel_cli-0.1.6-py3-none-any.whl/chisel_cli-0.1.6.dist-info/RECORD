@@ -1,0 +1,16 @@
+chisel/__init__.py,sha256=rPSfWgIeq2YWVPyESOAwCBt8vftsTpIkuLAGDEzyRQc,22
+chisel/config.py,sha256=kOmvcMa-pFAMo3JtWDYaykiMTjh40qS87dRKoz6qL5U,1742
+chisel/do_client.py,sha256=3I7gXaP3hPwmzLZ3Y0NTdVKzA4eL-FYaY8LKrz2RYcE,1284
+chisel/droplet.py,sha256=VJh9ktbc9tjWLjUK-7K2uCUaXzSORtlrWsDpyNAl6vA,10977
+chisel/gpu_profiles.py,sha256=SwhruZg_1lO5ITiVzEvHUhFNELjkWGqYIUyo_UMqTaQ,678
+chisel/main.py,sha256=venBxgjEJz-YmDqz0DSH2BvzjdS0eMCKUGwN2cvFfTo,6838
+chisel/profile_manager.py,sha256=eWo3MIUSwn2FAPwVgpQUEyEc8KuJlRacX3hHX_GqzsU,38731
+chisel/profile_state.py,sha256=_8Zbqr88FmIoTsXkW8bsadNZjgzFrqX-pUMCht-hscM,3205
+chisel/ssh_manager.py,sha256=IdrT7LMyhqDnfiMr5mIJUKCH1muDtKIj9A1X2XWa5Qw,29001
+chisel/state.py,sha256=8gYeGjXHrkCPBhu7X7k4DgpGb_a1qee4HlDbpPce9kQ,5878
+chisel_cli-0.1.6.dist-info/licenses/LICENSE,sha256=m-vgmhaDz5u2fpzDSVAQgG1F2GV4rFdQlYYw82Avh3Y,1076
+chisel_cli-0.1.6.dist-info/METADATA,sha256=P8WOWsMmrqA-JKx2A-Fuuk7eMv9APPZPIIlbHZX3JYw,4496
+chisel_cli-0.1.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+chisel_cli-0.1.6.dist-info/entry_points.txt,sha256=CqdRb1dR3a8vWvnD9ouadUOiVfC3m8pQcKGdBRZ9Bi4,44
+chisel_cli-0.1.6.dist-info/top_level.txt,sha256=-_iT2LjQtkCXEMomeP2t8UoPj3zcFxjyo99OxpzwyhA,7
+chisel_cli-0.1.6.dist-info/RECORD,,
