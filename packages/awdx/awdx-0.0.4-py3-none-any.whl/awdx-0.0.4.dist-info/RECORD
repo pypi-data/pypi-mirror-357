@@ -1,0 +1,10 @@
+awdx/__main__.py,sha256=dM9VGexGcQgVaiuJ4MoATEybE1OKnvx2FTEV7GN77ck,63
+awdx/cli.py,sha256=z4RsJORO7KQFtWymhy4cD7i6s0isivR2LSfbIKTDSA0,1350
+awdx/profilyze/__init__.py,sha256=Nqnn8clbgv-5l0PgxcTOldg8mkMKrFn4TvPL-rYUUGg,1
+awdx/profilyze/profile_commands.py,sha256=TA_BAh5i9qByF8bMkqjtB6QCc-7ETebVJTtBpRNRWYs,13593
+awdx-0.0.4.dist-info/licenses/LICENSE,sha256=hrevUivaXdCFH6iBRTvT--nUNFEXiPnu1wQ1qk6AVdw,1086
+awdx-0.0.4.dist-info/METADATA,sha256=3RsFobuVuTdelbvhtvJwfzgMqsvODqbz3k0EcRlMTiA,3883
+awdx-0.0.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+awdx-0.0.4.dist-info/entry_points.txt,sha256=OrpmC5coVuwjMzYNqsy6C22Q7XO8SW6_Zetp5jnJcFk,43
+awdx-0.0.4.dist-info/top_level.txt,sha256=-v0wJqVyOGcgPPVyKwlXjOURv9_68c5cG8PfxALzJJI,5
+awdx-0.0.4.dist-info/RECORD,,
