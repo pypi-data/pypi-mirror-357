@@ -1,0 +1,144 @@
+{
+  "Table": {
+    "components": [
+      "//table"
+    ],
+    "labels": [
+      [".", "@title"]
+    ]
+  },
+  "Tile": {
+    "components": [
+      "//div[contains(concat(' ', normalize-space(@class), ' '), ' nuitile ')][.//span[contains(concat(' ', normalize-space(@class), ' '), ' ps-label ')]]"
+    ],
+    "labels": [
+      [".//span[contains(concat(' ', normalize-space(@class), ' '), ' ps-label ')]", "text"]
+    ]
+  },
+  "PasswordInput": {
+    "components": [
+      "//input[@type='password']"
+    ],
+    "labels": [
+      ["//label[@for='#id']", "text"],
+      [".", "@aria-label"],
+      [".", "@placeholder"]
+    ]
+  },
+  "ToggleSwitch": {
+    "components": [
+      "//span[contains(concat(' ', normalize-space(@class), ' '), ' ps_indicator ')]"
+    ],
+    "labels": [
+      ["ancestor::div[contains(@class, 'ps_switch')]//label", "text"]
+    ]
+  },
+  "LookupTextInput": {
+    "components": [
+      "//input[@type='text'][following-sibling::span//a[contains(concat(' ', normalize-space(@class), ' '), ' ps_icon-prompt ')]]"
+    ],
+    "labels": [
+      ["//label[@for='#id']", "text"],
+      [".", "@aria-label"],
+      [".", "@placeholder"]
+    ]
+  },
+  "DropdownButton": {
+    "components": [
+      "//span[contains(concat(' ', normalize-space(@class), ' '), ' ps-button-wrapper ')]",
+      "//button",
+      "//input[@type='button']",
+      "//input[@type='submit']",
+      "//div[@role='button']",
+      "//a[@role='button']"
+    ],
+    "labels": [
+      [".", "text"],
+      [".", "@aria-label"],
+      [".", "@value"],
+      [".", "@title"],
+      [".//span", "text"],
+      [".", "string"]
+    ]
+  },
+  "Select": {
+    "components": [
+      "//select"
+    ],
+    "labels": [
+      ["//label[@for='#id']", "text"],
+      ["ancestor::td[1]/preceding-sibling::td[1]//label", "text"],
+      ["preceding::label[@for='#id'][1]", "text"],
+      ["preceding::div[1]//label[@for='#id']", "text"],
+      ["ancestor::div[1]/preceding-sibling::div[1]//label", "text"],
+      [".", "@aria-label"],
+      [".", "@title"]
+    ]
+  },
+  "TextInput": {
+    "components": [
+      "//input[@type='text']"
+    ],
+    "labels": [
+      ["//label[@for='#id']", "text"],
+      [".", "@aria-label"],
+      [".", "@placeholder"]
+    ]
+  },
+  "Checkbox": {
+    "components": [
+      "//input[@type='checkbox']"
+    ],
+    "labels": [
+      ["//label[@for='#id']", "text"],
+      [".", "@aria-label"],
+      [".", "@placeholder"]
+    ]
+  },
+  "Button": {
+    "components": [
+      "//span[contains(concat(' ', normalize-space(@class), ' '), ' ps-button-wrapper ')]",
+      "//button",
+      "//input[@type='button']",
+      "//input[@type='submit']",
+      "//div[@role='button']",
+      "//a[@role='button']"
+    ],
+    "labels": [
+      [".", "text"],
+      [".", "@aria-label"],
+      [".", "@value"],
+      [".", "@title"],
+      [".//span", "text"],
+      [".", "string"]
+    ]
+  },
+  "Link": {
+    "components": [
+      "//a"
+    ],
+    "labels": [
+      [".", "text"]
+    ]
+  },
+  "Image": {
+    "components": [
+      "//img"
+    ],
+    "labels": [
+      [".", "@alt"]
+    ]
+  },
+  "Text": {
+    "components": [
+      "//span",
+      "//div",
+      "//p",
+      "//td",
+      "//th"
+    ],
+    "labels": [
+      [".", "text"]
+    ]
+  }
+}
