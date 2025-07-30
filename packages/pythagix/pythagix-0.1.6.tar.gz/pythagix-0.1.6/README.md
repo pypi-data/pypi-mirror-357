@@ -1,0 +1,41 @@
+Pythagix
+
+Pythagix is a lightweight Python utility library for working with number theory.
+It offers essential math functions like checking primes, computing triangle numbers, finding GCDs, and more — all in a fast, dependency-free package.
+
+Installation
+
+```bash
+pip install pythagix
+```
+Features
+
+is_prime(number) — Check if a number is prime
+
+prime_list(numbers: list) — Return all prime numbers from a list
+
+nth_prime(n) — Get the n-th prime number
+
+gcd(numbers: list) — Compute the greatest common divisor of a list
+
+is_perfect_square(n) — Check if a number is a perfect square
+
+count_factors(n) — Count the total number of factors of a number
+
+triangle_number(n) — Compute the n-th triangle number
+
+Example Usage
+
+```python
+from pythagix import is_prime, nth_prime, gcd, triangle_number
+
+print(is_prime(13))        # True
+print(nth_prime(10))       # 29
+print(gcd([12, 18, 24]))   # 6
+print(triangle_number(7))  # 28
+```
+
+About
+
+Pythagix was built to give students, developers, and math enthusiasts a clean and simple way to explore number theory in Python.
+It is ideal for learning, prototyping, or educational tools.
