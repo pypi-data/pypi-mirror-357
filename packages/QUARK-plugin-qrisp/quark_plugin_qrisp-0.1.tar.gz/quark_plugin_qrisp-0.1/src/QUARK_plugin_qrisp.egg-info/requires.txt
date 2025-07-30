@@ -1,0 +1,2 @@
+qrisp>=0.7.2
+quark-framework>=0.1.9
