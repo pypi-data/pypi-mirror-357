@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+onpanda/__info__.py
+onpanda/__init__.py
+onpanda/onpanda.py
+onpanda/panda_battle.py
+onpanda/parser.py
+onpanda.egg-info/PKG-INFO
+onpanda.egg-info/SOURCES.txt
+onpanda.egg-info/dependency_links.txt
+onpanda.egg-info/requires.txt
+onpanda.egg-info/top_level.txt
+onpanda/server/__init__.py
+onpanda/server/main.py
