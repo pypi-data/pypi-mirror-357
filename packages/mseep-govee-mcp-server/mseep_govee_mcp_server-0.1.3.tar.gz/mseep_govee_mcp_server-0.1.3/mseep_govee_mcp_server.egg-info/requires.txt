@@ -1,0 +1,3 @@
+mcp[cli]
+govee-api-laggat>=0.2.2
+python-dotenv
