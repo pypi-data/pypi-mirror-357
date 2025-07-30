@@ -1,0 +1,70 @@
+Metadata-Version: 2.4
+Name: cliptext
+Version: 0.1.1
+Summary: Smart sentence-based text clipper that respects meaning and punctuation.
+Author-email: Vivek Appu <your-email@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/cliptext
+Keywords: text,clip,sentence,truncate,youtube,seo
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+cliptext
+
+**Smart sentence-based text clipper for Python.**  
+Cuts long text without breaking sentences. Great for YouTube descriptions, SEO titles, social posts, and more.
+
+---
+
+✨ Features
+
+- Clips text at punctuation (".", "!", "?")
+- Keeps sentences whole — no awkward mid-cut phrases
+- Adds `...` if text is trimmed
+- Simple, lightweight — no dependencies
+
+---
+
+📦 Installation
+
+```bash
+pip install cliptext
+````
+
+🧠 Usage
+
+```python
+from cliptext import clip_text
+
+text = "This is a long description. It has many sentences! But not all will fit?"
+
+short = clip_text(text, limit=50)
+print(short)  # Output: "This is a long description..."
+```
+
+ `clip_text(text: str, limit: int) -> str`
+
+| Parameter | Type  | Description                      |
+| --------- | ----- | -------------------------------- |
+| `text`    | `str` | The text you want to clip        |
+| `limit`   | `int` | Max number of characters allowed |
+
+---
+
+🆕 What's New in 0.1.1
+
+- ✅ Now supports partial word clipping if sentence is too long
+- ✅ Won’t break words unless absolutely needed (e.g., if first word is too long)
+
+
+👨‍💻 Author
+
+Made with ❤️ by [Vivek Appu](https://github.com/VivekMalayarasan)
+
+---
+
+📝 License
+
+MIT License – free to use, modify, and share.
+
+
