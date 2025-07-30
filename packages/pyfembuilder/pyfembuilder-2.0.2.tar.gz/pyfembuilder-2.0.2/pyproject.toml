@@ -1,0 +1,17 @@
+[project]
+name = "pyfembuilder"
+version = "2.0.2"
+description = "pyFEMStudio 2.0.0c (November 2023)"
+readme = "README.md"
+authors = [
+    { name = "Carlos Couto", email = "ccouto@ua.pt" }
+]
+requires-python = ">=3.5"
+dependencies = ['openpyxl>3.0.0']
+
+[project.scripts]
+pyfembuilder = "pyfembuilder:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
