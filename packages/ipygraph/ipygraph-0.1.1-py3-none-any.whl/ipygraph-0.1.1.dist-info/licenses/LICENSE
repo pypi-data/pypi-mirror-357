@@ -1,0 +1,87 @@
+IPYGRAPH COMMUNITY & COMMERCIAL LICENSE (NO-MODIFICATION)
+Version 1.1 — 22 June 2025  
+© 2025 Your Name. All rights reserved.
+
+──────────────────────────────────────────────────────────────────────────────
+Preamble
+This license grants two sets of rights:
+  ▸ “Personal Use” — free of charge for natural persons, strictly
+    non-commercial, **without the right to modify** the Software.  
+  ▸ “Commercial Use” — requires a paid agreement for any organizational
+    or revenue-generating use, also **without the right to modify** the
+    Software unless expressly permitted in that separate contract.
+──────────────────────────────────────────────────────────────────────────────
+
+DEFINITIONS
+-----------
+“Software” means all source code, binaries, assets, and documentation
+            contained in the ‘ipygraph’ package and any derivative
+            distribution of it made by the Licensor.
+
+“Personal Use” means use by an individual natural person exclusively for
+                private, non-commercial purposes and **not** on behalf of
+                any Commercial Entity.
+
+“Commercial Entity” means any corporation, partnership, sole trader,
+                     government agency, non-profit, academic institution,
+                     or any individual using the Software in connection
+                     with goods or services offered for monetary or other
+                     consideration.
+
+──────────────────────────────────────────────────────────────────────────────
+SECTION 1 — PERSONAL USE LICENSE (FREE, NO MODIFICATION)
+──────────────────────────────────────────────────────────────────────────────
+1.1 Grant. Subject to compliance with this License, the Licensor grants any
+     natural person (“User”) a worldwide, royalty-free, non-exclusive,
+     revocable license to **install and run** the unmodified Software on an
+     unlimited number of devices for Personal Use.
+
+1.2 Restrictions. The User SHALL NOT:
+     (a) modify, translate, reverse-engineer, decompile, or disassemble the
+         Software, in whole or in part;  
+     (b) redistribute, sublicense, sell, rent, lease, lend, or otherwise
+         make the Software available to third parties;  
+     (c) use the Software for any commercial, professional, or revenue-
+         generating activity.
+
+Any breach of 1.2 immediately terminates this Personal Use License.
+
+──────────────────────────────────────────────────────────────────────────────
+SECTION 2 — COMMERCIAL USE (PAID LICENSE REQUIRED)
+──────────────────────────────────────────────────────────────────────────────
+2.1 No rights are granted for Commercial Use under this document. A
+     separate written Commercial License agreement with the Licensor and
+     full payment of the applicable fee are required **before** any
+     commercial, organizational, or revenue-generating use.
+
+2.2 The Commercial License may, at the Licensor’s discretion, grant limited
+     rights to modify the Software; any such rights must be explicitly
+     stated in that separate agreement.
+
+For inquiries: <you@example.com>
+
+──────────────────────────────────────────────────────────────────────────────
+SECTION 3 — NO SURRENDER OF RIGHTS
+──────────────────────────────────────────────────────────────────────────────
+All rights not expressly granted herein are reserved by the Licensor.
+
+──────────────────────────────────────────────────────────────────────────────
+SECTION 4 — DISCLAIMER OF WARRANTY
+──────────────────────────────────────────────────────────────────────────────
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+──────────────────────────────────────────────────────────────────────────────
+SECTION 5 — TERMINATION
+──────────────────────────────────────────────────────────────────────────────
+Violation of any term of this License automatically terminates all rights
+granted. Upon termination, the Licensee must cease using and destroy all
+copies of the Software.
+
+──────────────────────────────────────────────────────────────────────────────
+END OF LICENSE
+──────────────────────────────────────────────────────────────────────────────
