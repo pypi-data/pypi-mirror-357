@@ -1,0 +1,28 @@
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "nastaran-tobiiglassesctrl"
+version = "2.4.3"
+description = "A Python controller for Tobii Pro Glasses 2"
+homepage = "https://github.com/nastaran62/NastaranTobiiGlassesPyController/"
+authors = ['Davide De Tommaso']
+keywords=['eye-tracker', 'tobii', 'glasses', 'tobii pro glasses 2', 'tobii glasses', 'eye tracking']
+license = "GPL-3.0-or-later"
+readme = "README.md"
+packages = [
+    { include = "tobiiglassesctrl" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.13"
+netifaces = "=0.11.0"
+
+
+
+[tool.autopep8]
+max_line_length = 100
+
+
+# sudo dpkg -i liblsl (download from https://github.com/sccn/liblsl/releases)
