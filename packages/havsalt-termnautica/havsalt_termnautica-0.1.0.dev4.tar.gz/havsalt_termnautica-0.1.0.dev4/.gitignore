@@ -1,0 +1,16 @@
+dev.py
+speach.txt
+
+# rust generated files
+target/
+
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# venv
+.venv
