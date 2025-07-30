@@ -1,0 +1,45 @@
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "B",
+    "I",
+    "N",
+    "UP",
+    "PL",
+    "RUF",
+    "SIM",
+    "TCH",
+    "TID",
+    "ERA",
+]
+ignore = []
+
+[tool.ruff.lint.pep8-naming]
+classmethod-decorators = [
+    "classmethod",
+    "pydantic.validator",
+    "pydantic.root_validator",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+skip-magic-trailing-comma = false
+
+[tool.ruff.isort]
+combine-as-imports = true
+force-wrap-aliases = true
+
+[tool.hatch.build.targets]
+
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
