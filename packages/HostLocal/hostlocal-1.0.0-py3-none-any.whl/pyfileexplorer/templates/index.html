@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Local Python File Explorer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    .fade-in {
+      animation: fadeIn 0.4s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .card-animate {
+      animation: cardPop 0.5s cubic-bezier(0.4, 2, 0.6, 1) both;
+    }
+    @keyframes cardPop {
+      0% { opacity: 0; transform: translateY(30px) scale(0.97); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal-bg { background: rgba(0, 0, 0, 0.6); }
+    .modal { animation: modalIn 0.3s cubic-bezier(0.4, 2, 0.6, 1); }
+    @keyframes modalIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .drag-over {
+      border: 2px dashed #3b82f6;
+      background-color: rgba(59, 130, 246, 0.1);
+    }
+  </style>
+</head>
+<body class="dark bg-gray-900 text-gray-100 font-sans transition-colors duration-300">
+  <div class="bg-gray-800 text-white shadow-md p-4 flex items-center sticky top-0 z-50">
+    <button onclick="history.back()" class="text-white hover:text-blue-400 mr-3" aria-label="Go back to previous page">
+      <span class="material-icons">arrow_back</span>
+    </button>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="h-8 w-8 mr-3" />
+    <span class="text-lg font-medium">Local Python File Explorer</span>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="flex flex-wrap items-center gap-2 text-sm text-gray-300 mb-4 bg-gray-800 px-4 py-2 rounded fade-in">
+      {% if path_parts|length > 0 %}
+      <a href="{{ url_for('index', path='/'.join(path_parts[:-1])) }}" class="text-blue-400 hover:underline mr-2">Back</a>
+      {% endif %}
+      <span class="material-icons text-blue-400 text-base">home</span>
+      <a href="{{ url_for('index') }}" class="text-blue-400 hover:underline">Home</a>
+      {% for i in range(path_parts|length) %}
+      <span class="text-blue-400">/</span>
+      <a href="{{ url_for('index', path='/'.join(path_parts[:i+1])) }}" class="text-blue-400 hover:underline">{{ path_parts[i] }}</a>
+      {% endfor %}
+    </div>
+
+    <form id="uploadForm" class="flex flex-wrap items-center gap-4 mb-6 fade-in" method="post" action="{{ url_for('index', path=current_path) }}" enctype="multipart/form-data">
+      <level><input type="file" name="file" multiple required class="bg-gray-800 border border-gray-600 text-gray-100 px-3 py-1 rounded" /></level>
+      <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1.5 rounded flex items-center gap-1">
+        <span class="material-icons text-base">upload</span> Upload
+      </button>
+    </form>
+
+    <div class="flex flex-wrap justify-between items-center gap-4 mb-6 fade-in">
+      <label class="flex items-center gap-1">
+        <input type="checkbox" id="toggleHidden" onchange="toggleHiddenFiles()" /> Show hidden files
+      </label>
+      <form method="get" class="flex items-center gap-2">
+        <span class="material-icons text-blue-400">search</span>
+        <input type="text" name="q" placeholder="Search files..." class="bg-gray-800 border border-gray-600 text-gray-100 px-3 py-1 rounded" />
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1.5 rounded">Search</button>
+      </form>
+      <div class="flex items-center gap-2">
+        <label for="sortSelect" class="text-gray-300">Sort by:</label>
+        <select id="sortSelect" class="bg-gray-800 border border-gray-600 text-gray-100 px-3 py-1 rounded">
+          <option value="name" {% if sort == 'name' %}selected{% endif %}>Name</option>
+          <option value="size" {% if sort == 'size' %}selected{% endif %}>Size</option>
+          <option value="date" {% if sort == 'date' %}selected{% endif %}>Date Modified</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="dropZone" class="relative">
+      <div id="progressBar" class="hidden mb-4">
+        <div class="bg-gray-700 h-2 rounded">
+          <div class="bg-blue-500 h-2 rounded" style="width: 0%"></div>
+        </div>
+      </div>
+      <ul class="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-4 fade-in" id="fileList">
+        {% if files %}
+        {% for file in files %}
+        <li class="p-4 rounded-lg shadow bg-gray-800 flex flex-col gap-2 hover:shadow-lg transition card-animate {% if file.is_hidden %}hidden-file{% endif %}" style="{% if file.is_hidden %}display: none;{% endif %}" data-filename="{{ file.name }}" data-index="{{ loop.index0 }}">
+          <div class="flex flex-col gap-1">
+            <span class="material-icons text-blue-400 text-3xl">
+              {% if file.is_dir %}folder
+              {% elif file.name.endswith('.mp3') or file.name.endswith('.wav') %}music_note
+              {% elif file.name.endswith('.mp4') or file.name.endswith('.mkv') or file.name.endswith('.avi') %}movie
+              {% elif file.name.endswith('.jpg') or file.name.endswith('.jpeg') or file.name.endswith('.png') or file.name.endswith('.gif') %}image
+              {% elif file.name.endswith('.zip') or file.name.endswith('.rar') or file.name.endswith('.7z') %}archive
+              {% elif file.name.endswith('.pdf') %}picture_as_pdf
+              {% elif file.name.endswith('.txt') or file.name.endswith('.md') %}description
+              {% else %}insert_drive_file{% endif %}
+            </span>
+            {% if file.is_dir %}
+            <a class="text-white font-medium break-words hover:text-blue-400" href="{{ url_for('index', path=(current_path ~ '/' if current_path else '') ~ file.name) }}">{{ file.name }}/</a>
+            {% else %}
+            <a class="text-white font-medium break-words hover:text-blue-400" href="{{ url_for('serve_file', filename=(current_path ~ '/' if current_path else '') ~ file.name) }}" download>{{ file.name }}</a>
+            {% endif %}
+            <div class="text-sm text-gray-400">
+              {% if not file.is_dir %}
+              <span class="file-size">{{ file.size }}</span><br />{{ file.modified }}
+              {% else %}
+              Folder
+              {% endif %}
+            </div>
+          </div>
+          {% if not file.is_dir %}
+          <div class="flex gap-2 mt-auto">
+            <button type="button" onclick="previewFileModal('{{ url_for('serve_file', filename=(current_path ~ '/' if current_path else '') ~ file.name) }}', '{{ file.name|escape }}')" title="Preview" class="border border-blue-400 text-blue-400 hover:bg-blue-500 hover:text-white px-2 py-1 rounded flex items-center gap-1">
+              <span class="material-icons text-sm">visibility</span>
+            </button>
+            <a href="{{ url_for('serve_file', filename=(current_path ~ '/' if current_path else '') ~ file.name) }}" download title="Download" class="border border-blue-400 text-blue-400 hover:bg-blue-500 hover:text-white px-2 py-1 rounded flex items-center gap-1">
+              <span class="material-icons text-sm">download</span>
+            </a>
+          </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+        {% else %}
+        <li class="text-center col-span-full text-gray-400 text-lg mt-8 fade-in">😶‍🌫️ No files found in this folder.</li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+
+  <div id="previewModal" class="fixed inset-0 z-50 flex items-center justify-center hidden modal-bg">
+    <div class="bg-gray-900 text-gray-100 rounded-lg shadow-lg max-w-2xl w-full p-6 relative modal">
+      <button onclick="closePreviewModal()" class="absolute top-2 right-2 text-gray-400 hover:text-white">
+        <span class="material-icons">close</span>
+      </button>
+      <div id="modalContent" class="flex flex-col items-center justify-center min-h-[200px]">
+        <span class="text-gray-300">Loading preview...</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded shadow-lg hidden">
+    <span id="toastMessage"></span>
+  </div>
+
+  <script>
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 B';
+      const k = 1024;
+      const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    document.querySelectorAll('.file-size').forEach(el => {
+      const bytes = parseInt(el.textContent);
+      if (!isNaN(bytes)) {
+        el.textContent = formatBytes(bytes);
+      }
+    });
+
+    function toggleHiddenFiles() {
+      const show = document.getElementById("toggleHidden").checked;
+      document.querySelectorAll("#fileList > li.hidden-file").forEach((el) => {
+        el.style.display = show ? "flex" : "none";
+      });
+    }
+
+    function isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    function previewFileModal(fileUrl, fileName) {
+      const modal = document.getElementById("previewModal");
+      const content = document.getElementById("modalContent");
+      content.innerHTML = '<span class="text-gray-300">Loading preview...</span>';
+      modal.classList.remove("hidden");
+      const ext = fileName.split(".").pop().toLowerCase();
+      if (["jpg", "jpeg", "png", "gif", "bmp", "webp"].includes(ext)) {
+        content.innerHTML = `<img src="${fileUrl}" alt="${fileName}" class="max-w-full max-h-96 rounded mb-2" />`;
+      } else if (["mp4", "webm", "mkv", "avi", "mov"].includes(ext)) {
+        content.innerHTML = `<video src="${fileUrl}" controls autoplay class="max-w-full max-h-96 rounded mb-2"></video>`;
+      } else if (["pdf"].includes(ext)) {
+        if (isMobile()) {
+          // Use Google Docs Viewer for mobile
+          const gdocs = `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(window.location.origin + fileUrl)}`;
+          content.innerHTML = `<iframe src="${gdocs}" class="w-full max-h-96 rounded mb-2" style="height:480px;" frameborder="0"></iframe><div class='text-xs text-gray-400 mt-2'>If the preview does not load, your browser may not support inline PDF viewing. Try downloading the file.</div>`;
+        } else {
+          content.innerHTML = `<iframe src="${fileUrl}" class="w-full max-h-96 rounded mb-2" style="height:480px;" frameborder="0"></iframe>`;
+        }
+      } else if (["doc", "docx", "xls", "xlsx", "ppt", "pptx"].includes(ext)) {
+        const officeUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(window.location.origin + fileUrl)}`;
+        content.innerHTML = `<iframe src="${officeUrl}" class="w-full max-h-96 rounded mb-2" style="height:480px;" frameborder="0"></iframe><div class='text-xs text-gray-400 mt-2'>If the preview does not load, your browser may not support inline Office document viewing. Try downloading the file.</div>`;
+      } else if (["txt", "md", "py", "json", "log", "csv", "js", "css", "html"].includes(ext)) {
+        fetch(fileUrl)
+          .then((r) => r.text())
+          .then((text) => {
+            content.innerHTML = `<pre class='w-full max-h-96 overflow-auto bg-gray-800 text-gray-100 p-3 rounded text-sm text-left'>${escapeHtml(text)}</pre>`;
+          })
+          .catch(() => {
+            content.innerHTML = '<span class="text-red-300">Failed to load file.</span>';
+          });
+      } else {
+        content.innerHTML = '<span class="text-gray-300">No preview available for this file type.</span>';
+      }
+    }
+
+    function closePreviewModal() {
+      document.getElementById("previewModal").classList.add("hidden");
+    }
+
+    function escapeHtml(text) {
+      return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+
+    document.getElementById("sortSelect").addEventListener("change", function () {
+      const sort = this.value;
+      window.location.href = "{{ url_for('index', path=current_path) }}?sort=" + sort;
+    });
+
+    const dropZone = document.getElementById("dropZone");
+    dropZone.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      dropZone.classList.add("drag-over");
+    });
+    dropZone.addEventListener("dragleave", () => {
+      dropZone.classList.remove("drag-over");
+    });
+    dropZone.addEventListener("drop", (e) => {
+      e.preventDefault();
+      dropZone.classList.remove("drag-over");
+      const files = e.dataTransfer.files;
+      if (files.length) {
+        const formData = new FormData();
+        for (const file of files) {
+          formData.append("file", file);
+        }
+        uploadFiles(formData);
+      }
+    });
+
+    function uploadFiles(formData) {
+      const progressBar = document.getElementById("progressBar");
+      const progress = progressBar.querySelector("div > div");
+      progressBar.classList.remove("hidden");
+      fetch("{{ url_for('index', path=current_path) }}", {
+        method: "POST",
+        body: formData,
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          progress.style.width = "100%";
+          setTimeout(() => {
+            progressBar.classList.add("hidden");
+            progress.style.width = "0%";
+            showToast(data.message || "Upload successful!");
+            setTimeout(() => location.reload(), 1000);
+          }, 500);
+        })
+        .catch((error) => {
+          progressBar.classList.add("hidden");
+          showToast("Upload failed: " + error.message, "bg-red-600");
+        });
+    }
+
+    document.getElementById("uploadForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      uploadFiles(formData);
+    });
+
+    function showToast(message, bgClass = "bg-green-600") {
+      const toast = document.getElementById("toast");
+      const toastMessage = document.getElementById("toastMessage");
+      toast.className = `fixed bottom-4 right-4 ${bgClass} text-white px-4 py-2 rounded shadow-lg`;
+      toastMessage.textContent = message;
+      toast.classList.remove("hidden");
+      setTimeout(() => toast.classList.add("hidden"), 3000);
+    }
+  </script>
+</body>
+</html>
