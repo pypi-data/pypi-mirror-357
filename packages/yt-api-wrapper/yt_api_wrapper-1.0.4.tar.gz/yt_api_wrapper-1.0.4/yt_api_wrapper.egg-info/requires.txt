@@ -1,0 +1,13 @@
+requests>=2.25.0
+
+[async]
+aiohttp[speedups]
+
+[dev]
+pytest
+mypy
+black
+isort
+
+[orjson]
+orjson>=3.6.8
