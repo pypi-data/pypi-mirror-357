@@ -1,0 +1,10 @@
+cleanvoice/__init__.py,sha256=_adW4s07JVOLgNgzq8GgxxvXR27A0ww5ke-C0u3Femg,1675
+cleanvoice/cleanvoice.py,sha256=b4Tsf4esBTozxZ1XoTXD-adXqaKsD9sTID81Xr5hdEY,9310
+cleanvoice/client.py,sha256=oNWGIfMmKgN6I3dv_ocun4HVPYDbr5hAMdFbw89z2QU,4111
+cleanvoice/file_handler.py,sha256=ZQ4YuVMm9ZnGGfxD-6Bb8Z37ot5hPMWZgy6x98Fm1SI,10785
+cleanvoice/types.py,sha256=3cFRfE5RlhcaDvTM0cz8bK0ewAcqIla_PSJn7EqUZa8,5871
+cleanvoice_sdk-1.0.0.dist-info/licenses/LICENSE,sha256=su5gWnTxkFmvqZwX8MG127FjjwOcMUTTZXDXCH8rlC4,1078
+cleanvoice_sdk-1.0.0.dist-info/METADATA,sha256=YVbJDKgPxSD1JobCRYnc-Wl-ReNLBWpnJVrPgL9ab_0,12847
+cleanvoice_sdk-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+cleanvoice_sdk-1.0.0.dist-info/top_level.txt,sha256=q0lPG6I1m7fE0idZ3imIDMqbQdH_q0EPOBX_xgece4k,11
+cleanvoice_sdk-1.0.0.dist-info/RECORD,,
