@@ -1,0 +1,2 @@
+[console_scripts]
+bbmuse = bbmuse.cli:main
