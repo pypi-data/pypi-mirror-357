@@ -1,0 +1,12 @@
+python
+mcp
+notify-bridge
+platformdirs
+pydantic
+ftfy
+httpx
+pillow
+svglib
+tenacity
+loguru
+aiohttp
