@@ -1,0 +1,30 @@
+[project]
+name = "pyphotobackups"
+version = "0.1.14"
+description = "command line tool to sync photos from your iPhone and organize them into YYYY-MM folders."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+authors = [{ name = "hengtseChou", email = "hankthedev@gmail.com" }]
+requires-python = ">=3.9"
+dependencies = ["pillow>=11.2.1", "tqdm>=4.67.1"]
+
+[project.urls]
+Homepage = "https://github.com/hengtseChou/pyphotobackups"
+
+[dependency-groups]
+dev = ["pytest>=8.3.5", "pytest-cov>=6.1.1", "ruff>=0.11.11"]
+
+[project.scripts]
+pyphotobackups = "pyphotobackups.main:main"
+
+[tool.ruff]
+line-length = 100
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
