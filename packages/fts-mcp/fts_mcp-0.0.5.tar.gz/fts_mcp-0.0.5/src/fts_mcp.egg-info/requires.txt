@@ -1,0 +1,10 @@
+lenlp
+tantivy
+rapidfuzz
+fastmcp>=2.7
+lm_deluge>=0.0.14
+modal
+pandas
+python-docx
+rich
+pyyaml
