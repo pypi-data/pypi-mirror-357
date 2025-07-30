@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+fastapi_starter/__init__.py
+fastapi_starter/generator.py
+hitesh_fastapi_starter.egg-info/PKG-INFO
+hitesh_fastapi_starter.egg-info/SOURCES.txt
+hitesh_fastapi_starter.egg-info/dependency_links.txt
+hitesh_fastapi_starter.egg-info/entry_points.txt
+hitesh_fastapi_starter.egg-info/requires.txt
+hitesh_fastapi_starter.egg-info/top_level.txt
