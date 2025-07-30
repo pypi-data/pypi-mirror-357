@@ -1,0 +1,7 @@
+devices
+ducky_converter
+ducky_parser
+happy_frog_parser
+main
+payloads
+tests
