@@ -1,0 +1,17 @@
+hippo/__init__.py,sha256=2TY-dfPgz2yq9PdtdXJr_Qps7LDsjJJaBQxWftzH1wQ,412
+hippo/_version.py,sha256=p1em6j4Md5OnaRvfNJ_TuKflAR1JugHxOfATYMkcv-Q,47
+hippo/cli.py,sha256=h1DV_q2d-yhiFW8XyGrhmWYNDOtONRfjywL59nGxU8Y,1572
+hippo/config.py,sha256=GG6xb4zvhd9P8x_m5tGFGm-MJM1JjMLlxk7efC5fxoI,416
+hippo/data/__init__.py,sha256=nLwuG3-x20edKvztKXJvJOpNGIfrUhbjf-AA0t-kIE0,52
+hippo/data/preprocessing.py,sha256=y82j-PXWUbArWTRXji20vr-kz11e1V_ruVr4GuN8V8c,1374
+hippo/models/__init__.py,sha256=8e494ZLNUVAap-fdVIaW5Yjeb8IupWQ0mXD-ZaE6wXQ,45
+hippo/models/registry.py,sha256=-pTf75DcFS_c0Duc8ca5t6ctHSuY6QyAEdz66eEhFn8,551
+hippo/tracking/__init__.py,sha256=NxzJjb1UIP2DNGJMhTeP7i-xhmXYEQnOvV7T3UI4pDA,42
+hippo/tracking/tracker.py,sha256=wktVTr-e41elv365PQf6XVo3AD00GEI6cvQorid8j2Q,2274
+hippo/tuning/__init__.py,sha256=8e494ZLNUVAap-fdVIaW5Yjeb8IupWQ0mXD-ZaE6wXQ,45
+hippo/tuning/opt.py,sha256=P1sZYcR47JKCVmUZeSO5JbgPYVi_5xfbkdAX_ULVvnE,797
+hippo-0.1.0b2.dist-info/LICENSE,sha256=AIJP62DIXBHUjAtodSSh0ShpQRGcTKmq4lSucgGfSuI,1071
+hippo-0.1.0b2.dist-info/METADATA,sha256=wKRkUYCGI6JMTbDAHEcu5-Z2SARKqDvQwoYNsjxXCgI,3362
+hippo-0.1.0b2.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+hippo-0.1.0b2.dist-info/entry_points.txt,sha256=2oYdaBEvNNqY4DrkiOZTwe6mVZ3kB2UbvhZckuh8Wh8,41
+hippo-0.1.0b2.dist-info/RECORD,,

@@ -1,0 +1,3 @@
+[console_scripts]
+hippo=hippo.cli:train
+
