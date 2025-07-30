@@ -1,0 +1,13 @@
+macro_gen/__init__.py,sha256=w8qrrnmM05qwUYO2ynbN0u2D9cYamvlHkgqCRGktHRs,2440
+macro_gen/actiongenerator.py,sha256=yQ6DZbldZukH3pNnnt2vpghVAhAYRpqt94F3c4hNdhA,11271
+macro_gen/executioncontroller.py,sha256=vTDTG9aKLUMnQC5W-252r-J7BBmhTBRpbsvHTGu3gyI,7987
+macro_gen/inputrecorder.py,sha256=xhZn6sgzpCkDZFD_AREtAeeRCc6TrbByT9gWaRnqKXY,14529
+macro_gen/main.py,sha256=66-Wg-6NDUt8UZUttV4D-GJuU9T_lZl3xOhCYZDvGe8,12809
+macro_gen/templates.py,sha256=-RQ-my-gL_YQU58sqr6BpIV-6Z2XsvbKf0N6fVjLVmE,2107
+macro_gen/utils.py,sha256=dlQgqnmvepuKxmzzl_vwvPHwRrW0CcfQ7lDbUbWtNnw,7060
+macro_gen-0.1.0.data/data/share/man/man8/macro-gen.8,sha256=gkpNl_yw_9GvuAK6LVaUfU72Bz6IKdS22tqGh5dcXpc,3156
+macro_gen-0.1.0.dist-info/METADATA,sha256=JcCi4TauhcvN0nMi6eIBrLKke4S0l8le3JWSrKRH_mU,2996
+macro_gen-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+macro_gen-0.1.0.dist-info/entry_points.txt,sha256=o64FJJNWkYAHppan9VEm02qA1iUq_d7LabH4tIYsRtY,100
+macro_gen-0.1.0.dist-info/top_level.txt,sha256=xeL6heKJQFNmhlm3SN_KztVzn1iyLR4XG3hOg2-osN4,10
+macro_gen-0.1.0.dist-info/RECORD,,

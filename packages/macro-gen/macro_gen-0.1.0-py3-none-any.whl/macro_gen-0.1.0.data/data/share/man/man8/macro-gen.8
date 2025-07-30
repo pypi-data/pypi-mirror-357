@@ -1,0 +1,180 @@
+.TH MACRO-GEN 8 "June 2025" "macro-gen 0.1.0" "System Administration Tools"
+.SH NAME
+macro-gen \- record and replay mouse and keyboard actions
+.SH SYNOPSIS
+.B macro-gen
+.I command
+[options]
+.SH DESCRIPTION
+.B macro-gen
+is a tool for recording mouse and keyboard actions and generating scripts to replay them.
+It can be used to automate repetitive tasks by recording the actions once and replaying them
+as needed.
+.PP
+The tool has two main modes of operation: recording actions and generating replay scripts.
+.SH COMMANDS
+.TP
+.B record
+Record mouse and keyboard actions to a JSON file.
+.TP
+.B generate
+Generate a Python script to replay recorded actions.
+.TP
+.B list-history
+List all recordings saved in the history directory.
+.TP
+.B list-macros
+List all macros saved in the macros directory.
+.TP
+.B run MACRO_NAME
+Run the specified macro from the macros directory.
+.TP
+.B rm-macro MACRO_NAME
+Remove the specified macro from the macros directory.
+.TP
+.B rm-recording RECORDING_NAME
+Remove the specified recording from the history directory.
+.SH OPTIONS
+No command-line options available.
+.SH RECORDING CONTROLS
+.TP
+.B F9
+Start or stop recording.
+.TP
+.B F8
+Pause or resume recording.
+.TP
+.B ESC
+Exit the recorder.
+.SH FILES
+.TP
+.I ./macro_gen.conf
+Local configuration file (highest priority).
+.TP
+.I ~/.macro_gen.conf
+User-specific configuration file.
+.TP
+.I /etc/macro-gen/macro_gen.conf
+System-wide configuration file (lowest priority).
+.SH CONFIGURATION
+The configuration file uses the INI format with the following sections:
+.PP
+.B [recorder]
+.RS
+.TP
+.B mouse_trps = 50
+Mouse tracking rate in ticks per second.
+.RE
+.PP
+.B [playback]
+.RS
+.TP
+.B default_trigger_key = f10
+Default key for triggering action execution.
+.TP
+.B default_pause_key = f8
+Default key for pausing/resuming playback.
+.RE
+.PP
+.B [paths]
+.RS
+.TP
+.B history_dir = history
+Directory for storing recorded actions.
+.TP
+.B macros_dir = macros
+Directory for generated scripts.
+.RE
+.SH INSTALLATION
+.PP
+The macro-gen tool can be installed in several ways:
+.PP
+Using pip:
+.PP
+.RS
+pip install macro-gen
+.RE
+.PP
+From source (user installation):
+.PP
+.RS
+git clone https://github.com/0xTristo/macro-gen.git
+.RE
+.RS
+cd macro-gen
+.RE
+.RS
+pip install --user .
+.RE
+.PP
+From source (system-wide installation, requires root):
+.PP
+.RS
+git clone https://github.com/0xTristo/macro-gen.git
+.RE
+.RS
+cd macro-gen
+.RE
+.RS
+sudo pip install .
+.RE
+.PP
+Using the installation helper:
+.PP
+.RS
+sudo python install.py
+.RE
+.PP
+Or for user-mode installation:
+.PP
+.RS
+python install.py --user
+.RE
+.PP
+.SH EXAMPLES
+.PP
+Record mouse and keyboard actions:
+.PP
+.RS
+macro-gen record
+.RE
+.PP
+Generate a script from a recorded file:
+.PP
+.RS
+macro-gen generate recording.json
+.RE
+.PP
+List all available recordings:
+.PP
+.RS
+macro-gen list-history
+.RE
+.PP
+List all available macros:
+.PP
+.RS
+macro-gen list-macros
+.RE
+.PP
+Run a specific macro:
+.PP
+.RS
+macro-gen run my_macro
+.RE
+.PP
+Remove a specific macro:
+.PP
+.RS
+macro-gen rm-macro my_macro
+.RE
+.PP
+Remove a specific recording:
+.PP
+.RS
+macro-gen rm-recording my_recording
+.RE
+.SH AUTHOR
+Ali Terro <aliterr588@gmail.com>
+.SH COPYRIGHT
+Copyright \co 2025 Ali Terro. License: MIT.
