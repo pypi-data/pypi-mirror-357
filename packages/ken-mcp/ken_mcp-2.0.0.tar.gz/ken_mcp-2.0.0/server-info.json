@@ -1,0 +1,146 @@
+{
+  "name": "KEN-MCP 🏗️",
+  "instructions": null,
+  "fastmcp_version": "2.9.0",
+  "mcp_version": "1.9.4",
+  "server_version": "2.9.0",
+  "tools": [
+    {
+      "key": "generate_mcp_server",
+      "name": "generate_mcp_server",
+      "description": "Generate a complete MCP server from requirements. Works for ANY type of MCP - not just APIs!\n\nExamples:\n- \"I want an MCP that manages todo lists\"\n- \"Create an MCP for tracking my daily habits\" \n- \"Build an MCP that can analyze text files\"\n- \"I need an MCP that interfaces with YouTube API\"",
+      "input_schema": {
+        "properties": {
+          "requirements": {
+            "description": "Natural language description of desired MCP functionality",
+            "title": "Requirements",
+            "type": "string"
+          },
+          "project_name": {
+            "description": "Name for the MCP project (e.g., 'todo-manager')",
+            "title": "Project Name",
+            "type": "string"
+          },
+          "output_dir": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Directory to create the project in",
+            "title": "Output Dir"
+          },
+          "include_resources": {
+            "default": true,
+            "description": "Whether to include MCP resources",
+            "title": "Include Resources",
+            "type": "boolean"
+          },
+          "include_prompts": {
+            "default": true,
+            "description": "Whether to include MCP prompts",
+            "title": "Include Prompts",
+            "type": "boolean"
+          },
+          "python_version": {
+            "default": "3.10",
+            "description": "Minimum Python version required",
+            "title": "Python Version",
+            "type": "string"
+          },
+          "additional_dependencies": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Additional Python packages to include",
+            "title": "Additional Dependencies"
+          }
+        },
+        "required": [
+          "requirements",
+          "project_name"
+        ],
+        "type": "object"
+      },
+      "annotations": null,
+      "tags": null,
+      "enabled": true
+    },
+    {
+      "key": "analyze_requirements",
+      "name": "analyze_requirements",
+      "description": "Analyze requirements and suggest an implementation plan without generating code",
+      "input_schema": {
+        "properties": {
+          "requirements": {
+            "description": "Natural language description to analyze",
+            "title": "Requirements",
+            "type": "string"
+          }
+        },
+        "required": [
+          "requirements"
+        ],
+        "type": "object"
+      },
+      "annotations": null,
+      "tags": null,
+      "enabled": true
+    },
+    {
+      "key": "list_generated_servers",
+      "name": "list_generated_servers",
+      "description": "List all previously generated MCP servers",
+      "input_schema": {
+        "properties": {
+          "directory": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Directory to search in",
+            "title": "Directory"
+          }
+        },
+        "type": "object"
+      },
+      "annotations": null,
+      "tags": null,
+      "enabled": true
+    }
+  ],
+  "prompts": [],
+  "resources": [],
+  "templates": [],
+  "capabilities": {
+    "tools": {
+      "listChanged": true
+    },
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    },
+    "prompts": {
+      "listChanged": false
+    },
+    "logging": {}
+  }
+}
