@@ -1,0 +1,2 @@
+[console_scripts]
+bpcli = brickproof_cli.__main__:main
