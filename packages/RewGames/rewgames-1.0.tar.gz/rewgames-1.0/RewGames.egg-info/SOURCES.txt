@@ -1,0 +1,7 @@
+README.md
+setup.py
+RewGames.egg-info/PKG-INFO
+RewGames.egg-info/SOURCES.txt
+RewGames.egg-info/dependency_links.txt
+RewGames.egg-info/requires.txt
+RewGames.egg-info/top_level.txt
