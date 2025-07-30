@@ -1,0 +1,12 @@
+mcp_jupyter/__init__.py,sha256=se5zUr9YTM9FIgImJE1jr7nKk_QSgZGwu21ggCBYN48,321
+mcp_jupyter/__main__.py,sha256=KWHanOpM7AP9508UXjXB7naJd-geu2RvS9LON6kwdds,37
+mcp_jupyter/jupyter.py,sha256=Cnstxijl-UP7pF18q5JQpxXU5LKwqMmKOo0ODbSW4fI,1441
+mcp_jupyter/notebook.py,sha256=5rrGRBSmgkW4P2boN3PSKZcq3VAUNn8LaXuZufQZN3M,11893
+mcp_jupyter/server.py,sha256=8rJsm_nCk6N0grLyM6tGkRXiX3QdKknHbTHJVWemhpI,35267
+mcp_jupyter/state.py,sha256=9WY6oqridzEvqgsJiBWil8VjrtgN1MB5yQW-A3KT-FY,10727
+mcp_jupyter/utils.py,sha256=VigU-KltK-Q_iuHqqPKB9ntZCxK1m268lBR3RXXxTJs,3645
+mcp_jupyter-1.1.0.dist-info/METADATA,sha256=rIZgt-kADFgUXCTDIYNsGy2XcU1ciqDbuNZuIqwnIKQ,3449
+mcp_jupyter-1.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_jupyter-1.1.0.dist-info/entry_points.txt,sha256=EhuT8JXTl0xrN0W5fAxJPBIqXrbjQDnrGDGVM6DnVac,49
+mcp_jupyter-1.1.0.dist-info/licenses/LICENSE,sha256=Mn8bEXwwaoKnvE8pKAYeCR11_8ifwcJfjas7K3jwHlg,11337
+mcp_jupyter-1.1.0.dist-info/RECORD,,
