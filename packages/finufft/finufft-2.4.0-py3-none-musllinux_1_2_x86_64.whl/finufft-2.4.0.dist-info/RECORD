@@ -1,0 +1,10 @@
+finufft-2.4.0.dist-info/RECORD,,
+finufft-2.4.0.dist-info/METADATA,sha256=EjjH7f5c0Dz22Fi9d1bMifxcrepWBgSmpP2GzC9OJXs,1682
+finufft-2.4.0.dist-info/WHEEL,sha256=0YZtBOs44A-9RBMapj8iUUm2iajkRHXxBvSa0dvbJLE,114
+finufft.libs/libgcc_s-a0b57c20.so.1,sha256=XPAr2giQZFaQKDEig3i_sQM7zfbaGkuhwmZ9ryvu-Vk,148041
+finufft.libs/libstdc++-0d31ccbe.so.6.0.32,sha256=QyUTnI2umnGgPmNJ-6F_BVIAJnq6-70cNoEWpma6EFQ,3494521
+finufft.libs/libgomp-ba615989.so.1.0.0,sha256=ias_EL8azDXDK-DHwF5bn1_d-YFCmv_39z59O3JG2BI,336801
+finufft/libfinufft.so,sha256=NMjjBF_-Iu9XvDl1q973e7cA-XGpGyp4hHNL0PeNjdw,8085513
+finufft/_finufft.py,sha256=uceSAU-0gWE9J_K0QM5hrfXc7r4islL0CgaQilIjUo8,4827
+finufft/__init__.py,sha256=UXp5s2buRW7z8ysZND74xkNynb-5yIox78HOjkxTIXs,910
+finufft/_interfaces.py,sha256=cbodO5AobOZTKrKSduKGb04Rz1SYgASjOBWv34sT-BM,30379
