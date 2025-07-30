@@ -1,0 +1,16 @@
+nvat/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nvat/helper.py,sha256=g1CiL3-iofw6mQVjpZeN53TKELJWrSnTkq4EADE2U-o,1421
+nvat/main.py,sha256=y4-l8RFbAZFLNwoA8f6qmK9mN6hrdyP73YgSyWGvNkQ,2742
+nvat/template/buildVars.py,sha256=t4WHL8D7WukMxdHMWy25CnVHBzxP-_s_Q4PQnrYH0f0,4500
+nvat/template/manifest-translated.ini.tpl,sha256=vxfnZ7-xfH2yZqrFjdJKm-OimdWCg6-9GF_EKjBWR0U,70
+nvat/template/manifest.ini.tpl,sha256=vzMM0wEwyLqZ7AzKzG4C0UVPWv9ILL4ELkhhhnYQ0j8,301
+nvat/template/pyproject.toml,sha256=Q41bHHYY712DmNFErg1RrjZ2FMc5GNKUmIm-CP-rHSA,604
+nvat/template/pyrightconfig.json,sha256=fT9GDKQTn3GjizLLl4ICWETClzOwT4zxpfBXfP-Bb9o,139
+nvat/template/sconstruct,sha256=-fBYhUH408_j2vEKHMTTceD1H7PeM8veOjEmq5DeJSg,11636
+nvat/template/addon/globalPlugins/$name/__init__.py,sha256=1Y9F2aEdN_aFEZEYuxlnVW0Maq69EyV_yBa1X6PxEOI,1099
+nvat/template/site_scons/site_tools/gettexttool/__init__.py,sha256=ntSGHfEMk9fOiIC8Z-bQiJ5lB9Vy1VNJI60-vlXaoIk,1604
+nvat-1.0.1.dist-info/METADATA,sha256=tjh9agaqTcwojrnogrcht8qkJ7jA8YDes_AT9CRGMyU,232
+nvat-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+nvat-1.0.1.dist-info/entry_points.txt,sha256=gqUmKTCIJxGWMoVEz1r8bvpcIXNl1ndKyOFR8s1gCIE,40
+nvat-1.0.1.dist-info/top_level.txt,sha256=28a2TAJIFczy04h77mLZF8WzQDM88u16QBnVXyB-dOI,5
+nvat-1.0.1.dist-info/RECORD,,
