@@ -1,0 +1,4 @@
+requests>=2.28.0
+Pillow>=11
+FontTools>=4.0.0
+fastmcp
