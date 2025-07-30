@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.py
+mseep_weather.egg-info/PKG-INFO
+mseep_weather.egg-info/SOURCES.txt
+mseep_weather.egg-info/dependency_links.txt
+mseep_weather.egg-info/requires.txt
+mseep_weather.egg-info/top_level.txt
