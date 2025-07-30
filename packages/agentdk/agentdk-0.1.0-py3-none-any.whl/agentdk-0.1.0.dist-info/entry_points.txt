@@ -1,0 +1,2 @@
+[console_scripts]
+agentdk-cli = agentdk.cli:main
