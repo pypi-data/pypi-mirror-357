@@ -1,0 +1,1970 @@
+Found CUDA_PATH, attempting to build with CUDA. To build without CUDA, run 'CUSIG=0 pip install pysiglib' instead.
+========== Running Command ==========
+.\bootstrap.bat
+
+Building the B2 engine..
+LOCALAPPDATA=C:\Users\Shmelev\AppData\Local
+Found with vswhere C:\Program Files\Microsoft Visual Studio\2022\Community
+Found with vswhere C:\Program Files\Microsoft Visual Studio\2022\Community
+Call_If_Exists "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\..\..\VC\Auxiliary\Build\vcvarsall.bat"  AMD64
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.3
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+###
+### Using 'vc143' toolset.
+###
+
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\engine>"cl" /nologo /MP /MT /TP /Feb2 /wd4996 /wd4675 /O2 /GL /EHsc /Zc:wchar_t /Gw   -DNDEBUG  bindjam.cpp builtins.cpp class.cpp command.cpp compile.cpp constants.cpp cwd.cpp debug.cpp debugger.cpp events.cpp execcmd.cpp execnt.cpp execunix.cpp filent.cpp filesys.cpp fileunix.cpp frames.cpp function.cpp glob.cpp hash.cpp hcache.cpp hdrmacro.cpp headers.cpp jam.cpp jamgram.cpp lists.cpp make.cpp make1.cpp md5.cpp mem.cpp modules.cpp native.cpp output.cpp parse.cpp pathnt.cpp pathsys.cpp pathunix.cpp regexp.cpp rules.cpp scan.cpp search.cpp jam_strings.cpp startup.cpp tasks.cpp timestamp.cpp value.cpp variable.cpp w32_getreg.cpp mod_args.cpp mod_command_db.cpp mod_db.cpp mod_jam_builtin.cpp mod_jam_class.cpp mod_jam_errors.cpp mod_jam_modules.cpp mod_order.cpp mod_path.cpp mod_property_set.cpp mod_regex.cpp mod_sequence.cpp mod_set.cpp mod_string.cpp mod_summary.cpp mod_sysinfo.cpp mod_version.cpp /link kernel32.lib advapi32.lib user32.lib /MANIFEST:EMBED /MANIFESTINPUT:b2.exe.manifest 
+bindjam.cpp
+builtins.cpp
+class.cpp
+command.cpp
+compile.cpp
+constants.cpp
+cwd.cpp
+debug.cpp
+debugger.cpp
+events.cpp
+execcmd.cpp
+execnt.cpp
+execunix.cpp
+filent.cpp
+filesys.cpp
+fileunix.cpp
+frames.cpp
+function.cpp
+glob.cpp
+hash.cpp
+hcache.cpp
+hdrmacro.cpp
+headers.cpp
+jam.cpp
+jamgram.cpp
+lists.cpp
+make.cpp
+make1.cpp
+md5.cpp
+mem.cpp
+modules.cpp
+native.cpp
+output.cpp
+parse.cpp
+pathnt.cpp
+pathsys.cpp
+pathunix.cpp
+regexp.cpp
+rules.cpp
+scan.cpp
+search.cpp
+jam_strings.cpp
+startup.cpp
+tasks.cpp
+timestamp.cpp
+value.cpp
+variable.cpp
+w32_getreg.cpp
+mod_args.cpp
+mod_command_db.cpp
+mod_db.cpp
+mod_jam_builtin.cpp
+mod_jam_class.cpp
+mod_jam_errors.cpp
+mod_jam_modules.cpp
+mod_order.cpp
+mod_path.cpp
+mod_property_set.cpp
+mod_regex.cpp
+mod_sequence.cpp
+mod_set.cpp
+mod_string.cpp
+mod_summary.cpp
+mod_sysinfo.cpp
+mod_version.cpp
+Generating code
+Finished generating code
+
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\engine>dir *.exe 
+ Volume in drive C has no label.
+ Volume Serial Number is AE4F-76C5
+
+ Directory of C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\engine
+
+25/06/2025  10:30         1,065,984 b2.exe
+               1 File(s)      1,065,984 bytes
+               0 Dir(s)  55,698,325,504 bytes free
+
+Building is done. To install, run:
+
+    .\b2 --prefix=DIR install
+
+
+========== Running Command ==========
+./b2 install --prefix=../b2
+
+Jamroot.jam:118: in modules.load from module Jamfile<C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2>
+warning: Bison generator program 'bison' not found. Skipping grammar build.
+C:/Users/Shmelev/source/repos/pySigLib/b2-5.3.2/src/build\project.jam:562: in load-jamfile from module project
+C:/Users/Shmelev/source/repos/pySigLib/b2-5.3.2/src/build\project.jam:84: in load from module project
+C:/Users/Shmelev/source/repos/pySigLib/b2-5.3.2/src/build\project.jam:217: in project.find from module project
+C:/Users/Shmelev/source/repos/pySigLib/b2-5.3.2/src\build-system.jam:639: in module scope from module build-system
+warning: No toolsets are configured.
+warning: Configuring default toolset "msvc".
+warning: If the default is wrong, your build may not work correctly.
+warning: Use the "toolset=xxxxx" option to override our guess.
+warning: For more configuration options, please consult
+warning: https://www.bfgroup.xyz/b2/manual/release/index.html#b2.overview.configuration
+...found 463 targets...
+...updating 222 targets...
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\b2.exe
+src\engine\b2.exe
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build-system.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build-system.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\ac.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\ac.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\alias.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\alias.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\build-request.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\build-request.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\config-cache.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\config-cache.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib\wxFormBuilder.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\contrib\wxFormBuilder.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\configure.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\configure.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib\tntnet.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\contrib\tntnet.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\options\help.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\options\help.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\assert.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\assert.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\indirect.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\indirect.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\container.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\container.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\option.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\option.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\doc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\doc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\order.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\order.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\os.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\os.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\param.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\param.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\path.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\path.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\print.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\print.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\utility.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\utility.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\sequence.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\sequence.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util\numbers.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\util\numbers.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\acc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\acc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\bison.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\bison.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\asciidoctor.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\asciidoctor.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\generators.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\generators.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\boostbook.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\boostbook.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\cast.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\cast.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\cc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\cc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\auto-index.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\auto-index.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\borland.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\borland.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\builtin.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\builtin.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\clang-darwin.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\clang-darwin.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\bzip2.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\bzip2.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\clang-vxworks.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\clang-vxworks.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\clang-win.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\clang-win.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\clang.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\clang.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\common.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\common.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\como.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\como.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\como-linux.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\como-linux.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\como-win.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\como-win.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\cw-config.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\cw-config.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\convert.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\convert.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\cray.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\cray.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\cygwin.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\cygwin.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\cw.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\cw.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\darwin.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\darwin.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\diab.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\diab.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\dmc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\dmc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\docutils.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\docutils.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\doxproc.py
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\doxproc.py
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\doxygen.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\doxygen.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\embarcadero.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\embarcadero.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\emscripten.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\emscripten.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\flags.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\flags.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\fop.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\fop.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\fortran.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\fortran.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\gettext.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\gettext.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\gcc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\gcc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\hpfortran.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\hpfortran.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\gfortran.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\gfortran.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\generate.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\generate.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\hp_cxx.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\hp_cxx.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\clang-linux.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\clang-linux.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\ibmcxx.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\ibmcxx.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\ifort.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\ifort.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\intel-darwin.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\intel-darwin.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\intel-linux.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\intel-linux.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\lex.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\lex.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\intel-vxworks.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\intel-vxworks.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\intel-win.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\intel-win.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\intel.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\intel.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\libjpeg.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\libjpeg.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\make.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\make.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\mc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\mc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\link.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\link.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\lzma.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\lzma.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\message.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\message.jam
+        1 file(s) copied.
+...on 100th target...
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\libpng.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\libpng.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\libtiff.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\libtiff.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\msvc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\msvc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\midl.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\midl.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\mpi.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\mpi.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\mipspro.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\mipspro.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\notfile.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\notfile.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\openssl.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\openssl.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\pgi.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\pgi.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\package.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\package.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\python-config.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\python-config.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\pathscale.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\pathscale.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\pch.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\pch.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\pkg-config.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\pkg-config.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\python.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\python.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\project.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\project.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\qcc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\qcc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\qt3.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\qt3.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\qt.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\qt.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\qt5.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\qt5.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\qt4.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\qt4.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\quickbook-config.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\quickbook-config.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\stage.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\stage.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\quickbook.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\quickbook.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\rc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\rc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\stlport.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\stlport.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\symlink.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\symlink.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\sun.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\sun.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\unix.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\unix.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\testing-aux.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\testing-aux.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\testing.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\testing.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\xlf.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\xlf.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\vmsdecc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\vmsdecc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\whale.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\whale.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\xsltproc-config.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\xsltproc-config.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\xsltproc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\xsltproc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\zlib.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\zlib.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\doxygen\windows-paths-check.hpp
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\doxygen\windows-paths-check.hpp
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\zstd.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\zstd.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\architecture-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\architecture-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\archiveflags-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\archiveflags-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\asmflags-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\asmflags-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\build-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\build-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\cflags-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\cflags-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\doxygen\windows-paths-check.doxyfile
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\doxygen\windows-paths-check.doxyfile
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\compileflags-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\compileflags-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\coverage-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\coverage-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\conditional-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\conditional-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\cxx-template-depth-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\cxx-template-depth-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\cxxabi-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\cxxabi-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\cxxflags-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\cxxflags-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\cxxstd-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\cxxstd-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\debug-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\debug-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\define-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\define-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\dependency-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\dependency-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\dll-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\dll-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\exception-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\exception-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\fflags-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\fflags-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\file-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\file-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\find-lib-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\find-lib-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\flags-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\flags-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\force-include-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\force-include-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\include-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\include-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\instruction-set-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\instruction-set-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\internal-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\internal-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\linemarkers-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\linemarkers-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\library-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\library-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\link-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\link-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\local-visibility-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\local-visibility-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\location-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\location-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\location-prefix-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\location-prefix-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\lto-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\lto-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\name-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\name-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\linkflags-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\linkflags-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\objcflags-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\objcflags-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\os-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\os-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\optimization-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\optimization-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\relevant-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\relevant-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\response-file-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\response-file-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\rtti-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\rtti-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\sanitizers-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\sanitizers-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\runtime-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\runtime-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\search-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\search-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\source-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\source-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\stdlib-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\stdlib-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\tag-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\tag-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\threadapi-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\threadapi-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\strip-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\strip-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\threading-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\threading-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\toolset-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\toolset-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\user-interface-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\user-interface-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\translate-path-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\translate-path-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\address-model-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\address-model-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\version-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\version-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\variant-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\variant-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\__init_features__.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\__init_features__.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\visibility-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\visibility-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\warnings-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\warnings-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\generators\archive-generator.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\generators\archive-generator.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\generators\c-preprocessing-generator.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\generators\c-preprocessing-generator.jam
+        1 file(s) copied.
+...on 200th target...
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\generators\dummy-generator.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\generators\dummy-generator.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\generators\lib-generator.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\generators\lib-generator.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\generators\linking-generator.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\generators\linking-generator.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\generators\prebuilt-lib-generator.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\generators\prebuilt-lib-generator.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\generators\searched-lib-generator.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\generators\searched-lib-generator.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\adoc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\adoc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\asm.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\asm.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\cpp.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\cpp.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\css.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\css.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\docbook.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\docbook.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\exe.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\exe.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\html.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\html.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\generators\__init_generators__.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\generators\__init_generators__.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\lib.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\lib.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\man.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\man.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\markdown.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\markdown.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\objc.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\objc.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\obj.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\obj.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\preprocessed.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\preprocessed.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\qt.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\qt.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\register.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\register.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\rsp.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\rsp.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\sass-type.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\sass-type.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\pdf.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\pdf.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\generators\c-compiling-generator.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\generators\c-compiling-generator.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\features\allow-feature.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\features\allow-feature.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\sass.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\sass.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\saxonhe.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\saxonhe.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\property-set.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\property-set.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\property.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\property.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\scanner.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\scanner.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\targets.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\targets.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\toolset.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\toolset.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\type.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\type.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\version.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\version.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build\virtual-target.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\build\virtual-target.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib\boost.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\contrib\boost.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\types\xml.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\types\xml.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib\modular.jam
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\contrib\modular.jam
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\xsltproc\test.xml
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\xsltproc\test.xml
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\xsltproc\test.xsl
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\xsltproc\test.xsl
+        1 file(s) copied.
+common.copy C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools\xsltproc\included.xsl
+C:\Users\Shmelev\source\repos\pySigLib\b2-5.3.2\src\tools\xsltproc\included.xsl
+        1 file(s) copied.
+
+...updated 222 targets...
+
+========== Running Command ==========
+../b2/b2 release
+
+warning: No toolsets are configured.
+warning: Configuring default toolset "msvc".
+warning: If the default is wrong, your build may not work correctly.
+warning: Use the "toolset=xxxxx" option to override our guess.
+warning: For more configuration options, please consult
+warning: https://www.bfgroup.xyz/b2/manual/release/index.html#b2.overview.configuration
+...found 25 targets...
+
+========== Running Command ==========
+x64/Release/avx_info.exe
+
+
+Found supported instruction sets: ['avx', 'avx2']
+
+AVX2 supported, defining macro VEC in cpsig
+
+========== Running Command ==========
+../b2/b2 --toolset=msvc --build-type=complete architecture=x86 address-model=64 release
+
+...found 62 targets...
+...updating 27 targets...
+common.copy x64\Release\cpsig.h
+cpsig\cpsig.h
+        1 file(s) copied.
+msvc.write-setup-script bin\standalone\msvc\msvc-14.3\address-model-64\architecture-x86\msvc-setup.bat
+compile-c-c++ cpsig\bin\msvc-14.3\release\address-model-64\architecture-x86\cxxstd-20-iso\threading-multi\cppch.obj
+cppch.cpp
+compile-c-c++ cpsig\bin\msvc-14.3\release\address-model-64\architecture-x86\cxxstd-20-iso\threading-multi\cp_path_transforms.obj
+cp_path_transforms.cpp
+
+--- Analyzing function: void __cdecl add_time(double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_path_transforms.cpp(28) : info C5002: loop not vectorized due to reason '502'
+compile-c-c++ cpsig\bin\msvc-14.3\release\address-model-64\architecture-x86\cxxstd-20-iso\threading-multi\cpsig.obj
+cpsig.cpp
+compile-c-c++ cpsig\bin\msvc-14.3\release\address-model-64\architecture-x86\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj
+cp_sig_kernel.cpp
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(51): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(51): note: the template instantiation context (the oldest one first) is
+cpsig\cp_sig_kernel.cpp(123): note: see reference to function template instantiation 'void multi_threaded_batch<double,std::function<void (double *,double *)>>(FN &,T *,double *,uint64_t,uint64_t,uint64_t,int)' being compiled
+        with
+        [
+            FN=std::function<void (double *,double *)>,
+            T=double
+        ]
+
+--- Analyzing function: __cdecl `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>::operator()(double * __ptr64,double * __ptr64)const __ptr64
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::_Destroy_range<class std::allocator<class std::thread> >(class std::thread * __ptr64,class std::thread * __ptr64 const,class std::allocator<class std::thread> & __ptr64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::invoke<class `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,double * __ptr64,double * __ptr64>(class `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> && __ptr64,double * __ptr64 && __ptr64,double * __ptr64 && __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: class std::basic_ostream<char,struct std::char_traits<char> > & __ptr64 __cdecl std::operator<<<struct std::char_traits<char> >(class std::basic_ostream<char,struct std::char_traits<char> > & __ptr64,char const * __ptr64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(783) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(796) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl std::_Uninitialized_backout_al<class std::allocator<class std::thread> >::~_Uninitialized_backout_al<class std::allocator<class std::thread> >(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl get_sig_kernel_(double * __ptr64,unsigned __int64,unsigned __int64,double * __ptr64,unsigned __int64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_sig_kernel.cpp(43) : info C5002: loop not vectorized due to reason '1300'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_sig_kernel.cpp(61) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_sig_kernel.cpp(73) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_sig_kernel.cpp(70) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_sig_kernel.cpp(69) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_sig_kernel.cpp(60) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Reallocation_guard::~_Reallocation_guard(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Change_array(class std::thread * __ptr64 const,unsigned __int64,unsigned __int64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: class std::thread * __ptr64 __cdecl std::_Uninitialized_move<class std::thread * __ptr64,class std::allocator<class std::thread> >(class std::thread * __ptr64 const,class std::thread * __ptr64 const,class std::thread * __ptr64,class std::allocator<class std::thread> & __ptr64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+
+--- Analyzing function: void __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Tidy(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: static unsigned int __cdecl std::thread::_Invoke<class std::tuple<class `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,double * __ptr64,double * __ptr64>,0,1,2>(void * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::~vector<class std::thread,class std::allocator<class std::thread> >(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: class std::thread * __ptr64 __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Emplace_reallocate<class `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,double * __ptr64 & __ptr64,double * __ptr64 & __ptr64>(class std::thread * __ptr64 const,class `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,double * __ptr64 & __ptr64,double * __ptr64 & __ptr64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+
+--- Analyzing function: void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(51) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(58) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+
+--- Analyzing function: void __cdecl batch_sig_kernel_(double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,int)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_sig_kernel.cpp(129) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: batch_sig_kernel
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_sig_kernel.cpp(130) : info C5002: loop not vectorized due to reason '500'
+compile-c-c++ cpsig\bin\msvc-14.3\release\address-model-64\architecture-x86\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj
+cp_tensor_poly.cpp
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(90): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(90): note: the template instantiation context (the oldest one first) is
+cpsig\cp_tensor_poly.cpp(87): note: see reference to function template instantiation 'void multi_threaded_batch_2<double,std::function<void (double *,double *,double *)>>(FN &,T *,T *,double *,uint64_t,uint64_t,uint64_t,uint64_t,int)' being compiled
+        with
+        [
+            FN=std::function<void (double *,double *,double *)>,
+            T=double
+        ]
+
+--- Analyzing function: unsigned __int64 __cdecl power(unsigned __int64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.cpp(24) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl sig_combine_inplace_(double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64 * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(36) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(34) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(29) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(45) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(27) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: sig_length
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.cpp(24) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl `void __cdecl multi_threaded_batch_2<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>::operator()(double * __ptr64,double * __ptr64,double * __ptr64)const __ptr64
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(80) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: class std::basic_ostream<char,struct std::char_traits<char> > & __ptr64 __cdecl std::operator<<<struct std::char_traits<char> >(class std::basic_ostream<char,struct std::char_traits<char> > & __ptr64,char const * __ptr64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(783) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(796) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::invoke<class `void __cdecl multi_threaded_batch_2<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,double * __ptr64,double * __ptr64,double * __ptr64>(class `void __cdecl multi_threaded_batch_2<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> && __ptr64,double * __ptr64 && __ptr64,double * __ptr64 && __ptr64,double * __ptr64 && __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(80) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::_Destroy_range<class std::allocator<class std::thread> >(class std::thread * __ptr64,class std::thread * __ptr64 const,class std::allocator<class std::thread> & __ptr64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl std::_Uninitialized_backout_al<class std::allocator<class std::thread> >::~_Uninitialized_backout_al<class std::allocator<class std::thread> >(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Tidy(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Reallocation_guard::~_Reallocation_guard(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Change_array(class std::thread * __ptr64 const,unsigned __int64,unsigned __int64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: static unsigned int __cdecl std::thread::_Invoke<class std::tuple<class `void __cdecl multi_threaded_batch_2<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,double * __ptr64,double * __ptr64,double * __ptr64>,0,1,2,3>(void * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(80) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: class std::thread * __ptr64 __cdecl std::_Uninitialized_move<class std::thread * __ptr64,class std::allocator<class std::thread> >(class std::thread * __ptr64 const,class std::thread * __ptr64 const,class std::thread * __ptr64,class std::allocator<class std::thread> & __ptr64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+
+--- Analyzing function: void __cdecl sig_combine_(double * __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.cpp(65) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(36) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(34) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(29) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(45) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(27) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::~vector<class std::thread,class std::allocator<class std::thread> >(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: class std::thread * __ptr64 __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Emplace_reallocate<class `void __cdecl multi_threaded_batch_2<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,double * __ptr64 & __ptr64,double * __ptr64 & __ptr64,double * __ptr64 & __ptr64>(class std::thread * __ptr64 const,class `void __cdecl multi_threaded_batch_2<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,double * __ptr64 & __ptC:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+
+--- Analyzing function: void __cdecl multi_threaded_batch_2<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,int)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(90) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(97) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+
+--- Analyzing function: void __cdecl batch_sig_combine_(double * __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.cpp(94) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: batch_sig_combine
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.cpp(96) : info C5002: loop not vectorized due to reason '500'
+compile-c-c++ cpsig\bin\msvc-14.3\release\address-model-64\architecture-x86\cxxstd-20-iso\threading-multi\cp_signature.obj
+cp_signature.cpp
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(51): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(51): note: the template instantiation context (the oldest one first) is
+cpsig\cp_signature.cpp(57): note: see reference to function template instantiation 'void batch_signature_<float>(T *,double *,uint64_t,uint64_t,uint64_t,uint64_t,bool,bool,bool,int)' being compiled
+        with
+        [
+            T=float
+        ]
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(290): note: see reference to function template instantiation 'void multi_threaded_batch<T,std::function<void (float *,double *)>>(FN &,T *,double *,uint64_t,uint64_t,uint64_t,int)' being compiled
+        with
+        [
+            T=float,
+            FN=std::function<void (float *,double *)>
+        ]
+
+--- Analyzing function: void __cdecl sig_combine_inplace_(double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64 * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(36) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(34) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(29) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(45) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(27) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: char * __ptr64 __cdecl std::_UIntegral_to_buff<char,unsigned __int64>(char * __ptr64,unsigned __int64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(2781) : info C5002: loop not vectorized due to reason '502'
+
+--- Analyzing function: void __cdecl std::_String_val<struct std::_Simple_types<char> >::_Activate_SSO_buffer(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(460) : info C5002: loop not vectorized due to reason '1300'
+
+--- Analyzing function: static char * __ptr64 __cdecl std::_Char_traits<char,int>::move(char * __ptr64 const,char const * __ptr64 const,unsigned __int64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp(153) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp(165) : info C5002: loop not vectorized due to reason '1301'
+
+--- Analyzing function: void __cdecl std::_String_val<struct std::_Simple_types<char> >::_Bxty::_Switch_to_buf(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(506) : info C5002: loop not vectorized due to reason '1300'
+
+--- Analyzing function: void __cdecl linear_signature_<__int64>(class Point<__int64> & __ptr64,class Point<__int64> & __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64 * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: void __cdecl linear_signature_<int>(class Point<int> & __ptr64,class Point<int> & __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64 * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: void __cdecl linear_signature_<double>(class Point<double> & __ptr64,class Point<double> & __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64 * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: void __cdecl linear_signature_<float>(class Point<float> & __ptr64,class Point<float> & __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64 * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: class std::basic_ostream<char,struct std::char_traits<char> > & __ptr64 __cdecl std::operator<<<struct std::char_traits<char> >(class std::basic_ostream<char,struct std::char_traits<char> > & __ptr64,char const * __ptr64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(783) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(796) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl `void __cdecl multi_threaded_batch<__int64,class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> & __ptr64,__int64 * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>::operator()(__int64 * __ptr64,double * __ptr64)const __ptr64
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>::operator()(double * __ptr64,double * __ptr64)const __ptr64
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl `void __cdecl multi_threaded_batch<float,class std::function<void __cdecl(float * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(float * __ptr64,double * __ptr64)> & __ptr64,float * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>::operator()(float * __ptr64,double * __ptr64)const __ptr64
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl `void __cdecl multi_threaded_batch<int,class std::function<void __cdecl(int * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(int * __ptr64,double * __ptr64)> & __ptr64,int * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>::operator()(int * __ptr64,double * __ptr64)const __ptr64
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::invoke<class `void __cdecl multi_threaded_batch<__int64,class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> & __ptr64,__int64 * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,__int64 * __ptr64,double * __ptr64>(class `void __cdecl multi_threaded_batch<__int64,class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> & __ptr64,__int64 * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> && __ptr64,__int64 * __ptr64 && __ptr64,double * __ptr64 && __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::invoke<class `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,double * __ptr64,double * __ptr64>(class `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> && __ptr64,double * __ptr64 && __ptr64,double * __ptr64 && __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::invoke<class `void __cdecl multi_threaded_batch<float,class std::function<void __cdecl(float * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(float * __ptr64,double * __ptr64)> & __ptr64,float * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,float * __ptr64,double * __ptr64>(class `void __cdecl multi_threaded_batch<float,class std::function<void __cdecl(float * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(float * __ptr64,double * __ptr64)> & __ptr64,float * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> && __ptr64,float * __ptr64 && __ptr64,double * __ptr64 && __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::invoke<class `void __cdecl multi_threaded_batch<int,class std::function<void __cdecl(int * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(int * __ptr64,double * __ptr64)> & __ptr64,int * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,int * __ptr64,double * __ptr64>(class `void __cdecl multi_threaded_batch<int,class std::function<void __cdecl(int * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(int * __ptr64,double * __ptr64)> & __ptr64,int * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> && __ptr64,int * __ptr64 && __ptr64,double * __ptr64 && __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::_Destroy_range<class std::allocator<class std::thread> >(class std::thread * __ptr64,class std::thread * __ptr64 const,class std::allocator<class std::thread> & __ptr64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: static unsigned int __cdecl std::thread::_Invoke<class std::tuple<class `void __cdecl multi_threaded_batch<__int64,class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> & __ptr64,__int64 * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,__int64 * __ptr64,double * __ptr64>,0,1,2>(void * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: static unsigned int __cdecl std::thread::_Invoke<class std::tuple<class `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,double * __ptr64,double * __ptr64>,0,1,2>(void * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: static unsigned int __cdecl std::thread::_Invoke<class std::tuple<class `void __cdecl multi_threaded_batch<float,class std::function<void __cdecl(float * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(float * __ptr64,double * __ptr64)> & __ptr64,float * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,float * __ptr64,double * __ptr64>,0,1,2>(void * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: static unsigned int __cdecl std::thread::_Invoke<class std::tuple<class `void __cdecl multi_threaded_batch<int,class std::function<void __cdecl(int * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(int * __ptr64,double * __ptr64)> & __ptr64,int * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1>,int * __ptr64,double * __ptr64>,0,1,2>(void * __ptr64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(41) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl std::_Uninitialized_backout_al<class std::allocator<class std::thread> >::~_Uninitialized_backout_al<class std::allocator<class std::thread> >(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Reallocation_guard::~_Reallocation_guard(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Change_array(class std::thread * __ptr64 const,unsigned __int64,unsigned __int64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Tidy(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: __cdecl `void __cdecl batch_signature_<__int64>(__int64 * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool,int)'::`16'::<lambda_1>::operator()(__int64 * __ptr64,double * __ptr64)const __ptr64
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(267) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl signature_naive_<__int64>(class Path<__int64> & __ptr64,double * __ptr64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_path.h(367) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(68) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(36) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(34) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(29) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(45) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(27) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: __cdecl `void __cdecl batch_signature_<double>(double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool,int)'::`16'::<lambda_1>::operator()(double * __ptr64,double * __ptr64)const __ptr64
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(267) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl signature_horner_<__int64>(class Path<__int64> & __ptr64,double * __ptr64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_path.h(367) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(104) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(123) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(132) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(145) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(162) : info C5002: loop not vectorized due to reason '1301'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(160) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(136) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(176) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(189) : info C5002: loop not vectorized due to reason '1301'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(188) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(126) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(196) : info C5001: loop vectorized
+
+--- Analyzing function: void __cdecl signature_horner_<double>(class Path<double> & __ptr64,double * __ptr64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_path.h(367) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(104) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(123) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(132) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(145) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(162) : info C5002: loop not vectorized due to reason '1301'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(160) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(136) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(176) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(189) : info C5002: loop not vectorized due to reason '1301'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(188) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(126) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(196) : info C5001: loop vectorized
+
+--- Analyzing function: void __cdecl signature_naive_<double>(class Path<double> & __ptr64,double * __ptr64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_path.h(367) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(68) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(36) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(34) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(29) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(45) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(27) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: __cdecl `void __cdecl batch_signature_<int>(int * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool,int)'::`16'::<lambda_1>::operator()(int * __ptr64,double * __ptr64)const __ptr64
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(267) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl signature_naive_<int>(class Path<int> & __ptr64,double * __ptr64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_path.h(367) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(68) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(36) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(34) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(29) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(45) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(27) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: void __cdecl signature_horner_<int>(class Path<int> & __ptr64,double * __ptr64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_path.h(367) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(104) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(123) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(132) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(145) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(162) : info C5002: loop not vectorized due to reason '1301'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(160) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(136) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(176) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(189) : info C5002: loop not vectorized due to reason '1301'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(188) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(126) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(196) : info C5001: loop vectorized
+
+--- Analyzing function: class std::thread * __ptr64 __cdecl std::_Uninitialized_move<class std::thread * __ptr64,class std::allocator<class std::thread> >(class std::thread * __ptr64 const,class std::thread * __ptr64 const,class std::thread * __ptr64,class std::allocator<class std::thread> & __ptr64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+
+--- Analyzing function: __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::~vector<class std::thread,class std::allocator<class std::thread> >(void) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl signature_naive_<float>(class Path<float> & __ptr64,double * __ptr64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_path.h(367) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(68) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(36) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(34) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(29) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(45) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_tensor_poly.h(27) : info C5002: loop not vectorized due to reason '1106'
+
+--- Analyzing function: void __cdecl signature_horner_<float>(class Path<float> & __ptr64,double * __ptr64,unsigned __int64)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_path.h(367) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(104) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(35) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(48) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(46) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(41) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(123) : info C5002: loop not vectorized due to reason '1200'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(132) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(145) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(162) : info C5002: loop not vectorized due to reason '1301'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(160) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(136) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(176) : info C5001: loop vectorized
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(189) : info C5002: loop not vectorized due to reason '1301'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(188) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(126) : info C5002: loop not vectorized due to reason '1106'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(196) : info C5001: loop vectorized
+
+--- Analyzing function: __cdecl `void __cdecl batch_signature_<float>(float * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool,int)'::`16'::<lambda_1>::operator()(float * __ptr64,double * __ptr64)const __ptr64
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(267) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: static char * __ptr64 __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Allocate_for_capacity<0>(class std::allocator<char> & __ptr64,unsigned __int64 & __ptr64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(840) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > & __ptr64 __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Reallocate_grow_by<class `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > & __ptr64 __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::append(char const * __ptr64 const,unsigned __int64) __ptr64'::`2'::<lambda_1>,char const * __ptr64,unsigned __int64>(unsigned __int64,class `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > & __ptr64 __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::append(char const * __ptr64 const,unsigned __int64) __ptr64'::`2'::<lambda_1>,char const * __ptr64,unsigned __int64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(840) : info C5002: loop not vectorized due to reason '1102'
+
+--- Analyzing function: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > & __ptr64 __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Reallocate_grow_by<class `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > & __ptr64 __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::insert(unsigned __int64,char const * __ptr64 const,unsigned __int64) __ptr64'::`2'::<lambda_1>,unsigned __int64,char const * __ptr64,unsigned __int64>(unsigned __int64,class `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > & __ptr64 __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::insert(unsigned __int64,char const * __ptr64 const,unsigned __int64) __ptr64'::`2'::<lambda_1>,unsigned __int64,char const * __ptr64,unsigned __int64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(840) : info C5002: loop not vectorized due to reason '1102'
+
+--- Analyzing function: __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >(struct std::_String_constructor_concat_tag,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > & __ptr64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > & __ptr64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp(153) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp(165) : info C5002: loop not vectorized due to reason '1301'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(840) : info C5002: loop not vectorized due to reason '1102'
+
+--- Analyzing function: void __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::_Construct<1,char * __ptr64>(char * __ptr64 const,unsigned __int64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(840) : info C5002: loop not vectorized due to reason '1102'
+
+--- Analyzing function: __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::basic_string<char,struct std::char_traits<char>,class std::allocator<char> ><char * __ptr64,0>(char * __ptr64,char * __ptr64,class std::allocator<char> const & __ptr64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(840) : info C5002: loop not vectorized due to reason '1102'
+
+--- Analyzing function: void __cdecl signature_<double>(double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(220) : info C5002: loop not vectorized due to reason '1200'
+
+--- Analyzing function: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > & __ptr64 __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::insert(unsigned __int64,char const * __ptr64 const,unsigned __int64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp(153) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp(165) : info C5002: loop not vectorized due to reason '1301'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(840) : info C5002: loop not vectorized due to reason '1102'
+
+--- Analyzing function: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > & __ptr64 __cdecl std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::append(char const * __ptr64 const,unsigned __int64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp(153) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp(165) : info C5002: loop not vectorized due to reason '1301'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(840) : info C5002: loop not vectorized due to reason '1102'
+
+--- Analyzing function: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl std::_Integral_to_string<char,unsigned __int64>(unsigned __int64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(2781) : info C5002: loop not vectorized due to reason '502'
+
+--- Analyzing function: void __cdecl signature_<__int64>(__int64 * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(220) : info C5002: loop not vectorized due to reason '1200'
+
+--- Analyzing function: void __cdecl signature_<int>(int * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(220) : info C5002: loop not vectorized due to reason '1200'
+
+--- Analyzing function: class std::thread * __ptr64 __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Emplace_reallocate<class `void __cdecl multi_threaded_batch<float,class std::function<void __cdecl(float * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(float * __ptr64,double * __ptr64)> & __ptr64,float * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,float * __ptr64 & __ptr64,double * __ptr64 & __ptr64>(class std::thread * __ptr64 const,class `void __cdecl multi_threaded_batch<float,class std::function<void __cdecl(float * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(float * __ptr64,double * __ptr64)> & __ptr64,float * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,float * __ptr64 & __ptr64,double * __ptr64 & __ptr64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+
+--- Analyzing function: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl std::to_string(unsigned __int64)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(2781) : info C5002: loop not vectorized due to reason '502'
+
+--- Analyzing function: class std::thread * __ptr64 __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Emplace_reallocate<class `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,double * __ptr64 & __ptr64,double * __ptr64 & __ptr64>(class std::thread * __ptr64 const,class `void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,double * __ptr64 & __ptr64,double * __ptr64 & __ptr64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+
+--- Analyzing function: class std::thread * __ptr64 __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Emplace_reallocate<class `void __cdecl multi_threaded_batch<__int64,class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> & __ptr64,__int64 * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,__int64 * __ptr64 & __ptr64,double * __ptr64 & __ptr64>(class std::thread * __ptr64 const,class `void __cdecl multi_threaded_batch<__int64,class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> & __ptr64,__int64 * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,__int64 * __ptr64 & __ptr64,double * __ptr64 & __ptr64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+
+--- Analyzing function: class std::thread * __ptr64 __cdecl std::vector<class std::thread,class std::allocator<class std::thread> >::_Emplace_reallocate<class `void __cdecl multi_threaded_batch<int,class std::function<void __cdecl(int * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(int * __ptr64,double * __ptr64)> & __ptr64,int * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,int * __ptr64 & __ptr64,double * __ptr64 & __ptr64>(class std::thread * __ptr64 const,class `void __cdecl multi_threaded_batch<int,class std::function<void __cdecl(int * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(int * __ptr64,double * __ptr64)> & __ptr64,int * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)'::`2'::<lambda_1> & __ptr64,int * __ptr64 & __ptr64,double * __ptr64 & __ptr64) __ptr64
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1998) : info C5002: loop not vectorized due to reason '1305'
+
+--- Analyzing function: void __cdecl multi_threaded_batch<double,class std::function<void __cdecl(double * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(double * __ptr64,double * __ptr64)> & __ptr64,double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(51) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(58) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl multi_threaded_batch<__int64,class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(__int64 * __ptr64,double * __ptr64)> & __ptr64,__int64 * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(51) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(58) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl multi_threaded_batch<float,class std::function<void __cdecl(float * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(float * __ptr64,double * __ptr64)> & __ptr64,float * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(51) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(58) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl multi_threaded_batch<int,class std::function<void __cdecl(int * __ptr64,double * __ptr64)> >(class std::function<void __cdecl(int * __ptr64,double * __ptr64)> & __ptr64,int * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,int)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(51) : info C5002: loop not vectorized due to reason '500'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\multithreading.h(58) : info C5002: loop not vectorized due to reason '500'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(1102) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl signature_<float>(float * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(220) : info C5002: loop not vectorized due to reason '1200'
+
+--- Analyzing function: void __cdecl batch_signature_<double>(double * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool,int)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(245) : info C5002: loop not vectorized due to reason '502'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(294) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl batch_signature_<__int64>(__int64 * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool,int)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(245) : info C5002: loop not vectorized due to reason '502'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(294) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl batch_signature_<float>(float * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool,int)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(245) : info C5002: loop not vectorized due to reason '502'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(294) : info C5002: loop not vectorized due to reason '500'
+
+--- Analyzing function: void __cdecl batch_signature_<int>(int * __ptr64,double * __ptr64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,bool,bool,bool,int)
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(245) : info C5002: loop not vectorized due to reason '502'
+C:\Users\Shmelev\source\repos\pySigLib\siglib\cpsig\cp_signature.h(294) : info C5002: loop not vectorized due to reason '500'
+msvc.link.dll cpsig\bin\msvc-14.3\release\address-model-64\architecture-x86\cxxstd-20-iso\threading-multi\cpsig.dll
+   Creating library cpsig\bin\msvc-14.3\release\address-model-64\architecture-x86\cxxstd-20-iso\threading-multi\cpsig.lib and object cpsig\bin\msvc-14.3\release\address-model-64\architecture-x86\cxxstd-20-iso\threading-multi\cpsig.exp
+common.copy x64\Release\cpsig.lib
+cpsig\bin\msvc-14.3\release\address-model-64\architecture-x86\cxxstd-20-iso\threading-multi\cpsig.lib
+        1 file(s) copied.
+common.copy x64\Release\cpsig.dll
+cpsig\bin\msvc-14.3\release\address-model-64\architecture-x86\cxxstd-20-iso\threading-multi\cpsig.dll
+        1 file(s) copied.
+
+...updated 28 targets...
+
+========== Running Command ==========
+../b2/b2 toolset=msvc --debug-configuration -n
+
+notice: loading B2 from C:/Users/Shmelev/source/repos/pySigLib/b2/.b2/build-system.jam
+notice: Searching 'C:\WINDOWS' 'C:\Users\Shmelev' 'C:\Users\Shmelev' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\options' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util' 'C:/Users/Shmelev/source/repos/pySigLib/b2/.b2' for site-config configuration file 'site-config.jam'.
+notice: Configuration file 'site-config.jam' not found in 'C:\WINDOWS' 'C:\Users\Shmelev' 'C:\Users\Shmelev' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\options' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util' 'C:/Users/Shmelev/source/repos/pySigLib/b2/.b2'.
+notice: Searching 'C:\Users\Shmelev' 'C:\Users\Shmelev' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\options' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util' 'C:/Users/Shmelev/source/repos/pySigLib/b2/.b2' for user-config configuration file 'user-config.jam'.
+notice: Configuration file 'user-config.jam' not found in 'C:\Users\Shmelev' 'C:\Users\Shmelev' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\options' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util' 'C:/Users/Shmelev/source/repos/pySigLib/b2/.b2'.
+notice: [cmdline-cfg] toolset msvc not previously configured; attempting to auto-configure now
+notice: [msvc-cfg] msvc-14.3 detected, command: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64\cl.exe'
+notice: will use 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64\cl.exe' for msvc, condition <toolset>msvc-14.3
+notice: [generate-setup-cmd] 14.44.35207 is 14.3
+notice: [generate-setup-cmd] 14.44.35207 is 14.3
+notice: [generate-setup-cmd] 14.44.35207 is 14.3
+notice: [generate-setup-cmd] 14.44.35207 is 14.3
+notice: [generate-setup-cmd] 14.44.35207 is 14.3
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>x86/<address-model>32', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars32.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>/<address-model>32', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars32.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>x86/<address-model>64', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>/<address-model>64', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>x86/<address-model>', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>/<address-model>', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>ia64/<address-model>64', setup: 'C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>ia64/<address-model>', setup: 'C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>arm/<address-model>32', setup: 'C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>arm/<address-model>64', setup: 'C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat'
+...found 70 targets...
+...updating 28 targets...
+common.mkdir dist
+
+        if not exist "dist" mkdir "dist"
+    
+common.mkdir cpsig\bin\msvc-14.3\debug
+
+        if not exist "cpsig\bin\msvc-14.3\debug" mkdir "cpsig\bin\msvc-14.3\debug"
+    
+common.mkdir cpsig\bin\msvc-14.3\debug\cxxstd-20-iso
+
+        if not exist "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso" mkdir "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso"
+    
+common.mkdir cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi
+
+        if not exist "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi" mkdir "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi"
+    
+msvc.read-setup <pbin\standalone\msvc\msvc-14.3>msvc-setup.read
+ 
+
+file C:\Users\Shmelev\AppData\Local\Temp\jamc0b8c1dc.000
+
+msvc.write-setup-script bin\standalone\msvc\msvc-14.3\msvc-setup.bat
+
+    type "C:\Users\Shmelev\AppData\Local\Temp\jamc0b8c1dc.000" > "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cppch.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cppch.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cppch.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cpsig.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_path_transforms.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_path_transforms.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_path_transforms.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_signature.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_signature.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_signature.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_sig_kernel.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_tensor_poly.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+msvc.link.dll cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.dll
+
+        call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ link /NOLOGO /INCREMENTAL:NO "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cppch.obj" "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.obj" "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_path_transforms.obj" "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_signature.obj" "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj" "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj"      /DEBUG /MANIFEST:EMBED /MACHINE:X64 /subsystem:console /out:"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.dll"   /DLL /IMPLIB:"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.lib" 
+    
+common.copy dist\cpsig.dll
+
+    copy /b "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.dll" + this-file-does-not-exist-A698EE7806899E69 "dist\cpsig.dll"
+
+common.copy dist\cpsig.lib
+
+    copy /b "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.lib" + this-file-does-not-exist-A698EE7806899E69 "dist\cpsig.lib"
+
+common.copy dist\cpsig.pdb
+
+    copy /b "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.pdb" + this-file-does-not-exist-A698EE7806899E69 "dist\cpsig.pdb"
+
+common.copy dist\cpsig.h
+
+    copy /b "cpsig\cpsig.h" + this-file-does-not-exist-A698EE7806899E69 "dist\cpsig.h"
+
+common.mkdir cpsig\bin\msvc-14.3\release\cxxstd-20-iso
+
+        if not exist "cpsig\bin\msvc-14.3\release\cxxstd-20-iso" mkdir "cpsig\bin\msvc-14.3\release\cxxstd-20-iso"
+    
+common.mkdir cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi
+
+        if not exist "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi" mkdir "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi"
+    
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cppch.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cppch.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cppch.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cpsig.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_path_transforms.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_path_transforms.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_path_transforms.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_signature.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_signature.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_signature.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_sig_kernel.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_tensor_poly.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+msvc.link.dll cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.dll
+
+        call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ link /NOLOGO /INCREMENTAL:NO "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cppch.obj" "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.obj" "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_path_transforms.obj" "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_signature.obj" "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj" "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj"      /MANIFEST:EMBED /MACHINE:X64 /subsystem:console /out:"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.dll"   /DLL /IMPLIB:"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.lib" 
+    
+
+...updated 29 targets...
+notice: loading B2 from C:/Users/Shmelev/source/repos/pySigLib/b2/.b2/build-system.jam
+notice: Searching 'C:\WINDOWS' 'C:\Users\Shmelev' 'C:\Users\Shmelev' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\options' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util' 'C:/Users/Shmelev/source/repos/pySigLib/b2/.b2' for site-config configuration file 'site-config.jam'.
+notice: Configuration file 'site-config.jam' not found in 'C:\WINDOWS' 'C:\Users\Shmelev' 'C:\Users\Shmelev' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\options' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util' 'C:/Users/Shmelev/source/repos/pySigLib/b2/.b2'.
+notice: Searching 'C:\Users\Shmelev' 'C:\Users\Shmelev' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\options' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util' 'C:/Users/Shmelev/source/repos/pySigLib/b2/.b2' for user-config configuration file 'user-config.jam'.
+notice: Configuration file 'user-config.jam' not found in 'C:\Users\Shmelev' 'C:\Users\Shmelev' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\build' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\contrib' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\options' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\tools' 'C:\Users\Shmelev\source\repos\pySigLib\b2\.b2\util' 'C:/Users/Shmelev/source/repos/pySigLib/b2/.b2'.
+notice: [cmdline-cfg] toolset msvc not previously configured; attempting to auto-configure now
+notice: [msvc-cfg] msvc-14.3 detected, command: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64\cl.exe'
+notice: will use 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64\cl.exe' for msvc, condition <toolset>msvc-14.3
+notice: [generate-setup-cmd] 14.44.35207 is 14.3
+notice: [generate-setup-cmd] 14.44.35207 is 14.3
+notice: [generate-setup-cmd] 14.44.35207 is 14.3
+notice: [generate-setup-cmd] 14.44.35207 is 14.3
+notice: [generate-setup-cmd] 14.44.35207 is 14.3
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>x86/<address-model>32', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars32.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>/<address-model>32', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars32.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>x86/<address-model>64', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>/<address-model>64', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>x86/<address-model>', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>/<address-model>', setup: 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>ia64/<address-model>64', setup: 'C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>ia64/<address-model>', setup: 'C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>arm/<address-model>32', setup: 'C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat'
+notice: [msvc-cfg] condition: '<toolset>msvc-14.3/<architecture>arm/<address-model>64', setup: 'C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat'
+...found 70 targets...
+...updating 28 targets...
+common.mkdir dist
+
+        if not exist "dist" mkdir "dist"
+    
+common.mkdir cpsig\bin\msvc-14.3\debug
+
+        if not exist "cpsig\bin\msvc-14.3\debug" mkdir "cpsig\bin\msvc-14.3\debug"
+    
+common.mkdir cpsig\bin\msvc-14.3\debug\cxxstd-20-iso
+
+        if not exist "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso" mkdir "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso"
+    
+common.mkdir cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi
+
+        if not exist "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi" mkdir "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi"
+    
+msvc.read-setup <pbin\standalone\msvc\msvc-14.3>msvc-setup.read
+ 
+
+file C:\Users\Shmelev\AppData\Local\Temp\jamc0b8c1dc.000
+
+msvc.write-setup-script bin\standalone\msvc\msvc-14.3\msvc-setup.bat
+
+    type "C:\Users\Shmelev\AppData\Local\Temp\jamc0b8c1dc.000" > "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cppch.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cppch.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cppch.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cpsig.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_path_transforms.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_path_transforms.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_path_transforms.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_signature.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_signature.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_signature.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_sig_kernel.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+compile-c-c++ cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_tensor_poly.cpp" -c -Fo"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /Z7 /Od /Ob0 /W3 /MDd /Zc:forScope /Zc:wchar_t /Zc:inline /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS 
+
+msvc.link.dll cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.dll
+
+        call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ link /NOLOGO /INCREMENTAL:NO "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cppch.obj" "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.obj" "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_path_transforms.obj" "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_signature.obj" "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj" "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj"      /DEBUG /MANIFEST:EMBED /MACHINE:X64 /subsystem:console /out:"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.dll"   /DLL /IMPLIB:"cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.lib" 
+    
+common.copy dist\cpsig.dll
+
+    copy /b "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.dll" + this-file-does-not-exist-A698EE7806899E69 "dist\cpsig.dll"
+
+common.copy dist\cpsig.lib
+
+    copy /b "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.lib" + this-file-does-not-exist-A698EE7806899E69 "dist\cpsig.lib"
+
+common.copy dist\cpsig.pdb
+
+    copy /b "cpsig\bin\msvc-14.3\debug\cxxstd-20-iso\threading-multi\cpsig.pdb" + this-file-does-not-exist-A698EE7806899E69 "dist\cpsig.pdb"
+
+common.copy dist\cpsig.h
+
+    copy /b "cpsig\cpsig.h" + this-file-does-not-exist-A698EE7806899E69 "dist\cpsig.h"
+
+common.mkdir cpsig\bin\msvc-14.3\release\cxxstd-20-iso
+
+        if not exist "cpsig\bin\msvc-14.3\release\cxxstd-20-iso" mkdir "cpsig\bin\msvc-14.3\release\cxxstd-20-iso"
+    
+common.mkdir cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi
+
+        if not exist "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi" mkdir "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi"
+    
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cppch.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cppch.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cppch.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cpsig.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_path_transforms.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_path_transforms.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_path_transforms.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_signature.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_signature.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_signature.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_sig_kernel.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+compile-c-c++ cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj
+
+    call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ cl /Zm800 -nologo "cpsig\cp_tensor_poly.cpp" -c -Fo"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj"     -TP /wd4675 /EHs /std:c++20 /GR /Zc:throwingNew /O2 /Ob2 /W3 /MD /Zc:forScope /Zc:wchar_t /Zc:inline /Gw /favor:blend /arch:AVX2 /Qvec-report:2 -DAVX -DCPSIG_EXPORTS -DNDEBUG 
+
+msvc.link.dll cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.dll
+
+        call "bin\standalone\msvc\msvc-14.3\msvc-setup.bat"  >nul
+ link /NOLOGO /INCREMENTAL:NO "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cppch.obj" "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.obj" "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_path_transforms.obj" "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_signature.obj" "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_sig_kernel.obj" "cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cp_tensor_poly.obj"      /MANIFEST:EMBED /MACHINE:X64 /subsystem:console /out:"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.dll"   /DLL /IMPLIB:"cpsig\bin\msvc-14.3\release\cxxstd-20-iso\threading-multi\cpsig.lib" 
+    
+
+...updated 29 targets...
+
+
+========== Running Command ==========
+C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat && set
+
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.3
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+ADVISOR_2025_DIR=C:\Program Files (x86)\Intel\oneAPI\advisor\2025.0
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\Shmelev\AppData\Roaming
+CommandPromptType=Native
+CommonProgramFiles=C:\Program Files\Common Files
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+CommonProgramW6432=C:\Program Files\Common Files
+COMPUTERNAME=DESKTOP-9I2JFR3
+ComSpec=C:\WINDOWS\system32\cmd.exe
+CUDAHOME=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\
+CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6
+CUDA_PATH_V11_8=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\
+CUDA_PATH_V12_6=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6
+DevEnvDir=C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\
+DriverData=C:\Windows\System32\Drivers\DriverData
+EFC_12208_1262719628=1
+EFC_12208_1592913036=1
+EFC_12208_2283032206=1
+EFC_12208_2775293581=1
+EFC_12208_3789132940=1
+ExtensionSdkDir=C:\Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs
+EXTERNAL_INCLUDE=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+Framework40Version=v4.0
+FrameworkDir=C:\Windows\Microsoft.NET\Framework\
+FrameworkDir32=C:\Windows\Microsoft.NET\Framework\
+FrameworkVersion=v4.0.30319
+FrameworkVersion32=v4.0.30319
+HOMEDRIVE=C:
+HOMEPATH=\Users\Shmelev
+IGCCSVC_DB=AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfv/FMhshIU+Q2rEDi0egowQAAAACAAAAAAAQZgAAAAEAACAAAAA0aiQ24zcYg2P7rIjubBPShiz+MufIrZLVKl4tgFAmAAAAAAAOgAAAAAIAACAAAABxd7QSTXvXgeTBb26/4h6EfVtdIADqnc9betYTKldYq2AAAAApqcHv4y2jZ7JK7iPsatXQ8XGcy9jljnpLJbI6Cb16e5N7ONw6dp+eTsiWnoqSmKLLP1K7mRl+R7mLFV4uog8TR4wS47uaZATvSK/Lcv0vR9jrv8HzKNvyJOSZYNXcHHFAAAAAyRckSGCajZpJRGxPLj09TWpkDAkC7ydUMMnqG3UjwFYHO9v/2O7Qo+HzYMYxXEbwil3rE8fYwqwNK+vcFDTVpg==
+INCLUDE=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt
+LIB=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ATLMFC\lib\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\lib\x86;C:\Program Files (x86)\Windows Kits\10\lib\10.0.26100.0\ucrt\x86;C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86
+LIBPATH=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ATLMFC\lib\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\lib\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\lib\x86\store\references;C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.26100.0;C:\Program Files (x86)\Windows Kits\10\References\10.0.26100.0;C:\Windows\Microsoft.NET\Framework\v4.0.30319
+LOCALAPPDATA=C:\Users\Shmelev\AppData\Local
+LOGONSERVER=\\DESKTOP-9I2JFR3
+NUMBER_OF_PROCESSORS=20
+NVTOOLSEXT_PATH=C:\Program Files\NVIDIA Corporation\NvToolsExt\
+OneDrive=C:\Users\Shmelev\OneDrive
+OneDriveConsumer=C:\Users\Shmelev\OneDrive
+OS=Windows_NT
+Path=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX86\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\VC\VCPackages;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\bin\Roslyn;C:\Program Files\Microsoft Visual Studio\2022\Community\Team Tools\DiagnosticsHub\Collector;C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\\x86;C:\Program Files (x86)\Windows Kits\10\bin\\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Scripts;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\msys64\ucrt64\bin;C:\Program Files\Git\cmd;C:\Program Files\CMake\bin;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.1.0\;C:\Program Files\dotnet\;C:\Program Files\GitHub CLI\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\Shmelev\.elan\bin;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\;C:\Users\Shmelev\AppData\Local\Programs\Python\Launcher\;C:\Users\Shmelev\AppData\Local\Microsoft\WindowsApps;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\Users\Shmelev\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\ucrt64\bin;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\bin\Hostx64\x64;C:\Program Files\JetBrains\PyCharm Community Edition 2024.2.2\bin;;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Lib\site-packages\Cython\Includes;C:\Program Files\JetBrains\PyCharm 2024.2.2\bin;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64;C:\Users\Shmelev\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\Shmelev\AppData\Local\GitHubDesktop\bin;C:\boost_1_87_0\boost_1_87_0;C:\Users\Shmelev\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\VC\Linux\bin\ConnectionManagerExe;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\vcpkg
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+PLAT=win-amd64
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 186 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=ba02
+ProgramData=C:\ProgramData
+ProgramFiles=C:\Program Files
+ProgramFiles(x86)=C:\Program Files (x86)
+ProgramW6432=C:\Program Files
+PROMPT=$P$G
+PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+PUBLIC=C:\Users\Public
+PyCharm=C:\Program Files\JetBrains\PyCharm 2024.2.2\bin;
+PyCharm Community Edition=C:\Program Files\JetBrains\PyCharm Community Edition 2024.2.2\bin;
+PYTHONIOENCODING=UTF-8
+PYTHONPATH=C:\Users\Shmelev\source\repos\pySigLib;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312
+PYTHONUNBUFFERED=1
+RTOOLS44_HOME=C:\rtools44
+SESSIONNAME=Console
+SystemDrive=C:
+SystemRoot=C:\WINDOWS
+TEMP=C:\Users\Shmelev\AppData\Local\Temp
+TMP=C:\Users\Shmelev\AppData\Local\Temp
+UCRTVersion=10.0.26100.0
+UniversalCRTSdkDir=C:\Program Files (x86)\Windows Kits\10\
+USERDOMAIN=DESKTOP-9I2JFR3
+USERDOMAIN_ROAMINGPROFILE=DESKTOP-9I2JFR3
+USERNAME=Shmelev
+USERPROFILE=C:\Users\Shmelev
+VCIDEInstallDir=C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\VC\
+VCINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\
+VCPKG_ROOT=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\vcpkg
+VCToolsInstallDir=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\
+VCToolsRedistDir=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Redist\MSVC\14.44.35112\
+VCToolsVersion=14.44.35207
+VisualStudioVersion=17.0
+VS170COMNTOOLS=C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\
+VSCMD_ARG_app_plat=Desktop
+VSCMD_ARG_HOST_ARCH=x86
+VSCMD_ARG_TGT_ARCH=x86
+VSCMD_VER=17.14.3
+VSINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Community\
+VTUNE_PROFILER_2025_DIR=C:\Program Files (x86)\Intel\oneAPI\vtune\2025.0
+windir=C:\WINDOWS
+WindowsLibPath=C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.26100.0;C:\Program Files (x86)\Windows Kits\10\References\10.0.26100.0
+WindowsSdkBinPath=C:\Program Files (x86)\Windows Kits\10\bin\
+WindowsSdkDir=C:\Program Files (x86)\Windows Kits\10\
+WindowsSDKLibVersion=10.0.26100.0\
+WindowsSdkVerBinPath=C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\
+WindowsSDKVersion=10.0.26100.0\
+ZES_ENABLE_SYSMAN=1
+__DOTNET_ADD_32BIT=1
+__DOTNET_PREFERRED_BITNESS=32
+__VSCMD_PREINIT_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Scripts;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\msys64\ucrt64\bin;C:\Program Files\Git\cmd;C:\Program Files\CMake\bin;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.1.0\;C:\Program Files\dotnet\;C:\Program Files\GitHub CLI\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\Shmelev\.elan\bin;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\;C:\Users\Shmelev\AppData\Local\Programs\Python\Launcher\;C:\Users\Shmelev\AppData\Local\Microsoft\WindowsApps;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\Users\Shmelev\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\ucrt64\bin;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\bin\Hostx64\x64;C:\Program Files\JetBrains\PyCharm Community Edition 2024.2.2\bin;;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Lib\site-packages\Cython\Includes;C:\Program Files\JetBrains\PyCharm 2024.2.2\bin;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64;C:\Users\Shmelev\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\Shmelev\AppData\Local\GitHubDesktop\bin;C:\boost_1_87_0\boost_1_87_0;C:\Users\Shmelev\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64
+{9A2E9401-D1A1-4957-9C00-F167E5B7ABF2}_Path=C:\Program Files\Wolfram Research\WolframScript\
+{9A2E9401-D1A1-4957-9C00-F167E5B7ABF2}_{9A2E9401-D1A1-4957-9C00-F167E5B7ABF2}_Path=C:\Program Files\Wolfram Research\WolframScript\
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.3
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+ADVISOR_2025_DIR=C:\Program Files (x86)\Intel\oneAPI\advisor\2025.0
+ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\Shmelev\AppData\Roaming
+CommandPromptType=Native
+CommonProgramFiles=C:\Program Files\Common Files
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+CommonProgramW6432=C:\Program Files\Common Files
+COMPUTERNAME=DESKTOP-9I2JFR3
+ComSpec=C:\WINDOWS\system32\cmd.exe
+CUDAHOME=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\
+CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6
+CUDA_PATH_V11_8=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\
+CUDA_PATH_V12_6=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6
+DevEnvDir=C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\
+DriverData=C:\Windows\System32\Drivers\DriverData
+EFC_12208_1262719628=1
+EFC_12208_1592913036=1
+EFC_12208_2283032206=1
+EFC_12208_2775293581=1
+EFC_12208_3789132940=1
+ExtensionSdkDir=C:\Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs
+EXTERNAL_INCLUDE=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+Framework40Version=v4.0
+FrameworkDir=C:\Windows\Microsoft.NET\Framework\
+FrameworkDir32=C:\Windows\Microsoft.NET\Framework\
+FrameworkVersion=v4.0.30319
+FrameworkVersion32=v4.0.30319
+HOMEDRIVE=C:
+HOMEPATH=\Users\Shmelev
+IGCCSVC_DB=AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfv/FMhshIU+Q2rEDi0egowQAAAACAAAAAAAQZgAAAAEAACAAAAA0aiQ24zcYg2P7rIjubBPShiz+MufIrZLVKl4tgFAmAAAAAAAOgAAAAAIAACAAAABxd7QSTXvXgeTBb26/4h6EfVtdIADqnc9betYTKldYq2AAAAApqcHv4y2jZ7JK7iPsatXQ8XGcy9jljnpLJbI6Cb16e5N7ONw6dp+eTsiWnoqSmKLLP1K7mRl+R7mLFV4uog8TR4wS47uaZATvSK/Lcv0vR9jrv8HzKNvyJOSZYNXcHHFAAAAAyRckSGCajZpJRGxPLj09TWpkDAkC7ydUMMnqG3UjwFYHO9v/2O7Qo+HzYMYxXEbwil3rE8fYwqwNK+vcFDTVpg==
+INCLUDE=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt
+LIB=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ATLMFC\lib\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\lib\x86;C:\Program Files (x86)\Windows Kits\10\lib\10.0.26100.0\ucrt\x86;C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86
+LIBPATH=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ATLMFC\lib\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\lib\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\lib\x86\store\references;C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.26100.0;C:\Program Files (x86)\Windows Kits\10\References\10.0.26100.0;C:\Windows\Microsoft.NET\Framework\v4.0.30319
+LOCALAPPDATA=C:\Users\Shmelev\AppData\Local
+LOGONSERVER=\\DESKTOP-9I2JFR3
+NUMBER_OF_PROCESSORS=20
+NVTOOLSEXT_PATH=C:\Program Files\NVIDIA Corporation\NvToolsExt\
+OneDrive=C:\Users\Shmelev\OneDrive
+OneDriveConsumer=C:\Users\Shmelev\OneDrive
+OS=Windows_NT
+Path=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX86\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\VC\VCPackages;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\bin\Roslyn;C:\Program Files\Microsoft Visual Studio\2022\Community\Team Tools\DiagnosticsHub\Collector;C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\\x86;C:\Program Files (x86)\Windows Kits\10\bin\\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Scripts;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\msys64\ucrt64\bin;C:\Program Files\Git\cmd;C:\Program Files\CMake\bin;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.1.0\;C:\Program Files\dotnet\;C:\Program Files\GitHub CLI\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\Shmelev\.elan\bin;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\;C:\Users\Shmelev\AppData\Local\Programs\Python\Launcher\;C:\Users\Shmelev\AppData\Local\Microsoft\WindowsApps;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\Users\Shmelev\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\ucrt64\bin;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\bin\Hostx64\x64;C:\Program Files\JetBrains\PyCharm Community Edition 2024.2.2\bin;;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Lib\site-packages\Cython\Includes;C:\Program Files\JetBrains\PyCharm 2024.2.2\bin;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64;C:\Users\Shmelev\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\Shmelev\AppData\Local\GitHubDesktop\bin;C:\boost_1_87_0\boost_1_87_0;C:\Users\Shmelev\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\VC\Linux\bin\ConnectionManagerExe;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\vcpkg
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+PLAT=win-amd64
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 186 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=ba02
+ProgramData=C:\ProgramData
+ProgramFiles=C:\Program Files
+ProgramFiles(x86)=C:\Program Files (x86)
+ProgramW6432=C:\Program Files
+PROMPT=$P$G
+PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+PUBLIC=C:\Users\Public
+PyCharm=C:\Program Files\JetBrains\PyCharm 2024.2.2\bin;
+PyCharm Community Edition=C:\Program Files\JetBrains\PyCharm Community Edition 2024.2.2\bin;
+PYTHONIOENCODING=UTF-8
+PYTHONPATH=C:\Users\Shmelev\source\repos\pySigLib;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312
+PYTHONUNBUFFERED=1
+RTOOLS44_HOME=C:\rtools44
+SESSIONNAME=Console
+SystemDrive=C:
+SystemRoot=C:\WINDOWS
+TEMP=C:\Users\Shmelev\AppData\Local\Temp
+TMP=C:\Users\Shmelev\AppData\Local\Temp
+UCRTVersion=10.0.26100.0
+UniversalCRTSdkDir=C:\Program Files (x86)\Windows Kits\10\
+USERDOMAIN=DESKTOP-9I2JFR3
+USERDOMAIN_ROAMINGPROFILE=DESKTOP-9I2JFR3
+USERNAME=Shmelev
+USERPROFILE=C:\Users\Shmelev
+VCIDEInstallDir=C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\VC\
+VCINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\
+VCPKG_ROOT=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\vcpkg
+VCToolsInstallDir=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\
+VCToolsRedistDir=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Redist\MSVC\14.44.35112\
+VCToolsVersion=14.44.35207
+VisualStudioVersion=17.0
+VS170COMNTOOLS=C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\
+VSCMD_ARG_app_plat=Desktop
+VSCMD_ARG_HOST_ARCH=x86
+VSCMD_ARG_TGT_ARCH=x86
+VSCMD_VER=17.14.3
+VSINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Community\
+VTUNE_PROFILER_2025_DIR=C:\Program Files (x86)\Intel\oneAPI\vtune\2025.0
+windir=C:\WINDOWS
+WindowsLibPath=C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.26100.0;C:\Program Files (x86)\Windows Kits\10\References\10.0.26100.0
+WindowsSdkBinPath=C:\Program Files (x86)\Windows Kits\10\bin\
+WindowsSdkDir=C:\Program Files (x86)\Windows Kits\10\
+WindowsSDKLibVersion=10.0.26100.0\
+WindowsSdkVerBinPath=C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\
+WindowsSDKVersion=10.0.26100.0\
+ZES_ENABLE_SYSMAN=1
+__DOTNET_ADD_32BIT=1
+__DOTNET_PREFERRED_BITNESS=32
+__VSCMD_PREINIT_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Scripts;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\msys64\ucrt64\bin;C:\Program Files\Git\cmd;C:\Program Files\CMake\bin;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.1.0\;C:\Program Files\dotnet\;C:\Program Files\GitHub CLI\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\Shmelev\.elan\bin;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\;C:\Users\Shmelev\AppData\Local\Programs\Python\Launcher\;C:\Users\Shmelev\AppData\Local\Microsoft\WindowsApps;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\Users\Shmelev\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\ucrt64\bin;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\bin\Hostx64\x64;C:\Program Files\JetBrains\PyCharm Community Edition 2024.2.2\bin;;C:\Users\Shmelev\AppData\Local\Programs\Python\Python312\Lib\site-packages\Cython\Includes;C:\Program Files\JetBrains\PyCharm 2024.2.2\bin;;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64;C:\Users\Shmelev\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\Shmelev\AppData\Local\GitHubDesktop\bin;C:\boost_1_87_0\boost_1_87_0;C:\Users\Shmelev\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64
+{9A2E9401-D1A1-4957-9C00-F167E5B7ABF2}_Path=C:\Program Files\Wolfram Research\WolframScript\
+{9A2E9401-D1A1-4957-9C00-F167E5B7ABF2}_{9A2E9401-D1A1-4957-9C00-F167E5B7ABF2}_Path=C:\Program Files\Wolfram Research\WolframScript\
+
+========== Running Command ==========
+build_cusig.bat C:\Program Files\Microsoft Visual Studio\2022\Community\VC C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207
+
+
+C:\Users\Shmelev\source\repos\pySigLib>REM set env variables for 64b c++  
+
+C:\Users\Shmelev\source\repos\pySigLib>call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC"\Auxiliary\Build\vcvars64.bat 
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.3
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+build pch
+cupch.cpp
+*** Compiling cuda files with nvcc ***
+cu_sig_kernel.cu
+tmpxft_0000c084_00000000-7_cu_sig_kernel.compute_75.cudafe1.cpp
+cu_sig_kernel.h
+tmpxft_00007688_00000000-7_cu_sig_kernel.compute_75.cudafe1.cpp
+---------------------------------------------------------------------------------------
+link cuda obj files
+kernel32.lib
+user32.lib
+gdi32.lib
+winspool.lib
+comdlg32.lib
+advapi32.lib
+shell32.lib
+ole32.lib
+oleaut32.lib
+uuid.lib
+odbc32.lib
+odbccp32.lib
+cudart.lib
+cudadevrt.lib
+cu_sig_kernel.h.obj
+cu_sig_kernel.cu.obj
+---------------------------------------------------------------------------------------
+link.exe
+   Creating library C:\Users\Shmelev\source\repos\pySigLib\siglib\x64\Release\cusig.lib and object C:\Users\Shmelev\source\repos\pySigLib\siglib\x64\Release\cusig.exp
+Generating code
+Incremental LTCG not supported for -Od component, build without incremental LTCG.
+Finished generating code
+---------------------------------------------------------------------------------------
+'#' is not recognized as an internal or external command,
+operable program or batch file.
+'#' is not recognized as an internal or external command,
+operable program or batch file.
+A subdirectory or file x64 already exists.
+A subdirectory or file Release already exists.
