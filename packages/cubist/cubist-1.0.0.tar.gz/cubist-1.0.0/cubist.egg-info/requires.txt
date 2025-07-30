@@ -1,0 +1,14 @@
+numpy
+pandas>=2.2.2
+scikit-learn>=1.6.0
+
+[dev]
+pre-commit
+pytest
+ruff
+coverage
+pylint
+sphinx
+
+[viz]
+matplotlib
