@@ -1,0 +1,700 @@
+{% extends "base.html" %}
+{% load custom_tags_and_filters %}
+{% block extrahead %}
+    {% load static %}
+    <script type="text/javascript" src="{% static "floor_plan/floor_plan_canvas.js" %}"></script>
+    <script type="text/javascript" src="{% static "floor_plan/hammer.min.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "floor_plan/floor_plan_canvas.css" %}" />
+    <style>
+		html {
+			height: 100%;
+		}
+		body {
+			height: 100%;
+			visibility: hidden;
+		}
+		.is-invalid {
+			border-color: #dc3545;
+			background-color: #fff1f3;
+		}
+		.invalid-feedback {
+			color: #dc3545;
+		}
+        .selected_position {
+            border: 5px solid #5bec5b;
+        }
+        .sensor-view-attributes {
+            padding: 10px 20px 10px 20px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            background-color: #e8e8e8;
+            margin-top: 40px;
+        }
+    </style>
+{% endblock %}
+{% block title %}Floor Plan Editor{% endblock %}
+{% block body %}
+    <div id="editor"
+         style="height: 100%;
+                padding: 10px;
+                display: grid;
+                grid-template-columns: minmax(min-content, 3fr) 8fr;
+                gap: 5px">
+        <div class="well" style="height: 100%; overflow: scroll;">
+            {% url 'floor_plan' loaded_floor_plan.id as view_url %}
+            {% button size="small" type="view" value="Go to view" url=view_url %}
+            <div id="marker-edit-container" style="margin-top: 10px;"></div>
+        </div>
+        <div id="canvas-overlay" class="canvas-overlay" style="height: 100%;">
+            <div class="canvas-container" id="canvas-container">
+                <div class="canvas-header">
+                    <div class="canvas-buttons">
+                        <button class="canvas-btn" id="zoom-in">+</button>
+                        <button class="canvas-btn" id="zoom-out">-</button>
+                    </div>
+                    <div>
+                        <span class="canvas-title">{{ loaded_floor_plan.name }}</span>
+                        <span class="canvas-hint-text"><i class="glyphicon glyphicon-info-sign"></i> Right click on floor plan to create a new marker, or left click to select a marker</span>
+                        <span class="canvas-hint-text"><i class="glyphicon glyphicon-info-sign"></i> Click and drag to move</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="templates" style="display: none;">
+        <div id="floor-plan-edit-template">
+            <form method="post" enctype="multipart/form-data">
+                <div style="display: flex; justify-content: space-between">
+                    <h4>Edit Floor Plan</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+                        <button id="floor-plan-reset-button" class="btn btn-sm btn-warning">Reset</button>
+                        {% button size="small" type="save" value="Save" name="save_floor_plan" %}
+                    </div>
+                </div>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="control-label" for="name">Name</label>
+                    <input class="form-control" type="text" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="image">Floor Plan Image</label>
+                    <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" />
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" name="is_default" id="is_default">
+                    <label class="control-label" for="is_default">Default Floor Plan</label>
+                </div>
+            </form>
+        </div>
+        <div id="marker-edit-template">
+            <form method="post">
+                {% csrf_token %}
+                <div style="display: flex; justify-content: space-between">
+                    <h4>Edit Marker</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+                        {% button size="small" id="marker-delete-button" type="delete" submit=True  value="Delete" name="delete_node" onclick="return confirm('Are you sure you delete this marker?');" %}
+                        <button id="marker-reset-button" class="btn btn-sm btn-warning">Cancel</button>
+                        {% button size="small" type="save" value="Save" name="save_node" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="type">Marker Type</label>
+                    <select id="type" name="type" class="form-control">
+                        {% for type_id, type_name in types %}
+                            <option value="{{ type_id }}" data-name="{{ type_name }}">{{ type_name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="icon">Icon</label>
+                    <select id="icon" name="icon" class="form-control">
+                        {% for icon in icons %}
+                            <option value="{{ icon.id }}" data-img="{{ icon.image.url }}">{{ icon.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="icon_scale">Icon Scale</label>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <input class="form-control" type="range" id="icon_scale" name="icon_scale" min="0.1" max="2" step="0.05" />
+                        <span id="icon_scale_text" style="font-weight: 500;"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="x_offset">Icon X Offset (Horizontal)</label>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <input class="form-control" type="range" id="x_offset" name="x_offset" step="1" min="0" />
+                        <input class="form-control" style="width: 30%;" type="number" id="x_offset_input" min="0" step="1" />
+                        <span style="font-weight: 500;">px</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="y_offset">Icon Y Offset (Vertical)</label>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <input class="form-control" type="range" id="y_offset" name="y_offset" step="1" min="0" />
+                        <input class="form-control" style="width: 30%;" type="number" id="y_offset_input" min="0" step="1" />
+                        <span style="font-weight: 500;">px</span>
+                    </div>
+                </div>
+                <input type="hidden" id="id" name="id" readonly>
+                <input type="hidden" id="floor_plan" name="floor_plan" value="{{ loaded_floor_plan.id }}" readonly>
+                <input type="hidden" id="x" name="x" readonly>
+                <input type="hidden" id="y" name="y" readonly>
+                <div id="marker-edit-type"></div>
+            </form>
+        </div>
+        <div id="sensors-select-template">
+            <div class="form-group">
+                <label class="control-label" for="sensor">Sensor</label>
+                <select id="sensor" name="sensor" class="form-control">
+                    {% if sensors_without_nodes %}
+                        <optgroup label="Sensors without floor plan">
+                            {% for sensor in sensors_without_nodes %}
+                                <option value="{{ sensor.id }}" data-name="{{ sensor.name }}">{{ sensor.name }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    {% endif %}
+                    {% if sensors_with_nodes %}
+                        <optgroup label="Sensors already linked to a floor plan">
+                            {% for sensor in sensors_with_nodes %}
+                                <option value="{{ sensor.id }}" data-name="{{ sensor.name }}">{{ sensor.name }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    {% endif %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="font_size">Sensor Value Text Font Size (px)</label>
+                <input class="form-control" type="number" id="font_size" name="font_size" step="1" min="0" />
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="sensor_text_position">Sensor Value Text Position</label>
+                <input type="hidden" id="sensor_text_position" name="sensor_text_position">
+                <div class="btn-group" role="group" style="display: flex; flex-direction: column; gap: 3px;">
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <button id="sensor_text_position_top"
+                                data-position-id="0"
+                                type="button"
+                                class="btn btn-primary"
+                                style="width: 72px">Top</button>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 3px;">
+                        <button id="sensor_text_position_left"
+                                data-position-id="3"
+                                type="button"
+                                class="btn btn-primary"
+                                style="width: 72px">Left</button>
+                        <button id="sensor_text_position_right"
+                                data-position-id="1"
+                                type="button"
+                                class="btn btn-primary"
+                                style="width: 72px">Right</button>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <button id="sensor_text_position_bottom" data-position-id="2" type="button" class="btn btn-primary">Bottom</button>
+                    </div>
+                </div>
+            </div>
+            <div class="sensor-view-attributes">
+                <h4 style="margin-bottom: 20px;">Sensor View Attributes</h4>
+                <div class="form-group">
+                    <label class="control-label" for="sensor-text">Sensor Text</label>
+                    <input class="form-control" type="text" id="sensor-text" />
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="sensor-alert" />
+                    <label class="control-label" for="sensor-alert">With Alert</label>
+                </div>
+            </div>
+        </div>
+        <div id="floor-plans-select-template">
+            <div class="form-group">
+                <label class="control-label" for="portal_to">Portal To Floor Plan</label>
+                <select id="portal_to" name="portal_to" class="form-control">
+                    {% for floor_plan in floor_plans %}
+                        <option value="{{ floor_plan.id }}" data-name="{{ floor_plan.name }}">{{ floor_plan.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+    {#	Markers List as JSON #}
+    {{ node_list|json_script:"marker-list-data" }}
+    <script type="text/javascript">
+		const markers = JSON.parse(document.getElementById('marker-list-data').textContent);
+		const container = document.getElementById('canvas-container');
+        let selected_marker = undefined;
+        let selected_marker_is_new = false;
+        let selected_marker_index = undefined;
+        let initial_load = true;
+        const text_positions = ['top', 'right', 'bottom', 'left'];
+
+		const fp = new FloorPlanCanvas(
+            container,
+			{
+				img_url: "{{ loaded_floor_plan.image.url }}",
+				markers,
+                show_sensor_value: true,
+				show_sensor_alert: false,
+				marker_on_click: function(node, e) {
+					if(node) {
+						select_marker(fp, node, -1, false);
+					}
+				},
+				marker_on_dbl_click: function(node, e) {
+				},
+				marker_on_hover: function(node, e) {
+				},
+				on_zoom: function() {
+                    save_value('{{ loaded_floor_plan.id }}', 'zoom', fp.get_zoom());
+				},
+				on_drag: function() {
+                    const offset = fp.get_camera_offset();
+                    save_value('{{ loaded_floor_plan.id }}', 'x', offset.x);
+                    save_value('{{ loaded_floor_plan.id }}', 'y', offset.y);
+				},
+				on_right_click: function(node, location, e) {
+					if(!node && location && !selected_marker) {
+                        const icon_scale = has_value('{{ loaded_floor_plan.id }}', 'icon_scale') ? parseFloat(get_value('{{ loaded_floor_plan.id }}', 'icon_scale')) : 1;
+                        const sensor_text_position = has_value('{{ loaded_floor_plan.id }}', 'sensor_text_position') ? parseInt(get_value('{{ loaded_floor_plan.id }}', 'sensor_text_position')) : 2;
+                        const font_size = has_value('{{ loaded_floor_plan.id }}', 'font_size') ? parseInt(get_value('{{ loaded_floor_plan.id }}', 'font_size')) : undefined;
+						const marker = {
+                            _is_new: true,
+							x: Math.round(location.x),
+							y: Math.round(location.y),
+                            icon_scale,
+                            sensor_text_position,
+                            font_size
+						};
+						markers.push(marker);
+						select_marker(fp, marker, markers.length - 1, true);
+					}
+				},
+                on_floor_plan_load: function (fp) {
+                    fp.set_cursor('crosshair');
+                    if(has_value('{{ loaded_floor_plan.id }}', 'zoom')) {
+                        fp.set_zoom(parseFloat(get_value('{{ loaded_floor_plan.id }}', 'zoom')));
+                    }
+                    if(has_value('{{ loaded_floor_plan.id }}', 'x') && has_value('{{ loaded_floor_plan.id }}', 'y')) {
+                        fp.set_camera_offset({
+                            x: parseFloat(get_value('{{ loaded_floor_plan.id }}', 'x')),
+                            y: parseFloat(get_value('{{ loaded_floor_plan.id }}', 'y'))
+                        });
+                    }
+                    if(initial_load) {
+                        initial_load = false;
+                        load_state(fp);
+                    }
+                },
+                show_dummy_sensor_value: true,
+            }
+		);
+
+        function select_marker(fp, marker, index, is_new=false)
+		{
+            fp.set_cursor('grab');
+            // If a marker is already selected, deselect it
+            if(selected_marker) {
+				selected_marker.selected = false;
+                selected_marker.img_reload = true;
+				Object.assign(selected_marker, JSON.parse(selected_marker.previous));
+			}
+
+            // Select the new marker
+            selected_marker = marker;
+            selected_marker_index = index;
+            selected_marker_is_new = is_new;
+
+            // Save the marker's previous state
+            marker.previous = JSON.stringify(marker);
+            marker.selected = true;
+
+            // Show the marker edit form
+            show_marker_edit_form(fp, marker, {});
+		}
+        
+        function show_marker_edit_form(fp, marker, form_issues)
+		{
+
+			const marker_edit_instance = $('#marker-edit-template').clone();
+            marker_edit_instance.attr('id', 'marker-edit-instance');
+			$('#marker-edit-container').empty().append(marker_edit_instance);
+            marker_edit_instance.show();
+
+			// Marker type field
+            marker_edit_instance.find('#type').on('change', function() {
+				marker.type_id = parseInt($(this).val());
+				marker.type = $(this).find(':selected').data('name');
+				if(marker.type === "Sensor") {
+                	set_node_type_sensor(fp, marker, marker_edit_instance, form_issues);
+            	} else if(marker.type === "Portal") {
+					set_node_type_portal(marker, marker_edit_instance);
+                    display_issues(form_issues, marker_edit_instance, 'portal_to');
+				}
+            });
+            marker_edit_instance.find('#type')
+				.val(marker.type_id)
+				.trigger('change');
+			display_issues(form_issues, marker_edit_instance, 'type');
+
+			// Marker Icon field
+			marker_edit_instance.find('#icon').val(marker.icon_id);
+			marker_edit_instance.find('#icon').on('change', function() {
+				marker.icon_id = parseInt($(this).val());
+				marker.icon = $(this).find(':selected').data('img');
+                marker.img_reload = true;
+			});
+            display_issues(form_issues, marker_edit_instance, 'icon');
+
+            // X Offset field
+            const x_max = fp.image_size().width;
+			marker_edit_instance.find('#x_offset').attr('max', x_max);
+            marker_edit_instance.find('#x_offset_input').attr('max', x_max);
+			marker_edit_instance.find('#x_offset').val(marker.x);
+            marker_edit_instance.find('#x_offset_input').val(marker.x);
+            marker_edit_instance.find('#x_offset').on('input', function() {
+				marker.x = $(this).val();
+                marker_edit_instance.find('#x').val(marker.x);
+                marker_edit_instance.find('#x_offset_input').val($(this).val());
+            });
+            marker_edit_instance.find('#x_offset_input').on('input', function() {
+                const value = $(this).val();
+                if(!isNaN(value)) {
+                    const updated_value = Math.min(Math.max(0, Math.round(value)), x_max);
+                    $(this).val(updated_value);
+                    marker.x = $(this).val();
+                    marker_edit_instance.find('#x').val(marker.x);
+                    marker_edit_instance.find('#x_offset').val($(this).val());
+                }
+            });
+
+
+			// Y Offset field
+            const y_max = fp.image_size().height;
+            marker_edit_instance.find('#y_offset').attr('max', y_max);
+            marker_edit_instance.find('#y_offset_input').attr('max', y_max);
+			marker_edit_instance.find('#y_offset').val(marker.y);
+            marker_edit_instance.find('#y_offset_input').val(marker.y);
+            marker_edit_instance.find('#y_offset').on('input', function() {
+				marker.y = $(this).val();
+                marker_edit_instance.find('#y').val(marker.y);
+                marker_edit_instance.find('#y_offset_input').val($(this).val());
+            });
+            marker_edit_instance.find('#y_offset_input').on('input', function() {
+                const value = $(this).val();
+                if(!isNaN(value)) {
+                    const updated_value = Math.min(Math.max(0, Math.round(value)), y_max);
+                    $(this).val(updated_value);
+                    marker.y = $(this).val();
+                    marker_edit_instance.find('#y').val(marker.y);
+                    marker_edit_instance.find('#y_offset').val($(this).val());
+                }
+            });
+
+
+			// Marker Icon Scale field
+            marker_edit_instance.find('#icon_scale').val(marker.icon_scale);
+            marker_edit_instance.find('#icon_scale_text').text((marker.icon_scale*100).toFixed(0) + '%');
+            marker_edit_instance.find('#icon_scale').on('input', function() {
+				marker.icon_scale = parseFloat($(this).val());
+                save_value('{{ loaded_floor_plan.id }}', 'icon_scale', marker.icon_scale);
+                marker_edit_instance.find('#icon_scale_text').text((marker.icon_scale*100).toFixed(0) + '%');
+			});
+            display_issues(form_issues, marker_edit_instance, 'icon_scale');
+
+            // Marker X field
+			marker_edit_instance.find('#x').val(marker.x);
+
+            // Marker Y field
+			marker_edit_instance.find('#y').val(marker.y);
+
+            // Marker Id field
+			marker_edit_instance.find('#id').val(marker.id);
+
+            if(!marker.id) {
+                marker_edit_instance.find('#marker-delete-button').remove();
+            }
+
+            // Marker Reset button
+			marker_edit_instance.find('#marker-reset-button').on('click', function() {
+				cancel();
+                return false;
+            });
+		}
+
+        function display_issues(form_issues, form_instance, id)
+		{
+			if(form_issues[id]) {
+				form_instance.find(`#${id}`).addClass('is-invalid');
+                form_instance.find(`#${id}`).after(`<div id="${id}-feedback" class="invalid-feedback">${form_issues[id]}</div>`);
+            }
+        }
+
+        function select_sensor_text_position(sensor_text_position_id, sensors_select_instance)
+        {
+            const position = text_positions[sensor_text_position_id];
+
+            sensors_select_instance.find('#sensor_text_position').val(sensor_text_position_id);
+
+            sensors_select_instance.find('#sensor_text_position_top').removeClass('selected_position');
+            sensors_select_instance.find('#sensor_text_position_top').removeClass('btn-success');
+
+            sensors_select_instance.find('#sensor_text_position_left').removeClass('selected_position');
+            sensors_select_instance.find('#sensor_text_position_left').removeClass('btn-success');
+
+            sensors_select_instance.find('#sensor_text_position_right').removeClass('selected_position');
+            sensors_select_instance.find('#sensor_text_position_right').removeClass('btn-success');
+
+            sensors_select_instance.find('#sensor_text_position_bottom').removeClass('selected_position');
+            sensors_select_instance.find('#sensor_text_position_bottom').removeClass('btn-success');
+
+            sensors_select_instance.find('#sensor_text_position_' + position).addClass('selected_position');
+            sensors_select_instance.find('#sensor_text_position_' + position).addClass('btn-success');
+        }
+
+        function set_node_type_sensor(fp, marker, edit_template, form_issues)
+		{
+			const sensors_select_instance = $('#sensors-select-template').clone();
+
+            sensors_select_instance.find('#font_size').val(marker.font_size);
+            sensors_select_instance.find('#font_size').on('input', function() {
+                marker.font_size = parseInt($(this).val());
+                save_value('{{ loaded_floor_plan.id }}', 'font_size', marker.font_size);
+            });
+            display_issues(form_issues, sensors_select_instance, 'font_size');
+
+            if(marker.sensor_text_position >= 0 && marker.sensor_text_position < text_positions.length) {
+                select_sensor_text_position(marker.sensor_text_position, sensors_select_instance);
+            }
+
+            for(const position of text_positions) {
+                sensors_select_instance.find('#sensor_text_position_' + position).on('click', function() {
+                    marker.sensor_text_position = text_positions.indexOf(position);
+                    save_value('{{ loaded_floor_plan.id }}', 'sensor_text_position', marker.sensor_text_position);
+                    select_sensor_text_position(text_positions.indexOf(position), sensors_select_instance);
+                });
+            }
+            display_issues(form_issues, sensors_select_instance, 'sensor_text_position');
+
+            sensors_select_instance.find('#sensor-text').val(marker.sensor_value || fp.get_dummy_sensor_value());
+            sensors_select_instance.find('#sensor-text').on('input', function() {
+                marker.sensor_value = $(this).val();
+            });
+
+            sensors_select_instance.find('#sensor-alert').prop('checked', marker.sensor_alert);
+            sensors_select_instance.find('#sensor-alert').on('change', function() {
+                marker.sensor_alert = $(this).prop('checked');
+            });
+
+
+            sensors_select_instance.attr('id', 'sensors-select-instance');
+			edit_template.find('#marker-edit-type').empty().append(sensors_select_instance);
+			sensors_select_instance.show();
+			edit_template.find('#sensor').val(marker.sensor_id);
+			edit_template.find('#sensor').on('change', function() {
+				marker.sensor_id = parseInt($(this).val());
+				marker.sensor_name = $(this).find(':selected').data('name');
+			});
+            display_issues(form_issues, sensors_select_instance, 'sensor');
+		}
+
+        function set_node_type_portal(marker, edit_template)
+		{
+			const floor_plans_select_instance = $('#floor-plans-select-template').clone();
+            floor_plans_select_instance.attr('id', 'floor-plans-select-instance');
+			edit_template.find('#marker-edit-type').empty().append(floor_plans_select_instance);
+			floor_plans_select_instance.show();
+			edit_template.find('#portal_to').val(marker.portal_id);
+			edit_template.find('#portal_to').on('change', function() {
+				marker.portal_id = parseInt($(this).val());
+				marker.portal_name = $(this).find(':selected').data('name');
+			});
+		}
+
+        function cancel()
+		{
+            if(selected_marker) {
+                fp.set_cursor('crosshair');
+				selected_marker.selected = false;
+				selected_marker.img_reload = true;
+				Object.assign(selected_marker, JSON.parse(selected_marker.previous));
+				selected_marker = undefined;
+                if(selected_marker_is_new) {
+					markers.splice(selected_marker_index, 1);
+                }
+                selected_marker_index = undefined;
+                selected_marker_is_new = false;
+				show_floor_plan_edit_form_initial(fp);
+			}
+		}
+
+        function show_floor_plan_edit_form_initial(fp) {
+			show_floor_plan_edit_form(fp, {}, {});
+			reset_floor_plan_form(fp, $('#floor-plan-edit-instance'));
+        }
+
+        function show_floor_plan_edit_form(fp, value, issues)
+		{
+			const floor_plan_edit_instance = $('#floor-plan-edit-template').clone();
+            floor_plan_edit_instance.attr('id', 'floor-plan-edit-instance');
+			$('#marker-edit-container').empty().append(floor_plan_edit_instance);
+			floor_plan_edit_instance.show();
+
+			floor_plan_edit_instance.find('#name').val(value['name']);
+            display_issues(issues, floor_plan_edit_instance, 'name');
+
+			floor_plan_edit_instance.find('#image').on('change', function(event) {
+				const file = event.target.files[0];
+				if (file) {
+					const reader = new FileReader();
+					reader.onload = function(e) {
+						const img = new Image();
+						img.onload = function() {
+							fp.set_img(img);
+						}
+						img.src = e.target.result;
+					}
+					reader.readAsDataURL(file);
+				}
+            });
+            display_issues(issues, floor_plan_edit_instance, 'image');
+
+			floor_plan_edit_instance.find('#is_default').prop('checked', value['is_default']);
+            display_issues(issues, floor_plan_edit_instance, 'is_default');
+
+			floor_plan_edit_instance.find('#floor-plan-reset-button').on('click', function() {
+				reset_floor_plan_form(fp, floor_plan_edit_instance);
+                return false;
+			});
+        }
+
+        function reset_floor_plan_form(fp, floor_plan_edit_instance)
+		{
+            floor_plan_edit_instance.find('#name').val('{{ loaded_floor_plan.name }}');
+            floor_plan_edit_instance.find('#name-feedback').remove();
+            floor_plan_edit_instance.find('#name').removeClass('is-invalid');
+            if(floor_plan_edit_instance.find('#image').val()) {
+				floor_plan_edit_instance.find('#image').val('');
+				const img = new Image();
+				img.onload = function() {
+					fp.set_img(img);
+				};
+				img.src = '{{ loaded_floor_plan.image.url }}';
+			}
+            floor_plan_edit_instance.find('#image-feedback').remove();
+            floor_plan_edit_instance.find('#image').removeClass('is-invalid');
+
+            {% if loaded_floor_plan.is_default %}
+				floor_plan_edit_instance.find('#is_default').prop('checked', true);
+			{% else %}
+				floor_plan_edit_instance.find('#is_default').prop('checked', false);
+			{% endif %}
+			floor_plan_edit_instance.find('#is_default-feedback').remove();
+			floor_plan_edit_instance.find('#is_default').removeClass('is-invalid');
+        }
+
+        function load_state(fp) {
+            {% if floor_plan_form %}
+				const form_issues = {};
+                const value = {};
+                {% if floor_plan_form.name %}
+					value['name'] = '{{ floor_plan_form.name.value }}';
+					form_issues['name'] = '{{ floor_plan_form.errors.name|striptags }}';
+				{% endif %}
+				{% if floor_plan_form.image %}
+					form_issues['image'] = '{{ floor_plan_form.errors.image|striptags }}';
+				{% endif %}
+				{% if floor_plan_form.is_default %}
+					value['is_default'] = {{ floor_plan_form.is_default.value|yesno:"true,false" }};
+					form_issues['is_default'] = '{{ floor_plan_form.errors.is_default|striptags }}';
+				{% endif %}
+				show_floor_plan_edit_form(fp, value, form_issues);
+            {% elif node_form %}
+				const selected_marker_id = parseInt('{{ selected_node_id }}');
+				const marker = selected_marker_id ? markers.find(marker => marker.id === selected_marker_id) : {};
+				if(marker) {
+					marker.previous = JSON.stringify(marker);
+					marker.selected = true;
+					const form_issues = {};
+					{% if node_form.non_field_errors  %}
+						form_issues['non_field_errors'] = $('{{ node_form.non_field_errors }}');
+					{% endif %}
+					{% if node_form.type %}
+						marker.type_id = parseInt('{{ node_form.type.value }}');
+						form_issues['type'] = '{{ node_form.errors.type|striptags }}';
+					{% endif %}
+					{% if node_form.icon %}
+						marker.icon_id = parseInt('{{ node_form.icon.value }}');
+						form_issues['icon'] = '{{ node_form.errors.icon|striptags }}';
+					{% endif %}
+					{% if node_form.icon_scale %}
+						marker.icon_scale = parseFloat('{{ node_form.icon_scale.value }}');
+						form_issues['icon_scale'] = '{{ node_form.errors.icon_scale|striptags }}';
+					{% endif %}
+					{% if node_form.sensor %}
+						marker.sensor_id = parseInt('{{ node_form.sensor.value }}');
+						marker.sensor_name = get_sensor_name_by_id(marker.sensor_id);
+						form_issues['sensor'] = '{{ node_form.errors.sensor|striptags }}';
+					{% endif %}
+                    {% if node_form.font_size %}
+                        marker.font_size = parseInt('{{ node_form.font_size.value }}');
+                        form_issues['font_size'] = '{{ node_form.errors.font_size|striptags }}';
+                    {% endif %}
+                    {% if node_form.sensor_text_position %}
+                        marker.sensor_text_position = parseInt('{{ node_form.sensor_text_position.value }}');
+                        form_issues['sensor_text_position'] = '{{ node_form.errors.sensor_text_position|striptags }}';
+                    {% endif %}
+					{% if node_form.portal_to %}
+						marker.portal_id = parseInt('{{ node_form.portal_to.value }}');
+						marker.portal_name = get_floor_plan_name_by_id(marker.portal_id);
+						form_issues['portal_to'] = '{{ node_form.errors.portal_to|striptags }}';
+					{% endif %}
+					{% if node_form.x %}
+						marker.x = parseFloat('{{ node_form.x.value }}');
+					{% endif %}
+					{% if node_form.y %}
+						marker.y = parseFloat('{{ node_form.y.value }}');
+					{% endif %}
+					if(!marker.id) {
+						markers.push(marker);
+					}
+					selected_marker = marker;
+					show_marker_edit_form(fp, selected_marker, form_issues);
+				}
+			{% else %}
+				show_floor_plan_edit_form_initial(fp);
+			{% endif %}
+        }
+
+        function get_sensor_name_by_id(sensor_id) {
+            const sensors_select_instance = $('#sensors-select-template');
+            return sensors_select_instance.find(`#sensor option[value="${sensor_id}"]`).data('name');
+        }
+
+        function get_floor_plan_name_by_id(floor_plan_id) {
+            const floor_plans_select_instance = $('#floor-plans-select-template');
+            return floor_plans_select_instance.find(`#portal_to option[value="${floor_plan_id}"]`).data('name');
+        }
+
+
+        function save_value(fp_id, key, value) {
+            localStorage.setItem(fp_id+":"+key, value);
+        }
+
+        function get_value(fp_id, key) {
+            return localStorage.getItem(fp_id+":"+key);
+        }
+
+        function has_value(fp_id, key) {
+            return localStorage.getItem(fp_id+":"+key) !== null;
+        }
+        
+		// after document load
+	    document.addEventListener('DOMContentLoaded', function() {
+           // scroll to bottom of page
+			window.scrollTo(0,document.body.scrollHeight);
+			document.body.style.visibility = 'visible';
+        });
+	
+    </script>
+{% endblock %}
