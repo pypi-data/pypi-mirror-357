@@ -1,0 +1,26 @@
+pint
+pydantic
+
+[:python_version < "3.9"]
+importlib_resources
+typing_extensions
+
+[dev]
+icat-esrf-definitions[test]
+pre-commit
+datamodel-code-generator
+tabulate
+
+[doc]
+icat-esrf-definitions[test]
+sphinx>=4.5
+sphinx-autodoc-typehints>=1.16
+pydata-sphinx-theme
+
+[test]
+icat-esrf-definitions[xml]
+pytest
+silx
+
+[xml]
+xmltodict
