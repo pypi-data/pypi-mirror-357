@@ -1,0 +1,11 @@
+README.md
+setup.py
+feliz_milvus/__init__.py
+feliz_milvus/collection_tools.py
+feliz_milvus/crud_tools.py
+feliz_milvus.egg-info/PKG-INFO
+feliz_milvus.egg-info/SOURCES.txt
+feliz_milvus.egg-info/dependency_links.txt
+feliz_milvus.egg-info/requires.txt
+feliz_milvus.egg-info/top_level.txt
+test/test.py
