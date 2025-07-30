@@ -1,0 +1,14 @@
+utme/__init__.py,sha256=1Y4i718VCF-atnQzyT2Oml9OpS_GEi2n1alHtckIZbw,872
+utme/_alphabet.py,sha256=2TYUE0EocpuizaNMwiChDHadfQshYUi2P8OasOzMzek,387
+utme/_input.py,sha256=oRiuNCVpzqUtb5ntOHjPgtKusWUh9B3q1Pfa7_nieFk,727
+utme/_machine.py,sha256=xTuuDYqujXUo35boUn7wiTdXqsQ_ZppbGzUGoAJa7QY,2241
+utme/_output.py,sha256=3cn_TUqysfadfBKAH-iBFiMyA1rhWrmB4ny3KFpZe6I,405
+utme/_rules.py,sha256=yTjXQ3apO1Ewy-EA38PK5zG8gt3gEc2Vd2XhzQ_DrUc,1103
+utme/_runner.py,sha256=eBFEjwHOwpHA0yZbfpPUf-7VhHWJqMpv7-nZOqGMjDk,2961
+utme/_state.py,sha256=9kYry-4j0vhJqmmw9eRTnK8k0VCGNyuREBw7PlBn26k,436
+utme/_symbol.py,sha256=y0tlmlznruucy9h4OClqSD_qmnYTgXXkMxdalPe-3vw,816
+utme/_tape.py,sha256=7_3XewOVNmowz1ZzX57ahzjHihHeucviBbWpD_NnRjU,281
+utme-1.0.0.dist-info/licenses/LICENSE,sha256=wl7vhq_V7g_G8zb-MEpuiV_9gta5SByhRcHUGJoyXEU,1069
+utme-1.0.0.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+utme-1.0.0.dist-info/METADATA,sha256=MaLpGG2Twu0c6cJ4eK0qJeRT5B4LMzP05cD73SexJmM,3670
+utme-1.0.0.dist-info/RECORD,,
