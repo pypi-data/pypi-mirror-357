@@ -1,0 +1,2 @@
+[console_scripts]
+vaultapi = vaultapi:commandline
