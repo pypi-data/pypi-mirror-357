@@ -1,0 +1,24 @@
+[project]
+name = "Persistify"
+version = "1.0"
+description = "Library for saving Python data structures as Python code."
+readme = "README.md"
+authors = [
+    { name = "SuperWhiteDev" }
+]
+requires-python = ">=3.7"
+license = { file = "LICENSE" } 
+keywords = ["serialization", "persistence", "python-code"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+dependencies = ["pycryptodome>=3.10.1"]
+
+[project.scripts]
+persistify = "persistify:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

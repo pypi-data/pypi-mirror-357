@@ -1,0 +1,16 @@
+# Byte-compiled
+__pycache__/
+*.py[oc]
+
+# Distribution / packaging directories
+build/
+dist/
+wheels/
+.eggs/
+*.egg-info
+
+*.pydat
+*.data
+
+# Virtual environments
+.venv
