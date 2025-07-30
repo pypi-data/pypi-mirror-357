@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: PinappleClient
+Version: 1.0.2
+Summary: Client for interacting with Pinapple
+Author-email: Erik Bremstedt <erik.bremstedt-pedersen@regionstockholm.se>
+License: GPL-3.0
+Project-URL: Homepage, https://github.com/ebremst3dt/pinappleclient
+Project-URL: Issues, https://github.com/ebremst3dt/pinappleclient/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests==2.32.3
+Requires-Dist: pandas==2.2.3
+Requires-Dist: roskarl==2.3.3
+Dynamic: license-file
+
+# PinappleClient
+
+Is a simple client to interact with the Pinapple service.
