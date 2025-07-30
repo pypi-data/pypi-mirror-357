@@ -1,0 +1,8 @@
+google-cloud-storage
+click
+dask-gateway
+pandas
+xarray
+matplotlib
+numpy
+bottleneck
