@@ -1,0 +1,8 @@
+datetime
+pandas
+plotly
+requests
+
+[test]
+coverage[toml]
+pylint
