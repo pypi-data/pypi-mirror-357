@@ -1,0 +1,11 @@
+mcp
+pydantic
+requests
+pytz
+pyyaml
+faiss-cpu
+numpy
+sentence-transformers
+fastapi
+uvicorn
+huggingface-hub
