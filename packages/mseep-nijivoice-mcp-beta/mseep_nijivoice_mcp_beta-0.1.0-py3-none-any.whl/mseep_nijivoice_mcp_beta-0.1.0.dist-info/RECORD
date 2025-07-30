@@ -1,0 +1,16 @@
+mseep_nijivoice_mcp_beta-0.1.0.dist-info/licenses/LICENSE,sha256=p149Z9FZP2DKRZnCk3BJ3dErZ5NvHz8iJ6ZzN2d1Jow,1063
+nijivoice/__init__.py,sha256=QhZpzdzGwPDco8kzx0vFT5MyWE_AiGF0q_OyXji_ZXs,200
+nijivoice/api.py,sha256=YbnTqNWa6fHnDL_GVaAzkCxS7jOnqDJ-8hKR5AHO004,5048
+nijivoice/exceptions.py,sha256=dOlQoO2FLa7Ozl2JrQhOiciI0I6iHejeYf1HNM1MiJ8,339
+nijivoice/models.py,sha256=HkSyA46Blv7ze8V0zLfNawUqMRnNaZpMvgjNWBklsLE,6020
+tests/__init__.py,sha256=01zixz7WoQ1IGCxNCCS1pZFuJ6VHXZ5rzNuoxNbSUaM,37
+tests/conftest.py,sha256=fjYFXSE6wRRMschsTDTjp6ChLqhEB37vu2gbn-LVFGM,140
+tests/mock_client.py,sha256=StDMQPwTFlz0rh59gz_t_tE8AQ1dj-iz8fzeew_lSvg,2244
+tests/test_api.py,sha256=wXwkPcLJWITK_eDMO8QSufV9HbNTvjGm3rpTb6hqBa0,13035
+tests/test_exceptions.py,sha256=MHjwdU4InK-GSNaU-RZqxKhSmeepaHzWqqR5l8lgGCg,1351
+tests/test_models.py,sha256=W1NxlRkvXMv-aSujvyXJf9-oM54-Z23LDU38oVwPcbI,12610
+tests/test_server.py,sha256=zSD4uubR76N-RTTGFXuOTUvnToirtSWz9V2WT1WWrKA,8681
+mseep_nijivoice_mcp_beta-0.1.0.dist-info/METADATA,sha256=AUqKakfLYasyBHKXzZxk1s7FpmmojoZPbq566ilCXtY,976
+mseep_nijivoice_mcp_beta-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mseep_nijivoice_mcp_beta-0.1.0.dist-info/top_level.txt,sha256=1Tl8iPqgiYn1V7FVVWN7B4RXtrXi5ed9rumwOtAGKVA,16
+mseep_nijivoice_mcp_beta-0.1.0.dist-info/RECORD,,
