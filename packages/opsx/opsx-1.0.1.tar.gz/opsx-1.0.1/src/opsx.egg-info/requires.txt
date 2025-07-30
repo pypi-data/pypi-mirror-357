@@ -1,0 +1,4 @@
+openai>=1.0.0
+patch-ng>=1.17
+click>=8.0
+prompt-toolkit>=3.0

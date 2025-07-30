@@ -1,0 +1,37 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opsx"
+version = "1.0.1" # <-- 版本号升级到 2.0.0
+authors = [
+  { name="Your Name", email="you@example.com" },
+]
+description = "一个CLI工具，用于与项目交互并与AI模型通信。"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT License" }
+# --- MODIFICATION START ---
+dependencies = [
+    "openai>=1.0.0", # 添加 openai 库作为依赖
+    "patch-ng>=1.17",
+    "click>=8.0",
+    "prompt-toolkit>=3.0"
+]
+# --- MODIFICATION END ---
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+opsbot = "opsbot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"opsbot" = ["prompts/*.txt"]

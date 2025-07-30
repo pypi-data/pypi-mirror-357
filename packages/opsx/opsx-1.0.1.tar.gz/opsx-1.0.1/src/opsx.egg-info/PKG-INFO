@@ -1,0 +1,65 @@
+Metadata-Version: 2.4
+Name: opsx
+Version: 1.0.1
+Summary: 一个CLI工具，用于与项目交互并与AI模型通信。
+Author-email: Your Name <you@example.com>
+License: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: openai>=1.0.0
+Requires-Dist: patch-ng>=1.17
+Requires-Dist: click>=8.0
+Requires-Dist: prompt-toolkit>=3.0
+
+# OpsBot - 您的AI驱动的代码助手
+
+OpsBot是一个命令行工具，旨在帮助开发者更高效地与AI模型互动，管理项目代码上下文，并自动应用AI生成的代码修改。
+
+## 主要功能
+- **项目上下文生成**: 扫描指定目录下的代码文件，生成结构化的项目概览和文件内容，作为AI的输入。
+- **交互式AI聊天**: 启动一个基于OpenAI模型的聊天会话，支持历史记录、多行输入、命令（如加载上下文、回滚修改）。
+- **代码Diff应用**: AI返回的diff可以直接在本地项目中预览和应用。
+- **修改回滚**: 支持回滚AI应用的最近一次代码修改。
+- **可配置**: 通过 `.ops` 文件自定义API设置、文件扫描规则和系统提示词。
+
+## 安装
+
+1. **克隆仓库**:
+   ```bash
+   git clone <your-repo-url> # 将 <your-repo-url> 替换为您的实际仓库地址
+   cd opsbot
+   ```
+2. **安装依赖 (推荐使用虚拟环境)**:
+   ```bash
+   python -m venv venv
+   # Linux/macOS
+   source venv/bin/activate
+   # Windows
+   venv\Scripts\activate
+   # 安装项目为可编辑模式，以便正确加载资源文件
+   pip install -e .
+   ```
+
+## 使用
+
+### 1. 初始化项目
+在您的项目根目录运行此命令。它将创建 `.ops` 配置文件和 `opsbot_data` 目录，其中包含默认的系统提示词文件、聊天记录和备份目录。
+```bash
+opsbot init
+```
+**重要**: 请务必编辑新生成的 `.ops` 文件，填入您的 OpenAI API Key。
+
+### 2. 生成项目上下文 (可选)
+您可以将整个项目的代码结构和内容扫描并输出到一个文本文件中。这个文件可以作为AI模型理解您项目的基础。
+```bash
+opsbot gp . -o my_project_context.txt
+```
+
+### 3. 启动聊天会话
+```bash
+opsbot chat
+```
+您也可以在启动时注入之前生成的上下文文件：
+```bash

@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/opsbot/__init__.py
+src/opsbot/api_client.py
+src/opsbot/chat_session.py
+src/opsbot/cli.py
+src/opsbot/config.py
+src/opsbot/core.py
+src/opsbot/file_handler.py
+src/opsbot/prompts/default_code_prompt.txt
+src/opsx.egg-info/PKG-INFO
+src/opsx.egg-info/SOURCES.txt
+src/opsx.egg-info/dependency_links.txt
+src/opsx.egg-info/entry_points.txt
+src/opsx.egg-info/requires.txt
+src/opsx.egg-info/top_level.txt
