@@ -1,0 +1,31 @@
+from setuptools import find_packages, setup
+
+with open('README.md', 'r') as f:
+    long_description = f.read()
+
+# raw_pkgs = find_packages(where="utils_qt_mk")
+# packages = ['src' + ('' if pkg == '' else f'.{pkg}')
+#             for pkg in raw_pkgs]
+
+setup(
+    name="utils_qt_mk",
+    version="1.0.1",
+    description="Collection of utilities for Qt applications",
+    package_dir={'': 'src'},
+    packages=find_packages(where='src'),
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    url='https://github.com/PzKpfwIVB/Utilities',
+    author="Mihaly Konda",
+    author_email='mihaly.konda@gmail.com',
+    classifiers=[
+        "Programming Language :: Python :: 3.12",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "Operating System :: OS Independent"
+    ],
+    install_requires=["PySide6 == 6.6.2"],
+    extras_require={
+        "dev": ["twine >= 6.1.0"],
+    },
+    python_requires=">= 3.12",
+)
