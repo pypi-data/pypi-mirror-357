@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/QtPyEqualizer.egg-info/PKG-INFO
+src/QtPyEqualizer.egg-info/SOURCES.txt
+src/QtPyEqualizer.egg-info/dependency_links.txt
+src/QtPyEqualizer.egg-info/requires.txt
+src/QtPyEqualizer.egg-info/top_level.txt
+src/QtPy_EqualizerBar/__init__.py
+src/QtPy_EqualizerBar/equalizer_bar/__init__.py
+src/QtPy_EqualizerBar/equalizer_bar/demo.py
+src/QtPy_EqualizerBar/equalizer_bar/equalizer_bar.py

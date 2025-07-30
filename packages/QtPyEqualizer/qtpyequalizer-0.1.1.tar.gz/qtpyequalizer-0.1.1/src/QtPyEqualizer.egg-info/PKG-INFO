@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: QtPyEqualizer
+Version: 0.1.1
+Summary: A Qt EqualizerBar widget forked from python-qtwidgets
+Author-email: VariousTurtle <leemarvinbeck@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/VariousTurtle/qtpy-equalizerbar
+Project-URL: Source, https://github.com/VariousTurtle/qtpy-equalizerbar
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: qtpy
+Dynamic: license-file
+
+# QtPy-EqualizerBar
+
+
+This is a stripped down fork of the original [python-qtwidgets](https://github.com/pythonguis/python-qtwidgets) for the needs of my own projects
+I have removed all widgets other than the EqualizerBar, and the code had been ported to use QtPy for compatibillity across PyQt5, PyQt6, PySide2 and PySide6.
+
