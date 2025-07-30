@@ -1,0 +1,117 @@
+[dependency-groups]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-xdist>=3.6.1",
+    "pytest-asyncio>=0.23.0",
+    "black>=23.0.0",
+    "mypy>=1.0.0",
+    "expecttest>=0.1.4",
+    "ruff>=0.1.5",
+    "pyright>=1.1.350",
+    "tomli_w>=1.0.0",
+    "requests>=2.30.0",
+]
+
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[tool.uv]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+select = [
+    "ASYNC",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"test/**/*.py" = [
+    "ASYNC",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+    "e2e",
+]
+addopts = "-n auto --tb=native"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.pyright]
+include = [
+    "codemcp",
+]
+exclude = [
+    "**/node_modules",
+    "**/__pycache__",
+    "dist",
+]
+venvPath = "."
+venv = ".venv"
+reportMissingImports = true
+reportMissingTypeStubs = true
+pythonVersion = "3.12"
+pythonPlatform = "All"
+typeCheckingMode = "strict"
+reportUnknownMemberType = true
+reportUnknownParameterType = true
+reportUnknownVariableType = true
+reportUnknownArgumentType = true
+reportPrivateImportUsage = true
+reportUntypedFunctionDecorator = true
+reportFunctionMemberAccess = true
+reportIncompatibleMethodOverride = true
+stubPath = "./stubs"
+stubPackages = [
+    { source = "tomli", stub = "tomli_stubs" },
+    { source = "mcp", stub = "mcp_stubs" },
+]
+
+[[tool.pyright.ignoreExtraErrors]]
+path = "codemcp/testing.py"
+errorCodes = [
+    "reportUnknownMemberType",
+    "reportUnknownArgumentType",
+    "reportUnknownVariableType",
+]
+
+[[tool.pyright.ignoreExtraErrors]]
+path = "codemcp/main.py"
+errorCodes = [
+    "reportUnknownMemberType",
+    "reportUnknownArgumentType",
+    "reportUnknownVariableType",
+    "reportUnknownParameterType",
+    "reportMissingParameterType",
+]
+
+[[tool.pyright.ignoreExtraErrors]]
+path = "codemcp/agno.py"
+errorCodes = [
+    "reportUnknownMemberType",
+    "reportUnknownArgumentType",
+    "reportUnknownVariableType",
+    "reportUnknownParameterType",
+    "reportMissingParameterType",
+    "reportPrivateImportUsage",
+]
+
+[[tool.pyright.ignoreExtraErrors]]
+path = "codemcp/config.py"
+errorCodes = [
+    "reportUnknownVariableType",
+]
+
+[tool.hatch.build.targets]
