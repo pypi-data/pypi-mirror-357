@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_pdf2md.egg-info/PKG-INFO
+mseep_pdf2md.egg-info/SOURCES.txt
+mseep_pdf2md.egg-info/dependency_links.txt
+mseep_pdf2md.egg-info/requires.txt
+mseep_pdf2md.egg-info/top_level.txt
