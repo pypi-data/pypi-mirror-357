@@ -1,0 +1,10 @@
+CorState/CorStateError.py,sha256=dTK6rIJdmLr1XgZY3kW0vskBvzoPMw2a-CXrI3LXKMQ,3933
+CorState/State.py,sha256=9r9ntekMmq1n7TpVZl-y7IRiao0_cCvntwN4foLLXbk,3053
+CorState/StateMachine.py,sha256=hrsBhgLPwMXMUla34xeEfUOzaKKnn9Ha3jSaxie-Khw,12655
+CorState/Transition.py,sha256=bIoWsm12h6UMGwT29-8yKZrtsJF6j4mYJjEa4CZSyVg,3609
+CorState/__init__.py,sha256=a4ObZXV3ntzQwFGqEo9Fuear9KGD7HGT8YM9bReChy4,947
+corstate-0.1.5.dev0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+corstate-0.1.5.dev0.dist-info/METADATA,sha256=zPZvlfuP3wuyT133CdgswvL8Xl2t7ppL8TJH0xwKLmo,1103
+corstate-0.1.5.dev0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+corstate-0.1.5.dev0.dist-info/top_level.txt,sha256=8SzF-QLWtOI8a_LhCiAQtUjaNvalByFaLlEWI9scFpI,9
+corstate-0.1.5.dev0.dist-info/RECORD,,
