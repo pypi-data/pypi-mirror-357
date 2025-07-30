@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+CorState/CorStateError.py
+CorState/State.py
+CorState/StateMachine.py
+CorState/Transition.py
+CorState/__init__.py
+CorState.egg-info/PKG-INFO
+CorState.egg-info/SOURCES.txt
+CorState.egg-info/dependency_links.txt
+CorState.egg-info/top_level.txt
+tests/test_StateMachine.py
