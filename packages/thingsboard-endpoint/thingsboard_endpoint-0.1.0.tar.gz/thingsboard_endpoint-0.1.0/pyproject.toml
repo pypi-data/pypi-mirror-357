@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=67.6.1", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thingsboard-endpoint"
+dynamic = ["version", "classifiers", "dependencies", "urls", "keywords", "authors", "description"]
+requires-python = ">=3.9"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "thingsboard.endpoint.version"}
