@@ -1,0 +1,1 @@
+print("This is a hello world for pip package from main.py")
