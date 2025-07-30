@@ -1,0 +1,17 @@
+spark_analyzer/README.md,sha256=pd-erRp0JqCWGNPvxLeiBMbozU1nLGKCw3KYckZ63KQ,10924
+spark_analyzer/__init__.py,sha256=P6PH3l7fy5t1OWdcXmQlxIPx-A6KH00qwtSk1yhMJXA,22
+spark_analyzer/cli.py,sha256=-JZafVlmd2tIgKsyyRgCv9pURKVq6fkmnY-pVuGMxp4,43936
+spark_analyzer/config_cli.py,sha256=hn176d8NL9ZxZFgo9mGV7ixG3FEIV-B4UYi8OqY8uG4,21139
+spark_analyzer/lib/__init__.py,sha256=s4ia4QaeE_-kzngUxzlaI2Hl5OQgdcP9rSTDT1f68Zo,33
+spark_analyzer/lib/api_client.py,sha256=3hi6fJpDK9rQbvvDDPz5Qp8mKbwl2pmZFafsqhkQtVM,29108
+spark_analyzer/lib/s3_uploader.py,sha256=19r_m6q5X724lm7ZFdCwkm1-RdxqqxkZ_hW2UHdSkRs,21903
+spark_analyzer/lib/spark_stage_analyzer.py,sha256=IAe05P8sTszyEm6gUczvudyu7zim6dVgHEfl7prlv8Q,35092
+spark_analyzer/lib/utils.py,sha256=KO91P-htUQhTxSYQ0ybwd08RlYglxOUPg3axNZW-sPo,2727
+spark_analyzer/resources/storage_format_keywords.json,sha256=k4WAIODdoxC8GoDbvlJFTEl5YuRhjnEK7QmEuDMygqY,1422
+spark_analyzer/resources/workflow_type_keywords.json,sha256=h6o91iaQXxykznoYS1JI7u_-sAZl8aLjaNMM7lYHtDA,3857
+spark_analyzer/resources/test_data/stage_analyzer_test_data.json,sha256=e2dCIlJrrIAzXIMujd6QrDJ7Ukbp8CpJacVqgzwH_rM,1795
+spark_analyzer-0.1.11.dist-info/METADATA,sha256=aE8rUm1Wj6UqncGjbuDsUYHaEndJjLPV41GipHAK3_4,12110
+spark_analyzer-0.1.11.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+spark_analyzer-0.1.11.dist-info/entry_points.txt,sha256=uRhdPYaamvPyNYexL3bZu_EOsMf_nx2eR8DGVN5E89k,116
+spark_analyzer-0.1.11.dist-info/top_level.txt,sha256=8s3WYeWhoiovUBjiIkea_UuLzUVMq-YG_YvCXZH_dEo,15
+spark_analyzer-0.1.11.dist-info/RECORD,,
