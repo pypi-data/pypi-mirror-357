@@ -1,0 +1,59 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "directxapps",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "sdb2xml.__init__",
+            "console": "integratedTerminal",
+            "args": [
+                "C:\\Windows\\apppatch\\DirectXApps.sdb"
+            ]
+        },
+        {
+            "name": "small",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "sdb2xml.__init__",
+            "console": "integratedTerminal",
+            "args": [
+                "C:\\Windows\\apppatch\\MergeSdbFiles\\01DA78C738588000.msimain.sdb"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "frxmain",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "sdb2xml.__init__",
+            "console": "integratedTerminal",
+            "args": [
+                "C:\\Windows\\apppatch\\frxmain.sdb"
+            ]
+        },
+        {
+            "name": "mydefrag_compat",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "sdb2xml.__init__",
+            "console": "integratedTerminal",
+            "args": [
+                "R:\\apphelp\\sdbs\\old\\mydefrag_compat.sdb"
+            ]
+        },
+        {
+            "name": "msimain",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "sdb2xml.__init__",
+            "console": "integratedTerminal",
+            "args": [
+                "R:\\apphelp\\sdbs\\old\\msimain.sdb"
+            ]
+        }
+    ]
+}
