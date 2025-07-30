@@ -1,0 +1,6 @@
+Metadata-Version: 2.2
+Name: extract_check_fetch_data
+Version: 0.1
+Requires-Dist: Flask
+Requires-Dist: requests
+Dynamic: requires-dist
