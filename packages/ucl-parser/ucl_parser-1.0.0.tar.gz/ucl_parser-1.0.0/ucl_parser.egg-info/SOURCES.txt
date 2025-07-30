@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+ucl_parser.egg-info/PKG-INFO
+ucl_parser.egg-info/SOURCES.txt
+ucl_parser.egg-info/dependency_links.txt
+ucl_parser.egg-info/requires.txt
+ucl_parser.egg-info/top_level.txt
