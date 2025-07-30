@@ -1,0 +1,9 @@
+README.md
+license
+setup.py
+file_crud/__init__.py
+file_crud/crud.py
+file_crud.egg-info/PKG-INFO
+file_crud.egg-info/SOURCES.txt
+file_crud.egg-info/dependency_links.txt
+file_crud.egg-info/top_level.txt
