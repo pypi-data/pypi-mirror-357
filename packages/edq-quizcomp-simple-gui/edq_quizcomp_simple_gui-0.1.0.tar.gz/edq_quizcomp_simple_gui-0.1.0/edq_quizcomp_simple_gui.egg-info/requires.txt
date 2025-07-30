@@ -1,0 +1,7 @@
+edq-quizcomp>=0.4.0
+
+[dev]
+build
+packaging>=21.3
+twine
+vermin
