@@ -1,0 +1,3 @@
+[console_scripts]
+canonmap = canonmap.cli:cli
+canonmap-download-model = canonmap.cli:download_model_command
