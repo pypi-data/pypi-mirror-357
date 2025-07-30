@@ -1,0 +1,2 @@
+[console_scripts]
+datetime_demo_mcp = datetime_demo_mcp.server:main
