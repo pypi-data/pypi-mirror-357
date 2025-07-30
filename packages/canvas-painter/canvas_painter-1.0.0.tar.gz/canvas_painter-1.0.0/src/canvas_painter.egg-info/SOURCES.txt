@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.py
+src/bindings.cpp
+src/canvas_painter.egg-info/PKG-INFO
+src/canvas_painter.egg-info/SOURCES.txt
+src/canvas_painter.egg-info/dependency_links.txt
+src/canvas_painter.egg-info/top_level.txt
