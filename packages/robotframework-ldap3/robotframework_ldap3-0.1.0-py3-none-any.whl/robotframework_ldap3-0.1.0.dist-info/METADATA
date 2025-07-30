@@ -1,0 +1,37 @@
+Metadata-Version: 2.3
+Name: robotframework-ldap3
+Version: 0.1.0
+Summary: A Robotframework library to interact with a LDAP server
+License: Apache-2.0
+Author: Tobias Linkermann
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: ldap3 (>=2.9.1,<3.0.0)
+Requires-Dist: ldif (>=4.2.5,<5.0.0)
+Requires-Dist: robotframework (>=7.2.2,<8.0.0)
+Requires-Dist: robotframework-assertion-engine (>=3.0.3,<4.0.0)
+Description-Content-Type: text/markdown
+
+# LDAP3 Library for Robot Framework
+
+The LDAP Library for [Robot Framework](https://robotframework.org) provides keywords to interact with directory servers via LDAP protocol.
+Therefore the platform independent python library [ldap3](https://ldap3.readthedocs.io/en/latest/) is used, which provides extended namespaces for interacting with Microsoft and Novell based directories beside the default RFC 4511 namespace.
+Here yo can find the [keyword docs](https://tschroeder13.github.io/robotframework-ldap3/ldap3library.html)
+
+## Credits
+[Robot Framework](https://robotframework.org)
+
+[ldap3](https://github.com/cannatag/ldap3/)
+
+[Apache Directory Studio](https://directory.apache.org/studio/downloads.html)
+
+[MarketSquare for Assertion Engine and tons of inspiration](https://github.com/MarketSquare/)
+
+[@ManyDefects](https://github.com/manykarim)
+
