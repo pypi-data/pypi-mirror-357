@@ -1,0 +1,9 @@
+quark_plugin_qrisp/__init__.py,sha256=JuVdI6vj58828xnmzkv9BsIgT56HLtt38FzyRnpPHc4,660
+quark_plugin_qrisp/mis_qiro_mapping_qrisp.py,sha256=kzE-tNEI9TIJT-rUkeb8JzCm_H4TlTT5NnKI28Y20I0,2245
+quark_plugin_qrisp/qiro_statevector_simulator_qrisp.py,sha256=tvfsnk2vQ3zxyo518P86Tnw_ObGTgTxlJrAuKoRPRgQ,1259
+quark_plugin_qrisp-0.1.1.dist-info/licenses/LICENSE,sha256=mBSg1RUz4kbDrNcragwoIGmn2KDVbbYK5e84mu1pSv4,11351
+quark_plugin_qrisp-0.1.1.dist-info/licenses/NOTICE,sha256=fiqPOWv1T4Hjjr-JbJT2Cb8_uebnIfELGNjnrrgIRmA,157
+quark_plugin_qrisp-0.1.1.dist-info/METADATA,sha256=hVOPfr02GvHMrvhpPt02ebVLM-cLnaWDMWv_A-SFn6Y,1759
+quark_plugin_qrisp-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+quark_plugin_qrisp-0.1.1.dist-info/top_level.txt,sha256=9fwrW8yR1oU1M7Lw-VOyh-O5HqzRGHpMPenibPToirE,19
+quark_plugin_qrisp-0.1.1.dist-info/RECORD,,
