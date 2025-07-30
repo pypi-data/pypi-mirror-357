@@ -1,0 +1,9 @@
+spoken/__init__.py,sha256=oU9m5O9zthimJKM8OMCi9l0kX8zgruRdLmvYdSYgOkw,921
+spoken/base.py,sha256=xKMgrukhNX0o_W5IJhKjikXcTdkWNvfxPcQYAUdPavw,4806
+spoken/models/gemini.py,sha256=4cru12JNRwTpeUa5651md4eTqQVgPzZyXd0BescLmks,7779
+spoken/models/nova.py,sha256=VJBfztrYR9bxUS5JyZvTpAZ6e6UoO1330mR2uw5KpHE,16121
+spoken/models/openai.py,sha256=-_2iTDjyIIoCXBXvpT44HPsMy8MOdXGD1KjoQx073_0,5515
+spoken-0.0.1.dist-info/METADATA,sha256=UDITVjDirwvXvqCAzcnvZPGaPNCm0YazJOB_REJBF1c,2079
+spoken-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+spoken-0.0.1.dist-info/licenses/LICENSE,sha256=l7jBSctX64Rm9RPHMKWb33eyClXn63b9HVeQPPe8zWc,1067
+spoken-0.0.1.dist-info/RECORD,,

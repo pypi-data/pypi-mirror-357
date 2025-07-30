@@ -1,0 +1,64 @@
+Metadata-Version: 2.4
+Name: spoken
+Version: 0.0.1
+Summary: a single interface around speech-to-speech foundation models
+Project-URL: repository, https://github.com/haizelabs/spoken
+Project-URL: issues, https://github.com/haizelabs/spoken/issues
+Author-email: Nimit Kalra <nimit@haizelabs.com>
+License: MIT License
+License-File: LICENSE
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.12
+Requires-Dist: aws-sdk-bedrock-runtime
+Requires-Dist: instructor
+Requires-Dist: loguru
+Requires-Dist: numpy
+Requires-Dist: openai
+Requires-Dist: pyaudio>=0.2.13
+Requires-Dist: pydub
+Requires-Dist: rx>=3.2.0
+Requires-Dist: smithy-aws-core>=0.0.1
+Requires-Dist: websockets
+Provides-Extra: dev
+Requires-Dist: isort; extra == 'dev'
+Requires-Dist: mypy; extra == 'dev'
+Requires-Dist: ruff; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# spoken!
+<div align="center">
+
+`pip install spoken`
+
+</div>
+
+currently supports batch/offline evaluation for offline evaluations/benchmarking but can easily propagate audio chunks forward
+
+```python
+import spoken
+
+model = spoken("gpt-4o-realtime-preview-2024-12-17", "examples/input.wav")
+input_asr, output_asr, output_audio = await model.run()
+
+output_asr                   # "That's quite the story..."
+len(output_audio)            # 8549ms
+model.output_audio_tokens    # 254
+```
+
+A single interface around speech-to-speech foundation models.
+
+Supports
+- [OpenAI Realtime](https://platform.openai.com/docs/guides/realtime)
+  - gpt-4o-realtime-preview-2024-12-17
+  - gpt-4o-mini-audio-preview-2024-12-17
+- [Gemini Multimodal Live](https://ai.google.dev/gemini-api/docs/live)
+  - gemini-2.5-flash-preview-native-audio-dialog
+  - gemini-2.5-flash-exp-native-audio-thinking-dialog
+- [Amazon Nova Sonic](https://aws.amazon.com/ai/generative-ai/nova/speech/)
+  - amazon.nova-sonic-v1:0
+
+## Installation
+- need `portaudio.h` for Amazon Nova Sonic support (mac `brew install portaudio`)
