@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+routina/__init__.py
+routina/cli.py
+routina/decorators.py
+routina/exceptions.py
+routina/runner.py
+routina/store.py
+routina/timeutils.py
+routina.egg-info/PKG-INFO
+routina.egg-info/SOURCES.txt
+routina.egg-info/dependency_links.txt
+routina.egg-info/entry_points.txt
+routina.egg-info/requires.txt
+routina.egg-info/top_level.txt
+tests/test_routina.py

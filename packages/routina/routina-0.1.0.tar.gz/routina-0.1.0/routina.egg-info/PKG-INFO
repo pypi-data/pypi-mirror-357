@@ -1,0 +1,493 @@
+Metadata-Version: 2.4
+Name: routina
+Version: 0.1.0
+Summary: A Python-native, time-aware function runner — like cron, but all in code
+Author-email: Andrew Wade <andrew@example.com>
+Maintainer-email: Andrew Wade <andrew@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/andrewwade/routina
+Project-URL: Repository, https://github.com/andrewwade/routina
+Project-URL: Documentation, https://github.com/andrewwade/routina#readme
+Project-URL: Bug Tracker, https://github.com/andrewwade/routina/issues
+Keywords: cron,scheduler,tasks,automation,time
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: flake8>=5.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: pre-commit>=2.20.0; extra == "dev"
+Requires-Dist: build>=0.10.0; extra == "dev"
+Requires-Dist: twine>=4.0.0; extra == "dev"
+Requires-Dist: requests>=2.28.0; extra == "dev"
+Dynamic: license-file
+
+# 🕰️ Routina
+
+**A Python-native, time-aware function runner — like cron, but all in code.**
+
+[![PyPI version](https://badge.fury.io/py/routina.svg)](https://badge.fury.io/py/routina)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Routina lets you schedule Python functions to run at specific intervals or times using simple decorators. No external dependencies, no complex configuration files, no daemon processes — just pure Python scheduling that works.
+
+## ✨ Features
+
+- **🎯 Simple Decorators**: Schedule functions with `@every_n_days(2)`, `@at_time("14:30")`, etc.
+- **⏰ Multiple Schedule Types**: Intervals, specific times, weekdays, weekends, cron expressions
+- **🔄 Retry Logic**: Built-in retry with configurable attempts and delays
+- **⏱️ Timeout Support**: Prevent functions from running too long
+- **💾 Multiple Storage Backends**: JSON, SQLite, or in-memory storage
+- **📊 Execution Tracking**: Track runs, successes, failures, and timing
+- **🛠️ CLI Interface**: Monitor and manage scheduled functions from command line
+- **🧪 Production Ready**: Comprehensive error handling and logging
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+pip install routina
+```
+
+### Basic Usage
+
+```python
+from routina import every_n_days, run_if_due
+
+@every_n_days(2)
+def restart_server():
+    print("🔁 Restarting server")
+    # Your server restart logic here
+
+@every_n_days(1)
+def rotate_logs():
+    print("🧹 Rotating logs")
+    # Your log rotation logic here
+
+if __name__ == "__main__":
+    run_if_due(restart_server)
+    run_if_due(rotate_logs)
+```
+
+### Replace Cron Jobs
+
+Instead of managing crontab entries:
+
+```bash
+# Old way: crontab -e
+0 2 * * * python3 /opt/yourapp/routines.py
+```
+
+```python
+# New way: routines.py
+from routina import run_all_due
+
+@every_n_days(1)
+def daily_backup():
+    # Your backup logic
+    pass
+
+@every_n_hours(6)
+def cleanup_temp_files():
+    # Your cleanup logic
+    pass
+
+if __name__ == "__main__":
+    run_all_due()  # Run all functions that are due
+```
+
+Schedule this script to run frequently (e.g., every minute), and routina will ensure each function runs only when it's supposed to.
+
+## 📚 All Decorators
+
+### Time Intervals
+
+```python
+from routina import *
+
+@every_n_seconds(30)
+def check_health():
+    pass
+
+@every_n_minutes(15)  
+def process_queue():
+    pass
+
+@every_n_hours(6)
+def backup_database():
+    pass
+
+@every_n_days(1)
+def daily_report():
+    pass
+
+@every_n_weeks(2)
+def bi_weekly_maintenance():
+    pass
+
+@every_n_months(1)
+def monthly_cleanup():
+    pass
+```
+
+### Specific Times
+
+```python
+@at_time("14:30")  # 2:30 PM daily
+def afternoon_report():
+    pass
+
+@at_time("09:00:00")  # 9:00 AM with seconds
+def morning_startup():
+    pass
+```
+
+### Day-Based Scheduling
+
+```python
+@on_weekdays()  # Monday through Friday
+def business_hours_task():
+    pass
+
+@on_weekends()  # Saturday and Sunday
+def weekend_maintenance():
+    pass
+
+@on_days([0, 2, 4])  # Monday, Wednesday, Friday (0=Monday)
+def mwf_task():
+    pass
+
+@on_days(["monday", "wednesday", "friday"])  # Same as above
+def mwf_task_alt():
+    pass
+```
+
+### Cron-Style Scheduling
+
+```python
+@cron_schedule("0 */2 * * *")  # Every 2 hours
+def bi_hourly_task():
+    pass
+
+@cron_schedule("30 14 * * 1-5")  # 2:30 PM on weekdays
+def weekday_afternoon():
+    pass
+
+@cron_schedule("0 0 1 * *")  # First day of every month
+def monthly_report():
+    pass
+```
+
+## 🔧 Advanced Features
+
+### Retry Logic
+
+```python
+@every_n_minutes(5, retry_count=3, retry_delay=60)
+def unreliable_api_call():
+    # Will retry up to 3 times with 60-second delays
+    response = requests.get("https://api.example.com/data")
+    return response.json()
+```
+
+### Timeout Protection
+
+```python
+@every_n_hours(1, timeout=300)  # 5-minute timeout
+def long_running_task():
+    # Will be killed if it takes longer than 5 minutes
+    process_large_dataset()
+```
+
+### Error Handling
+
+```python
+from routina import run_all_due, get_function_status
+
+# Run all scheduled functions
+results = run_all_due()
+
+for func_name, result in results.items():
+    if result["success"]:
+        print(f"✅ {func_name}: {result['result']}")
+    else:
+        print(f"❌ {func_name}: {result['error']}")
+
+# Check individual function status
+status = get_function_status("my_function")
+print(f"Success rate: {status['success_rate']:.1%}")
+print(f"Last run: {status['last_run_human']}")
+```
+
+## 💾 Storage Backends
+
+### JSON Storage (Default)
+
+```python
+from routina import set_storage_backend, JSONStorage
+
+# Uses .routina/state.json by default
+set_storage_backend(JSONStorage("/path/to/custom/state.json"))
+```
+
+### SQLite Storage
+
+```python
+from routina import set_storage_backend, SQLiteStorage
+
+# Better performance for high-frequency functions
+set_storage_backend(SQLiteStorage(".routina/state.db"))
+```
+
+### In-Memory Storage
+
+```python
+from routina import set_storage_backend, InMemoryStorage
+
+# Perfect for testing
+set_storage_backend(InMemoryStorage())
+```
+
+## 🖥️ Command Line Interface
+
+Routina includes a CLI for monitoring and managing scheduled functions:
+
+```bash
+# Show status of all functions
+routina status
+
+# Show status of specific function
+routina status my_function
+
+# List all scheduled functions
+routina list
+
+# Run all due functions
+routina run
+
+# Force run a specific function
+routina force my_function
+
+# Reset function history
+routina reset my_function
+
+# Clear all history
+routina clear
+
+# Use different storage backend
+routina --storage sqlite status
+routina --storage-path /custom/path.db status
+```
+
+## 📊 Monitoring & Status
+
+### Function Status
+
+```python
+from routina import get_function_status, print_status_report
+
+# Detailed status for one function
+status = get_function_status("backup_database")
+print(f"Runs: {status['run_count']}")
+print(f"Success Rate: {status['success_rate']:.1%}")
+print(f"Last Run: {status['last_run_human']}")
+print(f"Next Run: {status['next_run_human']}")
+
+# Status report for all functions
+print_status_report()
+```
+
+### Execution Results
+
+```python
+from routina import run_all_due
+
+results = run_all_due()
+
+# Check which functions ran
+for func_name, result in results.items():
+    if result["success"]:
+        print(f"✅ {func_name} completed successfully")
+        if "result" in result:
+            print(f"   Result: {result['result']}")
+    else:
+        print(f"❌ {func_name} failed: {result['error']}")
+```
+
+## 🏗️ Real-World Examples
+
+### System Administration
+
+```python
+from routina import *
+
+@every_n_minutes(30)
+def check_disk_space():
+    """Monitor disk usage every 30 minutes."""
+    import shutil
+    usage = shutil.disk_usage("/")
+    free_gb = usage.free // (1024**3)
+    
+    if free_gb < 10:
+        send_alert(f"Low disk space: {free_gb}GB remaining")
+    
+    return {"free_gb": free_gb}
+
+@every_n_hours(6)
+def rotate_logs():
+    """Rotate application logs every 6 hours."""
+    import glob
+    import gzip
+    
+    for log_file in glob.glob("/var/log/myapp/*.log"):
+        with open(log_file, 'rb') as f_in:
+            with gzip.open(f"{log_file}.gz", 'wb') as f_out:
+                f_out.writelines(f_in)
+        os.remove(log_file)
+
+@at_time("02:00")
+def daily_backup():
+    """Run daily backup at 2 AM."""
+    backup_database()
+    backup_files()
+    cleanup_old_backups()
+
+if __name__ == "__main__":
+    run_all_due()
+```
+
+### Web Application Maintenance
+
+```python
+from routina import *
+
+@every_n_minutes(15)
+def process_email_queue():
+    """Process pending emails every 15 minutes."""
+    emails = get_pending_emails()
+    for email in emails:
+        send_email(email)
+        mark_as_sent(email.id)
+    return {"emails_sent": len(emails)}
+
+@every_n_hours(1)
+def cleanup_sessions():
+    """Clean up expired sessions hourly."""
+    expired_count = delete_expired_sessions()
+    return {"sessions_cleaned": expired_count}
+
+@cron_schedule("0 1 * * 0")  # 1 AM every Sunday
+def weekly_report():
+    """Generate weekly analytics report."""
+    report = generate_analytics_report()
+    email_report_to_team(report)
+    return {"report_generated": True}
+
+@on_weekdays(retry_count=3)
+def sync_external_data():
+    """Sync with external API on weekdays."""
+    data = fetch_external_data()  # Might fail
+    update_local_database(data)
+    return {"records_synced": len(data)}
+```
+
+## 🧪 Testing
+
+Run the test suite:
+
+```bash
+# Install development dependencies
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Run tests with coverage
+pytest --cov=routina --cov-report=html
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/andrewwade/routina.git
+cd routina
+
+# Install in development mode
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Format code
+black routina/
+```
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙋 FAQ
+
+### How is this different from `schedule` or `APScheduler`?
+
+- **Routina** is designed for functions that run periodically in scripts, not long-running daemons
+- **Routina** tracks execution history and prevents duplicate runs automatically
+- **Routina** has built-in retry logic and error handling
+- **Routina** works great with cron for robust scheduling
+
+### Can I use this in production?
+
+Yes! Routina is designed for production use with:
+- Comprehensive error handling
+- Multiple storage backends
+- Retry logic and timeouts
+- Detailed logging and monitoring
+- Thread-safe operations
+
+### How do I migrate from cron?
+
+1. Replace your cron jobs with a single script that runs frequently
+2. Use routina decorators instead of cron timing
+3. Let routina handle the scheduling logic
+4. Benefit from better error handling and monitoring
+
+### What happens if my script crashes?
+
+Routina stores execution history persistently, so when your script restarts:
+- Functions won't run again if they've already run in their interval
+- You won't lose execution history
+- Everything continues normally
+
+## 🔗 Links
+
+- **Documentation**: [GitHub README](https://github.com/andrewwade/routina)
+- **PyPI Package**: [https://pypi.org/project/routina/](https://pypi.org/project/routina/)
+- **Source Code**: [https://github.com/andrewwade/routina](https://github.com/andrewwade/routina)
+- **Bug Reports**: [GitHub Issues](https://github.com/andrewwade/routina/issues)
+
+---
+
+Made with ❤️ by [Andrew Wade](https://github.com/andrewwade) 

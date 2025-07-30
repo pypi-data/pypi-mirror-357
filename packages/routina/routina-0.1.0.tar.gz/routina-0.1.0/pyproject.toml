@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "routina"
+version = "0.1.0"
+description = "A Python-native, time-aware function runner — like cron, but all in code"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Andrew Wade", email = "andrew@example.com"}
+]
+maintainers = [
+    {name = "Andrew Wade", email = "andrew@example.com"}
+]
+keywords = ["cron", "scheduler", "tasks", "automation", "time"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+    "mypy>=1.0.0",
+    "pre-commit>=2.20.0",
+    "build>=0.10.0",
+    "twine>=4.0.0",
+    "requests>=2.28.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/andrewwade/routina"
+Repository = "https://github.com/andrewwade/routina"
+Documentation = "https://github.com/andrewwade/routina#readme"
+"Bug Tracker" = "https://github.com/andrewwade/routina/issues"
+
+[project.scripts]
+routina = "routina.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["routina*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"] 
