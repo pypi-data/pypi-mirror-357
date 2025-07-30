@@ -1,0 +1,99 @@
+Metadata-Version: 2.4
+Name: CAKED
+Version: 0.1.7
+Summary: A dataloader abstract package
+Author-email: Bea Costa Gomes <bcostagomes@turing.ac.uk>
+Project-URL: Homepage, https://github.com/alan-turing-institute/CAKED
+Project-URL: Bug Tracker, https://github.com/alan-turing-institute/CAKED/issues
+Project-URL: Discussions, https://github.com/alan-turing-institute/CAKED/discussions
+Project-URL: Changelog, https://github.com/alan-turing-institute/CAKED/releases
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: mrcfile
+Requires-Dist: torchvision
+Requires-Dist: scipy
+Requires-Dist: pyarrow
+Provides-Extra: test
+Requires-Dist: pytest>=6; extra == "test"
+Requires-Dist: pytest-cov>=3; extra == "test"
+Requires-Dist: pre-commit; extra == "test"
+Provides-Extra: dev
+Requires-Dist: pytest>=6; extra == "dev"
+Requires-Dist: pytest-cov>=3; extra == "dev"
+Provides-Extra: doc
+Requires-Dist: sphinx>=5.0.0; extra == "doc"
+Requires-Dist: pydata-sphinx-theme>=0.7; extra == "doc"
+Dynamic: license-file
+
+# CAKED
+
+[![Actions Status][actions-badge]][actions-link]
+[![PyPI version][pypi-version]][pypi-link]
+[![PyPI platforms][pypi-platforms]][pypi-link]
+
+A package to load tomograms and subtomograms from different sources into a
+[PyTorch DataLoader](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader)
+class.
+
+The DiskDataLoader and DiskDataset classes were initially developed for
+[Affinity-VAE](https://github.com/alan-turing-institute/affinity-vae) by Marjan
+Famili (@marjanfamili), Jola Mirecka (@jolaem) and Camila Rangel-Smith
+(@crangelsmith). These authors have also prepared and curated the corresponding
+test data.
+
+## Installation
+
+```bash
+python -m venv env
+source env/bin/activate
+python -m pip install --upgrade pip
+python -m pip install caked
+```
+
+From source:
+
+```bash
+git clone https://github.com/alan-turing-institute/CAKED
+cd CAKED
+python -m pip install .
+```
+
+## Usage
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for instructions on how to contribute.
+
+## License
+
+Distributed under the terms of the [MIT license](LICENSE).
+
+This packaged was based on this very useful and well built
+[project template](https://github.com/alan-turing-institute/python-project-template).
+
+<!-- prettier-ignore-start -->
+[actions-badge]:            https://github.com/alan-turing-institute/CAKED/workflows/CI/badge.svg
+[actions-link]:             https://github.com/alan-turing-institute/CAKED/actions
+[pypi-link]:                https://pypi.org/project/CAKED/
+[pypi-platforms]:           https://img.shields.io/pypi/pyversions/CAKED
+[pypi-version]:             https://img.shields.io/pypi/v/CAKED
+<!-- prettier-ignore-end -->
