@@ -1,0 +1,5 @@
+requests
+discord.py>=2.0.0
+
+[:platform_system == "Windows"]
+pywin32
