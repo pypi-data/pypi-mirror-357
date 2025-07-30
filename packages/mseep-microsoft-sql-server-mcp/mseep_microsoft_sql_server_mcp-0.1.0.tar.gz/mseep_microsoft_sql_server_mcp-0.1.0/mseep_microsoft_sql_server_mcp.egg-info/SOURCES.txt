@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_microsoft_sql_server_mcp.egg-info/PKG-INFO
+mseep_microsoft_sql_server_mcp.egg-info/SOURCES.txt
+mseep_microsoft_sql_server_mcp.egg-info/dependency_links.txt
+mseep_microsoft_sql_server_mcp.egg-info/requires.txt
+mseep_microsoft_sql_server_mcp.egg-info/top_level.txt
+tests/test_config.py
+tests/test_error_handling.py
+tests/test_integration.py
+tests/test_performance.py
+tests/test_security.py
+tests/test_server.py

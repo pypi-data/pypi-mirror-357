@@ -1,0 +1,19 @@
+[tool.mcp.system_dependencies]
+darwin = [
+    "freetds",
+]
+linux = [
+    "freetds-dev",
+]
+win32 = []
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/mssql_mcp_server",
+]
+
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
