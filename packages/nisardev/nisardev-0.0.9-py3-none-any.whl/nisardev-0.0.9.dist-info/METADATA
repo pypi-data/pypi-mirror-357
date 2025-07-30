@@ -1,0 +1,41 @@
+Metadata-Version: 2.3
+Name: nisardev
+Version: 0.0.9
+Summary: Tools for NISAR/GrIMP L3 products
+License: MIT
+Keywords: SAR,NISAR
+Author: Ian Joughin
+Author-email: ian@apl.washington.edu
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: bokeh (>=3)
+Requires-Dist: dask (>=2022.1.1,<2023.0.0)
+Requires-Dist: holoviews (==1.20.2)
+Requires-Dist: matplotlib (>=3.0.0)
+Requires-Dist: numpy (>=1.20.0)
+Requires-Dist: pandas (>=1)
+Requires-Dist: panel (>=1)
+Requires-Dist: pystac (>=1,<2)
+Requires-Dist: rio_stac (>=0,<1)
+Requires-Dist: rioxarray (>=0,<1)
+Requires-Dist: stackstac (==0.5.1)
+Requires-Dist: xarray (>=0,<1)
+Project-URL: Homepage, https://github.com/fastice/nisardev
+Project-URL: Repository, https://github.com/fastice/nisardev
+Description-Content-Type: text/markdown
+
+# nisardev
+Tools for nisar cal/val activities and cryo notebooks
+
+For examples of how this library is used refer to notebooks in https://github.com/fastice/GrIMPNotebooks
+
+## Installation
+
+In an existing python virtual environment: `pip install https://github.com/fastice/nisardev.git@main`
+
