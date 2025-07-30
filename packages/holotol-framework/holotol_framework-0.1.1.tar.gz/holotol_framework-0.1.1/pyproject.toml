@@ -1,0 +1,44 @@
+# pyproject.toml
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "holotol-framework"
+version = "0.1.1" # This will be read from holotol_framework/__init__.py by Hatchling
+description = "A Python package for integrating biological sequence data with a conceptual HoloToL framework."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" } # Assuming you'll add a LICENSE file
+keywords = ["biology", "bioinformatics", "quantum", "evolution", "ncbi"]
+authors = [
+  { name = "Karl Ambrosius", email = "karlambrosius@outlook.com.au" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Intended Audience :: Science/Research",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "biopython",
+    "scikit-learn",
+    "scipy",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/kambrosgroup/HoloTol" # Replace with your actual GitHub URL
+"Bug Tracker" = "https://github.com/kambrosgroup/HoloTol/issues" # Replace with your actual GitHub URL
+
+[tool.hatch.version]
+path = "holotol_framework/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = ["/holotol_framework"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["holotol_framework"]
