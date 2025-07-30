@@ -1,0 +1,2 @@
+[console_scripts]
+salt-viewer = salt_viewer.salt_viewer:main
