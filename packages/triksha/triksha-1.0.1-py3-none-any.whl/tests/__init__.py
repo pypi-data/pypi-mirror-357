@@ -1,0 +1,3 @@
+"""
+Triksha tests package
+""" 
