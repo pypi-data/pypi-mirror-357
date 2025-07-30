@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/optimade_mcp_server/__init__.py
+src/optimade_mcp_server/main.py
+src/optimade_mcp_server.egg-info/PKG-INFO
+src/optimade_mcp_server.egg-info/SOURCES.txt
+src/optimade_mcp_server.egg-info/dependency_links.txt
+src/optimade_mcp_server.egg-info/entry_points.txt
+src/optimade_mcp_server.egg-info/requires.txt
+src/optimade_mcp_server.egg-info/top_level.txt
+src/optimade_mcp_server/config/optimade_config.json
