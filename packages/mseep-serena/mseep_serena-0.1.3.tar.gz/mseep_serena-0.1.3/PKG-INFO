@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: mseep-serena
+Version: 0.1.3
+Home-page: 
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Keywords: mseep
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: requests<3,>=2.32.3
+Requires-Dist: pyright<2,>=1.1.396
+Requires-Dist: overrides<8,>=7.7.0
+Requires-Dist: python-dotenv<2,>=1.0.0
+Requires-Dist: mcp>=1.5.0
+Requires-Dist: flask>=3.0.0
+Requires-Dist: sensai-utils>=1.4.0
+Requires-Dist: pydantic>=2.10.6
+Requires-Dist: types-pyyaml>=6.0.12.20241230
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: ruamel.yaml>=0.18.0
+Requires-Dist: jinja2>=3.1.6
+Requires-Dist: dotenv>=0.9.9
+Requires-Dist: pathspec>=0.12.1
+Requires-Dist: psutil>=7.0.0
+Requires-Dist: docstring_parser>=0.16
+Requires-Dist: joblib>=1.5.1
+Requires-Dist: tqdm>=4.67.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+
+Package managed by MseeP.ai
