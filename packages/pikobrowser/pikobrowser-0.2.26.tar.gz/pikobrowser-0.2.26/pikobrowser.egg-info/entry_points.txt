@@ -1,0 +1,3 @@
+[console_scripts]
+piko = piko.app:main
+pikobrowser = piko.app:main
