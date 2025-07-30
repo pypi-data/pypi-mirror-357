@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: pycmox
+Version: 0.2.4
+Summary: A Python wrapper for lmox
+Home-page: https://curl.sai.msu.ru/hg/pycmox/
+Author: Matwey V. Kornilov
+Author-email: matwey.kornilov@gmail.com
+License: LGPL-3.0-or-later
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+===================================================
+pycmox - Python wrapper for ``infras/exchange.cpp``
+===================================================
+
+.. image:: https://asciinema.org/a/724152.png
+    :target: https://asciinema.org/a/724152
+    :alt: Live demo
+
+Build requirements
+==================
+1. C++ compiler with C++11 support (gcc 4.8 or later)
+2. `pybind11 <https://pypi.org/project/pybind11/>`_
+
+Installation
+============
+
+Installing using ``pip``
+------------------------
+
+::
+
+  pip install pycmox
+
+Requiring in ``setup.cfg``
+--------------------------
+
+::
+
+  [options]
+  install_requires =
+      pycmox
+
+
+License
+=======
+Copyright (C) 2021-2024 Matwey V. Kornilov <matwey.kornilov@gmail.com>
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
+
