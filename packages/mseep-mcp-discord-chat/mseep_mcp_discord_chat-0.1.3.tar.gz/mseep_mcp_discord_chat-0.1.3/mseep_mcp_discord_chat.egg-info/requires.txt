@@ -1,0 +1,5 @@
+discord.py>=2.3.0
+mcp>=1.2.1
+
+[:python_version >= "3.13"]
+audioop-lts
