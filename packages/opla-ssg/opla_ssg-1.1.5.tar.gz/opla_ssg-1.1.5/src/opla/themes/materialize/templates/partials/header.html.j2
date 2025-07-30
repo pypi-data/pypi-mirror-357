@@ -1,0 +1,21 @@
+    <header>
+        <div class="navbar-fixed">
+            <nav class="{{ config.theme.color }}">
+                <div class="nav-wrapper">
+                    <a href="#" class="my-logo center-align">{{ config.name }}</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right my-hide">
+                        {% for li in menu -%}
+                        <li><a href="{{ li.href }}">{{ li.text }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <ul class="sidenav {{ config.theme.color }}" id="mobile-demo">
+            {% for li in menu -%}
+            <li><a href="{{ li.href }}" class="white-text">{{ li.text }}</a></li>
+            {% endfor %}
+        </ul>
+    </header>
