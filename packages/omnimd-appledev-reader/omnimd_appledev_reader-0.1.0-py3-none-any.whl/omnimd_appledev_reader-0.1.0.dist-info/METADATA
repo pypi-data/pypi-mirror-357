@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: omnimd-appledev-reader
+Version: 0.1.0
+Summary: A plugin for omni-article-markdown to read Apple Developer Documentation content.
+Project-URL: Homepage, https://github.com/caol64/omni-article-markdown/tree/main/plugins/omnimd-appledev-reader
+Author-email: Lei <caol64@gmail.com>
+License-Expression: MIT
+Requires-Python: >=3.13
+Requires-Dist: playwright
+Description-Content-Type: text/markdown
+
+# 墨探 (omni-article-markdown) Apple Developer Documentation 插件

@@ -1,0 +1,2 @@
+[mdcli]
+appledev = omnimd_appledev_reader.reader
