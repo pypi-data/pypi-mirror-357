@@ -1,0 +1,15 @@
+README.md
+setup.py
+linking_info_lib/__init__.py
+linking_info_lib/dbpedia.py
+linking_info_lib/helpers.py
+linking_info_lib/information_linking_apis.py
+linking_info_lib/information_linking_orcid.py
+linking_info_lib/orcid.py
+linking_info_lib/wikidata.py
+linking_info_lib/wikipedia.py
+linking_information_queries.egg-info/PKG-INFO
+linking_information_queries.egg-info/SOURCES.txt
+linking_information_queries.egg-info/dependency_links.txt
+linking_information_queries.egg-info/requires.txt
+linking_information_queries.egg-info/top_level.txt
