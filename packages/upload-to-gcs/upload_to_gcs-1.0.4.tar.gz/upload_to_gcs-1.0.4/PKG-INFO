@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: upload-to-gcs
+Version: 1.0.4
+Summary: Program to upload large files to GCP
+Author-email: Andrii Omelianovych <andrii@haila.io>
+Requires-Python: >=3.12
+Requires-Dist: google-cloud-storage
