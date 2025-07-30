@@ -1,0 +1,481 @@
+Metadata-Version: 2.4
+Name: necika
+Version: 1.0.0
+Summary: A comprehensive color manipulation library for Python
+Author-email: CELESTIFYX Team <celestifyx@gmail.com>
+License-Expression: GPL-3.0-or-later
+Project-URL: Homepage, https://gitlab.com/celestifyx/necika
+Project-URL: Repository, https://gitlab.com/celestifyx/necika
+Project-URL: Issues, https://gitlab.com/celestifyx/necika/-/issues
+Keywords: color,rgb,hsl,hsv,hex,ansi,terminal
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+
+# Necika - Comprehensive Color Manipulation Library
+
+[![PyPI version](https://badge.fury.io/py/necika.svg)](https://badge.fury.io/py/necika)
+[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+A comprehensive color manipulation library for Python that provides extensive color space conversions, palette generation, terminal color output, and accessibility features.
+
+## Features
+
+- **Multiple Color Spaces**: RGB, HSL, HSV, CMYK conversions
+- **Color Palette Generation**: Monochromatic, analogous, complementary, triadic, and more
+- **Terminal Color Output**: ANSI colors, 24-bit RGB, styling, and special effects
+- **Accessibility**: WCAG contrast ratio calculations and compliance checking
+- **Color Theory**: Complement, triadic, analogous color relationships
+- **Color Manipulation**: Lighten, darken, saturate, blend, and mix colors
+- **Multiple Input Formats**: Hex, RGB tuples, named colors, color strings
+
+## Installation
+
+```bash
+pip install necika
+```
+
+## Quick Start
+
+```python
+from necika import (Color, ColorPalette, TerminalColor)
+
+# Create colors
+red:   Color = Color('#FF0000')
+blue:  Color = Color('blue')
+green: Color = Color((0, 255, 0))
+
+# Terminal output
+terminal: TerminalColor = TerminalColor()
+print(terminal.red('This is red text'))
+print(terminal.success('✓ Success message'))
+
+# Generate color palette
+palette: ColorPalette = ColorPalette.monochromatic(red, count=5)
+print('Palette colors: ' + ', '.join([color.hex for color in palette]))
+```
+
+## Color Class
+
+### Creating Colors
+
+```python
+from necika import Color
+
+# Different ways to create colors
+hex_color:   Color = Color('#FF0000')           # Hex with hash
+hex_short:   Color = Color('#F00')              # Short hex
+hex_no_hash: Color = Color('FF0000')            # Hex without hash
+named_color: Color = Color('red')               # Named color
+rgb_tuple:   Color = Color((255, 0, 0))         # RGB tuple
+rgb_string:  Color = Color('rgb(255, 0, 0)')    # RGB string
+hsl_string:  Color = Color('hsl(0, 100%, 50%)') # HSL string
+
+print('Hex color: ' + hex_color.hex)       # Output: #FF0000
+print('RGB values: ' + str(hex_color.rgb)) # Output: (255, 0, 0)
+```
+
+### Color Properties
+
+```python
+from necika import Color
+
+color: Color = Color('#FF6B35')
+
+# Basic properties
+print('Hex: ' + color.hex)         # #FF6B35
+print('RGB: ' + str(color.rgb))    # (255, 107, 53)
+print('HSL: ' + str(color.hsl))    # (16.8, 100.0, 60.4)
+print('HSV: ' + str(color.hsv))    # (16.8, 79.2, 100.0)
+print('CMYK: ' + str(color.cmyk))  # (0.0, 58.0, 79.2, 0.0)
+
+# Analysis properties
+print('Luminance: ' + str(round(color.luminance, 3)))  # 0.318
+print('Is light: ' + str(color.is_light))              # False
+print('Is dark: ' + str(color.is_dark))                # True
+```
+
+### Color Manipulation
+
+```python
+from necika import Color
+
+base_color: Color = Color('#3498db')
+
+# Lightness manipulation
+lighter: Color = base_color.lighten(0.2)  # Increase lightness by 20%
+darker:  Color = base_color.darken(0.2)   # Decrease lightness by 20%
+
+# Saturation manipulation
+more_saturated: Color = base_color.saturate(0.3)    # Increase saturation
+less_saturated: Color = base_color.desaturate(0.3)  # Decrease saturation
+
+# Hue manipulation
+rotated: Color = base_color.rotate_hue(45)    # Rotate hue by 45 degrees
+
+print('Original: ' + base_color.hex)  # #3498DB
+print('Lighter: ' + lighter.hex)      # #5DADE2
+print('Darker: ' + darker.hex)        # #2E86C1
+```
+
+### Color Relationships
+
+```python
+from necika import Color
+
+red: Color = Color('#FF0000')
+
+# Color theory relationships
+complement: Color = red.complement()  # Opposite color
+
+triadic_colors:   tuple[Color, Color] = red.triadic()              # 120° apart colors
+analogous_colors: tuple[Color, Color] = red.analogous()            # Adjacent colors
+split_comp:       tuple[Color, Color] = red.split_complementary()  # Split complement
+
+print('Complement: ' + complement.hex)                                     # #00FFFF
+print('Triadic: ' + triadic_colors[0].hex + ', ' + triadic_colors[1].hex)  # #00FF00, #0000FF
+```
+
+### Color Blending
+
+```python
+from necika import Color
+
+red:  Color = Color('#FF0000')
+blue: Color = Color('#0000FF')
+
+# Blend colors with different ratios
+blend_25: Color = red.blend(blue, 0.25)  # 75% red, 25% blue
+blend_50: Color = red.blend(blue, 0.5)   # 50% red, 50% blue
+blend_75: Color = red.blend(blue, 0.75)  # 25% red, 75% blue
+
+print('25% blue: ' + blend_25.hex)  # #BF0040
+print('50% blue: ' + blend_50.hex)  # #800080
+print('75% blue: ' + blend_75.hex)  # #4000BF
+```
+
+### Accessibility Features
+
+```python
+from necika import Color
+
+# Test color combinations for accessibility
+text_color: Color = Color('#333333')
+bg_color:   Color = Color('#FFFFFF')
+
+# Calculate contrast ratio
+contrast: float = text_color.contrast_ratio(bg_color)
+print('Contrast ratio: ' + str(round(contrast, 2)))  # 12.63
+
+# Check WCAG compliance
+aa_compliant:  bool = text_color.meets_wcag_aa(bg_color)   # >= 4.5:1
+aaa_compliant: bool = text_color.meets_wcag_aaa(bg_color)  # >= 7:1
+
+print('WCAG AA compliant: ' + str(aa_compliant))   # True
+print('WCAG AAA compliant: ' + str(aaa_compliant)) # True
+```
+
+## Color Palette Generation
+
+### Basic Palette Types
+
+```python
+from necika import (Color, ColorPalette)
+
+base_color: Color = Color('#E74C3C')
+
+# Generate different palette types
+mono_palette:    ColorPalette = ColorPalette.monochromatic(base_color, count=5)
+analog_palette:  ColorPalette = ColorPalette.analogous(base_color, count=5)
+comp_palette:    ColorPalette = ColorPalette.complementary(base_color)
+triadic_palette: ColorPalette = ColorPalette.triadic(base_color)
+
+print('Monochromatic: ' + ', '.join([color.hex for color in mono_palette]))
+# Output: #F8D7DA, #F1B2B7, #E74C3C, #B93A2F, #8B2C23
+
+print('Analogous: ' + ', '.join([color.hex for color in analog_palette]))
+# Output: #E7A23C, #E7743C, #E74C3C, #E73C64, #E73C8C
+```
+
+### Advanced Palettes
+
+```python
+from necika import (Color, ColorPalette)
+
+base_color: Color = Color('#3498DB')
+
+# Material Design inspired palette
+material_palette: ColorPalette = ColorPalette.material_design(base_color)
+
+# Gradient palette
+start_color: Color = Color('#FF0000')
+end_color:   Color = Color('#0000FF')
+
+gradient_palette: ColorPalette = ColorPalette.gradient(start_color, end_color, steps=7)
+
+# Random palette with constraints
+random_palette: ColorPalette = ColorPalette.random(count=6, saturation_range=(60, 90), lightness_range=(40, 70))
+
+print('Material Design: ' + ', '.join([color.hex for color in material_palette.colors[:5]]))
+print('Gradient: ' + ', '.join([color.hex for color in gradient_palette]))
+```
+
+### Palette Analysis
+
+```python
+from necika import (Color, ColorPalette)
+
+# Create a palette
+colors: list[Color] = [Color('#FF0000'), Color('#00FF00'), Color('#0000FF'), Color('#FFFF00')]
+palette: ColorPalette = ColorPalette(colors)
+
+# Analyze palette
+lightest:       Color = palette.get_lightest()
+darkest:        Color = palette.get_darkest()
+most_saturated: Color = palette.get_most_saturated()
+
+print('Lightest color: ' + lightest.hex)        # #FFFF00
+print('Darkest color: ' + darkest.hex)          # #0000FF
+print('Most saturated: ' + most_saturated.hex)  # #FF0000
+
+# Sort palette
+palette.sort_by_hue()
+print('Sorted by hue: ' + ', '.join([color.hex for color in palette]))
+```
+
+## Terminal Color Output
+
+### Basic Colors and Styles
+
+```python
+from necika import TerminalColor
+
+terminal: TerminalColor = TerminalColor()
+
+# Basic colors
+print(terminal.red('Red text'))
+print(terminal.green('Green text'))
+print(terminal.blue('Blue text'))
+print(terminal.yellow('Yellow text'))
+
+# Text styles
+print(terminal.bold('Bold text'))
+print(terminal.italic('Italic text'))
+print(terminal.underline('Underlined text'))
+
+# Combined colors and styles
+print(terminal.colored('Custom styled text', color='red', style='bold'))
+print(terminal.colored('Background color', color='white', background='blue'))
+```
+
+### Message Types
+
+```python
+from necika import TerminalColor
+
+terminal: TerminalColor = TerminalColor()
+
+# Semantic message types
+print(terminal.success('✓ Operation completed successfully'))
+print(terminal.warning('⚠ This is a warning message'))
+print(terminal.error('✗ An error has occurred'))
+print(terminal.info('ℹ This is an informational message'))
+```
+
+### Custom Colors
+
+```python
+from necika import (Color, TerminalColor)
+
+terminal: TerminalColor = TerminalColor()
+
+# Use custom colors
+custom_color: Color = Color('#FF6B35')
+print(terminal.colored('Custom orange text', custom_color))
+
+# Hex colors directly
+print(terminal.colored('Direct hex color', '#9B59B6'))
+
+# RGB colors
+print(terminal.colored('RGB color', (255, 105, 180)))
+```
+
+### Special Effects
+
+```python
+from necika import (Color, TerminalColor)
+
+terminal: TerminalColor = TerminalColor()
+
+# Rainbow effect
+print(terminal.rainbow('Rainbow colored text!'))
+
+# Gradient text
+start: Color = Color('#FF0000')
+end:   Color = Color('#0000FF')
+
+print(terminal.gradient_text('Gradient from red to blue', start, end))
+
+# Custom rainbow colors
+custom_colors: list[str] = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+print(terminal.rainbow('Custom rainbow', custom_colors))
+```
+
+## Advanced Usage
+
+### Color Space Conversions
+
+```python
+from necika import Color
+
+# Create colors from different color spaces
+hsl_color:  Color = Color.from_hsl(240, 100, 50)     # Pure blue
+hsv_color:  Color = Color.from_hsv(120, 100, 100)    # Pure green
+cmyk_color: Color = Color.from_cmyk(100, 0, 100, 0)  # Cyan
+
+print('From HSL: ' + hsl_color.hex)   # #0000FF
+print('From HSV: ' + hsv_color.hex)   # #00FF00
+print('From CMYK: ' + cmyk_color.hex) # #00FF00
+```
+
+### Color Validation and Error Handling
+
+```python
+from necika import (Color, InvalidColorError)
+
+try:
+    # This will raise an InvalidColorError
+    invalid_color: Color = Color('not-a-color')
+except InvalidColorError as e:
+    print('Error: ' + str(e))
+
+# Safe color creation with validation
+def safe_color_creation(color_input: str) -> Color | None:
+    try:
+        return Color(color_input)
+    except InvalidColorError:
+        return None
+
+result:         Color | None = safe_color_creation('#FF0000')  # Valid
+invalid_result: Color | None = safe_color_creation('invalid')  # None
+```
+
+### Batch Color Operations
+
+```python
+from necika import Color
+
+# Process multiple colors
+hex_colors: list[str] = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00']
+colors:     list[Color] = [Color(hex_color) for hex_color in hex_colors]
+
+# Apply operations to all colors
+lightened_colors: list[Color] = [color.lighten(0.2) for color in colors]
+complements:      list[Color] = [color.complement() for color in colors]
+
+# Analyze all colors
+luminances:   list[float] = [color.luminance for color in colors]
+light_colors: list[Color] = [color for color in colors if color.is_light]
+
+print('Original: ' + ', '.join([color.hex for color in colors]))
+print('Lightened: ' + ', '.join([color.hex for color in lightened_colors]))
+print('Light colors count: ' + str(len(light_colors)))
+```
+
+## API Reference
+
+### Color Class
+
+#### Constructor
+- `Color(color)` - Create color from hex, RGB tuple, named color, or color string
+
+#### Properties
+- `rgb: tuple[int, int, int]` - RGB values (0-255)
+- `hex: str` - Hexadecimal representation
+- `hsl: tuple[float, float, float]` - HSL values (h: 0-360, s,l: 0-100)
+- `hsv: tuple[float, float, float]` - HSV values (h: 0-360, s,v: 0-100)
+- `cmyk: tuple[float, float, float, float]` - CMYK values (0-100)
+- `luminance: float` - Relative luminance (0.0-1.0)
+- `is_light: bool` - True if color is light
+- `is_dark: bool` - True if color is dark
+
+#### Methods
+- `lighten(amount: float) -> Color` - Create a lighter version
+- `darken(amount: float) -> Color` - Create darker version
+- `saturate(amount: float) -> Color` - Increase saturation
+- `desaturate(amount: float) -> Color` - Decrease saturation
+- `rotate_hue(degrees: float) -> Color` - Rotate hue
+- `complement() -> Color` - Get complementary color
+- `triadic() -> tuple[Color, Color]` - Get triadic colors
+- `analogous() -> tuple[Color, Color]` - Get analogous colors
+- `blend(other: Color, ratio: float) -> Color` - Blend with another color
+- `contrast_ratio(other: Color) -> float` - Calculate contrast ratio
+- `meets_wcag_aa(other: Color) -> bool` - Check WCAG AA compliance
+- `meets_wcag_aaa(other: Color) -> bool` - Check WCAG AAA compliance
+
+### ColorPalette Class
+
+#### Constructor
+- `ColorPalette(colors: list[Color] | None)` - Create palette from a color list
+
+#### Class Methods
+- `monochromatic(base_color: ColorType, count: int = 5) -> ColorPalette` - Monochromatic palette
+- `analogous(base_color: ColorType, count: int = 5) -> ColorPalette` - Analogous palette
+- `complementary(base_color: ColorType) -> ColorPalette` - Complementary palette
+- `triadic(base_color: ColorType) -> ColorPalette` - Triadic palette
+- `gradient(start: ColorType, end: ColorType, steps: int = 5) -> ColorPalette` - Gradient palette
+- `random(count: int = 5, saturation_range: tuple[float, float] = (30, 90), lightness_range: tuple[float, float] = (30, 70)) -> ColorPalette` - Random palette
+
+#### Methods
+- `add_color(color: ColorType) -> None` - Add color to palette
+- `remove_color(index: int) -> Color` - Remove color by index
+- `get_lightest() -> Color | None` - Get the lightest color
+- `get_darkest() -> Color | None` - Get the darkest color
+- `sort_by_hue() -> None` - Sort colors by hue
+
+### TerminalColor Class
+
+#### Constructor
+- `TerminalColor(auto_detect: bool = True)` - Create terminal color instance
+
+#### Methods
+- `colored(text: str, color: ColorType, background: ColorType | None = None, style: str | None = None) -> str` - Apply color and style
+- `red(text: str) -> str`, `green(text: str) -> str`, etc. - Basic color methods
+- `bold(text: str) -> str`, `italic(text: str) -> str`, etc. - Style methods
+- `success(text: str) -> str`, `error(text: str) -> str`, etc. - Message type methods
+- `rainbow(text: str, colors: list[str] | None = None) -> str` - Rainbow effect
+- `gradient_text(text, start_color, end_color) -> str` - Gradient effect
+
+## Examples
+
+See the `examples/` directory for comprehensive usage examples:
+
+- `basic_usage.py` - Basic color operations and conversions
+- `palette_generator.py` - Interactive palette generation tool
+- `terminal_demo.py` - Terminal color effects demonstration
+
+## Requirements
+
+- Python 3.12+
+- No external dependencies
+
+## License
+
+This project is licensed under the GNU General Public License v3.0 or later (GPL-3.0-or-later).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit issues and pull requests.
+
+## Authors
+
+- CELESTIFYX Team <celestifyx@gmail.com>
+
+---
+
+*Necika - Making colors beautiful and accessible in Python* 🎨

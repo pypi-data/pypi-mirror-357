@@ -1,0 +1,11 @@
+necika/__init__.py,sha256=aYOTTnpVpoEfZr_H93O8iZXLXW0jWxR3vlQtspvhZgM,1081
+necika/color.py,sha256=R988gROhX_c5o8wo9T3x3gQKHiXG2O4tYdZLJqJcAU8,22932
+necika/constants.py,sha256=E7kf4Soa3I00_JO6YOQg9htLGyWVewa-1BA3EXgpRb0,6293
+necika/exceptions.py,sha256=ABE13xTDy8lZYE3I48tuuciKXuE0pCTHhKbp9JqTapc,1591
+necika/palette.py,sha256=FUWUUSN1tkVgDCy-imFJ0h-oaK6k8DDUa5V8oZpIaXY,11516
+necika/terminal.py,sha256=k0kioaO9rGpYz_VmWaQjAChtMO8bavvfvkOJ0_WD6i0,17055
+necika/utils.py,sha256=FQMNw2rEMcDXvvsSnB0SwVF1gT3Z393dU3pxLPpjclE,17618
+necika-1.0.0.dist-info/METADATA,sha256=w_Er-KnAA9jgl4qkIG5UkOVhiqXPy6nAHzLvH7nJak4,15651
+necika-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+necika-1.0.0.dist-info/top_level.txt,sha256=UE7FfdYCkFx4q0jlaN3BvI_wMUYCo6SmsGmlboMEEXE,7
+necika-1.0.0.dist-info/RECORD,,
