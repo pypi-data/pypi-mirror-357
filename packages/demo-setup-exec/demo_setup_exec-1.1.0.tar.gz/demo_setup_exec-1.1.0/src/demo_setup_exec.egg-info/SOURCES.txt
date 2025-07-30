@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/demo_setup_exec/__init__.py
+src/demo_setup_exec.egg-info/PKG-INFO
+src/demo_setup_exec.egg-info/SOURCES.txt
+src/demo_setup_exec.egg-info/dependency_links.txt
+src/demo_setup_exec.egg-info/top_level.txt
