@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: great-tool-chrisfork
+Version: 0.0.1
+Summary: A great tool created by chrisfork.
+Home-page: https://github.com/chrisfork/great_tool ; 替换成你的项目URL
+Author: chrisfork
+Author-email: your_email@example.com  ; 替换成你的邮箱
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
