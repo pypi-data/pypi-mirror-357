@@ -1,0 +1,8 @@
+slint-1.12.1b1.dist-info/METADATA,sha256=CAxcGTQKm7-2Ln7wVT6iCIdMfDuoup0-x4Q4-hVe1MI,10761
+slint-1.12.1b1.dist-info/WHEEL,sha256=SeMW7HmVgqDlHov6XTzyxjk3jYj99dJr0Shj6PW8Wl0,95
+slint/__init__.py,sha256=ymZPzEh0hwIukV8H7Pc9YF7-67sVFh8f-LfNhy96GFM,15998
+slint/models.py,sha256=lAGsJSXs_Ww0TBWzfFpgeevCl_ME9M-pPhaGa7fh8jU,4454
+slint/py.typed,sha256=U9DEK9s8Tcu6C1t-qgbj6C18MAYDxP_OizpHnHFmW5Y,190
+slint/slint.pyd,sha256=PIFnUmZrx2Ip4dsI2LYdlQFr1AxjHDHEIJYma9xHeJ8,27912192
+slint/slint.pyi,sha256=CjRGsVXZgN0GKQnC0PhHoH-Ilci12YiHTa6Oys_AJQ4,5926
+slint-1.12.1b1.dist-info/RECORD,,
