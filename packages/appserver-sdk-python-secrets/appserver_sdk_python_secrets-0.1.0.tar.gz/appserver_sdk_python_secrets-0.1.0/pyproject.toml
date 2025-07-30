@@ -1,0 +1,27 @@
+[project]
+name = "appserver-sdk-python-secrets"
+version = "0.1.0"
+description = "Gerenciador de segredos local usando keyring, com índice em JSON."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Iran Ribeiro", email = "iranribeiro22@email.com" }
+]
+keywords = ["secrets", "keyring", "appserver", "segurança", "armazenamento seguro"]
+requires-python = ">=3.8"
+dependencies = [
+    "keyring>=25.0.0"
+]
+
+[project.urls]
+Repository = "https://github.com/appserver-sdk/python-secrets"
+
+[project.scripts]
+appserver-secrets = "appserver_secrets.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [{ include = "appserver_secrets", from = "src" }]
