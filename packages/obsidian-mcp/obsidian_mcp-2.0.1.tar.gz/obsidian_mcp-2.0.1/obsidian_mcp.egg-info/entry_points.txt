@@ -1,0 +1,3 @@
+[console_scripts]
+obsidian-mcp = obsidian_mcp.server:main
+obsidian-mcp-configure = obsidian_mcp.configure:main
