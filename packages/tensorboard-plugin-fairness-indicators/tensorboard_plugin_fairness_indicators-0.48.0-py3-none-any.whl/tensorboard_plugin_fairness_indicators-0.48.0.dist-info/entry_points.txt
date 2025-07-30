@@ -1,0 +1,2 @@
+[tensorboard_plugins]
+fairness_indicators = tensorboard_plugin_fairness_indicators.plugin:FairnessIndicatorsPlugin
