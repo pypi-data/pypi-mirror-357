@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "smart-code"
+version = "0.1.0"
+description = "Static code algorithm optimization analyzer"
+authors = ["mingcsun <marshalx9@163.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "smart_code" }]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+
+[tool.poetry.scripts]
+smart-code = "smart_code.cli:main"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
