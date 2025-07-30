@@ -1,0 +1,5 @@
+markdownify<0.14.0,>=0.13.1
+mcp[cli]>=1.4.1
+rnet>=2.0.0
+tiktoken>=0.5.0
+marker-pdf>=1.6.1

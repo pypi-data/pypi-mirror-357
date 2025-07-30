@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: mseep-mcp-rquest
+Version: 0.1.16
+Summary: A Model Context Protocol (MCP) server providing advanced HTTP request capabilities with realistic browser emulation for Claude and other LLMs
+Home-page: 
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Keywords: mseep,mcp,http,request,api,claude,llm,browser-emulation,tls-fingerprint,ja3,ja4,anti-bot
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE.txt
+Requires-Dist: markdownify<0.14.0,>=0.13.1
+Requires-Dist: mcp[cli]>=1.4.1
+Requires-Dist: rnet>=2.0.0
+Requires-Dist: tiktoken>=0.5.0
+Requires-Dist: marker-pdf>=1.6.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Package managed by MseeP.ai
