@@ -1,0 +1,7 @@
+README.md
+main.py
+pyproject.toml
+gpt_oss.egg-info/PKG-INFO
+gpt_oss.egg-info/SOURCES.txt
+gpt_oss.egg-info/dependency_links.txt
+gpt_oss.egg-info/top_level.txt
