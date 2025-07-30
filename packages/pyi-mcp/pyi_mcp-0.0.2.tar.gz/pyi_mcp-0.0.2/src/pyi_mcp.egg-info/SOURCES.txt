@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/pyi_mcp/__init__.py
+src/pyi_mcp/server.py
+src/pyi_mcp.egg-info/PKG-INFO
+src/pyi_mcp.egg-info/SOURCES.txt
+src/pyi_mcp.egg-info/dependency_links.txt
+src/pyi_mcp.egg-info/entry_points.txt
+src/pyi_mcp.egg-info/requires.txt
+src/pyi_mcp.egg-info/top_level.txt
