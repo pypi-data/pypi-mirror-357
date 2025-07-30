@@ -1,0 +1,66 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name            = "multispaeti"
+description     = "Implementation of MULTISPATI-PCA in python"
+readme          = { file = "README.md", content-type = "text/markdown" }
+license         = { file = "LICENSE" }
+requires-python = ">=3.11"
+dynamic         = ["version"]
+
+authors = [{ name = "Niklas Müller-Bötticher", email = "niklas.mueller-boetticher@charite.de" }]
+dependencies = ["numpy>=1.25", "scikit-learn>=1.6", "scipy>=1.11"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+cuda11 = ["cupy-cuda11x>=13"]
+cuda12 = ["cupy-cuda12x>=13"]
+plot   = ["matplotlib>=3.8"]
+test   = ["pytest"]
+docs   = ["sphinx", "sphinx-copybutton", "sphinx-rtd-theme"]
+dev    = ["multispaeti[plot,test,docs]", "pre-commit"]
+
+[project.urls]
+Homepage      = "https://github.com/HiDiHlabs/multiSPAETI"
+Documentation = "https://multispaeti.readthedocs.io"
+Repository    = "https://github.com/HiDiHlabs/multiSPAETI"
+Issues        = "https://github.com/HiDiHlabs/multiSPAETI/issues"
+
+
+[tool]
+
+[tool.setuptools.packages.find]
+include = ["multispaeti"]
+
+[tool.setuptools_scm]
+
+[tool.ruff]
+target-version = "py311"
+
+fix        = true
+show-fixes = true
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.mypy]
+python_version         = "3.11"
+ignore_missing_imports = true
+warn_no_return         = false
+packages               = "multispaeti"
+plugins                = "numpy.typing.mypy_plugin"
+
+[tool.pytest.ini_options]
+addopts    = ["--import-mode=importlib"]
+pythonpath = "multispaeti"
