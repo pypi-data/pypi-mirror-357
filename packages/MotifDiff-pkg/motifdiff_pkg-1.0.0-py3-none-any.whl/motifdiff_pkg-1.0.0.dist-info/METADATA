@@ -1,0 +1,11 @@
+Metadata-Version: 2.2
+Name: MotifDiff-pkg
+Version: 1.0.0
+Requires-Dist: regex
+Requires-Dist: torch
+Requires-Dist: pandas
+Requires-Dist: numpy<2
+Requires-Dist: typer
+Requires-Dist: pysam
+Requires-Dist: scipy
+Dynamic: requires-dist
