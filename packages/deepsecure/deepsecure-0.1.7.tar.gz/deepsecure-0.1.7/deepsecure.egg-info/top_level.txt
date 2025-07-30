@@ -1,0 +1,8 @@
+assets
+cursor
+deepsecure
+dist
+docs
+examples
+requirements
+scripts
