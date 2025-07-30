@@ -1,0 +1,6 @@
+courts-db>=0.10.9
+fast-diff-match-patch>=2.0.0
+lxml>=4.6.3
+pyahocorasick>=1.2
+regex>=2020.1.8
+reporters-db>=3.2.53
