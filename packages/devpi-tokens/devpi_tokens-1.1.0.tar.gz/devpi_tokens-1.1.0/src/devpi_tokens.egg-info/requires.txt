@@ -1,0 +1,8 @@
+pymacaroons
+
+[client]
+delta
+devpi-client>=4.3.0
+
+[server]
+devpi-server>=6.10.0
