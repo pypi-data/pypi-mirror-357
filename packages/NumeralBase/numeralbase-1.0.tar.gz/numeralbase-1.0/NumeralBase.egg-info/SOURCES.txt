@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+NumeralBase.egg-info/PKG-INFO
+NumeralBase.egg-info/SOURCES.txt
+NumeralBase.egg-info/dependency_links.txt
+NumeralBase.egg-info/top_level.txt
