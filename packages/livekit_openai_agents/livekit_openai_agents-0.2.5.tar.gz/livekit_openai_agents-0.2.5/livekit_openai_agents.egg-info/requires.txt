@@ -1,0 +1,3 @@
+livekit-agents==1.1.3
+openai-agents>=0.0.14
+pyee>=9.0.0
