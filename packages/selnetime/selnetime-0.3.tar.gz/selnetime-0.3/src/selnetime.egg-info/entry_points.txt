@@ -1,0 +1,5 @@
+[console_scripts]
+ntwf = selnetime.snt:main_wf
+snt = selnetime.snt:main
+snt_sim = selnetime.sim_cmd:snt_sim
+snt_sim_param = selnetime.sim_cmd:snt_sim_param
