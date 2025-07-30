@@ -1,0 +1,2 @@
+[console_scripts]
+quic-migration-tester = quic_migration_tester.main:cli_main
