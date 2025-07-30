@@ -1,0 +1,17 @@
+[project]
+name = "mcp-config-path"
+version = "0.1.0"
+description = "mcp client config path, such as Claude Desktop and code, Cline, Cursor"
+authors = [{name = "milisp", email = "milisp@proton.me"}]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+
+[tool.setuptools]
+packages = ["mcp_config_path"]
+package-dir = {"" = "py"}
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+publish-url = "https://upload.pypi.org/legacy/"

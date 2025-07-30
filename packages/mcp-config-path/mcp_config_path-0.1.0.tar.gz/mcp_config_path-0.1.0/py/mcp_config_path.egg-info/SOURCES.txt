@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+py/mcp_config_path/__init__.py
+py/mcp_config_path/main.py
+py/mcp_config_path.egg-info/PKG-INFO
+py/mcp_config_path.egg-info/SOURCES.txt
+py/mcp_config_path.egg-info/dependency_links.txt
+py/mcp_config_path.egg-info/top_level.txt
