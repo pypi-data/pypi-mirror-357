@@ -1,0 +1,4 @@
+slacktokens
+requests==2.27.1
+pyperclip==1.8.2
+emoji==2.14.1

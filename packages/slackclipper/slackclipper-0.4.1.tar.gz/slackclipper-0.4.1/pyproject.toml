@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slackclipper"
+version = "0.4.1"
+description = "Copy the contents of a Slack thread."
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.7"
+license = "GPL-3.0-only" # AKA "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
+urls = { Repository = "https://github.com/hraftery/slackclipper" }
+authors = [ {name = "Heath Raftery", email = "heath@empirical.ee" } ]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities"
+]
+
+dependencies = [
+# slacktokens takes care of leveldb and pycookiecheat-slack dependencies.
+# It's a sister project (they're growing up together), so safe to require latest.
+    "slacktokens",
+    "requests==2.27.1", # for calling the Slack API
+    "pyperclip==1.8.2", # for accessing the clipboard
+    "emoji==2.14.1"     # for turning :emoji: into their glyphs.
+]
+
+[tool.setuptools]
+# All py_modules install as files in site-packages, so must be unique. A common
+# prefix is best way I've found for code hiding, without resorting to a package.
+py-modules = [
+    "slackclipper",
+    "slackclipper_runner"
+]    
+
+[project.scripts]
+slackclipper = "slackclipper_runner:main"
