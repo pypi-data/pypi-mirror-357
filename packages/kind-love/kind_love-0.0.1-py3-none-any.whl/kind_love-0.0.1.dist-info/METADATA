@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: kind-love
+Version: 0.0.1
+Summary: A simple love package
+Home-page: https://github.com/xxx/xxx/xxx
+Author: Yeah
+Author-email: 1615498405@qq.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# hellopkg
+
+A simple Python package that says love.
+
+## Usage
+
+```python
+from kind_love import say_love
+
+say_love()
+
