@@ -1,0 +1,116 @@
+Metadata-Version: 2.4
+Name: tilt-sectioner
+Version: 0.1.2
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+License-File: LICENSE
+Summary: Source data sectioner for Tilt Networks
+Author-email: Paulo Moreira <paulo@tilt.technology>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# tilt_sectioner
+
+A fast, cross-platform Python module for **splitting and reconstructing media files** (like `.mp4`) for **Tilt Networks** pipelines.
+
+Built in Rust with [PyO3](https://pyo3.rs/), distributed as a single Python wheel per platform.
+
+---
+
+##  Features
+
+* Split media files (e.g., `.mp4`) into time-based chunks
+* Reconstruct files from chunks
+* Optional support for text-based segmentation in the future
+* **No build-time FFmpeg dependency** – only runtime CLI calls
+* Python bindings for easy use
+
+---
+
+##  Installation
+
+```bash
+pip install tilt_sectioner
+```
+
+*(Wheels are available for Linux, Windows, and macOS — Python 3.8 and above)*
+
+---
+
+##  Quick Example
+
+```python
+from tilt_sectioner import split_video, reconstruct_video
+
+# Split into 10-second chunks
+split_video("input.mp4", "output_chunks", time_limit_sec=10)
+
+# Reconstruct later
+reconstruct_video("output_chunks", "output_merged.mp4")
+```
+
+---
+
+##  System Requirements
+
+###  Python Versions Supported:
+
+* Python **3.8+**
+
+###  Operating Systems Supported:
+
+* Linux
+* macOS (Intel & Apple Silicon)
+* Windows (x64)
+
+---
+
+###  FFmpeg Runtime Requirement:
+
+This package **requires FFmpeg to be installed at runtime**.
+
+* **You MUST have the `ffmpeg` binary available in your system PATH**.
+* The Rust backend will call ffmpeg as an external process.
+
+---
+
+####  How to Install FFmpeg:
+
+| OS            | Command                                                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| macOS         | `brew install ffmpeg`                                                                                                                |
+| Ubuntu/Debian | `sudo apt-get install ffmpeg`                                                                                                        |
+| Windows       | Download from [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html) or install via Chocolatey: `choco install ffmpeg` |
+
+---
+
+###  How to Test FFmpeg Availability:
+
+```bash
+ffmpeg -version
+```
+
+---
+
+##  Metadata and JSON Outputs
+
+Each split operation generates a JSON metadata file describing the chunk files.
+
+This is used by `reconstruct_video()` for accurate reassembly.
+
+---
+
+##  Development Notes
+
+* Built with Rust using PyO3 and Maturin
+* Wheels built via GitHub Actions
+* **No compile-time linking to FFmpeg libraries** – runtime only via subprocess calls.
+
+---
+
+##  License
+
+MIT License © Tilt Networks
+
+
