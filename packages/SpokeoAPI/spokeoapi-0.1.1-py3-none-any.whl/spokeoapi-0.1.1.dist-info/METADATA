@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: spokeoAPI
+Version: 0.1.1
+Summary: official Spokeo API wrapper
+Home-page: https://github.com/zhangxinxu
+Author: Wei Zhang
+Author-email: zhangwei.api@protonmail.com
+Project-URL: Source, https://github.com/zhangxinxu
+Project-URL: Documentation, https://github.com/zhangxinxu
+Requires-Python: >=3.6
+Requires-Dist: requests
+Requires-Dist: tls_client
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: home-page
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Automated OSINT and people search toolkit.
