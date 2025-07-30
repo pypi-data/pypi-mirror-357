@@ -1,0 +1,6 @@
+numpy
+matplotlib
+networkx
+mplcyberpunk
+pandas
+seaborn
