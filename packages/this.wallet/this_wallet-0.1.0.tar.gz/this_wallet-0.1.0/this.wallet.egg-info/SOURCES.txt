@@ -1,0 +1,6 @@
+README.md
+setup.py
+this.wallet.egg-info/PKG-INFO
+this.wallet.egg-info/SOURCES.txt
+this.wallet.egg-info/dependency_links.txt
+this.wallet.egg-info/top_level.txt
