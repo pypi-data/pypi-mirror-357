@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+requirements-dev.txt
+requirements.txt
+edq_canvas.egg-info/PKG-INFO
+edq_canvas.egg-info/SOURCES.txt
+edq_canvas.egg-info/dependency_links.txt
+edq_canvas.egg-info/requires.txt
+edq_canvas.egg-info/top_level.txt

@@ -1,0 +1,7 @@
+edq-lms-toolkit>=0.1.0
+
+[dev]
+build
+packaging>=21.3
+twine
+vermin
