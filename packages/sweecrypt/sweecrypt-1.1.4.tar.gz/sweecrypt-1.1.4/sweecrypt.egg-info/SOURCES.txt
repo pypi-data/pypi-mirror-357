@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+sweecrypt/__init__.py
+sweecrypt/cli.py
+sweecrypt.egg-info/PKG-INFO
+sweecrypt.egg-info/SOURCES.txt
+sweecrypt.egg-info/dependency_links.txt
+sweecrypt.egg-info/entry_points.txt
+sweecrypt.egg-info/requires.txt
+sweecrypt.egg-info/top_level.txt

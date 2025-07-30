@@ -1,0 +1,26 @@
+[project]
+name = "sweecrypt"
+version = "1.1.4"
+authors = [
+  { name="Swee", email="meow@swee.codes" },
+]
+description = "An easy and fun encryption module."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "typer",
+  "typing-extensions"
+]
+[project.license]
+text = "MIT"
+[project.scripts]
+sweecrypt = "sweecrypt.cli:app"
+[project.urls]
+Homepage = "https://swee.codes/apps/sweecrypt"
+Repository = "https://git.swee.codes/SweeZero/SweeCrypt"
+Issues = "https://git.swee.codes/SweeZero/SweeCrypt/issues"
+Changelog = "https://git.swee.codes/SweeZero/SweeCrypt/releases"
