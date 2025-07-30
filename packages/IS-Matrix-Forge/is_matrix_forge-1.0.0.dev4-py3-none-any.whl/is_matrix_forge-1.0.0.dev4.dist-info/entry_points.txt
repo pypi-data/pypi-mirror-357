@@ -1,0 +1,5 @@
+[console_scripts]
+install-presets=Scripts.install_presets:main
+led-matrix-identify=is_matrix_forge.led_matrix.Scripts.identify_matrices:main
+python-path=Scripts.python_path:main
+
