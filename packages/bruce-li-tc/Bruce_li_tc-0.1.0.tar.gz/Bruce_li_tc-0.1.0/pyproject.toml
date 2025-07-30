@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Bruce_li_tc"
+version = "0.1.0"
+description = "A versatile utility library"
+authors = [
+    { name = "Bruce Li", email = "bruce.li@example.com" }
+]
+dependencies = [
+    "requests"
+]
+
+[project.optional-dependencies]
+excel = ["openpyxl"]
+async = ["aiohttp"]
+loguru = ["loguru"]

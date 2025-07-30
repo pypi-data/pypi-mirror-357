@@ -1,0 +1,10 @@
+requests
+
+[async]
+aiohttp
+
+[excel]
+openpyxl
+
+[loguru]
+loguru
