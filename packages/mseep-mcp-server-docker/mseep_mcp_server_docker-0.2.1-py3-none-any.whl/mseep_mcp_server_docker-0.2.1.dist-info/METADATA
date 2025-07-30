@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: mseep-mcp-server-docker
+Version: 0.2.1
+Summary: A Docker MCP Server
+Home-page: 
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Keywords: mseep,docker,mcp,server
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: docker>=7.1.0
+Requires-Dist: mcp<2.0,>=1.1.0
+Requires-Dist: paramiko<4.0,>=3.5.1
+Requires-Dist: pydantic>=2.10.3
+Requires-Dist: pydantic-settings>=2.6.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Package managed by MseeP.ai
