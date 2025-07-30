@@ -1,0 +1,11 @@
+qv_ollama_sdk/__init__.py,sha256=c8vs0yB9NPvX5DIcqOLiU92uFaLXelydATv7c7vSuwU,773
+qv_ollama_sdk/client.py,sha256=zftEjs8WzUALT2PyGn1ia36QjMIHadv3bHNJR9fRGFU,10020
+qv_ollama_sdk/domain/__init__.py,sha256=D25C4A3g3439ymC1vDAAZwnmE4R-8UixyZARgY1MlGY,486
+qv_ollama_sdk/domain/models.py,sha256=5sL8mDkFHMU0cfBEDYydOz0Wyqx_tebOZM-cCeWFO4E,14342
+qv_ollama_sdk/services/__init__.py,sha256=Qgs6XrGQsaPG7zf7bKUeUGtNJt58nuoAF0EghxQjm5c,154
+qv_ollama_sdk/services/ollama_conversation_service.py,sha256=j3w0uu6j_BNWOk7QiVFg-Wdb8uI_LWBTln2_LkTTXFk,17421
+qv_ollama_sdk-0.6.0.dist-info/licenses/LICENSE,sha256=l-ZN3WPbNHzL2jHLvwziNrxSmNPL7Q6nq6Zrz82nI6Y,1089
+qv_ollama_sdk-0.6.0.dist-info/METADATA,sha256=lEAoI5jzvcCjJh7y29OaMoXlaXTCKICKRHILRNo8DH8,6205
+qv_ollama_sdk-0.6.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+qv_ollama_sdk-0.6.0.dist-info/top_level.txt,sha256=2OrktjZgl78ov29y8jTb9MWdXLKYJMEuJMlfuut4xMI,14
+qv_ollama_sdk-0.6.0.dist-info/RECORD,,
