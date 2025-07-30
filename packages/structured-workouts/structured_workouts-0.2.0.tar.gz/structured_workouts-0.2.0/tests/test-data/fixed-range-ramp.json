@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "content": [
+    {
+      "type": "interval",
+      "volume": {
+        "type": "constant",
+        "quantity": "duration",
+        "value": {
+          "reference": "absolute",
+          "value": 10.0
+        }
+      },
+      "intensity": {
+        "type": "range",
+        "quantity": "power",
+        "min": {
+          "reference": "absolute",
+          "value": 100.0
+        },
+        "max": {
+          "reference": "absolute",
+          "value": 150.0
+        }
+      }
+    },
+    {
+      "type": "interval",
+      "volume": {
+        "type": "constant",
+        "quantity": "distance",
+        "value": {
+          "reference": "absolute",
+          "value": 10.0
+        }
+      },
+      "intensity": {
+        "type": "ramp",
+        "quantity": "power",
+        "start": {
+          "reference": "absolute",
+          "value": 100.0
+        },
+        "end": {
+          "reference": "absolute",
+          "value": 150.0
+        }
+      }
+    }
+  ],
+  "title": "Workout with fixed range ramp"
+}

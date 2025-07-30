@@ -1,0 +1,10 @@
+{
+  "version": "0.1.0",
+  "content": [
+    {
+      "type": "instruction",
+      "text": "Don't push too hard"
+    }
+  ],
+  "title": "Workout with instruction"
+}

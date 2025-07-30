@@ -1,0 +1,310 @@
+# Structured Workouts
+
+A Python library for creating, parsing, and converting structured workout formats. Built around the **Structured Workout Format (SWF)**, this package enables you to work with workouts from various platforms and convert between different file formats.
+
+## Quick Start
+
+### Installation
+
+```bash
+pip install structured-workouts
+```
+
+Or using uv:
+```bash
+uv add structured-workouts
+```
+
+### Basic Usage
+
+#### Creating a Workout
+
+```python
+from structured_workouts import Workout
+from structured_workouts.base import (
+    Interval, Section, ConstantValue, Value, Reference,
+    VolumeQuantity, IntensityQuantity
+)
+
+# Create a simple 30-minute threshold workout
+workout = Workout(
+    title="Threshold Test",
+    description="30-minute sustained effort at threshold power",
+    content=[
+        Section(
+            name="Warmup",
+            content=[
+                Interval(
+                    volume=ConstantValue(
+                        value=Value(reference=Reference.absolute, value=10*60),  # 10 minutes (in seconds)
+                        quantity=VolumeQuantity.duration
+                    ),
+                    intensity=ConstantValue(
+                        value=Value(reference=Reference.parameter, value=0.6, parameter="threshold"),
+                        quantity=IntensityQuantity.power
+                    )
+                )
+            ]
+        ),
+        Section(
+            name="Main Set", 
+            content=[
+                Interval(
+                    volume=ConstantValue(
+                        value=Value(reference=Reference.absolute, value=30*60),  # 30 minutes
+                        quantity=VolumeQuantity.duration
+                    ),
+                    intensity=ConstantValue(
+                        value=Value(reference=Reference.parameter, value=1.0, parameter="threshold"),
+                        quantity=IntensityQuantity.power
+                    )
+                )
+            ]
+        ),
+        Section(
+            name="Cooldown",
+            content=[
+                Interval(
+                    volume=ConstantValue(
+                        value=Value(reference=Reference.absolute, value=10*60),  # 10 minutes
+                        quantity=VolumeQuantity.duration
+                    ),
+                    intensity=ConstantValue(
+                        value=Value(reference=Reference.parameter, value=0.5, parameter="threshold"),
+                        quantity=IntensityQuantity.power
+                    )
+                )
+            ]
+        )
+    ]
+)
+
+print(f"Created workout: {workout.title}")
+```
+
+#### Converting Between Formats
+
+```python
+from structured_workouts.parsers import IntervalsICUTextParser
+
+# Export to intervals.icu text format
+parser = IntervalsICUTextParser()
+intervals_icu_text = parser.to_format(workout)
+print("Intervals.icu format:")
+print(intervals_icu_text)
+```
+
+Output:
+```
+Warmup
+- 10m 60%
+
+Main Set
+- 30m 100%
+
+Cooldown
+- 10m 50%
+```
+
+#### Using the Command Line Interface
+
+Convert workouts between formats using the CLI:
+
+```bash
+# Convert from SWF to intervals.icu text format
+structured-workouts --from swf --from-file my_workout.json --to intervals-icu-text
+
+# List all available formats
+structured-workouts --list-formats
+
+# Convert with automatic format detection
+structured-workouts --from-file workout.json
+```
+
+## Structured Workout Format (SWF)
+
+The **Structured Workout Format (SWF)** is a JSON-based format designed to be:
+
+- **Simple and readable**: Easy to understand and modify
+- **Flexible**: Supports complex workout structures with repeats, sections, and variable intensities
+- **Convertible**: Can serve as an intermediate format for converting between other workout formats
+- **Parametrizable**: Supports variables for power zones, heart rate zones, etc.
+
+### Key Concepts
+
+- **Duration**: Always specified in seconds (e.g., `600` for 10 minutes)
+- **Intensity**: Power or speed, specified using three reference types:
+  - `absolute`: Direct values (e.g., 250 watts, 4.5 m/s)
+  - `parameter`: Fractions of named variables (e.g., 85% of "threshold")
+  - `tte`: Time-to-exhaustion based (e.g., "power you can hold for 300 seconds")
+- **Variables**: Named references like "threshold", "vo2max" for flexible intensity targeting
+
+For detailed format specification, see [README_SWF.md](README_SWF.md).
+
+## Supported Formats
+
+### ✅ Currently Supported
+
+| Format | Import | Export | Notes |
+|--------|---------|---------|-------|
+| **SWF (JSON)** | ✅ | ✅ | Native format |
+| **Intervals.icu Text** | ⚠️ | ✅ | Import is experimental and not feature complete |
+| **Intervals.icu API JSON** | ⚠️ | ✅ | Import is experimental and not feature complete |
+
+### 🚧 Planned Support
+
+- ERG files
+- MRC files  
+- ZWO files (Zwift)
+- Garmin Connect JSON format
+- FIT files
+
+
+## Advanced Usage
+
+### Working with Variables
+
+```python
+# Create a workout using power zones
+workout = Workout(
+    title="Power Zone Training",
+    content=[
+        Interval(
+            volume=ConstantValue(
+                value=Value(reference=Reference.absolute, value=20*60),
+                quantity=VolumeQuantity.duration
+            ),
+            intensity=ConstantValue(
+                value=Value(
+                    reference=Reference.parameter, 
+                    value=0.85,  # 85% of FTP
+                    parameter="ftp"  # Functional Threshold Power
+                ),
+                quantity=IntensityQuantity.power
+            )
+        )
+    ]
+)
+```
+
+### Complex Workouts with Repeats
+
+```python
+from structured_workouts.base import Repeat, RepeatQuantity
+
+# Create intervals: 5x (4 minutes on, 2 minutes recovery)
+intervals = Repeat(
+    type="repeat",
+    count=ConstantValue(
+        value=Value(reference=Reference.absolute, value=5),
+        quantity=RepeatQuantity.NUMBER
+    ),
+    content=[
+        Interval(
+            volume=ConstantValue(
+                value=Value(reference=Reference.absolute, value=4*60),
+                quantity=VolumeQuantity.duration
+            ),
+            intensity=ConstantValue(
+                value=Value(reference=Reference.parameter, value=1.05, parameter="threshold"),
+                quantity=IntensityQuantity.power
+            )
+        ),
+        Interval(
+            volume=ConstantValue(
+                value=Value(reference=Reference.absolute, value=2*60),
+                quantity=VolumeQuantity.duration
+            ),
+            intensity=ConstantValue(
+                value=Value(reference=Reference.parameter, value=0.6, parameter="threshold"),
+                quantity=IntensityQuantity.power
+            )
+        )
+    ]
+)
+
+workout = Workout(
+    title="VO2 Max Intervals",
+    content=[Section(name="Intervals", content=[intervals])]
+)
+```
+
+### Time-to-Exhaustion (TTE) Based Intensities
+
+The new schema supports specifying intensities based on time-to-exhaustion:
+
+```python
+# Create a workout using TTE-based intensities
+workout = Workout(
+    title="TTE Workout",
+    content=[
+        Interval(
+            volume=ConstantValue(
+                value=Value(reference=Reference.absolute, value=8*60),  # 8 minutes
+                quantity=VolumeQuantity.duration
+            ),
+            intensity=ConstantValue(
+                value=Value(reference=Reference.tte, value=300),  # Power you can hold for 300s (5 min)
+                quantity=IntensityQuantity.power
+            )
+        )
+    ]
+)
+```
+
+## Development
+
+### Running Tests
+
+```bash
+make test
+```
+
+### Project Structure
+
+```
+src/structured_workouts/
+├── __init__.py           # Main package exports
+├── base.py              # Core data structures (Interval, Section, etc.)
+├── schema.py            # Pydantic models and validation
+├── structured_workout_format.py  # SWF format implementation
+├── validation.py        # Additional validation logic
+└── parsers/
+    ├── base.py          # Abstract parser base class
+    ├── intervals_icu_text.py     # Intervals.icu text format parser
+    └── intervals_icu_api.py      # Intervals.icu API JSON parser
+```
+
+### Upload to Intervals.icu
+
+The package includes a complete example script that creates a workout and uploads it to intervals.icu:
+
+```bash
+# Set up your API credentials
+export INTERVALS_ICU_API_KEY="your_api_key"
+export INTERVALS_ICU_ATHLETE_ID="i"
+
+# Run the upload script
+uv run scripts/upload_to_intervals_icu.py
+```
+
+See `scripts/upload_to_intervals_icu.py` for a complete working example.
+
+## Contributing
+
+Contributions are welcome! Areas where help is especially appreciated:
+
+1. **New format parsers** (ERG, MRC, ZWO, etc.)
+2. **Improving import functionality** for intervals.icu formats
+3. **Test coverage** for edge cases
+4. **Documentation** and examples
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Background
+
+Although `structured-workouts` is developed by and integrated with SweatStack, it is designed to be a general-purpose library not tied to any specific platform or service.
+
+The main goal is to provide a flexible, standardized way to represent structured workouts that can serve as an intermediate format for converting between different platforms and training systems.

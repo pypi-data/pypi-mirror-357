@@ -1,0 +1,107 @@
+{
+  "version": "0.1.0",
+  "content": [
+    {
+      "type": "section",
+      "content": [
+        {
+          "type": "interval",
+          "volume": {
+            "type": "constant",
+            "quantity": "duration",
+            "value": {
+              "reference": "absolute",
+              "value": 600
+            }
+          },
+          "intensity": {
+            "type": "constant",
+            "quantity": "power",
+            "value": {
+              "reference": "absolute",
+              "value": 200
+            }
+          }
+        }
+      ],
+      "name": "Warm-Up"
+    },
+    {
+      "type": "repeat",
+      "count": {
+        "type": "constant",
+        "quantity": "number",
+        "value": {
+          "reference": "absolute",
+          "value": 6
+        }
+      },
+      "content": [
+        {
+          "type": "interval",
+          "volume": {
+            "type": "constant",
+            "quantity": "duration",
+            "value": {
+              "reference": "absolute",
+              "value": 360
+            }
+          },
+          "intensity": {
+            "type": "constant",
+            "quantity": "power",
+            "value": {
+              "reference": "absolute",
+              "value": 300
+            }
+          }
+        },
+        {
+          "type": "interval",
+          "volume": {
+            "type": "constant",
+            "quantity": "duration",
+            "value": {
+              "reference": "absolute",
+              "value": 60
+            }
+          },
+          "intensity": {
+            "type": "constant",
+            "quantity": "power",
+            "value": {
+              "reference": "absolute",
+              "value": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "content": [
+        {
+          "type": "interval",
+          "volume": {
+            "type": "constant",
+            "quantity": "duration",
+            "value": {
+              "reference": "absolute",
+              "value": 600
+            }
+          },
+          "intensity": {
+            "type": "constant",
+            "quantity": "power",
+            "value": {
+              "reference": "absolute",
+              "value": 150
+            }
+          }
+        }
+      ],
+      "name": "Cool-Down"
+    }
+  ],
+  "title": "GPT Created Workout"
+}
