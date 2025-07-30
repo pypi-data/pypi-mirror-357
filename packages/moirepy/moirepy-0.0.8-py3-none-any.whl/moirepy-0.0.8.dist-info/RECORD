@@ -1,0 +1,9 @@
+moirepy/__init__.py,sha256=ByrhdTEgLVt6aa1az8-mC-xzKolsKeOrFjjZGcjZsGA,183
+moirepy/layers.py,sha256=JHuqmsI99jp_5eD2ZmwgekZ57iwLyfCbCwqvxAFH_PU,36482
+moirepy/moire.py,sha256=0ws6cTmPxXVhxMOod9dmB-NvrN8tQ-2xSWAFJDAqbtQ,15407
+moirepy/utils.py,sha256=ICQEBFmvCSSs-kc_tLUdHLKET8orztIkPuonasBKgkY,1182
+moirepy-0.0.8.dist-info/licenses/LICENSE,sha256=gp04offumtpyVvLmRMBThOK0nMvDh1E70P1BdXznzfM,1088
+moirepy-0.0.8.dist-info/METADATA,sha256=L-yfLut21OJ6JpTlRNAk3Uo56PAVr9mfIIfEHCUX_Zo,5985
+moirepy-0.0.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+moirepy-0.0.8.dist-info/top_level.txt,sha256=MCPyHcybC66lDhlCDUKqGkdw6LXLeZ-CJ3_hlzQxPhM,8
+moirepy-0.0.8.dist-info/RECORD,,
