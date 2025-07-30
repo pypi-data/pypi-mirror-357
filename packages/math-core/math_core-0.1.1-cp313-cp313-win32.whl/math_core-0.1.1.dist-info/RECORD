@@ -1,0 +1,8 @@
+math_core-0.1.1.dist-info/METADATA,sha256=Wi0bM0mnkzE1SiVuP1dw1gu3-PLjQFZ6012JJqKIBiM,7372
+math_core-0.1.1.dist-info/WHEEL,sha256=Ec7DSd_z_I2pIsRKzfe6AWM_mktyYExqPZurZ7NiZ9g,92
+math_core-0.1.1.dist-info/licenses/LICENSE,sha256=r2AIoV5zbX4_R5gSeo-C0G32JVOCXjKw-vxy5cIdWC0,1074
+math_core/__init__.py,sha256=ZkW-CYVOlkNelhr6XjO7WaK_HpFeYZ3ui0H0y9daHg8,203
+math_core/_math_core_rust.cp313-win32.pyd,sha256=SFynHEtQ1K2J_HJyjTNZ087VW7yRtjlTxY_AMW122LM,332288
+math_core/_math_core_rust.pyi,sha256=Ulf_q5dvGN2433AtJyZPex3gl0lfzznBpaGjmxFvuJo,1600
+math_core/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+math_core-0.1.1.dist-info/RECORD,,
