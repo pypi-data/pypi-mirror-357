@@ -1,0 +1,231 @@
+Metadata-Version: 2.4
+Name: pyingraph
+Version: 0.1.0
+Summary: A Python-based framework for graphically integrating multiple Python algorithms
+Author-email: bobobone <bobobone@qq.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/pyingraph
+Project-URL: Bug Reports, https://github.com/yourusername/pyingraph/issues
+Project-URL: Source, https://github.com/yourusername/pyingraph
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: networkx
+Requires-Dist: httpimport
+Requires-Dist: requests
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Dynamic: license-file
+
+# 🐷 PyG: PyInGraph 
+
+A Python-based framework for graphically integrating multiple Python algorithms through a node-based computational graph system.
+
+## Overview
+
+PyInGraph provides a flexible framework for creating and executing computational graphs where each node represents a Python algorithm block. The framework supports both local and remote module loading, making it ideal for distributed algorithm development and integration.
+
+## Features
+
+- **Node-based Architecture**: Create computational graphs using algorithm blocks as nodes
+- **Remote Module Support**: Load algorithm blocks from remote repositories via HTTP
+- **Parameter Management**: Flexible parameter loading and validation system
+- **State Management**: Support for stateful algorithm blocks with reset capabilities
+- **NetworkX Integration**: Built-in support for graph visualization and analysis
+- **Time-based Simulation**: Support for time-dependent algorithm execution
+
+## Installation
+
+### From Source
+
+```bash
+cd PyInGraph
+pip install -e .
+```
+
+### Dependencies
+
+- Python >= 3.7
+- numpy
+- matplotlib
+- networkx
+- httpimport
+- requests
+
+## Quick Start
+
+### Creating a Custom Algorithm Block
+
+```python
+from pyingraph import BlockBase
+
+class MyAlgorithmBlock(BlockBase):
+    def __init__(self):
+        super().__init__()
+        self.state = 0
+        self.attrNamesArr = ["gain", "offset"]  # Define required parameters
+    
+    def read_inputs(self, inputs: list) -> None:
+        if len(inputs) != 1:
+            raise ValueError("Expected exactly one input")
+        self.input_value = inputs[0]
+    
+    def compute_outputs(self, time=None) -> list:
+        self.state += 1
+        result = self.input_value * self.gain + self.offset + self.state
+        return [result]
+    
+    def reset(self) -> None:
+        self.state = 0
+```
+
+### Loading and Executing a Graph
+
+```python
+from pyingraph import GraphLoader
+
+# Load graph from JSON description
+loader = GraphLoader("my_graph.json", flag_remote=False)
+loader.load()
+
+# Get nodes and edges
+nodes = loader.get_nodes()
+edges = loader.get_edges()
+
+# Get NetworkX graph for visualization
+nx_graph = loader.get_nx_graph()
+```
+
+### Graph Description Format
+
+Create a JSON file describing your computational graph:
+
+```json
+{
+  "nodes": [
+    {
+      "id": "node1",
+      "name": "Input Block",
+      "class_file": "my_algorithm_block.py",
+      "class_name": "MyAlgorithmBlock",
+      "parameters": {
+        "gain": 2.0,
+        "offset": 1.0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source_node_id": "node1",
+      "target_node_id": "node2",
+      "source_port_idx": 0,
+      "target_port_idx": 0
+    }
+  ]
+}
+```
+
+## Core Components
+
+### BlockBase
+
+The abstract base class for all algorithm blocks. Every custom block must inherit from `BlockBase` and implement:
+
+- `__init__()`: Initialize the block and define required parameters in `attrNamesArr`
+- `read_inputs(inputs: list)`: Validate and store input values
+- `compute_outputs(time: float)`: Perform the algorithm computation
+- `reset()`: Reset internal states (optional)
+
+### GraphLoader
+
+Handles loading and instantiation of computational graphs from JSON descriptions. Supports:
+
+- Local module loading
+- Remote module loading via HTTP
+- Parameter validation and injection
+- NetworkX graph generation
+
+## Remote Module Support
+
+PyInGraph supports loading algorithm blocks from remote repositories:
+
+```python
+# Load graph with remote modules
+loader = GraphLoader("http://example.com/graph.json", flag_remote=True)
+loader.load()
+```
+
+In your JSON description, specify the remote folder URL:
+
+```json
+{
+  "nodes": [
+    {
+      "id": "remote_node",
+      "folder_url": "http://example.com/algorithms/",
+      "class_file": "remote_algorithm.py",
+      "class_name": "RemoteAlgorithm",
+      "parameters": {}
+    }
+  ]
+}
+```
+
+## Development
+
+### Running Tests
+
+```bash
+pip install -e ".[dev]"
+pytest
+```
+
+### Code Formatting
+
+```bash
+black src/
+flake8 src/
+```
+
+## API Reference
+
+### BlockBase Methods
+
+- `read_parameters(parDict: dict)`: Load parameters from dictionary
+- `read_inputs(inputs: list)`: Abstract method to read input values
+- `compute_outputs(time: float)`: Abstract method to compute outputs
+- `reset()`: Abstract method to reset internal states
+
+### GraphLoader Methods
+
+- `load()`: Load and parse the graph description
+- `get_nodes()`: Get list of instantiated node objects
+- `get_edges()`: Get list of edge descriptions
+- `get_nx_graph()`: Get NetworkX DiGraph representation
+
+## License
+
+MIT License - see LICENSE file for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Support
+
+For questions and support, please contact: bobobone@qq.com
