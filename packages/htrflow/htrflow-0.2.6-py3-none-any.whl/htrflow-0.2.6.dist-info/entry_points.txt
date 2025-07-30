@@ -1,0 +1,2 @@
+[console_scripts]
+htrflow = htrflow.cli:app
