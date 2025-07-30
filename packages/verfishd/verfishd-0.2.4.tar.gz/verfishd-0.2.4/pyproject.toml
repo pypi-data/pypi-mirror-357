@@ -1,0 +1,40 @@
+[project]
+name = "verfishd"
+dynamic = [ "version" ]
+description = "Simulate the vertical fish distribution influenced by physical stimuli"
+authors = [
+ { name = "Jan Meischner", email = "jan.meischner@googlemail.com"}
+]
+readme = "README.md"
+keywords = ["vertical fish distribution", "data-science", "simulation", "modelling"]
+classifiers = [
+  "Intended Audience :: Education",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python",
+  "Topic :: Scientific/Engineering :: Oceanography",
+  "Typing :: Typed"
+]
+license = "MSC"
+
+[project.urls]
+repository = "https://github.com/marine-data-science/verfishd"
+
+[tool.poetry]
+version = "0.2.4"  # base version
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2.3"
+numpy = "^2.2.2"
+seabird = "^0.12.0"
+matplotlib = "^3.10.0"
+setuptools = "^78.1.1"
+rich = "^13.9.4"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
