@@ -1,0 +1,7 @@
+MANIFEST.in
+README.md
+setup.py
+src/etude_structure_package.egg-info/PKG-INFO
+src/etude_structure_package.egg-info/SOURCES.txt
+src/etude_structure_package.egg-info/dependency_links.txt
+src/etude_structure_package.egg-info/top_level.txt
