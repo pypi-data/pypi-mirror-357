@@ -1,0 +1,259 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Kubiya",
+  "logo": {
+    "dark": "/assets/kubiya_logo.png",
+    "light": "assets/kubiya_logo.png"
+  },
+  "favicon": "/assets/favicon.ico",
+  "colors": {
+    "primary": "#1f2937",
+    "light": "#6b7280",
+    "dark": "#111827"
+  },
+  "topbarLinks": [
+    {
+      "name": "Platform",
+      "url": "https://app.kubiya.ai"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/kubiyabot/workflow_sdk"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://app.kubiya.ai",
+    "style": "roundedRectangle"
+  },
+
+
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.gg/kubiya"
+    },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://kubiya.ai/blog"
+    },
+    {
+      "name": "Changelog",
+      "icon": "clock",
+      "url": "/changelog"
+    }
+  ],
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
+  },
+  "api": {
+    "mdx": {
+      "server": ["https://api.kubiya.ai/api/v1", "http://localhost:8001"],
+      "auth": {
+        "method": "key",
+        "name": "Authorization",
+        "inputPrefix": "UserKey "
+      }
+    },
+    "playground": {
+      "mode": "show"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "getting-started/welcome",
+              "getting-started/installation", 
+              "getting-started/quickstart"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/platform-overview",
+              "concepts/workflows",
+              "concepts/runners",
+              "concepts/integrations",
+              "concepts/deterministic-workflows",
+              "concepts/why-kubiya",
+              "concepts/agent-frameworks-comparison"
+            ]
+          },
+          {
+            "group": "Workflows",
+            "pages": [
+              "workflows/overview",
+              "workflows/architecture",
+              "workflows/dsl-reference",
+              "workflows/examples",
+              "workflows/advanced"
+            ]
+          },
+          {
+            "group": "Full Stack Agents",
+            "pages": [
+              "full-stack-agents/overview",
+              "full-stack-agents/agent-servers",
+              "providers/adk/getting-started",
+              "providers/adk/agents",
+              "providers/adk/streaming",
+              "providers/fastmcp",
+              "full-stack-agents/existing-frameworks/overview",
+              "full-stack-agents/existing-frameworks/langgraph"
+            ]
+          },
+          {
+            "group": "Frontend & UI",
+            "pages": [
+              "frontend",
+              "frontend/vercel-ai-sdk"
+            ]
+          },
+          {
+            "group": "Platform & Tools",
+            "pages": [
+              "mcp/overview",
+              "servers/overview"
+            ]
+          },
+          {
+            "group": "Framework Examples",
+            "pages": [
+              "full-stack-agents/existing-frameworks/overview",
+              "full-stack-agents/existing-frameworks/langgraph"
+            ]
+          },
+          {
+            "group": "Deployment",
+            "pages": [
+              "deployment/helm-chart"
+            ]
+          },
+          {
+            "group": "Tutorials",
+            "pages": [
+              "tutorials/ai-powered-automation",
+              "tutorials/full-stack-ai"
+            ]
+          },
+          {
+            "group": "Resources",
+            "pages": [
+              "changelog",
+              "migration-guide",
+              "updates"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "APIs",
+        "groups": [
+          {
+            "group": "Agent Server APIs",
+            "pages": [
+              "api-reference/agent-servers/overview",
+              "api-reference/agent-servers/compose",
+              "api-reference/agent-servers/discovery",
+              "api-reference/agent-servers/orchestration"
+            ]
+          },
+          {
+            "group": "Kubiya Platform APIs",
+            "pages": [
+              "api-reference/platform/overview",
+              "api-reference/platform/authentication",
+              "api-reference/platform/agents",
+              "api-reference/platform/tasks",
+              "api-reference/platform/sources",
+              "api-reference/platform/runners",
+              "api-reference/platform/knowledge"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "SDK",
+        "groups": [
+          {
+            "group": "SDK Reference",
+            "pages": [
+              "sdk/overview",
+              "sdk/api-reference",
+              "sdk/examples",
+              "sdk/contributing",
+              "sdk/changelog"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footerSocials": {
+    "github": "https://github.com/kubiyabot",
+    "linkedin": "https://www.linkedin.com/company/kubiya-ai",
+    "twitter": "https://twitter.com/kubiya_ai"
+  },
+
+  "search": {
+    "prompt": "Search documentation..."
+  },
+  "metadata": {
+    "og:title": "Kubiya Documentation",
+    "og:description": "Build intelligent automation workflows with Kubiya's powerful SDK",
+    "og:image": "/assets/og-image.png",
+    "twitter:card": "summary_large_image"
+  },
+  "analytics": {
+    "gtm": {
+      "tagId": "GTM-XXXXXXX"
+    }
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": true
+  },
+  "modeToggle": {
+    "default": "system",
+    "isHidden": false
+  },
+  "custom": {
+    "css": ["/style.css"]
+  },
+  "theme": "mint",
+  "redirects": [
+    {
+      "source": "/providers/adk",
+      "destination": "/providers/adk/getting-started"
+    },
+    {
+      "source": "/api",
+      "destination": "/api-reference/agent-servers/overview"
+    },
+    {
+      "source": "/full-stack-agents",
+      "destination": "/full-stack-agents/overview"
+    },
+    {
+      "source": "/agent-servers",
+      "destination": "/full-stack-agents/agent-servers"
+    },
+    {
+      "source": "/streaming",
+      "destination": "/providers/adk/streaming"
+    }
+  ]
+}

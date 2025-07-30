@@ -1,0 +1,195 @@
+---
+title: "FastMCP Provider"
+description: "Execute tools directly using the Model Context Protocol"
+icon: "plug"
+---
+
+# FastMCP Provider
+
+FastMCP is a provider that enables direct tool execution through the Model Context Protocol (MCP). Unlike ADK which generates workflows from natural language, FastMCP focuses on executing specific tools directly.
+
+## When to Use FastMCP
+
+Use FastMCP when you:
+- Have MCP-compatible tools you want to execute
+- Need direct tool execution without AI workflow generation
+- Want to leverage the standardized MCP protocol
+- Are building integrations with existing MCP servers
+
+## Quick Start
+
+### 1. Install the SDK
+
+```bash
+pip install kubiya-workflow-sdk
+```
+
+### 2. Start MCP Server
+
+```bash
+# Point to your MCP server implementation
+export KUBIYA_MCP_SERVER_PATH="/path/to/mcp/server"
+
+# Start the FastMCP provider
+python -m kubiya_workflow_sdk.providers.fastmcp.provider
+```
+
+### 3. Execute Tools
+
+```python
+from kubiya_workflow_sdk.providers import get_provider
+
+# Initialize FastMCP provider
+mcp = get_provider("fastmcp", server_path="/path/to/mcp/server")
+
+# Execute a tool directly
+result = await mcp.execute_tool(
+    tool_name="file_operations",
+    arguments={
+        "action": "read",
+        "path": "/data/report.csv"
+    }
+)
+
+print(result)  # Tool execution result
+```
+
+## Available MCP Tools
+
+FastMCP can work with any MCP-compatible tools:
+
+<CardGroup cols={2}>
+  <Card title="File System" icon="folder">
+    Read, write, and manage files
+    ```python
+    await mcp.execute_tool("fs_read", {"path": "/data/file.txt"})
+    ```
+  </Card>
+  
+  <Card title="GitHub" icon="github">
+    Interact with GitHub repositories
+    ```python
+    await mcp.execute_tool("github_create_issue", {
+        "repo": "owner/repo",
+        "title": "Bug report"
+    })
+    ```
+  </Card>
+  
+  <Card title="Database" icon="database">
+    Query and update databases
+    ```python
+    await mcp.execute_tool("db_query", {
+        "query": "SELECT * FROM users"
+    })
+    ```
+  </Card>
+  
+  <Card title="Custom Tools" icon="wrench">
+    Your own MCP-compatible tools
+    ```python
+    await mcp.execute_tool("custom_tool", {
+        "param": "value"
+    })
+    ```
+  </Card>
+</CardGroup>
+
+## Integration with Workflows
+
+You can use FastMCP within Kubiya workflows:
+
+```python
+from kubiya_workflow_sdk.dsl import workflow, step
+from kubiya_workflow_sdk.providers import get_provider
+
+@workflow
+def data_pipeline():
+    # Step 1: Read data using MCP tool
+    read_data = step("read_csv").mcp_tool(
+        tool="fs_read",
+        arguments={"path": "/data/input.csv"}
+    )
+    
+    # Step 2: Process data (your logic)
+    process = step("process").python(
+        code="""
+        import pandas as pd
+        df = pd.read_csv(io.StringIO(inputs['csv_data']))
+        result = df.groupby('category').sum()
+        print(result.to_json())
+        """,
+        inputs={"csv_data": "${read_data.content}"}
+    ).depends("read_csv")
+    
+    # Step 3: Write results using MCP tool
+    write_result = step("write_results").mcp_tool(
+        tool="fs_write",
+        arguments={
+            "path": "/data/output.json",
+            "content": "${process.stdout}"
+        }
+    ).depends("process")
+```
+
+## FastMCP vs ADK
+
+| Feature | FastMCP | ADK |
+|---------|---------|-----|
+| **Purpose** | Direct tool execution | AI workflow generation |
+| **Input** | Tool name + parameters | Natural language |
+| **Use Case** | "Execute database query" | "Analyze sales data and create report" |
+| **AI Required** | No | Yes |
+| **Streaming** | Tool output only | Full workflow progress |
+
+## Configuration
+
+### Environment Variables
+
+```bash
+# MCP server location
+export KUBIYA_MCP_SERVER_PATH="/usr/local/bin/mcp-server"
+
+# Server configuration
+export KUBIYA_FASTMCP_PORT=8002
+export KUBIYA_FASTMCP_HOST="0.0.0.0"
+
+# Tool discovery
+export KUBIYA_MCP_AUTO_DISCOVER=true
+```
+
+### Custom MCP Server
+
+Create your own MCP-compatible tool:
+
+```python
+# my_mcp_tool.py
+from kubiya_workflow_sdk.mcp import MCPTool, MCPServer
+
+class MyCustomTool(MCPTool):
+    name = "my_tool"
+    description = "Custom tool for specific task"
+    
+    async def execute(self, **kwargs):
+        # Your tool logic here
+        return {"result": "success", "data": kwargs}
+
+# Register and run
+server = MCPServer()
+server.register_tool(MyCustomTool())
+server.run()
+```
+
+## Next Steps
+
+<Cards>
+  <Card title="MCP Protocol" icon="book" href="/mcp/overview">
+    Learn about the Model Context Protocol
+  </Card>
+  <Card title="Build MCP Tools" icon="hammer" href="/servers/overview">
+    Create your own MCP-compatible tools
+  </Card>
+  <Card title="Try ADK" icon="robot" href="/providers/adk/getting-started">
+    Explore AI-powered workflow generation
+  </Card>
+</Cards> 
