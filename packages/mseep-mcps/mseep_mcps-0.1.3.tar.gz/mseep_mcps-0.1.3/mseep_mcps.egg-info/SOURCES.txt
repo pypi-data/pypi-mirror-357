@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+mseep_mcps.egg-info/PKG-INFO
+mseep_mcps.egg-info/SOURCES.txt
+mseep_mcps.egg-info/dependency_links.txt
+mseep_mcps.egg-info/requires.txt
+mseep_mcps.egg-info/top_level.txt
+test/__init__.py
+test/test_document_processing.py
