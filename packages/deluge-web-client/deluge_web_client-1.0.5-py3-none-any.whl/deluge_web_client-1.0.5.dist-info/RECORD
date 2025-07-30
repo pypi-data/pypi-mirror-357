@@ -1,0 +1,10 @@
+deluge_web_client/__init__.py,sha256=b0_XHay6g5Cm7mdAF2J5FvshZ618jYiKWHAV8f3hzEw,301
+deluge_web_client/client.py,sha256=QmegA1JWgGjlOAX8iqf5cUuQu9V5e9-Jlpw6morLTR8,23547
+deluge_web_client/exceptions.py,sha256=xtcrnCi5xjo__zenGfj2hh7DwtsX04CXfPuZYhQlASw,83
+deluge_web_client/response.py,sha256=kY2Q1uyVSMy03qwNYsRhUMpX0zuw02Rw467KZeOSpho,298
+deluge_web_client/state.py,sha256=fTdOq9ZDHFnGb_omvP-TT7ICumxZVn0zQNQG5IXfPlM,779
+deluge_web_client/types.py,sha256=Gf_Q_zdmJ1QxIFTze8qRYvyb3Bb941TG3Mqvgdjs75w,192
+deluge_web_client-1.0.5.dist-info/LICENSE,sha256=4xpGp7GUGCA5OKYBXAdZg4QSJM7A5oxLgWf9yZ5x2AQ,1075
+deluge_web_client-1.0.5.dist-info/METADATA,sha256=UaEnbxlxGqCuR3U-CHWKM97cjYV6IsYULfGuKHCGDLI,5624
+deluge_web_client-1.0.5.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+deluge_web_client-1.0.5.dist-info/RECORD,,
