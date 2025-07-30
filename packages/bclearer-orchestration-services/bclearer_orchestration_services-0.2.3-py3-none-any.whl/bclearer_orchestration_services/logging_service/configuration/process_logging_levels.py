@@ -1,0 +1,25 @@
+from enum import Enum
+
+
+class ProcessLoggingLevels(Enum):
+    PROCESS_LEVEL_NOT_GIVEN = 9999
+
+    PROCESS_LEVEL_1 = 1000
+
+    PROCESS_LEVEL_2 = 990
+
+    PROCESS_LEVEL_3 = 980
+
+    PROCESS_LEVEL_4 = 970
+
+    PROCESS_LEVEL_5 = 960
+
+    PROCESS_LEVEL_6 = 950
+
+    PROCESS_LEVEL_7 = 940
+
+    PROCESS_LEVEL_8 = 930
+
+    PROCESS_LEVEL_9 = 920
+
+    PROCESS_LEVEL_10 = 910
