@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+bayes_toolbox/__init__.py
+bayes_toolbox/glm.py
+bayes_toolbox/meta.py
+bayes_toolbox.egg-info/PKG-INFO
+bayes_toolbox.egg-info/SOURCES.txt
+bayes_toolbox.egg-info/dependency_links.txt
+bayes_toolbox.egg-info/requires.txt
+bayes_toolbox.egg-info/top_level.txt
