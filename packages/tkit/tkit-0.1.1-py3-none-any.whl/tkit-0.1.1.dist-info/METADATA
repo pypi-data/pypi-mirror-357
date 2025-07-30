@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: tkit
+Version: 0.1.1
+Summary: 简易工具类集合：JsonParser、URLSign、PinYinUtils等。
+Author: Wu Juan
+Maintainer: Wu Juan
+License: MulanPSL-2.0
+Keywords: tkit
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: jsonpath_ng
+Requires-Dist: pypinyin
+Requires-Dist: pwgen
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: requires-dist
+Dynamic: summary
+
+# tkit
+
+简易工具类集合：JsonParser、URLSign、PinYinUtils等。
+
+## 安装
+
+```shell
+pip install tkit
+```
+
+## 工具类
+
+- tkit.jsonparser.JsonParser
+- tkit.urlsign.URLSign
+
+## 版本记录
+
+### v0.1.0
+
+- 新增：tkit.jsonparser.JsonParser
+- 新增：tkit.urlsign.URLSign
+
+### v0.1.1
+
+- 新增：tkit.pinyinutils.PinYinUtils

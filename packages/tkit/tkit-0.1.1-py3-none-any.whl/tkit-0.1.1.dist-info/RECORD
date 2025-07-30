@@ -1,0 +1,9 @@
+tkit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tkit/jsonparser.py,sha256=0c-GxZmWt1P9pC3lTNMNnhlk2psrWD8MYa21T5NDrCI,1366
+tkit/pinyinutils.py,sha256=1uhVdFoNx6dkF2hmK5U8gTpCsaQkt5M0_ZzxJ-YY9s8,453
+tkit/urlsign.py,sha256=Sb4cfzZ0DC459QIHleH7Z_o-GT3AIVpFT6HQbAuzmAI,1975
+tkit-0.1.1.dist-info/licenses/LICENSE,sha256=8NreXJM3ab-0PXXvuVF9QqDoXrglPouAZDdv3Vj-70U,9247
+tkit-0.1.1.dist-info/METADATA,sha256=-E0KlaVNIpOqEp5OMAXpP-dfPLdThyzt9nRhZG7Nef8,1150
+tkit-0.1.1.dist-info/WHEEL,sha256=CmyFI0kx5cdEMTLiONQRbGQwjIoR1aIYB7eCAQ4KPJ0,91
+tkit-0.1.1.dist-info/top_level.txt,sha256=0bE7FoRTfRQo8pgBziwzgGuCTxS1hptRAzaPFBBD0pI,5
+tkit-0.1.1.dist-info/RECORD,,
