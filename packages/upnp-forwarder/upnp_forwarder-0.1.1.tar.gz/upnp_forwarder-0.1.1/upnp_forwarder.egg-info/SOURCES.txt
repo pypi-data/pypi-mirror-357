@@ -1,0 +1,9 @@
+README.md
+setup.py
+upnp_forwarder/__init__.py
+upnp_forwarder/core.py
+upnp_forwarder.egg-info/PKG-INFO
+upnp_forwarder.egg-info/SOURCES.txt
+upnp_forwarder.egg-info/dependency_links.txt
+upnp_forwarder.egg-info/requires.txt
+upnp_forwarder.egg-info/top_level.txt

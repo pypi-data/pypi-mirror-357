@@ -1,0 +1,106 @@
+Metadata-Version: 2.1
+Name: upnp_forwarder
+Version: 0.1.1
+Summary: A Python package for UPnP port forwarding
+Home-page: https://github.com/yourusername/upnp_forwarder
+Author: Your Name
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: miniupnpc
+
+# upnp_forwarder
+
+A Python package for easily adding and removing UPnP port mappings on your router.
+
+## Installation
+
+You can install the package using pip:
+
+```bash
+pip install upnp_forwarder
+```
+
+## Usage
+
+The package provides two main functions: `add_port_mapping` and `delete_port_mapping`.
+
+### `add_port_mapping`
+
+Adds a UPnP port mapping.
+
+```python
+from upnp_forwarder import add_port_mapping, UPnPError
+import logging
+
+# Optional: Configure logging to see package output
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+local_port = 8000
+external_port = 8000
+protocol = 'TCP' # 'TCP' or 'UDP'
+description = 'My Application Port'
+lease_duration = 3600 # Lease duration in seconds (0 for infinite)
+
+try:
+    if add_port_mapping(local_port, external_port, protocol, description, lease_duration):
+        print(f"Successfully added port mapping: External Port {external_port} -> Local Port {local_port}")
+    else:
+        print("Failed to add port mapping.")
+except UPnPError as e:
+    print(f"UPnP Error: {e}")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+```
+
+**Parameters:**
+
+*   `local_port` (int): The local port on your machine to forward.
+*   `external_port` (int): The external port on your router to open.
+*   `protocol` (str): The protocol to use ('TCP' or 'UDP').
+*   `description` (str): A description for the port mapping.
+*   `lease_duration` (int, optional): The duration in seconds for the mapping to be active. Defaults to 3600 seconds. Use 0 for an infinite lease (if supported by the router).
+
+### `delete_port_mapping`
+
+Deletes a UPnP port mapping.
+
+```python
+from upnp_forwarder import delete_port_mapping, UPnPError
+import logging
+
+# Optional: Configure logging to see package output
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+external_port = 8000
+protocol = 'TCP' # 'TCP' or 'UDP'
+
+try:
+    if delete_port_mapping(external_port, protocol):
+        print(f"Successfully deleted port mapping: External Port {external_port}")
+    else:
+        print(f"Failed to delete port mapping: External Port {external_port}")
+except UPnPError as e:
+    print(f"UPnP Error: {e}")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+```
+
+**Parameters:**
+
+*   `external_port` (int): The external port of the mapping to delete.
+*   `protocol` (str): The protocol of the mapping to delete ('TCP' or 'UDP').
+
+## Error Handling
+
+The package may raise `upnp_forwarder.UPnPError` for UPnP-specific issues (e.g., no UPnP devices found, failed to select IGD, failed to add/delete mapping). It's recommended to wrap calls in a `try...except UPnPError` block to handle these cases.
+
+## Contributing
+
+(Optional section: Add information on how others can contribute to your project)
+
+## License
+
+This project is licensed under the MIT License. (Or your chosen license)
