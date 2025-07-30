@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: dom-inspector-ai
+Version: 0.1.1
+Summary: Extract class/id and DOM paths with screenshot for AI agents
+Author-email: Your Name <yutotkg.1040@gmail.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: beautifulsoup4
+Requires-Dist: selenium
+Requires-Dist: requests
+Dynamic: license-file
+
+# DOM Inspector AI
+
+This package extracts all `id` and `class` attributes from a web page, along with their DOM paths and a base64 screenshot.
+
+## Installation
+
+```bash
+pip install git+https://github.com/yut0takagi/dom-inspector-ai.git
+```
+
+## CLI Usage
+
+```bash
+python cli.py https://example.com > output.json
+```
+
+## Python Usage
+
+```python
+from dom_inspector_ai.analyzer import analyze_url
+
+result = analyze_url("https://example.com")
+print(result["ids"])
+```
+
+## Output
+
+- `ids`: Dictionary of id attributes with tag, hierarchy, and CSS selector path
+- `classes`: Dictionary of class attributes with count and example paths
+- `screenshot_base64`: PNG screenshot of the page in base64
