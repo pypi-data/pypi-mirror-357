@@ -1,0 +1,2 @@
+[console_scripts]
+autotestify = autotestify.cli:main
