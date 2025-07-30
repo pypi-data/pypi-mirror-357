@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "zebrastream-cli"
+version = "0.0.1"
+description = "An open-source CLI for managing ZebraStream accounts."
+authors = ["Johannes Dröge <p5p129dw@parsimonit.com>"]
+readme = "README.md"
+license = "GPL-3.0-or-later"
+packages = [
+    {include = "api_client"},
+    {include = "cli"},
+]
+include = ["api-client/py.typed"]
+
+[tool.poetry.scripts]
+zebrastream-cli = "cli.main:app"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+httpx = ">=0.23.0,<0.29.0"
+attrs = ">=22.2.0"
+python-dateutil = "^2.8.0"
+typer = {extras = ["all"], version = "^0.16.0"}
+click = ">=8.1.7"
+rich = "^13.0.0"
+confuse = "^2.0.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["F", "I", "UP"]
