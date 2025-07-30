@@ -1,0 +1,10 @@
+            <div id="social" style="margin: 2rem 0 2rem 0;">
+{% for social_data in config.footer.social %}
+                <a href="{{ social_data.url }}" style="padding-right: 1rem; text-decoration: none">
+                    <i aria-hidden="true" class="fa-brands fa-{{ social_data.icon }} fa-2xl"
+                        style="color: {{ social_data.get('color', 'black') }};"></i>
+                    <span class="fa-sr-only">Link to my {{ social_data.icon }} account</span>
+                    {%- if social_data.text %}<span>{{ social_data.text }}</span>{%- endif %}
+                </a>
+{% endfor %}
+            </div>

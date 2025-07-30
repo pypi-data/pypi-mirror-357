@@ -1,0 +1,3 @@
+{%- for favicon in config.theme.favicon %}
+<link rel="{{ favicon.rel }}"{{ ' type="' + favicon.type + '"' if favicon.type }} href="{{ favicon.href }}"{{ ' sizes="' + favicon.sizes + '"' if favicon.sizes }}>
+{% endfor -%}

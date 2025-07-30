@@ -1,0 +1,33 @@
+{% import "macro.j2" as macro %}
+{# Some global variables definitions #}
+{% set section_h2_class = section_h2_class | default(None) %}
+{% set footer_class = footer_class | default(None) %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%- block style %}
+    {% include 'partials/style.html.j2' %}
+    {%- endblock style %}
+    <title>{{ config.title }}</title>
+</head>
+
+<body>
+    {%- block header %}
+    {% include 'partials/header.html.j2' %}
+    {%- endblock header %}
+    {% block content %}
+    {% include 'partials/content.html.j2' %}
+    {%- endblock content %}
+    {%- block script %}
+    {% include 'partials/script.html.j2' %}
+    {%- endblock script %}
+    {%- block footer %}
+    {% include 'partials/footer.html.j2' %}
+    {%- endblock footer %}
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+            <a>
+                <h5>{{ config.name }}</h5>
+            </a>
+            <address>
+                <ul>
+                    {% for li in config.footer.contact -%}
+                    <li>{{ li }}</li>
+                    {% endfor -%}
+                </ul>
+            </address>

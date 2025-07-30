@@ -1,0 +1,14 @@
+    <footer {{ macro.insert_class(footer_class) }}>
+        <div class="container">
+{% if config.footer -%}
+{% if config.footer.contact -%}
+{%- include 'partials/footer_contact.html.j2' %}
+{% endif -%}
+
+{% if config.footer.social %}
+{% include 'partials/footer_social.html.j2' %}
+{% endif %}
+{%- endif %}
+        </div>
+{% include 'partials/footer_generated_by.html.j2' %}
+    </footer>
