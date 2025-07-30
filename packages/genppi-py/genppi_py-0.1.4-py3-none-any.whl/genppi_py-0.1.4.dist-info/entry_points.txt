@@ -1,0 +1,4 @@
+[console_scripts]
+genppi-download-model = genppi_py.download_model:main
+genppi-download-samples = genppi_py.download_samples:download_samples
+genppi.py = genppi_py.genppi:main
