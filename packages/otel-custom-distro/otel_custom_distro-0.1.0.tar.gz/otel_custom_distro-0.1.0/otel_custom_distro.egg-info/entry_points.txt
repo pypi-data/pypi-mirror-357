@@ -1,0 +1,2 @@
+[opentelemetry_distro]
+otel_custom_distro = ndotel.distro:create_distro
