@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "bnop"
+version = "0.2.2"
+description = "a common top level ontology for bCLEARer based on BORO."
+authors = ["Mesbah Khan <khanm@ontoledgy.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
