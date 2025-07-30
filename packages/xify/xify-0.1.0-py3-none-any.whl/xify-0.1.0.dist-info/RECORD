@@ -1,0 +1,8 @@
+xify/__init__.py,sha256=0g_afv5KkysRJzC-Kc2owb5CkJvKRLSMhG_YA4PT7SI,2950
+xify/errors.py,sha256=jRkwz6smz5g9CQDVRpm2ynl3K0wmNxVcPH802SUDPFM,624
+xify/handlers/auth.py,sha256=eyGUG8Ehqc4ZpGPYAj1glxgHkf9qQw0X3jiwV529_sk,6201
+xify/handlers/request.py,sha256=0tGC5O7BKofZdRe-06SzzsJalN6wv43O8rhS8ZCHKXk,7250
+xify-0.1.0.dist-info/METADATA,sha256=qPODa1z1Iz50rzgafv0DieRBbcMBCUXF6zmtuAeOKWI,6380
+xify-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+xify-0.1.0.dist-info/licenses/LICENSE,sha256=PUNrVT4YEqN_sMRXVqYltAzAdM5ovhnAmwOyYq_wRzY,1063
+xify-0.1.0.dist-info/RECORD,,
