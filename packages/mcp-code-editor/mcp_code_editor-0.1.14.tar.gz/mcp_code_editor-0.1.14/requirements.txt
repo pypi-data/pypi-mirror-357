@@ -1,0 +1,2 @@
+# MCP Code Editor Dependencies
+fastmcp>=2.8.0
