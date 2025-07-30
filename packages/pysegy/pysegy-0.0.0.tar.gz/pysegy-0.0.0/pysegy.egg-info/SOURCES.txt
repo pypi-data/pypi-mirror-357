@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+pysegy/__init__.py
+pysegy/ibm.py
+pysegy/read.py
+pysegy/scan.py
+pysegy/types.py
+pysegy/utils.py
+pysegy/write.py
+pysegy.egg-info/PKG-INFO
+pysegy.egg-info/SOURCES.txt
+pysegy.egg-info/dependency_links.txt
+pysegy.egg-info/requires.txt
+pysegy.egg-info/top_level.txt
+pysegy/tests/test_async.py
+pysegy/tests/test_python.py
