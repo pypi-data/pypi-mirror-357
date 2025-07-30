@@ -1,0 +1,3 @@
+pyelle>=0.1.0
+cryptography>=45.0.3
+argon2-cffi>=25.1.0
