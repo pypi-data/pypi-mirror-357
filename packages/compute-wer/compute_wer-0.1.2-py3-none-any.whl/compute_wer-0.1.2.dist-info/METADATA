@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: compute-wer
+Version: 0.1.2
+Summary: Compute WER
+Home-page: https://github.com/pengzhendong/compute-wer
+Author: Zhendong Peng
+Author-email: pzd17@tsinghua.org.cn
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click
+Requires-Dist: contractions
+Requires-Dist: edit_distance
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
+
+# compute-wer
+
+## Usage
+
+```bash
+$ pip install compute-wer
+$ compute-wer ref.txt hyp.txt output.txt
+```
+
+Each line of the `ref.txt` and `hyp.txt` should meet the following format:
+
+```bash
+$utt $text
+```
+
+or
+
+```bash
+$utt\t$text
+```
+
+## Help
+
+```bash
+$ compute-wer --help
+```
