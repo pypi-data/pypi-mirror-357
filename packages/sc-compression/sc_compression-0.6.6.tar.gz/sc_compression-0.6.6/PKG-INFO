@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: sc-compression
+Version: 0.6.6
+Summary: SC Compression
+Home-page: https://github.com/xcoder-tool/sc-compression
+Author: Vorono4ka
+Author-email: crowo4ka@gmail.com
+License: GPLv3
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: zstandard
+
+# SC Compression
+
+A module for compression like in Supercell games. 
+
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/xcoder-tool/sc-compression?include_prereleases)
+- 
+
+TestPyPi - https://test.pypi.org/project/sc-compression/ <br>
+PyPi - https://pypi.org/project/sc-compression/
+
+## Supported compressions:
+- LZMA
+- SC
+- SCLZ
+- SIG
+- ZSTD

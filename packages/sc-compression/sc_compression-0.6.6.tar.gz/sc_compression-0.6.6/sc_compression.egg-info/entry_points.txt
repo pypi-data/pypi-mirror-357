@@ -1,0 +1,2 @@
+[console_scripts]
+sc-compression = sc_compression.__main__:main
