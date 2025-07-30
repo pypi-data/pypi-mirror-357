@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "nisardev"
+version = "0.0.9"
+description = "Tools for NISAR/GrIMP L3 products"
+authors = ["Ian Joughin <ian@apl.washington.edu>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/fastice/nisardev"
+repository = "https://github.com/fastice/nisardev"
+keywords = ["SAR", "NISAR"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+bokeh = ">=3"
+dask = "^2022.1.1"
+holoviews = "1.20.2"
+matplotlib = ">=3.0.0"
+#gdal = "*"
+pandas = ">=1"
+#progressbar2 = "^3"
+numpy = ">=1.20.0"
+panel = ">=1"
+#requests = "^2"
+#pyproj = ">=3"
+pystac = "^1"
+rio_stac = "^0"
+rioxarray = "^0"
+stackstac = "0.5.1"
+xarray = "^0"
+
+[tool.poetry.group.dev.dependencies]
+ipython = "*"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "semver"
+
+[build-system]
+requires = ["setuptools", "poetry-core>=1.0.9"]
+build-backend = "poetry.core.masonry.api"
+#requires = ["setuptools", "poetry-core @ git+https://github.com/python-poetry/poetry-core.git@master"]
+
