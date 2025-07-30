@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+drdoc/__init__.py
+drdoc/drdoc.py
+drdoc.egg-info/PKG-INFO
+drdoc.egg-info/SOURCES.txt
+drdoc.egg-info/dependency_links.txt
+drdoc.egg-info/entry_points.txt
+drdoc.egg-info/requires.txt
+drdoc.egg-info/top_level.txt
