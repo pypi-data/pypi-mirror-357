@@ -1,0 +1,11 @@
+build/
+dcentrapi.egg-info
+dist
+venv
+.vscode/
+.DS_Store
+.idea/
+node_modules
+__pycache__
+testing_script*.py
+temp*.*
