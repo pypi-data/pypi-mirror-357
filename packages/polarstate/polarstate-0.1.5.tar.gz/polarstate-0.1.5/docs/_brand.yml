@@ -1,0 +1,26 @@
+color:
+  palette:
+    ice-blue: "#e8f4f8"
+    steel-grey: "#3a4750"
+    frost-white: "#f7fbfc"
+    arctic-blue: "#c7d9e1"
+    midnight: "#1a1d23"
+    glacier: "#d1e7ed"
+  background: ice-blue
+  foreground: steel-grey
+  primary: midnight
+
+logo: 
+  large: logo.png
+
+typography:
+  fonts:
+    - family: Open Sans
+      source: google
+    - family: Fraunces
+      source: google
+    - family: Fira Code
+      source: google
+  base: Open Sans
+  headings: Fraunces
+  monospace: Fira Code

@@ -1,0 +1,47 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: master
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Create virtual environment
+        run: uv venv
+
+      - name: Run tests using uv
+        run: uv run pytest tests
+
+      - name: Build package using uv
+        run: uv build
+
+      - name: 🐍 Set up Python
+        run: uv python install
+
+      - name: Install Jupyter
+        run: uv pip install jupyter
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set Git identity for Quarto publishing
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Clean any leftover Quarto publish worktree
+        run: rm -rf .quarto
+
+      - name: Render and Publish
+        working-directory: docs
+        run: uv run quarto publish gh-pages --no-browser --token "${{ secrets.GITHUB_TOKEN }}"

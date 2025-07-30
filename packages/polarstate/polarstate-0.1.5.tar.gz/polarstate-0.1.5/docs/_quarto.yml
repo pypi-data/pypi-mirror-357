@@ -1,0 +1,31 @@
+project:
+  type: website
+
+website:
+  title: "Polars State"
+  navbar:
+    left:
+      - href: get_started.qmd
+        text: Get Started
+      - file: reference/index.qmd
+        text: "Reference"
+
+metadata-files:
+  - _sidebar.yml
+
+
+quartodoc:
+  sidebar: "_sidebar.yml"
+  package: polarstate
+  sections:
+    - title: Getting Started
+      desc: Introduction to the package.
+    - title: Some functions
+      desc: Functions to inspect docstrings.
+      contents:
+      - name: aj
+        members:
+        - prepare_event_table
+      - name: predict
+        members:
+        - predict_aj_estimates
