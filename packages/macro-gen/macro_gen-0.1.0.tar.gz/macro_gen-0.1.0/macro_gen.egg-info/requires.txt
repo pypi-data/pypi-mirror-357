@@ -1,0 +1,2 @@
+pynput>=1.7.0
+configparser>=5.0.0

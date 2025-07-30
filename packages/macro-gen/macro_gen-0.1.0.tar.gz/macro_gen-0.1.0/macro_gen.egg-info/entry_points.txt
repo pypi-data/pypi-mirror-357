@@ -1,0 +1,3 @@
+[console_scripts]
+macro-gen = macro_gen.main:main
+macro-gen-install = macro_gen.install_config:main

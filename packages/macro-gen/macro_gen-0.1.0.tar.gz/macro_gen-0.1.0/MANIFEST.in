@@ -1,0 +1,3 @@
+include README.md
+include macro-gen.8
+include macro_gen.conf
