@@ -1,0 +1,44 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Install additional dependencies for training and benchmarking
+RUN pip install --no-cache-dir \
+    transformers \
+    datasets \
+    torch \
+    accelerate \
+    sentencepiece \
+    bitsandbytes \
+    peft \
+    trl \
+    kubernetes
+
+# Copy the Dravik application code
+COPY . .
+
+# Create necessary directories
+RUN mkdir -p /app/data /app/results /app/logs
+
+# Set environment variables
+ENV PYTHONPATH="/app:${PYTHONPATH}"
+ENV LOG_LEVEL="INFO"
+
+# Use a non-root user for better security
+RUN useradd -m dravik
+RUN chown -R dravik:dravik /app
+USER dravik
+
+# Set the entrypoint (will be overridden by Kubernetes)
+CMD ["python", "-m", "dravik.training.kubernetes_runner"] 
