@@ -1,0 +1,3 @@
+[console_scripts]
+fang71=fang71.cli:main
+
