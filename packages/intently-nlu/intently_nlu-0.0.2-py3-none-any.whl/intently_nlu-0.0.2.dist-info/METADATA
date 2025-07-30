@@ -1,0 +1,119 @@
+Metadata-Version: 2.4
+Name: intently-nlu
+Version: 0.0.2
+Summary: Python library to extract intention and structured information from sentences written in natural language.
+Project-URL: Homepage, https://encrystudio.github.io/intently-nlu
+Project-URL: Documentation, https://encrystudio.github.io/intently-nlu
+Project-URL: Issues, https://github.com/encrystudio/intently-nlu/issues
+Project-URL: Source, https://github.com/encrystudio/intently-nlu
+Author-email: encrystudio <epfl.business+py@proton.me>, Clement Doumouro <clement.doumouro@snips.ai>, Adrien Ball <adrien.ball@snips.ai>
+License-Expression: Apache-2.0
+License-File: LICENSE
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Home Automation
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Text Processing :: Linguistic
+Classifier: Topic :: Utilities
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Requires-Dist: dill~=0.3.9
+Requires-Dist: platformdirs~=4.3.6
+Requires-Dist: pyaml~=25.1.0
+Requires-Dist: rapidfuzz~=3.11.0
+Requires-Dist: requests~=2.32.3
+Requires-Dist: sklearn-crfsuite>=0.5.0
+Description-Content-Type: text/markdown
+
+# Intently NLU
+
+[![PyPI - Version](https://img.shields.io/pypi/v/intently-nlu.svg)](https://pypi.org/project/intently-nlu)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/intently-nlu.svg)](https://pypi.org/project/intently-nlu)
+
+Intently NLU is a Python library that allows to extract the intention and structured information from sentences written in natural language.
+
+## Table of Contents
+
+- [Intently NLU](#intently-nlu)
+  - [Table of Contents](#table-of-contents)
+  - [State](#state)
+  - [About](#about)
+  - [Getting Started](#getting-started)
+  - [Sample datasets](#sample-datasets)
+  - [Documentation](#documentation)
+  - [Contributing](#contributing)
+  - [License](#license)
+
+## State
+
+Currently in phase 2: Pre-Alpha
+The library may work, but is not ready for production.
+
+## About
+
+Behind every chatbot and voice assistant lies a common piece of technology: Natural Language Understanding (NLU). Anytime a user interacts with an assistant using natural language, their words need to be translated into a machine-readable description of what they meant.
+
+The NLU engine first detects what the intention of the user is (a.k.a. intent), then extracts the parameters (called slots) of the query. The developer can then use this to determine the appropriate action or response.
+
+Let’s take an example to illustrate this, and consider the following sentence:
+
+`"What will be the weather in berlin at 9pm?"`
+
+Properly trained, the Intently NLU engine will be able to extract structured data such as:
+
+```json
+{
+  "intent": "weather/intents/searchWeatherForecast",
+  "probability": 0.95,
+  "raw_utterance": "What will be the weather in berlin at 9pm?",
+  "resolved_slots": {
+    "locality": "berlin",
+    "forecast_start_datetime": "9pm"
+  }
+}
+```
+
+In this case, the identified intent is `weather/intents/searchWeatherForecast` and two slots were extracted, a locality and a time.
+
+This library is highly inspired by and forked from [Snips NLU](https://github.com/snipsco/snips-nlu), although large parts of the library have been completely rewritten or restructured. Therefore, not all functionality of [Snips NLU](https://github.com/snipsco/snips-nlu) is available in the same way, some are even missing completely.
+
+The motivation of this project is to create a robust, fast and easy-to-use nlu library similar to [Snips NLU](https://github.com/snipsco/snips-nlu) with support for newer Python versions or tools, since [Snips NLU](https://github.com/snipsco/snips-nlu) has not been updated for a long time.
+
+## Getting Started
+
+See the [Quick Start Guide](https://encrystudio.github.io/intently-nlu/quickstart.html) for more information on how to get started with Intently NLU.
+
+## Sample datasets
+
+Here is a list of some datasets that can be used to train am Intently NLU engine:
+
+- [Smarthome dataset](examples/example.json): "Set the temperature to 18 degrees in the bedroom", "Turn off the lights in the living room"
+
+## Documentation
+
+The documentation can be found [here](https://encrystudio.github.io/intently-nlu).
+
+## Contributing
+
+You can contribute to this project by submitting issues, creating pull requests or improving the documentation.
+
+## License
+
+The whole library is built using many concepts from [Snips NLU](https://github.com/snipsco/snips-nlu),
+which is licensed under [Apache License, Version 2.0](https://opensource.org/license/apache-2-0).
+The library itself is licensed under [Apache License, Version 2.0](https://opensource.org/license/apache-2-0) too.
+
+`intently-nlu` is provided as Open Source software. See [LICENSE](LICENSE) and [NOTICE](NOTICE) for more information.
