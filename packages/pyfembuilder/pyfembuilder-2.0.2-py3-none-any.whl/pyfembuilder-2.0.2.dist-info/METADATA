@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: pyfembuilder
+Version: 2.0.2
+Summary: pyFEMStudio 2.0.0c (November 2023)
+Author-email: Carlos Couto <ccouto@ua.pt>
+Requires-Python: >=3.5
+Requires-Dist: openpyxl>3.0.0
+Description-Content-Type: text/markdown
+
+pyfembuilder 2.0.1
