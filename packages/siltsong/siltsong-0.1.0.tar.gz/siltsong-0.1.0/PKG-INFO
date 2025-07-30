@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: siltsong
+Version: 0.1.0
+Summary: A multiple-scattering radiative transfer code for forward modeling PPNe, PNe, and more
+Project-URL: Documentation, https://github.com/yunqibillyli/siltsong#readme
+Project-URL: Issues, https://github.com/yunqibillyli/siltsong/issues
+Project-URL: Source, https://github.com/yunqibillyli/siltsong
+Author-email: Yun Qi Li <billyli@uw.edu>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+example Jupyter Notebooks in src/examples
