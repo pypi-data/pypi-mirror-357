@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: distro-support
+Version: 2025.6.24
+Summary: Get information about support dates for Linux distributions
+Author-email: Alex Lowe <alex@lowe.dev>
+Requires-Python: >=3.8

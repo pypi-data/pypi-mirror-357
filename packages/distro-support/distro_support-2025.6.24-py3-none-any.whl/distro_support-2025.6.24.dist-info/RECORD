@@ -1,0 +1,9 @@
+distro_support/__init__.py,sha256=LDjWqhmwMH-ucPoIKIDAYdYCtaa_cXz0F5GAO3lFqRU,919
+distro_support/_distro.py,sha256=PJ1ru_9KYUQxLpoWzT8q7XBGsFcea1xH7MS3b59uFc8,2273
+distro_support/errors.py,sha256=KK11bBpaRD97MIP9DBHKvRQcr66yFIeyUlj3grawt8I,1226
+distro_support/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+distro_support/ubuntu.json,sha256=2biTuhyYuNI4HPo-KsPQc3tfo8cD9iTvdkHGJ5Fo9OQ,8545
+distro_support/ubuntu.py,sha256=uqjAvsrqXK7JxVc04iKFkGfzGLExh6-u3B_5jxXhg18,880
+distro_support-2025.6.24.dist-info/METADATA,sha256=bXhAPbuD7YQ9PWC709uXXMvqMuZz_l4_QM-yZdtyLSc,194
+distro_support-2025.6.24.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+distro_support-2025.6.24.dist-info/RECORD,,
