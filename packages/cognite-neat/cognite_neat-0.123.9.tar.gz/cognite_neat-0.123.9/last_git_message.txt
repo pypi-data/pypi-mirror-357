@@ -1,0 +1,24 @@
+[NEAT-1004] 🧑‍🏫Validation of indices (#1230)
+
+# Description
+
+Stacked on #1241 
+
+This introduce the validation for the cases:
+* Composite indices missing order.
+* Composite indices order is ambiguous.
+* Indices are not consistently defined for the same container property.
+* Inverted index for non-listable or btree index for listable property.
+* IndexType not explicitly defined.
+* Set invalid cursorable on inverted
+
+## Bump
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## Changelog
+### Improved
+
+- Added validation of indices.
