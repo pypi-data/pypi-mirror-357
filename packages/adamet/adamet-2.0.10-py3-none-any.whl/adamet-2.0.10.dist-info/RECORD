@@ -1,0 +1,13 @@
+adamet/LICENSE.txt,sha256=5y8xATzvVXpEITG8wd3n7vCAuD4uPXKpeAGpmAOLe4Y,341
+adamet/README.rst,sha256=qj5x9KyxtQNFhfPDw10xIc-VPdwvAvUNsC9b28Ll_wA,2397
+adamet/__init__.py,sha256=3pQe65R3KeBO9POsrrdqvp-aol4FIWlR2n6Qm_QLC6s,24
+adamet/adamet.py,sha256=XNKlNG9a98dR2wauBynycYSlVuMvabIAbW7l3pDXx20,10074
+adamet/corner_plot.py,sha256=Ln05yWZtOIwz9_SFUHmQR0PHxXpgRjowX_Zm9J2sfO4,19208
+adamet/examples/__init__.py,sha256=77O9eqP2EaWMNejGjPJCahtv6vLkbtVj0hG4FT4V0fA,36
+adamet/examples/adamet_example.py,sha256=eA38RlX-pQVLe6np9WwP9_6W1rysHKVlQ7Hplbe7hBo,2652
+adamet/examples/adamet_reference_output.txt,sha256=FO7nBI-N4qVzoyQECrN272uGm3T0f6X2lsXtbFNM1yU,717
+adamet-2.0.10.dist-info/METADATA,sha256=YJtpRkICbFpFCC25b7X_oq6lzxrpU9EVYWiGm94J64k,7474
+adamet-2.0.10.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+adamet-2.0.10.dist-info/top_level.txt,sha256=XMkegJ_-aGj2RU5yQI5-dClpQeKZzbpR9qyDyWPr09U,7
+adamet-2.0.10.dist-info/zip-safe,sha256=frcCV1k9oG9oKj3dpUqdJg1PxRT2RSN_XKdLCPjaYaY,2
+adamet-2.0.10.dist-info/RECORD,,
