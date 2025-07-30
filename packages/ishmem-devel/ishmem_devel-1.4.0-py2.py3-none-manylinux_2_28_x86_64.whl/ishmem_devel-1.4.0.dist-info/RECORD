@@ -1,0 +1,17 @@
+ishmem_devel-1.4.0.data/data/include/ishmem.h,sha256=P79OvKf337tzuVVJlIu6DwSFiAF2kt-8j8mUIA2nIwY,127861
+ishmem_devel-1.4.0.data/data/include/ishmemx.h,sha256=7MNj87YGkBXTL0YrfDP1p0neayDyX0EATTEruDcQVQo,302462
+ishmem_devel-1.4.0.data/data/include/ishmem/config.h,sha256=kDs9HrdbS0OURwVMWQ1rGDA7D1cIQoTHtMX2GBPkBpw,254
+ishmem_devel-1.4.0.data/data/include/ishmem/copy.h,sha256=i26-cx_zvywLIyjJ3gH92YqJfA63cTzYC9NyutSQgFA,17204
+ishmem_devel-1.4.0.data/data/include/ishmem/env_defs.h,sha256=JsuzghdCc-6GhTDB8VIoj3yjox0yipjJgCNlQH9F6SY,1963
+ishmem_devel-1.4.0.data/data/include/ishmem/env_utils.h,sha256=-DrVuhLeHtVOAfSHsRt3s9kfdjtX7psMSNkuFfPK8-o,982
+ishmem_devel-1.4.0.data/data/include/ishmem/err.h,sha256=FZCGJQqae4CKXa0TCmCLbbkY43N1yDET1cAq3rE2URI,13062
+ishmem_devel-1.4.0.data/data/include/ishmem/types.h,sha256=kIOuhyUkXM0FevFDv6XTa_nYoBXcVHgknX6OlSQU4Xw,10732
+ishmem_devel-1.4.0.data/data/include/ishmem/util.h,sha256=vpm29IJOyuK_15ZiWVSoFNLsMXTfLyy-ctpI68Lw6co,18445
+ishmem_devel-1.4.0.data/data/lib/cmake/ishmem/ISHMEMConfig.cmake,sha256=-ZNY-alf_g9pLQvX9Au8q9rYXdZpvnxM8dVQyRShx5s,7787
+ishmem_devel-1.4.0.data/data/lib/cmake/ishmem/ISHMEMConfigVersion.cmake,sha256=-3pQ1azP1kAgxKcxtxtm4Rlird_5Ph_m6npNy6GOdis,393
+ishmem_devel-1.4.0.data/data/lib/pkgconfig/ishmem.pc,sha256=wRcN7G-l0u8jR5juWnvfA0JQ4IbIBXmMFOh4iyGPogI,941
+ishmem_devel-1.4.0.dist-info/LICENSE.txt,sha256=dyFjPQ3f9D-uJev9QF-BZqDOcwy87ETy862dXrismm8,4105
+ishmem_devel-1.4.0.dist-info/METADATA,sha256=HOKW6R62ZsxPw_N8SAXJkmO1Fz1_pJwwn1ixBd4Eyp8,789
+ishmem_devel-1.4.0.dist-info/WHEEL,sha256=wHDSHW15S5Ss-cXTEuv9lQNHlx87Fk-iZqRWK0BLwrI,146
+ishmem_devel-1.4.0.dist-info/top_level.txt,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+ishmem_devel-1.4.0.dist-info/RECORD,,
