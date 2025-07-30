@@ -1,0 +1,9 @@
+SettleSheet.py
+pyproject.toml
+readme.md
+settlesheet.egg-info/PKG-INFO
+settlesheet.egg-info/SOURCES.txt
+settlesheet.egg-info/dependency_links.txt
+settlesheet.egg-info/entry_points.txt
+settlesheet.egg-info/requires.txt
+settlesheet.egg-info/top_level.txt
