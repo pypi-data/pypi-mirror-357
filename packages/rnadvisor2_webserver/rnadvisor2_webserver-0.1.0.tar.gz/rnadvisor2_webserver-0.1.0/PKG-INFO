@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: rnadvisor2-webserver
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: plotly>=6.1.2
+Requires-Dist: rnadvisor>=2.1.8
+Requires-Dist: scikit-learn>=1.3.2
+Requires-Dist: numpy>=1.24.4
+Requires-Dist: streamlit>=1.46.0
+Requires-Dist: streamlit-javascript>=0.1.5
+Requires-Dist: streamlit-molstar>=0.4.21
+Requires-Dist: torch>=2.7.1
+Requires-Dist: transformers>=4.52.4
