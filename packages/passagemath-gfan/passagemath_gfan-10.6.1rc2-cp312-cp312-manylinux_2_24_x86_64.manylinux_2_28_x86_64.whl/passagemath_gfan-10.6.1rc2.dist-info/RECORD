@@ -1,0 +1,14 @@
+passagemath_gfan.libs/libcddgmp-4b058152.so.0.1.2,sha256=LWPlYejLqo1q9nTd8v6Jxcc1B41dK9SBx797Byi7ucA,346265
+passagemath_gfan.libs/libgmp-9002057b.so.10.5.0,sha256=8FVIscl6PFdXPV0ou7mxwhR8ZlEZCvs3F_WcsyCifIA,576745
+sage/all__sagemath_gfan.py,sha256=-3lK0TJRx8kxCNrWxbuMRMo5aHDl-K2MfRJZTkmUtUY,87
+sage/interfaces/all__sagemath_gfan.py,sha256=NQrbAZYhanka6mlj7yi5oOcCtnUslYiEDnS-wB-XkOE,43
+sage/libs/all__sagemath_gfan.py,sha256=NQrbAZYhanka6mlj7yi5oOcCtnUslYiEDnS-wB-XkOE,43
+sage/libs/gfan.cpython-312-x86_64-linux-gnu.so,sha256=aesO94z-sebFAGr1cMEsF5oPNM_Urima2Gvj9TzLYGQ,78040
+sage/rings/all__sagemath_gfan.py,sha256=NQrbAZYhanka6mlj7yi5oOcCtnUslYiEDnS-wB-XkOE,43
+sage/rings/polynomial/all__sagemath_gfan.py,sha256=NQrbAZYhanka6mlj7yi5oOcCtnUslYiEDnS-wB-XkOE,43
+sage/rings/polynomial/groebner_fan.py,sha256=imznpP-KEchp8em8QprmSsCRXSsHQDhweMRl4eGO4fs,67561
+sage_wheels/bin/gfan,sha256=qmi_NyFuCgEUPui7tzv5FYwqzmGUc0TREKpljrh36sg,114731912
+passagemath_gfan-10.6.1rc2.dist-info/METADATA,sha256=1boL-XvHUNC1Rll80BD-i6bCdBiwMgzPNBY7UptsrAQ,4034
+passagemath_gfan-10.6.1rc2.dist-info/WHEEL,sha256=LpQoElFRmdjMbJKp2FHd8t88QuEtEHUH_crLCk0WHuI,152
+passagemath_gfan-10.6.1rc2.dist-info/top_level.txt,sha256=hibFyzQHiLOMK68qL1OWsNKaXOmSXqZjeLTBem6Yy7I,5
+passagemath_gfan-10.6.1rc2.dist-info/RECORD,,
