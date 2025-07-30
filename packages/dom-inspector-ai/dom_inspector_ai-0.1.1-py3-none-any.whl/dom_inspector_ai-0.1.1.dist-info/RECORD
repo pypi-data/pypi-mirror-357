@@ -1,0 +1,9 @@
+dom_inspector_ai/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dom_inspector_ai/analyzer.py,sha256=C2DevKLNUlhRPiTEU2S3nrqHvP3QgNFjcjPp24dsBmM,485
+dom_inspector_ai/extractor.py,sha256=9LNVe8hx7tJBPUnRiPM5Wr1QAzxhPPIXEUSd1wtI8W8,1465
+dom_inspector_ai/screenshot.py,sha256=XhLxlvKSb7CW05rvpaIL-E5qeTevuNQyGcKbV6KSAiY,539
+dom_inspector_ai-0.1.1.dist-info/licenses/LICENSE,sha256=OphKV48tcMv6ep-7j-8T6nycykPT0g8ZlMJ9zbGvdPs,1066
+dom_inspector_ai-0.1.1.dist-info/METADATA,sha256=5tvsx2_iNQGqzbNXnEpSgb9IUOg_hymtsfC6QzGO93Q,1053
+dom_inspector_ai-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dom_inspector_ai-0.1.1.dist-info/top_level.txt,sha256=ldbWghG-AZaJzjG1aRdc8-K8hzM08vKEQ4zPryzqH7c,17
+dom_inspector_ai-0.1.1.dist-info/RECORD,,
