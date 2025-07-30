@@ -1,0 +1,12 @@
+midi_velocity_mapper/__about__.py,sha256=fs69WYcxkuTylg2iiXlW-sy96Bmrn5fL5lUR5I2TIXI,122
+midi_velocity_mapper/__init__.py,sha256=tZBX6I3mlS94avDlaAza_XD3esYshH44EgCwNvL_dmk,100
+midi_velocity_mapper/translate_velocities.py,sha256=Mme1ZrpnkFSVcVH0bOEvUmFxAm3SOpsuwsWT0jj26oE,7940
+midi_velocity_mapper/util.py,sha256=03897wuldtIBIFizrrNTGzbYIeV7nEzwyUAbiRZuvFI,1404
+midi_velocity_mapper/data/keys-all.tsv,sha256=VfmFgqITeDZXKy7ru7PtHFrN7OOhNlUR04jh41dVymI,851
+midi_velocity_mapper/data/keys-black.tsv,sha256=KFg13wpdixNz-YBpClJ0h6yXPCiImInghSDcliZca6Q,255
+midi_velocity_mapper/data/keys-white.tsv,sha256=hxIT6951OGGBrU9tKf7PqGJ8cCxHmRQpqjNlEnSs1es,318
+midi_velocity_mapper-0.0.1.dist-info/METADATA,sha256=JiPL2Lpy-gCbWFHtxlK3LqlzQ_eHVbeE8QuLN9LS59Q,3254
+midi_velocity_mapper-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+midi_velocity_mapper-0.0.1.dist-info/entry_points.txt,sha256=bZXfbwAL5X7eSyIZetXMzqNgX2KfNd_r7go1tgQjhQ0,71
+midi_velocity_mapper-0.0.1.dist-info/licenses/LICENSE.txt,sha256=eucNjr4h4ytwFkdDIWLGsyaaB4Dk3IUT9T78PvDh3Ls,1092
+midi_velocity_mapper-0.0.1.dist-info/RECORD,,

@@ -1,0 +1,2 @@
+[console_scripts]
+mvm = midi_velocity_mapper.translate_velocities:main
