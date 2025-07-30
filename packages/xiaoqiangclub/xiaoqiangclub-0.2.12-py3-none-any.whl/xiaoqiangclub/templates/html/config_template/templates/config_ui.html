@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题 -->
+    <title>{{ settings.title }}</title>
+    <!-- 网站logo -->
+    <link rel="icon" href="{{ settings.logo | default('http://217.142.251.127/h/img/xiaoqiangclub_logo.png') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Toast提示样式 */
+        .toast {
+            position: fixed;
+            top: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .toast-error {
+            background-color: #f44336;
+        }
+
+        /* 帮助提示的样式 */
+        .help-tooltip {
+            display: inline-block;
+            margin-left: 5px;
+            cursor: pointer;
+            color: red; /* 设置字体颜色为红色 */
+            position: relative;
+            font-size: 0.875rem; /* 对应 text-sm */
+            font-weight: 500; /* 对应 font-medium */
+        }
+
+        .help-tooltip a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+        }
+
+        .help-tooltip a:hover {
+            color: #4CAF50;
+        }
+
+        /* 帮助内容提示框样式 */
+        .help-tooltip .tooltip-content {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+            padding: 5px;
+            z-index: 999;
+            white-space: normal; /* 允许换行 */
+            width: max-content;
+            max-width: 218px;
+            word-wrap: break-word; /* 确保文本能自动换行 */
+            overflow-wrap: break-word; /* 支持长单词的换行 */
+            word-break: break-word; /* 确保长单词不会溢出 */
+        }
+
+        .help-tooltip:hover .tooltip-content {
+            display: block;
+        }
+
+        /* 使main区域至少填满整个视口 */
+        main {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* 保证main区域至少填满整个屏幕 */
+        }
+
+        /* 保证按钮和footer位于页面底部，并且能够向下滚动 */
+        .button-row-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 16px;
+            background-color: #333;
+            position: sticky;
+            bottom: 0; /* 固定在底部 */
+            width: 100%;
+            gap: 16px; /*按钮之间的间距*/
+        }
+
+        /* 让footer部分文本居中显示 */
+        .button-row-footer .text-center {
+            text-align: center;
+            color: white;
+        }
+
+        /* 标题的帮助提示框样式 */
+        .custom-help-tooltip {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 14px;
+            max-width: 388px; /* 限制最大宽度 */
+            white-space: normal; /* 允许换行 */
+            word-wrap: break-word; /* 防止单词溢出并自动换行 */
+            z-index: 999;
+        }
+
+        /* 鼠标悬停时显示帮助内容 */
+        h1:hover .custom-help-tooltip {
+            display: block;
+        }
+
+        /* Switch 样式 */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px; /* 控制开关的宽度 */
+            height: 20px; /* 控制开关的高度 */
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc; /* 背景颜色 */
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            left: 4px; /* 按钮的初始位置 */
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3; /* 选中时的背景颜色 */
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(14px); /* 选中时，按钮滑动的位置 */
+        }
+
+        /* Switch前后标签文字 */
+        .switch-container {
+            display: flex;
+            align-items: center; /* 垂直居中 */
+            gap: 10px; /* 开关和文字之间的间距 */
+        }
+
+
+        /* 美化滚动条 */
+        .overflow-y-auto {
+            overflow-y: auto;
+        }
+
+        .overflow-y-auto::-webkit-scrollbar {
+            width: 8px; /* 设置滚动条宽度 */
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-track {
+            background: #f1f1f1; /* 设置滚动条轨道背景 */
+            border-radius: 10px; /* 设置轨道的圆角 */
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-thumb {
+            background: #888; /* 设置滑块的颜色 */
+            border-radius: 10px; /* 设置滑块的圆角 */
+            transition: background 0.3s ease;
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+            background: #555; /* 设置滑块的hover效果 */
+        }
+
+        /* 可以为滚动条的按钮也做美化，如果是select框的话 */
+        select::-webkit-scrollbar-button {
+            background-color: #888; /* 滚动条按钮的颜色 */
+        }
+
+        /* 按钮默认样式 */
+        button {
+            transition: transform 0.1s ease, background-color 0.1s ease;
+        }
+
+        /* 按下动画 */
+        button:active {
+            transform: scale(0.88); /* 按下时缩小 */
+            background-color: #005bb5; /* 暗化背景 */
+        }
+
+    </style>
+</head>
+<body class="bg-gray-800 text-gray-100">
+
+<!-- =============== 欢迎页面标题/条款 =============== -->
+{% if settings.welcome is mapping %}
+    <div id="welcome-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+        <div class="bg-gray-800 text-white rounded-lg shadow-lg w-11/12 max-w-xl p-6 space-y-4">
+            <!-- 欢迎页面标题 -->
+            <h2 class="text-2xl font-bold text-center mb-4">
+                {{ settings.welcome.title | default("欢迎使用本系统") }}
+            </h2>
+
+            <!-- 欢迎页面内容 -->
+            <p class="text-gray-300 text-sm leading-relaxed mb-4 overflow-y-auto max-h-60"
+               style="white-space: pre-line; text-align: {{ settings.welcome.content_alignment | default('left') }};">
+                {{ settings.welcome.content | default('请阅读以下用户须知：\n\n1. 请遵守法律规定合法使用本工具。\n2. 本工具仅供个人测试使用，请勿用于非法用途。\n3. 本工具填写的账号信息只存储在本地。\n4. 我们鼓励用户提供反馈，以便我们不断优化服务。\n5. 工具/服务内容可能发生变更，请及时检查更新。\n\n请您在继续使用之前，确认您已阅读并同意以上条款。') | replace(' ', '&nbsp;') | safe }}
+            </p>
+
+
+            <!-- 同意条款 -->
+            <div class="flex items-center space-x-2 mb-4">
+                <input id="welcome-agree-checkbox" type="checkbox" class="form-checkbox text-blue-500"/>
+                <label for="welcome-agree-checkbox" class="text-sm">
+                    {{ settings.welcome.agree_text | default("我已阅读并同意以上内容") }}
+                    {% if settings.welcome.agree_link %}
+                        <a href="{{ settings.welcome.agree_link }}" class="text-blue-500"
+                           target="_blank">阅读用户须知</a>
+                    {% elif settings.welcome.agree_link == "" %}
+                        <a href="https://xiaoqiangclub.blog.csdn.net/article/details/138905099" class="text-blue-500"
+                           target="_blank">阅读用户须知</a>
+                    {% endif %}
+                </label>
+
+            </div>
+
+            <!-- 按钮部分，使用flex布局并让按钮居中 -->
+            <div class="flex justify-center gap-8 mt-6">
+                <!-- 确定按钮 -->
+                <button id="welcome-agree-button"
+                        class="bg-blue-600 text-white px-3 py-1 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition"
+                        disabled>
+                    确定
+                </button>
+
+                <!-- 取消按钮 -->
+                <button id="disagree-btn" class="bg-gray-600 text-white px-3 py-1 rounded-md">
+                    取消
+                </button>
+            </div>
+
+            <!-- 提示信息 -->
+            <div id="warning-message" class="text-yellow-500 text-center hidden mt-4">
+                <p>请勾选同意条款！</p>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <!-- 如果没有设置welcome字段，则不显示欢迎页面 -->
+    <div id="welcome-modal" style="display: none;"></div>
+{% endif %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const welcomeModal = document.getElementById("welcome-modal");
+        const agreeButton = document.getElementById("welcome-agree-button");
+        const agreeCheckbox = document.getElementById("welcome-agree-checkbox");
+        const disagreeButton = document.getElementById("disagree-btn");
+        const warningMessage = document.getElementById("warning-message");
+
+        // 如果有welcome设置
+        {% if settings.welcome is mapping %}
+            const cancelLink = "{{ settings.welcome.cancel_link | default('https://xiaoqiangclub.us.kg/') }}";
+
+            // 检查是否同意
+            if (localStorage.getItem("welcomeAccepted") === "true") {
+                welcomeModal.style.display = "none";  // 不再显示
+            } else {
+                welcomeModal.classList.remove("hidden");  // 显示欢迎页面
+            }
+
+            // 当用户勾选“我已阅读并同意”时启用确认按钮
+            agreeCheckbox.addEventListener("change", function () {
+                if (agreeCheckbox.checked) {
+                    agreeButton.disabled = false;
+                    warningMessage.classList.add("hidden"); // 隐藏警告
+                } else {
+                    agreeButton.disabled = true;
+                }
+            });
+
+            // 点击“确定”按钮时，检查是否已勾选
+            agreeButton.addEventListener("click", function () {
+                if (!agreeCheckbox.checked) {
+                    warningMessage.classList.remove("hidden"); // 显示警告
+                } else {
+                    welcomeModal.style.display = "none";
+                    localStorage.setItem("welcomeAccepted", "true"); // 存储已同意
+                }
+            });
+
+            // 点击“取消”按钮时跳转到 cancel_link
+            disagreeButton.addEventListener("click", function () {
+                window.location.href = cancelLink;
+            });
+
+        {% endif %}
+    });
+</script>
+
+<!-- =============== 更新 =============== -->
+{% if settings.update_info is mapping and settings.update_info.version and settings.update_info.update_url %}
+    <!-- 更新弹窗 -->
+    <div id="update-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+        <div class="bg-gray-800 text-white rounded-lg shadow-lg w-11/12 max-w-xl p-6 space-y-4">
+            <!-- 更新页面标题 -->
+            <h2 class="text-2xl font-bold text-center mb-4">
+                发现新版本：{{ settings.update_info.version }}
+            </h2>
+
+            <!-- 更新页面内容 -->
+            <p class="text-gray-300 text-sm leading-relaxed mb-4 overflow-y-auto max-h-60"
+               style="white-space: pre-line; text-align: {{ settings.welcome.content_alignment | default('center') }};">
+                {{ settings.update_info.content | default('发现新版本可用，请点击下方按钮进行更新。') | replace(' ', '&nbsp;') | safe }}
+            </p>
+
+            <!-- 按钮部分，使用flex布局并让按钮居中 -->
+            <div class="flex justify-center gap-8 mt-6">
+                <!-- 更新按钮 -->
+                <a href="{{ settings.update_info.update_url }}" target="_self">
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-md transition hover:bg-blue-700">
+                        立即更新
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <!-- 如果没有更新信息，隐藏更新弹窗 -->
+    <div id="update-modal" style="display: none;"></div>
+{% endif %}
+
+<!-- 更新弹窗显示控制脚本 -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const updateModal = document.getElementById("update-modal");
+
+        // 如果有更新信息，显示更新弹窗
+        {% if settings.update_info is mapping and settings.update_info.version and settings.update_info.update_url %}
+            updateModal.classList.remove("hidden");  // 显示更新弹窗
+        {% endif %}
+    });
+</script>
+
+
+<!-- =============== 标题 =============== -->
+<header class="text-white p-4">
+    <div class="mx-auto flex justify-center items-center relative">
+        <h1 class="text-3xl font-bold">
+            {% if settings.title_link %}
+                <a href="{{ settings.title_link }}" target="_blank">
+                    {{ settings.title }}
+                </a>
+            {% else %}
+                {{ settings.title }}
+            {% endif %}
+
+            {% if settings.help %}
+                <!-- 自定义帮助提示框 -->
+                <span class="custom-help-tooltip">{{ settings.help|replace('\n', '<br>')|safe }}</span>
+
+            {% endif %}
+        </h1>
+    </div>
+</header>
+
+<!-- =============== 设置项 =============== -->
+<main class="max-w-{{ settings.max_width | default('3xl') }} mx-auto mt-6">
+    <div class="space-y-6">
+        {% for section_name, section in settings.items() %}
+            {% if section_name not in ["welcome", "update"] and section is mapping %}
+                <section class="bg-gray-700 p-6 rounded-lg shadow-lg">
+                    <h2 class="text-lg font-semibold mb-4">{{ section_name }}</h2>
+                    <form id="{{ section_name }}-form">
+                        {% for field_name, field in section.items() %}
+                            <div class="mb-4">
+                                {% if field['type'] != 'switch' %}
+                                    <label for="{{ field_name }}"
+                                           class="block text-sm font-medium text-gray-300">{{ field['label'] }}
+                                        {% if field['help'] %}
+                                            <!-- 帮助提示 -->
+                                            <span class="help-tooltip">
+                                            {% if field['help_link'] %}
+                                                <a href="{{ field['help_link'] }}" target="_blank">?</a>
+                                                <div class="tooltip-content">
+                                                    <a href="{{ field['help_link'] }}" target="_blank">
+                                                        {{ field['help']|replace('\n', '<br>')|safe }}
+                                                    </a>
+
+                                                </div>
+                                            {% else %}
+                                                <a href="javascript:void(0);">?</a>
+                                                <div class="tooltip-content">{{ field['help']|replace('\n', '<br>')|safe }}</div>
+                                            {% endif %}
+                                        </span>
+                                        {% endif %}
+                                    </label>
+                                {% endif %}
+
+                                {% if field['type'] == 'input' %}
+                                    <!-- 文本输入框 -->
+                                    <input type="text" id="{{ field_name }}" name="{{ section_name }}.{{ field_name }}"
+                                           class="mt-2 p-2 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-100"
+                                           placeholder="{{ field['placeholder'] }}" value="{{ field['value'] }}">
+
+                                {% elif field['type'] == 'password' %}
+                                    <!-- 密码输入框 -->
+                                    <input type="password" id="{{ field_name }}"
+                                           name="{{ section_name }}.{{ field_name }}"
+                                           class="mt-2 p-2 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-100"
+                                           placeholder="{{ field['placeholder'] }}" value="{{ field['value'] }}">
+
+                                {% elif field['type'] == 'select' %}
+                                    <!-- 下拉框 -->
+                                    <select id="{{ field_name }}" name="{{ section_name }}.{{ field_name }}"
+                                            class="mt-2 p-2 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-100">
+                                        {% for option in field['options'] %}
+                                            <option value="{{ option }}"
+                                                    {% if option == field['value'] %}selected{% endif %}>{{ option }}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                {% elif field['type'] == 'radio' %}
+                                    <!-- 单选框 -->
+                                    <div class="mt-2 space-y-2">
+                                        {% for option in field['options'] %}
+                                            <label class="inline-flex items-center">
+                                                <input type="radio" name="{{ section_name }}.{{ field_name }}"
+                                                       value="{{ option }}"
+                                                       {% if option == field['value'] %}checked{% endif %}
+                                                       class="form-radio text-blue-600">
+                                                <span class="ml-2 text-gray-100">{{ option }}</span>
+                                            </label>
+                                        {% endfor %}
+                                    </div>
+
+                                {% elif field['type'] == 'checkbox' %}
+                                    <!-- 复选框 -->
+                                    <div class="mt-2 space-y-2">
+                                        {% for option in field['options'] %}
+                                            <label class="inline-flex items-center">
+                                                <input type="checkbox"
+                                                       name="{{ section_name }}.{{ field_name }}"
+                                                       value="{{ option }}"
+                                                       {% if option in field['value'] %}checked{% endif %}
+                                                       class="form-checkbox text-blue-600">
+                                                <span class="ml-2 text-gray-100">{{ option }}</span>
+                                            </label>
+                                        {% endfor %}
+                                    </div>
+
+                                {% elif field['type'] == 'switch' %}
+                                    <!-- 开关 -->
+                                    <div class="switch-container">
+                                        <label class="switch">
+                                            <input type="checkbox" id="{{ field_name }}"
+                                                   name="{{ section_name }}.{{ field_name }}"
+                                                   {% if field['value'] %}checked{% endif %}>
+                                            <span class="slider"></span>
+                                        </label>
+                                        <!-- 文字显示在开关后面 -->
+                                        <span class="text-white text-base ">
+                                            {{ field['label'] }}
+                                            {% if field['help'] %}
+                                                <!-- 帮助提示 -->
+                                                <span class="help-tooltip ">
+                                            {% if field['help_link'] %}
+                                                <a href="{{ field['help_link'] }}" target="_blank">?</a>
+                                                <div class="tooltip-content">
+                                                    <a href="{{ field['help_link'] }}"
+                                                       target="_blank">{{ field['help']|replace('\n', '<br>')|safe }}</a>
+                                                </div>
+                                            {% else %}
+                                                <a href="javascript:void(0);">?</a>
+                                                <div class="tooltip-content">{{ field['help']|replace('\n', '<br>')|safe }}</div>
+                                            {% endif %}
+                                            </span>
+                                            {% endif %}
+                                        </span>
+                                    </div>
+
+                                {% elif field['type'] == 'date' %}
+                                    <!-- 日期选择器 -->
+                                    <input type="date" id="{{ field_name }}" name="{{ section_name }}.{{ field_name }}"
+                                           class="mt-2 p-2 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-100"
+                                           value="{{ field['value'] }}">
+
+                                {% elif field['type'] == 'range' %}
+                                    <!-- 范围选择器 -->
+                                    <input type="range" id="{{ field_name }}" name="{{ section_name }}.{{ field_name }}"
+                                           class="mt-2 w-full" min="{{ field['min'] }}" max="{{ field['max'] }}"
+                                           step="{{ field['step'] }}" value="{{ field['value'] }}">
+                                    <div class="text-gray-300 mt-2">值：<span
+                                            id="{{ field_name }}-value">{{ field['value'] }}</span></div>
+                                    <script>
+                                        $('#{{ field_name }}').on('input', function () {
+                                            $('#{{ field_name }}-value').text(this.value);  // 实时显示滑动值
+                                        });
+                                    </script>
+
+                                {% elif field['type'] == 'line' %}
+                                    <!-- 分隔线，设置粗细、颜色、长度、上下间距，设置默认值为 2、gray-600、full 和 6 -->
+                                    <hr class="my-{{ field['spacing'] | default(6) }} border-t-{{ field['thickness'] | default(1) }} border-{{ field['color'] | default('gray-600') }} w-{{ field['length'] | default('full') }} mx-auto">
+
+                                {% elif field['type'] == 'list' %}
+                                    <!-- 列表输入框和添加按钮 -->
+                                    <div class="mb-4">
+                                        <input type="text" id="{{ field_name }}-input"
+                                               class="mt-2 p-2 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-100"
+                                               placeholder="{{ field['placeholder'] }}">
+                                        <button type="button" onclick="addListItem(event, '{{ field_name }}')"
+                                                class="mt-2 px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-500">
+                                            添加
+                                        </button>
+                                    </div>
+
+                                    <!-- 列表展示区域 -->
+                                    <ul id="{{ field_name }}-list" class="mt-4 space-y-2">
+                                        {% if field['value'] %}
+                                            {% for item in field['value'] %}
+                                                <li class="flex justify-between items-center max-w-2lg w-full mx-auto"
+                                                    data-value="{{ item }}">
+                                                    <span class="truncate text-left flex-1">{{ item }}</span>
+                                                    <button type="button"
+                                                            onclick="removeListItem('{{ field_name }}', '{{ item }}')"
+                                                            class="bg-red-600 text-white px-3 py-1 rounded-md hover:bg-red-700 transition-colors">
+                                                        删除
+                                                    </button>
+                                                </li>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </ul>
+
+                                {% elif field['type'] == 'button' %}
+                                    <!-- 自定义按钮 -->
+                                    <div class="mt-4">
+                                        <button id="custom-button-{{ field_name }}"
+                                                class="px-3 py-2 rounded-md hover:bg-{{ field['hover_color'] | default('red-500') }} transition-colors
+                                               bg-{{ field['bg_color'] | default('blue-600') }}
+                                               text-{{ field['text_color'] | default('white') }}"
+                                                title="{{ field['tooltip'] | default('') }}"
+                                                data-button='{{ field | tojson }}'>
+                                            {{ field['button_text'] | default('测试') }}
+                                        </button>
+                                    </div>
+
+
+
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </form>
+                </section>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <!-- 保存和还原初始设置按钮及Footer，固定在底部 -->
+    <div class="button-row-footer bg-gray-800 p-4 flex flex-col items-center space-y-4 sticky bottom-0">
+        <!-- 按钮部分 -->
+        <div class="flex space-x-4 gap-8 font-bold">
+            <button id="save-settings"
+                    class="bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-500 transition duration-300">
+                保存设置
+            </button>
+            <button id="reset-settings"
+                    class="bg-red-600 text-white px-3 py-2 rounded-md hover:bg-red-500 transition duration-300">
+                还原设置
+            </button>
+        </div>
+
+        <!-- footer部分 -->
+        <div class="text-white text-center text-sm">
+            <p>&copy; <span id="current-year"></span>
+                <a href="{{ settings.footer_link | default('https://xiaoqiangclub.us.kg/') }}" target="_blank">
+                    {{ settings.footer | default('XiaoqiangClub') }}
+                </a>
+            </p>
+        </div>
+
+        <script>
+            // 获取当前年份并显示在页面上
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+        </script>
+    </div>
+</main>
+
+<!-- 成功提示 -->
+<div id="toast" class="toast">已保存！</div>
+<!-- 错误提示 -->
+<div id="toast-error" class="toast toast-error">保存失败！</div>
+
+<!-- 确认还原初始设置弹窗 -->
+<div id="confirm-dialog" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-sm w-full">
+        <h2 class="text-xl font-semibold text-gray-100 mb-6 text-center">确定要还原初始设置吗？</h2>
+        <div class="flex justify-center gap-8">
+            <button id="confirm-yes"
+                    class="confirm-yes bg-red-600 text-white px-3 py-1 rounded-md hover:bg-red-500 transition-colors">
+                确定
+            </button>
+            <button id="confirm-no"
+                    class="confirm-no bg-gray-600 text-white px-3 py-1 rounded-md hover:bg-gray-500 transition-colors">
+                取消
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 显示自定义确认弹窗
+    $('#reset-settings').click(function () {
+        $('#confirm-dialog').removeClass('hidden');
+    });
+
+    // 点击确认按钮
+    $('#confirm-yes').click(function () {
+        $.ajax({
+            url: '/config/reset_settings',  // 发送请求到后端还原设置
+            method: 'POST',
+            success: function () {
+                $('#toast').text('设置已还原！').show().fadeOut(3000);
+                // 由于文件保存有延迟，延时刷新页面
+                setTimeout(function () {
+                    location.reload();  // 刷新页面
+                }, 100);  // 等待1秒钟以确保文件保存完成
+            },
+            error: function () {
+                $('#toast-error').text('还原失败！').show().fadeOut(3000);
+            },
+            complete: function () {
+                $('#confirm-dialog').addClass('hidden');
+            }
+        });
+    });
+
+    // 点击取消按钮
+    $('#confirm-no').click(function () {
+        $('#confirm-dialog').addClass('hidden');
+    });
+</script>
+
+<script>
+    // list 类型下新增列表数据的实现
+    // 存储前端数据
+    const fieldData = {};
+
+    // 添加列表项
+    function addListItem(event, fieldName) {
+        const inputField = document.getElementById(fieldName + '-input');
+        const listContainer = document.getElementById(fieldName + '-list');
+        const newItem = inputField.value.trim();
+
+        // 检查输入项是否为空
+        if (newItem !== '') {
+            // 创建新的列表项
+            const listItem = document.createElement('li');
+            listItem.classList.add('flex', 'justify-between', 'items-center', 'max-w-2lg', 'w-full', 'mx-auto');
+            listItem.setAttribute('data-value', newItem);
+            listItem.innerHTML = `
+    <span class="truncate text-left flex-1">${newItem}</span>
+    <button type="button" onclick="removeListItem('${fieldName}', '${newItem}')"
+            class="bg-red-600 text-white px-3 py-1 rounded-md hover:bg-red-700 transition-colors">
+        删除
+    </button>
+`;
+            listContainer.appendChild(listItem);
+
+
+            // 保存到前端的数据对象
+            if (!fieldData[fieldName]) {
+                fieldData[fieldName] = [];
+            }
+            fieldData[fieldName].push(newItem);
+
+            // 清空输入框
+            inputField.value = '';
+        }
+    }
+
+    // 删除列表项
+    function removeListItem(fieldName, itemValue) {
+        const listContainer = document.getElementById(fieldName + '-list');
+        const listItems = listContainer.getElementsByTagName('li');
+
+        // 查找并移除匹配的列表项
+        for (let item of listItems) {
+            if (item.getAttribute('data-value') === itemValue) {
+                listContainer.removeChild(item);
+
+                // 从前端的数据对象中移除该项
+                const index = fieldData[fieldName].indexOf(itemValue);
+                if (index !== -1) {
+                    fieldData[fieldName].splice(index, 1);
+                }
+                break;
+            }
+        }
+    }
+
+    // 提交表单并进行 AJAX 请求
+    document.getElementById('save-settings').addEventListener('click', function (e) {
+        e.preventDefault();  // 防止表单默认提交
+
+        let updatedSettings = {{ settings | tojson }};  // 获取原始 settings 数据
+
+        // 遍历每个section并更新对应的设置值
+        for (let sectionName in updatedSettings) {
+            let section = updatedSettings[sectionName];
+
+            // 遍历该section中的字段
+            for (let fieldName in section) {
+                let field = section[fieldName];
+
+                if (field.type === 'list') {
+                    // 获取前端保存的列表数据
+                    const listData = fieldData[fieldName] || [];
+
+                    // 更新设置对象中的值
+                    section[fieldName].value = listData;
+                } else {
+                    // 处理其他类型的字段
+                    let fieldValue = document.getElementById(fieldName).value;
+                    section[fieldName].value = fieldValue;
+                }
+            }
+        }
+
+        // 打印更新后的设置（用于调试）
+        console.log(updatedSettings);
+
+        // 使用 AJAX 提交更新后的设置
+        fetch('/save_settings', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedSettings)
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('toast').textContent = '设置已保存！';
+                document.getElementById('toast').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('toast').style.display = 'none';
+                }, 3000);
+            })
+            .catch(error => {
+                document.getElementById('toast-error').textContent = '保存失败！';
+                document.getElementById('toast-error').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('toast-error').style.display = 'none';
+                }, 3000);
+            });
+    });
+</script>
+
+<script>
+    // 获取更新后的设置
+    function getUpdatedSettings() {
+        let updatedSettings = {{ settings | tojson }};  // 获取原始 settings 数据
+
+        for (let sectionName in updatedSettings) {
+            let section = updatedSettings[sectionName];
+
+            // 遍历该section中的字段
+            for (let fieldName in section) {
+                let field = section[fieldName];
+                let fieldValue;
+
+                if (field.type === 'input' || field.type === 'password') {
+                    fieldValue = $("#" + fieldName).val();
+                } else if (field.type === 'select') {
+                    fieldValue = $("#" + fieldName).val();
+                } else if (field.type === 'radio') {
+                    fieldValue = $("input[name='" + sectionName + "." + fieldName + "']:checked").val();
+                } else if (field.type === 'checkbox') {
+                    fieldValue = [];
+                    $("input[name='" + sectionName + "." + fieldName + "']:checked").each(function () {
+                        fieldValue.push($(this).val());
+                    });
+                } else if (field.type === 'switch') {
+                    fieldValue = $("#" + fieldName).prop("checked");
+                } else if (field.type === 'date') {
+                    fieldValue = $("#" + fieldName).val();
+                } else if (field.type === 'range') {
+                    fieldValue = $("#" + fieldName).val();
+                } else if (field.type === 'list') {
+                    const listItems = [];
+                    $("#" + fieldName + "-list li").each(function () {
+                        listItems.push($(this).attr('data-value'));
+                    });
+
+                    fieldValue = listItems;
+                }
+
+                section[fieldName].value = fieldValue;
+            }
+        }
+
+        return updatedSettings;
+    }
+
+    // 发送更新后的设置到后端
+    function sendSettingsToBackend(url, postData, successMessage = '设置已保存！', errorMessage = '保存失败！', shouldReload = false) {
+        $.ajax({
+            url: url,
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(postData),
+            success: function (response) {
+                // 检查返回的 code 是否以 4 开头，表示错误
+                if (response.code && response.code.toString().startsWith('4')) {
+                    // 显示错误提示
+                    $('#toast-error').text(errorMessage || '保存失败！').show().fadeOut(3000);
+                    return;  // 终止成功回调的执行
+                }
+
+                // 显示成功提示
+                $('#toast').text(successMessage).show().fadeOut(3000);
+
+                // 如果返回的响应包含 reload 标志，则刷新页面
+                if (response.reload || shouldReload) {
+                    location.reload();  // 刷新整个页面
+                }
+            },
+            error: function () {
+                // 显示失败提示
+                $('#toast-error').text(errorMessage).show().fadeOut(3000);
+            }
+        });
+    }
+
+    // 绑定保存设置按钮点击事件
+    $('#save-settings').click(function (e) {
+        e.preventDefault();  // 防止表单默认提交
+
+        // 获取更新后的设置
+        let updatedSettings = getUpdatedSettings();
+
+        // 调用发送请求的函数
+        sendSettingsToBackend('/config/save_settings', updatedSettings, '设置已保存！', '保存失败！');
+    });
+
+    // 绑定自定义按钮点击事件
+    $(document).on('click', 'button[id^="custom-button-"]', function (e) {
+        e.preventDefault();  // 防止表单默认提交
+
+        // 获取按钮的配置数据（通过 data-button 获取）
+        let buttonData = $(this).data('button');
+
+        // 判断是否有 open_link 参数
+        let openLink = buttonData.open_link;
+
+        // 如果有 open_link 则跳转到该链接
+        if (openLink) {
+            window.open(openLink, '_blank');  // 使用 window.open 打开新标签页
+            return;  // 跳过后续请求处理（防止同时发请求）
+        }
+
+        // 获取按钮的成功提示、失败提示和是否刷新页面的配置
+        let successMessage = buttonData.success_message || '设置已保存！';
+        let errorMessage = buttonData.error_message || '保存失败！';
+        let shouldReload = buttonData.reload !== undefined ? buttonData.reload : false;
+
+        // 获取按钮配置中的字段数据，默认为空数组
+        let fields = buttonData.fields || [];
+        let route = buttonData.route;
+
+        // 获取更新后的设置
+        let updatedSettings = getUpdatedSettings();
+
+        // 构建要发送的数据对象
+        let postData = {};
+
+        // 如果 fields 存在，则遍历提取字段数据
+        if (fields.length > 0) {
+            fields.forEach(function (fieldName) {
+                // 遍历 settings 数据并提取对应的字段数据
+                let sectionName = Object.keys(updatedSettings).find(section => updatedSettings[section][fieldName]);
+                if (sectionName) {
+                    postData[fieldName] = updatedSettings[sectionName][fieldName].value;
+                }
+            });
+        } else {
+            // 如果 fields 不存在，直接将更新后的所有配置作为 postData
+            postData = updatedSettings;
+        }
+
+        // 调用发送请求的函数，发送数据到后端
+        sendSettingsToBackend(route, postData, successMessage, errorMessage, shouldReload);
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  git-auto-runner:
+    container_name: my_website  # 容器名称
+
+    # 构建配置
+    build:
+      context: .    # 指定构建上下文
+      dockerfile: Dockerfile  # 这里指定了 Dockerfile 的路径
+
+    # 镜像名称
+    image: xiaoqiangserver
+
+    # 环境变量配置
+    environment:
+      - REPO_URL=https://gitee.com/xiaoqiangclub/my_website.git  # 传入 Git 仓库地址，必须传入
+      - RUN_FILE=my_website/fastapi_view.py  # 可选：启动文件，默认为 start.py
+      - PULL_ON_RESTART=true  # 可选：是否每次重启都拉取最新代码
+      - PORT=8000  # 可选：暴露的端口号，默认为 8000
+      - PIP_MIRROR=https://pypi.org/simple  # 可选：pip 镜像源
+      - DEBIAN_MIRROR=http://mirrors.aliyun.com/debian # 可选：apt 镜像源
+
+    # 端口映射
+    ports:
+      - "8111:8000"  # 映射容器端口到主机端口
+
+    # 挂载数据卷
+    volumes:
+      - /volume1/docker/my_website/data:/app/my_website/my_website/data  # 可选：挂载数据卷，将主机的 ./data 目录挂载到容器的 /app/<REPO_URL项目名称>/data
+      - /volume1/docker/my_website/logs:/app/my_website/my_website/logs
+
+    # 容器重启策略
+    restart: always  # 容器崩溃后自动重启
+
+    # 保持容器活跃
+    stdin_open: true  # 开启 stdin，以便容器保持活跃
+    tty: true  # 开启 tty，以便容器保持活跃
