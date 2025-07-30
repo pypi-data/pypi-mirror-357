@@ -1,0 +1,26 @@
+variant: go-grpc-protoc
+
+keep:
+  # ── application source (Go) ─────────────────────────
+  - cmd/**
+  - internal/**
+  - pkg/proto/**
+  - configs/**
+  - go.mod
+  - git.ignore
+
+  # ── tests ───────────────────────────────────────────
+  - test/**
+
+  # ── build & project metadata ────────────────────────
+  - Makefile
+  - Dockerfile
+  - README.md
+
+  # ── IDE / run configs ───────────────────────────────
+  - runConfigurations/Go/**
+
+  # ── deployment & infra (shared) ─────────────────────
+  - skaffold.yaml
+  - chart/**
+  - infra/**
