@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+alembic/env.py
+alembic/versions/4056c087960a_.py
+alembic/versions/8b53c8e91507_adding_new_market_table_and_content_.py
+mc_postgres_db.egg-info/PKG-INFO
+mc_postgres_db.egg-info/SOURCES.txt
+mc_postgres_db.egg-info/dependency_links.txt
+mc_postgres_db.egg-info/requires.txt
+mc_postgres_db.egg-info/top_level.txt
