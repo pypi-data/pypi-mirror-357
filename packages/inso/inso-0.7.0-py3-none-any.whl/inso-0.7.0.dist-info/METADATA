@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: inso
+Version: 0.7.0
+Summary: A module to compute insolation based on eccentricity, obliquity, and climatic precession parameters from various astronomical solutions (Berger 1978, Laskar 2004, ...).
+Author-email: Didier Paillard <Didier.Paillard@lsce.ipsl.fr>
+License-Expression: CECILL-2.1
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.26.4
+Requires-Dist: scipy>=1.14.0
+Requires-Dist: matplotlib>=3.8.4
+Dynamic: license-file
+
+# Insolation
+
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15682056.svg)](https://doi.org/10.5281/zenodo.15682056)
+
+This software consists of three Python libraries:
+
+* astro.py: an interface (or computational module) providing various astronomical solutions (Berger 1978, Laskar 2004, ...) to deliver parameters needed for insolation: eccentricity, obliquity, and climatic precession. The reference solution is Laskar 2004.
+* inso.py (depends on astro.py): computes different types of insolation—instantaneous, daily averaged, or other averaged insolation—as well as "caloric seasons", useful for paleoclimatic and long-term climate studies.
+* minmax_inso.py (depends on astro.py and inso.py): computes extremal values of daily insolation.
+
+Some usage examples are also provided.  
+figures.py generates several figures (for a paper to be submitted soon).
+```
+import inso
+inso.figure.display("1")
+```
