@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: saiyam-calculator
+Version: 1.1.0
+Summary: A simple calculator package
+Author: Saiyam Jain
+Author-email: sj@yopmail.com
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# Saiyam basic Calucator 
+
+A Simple calclator package of python
+
+## Installation
+
+'''bash
+pip install saiyamcal
+
+#python -m venv mypyenv
+
+#Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+#.\mypyenv\Scripts\activate
