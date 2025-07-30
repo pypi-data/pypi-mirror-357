@@ -1,0 +1,5 @@
+colorama
+psutil
+
+[:platform_system == "Linux"]
+distro
