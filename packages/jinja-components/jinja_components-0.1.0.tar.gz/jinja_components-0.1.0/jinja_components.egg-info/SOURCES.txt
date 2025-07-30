@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+jinja_components/__init__.py
+jinja_components.egg-info/PKG-INFO
+jinja_components.egg-info/SOURCES.txt
+jinja_components.egg-info/dependency_links.txt
+jinja_components.egg-info/requires.txt
+jinja_components.egg-info/top_level.txt
+tests/test_basic.py
