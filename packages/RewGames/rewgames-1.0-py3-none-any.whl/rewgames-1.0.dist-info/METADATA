@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: RewGames
+Version: 1.0
+Summary: This is a fun game made by me using pygame library from python
+Home-page: https://github.com/yourusername/myfile
+Author: Ankit Rewar
+Author-email: ankitreawar001@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+Requires-Dist: pygame
+Requires-Dist: time
+Requires-Dist: random
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
+
+GGS bois
