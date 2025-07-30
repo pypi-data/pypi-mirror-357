@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: rtac
+Version: 0.0.1.1
+Summary: RTAC is a collection of Realtime Algorithm Configuration methods.
+Home-page: https://github.com/DimitriWeiss/RTAC.git
+Author: Dimitri Weiß
+Author-email: dimitri-weiss@web.de
+License: LICENSE
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# RTAC
+Realtime Algorithm Configuration Methods
+
+This Software is a reimplementation of the realtime algorithm configurators (RAC) described in "ReACTR: Realtime Algorithm Configuration through Tournament Rankings", "Pool-Based Realtime Algorithm Configuration" and "Realtime gray-box algorithm configuration using cost-sensitive classification" into a collective RAC suite. It also includes extended options regarding logging, input, e.g. parameter space via PCS files, and target algorithm calls..
+

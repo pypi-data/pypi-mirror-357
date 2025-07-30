@@ -1,0 +1,17 @@
+--verbosity 2
+--number_cores 8
+--timeout 5
+--contenders 30
+--keeptop 2
+--pws
+#--experimental
+--chance 25
+--mutate 10
+--kill 5
+--ac 1
+--paramlimit 100000
+--log_folder logs
+--wrapper wrapper.tsp
+--wrapper_name TSP_RT
+--feature_gen feature_gen/tsp_feats.py
+--param_file data/params_tsp.json
