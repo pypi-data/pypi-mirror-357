@@ -1,0 +1,316 @@
+# Todo CLI - A Powerful Command-Line Todo Manager
+
+[![PyPI version](https://badge.fury.io/py/todo-cli.svg)](https://badge.fury.io/py/todo-cli)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A feature-rich command-line todo application with support for priorities, tags, due dates, and advanced filtering capabilities.
+
+## Features
+
+- ✅ **Task Management**: Add, edit, delete, and mark tasks as complete
+- 🏷️ **Tagging System**: Organize tasks with custom tags
+- ⚡ **Priority Levels**: Set task priorities (low, medium, high)
+- 📅 **Due Dates**: Set and track task deadlines
+- 🔍 **Advanced Search**: Filter tasks by status, tags, or keywords
+- 💾 **Persistent Storage**: Tasks are saved automatically
+- 🎨 **Clean Interface**: Beautiful command-line output
+
+## Installation
+
+### From PyPI (Recommended)
+
+```bash
+pip install todo-cli
+```
+
+### From Source
+
+```bash
+git clone https://github.com/rajat-gith/todo-cli.git
+cd todo-cli
+pip install -e .
+```
+
+## Quick Start
+
+```bash
+# Add your first task
+todo add "Buy groceries" --priority high --tag shopping --due 2024-12-25
+
+# List all tasks
+todo list
+
+# Mark a task as done
+todo done 1
+
+# Get help
+todo --help
+```
+
+## Command Reference
+
+### 1. Adding Tasks
+
+Add new todo tasks with optional metadata:
+
+```bash
+todo add <task_description> [OPTIONS]
+```
+
+**Options:**
+- `--priority`: Set task priority (`low`, `medium`, `high`) - Default: `low`
+- `--tag`: Add a tag to group related tasks
+- `--due`: Set due date in YYYY-MM-DD format
+
+**Examples:**
+
+```bash
+# Basic task
+todo add "Complete project report"
+
+# Task with priority
+todo add "Call dentist" --priority high
+
+# Task with tag
+todo add "Buy milk" --tag shopping
+
+# Task with due date
+todo add "Submit tax returns" --due 2024-04-15
+
+# Task with all options
+todo add "Prepare presentation" --priority medium --tag work --due 2024-12-20
+```
+
+### 2. Listing Tasks
+
+Display tasks with various filtering options:
+
+```bash
+todo list [OPTIONS]
+```
+
+**Options:**
+- `--filter`: Filter by status (`all`, `done`, `pending`) - Default: `all`
+- `--tag`: Show only tasks with specific tag
+- `--search`: Search for keyword in task descriptions
+
+**Examples:**
+
+```bash
+# Show all tasks
+todo list
+
+# Show only pending tasks
+todo list --filter pending
+
+# Show only completed tasks
+todo list --filter done
+
+# Show tasks with specific tag
+todo list --tag work
+
+# Search for tasks containing keyword
+todo list --search "project"
+
+# Combine filters
+todo list --filter pending --tag shopping
+```
+
+### 3. Marking Tasks as Done
+
+Mark tasks as completed by their index number:
+
+```bash
+todo done <index>
+```
+
+**Examples:**
+
+```bash
+# Mark task #1 as done
+todo done 1
+
+# Mark task #5 as done
+todo done 5
+```
+
+### 4. Deleting Tasks
+
+Remove tasks permanently by their index number:
+
+```bash
+todo delete <index>
+```
+
+**Examples:**
+
+```bash
+# Delete task #2
+todo delete 2
+
+# Delete task #10
+todo delete 10
+```
+
+### 5. Editing Tasks
+
+Modify existing task descriptions:
+
+```bash
+todo edit <index> <new_task_description>
+```
+
+**Examples:**
+
+```bash
+# Edit task #3
+todo edit 3 "Updated task description"
+
+# Edit task #1 with new content
+todo edit 1 "Buy organic groceries from farmer's market"
+```
+
+## Usage Workflows
+
+### Daily Task Management
+
+```bash
+# Morning routine - check pending tasks
+todo list --filter pending
+
+# Add new tasks as they come up
+todo add "Review pull requests" --priority high --tag work
+todo add "Pick up dry cleaning" --tag errands
+
+# Mark completed tasks
+todo done 1
+todo done 3
+
+# Evening review - see what's left
+todo list --filter pending
+```
+
+### Project Organization
+
+```bash
+# Add project-related tasks
+todo add "Design database schema" --tag project-x --priority high
+todo add "Write API documentation" --tag project-x --priority medium
+todo add "Set up CI/CD pipeline" --tag project-x --priority low
+
+# View all project tasks
+todo list --tag project-x
+
+# Track progress
+todo list --tag project-x --filter done
+```
+
+### Priority-Based Workflow
+
+```bash
+# Add tasks with different priorities
+todo add "Fix critical bug" --priority high
+todo add "Update documentation" --priority medium
+todo add "Organize desktop" --priority low
+
+# Focus on high-priority items first
+todo list --search "high"
+
+# Handle medium priority tasks
+todo list --search "medium"
+```
+
+## Tips and Best Practices
+
+### 1. Effective Tagging
+
+- Use consistent tag names (e.g., `work`, `personal`, `shopping`)
+- Keep tags short and descriptive
+- Use project names as tags for better organization
+
+```bash
+# Good tagging examples
+todo add "Team standup" --tag work
+todo add "Grocery shopping" --tag personal
+todo add "Book flight" --tag vacation-planning
+```
+
+### 2. Priority Management
+
+- **High**: Urgent and important tasks
+- **Medium**: Important but not urgent
+- **Low**: Nice-to-have tasks
+
+```bash
+# Critical deadline
+todo add "Submit proposal" --priority high --due 2024-12-31
+
+# Important but flexible
+todo add "Update resume" --priority medium
+
+# When you have time
+todo add "Organize photos" --priority low
+```
+
+### 3. Due Date Format
+
+Always use YYYY-MM-DD format for due dates:
+
+```bash
+# Correct format
+todo add "Pay rent" --due 2024-12-01
+
+# This will work for any date
+todo add "Birthday party" --due 2024-12-25
+```
+
+### 4. Search and Filter Combinations
+
+Combine different filters for powerful task management:
+
+```bash
+# Pending work tasks
+todo list --filter pending --tag work
+
+# High priority tasks due soon
+todo list --search "high"
+
+# Shopping list items
+todo list --tag shopping --filter pending
+```
+
+## Task Index Numbers
+
+- Tasks are automatically assigned index numbers starting from 1
+- Index numbers may change when tasks are deleted
+- Always check current index numbers with `todo list` before using `done`, `delete`, or `edit` commands
+
+## Error Handling
+
+The application handles common errors gracefully:
+
+- Invalid index numbers will show an error message
+- Invalid date formats will be rejected
+- Invalid priority levels will show available options
+
+## Configuration
+
+The application stores tasks in a local file. The storage location depends on your operating system:
+
+- **Linux/macOS**: `~/.local/share/todo-cli/`
+- **Windows**: `%APPDATA%\todo-cli\`
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you encounter any issues or have questions:
+
+1. Check the [FAQ](FAQ.md)
+2. Search existing [issues](https://github.com/rajat-gith/todo-cli/issues)
+3. Create a new issue with detailed information
+
+**Happy task managing! 🚀**

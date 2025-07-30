@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+todo_cli/__init__.py
+todo_cli/cli.py
+todo_cli/core.py
+todo_cli/storage.py
+todo_cli/utils.py
+todos_cmd.egg-info/PKG-INFO
+todos_cmd.egg-info/SOURCES.txt
+todos_cmd.egg-info/dependency_links.txt
+todos_cmd.egg-info/entry_points.txt
+todos_cmd.egg-info/requires.txt
+todos_cmd.egg-info/top_level.txt
