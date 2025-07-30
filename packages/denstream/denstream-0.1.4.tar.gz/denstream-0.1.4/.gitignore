@@ -1,0 +1,9 @@
+.vscode/
+**/__pycache__/
+denstream.egg-info/
+examples/.ipynb_checkpoints/
+.venv/
+build/
+
+.coverage
+coverage.xml
