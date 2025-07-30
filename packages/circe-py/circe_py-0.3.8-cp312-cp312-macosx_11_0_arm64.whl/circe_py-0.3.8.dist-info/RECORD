@@ -1,0 +1,16 @@
+circe/metrics.py,sha256=Da0T_z5dZ08Z8ye-N22d1PsrCB8MbKGMoGn-sMH1NM4,3712
+circe/inverse_covariance.py,sha256=M11tgdID9EdPBxUcw7MEKrgiIx6gGcVyx21jzPPK4JM,8556
+circe/metacells.py,sha256=ghL0BaIed_IYWHkU_oCduHMGX4Xdt2f00Eo6DggrznY,6899
+circe/rank_correlation.py,sha256=5MDeeIvLdzQzqWonXZcTb0i6qymYnxdRuMPZBCC9bwo,4676
+circe/__init__.py,sha256=zZdPbrpRm9KHcqqhr-4DE8PDxpgDxOwrB5H5USiYwwE,267
+circe/pyquic.cpython-312-darwin.so,sha256=jIwhubp2v6VqOU508GEaCQ6wsWM68XN3xvGazx--oI0,102336
+circe/downloads.py,sha256=xZ7sHHjgMX1MxQV6HE2ZUuL3oDdafEqn8oxPxUbOuvg,1251
+circe/ccan_module.py,sha256=fuqWKLjd-H3XbO9njYDHfBp0L0gfVzDEttYUBI-ww_A,10202
+circe/quic_graph_lasso.py,sha256=0PfSgyJUBih7ojdQQjvK2rnEGrGVL3lyazo8rfK-apI,11594
+circe/draw.py,sha256=C-T7IIFtXIgMZmS12UqcIjEKk2U3WENty3Yk7d4wK94,19473
+circe/circe.py,sha256=-hGidxmv5pd7PGdgLHiWmlCLTFEtajUFqaAGmntR8g8,56451
+circe_py-0.3.8.dist-info/RECORD,,
+circe_py-0.3.8.dist-info/WHEEL,sha256=CltXN3lQvXbHxKDtiDwW0RNzF8s2WyBuPbOAX_ZeQlA,109
+circe_py-0.3.8.dist-info/top_level.txt,sha256=azoS4DIESMh385IkcRZDLCtFVHLGTHRSASW9rSxJXJY,6
+circe_py-0.3.8.dist-info/METADATA,sha256=68bvf7LgGC0v1QLdmBABZHOokvzs_zyznHSsGeRHxXc,5496
+circe_py-0.3.8.dist-info/licenses/LICENSE.txt,sha256=Y_PkFOLbEkCgbsMIkA6l0kZfE59NzLq4eLyTXatw_Xs,35186
