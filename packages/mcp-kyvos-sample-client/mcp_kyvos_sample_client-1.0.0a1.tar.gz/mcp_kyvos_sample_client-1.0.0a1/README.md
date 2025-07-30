@@ -1,0 +1,210 @@
+## MCP Kyvos Sample Client
+
+The `mcp-kyvos-sample-client` is a sample client implementation that demonstrates how to interact with a Kyvos MCP server. It enables users to send natural language queries using either:
+
+* **SSE (Server-Sent Events)** for web-based communication, or
+* **STDIO** for command-line interaction.
+
+The client supports both **Basic Authentication** and **OAuth 2.0**, with credentials and the Kyvos platform URL specified through a JSON configuration file.
+
+## Installation
+
+Install the MCP Kyvos sample client package from `pip`:
+
+```bash
+pip install mcp-kyvos-sample-client==1.0.0a1
+```
+
+---
+
+## Configuration Overview
+
+The client configuration is defined in a JSON file (e.g., `mcp.json`) or via environment files. There are two primary properties:
+
+1. **clientConfiguration**
+2. **mcpServers**
+```json
+{
+  "clientConfiguration": {
+    "openai-api-key": "sk-...",
+    "auth_type": "basic"
+  },
+  "mcpServers": {
+    "my-stdio-server": {
+      "type": "stdio",
+      "command": "mcp-kyvos-server",
+      "args": [
+        "--env-file", "/path/to/.env"
+      ]
+    }
+  }
+}
+```
+
+## Client Credentials
+
+These settings apply globally to the MCP client and control logging and authentication to OpenAI:
+
+| Parameter           | Description                                                                               | Example                     | Required | Default value |
+|---------------------|-------------------------------------------------------------------------------------------|-----------------------------|----------|---------------|
+| `log_level`         | Log level Options: `DEBUG` (default), `INFO`                                              | `"INFO"`                    | No       | `"DEBUG"`     |
+| `log_file`          | File path for client logs.                                                                | `"/var/log/mcp/client.log"` | No       | -             |
+| `openai-api-key`    | API key for OpenAI integration.                                                           | `"sk-..."`                  | Yes      | -             |
+| `auth_type`         | Type of authorization client need to use.                                                 | `basic/oauth`               | No       | `Oauth`       |
+| `client_port`       | The port on which the client receives the callback from the server during the OAuth flow. | `3001`                      | No       | `3000`        |
+| `openai_model_name` | OpenAI model name to use for generating responses.                                                                                     | `gpt-4o-mini`               | No       | `gpt-4o`      |
+
+**Example**:
+
+```json
+"clientConfiguration":{
+  "log_level": "INFO",
+  "log_file": "/var/log/mcp/client.log",
+  "openai-api-key": "sk-..."
+}
+```
+
+---
+
+## STDIO Mode
+
+Runs synchronously over standard input/output, ideal for scripts and pipelines.
+
+**Connect with stdio:**
+
+| Field     | Description                                                                                | Examples                                                                | Required | 
+|-----------|--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|----------|
+| `type`    | Server connection type.                                                                    | `"stdio"` or `"sse"`                                                    | No       | -|
+| `command` | The command used to start the server executable. It must be either an absolute path or available on the system PATH. | `"uv"`,`"python"`, or any command installed via `pip`.                  | Yes      |
+| `args`    | Array of arguments passed to the command.                                                  | ["--kyvos-url", "https://your-kyvos-endpoint", "--verify-ssl", "false"] | Yes      | 
+| `env`     | Environment variables for the server.                                                      | `"USERNAME"`:`"user123"`                                                | No       | 
+
+
+
+**Example configuration in ************************`mcp.json`************************:**
+
+```json
+{
+  "clientConfiguration": {
+    "log_level": "INFO",
+    "log_file": "/var/log/mcp/analytics-stdio.log",
+    "openai-api-key": "sk-..."
+  },
+  "mcpServers": {
+    "my-stdio-server": {
+      "type": "stdio",
+      "command": "mcp-kyvos-server",
+      "args": [
+        "--kyvos-url", "https://your-kyvos-endpoint",
+        "--kyvos-username", "user123",
+        "--kyvos-password", "secret",
+        "--openai-api-key", "sk-...",
+        "--kyvos-prompt-file", "./prompt.txt",
+        "--kyvos-default-folder", "/shared/folder",
+        "--verify-ssl", "false"
+      ]
+    }
+  }
+}
+```
+
+**Or via environment file:**
+
+```json
+{
+  "clientConfiguration": {
+    "openai-api-key": "sk-..."
+  },
+  "mcpServers": {
+    "my-stdio-server": {
+      "type": "stdio",
+      "command": "mcp-kyvos-server",
+      "args": [
+        "--env-file", "/path/to/.env"
+      ]
+    }
+  }
+}
+```
+
+**Or set env vars:**
+
+```json
+{
+  "clientConfiguration": {
+   "openai-api-key": "sk-..."
+  },
+  "mcpServers": {
+    "my-stdio-server": {
+      "type": "stdio",
+      "command": "mcp-kyvos-server",
+      "args": [],
+      "env": {
+        "KYVOS_URL": "https://your-kyvos-endpoint",
+        "KYVOS_USERNAME": "user123",
+        "KYVOS_PASSWORD": "secreat"
+      }
+    }
+  }
+}
+```
+
+---
+
+## SSE Mode
+
+Provides a persistent stream of responses from the MCP Kyvos server using HTTP SSE protocol.
+
+**Connect with sse:**
+
+| Field                    | Description                   | Examples                           | Required|
+|--------------------------| ----------------------------- |------------------------------------|---------|
+| `type`                   | Server connection type.       | `"sse"`                            | No|
+| `url`                    | URL of the SSE server.        | `"http://<machine_ip>:<port>/sse"` |Yes|
+| `username`     | Username for HTTP Basic Auth. | `"user123"`                        |No|
+| `password`     | Password for HTTP Basic Auth. | `"secret"`                         |No|
+
+> **Note:** Username and password will be base64 encoded and passed as a Basic Auth token in the `Authorization` header.
+>
+> **Note:** The `type` parameter is optional. If a **url** is provided, the client will automatically detect the type as `sse`; if a **command** is provided, it will detect `stdio` mode.
+> 
+> **Tip:** Ensure that the MCP server is running before starting the client in SSE mode.
+
+
+```json
+{
+  "clientConfiguration": {
+    "log_level": "DEBUG",
+    "log_file": "/var/log/mcp/analytics-sse.log",
+    "openai-api-key": "sk-..."
+  },
+  "mcpServers": {
+    "analytics-sse": {
+      "type": "sse",
+      "url": "http://<machine_ip>:port/sse",
+      "username": "user123",
+      "password": "secret"
+    }
+  }
+}
+```
+---
+>
+> For reference on the MCP Kyvos server and its supported command-line arguments, see [mcp-kyvos-server](https://pypi.org/project/mcp-kyvos-server/1.0.0a1/).
+>
+---
+## Running the Client
+
+To start the MCP Kyvos sample client using a configuration file, run:
+
+```bash
+mcp-kyvos-sample-client --config /path/to/mcp.json
+```
+---
+
+>**Note**: On error like "Your input exceeds the context window of this model" use the command '/clear ' without quotes to reset the context. All previous context will be lost after using this command.
+ 
+
+## License
+
+This project is licensed under the MIT License.

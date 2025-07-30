@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-kyvos-sample-client"
+version = "1.0.0a1"
+description = "A sample client implementation to interact with Kyvos MCP server."
+authors = [{ name = "Kyvos", email = "support@kyvos.io" }]
+readme = "README.md"
+license = { file = "license.txt" }
+requires-python = ">=3.10"
+dependencies = [
+    "openai-agents==0.0.16",
+    "uv",
+    "python-dotenv",
+    "mcp>=1.9.1",
+    "aiohttp>=3.12.2"
+]
+
+[project.scripts]
+mcp-kyvos-sample-client = "mcp_kyvos_sample_client.client:cli_main"
+
+[tool.setuptools]
+license-file = ["license.txt"]

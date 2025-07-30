@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+
+# uv/uvx specific
+.uv/
+.uvx/
+.venv.uv/
+
+# macOS
+.DS_Store
+
+# Logs and databases
+*.log
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+# Ignore log directories
+logs/
+log/
+
+# Ignore Python virtual environment
+.venv/
+bin/
+include/
+lib/
+
+# Ignore configuration and environment-related files
+*.cfg
+*.ini
+
+# Ignore devcontainer configuration
+.devcontainer/
