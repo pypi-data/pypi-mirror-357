@@ -1,0 +1,28 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aesb"  # 必需：包的名称，在 PyPI 上必须唯一。建议加上你的用户名以确保唯一性。 [10]
+version = "0.0.1"  # 必需：版本号
+authors = [
+  { name="intelljames", email="intelljames@gmail.com" },
+]
+description = "A fine package for fetch battery data"  # 必需：项目的简短描述
+readme = "README.md"  # 必需：指向 README 文件的路径
+requires-python = ">=3.10"  # 必需：项目支持的 Python 版本
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests",  # 如果你的项目依赖其他包，在这里列出
+    "numpy>=1.20.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/my-awesome-project"
+"Bug Tracker" = "https://github.com/your-username/my-awesome-project/issues"
