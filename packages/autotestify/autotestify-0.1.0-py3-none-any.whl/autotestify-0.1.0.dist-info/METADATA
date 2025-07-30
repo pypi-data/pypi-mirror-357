@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: autotestify
+Version: 0.1.0
+Summary: Auto-generate pytest tests for Python functions with @autotest decorator
+Home-page: https://github.com/SafarovSardorDev/autotestify
+Author: Sardor Safarov
+Author-email: sardor.safarov200320@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# autotestify
+
+ðŸ§ª Auto-generate pytest tests for your Python functions using the `@autotest` decorator.
+
+## Install
+```bash
+pip install autotestify
+```
+
+##Usage
+```bash
+autotestify your_file.py
+```
+
+##Example
+```
+from autotestify import autotest
+
+@autotest
+def add(a, b):
+    return a + b
+```
