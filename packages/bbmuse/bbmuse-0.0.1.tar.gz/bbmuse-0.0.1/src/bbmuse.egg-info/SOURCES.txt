@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/bbmuse/__init__.py
+src/bbmuse/example.py
+src/bbmuse.egg-info/PKG-INFO
+src/bbmuse.egg-info/SOURCES.txt
+src/bbmuse.egg-info/dependency_links.txt
+src/bbmuse.egg-info/top_level.txt
