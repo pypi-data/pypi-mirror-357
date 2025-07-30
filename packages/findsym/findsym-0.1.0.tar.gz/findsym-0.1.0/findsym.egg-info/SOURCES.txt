@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.cfg
+setup.py
+findsym/__init__.py
+findsym/_version.py
+findsym/core.py
+findsym.egg-info/PKG-INFO
+findsym.egg-info/SOURCES.txt
+findsym.egg-info/dependency_links.txt
+findsym.egg-info/entry_points.txt
+findsym.egg-info/not-zip-safe
+findsym.egg-info/requires.txt
+findsym.egg-info/top_level.txt

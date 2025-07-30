@@ -1,0 +1,13 @@
+numpy>=1.18.0
+ase>=3.20.0
+spglib>=1.16.0
+
+[dev]
+pytest>=6.0
+pytest-cov
+black
+flake8
+isort
+
+[visualization]
+matplotlib>=3.3.0
