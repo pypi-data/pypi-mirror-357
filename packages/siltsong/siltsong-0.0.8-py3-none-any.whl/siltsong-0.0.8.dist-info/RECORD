@@ -1,0 +1,16 @@
+siltsong/__about__.py,sha256=wOJN3HxAgnSon5vWYU3Txm2UZ_7tBHDKXUKZIH-mXX8,22
+siltsong/__init__.py,sha256=-y4Y_uWNHskPJCRrS2WZXCRS96RcWOBcf5raCh5AMbY,81383
+siltsong/dust.py,sha256=nt23CCcZ0EQ12DajKw6HqGGUFmTWom4TsTgXjhy_7ZQ,2537
+siltsong/stars.py,sha256=sfFr7y6hncxj-PJ72EdZ98BVvPzgRkCqobLZ9T9Wylw,231
+siltsong/data/u39z010nt_drz.fits,sha256=6S6TdSC9IizuhSZMjnVOLwUQPyETAsmZjKHRsrCfPr4,29102400
+siltsong/data/u39z010ot_drz.fits,sha256=uZ8Lw9TgJ3HRTHimAoQ2EwI4RpETqf3zV6Jkj-0BEWs,29102400
+siltsong/data/dust/extinction_efficiency_Draine_2011_fig_22.3.csv,sha256=JvYCx30VS4SRg_V-uhgud_cAEDAxTnIXtx1sj84DAiw,505
+siltsong/data/dust/scattering_efficiency_Draine_2011_fig_22.2.csv,sha256=je_qBV1GymHVYfRmTxOjRhPny-SDHcAIDHCsp6qMTjQ,273
+siltsong/examples/M1-92.ipynb,sha256=GxcIlEdJ714nx4PsXOEVIn3viqcGwjI4gBnB7wnbqww,230660
+siltsong/examples/MW.ipynb,sha256=pF2x_VlBG8aNs93Bkd4ik2PVzKtFkWFKo_L-cIFBZfc,296041
+siltsong/examples/.ipynb_checkpoints/M1-92-checkpoint.ipynb,sha256=GxcIlEdJ714nx4PsXOEVIn3viqcGwjI4gBnB7wnbqww,230660
+siltsong/examples/.ipynb_checkpoints/MW-checkpoint.ipynb,sha256=pF2x_VlBG8aNs93Bkd4ik2PVzKtFkWFKo_L-cIFBZfc,296041
+siltsong-0.0.8.dist-info/METADATA,sha256=ZCIELnJR6yEpjogqXGMiLL1XNXNO7uDi-fE4VXE8GXc,1028
+siltsong-0.0.8.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+siltsong-0.0.8.dist-info/licenses/LICENSE,sha256=5UNHmDBDDG9l2kKuPqNIbgnZZ8KVmdBYfB0ny0RaVTk,1065
+siltsong-0.0.8.dist-info/RECORD,,
