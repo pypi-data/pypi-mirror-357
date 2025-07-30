@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+cueai_architect.egg-info/PKG-INFO
+cueai_architect.egg-info/SOURCES.txt
+cueai_architect.egg-info/dependency_links.txt
+cueai_architect.egg-info/entry_points.txt
+cueai_architect.egg-info/requires.txt
+cueai_architect.egg-info/top_level.txt
+cueai_architect/ai/integration/consciousness_transformer.py
+cueai_architect/core/foundations/pre_metric_substrate.py
+cueai_architect/utility/cue_application_manager.py
+cueai_architect/utility/functions.py
+tests/test_basic.py
