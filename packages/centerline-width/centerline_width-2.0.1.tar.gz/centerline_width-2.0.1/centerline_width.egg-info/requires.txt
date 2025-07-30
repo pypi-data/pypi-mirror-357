@@ -1,0 +1,15 @@
+geopy
+haversine
+matplotlib
+networkx
+numpy
+pandas
+pykml
+pyproj
+scipy
+shapely
+
+[dev]
+pre-commit
+pytest
+pytest-cov

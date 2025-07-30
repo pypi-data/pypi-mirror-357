@@ -1,0 +1,80 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+
+requires = [ "setuptools" ]
+
+[project]
+name = "centerline-width"
+version = "v2.0.1"
+description = "A Python package to find the centerline and width of rivers based on the latitude and longitude of the right and left bank"
+readme = "README.md"
+keywords = [
+  "centerline",
+  "centerline-detection",
+  "centerline-extraction",
+  "fluvial",
+  "geomorphology",
+  "geophysics",
+  "hydrology",
+  "limnology",
+  "networkx",
+  "python",
+  "river-bank",
+  "river-bank-length",
+  "rivers",
+  "voronoi",
+]
+
+license = { file = "LICENSE" }
+authors = [
+  { name = "Cora Schneck", email = "cyschneck@gmail.com" },
+  { name = "Una Schneck", email = "ugschneck@gmail.com" },
+]
+
+requires-python = ">=3.10"
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Hydrology",
+  "Topic :: Scientific/Engineering :: Physics",
+  "Topic :: Scientific/Engineering :: Visualization",
+]
+
+dependencies = [
+  "geopy",
+  "haversine",
+  "matplotlib",
+  "networkx",
+  "numpy",
+  "pandas",
+  "pykml",
+  "pyproj",
+  "scipy",
+  "shapely",
+]
+
+optional-dependencies.dev = [
+  "pre-commit",
+  "pytest",
+  "pytest-cov",
+]
+urls.Issues = "https://github.com/cyschneck/centerline-width/issues"
+urls.Repository = "https://github.com/cyschneck/centerline-width"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = [ "." ]
+include = [ "centerline_width" ]
+exclude = [ "centerline_width/pytests*" ]
