@@ -1,0 +1,93 @@
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+testpaths = "tests"
+asyncio_default_fixture_loop_scope = "function"
+pythonpath = [
+    "src",
+]
+
+[tool.ruff]
+line-length = 88
+src = [
+    "src",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "W",
+    "I",
+    "C",
+    "B",
+]
+ignore = [
+    "E501",
+    "B008",
+    "C901",
+]
+extend-select = [
+    "I",
+]
+
+[tool.black]
+line-length = 88
+target-version = [
+    "py313",
+]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.13"
+ignore_missing_imports = true
+namespace_packages = true
+explicit_package_bases = true
+mypy_path = "src"
+
+[tool.hatch.build.targets.wheel]
+
+[tool.hatch.version]
+path = "src/mcp_text_editor/version.py"
+
+[tool.coverage.run]
+source = [
+    "mcp_text_editor",
+]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "pass",
+    "raise ImportError",
+    "__version__",
+    "if TYPE_CHECKING:",
+    "raise FileNotFoundError",
+    "raise ValueError",
+    "raise RuntimeError",
+    "raise OSError",
+    "except Exception as e:",
+    "except ValueError:",
+    "except FileNotFoundError:",
+    "except OSError as e:",
+    "except Exception:",
+    "if not os.path.exists",
+    "if os.path.exists",
+    "def __init__",
+]
+omit = [
+    "src/mcp_text_editor/__init__.py",
+    "src/mcp_text_editor/version.py",
+]
