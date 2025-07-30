@@ -1,0 +1,6 @@
+README.md
+setup.py
+byted_agent_interface.egg-info/PKG-INFO
+byted_agent_interface.egg-info/SOURCES.txt
+byted_agent_interface.egg-info/dependency_links.txt
+byted_agent_interface.egg-info/top_level.txt
