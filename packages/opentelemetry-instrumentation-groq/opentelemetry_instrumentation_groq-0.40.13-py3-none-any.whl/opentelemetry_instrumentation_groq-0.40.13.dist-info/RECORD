@@ -1,0 +1,8 @@
+opentelemetry/instrumentation/groq/__init__.py,sha256=E1blGTym8YomMT-bsUCrVSneSy-CZmHdtCWup19OpFw,20433
+opentelemetry/instrumentation/groq/config.py,sha256=eN2YxQdWlAF-qWPwZZr0xFM-8tx9zUjmiparuB64jcU,170
+opentelemetry/instrumentation/groq/utils.py,sha256=1ESL4NCp8Mjww8cGEzQO_AEqGiSK4JSiMFYUhwBnuao,2151
+opentelemetry/instrumentation/groq/version.py,sha256=vQg86lMQG_F-usx58lOg3MO6b3SadNM0IbUHwUUchxk,24
+opentelemetry_instrumentation_groq-0.40.13.dist-info/METADATA,sha256=-bFJTPi3Z0dR9PSUH7DmdHl_7Jl09bDoIbJBsBpTtfQ,2118
+opentelemetry_instrumentation_groq-0.40.13.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+opentelemetry_instrumentation_groq-0.40.13.dist-info/entry_points.txt,sha256=uezQe06CpIK8xTZZSK0lF29nOKkz_w6VR4sQnb4IAFQ,87
+opentelemetry_instrumentation_groq-0.40.13.dist-info/RECORD,,
