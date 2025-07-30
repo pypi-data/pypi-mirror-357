@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: ZestRAG
+Version: 0.1.0
+Summary: A lightweight RAG framework forked from ZestRAG(forked from LightRAG)
+Author-email: liqisheng <liqisheng2016@sina.com>
+License: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp
+Requires-Dist: configparser
+Requires-Dist: future
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: pipmaster
+Requires-Dist: pydantic
+Requires-Dist: python-dotenv
+Requires-Dist: pyuca
+Requires-Dist: setuptools
+Requires-Dist: tenacity
+Requires-Dist: tiktoken
+Requires-Dist: xlsxwriter>=3.1.0
+Dynamic: license-file
