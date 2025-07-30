@@ -1,0 +1,17 @@
+brickproof/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+brickproof/__main__.py,sha256=U7FCWkiM5tXsPDcVv3l9vaDbO8Q7gBykncHNoDPBNrY,1391
+brickproof/brickproof_runner.py,sha256=A97ZaQDBCMvub17veTmSn3Y75uqk_whrrV7htBhzofQ,857
+brickproof/cli.py,sha256=5ukFtgfXJWeWEuartkDhKoJryXN7Jm5v0nAqFSH1LWg,5598
+brickproof/constants.py,sha256=A59QQ39pWPL-Fj5MaIYFHi3yfEHaqXiBVmHqhsymJag,2142
+brickproof/databricks.py,sha256=Lvz4I8G-KUG3dV5Ehab3D_sIFnjH2dJ0R3YFrFCOLCM,3874
+brickproof/utils.py,sha256=DC_fizXQ_v2GNe-454O50FoW1rCNPNLACwG-uD-M_Mg,1581
+brickproof/version.py,sha256=QqMXHVJs6Mh0abjyoct_OcIt77Rz1dSmEAy-kWDxGc8,18
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_dummies.py,sha256=DJkJgbqj9qGCrfY6OXCxHOyCQHiQDgACDAbF8KuCgQg,132
+tests/test_spark.py,sha256=DKKzbDGVhs-kQpRZo7FpNg7K3lg0r4NIYc4aDjrwYtI,618
+tests/test_utils.py,sha256=ZGo9ApVdvk0WhXHw5aE6T553g9PRgja8UtDoGXGjBn8,1136
+brickproof-0.0.3.dist-info/METADATA,sha256=OwqRHEhvY39bHDDWQa6RIC19-SsKOakDlGO2HXHRCLI,417
+brickproof-0.0.3.dist-info/WHEEL,sha256=tZoeGjtWxWRfdplE7E3d45VPlLNQnvbKiYnx7gwAy8A,92
+brickproof-0.0.3.dist-info/entry_points.txt,sha256=I-kHPH4vZ4fvdH_yBQxi2ckI9h8jZRIJuikDvKUDBAk,57
+brickproof-0.0.3.dist-info/top_level.txt,sha256=fZMQPiSM3R6G88xE0H_p63AWIru8zC22CvRukbSMAVM,17
+brickproof-0.0.3.dist-info/RECORD,,
