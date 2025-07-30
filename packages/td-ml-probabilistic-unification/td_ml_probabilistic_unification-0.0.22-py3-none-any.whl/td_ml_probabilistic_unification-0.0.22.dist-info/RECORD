@@ -1,0 +1,9 @@
+td_ml_probabilistic_unification/__init__.py,sha256=x4zRO6-Zw5wv1NZqWK_E1svtMFXE7ynjU65NfTFi1CM,35
+td_ml_probabilistic_unification/data_loader.py,sha256=E17UgQJpIq7dAHagPy87AsqCHzHu5mqMx_Ny0KmEpZI,951
+td_ml_probabilistic_unification/get_cluster.py,sha256=1dxEdzyS9ANz9Ac39TVfVDqx9xbl-ZSYkasYkIk0-Jo,13135
+td_ml_probabilistic_unification/get_similarity.py,sha256=-PRiDL8dEUZ9hcKFykhBe7uUr1OIraeMPXe54IndB3Y,9330
+td_ml_probabilistic_unification/main.py,sha256=VWzb4Sk7h_3TYw0t_FqPzpdov6ODP3KAbSeQxz17RsQ,9502
+td_ml_probabilistic_unification-0.0.22.dist-info/METADATA,sha256=cT8YkECdc6WsNXmTvVip5CL9OCFlTatSYyG9XkPIXj0,3498
+td_ml_probabilistic_unification-0.0.22.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+td_ml_probabilistic_unification-0.0.22.dist-info/licenses/LICENSE,sha256=gZsIcQvSVwL8_lwngxEY2WCJLzbBvVOYwe_w8lx8B6g,78
+td_ml_probabilistic_unification-0.0.22.dist-info/RECORD,,
