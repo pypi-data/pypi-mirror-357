@@ -1,0 +1,12 @@
+endpoints/__init__.py,sha256=G74aP_pCyzqs0ffxL_TyDISQGDWqXZezsbBNHRR4-JM,489
+endpoints/detections.py,sha256=DB16u_mLck-MvjE0TRm9LQQV96plOkJwf8qPDERlnU8,12084
+endpoints/images.py,sha256=a0NEhYUMMNi-fGE4oSnrPWO7poYkyzJXANh8Z3iPq8Y,17883
+endpoints/map_features.py,sha256=TLFrExgN9GmsrGCyiphdTMnHUUbSJTJcsq5gBK32f4I,11197
+endpoints/organizations.py,sha256=B0lIsAnZ8WEIYOFdArSWG9JG5DhpspP7xJMJZJqpDow,7144
+endpoints/sequences.py,sha256=zrZimcPNOl0JWW_zD3IelnTyH1M6IgzQfLKQUyRIi_0,10457
+endpoints/vector_tiles.py,sha256=QTnzYh82DFpzYds2ANd8AJVN4U55TRdtczGEdsYWaOs,12474
+mapiry-1.0.0.dist-info/licenses/LICENSE,sha256=lrte8Oh0WevVbmSDl6qSKfy0mogPe27YaC7mnBGP6jA,1085
+mapiry-1.0.0.dist-info/METADATA,sha256=enqOVdJ2L3Yx3BYReH5Z3Mf_u03gJVgszU65qjxkwJI,11165
+mapiry-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mapiry-1.0.0.dist-info/top_level.txt,sha256=P_Fg3hHp0uv-LzU7lkJhRagjQAazQotgYle6dLUOIY8,10
+mapiry-1.0.0.dist-info/RECORD,,
