@@ -1,0 +1,2 @@
+[console_scripts]
+hitesh-fastapi-starter = fastapi_starter.generator:create_project_cli
