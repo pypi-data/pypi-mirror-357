@@ -1,0 +1,363 @@
+# Diperion Python SDK
+
+<div align="center">
+
+[![PyPI version](https://badge.fury.io/py/diperion.svg)](https://badge.fury.io/py/diperion)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+**A clean, developer-friendly Python SDK for the Diperion Semantic Engine**
+
+[Installation](#installation) • [Quick Start](#quick-start) • [Documentation](#documentation) • [Examples](#examples)
+
+</div>
+
+## Overview
+
+The Diperion Python SDK provides a clean, intuitive interface to interact with the Diperion Semantic Engine. Build powerful semantic applications without worrying about the underlying complexity of HTTP requests or data parsing.
+
+### ✨ Key Features
+
+- **🎯 Simple API**: Intuitive, Pythonic interface
+- **🚀 Auto-connection**: Automatic server detection and connection
+- **🛡️ Error Handling**: Comprehensive error handling with meaningful messages
+- **📊 Rich Data Models**: Type-safe data models with helpful methods
+- **🔍 Smart Querying**: Support for both natural language and DSL queries
+- **🎨 Graph Visualization**: Built-in support for graph visualization
+- **⚡ Performance**: Efficient HTTP session management
+
+## Installation
+
+Install the SDK using pip:
+
+```bash
+pip install diperion
+```
+
+## Quick Start
+
+### 1. Connect to your Diperion server
+
+```python
+import diperion
+
+# Connect to production (automatic)
+client = diperion.connect(environment="production")
+
+# Create a business and add some data
+business = client.create_business("mi_negocio", "Descripción de mi negocio")
+
+# Create nodes
+product = client.create_node("mi_negocio", "iPhone 15", "Product",
+                           {"price": 999, "category": "smartphone"})
+
+# Query data
+results = client.query("mi_negocio", "FIND Product WHERE price > 500")
+print(f"Found {len(results.nodes)} expensive products")
+```
+
+### 2. List available businesses
+
+```python
+businesses = client.list_businesses()
+for business in businesses:
+    print(f"📊 {business.name} ({business.industry})")
+```
+
+### 3. Create a new business
+
+```python
+# Create a new business with base entities
+business = client.create_business("my_store", "A retail electronics store")
+print(f"✅ Created business: {business.name}")
+```
+
+### 4. Create semantic nodes
+
+```python
+# Create products
+iphone = client.create_node(
+    business_id="my_store",
+    name="iPhone 15 Pro",
+    node_type="Product",
+    attributes={
+        "price": 999.99,
+        "brand": "Apple",
+        "category": "Smartphone",
+        "available": True
+    }
+)
+
+airpods = client.create_node(
+    business_id="my_store",
+    name="AirPods Pro",
+    node_type="Product",
+    attributes={
+        "price": 249.99,
+        "brand": "Apple",
+        "available": True
+    }
+)
+
+print(f"✅ Created: {iphone.name} and {airpods.name}")
+```
+
+### 5. Query your data
+
+```python
+# Natural language query
+results = client.query("my_store", "Find products under $500")
+print(f"🔍 Found {len(results)} products:")
+for product in results:
+    print(f"  • {product.name}: ${product.get_attribute('price')}")
+
+# DSL query
+expensive_products = client.query("my_store", "FIND Product WHERE price > 500")
+print(f"💰 Expensive products: {[p.name for p in expensive_products]}")
+```
+
+### 6. Create relationships
+
+```python
+# Create semantic relationships
+client.create_relationship(
+    business_id="my_store",
+    from_node_name="AirPods Pro",
+    to_node_name="iPhone 15 Pro",
+    relationship_type="compatible_with"
+)
+
+client.create_relationship(
+    business_id="my_store",
+    from_node_name="iPhone 15 Pro",
+    to_node_name="Premium Category",
+    relationship_type="classified_as"
+)
+
+print("✅ Created semantic relationships")
+```
+
+### 7. Explore relationships
+
+```python
+# Get relationship information
+relationships = client.get_relationships("my_store")
+for rel in relationships:
+    print(f"🔗 {rel.relationship_type}: {rel.count} connections")
+```
+
+### 8. Visualize your graph
+
+```python
+# Get graph visualization data
+graph = client.get_graph_visualization("my_store", max_nodes=50)
+print(f"📊 Graph: {graph.node_count()} nodes, {graph.edge_count()} edges")
+print(f"🏷️  Node types: {graph.get_node_types()}")
+```
+
+## Configuration
+
+The SDK supports flexible URL configuration for different environments:
+
+### 1. Environment Variables (Recommended for Production)
+
+```bash
+# Set the environment
+export DIPERION_ENVIRONMENT=production
+
+# Or set explicit URL
+export DIPERION_API_URL=https://api.diperion.com
+
+# Custom environment URLs
+export DIPERION_PRODUCTION_URL=https://api.diperion.com
+export DIPERION_STAGING_URL=https://staging-api.diperion.com
+```
+
+### 2. Configuration File
+
+Create a `.diperion.json` file in your project root:
+
+```json
+{
+  "environment": "production",
+  "timeout": 30,
+  "urls": {
+    "development": "http://localhost:8080",
+    "production": "https://api.diperion.com",
+    "staging": "https://staging-api.diperion.com"
+  }
+}
+```
+
+### 3. Programmatic Configuration
+
+```python
+import diperion
+
+# Explicit URL (highest priority)
+client = diperion.connect(base_url="https://your-custom-url.run.app")
+
+# Environment-based
+client = diperion.connect(environment="production")
+
+# Using default environment from config
+client = diperion.connect()  # Uses DIPERION_ENVIRONMENT or config file
+```
+
+### Configuration Priority
+
+The SDK resolves URLs in this order:
+
+1. **Explicit `base_url` parameter** (highest priority)
+2. **`DIPERION_API_URL` environment variable**
+3. **`DIPERION_BASE_URL` environment variable**
+4. **Environment-specific URL from config file**
+5. **Default environment URL** (development: localhost, production: Cloud Run)
+
+## Usage Examples
+
+### Business Intelligence
+
+```python
+# Get comprehensive business analysis
+analysis = client.intelligence.perform_comprehensive_introspection("mi_negocio")
+print(f"Total entities: {analysis['total_entities']}")
+
+# Smart business setup with auto-generated taxonomy
+result = client.smart_business_setup("Tech Store", "Electronics retailer")
+print(f"Created business: {result['generated_business_id']}")
+```
+
+### Advanced Querying
+
+```python
+# Natural language queries
+results = client.query("mi_negocio", "FIND expensive products")
+
+# DSL queries with conditions
+results = client.query("mi_negocio", 'FIND Product WHERE price > 500 AND category = "smartphone"')
+
+# List all entities of a type
+results = client.query("mi_negocio", "LIST Product")
+```
+
+### Relationship Management
+
+```python
+# Create relationships
+client.create_relationship("mi_negocio", "iPhone 15", "Premium Category", "belongs_to")
+
+# Get relationship information
+relationships = client.get_relationships("mi_negocio", "belongs_to")
+```
+
+## Production Deployment
+
+When deploying to production, the SDK automatically connects to the production Cloud Run instance:
+
+```python
+import diperion
+
+# Automatically uses production URL
+client = diperion.connect(environment="production")
+
+# Or use environment variable
+# DIPERION_ENVIRONMENT=production
+client = diperion.connect()
+```
+
+## Development vs Production
+
+- **Development**: Uses `http://localhost:8080` by default
+- **Production**: Uses Google Cloud Run URL automatically
+- **Staging**: Configurable for your staging environment
+
+## Error Handling
+
+```python
+from diperion.common.exceptions import DiperionError, ConnectionError
+
+try:
+    client = diperion.connect()
+    results = client.query("mi_negocio", "FIND Product")
+except ConnectionError as e:
+    print(f"Connection failed: {e}")
+except DiperionError as e:
+    print(f"API error: {e}")
+```
+
+## Configuration Management
+
+```python
+from diperion.semantic_engine.config import get_config
+
+# Get current configuration
+config = get_config()
+print(f"Current environment: {config.get_environment()}")
+print(f"Current URL: {config.get_base_url()}")
+
+# Create example config file
+config.create_example_config_file(".diperion.json")
+```
+
+## API Reference
+
+### Client Methods
+
+| Method                                                           | Description                       |
+| ---------------------------------------------------------------- | --------------------------------- |
+| `list_businesses()`                                              | Get all available businesses      |
+| `get_business(business_id)`                                      | Get detailed business information |
+| `create_business(business_id, description)`                      | Create a new business             |
+| `create_node(business_id, name, node_type, attributes)`          | Create a semantic node            |
+| `find_nodes(business_id, node_type, conditions)`                 | Find nodes by criteria            |
+| `query(business_id, query)`                                      | Execute semantic queries          |
+| `execute_dsl(business_id, command)`                              | Execute DSL commands              |
+| `create_relationship(business_id, from_node, to_node, rel_type)` | Create relationships              |
+| `get_relationships(business_id, relationship_type)`              | Get relationship info             |
+| `get_graph_visualization(business_id, max_nodes, node_types)`    | Get graph data                    |
+
+### Data Models
+
+- **`Business`**: Represents a business entity
+- **`Node`**: Represents a semantic node
+- **`Edge`**: Represents a relationship
+- **`QueryResult`**: Results from semantic queries
+- **`BusinessCapabilities`**: Business metadata and capabilities
+- **`RelationshipInfo`**: Information about relationship types
+- **`GraphVisualization`**: Graph visualization data
+
+## Examples
+
+Check out the [examples](examples/) directory for more detailed usage examples:
+
+- [Basic Usage](examples/basic_usage.py)
+- [E-commerce Store](examples/ecommerce_example.py)
+- [Restaurant Menu](examples/restaurant_example.py)
+- [Graph Visualization](examples/visualization_example.py)
+
+## Requirements
+
+- Python 3.8+
+- Running Diperion Semantic Engine server
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+- 📖 [Documentation](https://docs.diperion.com/python-sdk)
+- 🐛 [Issue Tracker](https://github.com/diperion/diperion-python/issues)
+- 💬 [Discussions](https://github.com/diperion/diperion-python/discussions)
+- 📧 [Email Support](mailto:support@diperion.com)
+
+---
+
+<div align="center">
+Made with ❤️ by the Diperion Team
+</div>
