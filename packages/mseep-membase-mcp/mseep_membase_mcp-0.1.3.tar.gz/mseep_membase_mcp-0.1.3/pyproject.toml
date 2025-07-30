@@ -1,0 +1,9 @@
+[tool.uv.sources.membase]
+git = "https://github.com/unibaseio/membase.git"
+
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
