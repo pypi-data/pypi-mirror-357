@@ -1,0 +1,3 @@
+# MaXML Library: Runtime Dependencies
+classicist==1.0.*
+enumerific==1.0.*

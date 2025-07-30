@@ -1,0 +1,12 @@
+classicist==1.0.*
+enumerific==1.0.*
+
+[development]
+black==24.10.*
+pytest==8.3.*
+pytest-codeblocks==0.17.0
+
+[distribution]
+build
+twine
+wheel
