@@ -1,0 +1,23 @@
+Metadata-Version: 2.2
+Name: fusionlib
+Version: 0.2
+Summary: FusionLib: One import for all common Python libraries
+Author: Your Name
+Author-email: youremail@example.com
+Keywords: numpy,pandas,matplotlib,textblob,utility,seaborn,scikit-learn,nltk,requests
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Requires-Dist: textblob
+Requires-Dist: nltk
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Requires-Dist: pillow
+Dynamic: author
+Dynamic: author-email
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: summary
