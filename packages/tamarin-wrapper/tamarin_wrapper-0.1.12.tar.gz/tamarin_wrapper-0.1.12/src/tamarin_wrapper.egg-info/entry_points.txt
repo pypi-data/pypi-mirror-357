@@ -1,0 +1,2 @@
+[console_scripts]
+tamarin-wrapper = tamarin_wrapper.main:cli
