@@ -1,0 +1,21 @@
+[project]
+name = "conrun"
+version = "0.1.0"
+description = "Simple concurrent runner for threads, processes, and async tasks"
+authors = [{ name = "Dmitrii Khudiakov" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["concurrent", "asyncio", "parallel", "threads", "tasks"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
