@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "vme-infrastructure": {
+      "command": "uv",
+      "args": ["run", "--directory", "/home/frta/projects/vme-fastmcp-server-v2", "python", "vme_server_filtered.py"],
+      "env": {
+        "VME_API_BASE_URL": "https://vmemgr01.lab.loc/api",
+        "VME_API_TOKEN": "87e6c446-c98f-4183-926c-9b5a25267d4a"
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+# Test Route Configuration - Resources Preferred
+# Maximum semantic model for testing resource-heavy clients
+name: "Test Resources First Routes"
+description: "Prefer resources over tools for semantic clients"
+
+# Static infrastructure as Resources
+infrastructure_resources:
+  - pattern: "^/api/zones$"
+    mcp_type: "RESOURCE"
+    description: "Available cloud zones"
+    
+  - pattern: "^/api/zones/.*"
+    mcp_type: "RESOURCE_TEMPLATE"
+    description: "Zone details and capabilities"
+    
+  - pattern: "^/api/library/instance-types$"
+    mcp_type: "RESOURCE"
+    description: "Available instance types"
+    
+  - pattern: "^/api/library/instance-types/.*"
+    mcp_type: "RESOURCE_TEMPLATE"
+    description: "Instance type specifications"
+
+# User and system info as Resources
+system_resources:
+  - pattern: "^/api/whoami$"
+    mcp_type: "RESOURCE"
+    description: "Current user profile"
+    
+  - pattern: "^/api/appliance-settings$"
+    mcp_type: "RESOURCE"
+    description: "System configuration"
+    
+  - pattern: "^/api/license.*"
+    mcp_type: "RESOURCE"
+    description: "License status"
+
+# Only dynamic operations as Tools
+action_tools:
+  - pattern: "^/api/instances$"
+    mcp_type: "TOOL"
+    description: "List instances (dynamic)"
+    
+  - pattern: "^/api/instances/[^/]+$"
+    mcp_type: "TOOL"
+    description: "Instance operations (create, delete, etc.)"
+
+# Everything else excluded
+exclude_all:
+  - pattern: ".*"
+    mcp_type: "EXCLUDE"
+
+# Expected counts: ~2 tools, ~7 resources
+expected_tool_count: 2
+expected_resource_count: 7

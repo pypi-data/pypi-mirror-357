@@ -1,0 +1,19 @@
+# Test Route Configuration - Empty/Edge Cases
+# For testing edge cases and error handling
+name: "Test Empty Routes"
+description: "Edge case testing - minimal or no routes"
+
+# Only one basic endpoint
+minimal_tools:
+  - pattern: "^/api/whoami$"
+    mcp_type: "TOOL"
+    description: "Single test endpoint"
+
+# Exclude everything else
+exclude_all:
+  - pattern: ".*"
+    mcp_type: "EXCLUDE"
+
+# Expected counts: 1 tool, 0 resources
+expected_tool_count: 1
+expected_resource_count: 0

@@ -1,0 +1,41 @@
+# Example configuration for multiple MCP servers
+llm:
+  default_provider: "anthropic"
+  default_model: "claude-3-5-sonnet-20241022"
+
+server:
+  servers:
+    # VME server via stdio
+    vme:
+      name: "vme"
+      transport: "stdio"
+      path_or_url: "../servers/vme_server_filtered.py"
+      timeout: 30
+      auto_connect: true
+      enabled: true
+    
+    # Example HTTP server (if you have one running)
+    # http_server:
+    #   name: "http_server"
+    #   transport: "http"
+    #   path_or_url: "http://localhost:8000"
+    #   timeout: 15
+    #   auto_connect: true
+    #   enabled: false
+    
+    # Another stdio server example
+    # discovery_server:
+    #   name: "discovery"
+    #   transport: "stdio"
+    #   path_or_url: "../servers/progressive_discovery_server.py"
+    #   timeout: 30
+    #   auto_connect: false
+    #   enabled: true
+
+  default_timeout: 30
+
+audio:
+  enabled: true
+  mode: "input_only"
+
+debug_level: 1

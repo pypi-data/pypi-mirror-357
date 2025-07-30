@@ -1,0 +1,75 @@
+# Morpheus Enterprise Full Routes
+# All routes available in full Morpheus platform
+name: "Morpheus Enterprise Routes"
+description: "All routes available in full Morpheus Enterprise platform"
+
+# Include all VME routes plus enterprise features
+inherit_from: "vme_routes.yaml"
+
+# Enterprise-only features
+enterprise:
+  - pattern: "^/api/billing.*"
+    description: "Enterprise billing and invoicing"
+    
+  - pattern: "^/api/reports.*"
+    description: "Advanced reporting and analytics"
+    
+  - pattern: "^/api/workflows.*"
+    description: "Workflow automation and orchestration"
+    
+  - pattern: "^/api/costing.*"
+    description: "Cost management and optimization"
+    
+  - pattern: "^/api/budgets.*"
+    description: "Budget management and tracking"
+    
+  - pattern: "^/api/policies.*"
+    description: "Governance and policy management"
+    
+  - pattern: "^/api/approvals.*"
+    description: "Approval workflows"
+
+# Multi-cloud (Enterprise)
+multi_cloud:
+  - pattern: "^/api/clouds.*"
+    description: "Multi-cloud management"
+    
+  - pattern: "^/api/cloud-types.*"
+    description: "Cloud provider types"
+
+# Advanced automation (Enterprise)
+automation:
+  - pattern: "^/api/tasks.*"
+    description: "Task automation"
+    
+  - pattern: "^/api/task-sets.*"
+    description: "Task set management"
+    
+  - pattern: "^/api/execute-schedules.*"
+    description: "Scheduled execution"
+
+# Advanced monitoring (Enterprise)
+advanced_monitoring:
+  - pattern: "^/api/monitoring/alerts.*"
+    description: "Advanced alerting"
+    
+  - pattern: "^/api/monitoring/incidents.*"
+    description: "Incident management"
+
+# Enterprise integrations
+integrations:
+  - pattern: "^/api/integrations.*"
+    description: "Third-party integrations"
+    
+  - pattern: "^/api/integration-types.*"
+    description: "Integration type definitions"
+
+# Advanced security (Enterprise)
+security:
+  - pattern: "^/api/certificates.*"
+    description: "Certificate management"
+    
+  - pattern: "^/api/cypher.*"
+    description: "Secret management"
+
+# No excluded patterns - everything allowed in Morpheus Enterprise

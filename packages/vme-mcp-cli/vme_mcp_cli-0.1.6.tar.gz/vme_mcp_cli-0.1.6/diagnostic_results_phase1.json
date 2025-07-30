@@ -1,0 +1,80 @@
+{
+  "server_info": {
+    "platform_type": "vme",
+    "api_base_url": "https://vmemgr01.lab.loc",
+    "active_groups": [],
+    "total_tool_groups": 6
+  },
+  "tool_groups": {
+    "compute_activation": {
+      "success": true,
+      "before_count": 0,
+      "after_count": 1,
+      "is_now_active": true
+    },
+    "route_maps": {
+      "total_routes": 24,
+      "cluster_routes": [
+        "^/api/clusters$",
+        "^/api/clusters/.*"
+      ],
+      "server_routes": [
+        "^/api/servers$",
+        "^/api/servers/.*"
+      ]
+    }
+  },
+  "critical_tools": {
+    "vme_clusters_Get_All_Clusters": {
+      "status_code": 200,
+      "available": true,
+      "error": null
+    },
+    "vme_servers_Get_all_hosts": {
+      "status_code": 200,
+      "available": true,
+      "error": null
+    },
+    "list_available_resources": {
+      "status": "custom_tool",
+      "available": true,
+      "note": "Custom tool - should always work"
+    },
+    "get_server_info": {
+      "status": "custom_tool",
+      "available": true,
+      "note": "Custom tool - should always work"
+    }
+  },
+  "execution_tests": {},
+  "recommendations": [
+    "\u2705 All critical tools appear to be working",
+    "\ud83c\udfaf Focus on LLM behavior improvements"
+  ],
+  "openapi_analysis": {
+    "total_paths": 279,
+    "cluster_paths": [
+      "/api/clusters",
+      "/api/networks/servers/{serverId}/edge-clusters",
+      "/api/networks/servers/{serverId}/edge-clusters/{edgeClusterId}"
+    ],
+    "server_paths": [
+      "/api/load-balancers/{loadBalancerId}/virtual-servers",
+      "/api/load-balancers/{loadBalancerId}/virtual-servers/{id}",
+      "/api/networks/servers/{serverId}/dhcp-relays",
+      "/api/networks/servers/{serverId}/dhcp-relays/{id}",
+      "/api/networks/servers/{serverId}/dhcp-servers",
+      "/api/networks/servers/{serverId}/dhcp-servers/{id}",
+      "/api/networks/servers/{serverId}/edge-clusters",
+      "/api/networks/servers/{serverId}/edge-clusters/{edgeClusterId}",
+      "/api/networks/servers/{serverId}/firewall-rules",
+      "/api/networks/servers/{serverId}/scopes",
+      "/api/networks/servers/{serverId}/scopes/{id}",
+      "/api/servers",
+      "/api/servers/{id}",
+      "/storage/servers",
+      "/api/storage-servers",
+      "/api/storage-servers/{id}"
+    ]
+  }
+}

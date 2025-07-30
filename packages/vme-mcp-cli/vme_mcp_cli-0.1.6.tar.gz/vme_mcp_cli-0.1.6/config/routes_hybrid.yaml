@@ -1,0 +1,160 @@
+# Production Route Configuration - Hybrid (Tools + Resources)
+# For MCP Inspector and other hybrid clients
+name: "Production Hybrid Routes"
+description: "Mixed tools and resources for production hybrid clients"
+
+# Core system operations as Tools
+core_tools:
+  - pattern: "^/api/appliance-settings$"
+    mcp_type: "TOOL"
+    description: "Appliance configuration management"
+    
+  - pattern: "^/api/license.*"
+    mcp_type: "TOOL"
+    description: "License operations and validation"
+    
+  - pattern: "^/api/health.*"
+    mcp_type: "TOOL"
+    description: "System health checks"
+
+# CREATE operations as Tools (must come BEFORE resource patterns)
+create_operations:
+  - pattern: "^/api/zones$"
+    mcp_type: "TOOL"
+    methods: ["POST"]
+    description: "Create new cloud zones"
+    
+  - pattern: "^/api/groups$" 
+    mcp_type: "TOOL"
+    methods: ["POST"]
+    description: "Create new groups"
+    
+  - pattern: "^/api/clouds$"
+    mcp_type: "TOOL" 
+    methods: ["POST"]
+    description: "Create cloud integrations"
+    
+  - pattern: "^/api/accounts$"
+    mcp_type: "TOOL"
+    methods: ["POST"]
+    description: "Create new tenants/accounts"
+    
+  - pattern: "^/api/instances$"
+    mcp_type: "TOOL" 
+    methods: ["POST"]
+    description: "Create new virtual machines"
+
+# Infrastructure data as Resources (GET operations only)
+infrastructure_resources:
+  - pattern: "^/api/zones$"
+    mcp_type: "RESOURCE"
+    methods: ["GET"]
+    description: "Available cloud zones (read-only)"
+    
+  - pattern: "^/api/zones/.*"
+    mcp_type: "RESOURCE_TEMPLATE"
+    methods: ["GET"]
+    description: "Individual zone configurations (read-only)"
+    
+  - pattern: "^/api/clouds$"
+    mcp_type: "RESOURCE"
+    methods: ["GET"]
+    description: "Cloud provider integrations (read-only)"
+    
+  - pattern: "^/api/clouds/.*"
+    mcp_type: "RESOURCE_TEMPLATE"
+    methods: ["GET"]
+    description: "Cloud provider details (read-only)"
+    
+  - pattern: "^/api/groups$"
+    mcp_type: "RESOURCE"
+    methods: ["GET"]
+    description: "User and tenant groups (read-only)"
+
+# VM and infrastructure management as Tools (dynamic operations)
+vm_management_tools:
+  - pattern: "^/api/instances.*"
+    mcp_type: "TOOL"
+    description: "Virtual machine lifecycle management"
+    
+  - pattern: "^/api/library/instance-types.*"
+    mcp_type: "TOOL"
+    description: "Instance type management"
+    
+  - pattern: "^/api/clusters.*"
+    mcp_type: "TOOL"
+    description: "Cluster management operations"
+
+# User and system info as Resources (static data)
+system_resources:
+  - pattern: "^/api/whoami$"
+    mcp_type: "RESOURCE"
+    description: "Current user profile and permissions"
+    
+  - pattern: "^/api/accounts$"
+    mcp_type: "RESOURCE"
+    description: "Account and tenant information"
+
+# Monitoring and logs as Tools (requires license features)
+monitoring_tools:
+  - pattern: "^/api/monitoring.*"
+    mcp_type: "TOOL"
+    required_features: ["monitoring"]
+    description: "Monitoring and alerting operations (requires monitoring license)"
+    
+  - pattern: "^/api/logs$"
+    mcp_type: "TOOL"
+    required_features: ["logging"]
+    description: "System log queries (requires logging license)"
+
+# Analytics and reporting tools (enterprise features)
+analytics_tools:
+  - pattern: "^/api/reports.*"
+    mcp_type: "TOOL"
+    required_features: ["analytics", "reports"]
+    description: "Analytics and reporting (requires analytics license)"
+    
+  - pattern: "^/api/costing.*"
+    mcp_type: "TOOL"
+    required_features: ["costing"]
+    description: "Cost analysis (requires costing license)"
+
+# Automation and workflow tools (advanced features)
+automation_tools:
+  - pattern: "^/api/workflows.*"
+    mcp_type: "TOOL"
+    required_features: ["workflows", "automation"]
+    description: "Workflow automation (requires automation license)"
+    
+  - pattern: "^/api/jobs.*"
+    mcp_type: "TOOL"
+    required_features: ["jobs"]
+    description: "Job management (requires jobs license)"
+    
+  - pattern: "^/api/tasks.*"
+    mcp_type: "TOOL"
+    required_features: ["tasks"]
+    description: "Task automation (requires tasks license)"
+
+# Approval workflow tools
+approval_tools:
+  - pattern: "^/api/approvals.*"
+    mcp_type: "TOOL"
+    required_features: ["approvals"]
+    description: "Approval workflows (requires approvals license)"
+
+# Load balancer tools (enterprise feature)
+load_balancer_tools:
+  - pattern: "^/api/load-balancers.*"
+    mcp_type: "TOOL"
+    required_features: ["loadBalancers"]
+    description: "Load balancer management (requires loadBalancers license)"
+
+# Everything else excluded
+exclude_all:
+  - pattern: ".*"
+    mcp_type: "EXCLUDE"
+
+# Expected counts for validation
+expected_tool_count: 45
+expected_resource_count: 12

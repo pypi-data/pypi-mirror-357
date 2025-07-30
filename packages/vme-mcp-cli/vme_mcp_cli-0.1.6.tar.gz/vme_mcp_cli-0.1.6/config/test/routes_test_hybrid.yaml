@@ -1,0 +1,49 @@
+# Test Route Configuration - Hybrid (Tools + Resources)
+# Moderate set for testing MCP Inspector and hybrid clients
+name: "Test Hybrid Routes"
+description: "Mixed tools and resources for testing hybrid clients"
+
+# Core operations as Tools
+core_tools:
+  - pattern: "^/api/appliance-settings$"
+    mcp_type: "TOOL"
+    description: "Appliance configuration"
+    
+  - pattern: "^/api/license.*"
+    mcp_type: "TOOL"
+    description: "License operations"
+
+# Static data as Resources
+infrastructure_resources:
+  - pattern: "^/api/zones$"
+    mcp_type: "RESOURCE"
+    description: "Cloud zones (static list)"
+    
+  - pattern: "^/api/zones/.*"
+    mcp_type: "RESOURCE_TEMPLATE"
+    description: "Individual zone details"
+
+# VM operations as Tools
+vm_tools:
+  - pattern: "^/api/instances.*"
+    mcp_type: "TOOL"
+    description: "Instance management operations"
+    
+  - pattern: "^/api/library/instance-types.*"
+    mcp_type: "TOOL"
+    description: "Instance type operations"
+
+# User info as Resource
+user_resources:
+  - pattern: "^/api/whoami$"
+    mcp_type: "RESOURCE"
+    description: "Current user (static info)"
+
+# Everything else excluded
+exclude_all:
+  - pattern: ".*"
+    mcp_type: "EXCLUDE"
+
+# Expected counts: ~8 tools, ~3 resources
+expected_tool_count: 8
+expected_resource_count: 3

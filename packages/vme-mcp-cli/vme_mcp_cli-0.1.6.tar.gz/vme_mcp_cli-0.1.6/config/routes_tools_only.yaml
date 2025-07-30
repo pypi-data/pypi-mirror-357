@@ -1,0 +1,69 @@
+# Production Route Configuration - Tools Only
+# For Claude Desktop and other tools-only clients
+name: "Production Tools Only Routes"
+description: "Tool-focused configuration for clients that don't support resources"
+
+# Core system operations
+core_tools:
+  - pattern: "^/api/appliance-settings$"
+    mcp_type: "TOOL"
+    description: "Appliance configuration management"
+    
+  - pattern: "^/api/license.*"
+    mcp_type: "TOOL"
+    description: "License operations and validation"
+    
+  - pattern: "^/api/whoami$"
+    mcp_type: "TOOL"
+    description: "Current user information"
+    
+  - pattern: "^/api/health.*"
+    mcp_type: "TOOL"
+    description: "System health and status"
+
+# VM lifecycle management
+vm_management:
+  - pattern: "^/api/instances$"
+    mcp_type: "TOOL"
+    description: "List virtual machines"
+    
+  - pattern: "^/api/instances/[^/]+$"
+    mcp_type: "TOOL"
+    description: "Individual VM operations"
+    
+  - pattern: "^/api/library/instance-types$"
+    mcp_type: "TOOL"
+    description: "Available instance types"
+
+# Infrastructure queries
+infrastructure_tools:
+  - pattern: "^/api/zones$"
+    mcp_type: "TOOL"
+    description: "Available zones"
+    
+  - pattern: "^/api/clouds$"
+    mcp_type: "TOOL"
+    description: "Cloud integrations"
+    
+  - pattern: "^/api/groups$"
+    mcp_type: "TOOL"
+    description: "User groups"
+
+# Monitoring and operations
+monitoring_tools:
+  - pattern: "^/api/monitoring/checks$"
+    mcp_type: "TOOL"
+    description: "Health monitoring"
+    
+  - pattern: "^/api/logs$"
+    mcp_type: "TOOL"
+    description: "System logs"
+
+# Everything else excluded
+exclude_all:
+  - pattern: ".*"
+    mcp_type: "EXCLUDE"
+
+# Expected counts
+expected_tool_count: 35
+expected_resource_count: 0

@@ -1,0 +1,31 @@
+# Test Route Configuration - Tools Only
+# Minimal set for testing Claude Desktop compatibility
+name: "Test Tools Only Routes"
+description: "Minimal tool set for testing tools-only clients like Claude Desktop"
+
+# Core operations only
+core_tools:
+  - pattern: "^/api/appliance-settings$"
+    description: "Basic appliance info"
+    
+  - pattern: "^/api/license.*"
+    description: "License information"
+    
+  - pattern: "^/api/whoami$"
+    description: "Current user info"
+
+# Basic VM operations
+vm_tools:
+  - pattern: "^/api/instances$"
+    description: "List instances (no details)"
+    
+  - pattern: "^/api/library/instance-types.*"
+    description: "Provisioning types only"
+
+# Everything else excluded
+exclude_all:
+  - pattern: ".*"
+    mcp_type: "EXCLUDE"
+    
+# Expected tool count: ~5-6 tools
+expected_tool_count: 6

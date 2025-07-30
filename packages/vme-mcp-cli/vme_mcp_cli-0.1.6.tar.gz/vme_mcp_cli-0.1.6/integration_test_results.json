@@ -1,0 +1,137 @@
+{
+  "timestamp": "2025-06-19",
+  "test_suite": "Critical Tools Integration Test",
+  "server_info": {
+    "platform_type": "vme",
+    "compute_pre_activated": true,
+    "active_groups": [
+      "compute",
+      "networking"
+    ]
+  },
+  "tests": {
+    "cluster_tools": {
+      "vme_clusters_Get_All_Clusters": {
+        "status": "success",
+        "status_code": 200,
+        "cluster_count": 1,
+        "cluster_names": [
+          "prod01"
+        ],
+        "error": null
+      },
+      "vme_clusters_Get_Cluster": {
+        "status": "success",
+        "status_code": 200,
+        "cluster_id": 1,
+        "error": null
+      }
+    },
+    "server_tools": {
+      "vme_servers_Get_all_hosts": {
+        "status": "success",
+        "status_code": 200,
+        "server_count": 25,
+        "server_names": [
+          "frippe01",
+          "frippe02",
+          "frippe03",
+          "iotest01",
+          "iotest02",
+          "iotest03",
+          "iotest04",
+          "iotest05",
+          "iotest06",
+          "iotest07",
+          "iotest08",
+          "iotest09",
+          "iotest10",
+          "mr-ai01",
+          "new_vm",
+          "new_vm_1",
+          "new_vm_2",
+          "new_vm_3",
+          "new_vm_4",
+          "new_vm_5",
+          "ns01",
+          "ns02",
+          "ns02-1",
+          "rocky-vm",
+          "rocky8-vm"
+        ],
+        "server_types": [],
+        "error": null
+      },
+      "vme_servers_Get_Host": {
+        "status": "success",
+        "status_code": 200,
+        "server_id": 39,
+        "server_name": "frippe01",
+        "error": null,
+        "specifications": {
+          "cpu_cores": null,
+          "memory_gb": 3.73,
+          "status": "provisioned",
+          "power_state": "on",
+          "os_info": null,
+          "server_type": null
+        }
+      }
+    },
+    "progressive_discovery": {
+      "progressive_discovery": {
+        "status": "success",
+        "initial_active_groups": [
+          "compute",
+          "networking"
+        ],
+        "post_activation_groups": [
+          "compute",
+          "networking"
+        ],
+        "compute_pre_activated": true,
+        "networking_activated": true,
+        "discovery_still_functional": true
+      }
+    },
+    "user_scenarios": {
+      "user_scenario_cluster_nodes": {
+        "status": "success",
+        "cluster_count": 1,
+        "node_count": 3,
+        "node_specifications": [
+          {
+            "name": "frippe01",
+            "cpu_cores": null,
+            "memory_gb": 3.73,
+            "status": "provisioned",
+            "type": null
+          },
+          {
+            "name": "frippe02",
+            "cpu_cores": null,
+            "memory_gb": 3.51,
+            "status": "provisioned",
+            "type": null
+          },
+          {
+            "name": "frippe03",
+            "cpu_cores": null,
+            "memory_gb": 7.45,
+            "status": "provisioned",
+            "type": null
+          }
+        ],
+        "workflow_successful": true
+      }
+    }
+  },
+  "summary": {
+    "total_tests": 6,
+    "passed_tests": 6,
+    "failed_tests": 0,
+    "success_rate": 100.0,
+    "critical_failures": [],
+    "overall_status": "PASS"
+  }
+}

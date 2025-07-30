@@ -1,0 +1,374 @@
+# VME OpenAPI Augmentations
+# This file contains additional context and descriptions to enhance the auto-generated tools
+# These augmentations are merged with the base OpenAPI spec at runtime
+# 
+# Structure:
+# - paths: Additional descriptions for specific endpoints
+# - components: Enhanced schema descriptions
+# - x-vme-context: Custom extensions for VME-specific knowledge
+
+paths:
+  /api/license:
+    get:
+      x-augment-description: |
+        
+        **IMPORTANT CONTEXT ABOUT VME LICENSING**:
+        
+        This endpoint returns license information including socket count, which refers to:
+        - **Socket licenses**: The number of physical CPU sockets licensed for the HCI cluster
+        - **NOT** the number of VMs you can create
+        
+        To determine if you can create more VMs, you need to check:
+        1. **Cluster resource utilization**: Use compute infrastructure tools to check CPU, memory, and storage availability
+        2. **Current workload count**: Compare against the workload limit in the license
+        3. **Available resources**: Even with all sockets licensed, existing hardware may have plenty of capacity
+        
+        **Common Misconceptions**:
+        - "No more socket licenses available" does NOT mean "Cannot create more VMs"
+        - Socket licenses only limit adding new physical hosts to the cluster
+        - VM capacity depends on available resources within licensed hardware
+        
+        **Example Interpretation**:
+        - 8 sockets licensed, 8 sockets used = Cannot add more physical hosts
+        - But each host might have 256GB RAM with only 100GB used = Can create many more VMs
+  
+  /api/appliance-settings:
+    get:
+      x-augment-description: |
+        
+        **CONTEXT**: These are global platform settings, not VM-specific configurations.
+    put:
+      x-augment-description: |
+        
+        **WARNING**: Modifying these settings affects the entire VME platform. Use with caution.
+
+  /api/instances:
+    get:
+      x-augment-description: |
+        
+        **NOTE**: In VME context, "instances" are virtual machines (VMs). This endpoint lists all VMs across the HCI cluster.
+    post:
+      x-override-tool: true
+      x-tool-definition:
+        name: "vme_compute_Create_an_Instance"
+        description: |
+          Create a new virtual machine instance in the VME HCI cluster.
+          
+          **CRITICAL**: This tool requires progressive discovery. Call `discover_compute_infrastructure()` first!
+          
+          **Instance Type**: For KVM-based VMs, ALWAYS use instanceType.code = "mvm"
+          
+          **Required Structure**: The config object is REQUIRED and must contain imageId.
+          
+          **Working Example**:
+          ```json
+          {
+            "instance": {
+              "name": "test-vm-01",
+              "cloud": "tc-lab",
+              "hostName": "test-vm-01",
+              "type": "mvm",
+              "instanceType": {"code": "mvm"},
+              "site": {"id": 1},
+              "layout": {"id": 2},
+              "plan": {"id": 11}
+            },
+            "zoneId": 1,
+            "config": {
+              "resourcePoolId": "pool-1",
+              "imageId": 108,
+              "createUser": true
+            },
+            "volumes": [{
+              "id": -1,
+              "rootVolume": true,
+              "name": "root",
+              "size": 40,
+              "storageType": 1,
+              "datastoreId": "auto"
+            }],
+            "networkInterfaces": [{
+              "network": {"id": "network-10"}
+            }]
+          }
+          ```
+        parameters:
+          type: object
+          required: ["instance", "zoneId", "config"]
+          properties:
+            instance:
+              type: object
+              required: ["name", "site", "instanceType", "layout", "plan"]
+              properties:
+                name:
+                  type: string
+                  description: "Name of the VM instance"
+                cloud:
+                  type: string
+                  description: "Cloud/zone name (e.g., 'tc-lab')"
+                hostName:
+                  type: string
+                  description: "Hostname for the VM"
+                type:
+                  type: string
+                  description: "Instance type code (use 'mvm' for KVM)"
+                  enum: ["mvm"]
+                instanceType:
+                  type: object
+                  required: ["code"]
+                  properties:
+                    code:
+                      type: string
+                      description: "Must be 'mvm' for KVM VMs"
+                      enum: ["mvm"]
+                site:
+                  type: object
+                  required: ["id"]
+                  properties:
+                    id:
+                      type: integer
+                      description: "Resource group ID"
+                layout:
+                  type: object
+                  required: ["id"]
+                  properties:
+                    id:
+                      type: integer
+                      description: "Layout ID (use 2 for single VM)"
+                plan:
+                  type: object
+                  required: ["id"]
+                  properties:
+                    id:
+                      type: integer
+                      description: "Service plan ID"
+            zoneId:
+              type: integer
+              description: "Zone ID (use 1 for tc-lab)"
+            config:
+              type: object
+              required: ["resourcePoolId", "imageId"]
+              properties:
+                resourcePoolId:
+                  type: string
+                  description: "Resource pool ID (e.g., 'pool-1')"
+                imageId:
+                  type: integer
+                  description: "OS image ID (use resolve_image_name() to get ID)"
+                createUser:
+                  type: boolean
+                  description: "Create default user account"
+                  default: true
+                noAgent:
+                  type: boolean
+                  description: "Skip agent installation"
+                  default: false
+            volumes:
+              type: array
+              description: "Storage volumes configuration"
+              items:
+                type: object
+                required: ["id", "rootVolume", "size"]
+                properties:
+                  id:
+                    type: integer
+                    description: "Use -1 for new volume"
+                    default: -1
+                  rootVolume:
+                    type: boolean
+                    description: "Is this the root volume?"
+                    default: true
+                  name:
+                    type: string
+                    description: "Volume name"
+                    default: "root"
+                  size:
+                    type: integer
+                    description: "Size in GB"
+                    default: 40
+                  storageType:
+                    type: integer
+                    description: "Storage type ID"
+                    default: 1
+                  datastoreId:
+                    type: string
+                    description: "Datastore ID or 'auto'"
+                    default: "auto"
+            networkInterfaces:
+              type: array
+              description: "Network interface configuration"
+              items:
+                type: object
+                required: ["network"]
+                properties:
+                  network:
+                    type: object
+                    required: ["id"]
+                    properties:
+                      id:
+                        type: string
+                        description: "Network ID (e.g., 'network-10')"
+
+  /api/instance-types:
+        {
+          "zoneId": 1,
+          "instance": {
+            "name": "my-vm-01",
+            "cloud": "tc-lab",
+            "hostName": "my-vm-01", 
+            "type": "mvm",
+            "instanceType": {
+              "code": "mvm"
+            },
+            "site": {
+              "id": 1
+            },
+            "layout": {
+              "id": 2
+            },
+            "plan": {
+              "id": 11
+            }
+          },
+          "config": {
+            "resourcePoolId": "pool-1",
+            "noAgent": false,
+            "createUser": true
+          },
+          "volumes": [
+            {
+              "id": -1,
+              "rootVolume": true,
+              "name": "root", 
+              "size": 40,
+              "storageType": 1,
+              "datastoreId": "auto"
+            }
+          ],
+          "networkInterfaces": [
+            {
+              "network": {
+                "id": "network-10"
+              }
+            }
+          ]
+        }
+        ```
+        
+        **CRITICAL - Minimal Working Structure**:
+        The above example is a MINIMAL working request. Key points:
+        - Do NOT include extra fields in layout/plan objects (just id)
+        - Do NOT include poolProviderType in config
+        - Do NOT include layout.code or plan.code/name
+        - Network interfaces just need network.id
+        - Use "auto" for datastoreId if unsure
+        
+        **Field-by-Field Explanation**:
+        - `instance.cloud`: The zone NAME (not ID) - e.g., "tc-lab"
+        - `instance.type`: MUST be "mvm" (same as instanceType.code)
+        - `instance.hostName`: The hostname for the VM (often same as name)
+        - `networkInterfaceTypeId`: Use 10 for standard network interface
+        - `storageType`: Use 1 for standard storage
+        - `datastoreId`: Use 5 for the default Ceph datastore
+        
+        **Common Errors and Solutions**:
+        1. "Instance Type not found with code X" → Use "mvm" for instanceType.code
+        2. "You must choose a network" → Add networkInterfaces array
+        3. "HTTP 400: success: False" → Simplify request - remove extra fields
+        4. "Invalid layout" → Use just layout.id, no other fields
+        5. "Invalid plan" → Use just plan.id, no other fields
+        6. "Invalid network" → Network IDs need "network-" prefix (e.g., "network-10")
+        
+        **If you get HTTP 400 errors**:
+        - Start with the MINIMAL structure above
+        - Don't add fields unless specifically needed
+        - The API is sensitive to extra/unexpected fields
+        
+        **Helper Tools (ONLY available after discovery)**:
+        These tools are NOT available until you activate compute infrastructure:
+        - `list_available_resources()` - See all resources by name
+        - `resolve_zone_name("tc-lab")` → Returns zone ID
+        - `resolve_image_name("ubuntu-22.04")` → Returns image ID
+        - `resolve_service_plan_name("1 CPU, 4GB Memory")` → Returns plan details
+        - `resolve_instance_type_name("Linux VM")` → Returns type and layout info
+        
+        **Complete VM Creation Workflow**:
+        1. **MUST DO FIRST**: Call `discover_capabilities()` to see tool groups
+        2. **MUST DO SECOND**: Call `discover_compute_infrastructure()` to activate tools
+        3. **WAIT**: For confirmation that new tools are available
+        4. **NOW** you can call `list_available_resources()` to see what's available
+        5. Use resolver tools to get IDs for zone, image, plan
+        6. Build the JSON structure with "mvm" as instanceType.code
+        7. Include config, volumes, and networkInterfaces sections
+        8. Submit to this endpoint
+        
+        **⚠️ IMPORTANT**: If you skip steps 1-3, the tools won't exist and you'll get errors!
+
+  /api/instance-types:
+    get:
+      x-augment-description: |
+        
+        **IMPORTANT**: Instance types define the virtualization platform, NOT the OS.
+        
+        For VME HCI clusters with KVM:
+        - Look for instance types with code "mvm" (Morpheus VM)
+        - Do NOT use VMware-related types
+        - The OS is selected separately via imageId in the config section
+        
+        Common instance type codes:
+        - "mvm" = Morpheus VM (KVM-based) - USE THIS FOR VME HCI
+        - "vmware" = VMware VMs (not applicable for KVM clusters)
+        - OS names like "ubuntu", "rocky" are NOT instance type codes
+
+  /api/whoami:
+    get:
+      x-augment-description: |
+        
+        **INCLUDES**: User permissions which determine what operations you can perform.
+
+# Global context that could be injected into system prompts or tool group descriptions
+x-vme-context:
+  progressive_discovery:
+    description: |
+      **⚠️ CRITICAL: How Progressive Discovery Works**
+      
+      This MCP server uses progressive discovery to avoid overwhelming you with 500+ tools.
+      Initially, you only have access to discovery tools. You MUST activate tool groups before
+      using them:
+      
+      1. **Available at start**: Only ~19 discovery and utility tools
+      2. **To see more tools**: Call `discover_capabilities()` first
+      3. **To activate a group**: Call the specific discover function (e.g., `discover_compute_infrastructure()`)
+      4. **After activation**: New tools appear in your tool list
+      
+      **NEVER** attempt to call tools that haven't been activated yet!
+      **NEVER** simulate or pretend to call tools - always use the actual tool!
+      
+      If a tool isn't in your current tool list, you need to:
+      1. Check available groups with `discover_capabilities()`
+      2. Activate the appropriate group
+      3. Wait for confirmation of new tools
+      4. Then use the newly available tools
+      
+  platform:
+    description: |
+      VME (Virtual Machine Engine) is an HPE HCI (Hyper-Converged Infrastructure) platform using:
+      - KVM for virtualization (NOT VMware)
+      - Ceph for distributed storage
+      - SDN for software-defined networking
+      
+  licensing:
+    description: |
+      VME licensing model:
+      - Socket licenses: Control how many physical CPU sockets can be in the cluster
+      - Workload licenses: May limit total number of VMs (if applicable)
+      - Feature licenses: Enable/disable platform capabilities
+      - Socket count does NOT directly limit VM creation
+      
+  capacity:
+    description: |
+      VM capacity is determined by:
+      1. Available CPU cores in the cluster
+      2. Available memory (RAM) in the cluster  
+      3. Available storage in Ceph pools
+      4. NOT by socket license count

@@ -1,0 +1,93 @@
+# Production Route Configuration - Resources Preferred
+# For advanced semantic clients that prefer browsable resources
+name: "Production Resources Preferred Routes"
+description: "Resource-heavy configuration for semantic browsing clients"
+
+# Infrastructure as Resources (primary interface)
+infrastructure_resources:
+  - pattern: "^/api/zones$"
+    mcp_type: "RESOURCE"
+    description: "Available deployment zones"
+    
+  - pattern: "^/api/zones/.*"
+    mcp_type: "RESOURCE_TEMPLATE"
+    description: "Zone configuration and capabilities"
+    
+  - pattern: "^/api/clouds$"
+    mcp_type: "RESOURCE"
+    description: "Cloud provider integrations"
+    
+  - pattern: "^/api/clouds/.*"
+    mcp_type: "RESOURCE_TEMPLATE"
+    description: "Cloud provider configurations"
+    
+  - pattern: "^/api/library/instance-types$"
+    mcp_type: "RESOURCE"
+    description: "Available VM instance types"
+    
+  - pattern: "^/api/library/instance-types/.*"
+    mcp_type: "RESOURCE_TEMPLATE"
+    description: "Instance type specifications"
+    
+  - pattern: "^/api/groups$"
+    mcp_type: "RESOURCE"
+    description: "User and tenant groups"
+    
+  - pattern: "^/api/groups/.*"
+    mcp_type: "RESOURCE_TEMPLATE"
+    description: "Group configurations and permissions"
+
+# System information as Resources
+system_resources:
+  - pattern: "^/api/whoami$"
+    mcp_type: "RESOURCE"
+    description: "Current user profile and permissions"
+    
+  - pattern: "^/api/accounts$"
+    mcp_type: "RESOURCE"
+    description: "Account and tenant information"
+    
+  - pattern: "^/api/accounts/.*"
+    mcp_type: "RESOURCE_TEMPLATE"
+    description: "Account details and configurations"
+    
+  - pattern: "^/api/appliance-settings$"
+    mcp_type: "RESOURCE"
+    description: "System configuration and settings"
+    
+  - pattern: "^/api/license.*"
+    mcp_type: "RESOURCE"
+    description: "License information and status"
+
+# Virtual machines as Resources (for browsing)
+vm_resources:
+  - pattern: "^/api/instances$"
+    mcp_type: "RESOURCE"
+    description: "Current virtual machine inventory"
+    
+  - pattern: "^/api/instances/.*"
+    mcp_type: "RESOURCE_TEMPLATE"
+    description: "Individual VM details and status"
+
+# Only critical actions as Tools
+critical_actions:
+  - pattern: "^/api/instances$"
+    mcp_type: "TOOL"
+    description: "Create new virtual machines"
+    
+  - pattern: "^/api/instances/[^/]+/(start|stop|restart|delete)$"
+    mcp_type: "TOOL"
+    description: "VM lifecycle operations"
+    
+  - pattern: "^/api/monitoring/alerts$"
+    mcp_type: "TOOL"
+    description: "Emergency alert management"
+
+# Everything else excluded
+exclude_all:
+  - pattern: ".*"
+    mcp_type: "EXCLUDE"
+
+# Expected counts
+expected_tool_count: 8
+expected_resource_count: 65

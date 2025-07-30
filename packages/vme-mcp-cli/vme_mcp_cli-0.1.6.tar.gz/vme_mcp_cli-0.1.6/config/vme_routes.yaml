@@ -1,0 +1,85 @@
+# VME (VM Essentials) Allowed Routes
+# Based on actual testing - these routes work in VME
+name: "VME Routes"
+description: "Routes available in HPE VM Essentials platform"
+
+# Core VM Management
+instances:
+  - pattern: "^/api/instances.*"
+    description: "VM instance operations (list, create, manage)"
+    
+  - pattern: "^/api/instance-types.*"  
+    description: "Instance type management (limited in VME)"
+    
+  - pattern: "^/api/library/instance-types.*"
+    description: "Provisioning instance types (works in VME)"
+
+# Core Platform Management  
+platform:
+  - pattern: "^/api/appliance-settings$"
+    description: "Appliance configuration settings"
+    
+  - pattern: "^/api/license.*"
+    description: "License information and status"
+    
+  - pattern: "^/api/whoami$"
+    description: "Current user information"
+
+# Storage & Infrastructure (VME Core)
+storage:
+  - pattern: "^/api/virtual-images.*"
+    description: "Virtual machine images"
+    
+  - pattern: "^/api/storage.*"
+    description: "Storage management"
+
+# Networking (VME Core)
+networking:
+  - pattern: "^/api/networks.*"
+    description: "Network configuration"
+    
+  - pattern: "^/api/network-types.*"
+    description: "Network type definitions"
+
+# Basic Backup (VME Core)
+backup:
+  - pattern: "^/api/backups.*"
+    description: "Basic backup operations"
+
+# Basic Monitoring (VME Core)  
+monitoring:
+  - pattern: "^/api/monitoring/checks.*"
+    description: "Basic health checks"
+
+# Zones/Clouds (VME Core)
+infrastructure:
+  - pattern: "^/api/zones.*"
+    description: "Cloud/zone management"
+    
+  - pattern: "^/api/zone-types.*"
+    description: "Available zone types"
+
+# User Management (VME Core)
+users:
+  - pattern: "^/api/users.*"
+    description: "User management"
+    
+  - pattern: "^/api/roles.*"
+    description: "Role management"
+
+# Excluded/Limited in VME (return 403)
+excluded_patterns:
+  - pattern: "^/api/billing.*"
+    reason: "Enterprise billing features not in VME"
+    
+  - pattern: "^/api/reports.*"
+    reason: "Advanced reporting not in VME"
+    
+  - pattern: "^/api/workflows.*" 
+    reason: "Workflow automation not in VME"
+    
+  - pattern: "^/api/costing.*"
+    reason: "Cost management not in VME"
+    
+  - pattern: "^/api/budgets.*"
+    reason: "Budget management not in VME"
