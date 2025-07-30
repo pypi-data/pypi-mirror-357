@@ -1,0 +1,23 @@
+[project]
+name = "peoplesoft-selenium-components"
+version = "0.3.2"
+description = "A helpful library for finding and interacting with PeopleSoft components using Selenium"
+license = "MIT"
+authors = [
+    {name = "jsa34", email = "jsa34@cam.ac.uk"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "selenium>=4",
+    "selocity"
+]
+
+[tool.poetry]
+packages = [
+    { include = "peoplesoft_components" },
+    { include = "peoplesoft_pages" }
+]
+
+[tool.poetry.group.dev.dependencies]
+setuptools = "^70.0.0"
