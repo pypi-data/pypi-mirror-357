@@ -1,0 +1,23 @@
+[project]
+name = "scor"
+version = "0.1.0"
+description = "The library for ICANN 2025 Paper 'Stochastic Covariance Regularization for Imbalanced Datasets'"
+authors = [
+    {name = "Ahmet Erdem", email = "erdemah22@itu.edu.tr"},
+    {name = "Faik Boray Tek", email = "tekfb@itu.edu.tr"}
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.1.0",
+    "numpy>=1.23",
+    "torchvision>=0.16.0",
+    "tqdm>=4.64",
+    "scikit-learn>=1.1"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
