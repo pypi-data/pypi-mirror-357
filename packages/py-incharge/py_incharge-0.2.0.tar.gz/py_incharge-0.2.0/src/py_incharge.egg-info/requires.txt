@@ -1,0 +1,6 @@
+requests>=2.32.4
+websocket-client>=1.8.0
+
+[dev]
+ruff
+pyright
