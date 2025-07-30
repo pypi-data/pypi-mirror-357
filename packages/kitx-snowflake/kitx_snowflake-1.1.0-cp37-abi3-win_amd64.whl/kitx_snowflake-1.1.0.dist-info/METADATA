@@ -1,0 +1,63 @@
+Metadata-Version: 2.4
+Name: kitx-snowflake
+Version: 1.1.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Summary: py kits + rs
+Keywords: kitx-snowflake,kitx,snowflake
+Author-email: kitx <carepsb@gmail.com>
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# kitx-snowflake
+
+[![PyPI - Version](https://img.shields.io/pypi/v/kitx.svg)](https://pypi.org/project/kitx)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/kitx.svg)](https://pypi.org/project/kitx)
+
+-----
+
+[Family kitx](https://pypi.org/project/kitx/)
+
+[Member kitx-snowflake](https://pypi.org/project/kitx/)
+
+## CN
+雪花id生成器， 每毫秒最大生成4096个id
+
+## EN
+snowflake id algorithm ，sometimes one millis can’t use up 4096 ID
+
+## Installation
+
+```console
+pip install kitx
+```
+or
+```console
+pip install kitx_snowflake
+```
+
+```console
+from kitx.kitx_snowflake import fn_snowflake
+
+print(fn_snowflake())
+```
+## Use machine_id and node_id
+
+Please make sure that machine_id and node_id is small than 32(2^5)
+```console
+from kitx.kitx_snowflake import fn_snowflake
+ 
+print(fn_snowflake(1, 2))
+```
+## License
+
+`kitx` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+
