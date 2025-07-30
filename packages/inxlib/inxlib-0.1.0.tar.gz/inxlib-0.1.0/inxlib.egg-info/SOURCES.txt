@@ -1,0 +1,7 @@
+README.md
+setup.py
+inxlib.egg-info/PKG-INFO
+inxlib.egg-info/SOURCES.txt
+inxlib.egg-info/dependency_links.txt
+inxlib.egg-info/requires.txt
+inxlib.egg-info/top_level.txt
