@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: CorState
+Version: 0.1.5.dev0
+Summary: Lightweight and versatile State Machine library
+Home-page: https://github.com/Zentetsu/CorState
+Author: Zentetsu
+License: GPLv3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# CorState
+Lightweight and versatile State Machine library
+
+### Features
+* State Machine implementation
+* Load structure from JSON file
+* GUI editor
+
+### Ongoing
+* ...
+
+### Future improvement
+* Petry Net implementation
+
+
+### More
+[![PyPI version](https://badge.fury.io/py/CorState.svg)](https://badge.fury.io/py/CorState)
+![Python package](https://github.com/Zentetsu/CorState/workflows/Python%20package/badge.svg?branch=master)
+![Upload Python Package](https://github.com/Zentetsu/CorState/workflows/Upload%20Python%20Package/badge.svg)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
