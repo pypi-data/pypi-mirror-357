@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: array-api-typing
+Version: 0.0.0.dev0
+Summary: Coming soon - Static typing support for the array API standard
+Project-URL: Repository, https://github.com/data-apis/array-api-typing
+Author-email: Consortium for Python Data API Standards <data-apis@users.noreply.github.com>, Joren Hammudoglu <jhammudoglu@users.noreply.github.com>, Nathaniel Starkman <nstarman@users.noreply.github.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 1 - Planning
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+coming soon

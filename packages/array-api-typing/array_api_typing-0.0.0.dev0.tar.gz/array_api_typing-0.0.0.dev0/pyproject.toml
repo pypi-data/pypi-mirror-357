@@ -1,0 +1,22 @@
+[project]
+name = "array-api-typing"
+version = "0.0.0.dev0"
+requires-python = ">=3.9"
+description = "Coming soon - Static typing support for the array API standard"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Consortium for Python Data API Standards", email = "data-apis@users.noreply.github.com"},
+    {name = "Joren Hammudoglu", email = "jhammudoglu@users.noreply.github.com"},
+    {name = "Nathaniel Starkman", email = "nstarman@users.noreply.github.com"},
+]
+classifiers = ["Development Status :: 1 - Planning"]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/data-apis/array-api-typing"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
