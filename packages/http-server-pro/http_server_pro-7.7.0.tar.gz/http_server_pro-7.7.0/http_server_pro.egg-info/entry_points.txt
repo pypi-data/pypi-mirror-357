@@ -1,0 +1,2 @@
+[console_scripts]
+http_server_pro = http_server_pro.main:main
