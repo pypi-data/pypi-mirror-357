@@ -1,0 +1,455 @@
+Metadata-Version: 2.1
+Name: py-downx
+Version: 1.0.1
+Summary: Flexible download manager
+Home-page: https://github.com/still-standing88/pydown/
+Author: still-standing88
+License: MIT
+Keywords: pydown py-down download downloads
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: humanize
+Requires-Dist: validators
+Requires-Dist: paramiko
+Requires-Dist: httpx
+Requires-Dist: dataclasses-json
+
+
+## Table of Contents
+
+1. [**Introduction**](#1-introduction)
+2. [**Installation**](#2-installation)
+3. [**Quick Start**](#3-quick-start)
+   - [**Command Line Interface**](#31-command-line-interface)
+4. [**Core Data Types & Enums**](#4-core-data-types--enums)
+   - [`DownloadRequest`](#downloadrequest)
+   - [`ProgressInfo`](#progressinfo)
+   - [`DownloadStatus`](#downloadstatus)
+5. [**Download Manager API (`DownloadManager`)**](#5-download-manager-api-downloadmanager)
+   - [Initialization & Lifecycle](#initialization--lifecycle)
+   - [Adding & Managing Downloads](#adding--managing-downloads)
+   - [Controlling the Manager](#controlling-the-manager)
+   - [Monitoring & Observers](#monitoring--observers)
+6. [**Advanced Features**](#6-advanced-features)
+   - [Monitoring with Observers](#monitoring-with-observers)
+   - [Protocol-Specific Configuration](#protocol-specific-configuration)
+   - [Resume, Retry, and Duplicate Handling](#resume-retry-and-duplicate-handling)
+7. [**Utility Functions**](#7-utility-functions)
+8. [**License**](#8-license)
+
+---
+
+## 1. Introduction
+
+**pydown** is a flexible Python library for managing file downloads. It provides a unified, high-level API to handle downloads over multiple protocols, including HTTP(S), FTP, and SFTP, with robust support for advanced features like concurrency, download resuming, and speed limiting.
+
+### Features
+
+- **Multi-Protocol Support**: Natively handles `HTTP`, `HTTPS`, `FTP`, and `SFTP` URLs.
+- **Concurrent Downloads**: Download multiple files simultaneously using an efficient asynchronous worker pool.
+- **Pause & Resume**: Pause downloads and resume them later, even after the application restarts.
+- **Error Handling & Retries**: Automatically retries failed downloads with configurable exponential backoff.
+- **Speed Limiting**: Throttle download bandwidth to a specified maximum rate.
+- **Real-time Monitoring**: Use observers to get live feedback on download progress, speed, status changes, and errors.
+- **Duplicate Handling**: Configure strategies (`skip`, `overwrite`, `rename`) for handling duplicate download requests.
+
+---
+
+## 2. Installation
+
+### Dependencies
+
+`pydown` depends on the following libraries, which will be installed automatically: `httpx`, `validators`, `humanize`, `dataclasses-json`, and `paramiko`.
+
+### Installation
+
+Install via PyPI:
+```bash
+pip install py-downx
+```
+*(Note: As this is a hypothetical package name for this context, you would typically install the package you've created from its source or a repository).*
+
+---
+
+## 3. Quick Start
+
+This example demonstrates how to download a file using the `DownloadManager`.
+
+```python
+import time
+from pydown import DownloadManager, create_download_request
+
+# 1. Initialize the Download Manager
+# This will manage a queue of downloads with up to 3 concurrent workers.
+manager = DownloadManager(max_concurrent_downloads=3)
+
+# 2. Create a download request for a test file
+# The file will be saved as '100MB.bin' in the current directory.
+request = create_download_request(
+    name="Large Test File",
+    url="http://speedtest.tele2.net/100MB.zip",
+    file_path="100MB.zip"
+)
+
+# 3. Add the request to the manager's queue
+manager.add_download(request)
+print("Download added to the queue.")
+
+# 4. Start the download workers
+manager.start()
+print("Download manager started.")
+
+# 5. Wait for all downloads to complete
+manager.wait_for_completion()
+print("All downloads have finished.")
+
+# 6. Stop the manager and clean up resources
+manager.stop()
+print("Manager stopped.")
+```
+
+---
+
+## 3.1. Command Line Interface
+
+PyDown includes a powerful command-line tool that provides all the library's functionality through an easy-to-use CLI interface.
+
+### Installation with CLI Support
+
+After installing pydown, the `pydown` command will be available in your terminal:
+
+```bash
+pip install pydown
+pydown --help
+```
+
+### Basic Usage
+
+```bash
+# Download a single file
+pydown https://example.com/file.zip
+
+# Download with custom output path
+pydown https://example.com/file.zip -o /path/to/save/file.zip
+
+# Download multiple files concurrently
+pydown url1 url2 url3 -c 5 -d ./downloads/
+
+# Batch download from a file containing URLs
+pydown --batch urls.txt -d ./downloads/
+```
+
+### Advanced CLI Features
+
+#### Concurrent Downloads and Performance
+```bash
+# Set maximum concurrent downloads and segments
+pydown https://example.com/largefile.zip -c 3 -s 8 --speed-limit 1000000
+```
+
+#### Authentication and Headers
+```bash
+# HTTP headers and cookies (as JSON)
+pydown https://api.example.com/data.json --headers '{"Authorization": "Bearer token"}'
+
+# FTP/SFTP with credentials
+pydown ftp://user:pass@server/file.txt
+pydown sftp://user:pass@server/file.txt
+```
+
+#### Session Management
+```bash
+# Save download session for later resuming
+pydown https://example.com/file.zip --save-session mysession.json
+
+# Resume previous session
+pydown --resume mysession.json
+```
+
+#### Batch Operations
+Create a text file with URLs (one per line):
+```
+# my_downloads.txt
+https://example.com/file1.zip
+https://example.com/file2.pdf
+https://cdn.example.com/data.json
+```
+
+Then download all files:
+```bash
+pydown --batch my_downloads.txt -d ./downloads/ -c 5
+```
+
+#### Output Control
+```bash
+# Quiet mode (no progress bars)
+pydown https://example.com/file.zip -q
+
+# Verbose output with detailed logging
+pydown https://example.com/file.zip -v
+
+# Log to file
+pydown https://example.com/file.zip --log-file downloads.log
+```
+
+#### Error Handling and Retries
+```bash
+# Configure retry behavior and timeouts
+pydown https://example.com/file.zip --retries 5 --timeout 60
+
+# Handle duplicate files (skip, overwrite, or rename)
+pydown https://example.com/file.zip --duplicate rename
+```
+
+### CLI Options Reference
+
+| Option | Description | Default |
+|--------|-------------|---------|
+| `urls` | URLs to download (positional arguments) | - |
+| `-o, --output` | Output file path (for single downloads) | Auto-generated |
+| `-d, --directory` | Output directory | Current directory |
+| `-c, --concurrent` | Maximum concurrent downloads | 3 |
+| `-s, --segments` | Maximum segments per download | 8 |
+| `--speed-limit` | Speed limit in bytes per second | Unlimited |
+| `--timeout` | Connection timeout in seconds | 30 |
+| `--retries` | Maximum retry attempts | 3 |
+| `--duplicate` | Duplicate handling (`skip`, `overwrite`, `rename`) | `skip` |
+| `--headers` | HTTP headers as JSON string | None |
+| `--cookies` | HTTP cookies as JSON string | None |
+| `--proxy` | Proxy URL | None |
+| `--batch` | File containing URLs to download | None |
+| `--save-session` | Save session to JSON file | None |
+| `--resume` | Resume from saved session file | None |
+| `-q, --quiet` | Suppress progress output | False |
+| `-v, --verbose` | Verbose output | False |
+| `--no-progress` | Disable progress bars | False |
+| `--log-file` | Log to file | None |
+
+### Examples
+
+1. **Simple Download:**
+   ```bash
+   pydown https://example.com/file.zip
+   ```
+
+2. **Multiple Files with Custom Settings:**
+   ```bash
+   pydown https://site1.com/file1.zip https://site2.com/file2.pdf \
+          -d ~/Downloads/ -c 4 -s 6 --verbose
+   ```
+
+3. **Authenticated Download:**
+   ```bash
+   pydown https://api.example.com/data.json \
+          --headers '{"Authorization": "Bearer your-token"}' \
+          --cookies '{"session": "abc123"}'
+   ```
+
+4. **Batch Download with Session Save:**
+   ```bash
+   pydown --batch large_downloads.txt \
+          --save-session backup.json \
+          -d ./downloads/ -c 5 --verbose
+   ```
+
+5. **Resume Interrupted Downloads:**
+   ```bash
+   pydown --resume backup.json
+   ```
+
+---
+
+## 4. Core Data Types & Enums
+
+### `DownloadRequest`
+A `dataclass` that holds all configuration and state for a single download. It is the central object you create and pass to the `DownloadManager`.
+
+- `name: str`: A human-readable name for the download.
+- `url: str`: The URL of the file to download.
+- `file_path: str`: The local path where the file will be saved.
+- `status: DownloadStatus`: The current status of the download (e.g., `PENDING`, `COMPLETED`).
+- `priority: int`: A numerical priority (higher numbers are processed first).
+- `headers: Dict[str, str]`: Custom HTTP headers.
+- `max_retries: int`: Maximum number of times to retry on failure.
+- `speed_limit: Optional[int]`: Speed limit in bytes per second.
+- `checksum: Optional[str]`: The expected checksum string for validation.
+- `checksum_type: str`: The algorithm to use (`md5`, `sha1`, `sha256`).
+- `ftp_username: Optional[str]`: Username for FTP/SFTP authentication.
+- `ftp_password: Optional[str]`: Password for FTP/SFTP authentication.
+
+### `ProgressInfo`
+A `dataclass` passed to observers during progress updates.
+
+- `total_size: int`: Total size of the file in bytes.
+- `downloaded_size: int`: Number of bytes downloaded so far.
+- `speed: float`: Current download speed in bytes per second.
+- `eta: float`: Estimated time remaining in seconds.
+- `progress_percent: float`: Download progress as a percentage (0-100).
+
+### `DownloadStatus`
+An `Enum` representing the state of a `DownloadRequest`.
+- `PENDING`: The download is waiting to be processed.
+- `QUEUED`: The download is in the queue, ready for a worker.
+- `IN_PROGRESS`: The download is actively being processed by a worker.
+- `PAUSED`: The download has been manually paused.
+- `COMPLETED`: The download finished successfully.
+- `FAILED`: The download failed after all retries.
+- `CANCELLED`: The download was cancelled by the user.
+- `DUPLICATE`: The download was skipped because it was identified as a duplicate.
+
+---
+
+## 5. Download Manager API (`DownloadManager`)
+
+The `DownloadManager` is the main entry point for orchestrating all download operations.
+
+### Initialization & Lifecycle
+
+- `__init__(self, max_concurrent_downloads: int = 3, duplicate_strategy: str = "skip", log_file: Optional[str] = None, quiet: bool = False)`
+  - Initializes the manager.
+  - **`max_concurrent_downloads`**: The number of downloads to run in parallel.
+  - **`duplicate_strategy`**: How to handle duplicates: `"skip"`, `"overwrite"`, `"rename"`.
+  - **`log_file`**: Path to a file for logging output.
+  - **`quiet`**: If `True`, suppresses console logging.
+
+### Adding & Managing Downloads
+
+- `add_download(self, request: DownloadRequest) -> str`
+  - Adds a single `DownloadRequest` to the queue. Returns the request URL as its unique ID.
+
+- `add_downloads_from_json(self, json_file: str) -> List[str]`
+  - Loads and adds multiple download requests from a JSON file.
+
+- `pause_download(self, url: str) -> bool`
+  - Pauses an active or pending download identified by its URL.
+
+- `resume_download(self, url: str) -> bool`
+  - Resumes a paused download.
+
+- `cancel_download(self, url: str) -> bool`
+  - Cancels a download. The partial file is not deleted.
+
+- `export_downloads(self, json_file: str)`
+  - Saves the state of all current downloads to a JSON file.
+
+### Controlling the Manager
+
+- `start(self)`
+  - Starts the worker threads to process the download queue.
+
+- `stop(self)`
+  - Stops the workers and cleans up resources. This should be called to ensure a graceful exit.
+
+- `wait_for_completion(self)`
+  - Blocks until the download queue is empty and all active downloads are finished.
+
+### Monitoring & Observers
+
+- `add_observer(self, observer: DownloadObserver)`
+  - Registers a custom observer to receive real-time events.
+
+- `remove_observer(self, observer: DownloadObserver)`
+  - Unregisters an observer.
+
+- `get_download_status(self, url: str) -> Optional[DownloadRequest]`
+  - Retrieves the current state of a specific download.
+
+- `get_all_downloads(self) -> Dict[str, DownloadRequest]`
+  - Returns a dictionary of all downloads managed by the instance.
+
+---
+
+## 6. Advanced Features
+
+### Monitoring with Observers
+Create a custom class that inherits from `DownloadObserver` to react to download events.
+
+```python
+from pydown import DownloadObserver, DownloadRequest, ProgressInfo, DownloadStatus
+
+class MyCustomObserver(DownloadObserver):
+    def on_progress(self, request: DownloadRequest, progress: ProgressInfo):
+        print(f"[{request.name}] {progress.progress_percent:.1f}% at {progress.speed / 1024:.1f} KB/s")
+
+    def on_status_change(self, request: DownloadRequest, old_status: DownloadStatus, new_status: DownloadStatus):
+        print(f"[{request.name}] Status changed: {new_status.name}")
+
+    def on_error(self, request: DownloadRequest, error: Exception):
+        print(f"[{request.name}] An error occurred: {error}")
+
+# Add it to the manager
+manager = DownloadManager()
+my_observer = MyCustomObserver()
+manager.add_observer(my_observer)
+```
+
+### Protocol-Specific Configuration
+You can specify protocol-specific details, like FTP credentials, directly on the `DownloadRequest` object.
+
+```python
+from pydown import create_download_request
+
+ftp_request = create_download_request(
+    name="FTP File",
+    url="ftp://speedtest.tele2.net/1MB.zip",
+    file_path="1MB.zip",
+    ftp_username="anonymous",
+    ftp_password="user@example.com"
+)
+
+manager.add_download(ftp_request)
+```
+
+### Resume, Retry, and Duplicate Handling
+- **Resume**: Resuming is enabled by default. `pydown` creates a `.partial` file and will automatically pick up where it left off if the download is interrupted.
+- **Retry**: The manager automatically retries downloads on connection errors or server-side issues (HTTP 5xx). Configure this with `max_retries` on the `DownloadRequest`.
+- **Duplicates**: The `duplicate_strategy` on the `DownloadManager` controls behavior when a download is added that is identical to a previously completed one (based on URL, size, and checksum).
+
+---
+
+## 7. Utility Functions
+
+`pydown` provides helper functions to simplify common tasks.
+
+- `create_download_request(name: str, url: str, **kwargs) -> DownloadRequest`
+  - A convenient factory to create a `DownloadRequest` object.
+
+- `cookies_from_requests_session(session: 'requests.Session') -> Dict[str, str]`
+  - Extracts cookies from a `requests.Session` object to use in a `DownloadRequest`.
+
+- `headers_from_requests_session(session: 'requests.Session') -> Dict[str, str]`
+  - Extracts headers from a `requests.Session` object.
+
+**Example:**
+```python
+import requests
+from pydown import create_download_request, cookies_from_requests_session
+
+# Log in to a site using the requests library
+session = requests.Session()
+session.post("https://example.com/login", data={"user": "...", "pass": "..."})
+
+# Create a download request using the session's cookies
+request = create_download_request(
+    name="Authenticated Download",
+    url="https://example.com/file.zip",
+    cookies=cookies_from_requests_session(session)
+)
+```
+
+---
+
+## 8. License
+
+MIT
