@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "vexa-client"
+version = "0.4.0"
+description = "A Python client library for interacting with the Vexa API Gateway"
+authors = ["Vexa Development Team <dev@vexa.ai>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["vexa", "api", "client", "bot", "transcription", "meeting"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Communications :: Conferencing",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
+
+[tool.poetry.urls]
+Homepage = "https://github.com/vexa/vexa-client-python"
+Documentation = "https://docs.vexa.ai"
+Repository = "https://github.com/vexa/vexa-client-python"
+"Bug Reports" = "https://github.com/vexa/vexa-client-python/issues"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.25.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api" 
