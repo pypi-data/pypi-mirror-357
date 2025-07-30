@@ -1,0 +1,12 @@
+openai>=1.79.0
+cicada-agent>=0.7.4
+loguru>=0.7.3
+httpx>=0.28.1
+toolregistry>=0.4.12
+python-dotenv>=1.1.0
+
+[dev]
+pyright>=1.1.402
+ruff>=0.12
+build>=1.2.2.post1
+twine>=6.1.0
