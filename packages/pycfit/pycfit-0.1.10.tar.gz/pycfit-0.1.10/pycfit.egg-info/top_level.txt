@@ -1,0 +1,5 @@
+cfit-dev
+dist
+pre_proc
+pycfit
+qt_designer_env
