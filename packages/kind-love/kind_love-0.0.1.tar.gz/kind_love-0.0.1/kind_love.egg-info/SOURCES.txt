@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+kind_love/__init__.py
+kind_love/core.py
+kind_love.egg-info/PKG-INFO
+kind_love.egg-info/SOURCES.txt
+kind_love.egg-info/dependency_links.txt
+kind_love.egg-info/top_level.txt
