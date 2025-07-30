@@ -1,0 +1,11 @@
+sc_supertree/__init__.py,sha256=PKge8pUOJFwJVw2l5CdbeKuRHftgwt330G4ZU2VM5Dk,345
+sc_supertree/_app.py,sha256=LfVmZqtKvWg0sa-zoXHitkQiH2DlNlE6HumWB9YYFWY,2073
+sc_supertree/cli.py,sha256=sLHQe_GMLM4Ic_wK9ZeZbk2SBi6kN-GVcrMNIVvBsSQ,1167
+sc_supertree/load.py,sha256=uUH9WgpU5-DES2WfRa0a4sY1oKUn2VZbe4cawi69zx0,584
+sc_supertree/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sc_supertree/scs.py,sha256=5IL868nFSzP12_3PGQ_obqKDafUpo93DAyFlSLLiB5U,23141
+sc_supertree-2025.6.25.dist-info/entry_points.txt,sha256=Rn6PsP9cXoEBF9pi54yU6zNWkEzgF6gZUbK4e2wgf7U,189
+sc_supertree-2025.6.25.dist-info/licenses/LICENSE,sha256=KVt1wXI8C1xHUuL8zjFh-ob-SlR8KbG5DLKo_TIzZAo,1502
+sc_supertree-2025.6.25.dist-info/WHEEL,sha256=G2gURzTEtmeR8nrdXUJfNiB3VYVxigPQ-bEQujpNiNs,82
+sc_supertree-2025.6.25.dist-info/METADATA,sha256=6yq_x5uIGhvZR5NUROoe_UZkltgRgRtGcoxuu9gxWv8,6243
+sc_supertree-2025.6.25.dist-info/RECORD,,
