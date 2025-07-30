@@ -1,0 +1,3 @@
+[console_scripts]
+time-series-insight = time_series_insight.cli.main:app
+tsia = time_series_insight.cli.main:app
