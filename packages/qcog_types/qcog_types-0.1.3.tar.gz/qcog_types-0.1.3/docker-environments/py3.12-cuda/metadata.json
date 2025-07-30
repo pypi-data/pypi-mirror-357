@@ -1,0 +1,6 @@
+{
+    "instance": "gpu",
+    "python_version": "3.12",
+    "cuda_version": "12.8",
+    "version": "0.0.3"
+}

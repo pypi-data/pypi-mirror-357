@@ -1,0 +1,9 @@
+{
+    "name": "pytorch-models",
+    "version": "0.0.22",
+    "release_notes": "Add Metrics",
+    "description": "A package for training and predicting with pytorch models",
+    "dependencies": [
+        "qcog-torch"
+    ]
+}

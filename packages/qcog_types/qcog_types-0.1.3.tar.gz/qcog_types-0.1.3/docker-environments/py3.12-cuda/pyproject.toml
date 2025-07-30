@@ -1,0 +1,24 @@
+[project]
+name = "py3-12-cuda"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "boto3>=1.38.35",
+    "pandas>=2.3.0",
+    "pydantic>=2.11.4",
+    "qcog-torch>=1.1.10",
+    "structlog>=25.4.0",
+    "torch>=2.7.1",
+]
+
+
+[tool.uv.sources]
+qcog_torch = { index = "gemfury" }
+
+[[tool.uv.index]]
+name = "gemfury"
+url = "https://pypi.fury.io/qognitive"
+authenticate = "always"
+explicit=true

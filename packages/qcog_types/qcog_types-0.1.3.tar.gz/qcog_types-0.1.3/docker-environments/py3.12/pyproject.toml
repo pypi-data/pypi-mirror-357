@@ -1,0 +1,21 @@
+[project]
+name = "py3-12-no-cuda"
+version = "0.0.1"
+description = "Python 3.12 environment no CUDA"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "qcog-torch>=1.1.6",
+    "structlog>=25.2.0",
+    "torch>=2.6.0",
+    "wandb>=0.19.8",
+]
+
+[tool.uv.sources]
+qcog_torch = { index = "gemfury" }
+
+[[tool.uv.index]]
+name = "gemfury"
+url = "https://pypi.fury.io/qognitive"
+authenticate = "always"
+explicit=true

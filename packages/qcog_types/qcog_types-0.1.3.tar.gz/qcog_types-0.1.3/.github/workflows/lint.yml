@@ -1,0 +1,82 @@
+name: Lint All Packages
+
+on:
+  push:
+
+jobs:
+  discover-packages:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Discover packages
+        id: set-matrix
+        run: |
+          packages=$(find qcog_exp -name "pyproject.toml" \
+            -not -path "*/tests/*" \
+            -not -path "*/.*" \
+            -not -path "*/__pycache__/*" \
+            -not -path "*/weightedgeneral/*" \
+            -exec dirname {} \; | jq -R -s -c 'split("\n")[:-1] | map(select(length > 0)) | map({"package_dir": .})')
+          echo "matrix={\"include\":$packages}" >> $GITHUB_OUTPUT
+
+  lint-test-packages:
+    needs: discover-packages
+    if: needs.discover-packages.outputs.matrix != '{"include":[]}'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.discover-packages.outputs.matrix) }}
+    env:
+      UV_INDEX_GEMFURY_PASSWORD: ${{ secrets.GEMFURY_READ_TOKEN }}
+      UV_INDEX_GEMFURY_USERNAME: qognitive
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+
+      - name: Install UV
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: latest
+
+      - name: Announce package being processed
+        run: |
+          echo "Processing package: ${{ matrix.package_dir }}"
+
+      - name: Install package dependencies
+        run: |
+          uv pip install --system .[dev]
+        working-directory: ${{ matrix.package_dir }}
+
+      - name: Build types (if applicable)
+        run: python scripts/build_types.py
+        continue-on-error: true
+
+      - name: Format package
+        run: ruff format .
+        working-directory: ${{ matrix.package_dir }}
+
+      - name: Lint package
+        run: |
+          ruff check --fix .
+          mypy .
+        working-directory: ${{ matrix.package_dir }}
+
+      - name: Run tests
+        run: |
+          if [ -d "tests" ] || [ -f "test_*.py" ] || [ -f "*_test.py" ]; then
+            echo "Tests found, running pytest"
+            uv run --dev pytest
+          else
+            echo "No tests found, skipping..."
+          fi
+        working-directory: ${{ matrix.package_dir }}
