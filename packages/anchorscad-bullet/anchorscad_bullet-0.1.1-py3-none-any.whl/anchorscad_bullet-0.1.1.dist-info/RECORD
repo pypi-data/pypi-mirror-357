@@ -1,0 +1,7 @@
+anchorscad_bullet/LICENSE,sha256=WSmH6FECKNVGVAuEoiREvemOSNAweNOy7vzYib7Fzow,26521
+anchorscad_bullet/__init__.py,sha256=g_h7sUPYquhS9VNgXepQhVBQtJIvGcDiiSeAIKTiqIc,63
+anchorscad_bullet/pybullet_viewer.py,sha256=8Sgn0tM1T_swFQ4vJIZZk_dBM4UQdsvu8x-5O1VfBz0,6996
+anchorscad_bullet/render_bullet.py,sha256=b6tSp7MhaQ4Y4o_dLHkhTypAFllARx0QatPka3WhYTM,9490
+anchorscad_bullet-0.1.1.dist-info/METADATA,sha256=rPw3NdGH4p9mj-bNW2xF3Hh-k1TLFMNOSMKB82rhZnU,1909
+anchorscad_bullet-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+anchorscad_bullet-0.1.1.dist-info/RECORD,,
