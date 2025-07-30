@@ -1,0 +1,30 @@
+[project]
+name = "balajiwork"
+version = "1.0.0"
+description = "IFC to Excel conversion GUI with validation - from Balaji"
+authors = [{ name = "Balaji Balagurusami", email = "mail@balaji.work" }]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.7"
+dependencies = [
+  "ifcopenshell",
+  "pandas",
+  "openpyxl"
+]
+
+[project.urls]
+Homepage = "https://balaji.work"
+Repository = "https://github.com/balajibalagurusami/python"
+
+[project.scripts]
+ifc2xlsx = "pyfc.ifc2xlsx:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

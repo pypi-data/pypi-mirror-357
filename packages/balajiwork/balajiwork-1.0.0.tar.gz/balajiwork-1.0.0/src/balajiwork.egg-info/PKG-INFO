@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: balajiwork
+Version: 1.0.0
+Summary: IFC to Excel conversion GUI with validation - from Balaji
+Author-email: Balaji Balagurusami <mail@balaji.work>
+License-Expression: MIT
+Project-URL: Homepage, https://balaji.work
+Project-URL: Repository, https://github.com/balajibalagurusami/python
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: ifcopenshell
+Requires-Dist: pandas
+Requires-Dist: openpyxl
+
+# balajiwork
+
+A GUI-based tool to convert IFC files to Excel with CCI validation. Built by Balaji Balagurusami for COWI A/S.

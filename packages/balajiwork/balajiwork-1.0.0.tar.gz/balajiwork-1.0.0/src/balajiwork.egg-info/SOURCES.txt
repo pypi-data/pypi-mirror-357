@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/balajiwork.egg-info/PKG-INFO
+src/balajiwork.egg-info/SOURCES.txt
+src/balajiwork.egg-info/dependency_links.txt
+src/balajiwork.egg-info/entry_points.txt
+src/balajiwork.egg-info/requires.txt
+src/balajiwork.egg-info/top_level.txt
+src/pyfc/__init__.py
+src/pyfc/ifc2xlsx.py
