@@ -1,0 +1,2 @@
+[console_scripts]
+audial = audial.cli.commands:cli
