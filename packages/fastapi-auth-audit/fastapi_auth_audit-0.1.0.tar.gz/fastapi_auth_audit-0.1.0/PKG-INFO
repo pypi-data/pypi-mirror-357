@@ -1,0 +1,17 @@
+Metadata-Version: 2.3
+Name: fastapi-auth-audit
+Version: 0.1.0
+Summary: FastAPI 权限校验 + 审计日志组件
+Author: You
+Author-email: you@example.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: fastapi (>=0.95.0,<0.96.0)
+Requires-Dist: pydantic (>=1.10.0,<2.0.0)
+Requires-Dist: sqlalchemy (>=2.0.0,<3.0.0)
+Requires-Dist: uvicorn[standard] (>=0.22.0,<0.23.0)

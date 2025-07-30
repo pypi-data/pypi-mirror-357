@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "fastapi-auth-audit"
+version = "0.1.0"
+description = "FastAPI 权限校验 + 审计日志组件"
+authors = ["You <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.95.0"
+sqlalchemy = "^2.0.0"
+pydantic = "^1.10.0"
+uvicorn = { extras = ["standard"], version = "^0.22.0" }
