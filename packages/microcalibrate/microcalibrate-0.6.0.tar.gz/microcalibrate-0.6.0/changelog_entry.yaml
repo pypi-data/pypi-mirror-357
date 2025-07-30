@@ -1,0 +1,4 @@
+- bump: minor
+  changes:
+    added:
+    - Adding the calibration performance dashboard link to documentation.
