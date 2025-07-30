@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+language_renderer7/__init__.py
+language_renderer7/core.py
+language_renderer7.egg-info/PKG-INFO
+language_renderer7.egg-info/SOURCES.txt
+language_renderer7.egg-info/dependency_links.txt
+language_renderer7.egg-info/requires.txt
+language_renderer7.egg-info/top_level.txt
+tests/test_core.py

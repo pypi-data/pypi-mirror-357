@@ -1,0 +1,10 @@
+matplotlib
+numpy
+colorama
+rich
+pygments
+beautifulsoup4
+requests
+tqdm
+lxml
+networkx
