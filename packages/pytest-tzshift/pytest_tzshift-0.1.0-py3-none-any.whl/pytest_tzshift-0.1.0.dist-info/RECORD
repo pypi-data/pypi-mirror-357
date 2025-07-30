@@ -1,0 +1,9 @@
+pytest_tzshift/__init__.py,sha256=jJMcErTP3NXcu1ZwuTT456DbS0YQb9b1oaF4KD2ODXY,162
+pytest_tzshift/_types.py,sha256=ngaIoADpjoSu6ebp3dDrDN6g4BKS0WDEMDoNBnhzSxQ,1770
+pytest_tzshift/plugin.py,sha256=slAn3xUbZAZlKHMBNw6i8dKrppy-wRH2eSzz-aUMxjQ,13205
+pytest_tzshift-0.1.0.dist-info/licenses/LICENSE,sha256=0sfpDnsPiMMy7jj7OL2AHvRvrN-jiDy5H_L0cJtqoqw,1103
+pytest_tzshift-0.1.0.dist-info/METADATA,sha256=u7T2lLWJ-iffyUYojbbZfHTx7FtnCb4KrprNmAu19LI,2667
+pytest_tzshift-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pytest_tzshift-0.1.0.dist-info/entry_points.txt,sha256=NlTH4xf3o8ha6SkTbPEmAQ9H0BsYov3k0ASOl0v1CVg,43
+pytest_tzshift-0.1.0.dist-info/top_level.txt,sha256=uH9oE-pKpimaG76s8Qp2z3V-c7cZrfuJexWRC0Z8uHE,15
+pytest_tzshift-0.1.0.dist-info/RECORD,,
