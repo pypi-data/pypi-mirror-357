@@ -1,0 +1,139 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ip-safelist-middleware"
+dynamic = ["version"]
+description = "FastAPI Middleware for IP Address Safelisting"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Gavin M. Roy", email = "gavinmroy@gmail.com"},
+]
+keywords = ["fastapi", "middleware", "ip", "safelist", "security"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: BSD License",
+    "Framework :: FastAPI",
+    "Intended Audience :: Developers",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware",
+    "Topic :: Security",
+]
+dependencies = [
+    "fastapi>=0.68.0",
+    "httpx>=0.24.0",
+    "starlette>=0.14.2",
+    "pydantic>=1.9.0",
+    "pydantic_settings"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-asyncio>=0.20.0",
+    "mypy>=1.0.0",
+    "pyright>=1.1.396",
+    "ruff>=0.0.260"
+]
+docs = [
+  "black",  # used by mkdocs for signature formatting
+  "mkdocs>=1.5,<2",
+  "mkdocs-material>9.5,<10",
+  "mkdocstrings[python]>=0.26,<0.27",
+  "mkdocstrings-python-xref>=1.6,<2"
+]
+
+[project.urls]
+Homepage = "https://github.com/gmr/ip-safelist-middleware"
+Documentation = "https://gmr.github.io/ip-safelist-middleware"
+Issues = "https://github.com/gmr/ip-safelist-middleware/issues"
+Changelog = "https://gmr.github.io/ip-safelist-middleware/changelog/"
+
+[tool.coverage.run]
+branch = true
+source = ["ip_safelist_middleware"]
+command_line = "-m unittest discover tests --buffer --verbose"
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
+
+[tool.hatch.version]
+path = "ip_safelist_middleware/__version__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ip_safelist_middleware"]
+
+[tool.hatch.envs.ci]
+dependencies = [
+  "coverage[toml]>=7.4,<8",
+  "pytest>=8,<9",
+]
+
+[tool.hatch.envs.default.scripts]
+github-pages = ["mkdocs gh-deploy --force"]
+serve-docs = ["mkdocs serve"]
+
+[tool.mkdocs]
+config-file = "mkdocs.yml"
+
+[tool.mypy]
+python_version = "3.12"
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+strict_optional = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = ["tests.*", "examples.*"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+disallow_untyped_decorators = false
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 40
+quote-style = "single"
+skip-magic-trailing-comma = true
+
+[tool.ruff.lint]
+select = [
+    "ANN",    # flake9-annotations
+    "ASYNC",  # flake8-async
+    "B",      # flake8-bugbear
+    "BLE",    # flake8-blind-except
+    "C4",     # flake8-comprehensions
+    "DTZ",    # flake8-datetimez
+    "E", "W", # pycodestyle
+    "F",      # pyflakes
+    "G",      # flake8-logging-format
+    "I",      # isort
+    "S",      # flake8-bandit
+    "T20",    # flake8-print
+    "UP",     # pyupgrade
+    "F401",   # unused imports
+    "F841",   # unused variables
+    "B027",   # empty method in abstract base class
+    "B905",   # zip() without explicit strict parameter
+]
+ignore = [
+  "ANN401",   # There is a time and place for typing.Any
+  "RSE",      # contradicts Python Style Guide
+]
+flake8-quotes = { inline-quotes = "single" }
+isort.split-on-trailing-comma=false
