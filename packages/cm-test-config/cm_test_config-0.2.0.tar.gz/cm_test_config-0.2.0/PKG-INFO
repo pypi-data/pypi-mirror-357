@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: cm_test_config
+Version: 0.2.0
+Summary: A test configuration package
+Author-email: SaginRavi <Sagin.Ravi@zeb.co>
+License: MIT
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# cm_test_config
+
+A Python package for test configuration management.
+
+## Installation
+```bash
+pip install cm_test_config
