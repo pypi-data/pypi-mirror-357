@@ -1,0 +1,2 @@
+[console_scripts]
+method-flowchart = method_flowchart.cli:main
