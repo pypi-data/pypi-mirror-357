@@ -1,0 +1,11 @@
+mcp_streamablehttp_client/__init__.py,sha256=HPrGvFlUaVpokssHWBDHp4wycGS19FC8oDSlKpXkUjA,267
+mcp_streamablehttp_client/cli.py,sha256=h0nYo1JeURq0dm8C_EXzWfI9gyUfnU0j7OTifEBd5gk,45482
+mcp_streamablehttp_client/config.py,sha256=PQl57PGewIXhl0cdsG_0-6EdrrFEp232LmK5Pq2opAM,4656
+mcp_streamablehttp_client/oauth.py,sha256=NuHZuiBHfp-FZVR-PAz79EsS_Se0CUyvbektgDYtyVY,23998
+mcp_streamablehttp_client/proxy.py,sha256=zpXyFhfDW61D9nVZ4sxI-Hmr67I7kAFUl84tF3UZhRU,9804
+mcp_streamablehttp_client/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mcp_streamablehttp_client-0.1.0.dist-info/METADATA,sha256=7Uve-OnmPzVXZimmedMehlq53Cv4FBhwhasSax9Z0Q0,10807
+mcp_streamablehttp_client-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mcp_streamablehttp_client-0.1.0.dist-info/entry_points.txt,sha256=NR8zTKQ2ozSS759va9-B7N0xbqpH4m_RnvKKCgO5SGc,81
+mcp_streamablehttp_client-0.1.0.dist-info/top_level.txt,sha256=hyjOGQ6kloY8o44hAywHqNg6p6EZlo9e8M5MsWOL6rk,26
+mcp_streamablehttp_client-0.1.0.dist-info/RECORD,,

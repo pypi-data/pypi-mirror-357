@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-streamablehttp-client = mcp_streamablehttp_client.cli:main
