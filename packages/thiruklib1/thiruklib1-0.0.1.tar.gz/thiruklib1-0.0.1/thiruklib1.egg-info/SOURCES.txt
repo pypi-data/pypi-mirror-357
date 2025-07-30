@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+thiruklib1/__init__.py
+thiruklib1/greet.py
+thiruklib1.egg-info/PKG-INFO
+thiruklib1.egg-info/SOURCES.txt
+thiruklib1.egg-info/dependency_links.txt
+thiruklib1.egg-info/top_level.txt
