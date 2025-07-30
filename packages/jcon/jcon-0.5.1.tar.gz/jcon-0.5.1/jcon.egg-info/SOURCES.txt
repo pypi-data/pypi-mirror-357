@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+jcon/__init__.py
+jcon/cli.py
+jcon/core.py
+jcon/layout.py
+jcon.egg-info/PKG-INFO
+jcon.egg-info/SOURCES.txt
+jcon.egg-info/dependency_links.txt
+jcon.egg-info/top_level.txt
