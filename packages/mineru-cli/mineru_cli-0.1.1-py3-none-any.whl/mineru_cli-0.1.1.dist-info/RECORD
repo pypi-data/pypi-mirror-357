@@ -1,0 +1,12 @@
+mineru_cli/cli.py,sha256=eYGFCQsOvRbppEoGdh5xSoxOnCJaZEpK5PzxarN430Q,9851
+mineru_cli/draw_bbox.py,sha256=LxtcCRQXDRjBsKAeo_Hgg7Robv9roowz7tGogUcgvkA,9777
+mineru_cli/pdf_utils.py,sha256=RLoRXBJvpIH_G_cP6QsmjoN8xF4a9eFEx6FToWOmEbM,740
+mineru_cli-0.1.1.dist-info/licenses/LICENSE,sha256=jzEYBCUoiSWR5FB0kIM0WBAg0cjOrCxKYmy4fs-gMGY,995
+venv/bin/dumppdf.py,sha256=duAJJtlKAxOmdEiOspUaT5MiVjqddScKHHzpKpzaG7U,14369
+venv/bin/jp.py,sha256=lvpMw2ks9tM3ruAhO4_cbb--kRNyA5Y6Aft4eWMRJJ8,1734
+venv/bin/pdf2txt.py,sha256=SHUKzzBnFI0DrkZgDhKJnauLwfoOuAjF5itGyX9xg20,9880
+mineru_cli-0.1.1.dist-info/METADATA,sha256=YsnUJu4-el2bK0L-VcGguy64UhWh8ydNld0NjCG0IfU,5311
+mineru_cli-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mineru_cli-0.1.1.dist-info/entry_points.txt,sha256=_Xup3zkn3H2kECu1eyHhU_RIX-0kWPgSUsYPw5cRfQA,51
+mineru_cli-0.1.1.dist-info/top_level.txt,sha256=HbWZ71NruQC0qarknWrmirkBdXUQw5MNDEj2O1Jn6J4,16
+mineru_cli-0.1.1.dist-info/RECORD,,
