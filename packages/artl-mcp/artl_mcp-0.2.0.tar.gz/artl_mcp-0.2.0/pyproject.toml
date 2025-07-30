@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "artl-mcp"
+version = "0.2.0"
+description = "PydanticAI and MCP approaches for getting textual representations of scientific literature from PMIDs, DOIs, etc."
+readme = "README.md"
+requires-python = ">=3.11, <4.0"  # Fixed syntax error
+dependencies = [
+    "aurelian>=0.4.2",
+    "fastmcp>=2.8.1",
+    "gradio>=5.34.0",
+    "habanero>=2.3.0",
+    "markitdown[pdf]>=0.1.2",
+    "pydantic-ai>=0.2.18",
+    "pytest>=8.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["allroadstoliterature"]
+
+
+[project.scripts]
+#doi-metadata = "allroadstoliterature.main:cli"
+#mcp-test = "allroadstoliterature.mcp_client:run"
+artl = "allroadstoliterature.main:cli"
+

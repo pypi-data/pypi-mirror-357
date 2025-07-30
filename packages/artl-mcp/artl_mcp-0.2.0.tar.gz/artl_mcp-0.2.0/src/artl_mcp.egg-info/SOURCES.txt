@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/allroadstoliterature/__init__.py
+src/allroadstoliterature/client.py
+src/allroadstoliterature/main.py
+src/allroadstoliterature/tools.py
+src/artl_mcp.egg-info/PKG-INFO
+src/artl_mcp.egg-info/SOURCES.txt
+src/artl_mcp.egg-info/dependency_links.txt
+src/artl_mcp.egg-info/entry_points.txt
+src/artl_mcp.egg-info/requires.txt
+src/artl_mcp.egg-info/top_level.txt
+tests/test_aurelian.py
+tests/test_main.py
