@@ -1,0 +1,59 @@
+Metadata-Version: 2.4
+Name: astarte-device-sdk
+Version: 0.14.0
+Summary: Astarte device SDK for Python
+Author: Dario Freddi, Francesco Vaiani
+Author-email: Simone Orru <simone.orru@secomind.com>
+Maintainer-email: Simone Orru <simone.orru@secomind.com>
+License: Apache-2.0
+Project-URL: Documentation, https://docs.astarte-platform.org/device-sdks/index.html
+Project-URL: Source Code, https://github.com/astarte-platform/astarte-device-sdk-python
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.1
+Requires-Dist: paho-mqtt>=1.3.1
+Requires-Dist: cryptography>=42.0.0
+Requires-Dist: bson>=0.5.5
+Requires-Dist: PyJWT>=1.7.0
+Requires-Dist: astarte-message-hub-proto==0.7.0
+Provides-Extra: static
+Requires-Dist: black; extra == "static"
+Requires-Dist: pylint; extra == "static"
+Provides-Extra: unit
+Requires-Dist: pytest; extra == "unit"
+Requires-Dist: pytest-cov; extra == "unit"
+Provides-Extra: e2e
+Requires-Dist: termcolor; extra == "e2e"
+Requires-Dist: python-dateutil; extra == "e2e"
+
+<!--
+Copyright 2023 SECO Mind Srl
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
+# Astarte Python device SDK
+
+Python device SDK for [Astarte](https://github.com/astarte-platform/astarte). Create Astarte devices
+with Python3.
+
+It integrates with asyncio to ensure a smooth developer experience and to hide complex details
+regarding threading and MQTT interactions.
+
+## How to get with Pip
+
+The Astarte device SDK can be obtained by running:
+```
+pip install astarte-device-sdk
+```
+
+## Documentation for the Astarte device SDKs
+
+Find more informations regarding the Astarte device SDKs in their
+[documentation page](https://docs.astarte-platform.org/device-sdks/index.html).
+
+There you will find additional resources such as dedicated get started guides for each supported
+language, features specifications and APIs documentation.
