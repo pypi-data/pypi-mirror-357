@@ -1,0 +1,11 @@
+recursive-exclude src *
+recursive-include src/collective *
+recursive-include docs *
+include *.cfg
+include *.rst
+include *.txt
+global-exclude *.pyc *.sh *.pot
+exclude .*
+exclude pyvenv.cfg
+exclude .installed.cfg
+exclude .mr.developer.cfg
