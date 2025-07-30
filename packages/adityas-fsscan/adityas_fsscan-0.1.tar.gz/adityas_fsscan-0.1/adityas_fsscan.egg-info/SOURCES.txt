@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+adityas_fsscan.egg-info/PKG-INFO
+adityas_fsscan.egg-info/SOURCES.txt
+adityas_fsscan.egg-info/dependency_links.txt
+adityas_fsscan.egg-info/entry_points.txt
+adityas_fsscan.egg-info/top_level.txt
+src/__init__.py
+src/count_data.py
+src/file_scanner.py
+src/main.py
