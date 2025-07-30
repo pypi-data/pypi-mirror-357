@@ -1,0 +1,2 @@
+[console_scripts]
+vconverter = vision_converter.cli.main:vconverter

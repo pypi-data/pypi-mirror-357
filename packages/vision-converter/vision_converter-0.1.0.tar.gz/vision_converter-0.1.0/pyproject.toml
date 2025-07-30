@@ -1,0 +1,46 @@
+[project]
+name = "vision-converter"
+version = "0.1.0"
+description = "This project consist of a library and a CLI for converting datasets between annotation formats."
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Guillermo Cousido Martínez", email = "guillermo.cousido@gmail.com" }
+]
+license = "MIT"
+keywords = ["dataset", "converter", "computer vision", "cli", "yolo", "coco", "pascal voc"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+dependencies = [
+    "click>=8.1.8",
+    "pillow>=11.2.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-mock>=3.14.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/GCousido/VisionConverter"
+Documentation = "https://github.com/GCousido/VisionConverter#readme"
+Repository = "https://github.com/GCousido/VisionConverter"
+Issues = "https://github.com/GCousido/VisionConverter/issues"
+Changelog = "https://github.com/GCousido/VisionConverter/releases"
+
+[project.scripts]
+vconverter = "vision_converter.cli.main:vconverter"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["vision_converter/tests"]
