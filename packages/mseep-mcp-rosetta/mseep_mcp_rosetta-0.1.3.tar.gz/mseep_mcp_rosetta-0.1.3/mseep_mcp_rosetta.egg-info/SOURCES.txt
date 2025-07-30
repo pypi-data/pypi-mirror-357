@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_mcp_rosetta.egg-info/PKG-INFO
+mseep_mcp_rosetta.egg-info/SOURCES.txt
+mseep_mcp_rosetta.egg-info/dependency_links.txt
+mseep_mcp_rosetta.egg-info/requires.txt
+mseep_mcp_rosetta.egg-info/top_level.txt
+pymol-mcp-socket-plugin/__init__.py
