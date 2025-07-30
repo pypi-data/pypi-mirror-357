@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "algozen"
+version = "1.2.2"
+description = "A comprehensive Python package for Data Structures, Algorithms, Design Patterns, and Problem Solutions"
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [
+    {name = "moah0911", email = "stormshots0911@gmail.com"}
+]
+maintainers = [
+    {name = "moah0911", email = "stormshots0911@gmail.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Education",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries"
+]
+keywords = [
+    "algorithms", "data-structures", "computer-science", "programming",
+    "leetcode", "interview", "coding", "patterns", "design-patterns",
+    "sorting", "searching", "graph", "tree", "dynamic-programming"
+]
+
+[project.urls]
+Homepage = "https://github.com/moah0911/algozen"
+Repository = "https://github.com/moah0911/algozen"
+"Bug Reports" = "https://github.com/moah0911/algozen/issues"
+Documentation = "https://github.com/moah0911/algozen#readme"
+
+[tool.setuptools]
+packages = ["algozen", "algozen.data_structures", "algozen.algorithms", "algozen.patterns", "algozen.design_patterns", "algozen.problems"]
+
+[tool.setuptools.package-data]
+algozen = ["py.typed"]
