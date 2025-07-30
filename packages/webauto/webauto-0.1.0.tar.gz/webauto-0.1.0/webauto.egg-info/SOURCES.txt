@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+webauto/__init__.py
+webauto.egg-info/PKG-INFO
+webauto.egg-info/SOURCES.txt
+webauto.egg-info/dependency_links.txt
+webauto.egg-info/requires.txt
+webauto.egg-info/top_level.txt

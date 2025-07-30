@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: webauto
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: cdpkits>=1.2.7
+
+# Study Async CDP
+
+The primary objective of this project, with reference to [pydoll](https://github.com/autoscrape-labs/pydoll), is to learn the implementation of browser control based on CDP.
