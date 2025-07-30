@@ -1,0 +1,12 @@
+modelrepo/__init__.py,sha256=daEdpEyAJIa8b2VkCqSKcw8PaExcB6Qro80XNes_sHA,2
+modelrepo/factory.py,sha256=rUxqejUGpHHcoCQldEMu7dkPaYlabytw4p-IBUo4kvA,1670
+modelrepo/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+modelrepo/models/base.py,sha256=uO1kJILuvTPRrdCJQMf3ngz3N780uIyn28IjzcxuEz8,2202
+modelrepo/repository/__init__.py,sha256=qXj4cEhFj1Mr-r3XSRqYIifQSH6cOXIBTDXZPfupQqY,376
+modelrepo/repository/_in_memory_model_repository.py,sha256=lc6mKuS5aXMv3kB-KT8u7WxjnLJi4xINC-arugdd-Sg,5606
+modelrepo/repository/_model_repository.py,sha256=VZpb2sZPefNe-QhN2FEbJFBeYZgzuz5M1r3cjnuqjUs,3206
+modelrepo/repository/_mongo_db_model_repository.py,sha256=mk3evMK94LOQgqx6IFgkXmJwL0cwO93EF498xc-_0Wk,6541
+modelrepo/repository/_sql_alchemy_model_repository.py,sha256=Xutu8A2Uk3zefK7Mp1dC4pSWPCD44eBIK2MVlnrtTMI,8326
+modelrepo-1.0.0.dist-info/METADATA,sha256=MM_n9YCs_vOIr11EvR118z8xs5RUA7pyFvRHW3gn0QI,3360
+modelrepo-1.0.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+modelrepo-1.0.0.dist-info/RECORD,,
