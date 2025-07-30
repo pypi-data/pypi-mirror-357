@@ -1,0 +1,19 @@
+Metadata-Version: 2.3
+Name: pycoustic
+Version: 0.1.2
+Summary: 
+Author: thumpercastle
+Author-email: tony.ryb@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: numpy (==2.2.6)
+Requires-Dist: openpyxl (==3.1.5)
+Requires-Dist: pandas (==2.2.3)
+Requires-Dist: streamlit (==1.46.0)
+Description-Content-Type: text/markdown
+
+
