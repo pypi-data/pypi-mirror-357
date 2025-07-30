@@ -1,0 +1,95 @@
+Metadata-Version: 2.1
+Name: postprocessing_seismo_lib
+Version: 0.1.1
+Summary: A library for building and parsing Seismology API message bodies.
+Home-page: https://scsngit.gps.caltech.edu/services/associator
+Author: Ryan Tam
+Author-email: rwtam@caltech.edu
+License: UNKNOWN
+Description: # postprocessing_seismo_lib
+        
+        `postprocessing_seismo_lib` is a lightweight Python library for building and parsing structured API messages, especially for use with nested JSON structures used in event-based data systems. Currently, the library works on building out the Response format for seismology associator outputs, or extracting the body out of its Response format.
+        
+        ## Features
+        
+        - Build a full message with metadata and body using `build_message`
+        - Build a full message with status, headers, body_meta and body using `convert_file_to_json`, with provided csv, arcout or quakeml files
+        - Extract the `body` section from a structured JSON file using `extract_body_from_file`
+        
+        
+        ## Example Scenarios 
+        
+        ### Extraction of body
+        
+        The below function allows for extracting out the body from csv, quakeml or arcout:
+        
+        ```
+        from postprocessing_seismo_lib import extract_body_from_file
+        
+        body_data = extract_body_from_file("full_response_arcout.json")
+        body_data = extract_body_from_file("full_response_quakeml.json")
+        body_data = extract_body_from_file("full_response_csv.json")
+        
+        ```
+        
+        ### Creation of full response format
+        
+        Below shows how to build out the Response format for provided files. In all cases below, you provide an ID and an output file name (of type json). Also, provide the error log file, in case any errors occur. A file of the name you specified will be generated which reports the errors. If no errors exist, the output JSON file will be generated at the path where you run the python script. 
+        
+        If you are converting from csv to json, you provide the `_events.csv` and `_picks.csv` that are generated from pinging the associator API, and set them to `event_file` and `pick_file`. Leave the input_file blank. For quakeML or arcout conversion to json, specify the input_file. 
+        
+        ```
+        from postprocessing_seismo_lib import convert_file_to_json
+        
+        # For CSV
+        convert_file_to_json(
+            input_file="",  # not used for CSV
+            output_file="[Output file name].json",
+            id="[Name of choice]",
+            event_file="[xxxx]_gamma_events.csv",
+            pick_file="[xxxx]_gamma_picks.csv",
+            error_log_file="csv_error_log.txt"
+        )
+        
+        # For QuakeML XML (this input file has no XML signifiers but was parsed successfully as XML here)
+        convert_file_to_json(
+            input_file="[xxxx]_events_test",
+            output_file="[xxxx]_quakeml.json",
+            id="[Name of choice]",
+            error_log_file="quakeml_error_log.txt"
+        )
+        
+        #Conventional QuakeML XML here
+        convert_file_to_json(
+            input_file="[xxxx]_events_test.xml",
+            output_file="[xxxx]_quakeml.json",
+            id="[Name of choice]",
+            error_log_file="quakeml_error_log.txt"
+        )
+        
+        
+        # For ArcOut
+        convert_file_to_json(
+            input_file="[xxxx]_api_stproc_9999.arcout",
+            output_file="[Output file name].json",
+            id="[Name of choice]",
+            error_log_file="arcout_error_log.txt"
+        )
+        ```
+        
+        
+        
+        
+        
+        
+        ## Installation
+        
+        You can install the library locally for development:
+        
+        ```bash
+        pip install -e .
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
