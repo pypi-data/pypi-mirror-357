@@ -1,0 +1,11 @@
+selfshadingcorrection/__init__.py,sha256=6biRHVipfT-qw1ioFt3XXoeyPyTrjy2vfUnTcH_Mfx0,60
+selfshadingcorrection/find_b_bw.py,sha256=ejE0lwJbWLNgoy3_qaTHGeyyAwUJYRWY4sdBbIO4tnU,440
+selfshadingcorrection/find_rrs.py,sha256=QfBgdEPlMUxNlL4Gl-o6-4UAoVr3Bo5NAWyPSmsIcFY,453
+selfshadingcorrection/model_rrs.py,sha256=qT806mrfrJgm4u8kn_EhUflthKbSTxCi_cvVZyr9RkM,365
+selfshadingcorrection/run.py,sha256=ouATSHQettf9hSXEi4k6UUYu3iiBtzlbJbbUteXeZVs,5501
+selfshadingcorrection/theta_water.py,sha256=EVshJ7pXPDlZ9RdyohsjAzAc-e8reIjqmzDvcesUICc,332
+selfshadingcorrection-1.0.0.dist-info/LICENSE,sha256=YF6QR6Vjxcg5b_sYIyqkME7FZYau5TfEUGTG-0JeRK0,35129
+selfshadingcorrection-1.0.0.dist-info/METADATA,sha256=iIAzoo_y2ZWU_SJScFR2j0UCC-5k2dIFdlcXGFLuEKs,2527
+selfshadingcorrection-1.0.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+selfshadingcorrection-1.0.0.dist-info/top_level.txt,sha256=TQMw6GDD6GuebGB8CnVNh2yVHPDW37JjH49jr8cBhj0,22
+selfshadingcorrection-1.0.0.dist-info/RECORD,,
