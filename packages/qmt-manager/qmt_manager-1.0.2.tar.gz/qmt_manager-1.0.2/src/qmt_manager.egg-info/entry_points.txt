@@ -1,0 +1,2 @@
+[console_scripts]
+qmt-manager = qmt_manager.manager:main
