@@ -1,0 +1,290 @@
+[
+    {
+        "id": "PANDAS_ITERROWS",
+        "complexity": "O(n) vs O(n)",
+        "messages": {
+            "zh": {
+                "description": "检测到使用 DataFrame.iterrows() 迭代行",
+                "suggestion": "改用 itertuples 或向量化操作",
+                "hint": "iterrows 会将每行转换为 Series，性能较差"
+            },
+            "en": {
+                "description": "Detected use of DataFrame.iterrows() to iterate over rows",
+                "suggestion": "Use itertuples or vectorized operations instead",
+                "hint": "iterrows converts each row into a Series, which has poor performance"
+            }
+        }
+    },
+    {
+        "id": "PANDAS_APPLY_AXIS1",
+        "complexity": "O(n) vs O(n)",
+        "messages": {
+            "zh": {
+                "description": "检测到使用 DataFrame.apply 逐行运算",
+                "suggestion": "改用向量化列运算或 itertuples",
+                "hint": "apply 每行调用 Python 函数，单核执行，数据量大时非常慢"
+            },
+            "en": {
+                "description": "Detected use of DataFrame.apply for row-wise operations",
+                "suggestion": "Use vectorized column operations or itertuples instead",
+                "hint": "apply calls a Python function on each row, runs on a single core, and can be very slow with large datasets"
+            }
+        }
+    },
+    {
+        "id": "DATAFRAME_APPEND_LOOP",
+        "complexity": "O(n²) vs O(n)",
+        "messages": {
+            "zh": {
+                "description": "检测到在循环中频繁调用 DataFrame.append",
+                "suggestion": "先收集列表后一次性调用 pd.concat",
+                "hint": "append 每次创建新 DataFrame，导致大量内存拷贝"
+            },
+            "en": {
+                "description": "Detected frequent calls to DataFrame.append inside a loop",
+                "suggestion": "Collect data in a list and then call pd.concat once",
+                "hint": "append creates a new DataFrame each time, leading to significant memory copying"
+            }
+        }
+    },
+    {
+        "id": "PANDAS_PYTHON_LOOP_CLEAN",
+        "complexity": "O(n)",
+        "messages": {
+            "zh": {
+                "description": "检测到使用 Python 循环逐元素清洗数据",
+                "suggestion": "改用 Pandas 向量化字符串方法和布尔索引",
+                "hint": "使用 Python 循环逐条处理，性能不佳"
+            },
+            "en": {
+                "description": "Detected use of a Python loop for element-wise data cleaning",
+                "suggestion": "Use Pandas vectorized string methods and boolean indexing instead",
+                "hint": "Processing item by item with a Python loop offers poor performance"
+            }
+        }
+    },
+    {
+        "id": "NESTED_LOOP_FOR_MATRIX",
+        "complexity": "O(n³) vs O(n³)",
+        "messages": {
+            "zh": {
+                "description": "检测到使用嵌套 Python 循环进行矩阵/数组计算",
+                "suggestion": "改用 NumPy 向量化运算，如 numpy.dot",
+                "hint": "NumPy 利用底层 C/Fortran 优化"
+            },
+            "en": {
+                "description": "Detected use of nested Python loops for matrix/array calculations",
+                "suggestion": "Use NumPy vectorized operations, such as numpy.dot, instead",
+                "hint": "NumPy is optimized with underlying C/Fortran implementations"
+            }
+        }
+    },
+    {
+        "id": "USE_BUILTIN_FUNCTIONS",
+        "complexity": "O(n)",
+        "messages": {
+            "zh": {
+                "description": "检测到手动累加或手动寻找最值的循环",
+                "suggestion": "改用内置 sum/min/max/any/all",
+                "hint": "内置函数在 C 层实现，速度更快"
+            },
+            "en": {
+                "description": "Detected manual loops for summation or finding min/max values",
+                "suggestion": "Use built-in functions like sum(), min(), max(), any(), all()",
+                "hint": "Built-in functions are implemented in C and are much faster"
+            }
+        }
+    },
+    {
+        "id": "ALGORITHM_OPTIMIZATION",
+        "complexity": "O(φ^n) vs O(n)",
+        "messages": {
+            "zh": {
+                "description": "检测到朴素阶乘/斐波那契/质数检测等低效算法实现",
+                "suggestion": "使用 math.factorial、动态规划或筛法",
+                "hint": "指数递归性能极低"
+            },
+            "en": {
+                "description": "Detected inefficient algorithm implementations like naive factorial/Fibonacci/prime checking",
+                "suggestion": "Use math.factorial, dynamic programming, or sieve methods",
+                "hint": "Exponential recursion has extremely poor performance"
+            }
+        }
+    },
+    {
+        "id": "STRING_CONCAT_IN_LOOP",
+        "complexity": "O(n²) vs O(n)",
+        "messages": {
+            "zh": {
+                "description": "检测到在循环中累加字符串",
+                "suggestion": "改用 str.join",
+                "hint": "字符串不可变，+= 会创建新对象"
+            },
+            "en": {
+                "description": "Detected string concatenation in a loop",
+                "suggestion": "Use str.join() instead",
+                "hint": "Strings are immutable; += creates a new object on each iteration"
+            }
+        }
+    },
+    {
+        "id": "STRING_REPLACE_IN_LOOP",
+        "complexity": "O(n*m) vs O(n)",
+        "messages": {
+            "zh": {
+                "description": "检测到循环中多次执行字符串替换",
+                "suggestion": "使用 re.sub 一次性替换",
+                "hint": "循环多次 replace 性能低"
+            },
+            "en": {
+                "description": "Detected multiple string replace calls in a loop",
+                "suggestion": "Use re.sub for a single, comprehensive replacement",
+                "hint": "Multiple replace calls in a loop are inefficient"
+            }
+        }
+    },
+    {
+        "id": "STRING_ITERATION_LOOP",
+        "complexity": "O(n)",
+        "messages": {
+            "zh": {
+                "description": "检测到使用循环逐字符处理字符串",
+                "suggestion": "改用内置字符串方法或标准库",
+                "hint": "逐字符处理不及 C 实现高效"
+            },
+            "en": {
+                "description": "Detected character-by-character string processing in a loop",
+                "suggestion": "Use built-in string methods or standard library functions instead",
+                "hint": "Character-by-character processing is less efficient than C implementations"
+            }
+        }
+    },
+    {
+        "id": "LINEAR_SEARCH_IN_LOOP",
+        "complexity": "O(n*m) vs O(n)",
+        "messages": {
+            "zh": {
+                "description": "检测到在循环中进行线性搜索",
+                "suggestion": "改用集合或字典查询",
+                "hint": "集合查询为 O(1)"
+            },
+            "en": {
+                "description": "Detected linear search within a loop",
+                "suggestion": "Convert the searched list to a set or dictionary for O(1) lookups",
+                "hint": "Set lookups are O(1) on average"
+            }
+        }
+    },
+    {
+        "id": "NESTED_LOOP_COMPARISON",
+        "complexity": "O(nm) vs O(n+m)",
+        "messages": {
+            "zh": {
+                "description": "检测到嵌套循环比较两个序列",
+                "suggestion": "改用集合交集或双指针算法",
+                "hint": "集合交集更高效"
+            },
+            "en": {
+                "description": "Detected nested loops for comparing two sequences",
+                "suggestion": "Use set intersection or a two-pointer algorithm instead",
+                "hint": "Set intersection is more efficient"
+            }
+        }
+    },
+    {
+        "id": "REDUNDANT_TRAVERSAL",
+        "complexity": "O(2n) vs O(n)",
+        "messages": {
+            "zh": {
+                "description": "检测到对同一列表的多次遍历",
+                "suggestion": "合并循环",
+                "hint": "减少冗余遍历"
+            },
+            "en": {
+                "description": "Detected multiple traversals of the same list",
+                "suggestion": "Combine loops to traverse only once",
+                "hint": "Reduce redundant traversals"
+            }
+        }
+    },
+    {
+        "id": "MANUAL_SORT_LOOP",
+        "complexity": "O(n²) vs O(n log n)",
+        "messages": {
+            "zh": {
+                "description": "检测到手写排序算法",
+                "suggestion": "使用内置 sorted()",
+                "hint": "内置 Timsort 性能优"
+            },
+            "en": {
+                "description": "Detected a manual sorting algorithm implementation",
+                "suggestion": "Use the built-in sorted() function",
+                "hint": "The built-in Timsort is highly optimized"
+            }
+        }
+    },
+    {
+        "id": "REPEATED_SORT",
+        "complexity": "O(n log n)",
+        "messages": {
+            "zh": {
+                "description": "检测到重复排序",
+                "suggestion": "减少排序次数或使用 bisect",
+                "hint": "避免在循环内排序"
+            },
+            "en": {
+                "description": "Detected repeated sorting",
+                "suggestion": "Reduce the number of sorts or use the bisect module",
+                "hint": "Avoid sorting inside a loop"
+            }
+        }
+    },
+    {
+        "id": "LIST_QUEUE_USAGE",
+        "complexity": "O(n) vs O(1)",
+        "messages": {
+            "zh": {
+                "description": "检测到使用 list.pop(0)/insert(0,x) 实现队列",
+                "suggestion": "使用 collections.deque",
+                "hint": "deque 的 popleft() 为 O(1)"
+            },
+            "en": {
+                "description": "Detected use of list.pop(0) or list.insert(0, x) to implement a queue",
+                "suggestion": "Use collections.deque for an efficient queue",
+                "hint": "deque's popleft() operation is O(1)"
+            }
+        }
+    },
+    {
+        "id": "ADJ_MATRIX_TRAVERSAL",
+        "complexity": "O(n³) vs O(E log V)",
+        "messages": {
+            "zh": {
+                "description": "检测到三重嵌套循环遍历邻接矩阵",
+                "suggestion": "使用邻接表并运行 Dijkstra/BFS",
+                "hint": "更高效的图算法"
+            },
+            "en": {
+                "description": "Detected traversal of an adjacency matrix using triple nested loops",
+                "suggestion": "Use an adjacency list and run Dijkstra's or BFS",
+                "hint": "Use more efficient graph algorithms"
+            }
+        }
+    },
+    {
+        "id": "GRAPH_REPEAT_SEARCH",
+        "complexity": "O(V+E) vs O(V^V)",
+        "messages": {
+            "zh": {
+                "description": "检测到图遍历缺少访问记录",
+                "suggestion": "使用集合记录访问节点",
+                "hint": "防止指数级重复遍历"
+            },
+            "en": {
+                "description": "Detected graph traversal without a visited set",
+                "suggestion": "Use a set to keep track of visited nodes",
+                "hint": "Prevents exponential reprocessing of nodes"
+            }
+        }
+    }
+]
