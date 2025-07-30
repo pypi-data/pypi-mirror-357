@@ -1,0 +1,2 @@
+[console_scripts]
+pyarmour = pyarmour.cli:cli
