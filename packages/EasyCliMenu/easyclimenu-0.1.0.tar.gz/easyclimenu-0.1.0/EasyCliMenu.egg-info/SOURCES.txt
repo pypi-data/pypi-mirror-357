@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+EasyCliMenu.egg-info/PKG-INFO
+EasyCliMenu.egg-info/SOURCES.txt
+EasyCliMenu.egg-info/dependency_links.txt
+EasyCliMenu.egg-info/top_level.txt
+climenu/__init__.py
