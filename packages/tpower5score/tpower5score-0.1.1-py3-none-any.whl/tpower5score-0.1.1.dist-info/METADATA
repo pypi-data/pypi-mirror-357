@@ -1,0 +1,73 @@
+Metadata-Version: 2.4
+Name: tpower5score
+Version: 0.1.1
+Summary: An automatic evaluation package for assessing the quality of LLM-generated multi-document topic sets.
+Author-email: Itamar Trainin <itamar.trainin@mail.huji.ac.il>, Omri Abend <omri.abend@mail.huji.ac.il>
+License: MIT License
+        
+        Copyright (c) 2025 itamartrainin
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Homepage, https://github.com/itamartrainin/Tpower5Score
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy~=1.26.4
+Requires-Dist: tqdm~=4.67.0
+Requires-Dist: litellm~=1.73.0
+Requires-Dist: scipy~=1.13.1
+Dynamic: license-file
+
+# Tpower5Score
+An automatic evaluation package for assessing the quality of LLM-generated multi-document topic sets.
+
+## 📦 How to install
+
+```cmd
+pip install tpower5score
+```
+
+## 🚀 How to use
+
+```python
+    topics_set = [<topics_set>]
+    docs = [<documents>]
+
+    agg_weights = {
+        'Interpretability': 0.2,
+        'Topic Coverage': 0.2,
+        'Document Coverage': 0.2,
+        'Overlap': 0.2,
+        'Rank': 0.2
+    }
+
+    aspects, agg_score = tpower5score.evaluate(topics_set, docs)
+```
+
+Or see working example in [examples/main.py]()
+
+## 📖 Citation
+
+If you use this package in your work, please cite:
+
+```bibtex
+@article{
+  title={$T^5Score$: A Methodology for Automatically Assessing the Quality of LLM Generated Multi-Document Topic Sets},
+  author={Trainin Itamar, Omri Abend},
+}
