@@ -1,0 +1,17 @@
+argparse
+pydicom
+pynetdicom<3,>=2
+pillow>=9.2.0
+prettytable
+numpy
+urllib3>=1.26.5
+requests<3.0.0,>=2.32.4
+
+[dev]
+wrapt
+pylint
+twine
+autopep8
+bumpversion
+pytest
+build
