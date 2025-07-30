@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: kitx
+Version: 1.0.0
+Summary: A logging utility library for handwriting project
+Author: kit x
+Author-email: craepsb@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Requires-Dist: loguru==0.7.3
+Requires-Dist: pydantic
+Requires-Dist: minio
+Requires-Dist: pydantic_settings
+Requires-Dist: cos-python-sdk-v5
+Requires-Dist: httpx
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
