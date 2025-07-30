@@ -1,0 +1,2 @@
+[console_scripts]
+cmdcapture = cmdcapture.cli:main
