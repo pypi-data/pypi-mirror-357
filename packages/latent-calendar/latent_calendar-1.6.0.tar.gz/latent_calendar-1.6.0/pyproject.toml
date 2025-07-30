@@ -1,0 +1,113 @@
+[project]
+name = "latent-calendar"
+version = "1.6.0"
+description = "Analyzing and modeling weekly calendar distributions using latent components"
+authors = [{ name = "Will Dean", email = "wd60622@gmail.com" }]
+requires-python = ">=3.10,<4.0"
+readme = "README.md"
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "pandas>=1.0.0",
+    "scikit-learn>=1.0.0",
+    "matplotlib>=3.5.0",
+    "conjugate-models>=0.9.0",
+    "narwhals>=1.44.0",
+]
+
+[project.optional-dependencies]
+pymc = ["pymc>=5.0.0"]
+
+[project.urls]
+Homepage = "https://williambdean.github.io/latent-calendar/"
+Repository = "https://github.com/williambdean/latent-calendar/"
+Documentation = "https://williambdean.github.io/latent-calendar/"
+
+[dependency-groups]
+docs = [
+    "mkdocs>=1.4.3,<2",
+    "mkdocstrings[python]>=0.23.0",
+    "mkdocs-material>=9.1.18,<10",
+]
+dev = [
+    "pytest>=7.4.0,<8",
+    "pytest-cov>=4.1.0,<5",
+    "ipython==8.8.0",
+    "tox>=4.11.4,<5",
+    "pytest-mpl>=0.17.0,<0.18",
+    "jupyter>=1.0.0,<2",
+    "polars>=1.30.0",
+    "pyarrow>=20.0.0",
+]
+
+[tool.uv]
+default-groups = [
+    "docs",
+    "dev",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "latent_calendar",
+    "latent_calendar/py.typed",
+]
+
+[tool.hatch.build.targets.wheel]
+include = [
+    "latent_calendar",
+    "latent_calendar/py.typed",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.tox]
+legacy_tox_ini = """
+    [tox]
+    min_version = 4.0
+    isolated_build = true
+    env_list =
+        # tox and distutils
+        py313
+        py312
+        py311
+        py310
+
+    [testenv]
+    deps =
+        pytest
+        pytest-mpl
+        pytest-cov
+        pymc
+        polars
+    commands = pytest
+"""
+
+[tool.pytest.ini_options]
+minversion = 6.0
+addopts = "--mpl --mpl-baseline-path=tests/baseline --cov=latent_calendar --cov-report=xml --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+exclude = ["scripts"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"**/tests/*" = ["S101"]
