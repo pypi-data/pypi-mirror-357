@@ -1,0 +1,16 @@
+dinstar/__init__.py,sha256=yal3I5f8NmZlopfiy41i85SKK1WKeCX7nqg7jHfIo74,360
+dinstar/base.py,sha256=XS6kiAK_IqwJ1yfr6202uUMBG7DZOePKl3rgk62iEpM,2727
+dinstar/cdr.py,sha256=MT_0cJ_PeQfmX5C5_0_DOU9F-QjHENB3AcUxb97txng,2267
+dinstar/client.py,sha256=832SrH5OzIY9-ghwvIu28Bf4Z1r3LC4Nv-W8F3bWJgI,900
+dinstar/device.py,sha256=8wVhq-fUShfHS03T_HgTVwVECLssDIgILIuC7nS-CcI,1368
+dinstar/models.py,sha256=M56pgScStHSQ7yzazmf1pqXhr7iPDMPc5M2g1QlIT5w,9800
+dinstar/port.py,sha256=eio_IP5fv9PqCQmxu6YbyGfZ6Z9BK2ezSm-X8s2iDXU,3110
+dinstar/sms.py,sha256=MHRiTGwemHLDyE-2vPK3XWdGfy59-CNOvV41Lm_TDY8,15780
+dinstar/stk.py,sha256=zDSNGKJFuNz-n3zUqKjScUdIeaBhlmyLn96jNNqUlHI,3520
+dinstar/ussd.py,sha256=c-yHsxUe8mbM-q0KugRPjjSIhhXzjiaLtThuKVrG1iE,2878
+dinstar/webhook_models.py,sha256=4oQI8D4ooztC4LdOR6ZWS9ss8sphIyfpy2FnTdzWUM4,5794
+dinstar_uc_api-0.1.0.dist-info/licenses/LICENSE,sha256=Yuj4MSFTSEOPhU4x3qaKDKbK09S6Tmi0Knepk6grY9g,1066
+dinstar_uc_api-0.1.0.dist-info/METADATA,sha256=jlNTM1JEUiE4jm0f2GEAVhiVaqE8AxuuU48fMGUAr_A,3687
+dinstar_uc_api-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dinstar_uc_api-0.1.0.dist-info/top_level.txt,sha256=59dVN_q3C5uaF7h2lfOHupNyap5h4yNGtWqjDEDb9g0,8
+dinstar_uc_api-0.1.0.dist-info/RECORD,,
