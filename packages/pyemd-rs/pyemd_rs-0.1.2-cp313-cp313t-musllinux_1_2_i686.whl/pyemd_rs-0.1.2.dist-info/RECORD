@@ -1,0 +1,11 @@
+pyemd_rs-0.1.2.dist-info/METADATA,sha256=WVuxMFnGhnVtuMYhJ2AgCuprHtI1UlpvBMwa0FnGQy0,812
+pyemd_rs-0.1.2.dist-info/WHEEL,sha256=_--7842vLfZ-bASxjScZ3IWud5zhsgbTk4OuL0RS1is,106
+pyemd_rs-0.1.2.dist-info/licenses/LICENSE,sha256=1BQ8oo4zAsxuVkvhIg881vCV38JEmR97oLFCAZSphXQ,1071
+pyemd_rs.libs/libgcc_s-b5472b99.so.1,sha256=wh8CpjXz9IccAyeERcB7YDEx7NH2jF-PykwOyYNeRRI,453841
+pyemd_rs/__init__.py,sha256=HPRjv1bRcEPzNZEPGklPXu67bFLfZKAXdxqCOjaOVmM,148
+pyemd_rs/_pyemd_rs.cpython-313t-i386-linux-musl.so,sha256=Y9snRqYSvIQ53AjG9S3T82dN5nLaggO2Ecf6Svn9bU8,994173
+pyemd_rs/_pyemd_rs.pyi,sha256=LuESSRdHyd20S76O8aYGurhQa3nNR71_F965okSKzU0,2681
+pyemd_rs/_testing.py,sha256=n-tifr1oExnjtBZFUpC-_231oLwO1yYq1Raxj7eZGvs,414
+pyemd_rs/emd.py,sha256=EEudCRQ-LiKB2mDsvlrRkcfvzQfqlN2eUIDaA-q5_vg,27
+pyemd_rs/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyemd_rs-0.1.2.dist-info/RECORD,,
