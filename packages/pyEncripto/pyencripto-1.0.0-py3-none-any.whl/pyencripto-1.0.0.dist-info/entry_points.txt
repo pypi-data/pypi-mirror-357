@@ -1,0 +1,2 @@
+[console_scripts]
+pyEncripto = pyEncripto.cli:main
