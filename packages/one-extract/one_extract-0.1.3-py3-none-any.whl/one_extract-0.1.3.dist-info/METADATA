@@ -1,0 +1,61 @@
+Metadata-Version: 2.4
+Name: one-extract
+Version: 0.1.3
+Summary: Simple extractor for OneNote files.
+Project-URL: Documentation, https://github.com/volexity/one-extract/blob/main/README.md
+Project-URL: Issues, https://github.com/volexity/one-extract/issues
+Project-URL: Source, https://github.com/volexity/one-extract
+Author-email: Threat Intel <threatintel@volexity.com>
+License-File: LICENSE.md
+Keywords: extractor,onenote
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Requires-Dist: msoffcrypto-tool~=5.0
+Description-Content-Type: text/markdown
+
+# OneNote Extractor
+
+This is a quick Python script for extracting files and metadata from `.one` files. At the time of the creation (2023-01-20) of this script there appear to be no Python scripts that can extract files or metadata from objects
+
+## Installation
+
+To install OneNote Extractor, we recommend using something like this:
+
+`python -m pip install one-extract`
+
+## Usage as a library
+
+For examples of how to use OneNoteExtractor as a library, review the code in `cli.py`
+
+## CLI usage
+
+Following successful installation of OneNoteExtractor a new CLI utility will be available, for usage see:
+
+`one-extract --help`
+
+### Extract embedded files
+
+`one-extract /path/to/file.one --extract-files`
+
+### Display metadata
+
+`one-extract /path/to/file.one --extract-meta`
+
+### Extract embedded files from a password protected notebook with password 1234
+
+`one-extract /path/to/file.one --extract-files --password 1234`
+
+## Disclaimer
+
+This is only intended as an interim solution, until someone with a greater understanding of the `.one` file format comes up with something more robust.
+
+It was created in response to an uptick in malicious `.one` file extensions being delivered by various malspam actors.
