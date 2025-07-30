@@ -1,0 +1,3 @@
+[console_scripts]
+andrxriv-hello = andrxriv_hello:hello
+
