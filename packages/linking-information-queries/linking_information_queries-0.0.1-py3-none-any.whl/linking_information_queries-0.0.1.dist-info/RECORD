@@ -1,0 +1,12 @@
+linking_info_lib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+linking_info_lib/dbpedia.py,sha256=5lXG2W8B9GaAjgLvD-5SfMcxsgLpLCdLin7BBHY1Rqw,504
+linking_info_lib/helpers.py,sha256=rPMXCP7V3O47S9dDZCYY3ZCEGc6xYBSD46kL3YHoQeE,511
+linking_info_lib/information_linking_apis.py,sha256=uIal4giU7uMuuhwirEV1RV-6xqkYCbsZCGr6Vl_8lvk,962
+linking_info_lib/information_linking_orcid.py,sha256=tS6W_AIfmQVpaIiwq71Pr1k26TTfgiROXgDDrIMgIYU,515
+linking_info_lib/orcid.py,sha256=_4vE1rQ7yQha1kKUj2Mg-53ww-BJyC8csaxHc-SKFRs,1051
+linking_info_lib/wikidata.py,sha256=PL_TLFdUBvoO90xcZzBUUHabOYchN7SJ5Occb20sP-8,1525
+linking_info_lib/wikipedia.py,sha256=4_Lymk67dMe4tP3OyP77fs9lL5VZBBWSD-UB3YveWEI,876
+linking_information_queries-0.0.1.dist-info/METADATA,sha256=4eyGW1LtZIycTnajENEXz24yjnvQW3Xd3iBc4tcwpyk,4325
+linking_information_queries-0.0.1.dist-info/WHEEL,sha256=PZUExdf71Ui_so67QXpySuHtCi3-J3wvF4ORK6k_S8U,91
+linking_information_queries-0.0.1.dist-info/top_level.txt,sha256=0-9Esof_pguem-kJv1K5g_jL2z87fB0IVJsAGWJVyUg,17
+linking_information_queries-0.0.1.dist-info/RECORD,,
