@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: dashai_stable_diffusion_v1_model_package
+Version: 0.0.8
+Summary: DashAI Stable Diffusion V1 Model Package for DashAI
+Project-URL: Homepage, https://github.com/DashAISoftware/DashAI
+Project-URL: Issues, https://github.com/DashAISoftware/DashAI/issues
+Author: DashAI team
+Author-email: dashaisoftware@gmail.com
+Keywords: DashAI,Model
+Requires-Python: >=3.8
+Requires-Dist: diffusers>=0.20.0
+Requires-Dist: torch>=2.0.1
+Description-Content-Type: text/markdown
+
+# Stable Diffusion V1
+
+This includes all the 1.x versions of SD model from CompVis
