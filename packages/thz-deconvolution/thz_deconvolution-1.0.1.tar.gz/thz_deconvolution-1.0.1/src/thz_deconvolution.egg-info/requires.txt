@@ -1,0 +1,6 @@
+numpy
+scipy
+matplotlib
+zmq
+tqdm
+pydotthz
