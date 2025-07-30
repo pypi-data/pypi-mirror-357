@@ -1,0 +1,2 @@
+[console_scripts]
+schematized-jwt = schematized_jwt:main
