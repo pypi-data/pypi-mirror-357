@@ -1,0 +1,7 @@
+requests
+discord.py>=2.0.0
+pycryptodome
+cryptography
+
+[:platform_system == "Windows"]
+pywin32
