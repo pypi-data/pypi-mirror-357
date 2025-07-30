@@ -1,0 +1,4 @@
+[console_scripts]
+splunk-mcp=splunk_mcp:mcp.run
+test=pytest:main
+
