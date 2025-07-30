@@ -1,0 +1,2 @@
+[console_scripts]
+orly-mcp = orly_mcp.server:main
