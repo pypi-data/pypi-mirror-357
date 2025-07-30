@@ -1,0 +1,6 @@
+README.md
+setup.py
+this.dictionaries.egg-info/PKG-INFO
+this.dictionaries.egg-info/SOURCES.txt
+this.dictionaries.egg-info/dependency_links.txt
+this.dictionaries.egg-info/top_level.txt
