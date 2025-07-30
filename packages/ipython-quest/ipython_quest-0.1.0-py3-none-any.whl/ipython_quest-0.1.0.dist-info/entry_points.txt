@@ -1,0 +1,2 @@
+[console_scripts]
+pyquest = pyquest:main
