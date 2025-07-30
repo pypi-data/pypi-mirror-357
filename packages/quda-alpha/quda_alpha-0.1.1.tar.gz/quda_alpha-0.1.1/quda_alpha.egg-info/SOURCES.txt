@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+quda/factor/__init__.py
+quda/factor/completer.py
+quda/factor/consts.py
+quda/factor/core.py
+quda/factor/errors.py
+quda/factor/evaluator.py
+quda/factor/resolver.py
+quda/factor/utils.py
+quda_alpha.egg-info/PKG-INFO
+quda_alpha.egg-info/SOURCES.txt
+quda_alpha.egg-info/dependency_links.txt
+quda_alpha.egg-info/requires.txt
+quda_alpha.egg-info/top_level.txt

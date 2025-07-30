@@ -1,0 +1,6 @@
+pandas>=2.3.0
+polars>=1.30.0
+quda-core>=1.0.3
+varname>=0.14.0
+xcals>=0.0.4
+ygo>=1.1.4
