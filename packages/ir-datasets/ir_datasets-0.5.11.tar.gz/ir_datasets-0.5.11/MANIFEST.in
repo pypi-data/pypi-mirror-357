@@ -1,0 +1,3 @@
+recursive-include ir_datasets *.yaml
+recursive-include ir_datasets *.bib
+recursive-include ir_datasets *.json
