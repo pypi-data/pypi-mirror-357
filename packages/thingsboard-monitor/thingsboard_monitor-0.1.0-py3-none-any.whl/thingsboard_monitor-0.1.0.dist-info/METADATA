@@ -1,0 +1,44 @@
+Metadata-Version: 2.4
+Name: thingsboard-monitor
+Version: 0.1.0
+Summary: ThingsBoard monitor package
+Home-page: https://gitlab.com/things-board
+Author: HES-SO Valais, School of Engineering, Sion
+Author-email: thomas.sterren@hes-so.ch
+License-Expression: MIT
+Project-URL: Bug Tracker, https://gitlab.com/things-board/thingsboard-monitor/-/issues
+Project-URL: Source Code, https://gitlab.com/things-board/thingsboard-monitor
+Project-URL: Documentation, https://gitlab.com/things-board/thingsboard-monitor#thingsboard-monitor
+Keywords: ThingsBoard monitor library
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Information Technology
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: configobj
+Requires-Dist: tb-rest-client
+Requires-Dist: websockets
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: summary
+
+# ThingsBoard Monitor
+
+> Note: 
+> 
+> This is not an official project of the [
+ThingsBoard](https://thingsboard.io/) authors! Please refer to [ThingsBoard - Open-source IoT Platform](https://github.com/thingsboard) for official ThingsBoard projects!
+
+The _ThingsBoard Monitor_ package provides some classes to create an application monitoring and controlling
+one or more ThingsBoard endpoints (devices).
