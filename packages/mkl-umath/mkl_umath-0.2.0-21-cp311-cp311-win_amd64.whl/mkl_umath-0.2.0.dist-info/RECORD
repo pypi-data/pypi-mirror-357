@@ -1,0 +1,17 @@
+mkl_umath/__init__.py,sha256=7YQ5rgwe__JWCo_BxJqFlTp5__wQb3USwsJbtDfMxW4,1864
+mkl_umath/_init_helper.py,sha256=8R2JoWUyA8WXQgsEjwRMP72kE40guc4IkeywJOrts_w,1052
+mkl_umath/_patch.cp311-win_amd64.pyd,sha256=qxA_RQQPXMTZ74nv-tkM8o593u5gJ57izRvZ5GBb51s,166912
+mkl_umath/_ufuncs.cp311-win_amd64.pyd,sha256=6JkmncCvajM3INqmaEo-d_LRV0M6TZsENs3z-kd01O8,34816
+mkl_umath/_version.py,sha256=O6Hcm5iZIrpcFQnuw3IzCUSoKf0HHRvbYGyeE-Tz5Zk,23
+mkl_umath/generate_umath.py,sha256=SJ8w1fv41TkMIvXse1zsUMzGt9cvY8GKXGy0bBQ0IfY,34679
+mkl_umath/generate_umath_doc.py,sha256=t4qA6Ii8_9BvVYEBq6onGlFFzNGCLXIUTdL3a4-OqjQ,3397
+mkl_umath/mkl_umath_loops.dll,sha256=PP7eozpoAM-27qCQGBrzOkn-a6kBvneMUaROI-NeNMo,227840
+mkl_umath/mkl_umath_loops.lib,sha256=zUI0aAm79AotgZVWV9QTXJ3Jw6SRDevSf_Bi3BkfW18,49284
+mkl_umath/ufunc_docstrings_numpy1.py,sha256=Hvep1JDW3NW96DnbHO_FHeSd-Lv94_V1iknv9oUWmpI,112852
+mkl_umath/ufunc_docstrings_numpy2.py,sha256=dcDDLHQpVMLjOcpxDE3EbgreTs2SzbMtt0QlqIYyk5Y,149006
+mkl_umath/tests/test_basic.py,sha256=Q7v-Pl6LPFnvtCsPXi9McwRu4zW5295Z_r2ExE6JKe4,3870
+mkl_umath-0.2.0.dist-info/licenses/LICENSE.txt,sha256=deIcjqmg7IIRxMhraBbZEbNauhr3aIijRXQj7kaXmUE,1524
+mkl_umath-0.2.0.dist-info/METADATA,sha256=11J1TuoexHh5ihQAX-ZXMa2lUUwGmf0KWipHn1mzwIk,4364
+mkl_umath-0.2.0.dist-info/WHEEL,sha256=DQvgGWXEGa1hwul_8GOqOLDI5HpaqKZBZIsFwq_0rXQ,106
+mkl_umath-0.2.0.dist-info/top_level.txt,sha256=oFJ6a7NBbb6o-2d_OmNaQ-4w8BYfqQze7wHkgY7RX4E,10
+mkl_umath-0.2.0.dist-info/RECORD,,
