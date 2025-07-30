@@ -1,0 +1,4 @@
+[console_scripts]
+gguf-tensor-remover=gguf_python.remover:main
+gguf-tensor-renamer=gguf_python.renamer:main
+

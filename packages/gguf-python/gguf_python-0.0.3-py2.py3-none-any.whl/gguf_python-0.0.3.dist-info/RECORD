@@ -1,0 +1,8 @@
+gguf_python/__init__.py,sha256=Fu1Lf-oVskvjONoAn5gAMZIwOpEqeddqDj4i2maxz-I,148
+gguf_python/remover.py,sha256=yuCpOaOgXw2TKiK1wFRErmvBMHkt2ZXUHFe1lJb9EKU,233
+gguf_python/renamer.py,sha256=QSEraxsmBibiNuVHitlGN968nFkEo_xI85RGxIrQPUM,231
+gguf_python-0.0.3.dist-info/entry_points.txt,sha256=wZdXE_4fz2abJflSo4p6YZPTFOEr6_ZOXtcBvcmpg-k,109
+gguf_python-0.0.3.dist-info/LICENSE,sha256=GXD6enr5YUoIHoGXj3fUVE37LglxlDlqrEO2ESF3UkQ,1084
+gguf_python-0.0.3.dist-info/METADATA,sha256=kJ4FKJmmu63QvzFiz6ZGnfsMvzTXc7qnSEcSkZf2obY,1196
+gguf_python-0.0.3.dist-info/WHEEL,sha256=5druYqcII7zHXzX7qmN0TH895Jg3yuTtfjMgJIVBrKE,92
+gguf_python-0.0.3.dist-info/RECORD,,
