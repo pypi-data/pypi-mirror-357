@@ -1,0 +1,4 @@
+INFO:root:Metadata for Removal Filter SVM training.
+INFO:root:Dataset: MultiplexedPath('/Users/twh/PycharmProjects/varv/src/varv/feature_extraction/assets')
+INFO:root:Scikit-learn version is 1.6.1
+INFO:root:NumPy version is 2.2.2
