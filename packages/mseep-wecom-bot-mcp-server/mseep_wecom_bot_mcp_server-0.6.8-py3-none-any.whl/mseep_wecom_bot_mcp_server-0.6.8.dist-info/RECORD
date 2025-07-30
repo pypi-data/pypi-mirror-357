@@ -1,0 +1,14 @@
+mseep_wecom_bot_mcp_server-0.6.8.dist-info/licenses/LICENSE,sha256=tJf0Pz8q_65AjEkm3872K1cl4jGil28vJO5Ko_LhUqc,1060
+tests/__init__.py,sha256=pndG0UptvHJHgnrpXt5XDJ9pV2cDCu4SEUYcN7SNIfo,45
+tests/conftest.py,sha256=y8ZjP4Yqy3hzrhhtpxEc3bw0fOAj5dVfC9IUqB8al4I,25495
+tests/test_file.py,sha256=iRH0iuVMAopHbvyXSIdAmELQ8z5XjVv21zi3DiRQBEk,15764
+tests/test_image.py,sha256=PaksiiYw5x-lHmiZ-yYTizISUZiF1PaLiAuCWTwOQFg,38342
+tests/test_log_config.py,sha256=HCPYtfDUm5lLukMjWho2nqObQaG7y1gkJ6VC4_WeNGs,5001
+tests/test_markdown.py,sha256=EIWXKAQ8OMmljGCnvd7C_8c_hkhhq1Mjw8nMcGHY7hc,5694
+tests/test_message.py,sha256=eoFOpBPUVDug7Fl9PSLMG1cstssUKA9Vhf6iwhOm22k,18136
+tests/test_server.py,sha256=rL2Zqj0aHWLiiHrvojO5XIRxvWfLqnSQwT9mg5iksBY,786
+tests/test_utils.py,sha256=srMyvpHNakaz2vk-RCdrz4SOQI-cC9uoKHqjCQzEfm8,4940
+mseep_wecom_bot_mcp_server-0.6.8.dist-info/METADATA,sha256=FT3IgXgMPoSyNMVh_rQ6TmD5fFQtmyTw4K0AH1Xvl6o,1116
+mseep_wecom_bot_mcp_server-0.6.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mseep_wecom_bot_mcp_server-0.6.8.dist-info/top_level.txt,sha256=EdW7283x-lr_cbuivW8Ij7ANAP-ZJ9sLtILQseEPxXg,6
+mseep_wecom_bot_mcp_server-0.6.8.dist-info/RECORD,,
