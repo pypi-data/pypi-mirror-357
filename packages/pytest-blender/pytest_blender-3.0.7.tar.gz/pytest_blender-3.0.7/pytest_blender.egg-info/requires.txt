@@ -1,0 +1,7 @@
+pytest
+
+[dev]
+pytest-cov
+
+[test]
+pytest-cov
