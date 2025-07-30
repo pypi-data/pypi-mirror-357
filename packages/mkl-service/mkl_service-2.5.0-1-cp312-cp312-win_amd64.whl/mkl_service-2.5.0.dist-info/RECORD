@@ -1,0 +1,13 @@
+mkl/__init__.py,sha256=kE12BehMYLEdKSc28xCDVQHITUNPd6T4XF6sexWMGR0,2454
+mkl/_init_helper.py,sha256=JuedCuAeKeh5qwPtt2mFNicY0oqdDW892oAnWP3d7xM,2028
+mkl/_mkl_service.pyx,sha256=eAaEnSngsS1YrARueyihKf1TCUMP32N0z40fxbiyojc,34153
+mkl/_mklinit.cp312-win_amd64.pyd,sha256=XHU1gU2MZIHvqiWMcY8cUy2sZ0xLob5AFOPqwfIvj5Y,10752
+mkl/_mklinitmodule.c,sha256=SIqoyv1DJNDszVxNhjW00WX4vyfdhMFseY-2HZkw0uw,6549
+mkl/_py_mkl_service.cp312-win_amd64.pyd,sha256=c4bwxyPGk_WNBEKGNwG_ltTMiCUBryO37jbcJfoo4_0,109568
+mkl/_version.py,sha256=WTT9rY8-08-ETZU2HLDLaaS-bqOCH4aOBni-JajoYss,23
+mkl/tests/test_mkl_service.py,sha256=On7Eg5LRAP3qtNFwbfdW50NYt2bnTQCAI1pTAb_jiQ0,10424
+mkl_service-2.5.0.dist-info/licenses/LICENSE.txt,sha256=1GVJr_ZMSNOQMMWwo8rah-ItbrudUSGoRJdJotbn2R8,1524
+mkl_service-2.5.0.dist-info/METADATA,sha256=FP872EPxgyElTpXlu3N3NSb-GZmLGu72cVjZAVjA5tQ,2986
+mkl_service-2.5.0.dist-info/WHEEL,sha256=-9ANHBpnGTnvzH-J8UNS-CV6sEAPEWDvzEq9s6bF1qI,110
+mkl_service-2.5.0.dist-info/top_level.txt,sha256=sekqQ_0YET7LLHO6NsXQgKDPGGRhmKuANW9ovFuM2TE,4
+mkl_service-2.5.0.dist-info/RECORD,,
