@@ -1,0 +1,3 @@
+[console_scripts]
+appserver-secrets=appserver_secrets.__main__:main
+
