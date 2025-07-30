@@ -1,0 +1,26 @@
+marks:
+- auth
+stages:
+- name: Get auth token
+  request:
+    data:
+      password: '{password}'
+      username: '{username}'
+    method: POST
+    url: '{host}/auth/token'
+  response:
+    save:
+      json:
+        token: access_token
+    status_code: 200
+- name: Add solution to project
+  request:
+    headers:
+      Authorization: Bearer {token}
+    method: POST
+    url: '{host}/v2/api/projects/{project_id}/solutions/{solution_id}'
+  response:
+    status_code:
+    - 200
+    - 409
+test_name: add_solution_to_existing_project_v2_api_projects__project_id__solutions__solution_id__post
