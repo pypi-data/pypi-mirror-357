@@ -1,0 +1,14 @@
+    <header>
+        <nav>
+            <div>
+                <h1>{{ config.name }}</h1>
+            </div>
+            <div>
+                <ul>
+                    {% for li in menu -%}
+                    <li><a href="{{ li.href }}">{{ li.text }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
+    </header>
