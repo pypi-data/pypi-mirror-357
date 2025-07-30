@@ -1,0 +1,31 @@
+include AUTHORS.rst
+include CONTRIBUTING.rst
+include HISTORY.rst
+include LICENSE
+include PACKAGE.md
+
+graft src/
+
+exclude .coverage
+exclude .codecov.yml
+exclude .coveragerc
+exclude .editorconfig
+exclude .gitignore
+exclude .pre-commit-config.yaml
+exclude Jenkinsfile-eksci
+exclude Makefile
+exclude README.md
+exclude requirements_test.txt
+exclude setup.cfg
+exclude tox.ini
+
+prune .github
+prune examples/
+prune tests/
+prune src/comet_mpm.egg-info/
+prune benchmark/
+prune .jenkins/
+
+recursive-include docs *.rst conf.py Makefile make.bat *.jpg *.png *.gif
+
+global-exclude *.py[cod] __pycache__/* *.so *.dylib *.coverage
