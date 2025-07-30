@@ -1,0 +1,158 @@
+# A2A Client Toolkit
+
+A2A SDK とメッセージングプラットフォーム（LINE、Slack）を統合したクライアントツールキットです。各プラットフォームのユーザーと A2A エージェント間の双方向コミュニケーションを可能にします。
+
+## コンセプト
+
+このツールキットは、各メッセージングプラットフォームからのメッセージを受信して A2A エージェントに転送し、エージェントからの応答をプラットフォームユーザーに返すブリッジとして機能します。テキストメッセージだけでなく、画像やファイルのやり取りもサポートしています。
+
+## サポートプラットフォーム
+
+- **LINE**: LINE Bot API を使用
+- **Slack**: Slack Bolt API を使用
+
+## インストール
+
+```bash
+pip install -r requirements.txt
+```
+
+## 基本的な使い方
+
+### LINE クライアント
+
+#### 1. 環境変数の設定
+
+`.env`ファイルを作成し、必要な設定を行います：
+
+```env
+LINE_CHANNEL_SECRET=your_line_channel_secret
+LINE_CHANNEL_ACCESS_TOKEN=your_line_channel_access_token
+A2A_AGENT_CARD_URL=your_a2a_agent_card_url
+HOST=http://localhost:8000  # ファイル配信用URL（オプション）
+```
+
+#### 2. サンプルコード
+
+```python
+import os
+import linebot.v3.messaging as line_messaging
+import uvicorn
+from dotenv import load_dotenv
+
+from client.worker import A2AClientWorker
+from providers.line.file import LocalFileStore
+from providers.line.handler import DefaultLineEventHandler
+from providers.line.server import LineServer, LineServerConfig
+from providers.line.user_state import InMemoryUserStateStore
+
+if __name__ == "__main__":
+    load_dotenv()
+
+    config = LineServerConfig(
+        line_messaging_config=line_messaging.Configuration(
+            access_token=os.getenv("LINE_CHANNEL_ACCESS_TOKEN"),
+        ),
+        line_channel_secret=os.getenv("LINE_CHANNEL_SECRET") or "",
+    )
+
+    user_state_store = InMemoryUserStateStore()
+    file_store = LocalFileStore(base_uri=f"{os.getenv('HOST') or ''}/files", directory="public/files")
+
+    event_handler = DefaultLineEventHandler(
+        config=config.line_messaging_config,
+        file_store=file_store,
+        user_state_store=user_state_store,
+    )
+
+    worker = A2AClientWorker(
+        a2a_agent_card_url=os.getenv("A2A_AGENT_CARD_URL") or "",
+        event_handler=event_handler,
+    )
+
+    server = LineServer(config, worker, user_state_store)
+
+    uvicorn.run(server.build(), host="0.0.0.0", port=8000)
+```
+
+#### 3. サーバー起動
+
+```bash
+python src/samples/line.py
+```
+
+サーバーは `http://localhost:8000` で起動します。LINE の Webhook エンドポイントは `/callback` です。
+
+### Slack クライアント
+
+#### 1. 環境変数の設定
+
+`.env`ファイルを作成し、必要な設定を行います：
+
+```env
+SLACK_BOT_TOKEN=your_slack_bot_token
+SLACK_APP_TOKEN=your_slack_app_token
+A2A_AGENT_CARD_URL=your_a2a_agent_card_url
+```
+
+#### 2. サンプルコード
+
+```python
+import asyncio
+import os
+from dotenv import load_dotenv
+from slack_sdk.web.async_client import AsyncWebClient
+
+from client.worker import A2AClientWorker
+from providers.slack.app import SlackApp, SlackAppConfig
+from providers.slack.handler import DefaultSlackEventHandler
+
+if __name__ == "__main__":
+    load_dotenv()
+
+    config = SlackAppConfig(
+        slack_bot_token=os.getenv("SLACK_BOT_TOKEN", ""),
+        slack_app_token=os.getenv("SLACK_APP_TOKEN", ""),
+    )
+
+    # Initialize Slack Web API client
+    slack_client = AsyncWebClient(token=config.slack_bot_token)
+    event_handler = DefaultSlackEventHandler(slack_client=slack_client)
+
+    worker = A2AClientWorker(
+        a2a_agent_card_url=os.getenv("A2A_AGENT_CARD_URL") or "",
+        event_handler=event_handler,
+    )
+
+    app = SlackApp(config, worker)
+    asyncio.run(app.run())
+```
+
+#### 3. アプリ起動
+
+```bash
+python src/samples/slack.py
+```
+
+Slack アプリがソケットモードで起動します。
+
+## 機能
+
+- **双方向メッセージング**: 各プラットフォームユーザーと A2A エージェント間でのリアルタイム会話
+- **ファイル共有**: 画像、ドキュメント等のファイル送受信
+- **セッション管理**: ユーザーごとの会話状態を保持
+- **カスタマイズ可能**: 各コンポーネントを独自実装で置き換え可能
+- **マルチプラットフォーム**: LINE、Slack に対応
+
+## 動作の流れ
+
+1. プラットフォームユーザーがメッセージを送信
+2. 各プラットフォームの API がメッセージを受信
+3. メッセージを A2A 形式に変換
+4. A2A エージェントにメッセージを送信
+5. エージェントからの応答を受信
+6. 応答をプラットフォーム形式に変換して返信
+
+## ライセンス
+
+MIT License
