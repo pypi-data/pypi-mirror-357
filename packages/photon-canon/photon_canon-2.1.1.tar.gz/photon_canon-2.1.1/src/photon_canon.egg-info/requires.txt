@@ -1,0 +1,15 @@
+matplotlib==3.10.3
+numpy==2.3.1
+pandas==2.3.0
+pydantic==2.11.7
+scipy==1.16.0
+tqdm==4.67.1
+
+[cuda]
+cupy
+
+[dev]
+toml
+
+[test]
+unittest
