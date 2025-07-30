@@ -1,0 +1,11 @@
+include dragulacontainer/dragulacontainer.min.js
+include dragulacontainer/dragulacontainer.min.js.map
+include dragulacontainer/async-*.js
+include dragulacontainer/async-*.js.map
+include dragulacontainer/*-shared.js
+include dragulacontainer/*-shared.js.map
+include dragulacontainer/metadata.json
+include dragulacontainer/package-info.json
+include README.md
+include LICENSE
+include package.json

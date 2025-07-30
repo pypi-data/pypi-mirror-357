@@ -1,0 +1,16 @@
+
+name = "Dragulacontainer"
+uuid = "1b08a953-4be3-4667-9a23-b23fcb1e97b1"
+authors = ["Felix Pouchain <email>"]
+version = "0.0.3"
+
+[deps]
+Dash = "1b08a953-4be3-4667-9a23-3db579824955"
+
+[compat]
+julia = "1.2"
+Dash = "0.1.3, 1.0"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
