@@ -1,0 +1,7 @@
+r00android_fake/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+r00android_fake/main.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+r00android_fake/network/__init__.py,sha256=gmMDU8p5qAcSIWqXj9q9K023NkxFpCxw8V3LCzV8GGU,127
+r00android_fake/network/ip_info.py,sha256=wTNezJ6L1F4gtcQPiPkE11T_H2Hka5flV6j5nVYUqZg,13008
+r00android_fake-0.1.0.dist-info/METADATA,sha256=IpNBgq5AGNy0jbZI-q92nvwGnJktakwhsXkNneHdXEU,118
+r00android_fake-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+r00android_fake-0.1.0.dist-info/RECORD,,
