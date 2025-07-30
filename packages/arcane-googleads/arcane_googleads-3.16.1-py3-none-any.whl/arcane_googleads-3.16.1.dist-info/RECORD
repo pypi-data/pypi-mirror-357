@@ -1,0 +1,7 @@
+arcane/googleads/__init__.py,sha256=-P_OkwjL2-WxaGLG_LsatG_9PE-hbjZc6Hzw7LPgsjY,71
+arcane/googleads/client.py,sha256=Wkx6GPhqXABylgs629qw56RR4WAp1OXaY96VsbLNw00,15845
+arcane/googleads/exceptions.py,sha256=DOrTeo5QnoYRWIWcvOsOUqf4fT65q0n_zzMc6TgLcPY,254
+arcane/googleads/helpers.py,sha256=qHbx3abesP69Rbn1rBPY7HRET6Byh8R7vKiKNXiCZ4E,3445
+arcane_googleads-3.16.1.dist-info/METADATA,sha256=8TPoSfHTCZUgx4p0vfXRfQd1kwcsuJpTRJjhSeoVcBU,892
+arcane_googleads-3.16.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+arcane_googleads-3.16.1.dist-info/RECORD,,
