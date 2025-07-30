@@ -1,0 +1,125 @@
+Metadata-Version: 2.1
+Name: dubna-parser
+Version: 0.1.0
+Summary: package for parsing schedule of Dubna
+Author: Skelesheit
+Author-email: Skelesheit@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: gdown (>=5.2.0,<6.0.0)
+Requires-Dist: openpyxl (>=3.1.5,<4.0.0)
+Description-Content-Type: text/markdown
+
+# dubna_parser
+
+Библиотека для парсинга расписания университета Дубна из Excel-таблиц и скачивания таблиц из Google Docs по их URL. Это минимально рабочая версия, которая уже справляется с основными задачами, но может иметь небольшие артефакты. Если готовы мириться с небольшими шероховатостями, эта библиотека поможет автоматизировать работу с расписанием!
+
+## Возможности
+
+- **Скачивание таблиц из Google Docs** по URL с помощью функции `download_sheets`.
+- **Парсинг расписания университета Дубна** из Excel-файлов в указанной папке через функцию `parser.parse`.
+- Простая структура, минимум зависимостей.
+
+## Установка
+
+### Вариант 1: Установка через PyPI
+Библиотека доступна на PyPI под названием `dubna-schedule-parser`. Установите её с помощью:
+
+```bash
+pip install dubna-schedule-parser
+```
+
+### Вариант 2: Установка из исходников
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/Skelesheit/dubna-parser.git
+   cd dubna-parser
+   ```
+
+2. Установите необходимые зависимости (Python 3.9):
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   **Примечание**: Убедитесь, что установлены библиотеки `gdown` для работы с Google Docs и `openpyxl` для работы с Excel.
+
+## Использование
+
+### Скачивание таблиц из Google Docs
+
+Для загрузки таблиц используйте функцию `download_sheets`. Нужно указать файл (например, `links.txt`), содержащий URL-адреса Google Sheets. Пример:
+
+1. Создайте файл `links.txt` с URL-адресами таблиц (по одному URL на строку):
+   ```
+   https://docs.google.com/spreadsheets/d/your_spreadsheet_id/edit
+   https://docs.google.com/spreadsheets/d/another_spreadsheet_id/edit
+   ```
+
+2. Используйте функцию для скачивания:
+   ```python
+   from dubna_parser import download_sheets
+
+   # Укажите путь к файлу с URL
+   download_sheets("links.txt", output_path="downloaded_schedules")
+   ```
+
+   Это скачает таблицы в папку `downloaded_schedules` в формате Excel.
+
+### Парсинг расписания
+
+Для парсинга расписания из Excel-файлов в указанной папке используйте функцию `parser.parse`. Данные извлекаются сразу из всех таблиц в папке, и результат можно вывести или использовать дальше. Пример:
+
+```python
+from dubna_parser import parser
+
+# Укажите путь к папке с Excel-файлами
+folder_path = "downloaded_schedules"
+result = parser.parse(folder_path)
+
+# Результат — данные расписания (например, словарь или список)
+print(result)  # Можно вывести или использовать в своих целях
+```
+
+## Текущий статус
+
+- **Версия**: Минимально рабочая, но не полностью стабильная.
+- **Известные проблемы**:
+  - Возможны небольшие артефакты при парсинге кривых таблиц.
+- **Планы**:
+  - Улучшение стабильности парсинга.
+  - Добавление поддержки дополнительных форматов расписания.
+  - Расширение документации и примеров.
+
+## Примеры и тесты
+
+В папке репозитория есть два тестовых файла:
+- `test_download.py` — проверяет работу функции `download_sheets`.
+- `test_parse.py` — проверяет работу функции `parser.parse`.
+
+Запустите их, чтобы проверить функциональность библиотеки:
+
+```bash
+python test_download.py
+python test_parse.py
+```
+
+## Зависимости
+
+- Python 3.9
+- `gdown` для скачивания таблиц из Google Docs
+- `openpyxl` для чтения Excel-файлов
+
+Полный список зависимостей находится в `requirements.txt`.
+
+## Контрибьютинг
+
+Хотите помочь? Создавайте issues для багов или идей, делайте pull requests. Перед отправкой PR убедитесь, что код проходит тесты и соответствует PEP8.
+
+## Лицензия
+
+MIT License. Подробности в файле `LICENSE`.
+
+## Контакты
+
+Вопросы или предложения? Пишите в [issues](https://github.com/Skelesheit/dubna-parser/issues) или автору — Skelesheit.

@@ -1,0 +1,10 @@
+dubna_parser/__init__.py,sha256=dy3Y3mvK4H36UExIGVYqealBM5aXSiOvdkm5LlGHszo,99
+dubna_parser/consts.py,sha256=yYnIx112Q8XR-NdYf7m4VUMKi3OcOTfZoBOKTs_Rfos,403
+dubna_parser/downloader.py,sha256=VrS5KycW1z_Y1ICBc0s0oTefjjDEAVXMo3YfKnMAV6M,1208
+dubna_parser/enums.py,sha256=stD89izR5ZpApmE-94BHOB2r-MUKf-kqPx-RTdrIV_A,497
+dubna_parser/models.py,sha256=ALlXv_9UZSJAq9xUZdoffPmUBfC2f8eaY4exgDOIOl8,1850
+dubna_parser/parser.py,sha256=OzP9f5T6iO-nCv0SmjoZFmEYnOIQKpIQhn-KYZmoHlM,14940
+dubna_parser/utils.py,sha256=ObPYqwJ4vmVVMocGhB7MSrL1W2GWQtFN7FTSDRmM53w,1059
+dubna_parser-0.1.0.dist-info/METADATA,sha256=Y7o9pQrXq-UWzrsPJJgZJmLtPnq_pAkduldZCtNvO2o,5811
+dubna_parser-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+dubna_parser-0.1.0.dist-info/RECORD,,
