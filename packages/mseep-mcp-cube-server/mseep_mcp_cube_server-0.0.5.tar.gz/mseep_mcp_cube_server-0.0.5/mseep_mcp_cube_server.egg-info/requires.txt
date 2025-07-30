@@ -1,0 +1,6 @@
+mcp>=1.2.1
+pandas
+pyjwt>=2.10.1
+python-dotenv
+pyyaml>=6.0.2
+requests>=2.32.3
