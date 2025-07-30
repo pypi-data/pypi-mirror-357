@@ -1,0 +1,148 @@
+"""
+This module contains the data models for API requests and responses.
+"""
+from .base import (
+    BaseRequest,
+    BaseResponse,
+    PageRequest,
+    PageResponse,
+    ClientTokenRequest,
+    ClientTokenResponse,
+    Pager,
+    QueryOrderByDTO
+)
+from .color import (
+    ColorGroupDetail,
+    ColorGroupDetailResponse,
+    ColorGroupSaveDTO,
+    ColorGroupSaveRequest,
+    ColorGroupListRequest,
+    ColorGroupListResponse,
+    ColorGroupDetailRequest,
+    ColorBaseDetail,
+    ColorBaseDetailResponse,
+    ColorBaseSaveDTO,
+    ColorBaseSaveRequest,
+    ColorBaseListRequest,
+    ColorBaseListResponse,
+    ColorBaseDetailRequest
+)
+from .size import (
+    SizeGroupDetail,
+    SizeGroupDetailResponse,
+    SizeGroupSaveDTO,
+    SizeGroupSaveRequest,
+    SizeGroupListResponse,
+    SizeGroupListRequest,
+    SizeGroupDetailRequest,
+    SizeDetail,
+    SizeDetailResponse,
+    SizeSaveDTO,
+    SizeSaveRequest,
+    SizeListResponse,
+    SizeListRequest,
+    SizeDetailRequest
+)
+from .storehouse import (
+    StorehouseDetail,
+    StorehouseListRequest,
+    StorehouseListResponse
+)
+from .material import (
+    MaterialDetail,
+    MaterialListRequest,
+    MaterialListResponse,
+    MaterialDetailRequest,
+    MaterialDetailResponse,
+    MaterialPurchaseDetail,
+    MaterialPurchaseListRequest,
+    MaterialPurchaseListResponse,
+    MaterialPurchaseDetailRequest,
+    MaterialPurchaseDetailResponse
+)
+from .goods import (
+    GoodsPrice,
+    SkuDetail,
+    GoodsDetail,
+    GoodsListDetail,
+    GoodsListResponse,
+    GoodsListRequest,
+    GoodsDetailResponse,
+    GoodsDetailRequest,
+    GoodsSkuDTO,
+    GoodsSaveDTO,
+    GoodsSaveRequest
+)
+from .supplier import (
+    SupplierSaveDTO,
+    SupplierSaveRequest,
+    SupplierDetailRequest,
+    SupplierListRequest
+)
+
+__all__ = [
+    "BaseRequest",
+    "BaseResponse",
+    "PageRequest",
+    "PageResponse",
+    "ClientTokenRequest",
+    "ClientTokenResponse",
+    "Pager",
+    "QueryOrderByDTO",
+    "ColorGroupDetail",
+    "ColorGroupDetailResponse",
+    "ColorGroupSaveDTO",
+    "ColorGroupSaveRequest",
+    "ColorGroupListRequest",
+    "ColorGroupListResponse",
+    "ColorGroupDetailRequest",
+    "ColorBaseDetail",
+    "ColorBaseDetailResponse",
+    "ColorBaseSaveDTO",
+    "ColorBaseSaveRequest",
+    "ColorBaseListRequest",
+    "ColorBaseListResponse",
+    "ColorBaseDetailRequest",
+    "SizeGroupDetail",
+    "SizeGroupDetailResponse",
+    "SizeGroupSaveDTO",
+    "SizeGroupSaveRequest",
+    "SizeGroupListResponse",
+    "SizeGroupListRequest",
+    "SizeGroupDetailRequest",
+    "SizeDetail",
+    "SizeDetailResponse",
+    "SizeSaveDTO",
+    "SizeSaveRequest",
+    "SizeListResponse",
+    "SizeListRequest",
+    "SizeDetailRequest",
+    "StorehouseDetail",
+    "StorehouseListRequest",
+    "StorehouseListResponse",
+    "MaterialDetail",
+    "MaterialListRequest",
+    "MaterialListResponse",
+    "MaterialDetailRequest",
+    "MaterialDetailResponse",
+    "MaterialPurchaseDetail",
+    "MaterialPurchaseListRequest",
+    "MaterialPurchaseListResponse",
+    "MaterialPurchaseDetailRequest",
+    "MaterialPurchaseDetailResponse",
+    "GoodsPrice",
+    "SkuDetail",
+    "GoodsDetail",
+    "GoodsListDetail",
+    "GoodsListResponse",
+    "GoodsListRequest",
+    "GoodsDetailResponse",
+    "GoodsDetailRequest",
+    "GoodsSkuDTO",
+    "GoodsSaveDTO",
+    "GoodsSaveRequest",
+    "SupplierSaveDTO",
+    "SupplierSaveRequest",
+    "SupplierDetailRequest",
+    "SupplierListRequest"
+] 
