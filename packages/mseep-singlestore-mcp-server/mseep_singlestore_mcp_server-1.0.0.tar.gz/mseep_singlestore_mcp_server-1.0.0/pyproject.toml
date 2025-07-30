@@ -1,0 +1,27 @@
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src",
+]
+
+[tool.flake8]
+ignore = "E501"
+
+[tool.uv]
+dev-dependencies = [
+    "pyright>=1.1.391",
+    "pytest>=8.3.4",
+    "ruff>=0.8.5",
+    "singlestore-mcp-server",
+]
+
+[tool.uv.sources.singlestore-mcp-server]
+workspace = true
