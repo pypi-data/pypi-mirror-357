@@ -1,0 +1,12 @@
+magic_center/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+magic_center/data_entry.py,sha256=V3ccrM12HMR1u0uKltT1V3zz0YxAwm4K5fqyp7k-Ol8,7241
+magic_center/log/data_entry.log,sha256=_FP6ZN709sMYkQwtnzpeDrgAStiLJ0C3FAvxeGTQ6FU,380
+magic_center/service/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+magic_center/service/math/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+magic_center/service/math/shu_xue_ti.py,sha256=VDkuDDoTKhg6wneZMoEYIxTkxo5FYimit-vgz4TutEQ,20102
+magic_center/util/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+magic_center/util/magic_center_util.py,sha256=wxZ8oL2Mm3K5DpjftkIG4bHUlUQZeVT-Wt1TGkEUig4,1093
+magic_center-1.0.8.dist-info/METADATA,sha256=W-4ykuSGa7OemOLaToXILcKBwOtEcNFqTETenWdTUyY,244
+magic_center-1.0.8.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+magic_center-1.0.8.dist-info/entry_points.txt,sha256=tablfoB3vkgF7ev4WRTCgD9xu8VZ71cTWfMJVrZwI8o,60
+magic_center-1.0.8.dist-info/RECORD,,
