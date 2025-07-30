@@ -1,0 +1,14 @@
+subcutaneous/..__init__.py.icloud,sha256=qZ57oB5gY-oFN7mFQG0sRlWsZausLMhn9gPZzuxmJXc,158
+subcutaneous/Container.py,sha256=1_EqJxfK1an4M5VQM4I3IJXI1IZZBOilrZm5nutKXag,577
+subcutaneous/Helpers.py,sha256=85exnZxx6D-u1Z4BmGEk4dMtWWWkbHDRDPoxdhtNvrw,1261
+subcutaneous/ModuleMethods.py,sha256=LguwLQv4da6awI8fLGUKuuel0rYgcdWafxoBsDx_80c,2036
+subcutaneous/State.py,sha256=x8wZlkjhWbppmR2Ts0HXbJc-zkwqY0I2RwA-J323J00,1892
+subcutaneous/__init__.py,sha256=clCbi832WYk49383TDNLL_I0NRI_juaOz6fuAvVTsJw,81
+subcutaneous/example_container_state_usage.py,sha256=_b9nRXS_QlbaaLoXm75K68ssasF_-9wsMZxZg3pai9I,4899
+subcutaneous/example_container_state_usage_nb.ipynb,sha256=usQHmtO_rCSDxWwQK0LEBkkQbzqTuaxDlHAeOEQyqSs,3532
+subcutaneous/example_state_usage.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+subcutaneous/_utils/_utils.py,sha256=bh8-YH9KVXDvMguBssp8L_N7lM3SKHUkvMMiyBiTjQA,578
+subcutaneous-0.0.4.dist-info/METADATA,sha256=YVMWS05I1biz-rrV1oHkkUqTiHaQy836r0cZbRK_XuM,320
+subcutaneous-0.0.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+subcutaneous-0.0.4.dist-info/licenses/LICENSE,sha256=b_ymF5IlZFGAaTqnMvCgUh7JPcWSjE9RJBouhGYSrmA,1071
+subcutaneous-0.0.4.dist-info/RECORD,,
