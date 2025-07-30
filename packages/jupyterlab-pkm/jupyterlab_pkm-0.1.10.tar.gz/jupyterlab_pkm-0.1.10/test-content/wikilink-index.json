@@ -1,0 +1,185 @@
+{
+  "links": {
+    "PKM-Extension-Guide.md": [
+      "Note Name",
+      "Note Name",
+      "note",
+      "`\n\n### 🔍 Search & Navigation\n- **Alt + F** - Global search across all files\n- **Alt + B** - Show backlinks (what links to current note)\n- Full-text search across markdown files and notebooks\n- Quick navigation between connected notes\n\n### 📊 Content Embedding\n- `![[notebook.ipynb#cell-id",
+      "file.md#heading",
+      "research-notes.md#methodology",
+      "analysis.ipynb#results-cell",
+      "summary#results",
+      "data-analysis",
+      "research-methods",
+      "data-collection",
+      "research-methods",
+      "machine-learning",
+      "neural-networks",
+      "ml-examples",
+      "filename"
+    ],
+    "start.md": [
+      "introduction",
+      "sample-text-analysis"
+    ],
+    "visualize-your-wikilinks.ipynb": [
+      "start",
+      "another",
+      "thing"
+    ],
+    "newlink.md": [
+      "start",
+      "cows"
+    ]
+  },
+  "backlinks": {
+    "start": [
+      "visualize-your-wikilinks.ipynb",
+      "newlink.md"
+    ],
+    "Note Name": [
+      "PKM-Extension-Guide.md"
+    ],
+    "note": [
+      "PKM-Extension-Guide.md"
+    ],
+    "`\n\n### 🔍 Search & Navigation\n- **Alt + F** - Global search across all files\n- **Alt + B** - Show backlinks (what links to current note)\n- Full-text search across markdown files and notebooks\n- Quick navigation between connected notes\n\n### 📊 Content Embedding\n- `![[notebook.ipynb#cell-id": [
+      "PKM-Extension-Guide.md"
+    ],
+    "file.md#heading": [
+      "PKM-Extension-Guide.md"
+    ],
+    "research-notes.md#methodology": [
+      "PKM-Extension-Guide.md"
+    ],
+    "analysis.ipynb#results-cell": [
+      "PKM-Extension-Guide.md"
+    ],
+    "summary#results": [
+      "PKM-Extension-Guide.md"
+    ],
+    "data-analysis": [
+      "PKM-Extension-Guide.md"
+    ],
+    "research-methods": [
+      "PKM-Extension-Guide.md"
+    ],
+    "data-collection": [
+      "PKM-Extension-Guide.md"
+    ],
+    "machine-learning": [
+      "PKM-Extension-Guide.md"
+    ],
+    "neural-networks": [
+      "PKM-Extension-Guide.md"
+    ],
+    "ml-examples": [
+      "PKM-Extension-Guide.md"
+    ],
+    "filename": [
+      "PKM-Extension-Guide.md"
+    ],
+    "introduction": [
+      "start.md"
+    ],
+    "sample-text-analysis": [
+      "start.md"
+    ],
+    "another": [
+      "visualize-your-wikilinks.ipynb"
+    ],
+    "thing": [
+      "visualize-your-wikilinks.ipynb"
+    ],
+    "cows": [
+      "newlink.md"
+    ]
+  },
+  "contexts": {
+    "PKM-Extension-Guide.md->Note Name": {
+      "context": "### 📝 Wikilinks\n- `[[Note Name]]` - Create links between notes\n- `[[note|display text]]` - Link with custom display text",
+      "lineNumber": 15
+    },
+    "PKM-Extension-Guide.md->note": {
+      "context": "- `[[Note Name]]` - Create links between notes\n- `[[note|display text]]` - Link with custom display text  \n- **Shift + Click** to follow links in editing mode",
+      "lineNumber": 16
+    },
+    "PKM-Extension-Guide.md->`\n\n### 🔍 Search & Navigation\n- **Alt + F** - Global search across all files\n- **Alt + B** - Show backlinks (what links to current note)\n- Full-text search across markdown files and notebooks\n- Quick navigation between connected notes\n\n### 📊 Content Embedding\n- `![[notebook.ipynb#cell-id": {
+      "context": "- **Ctrl/Cmd + Click** to follow links in preview mode\n- Auto-completion for existing notes when typing `[[`",
+      "lineNumber": 19
+    },
+    "PKM-Extension-Guide.md->file.md#heading": {
+      "context": "- `![[notebook.ipynb#cell-id]]` - Embed specific cells from ipynb files \n- `![[file.md#heading]]` - Embed sections from markdown files\n- Live preview of embedded content",
+      "lineNumber": 29
+    },
+    "PKM-Extension-Guide.md->research-notes.md#methodology": {
+      "context": "```markdown\n![[research-notes.md#methodology]]\n![[analysis.ipynb#results-cell]]",
+      "lineNumber": 86
+    },
+    "PKM-Extension-Guide.md->analysis.ipynb#results-cell": {
+      "context": "![[research-notes.md#methodology]]\n![[analysis.ipynb#results-cell]]\n![[summary#results|Key Results]]",
+      "lineNumber": 87
+    },
+    "PKM-Extension-Guide.md->summary#results": {
+      "context": "![[analysis.ipynb#results-cell]]\n![[summary#results|Key Results]]\n```",
+      "lineNumber": 88
+    },
+    "PKM-Extension-Guide.md->data-analysis": {
+      "context": "```markdown\nIn my analysis [[data-analysis.ipynb]], I found that...",
+      "lineNumber": 95
+    },
+    "PKM-Extension-Guide.md->research-methods": {
+      "context": "2. Link to relevant notebooks: `[[data-collection.ipynb]]`\n3. Reference methodology: `[[research-methods.md]]`\n4. Track progress with linked daily notes",
+      "lineNumber": 111
+    },
+    "PKM-Extension-Guide.md->data-collection": {
+      "context": "1. Create project overview in `project-overview.md`\n2. Link to relevant notebooks: `[[data-collection.ipynb]]`\n3. Reference methodology: `[[research-methods.md]]`",
+      "lineNumber": 110
+    },
+    "PKM-Extension-Guide.md->machine-learning": {
+      "context": "### Learning Workflow  \n1. Create topic index: `[[machine-learning.md]]`\n2. Link to specific concepts: `[[neural-networks.md]]`",
+      "lineNumber": 115
+    },
+    "PKM-Extension-Guide.md->neural-networks": {
+      "context": "1. Create topic index: `[[machine-learning.md]]`\n2. Link to specific concepts: `[[neural-networks.md]]`\n3. Embed code examples: `![[ml-examples.ipynb]]`",
+      "lineNumber": 116
+    },
+    "PKM-Extension-Guide.md->ml-examples": {
+      "context": "2. Link to specific concepts: `[[neural-networks.md]]`\n3. Embed code examples: `![[ml-examples.ipynb]]`\n4. Build concept maps with wikilinks",
+      "lineNumber": 117
+    },
+    "PKM-Extension-Guide.md->filename": {
+      "context": "- Save files to update backlink index\n- Ensure wikilinks use correct syntax: `[[filename]]`",
+      "lineNumber": 134
+    },
+    "start.md->introduction": {
+      "context": "[[introduction]]",
+      "lineNumber": 3
+    },
+    "start.md->sample-text-analysis": {
+      "context": "[[sample-text-analysis.ipynb]]",
+      "lineNumber": 5
+    },
+    "visualize-your-wikilinks.ipynb->start": {
+      "context": "[[start]] [[another]] [[thing]]",
+      "lineNumber": 15
+    },
+    "visualize-your-wikilinks.ipynb->another": {
+      "context": "[[start]] [[another]] [[thing]]",
+      "lineNumber": 15
+    },
+    "visualize-your-wikilinks.ipynb->thing": {
+      "context": "[[start]] [[another]] [[thing]]",
+      "lineNumber": 15
+    },
+    "newlink.md->start": {
+      "context": "[[start]]",
+      "lineNumber": 4
+    },
+    "newlink.md->cows": {
+      "context": "[[cows]]",
+      "lineNumber": 6
+    }
+  },
+  "lastUpdated": "2025-06-06T18:33:27.508Z"
+}
