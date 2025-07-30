@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: Bruce-li-tc
+Version: 0.1.0
+Summary: A versatile utility library
+Author: Bruce Li
+Author-email: Bruce Li <bruce.li@example.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Requires-Dist: requests
+Provides-Extra: async
+Requires-Dist: aiohttp; extra == "async"
+Provides-Extra: excel
+Requires-Dist: openpyxl; extra == "excel"
+Provides-Extra: loguru
+Requires-Dist: loguru; extra == "loguru"
+
