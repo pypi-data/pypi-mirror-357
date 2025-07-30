@@ -1,0 +1,65 @@
+Metadata-Version: 2.4
+Name: pytest-ty
+Version: 0.1.2
+Summary: A pytest plugin to run the ty type checker
+Author-email: Raphael Boidol <pytest-ty@boidol.dev>
+License-Expression: MIT
+Project-URL: Repository, https://github.com/boidolr/pytest-ty
+Classifier: Framework :: Pytest
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pytest>=7.0.0
+Requires-Dist: ty
+Dynamic: license-file
+
+pytest-ty
+[![Build Status](https://github.com/boidolr/pytest-ty/actions/workflows/main.yaml/badge.svg)](https://github.com/boidolr/pytest-ty/actions/workflows/main.yaml "See Build Status on GitHub Actions")
+[![pypi](https://img.shields.io/pypi/v/pytest-ty.svg)](https://pypi.org/project/pytest-ty/ "See PyPI page")
+![python](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fboidolr%2Fpytest-ty%2Fmain%2Fpyproject.toml)
+=========
+
+A [`pytest`](https://github.com/pytest-dev/pytest) plugin to run the [`ty`](https://github.com/astral-sh/ty) type checker.
+
+
+Configuration
+------------
+
+Configure `ty` in `pyproject.toml` or `ty.toml`,
+see the [`ty` README](https://github.com/astral-sh/ty/blob/main/docs/README.md).
+
+
+Installation
+------------
+
+You can install "pytest-ty" from [`PyPI`](https://pypi.org):
+
+* `uv add --dev pytest-ty`
+* `pip install pytest-ty`
+
+Usage
+-----
+
+* Activate the plugin when running `pytest`: `pytest --ty`
+* Activate via `pytest` configuration: `addopts = "--ty"`
+
+
+License
+-------
+
+Distributed under the terms of the [`MIT`](https://opensource.org/licenses/MIT) license, "pytest-ty" is free and open source software
