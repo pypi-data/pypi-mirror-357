@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.cfg
+conflictlib/__init__.py
+conflictlib/engine.py
+conflictlib.egg-info/PKG-INFO
+conflictlib.egg-info/SOURCES.txt
+conflictlib.egg-info/dependency_links.txt
+conflictlib.egg-info/top_level.txt
+tests/test_conflict_engine.py

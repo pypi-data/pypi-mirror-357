@@ -1,0 +1,13 @@
+
+[project]
+name = "conflictlib"
+version = "0.0.4"
+description = "Reusable engine for resource conflict detection"
+authors = [{name = "Wade Tait", email = "wade.tait@braingu.com"}]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
