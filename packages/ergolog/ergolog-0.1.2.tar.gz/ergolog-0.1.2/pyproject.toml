@@ -1,0 +1,35 @@
+[project]
+name = "ergolog"
+version = "0.1.2"
+description = "A minimal, ergonomic python logging wrapper"
+readme = "README.md"
+authors = [{ name = "David Kincaid", email = "daelonsuzuka@gmail.com" }]
+license = "MIT"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=3.9"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/DaelonSuzuka/ergolog"
+Documentation = "https://github.com/DaelonSuzuka/ergolog"
+Repository = "https://github.com/DaelonSuzuka/ergolog"
+Issues = "https://github.com/DaelonSuzuka/ergolog/issues"
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+quote-style = "single"

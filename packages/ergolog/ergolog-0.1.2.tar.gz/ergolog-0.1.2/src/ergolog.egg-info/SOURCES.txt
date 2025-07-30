@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/ergolog/__init__.py
+src/ergolog/ergolog.py
+src/ergolog.egg-info/PKG-INFO
+src/ergolog.egg-info/SOURCES.txt
+src/ergolog.egg-info/dependency_links.txt
+src/ergolog.egg-info/top_level.txt
