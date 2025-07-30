@@ -1,0 +1,2 @@
+[sphinx.html_themes]
+intel_sphinx_theme = intel_sphinx_theme
