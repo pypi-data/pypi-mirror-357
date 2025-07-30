@@ -1,0 +1,2 @@
+[console_scripts]
+linkpaymcp = evocloud_agent_toolkit.linkpaymcp:main
