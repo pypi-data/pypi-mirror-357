@@ -1,0 +1,12 @@
+chico_dico/__init__.py,sha256=KXR7qcWzqxA5jKHE-yBPNKtFIEXmPduR6CfvCYN1Cnk,181
+chico_dico/__main__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chico_dico/game.py,sha256=EkLp1XMqfhn2Mz4OctJ7uoyXV2CsBpa0fxGRxR0wjOM,1314
+chico_dico/magic.py,sha256=zVL86k5pWwYYU5ct7uOP0lg-jKQ-Y-y_KYDzsHKLs6k,1782
+chico_dico/magic_max.py,sha256=1wDKSdO7mPsVM6gYzS21pyl3ftQzjvEHHmHcPnIacq4,2197
+chico_dico/poker.py,sha256=WYVp5jf1k81Yw4DqN__Yv6Kj480LJO0FSltOVPQK-fE,1789
+chico_dico/webui.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chico_dico-1.0.0.dist-info/METADATA,sha256=hIkduN98dnRcit1VIOq39ARCkEH3E9btAOUrjhXyYVo,1956
+chico_dico-1.0.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+chico_dico-1.0.0.dist-info/entry_points.txt,sha256=O2zdglAbKe9NnHFnicKujTMv7iDSKrStswXVHCIArPk,48
+chico_dico-1.0.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+chico_dico-1.0.0.dist-info/RECORD,,

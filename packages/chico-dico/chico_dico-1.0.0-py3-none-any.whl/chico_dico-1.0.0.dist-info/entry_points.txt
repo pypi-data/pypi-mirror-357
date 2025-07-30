@@ -1,0 +1,2 @@
+[console_scripts]
+mgc = chico_dico.webui:web_ui
