@@ -1,0 +1,10 @@
+assets
+compressai
+dist
+docker
+docs
+examples
+results
+sadl
+tests
+third_party
