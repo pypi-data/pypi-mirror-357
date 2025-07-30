@@ -1,0 +1,11 @@
+deep_brief/__init__.py,sha256=MizPseo8VfqMaZYUDz5iKaVUWpoOlmjykRLsb10rbwM,172
+deep_brief/cli.py,sha256=y4Sv5OGnNoOtCw1Shb7AOpN4TCk8JCDx--moymGg52o,2064
+deep_brief/analysis/__init__.py,sha256=4g1sX-1X93-84wcFqeqXDJOft6kPJ7-sTgbEY31qlVQ,44
+deep_brief/core/__init__.py,sha256=TjfVqRFUFG0CJd_ODBhzwsW_UC34h95bwvrzX5c1-Wk,39
+deep_brief/interface/__init__.py,sha256=sNcxtvH6bR2k-vedCwUIWp1xja5e-YTwsvc-_Zej3pA,32
+deep_brief/reports/__init__.py,sha256=a8HJTgxugN0RP0UGIlZLF8X1DtHXbu9nA8wHbvcnOvc,35
+deep_brief/utils/__init__.py,sha256=9W4HB3zo18N4_5T227EzMShLg8P5WjKFehSCbaEHNZ8,53
+deep_brief-0.1.0.dist-info/METADATA,sha256=Ix1IvjKcnO0gl0T1tkpH9TnUBoFOexyBwIycGw6L7gY,3568
+deep_brief-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+deep_brief-0.1.0.dist-info/entry_points.txt,sha256=Yp2lvPZyjobuRf_XNAx6dXgbe_rddhdvu-T21POi2zQ,51
+deep_brief-0.1.0.dist-info/RECORD,,
