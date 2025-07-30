@@ -1,0 +1,14 @@
+typer
+google-generativeai
+requests
+rich
+
+[dev]
+pytest
+black
+flake8
+mypy
+
+[test]
+pytest
+pytest-cov

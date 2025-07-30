@@ -1,0 +1,97 @@
+Metadata-Version: 2.4
+Name: patcher-trex
+Version: 0.1.0
+Summary: An AI-powered CLI tool to enhance your coding workflow by fixing errors, modifying code, adding comments, and generating files.
+Home-page: https://github.com/aayush00700/Patcher
+Author: Aayushman Katariya
+Author-email: erenyeager545w@gmail.com
+License: MIT
+Project-URL: Bug Reports, https://github.com/aayush00700/Patcher/issues
+Project-URL: Source, https://github.com/aayush00700/Patcher
+Project-URL: Documentation, https://github.com/aayush00700/Patcher#readme
+Keywords: ai,cli,code-fix,debugging,patch,automation,gemini,stack-overflow
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Software Development :: Debuggers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Console
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: typer
+Requires-Dist: google-generativeai
+Requires-Dist: requests
+Requires-Dist: rich
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# AI Patch Tool 🛠️✨
+
+An AI-powered CLI tool to enhance your coding workflow by fixing errors, modifying code, adding comments, and even generating full files — all powered by Python, Typer, and Google's Gemini API.
+
+## 🔍 Features
+
+- 📌 `searcherr`: Finds errors in your code and searches Stack Overflow for relevant solutions
+- 🔧 `fix`: Automatically detects and corrects errors in your script using AI
+- ✏️ `modify`: Take user input and modify code behavior accordingly
+- 💡 `query`: Generate code files based on user intent and desired filetype
+- 💬 `addComments`: Automatically add meaningful comments to code without changing its functionality
+
+## 📦 Installation
+
+```bash
+pip install ai-patch-tool
+```
+
+## 🚀 Usage
+
+```bash
+# Fix errors in your code
+patchtool fix script.py
+
+# Search for error solutions
+patchtool searcherr script.py
+
+# Modify code behavior
+patchtool modify script.py "add error handling"
+
+# Generate new code files
+patchtool query "create a web scraper" --filetype py
+
+# Add comments to existing code
+patchtool addComments script.py
+```
+
+## 🔧 Setup
+
+Before using, make sure to set your Google Gemini API key:
+```bash
+export GEMINI_API_KEY="your-api-key-here"
+```
