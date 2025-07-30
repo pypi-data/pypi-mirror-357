@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/smartenforcement/__init__.py
+src/smartenforcement.egg-info/PKG-INFO
+src/smartenforcement.egg-info/SOURCES.txt
+src/smartenforcement.egg-info/dependency_links.txt
+src/smartenforcement.egg-info/top_level.txt
