@@ -1,0 +1,57 @@
+Metadata-Version: 2.4
+Name: balajiwork
+Version: 1.1.2
+Summary: Balaji's personal utility library
+Author-email: Balaji Balagurusami <mail@balaji.work>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyPDF2
+Requires-Dist: IfcOpenShell
+Requires-Dist: pandas
+Requires-Dist: numpy
+Dynamic: license-file
+
+# balajiwork
+
+Utility functions for personal and professional use.
+
+## Tools included:
+
+### 🧾 ifc2xlsx
+A GUI tool to convert IFC files to XLSX.
+
+#### How to Run
+
+You can launch the tool directly from the command line:
+
+```cmd
+ifc2xlsx
+```
+
+Or, if you have a Python script entry point:
+
+```cmd
+python -m balajiwork.ifc2xlsx
+```
+
+This will open the GUI window for selecting input and output directories and other options.
+
+#### GUI Screenshot
+
+![IFC to CSV Converter GUI](ifc2xlsx.png)
+
+### 🖨️ slowprint
+Prints a PDF file one page at a time with a delay using SumatraPDF to avoid printer jamming.
+
+Usage:
+```python
+from balajiwork import slow_print
+
+slow_print(
+    pdf_path="C:\\pdf\\paper.pdf",
+    sumatra_path="C:\\Tools\\SumatraPDF\\SumatraPDF.exe",
+    printer_name="HP Smart Tank 660-670 series",
+    delay=10
+)
+```
