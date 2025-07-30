@@ -1,0 +1,70 @@
+[project]
+name = "cache-simulator"
+version = "2.0.2rc1"
+description = "A processor cache simulator for the MIPS ISA"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "Caleb Evans", email = "caleb@calebevans.me"}
+]
+maintainers = [
+    {name = "Caleb Evans", email = "caleb@calebevans.me"}
+]
+license = "MIT"
+keywords = ["mips", "processor", "cache", "simulator", "architecture"]
+
+[project.urls]
+homepage = "https://github.com/caleb531/cache-simulator"
+documentation = "https://github.com/caleb531/cache-simulator#readme"
+repository = "https://github.com/caleb531/cache-simulator"
+changelog = "https://github.com/caleb531/cache-simulator/releases"
+
+[project.scripts]
+cache-simulator = "cachesimulator.__main__:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "coverage==7.6.10",
+    "nose2==0.15.1",
+    "ruff==0.12.0",
+    "tomli==2.2.1",
+    "typing-extensions==4.12.2",
+]
+
+[tool.ruff]
+include = ["**/*.py"]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    "W",
+    # pyflakes
+    "F",
+    # isort
+    "I",
+    # perflint
+    "PERF",
+]
+
+# Configuration for coverage.py (https://pypi.python.org/pypi/coverage)
+
+[tool.coverage.run]
+# Enable branch coverage
+branch = true
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_lines = [
+    "pragma: no cover",
+    # Ignore non-runnable code
+    "if __name__ == .__main__.:",
+    "pass",
+]
+
+# Only check coverage for source files
+include = ["cachesimulator/*.py"]
