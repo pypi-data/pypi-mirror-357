@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+endpoints/__init__.py
+endpoints/detections.py
+endpoints/images.py
+endpoints/map_features.py
+endpoints/organizations.py
+endpoints/sequences.py
+endpoints/vector_tiles.py
+mapiry.egg-info/PKG-INFO
+mapiry.egg-info/SOURCES.txt
+mapiry.egg-info/dependency_links.txt
+mapiry.egg-info/requires.txt
+mapiry.egg-info/top_level.txt
