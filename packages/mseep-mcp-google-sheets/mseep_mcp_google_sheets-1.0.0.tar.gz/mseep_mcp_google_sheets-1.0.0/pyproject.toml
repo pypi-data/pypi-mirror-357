@@ -1,0 +1,15 @@
+[build-system]
+requires = [
+    "hatchling",
+    "uv-dynamic-versioning",
+]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
+
+[tool.hatch.build.targets]
+
+[tool.uv-dynamic-versioning]
+pattern = "default"
+strict = true
