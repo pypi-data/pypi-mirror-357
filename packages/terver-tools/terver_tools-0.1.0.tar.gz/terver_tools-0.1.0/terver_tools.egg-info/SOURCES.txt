@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+pyproject.toml
+setup.py
+terver-tools/__init__.py
+terver_tools.egg-info/PKG-INFO
+terver_tools.egg-info/SOURCES.txt
+terver_tools.egg-info/dependency_links.txt
+terver_tools.egg-info/requires.txt
+terver_tools.egg-info/top_level.txt
