@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "dicomgenerator"
+version = "0.9.1"
+description = "Generate pydicom datasets and data elements for use in testing"
+authors = ["sjoerdk <sjoerd.kerkstra@radboudumc.nl>"]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/sjoerdk/dicomgenerator"
+include = ["dicomgenerator/resources"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydicom = "^3.0.1"
+numpy = "^2.3.1"
+factory-boy = "^3.2.1"
+click = "^8.1.7"
+pillow = "^11.2.1"
+
+[tool.poetry.scripts]
+dicomgen = "dicomgenerator.cli:main"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+pytest-cov = "^6.2.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = True
+envlist = py312
+[gh-actions]
+python =
+    3.12: py312
+
+[testenv]
+allowlist_externals =
+    poetry
+commands =
+    poetry install -v
+    poetry run pytest --cov=tests/ --cov=dicomtrolley
+"""
