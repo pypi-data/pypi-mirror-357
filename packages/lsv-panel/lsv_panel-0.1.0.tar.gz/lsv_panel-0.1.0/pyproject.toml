@@ -1,0 +1,27 @@
+[build-system]
+requires = ["maturin>=1.8,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "lsv-panel"
+description = "Linear strength vortex panel method from Katz & Plotkin, implemented in Rust with a Python API"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dynamic = ["version"]
+[tool.maturin]
+features = ["pyo3/extension-module"]
+
+[project.optional-dependencies]
+build = [
+    "maturin"
+]
+dev = [
+    "maturin", 
+    "matplotlib",
+    "numpy>=1.8",
+    "pytest",
+]

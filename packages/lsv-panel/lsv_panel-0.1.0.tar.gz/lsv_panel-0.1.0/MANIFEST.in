@@ -1,0 +1,2 @@
+include data/*.txt
+include images/*.svg

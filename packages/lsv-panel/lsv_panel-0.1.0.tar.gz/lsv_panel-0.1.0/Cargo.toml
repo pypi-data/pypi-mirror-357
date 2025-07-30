@@ -1,0 +1,16 @@
+[package]
+name = "lsv_panel"
+version = "0.1.0"
+edition = "2021"
+# IMPORTANT: the version must be kept on line 3 to be read properly in docs/source/conf.py
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "lsv_panel"
+path = "panel.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = "0.23.3"
+nalgebra = "0.33.2"
+libm = "0.2.15"
