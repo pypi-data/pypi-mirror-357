@@ -1,0 +1,3 @@
+[console_scripts]
+pyautoflip=pyautoflip.cli:main
+
