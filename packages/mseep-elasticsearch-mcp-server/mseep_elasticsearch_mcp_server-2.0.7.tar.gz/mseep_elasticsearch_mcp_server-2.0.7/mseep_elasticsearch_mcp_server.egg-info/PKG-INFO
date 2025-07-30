@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: mseep-elasticsearch-mcp-server
+Version: 2.0.7
+Summary: MCP Server for interacting with Elasticsearch and OpenSearch
+Home-page: 
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Keywords: mseep
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: elasticsearch==8.17.2
+Requires-Dist: opensearch-py==2.8.0
+Requires-Dist: mcp==1.9.2
+Requires-Dist: python-dotenv==1.1.0
+Requires-Dist: fastmcp==2.8.0
+Requires-Dist: anthropic==0.49.0
+Requires-Dist: tomli==2.2.1
+Requires-Dist: tomli-w==1.2.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Package managed by MseeP.ai
