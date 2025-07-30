@@ -1,0 +1,40 @@
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+exclude = [
+    "venv/",
+    ".git/",
+    ".gitignore",
+    "*.pyc",
+    "__pycache__/",
+    ".pytest_cache/",
+    ".coverage",
+    "tests/",
+    "docs/",
+]
+include = [
+    "src/**",
+    "templates/**/*.md",
+    "templates/**/*.yaml",
+    "README.md",
+    "LICENSE*",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/greptimedb_mcp_server",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pyright",
+    "black",
+    "flake8",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+]
