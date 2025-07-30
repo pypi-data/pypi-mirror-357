@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+live_studio_open_service/__init__.py
+live_studio_open_service/client.py
+live_studio_open_service.egg-info/PKG-INFO
+live_studio_open_service.egg-info/SOURCES.txt
+live_studio_open_service.egg-info/dependency_links.txt
+live_studio_open_service.egg-info/top_level.txt
