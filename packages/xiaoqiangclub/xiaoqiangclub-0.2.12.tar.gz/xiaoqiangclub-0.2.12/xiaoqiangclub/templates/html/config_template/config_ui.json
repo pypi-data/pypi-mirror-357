@@ -1,0 +1,111 @@
+{
+  "title": "设置界面",
+  "logo": "http://217.142.251.127/h/img/xiaoqiangclub_logo.png",
+  "footer": "XiaoqiangClub",
+  "max_width": "3xl",
+  "个人信息": {
+    "gender": {
+      "order": 1,
+      "label": "性别",
+      "type": "radio",
+      "options": [
+        "男",
+        "女"
+      ],
+      "value": "男"
+    },
+    "douban": {
+      "label": "豆瓣",
+      "order": 2,
+      "placeholder": "请输入豆瓣用户ID",
+      "help": "请输入豆瓣用户ID",
+      "help_link": "https://www.douban.com/people/fsf/",
+      "type": "list",
+      "value": [
+        "56548956"
+      ]
+    }
+  },
+  "账户设置": {
+    "username": {
+      "order": 3,
+      "label": "用户名",
+      "type": "input",
+      "placeholder": "请输入用户名",
+      "value": ""
+    },
+    "password": {
+      "order": 4,
+      "label": "密码",
+      "type": "password",
+      "placeholder": "请输入密码",
+      "value": ""
+    },
+    "submit_button": {
+      "order": 5,
+      "type": "button",
+      "button_text": "测试",
+      "fields": [
+        "username",
+        "password",
+        "douban"
+      ],
+      "route": "/button",
+      "tooltip": "点击提交表单",
+      "bg_color": "#4CAF50",
+      "text_color": "#FFFFFF",
+      "success_message": "提交成功！",
+      "error_message": "提交失败！",
+      "reload": true
+    },
+    "hobbies": {
+      "order": 5,
+      "label": "选择兴趣爱好",
+      "type": "checkbox",
+      "options": [
+        "阅读",
+        "旅行",
+        "运动",
+        "电影"
+      ],
+      "value": [
+        "旅行",
+        "运动",
+        "电影"
+      ]
+    }
+  },
+  "系统设置": {
+    "language": {
+      "order": 6,
+      "label": "语言选择",
+      "type": "select",
+      "options": [
+        "简体中文",
+        "English",
+        "日本語"
+      ],
+      "value": "简体中文"
+    },
+    "theme": {
+      "order": 7,
+      "label": "启用暗黑模式",
+      "type": "switch",
+      "value": "on"
+    },
+    "birthday": {
+      "order": 8,
+      "label": "选择生日",
+      "type": "date",
+      "value": "2000-01-01"
+    },
+    "brightness": {
+      "order": 9,
+      "label": "设置亮度",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "value": "15"
+    }
+  }
+}
