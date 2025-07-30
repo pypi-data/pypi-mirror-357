@@ -1,0 +1,2 @@
+[console_scripts]
+pydown = pydown.cli:main
