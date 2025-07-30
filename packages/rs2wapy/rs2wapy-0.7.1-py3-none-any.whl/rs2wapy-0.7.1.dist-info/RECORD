@@ -1,0 +1,17 @@
+rs2wapy/__init__.py,sha256=qPfzUkslkayfdu-XBm5mNxEU4uz3qfHQ1P4EsKYX0m0,341
+rs2wapy/_version.py,sha256=xUQcFvzSRCcQJhyUvzazotP6F8EzywjV0jtrJeIbuvY,532
+rs2wapy/rs2wapy.py,sha256=GFUmtJks4ntu1NXNQCcJgLPLpkI_F5AaqMdDp8hx518,8566
+rs2wapy/adapters/__init__.py,sha256=rP_RzALWeZMbiUQF3aR3hp8XeezBWgqv_HcTGF8eZ-4,295
+rs2wapy/adapters/adapters.py,sha256=dWhhAXuUhV-PyrNq-w5zL069ObsMxhGM3v-QiiCsdtE,45619
+rs2wapy/epicgamesstore/__init__.py,sha256=IdTKS6ze9SFIxYP4tX53bh7ISPDNjiOPKsYeNDeNZcs,66
+rs2wapy/epicgamesstore/epicgamesstore.py,sha256=xnTsa81A6CywoinUMdHWexYfaA5jCEGpwBJQWdt0NQE,354
+rs2wapy/models/__init__.py,sha256=isZ4kcT2QGvlq3f_qelzr-eWK7FCqpdX1BntIX0vuBY,340
+rs2wapy/models/models.py,sha256=3a6I36HeOmCDWw0hNKI_Wvo0hE5YZ_MbrI-azqRQAhQ,12991
+rs2wapy/parsing/__init__.py,sha256=ntAIddC7lcGkv3oYkNtltl2xZa6d7KytJs91iG5lOFI,144
+rs2wapy/parsing/parsing.py,sha256=gPFZ3ALkOllr66tIl98oqZCCKhVjUeNneCK3Nx67C4c,33028
+rs2wapy/steam/__init__.py,sha256=FcRLm9lWIJSO6QXIzKfHk2ICmwsq8iJbbp1FvO8XHIc,70
+rs2wapy/steam/steam.py,sha256=5mmjfl2As_KfO79zEXfy2WMDek5EC2L_X9TLcrn3LmM,4520
+rs2wapy-0.7.1.dist-info/METADATA,sha256=0WrVfxQEn9t59CrjWajCbnTkLGgATWoKDRRzheCp-FU,5203
+rs2wapy-0.7.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+rs2wapy-0.7.1.dist-info/licenses/LICENSE,sha256=pTH3Dr8R8SqtDEXyHE6q0DmAXYL9w2o6o-migeM0Iz8,1093
+rs2wapy-0.7.1.dist-info/RECORD,,
