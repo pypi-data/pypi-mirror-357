@@ -1,0 +1,2 @@
+[console_scripts]
+docuquery = docuquery_ai.cli.main:main
