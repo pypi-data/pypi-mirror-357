@@ -1,0 +1,8 @@
+ip_safelist_middleware/__init__.py,sha256=8GOBN1aGaUp7CiUMD5rNTw2B8GbehN-UeS3XNnCyZZo,316
+ip_safelist_middleware/__version__.py,sha256=U3f_Jgr3zpgiYG2kLcvcT05TQsVzN9Kktg_f3Q9OZFA,22
+ip_safelist_middleware/middleware.py,sha256=PXpOyEi7ZSX0wao6tjAtd0XbKZzhGMkWFkI8TpBLRRc,6551
+ip_safelist_middleware/models.py,sha256=pWDiZHP5WD3HACzLESpyxDLZ0jpL3FxixX6ACp19k7U,572
+ip_safelist_middleware-1.2.0.dist-info/METADATA,sha256=6eyDLgsPCgHSkKdIauf5tVRU0ikTdcEB8FdgPEMZGF4,9632
+ip_safelist_middleware-1.2.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+ip_safelist_middleware-1.2.0.dist-info/licenses/LICENSE,sha256=BT_5ReQKB9UjwT2BiOB_5vY8-NkCr-lNpT3HQFXVW2U,1499
+ip_safelist_middleware-1.2.0.dist-info/RECORD,,
