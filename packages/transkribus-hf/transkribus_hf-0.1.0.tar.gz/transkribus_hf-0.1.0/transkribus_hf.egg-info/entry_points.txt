@@ -1,0 +1,2 @@
+[console_scripts]
+transkribus-hf = transkribus_hf.cli:main

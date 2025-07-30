@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+tests/test_parser.py
+transkribus_hf/__init__.py
+transkribus_hf/__version__.py
+transkribus_hf/cli.py
+transkribus_hf/converter.py
+transkribus_hf/exporters.py
+transkribus_hf/parser.py
+transkribus_hf.egg-info/PKG-INFO
+transkribus_hf.egg-info/SOURCES.txt
+transkribus_hf.egg-info/dependency_links.txt
+transkribus_hf.egg-info/entry_points.txt
+transkribus_hf.egg-info/requires.txt
+transkribus_hf.egg-info/top_level.txt
