@@ -1,0 +1,43 @@
+# GitLab CI/CD configuration for EnTiSe Python package
+# Using uv for faster dependency management
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"
+
+stages:
+  - lint
+  - test
+
+cache:
+  paths:
+    - .pip-cache/
+
+.python-job-template: &python-job-template
+  before_script:
+    - pip install uv
+    - uv pip install -e ".[dev]"
+
+lint:
+  <<: *python-job-template
+  stage: lint
+  image: python:3.12
+  script:
+    - ruff check .
+    - ruff format --check .
+    - mypy entise
+
+test:
+  <<: *python-job-template
+  stage: test
+  parallel:
+    matrix:
+      - PYTHON_VERSION: ["3.10", "3.11", "3.12", "3.13"]
+  image: python:$PYTHON_VERSION
+  script:
+    - pytest --cov=entise tests/ --junitxml=junit/test-report.xml
+  artifacts:
+    reports:
+      junit: junit/test-report.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
