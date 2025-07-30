@@ -1,0 +1,78 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Node	rbtree.py	/^class Node:$/;"	c
+Node	src/rbtreepy/__init__.py	/^class Node:$/;"	c
+RBTree	rbtree.py	/^class RBTree:$/;"	c
+RBTree	src/rbtreepy/__init__.py	/^class RBTree:$/;"	c
+__all__	src/rbtreepy/__init__.py	/^__all__ = ["Node", "RBTree", "verify_rb_tree", "test"]$/;"	v
+__init__	rbtree.py	/^    def __init__(self):$/;"	m	class:RBTree
+__init__	rbtree.py	/^    def __init__(self, value):$/;"	m	class:Node
+__init__	src/rbtreepy/__init__.py	/^    def __init__(self):$/;"	m	class:RBTree
+__init__	src/rbtreepy/__init__.py	/^    def __init__(self, value):$/;"	m	class:Node
+__str__	rbtree.py	/^    def __str__(self):$/;"	m	class:Node	file:
+__str__	rbtree.py	/^    def __str__(self):$/;"	m	class:RBTree	file:
+__str__	src/rbtreepy/__init__.py	/^    def __str__(self):$/;"	m	class:Node	file:
+__str__	src/rbtreepy/__init__.py	/^    def __str__(self):$/;"	m	class:RBTree	file:
+__version__	src/rbtreepy/__init__.py	/^__version__ = "0.0.1"$/;"	v
+_label	rbtree.py	/^    def _label(self):$/;"	m	class:Node
+_label	src/rbtreepy/__init__.py	/^    def _label(self):$/;"	m	class:Node
+_pretty	rbtree.py	/^    def _pretty(self, level: int = 0) -> str:$/;"	m	class:Node
+_pretty	src/rbtreepy/__init__.py	/^    def _pretty(self, level: int = 0) -> str:$/;"	m	class:Node
+_rotate_left	rbtree.py	/^    def _rotate_left(self, pivot):$/;"	m	class:RBTree
+_rotate_left	src/rbtreepy/__init__.py	/^    def _rotate_left(self, pivot):$/;"	m	class:RBTree
+_rotate_right	rbtree.py	/^    def _rotate_right(self, pivot):$/;"	m	class:RBTree
+_rotate_right	src/rbtreepy/__init__.py	/^    def _rotate_right(self, pivot):$/;"	m	class:RBTree
+base	main.c	/^  tree base;$/;"	m	struct:__anon2	file:
+compare_for_right	rbtree.py	/^    def compare_for_right(self, node):$/;"	m	class:Node
+compare_for_right	src/rbtreepy/__init__.py	/^    def compare_for_right(self, node):$/;"	m	class:Node
+container_of	main.c	/^#define container_of(/;"	d	file:
+data	main.c	/^  void *data;$/;"	m	struct:__anon1	file:
+dfs	rbtree.py	/^    def dfs(node):$/;"	f	function:verify_rb_tree
+dfs	src/rbtreepy/__init__.py	/^    def dfs(node):$/;"	f	function:verify_rb_tree
+galloc	main.c	/^static lalloc galloc = { .data = heap, .limit = 90000, .used = 0 };$/;"	v	file:
+heap	main.c	/^static u8 heap[90000];$/;"	v	file:
+hi	main.c	/^  int lo, hi;$/;"	m	struct:__anon2	file:
+i_calloc	main.c	/^i_calloc (u32 req, u32 size)$/;"	f	file:
+i_malloc	main.c	/^i_malloc (u32 req, u32 size)$/;"	f	file:
+insert	rbtree.py	/^    def insert(self, node: Node):$/;"	m	class:RBTree
+insert	src/rbtreepy/__init__.py	/^    def insert(self, node: Node):$/;"	m	class:RBTree
+is_black_nullable	rbtree.py	/^def is_black_nullable(node: Node | None):$/;"	f
+is_black_nullable	src/rbtreepy/__init__.py	/^def is_black_nullable(node: Node | None):$/;"	f
+is_red_nullable	rbtree.py	/^def is_red_nullable(node: Node | None):$/;"	f
+is_red_nullable	src/rbtreepy/__init__.py	/^def is_red_nullable(node: Node | None):$/;"	f
+lalloc	main.c	/^} lalloc;$/;"	t	typeref:struct:__anon1	file:
+lalloc_assert	main.c	/^#define lalloc_assert(/;"	d	file:
+left	main.c	/^  tree *left;$/;"	m	struct:tree_s	file:
+limit	main.c	/^  int limit;$/;"	m	struct:__anon1	file:
+lmalloc	main.c	/^lmalloc (lalloc *a, u32 req, u32 size)$/;"	f	file:
+lo	main.c	/^  int lo, hi;$/;"	m	struct:__anon2	file:
+main	main.c	/^main (void)$/;"	f
+max	main.c	/^  int max;$/;"	m	struct:__anon2	file:
+parent	main.c	/^  tree *parent;$/;"	m	struct:tree_s	file:
+range_cmp	main.c	/^range_cmp (const tree *a, const tree *b)$/;"	f	file:
+range_fixup_ancestors	main.c	/^range_fixup_ancestors (range_node *n)$/;"	f	file:
+range_node	main.c	/^} range_node;$/;"	t	typeref:struct:__anon2	file:
+range_node_create	main.c	/^range_node_create (int lo, int hi)$/;"	f	file:
+range_tree_find_overlap	main.c	/^range_tree_find_overlap (range_node *root, int lo, int hi)$/;"	f	file:
+range_tree_insert	main.c	/^range_tree_insert (range_node **root, range_node *n)$/;"	f	file:
+range_update_max	main.c	/^range_update_max (range_node *n)$/;"	f	file:
+ranges_overlap	main.c	/^ranges_overlap (int lo1, int hi1, int lo2, int hi2)$/;"	f	file:
+right	main.c	/^  tree *right;$/;"	m	struct:tree_s	file:
+t	redblack.py	/^    t = RBTree()$/;"	v
+test	rbtree.py	/^def test():$/;"	f
+test	src/rbtreepy/__init__.py	/^def test():$/;"	f
+tree	main.c	/^typedef struct tree_s tree;$/;"	t	typeref:struct:tree_s	file:
+tree_create	main.c	/^tree_create (void)$/;"	f	file:
+tree_insert	main.c	/^tree_insert ($/;"	f	file:
+tree_min	main.c	/^tree_min (tree *n)$/;"	f	file:
+tree_s	main.c	/^struct tree_s$/;"	s	file:
+tree_search_slot	main.c	/^tree_search_slot ($/;"	f	file:
+u32	main.c	/^typedef unsigned int u32;$/;"	t	file:
+u8	main.c	/^typedef unsigned char u8;$/;"	t	file:
+used	main.c	/^  int used;$/;"	m	struct:__anon1	file:
+verify_rb_tree	rbtree.py	/^def verify_rb_tree(tree):$/;"	f
+verify_rb_tree	src/rbtreepy/__init__.py	/^def verify_rb_tree(tree):$/;"	f
