@@ -1,0 +1,2 @@
+[console_scripts]
+typing-master = typing_test.main:main
