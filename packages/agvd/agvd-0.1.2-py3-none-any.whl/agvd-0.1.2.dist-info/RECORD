@@ -1,0 +1,11 @@
+agvd.py,sha256=H9gbb1xIihxX_5wf0hF8ojZovXF6uu5ZMwxHNvZupf4,9176
+cli.py,sha256=85iQp8yRBcZI--QTbDweq5VKsQ6sjGGvOBldFJrQgKk,773
+core.py,sha256=ipditsShwaCR6qajRa3YMoDikdMT0yquTUpulPqI9FE,4342
+exceptions.py,sha256=g5vvrgwok6MARwPMYZltpDZZGJkd5dFunMDLpz6N1YM,8960
+query.py,sha256=pC7a_fQpn6WzkVv27s-LIRzhTGmt6Pkpi9FiW0A1yp4,2213
+utils.py,sha256=V_P_PjB_QqVN1X98Pljxk--g3jfbJitiFjykoZ3YUic,3178
+agvd-0.1.2.dist-info/METADATA,sha256=hP30f5e5qWKd_hBnkeCfwkRcZwYuQwSkSD-tDKIQeV0,3841
+agvd-0.1.2.dist-info/WHEEL,sha256=iAkIy5fosb7FzIOwONchHf19Qu7_1wCWyFNR5gu9nU0,91
+agvd-0.1.2.dist-info/entry_points.txt,sha256=-VZGUeBgB8zDlo0X6atm59Pv1SP4C8S8Uee02GdPKYI,34
+agvd-0.1.2.dist-info/top_level.txt,sha256=4D--Lephbsf31NfhnuO363ZHUWyZJXppLVnp_xNtIZc,37
+agvd-0.1.2.dist-info/RECORD,,
