@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "gguf-python"
+version = "0.0.1"
+description = "gguf"
+authors = ["gguf <info@gguf.us>"]
+readme = "README.md"
+homepage = "https://gguf.org"
+classifiers = ["License :: OSI Approved :: MIT License"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

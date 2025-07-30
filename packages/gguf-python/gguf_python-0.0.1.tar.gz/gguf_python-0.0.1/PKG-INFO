@@ -1,0 +1,32 @@
+Metadata-Version: 2.3
+Name: gguf-python
+Version: 0.0.1
+Summary: gguf
+Author: gguf
+Author-email: info@gguf.us
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Project-URL: Homepage, https://gguf.org
+Description-Content-Type: text/markdown
+
+## gguf
+
+install it via pip/pip3:
+```
+pip install gguf-python
+```
+
+### todo list
+- management panel
