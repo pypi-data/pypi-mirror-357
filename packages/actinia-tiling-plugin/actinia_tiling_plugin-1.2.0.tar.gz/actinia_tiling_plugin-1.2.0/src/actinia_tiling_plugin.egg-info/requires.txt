@@ -1,0 +1,6 @@
+actinia-grassdata-management-plugin
+colorlog>=4.2.1
+
+[test]
+pytest
+pytest-cov
