@@ -1,0 +1,13 @@
+docsible/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+docsible/cli.py,sha256=q3U5GeCjVBcADsxKRtWlB8KCSurjQllyJ7pzBo8r6_k,16858
+docsible/markdown_template.py,sha256=IsE3RJcOZyw7OjzHtz2k9s6MjLfin40X9HJy1bP7gfU,24217
+docsible/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+docsible/utils/git.py,sha256=a80O0kpOQo9YMVb2gQDstiP3RSid7KbIF_vk-Q9J2Vs,3252
+docsible/utils/mermaid.py,sha256=ltFdC0bnP_hoEVPcEYiQBtHqDbrgpQK42T1_vEV4DC4,12002
+docsible/utils/special_tasks_keys.py,sha256=gnAKFtCftcmSyXYvWujIRBL7fMagV7j8vYDUOmIZH2I,3738
+docsible/utils/yaml.py,sha256=j18kmToadnmpY4D4B7c5_StTBgbCLP5FzsW-JRzdyaA,17947
+docsible-0.7.25.dist-info/LICENSE,sha256=_5hv3CoyXEkAGyhIPoUvKMPh8P6Z4Gmf8vhvo_5zTk4,1079
+docsible-0.7.25.dist-info/METADATA,sha256=IACHNXIGeBJpVLHAyDsz8y1GFquSm1u8P7CCTgZUYKQ,7337
+docsible-0.7.25.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+docsible-0.7.25.dist-info/entry_points.txt,sha256=x3P_QRUASTAJmJ8yjSvQ4ykTUS4bGhY79C5n8h0UVyY,54
+docsible-0.7.25.dist-info/RECORD,,
