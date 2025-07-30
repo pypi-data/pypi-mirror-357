@@ -1,0 +1,1 @@
+from .palindrometool import palindrome
