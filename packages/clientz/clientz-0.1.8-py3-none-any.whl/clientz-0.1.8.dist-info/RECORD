@@ -1,0 +1,9 @@
+clientz/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clientz/config.yaml,sha256=Nw8_26xNsTA-4eVSSKt8ZyHWddhOcGD9efzdDxC_Ek8,431
+clientz/core.py,sha256=l7PglJZSvembuB_fivyPJKKvQOYCET2OJMBeS-WlQNA,11923
+clientz/log.py,sha256=n2O-qKgrLWrkofurEI_Q7x-DbvMOMaWCqXJUVTpv3oI,6146
+clientz/server.py,sha256=AqSE7oAON_oXSvC5DICKlXwJFienZ9pHc75Xl3tESkM,13461
+clientz-0.1.8.dist-info/METADATA,sha256=TR46dbmardte5PB99IuE4QlCBBv9X1e79_soc_kJeyQ,653
+clientz-0.1.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+clientz-0.1.8.dist-info/top_level.txt,sha256=Zp1NVDdYhYcdqgSGgxAXx7CttjzDpOxTxqPcFUs0bMU,8
+clientz-0.1.8.dist-info/RECORD,,
