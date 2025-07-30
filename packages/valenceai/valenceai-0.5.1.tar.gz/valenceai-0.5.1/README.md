@@ -1,0 +1,205 @@
+# Valence SDK for Emotion Detection
+
+**valenceai** is a Python client library for interacting with the [Valence AI](https://getvalenceai.com) Pulse API for emotion detection. It provides a convenient interface to upload audio files -— short or long —- and retrieve detected emotional states.
+
+### Feature Overview
+
+- Upload **short audio files** in a single request
+- Upload **long audio files** using multipart parallel upload
+- Easily configure API credentials using environment variables
+- Enable or disable detailed logging
+- Built-in support for future extensibility and endpoint expansion
+
+The emotional classification model used in our APIs is optimized for North American English conversational data.
+
+The API includes a baseline model of 4 basic emotions. The emotions included by default are angry, happy, neutral, and sad. Our other model offerings include different subsets of the following emotions: happy, sad, angry, neutral, surprised, disgusted, nervous, irritated, excited, sleepy. 
+
+  _Coming soon_ – The API will include a model choice parameter, allowing users to choose between models of 4, 5, and 7 emotions.
+
+The number of emotions, emotional buckets, and language support can be customized. If you are interested in a custom model, please [contact us](https://www.getvalenceai.com/contact).
+
+### API Functionality
+
+While our APIs include the same model offerings in the backend, they are best suited for different purposes.
+
+|               | DiscreteAPI                                                                                                                                                                     | AsynchAPI                                                                                                                          |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Inputs        | A short audio file, 4-10s in length.                                                                                                                                            | A long audio file, at least 5s in length. Inputs can be up to 1 GB large.                                                         |
+| Outputs       | A JSON that includes the primary emotion detected in the file, along with its confidence. The confidence scores of all other emotions in the model are also returned. | A time-stamped JSON that includes the classified emotion and its confidence at a rate of 1 classification per 5 seconds of audio. |
+| Response Time | 100-500 ms                                                                                                                                                                      | Dependent upon file size                                                                                                          |
+
+The **DiscreteAPI** is built for real-time analysis of emotions in audio data. Small snippets of audio are sent to the API to receive feedback in real-time of what emotions are detected based on tone of voice. This API operates on an approximate per-sentence basis, and audio must be cut to the appropriate size.
+
+The **AsynchAPI** is built for emotion analysis of pre-recorded audio files. Files of any length, up to 1 GB in size, can be sent to the API to receive a summary of emotions throughout the file. Similar to the DiscreteAPI, this API operates on an approximate per-sentence basis, but the AsynchAPI provides timestamps to show the change in emotions over time.
+
+  _Coming soon_ –  StreamingAPI via WebSockets for real-time analysis of an audio stream.
+
+## Installation
+
+```bash
+pip install valenceai
+```
+
+## Configuration
+
+You can configure the SDK using environment variables or by passing parameters directly:
+
+### Environment Variables
+
+```bash
+export VALENCE_API_KEY="api_key_here"
+export VALENCE_DISCRETE_URL="https://discrete-api-url" # Optional: custom Discrete audio endpoint
+export VALENCE_ASYNCH_URL="https://asynch-api-url" # Optional: custom Asynch audio endpoint
+export VALENCE_LOG_LEVEL="DEBUG"  # Optional: INFO, DEBUG, ERROR
+```
+
+## Usage
+
+### Discrete Audio (Short Files)
+
+```python
+from valenceai import ValenceClient
+
+client = ValenceClient()
+result = client.discrete.emotions("YOUR_FILE.wav")
+print(result)
+```
+
+### Asynch Audio (Long Files)
+
+```python
+from valenceai import ValenceClient
+
+client = ValenceClient(show_progress=True)
+request_id = client.asynch.upload("YOUR_FILE.wav")
+
+# Get emotions from uploaded audio
+result = client.asynch.emotions(request_id)
+print(result)
+```
+
+## API Reference
+
+### ValenceClient Constructor
+
+```python
+client = ValenceClient(
+    api_key=None,           # API key (or use VALENCE_API_KEY env var)
+    part_size=5*1024*1024,  # Size of each upload chunk for asynch audio
+    show_progress=True,     # Show progress bar for asynch uploads
+    max_threads=3          # Number of concurrent threads for asynch uploads
+)
+```
+
+### Discrete Audio Methods
+
+```python
+client.discrete.emotions(file_path)
+```
+
+| Parameter | Type   | Description                       |
+|-----------|--------|-----------------------------------|
+| file_path | string | Path to the audio file            |
+
+### Asynch Audio Methods
+
+```python
+request_id = client.asynch.upload(file_path)
+result = client.asynch.emotions(request_id, max_attempts=20, interval_seconds=5)
+```
+
+| Parameter         | Type   | Default | Description                          |
+|-------------------|--------|---------|--------------------------------------|
+| file_path         | string | -       | Path to the audio file               |
+| max_attempts      | int    | 20      | Max attempts for polling prediction  |
+| interval_seconds  | int    | 5       | Seconds between prediction polls     |
+
+## Inputs and Outputs
+
+### Inputs
+The APIs expect mono audio in the .wav format. An ideal audio file is recorded at 44100 Hz (44.1 kHz), though sampling rates as low as 8 kHz can still be used with high accuracy. For custom use cases, microphone specifications can be customized based on audio environment, including optimizations for mono/stereo audio, single microphone applications, noisy environments, etc. 
+
+For the **DiscreteAPI**, input data is an audio file in the .wav format. 
+
+For the **AsynchAPI**, input data is an audio file, in the .wav format.
+
+### Outputs
+
+Outputs are returned as JSONs in the following formats: 
+
+**DiscreteAPI:**
+```json
+{
+  "main_emotion": "happy",
+  "confidence": 0.777777777,
+  "all_predictions": {
+    "angry": 0.123456789,
+    "happy": 0.777777777,
+    "neutral": 0.23456789,
+    "sad": 0.098765432
+  }
+}
+```
+
+The emotion returned in `main_emotion` is the highest confidence emotion returned from the model. Within `all_predictions`, each emotion is followed by its level of confidence. Some may use the top two highest confidence emotions to generate more nuanced states. We recommend dropping a `main_emotion` with confidence under 0.38, but that is at the user's discretion. 
+
+**AsynchAPI:**
+
+```json
+{
+  "request_id": "27a33189-bdd7-47ca-9817-abacfb7bdaf4",
+  "status": "completed",
+  "emotions": [
+    {
+      "t": "00:00",
+      "emotion": "neutral",
+      "confidence": 0.82791723
+    },
+    {
+      "t": "00:05",
+      "emotion": "neutral",
+      "confidence": 0.719817432
+    },
+    {
+      "t": "00:10",
+      "emotion": "happy",
+      "confidence": 0.917309381
+    },
+    {
+      "t": "00:15",
+      "emotion": "neutral",
+      "confidence": 0.414097846
+    }
+	"..."
+  ]
+}
+```
+
+The emotions returned in `emotions` are the highest confidence emotion returned from the model, alongside the timestamp and confidence. The number of values in `emotions` correlates directly to the length of the input file. We recommend dropping `emotions` with confidence under 0.38, but that is at the user's discretion.
+
+## Examples
+
+Example scripts are available in the [`examples/`](./examples) folder:
+
+- `upload_short_audio.py`
+- `upload_long_audio.py`
+
+## Development
+
+To build and test locally:
+
+```bash
+# Build
+python -m build
+
+# Install locally
+pip install .
+
+# Run tests
+pytest tests/
+```
+
+
+## License
+
+Private License © 2025 [Valence Vibrations, Inc](https://getvalenceai.com), a Delaware public benefit corporation.
