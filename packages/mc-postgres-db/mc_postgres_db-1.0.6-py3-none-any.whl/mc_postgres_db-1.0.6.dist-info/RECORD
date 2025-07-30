@@ -1,0 +1,7 @@
+alembic/env.py,sha256=31tHj84uXsP2MQvhcwgbXGEzN40P_lS3n7jHQSlbtnU,2373
+alembic/versions/4056c087960a_.py,sha256=-w5OvJcx0Oct_KpFsoG9j0EHiuPJI9e6yjaIjhg0BBY,5278
+alembic/versions/8b53c8e91507_adding_new_market_table_and_content_.py,sha256=2_TnumPJi-zLJKag4T0f4kDy2wscMmFI6ydqEcSuLXw,4226
+mc_postgres_db-1.0.6.dist-info/METADATA,sha256=kqJyzaAMWaS_Nu6QdxLd8xFWzhepqZN7pjpLzg00MQY,289
+mc_postgres_db-1.0.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mc_postgres_db-1.0.6.dist-info/top_level.txt,sha256=FwKWd5VsPFC8iQjpu1u9Cn-JnK3-V1RhUCmWqz1cl-s,8
+mc_postgres_db-1.0.6.dist-info/RECORD,,
