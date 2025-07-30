@@ -1,0 +1,8 @@
+kvo/datesmcp/__init__.py,sha256=H2xJtq9nus-U1QMAoNSVKWvO-rjofeKUbdWQub011lQ,183
+kvo/datesmcp/cli.py,sha256=mpOp-i_0hurCI7EJTSJWUAmx1XLHRK5t2E9UTIaxsZU,892
+kvo/datesmcp/clioptions.py,sha256=d-QsDtIf8t1K_ngXlPT-DSVT9bCAJVUd6FrgbTvxMJ8,765
+kvo/datesmcp/mcptools.py,sha256=LA9o1w2baFi9Q485njBnrHuO9dTfvNeke5ZRqcNFdew,6162
+kvo_dates_mcp-0.1.0.dist-info/METADATA,sha256=_droOc3a_ftU6j_xEtRhYkJBr0bYWqorTZ2RjiN0TP0,393
+kvo_dates_mcp-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+kvo_dates_mcp-0.1.0.dist-info/licenses/LICENSE,sha256=VUficTiSHppiJv8AABoUo1fg-DNDh6RCgjex6ai5Oo0,1085
+kvo_dates_mcp-0.1.0.dist-info/RECORD,,
