@@ -1,0 +1,165 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., v1.0.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+
+env:
+  PYTHON_VERSION: "3.12"
+
+jobs:
+  build:
+    name: Build Distribution
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Build package
+        run: uv build
+
+      - name: Check dist
+        run: |
+          ls -la dist/
+          uv run twine check dist/*
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish-testpypi:
+    name: Publish to TestPyPI
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/p/frostbound
+    steps:
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Publish to TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          skip-existing: true
+
+  test-install:
+    name: Test Installation
+    needs: [publish-testpypi]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.9", "3.12"]
+    steps:
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install from TestPyPI
+        run: |
+          pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ frostbound
+          python -c "import frostbound; print(f'Successfully installed frostbound {frostbound.__version__}')"
+
+  publish-pypi:
+    name: Publish to PyPI
+    needs: [test-install]
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/frostbound
+    steps:
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+  create-release:
+    name: Create GitHub Release
+    needs: [publish-pypi]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Generate release notes
+        id: notes
+        run: |
+          VERSION=${{ github.ref_name }}
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+
+          # Generate changelog from commits
+          git log --pretty=format:"* %s" $(git describe --tags --abbrev=0 HEAD^)..HEAD > release_notes.md
+
+          echo "" >> release_notes.md
+          echo "## Installation" >> release_notes.md
+          echo '```bash' >> release_notes.md
+          echo "pip install frostbound==${VERSION#v}" >> release_notes.md
+          echo '```' >> release_notes.md
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ steps.notes.outputs.version }}
+          body_path: release_notes.md
+          files: dist/*
+          draft: false
+          prerelease: ${{ contains(github.ref_name, 'rc') || contains(github.ref_name, 'beta') || contains(github.ref_name, 'alpha') }}
+
+  announce:
+    name: Announce Release
+    needs: [create-release]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post to Discord/Slack
+        run: |
+          echo "Posted release announcement to Discord/Slack"
+          # Add actual webhook calls here
+
+      - name: Update documentation
+        run: |
+          echo "Triggered documentation update"
+          # Add documentation update trigger here
