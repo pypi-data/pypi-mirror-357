@@ -1,0 +1,2 @@
+[console_scripts]
+mm-scaffolder = magic_module_scaffolder.__main__:main
