@@ -1,0 +1,8 @@
+license
+setup.py
+creador_archivos/__init__.py
+creador_archivos/func.py
+file_crud.egg-info/PKG-INFO
+file_crud.egg-info/SOURCES.txt
+file_crud.egg-info/dependency_links.txt
+file_crud.egg-info/top_level.txt
