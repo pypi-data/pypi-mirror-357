@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+webcloner/__init__.py
+webcloner/cloner.py
+webcloner.egg-info/PKG-INFO
+webcloner.egg-info/SOURCES.txt
+webcloner.egg-info/dependency_links.txt
+webcloner.egg-info/entry_points.txt
+webcloner.egg-info/not-zip-safe
+webcloner.egg-info/requires.txt
+webcloner.egg-info/top_level.txt
