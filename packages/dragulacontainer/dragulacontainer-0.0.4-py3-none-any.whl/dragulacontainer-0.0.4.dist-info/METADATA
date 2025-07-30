@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: dragulacontainer
+Version: 0.0.4
+Summary: Project Description
+Author: Felix Pouchain <email>
+License: MIT
+Classifier: Framework :: Dash
+License-File: LICENSE
+
