@@ -1,0 +1,10 @@
+verfishd/__init__.py,sha256=aY4g9zRKoOkHsC1er4AGFF31p-8i43K2Y6iWbI3-Zmw,229
+verfishd/core/__init__.py,sha256=z9bHzCo4fTcDEe6Imiwh__jAgOvQXEThpvNkDQbw3S8,198
+verfishd/core/migration_speed.py,sha256=o_b8hPkxM5eMzBM5ZLenwe1sShV4rbIAWnZGnJDR1Pg,706
+verfishd/core/model.py,sha256=EfxsQJgM1iYZVGBYqtijpK5bTWQjPn5eaLnqRjOXt9Y,11163
+verfishd/core/physical_factor.py,sha256=mVBibI27aOpZWPjDlWwIYCtO3EWXThAEkOYizpnvqNE,1694
+verfishd/core/physical_stimuli_profile.py,sha256=XDSNPHucibwxcxLsC67Qr2NK3S7TJeiqpj0SxFUw9DQ,3424
+verfishd-0.2.4.dist-info/LICENSE,sha256=RNGC-nqwh4Ufpw-FtkuUi365oatYwTS8n4u7uukceE0,1076
+verfishd-0.2.4.dist-info/METADATA,sha256=qbaSogmmbR6CYpUpEXqLB8bRfQdVkKD569aZ6TOzJjw,4299
+verfishd-0.2.4.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+verfishd-0.2.4.dist-info/RECORD,,
