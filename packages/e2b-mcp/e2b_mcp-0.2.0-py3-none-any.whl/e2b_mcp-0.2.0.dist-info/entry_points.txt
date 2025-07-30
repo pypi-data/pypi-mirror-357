@@ -1,0 +1,2 @@
+[console_scripts]
+e2b-mcp = e2b_mcp.cli:cli
