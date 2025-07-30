@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: postprocessing-seismo-lib
+Version: 0.1.0
+Summary: A library for building and parsing Seismology API message bodies.
+Home-page: https://scsngit.gps.caltech.edu/services/associator
+Author: Ryan Tam
+Author-email: rwtam@caltech.edu
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# postprocessing_seismo_lib
+
+`postprocessing_seismo_lib` is a lightweight Python library for building and parsing structured API messages, especially for use with nested JSON structures used in event-based data systems.
+
+## Features
+
+- Build a full message with metadata and body using `build_message`
+- Extract the `body` section from a structured JSON file using `extract_body_from_file`
+
+## Installation
+
+You can install the library locally for development:
+
+```bash
+pip install -e .
+
