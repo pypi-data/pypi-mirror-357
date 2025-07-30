@@ -1,0 +1,3 @@
+[console_scripts]
+mlfmu = mlfmu.cli.mlfmu:main
+publish-interface-docs = mlfmu.cli.publish_docs:main
