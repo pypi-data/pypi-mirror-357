@@ -1,0 +1,7 @@
+[console_scripts]
+
+[gui_scripts]
+
+[pytest11]
+envfile = pytest_envx.plugin
+

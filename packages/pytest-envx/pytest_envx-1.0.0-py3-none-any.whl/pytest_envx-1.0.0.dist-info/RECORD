@@ -1,0 +1,9 @@
+pytest_envx-1.0.0.dist-info/METADATA,sha256=exOajSO3w-x-kE_0FMIpcsbNjlwxwsNdqOnXlEOlJV8,7356
+pytest_envx-1.0.0.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+pytest_envx-1.0.0.dist-info/entry_points.txt,sha256=IFXXbCRaYAKpeB5gjRLgFmv-RyYpnOc_1ozXbw3i7eo,75
+pytest_envx-1.0.0.dist-info/licenses/LICENSE.txt,sha256=3J5UMwy46_h3i39RaCrnVNM7Tb_tUBbmbsepcA-Q_vQ,1070
+pytest_envx/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytest_envx/__version__.py,sha256=FQ55V3LF0lPPvC-2JOdSD2KdtzyjjzWuPA3d59j0B8k,96
+pytest_envx/plugin.py,sha256=hCOmSDpzSUHrr9BSlYm9R-afsFTpG0TLHcNlxaNoAQo,10449
+pytest_envx/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytest_envx-1.0.0.dist-info/RECORD,,
