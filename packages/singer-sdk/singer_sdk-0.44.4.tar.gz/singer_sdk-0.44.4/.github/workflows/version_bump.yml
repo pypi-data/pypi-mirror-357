@@ -1,0 +1,105 @@
+name: Version bump
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run the action without creating a PR or release draft"
+        required: true
+        default: false
+        type: boolean
+      bump:
+        description: "Version bump type"
+        required: true
+        type: choice
+        default: auto
+        options:
+        - auto
+        - patch
+        - minor
+        - major
+      prerelease:
+        description: "Increase to this prerelease version"
+        required: false
+        type: choice
+        default: none
+        options:
+        - none
+        - alpha
+        - beta
+        - rc
+
+jobs:
+  version_bump:
+
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    permissions:
+      contents: write       # to create a github release
+      pull-requests: write  # to create and update PRs
+      discussions: write    # to create a discussion
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.x"
+
+    - name: Bump version
+      id: cz-bump
+      uses: commitizen-tools/commitizen-action@0.23.1
+      with:
+        increment: ${{ github.event.inputs.bump != 'auto' && github.event.inputs.bump || '' }}
+        prerelease: ${{ github.event.inputs.prerelease != 'none' && github.event.inputs.prerelease || '' }}
+        commit: "false"
+        push: "false"
+        changelog: "true"
+        github_token: ${{ secrets.MELTYBOT_GITHUB_AUTH_TOKEN }}
+        extra_requirements: 'git+https://github.com/meltano/commitizen-version-bump@main'
+        changelog_increment_filename: _changelog_fragment.md
+
+    - name: Add job summary
+      run: |
+        cat _changelog_fragment.md >> $GITHUB_STEP_SUMMARY
+
+    - name: Draft Release
+      if: ${{ github.event.inputs.dry_run == 'false' }}
+      id: draft-release
+      uses: softprops/action-gh-release@v2
+      with:
+        draft: true
+        body_path: _changelog_fragment.md
+        tag_name: v${{ steps.cz-bump.outputs.version }}
+        prerelease: ${{ github.event.inputs.prerelease != 'none' }}
+        token: ${{ secrets.MELTYBOT_GITHUB_AUTH_TOKEN }}
+        discussion_category_name: ${{ github.event.inputs.prerelease && 'announcements' || '' }}
+
+    - name: Set repo file permissions
+      run: |
+        sudo chown -R $USER:$USER .git/objects
+
+    - name: Create Pull Request
+      if: ${{ github.event.inputs.dry_run == 'false' }}
+      uses: peter-evans/create-pull-request@v7
+      id: create-pull-request
+      with:
+        token: ${{ secrets.MELTYBOT_GITHUB_AUTH_TOKEN }}
+        commit-message: "chore: Bump package version"
+        title: "chore: Release v${{ steps.cz-bump.outputs.version }}"
+        body: |
+          Prepare MeltanoSDK `v${{ steps.cz-bump.outputs.version }}` for release.
+
+          Checklist:
+
+          - [ ] Check that the right version is set in all the files.
+          - [ ] Groom the changelog for wording or missing entries.
+          - [ ] Merge this PR once everything looks good.
+
+          [Release Draft](${{ steps.draft-release.outputs.url }})
+        branch: release/v${{ steps.cz-bump.outputs.version }}
+        labels: release
+        assignees: "${{ github.actor }}"
