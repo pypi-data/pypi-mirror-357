@@ -1,0 +1,8 @@
+workspace_generator/__init__.py,sha256=FETw91jCRVOjzgiQkR5xug4I96oUGZ2fXHc7AbJ3iYI,111
+workspace_generator/cli.py,sha256=pUjBincEPz7qzmd1KM7ECCMpHgD3SCwxww6eDjzhvM8,892
+workspace_generator/generator.py,sha256=vm6zDxGdt969LRLSFZmxJnPrd62weeSBwINx84ZQnGY,2034
+vscode_workspace_config_generator-1.1.2.dist-info/METADATA,sha256=hHTVZxZbZO0Q8fpdDpEt4geZ6gi8xkYJTLn821eTG9E,1253
+vscode_workspace_config_generator-1.1.2.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+vscode_workspace_config_generator-1.1.2.dist-info/entry_points.txt,sha256=1NA58Mox8KFgBJ3s69_EUT9yGb18mQMFLUE4eD978g8,82
+vscode_workspace_config_generator-1.1.2.dist-info/top_level.txt,sha256=D_f1765ZT-SSf_e36ZxPqMwP2_8GHBrXym8BudAFHZg,20
+vscode_workspace_config_generator-1.1.2.dist-info/RECORD,,
