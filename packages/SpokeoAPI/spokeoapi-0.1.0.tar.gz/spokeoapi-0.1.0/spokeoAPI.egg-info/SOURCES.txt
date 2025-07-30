@@ -1,0 +1,7 @@
+setup.py
+SpokeoAPI/__init__.py
+spokeoAPI.egg-info/PKG-INFO
+spokeoAPI.egg-info/SOURCES.txt
+spokeoAPI.egg-info/dependency_links.txt
+spokeoAPI.egg-info/requires.txt
+spokeoAPI.egg-info/top_level.txt
