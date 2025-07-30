@@ -1,0 +1,10 @@
+shadowlink/__init__.py,sha256=5pVZdYUqg9CmE3Y1ymM6aFV8J2pbALod8FtnsyBCmn0,586
+shadowlink/__main__.py,sha256=WICFlvBPfzXvG1oXczt3AsD_25Cy2GPE6NHZloP6rJM,148
+shadowlink/shadowlink.py,sha256=CtP-7Z5_sRmkP70sqElb3rZ2IuBakbI1ydvYC4jwoAg,6688
+shadowlink/version.py,sha256=pfR9lL_QWTmJoEFYtOBPadcHDQ6K4YSaocmFHjmqSzk,46
+shadowlink-0.0.1.dist-info/licenses/LICENSE,sha256=eeRYk7Of5yac9j6yDPYmGjn0lIayP04Rwcd1eYR933o,1082
+shadowlink-0.0.1.dist-info/METADATA,sha256=KH2jpe7JbQ9N297PfAj1E1L2VPkT22X-Rw3ciltQWnI,3104
+shadowlink-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+shadowlink-0.0.1.dist-info/entry_points.txt,sha256=R2Yvxr3ZfiFWpu3V5JBFTn97-gNeezOQn_9S1uwIQ1k,58
+shadowlink-0.0.1.dist-info/top_level.txt,sha256=w9MNPbJf0do574Mn1ULX7CQhwfindlivzzd7wKVNsK8,11
+shadowlink-0.0.1.dist-info/RECORD,,

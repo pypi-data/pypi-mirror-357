@@ -1,0 +1,2 @@
+[console_scripts]
+shadowlink = shadowlink.shadowlink:main
