@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: algomath
+Version: 0.1
+Summary: Python implementations of algorithms based on mathematical style pseudocode
+Home-page: https://github.com/wiegerw/algomath
+Author: Wieger Wesselink
+Author-email: j.w.wesselink@tue.nl
+Project-URL: Bug Tracker, https://github.com/wiegerw/algomath/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Boost Software License 1.0 (BSL-1.0)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# algomath
+Python implementations of algorithms based on mathematical style pseudocode
