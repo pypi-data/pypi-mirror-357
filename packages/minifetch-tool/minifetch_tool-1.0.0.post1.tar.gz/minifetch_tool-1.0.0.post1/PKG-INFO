@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: minifetch-tool
+Version: 1.0.0.post1
+Summary: A mini system information fetch tool.
+Home-page: https://github.com/widikov/minifetch
+Author: wdkq
+Author-email: koc2b93o0@mozmail.com
+License: MIT
+Keywords: system info fetch
+License-File: LICENSE
+Requires-Dist: colorama
+Requires-Dist: psutil
+Requires-Dist: distro; platform_system == "Linux"
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary

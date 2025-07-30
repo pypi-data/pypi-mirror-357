@@ -1,0 +1,2 @@
+include minifetch/ascii/*
+include minifetch/custom.txt
