@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: vscode_config_generator
+Version: 2.0.8
+Summary: Generate VS Code configurations for projects
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
