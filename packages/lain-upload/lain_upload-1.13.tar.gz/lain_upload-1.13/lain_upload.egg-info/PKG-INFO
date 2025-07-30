@@ -1,0 +1,65 @@
+Metadata-Version: 2.4
+Name: lain_upload
+Version: 1.13
+Summary: pomf.lain.la uploader.
+Home-page: https://github.com/NecRaul/lain.la-pomf-uploader
+Author: NecRaul
+Author-email: NecRaul <necraul@kuroneko.dev>
+License-Expression: LGPL-2.1-only
+Project-URL: Homepage, https://github.com/NecRaul/lain.la-pomf-uploader
+Project-URL: Documentation, https://github.com/NecRaul/lain.la-pomf-uploader#readme
+Project-URL: Repository, https://github.com/NecRaul/lain.la-pomf-uploader
+Project-URL: Issues, https://github.com/NecRaul/lain.la-pomf-uploader/issues
+Keywords: python,uploader,pomf,lain,lain.la,pomf.lain.la,kuroneko
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Internet :: WWW/HTTP
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyperclip>=1.8.2
+Requires-Dist: requests>=2.31.0
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+
+# lain.la-pomf-uploader
+
+pomf.lain.la uploader.
+
+## Requirements
+
+`requests` is used to upload the file.
+
+`pyperclip` is used to copy the link to the clipboard.
+
+If you want to build this on your own, you can install the requirements with
+
+```Python
+pip install -r requirements.txt
+```
+
+or install the package by running
+
+```Python
+pip install lain-upload
+```
+
+Python's native `os` (used to check for file size), `argparse` (parse return request and set command argument) and `setuptools` (used to build the script) packages are also used.
+
+## How it works
+
+Files below the file size 1GB can be uploaded to `pomf.lain.la` and `pomf2.lain.la` making necessary API calls to `https://pomf.lain.la/upload.php` endpoint.
+
+I just wrapped it inside said API calls inside Python and added validation to check for size. Links are printed on the terminal and copied to clipboard for ease of use.
+
+You can run the script with
+
+```Python
+lain-upload <file-path>
+```
+
+You can not upload files bigger than 1 gigabyte.
