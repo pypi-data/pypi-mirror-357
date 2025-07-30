@@ -1,0 +1,8 @@
+numpy
+scipy
+matplotlib
+pytest
+sphinx
+sphinx_rtd_theme
+recommonmark
+myst-nb

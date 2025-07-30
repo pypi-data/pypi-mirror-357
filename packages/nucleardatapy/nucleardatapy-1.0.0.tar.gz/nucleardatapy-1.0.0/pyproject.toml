@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools", "wheel", "sphinx"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nucleardatapy"
+authors = [
+    {name = "Jerome Margueron"},
+    {name = "Sudhanva Lalit"},
+    {name = "Mariana Dutra"},
+    {name = "Guilherme Grams"},
+    {name = "Rohit Kumar"},
+]
+description = "A toolkit for nuclear data processing and meta-analyses."
+license = {file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.9"
+version = "1.0.0"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+]
+
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License", # non-OSI Licenses
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[project-urls]
+Homepage = "https://github.com/jeromemargueron/nucleardatapy"
+Documentation = "https://nucleardatapy.readthedocs.io/en/latest/"
+Issues = "https://github.com/jeromemargueron/nucleardatapy/issues"
