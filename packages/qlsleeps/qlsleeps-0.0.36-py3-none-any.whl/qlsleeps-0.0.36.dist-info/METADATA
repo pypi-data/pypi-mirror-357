@@ -1,0 +1,28 @@
+Metadata-Version: 2.2
+Name: qlsleeps
+Version: 0.0.36
+Summary: a python analyse tool for QLan Sleep Analysis
+Home-page: http://8.136.42.241:8088/quanlan/python/qleegss/-/tree/dev
+Author: scg
+Author-email: shangchungang@eegion.com
+License: MIT License
+Keywords: eeg sleep staging analysis
+Platform: any
+License-File: LICENSE
+Requires-Dist: scipy
+Requires-Dist: numpy
+Requires-Dist: torch
+Requires-Dist: tqdm
+Requires-Dist: lspopt
+Requires-Dist: pandas
+Requires-Dist: reportlab
+Requires-Dist: openpyxl
+Requires-Dist: matplotlib
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: platform
+Dynamic: requires-dist
+Dynamic: summary
