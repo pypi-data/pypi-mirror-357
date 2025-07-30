@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/autoworkerz/__init__.py
+src/autoworkerz/core.py
+src/autoworkerz.egg-info/PKG-INFO
+src/autoworkerz.egg-info/SOURCES.txt
+src/autoworkerz.egg-info/dependency_links.txt
+src/autoworkerz.egg-info/requires.txt
+src/autoworkerz.egg-info/top_level.txt
+tests/test_main.py
