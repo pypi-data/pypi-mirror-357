@@ -1,0 +1,14 @@
+prs_commons/__init__.py,sha256=ddhEjFMg9IncjQYtBkRcyN5SLxGcx3TGU8j_GBMIzro,556
+prs_commons/__version__.py,sha256=PKB08bWrbST1EeA6ID6k6GedPUnp_kl0MAjxGAjYGVg,58
+prs_commons/core.py,sha256=nA5P-Dyy6xpvD7E-FPShUsbrlGMYZktPR0neendNu0c,852
+prs_commons/aws/__init__.py,sha256=b3ozF6mVdePo5Ct_qmbF7j2RU9zmjF7bAY8HwS0_swM,227
+prs_commons/aws/s3_client.py,sha256=_unw3aGLehiSPPLlRq5yV2EBhgiBL-OPiSGrmBtnEsQ,14338
+prs_commons/odoo/rpc_client.py,sha256=BEqq2JGLiBEp0xI1nUdjivQResVVzsU1TBOOT0KGW64,6418
+prs_commons/storage/base.py,sha256=z_rmnscJAHNP1HyvpbAEWnYmzXfw1V3aQAgzE93-MbQ,4938
+prs_commons/storage/bucket.py,sha256=gEfBAY0S7xZFF6A4ABq50IKP_d4a1MhnSMQM4AFfyz0,2436
+prs_commons-0.2.6.dist-info/licenses/LICENSE,sha256=YeD1QOvJXjHyQrzv55f7E5y6Lrb_9zVwTypbY4INQzo,1065
+prs_commons-0.2.6.dist-info/METADATA,sha256=ZciaB50_YvgMrzOCAyox69uwjAq0rn61ymbeIIcNnnk,2285
+prs_commons-0.2.6.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+prs_commons-0.2.6.dist-info/entry_points.txt,sha256=DNROEzaPILBKbX8-7kdymb_AeryX3kkzzj2I0KxB9Dg,53
+prs_commons-0.2.6.dist-info/top_level.txt,sha256=DMmui8oRpH7t2pdM0mL5fRS_2aW8tu6r-KHW0JonXeM,12
+prs_commons-0.2.6.dist-info/RECORD,,
