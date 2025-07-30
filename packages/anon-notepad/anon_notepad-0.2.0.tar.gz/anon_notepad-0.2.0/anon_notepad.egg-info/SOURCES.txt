@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+anon_notepad.egg-info/PKG-INFO
+anon_notepad.egg-info/SOURCES.txt
+anon_notepad.egg-info/dependency_links.txt
+anon_notepad.egg-info/entry_points.txt
+anon_notepad.egg-info/requires.txt
+anon_notepad.egg-info/top_level.txt
+noti/__init__.py
+noti/generator.py

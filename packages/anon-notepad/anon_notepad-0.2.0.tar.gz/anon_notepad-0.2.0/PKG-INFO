@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: anon-notepad
+Version: 0.2.0
+Summary: A Python package to with anon Notepad input on Windows.
+Home-page: https://github.com/PrinceYadav78/notepad
+Author: Prince
+Author-email: princecomputerlab0@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: google-generativeai
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+\## Installation
+
+
+
+You can install this package directly from PyPI:
+
+
+
+```bash
+
+pip install anon-notepad
+
