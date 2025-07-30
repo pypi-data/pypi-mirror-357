@@ -1,0 +1,8 @@
+package_backup/__init__.py,sha256=8oAxKUG747GUokmxjkrWejyJa5yPNEsoJDlXxoedxTw,21
+package_backup/simple_greet.py,sha256=0KA4rSwjQbCjm64dR2nQp6jHyaMRRNG7nEv9B_k2pN4,43
+script_testing/__init__.py,sha256=tj6AsYMALAV6uJ4-q5DZP7QxSnAAGoCbdOhNsdHbzVA,1596
+script_testing/simple_greet.py,sha256=F3pWkCxReQp416L8Nd1sgJgF16YRRfo_kiLDuMquF7Y,2719
+script_testing-0.1.1.dist-info/METADATA,sha256=OTch1wToULv1KzoDrJ-ke3x2rCFKnozZ35lnBOpz46Y,400
+script_testing-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+script_testing-0.1.1.dist-info/top_level.txt,sha256=bREt0Y-32KDAqxYejyOGtvdctqqnvQQn5zY2Nj9aPKg,30
+script_testing-0.1.1.dist-info/RECORD,,
