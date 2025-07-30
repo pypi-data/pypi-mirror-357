@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/CAKED.egg-info/PKG-INFO
+src/CAKED.egg-info/SOURCES.txt
+src/CAKED.egg-info/dependency_links.txt
+src/CAKED.egg-info/requires.txt
+src/CAKED.egg-info/top_level.txt
+src/caked/__init__.py
+src/caked/base.py
+src/caked/dataloader.py
+tests/test_disk_io.py
