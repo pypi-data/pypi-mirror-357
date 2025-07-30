@@ -1,0 +1,67 @@
+{
+  "original_request": "Create an MCP that analyzes text files and documents. It should be able to read various file types (txt, md, py, js, etc.), count words, lines, and characters, extract keywords, analyze sentiment, and generate summaries. The MCP should also be able to find similar files based on content analysis and provide file statistics.",
+  "generated_at": "2025-06-25T14:10:26.143169",
+  "project_name": "file-analyzer",
+  "analysis": {
+    "description": "MCP server for: Create an MCP that analyzes text files and documents. It should be able to read various file types (...",
+    "key_concepts": [
+      "file processing",
+      "creation operations",
+      "search functionality"
+    ],
+    "suggested_tools": [
+      {
+        "placeholder": "tool_one",
+        "description": "Primary tool - TODO: Implement based on requirements: Create an MCP that analyzes text files and documents. It should be able to read various file types (txt, md, py, js, etc.), count words, lines, and characters, extract keywords, analyze sentiment, and generate summaries. The MCP should also be able to find similar files based on content analysis and provide file statistics.",
+        "suggested_names": [
+          "create_item",
+          "add_entry",
+          "initialize"
+        ]
+      },
+      {
+        "placeholder": "tool_two",
+        "description": "Secondary tool - TODO: Implement based on requirements: Create an MCP that analyzes text files and documents. It should be able to read various file types (txt, md, py, js, etc.), count words, lines, and characters, extract keywords, analyze sentiment, and generate summaries. The MCP should also be able to find similar files based on content analysis and provide file statistics.",
+        "suggested_names": [
+          "list_items",
+          "search_data",
+          "query_items"
+        ]
+      },
+      {
+        "placeholder": "tool_three",
+        "description": "Additional tool - TODO: Implement or remove based on requirements: Create an MCP that analyzes text files and documents. It should be able to read various file types (txt, md, py, js, etc.), count words, lines, and characters, extract keywords, analyze sentiment, and generate summaries. The MCP should also be able to find similar files based on content analysis and provide file statistics.",
+        "suggested_names": [
+          "update_item",
+          "process_data",
+          "modify_entry"
+        ]
+      }
+    ],
+    "suggested_resources": [
+      {
+        "uri": "data://items",
+        "description": "TODO: List of items - implement based on requirements"
+      },
+      {
+        "uri": "resource://config",
+        "description": "TODO: Configuration data - implement based on requirements"
+      },
+      {
+        "uri": "data://status",
+        "description": "TODO: Status information - implement or remove based on requirements"
+      }
+    ],
+    "potential_dependencies": [
+      "spacy",
+      "nltk",
+      "scikit-learn"
+    ]
+  },
+  "implementation_hints": {
+    "data_storage": "Consider using JSON files, SQLite, or external APIs",
+    "error_handling": "Use ToolError for all user-facing errors",
+    "testing": "Test with MCP Inspector and the provided test harness",
+    "security": "Validate all inputs, sanitize file paths, handle auth if needed"
+  }
+}
