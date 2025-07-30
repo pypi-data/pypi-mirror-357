@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: Fable3D
+Version: 1.0.0
+Summary: Prosty silnik 3D w Pythonie
+Author: Twoje Imię
+Author-email: MichaŁ Lewandowski <slawek.1q2w3e4r@gmail.com>
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PySDL2>=0.9.17
+Requires-Dist: PyOpenGL>=3.1.6
+Requires-Dist: numpy>=1.20
+Requires-Dist: pyassimp>=5.2.5
+Requires-Dist: pillow>=11.2.1
+Dynamic: author
+Dynamic: license-file
+Dynamic: requires-python
