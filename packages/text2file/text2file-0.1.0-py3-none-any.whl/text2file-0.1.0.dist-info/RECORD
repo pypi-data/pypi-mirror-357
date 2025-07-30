@@ -1,0 +1,17 @@
+text2file/__init__.py,sha256=81ErRYy1Wf1g_rBqgHQ5cXgOZoF-lfwyLmzXlw8rhls,875
+text2file/__main__.py,sha256=ggvmAZGbe5mTRNoJ0guagPM9hUcnLaxbEwMbiqKVNXA,183
+text2file/cli.py,sha256=fprByrMSpgsW5t4hyQEaRB4RkMwRkWHucdsF8Noutyk,8887
+text2file/generators/__init__.py,sha256=64_62cmIOJy1KRtkyY5k0H8VoTzImRdGFOBOqjWkMk0,3947
+text2file/generators/archives.py,sha256=9sBHnRWYblRSU0kZS5bD073d7wgk_n3mx_Sfb1vHWWs,3108
+text2file/generators/base.py,sha256=WcXyG5lSsMX5Xu1eohCa0hSUbVBVqRRcGcbekeWedAI,785
+text2file/generators/image_set.py,sha256=zb36KbU8cU71kDgl5_uOIYa3SK2RQTXH7vpCHoFN6BI,4067
+text2file/generators/images.py,sha256=kaSB6828ZaeXEH-wxcd5S8cNuflGbO0_s9tJqo7Ysxc,3604
+text2file/generators/office.py,sha256=EaHbQ9jtNmgmSIHSqn5ocwYX8I7vX8LGV52W5dRW4OM,3320
+text2file/generators/pdf.py,sha256=3LCPgrRdvhtLHtsuyFtdBs8wnvavrsK43p4Lz2YKJ6g,2031
+text2file/generators/text.py,sha256=nnwGQqpg76JSvFAxyEkRqP6lkSF0-Ncd0uUq__MNsyA,1808
+text2file/generators/validators.py,sha256=R19iTL0FPcGqaY4LOWYtOzeAbQhB8fv__pJVJPWx7A4,7883
+text2file/generators/video.py,sha256=DiY9bykBsM65DIy_8zbuLYD4WylkyBsXtR884ScCy5Q,6262
+text2file-0.1.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+text2file-0.1.0.dist-info/METADATA,sha256=2S6oB4s3Ugd00y1A_7eV7I58mBldp2Uh9kXq3BCk7Tg,13511
+text2file-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+text2file-0.1.0.dist-info/RECORD,,
