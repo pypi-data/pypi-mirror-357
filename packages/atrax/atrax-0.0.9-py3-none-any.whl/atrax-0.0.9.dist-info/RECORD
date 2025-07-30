@@ -1,0 +1,16 @@
+atrax/__init__.py,sha256=oFNP5tvFhkliWE0Erb7vNHco3KCL76MqPNeu0T0WTN4,4912
+atrax/version.py,sha256=i_8WJmpfvLpsjKXabWI0e47fVoWC1Es8pVboBDn2ORg,21
+atrax/core/__init__.py,sha256=LJM3fVnGMWrGX7rqzQof0qeZq7ou2DjDda4nk4nJl50,109
+atrax/core/customdatetime.py,sha256=SpmcS-RMBL0ghjaZ3BFVALtcT7tpkLRmQoohMmy4NSY,7023
+atrax/core/cut.py,sha256=252Q2kU9LcmtOVyMUYA8q5Hibdcx2kE3_N9Hj591bZc,2017
+atrax/core/dataset.py,sha256=hWV9pjnN9fHFTfzR7i4VvA5IATgV_VXEM8H9bVvba8o,20414
+atrax/core/group.py,sha256=EC3FhZJQPVBd6YnO9BdHa3-kXnMDUCr0CWCYw97lsdk,5935
+atrax/core/locators.py,sha256=AS6MyfhQxi9gjUB6OC68PkfCVBkC7SxOsP3TP8Hb4gM,3583
+atrax/core/qcut.py,sha256=4hbcfOs2T_8qYiiHMSI7g2TfjM66Sx7sU9r0Uc3kbjM,984
+atrax/core/rolling.py,sha256=8fynOgGLcc7WHvj246NDRd8kGTDPM62H0isFS6RQLh8,1066
+atrax/core/series.py,sha256=8jxi8tYQFfKv6hjWgz_ry-CNDv400NOCJIUCJgNJfgU,17032
+atrax-0.0.9.dist-info/licenses/LICENSE,sha256=5c26u-GuYOjqzUDQMGGCYpHi9lRHuEZvG-jajFEklaI,34817
+atrax-0.0.9.dist-info/METADATA,sha256=89G7qVr0E0P9CJSMC5PHsGx1rHzq-jtuDYCaHl6fLrA,1773
+atrax-0.0.9.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+atrax-0.0.9.dist-info/top_level.txt,sha256=4ug1sWw07z605AAut5rjz3_GlVa2eCvQU__eDcJtAD0,6
+atrax-0.0.9.dist-info/RECORD,,
