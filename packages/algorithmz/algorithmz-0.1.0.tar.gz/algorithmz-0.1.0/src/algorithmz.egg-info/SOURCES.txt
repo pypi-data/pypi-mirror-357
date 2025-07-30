@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/algorithmz/__init__.py
+src/algorithmz/core.py
+src/algorithmz.egg-info/PKG-INFO
+src/algorithmz.egg-info/SOURCES.txt
+src/algorithmz.egg-info/dependency_links.txt
+src/algorithmz.egg-info/requires.txt
+src/algorithmz.egg-info/top_level.txt
+tests/test_main.py
