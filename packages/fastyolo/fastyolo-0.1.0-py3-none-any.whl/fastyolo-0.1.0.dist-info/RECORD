@@ -1,0 +1,10 @@
+fastyolo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastyolo/classifier.py,sha256=1MDlVkVGisbrwkUmtYJg0o1yod6jRGtxBxzuV6gJMWo,101
+fastyolo/core.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastyolo/detector.py,sha256=WODViS08YMFrbcSPkWDRVaKcxotMvHIFdTU-h56NSHE,699
+fastyolo/utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastyolo-0.1.0.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastyolo-0.1.0.dist-info/METADATA,sha256=ENBqhiIa5LtUqsnU3ynZAuyq0oHB3w9b4xZkv-QbjMk,557
+fastyolo-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fastyolo-0.1.0.dist-info/top_level.txt,sha256=MhIh4DiStZYOd7PxhpkofMmZWBzZ4OsNnZ5Dh5qm-pw,9
+fastyolo-0.1.0.dist-info/RECORD,,
