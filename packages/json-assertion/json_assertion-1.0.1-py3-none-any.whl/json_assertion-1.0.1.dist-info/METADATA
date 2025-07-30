@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: json-assertion
+Version: 1.0.1
+Summary: Package assisting in asserting JMESPath queries against JSON data.
+Author-email: Arne Demmers <arne.demmers@telenetgroup.be>
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: jmespath~=1.0
+Provides-Extra: build
+Requires-Dist: uv~=0.7; extra == 'build'
+Description-Content-Type: text/markdown
+
+# json-assertion
+Package assisting in asserting JMESPath queries against JSON data.
