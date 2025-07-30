@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+python_weaver.egg-info/PKG-INFO
+python_weaver.egg-info/SOURCES.txt
+python_weaver.egg-info/dependency_links.txt
+python_weaver.egg-info/entry_points.txt
+python_weaver.egg-info/requires.txt
+python_weaver.egg-info/top_level.txt
+weaver/__init__.py
+weaver/agent.py
+weaver/blueprint.py
+weaver/cli.py
+weaver/config.py
+weaver/exceptions.py
+weaver/project.py
