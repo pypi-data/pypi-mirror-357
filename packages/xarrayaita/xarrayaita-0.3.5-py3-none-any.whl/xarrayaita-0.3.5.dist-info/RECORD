@@ -1,0 +1,12 @@
+xarrayaita/__init__.py,sha256=zvrQEpbLb6kUYf4JbVH3rU816MVGVAWyRgtGUx0980k,159
+xarrayaita/aita.py,sha256=brGzqVA5fufWG-tsLyIOdGunj1DdrTDhakZG-B73Cg8,1347
+xarrayaita/aita_export.py,sha256=xtAn2WE3dpw9BfLdYY0Ih6RjGD2ofmUdUlKmR5wlWs0,6863
+xarrayaita/aita_geom.py,sha256=olZffQqAaNH8Vhrb-aR_3EdCUXjkCEL3v7nkYPuLXD4,6679
+xarrayaita/aita_interactive_nb.py,sha256=TOJ1FZGXgCtSynS6iGzIngoJbsmP_qFUV7JQ2nqeQgk,16007
+xarrayaita/aita_plot.py,sha256=sitVEzjxFNgchlM93RckdWPNQT-nikDENv07nyKrEcA,975
+xarrayaita/aita_processing.py,sha256=Dcq22-fhQw9PjpYm_yIEvx6P8w_zsZzPek6VKZlsee4,16219
+xarrayaita/loadData_aita.py,sha256=1nCw0jIA1JjM8zBbcsBW-x5fnBDuJ9XBM1e51eN9nAY,8660
+xarrayaita-0.3.5.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+xarrayaita-0.3.5.dist-info/METADATA,sha256=tr7DHnmJ6-CKgk0JwG0oepHa6-W0BTUwmKnJZmKBhMA,2223
+xarrayaita-0.3.5.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+xarrayaita-0.3.5.dist-info/RECORD,,
