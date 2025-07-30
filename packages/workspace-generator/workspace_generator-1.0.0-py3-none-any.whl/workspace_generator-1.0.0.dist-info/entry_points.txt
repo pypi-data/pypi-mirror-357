@@ -1,0 +1,2 @@
+[console_scripts]
+generate-workspace = workspace_generator.cli:main

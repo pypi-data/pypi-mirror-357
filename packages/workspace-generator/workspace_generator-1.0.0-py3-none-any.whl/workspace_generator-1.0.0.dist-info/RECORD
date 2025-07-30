@@ -1,0 +1,8 @@
+workspace_generator/__init__.py,sha256=FETw91jCRVOjzgiQkR5xug4I96oUGZ2fXHc7AbJ3iYI,111
+workspace_generator/cli.py,sha256=n0ObpcaKqhlseeuGv75FypSmBdjumubxaCqyd8-yNEM,964
+workspace_generator/generator.py,sha256=P_MSRpvU5rycfwipkSIzGa6BpTnF4Rq-ASIYdZejXAU,1725
+workspace_generator-1.0.0.dist-info/METADATA,sha256=XLNTBnPVm0KR5-Ymhm5STx_VS2F3JwnUGR9Cq0NHImE,1177
+workspace_generator-1.0.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+workspace_generator-1.0.0.dist-info/entry_points.txt,sha256=XUW4QkZ2-HnC8hHbhi-j1BisoWjo_H6kcier6BuMjTA,68
+workspace_generator-1.0.0.dist-info/top_level.txt,sha256=D_f1765ZT-SSf_e36ZxPqMwP2_8GHBrXym8BudAFHZg,20
+workspace_generator-1.0.0.dist-info/RECORD,,
