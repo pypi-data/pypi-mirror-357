@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.py
+atwoone/atwoone.egg-info/PKG-INFO
+atwoone/atwoone.egg-info/SOURCES.txt
+atwoone/atwoone.egg-info/dependency_links.txt
+atwoone/atwoone.egg-info/top_level.txt
+atwoone/thalaivar/__init__.py
