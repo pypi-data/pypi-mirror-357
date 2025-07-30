@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "workspace-generator"
+version = "1.0.0"
+description = "Generate VS Code workspace files for multi-package projects"
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+generate-workspace = "workspace_generator.cli:main"
