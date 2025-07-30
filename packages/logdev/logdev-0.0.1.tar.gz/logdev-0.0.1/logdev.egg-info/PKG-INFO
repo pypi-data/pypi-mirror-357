@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: logdev
+Version: 0.0.1
+Summary: Reserved package name for logdev.
+Author: Zayry
+Author-email: admin@zayry.com
+Requires-Python: >=3.7
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-python
+Dynamic: summary
