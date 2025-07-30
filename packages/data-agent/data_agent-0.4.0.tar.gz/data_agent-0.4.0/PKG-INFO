@@ -1,0 +1,78 @@
+Metadata-Version: 2.4
+Name: data-agent
+Version: 0.4.0
+Summary: Data Agent is a python library for pipelining real-time and historical data to and from industrial historians and control systems
+Home-page: https://github.com/imubit/data-agent/
+Author: Meir Tseitlin
+License: LGPLv3
+Project-URL: Documentation, https://github.com/imubit/data-agent/
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+License-File: LICENSE.txt
+Requires-Dist: dynaconf
+Requires-Dist: pandas
+Requires-Dist: msgpack
+Requires-Dist: zstandard
+Requires-Dist: aiomisc
+Requires-Dist: aiodebug
+Requires-Dist: apscheduler
+Requires-Dist: cachetools
+Requires-Dist: amqp-fabric
+Requires-Dist: pywin32>=1.0; platform_system == "Windows"
+Provides-Extra: testing
+Requires-Dist: setuptools; extra == "testing"
+Requires-Dist: pytest; extra == "testing"
+Requires-Dist: pytest-cov; extra == "testing"
+Requires-Dist: pytest-asyncio==0.26.0; extra == "testing"
+Requires-Dist: aiomisc-pytest; extra == "testing"
+Dynamic: license-file
+
+[![PyPI-Server](https://img.shields.io/pypi/v/data-agent.svg)](https://pypi.org/project/data-agent/)
+[![Coveralls](https://img.shields.io/coveralls/github/imubit/data-agent/main.svg)](https://coveralls.io/r/imubit/data-agent)
+
+
+
+# Data Agent
+
+Python package for accessing real-time and historical data on industrial historians and control systems.
+Different historian protocols and APIs are implemented through standalone plugins:
+
+* https://github.com/imubit/data-agent-osisoft-pi
+* https://github.com/imubit/data-agent-aspen-ip21
+
+## Description
+
+The package provides a unified data access API having several usage scenarios:
+
+* As a Python package
+* As a command line CLI
+* As a service (Windows or Linux) using AMQ protocol
+
+## Installation
+
+```commandline
+pip install data-agent
+```
+
+Install the plugins required for communicating with the target systems
+
+## Python Package Usage
+
+```python
+from data_agent.local_agent import LocalAgent
+
+with LocalAgent() as agent:
+
+    agent.api.list_supported_connectors()
+    agent.api.create_connection(...)
+```
+
+
+## Command Line Usage
+
+Start broker based agent
+```bash
+da-broker-svc --service.id my_service --broker.uri amqp://guest:guest@192.168.4.23/
+```
