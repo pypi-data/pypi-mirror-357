@@ -1,0 +1,16 @@
+ja/__init__.py,sha256=yQph7eFuAB-YfytGkv_EBgsDidgLlPdYWwuqGH7xSF4,1301
+ja/cli.py,sha256=bzF9rzJh_11BYJyXU5Rlq7ljMRAR0Dm61WG8tF-mxo0,11086
+ja/commands.py,sha256=MfJ-wjl-2PuyQO_am_ADaBZTPtchZcyqpybXjnrRJhg,11663
+ja/core.py,sha256=Sw1WyJQH8aZdaNImHIamk4MTP_Kuzkak8KmZgNQEmLg,10854
+ja/export.py,sha256=eyAxT42fPFQ5c-B5KKCtb1-FheA-F4qeiSgOvvS-uwE,6686
+ja/exporter.py,sha256=6t0SoMdroQOGi76ye6cvqk1a50aX4Ci1co8BNcg41oM,3480
+ja/groupby.py,sha256=ZoNK-gKT3XEO1q1L-d962W1XYpp_ak0ui24LpJAPFMg,10867
+ja/importer.py,sha256=BS3roWNUy1JMIsXjkAC2DsiAv7dSWH3ZhCMqr3mmIBA,3675
+ja/repl.py,sha256=7x-5hTzqAkrCJ4c-eb9-hBteeG3xJEPQ4TXaszgfpJg,16947
+ja/schema.py,sha256=GNWbVNJKunyqf45m9l8urjmRbDAIX6qESFaTM3q09jw,7064
+jsonl_algebra-1.0.dist-info/licenses/LICENSE,sha256=1eh_aOAZz71hpva42M9f8Vqj_FtSUqzE-1EimifmM_8,1068
+jsonl_algebra-1.0.dist-info/METADATA,sha256=c5-6_4Zz6vkLyLAjvHZy--x0GDSZXc8ogVvrh6YfnNg,12355
+jsonl_algebra-1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+jsonl_algebra-1.0.dist-info/entry_points.txt,sha256=JkmXTyr5-g06Dzf82-YUk16_hlMW52xEBRMqN-jhgkM,35
+jsonl_algebra-1.0.dist-info/top_level.txt,sha256=HVfy0Xy3Szm9DEy9aWtyzC1Ml_jYtcbaUemb3jW0F-I,3
+jsonl_algebra-1.0.dist-info/RECORD,,
