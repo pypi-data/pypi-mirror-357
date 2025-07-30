@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ioteq-cloud-iot"
+version = "1.0.5"
+description = "Cloud IoT API client library"
+readme = "README.md"
+license = {text = "Apache 2.0"}
+authors = [
+    {name = "Angel Oberto", email = "angel.oberto@io-teq.com"}
+]
+maintainers = [
+    {name = "Angel Oberto", email = "angel.oberto@io-teq.com"}
+]
+keywords = ["iot", "cloud", "api", "client"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Topic :: Internet",
+]
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/aeoberto/python-iot"
+Repository = "https://github.com/aeoberto/python-iot"
+Documentation = "https://github.com/aeoberto/python-iot#readme"
+"Bug Reports" = "https://github.com/aeoberto/python-iot/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ioteq*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.proto", "py.typed"] 
