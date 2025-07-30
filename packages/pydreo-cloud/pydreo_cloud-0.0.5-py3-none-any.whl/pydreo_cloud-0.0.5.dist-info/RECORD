@@ -1,0 +1,10 @@
+pydreo/__init__.py,sha256=UcllwXyjck0EiMwEO3uz6ubexzhgt22jzOvuZdvZ460,468
+pydreo/client.py,sha256=qnklsvP9G4rPjN_IY2nigUaNH6jjFs_g6Cg-BeO_tac,5580
+pydreo/const.py,sha256=9w2EEH5uhtJqDIN-eRt8YH6e4d7_N1DQd8pKYbSGUao,2008
+pydreo/exceptions.py,sha256=XYdy5ipgrlYP7j22SBrRyiRVrttpXX2Ogam45tE9FtI,1572
+pydreo/helpers.py,sha256=iM50NycU7dQCh4tvL5tn4MPZ9Sc6KYZDNAvWrwgwjSo,8678
+pydreo_cloud-0.0.5.dist-info/licenses/LICENSE,sha256=rLs4dKDVMuGJTp9F_eX1-R_PA7erNL8n6HZvGVzFMAQ,1066
+pydreo_cloud-0.0.5.dist-info/METADATA,sha256=SHq__SJV-PtK90cmPRZZUta95qgO2RPFEmOVnds7aPQ,605
+pydreo_cloud-0.0.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pydreo_cloud-0.0.5.dist-info/top_level.txt,sha256=Fju7_8EMoUeosz-_3VlS0fGMTqR7_F6B03WpjC-9114,7
+pydreo_cloud-0.0.5.dist-info/RECORD,,
