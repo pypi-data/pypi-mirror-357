@@ -1,0 +1,2 @@
+[console_scripts]
+divoom-gaming-gate = divoom_gaming_gate.main:main
