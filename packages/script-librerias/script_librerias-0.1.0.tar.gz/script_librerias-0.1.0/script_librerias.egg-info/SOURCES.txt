@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+nh_lib/__init__.py
+nh_lib/script_librerias.py
+script_librerias.egg-info/PKG-INFO
+script_librerias.egg-info/SOURCES.txt
+script_librerias.egg-info/dependency_links.txt
+script_librerias.egg-info/top_level.txt
