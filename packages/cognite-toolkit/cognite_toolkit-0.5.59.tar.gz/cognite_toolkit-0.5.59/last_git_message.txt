@@ -1,0 +1,34 @@
+[CDF-24984] 🗺 CogniteMigrate model (#1643)
+
+# Description
+
+Stacked on #1644, #1645
+
+## Deploys the CogniteMigration
+
+![image](https://github.com/user-attachments/assets/29384d56-0daa-4267-af68-b850f286633d)
+
+This model will be required to run any other migration command. The
+thinking is that migrating any of the core asset-centric resources
+`assets`, `events`, `timeseries`, `files` and `sequences` should have an
+entry in this model. Then, applications such as Charts, Canvas as well
+as resources such as 3D and annotations can use this mapping in their
+migration.
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Added
+
+- [Alpha] Added the `cdf migrate prepare` command that is used to deploy
+the `CogniteMigrate` model used to store mappings from asset-centric to
+data modeling.
+
+## templates
+
+No changes.
