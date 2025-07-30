@@ -1,0 +1,8 @@
+finufft-2.4.0.dist-info/RECORD,,
+finufft-2.4.0.dist-info/WHEEL,sha256=vtTrF6PKxCsPSJXANWUBQzB6FTyIVYqiasIUCj8qTCU,111
+finufft-2.4.0.dist-info/METADATA,sha256=EjjH7f5c0Dz22Fi9d1bMifxcrepWBgSmpP2GzC9OJXs,1682
+finufft/libfinufft.dylib,sha256=82ZOklbFSvuy2n3W2jstnzZ2-njZv_B8SiFMdxTf-BA,2385216
+finufft/__init__.py,sha256=UXp5s2buRW7z8ysZND74xkNynb-5yIox78HOjkxTIXs,910
+finufft/_interfaces.py,sha256=cbodO5AobOZTKrKSduKGb04Rz1SYgASjOBWv34sT-BM,30379
+finufft/_finufft.py,sha256=uceSAU-0gWE9J_K0QM5hrfXc7r4islL0CgaQilIjUo8,4827
+finufft/.dylibs/libomp.dylib,sha256=JwRr8HVhiE0r6ranJzeCTW3rEe827R48YpLaqHcJNPM,735616
