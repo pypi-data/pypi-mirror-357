@@ -1,0 +1,10 @@
+vs_score/__init__.py,sha256=ISO7DhiQphe-qcu8Z2pSDKKlGwEYLASzdSMZH0iM13M,77
+vs_score/feature_engineering.py,sha256=_dt7DC2iCEMGvXiKkx9VHohfrT_-JjiqgdsYn4Dd_tU,5453
+vs_score/merge_clean.py,sha256=7brTj7pHsPRixk0vGrOt6bIkJ_-XbRD6yC5heiDLuVw,4779
+vs_score/predict_api.py,sha256=vZqDWApJYpWzj-IOzl85onE5k-Ex_VT-gZctkT_Lvsw,4212
+vs_score/train_model.py,sha256=go2-pv4TSgqumRaDpmYpr1TvKTz_FexC9q3UCmKcmDU,1379
+vs_score-0.1.0.dist-info/licenses/LICENSE,sha256=6qDJONd82GGiyBVAn9EAojje_7otE0zXaI1SNJ9WczY,1083
+vs_score-0.1.0.dist-info/METADATA,sha256=Gin03lQcGto9l42NyxoDkbCMaE9i0jzw0Et0pkCz5WE,2552
+vs_score-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+vs_score-0.1.0.dist-info/top_level.txt,sha256=zhHHpT7nfmhZKnlcmWN3g5OMaAfXs82oN3b8wIPOizk,9
+vs_score-0.1.0.dist-info/RECORD,,
