@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: cursofiap-package-acrossi
+Version: 1.0.0
+Summary: Descricao da sua lib cursoFiap
+Home-page: https://github.com/AngeloCRossi/MLET_PYTHON_ML_IA_AULA2/tree/744ea9db06fe2ff4b011a092dc9e0c022ca4bdd0/AULA3
+Author: Angelo Rossi
+Author-email: yrc_legna@hotmail.com
+License: MIT
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: summary
+
+# CursoFiap
+
+A simple example library.
+
+## Installation
+
+```sh
+pip install cursoFiap
+```
+
+## Usage
+
+```python
+from cursoFiap import hello_world
+
+print(hello_world())
+```
