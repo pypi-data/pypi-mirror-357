@@ -1,0 +1,91 @@
+# AskPablos Scrapy API Middleware
+
+**AskPablosScrapyAPI** is a Scrapy downloader middleware that allows your spiders to transparently route specific requests through an external proxy API like AskPablos. It supports headless browser mode and rotating proxies on a per-request basis, while integrating cleanly with Scrapy's native settings system.
+
+---
+
+## 🚀 Features
+
+- ✅ Only activates for requests that explicitly ask for proxy routing
+- ✅ Supports rotating proxies and headless browser rendering
+- ✅ Compatible with per-spider `CUSTOM_SETTINGS`
+- ✅ Automatically signs requests using HMAC
+- ✅ Clean plug-and-play design for reuse across Scrapy projects
+
+---
+
+## 📦 Installation
+
+Install via pip:
+
+```bash
+pip install askpablos-scrapy-api
+```
+
+Or directly from the repository:
+
+```bash
+pip install git+https://github.com/fawadss1/askpablos-scrapy-api.git
+```
+
+---
+
+## 🔧 Quick Setup
+
+1. Add the middleware to your Scrapy project settings:
+
+```python
+# settings.py
+DOWNLOADER_MIDDLEWARES = {
+    "askpablos_scrapy_api.AskPablosScrapyAPI": 543,
+}
+
+# API credentials
+API_KEY = "your-api-key"
+SECRET_KEY = "your-secret-key"
+```
+
+2. Use in your spider by adding `askpablos_api_map` to the request meta:
+
+```python
+def start_requests(self):
+    yield scrapy.Request(
+        url="https://example.com",
+        callback=self.parse,
+        meta={
+            "askpablos_api_map": {
+                "browser": True,        # Use headless browser
+                "rotate_proxy": True    # Use rotating proxy IP
+            }
+        }
+    )
+```
+
+---
+
+## 📚 Documentation
+
+For detailed usage instructions and advanced configurations:
+
+- [Usage Guide](https://github.com/fawadss1/askpablos-scrapy-api/blob/main/docs/usage.md)
+- [FAQ](https://github.com/fawadss1/askpablos-scrapy-api/blob/main/docs/faq.md)
+
+---
+
+## 📋 Requirements
+
+- Python 3.7+
+- Scrapy 2.6+
+- Valid AskPablos Proxy API credentials
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## 👤 Author
+
+Fawad Ali ([@fawadss1](https://github.com/fawadss1))

@@ -1,0 +1,21 @@
+[project]
+name = "askpablos-scrapy-api"
+version = "0.1.0"
+description = "Scrapy middleware to route requests through AskPablos Proxy API"
+authors = [
+    { name="Fawad Ali", email="fawadstar6@gmail.com" }
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "scrapy>=2.6.0",
+    "requests>=2.25.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/fawadss1/askpablos-scrapy-api"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
