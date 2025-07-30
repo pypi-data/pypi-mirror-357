@@ -1,0 +1,57 @@
+# 任务：生成项目信息管理查询列表接口（分页）
+
+## 接口名称
+/project/pageList
+
+## 请求参数
+-项目名称 (模糊查询, String, 可选)
+-行政区（精确查询，BigDecimal，可选）
+-项目类型（精确查询，Integer，可选），[枚举值见表字段(gxrc_project_info.project_type)描述]
+-填报开始时间（Date，可选，格式：yyyy-MM-dd）
+-填报结束时间（Date，可选，格式：yyyy-MM-dd）
+-可租面积-最小值（BigDecimal，可选）
+-可租面积-最大值（BigDecimal，可选）
+-免租期（BigDecimal，可选）
+-免租期后优惠租金（BigDecimal，可选）
+-项目位置校准（Integer，可选），[不传-全部、1-已校准、0-未校准]
+-排序字段（sortField，可选，默认按填报日期）[1-总面积、2-可出租、3-已锁定、4-已出租、5-填报日期]
+-排序类型（sortType，可选，默认降序）[1-升序、0-降序]
+
+## 响应参数
+-项目名称 (String)
+-行政区 (String)
+-项目类型 (String)
+-总面积 (BigDecimal)
+-可出租 (BigDecimal)
+-已锁定 (BigDecimal)
+-已出租 (BigDecimal)
+-免租期 (String)
+-免租期类型 (Integer)
+-免租期最小值 (BigDecimal)
+-免租期最大值 (BigDecimal)
+-优惠租金 (String)
+-优惠租金类型 (Integer)
+-优惠租金最小值 (BigDecimal)
+-优惠租金最大值 (BigDecimal)
+-填报日期 (Date，格式：yyyy-MM-dd)
+-项目位置校准 (Integer)
+-项目Id (Long，表gxrc_project_info的主键Id)
+-项目状态 (Integer)，[枚举值见表字段(gxrc_project_info.status)描述]
+-项目状态名称 (String)
+
+## 涉及数据库表结构
+gxrc_project_info
+查看文件：业务表结构.sql
+
+## 示例
+用户扩展表对象功能（UserExtendController、UserExtendService、UserExtendDTO、UserExtendVO、UserExtendMapper、UserExtendMapper.xml）
+
+## 业务规则
+1、参考项目示例，生成或更新controller、service、dto、mapper、vo对象，统一加前缀：GxrcProjectInfo。
+2、填报日期对应gxrc_project_info.create_time字段。
+3、实现分页和排序功能（排序字段见查询条件参数说明）。
+4、免租期处理：
+-SQL查询：免租期类型字段(free_period_type)=1，则free_period_min={查询参数}，免租期类型字段(free_period_type)=2，则{查询参数}>=free_period_min and {查询参数}<free_period_max。
+-Service层处理：免租期类型free_period_type=1，返回则free_period_min，免租期类型free_period_type=2，返回free_period_min~free_period_max，使用stripTrailingZeros.toPlainString()格式化。
+5、免租期后优惠租金处理：参考免租期处理逻辑。
+6、项目类型和项目状态处理，如项目类型：Service层使用枚举(ProjectType，不存在则创建)处理，返回字符串。

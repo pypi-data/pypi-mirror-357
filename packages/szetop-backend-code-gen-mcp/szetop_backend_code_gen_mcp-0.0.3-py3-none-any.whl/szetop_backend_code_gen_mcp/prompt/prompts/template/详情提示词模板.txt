@@ -1,0 +1,73 @@
+# 任务：生成项目信息管理详情接口
+
+## 接口名称
+/project/detail
+
+## 请求参数
+-项目ID（Integer，必填）
+
+## 响应参数
+-项目信息（ProjectDetailVO，对应表gxrc_project_info）
+    -项目ID（Integer）
+    -项目名称（String）
+    -项目类型（Integer）
+    -项目类型名称（String），[枚举值见表字段(gxrc_project_info.project_type)描述]
+    -行政区划编号（Integer）
+    -详细地址（String）
+    -房屋编码（String）
+    -所属区联系人（String）
+    -所属区联系电话（String）
+    -免租期类型（Integer）
+    -免租期_最小值（Integer）
+    -免租期_最大值（Integer）
+    -优惠租金类型（Integer）
+    -优惠租金-最小值（Double）
+    -优惠租金-最大值（Double）
+    -优惠政策（String）
+    -申请条件（String）
+    -主干道（String，可选）
+    -地铁站名（String，可选）
+    -公交站名（String，可选）
+    -配套设施（String，多个用","隔开）
+    -项目图片数组（ProjectImages,对应表gxrc_attachment_info，外键：project_id）
+            -附件ID（Integer）
+            -附件名称（String）
+            -附件大小（Integer）
+            -附件路径（String）
+            -状态（Integer）
+            -图片压缩路径（String）
+    -园区基本信息（ProjectParkBaseInfo，对应表gxrc_park_base_info）
+        -园区总建筑面积（㎡）（Double）
+        -园区空置面积（㎡）（Double）
+        -园区总楼栋数量（Integer）
+        -建成日期（年）（Integer）
+        -独立围墙（Integer）
+        -四至（边界路名）（String）
+        -停车位个数（Integer）
+        -联系人（String）
+        -咨询电话（String）
+        -物业管理公司（String）
+        -物管公司联系电话（String）
+        -管理费（元/㎡/月）（String）
+        -园区介绍（String）
+
+## 涉及数据库表结构
+gxrc_project_info、gxrc_park_base_info、gxrc_attachment_info
+查看文件：表结构.sql
+
+## 基本要求
+1、参考项目已有代码风格和规范编写代码。
+2、前端传入的查询参数要按要求校验，比如格式、是否可空、长度等，简单的在dto层加注解校验，复杂的在service层实现校验逻辑。
+3、根据提供的数据库表结构生成SQL查询语句，查询数据如需处理，尽量不要在SQL语句处理，应在service层处理。
+4、使用MyBatis Plus框架进行数据库操作、复杂操作编写SQL语句实现（使用mapper层xml）。
+5、使用Lombok简化代码，减少重复代码。
+6、使用Swagger注解生成API文档。
+7、数据表字段属于枚举类型的，应创建枚举值（参考：UserExtendEducationEnum），数据需要处理在service层转换处理。
+8、所有的类和方法都要加上注释（参考上下文代码，作者：yaoyanhua、时间：2025-04-09）。
+
+## 示例
+用户扩展表对象功能（UserExtendController、UserExtendService、UserExtendDTO、UserExtendVO、UserExtendMapper、UserExtendMapper.xml）
+
+## 业务规则
+1、参考项目示例更新项目管理的controller、service对象、生成详情vo对象。
+2、项目图片数组：查询表gxrc_attachment_info，查询条件：project_id={项目id} and attach_type=1。
