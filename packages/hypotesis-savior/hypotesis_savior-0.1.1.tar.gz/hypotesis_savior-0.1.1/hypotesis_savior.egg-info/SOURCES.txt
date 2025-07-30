@@ -1,0 +1,9 @@
+pyproject.toml
+setup.py
+hypotesis_savior/__init__.py
+hypotesis_savior/core.py
+hypotesis_savior.egg-info/PKG-INFO
+hypotesis_savior.egg-info/SOURCES.txt
+hypotesis_savior.egg-info/dependency_links.txt
+hypotesis_savior.egg-info/requires.txt
+hypotesis_savior.egg-info/top_level.txt
