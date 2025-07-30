@@ -1,0 +1,17 @@
+swiflow-0.0.1.dist-info/METADATA,sha256=7o_jdbosKgd57LsgrVm2evDqRy1y7XreBgJyQnK7lQs,2835
+swiflow-0.0.1.dist-info/WHEEL,sha256=J2w-whO1S1XKUpZEBG5qJqV1duL63YWlZPgQlwzjf0s,106
+swiflow-0.0.1.dist-info/licenses/LICENSE,sha256=OM7iTJtpDbPWZniC6fzgHKrojxZ0NeJOCLhimJV3eao,10758
+swiflow.libs/libgcc_s-e52197c3.so.1,sha256=vkPW1Auw6CH9Bjk7frmX3hry_1H9c0tRI0Ncyg71WUI,724137
+swiflow/__init__.py,sha256=Ft9bFKfBe8-cdCN5M-v_P2uiBnSBTb4fuasXvQ8Lgu4,38
+swiflow/_common.py,sha256=HnxIZKMlIjisu69XPE8Bgwt0oxH5Gm2xoDHfnpSsUuE,8853
+swiflow/_impl.abi3.so,sha256=ft6bSzYWj2E2Dlkki4j_HcKvPMAl3BVm5m8k00pyvy8,1117001
+swiflow/_impl/__init__.pyi,sha256=8lHjnPeu2ywa5mAxzyY0ztrMJu_ZLVZsduVeMxWkJ4k,1061
+swiflow/_impl/flow.pyi,sha256=B7WAv92zeZt1Zx5Q0gCdJ6v-ShDK6T4A6RgI_Tj9tZc,223
+swiflow/_impl/gflow.pyi,sha256=3ELCUqBWjrO8BD8e2Bv7ElthGpWktchK0neon5Vy7WQ,369
+swiflow/_impl/pflow.pyi,sha256=r-zA9HIJ0jpEJbjfu1_XVMLI9BUUENbK2Zuc0bRj2yM,419
+swiflow/common.py,sha256=J6tVCHI4DmApuFWmDYhDCzddJPdcVgBeaEhG6DCckPs,1112
+swiflow/flow.py,sha256=Pa46BLEZo9rDEEGEI4QZPIbaHnqF9d7-UjZRT1QOiks,2275
+swiflow/gflow.py,sha256=5hcvDPmZMs_8dCekwj2JNdAAAXiilg2I8-UeKbppNWs,3089
+swiflow/pflow.py,sha256=HKrzycWOJRxMcn48tUhmhHu9rsISqr-kbx8GOi1z9Q0,3391
+swiflow/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+swiflow-0.0.1.dist-info/RECORD,,
