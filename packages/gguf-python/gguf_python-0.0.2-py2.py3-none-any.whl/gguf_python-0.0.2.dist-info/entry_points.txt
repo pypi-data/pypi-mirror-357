@@ -1,0 +1,3 @@
+[console_scripts]
+gguf-tensor-remover=gguf_python.re:main
+
