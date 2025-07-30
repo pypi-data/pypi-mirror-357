@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: otel-custom-distro
+Version: 0.1.0
+Summary: Custom OpenTelemetry SDK extensions
+Home-page: https://github.com/yourusername/otel-custom-distro
+Author: JATIN
+Author-email: your.email@example.com
+License: MIT
+Requires-Python: >=3.8
+Requires-Dist: opentelemetry-api==1.33.1
+Requires-Dist: opentelemetry-sdk==1.33.1
+Requires-Dist: opentelemetry-distro==0.54b1
+Requires-Dist: opentelemetry-exporter-otlp==1.33.1
+Requires-Dist: opentelemetry-exporter-otlp-proto-grpc==1.33.1
+Requires-Dist: opentelemetry-instrumentation==0.54b1
+Requires-Dist: opentelemetry-instrumentation-flask==0.54b1
+Requires-Dist: opentelemetry-instrumentation-mysql==0.54b1
+Requires-Dist: opentelemetry-instrumentation-mysqlclient==0.54b1
+Requires-Dist: opentelemetry-instrumentation-pymysql==0.54b1
+Requires-Dist: opentelemetry-instrumentation-pymongo==0.54b1
+Requires-Dist: opentelemetry-instrumentation-redis==0.54b1
+Requires-Dist: opentelemetry-instrumentation-jinja2==0.54b1
+Requires-Dist: opentelemetry-instrumentation-wsgi==0.54b1
+Requires-Dist: opentelemetry-instrumentation-requests==0.54b1
+Requires-Dist: protobuf==5.29.5
+Requires-Dist: wrapt==1.17.2
+Requires-Dist: cryptography==38.0.3
+Requires-Dist: requests==2.32.4
+
