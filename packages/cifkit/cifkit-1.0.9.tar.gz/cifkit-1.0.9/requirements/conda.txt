@@ -1,0 +1,6 @@
+gemmi
+matplotlib-base
+numpy
+pyvista
+scipy
+bobleesj.utils
