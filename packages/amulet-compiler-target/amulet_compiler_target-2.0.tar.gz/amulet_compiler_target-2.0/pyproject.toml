@@ -1,0 +1,19 @@
+[build-system]
+requires = [
+    "setuptools >= 42",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amulet_compiler_target"
+version = "2.0"
+authors = [
+    {name = "James Clare"},
+]
+description = "A token library to pin compile-time requirements."
+
+dynamic = ["readme"]
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"], content-type = "text/markdown"}

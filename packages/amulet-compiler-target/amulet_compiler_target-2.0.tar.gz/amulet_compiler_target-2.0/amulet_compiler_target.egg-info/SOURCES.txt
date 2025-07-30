@@ -1,0 +1,6 @@
+README.md
+pyproject.toml
+amulet_compiler_target.egg-info/PKG-INFO
+amulet_compiler_target.egg-info/SOURCES.txt
+amulet_compiler_target.egg-info/dependency_links.txt
+amulet_compiler_target.egg-info/top_level.txt
