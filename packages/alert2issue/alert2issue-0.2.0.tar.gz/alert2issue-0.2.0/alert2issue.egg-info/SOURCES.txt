@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+alert2issue.py
+pyproject.toml
+alert2issue.egg-info/PKG-INFO
+alert2issue.egg-info/SOURCES.txt
+alert2issue.egg-info/dependency_links.txt
+alert2issue.egg-info/entry_points.txt
+alert2issue.egg-info/requires.txt
+alert2issue.egg-info/top_level.txt

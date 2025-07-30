@@ -1,0 +1,2 @@
+[console_scripts]
+alert2issue = alert2issue:main
