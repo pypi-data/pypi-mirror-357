@@ -1,0 +1,8 @@
+quda/__init__.py,sha256=E99HC1mNy2dO-zyfuCUxYdCIFzAInCu0rn-uqTSkTjw,622
+quda/store/__init__.py,sha256=nL0OLwnCXb37Rop-5YiOV79hO-5j6U8ie5lJuDPeH5Y,254
+quda/store/database.py,sha256=l2QPGOCJHxbM5BzSC9ETsdiw0vPK1y3Q2nOLP6MoX-g,6751
+quda/store/parse.py,sha256=N1BBZoUhvLj58biZfEhFs4cGsqaZqsanx27bAp_P7Oo,2236
+quda-1.0.1.dist-info/METADATA,sha256=ejGirDIloH9pVFKIoYTVpcwZbibEoXpBnnG42CjJK-k,291
+quda-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+quda-1.0.1.dist-info/top_level.txt,sha256=i4Y30O6Q7egkbEShuyC1AliGjCF8wYcKwMNgD6fynqM,5
+quda-1.0.1.dist-info/RECORD,,
