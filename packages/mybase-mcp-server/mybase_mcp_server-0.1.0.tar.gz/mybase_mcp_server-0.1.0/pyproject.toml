@@ -1,0 +1,17 @@
+[project]
+name = "mybase-mcp-server"
+version = "0.1.0"
+description = "A MCP server project"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [ "mcp>=1.9.4",]
+[[project.authors]]
+name = "血剑"
+email = "mengjie.jmj@alibaba-inc.com"
+
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project.scripts]
+mybase-mcp-server = "mybase_mcp_server:main"
