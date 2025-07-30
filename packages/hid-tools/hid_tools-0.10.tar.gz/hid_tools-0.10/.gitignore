@@ -1,0 +1,9 @@
+__pycache__/
+.cache
+*.pyc
+.pytest_cache/
+build/
+dist/
+hid_tools.egg-info/
+doc/source/hidtools.rst
+man/*.1
