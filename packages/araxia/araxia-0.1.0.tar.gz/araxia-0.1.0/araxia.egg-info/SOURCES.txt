@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+araxia/__init__.py
+araxia/core.py
+araxia/evalluation.py
+araxia/pipeline.py
+araxia/preprocessing.py
+araxia/utils.py
+araxia.egg-info/PKG-INFO
+araxia.egg-info/SOURCES.txt
+araxia.egg-info/dependency_links.txt
+araxia.egg-info/requires.txt
+araxia.egg-info/top_level.txt
+tests/test_core.py
