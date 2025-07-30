@@ -1,0 +1,14 @@
+pyproject.toml
+setup.py
+bindings/python/tree_sitter_jinja3_inline.egg-info/PKG-INFO
+bindings/python/tree_sitter_jinja3_inline.egg-info/SOURCES.txt
+bindings/python/tree_sitter_jinja3_inline.egg-info/dependency_links.txt
+bindings/python/tree_sitter_jinja3_inline.egg-info/not-zip-safe
+bindings/python/tree_sitter_jinja3_inline.egg-info/requires.txt
+bindings/python/tree_sitter_jinja3_inline.egg-info/top_level.txt
+bindings/python/tree_sitter_jinja_inline/__init__.py
+bindings/python/tree_sitter_jinja_inline/__init__.pyi
+bindings/python/tree_sitter_jinja_inline/binding.c
+bindings/python/tree_sitter_jinja_inline/py.typed
+src/parser.c
+src/scanner.c
