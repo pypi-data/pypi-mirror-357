@@ -1,0 +1,10 @@
+colcon_ros_domain_id_coordinator/__init__.py,sha256=NgZrZxW00_aGmiHh3wpugT_ikRtRzYxIPlaV1GPrg7s,106
+colcon_ros_domain_id_coordinator/shell/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+colcon_ros_domain_id_coordinator/shell/ros_domain_id.py,sha256=rga6__R_5PMqqUWB_RxnISNZy78TGefzWTP3U-FmcGk,5613
+colcon_ros_domain_id_coordinator-0.2.4.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+colcon_ros_domain_id_coordinator-0.2.4.dist-info/METADATA,sha256=6AvKF9M_qLIudv5Xe6Ryee_j94m6_CAmRrTsNUVy29g,2370
+colcon_ros_domain_id_coordinator-0.2.4.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+colcon_ros_domain_id_coordinator-0.2.4.dist-info/entry_points.txt,sha256=wvZn-S1GcrkVQOCe5EgD5wb8TAqqXLGsBKGroLKtziA,221
+colcon_ros_domain_id_coordinator-0.2.4.dist-info/top_level.txt,sha256=2HFbHcbp3u5xt7c4H3Dx2sUj6K9M_kPh-DtZYpD-_-Q,33
+colcon_ros_domain_id_coordinator-0.2.4.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+colcon_ros_domain_id_coordinator-0.2.4.dist-info/RECORD,,
