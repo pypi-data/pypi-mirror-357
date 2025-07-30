@@ -1,0 +1,2 @@
+[console_scripts]
+webcloner = webcloner.cloner:main
