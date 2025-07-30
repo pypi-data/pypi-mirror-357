@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+makar72/3.txt
+makar72/4.txt
+makar72/5.txt
+makar72/__init__.py
+makar72.egg-info/PKG-INFO
+makar72.egg-info/SOURCES.txt
+makar72.egg-info/dependency_links.txt
+makar72.egg-info/top_level.txt

@@ -1,0 +1,409 @@
+----------------------------------------------------------------------------------
+4
+----------------------------------------------------------------------------------
+
+-- Удаление таблиц, если они существуют
+DROP TABLE IF EXISTS ProductWorkshops;
+DROP TABLE IF EXISTS ProductTypes;
+DROP TABLE IF EXISTS Workshops;
+DROP TABLE IF EXISTS Materials;
+DROP TABLE IF EXISTS Products;
+
+-- Таблица типов продукции
+CREATE TABLE ProductTypes (
+    ProductTypeID SERIAL PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    Coefficient NUMERIC NOT NULL
+);
+
+-- Таблица цехов
+CREATE TABLE Workshops (
+    WorkshopID SERIAL PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    WorkshopType VARCHAR(255) NOT NULL,
+    NumberOfPeople INTEGER NOT NULL
+);
+
+-- Таблица материалов
+CREATE TABLE Materials (
+    MaterialID SERIAL PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL
+);
+
+-- Таблица продукции
+CREATE TABLE Products (
+    ProductID SERIAL PRIMARY KEY,
+    ProductTypeID INTEGER REFERENCES ProductTypes(ProductTypeID),
+    MaterialID INTEGER REFERENCES Materials(MaterialID),
+    Name VARCHAR(255) NOT NULL,
+    Article VARCHAR(50) NOT NULL,
+    MinPartnerCost NUMERIC(10,2) NOT NULL
+);
+
+-- Таблица связи продукция-цеха
+CREATE TABLE ProductWorkshops (
+    ProductID INTEGER REFERENCES Products(ProductID),
+    WorkshopID INTEGER REFERENCES Workshops(WorkshopID),
+    Time NUMERIC NOT NULL,
+    PRIMARY KEY (ProductID, WorkshopID)
+);
+
+----------------------------------------------------------------------------------
+
+import tkinter as tk
+from tkinter import ttk, messagebox
+import pandas as pd
+import psycopg2
+from psycopg2 import sql
+from sqlalchemy import create_engine, Column, Integer, String, Numeric, ForeignKey, text, func
+from sqlalchemy.orm import declarative_base, sessionmaker, relationship
+import logging
+import os
+
+# Настройка логирования
+logging.basicConfig(
+    level=logging.ERROR,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+# Настройка SQLAlchemy
+Base = declarative_base()
+
+class ProductType(Base):
+    __tablename__ = 'producttypes'
+    producttypeid = Column(Integer, primary_key=True)
+    name = Column(String(255), nullable=False)
+    coefficient = Column(Numeric, nullable=False)
+    products = relationship("Product", back_populates="product_type")
+
+class Workshop(Base):
+    __tablename__ = 'workshops'
+    workshopid = Column(Integer, primary_key=True)
+    name = Column(String(255), nullable=False)
+    workshoptype = Column(String(255), nullable=False)
+    numberofpeople = Column(Integer, nullable=False)
+    product_workshops = relationship("ProductWorkshop", back_populates="workshop")
+
+class Material(Base):
+    __tablename__ = 'materials'
+    materialid = Column(Integer, primary_key=True)
+    name = Column(String(255), nullable=False)
+    products = relationship("Product", back_populates="material")
+
+class Product(Base):
+    __tablename__ = 'products'
+    productid = Column(Integer, primary_key=True)
+    producttypeid = Column(Integer, ForeignKey('producttypes.producttypeid'), nullable=False)
+    materialid = Column(Integer, ForeignKey('materials.materialid'), nullable=False)
+    name = Column(String(255), nullable=False)
+    article = Column(String(50), nullable=False)
+    minpartnercost = Column(Numeric(10, 2), nullable=False)
+    product_type = relationship("ProductType", back_populates="products")
+    material = relationship("Material", back_populates="products")
+    workshops = relationship("ProductWorkshop", back_populates="product")
+
+class ProductWorkshop(Base):
+    __tablename__ = 'productworkshops'
+    productid = Column(Integer, ForeignKey('products.productid'), primary_key=True)
+    workshopid = Column(Integer, ForeignKey('workshops.workshopid'), primary_key=True)
+    time = Column(Numeric, nullable=False)
+    product = relationship("Product", back_populates="workshops")
+    workshop = relationship("Workshop", back_populates="product_workshops")
+
+def load_excel_data(file_path):
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"Файл {file_path} не найден")
+    return pd.read_excel(file_path)
+
+def clean_data(df):
+    return df.applymap(lambda x: str(x).strip() if pd.notna(x) else x)
+
+def import_data(engine):
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    try:
+        # Очистка таблиц
+        session.execute(text("TRUNCATE TABLE producttypes RESTART IDENTITY CASCADE"))
+        session.execute(text("TRUNCATE TABLE workshops RESTART IDENTITY CASCADE"))
+        session.execute(text("TRUNCATE TABLE materials RESTART IDENTITY CASCADE"))
+        session.execute(text("TRUNCATE TABLE products RESTART IDENTITY CASCADE"))
+        session.execute(text("TRUNCATE TABLE productworkshops RESTART IDENTITY CASCADE"))
+        session.commit()
+        
+        # Импорт типов продукции
+        df_product_types = clean_data(load_excel_data('Product_type_import.xlsx'))
+        for _, row in df_product_types.iterrows():
+            pt = ProductType(
+                name=str(row['Тип продукции']).strip(),
+                coefficient=float(row['Коэффициент типа продукции'])
+            )
+            session.add(pt)
+        session.commit()
+        
+        # Импорт цехов
+        df_workshops = clean_data(load_excel_data('Workshops_import.xlsx'))
+        for _, row in df_workshops.iterrows():
+            # Убираем лишний пробел в названии столбца
+            people_count = int(row['Количество человек для производства '])
+            ws = Workshop(
+                name=str(row['Название цеха']).strip(),
+                workshoptype=str(row['Тип цеха']).strip(),
+                numberofpeople=people_count
+            )
+            session.add(ws)
+        session.commit()
+        
+        # Импорт материалов
+        df_products = clean_data(load_excel_data('Products_import.xlsx'))
+        unique_materials = df_products['Основной материал'].unique()
+        for material_name in unique_materials:
+            mat = Material(name=str(material_name).strip())
+            session.add(mat)
+        session.commit()
+        
+        # Импорт продукции
+        for _, row in df_products.iterrows():
+            pt = session.query(ProductType).filter_by(name=str(row['Тип продукции']).strip()).first()
+            mat = session.query(Material).filter_by(name=str(row['Основной материал']).strip()).first()
+            
+            if pt and mat:
+                product = Product(
+                    producttypeid=pt.producttypeid,
+                    materialid=mat.materialid,
+                    name=str(row['Наименование продукции']).strip(),
+                    article=str(row['Артикул']).strip(),
+                    minpartnercost=float(row['Минимальная стоимость для партнера'])
+                )
+                session.add(product)
+        session.commit()
+        
+        # Импорт связи продукция-цех
+        df_pw = clean_data(load_excel_data('Product_workshops_import.xlsx'))
+        for _, row in df_pw.iterrows():
+            product_name = str(row['Наименование продукции']).strip()
+            workshop_name = str(row['Название цеха']).strip()
+            
+            product = session.query(Product).filter_by(name=product_name).first()
+            workshop = session.query(Workshop).filter_by(name=workshop_name).first()
+            
+            if product and workshop:
+                pw = ProductWorkshop(
+                    productid=product.productid,
+                    workshopid=workshop.workshopid,
+                    time=float(row['Время изготовления, ч'])
+                )
+                session.add(pw)
+        session.commit()
+        logging.info("Данные успешно импортированы!")
+    except Exception as e:
+        session.rollback()
+        logging.error(f"Ошибка импорта: {e}")
+        messagebox.showerror("Ошибка", f"Ошибка импорта: {e}")
+    finally:
+        session.close()
+
+def calculate_total_time(product_id, engine):
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    try:
+        result = session.execute(
+            text("SELECT SUM(time) FROM productworkshops WHERE productid = :product_id GROUP BY productid"),
+            {"product_id": product_id}
+        ).fetchone()
+        return result[0] if result else 0
+    finally:
+        session.close()
+
+class FurnitureApp:
+    def __init__(self, root, engine):
+        self.engine = engine
+        self.Session = sessionmaker(bind=self.engine)
+        import_data(self.engine)
+        
+        self.root = root
+        self.root.title("Управление продукцией")
+        self.create_ui()
+    
+    def create_ui(self):
+        # Таблица продукции
+        self.tree = ttk.Treeview(self.root, columns=("type", "name", "article", "cost", "time"), show='headings')
+        self.tree.heading("type", text="Тип")
+        self.tree.heading("name", text="Наименование")
+        self.tree.heading("article", text="Артикул")
+        self.tree.heading("cost", text="Стоимость")
+        self.tree.heading("time", text="Время (ч)")
+        self.tree.column("type", width=100)
+        self.tree.column("name", width=200)
+        self.tree.column("article", width=100)
+        self.tree.column("cost", width=100)
+        self.tree.column("time", width=100)
+        self.tree.pack(padx=10, pady=10)
+        
+        # Кнопки
+        btn_frame = ttk.Frame(self.root)
+        btn_frame.pack(pady=5)
+        ttk.Button(btn_frame, text="Добавить", command=self.add_product).pack(side=tk.LEFT, padx=5)
+        ttk.Button(btn_frame, text="Редактировать", command=self.edit_product).pack(side=tk.LEFT, padx=5)
+        ttk.Button(btn_frame, text="Цеха", command=self.show_workshops).pack(side=tk.LEFT, padx=5)
+        
+        self.refresh_products()
+    
+    def refresh_products(self):
+        for i in self.tree.get_children():
+            self.tree.delete(i)
+        session = self.Session()
+        products = session.query(Product).all()
+        for p in products:
+            total_time = calculate_total_time(p.productid, self.engine)
+            self.tree.insert("", "end", iid=p.productid, values=(
+                p.product_type.name, 
+                p.name, 
+                p.article, 
+                f"{p.minpartnercost:.2f}", 
+                f"{total_time:.1f}"
+            ))
+        session.close()
+    
+    def add_product(self):
+        session = self.Session()
+        self.edit_window = tk.Toplevel(self.root)
+        self.edit_window.title("Новая продукция")
+        self.create_edit_form(self.edit_window, None, session)
+    
+    def edit_product(self):
+        selected = self.tree.selection()
+        if not selected:
+            messagebox.showwarning("Ошибка", "Выберите продукт для редактирования")
+            return
+        session = self.Session()
+        product = session.query(Product).get(selected[0])
+        self.edit_window = tk.Toplevel(self.root)
+        self.edit_window.title("Редактировать продукт")
+        self.create_edit_form(self.edit_window, product, session)
+    
+    def create_edit_form(self, window, product, session):
+        try:
+            fields = {
+                "type": "Тип продукции",
+                "article": "Артикул",
+                "name": "Наименование",
+                "minpartnercost": "Минимальная стоимость для партнера",
+                "material": "Материал"
+            }
+            self.form_vars = {}
+            
+            # Выпадающий список типов продукции
+            ttk.Label(window, text="Тип продукции").grid(row=0, column=0)
+            pt_options = [pt.name for pt in session.query(ProductType).all()]
+            if not pt_options:
+                raise ValueError("Нет доступных типов продукции")
+            pt_var = tk.StringVar()
+            pt_combo = ttk.Combobox(window, textvariable=pt_var, values=pt_options)
+            pt_combo.grid(row=0, column=1)
+            self.form_vars["type"] = pt_var
+            if product:
+                pt_combo.set(product.product_type.name)
+            
+            # Поля ввода
+            for i, (key, label) in enumerate(fields.items()):
+                if key in ["type", "material"]:
+                    continue
+                ttk.Label(window, text=label).grid(row=i+1, column=0)
+                entry = ttk.Entry(window)
+                if product:
+                    entry.insert(0, str(getattr(product, key)))
+                entry.grid(row=i+1, column=1)
+                self.form_vars[key] = entry
+            
+            # Выпадающий список материалов
+            ttk.Label(window, text="Материал").grid(row=len(fields), column=0)
+            mat_options = [mat.name for mat in session.query(Material).all()]
+            if not mat_options:
+                raise ValueError("Нет доступных материалов")
+            mat_var = tk.StringVar()
+            mat_combo = ttk.Combobox(window, textvariable=mat_var, values=mat_options)
+            mat_combo.grid(row=len(fields), column=1)
+            self.form_vars["material"] = mat_var
+            if product:
+                mat_combo.set(product.material.name)
+            
+            ttk.Button(window, text="Сохранить", command=lambda: self.save_product(product, window, session)).grid(
+                row=len(fields)+1, columnspan=2, pady=10
+            )
+        except Exception as e:
+            logging.error(f"Ошибка при создании формы: {e}")
+            messagebox.showerror("Ошибка", f"Не удалось загрузить данные: {e}")
+            window.destroy()
+    
+    def save_product(self, existing, window, session):
+        try:
+            pt = session.query(ProductType).filter_by(name=self.form_vars["type"].get()).first()
+            mat = session.query(Material).filter_by(name=self.form_vars["material"].get()).first()
+            
+            if not pt or not mat:
+                raise ValueError("Выберите тип продукции и материал")
+            
+            data = {
+                "producttypeid": pt.producttypeid,
+                "materialid": mat.materialid,
+                "name": self.form_vars["name"].get(),
+                "article": self.form_vars["article"].get(),
+                "minpartnercost": float(self.form_vars["minpartnercost"].get())
+            }
+            
+            if existing:
+                for k, v in data.items():
+                    setattr(existing, k, v)
+                session.commit()
+            else:
+                session.add(Product(**data))
+                session.commit()
+            
+            window.destroy()
+            self.refresh_products()
+            messagebox.showinfo("Успех", "Продукция сохранена")
+        except ValueError as ve:
+            session.rollback()
+            messagebox.showerror("Ошибка", f"Некорректные данные: {ve}")
+        except Exception as e:
+            session.rollback()
+            logging.error(f"Ошибка сохранения продукта: {e}")
+            messagebox.showerror("Ошибка", f"Не удалось сохранить продукт: {e}")
+        finally:
+            session.close()
+
+    def show_workshops(self):
+        selected = self.tree.selection()
+        if not selected:
+            messagebox.showwarning("Ошибка", "Выберите продукт")
+            return
+        session = self.Session()
+        product = session.query(Product).get(selected[0])
+        workshops = session.query(Workshop).join(ProductWorkshop).filter(
+            ProductWorkshop.productid == product.productid
+        ).all()
+        win = tk.Toplevel(self.root)
+        win.title(f"Цеха для {product.name}")
+        tree = ttk.Treeview(win, columns=("type", "people", "time"), show='headings')
+        tree.heading("type", text="Тип цеха")
+        tree.heading("people", text="Человек")
+        tree.heading("time", text="Время (ч)")
+        tree.column("type", width=150)
+        tree.column("people", width=100)
+        tree.column("time", width=100)
+        tree.pack(padx=10, pady=10)
+        
+        for ws in workshops:
+            pw = session.query(ProductWorkshop).filter_by(productid=product.productid, workshopid=ws.workshopid).first()
+            tree.insert("", "end", iid=ws.workshopid, values=(
+                ws.workshoptype, ws.numberofpeople, f"{pw.time:.2f}"
+            ))
+        session.close()
+
+if __name__ == "__main__":
+    engine = create_engine('postgresql://postgres:NikitaStillSLATT@localhost/warehouse2')
+    Base.metadata.create_all(engine)
+    
+    root = tk.Tk()
+    app = FurnitureApp(root, engine)
+    root.mainloop()
