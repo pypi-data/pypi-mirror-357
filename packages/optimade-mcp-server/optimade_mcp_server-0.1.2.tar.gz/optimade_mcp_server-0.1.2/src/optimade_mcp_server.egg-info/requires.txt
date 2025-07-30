@@ -1,0 +1,5 @@
+httpx>=0.28.1
+mcp[cli]>=1.9.4
+optimade[http-client]>=1.2.4
+python-dotenv>=1.0.1
+rich<14.dev0,>=13.0
