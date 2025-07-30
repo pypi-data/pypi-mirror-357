@@ -1,0 +1,179 @@
+Metadata-Version: 2.3
+Name: nginxsitepy
+Version: 0.1.0
+Summary: 
+License: MIT
+Author: ji-ho lee
+Author-email: search5@gmail.com
+Requires-Python: >=3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+
+# nginxsitepy
+
+A command-line tool for managing Nginx site configurations with location-based operations.
+
+## Features
+
+- **Easy Location Management**: Add, delete, and modify Nginx location blocks
+- **Directive Management**: Add directives to specific locations while preserving order
+- **State Persistence**: Remember configuration file settings between commands
+- **Clean Formatting**: Maintain proper indentation and avoid unnecessary blank lines
+- **Safe Operations**: Backup and validate configurations before changes
+
+## Installation
+
+```bash
+pip install nginxsitepy
+```
+
+## Quick Start
+
+1. Set your Nginx configuration file:
+```bash
+nginx-sites set_config /etc/nginx/sites-enabled/default
+```
+
+2. Add a location block:
+```bash
+nginx-sites add /api
+```
+
+3. Add directives to a location:
+```bash
+nginx-sites directive /api "proxy_pass http://localhost:3000"
+nginx-sites directive /api "proxy_set_header Host \$host"
+```
+
+4. View your configuration:
+```bash
+nginx-sites summary
+```
+
+## Commands
+
+### Configuration Management
+- `nginx-sites set_config <file>` - Set the Nginx configuration file to work with
+- `nginx-sites status` - Show current configuration status
+- `nginx-sites clear` - Clear saved state
+
+### Location Operations
+- `nginx-sites list` - List all location blocks
+- `nginx-sites show <path>` - Show details of a specific location
+- `nginx-sites add <path> [directive]` - Add a new location block (optionally with a directive)
+- `nginx-sites delete <path>` - Delete a location block
+
+### Directive Management
+- `nginx-sites directive <path> <directive>` - Add a directive to a location block
+
+### Information
+- `nginx-sites summary` - Show a complete summary of all locations and directives
+
+## Examples
+
+### Basic Flask Application Setup
+
+```bash
+# Set configuration file
+nginx-sites set_config /etc/nginx/sites-enabled/default
+
+# Add main location
+nginx-sites add /
+nginx-sites directive / "try_files \$uri @flask_application"
+
+# Add Flask upstream location
+nginx-sites add @flask_application
+nginx-sites directive @flask_application "proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for"
+nginx-sites directive @flask_application "proxy_set_header X-Forwarded-Proto \$scheme"
+nginx-sites directive @flask_application "proxy_set_header Host \$http_host"
+nginx-sites directive @flask_application "proxy_redirect off"
+nginx-sites directive @flask_application "proxy_pass http://localhost:8000"
+```
+
+### API Gateway Setup
+
+```bash
+# API endpoints
+nginx-sites add /api/v1
+nginx-sites directive /api/v1 "proxy_pass http://api-server:3000"
+
+nginx-sites add /api/v2
+nginx-sites directive /api/v2 "proxy_pass http://api-server-v2:3001"
+
+# Static files
+nginx-sites add /static
+nginx-sites directive /static "root /var/www"
+nginx-sites directive /static "expires 30d"
+```
+
+### View Configuration
+
+```bash
+# List all locations
+nginx-sites list
+
+# Show specific location
+nginx-sites show /api/v1
+
+# Complete summary
+nginx-sites summary
+```
+
+## Options
+
+- `--server, -s INDEX` - Specify server block index (default: 0)
+
+Example:
+```bash
+nginx-sites --server 1 list
+nginx-sites -s 1 directive / "root /var/www/site2"
+```
+
+## Requirements
+
+- Python 3.9+
+- Read/write access to Nginx configuration files
+
+## Development
+
+Clone the repository:
+```bash
+git clone <repository-url>
+cd nginxsitepy
+```
+
+Install in development mode:
+```bash
+pip install -e .
+```
+
+## License
+
+MIT License
+
+## Author
+
+ji-ho lee (search5@gmail.com)
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## Changelog
+
+### 0.1.0
+- Initial release
+- Basic location and directive management
+- State persistence
+- Clean formatting and indentation preservation
+
