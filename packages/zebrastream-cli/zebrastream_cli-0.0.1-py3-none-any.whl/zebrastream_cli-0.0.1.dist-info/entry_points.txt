@@ -1,0 +1,3 @@
+[console_scripts]
+zebrastream-cli=cli.main:app
+
