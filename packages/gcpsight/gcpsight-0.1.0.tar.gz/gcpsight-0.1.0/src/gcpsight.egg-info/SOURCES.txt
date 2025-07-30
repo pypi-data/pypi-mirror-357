@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/gcpsight/__init__.py
+src/gcpsight/gcp_scanner.py
+src/gcpsight/gemini_processor.py
+src/gcpsight/main.py
+src/gcpsight/security_scorer.py
+src/gcpsight.egg-info/PKG-INFO
+src/gcpsight.egg-info/SOURCES.txt
+src/gcpsight.egg-info/dependency_links.txt
+src/gcpsight.egg-info/entry_points.txt
+src/gcpsight.egg-info/requires.txt
+src/gcpsight.egg-info/top_level.txt

@@ -1,0 +1,281 @@
+Metadata-Version: 2.4
+Name: gcpsight
+Version: 0.1.0
+Summary: A CLI tool for GCP Security Analysis powered by Gemini.
+Author-email: Rishab Kumar <rishabkumar7@gmail.com>
+Project-URL: Homepage, https://github.com/rishabkumar7/gcpsight
+Project-URL: Bug Tracker, https://github.com/rishabkumar7/gcpsight/issues
+Keywords: gcp,security,cli,gemini,google-cloud
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Security
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: google-cloud-compute~=1.14
+Requires-Dist: google-cloud-storage~=2.16
+Requires-Dist: google-cloud-resource-manager~=1.12
+Requires-Dist: google-cloud-bigquery~=3.20
+Requires-Dist: google-cloud-functions~=1.8
+Requires-Dist: google-generativeai~=0.7
+Requires-Dist: python-dotenv~=1.0
+Requires-Dist: click~=8.1
+Requires-Dist: tabulate~=0.9.0
+Requires-Dist: rich~=13.7
+Dynamic: license-file
+
+# gcpsight - GCP Security Scanner with Gemini-Powered Queries
+
+A powerful command-line tool for scanning Google Cloud Platform (GCP) projects for security misconfigurations. Features an AI-powered natural language interface using Google's Gemini model, comprehensive security scoring, and beautiful terminal reports.
+
+## 🚀 Quick Install
+
+```bash
+pip install gcpsight
+```
+
+Or using [uv](https://docs.astral.sh/uv/)
+
+```bash
+uv pip install gcpsight
+```
+
+## ✨ Features
+
+*   🔥 **Firewall Scanning**: Detects VPC firewall rules open to the internet (`0.0.0.0/0`)
+*   🪣 **Public Storage Detection**: Finds publicly accessible GCS buckets
+*   👥 **IAM Analysis**: Identifies overly permissive roles (Owner, Editor) with broad access
+*   📊 **BigQuery Security**: Checks for publicly accessible datasets
+*   ⚡ **Cloud Functions**: Scans for insecure functions with public access or outdated runtimes
+*   🛡️ **Security Scoring**: Risk-based scoring with detailed remediation guidance
+*   🤖 **AI-Powered Queries**: Natural language security questions via Gemini
+*   🎨 **Beautiful Reports**: Colorful terminal output with emojis and structured tables
+
+## 📋 Quick Start Examples
+
+### Basic Security Scan
+```bash
+# Run comprehensive security assessment
+gcpsight security-assessment --project-id my-gcp-project
+
+# Check specific security issues
+gcpsight list-open-firewalls --project-id my-gcp-project
+gcpsight check-public-buckets --project-id my-gcp-project
+```
+
+### AI-Powered Natural Language Queries
+```bash
+# Ask questions in plain English
+gcpsight ask --project-id my-gcp-project "are there any firewalls open to the world?"
+gcpsight ask --project-id my-gcp-project "show me my security score"
+gcpsight ask --project-id my-gcp-project "check my cloud functions for issues"
+```
+
+### Sample Output
+
+**Security Assessment Report:**
+```
+🛡️  GCP SECURITY ASSESSMENT REPORT  🛡️
+
+📊 Overall Assessment
+┌─────────────────┬────────────────────────────────┐
+│ 🎯 Security Score │ 75/100 (75.0%)               │
+│ ⚠️  Risk Level     │ HIGH                          │
+└─────────────────┴────────────────────────────────┘
+
+Security Score Progress ████████████████████████████████████████ 75.0%
+
+📋 Findings Summary
+┌─────────────┬───────┬──────────┐
+│ Risk Level  │ Count │ Visual   │
+├─────────────┼───────┼──────────┤
+│ 🚨 CRITICAL │ 1     │ ●        │
+│ ⚠️ HIGH      │ 2     │ ●●       │
+└─────────────┴───────┴──────────┘
+
+🔍 Detailed Findings
+
+🚨 Open Firewall [CRITICAL]
+┌─────────────────────────────────────────────────────────────┐
+│ 🏷️  Resource: allow-ssh-from-anywhere                      │
+│ 📝 Issue: Firewall rule allows unrestricted SSH access     │
+│ 📉 Impact: -25 points                                      │
+│ 🔧 Fix: Restrict source ranges to specific IP addresses    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Project Structure
+
+*   `src/gcpsight/main.py`: The main entry point for the CLI application, built using `click`.
+*   `src/gcpsight/gcp_scanner.py`: Contains the core logic for interacting with GCP APIs.
+*   `src/gcpsight/gemini_processor.py`: Handles interaction with the Gemini API.
+*   `src/gcpsight/security_scorer.py`: Implements security scoring, risk assessment, and reporting functionality.
+*   `pyproject.toml`: Defines project metadata, dependencies, and the CLI entry point for packaging.
+*   `requirements.txt`: Lists project dependencies (primarily for reference).
+*   `README.md`: This file.
+*   `.env` (not included, but necessary for local development): Used for environment variables.
+
+## 🔧 Setup & Configuration
+
+### Prerequisites
+- Python 3.9+
+- Google Cloud SDK installed and configured
+- Valid GCP project with appropriate permissions
+
+### 1. Install gcpsight
+```bash
+pip install gcpsight
+```
+
+### 2. GCP Authentication
+```bash
+# Authenticate with your GCP account
+gcloud auth application-default login
+
+# Or set service account credentials
+export GOOGLE_APPLICATION_CREDENTIALS="/path/to/service-account.json"
+```
+
+### 3. Required GCP Permissions
+Your authenticated user/service account needs these IAM permissions:
+- `compute.firewalls.list`
+- `storage.buckets.list` & `storage.buckets.getIamPolicy`
+- `resourcemanager.projects.getIamPolicy`
+- `bigquery.datasets.list` & `bigquery.datasets.get`
+- `cloudfunctions.functions.list` & `cloudfunctions.functions.getIamPolicy`
+
+### 4. Gemini API Key (for AI features)
+```bash
+# Set your Gemini API key as environment variable
+export GEMINI_API_KEY="your-gemini-api-key-here"
+
+# Or create a .env file in your working directory
+echo "GEMINI_API_KEY=your-gemini-api-key-here" > .env
+```
+
+## 📖 All Available Commands
+
+### Security Assessment (Recommended)
+```bash
+# Comprehensive security report with scoring
+gcpsight security-assessment --project-id my-project
+
+# JSON output for automation
+gcpsight security-assessment --project-id my-project --output-format json
+
+# Table format for quick overview
+gcpsight security-assessment --project-id my-project --output-format table
+```
+
+### Individual Security Checks
+```bash
+# Check firewall rules
+gcpsight list-open-firewalls --project-id my-project
+
+# Check storage buckets
+gcpsight check-public-buckets --project-id my-project
+
+# Check IAM roles  
+gcpsight check-overly-permissive-iam-roles --project-id my-project
+
+# Check BigQuery datasets
+gcpsight check-public-bigquery-datasets --project-id my-project
+
+# Check Cloud Functions
+gcpsight check-insecure-cloud-functions --project-id my-project
+
+# Run all individual checks
+gcpsight run-all-checks --project-id my-project
+```
+
+### AI-Powered Natural Language Queries
+```bash
+# Ask security questions in plain English
+gcpsight ask --project-id my-project "are there any firewalls open to the world?"
+gcpsight ask --project-id my-project "show me public buckets"
+gcpsight ask --project-id my-project "check for overly permissive IAM roles"
+gcpsight ask --project-id my-project "are there any public BigQuery datasets?"
+gcpsight ask --project-id my-project "check my cloud functions for issues"
+gcpsight ask --project-id my-project "run all checks"
+gcpsight ask --project-id my-project "give me a security assessment"
+gcpsight ask --project-id my-project "what's my security score?"
+```
+
+### Example Command Outputs
+
+**Firewall Check:**
+```
+🔍 Checking open firewall rules for project my-project...
+
+🔥 Open Firewall Rules
+┌─────────────────────┬─────────┬──────────────┬─────────────────┐
+│ Name                │ Network │ Source Range │ Allowed Ports   │
+├─────────────────────┼─────────┼──────────────┼─────────────────┤
+│ allow-ssh-anywhere  │ default │ 0.0.0.0/0    │ tcp:22          │
+│ allow-http-https    │ default │ 0.0.0.0/0    │ tcp:80,tcp:443  │
+└─────────────────────┴─────────┴──────────────┴─────────────────┘
+```
+
+**Security Assessment Table Format:**
+```
+🛡️  Security Assessment Summary
+┌─────────────────┬────────────────────────┐
+│ 🎯 Security Score │ 75/100 (75.0%)       │
+│ ⚠️  Risk Level     │ HIGH                  │
+│ 📊 Total Findings │ 3                     │
+└─────────────────┴────────────────────────┘
+
+🔍 Detailed Security Findings
+┌──────────────────────┬─────────────────────┬─────────────┬──────────────┐
+│ Check Type           │ Resource            │ Risk Level  │ Score Impact │
+├──────────────────────┼─────────────────────┼─────────────┼──────────────┤
+│ Open Firewall        │ allow-ssh-anywhere  │ 🚨 CRITICAL │ -25          │
+│ Public Bucket        │ my-public-bucket    │ ⚠️ HIGH      │ -15          │
+│ Insecure Function    │ my-function         │ ⚡ MEDIUM    │ -10          │
+└──────────────────────┴─────────────────────┴─────────────┴──────────────┘
+```
+
+## 🛠️ Development Installation
+
+For contributors and developers who want to work on gcpsight:
+
+```bash
+# Clone the repository
+git clone https://github.com/rishabkumar7/gcpsight
+cd gcpsight
+
+# Install in development mode
+pip install -e .
+
+# Or build and install locally
+python -m pip install build
+python -m build
+pip install dist/gcpsight-*.whl
+```
+
+## 🚀 How it Works
+
+1. **CLI Interface**: Built with `click` library for intuitive command-line interaction
+2. **GCP API Integration**: Uses official Google Cloud client libraries for secure API access
+3. **Security Analysis**: Comprehensive checks across compute, storage, IAM, and serverless resources
+4. **Risk Scoring**: Intelligent scoring system with weighted impact based on security severity
+5. **AI Integration**: Gemini AI translates natural language queries into specific security checks
+6. **Rich Output**: Beautiful terminal reports with colors, emojis, and structured tables
+
+## Future Enhancements
+
+* Add more GCP security checks.
+* Improve output formatting.
+* More sophisticated error handling and logging.
+* Scan multiple projects or an entire GCP organization.
+* Automated remediation suggestions/actions (with caution!).
+
+## Contributing
+
+Contributions are welcome! Please open an issue.
+
+## License
+
+This is under the [MIT License.](LICENSE)
