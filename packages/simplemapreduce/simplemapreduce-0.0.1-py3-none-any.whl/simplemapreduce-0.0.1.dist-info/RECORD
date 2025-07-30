@@ -1,0 +1,8 @@
+simplemapreduce/__about__.py,sha256=sXLh7g3KC4QCFxcZGBTpG2scR7hmmBsMjq6LqRptkRg,22
+simplemapreduce/__init__.py,sha256=Bbb2Xd5ERHoNmP5kQ4WSd4Fm-fE7MXZYLjEuZtf7gUI,646
+simplemapreduce/executors.py,sha256=WexXmTXmmH2G_nbyt9ijI8vqAd7gC9DGVKrpvo9JF8M,2778
+simplemapreduce/types.py,sha256=yUK46d0lBCJzMSP33LYRPOkjKPKMvMb2H4sH_myHnHo,933
+simplemapreduce-0.0.1.dist-info/METADATA,sha256=xZFni1St7h_ajt6y_svxTUS3w22rL__MqoMc9wRoZEE,808
+simplemapreduce-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+simplemapreduce-0.0.1.dist-info/licenses/LICENSE.txt,sha256=d1AE6dLhmo92fPfQxYWKS1UCnI1mIhe4l5b-4yw3uys,1108
+simplemapreduce-0.0.1.dist-info/RECORD,,
