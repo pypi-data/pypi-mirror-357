@@ -1,0 +1,10 @@
+pluraldo/__init__.py,sha256=xOqpjoahFXUnqbiAbDxYKBIbnIGpZjIgD__VCc7z76A,4703
+pluraldo/__main__.py,sha256=CileVWvaEP7S18bDXrvFAis6BXIlvCt2hovxF_Fjdi0,32
+pluraldo/mimestore.py,sha256=LGAp087EgmdKmhOd1WJVqABlsVNQzEXlht-DGS6tEF4,4184
+pluraldo/pstore.py,sha256=5trKd8dDSxKSJJIZT58XiB24c7dC9TQRFB8OfJWM7BI,3967
+pluraldo/tui/task.py,sha256=LYRlsPJvgs44sq28Vpp-jLhbPMMTFlRIq3ye4mohM4Y,2092
+pluraldo/tui/task.tcss,sha256=SE8Cj0fyZuNY5Cmzs2dsub_NcnMOvBnFQKWAPAs481E,198
+pluraldo-0.1.0.dist-info/METADATA,sha256=k4Lhue9IrPHoWWOR-dJ_a16_Dyk20m8YbfZoBqOzeRg,818
+pluraldo-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+pluraldo-0.1.0.dist-info/entry_points.txt,sha256=1SX_4NrV2FiedzL9WeY1qhKok6_cb_-B7Kuu3CnkvnE,41
+pluraldo-0.1.0.dist-info/RECORD,,

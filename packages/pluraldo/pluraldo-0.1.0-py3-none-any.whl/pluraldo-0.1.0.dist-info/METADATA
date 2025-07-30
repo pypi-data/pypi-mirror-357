@@ -1,0 +1,27 @@
+Metadata-Version: 2.3
+Name: pluraldo
+Version: 0.1.0
+Summary: todo for plurals
+Author: Jamie Bliss
+Author-email: jamie@ivyleav.es
+Requires-Python: >=3.11,<4
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: anyio (>=4.9.0,<5.0.0)
+Requires-Dist: click (>=8.2.1,<9.0.0)
+Requires-Dist: platformdirs (>=4.3.8,<5.0.0)
+Requires-Dist: textual[syntax] (>=3.4.0,<4.0.0)
+Description-Content-Type: text/markdown
+
+# PluralDo, a simple system-focussed task tracking system
+
+PluralDo is a simple task-tracking tool for systems, allowing for creating
+tasks and assigning them to other system members, writing descriptions, and
+simple project creation.
+
+## Usage
+
+...
+
