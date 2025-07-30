@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: Mogonet
+Version: 2.0.0
+Summary: Package for MOGONET method @nature communications
+Author-email: Tony Liang <tony.liang@hli.ubc.ca>
+Project-URL: Homepage, https://github.com/tonyliang19/multi-omics-pipeline/
+Keywords: multi-omics,deep learning
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >3.8
+Description-Content-Type: text/markdown
+
+# Mogonet
+
+Simple package of the method MOGONET
