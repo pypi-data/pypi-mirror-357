@@ -1,0 +1,3 @@
+[console_scripts]
+mainx = runner:main
+mainx2 = safe_runner:main
