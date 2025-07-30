@@ -1,0 +1,5 @@
+[console_scripts]
+hdmf_generate_format_docs = hdmf_docutils.generate_format_docs:main
+hdmf_init_sphinx_extension_doc = hdmf_docutils.init_sphinx_extension_doc:main
+nwb_generate_format_docs = hdmf_docutils.generate_format_docs:nwb_main
+nwb_init_sphinx_extension_doc = hdmf_docutils.init_sphinx_extension_doc:nwb_main
