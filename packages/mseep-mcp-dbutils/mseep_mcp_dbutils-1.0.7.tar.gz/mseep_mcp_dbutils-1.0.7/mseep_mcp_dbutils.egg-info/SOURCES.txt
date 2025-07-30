@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_mcp_dbutils.egg-info/PKG-INFO
+mseep_mcp_dbutils.egg-info/SOURCES.txt
+mseep_mcp_dbutils.egg-info/dependency_links.txt
+mseep_mcp_dbutils.egg-info/requires.txt
+mseep_mcp_dbutils.egg-info/top_level.txt
+tests/test_write_operations.py
