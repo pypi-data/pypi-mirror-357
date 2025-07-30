@@ -1,0 +1,14 @@
+lambda_api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lambda_api/adapters.py,sha256=imE8bz1fuc3JN3kVvc_PaAFSFM67fSMa6Prp4DC7-d4,2766
+lambda_api/app.py,sha256=kBEY9kY638eUxwRMBKwXxEiEJnRwbKzQEFdhLkds15w,8596
+lambda_api/base.py,sha256=thYDG5PuHe1ANzXvB55peZGkHEr1k-PPEQS5DH2J0kk,1497
+lambda_api/docsgen.py,sha256=TFxSsNDBgpob_jhVHsNpnPK-GN8GJdUGgTVZac3sNZU,4066
+lambda_api/error.py,sha256=S9bdEYr4TF4bmT1wBol_I0-UNitEw_b0OIQ35ID_lvg,1226
+lambda_api/router.py,sha256=05H4QNsy0Ub75N3bUPPdSOq7ihwZMEhyuDK4a1_-DyA,1326
+lambda_api/schema.py,sha256=6O2ne2rHTXTFyQme15cBOnZQr_OBDgJOBFZBGNMK8bg,894
+lambda_api/utils.py,sha256=cV0YhyWt5gbc-yFigIdfRHgSptfQEREZN_XZyBZUNOk,1652
+lambda_api-4.0.0.dist-info/licenses/LICENSE,sha256=QFoO9z40iWEPi9QPL6tPCNssOYzWWu_IeeUbyQj3jo8,1070
+lambda_api-4.0.0.dist-info/METADATA,sha256=-SpA45IxspbVpxiGxHuc1xs4nlwudKGTtF-Hjunwk0I,1287
+lambda_api-4.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+lambda_api-4.0.0.dist-info/top_level.txt,sha256=MDXRv_4FnzAQ0Xd5isBpvVJYJKrprDkYuP1ryP7OxaQ,11
+lambda_api-4.0.0.dist-info/RECORD,,
