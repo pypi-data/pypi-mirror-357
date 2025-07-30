@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<componentregistry>
+  <adapters />
+  <utilities>
+    <utility factory="Products.membrane.tests.dx.utilities.UserAdder"
+             interface="Products.membrane.interfaces.IUserAdder"
+             name="membrane_example"
+    />
+  </utilities>
+</componentregistry>

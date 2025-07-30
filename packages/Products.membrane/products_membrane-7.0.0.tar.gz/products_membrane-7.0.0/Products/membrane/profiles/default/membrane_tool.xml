@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object meta_type="MembraneTool"
+        name="membrane_tool"
+>
+
+  <object meta_type="ZCTextIndex Lexicon"
+          name="lexicon"
+  >
+    <!--element name="Case Normalizer" group="Case Normalizer" /-->
+    <!--element name=" Don't remove stop words" group="Stop Words" /-->
+    <element group="Word Splitter"
+             name="Unicode Whitespace splitter"
+    />
+  </object>
+
+  <object meta_type="ZCTextIndex Lexicon"
+          name="normalizerlexicon"
+  >
+    <element group="Case Normalizer"
+             name="Case Normalizer"
+    />
+    <!--element name=" Don't remove stop words" group="Stop Words" /-->
+    <element group="Word Splitter"
+             name="Unicode Whitespace splitter"
+    />
+  </object>
+
+  <object meta_type="ZCTextIndex Lexicon"
+          name="plone_lexicon"
+  >
+    <element group="Word Splitter"
+             name="Unicode Whitespace splitter"
+    />
+    <element group="Case Normalizer"
+             name="Unicode Ignoring Accents Case Normalizer"
+    />
+  </object>
+
+  <index meta_type="ZCTextIndex"
+         name="Title"
+  >
+    <indexed_attr value="Title" />
+    <extra name="index_type"
+           value="Cosine Measure"
+    />
+    <extra name="lexicon_id"
+           value="plone_lexicon"
+    />
+  </index>
+
+  <index meta_type="ZCTextIndex"
+         name="getUserName"
+  >
+    <indexed_attr value="getUserName" />
+    <extra name="index_type"
+           value="Cosine Measure"
+    />
+    <extra name="lexicon_id"
+           value="plone_lexicon"
+    />
+  </index>
+
+  <index meta_type="FieldIndex"
+         name="exact_getUserName"
+  >
+    <indexed_attr value="getUserName" />
+  </index>
+
+  <index meta_type="ZCTextIndex"
+         name="getUserId"
+  >
+    <indexed_attr value="getUserId" />
+    <extra name="index_type"
+           value="Cosine Measure"
+    />
+    <extra name="lexicon_id"
+           value="plone_lexicon"
+    />
+  </index>
+
+  <index meta_type="FieldIndex"
+         name="exact_getUserId"
+  >
+    <indexed_attr value="getUserId" />
+  </index>
+
+  <index meta_type="ZCTextIndex"
+         name="getGroupId"
+  >
+    <indexed_attr value="getGroupId" />
+    <extra name="index_type"
+           value="Cosine Measure"
+    />
+    <extra name="lexicon_id"
+           value="plone_lexicon"
+    />
+  </index>
+
+  <index meta_type="FieldIndex"
+         name="exact_getGroupId"
+  >
+    <indexed_attr value="getGroupId" />
+  </index>
+
+  <index meta_type="FieldIndex"
+         name="UID"
+  >
+    <indexed_attr value="UID" />
+  </index>
+
+  <index meta_type="KeywordIndex"
+         name="object_implements"
+  >
+    <indexed_attr value="object_implements" />
+  </index>
+
+  <index meta_type="ZCTextIndex"
+         name="SearchableText"
+  >
+    <indexed_attr value="SearchableText" />
+    <extra name="index_type"
+           value="Okapi BM25 Rank"
+    />
+    <extra name="lexicon_id"
+           value="plone_lexicon"
+    />
+  </index>
+
+  <index meta_type="DateIndex"
+         name="created"
+  >
+    <property name="index_naive_time_as_local">True</property>
+  </index>
+
+  <index meta_type="DateIndex"
+         name="modified"
+  >
+    <property name="index_naive_time_as_local">True</property>
+  </index>
+
+  <index meta_type="KeywordIndex"
+         name="allowedRolesAndUsers"
+  >
+    <indexed_attr value="allowedRolesAndUsers" />
+  </index>
+
+  <index meta_type="FieldIndex"
+         name="review_state"
+  >
+    <indexed_attr value="review_state" />
+  </index>
+
+  <index meta_type="FieldIndex"
+         name="meta_type"
+  >
+    <indexed_attr value="meta_type" />
+  </index>
+
+  <index meta_type="FieldIndex"
+         name="getId"
+  >
+    <indexed_attr value="getId" />
+  </index>
+
+  <index meta_type="ExtendedPathIndex"
+         name="path"
+  />
+
+  <index meta_type="FieldIndex"
+         name="portal_type"
+  >
+    <indexed_attr value="portal_type" />
+  </index>
+
+  <index meta_type="DateRangeIndex"
+         name="startendrange"
+         since_field="start"
+         until_field="end"
+  />
+
+  <column value="UID" />
+  <column value="getUserName" />
+  <column value="getUserId" />
+  <column value="getGroupId" />
+  <column value="Title" />
+  <column value="review_state" />
+  <column value="getIcon" />
+  <column value="created" />
+  <column value="effective" />
+  <column value="expires" />
+  <column value="modified" />
+  <column value="CreationDate" />
+  <column value="EffectiveDate" />
+  <column value="ExpiresDate" />
+  <column value="ModificationDate" />
+  <column value="portal_type" />
+  <column value="getId" />
+  <column value="exact_getGroupId" />
+  <column value="parent_path" />
+
+</object>
