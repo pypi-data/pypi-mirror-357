@@ -1,0 +1,243 @@
+Metadata-Version: 2.1
+Name: ioteq-cloud-iot
+Version: 1.0.8
+Summary: Cloud IoT API client library
+Home-page: https://github.com/aeoberto/python-iot
+Author: Angel Oberto
+Author-email: angel.oberto@io-teq.com
+License: Apache 2.0
+Project-URL: Bug Reports, https://github.com/aeoberto/python-iot/issues
+Project-URL: Source, https://github.com/aeoberto/python-iot
+Project-URL: Documentation, https://github.com/aeoberto/python-iot#readme
+Platform: Posix; MacOS X; Windows
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: httpx
+Requires-Dist: proto-plus
+
+Python Client for IO-TEQ IoT Core API
+================================================================
+
+Quick start
+-----------
+
+To use this library, you first need to go through the following steps:
+
+1. Install pip package - ```pip install ioteq-cloud-iot```
+
+2. Set an environment variable **IOTEQ_CONFIGURATION**, pointing to your IO-TEQ service account JSON file.
+
+Installation
+~~~~~~~~~~~~
+
+Install this library in a `virtualenv`_ using pip. `virtualenv`_ is a tool to create isolated Python environments. It addresses dependencies and versions and, indirectly, permissions.
+
+With `virtualenv`_, it's possible to install this library without system install permissions and clashing with the installed system dependencies.
+
+.. _`virtualenv`: https://virtualenv.pypa.io/en/latest/
+
+Rebuilding the Package
+~~~~~~~~~~~~~~~~~~~~~
+
+If you make changes to the source code and need to rebuild the package, follow these steps:
+
+1. **Clean previous builds** (optional but recommended):
+   ```bash
+   rm -rf build/ dist/ *.egg-info/
+   ```
+
+2. **Build the package**:
+   ```bash
+   python3 setup.py sdist bdist_wheel
+   ```
+
+3. **Install the rebuilt package locally** (for testing):
+   ```bash
+   python3 -m pip install dist/ioteq_cloud_iot-1.0.0-py2.py3-none-any.whl
+   ```
+
+4. **Test the installation**:
+   ```bash
+   python3 -c "from ioteq.cloud.iot_v1 import DeviceManagerClient; print('Package rebuilt successfully!')"
+   ```
+
+5. **Uninstall test installation** (if needed):
+   ```bash
+   python3 -m pip uninstall ioteq-cloud-iot -y
+   ```
+
+**Note**: The package files will be created in the `dist/` directory:
+- `ioteq_cloud_iot-1.0.0-py2.py3-none-any.whl` - Wheel distribution
+- `ioteq-cloud-iot-1.0.0.tar.gz` - Source distribution
+
+Validating Package Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Before building the package, you can validate the configuration using:
+
+```bash
+python3 setup.py check
+```
+
+This command will:
+- Check for syntax errors in `setup.py`
+- Validate package metadata
+- Verify dependencies
+- Check for common configuration issues
+- Ensure all required files are present
+
+**Note**: You may see some deprecation warnings about `pyproject.toml` configuration, but these are informational and won't prevent the package from building successfully.
+
+Publishing to GitHub Packages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This package is configured to be published to GitHub Packages. To publish a new version:
+
+1. **Update the version number** using the provided script:
+   ```bash
+   python scripts/bump_version.py 1.1.0  # Replace with your new version
+   ```
+
+   Or manually update both `setup.py` and `pyproject.toml`:
+   ```bash
+   # Update version in setup.py
+   version = "1.1.0"  # or your new version
+
+   # Update version in pyproject.toml
+   version = "1.1.0"  # or your new version
+   ```
+
+2. **Commit and push your changes**:
+   ```bash
+   git add .
+   git commit -m "Bump version to 1.1.0"
+   git push origin main
+   ```
+
+3. **Create a new GitHub Release**:
+   - Go to your GitHub repository
+   - Click on "Releases" in the right sidebar
+   - Click "Create a new release"
+   - Set the tag version (e.g., `v1.1.0`)
+   - Add release notes
+   - Click "Publish release"
+
+4. **Automatic Publishing**: The GitHub Actions workflow will automatically:
+   - Build the package
+   - Publish it to GitHub Packages
+   - Make it available for installation
+
+**Installing from GitHub Packages**:
+```bash
+pip install --index-url https://pkg.github.com/aeoberto/TeqConnect-IOT-Python/ ioteq-cloud-iot
+```
+
+**Note**: You may need to authenticate with GitHub Packages. Create a Personal Access Token with `read:packages` scope and configure pip:
+```bash
+pip config set global.extra-index-url https://pkg.github.com/aeoberto/TeqConnect-IOT-Python/
+```
+
+Code samples and snippets
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Code samples and snippets live in the samples/ioteq folder.
+
+
+Supported Python versions
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Our client libraries are compatible with all current `active`_ and `maintenance`_ versions of
+Python.
+
+Python >= 3.8
+
+.. _active: https://devguide.python.org/devcycle/#in-development-main-branch
+.. _maintenance: https://devguide.python.org/devcycle/#maintenance-branches
+
+Unsupported Python versions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Python <= 3.7
+
+If you are using an `end-of-life`_ version of Python, we recommend you update it to an actively supported version as soon as possible.
+
+.. _end-of-life: https://devguide.python.org/devcycle/#end-of-life-branches
+
+Mac/Linux
+^^^^^^^^^
+
+.. code-block:: console
+
+    pip install virtualenv
+    virtualenv <your-env>
+    source <your-env>/bin/activate
+
+
+Windows
+^^^^^^^
+
+.. code-block:: console
+
+    pip install virtualenv
+    virtualenv <your-env>
+    <your-env>\Scripts\activate
+
+Next steps
+~~~~~~~~~~
+
+- Clone the GitHub repository.
+
+- Execute the setup.py file like Python setup.py install.
+
+Note about types of times and binaryData
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- By default, the following parameters are returned as the shown types:
+
+1. All time parameters (e.g. **cloudUpdateTime**, **deviceAckTime**, **updateTime**): **RFC3339** strings (e.g. "2023-01-12T23:38:07.732Z")
+2. **CONFIG binaryData**: **base64-encoded string**
+3. **STATE binaryData**: **NON-base64-encoded string**
+
+- To return these parameters using the different types, set environment variable **BINARYDATA_AND_TIME_IOTEQ_FORMAT** to **True** (case-insensitive string). This will ensure the following parameters are returned as the shown types:
+
+1. All times: **DatetimeWithNanoseconds** (defined in the **proto.datetime_helpers** module)
+2. All **binaryData** (CONFIG, STATE etc.): **BYTE ARRAYS**
+
+- If this environment variable is not set, or is set to any unexpected values, then the default types listed previously are used.
+
+Note about performance:
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- By default, calls to some SDK functions cause a REST request to be sent to acquire the registry API keys found on the IoTCore UI Registry Details page. Those keys are cached for subsequent operations to improve performance. However, these caches do not persist if the application is stopped and restarted. To improve those functions' performance, the REST call can be prevented by passing the API keys as environment variables:
+
+1. **REGISTRY_URL**: **string**
+2. **REGISTRY_SYSKEY**: **string**
+3. **REGISTRY_TOKEN**: **string**
+
+Note about running from the source instead of the PyPi (pip) module:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- To temporarily use the source code in this repo instead of the installed PyPi (pip) module, do the following:
+
+1. Clone this repo.
+2. Check out the desired branch using **git checkout <branch>**.
+3. In your code find where **ioteq** or **ioteq.cloud** is being imported.
+4. Precede that line with **import sys** and **sys.path.insert(0, <path_to_python-iot>)**. The path must end with python-iot. For example:
+
+.. code-block:: console
+
+    import sys
+    sys.path.insert(0, "path/to/python-iot")
+
+    from ioteq.cloud import iot_v1
+
+
