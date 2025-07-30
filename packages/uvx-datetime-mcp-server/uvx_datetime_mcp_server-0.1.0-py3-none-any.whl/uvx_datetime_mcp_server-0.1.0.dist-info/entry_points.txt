@@ -1,0 +1,2 @@
+[console_scripts]
+uvx-datetime-mcp-server = src.__main__:main
