@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: sold
+Version: 0.0.1
+Summary: A library for the study of auctions.
+Author: Vincent Knight
+Author-email: knightva@cardiff.ac.uk
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: more-itertools >= 10.2.0
+Requires-Dist: numpy >= 1.26.1
+Requires-Dist: sphinx ; extra == "doc"
+Requires-Dist: sphinx-rtd-theme ; extra == "doc"
+Requires-Dist: sphinx-togglebutton ; extra == "doc"
+Provides-Extra: doc
+
+# Sold
+
+A python library for the study of Auctions
+
