@@ -1,0 +1,56 @@
+Metadata-Version: 2.4
+Name: pyiron_contrib
+Version: 0.1.19
+Summary: Repository for user-generated plugins to the pyiron IDE.
+Home-page: https://github.com/pyiron/pyiron_contrib
+Author: Max-Planck-Institut für Eisenforschung GmbH - Computational Materials Design (CM) Department
+Author-email: huber@mpie.de
+License: BSD
+Keywords: pyiron
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+License-File: LICENSE
+Requires-Dist: matplotlib>=3.9.4
+Requires-Dist: numpy>=1.26.4
+Requires-Dist: pyiron_snippets>=0.1.3
+Requires-Dist: pyiron_base>=0.13.0
+Requires-Dist: scipy>=1.15.0
+Requires-Dist: seaborn>=0.13.2
+Requires-Dist: pyparsing>=3.1.4
+Provides-Extra: atomistic
+Requires-Dist: ase>=3.25.0; extra == "atomistic"
+Requires-Dist: pyiron_atomistics>=0.7.8; extra == "atomistic"
+Requires-Dist: pycp2k>=0.2.2; extra == "atomistic"
+Provides-Extra: fenics
+Requires-Dist: fenics>=2019.1.0; extra == "fenics"
+Requires-Dist: mshr>=2019.1.0; extra == "fenics"
+Provides-Extra: image
+Requires-Dist: scikit-image>=0.25.1; extra == "image"
+Provides-Extra: generic
+Requires-Dist: boto3>=1.38.32; extra == "generic"
+Requires-Dist: moto>=5.1.5; extra == "generic"
+Provides-Extra: tinybase
+Requires-Dist: distributed>=2024.12.1; extra == "tinybase"
+Requires-Dist: pymatgen>=2024.9.17.1; extra == "tinybase"
+Requires-Dist: pympipool>=0.8.4; extra == "tinybase"
+Requires-Dist: h5io_browser>=0.1.11; extra == "tinybase"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
+
+http://pyiron.org
