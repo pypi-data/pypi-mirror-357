@@ -1,0 +1,41 @@
+Metadata-Version: 2.3
+Name: spaceship-api
+Version: 0.1.0
+Summary: API for spaceship
+Author: Benjamin Wiessneth
+Author-email: b.wiessneth@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: pytest (>=8.3.4,<9.0.0)
+Description-Content-Type: text/x-rst
+
+spaceship-api
+#############
+
+API client for https://www.spaceship.com/
+
+
+Usage
+*****
+
+Install this package
+
+```
+pip install spaceship-api
+```
+
+.. code-block:: python3
+
+    from spaceship_api.dns_records_types import DNSRecordTypeAdapter
+    from spaceship_api.client import SpaceshipApiClient
+
+    api_client = SpaceshipApiClient(api_key="SzhR...", api_secret="LXWT...")
+
+    dns_records = api_client.get_dns_records("yourdomain.xyz")
+
+    for dns_record in dns_records:
+        print(dns_record)
+
