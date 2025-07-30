@@ -1,0 +1,60 @@
+Metadata-Version: 2.4
+Name: pygitpub
+Version: 0.0.55
+Summary: Pygitpub will help you work with github
+Home-page: https://veltzer.github.io/pygitpub
+Download-URL: https://github.com/veltzer/pygitpub
+Author: Mark Veltzer
+Author-email: mark.veltzer@gmail.com
+Maintainer: Mark Veltzer
+Maintainer-email: mark.veltzer@gmail.com
+License: MIT
+Keywords: github,pygithub
+Platform: python3
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Utilities
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: pytconf
+Requires-Dist: pylogconf
+Requires-Dist: PyGithub
+Requires-Dist: pyapikey
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: platform
+Dynamic: requires-dist
+Dynamic: summary
+
+==========
+*pygitpub*
+==========
+
+.. image:: https://img.shields.io/pypi/v/pygitpub
+
+.. image:: https://img.shields.io/github/license/veltzer/pygitpub
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+
+project website: https://veltzer.github.io/pygitpub
+
+author: Mark Veltzer
+
+version: 0.0.55
+
+	Mark Veltzer <mark.veltzer@gmail.com>, Copyright © 2022, 2023, 2024, 2025
