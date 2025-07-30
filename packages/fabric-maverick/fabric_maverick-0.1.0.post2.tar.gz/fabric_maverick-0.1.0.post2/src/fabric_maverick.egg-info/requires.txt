@@ -1,0 +1,5 @@
+thefuzz
+semantic-link-sempy>=0.11.0
+
+[test]
+pytest>=8.2.1
