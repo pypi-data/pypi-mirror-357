@@ -1,0 +1,48 @@
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/axiom_mcp",
+]
+
+[tool.black]
+line-length = 88
+target-version = [
+    "py311",
+    "py312",
+]
+include = "\\.pyi?$"
+
+[tool.ruff]
+select = [
+    "E",
+    "F",
+    "B",
+    "I",
+]
+line-length = 88
+target-version = [
+    "py311",
+    "py312",
+]
+fix = true
+
+[tool.ruff.isort]
+known-first-party = [
+    "axiom_mcp",
+]
+combine-as-imports = true
+force-wrap-aliases = true
+profile = "black"
+
+[tool.pytest.ini_options]
+addopts = "--asyncio-mode=auto"
+testpaths = [
+    "tests",
+]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
