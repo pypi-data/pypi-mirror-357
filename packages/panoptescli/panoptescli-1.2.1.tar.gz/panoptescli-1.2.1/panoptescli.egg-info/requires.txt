@@ -1,0 +1,5 @@
+Click<8.2,>=6.7
+PyYAML<6.1,>=5.1
+panoptes-client<2.0,>=1.7
+humanize<4.8,>=0.5.1
+pathvalidate<2.6,>=0.29.0
