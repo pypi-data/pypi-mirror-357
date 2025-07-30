@@ -1,0 +1,48 @@
+[build-system]
+requires = [
+    "setuptools >= 80.9.0",
+    "setuptools-scm >= 8.3.1",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aweson"
+dynamic = ["version"]
+authors = [
+  { name="Ferenc Dosa-Racz", email="dosarf@gmail.com" },
+]
+description = "Traversing and manipulating hierarchical info sets (JSON) using pythonic JSON Path-like expressions"
+readme = "README.rst"
+
+requires-python = ">=3.10"
+
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Operating System :: OS Independent",
+]
+
+dependencies = []
+
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+keywords = ["JSON", "Path"]
+
+[project.optional-dependencies]
+test = [
+  "pytest",
+]
+
+develop = [
+  "build",
+  "twine",
+]
+
+[project.urls]
+Homepage = "https://github.com/dosarf/aweson"
+Issues = "https://github.com/dosarf/aweson/issues"
+Changelog = "https://github.com/dosarf/aweson/blob/master/CHANGELOG.md"
+
+
+[tool.setuptools_scm]
+
