@@ -1,0 +1,7 @@
+game_object_detection/__init__.py,sha256=Yxe6dlezLpktFUHN63xZ24byh1ZtVhVzqHyM4hUZYC0,223
+game_object_detection/detector.py,sha256=XOtiwPb_z-zvAZ_O-zb7FON0VKBOFeAzDQ0Ga2XstTo,5907
+game_object_detection/trainer.py,sha256=lpKX-EVTA3vHsuXl3Z-yWncG15fd-ChpJppIy6Y0IX4,8370
+game_object_detection-1.0.0.dist-info/METADATA,sha256=mwawC_VvZSRFq8nrcWSuiM_Cyr0cf3LE40v511Pv5EM,703
+game_object_detection-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+game_object_detection-1.0.0.dist-info/top_level.txt,sha256=VvcOHeC1WtgWgedXKoWBHIk2oXnX6bXl56PvxqfDq3M,22
+game_object_detection-1.0.0.dist-info/RECORD,,
