@@ -1,0 +1,3 @@
+[console_scripts]
+build-samples = build_sample_db:main
+mcp-viz = mcp_visualization.cli:main
