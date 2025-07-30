@@ -1,0 +1,14 @@
+eppink_utilities/__init__.py,sha256=hIA0ZHTtAC689pWEpx0agASv1mxi6Iooi-tf1t3SE4o,222
+eppink_utilities/data_utils.py,sha256=qzj30aA_sqvM7J-nJ4yn5ynvTu-Ug8ZAdqU-XGLTWNE,19282
+eppink_utilities/dimless_utils.py,sha256=CW1H7lD9sF9QQ06e5UgWP5oo1d7I0kPdlNqoNuQYbHg,96889
+eppink_utilities/file_utils.py,sha256=ROuZzUdGuSpNW8zufI4lRJCAzbt2vBt6r3fa0NUa5Vs,12009
+eppink_utilities/general_utils.py,sha256=zrBLxgt-UDJ8giZKI5KBmWP5VZuwLJIBR4-ixkvnVyM,4331
+eppink_utilities/heattransfer_utils.py,sha256=uwxZfsds8WHOzJ6aIgd1394aDRk74HvjFlFd3Yu_Qps,19731
+eppink_utilities/math_utils.py,sha256=e0ItiVX3nVSKLGoNjYoo4s9XT_ETLd0GsDEaDJ6iW_0,16327
+eppink_utilities/plot_utils.py,sha256=EGP5zgy01xwVyMKuyYWMhMC-rQ7jlzYFsBAipml5ZXw,6973
+eppink_utilities/thermo_utils.py,sha256=7HHogX1zlnd9RHUdqsJHW0Ublw6etd6mZfwmW9mGGUg,7208
+eppink_utilities-0.12.10.dist-info/licenses/LICENSE,sha256=q7793gA8KixN-qkMfn6Gkc-42sLhhzhcdyZ7yPM4OEQ,1096
+eppink_utilities-0.12.10.dist-info/METADATA,sha256=ATdDjZkC-pbgySQ9ldVf28jkFMmnBSGMa9b5bcC55ac,1162
+eppink_utilities-0.12.10.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+eppink_utilities-0.12.10.dist-info/top_level.txt,sha256=XvImi0PtULDoTbakeL0YKBKeDEbHWld8Srjc_ejh6i4,17
+eppink_utilities-0.12.10.dist-info/RECORD,,
