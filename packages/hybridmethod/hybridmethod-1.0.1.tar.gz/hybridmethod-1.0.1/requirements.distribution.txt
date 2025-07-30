@@ -1,0 +1,4 @@
+# HybridMethod Library: Build & Distribution Dependencies
+build
+twine
+wheel
