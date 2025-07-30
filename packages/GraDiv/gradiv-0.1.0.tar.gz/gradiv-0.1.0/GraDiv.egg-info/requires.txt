@@ -1,0 +1,6 @@
+pybedtools
+pysam
+click>=8.0.3
+click_extra
+egglib>=3.5.0
+rich

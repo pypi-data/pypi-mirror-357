@@ -1,0 +1,5 @@
+GraDiv.egg-info
+gradiv/__pycache__
+gradiv/_version.py
+gradiv/test*
+.idea/

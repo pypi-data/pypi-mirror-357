@@ -1,0 +1,14 @@
+previous_node,genome1,genome2,genome3,genome4
++1,*,CGTAC,*,CGTAC
++3,*,TACGT,TACGT,TACGT
++4,?,*,*,AAAAA
++6,AACCG,GGGGG,GGGGG,GGGGG
++7,?,*,TTTTT,TTTTT
++10,A,C,G,T
++16,A,G,G,?
++22,?,T,G,?
++26,G,?,?,CGTAC
++28,T,AAA,AAA,?
++30,?,*,CCCCC,?
++32,AAAG,AAAG,CTTT,CTTT
++38,ACG,CGT,A,T

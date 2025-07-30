@@ -1,0 +1,62 @@
+# Build system backend to create package to upload on pypi
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools>=68",
+    "setuptools_scm[toml]>=8"
+]
+
+# configuration of setuptools_scm to use tag version autoincrementation
+[tool.setuptools_scm]
+write_to = "gradiv/_version.py"
+version_scheme = "release-branch-semver"
+tag_regex = "^(\\d.\\d.\\d)-*\\w*\\d*$"
+local_scheme = "no-local-version"
+
+# define Project settings
+[project]
+name = "GraDiv"
+dynamic = ["version"]
+description = """GraDiv is a tool to lead diversity analysis on a pangenome graph. It allows users to call variants from a pangenome graph indexed with GraTools, then compute diversity statistics from them."""
+authors = [
+    { name = "Margaux Imbert (UM)", email = "margaux.imbert01@etu.umontpellier.fr"},
+    { name = "Stéphane De Mita (PHIM, INRAE)", email = "stephane.demita@inrae.fr"},
+    { name = "Ravel Sebastien (PHIM, CIRAD)", email = "sebastien.ravel@cirad.fr" },
+    { name = "Christine Tranchant (DIADE, IRD)", email = "christine.tranchant@cirad.fr" }
+]
+dependencies = ["pybedtools","pysam", "click>=8.0.3","click_extra", "egglib>=3.5.0", "rich"]
+requires-python = ">=3.10"
+readme = "README.rst"
+license = { file = "LICENSE" }
+keywords = ["pangenome", "graph", "diversity"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.urls]
+Homepage = "https://forge.ird.fr/phim/gradiv"
+
+# setup scripts links
+[project.scripts]
+gradiv = "gradiv.main:main_command"
+
+[project.entry-points.gradiv]
+gradiv = "__init__"
+
+#[tool.setuptools.packages.find]
+#where = ["pg_stats"] #or .
+#include = ["pg_stats"]
+#exclude = ["gratools", "test_data"]
+
+[tool.setuptools]
+packages = ["gradiv"]

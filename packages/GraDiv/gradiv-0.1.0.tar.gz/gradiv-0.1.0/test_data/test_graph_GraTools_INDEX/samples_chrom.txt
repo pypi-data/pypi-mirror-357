@@ -1,0 +1,4 @@
+genome1	chr1	0	89
+genome2	chr1	0	101
+genome3	chr1	0	104
+genome4	chr1	0	106

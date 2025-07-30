@@ -1,0 +1,34 @@
+# docker image used to build the app
+image: python:3.10
+stages:
+  - install
+  - test
+before_script:
+  - echo ${CI_PROJECT_DIR}
+  - echo ${CI_COMMIT_REF_NAME}
+  - export PATH=$PATH:/root/.local/bin
+  - python3 -m pip install -U setuptools build pip
+  - python3 -m pip install --user gradiv@git+https://forge.ird.fr/phim/gradiv.git@$CI_COMMIT_REF_NAME
+test_install:
+  stage: install
+  script:
+    - gradiv --help
+#  tag:
+#    - VM
+#  rules:
+#    - if: $CI_COMMIT_TAG =~ "/^v.*rc/" # if commit tag starts with v
+#    - if: $CI_COMMIT_MESSAGE =~ "/.*-TEST.*/i" # test in commit message
+test_call:
+  stage: test
+  script:
+    - mkdir gradiv_ci
+    - cd gradiv_ci
+    - git clone https://forge.ird.fr/phim/gradiv.git
+    - gradiv call -g gradiv/test_data/test_graph_GraTools_INDEX
+test_compute:
+  stage: test
+  script:
+    - mkdir gradiv_ci
+    - cd gradiv_ci
+    - git clone https://forge.ird.fr/phim/gradiv.git
+    - gradiv compute -g gradiv/test_data/test_graph_GraTools_INDEX --stat-type site,unphased,phased
