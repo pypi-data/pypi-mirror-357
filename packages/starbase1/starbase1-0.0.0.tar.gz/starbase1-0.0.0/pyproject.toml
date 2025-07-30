@@ -1,0 +1,10 @@
+[project]
+name = "starbase1"
+version = "0.0.0"
+description = "Data-star framework for Python (coming soon)"
+authors = [{name = "Ryan Funduk", email = "ryan@funduk.ca"}]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
