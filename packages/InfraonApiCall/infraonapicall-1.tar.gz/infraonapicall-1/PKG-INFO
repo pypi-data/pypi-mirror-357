@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: InfraonApiCall
+Version: 1
+Summary: Library to call Infraon API for auth token
+Author: ravikumar
+Requires-Dist: requests
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary
