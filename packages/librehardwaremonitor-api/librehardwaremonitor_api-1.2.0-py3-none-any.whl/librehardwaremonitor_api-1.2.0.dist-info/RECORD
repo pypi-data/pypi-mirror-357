@@ -1,0 +1,11 @@
+librehardwaremonitor_api/__init__.py,sha256=POwDHnCO_eVfdXtFtU0ac40syECR_ozAatH-NhBmV1s,227
+librehardwaremonitor_api/client.py,sha256=pu-iK3uQL7N0IgAmmWRH1F0EUd0BENEnB9sCOctuouc,1326
+librehardwaremonitor_api/errors.py,sha256=y-Jj3hI34ZGTvD-37nO-HKIMU2EIrFTOS0SAWePuk-o,241
+librehardwaremonitor_api/model.py,sha256=MWhXDJxxOp6Xzs1mfymPNtez3l8Ezt-onMV_8Eo5nro,505
+librehardwaremonitor_api/parser.py,sha256=e2-GixuqdndsJT1Is2kRor_OR9XqXTJLuHdqG_-Fxuc,3523
+librehardwaremonitor_api/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+librehardwaremonitor_api-1.2.0.dist-info/licenses/LICENSE.md,sha256=y_9GnP9spNq0s_7L3U1weO65tryG_LpSBR3tRtXlzkw,1072
+librehardwaremonitor_api-1.2.0.dist-info/METADATA,sha256=FMU6sgvQX-Sb-i_bPKsGYslMBU6kePexY5VGiY3mfO8,2503
+librehardwaremonitor_api-1.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+librehardwaremonitor_api-1.2.0.dist-info/top_level.txt,sha256=TRiWuo2sZRIZrviinV95csyRWMMYq3oDNglSoOxGDjI,25
+librehardwaremonitor_api-1.2.0.dist-info/RECORD,,
