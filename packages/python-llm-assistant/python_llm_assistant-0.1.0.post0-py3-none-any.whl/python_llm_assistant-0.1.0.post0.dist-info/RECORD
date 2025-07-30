@@ -1,0 +1,9 @@
+python_llm_assistant/__init__.py,sha256=78tPPO_IusgoYv0tLdHKn1xIFXy6t2BMwc1ymesY5L4,42
+python_llm_assistant/__main__.py,sha256=K2Smq5iu4HaR-olgIZ_iLUhSJpG7NCwAhaBq3JTr9GI,2194
+python_llm_assistant/config.py,sha256=bk_9l57rqX8zHz5byDDYSwSMWMQbofpDda5zL0tfdn4,416
+python_llm_assistant/prompts.py,sha256=JJTysDHtBDdoXRFtZg5NVW2KYMqUSzfhnrgWxMrSh7g,6686
+python_llm_assistant-0.1.0.post0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+python_llm_assistant-0.1.0.post0.dist-info/METADATA,sha256=wTkNGUFUBLxp_rJkP9mWL9zuBVDghVjE0yCSeoe0qbI,792
+python_llm_assistant-0.1.0.post0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+python_llm_assistant-0.1.0.post0.dist-info/top_level.txt,sha256=51yXpFAEK_czOscAGOPl_e7K28TeQiCI5YEkegw9Hss,21
+python_llm_assistant-0.1.0.post0.dist-info/RECORD,,

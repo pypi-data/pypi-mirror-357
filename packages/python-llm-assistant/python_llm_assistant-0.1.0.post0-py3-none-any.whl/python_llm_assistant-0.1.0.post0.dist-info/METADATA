@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: python_llm_assistant
+Version: 0.1.0.post0
+Summary: Telegram group chat assistant
+Author: Alexandr, Vladimir, Roman
+Author-email: "Alexandr, Vladimir, Roman" <roman.arzum@gmail.com>
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+
+# Telegram Bot
+
+## Current Features
+- Returns bot version for any message
+
+## Installation
+
+1. Clone the repository
+2. Install dependencies:
+```bash
+pip install python_llm_assistant
+pip install -r https://github.com/RomanArzumanyan/LLM-assistant/blob/main/requirements.txt
+```
+3. Create a .env file with the following parameters:
+```
+BOT_TOKEN=your_telegram_bot_token
+```
+
+## Running
+```bash
+python -m python_llm_assistant
+```
