@@ -1,0 +1,14 @@
+constructor_groups/__init__.py,sha256=kVaXncO8SmrJDaG-GYpL_8BBIl3IfPesGC5RKLRu_Kk,29
+constructor_groups/client.py,sha256=oMM7dcaDY4Wg2Q5RvS2uAaGJjE7eCKDNZhzruJDYW90,2586
+constructor_groups/attendee/__init__.py,sha256=dgWr9Xh5zSPUiGcagALPR9yLHILYnSX93ZgQFlm_HO4,34
+constructor_groups/attendee/client.py,sha256=8GZLltDOGjkWGrABpjlY4Rsu-drYwmX5e4fkzCH59SU,2325
+constructor_groups/report/__init__.py,sha256=iPosCPDtzTisuH2H9tgfoBjmljMjRSdElNA-WSJTAlQ,32
+constructor_groups/report/client.py,sha256=e310W7hykTQk3h8Y6UIZkoestgL_QyOldtub41SXWwA,1056
+constructor_groups/session/__init__.py,sha256=DHBRVmP2yoIYj2KJTktiz8yQsM2n1r0RdKJ8X5ptJhg,33
+constructor_groups/session/client.py,sha256=HG9tMNmXalmYcsQny86JpcupRhaoyRVYbMXByBsa9Xk,1193
+constructor_groups/user/__init__.py,sha256=0TKi6VQRJVrX9SyTYF644VqR39AxJpnpesLps8yZUMA,30
+constructor_groups/user/client.py,sha256=u6BDcpPdGGhgHN1w1zS3bOpXfoIyXfIgAF_quu1H6CA,1174
+constructor_groups-0.2.5.dist-info/METADATA,sha256=OIM6QiMZqKi_lGipbqUOY37V4LgK0Fy6MH5OrbyvZyU,1780
+constructor_groups-0.2.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+constructor_groups-0.2.5.dist-info/top_level.txt,sha256=d4pxLEQKzdb5FZ-jpH7xDTfpCwVhin1K_RpKMBKnE14,19
+constructor_groups-0.2.5.dist-info/RECORD,,
