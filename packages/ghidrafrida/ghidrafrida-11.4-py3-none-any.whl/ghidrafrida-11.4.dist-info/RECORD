@@ -1,0 +1,10 @@
+ghidrafrida/__init__.py,sha256=EjP7_fAI5-_Rh-Af49FIYugNJ77OwQn7yQtFUeMGfCk,615
+ghidrafrida/arch.py,sha256=YJNNhM-koAENcamm5yGFVs5iTkPXfeCuLnJKwqw8p1c,9816
+ghidrafrida/commands.py,sha256=YMaIbAje7GQQOUDPW95Cxsc-sOSpVMSqbXa2VFqyAbc,65031
+ghidrafrida/methods.py,sha256=JPyqPVMb9s0xutccU-VWpzFcJZIP1bk-icF8z61UtdM,27455
+ghidrafrida/util.py,sha256=wTtxxU_cFn7IiHeT-2O6KDKhopUW3cXXzcIVEzFf-FM,11361
+ghidrafrida-11.4.dist-info/LICENSE,sha256=SlHPf3JPUb7bX6T5WDonYvHbjQXkOld-JIfHqrL9zhg,525
+ghidrafrida-11.4.dist-info/METADATA,sha256=YVz3xYInxoaHYXjMVOZl8D2y04etOFifLRMVdSTL6Ww,645
+ghidrafrida-11.4.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+ghidrafrida-11.4.dist-info/top_level.txt,sha256=qzlKAxe3PdcGD4B9iMzTNdCJA0uLKQ9d1h_WFG6ct7s,12
+ghidrafrida-11.4.dist-info/RECORD,,
