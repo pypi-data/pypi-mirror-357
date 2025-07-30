@@ -1,0 +1,9 @@
+LICENSE.md
+README.md
+setup.py
+qmt_manager.egg-info/PKG-INFO
+qmt_manager.egg-info/SOURCES.txt
+qmt_manager.egg-info/dependency_links.txt
+qmt_manager.egg-info/entry_points.txt
+qmt_manager.egg-info/requires.txt
+qmt_manager.egg-info/top_level.txt
