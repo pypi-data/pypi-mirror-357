@@ -1,0 +1,11 @@
+CHANGELOG.md
+LICENSE.md
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+intel_gradio_theme/__init__.py
+intel_gradio_theme/spark.css
+intel_gradio_theme/spark_classic_blue.py
+intel_gradio_theme/spark_tb.py
