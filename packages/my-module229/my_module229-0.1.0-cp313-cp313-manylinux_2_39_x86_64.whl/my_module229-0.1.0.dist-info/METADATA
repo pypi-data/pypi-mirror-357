@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: my_module229
+Version: 0.1.0
+Summary: Test module with pybind11
+Author: mark43yedrey
+Author-email: pibaxab962@boxmach.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: C++
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
