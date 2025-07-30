@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: caspyan
+Version: 0.2.0
+Summary: minimal Python implementation of Caspian SNN processor
+Author-email: Kevin Zhu <kzhu4@gmu.edu>
+Project-URL: Homepage, https://github.com/pypa/sampleproject
+Project-URL: Issues, https://github.com/pypa/sampleproject/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
