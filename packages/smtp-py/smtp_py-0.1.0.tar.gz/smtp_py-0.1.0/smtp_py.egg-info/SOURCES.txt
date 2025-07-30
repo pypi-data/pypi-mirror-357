@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+smtp-py/__init__.py
+smtp-py/smtp-py.py
+smtp_py.egg-info/PKG-INFO
+smtp_py.egg-info/SOURCES.txt
+smtp_py.egg-info/dependency_links.txt
+smtp_py.egg-info/requires.txt
+smtp_py.egg-info/top_level.txt
