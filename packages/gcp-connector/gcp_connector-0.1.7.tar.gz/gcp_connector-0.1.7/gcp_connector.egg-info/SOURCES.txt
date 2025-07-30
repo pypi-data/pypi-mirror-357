@@ -1,0 +1,9 @@
+README.md
+setup.py
+gcp_connector/__init__.py
+gcp_connector/modulo.py
+gcp_connector.egg-info/PKG-INFO
+gcp_connector.egg-info/SOURCES.txt
+gcp_connector.egg-info/dependency_links.txt
+gcp_connector.egg-info/requires.txt
+gcp_connector.egg-info/top_level.txt
