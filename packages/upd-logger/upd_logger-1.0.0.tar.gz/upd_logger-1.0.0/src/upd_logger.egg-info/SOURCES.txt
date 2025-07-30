@@ -1,0 +1,8 @@
+README.md
+setup.py
+src/upd_logger/__init__.py
+src/upd_logger/upd_logger.py
+src/upd_logger.egg-info/PKG-INFO
+src/upd_logger.egg-info/SOURCES.txt
+src/upd_logger.egg-info/dependency_links.txt
+src/upd_logger.egg-info/top_level.txt
