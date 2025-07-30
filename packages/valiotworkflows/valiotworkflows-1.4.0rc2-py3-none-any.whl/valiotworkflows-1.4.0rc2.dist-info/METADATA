@@ -1,0 +1,75 @@
+Metadata-Version: 2.1
+Name: valiotworkflows
+Version: 1.4.0rc2
+Summary: Library to implement services and plugins for the Valiot Workflows framework
+Author: Valiot
+Author-email: adrian@valiot.io
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: orjson (>=3.10.18,<4.0.0)
+Requires-Dist: pydash (>=8.0,<9.0)
+Requires-Dist: pygqlc (>=3.5.0,<4.0.0)
+Requires-Dist: pyjwt (>=2.8.0,<3.0.0)
+Requires-Dist: python-dateutil (>=2.8.2,<3.0.0)
+Requires-Dist: pytz (>=2024.1,<2026.0)
+Requires-Dist: redis[hiredis] (>=6.1.0,<7.0.0)
+Requires-Dist: temporalio (>=1.8.0,<2.0.0)
+Requires-Dist: valiotlogging (>=0.1.0,<2.0.0)
+Description-Content-Type: text/markdown
+
+# valiotworkflows
+
+Library to implement services and plugins for the Valiot Workflows framework.
+For use with the `jobs` microservice and `WorkflowXXX` types.
+
+## for MANTAINERS:
+
+### Initial configuration
+
+first of all, ensure you have configured poetry repositories correctly:
+`poetry config repositories.valiot https://pypi.valiot.io/`
+
+and their credentials:
+
+For private valiot's pypi:
+
+`poetry config http-basic.valiot <username> <password>`
+
+(_ask adrian to send you the proper username and password for this step_)
+
+And for public pypi:
+
+`poetry config pypi-token.pypi <pypi-token>`
+
+(_ask adrian or baruc to generate a token for you_)
+
+then,
+
+### regular publish steps (after initial configuration)
+
+deploy using:
+
+`poetry version <patch | minor | major>`
+
+then publish to valiot's private pypi:
+
+`poetry publish --build -r valiot # build and PUBLISH TO PRIVATE VALIOTs PYPI`
+
+or:
+
+`poetry publish -r valiot`
+
+(if you already built the package)
+
+After release, publish to github:
+
+`cat gstorm/__version__.py`
+
+`gh release create`
+
+`gh release upload v<#.#.#> ./dist/gstorm-<#.#.#>-py3-none-any.whl`
+
+and don't forget to keep the `CHANGELOG.md` updated!
+
