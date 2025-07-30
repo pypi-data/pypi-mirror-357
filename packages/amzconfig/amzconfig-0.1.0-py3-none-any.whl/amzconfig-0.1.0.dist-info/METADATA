@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: amzconfig
+Version: 0.1.0
+Summary: An amazing config loader tool.
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pyyaml>=6.0.2
+
+### 用例: 常量类
+```python
+from amzconfig import ConstantClass
+class MyConstants(ConstantClass):
+    DEFAULT_MODEL = "qwen"
+```
+- 类属性不可修改，类不可初始化，如下代码报错: "AttributeError: The property 'DEFAULT_MODEL' of the constant class MyConstants is not allowed to be modified."
+    ```python
+    MyConstants.DEFAULT_MODEL = "deepseek"
+    ```
+- 类不可初始化，如下代码报错: TypeError: The constant class MyConstants cannot be instantiated.
+    ```python
+    MyConstants()
+    ```
+
+
+
+
+### 同时定义Yaml配置和环境变量的映射
+- 定义一个yaml配置
+```Yaml
+
+```
