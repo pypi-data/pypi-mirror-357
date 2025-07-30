@@ -1,0 +1,9 @@
+.venv
+.env
+test_api.py
+__pycache__
+__pycache__/*
+dist
+.ruff_cache
+test_manual.py
+.pytest_cache
