@@ -1,0 +1,9 @@
+src/example.py,sha256=BtVn9pdo1CE2a4poGSNBtgXTJ5Oy_SFavmkchA_Q7O0,77
+src/memealerts/async/client.py,sha256=oOG7fKAyOL70sdXoa5yhxvA_zjrVJzQYaHh98jVK1xM,299
+src/memealerts/models/__init_.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/memealerts/models/smth.py,sha256=c6yBJ5_Zmhy3HA7CPJp9CL9CTLiE8vex7grzx-_U_RE,69
+src/memealerts/sync/client.py,sha256=pXFPZuChjuG8PCl_0ROhGEXX3FFG1fxSKgmHRCYV3RE,131
+memealerts-0.0.1.dist-info/METADATA,sha256=hh1quaPg7LTMg6l9AWOdfJDSEt2aHyhlo91eF--IsSY,1812
+memealerts-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+memealerts-0.0.1.dist-info/licenses/LICENSE.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+memealerts-0.0.1.dist-info/RECORD,,
