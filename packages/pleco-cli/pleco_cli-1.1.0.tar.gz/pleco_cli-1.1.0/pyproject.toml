@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pleco-cli"
+version = "1.1.0"
+authors = [
+  { name = "Robert Ward II", email = "robert.ward@noaa.gov" }
+]
+description = "Read in and clean ROV serial data from serial ports"
+readme = "README.md"
+requires-python = ">=3.13"
+classifiers = [
+  "Programming Language :: Python :: 3"
+]
+license = { file = "LICENSE" }
+dependencies = [
+  "pyserial",
+  "pandas"
+]
+
+[project.scripts]
+pleco = "pleco.__main__:cli"
+
+[tool.hatch.build]
+sources = ["src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pleco"]
