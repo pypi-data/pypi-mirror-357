@@ -1,0 +1,11 @@
+beanycro/__init__.py,sha256=W9ESb8JXgOQ6xw4Sldy3RRUv5GnRCTn877S_-5EaPFc,29
+beanycro/logging.conf,sha256=ZMxir_u-Q7bLM_UHFiHCSQ1_5Kf0Re0a0BWFAG-Vs6Q,686
+beanycro/logging_setup.py,sha256=jUtdrnkwSC6m2DLnXIuvcBje5VddRuu7ANGs20JaCOk,244
+beanycro/test/__init__.py,sha256=NODt-ug9u2gqSxhSMAi6_IKjOq57-jScRr8-f-Zgn7g,44
+beanycro/test/test.py,sha256=zn_cMdnNgNi82a-ELh3lculMhe_iVVXkekAVjBnj6sk,349
+beanycro/test/test2/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+beanycro/test/test2/tmp.py,sha256=i_LiZHwPoXqfBGKrFNgv65XnXYZ2FkdXZm0emZhmRi4,94
+beanycro-0.0.1.dist-info/METADATA,sha256=wwK14vh38GF-HvAqiDPCWDBFnF8X2mTyMrOHMPv0cPk,976
+beanycro-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+beanycro-0.0.1.dist-info/licenses/LICENSE,sha256=6kbiFSfobTZ7beWiKnHpN902HgBx-Jzgcme0SvKqhKY,1091
+beanycro-0.0.1.dist-info/RECORD,,

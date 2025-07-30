@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: beanycro
+Version: 0.0.1
+Summary: A package of utilities used for personal projects.
+Project-URL: Homepage, https://github.com/Benicol/Beanycro
+Project-URL: Issues, https://github.com/Benicol/Beanycro/issues
+Author-email: Benjamin Nicol <benji.locin@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
+# Benny Bean Utils Package
+
+## Description
+This package targets to offer basic utilities for my personal projects.
+
+## Installation
+
+### To build the package : 
+```bash
+py -m pip install --upgrade build
+py -m build
+```
+
+### To upload the package to PyPI:
+```bash
+py -m pip install --upgrade twine
+py -m twine upload dist/*
+```
+
+## Utilities
+### Test
+This is a simple utility to test if the package works
+
+```python
+from benny_bean_utils.test import ping
+
+ping()  # Output: Pong!
+```
