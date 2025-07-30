@@ -1,0 +1,13 @@
+askpablos_scrapy_api/__init__.py,sha256=Nkb3_tkSHdxjEYC44jF5dGMYzTj4PC6pAIfAUKtENUA,1320
+askpablos_scrapy_api/auth.py,sha256=1K1MeonnwOvWhCBzj0yu8ln3P51gT08DSAwWm3VK1Ak,1516
+askpablos_scrapy_api/config.py,sha256=0fAgQ-9iZJlEp5e86SH8vrYBs6XS2Xe6GAAxgMwavAY,2646
+askpablos_scrapy_api/endpoints.py,sha256=-0pFHefAEgLEb6v2qj_FWb2MAvlg4QV7oRB79wzeIgY,243
+askpablos_scrapy_api/exceptions.py,sha256=APR3_xTu15ZdGNQD-qHQ6_KiaATbub6ylf9Nxvc8J-0,5804
+askpablos_scrapy_api/middleware.py,sha256=QY_iawMOjXXmgmqXtCGo3stlmzazkCKLhfPIPXmsk6A,6862
+askpablos_scrapy_api/utils.py,sha256=CEYBk4rlYHOdcUlrwrj9BPAp7cOKh-CFDApZExXtyOw,1395
+askpablos_scrapy_api/version.py,sha256=h2n7YFfEoyLxhY-m4lCMSSFaD7NLYqcG-mvpsIUht0U,82
+askpablos_scrapy_api-0.1.2.dist-info/licenses/LICENSE,sha256=DhJQ4_j45c_DWghISLKmJshcLvX_Pr7QXaahe2iRMNo,1087
+askpablos_scrapy_api-0.1.2.dist-info/METADATA,sha256=dIY6rhY9vGOxteUT8pMMwCP6VIOMuZtBN6VKdve9428,4723
+askpablos_scrapy_api-0.1.2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+askpablos_scrapy_api-0.1.2.dist-info/top_level.txt,sha256=Z0_rjAN95efqiTykAUIkQn-EjscJQAXbBiXzKE7bgIM,21
+askpablos_scrapy_api-0.1.2.dist-info/RECORD,,
