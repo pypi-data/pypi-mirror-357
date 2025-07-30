@@ -1,0 +1,7 @@
+requests>=2.32.4
+selenium>=0.16.0
+websocket-client>=1.8.0
+
+[dev]
+ruff
+pyright
