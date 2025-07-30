@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "rr-connection-manager"
+version = "0.5.2"
+description = "A package to help you connect to all Registry databases"
+authors = ["andrew atterton <andrew.atterton@renalregistry.nhs.uk>"]
+readme="README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+sshtunnel = {version = "^0.4.0", optional = true}
+pykeepass = {version = "^4.1.0.post1", optional = true}
+pyodbc = {version = "^5.2.0", optional = true}
+mysql-connector-python = {version = "8.1.0", optional = true}
+redis = {version = "^5.2.0", optional = true}
+sqlalchemy = {version = "^2.0.36", optional = true}
+psycopg = {version = "^3.2.3", optional = true}
+
+[tool.poetry.extras]
+tunnel = ["sshtunnel"]
+keepass = ["pykeepass"]
+sqlite_sqla = ["sqlalchemy"]
+pgsql = ["psycopg"]
+pgsql_sqla = ["psycopg", "sqlalchemy"]
+sqlser = ["pyodbc"]
+sqlser_sqla = ["pyodbc", "sqlalchemy"]
+mysql = ["mysql-connector-python"]
+mysql_sqla = ["mysql-connector-python", "sqlalchemy"]
+redis = ["redis"]
+
+[tool.poetry.group.dev.dependencies]
+tox = "^4.14.1"
+mypy = "^1.9.0"
+bandit = "^1.7.8"
+ruff = "^0.3.2"
+pytest = "^8.1.1"
+pre-commit = "3.3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.bandit]
+exclude_dirs = ["tests", ".vscode", ".tox", ".ruff_cache", ".pytest_cache", ".mypy_cache", "dist"]
