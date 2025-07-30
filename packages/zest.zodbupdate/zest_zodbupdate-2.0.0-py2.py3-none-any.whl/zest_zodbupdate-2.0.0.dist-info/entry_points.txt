@@ -1,0 +1,2 @@
+[zodbupdate]
+renames = zest.zodbupdate.renames:rename_dict
