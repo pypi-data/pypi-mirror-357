@@ -1,0 +1,17 @@
+{
+  "include": ["evo"],
+  "exclude": ["**/__pycache__", ".venv", "venv", "tests"],
+  "typeCheckingMode": "strict",
+  "pythonVersion": "3.12",
+  "pythonPlatform": "All",
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "reportUnknownParameterType": false,
+  "reportUnknownArgumentType": false,
+  "reportUnknownMemberType": false,
+  "reportUnknownVariableType": false,
+  "reportUnknownLambdaType": false,
+  "reportGeneralTypeIssues": true,
+  "reportPrivateUsage": true,
+  "reportOptionalMemberAccess": true
+}
