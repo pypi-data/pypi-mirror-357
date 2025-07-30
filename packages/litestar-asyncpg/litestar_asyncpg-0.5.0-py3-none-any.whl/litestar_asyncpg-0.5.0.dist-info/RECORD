@@ -1,0 +1,10 @@
+litestar_asyncpg/__init__.py,sha256=8ZItEa5RfieLCBh51qO9Y2L_a3VsyHL8ggxQumJoesc,213
+litestar_asyncpg/__metadata__.py,sha256=g_XxeMcxF9jYQBaXA46O-Le_ukFsUSvkPTAnguORv6A,487
+litestar_asyncpg/_utils.py,sha256=uHSXjyDvyrVgdPqL2oXthYD55TEP-BMqnAyHKGQDM9Q,1874
+litestar_asyncpg/config.py,sha256=WKw0yjuJ0D9B1DxJE4A0MpfgTEtFK4tYfYAknY5M_bI,12096
+litestar_asyncpg/plugin.py,sha256=AvgIn23G8XltuKcyyPsyJTVGOhgrY9t8YPTtDvzIX5A,1707
+litestar_asyncpg/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+litestar_asyncpg-0.5.0.dist-info/METADATA,sha256=wFe-AKm9HecQp-FtN3vxSs1fuzXdMR1BxsRqy9ctOV0,11139
+litestar_asyncpg-0.5.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+litestar_asyncpg-0.5.0.dist-info/licenses/LICENSE,sha256=DX-mBmwOHF-LBx-Pwjclow5R3Ik33pNyt1GbFgcEvfc,1078
+litestar_asyncpg-0.5.0.dist-info/RECORD,,
