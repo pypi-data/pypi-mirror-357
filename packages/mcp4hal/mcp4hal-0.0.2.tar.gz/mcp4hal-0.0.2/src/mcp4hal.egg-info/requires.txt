@@ -1,0 +1,10 @@
+python-dotenv
+fastapi
+uvicorn
+mcp
+langchain-mcp-adapters
+pydantic
+paho-mqtt
+mcp-adapter
+fastmcp
+rich
