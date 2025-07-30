@@ -1,0 +1,10 @@
+yourdfpy/__init__.py,sha256=fOEQNEMpi5GFbeA6hocQV_m7_Lt3qfFoeCiOX5DbPc8,1423
+yourdfpy/urdf.py,sha256=vjVI5L1kmXEJJsGHrns9eqVQf2RlQqKVgFJQa_KNXRE,74108
+yourdfpy/viz.py,sha256=LB75_Zc-z3PdslMIHKOq-HvmFaoFDJefr5-F6w3-mDs,5596
+yourdfpy-0.0.58.dist-info/licenses/AUTHORS.md,sha256=gZu-a_8NNoqEGQ5RfWY4QKzDthDbYAnpfAf7YNRGZAo,65
+yourdfpy-0.0.58.dist-info/licenses/LICENSE.txt,sha256=EneCmnzFfNZL2_JjUUEnuzxOuWYT56qmfNoFARtDb9g,1081
+yourdfpy-0.0.58.dist-info/METADATA,sha256=iW5n9QAyU9pgFgCwnjKGsBdKEmzJrGhNBRl-jNMxSm4,8993
+yourdfpy-0.0.58.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+yourdfpy-0.0.58.dist-info/entry_points.txt,sha256=nEQ4JCBrceXoL0V8tlYmgzJk0jg0z7fAIsCx5Lsg3Ro,46
+yourdfpy-0.0.58.dist-info/top_level.txt,sha256=KmrPLKp0Ryp_88SdXjYTbt1z9lQWngOm8TVZoACAAyI,9
+yourdfpy-0.0.58.dist-info/RECORD,,
