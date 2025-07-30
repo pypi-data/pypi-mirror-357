@@ -1,0 +1,12 @@
+absl-py
+wandb
+moviepy==1.0.3
+huggingface-hub
+numpy<2.0.0
+
+[dev]
+pre-commit
+black
+flake8
+pytest
+pytest-cov
