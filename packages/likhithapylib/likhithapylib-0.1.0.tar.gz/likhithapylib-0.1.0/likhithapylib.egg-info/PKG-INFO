@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: likhithapylib
+Version: 0.1.0
+Summary: A simple data visualization library using matplotlib
+Home-page: https://github.com/jayavarapulikhitha/likhithapylib
+Author: Jayavarapu Likhitha Swapna
+Author-email: likhithaswapna703@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 📊 likhithapylib
+
+A simple yet powerful data visualization library built on top of `matplotlib`, designed for clean, quick, and customizable plots.
+
+> 🎯 Ideal for beginners and data science learners who want to visualize data with minimal code.
+
+---
+
+## ✨ Features
+
+- 📈 Line Plot with labels and markers
+- 📊 Bar Chart with colors and gridlines
+- 🔴 Scatter Plot with custom titles and axes
+- 🧩 Modular functions — easy to plug into your projects
+- 🐍 100% pure Python and open-source
+
+---
+
+## 🚀 Installation
+
+Install from PyPI:
+
+```bash
+pip install mylib
