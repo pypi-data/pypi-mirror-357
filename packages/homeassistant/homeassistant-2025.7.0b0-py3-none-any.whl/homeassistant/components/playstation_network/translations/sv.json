@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Kontot \u00e4r redan konfigurerat",
+            "reauth_successful": "\u00c5terautentisering lyckades"
+        },
+        "error": {
+            "cannot_connect": "Det gick inte att ansluta",
+            "invalid_account": "Ogiltig \u00e5tkomsttoken",
+            "invalid_auth": "Ogiltig autentisering",
+            "unknown": "Ov\u00e4ntat fel"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "npsso": "NPSSO-token"
+                },
+                "data_description": {
+                    "npsso": "NPSSO-token genereras vid lyckad inloggning p\u00e5 ditt PlayStation Network-konto och anv\u00e4nds f\u00f6r att autentisera dina f\u00f6rfr\u00e5gningar i Home Assistant."
+                }
+            },
+            "user": {
+                "data": {
+                    "npsso": "NPSSO-token"
+                },
+                "data_description": {
+                    "npsso": "NPSSO-token genereras vid lyckad inloggning p\u00e5 ditt PlayStation Network-konto och anv\u00e4nds f\u00f6r att autentisera dina f\u00f6rfr\u00e5gningar i Home Assistant."
+                }
+            }
+        }
+    }
+}
