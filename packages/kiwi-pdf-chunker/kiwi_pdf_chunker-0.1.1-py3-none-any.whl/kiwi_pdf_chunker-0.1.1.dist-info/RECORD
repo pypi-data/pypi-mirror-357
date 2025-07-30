@@ -1,0 +1,12 @@
+kiwi_pdf_chunker/__init__.py,sha256=Hvc_y0HMQkcmcu7_avWVItVno5DklZ2qXXQjCn7sWTU,143
+kiwi_pdf_chunker/box_processing.py,sha256=qSh7pqiJnp2J-gEkWbQJIQNfplJxR7lGUQbcWWhwFKo,26325
+kiwi_pdf_chunker/config.py,sha256=IVKG3rYZ-nhuo4432HQbmXMWtyrhl-ZQVYJ5EXk6u-E,2112
+kiwi_pdf_chunker/image_processing.py,sha256=s-sFx4qWof9i5uTrF2eU40ttPW5yWY1svl9jNvkJhTA,6810
+kiwi_pdf_chunker/main.py,sha256=18ji2O6OIVo2bvDtq4O4HmGTm4emazDFOaS6XCz9C-Q,38743
+kiwi_pdf_chunker/models.py,sha256=rWxl4F7kNnR01iSLyW3yZZg524IPLj46fBpWfE6oIfw,2661
+kiwi_pdf_chunker/pdf.py,sha256=9NvRHnHWbFyfe67uE_ua-IomYHF5DEtK8RmUgOf5gio,4044
+kiwi_pdf_chunker-0.1.1.dist-info/licenses/LICENSE,sha256=oxA9-juFBCBko0t5sgbp4gsOl--8j_ekp8jqLVLIVJw,1069
+kiwi_pdf_chunker-0.1.1.dist-info/METADATA,sha256=6-RQ0Z6ELZ4n_UN_NYCmLnRGNSRX0faScZ2XXhD2MRE,5142
+kiwi_pdf_chunker-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+kiwi_pdf_chunker-0.1.1.dist-info/top_level.txt,sha256=9qk9HUA1i_JuPgRlH3YRcMQoNz3l2lOaQYAK5LuraNI,17
+kiwi_pdf_chunker-0.1.1.dist-info/RECORD,,
