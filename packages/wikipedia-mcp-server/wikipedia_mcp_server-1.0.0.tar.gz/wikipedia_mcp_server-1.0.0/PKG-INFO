@@ -1,0 +1,116 @@
+Metadata-Version: 2.4
+Name: wikipedia-mcp-server
+Version: 1.0.0
+Summary: A Model Context Protocol server providing tools for querying Wikipedia for LLMs.
+Author-email: Yang Sheng Han <progamesigner@gmail.com>
+License: MIT
+Keywords: wikipedia,mcp,llm
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: AsyncIO
+Classifier: Framework :: Pydantic
+Classifier: Framework :: Pydantic :: 2
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastmcp>=2.9.0
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: pydantic>=2.11.7
+Requires-Dist: pydantic-settings>=2.10.0
+Dynamic: license-file
+
+# Wikipedia MCP Server
+
+A Model Context Protocol server that provides capabilities to query Wikipedia. This server enables LLMs to get information from Wikipedia.
+
+## Available Tools
+
+- `search` - Search `keyword` on Wikipedia.
+  - Required arguments:
+    - `keyword` (string): The search keyword
+    - `language` (string): The language
+
+- `fetch` - Fetch Wikipedia page content.
+  - Required arguments:
+    - `id` (integer): The pade ID
+    - `language` (string): The language
+
+## Installation
+
+### Using uv (recommended)
+
+When using [`uv`](https://docs.astral.sh/uv/) no specific installation is needed. We will
+use [`uvx`](https://docs.astral.sh/uv/guides/tools/) to directly run *wikipedia-mcp*.
+
+### Using PIP
+
+Alternatively you can install `wikipedia-mcp` via pip:
+
+```bash
+pip install wikipedia-mcp-server
+```
+
+After installation, you can run it as a script using:
+
+```bash
+python -m wikipedia_mcp
+```
+
+## Configurations
+
+### Using uvx
+```json
+{
+  "mcpServers": {
+    "wikipedia-mcp": {
+      "command": "uvx",
+      "args": [
+        "wikipedia-mcp-server@latest"
+      ]
+    }
+  }
+}
+```
+
+### Using docker
+```json
+{
+  "mcpServers": {
+    "wikipedia-mcp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "ghcr.io/progamesigner/wikipedia-mcp@latest"
+      ]
+    }
+  }
+}
+```
+
+### Using pip installation
+```json
+{
+  "mcpServers": {
+    "wikipedia-mcp": {
+      "command": "python",
+      "args": [
+        "-m",
+        "wikipedia_mcp"
+      ]
+    }
+  }
+}
+```
+
+## Build
+
+Docker build:
+
+```bash
+docker build -t wikipedia-mcp .
+```

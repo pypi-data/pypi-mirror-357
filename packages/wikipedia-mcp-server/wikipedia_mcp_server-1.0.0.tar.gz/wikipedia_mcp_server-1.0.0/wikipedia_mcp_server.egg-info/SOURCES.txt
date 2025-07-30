@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+tests/test_fetch.py
+tests/test_search.py
+wikipedia_mcp/__init__.py
+wikipedia_mcp/__main__.py
+wikipedia_mcp/parser.py
+wikipedia_mcp/server.py
+wikipedia_mcp/types.py
+wikipedia_mcp_server.egg-info/PKG-INFO
+wikipedia_mcp_server.egg-info/SOURCES.txt
+wikipedia_mcp_server.egg-info/dependency_links.txt
+wikipedia_mcp_server.egg-info/entry_points.txt
+wikipedia_mcp_server.egg-info/requires.txt
+wikipedia_mcp_server.egg-info/top_level.txt
