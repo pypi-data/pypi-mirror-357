@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mongodb-typegen"
+version = "1.0.1"
+dependencies = [
+    "pymongo[srv]",
+    "click"
+]
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.scripts]
+mongodb-typegen = "mongodb_typegen.cli:main"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-mock"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mongodb_typegen"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
