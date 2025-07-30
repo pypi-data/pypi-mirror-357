@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+MultiServiciosWeb/__init__.py
+MultiServiciosWeb/valida_curp.py
+multiserviciosweb.egg-info/PKG-INFO
+multiserviciosweb.egg-info/SOURCES.txt
+multiserviciosweb.egg-info/dependency_links.txt
+multiserviciosweb.egg-info/requires.txt
+multiserviciosweb.egg-info/top_level.txt
+tests/test_valida_curp.py
