@@ -1,0 +1,15 @@
+peewee_migrate/__init__.py,sha256=YmyySBC52Mr7J9N_sraqxGTmfa3JuQ-0flhvGQNqeqM,673
+peewee_migrate/__main__.py,sha256=QU_R-xINUz57FT8jRLw9AAEm2iE5qfxv_kb3LfOS8UY,51
+peewee_migrate/auto.py,sha256=Yl7_841xiAlNy2pNzKHnz2Z-_idcmac8rW5HbbuHHCU,8051
+peewee_migrate/cli.py,sha256=vS203uDpjQqTGqq-eNZ6tm32TmtALIXd8_4rqT77W9E,7127
+peewee_migrate/compat.py,sha256=e3Wn6b2MnyB_OrZ55-tHyi7KdC5U0-KyE4GXul5YAFo,5714
+peewee_migrate/migrator.py,sha256=rC0MMrD2Yjze5iJq6CLP3Reb5U0b0QVhoedSqy-vpYg,12787
+peewee_migrate/router.py,sha256=LOLufyNFqPFrbqTBbDddX255gtwV3kcgXTEJUmFpRZc,10718
+peewee_migrate/template.txt,sha256=4ZZ6f2J4IP4TBeuPDKku0BLf_CUKYOEWOzpP_YekfRE,1461
+peewee_migrate2-1.6.5.dist-info/licenses/AUTHORS.rst,sha256=982nG4l-JVhSaw7azRO_5-oqeKFe-1Z69FFxYNTHIDc,654
+peewee_migrate2-1.6.5.dist-info/licenses/LICENSE,sha256=Iy0A5NdYcJhbtb6XJTFXo6lWGQP33gmHiZwPQOv5NtQ,1484
+peewee_migrate2-1.6.5.dist-info/METADATA,sha256=eFWQeMxvHvCtSQPUqV-7wJfGRON995yG3oE_FcAxG0s,6459
+peewee_migrate2-1.6.5.dist-info/WHEEL,sha256=JNWh1Fm1UdwIQV075glCn4MVuCRs0sotJIq-J6rbxCU,109
+peewee_migrate2-1.6.5.dist-info/entry_points.txt,sha256=82J6KuiRltZLG4RzYH2Pk4pvLXi2n_r9Sqz4mW6BJrU,54
+peewee_migrate2-1.6.5.dist-info/top_level.txt,sha256=UbA-B0RoOYXUsMhVIV1sa9P0V5HnGdPfwCtg0HcIszU,15
+peewee_migrate2-1.6.5.dist-info/RECORD,,
