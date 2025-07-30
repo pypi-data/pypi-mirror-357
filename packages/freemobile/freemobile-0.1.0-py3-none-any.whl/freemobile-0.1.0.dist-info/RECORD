@@ -1,0 +1,9 @@
+sms/__init__.py,sha256=rbyAS2WoSAZhT48d8vM9mj21Lh2T9VbHiQnI0rFDqRk,116
+sms/__main__.py,sha256=l0hGwNBOu_TQflki4XCBCoXGe6Jw3_IjdGPCo70JEQQ,31
+sms/cli.py,sha256=zid4h40oyc-9jR3X6rRHqJxn0ylspOvE21BTtVGrEMU,1416
+sms/sms.py,sha256=3Lpe_OpFQ96fJwdkk3V-PxnltATCAfhNMueaslD22PM,1747
+freemobile-0.1.0.dist-info/METADATA,sha256=f2HtIBRiJzDey3hj0cKJJwAQ0qWYFPedncg88Cp7CA8,1930
+freemobile-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+freemobile-0.1.0.dist-info/entry_points.txt,sha256=M6JS3ovM2WSOETwZhjK9hu1EJ6PkgYV23nbnNyu4fYk,43
+freemobile-0.1.0.dist-info/top_level.txt,sha256=bGy2pOu7Jcsom9RUzqt2-gIloVUTFNcVleUeYh8_IwA,4
+freemobile-0.1.0.dist-info/RECORD,,
