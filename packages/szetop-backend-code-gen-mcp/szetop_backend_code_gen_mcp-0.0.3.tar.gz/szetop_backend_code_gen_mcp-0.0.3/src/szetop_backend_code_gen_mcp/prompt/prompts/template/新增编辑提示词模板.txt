@@ -1,0 +1,77 @@
+# 任务：生成项目信息管理新增\编辑接口
+
+## 接口名称
+/project/addOrEdit
+
+## 请求参数
+-项目信息（对应表gxrc_project_info）
+    -项目名称（String，必填，校验：长度不能超过50个字符）
+    -项目类型（Integer，必填），[枚举值见表字段(gxrc_project_info.project_type)描述]
+    -行政区划编号（Integer，必填）
+    -详细地址（String，必填）
+    -房屋编码（String，可选）
+    -所属区联系人（String，可选，校验：长度不能超过20个字符）
+    -所属区联系电话（String，可选，校验：手机号格式）
+    -免租期类型（Integer，必填），[枚举值见表字段(gxrc_project_info.free_period_type)描述]
+    -免租期_最小值（月）（Integer，必填）
+    -免租期_最大值（Integer，仅免租期类型为2时必填）
+    -优惠租金类型（Integer，必填），[枚举值见表字段(gxrc_project_info.project_rent_type)描述]
+    -优惠租金-最小值（Double，必填）
+    -优惠租金-最大值（Double，仅优惠租金类型为2时必填）
+    -优惠政策（String，可选）
+    -申请条件（String，可选）
+    -项目图片IDs（List<Integer>，必填，限制：最多上传6条）（对应表gxrc_attachment_info.id）
+    -主干道（String，可选）
+    -地铁站名（String，可选）
+    -公交站名（String，可选）
+    -配套设施（String，多个用","隔开）
+    -园区基本信息（对应表gxrc_park_base_info）
+        -园区总建筑面积（㎡）（Double，可选）
+        -园区空置面积（㎡）（Double，可选）
+        -园区总楼栋数量（Integer，可选）
+        -建成日期（年）（Integer，可选）
+        -独立围墙（Integer，可选），[枚举值见表字段(gxrc_park_base_info.park_is_wall)描述]
+        -四至（边界路名）（String，可选）
+        -停车位个数（Integer，可选）
+        -联系人（String，必填）
+        -咨询电话（String，必填）
+        -物业管理公司（String，可选）
+        -物管公司联系电话（String，可选）
+        -管理费（元/㎡/月）（String，可选）
+        -园区介绍（String，可选）
+
+## 响应参数
+-项目ID (Integer)，[表gxrc_project_info的主键id]
+
+## 涉及数据库表结构
+gxrc_project_info、gxrc_park_base_info、gxrc_attachment_info
+查看文件：表结构.sql
+
+## 基本要求
+1、参考项目已有代码风格和规范编写代码。
+2、前端传入的查询参数要按要求校验，比如格式、是否可空、长度等，简单的在dto层加注解校验，复杂的在service层实现校验逻辑。
+3、根据提供的数据库表结构生成SQL查询语句，查询数据如需处理，尽量不要在SQL语句处理，应在service层处理。
+4、使用MyBatis Plus框架进行数据库操作、复杂操作编写SQL语句实现（使用mapper层xml）。
+5、使用Lombok简化代码，减少重复代码。
+6、使用Swagger注解生成API文档。
+7、数据表字段属于枚举类型的，应创建枚举值（参考：UserExtendEducationEnum），数据需要处理在service层转换处理。
+8、使用请求参数生成dto对象。
+-dto对象，Date类型字段，需要加上@JsonFormat，以防请求格式化错误。
+9、所有的类和方法都要加上注释（参考上下文代码，作者：yaoyanhua、时间：2025-04-09）。
+
+## 示例
+用户扩展表对象功能（UserExtendController、UserExtendService、UserExtendDTO、UserExtendVO、UserExtendMapper、UserExtendMapper.xml）
+
+## 业务规则
+1、参考项目示例：
+-生成或更新项目信息表的controller、service、dto、mapper、vo对象，统一加前缀：GxrcProjectInfo。
+-生成或更新园区基本信息表的service、mapper对象，统一加前缀：GxrcParkBaseInfo。
+-生成或更新附件信息表的service、mapper对象，统一加前缀：GxrcAttachmentInfo。
+2、新增或编辑项目时，检测项目名称是否存在。
+3、项目图片处理：
+-项目图片通过上传图片接口存在表gxrc_attachment_info（attach_type=1）。
+-新增项目时，插入项目库表之后获取项目ID(ProjectId)，以图片id数组（通过项目图片IDs（List<Integer>）参数传入）为查询条件，更新gxrc_attachment_info表的project_id为项目ID(ProjectId)。
+-编辑项目时，以项目ID和图片id数组（通过项目图片IDs（List<Integer>）参数传入）为查询条件，查询出该项目库表的图片ID数组（projectExistsImagesIds：List<attachmentId>），
+和接口传入的图片id数组（projectImagesIds：通过项目图片IDs（List<Integer>）参数传入）进行比较：
+1）得到在projectExistsImagesIds但不在projectImagesIds的数组Ids（deletedAttachmentIds），以ProjectId和deletedAttachmentIds为条件，删除gxrc_attachment_info表的数据。
+2）得到在projectImagesIds但不在projectExistsImagesIds的数组Ids（updateAttachmentIds），以updateAttachmentIds为条件，更新gxrc_attachment_info表的project_id为项目ID(ProjectId)。

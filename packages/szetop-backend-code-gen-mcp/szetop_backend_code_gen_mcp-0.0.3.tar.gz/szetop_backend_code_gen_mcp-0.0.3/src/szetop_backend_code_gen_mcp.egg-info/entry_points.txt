@@ -1,0 +1,2 @@
+[console_scripts]
+szetop-backend-code-gen-mcp = szetop_backend_code_gen_mcp.server:main
