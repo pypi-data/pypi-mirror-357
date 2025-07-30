@@ -1,0 +1,2 @@
+[console_scripts]
+error-repository-server = error_repository_server.server:main
