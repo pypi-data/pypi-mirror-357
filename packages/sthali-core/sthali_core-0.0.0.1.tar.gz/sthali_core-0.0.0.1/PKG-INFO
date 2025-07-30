@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: sthali-core
+Version: 0.0.0.1
+Summary: A core package for Sthali development
+Author-email: Jhunu Fernandes <jhunu.fernandes@gmail.com>
+Project-URL: Homepage, https://github.com/jhunufernandes/sthali-core
+Project-URL: Bug Tracker, https://github.com/jhunufernandes/sthali-core/issues
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: cookiecutter>=2.6.0
+Requires-Dist: mkdocs>=1.6.0
+Requires-Dist: PyYAML>=6.0.2
+Requires-Dist: tomli>=2.0.1
+Requires-Dist: typer>=0.12.5
+Provides-Extra: dev
+Requires-Dist: coverage[toml]>=7.6.1; extra == "dev"
+Requires-Dist: ruff>=0.9.10; extra == "dev"
+Provides-Extra: tests
+Requires-Dist: coverage[toml]>=7.6.1; extra == "tests"
+Provides-Extra: stage
+Requires-Dist: build>=1.2.1; extra == "stage"
+Requires-Dist: coverage[toml]>=7.6.1; extra == "stage"
+Dynamic: license-file
+
+# sthali-core
+A core package for Sthali development
