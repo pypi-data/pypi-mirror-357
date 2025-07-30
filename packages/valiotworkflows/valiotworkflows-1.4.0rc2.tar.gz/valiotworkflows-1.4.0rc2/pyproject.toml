@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "valiotworkflows"
+version = "1.4.0rc2"
+description = "Library to implement services and plugins for the Valiot Workflows framework"
+authors = ["Valiot <adrian@valiot.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pygqlc = "^3.5.0"
+temporalio = "^1.8.0"
+python-dateutil = "^2.8.2"
+pyjwt = "^2.8.0"
+valiotlogging = ">=0.1.0,<2.0.0"
+pydash = "^8.0"
+pytz = ">=2024.1,<2026.0"
+orjson = "^3.10.18"
+redis = {extras = ["hiredis"], version = "^6.1.0"}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-bdd = "^8.1"
+pytest-xdist = "^3.6"
+pytest-cov = "^6.0"
+pytest-asyncio = "^1.0.0"
+black = "*"
+pylint = "*"
+autopep8 = "*"
+sphinx-rtd-theme = "^3.0"
+jeepney = "^0.9"
+tqdm = "^4.67.1"
+tabulate = "^0.9.0"
+# valiotworkflows = {path = ".", develop = true}
+
+[tool.pylint]
+extension-pkg-whitelist = ["orjson"]
+
+# [tool.poetry.scripts]
+# valiot-workflows-cli = "valiotworkflows.cli.__main__:main"
+
+[tool.pytest.ini_options]
+markers = [
+    "BDD_TEST: marks tests as BDD tests",
+]
+asyncio_default_fixture_loop_scope = "module"
+
+[tool.poetry_bumpversion.file."valiotworkflows/__version__.py"]
+
+[[tool.poetry.source]]
+name = "valiot"
+url = "https://pypi.valiot.io/"
+priority = "primary"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
