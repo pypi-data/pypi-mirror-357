@@ -1,0 +1,33 @@
+[project]
+name = "boring-semantic-layer"
+version = "0.1.0"
+description = "A boring semantic layer built with ibis"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "attrs>=25.3.0",
+    "ibis-framework[duckdb]>=10.6.0",
+]
+urls = {Homepage = "https://github.com/boringdata/boring-semantic-layer/tree/main"}
+
+[project.optional-dependencies]
+examples = ["duckdb>=1.3.1", "xorq"]
+xorq = ["xorq"]
+
+[project.scripts]
+hello = "boring_semantic_layer:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.6.7",
+    "pre-commit>=4.2.0",
+    "duckdb>=1.3.1",
+    "pytest",
+    "pandas>=2.3.0",
+    "xorq",
+    "urllib3>=2.2.3" 
+]
