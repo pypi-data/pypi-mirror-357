@@ -1,0 +1,8 @@
+pyproject.toml
+setup.py
+fileconverter_util.egg-info/PKG-INFO
+fileconverter_util.egg-info/SOURCES.txt
+fileconverter_util.egg-info/dependency_links.txt
+fileconverter_util.egg-info/not-zip-safe
+fileconverter_util.egg-info/top_level.txt
+src/bindings.cpp
