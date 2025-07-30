@@ -1,0 +1,2 @@
+[console_scripts]
+nedas-run = NEDAS.__main__:main
