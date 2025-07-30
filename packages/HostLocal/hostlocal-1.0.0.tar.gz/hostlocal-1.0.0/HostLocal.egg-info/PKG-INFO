@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: HostLocal
+Version: 1.0.0
+Summary: A simple Flask-based file explorer with batch upload and preview support
+Author: Your Name
+Requires-Dist: Flask
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary

@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.py
+HostLocal.egg-info/PKG-INFO
+HostLocal.egg-info/SOURCES.txt
+HostLocal.egg-info/dependency_links.txt
+HostLocal.egg-info/entry_points.txt
+HostLocal.egg-info/requires.txt
+HostLocal.egg-info/top_level.txt
+pyfileexplorer/__init__.py
+pyfileexplorer/__main__.py
+pyfileexplorer/app.py
+pyfileexplorer/templates/index.html
