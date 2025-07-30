@@ -1,0 +1,15 @@
+araxia/__init__.py,sha256=GXHN1oSox35YA6CsNymFgaU7Syt5F-5_9peI-LaylnM,297
+araxia/forecast.py,sha256=mVb7v68eHpX4y-qmrss5F2Nz26HgQdK4cDBESrkivck,1736
+araxia/network.py,sha256=t30UOVzQrsOP6vpylYjGvVJL4vCDWF8rwcMLkI5wwFQ,3538
+araxia/train.py,sha256=VnHIL6LiZlCVDekP8Bf_dos80b2AhyUuKi2g0VhVfYA,2060
+araxia/utils.py,sha256=CMcZLb3Vq0Dkl8c27U3DPlfRrQjxivQC6CQCN0uEdZA,454
+araxia/preprocessing/__init__.py,sha256=-lsYzZ4-BQlIGn-_yUnIUfC_RNML8YHT1ukIQLQhpn4,218
+araxia/preprocessing/cyclic.py,sha256=3rIdzyRXClk3gi6dJPCUyEDdpSPBK_7ijsPcmQJUVGA,1544
+araxia/preprocessing/date_features.py,sha256=RVtkMGyJmvfh6mtKR5y1-hTjswCJtDiiNnc20cUPBbc,819
+araxia/preprocessing/lagged.py,sha256=fm3QLniEDrDJN8HMnCqszcHTIl4Wd-B3Q629kF7Nx_4,1317
+araxia/preprocessing/onehot_dow.py,sha256=7Lb_kHL4bJUrUOCgDCBWAGN6GXWgfWiRlUN_C-sWnxI,876
+araxia-0.2.0.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+araxia-0.2.0.dist-info/METADATA,sha256=hccub6bWWZnY4Xj9J7DpgtZ_E9NlrBY7hICg0VKHl8w,3663
+araxia-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+araxia-0.2.0.dist-info/top_level.txt,sha256=1JODT347X2EykZc5tZrVisuxFlSkKlmtfDHl3TgvHtc,7
+araxia-0.2.0.dist-info/RECORD,,
