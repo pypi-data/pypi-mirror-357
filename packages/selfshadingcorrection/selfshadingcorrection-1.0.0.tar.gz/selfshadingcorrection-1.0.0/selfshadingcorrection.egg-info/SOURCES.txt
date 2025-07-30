@@ -1,0 +1,15 @@
+LICENSE
+setup.py
+selfshadingcorrection/__init__.py
+selfshadingcorrection/find_b_bw.py
+selfshadingcorrection/find_rrs.py
+selfshadingcorrection/model_rrs.py
+selfshadingcorrection/run.py
+selfshadingcorrection/theta_water.py
+selfshadingcorrection.egg-info/PKG-INFO
+selfshadingcorrection.egg-info/SOURCES.txt
+selfshadingcorrection.egg-info/dependency_links.txt
+selfshadingcorrection.egg-info/requires.txt
+selfshadingcorrection.egg-info/top_level.txt
+tests/test.py
+tests/test_private.py
