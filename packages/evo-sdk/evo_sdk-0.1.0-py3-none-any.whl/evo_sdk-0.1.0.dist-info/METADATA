@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: evo-sdk
+Version: 0.1.0
+Dynamic: Description
+Dynamic: Description-Content-Type
+Summary: Python SDK for using Seequent Evo
+Project-URL: Source, https://github.com/SeequentEvo/evo-python-sdk
+Project-URL: Tracker, https://github.com/SeequentEvo/evo-python-sdk/issues
+Project-URL: Homepage, https://www.seequent.com/
+Project-URL: Documentation, https://developer.seequent.com/
+License-File: LICENSE.md
+Requires-Python: >=3.10
+Requires-Dist: evo-files[aiohttp,notebooks]
+Requires-Dist: evo-objects[aiohttp,notebooks,utils]
+Requires-Dist: evo-sdk-common[aiohttp,notebooks]
+Requires-Dist: jupyter
