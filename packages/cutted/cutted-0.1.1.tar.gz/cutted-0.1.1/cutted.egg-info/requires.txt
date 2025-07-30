@@ -1,0 +1,7 @@
+customtkinter
+matplotlib
+numpy
+pydub
+simpleaudio
+google-genai
+dotenv
