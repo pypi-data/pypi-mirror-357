@@ -1,0 +1,5 @@
+anthropic>=0.44.0
+gtfs-kit>=10.1.1
+httpx>=0.28.1
+logging>=0.4.9.6
+mcp>=1.2.0

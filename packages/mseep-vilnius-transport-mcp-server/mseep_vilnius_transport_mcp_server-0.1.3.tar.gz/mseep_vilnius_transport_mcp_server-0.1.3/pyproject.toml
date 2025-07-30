@@ -1,0 +1,15 @@
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+artifacts = [
+    "src/vilnius_transport_mcp_server/data/*.zip",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/vilnius_transport_mcp_server",
+]
