@@ -1,0 +1,2 @@
+[console_scripts]
+optimade-mcp-server = optimade_mcp_server.main:main
