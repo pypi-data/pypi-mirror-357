@@ -1,0 +1,29 @@
+# Include documentation files
+include README.md
+include LICENSE
+include QUICKSTART.md
+include pyproject.toml
+
+# Include all Python files
+recursive-include evocloud_agent_toolkit *.py
+
+# Include package data
+recursive-include langchain *.py
+recursive-include mcp *.py
+
+# Include documentation
+recursive-include docs *.md *.rst *.txt
+
+# Include examples (but exclude from package installation)
+recursive-include examples *.py
+
+# Exclude unnecessary files
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.pyd
+global-exclude __pycache__
+global-exclude .git*
+global-exclude .DS_Store
+global-exclude *.so
+global-exclude .coverage
+global-exclude .pytest_cache 
