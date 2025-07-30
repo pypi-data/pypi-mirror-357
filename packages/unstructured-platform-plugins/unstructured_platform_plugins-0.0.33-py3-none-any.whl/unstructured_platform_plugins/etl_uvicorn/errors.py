@@ -1,0 +1,66 @@
+from abc import ABC
+from typing import Any, Optional
+
+import unstructured_ingest.errors_v2 as ingest_errors
+from fastapi import HTTPException
+
+
+class BaseError(HTTPException, ABC):
+    status_code: int
+
+    def __init__(self, detail: Any, headers: Optional[dict[str, str]] = None):
+        super().__init__(status_code=self.status_code, detail=detail, headers=headers)
+
+
+class UserError(BaseError):
+    status_code: int = 400
+
+
+class UserAuthError(UserError):
+    status_code: int = 403
+
+
+class UnprocessableEntityError(UserError):
+    status_code: int = 422
+
+
+class RateLimitError(UserError):
+    status_code: int = 429
+
+
+class QuotaError(UserError):
+    status_code: int = 402
+
+
+class ProviderError(BaseError):
+    status_code: int = 500
+
+
+class GatewayTimeoutError(BaseError):
+    status_code: int = 504
+
+
+class CatchAllError(BaseError):
+    status_code: int = 512
+
+
+def wrap_error(e: Exception) -> HTTPException:
+    if isinstance(e, ingest_errors.UserAuthError):
+        return UserAuthError(e)
+    elif isinstance(e, HTTPException):
+        if e.status_code == 400:
+            return UserError(e)
+        if e.status_code == 422:
+            return UnprocessableEntityError(e)
+        if e.status_code == 504:
+            return GatewayTimeoutError(e)
+    elif isinstance(e, ingest_errors.RateLimitError):
+        return RateLimitError(e)
+    elif isinstance(e, ingest_errors.QuotaError):
+        return QuotaError(e)
+    elif isinstance(e, ingest_errors.UserError):
+        return UserError(e)
+    elif isinstance(e, ingest_errors.ProviderError):
+        return ProviderError(e)
+    else:
+        return CatchAllError(e)
