@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: skyrl-gym
+Version: 0.1.0
+Summary: A gymnasium environment for RL agents to interact with the sky
+Author: NovaSkyAI AI Team
+License: MIT
+Requires-Python: ==3.10.*
+Description-Content-Type: text/markdown
+Requires-Dist: func_timeout
+Requires-Dist: pandas
+Requires-Dist: requests
+Requires-Dist: omegaconf
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
