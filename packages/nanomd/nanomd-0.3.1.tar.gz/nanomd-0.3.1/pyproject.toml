@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "nanomd"
+version = "0.3.1"
+description = ""
+authors = ["DeYing Zhang <legendzdy@dingtalk.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = "^0.15.1"
+pysam = "^0.22.1"
+pandas = "^2.2.3"
+scikit-learn = "^1.6.1"
+keras = "^3.9.2"
+jax = "^0.6.0"
+tensorflow = "^2.19.0"
+
+[tool.poetry.scripts]
+nanomd = "nanomd.main:app"
+
+[[tool.poetry.source]]
+name = "pypi2"
+url = "https://mirrors.sustech.edu.cn/pypi/web/simple"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
