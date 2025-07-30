@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+agvd.py
+cli.py
+core.py
+exceptions.py
+pyproject.toml
+query.py
+setup.py
+utils.py
+agvd.egg-info/PKG-INFO
+agvd.egg-info/SOURCES.txt
+agvd.egg-info/dependency_links.txt
+agvd.egg-info/entry_points.txt
+agvd.egg-info/requires.txt
+agvd.egg-info/top_level.txt
