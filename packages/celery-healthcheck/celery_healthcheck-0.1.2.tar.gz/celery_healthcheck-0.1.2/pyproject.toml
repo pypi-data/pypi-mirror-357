@@ -1,0 +1,29 @@
+[project]
+name = "celery-healthcheck"
+version = "0.1.2"
+description = "A lightweight HTTP health check server for Celery workers, designed to work with cloud platforms that only support TCP-based health probes"
+keywords = [
+    "celery",
+    "health-check",
+    "healthcheck",
+    "monitoring",
+    "azure",
+    "fastapi",
+    "worker",
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["celery>=5.5.0", "fastapi>=0.115.12", "uvicorn>=0.34.0"]
+authors = [{ name = "Michael Bianco", email = "mike@mikebian.co" }]
+urls = { "Repository" = "https://github.com/iloveitaly/celery-healthcheck" }
+license = { text = "MIT" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=8.3.3",
+]
