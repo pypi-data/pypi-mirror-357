@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: qpace
+Version: 0.0.1.dev32
+Requires-Python: >=3.10
+License-File: LICENSE.md
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: scikit-learn
+Requires-Dist: requests
+Requires-Dist: tqdm
+Requires-Dist: plotly
+Requires-Dist: grpcio==1.70.0
+Requires-Dist: protobuf==5.29.1
+
