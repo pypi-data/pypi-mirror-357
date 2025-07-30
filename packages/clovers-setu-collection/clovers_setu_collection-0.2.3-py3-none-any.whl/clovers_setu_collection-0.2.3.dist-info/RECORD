@@ -1,0 +1,11 @@
+clovers_setu_collection/__init__.py,sha256=fTsvkY7tABj_kdkFRemqjEx4Y8OUllkzvwxZhK5FJOU,5704
+clovers_setu_collection/api/__init__.py,sha256=hcaQuR8jIFRmbQ1KlZqtQBRRcwsjkfgLtfJr3xYLIjk,176
+clovers_setu_collection/api/Anosu.py,sha256=md4hSg0Nu7K5nxL9HtkvVX7NNPBgRfOHNVZ0sr8yOLI,680
+clovers_setu_collection/api/interface.py,sha256=gT3kboqfjBNdFL3nsmgrKPbQwpBXQal0tZodWA8rfKw,1125
+clovers_setu_collection/api/Lolicon.py,sha256=GcuLmHdEpUiLThvTQ_Ah3bKWjw8VPouh9NcBIxj8k9M,573
+clovers_setu_collection/api/MirlKoi.py,sha256=eansYyP7IGj0WyijpN0ss3s4A0B4dhbOv9y3HB2_yNA,1408
+clovers_setu_collection/config.py,sha256=8-yhhM8SPsraew_ONozIukamiteYWo0NnHw5AcGzrbM,854
+clovers_setu_collection-0.2.3.dist-info/LICENSE,sha256=TNfUB3_nQk_X38qAAlCSITwk8T5NKMvlgh_Loht7kA8,1093
+clovers_setu_collection-0.2.3.dist-info/METADATA,sha256=x5l7mPyUOxmmYXTL0rI4bGZV0aRJlZjIyko8HngmxJ8,2490
+clovers_setu_collection-0.2.3.dist-info/WHEEL,sha256=IYZQI976HJqqOpQU6PHkJ8fb3tMNBFjg-Cn-pwAbaFM,88
+clovers_setu_collection-0.2.3.dist-info/RECORD,,
