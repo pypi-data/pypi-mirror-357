@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: qurancorpus-ziya
+Version: 0.1
+Summary: Arabic Quranic Corpus Python API
+Author: Assem Chelli
+Author-email: assem.ch@gmail.com
+License: GPL
+Keywords: quran arabic corpus quranic
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Natural Language :: Arabic
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: pyparsing
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: keywords
+Dynamic: license
+Dynamic: platform
+Dynamic: requires-dist
+Dynamic: summary
+
+A Python API for the Quranic Arabic Corpus project.

@@ -1,0 +1,13 @@
+README.md
+setup.py
+qurancorpus/__init__.py
+qurancorpus/constants.py
+qurancorpus/corpus.py
+qurancorpus/data/__init__.py
+qurancorpus/data/quranic-corpus-morpology.xml
+qurancorpus_ziya.egg-info/PKG-INFO
+qurancorpus_ziya.egg-info/SOURCES.txt
+qurancorpus_ziya.egg-info/dependency_links.txt
+qurancorpus_ziya.egg-info/requires.txt
+qurancorpus_ziya.egg-info/top_level.txt
+qurancorpus_ziya.egg-info/zip-safe
