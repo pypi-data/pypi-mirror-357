@@ -1,0 +1,11 @@
+fast_hotels/__init__.py,sha256=_aVCqk6lTIDovC012ZIVwD38SEoowsLO4_nw0mA0IgU,143
+fast_hotels/models.py,sha256=P5GJYxXApCUTcN8JSDQdsbiVfU0DPNsF1PS5mJMo_7s,595
+fast_hotels/scraper.py,sha256=BNdQxzNh0BlI8wyru3pGqZ9aCoaHQ116g8s_-L6cXM4,7117
+fast_hotels/search.py,sha256=S0nlTvwyQw9pWhSvwhwuFyXrYyeuLlq2K2gXfvVyMFE,2935
+fast_hotels/utils.py,sha256=POMC0-wTDohQevMp8eBmB8kZOVCilFnKkdrg-bh-1Uc,1349
+fast_hotels-0.1.5.dist-info/licenses/LICENSE,sha256=sNuJe1GRWN0XpflecFNk97OLpW4wVl8n_px0eHuSiYY,1069
+tests/test_fast_hotels.py,sha256=guDQ935aKZcBEBJh21E9YLbHR2jbm48nt4AeUGBg6nk,353
+fast_hotels-0.1.5.dist-info/METADATA,sha256=osR2FK3hf_mQVNwHGWQ8eeMAo-bP4sTJSWPTAskoOhA,4627
+fast_hotels-0.1.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fast_hotels-0.1.5.dist-info/top_level.txt,sha256=sSLzqUoLnweQ7k1neAXn284M4nSYdEtx2mqAIwkSKN0,18
+fast_hotels-0.1.5.dist-info/RECORD,,
