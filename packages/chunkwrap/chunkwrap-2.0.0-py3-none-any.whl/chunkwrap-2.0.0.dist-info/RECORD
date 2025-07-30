@@ -1,0 +1,16 @@
+chunkwrap/__init__.py,sha256=wm4tNLSsVlIawNBGK3vhVyIxvQXqhVDMG7No340zY90,215
+chunkwrap/chunking.py,sha256=lh0CCUQaJRKkhmWuKByu0MPIVO-JOJ4uZ1scim0p9FY,1431
+chunkwrap/cli.py,sha256=R3qvxw7ebL3rrAuyUq4SSc3d2H8nxOJwTKHPmq0_tWU,3175
+chunkwrap/config.py,sha256=Ba6yjzSnAIKufYW3e63o1KAjgBnh4flVEIgLC282mrs,2515
+chunkwrap/core.py,sha256=vFOWoKmTiYnWt-SepTg_e7XPNJk6nY278No4HDRMoUg,2670
+chunkwrap/file_handler.py,sha256=rzF1-q-np1Nty_wicfP2SFanBoSF18rK-hzt6IAvAQ8,1477
+chunkwrap/output.py,sha256=AqTmKzsFX_2eu5eD5E_WpenoA8567ZINcB4yPDfX7po,2766
+chunkwrap/security.py,sha256=v20VuXSnLzGbICE4iXyGa1iDEWAY7B32HIdaDk61Y_s,1873
+chunkwrap/state.py,sha256=xl9jhmW-ksHXjlwB9BO67WOGLmgGUYIvDyEwg8ezeJs,1023
+chunkwrap/utils.py,sha256=OrZKAdqk5BaDlCusaN7rYjjGBC5cKXms2zf7EUxSpnI,794
+chunkwrap-2.0.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+chunkwrap-2.0.0.dist-info/METADATA,sha256=mNy2ePvs1AVWmdeD2ZIEfHmBUn3oWikiPAKvQ8d16gQ,47346
+chunkwrap-2.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+chunkwrap-2.0.0.dist-info/entry_points.txt,sha256=nh9QpYZaFVO8mu3VOQU0LwDGdn6X79ogCx2ouwfSrGY,49
+chunkwrap-2.0.0.dist-info/top_level.txt,sha256=nJj-iefgemrvSE5wz5UozGHZo4V4OcIzoH7vvdWvztA,10
+chunkwrap-2.0.0.dist-info/RECORD,,
