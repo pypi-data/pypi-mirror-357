@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_pydbcx_mcp.egg-info/PKG-INFO
+mseep_pydbcx_mcp.egg-info/SOURCES.txt
+mseep_pydbcx_mcp.egg-info/dependency_links.txt
+mseep_pydbcx_mcp.egg-info/requires.txt
+mseep_pydbcx_mcp.egg-info/top_level.txt
+pydbcx_mcp/__init__.py
+pydbcx_mcp/server.py
+tests/test_server.py
