@@ -1,0 +1,15 @@
+deepopt/__init__.py,sha256=TC5AEUKIY0oZzWd49EiyfApW_R2TJQ0s-H8BAx3-89I,160
+deepopt/acquisition.py,sha256=gYCGWW660NxShAjeBRHiHYeuGlfWCOqadDWsLL-ITvg,42898
+deepopt/configuration.py,sha256=9NJxkzUDBmVivrIwpm_uD5hgNcuUy3Vk78T9q0JlkHI,3823
+deepopt/deepopt_cli.py,sha256=SKMpuaYfeufDFBCok7Db3SPtGTEEIAIYZ4JE88g7xfQ,11544
+deepopt/defaults.py,sha256=7xoNpDxP8RB7IILWyP_cSB-xLj2iUs_gkX5mHQ_Pd_8,2142
+deepopt/deltaenc.py,sha256=ZbZMc-HqkMHVch-yniITVsjc0WSSRuFAOgPP3j2JUt8,23291
+deepopt/models.py,sha256=f8sPaOtwBbcTjlLKpPir2OQh2ktGbp8yNyKX4u6FTxk,35822
+deepopt/surrogate_utils.py,sha256=5jauZOA4O_CwvMS6Kjo6V5HFYk0HJ0tMakbCfDjNZC4,9019
+deepopt-0.1.8.dist-info/licenses/LICENSE.md,sha256=zBkj90OzhzzWPjWH5P_cp7eCxooSU-Qgb5jFRvRvAlA,1099
+deepopt-0.1.8.dist-info/licenses/NOTICE.md,sha256=9CR93geVKl_4ZrJORbXN0fzkEM2y4DglWhY1hn9ZwQw,1167
+deepopt-0.1.8.dist-info/METADATA,sha256=XfzFIA7xZHlQnTy6dh1tf2ruwNsewdoJmwdZEKWA7hw,4375
+deepopt-0.1.8.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+deepopt-0.1.8.dist-info/entry_points.txt,sha256=feQ1FrFGiAnFqBuub-CBMRKtgoAjvM769d1AWTjY60U,53
+deepopt-0.1.8.dist-info/top_level.txt,sha256=InmiVc5IPUKhvHH2m3U1rG5GFyLMZj5sgt6wLFo3Wr0,8
+deepopt-0.1.8.dist-info/RECORD,,
