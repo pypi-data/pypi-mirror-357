@@ -1,0 +1,5 @@
+python
+fastapi
+uvicorn
+xrpl-py
+pydantic
