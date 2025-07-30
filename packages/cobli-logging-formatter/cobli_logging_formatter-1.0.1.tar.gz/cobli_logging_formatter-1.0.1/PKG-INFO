@@ -1,0 +1,190 @@
+Metadata-Version: 2.4
+Name: cobli-logging-formatter
+Version: 1.0.1
+Summary: A structured JSON logging formatter with Datadog integration
+Project-URL: Homepage, https://github.com/Cobliteam/cobli-logging-formatter
+Project-URL: Documentation, https://github.com/Cobliteam/cobli-logging-formatter#readme
+Project-URL: Repository, https://github.com/Cobliteam/cobli-logging-formatter.git
+Project-URL: Issues, https://github.com/Cobliteam/cobli-logging-formatter/issues
+Author: Cobli Development Team
+License: MIT License
+        
+        Copyright (c) 2025 Cobli
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Keywords: datadog,formatter,json,logging,structured-logging
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Logging
+Requires-Python: >=3.8
+Requires-Dist: ddtrace>=1.0.0
+Provides-Extra: dev
+Requires-Dist: black>=22.0; extra == 'dev'
+Requires-Dist: flake8>=4.0; extra == 'dev'
+Requires-Dist: mypy>=0.900; extra == 'dev'
+Requires-Dist: pytest-cov>=2.0; extra == 'dev'
+Requires-Dist: pytest>=6.0; extra == 'dev'
+Requires-Dist: twine>=4.0; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# Cobli Logging Formatter
+
+A structured JSON logging formatter with Datadog integration for Python applications.
+
+## Features
+
+- **Structured JSON Logging**: Outputs logs in a consistent JSON format
+- **Datadog Integration**: Automatically includes trace and span IDs from Datadog APM
+- **Timezone Aware**: Timestamps in UTC with ISO 8601 format
+- **Custom Fields Support**: Automatically captures and includes custom log fields
+- **Thread Information**: Includes thread names for multi-threaded applications
+- **Exception Handling**: Captures and formats stack traces
+- **Environment Configuration**: Uses environment variables for service metadata
+
+## Installation
+
+## Using uv (recommended)
+
+```bash
+uv add cobli-logging-formatter
+```
+
+## Using pip
+
+```bash
+pip install cobli-logging-formatter
+```
+
+## Quick Start
+
+### Option 1: Use the preconfigured logger
+
+```python
+from cobli_logging import get_logger
+
+logger = get_logger()
+logger.info("Hello, world!")
+logger.error("Something went wrong", extra={"user_id": 123, "action": "login"})
+```
+
+### Option 2: Use just the formatter
+
+```python
+import logging
+from cobli_logging import JsonFormatter
+
+logger = logging.getLogger("my-service")
+handler = logging.StreamHandler()
+handler.setFormatter(JsonFormatter())
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
+
+logger.info("Hello, world!")
+```
+
+### Option 3: Use the configuration helper
+
+```python
+from cobli_logging import configure_logging
+
+# Configure with default settings
+configure_logging()
+
+# Or with custom settings
+configure_logging(
+    service_name="my-custom-service",
+    log_level="DEBUG",
+    propagate=True
+)
+
+import logging
+logger = logging.getLogger("my-custom-service")
+logger.info("Configured logger ready!")
+```
+
+## Configuration
+
+The formatter uses the following environment variables:
+
+- `DD_SERVICE`: Service name for Datadog (optional)
+- `DD_VERSION`: Service version for Datadog (optional)
+- `LOG_LEVEL`: Logging level (default: "INFO")
+
+## Output Format
+
+```json
+{
+  "timestamp": "2025-06-05T10:30:00Z",
+  "level": "INFO",
+  "message": "User logged in successfully",
+  "thread_name": "WorkerThread-1",
+  "dd": {
+    "trace_id": "1234567890123456789",
+    "span_id": "987654321",
+    "service": "user-service",
+    "version": "1.2.3"
+  },
+  "custom": {
+    "user_id": 123,
+    "action": "login",
+    "ip_address": "192.168.1.1"
+  },
+  "stack_trace": "Traceback (most recent call last):\n..."
+}
+```
+
+## Development
+
+## Quick start with Makefile
+
+This project uses a comprehensive Makefile for all development tasks:
+
+```bash
+# Complete development setup
+make dev-setup
+
+# Run all quality checks (format, lint, test)
+make check
+
+# Run tests with coverage
+make test-cov
+
+# Build the package
+make build
+
+# Run examples
+make examples
+
+# See all available commands
+make help
+```
+
+## License
+
+MIT License
