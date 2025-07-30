@@ -1,0 +1,87 @@
+Metadata-Version: 2.3
+Name: profile-this
+Version: 0.1.6
+Summary: A stupid simple memory profiler.
+License: MIT
+Author: Mike Letts
+Author-email: lettsmt@gmail.com
+Maintainer: Mike Letts
+Maintainer-email: lettsmt@gmail.com
+Requires-Python: >=3.13
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: matplotlib (>=3.10.3,<4.0.0)
+Requires-Dist: psutil (>=7.0.0,<8.0.0)
+Project-URL: Repository, https://github.com/michaelthomasletts/profile-this
+Description-Content-Type: text/markdown
+
+# profile-this
+
+![PyPI - Version](https://img.shields.io/pypi/v/profile-this?logo=pypi)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/profile-this?logo=python)
+
+Sometimes you need sophisticated line-by-line profiling for optimizing your Python code. Other times, you just want a quick and basic memory profile chart.
+
+There are plenty of tools for the former use-case, e.g. `py-spy` or `vprof`. But not many (or any) tools for the latter use-case.
+
+`profile-this` is a stupid simple memory profiler for people who just want a basic memory profiling plot without writing one from scratch.
+
+### Links
+
+[Source Code](https://github.com/michaelthomasletts/profile-this)
+
+[PyPI](https://pypi.org/project/profile-this/)
+
+### Example
+
+Install it like this:
+
+```bash
+pip install profile-this
+```
+
+Do this:
+
+```python
+from random import randint
+from profile_this import ProfileThis
+
+def func(n=10_000_000):
+    return sum([randint(0, i + 1) for i in range(n)])
+
+profiler = ProfileThis()
+profiler.start()
+func()
+profiler.stop()
+profiler.plot(
+    title="Profile for func", path="docs/func.png"
+)
+```
+
+Or this:
+
+```python
+with ProfileThis() as profiler:
+    func()
+    profiler.plot(
+        title="Profile for func",
+        path="docs/func.png",
+    )
+```
+
+Or this:
+
+```python
+from profile_this import profilethis
+
+@profilethis(title="Profile for func", path="docs/func.png")
+def func(n=10_000_000):
+    return sum([randint(0, i + 1) for i in range(n)])
+
+func()
+```
+
+To get this:
+
+![func image](https://raw.githubusercontent.com/michaelthomasletts/profile-this/refs/heads/main/docs/func.png)
