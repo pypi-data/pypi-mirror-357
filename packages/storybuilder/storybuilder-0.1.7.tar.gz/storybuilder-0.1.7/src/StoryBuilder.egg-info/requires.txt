@@ -1,0 +1,8 @@
+pillow
+azure-cognitiveservices-speech==1.37.0
+cos-python-sdk-v5
+pydub
+pyperclip
+ffmpeg
+lxml
+beautifulsoup4

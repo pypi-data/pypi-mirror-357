@@ -1,0 +1,45 @@
+Metadata-Version: 2.4
+Name: storybuilder
+Version: 0.1.7
+Summary: A Python toolkit to build story meta.
+Author-email: Kelvin Xu <xxk59@hotmail.com>
+Project-URL: Homepage, https://github.com/xxk59/StoryBuilder
+Project-URL: Issues, https://github.com/xxk59/StoryBuilder/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pillow
+Requires-Dist: azure-cognitiveservices-speech==1.37.0
+Requires-Dist: cos-python-sdk-v5
+Requires-Dist: pydub
+Requires-Dist: pyperclip
+Requires-Dist: ffmpeg
+Requires-Dist: lxml
+Requires-Dist: beautifulsoup4
+Dynamic: license-file
+
+## StoryBuilder
+
+StoryBuilder is a Python package for building and managing multilingual story content.
+
+## Features
+
+- Multilingual text and list processing
+- Story content and board management 
+- Script and event handling
+- Voice synthesis integration
+- Cloud storage support (COS)
+- HTML content processing
+
+## Installation
+
+```
+pip install storybuilder
+```
+
+## License
+
+MIT License
