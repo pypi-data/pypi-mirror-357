@@ -1,0 +1,14 @@
+pypix_api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pypix_api/auth/mtls.py,sha256=gM0_7wrru3LgdfQYm2OR_jh2DX3_QMLVU2FdhHBeaSE,1099
+pypix_api/auth/oauth2.py,sha256=aENG2PK-Lo-uSNKsunKd2B2rlIE__abwsAK4HfNe4BA,3690
+pypix_api/banks/base.py,sha256=m8oijut8ubZL9LzQwUSX8VdCqoA55RVKongcsAbQn0A,1506
+pypix_api/banks/bb.py,sha256=SFSMB02S6gwqGpYr_sJMGGe-pEDseYMJ8RrI2MOUEnU,573
+pypix_api/banks/cobv_methods.py,sha256=IUALYe4C0fiVMWqwEEj9QTAnDXOrMeQkZailCBdvpS8,3340
+pypix_api/banks/sicoob.py,sha256=h-tbcnmPe1UauYQUxFi8lITD08OUgKby4uLafPlphjc,670
+pypix_api/models/pix.py,sha256=BH_HcDq4OKmEuEIkWONrism9v1P2P7wP23w84Rau8vE,128
+pypix_api/utils/http_client.py,sha256=_t0vWeFwb56joO3FZvNtGgHnAnBS9ATyb7V3GFgxT9k,114
+pypix_api-0.0.3.dist-info/licenses/LICENSE,sha256=d54U-nZhO7AWIN4koG-KK2j9NKqJu01cMbPCziaJHZo,1065
+pypix_api-0.0.3.dist-info/METADATA,sha256=Te3eQO0DB8SDpKVGwyU8Y0tf01MIyv2fuTr4Pj81gTk,5902
+pypix_api-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pypix_api-0.0.3.dist-info/top_level.txt,sha256=3MXafEMXGZhKQH-lK4jC5Jt0VCl7SHaoksB-lSjaHUs,10
+pypix_api-0.0.3.dist-info/RECORD,,
