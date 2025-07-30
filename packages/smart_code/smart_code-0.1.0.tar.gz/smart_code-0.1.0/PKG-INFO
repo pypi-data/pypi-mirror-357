@@ -1,0 +1,45 @@
+Metadata-Version: 2.3
+Name: smart-code
+Version: 0.1.0
+Summary: Static code algorithm optimization analyzer
+License: MIT
+Author: mingcsun
+Author-email: marshalx9@163.com
+Requires-Python: >=3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+
+# smart_code
+
+Static code optimizer that analyzes Python code to suggest algorithmic efficiency improvements.
+
+## Installation
+
+```bash
+pip install smart-code
+```
+
+## Usage
+
+```bash
+smart-code path/to/file.py
+```
+
+Or in Python:
+
+```python
+from smart_code.analyzer import analyze_code
+from smart_code.suggestor import format_suggestions
+
+code = "..."
+sugs = analyze_code(code)
+print(format_suggestions(sugs))
+```
+
