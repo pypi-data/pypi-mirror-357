@@ -1,0 +1,14 @@
+spikeinterface[full]>=0.102.3
+markdown
+
+[desktop]
+PySide6
+pyqtgraph
+
+[test]
+pytest
+PySide6
+
+[web]
+panel
+bokeh
