@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+
+    - name: Install dependencies
+      run: |
+        uv sync --dev
+
+    - name: Lint with ruff
+      run: |
+        uv run ruff check src/
+        uv run ruff format --check src/
+
+    - name: Type check with mypy
+      run: |
+        uv run mypy src/
+      continue-on-error: true  # Don't fail CI on type errors for now
+
+    - name: Test with pytest
+      run: |
+        uv run pytest tests/ -v --cov=src --cov-report=xml
+      continue-on-error: true  # Add tests when available
+
+    - name: Test basic import and compilation
+      run: |
+        uv run python -c "import duckduckgo_mcp_server; print('Import successful')"
+        uv run python -m py_compile src/duckduckgo_mcp_server/*.py
+
+    - name: Upload coverage to Codecov
+      if: matrix.python-version == '3.12'
+      uses: codecov/codecov-action@v4
+      with:
+        file: ./coverage.xml
+        fail_ci_if_error: false
+
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: false
+        tags: duckduckgo-mcp-server:test
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+    - name: Test Docker image
+      run: |
+        docker run --rm duckduckgo-mcp-server:test --help 
