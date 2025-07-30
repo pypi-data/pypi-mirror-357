@@ -1,0 +1,17 @@
+[project]
+name = "C_librarianthefirstsecondandlast"
+version = "1.0.3"
+authors = [
+    {name="Cristigon", email="chrisuriri@gmail.com"},
+    ]
+description = "Just a collection of functions to make coding easier. Functions for vector mathematics are present. As well as Limited game dev UI."
+readme = "readme.txt"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
