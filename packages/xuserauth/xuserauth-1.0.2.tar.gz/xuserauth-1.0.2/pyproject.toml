@@ -1,0 +1,59 @@
+[project]
+name = "xuserauth"
+version = "1.0.2"
+description = "🔐 Pluggable Auth System for FastAPI — JWT, Roles, Google OAuth, Hashing, and Decorators"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    { name = "Abdulbasit Ayinde Aliyu", email = "you@example.com" }
+]
+keywords = ["fastapi", "authentication", "jwt", "oauth", "google", "authorization", "roles", "decorators"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Framework :: FastAPI",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+dependencies = [
+    "fastapi",
+    "starlette",
+    "bcrypt",
+    "passlib",
+    "PyJWT",
+    "Authlib",
+    "httpx",
+    "python-jose",
+    "cryptography",
+    "ecdsa",
+    "pyasn",
+    "typing-extensions",
+    "pydantic",
+    "pydantic_core",
+    "annotated-types",
+    "typing-inspection",
+    "anyio",
+    "idna",
+    "certifi",
+    "h11",
+    "httpcore",
+    "colorama",
+    "six",
+    "cffi",
+    "pycparser",
+    "rsa",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "iniconfig",
+    "Pygments"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
