@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: iplookup-cli
+Version: 0.1
+Summary: CLI for looking up IP adresses
+Home-page: https://github.com/eletrixtime/iplookup-cli
+Author: EletrixTime / eletrix.fr
+Author-email: hey@eletrix.fr
+Requires: requests
+Requires: colorama
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: requires
+Dynamic: requires-python
+Dynamic: summary
