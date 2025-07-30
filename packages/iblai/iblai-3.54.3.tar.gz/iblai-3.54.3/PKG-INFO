@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: iblai
+Version: 3.54.3
+Summary: ibl-data-manager
+Home-page: https://github.com/iblai/iblai-python-sdk
+Author: OpenAPI Generator community
+Author-email: team@openapitools.org
+Keywords: OpenAPI,OpenAPI-Generator,ibl-data-manager
+Description-Content-Type: text/markdown
+Requires-Dist: urllib3<2.1.0,>=1.25.3
+Requires-Dist: python-dateutil
+Requires-Dist: pydantic>=2
+Requires-Dist: typing-extensions>=4.7.1
+
+    API for iblai
+    
