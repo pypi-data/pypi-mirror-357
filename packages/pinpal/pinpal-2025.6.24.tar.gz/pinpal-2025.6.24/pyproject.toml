@@ -1,0 +1,77 @@
+[build-system]
+requires = [
+  "setuptools>=42",
+  "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pinpal"
+authors = [{name = "Glyph", email = "glyph@glyph.im"}]
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+readme = "README.md"
+dependencies = [
+  "keyring",
+  "horsephrase",
+  "fritter",
+  "twisted",
+]
+
+version = "2025.6.24"
+
+[project.urls]
+Home = "https://github.com/glyph/pinpal/"
+
+[project.scripts]
+pinpal = "pinpal.cli:main"
+
+
+[project.optional-dependencies]
+
+gui = [
+  "py2app ; sys_platform == 'darwin'",
+  "pyobjc-core ; sys_platform == 'darwin'",
+  "pyobjc-framework-Cocoa ; sys_platform == 'darwin'",
+  "pyobjc-framework-ExceptionHandling ; sys_platform == 'darwin'",
+  "pyobjc-framework-UserNotifications ; sys_platform == 'darwin'",
+  "pyobjc-framework-CFNetwork ; sys_platform == 'darwin'",
+  "pyobjc-framework-ServiceManagement ; sys_platform == 'darwin'",
+  "quickmacapp >= 2025.1.21 ; sys_platform == 'darwin'",
+  "quickmachotkey ; sys_platform == 'darwin'",
+
+  "ewmh ; sys_platform == 'linux'",
+  "pycairo ; sys_platform == 'linux'",
+  "PyGObject ; sys_platform == 'linux'",
+  "python-xlib ; sys_platform == 'linux'",
+  "pydbus ; sys_platform == 'linux'",
+]
+
+dev = [
+  "pip-tools",
+  "mypy",
+  "mypy-zope",
+  "types-python-dateutil",
+  "pygobject-stubs",
+  "types-python-xlib",
+  "encrust ; sys_platform == 'darwin'",
+
+  # workaround for https://github.com/ronaldoussoren/py2app/issues/531 ; drop
+  # when we can
+  "setuptools<71.0.0",
+]
+
+[tool.mypy]
+namespace_packages = true
+plugins = ["mypy_zope:plugin"]
+
+[[tool.mypy.overrides]]
+ignore_missing_imports = true
+module = [
+  "objc",
+  "Foundation",
+  "AppKit",
+  "ServiceManagement",
+  "setuptools",
+]
+
