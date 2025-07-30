@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run pytest:*)",
+      "Bash(grep:*)",
+      "Bash(gh issue view:*)",
+      "Bash(uv pip install:*)",
+      "Bash(echo:*)",
+      "Bash(ls:*)",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(uv run:*)",
+      "Bash(git add:*)",
+      "Bash(gh issue:*)",
+      "Bash(uv venv:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(test-env/bin/pip install:*)",
+      "Bash(test-env/bin/python:*)",
+      "Bash(test-env/bin/pip3 install:*)",
+      "Bash(test-env/bin/pypet --help)",
+      "Bash(test-env/bin/pypet:*)",
+      "Bash(git tag:*)",
+      "Bash(git push:*)",
+      "Bash(uv add:*)"
+    ],
+    "deny": []
+  }
+}
