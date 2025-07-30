@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: C_librarianthefirstsecondandlast
+Version: 1.0.3
+Summary: Just a collection of functions to make coding easier. Functions for vector mathematics are present. As well as Limited game dev UI.
+Author-email: Cristigon <chrisuriri@gmail.com>
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.12
+Description-Content-Type: text/plain
+
+IDK anymore. The description has all the necessary info.
