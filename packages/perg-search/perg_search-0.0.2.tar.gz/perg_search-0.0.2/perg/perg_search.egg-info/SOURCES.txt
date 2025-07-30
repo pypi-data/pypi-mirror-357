@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+perg/perg_search.egg-info/PKG-INFO
+perg/perg_search.egg-info/SOURCES.txt
+perg/perg_search.egg-info/dependency_links.txt
+perg/perg_search.egg-info/entry_points.txt
+perg/perg_search.egg-info/requires.txt
+perg/perg_search.egg-info/top_level.txt
+perg/syntaxes/__init__.py
+perg/syntaxes/bash.py
+perg/syntaxes/general.py
+perg/syntaxes/python.py
+tests/test_heuristics.py
+tests/test_syntaxes_general.py
+tests/test_syntaxes_python.py
