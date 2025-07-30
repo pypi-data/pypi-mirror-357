@@ -1,0 +1,221 @@
+Metadata-Version: 2.4
+Name: akenoai
+Version: 2.0.0
+Summary: AkenoAi Python Wrapper For Plus+
+Author: TeamKillerX
+License: MIT
+Project-URL: Source, https://github.com/TeamKillerX/akenoai-lib/
+Project-URL: Issues, https://github.com/TeamKillerX/akenoai-lib/issues
+Keywords: API,akeno-lib
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: pydantic
+Requires-Dist: typing
+Requires-Dist: aiohttp
+Requires-Dist: bs4
+Requires-Dist: python-box
+Provides-Extra: streamlit
+Requires-Dist: aiohttp; extra == "streamlit"
+Requires-Dist: wget; extra == "streamlit"
+Requires-Dist: requests; extra == "streamlit"
+Requires-Dist: httpx[http2]; extra == "streamlit"
+Requires-Dist: python-box; extra == "streamlit"
+Requires-Dist: starlette; extra == "streamlit"
+Requires-Dist: uvicorn[standard]; extra == "streamlit"
+Requires-Dist: fastapi[all]; extra == "streamlit"
+Requires-Dist: streamlit-option-menu; extra == "streamlit"
+Requires-Dist: streamlit-nightly; extra == "streamlit"
+Provides-Extra: fast
+Requires-Dist: aiohttp; extra == "fast"
+Requires-Dist: wget; extra == "fast"
+Requires-Dist: requests; extra == "fast"
+Requires-Dist: httpx[http2]; extra == "fast"
+Requires-Dist: python-box; extra == "fast"
+Requires-Dist: starlette; extra == "fast"
+Requires-Dist: uvicorn[standard]; extra == "fast"
+Requires-Dist: fastapi[all]; extra == "fast"
+Requires-Dist: kurigram; extra == "fast"
+Requires-Dist: TgCrypto; extra == "fast"
+Requires-Dist: pydantic; extra == "fast"
+Requires-Dist: bs4; extra == "fast"
+Requires-Dist: typing; extra == "fast"
+Requires-Dist: uvloop; extra == "fast"
+Provides-Extra: standard
+Requires-Dist: g4f; extra == "standard"
+Requires-Dist: httpx[http2]; extra == "standard"
+Requires-Dist: typing; extra == "standard"
+Requires-Dist: aiohttp; extra == "standard"
+Requires-Dist: openai; extra == "standard"
+Requires-Dist: google-generativeai; extra == "standard"
+Requires-Dist: curl_cffi; extra == "standard"
+Requires-Dist: motor; extra == "standard"
+Requires-Dist: typing-extensions; extra == "standard"
+Requires-Dist: huggingface-hub>=0.23.2; extra == "standard"
+Requires-Dist: authlib; extra == "standard"
+Requires-Dist: gpytranslate; extra == "standard"
+Requires-Dist: fastapi[all]; extra == "standard"
+Requires-Dist: uvicorn[standard]; extra == "standard"
+Requires-Dist: kurigram; extra == "standard"
+Provides-Extra: all
+Requires-Dist: aiohttp; extra == "all"
+Requires-Dist: aiofiles; extra == "all"
+Requires-Dist: kurigram; extra == "all"
+Requires-Dist: bs4; extra == "all"
+Requires-Dist: google-search-results; extra == "all"
+Requires-Dist: httpx[http2]; extra == "all"
+Requires-Dist: Python-IO; extra == "all"
+Requires-Dist: Pillow; extra == "all"
+Requires-Dist: openai; extra == "all"
+Requires-Dist: tqdm; extra == "all"
+Requires-Dist: pre-commit; extra == "all"
+Requires-Dist: gpytranslate; extra == "all"
+Requires-Dist: Flask; extra == "all"
+Requires-Dist: pymongo; extra == "all"
+Requires-Dist: pytz; extra == "all"
+Requires-Dist: urllib3; extra == "all"
+Requires-Dist: pydantic; extra == "all"
+Requires-Dist: typing-extensions; extra == "all"
+Requires-Dist: typing; extra == "all"
+Requires-Dist: deprecation; extra == "all"
+Requires-Dist: psutil; extra == "all"
+Requires-Dist: screeninfo; extra == "all"
+Requires-Dist: g4f; extra == "all"
+Requires-Dist: curl_cffi; extra == "all"
+Requires-Dist: google-generativeai; extra == "all"
+Requires-Dist: gradio-client; extra == "all"
+Requires-Dist: gradio; extra == "all"
+Requires-Dist: huggingface-hub>=0.23.2; extra == "all"
+Requires-Dist: motor; extra == "all"
+Requires-Dist: wget; extra == "all"
+Requires-Dist: uvicorn[standard]; extra == "all"
+Requires-Dist: fastapi[all]; extra == "all"
+Requires-Dist: authlib; extra == "all"
+Requires-Dist: numpy; extra == "all"
+Requires-Dist: python-dateutil; extra == "all"
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# AkenoAI-Lib
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/TeamKillerX/akenoai-lib)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green)](https://github.com/TeamKillerX/akenoai-lib/graphs/commit-activity)
+[![License](https://img.shields.io/badge/License-GPL-pink)](https://github.com/TeamKillerX/akenoai-lib/blob/main/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://makeapullrequest.com)
+[![akenoai - Version](https://img.shields.io/pypi/v/akenoai?style=round)](https://pypi.org/project/akenoai)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/TeamKillerX/akenoai-lib/main.svg)](https://results.pre-commit.ci/latest/github/TeamKillerX/akenoai-lib/main)
+
+<div align="center">
+    <a href="https://pepy.tech/project/akenoai"><img src="https://static.pepy.tech/badge/akenoai" alt="Downloads"></a>
+</div>
+
+**AkenoAI-Lib** is a high-performance library for making raw HTTP requests, powered by `aiohttp`. It provides a simple yet powerful syntax for handling API requests efficiently, ensuring speed and flexibility.
+
+### Features:
+- **Asynchronous Requests** – Fully utilizes `aiohttp` for non-blocking HTTP calls.
+- **Optimized Performance** – Designed for speed and low-latency API interactions.
+- **Flexible Request Handling** – Supports JSON, form-data, and custom headers.
+- **Built-in Response Serialization** – Easily parse and structure API responses.
+- **Lightweight & Scalable** – Minimal dependencies with a focus on performance.
+- **Optional:** `JSONResponse, HeaderOptions`
+
+> [!IMPORTANT]
+> **AkenoAI-Lib**: (Closed for updates)
+There won’t be new updates, but if the **raw method** is stable, there’s no need to panic about updates causing errors.
+
+## Installation
+
+```bash
+pip install akenoai[fast]
+```
+
+## Quick Start
+
+```python
+from akenoai.base import BaseDev
+from akenoai.types import MakeRequest, RequestOptions, JSONResponse
+
+async def fetch_data():
+    response = await BaseDev("https://api.example.com")._make_request(
+        MakeRequest(
+            method="get",
+            endpoint="data/list",
+            options=RequestOptions(serialize_response=True)
+        )
+    )
+    return response
+```
+
+## Usage
+
+### Making a GET Request
+
+```python
+response = await BaseDev("https://example.com")._make_request(
+    MakeRequest(
+        method="get",
+        endpoint="api/resource",
+        json_response=JSONResponse()
+    )
+)
+print(response)
+```
+
+### Sending a POST Request with JSON Data
+
+```python
+response = await BaseDev("https://example.com")._make_request(
+    MakeRequest(
+        method="post",
+        endpoint="api/create",
+        options=RequestOptions(),
+        json_response=JSONResponse(use_json={"key": "value"})
+    )
+)
+print(response)
+```
+
+---
+## 📊 Developed by:
+- [`AkenoX API`](https://t.me/xpushz) - Full stack Developer Backend
+- [`ErrAPI`](https://t.me/Chakszzz) - Backend And Frontend Web
+- [`itzpire API`](https://itzpire.com) - Backend And Frontend Web
+
+## ❤️ Special Thanks To
+- [`Kurigram`](https://github.com/KurimuzonAkuma/pyrogram)
+- [`FastAPI`](https://github.com/fastapi/fastapi)
+- Thank you all developers 😊
+---
+## Contributing
+Feel free to open issues and contribute to the development of AkenoAI-Lib!
+
+## Donation
+* Your donation helps us continue our work!
+
+To send payments via DANA, use the following Bank Jago account number:
+
+Bank Jago: `100201327349`
+
+## License
+This project is licensed under the MIT License.
