@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/slurm_emission/__init__.py
+src/slurm_emission/submit_jobs.py
+src/slurm_emission.egg-info/PKG-INFO
+src/slurm_emission.egg-info/SOURCES.txt
+src/slurm_emission.egg-info/dependency_links.txt
+src/slurm_emission.egg-info/top_level.txt
