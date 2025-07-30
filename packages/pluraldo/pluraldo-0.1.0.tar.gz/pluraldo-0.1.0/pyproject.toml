@@ -1,0 +1,35 @@
+[project]
+name = "pluraldo"
+dynamic = []
+description = "todo for plurals"
+authors = [
+    {name = "Jamie Bliss",email = "jamie@ivyleav.es"},
+    {name = "Aurynn Shaw",email = "self@aurynn.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<4"
+dependencies = [
+    "anyio (>=4.9.0,<5.0.0)",
+    "platformdirs (>=4.3.8,<5.0.0)",
+    "click (>=8.2.1,<9.0.0)",
+    "textual[syntax] (>=3.4.0,<4.0.0)",
+]
+version = "0.1.0"
+
+[project.scripts]
+pluraldo = 'pluraldo:cli'
+
+[tool.poetry]
+
+[tool.poetry.group.dev.dependencies]
+textual-dev = "^1.7.0"
+
+[tool.poetry.requires-plugins]
+poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
+
+[tool.poetry-dynamic-versioning]
+enable = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
