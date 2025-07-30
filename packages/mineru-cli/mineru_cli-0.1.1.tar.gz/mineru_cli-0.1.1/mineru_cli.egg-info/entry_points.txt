@@ -1,0 +1,2 @@
+[console_scripts]
+mineru-cli = mineru_cli.cli:main

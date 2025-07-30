@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+mineru_cli/cli.py
+mineru_cli/draw_bbox.py
+mineru_cli/pdf_utils.py
+mineru_cli.egg-info/PKG-INFO
+mineru_cli.egg-info/SOURCES.txt
+mineru_cli.egg-info/dependency_links.txt
+mineru_cli.egg-info/entry_points.txt
+mineru_cli.egg-info/requires.txt
+mineru_cli.egg-info/top_level.txt
+venv/bin/dumppdf.py
+venv/bin/jp.py
+venv/bin/pdf2txt.py
