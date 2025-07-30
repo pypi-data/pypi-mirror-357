@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "secscan-cli"
+version = "1.4.0"
+description = "A multi-language dependency vulnerability scanner supporting JavaScript, Python, and Go"
+readme = "README.md"
+authors = [
+    {name = "Deo Shankar", email = "deoshankar89@gmail.com"},
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+]
+keywords = ["security", "vulnerability", "scanner", "dependencies", "npm", "pip", "go", "osv"]
+requires-python = ">=3.7"
+dependencies = [
+    "requests>=2.25.0",
+    "pyyaml>=5.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0.0",
+    "pytest-cov>=2.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.900",
+]
+
+[project.urls]
+Homepage = "https://github.com/deosha/secscan"
+"Bug Tracker" = "https://github.com/deosha/secscan/issues"
+Documentation = "https://github.com/deosha/secscan#readme"
+"Source Code" = "https://github.com/deosha/secscan"
+
+[project.scripts]
+secscan = "secscan:main"
+
+[tool.setuptools]
+py-modules = ["secscan", "config", "policy", "cache"]
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
