@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/FalconVision.py
+src/clear.py
+src/FalconVision.egg-info/PKG-INFO
+src/FalconVision.egg-info/SOURCES.txt
+src/FalconVision.egg-info/dependency_links.txt
+src/FalconVision.egg-info/top_level.txt
