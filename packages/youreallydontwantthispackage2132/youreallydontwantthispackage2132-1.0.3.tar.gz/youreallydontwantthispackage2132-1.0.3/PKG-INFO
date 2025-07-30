@@ -1,0 +1,9 @@
+Metadata-Version: 2.2
+Name: youreallydontwantthispackage2132
+Version: 1.0.3
+Summary: Descriptionnn
+Author: testauthor
+Author-email: youreallydontwantthispackage2132@youreallydontwantthispackage2131.com
+Dynamic: author
+Dynamic: author-email
+Dynamic: summary

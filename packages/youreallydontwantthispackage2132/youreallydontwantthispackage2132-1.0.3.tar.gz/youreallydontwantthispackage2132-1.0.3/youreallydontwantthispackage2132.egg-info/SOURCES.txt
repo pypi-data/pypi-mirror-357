@@ -1,0 +1,5 @@
+setup.py
+youreallydontwantthispackage2132.egg-info/PKG-INFO
+youreallydontwantthispackage2132.egg-info/SOURCES.txt
+youreallydontwantthispackage2132.egg-info/dependency_links.txt
+youreallydontwantthispackage2132.egg-info/top_level.txt
