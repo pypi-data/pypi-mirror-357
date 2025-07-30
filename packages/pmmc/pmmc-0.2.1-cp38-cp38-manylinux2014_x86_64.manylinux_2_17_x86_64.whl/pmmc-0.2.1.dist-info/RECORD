@@ -1,0 +1,8 @@
+_pmmc.cpython-38-x86_64-linux-gnu.so,sha256=bWjcraX0BxFGk8jMFJIuUyvGmZFQ5AN88x2peBH1ZLE,615193
+pmmc/__init__.py,sha256=Rfeq2_b3VrHOvdW67ua1iSTZnoxvizY7DNZGEP3eFKw,2091
+pmmc.libs/libOpenCL-f806d0e1.so.1.0.0,sha256=8oAw-SbjjBUhOgUQ0R9xPFjBNwrm-7aAt-h9mdSSY0M,135601
+pmmc.libs/libgomp-a34b3233.so.1.0.0,sha256=On6uznIxkRvi-7Gz58tMtcLg-E4MK7c3OUcrWh_uyME,168193
+pmmc-0.2.1.dist-info/METADATA,sha256=f2bRL33wvkQZpOG_d7RNwlVHHrdunCB8mLLrjtu_O6c,9083
+pmmc-0.2.1.dist-info/WHEEL,sha256=woUWM7_g6e3T1wyUpGdez6hmhZ2KfmvHV84MVKZhxGM,147
+pmmc-0.2.1.dist-info/top_level.txt,sha256=RBE5SYNjn-HiBEDxZmRXNtaymOpsU7euiefLicxmsOk,11
+pmmc-0.2.1.dist-info/RECORD,,
