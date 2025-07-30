@@ -1,0 +1,10 @@
+csvformatmail/__init__.py,sha256=CLnqKquysEgrJgQadpPds1MDhVsVMNYxS9nppHH3Bqo,1442
+csvformatmail/_cli.py,sha256=LCyPWNo5bnZgS_zsYva4aCrcg3720RDufX7L05o2wBU,12083
+csvformatmail/_version.py,sha256=izB7sUD9NjNwuyxtrmSVzoVd_rq6pE3mbNEjvepKk_g,511
+csvformatmail/mail.py,sha256=nnq4lgV6kKaYp4SVT795VmuiVK-z4LHo0kO9fd2bpEw,11452
+csvformatmail-1.3.3.dist-info/licenses/LICENSE,sha256=2Y2tVNl8oDaTreocCW3W7LDb3Mykhpq52cJDKEqErig,1073
+csvformatmail-1.3.3.dist-info/METADATA,sha256=Aos5CZzsfSUcervwYIo89CdK5Z2-_Y0H_C5jkF8K4v4,4634
+csvformatmail-1.3.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+csvformatmail-1.3.3.dist-info/entry_points.txt,sha256=rxNY9TGMxpeuxWlqX1uo8GraaD3kqHiOFx_3yWGWut4,58
+csvformatmail-1.3.3.dist-info/top_level.txt,sha256=P0Ag9zPLM705ndCaTfM9T6ot20X_Eh4i_dLMvcTeQSc,14
+csvformatmail-1.3.3.dist-info/RECORD,,
