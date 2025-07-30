@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+shadowlink/__init__.py
+shadowlink/__main__.py
+shadowlink/shadowlink.py
+shadowlink/version.py
+shadowlink.egg-info/PKG-INFO
+shadowlink.egg-info/SOURCES.txt
+shadowlink.egg-info/dependency_links.txt
+shadowlink.egg-info/entry_points.txt
+shadowlink.egg-info/requires.txt
+shadowlink.egg-info/top_level.txt
+tests/test_shadowlink.py
