@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: gcp_connector
+Version: 0.1.7
+Summary: Libreria de conexion a proyectos GCP,
+Author: Daniel Cristancho
+Author-email: daniersdan81@gmail.com
+Requires-Python: >=3.9
+Requires-Dist: pandas==2.2.3
+Requires-Dist: google-auth==2.38.0
+Requires-Dist: google-auth-oauthlib==1.2.1
+Requires-Dist: google-api-python-client==2.160.0
+Requires-Dist: google-auth-httplib2==0.2.0
+Requires-Dist: google-cloud-bigquery==3.29.0
+Requires-Dist: google-crc32c==1.6.0
+Requires-Dist: pygsheets==2.0.6
+Requires-Dist: pyarrow==19.0.0
+Requires-Dist: db-dtypes==1.4.2
+Requires-Dist: google-cloud-storage==3.0.0
+Requires-Dist: google-cloud-bigquery-storage==2.30.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
