@@ -1,0 +1,184 @@
+Metadata-Version: 2.4
+Name: zfit_physics
+Version: 0.8.1
+Summary: Physics extension to zfit
+Project-URL: Documentation, https://zfit-physics.readthedocs.io/en/latest/
+Project-URL: Repository, https://github.com/zfit/zfit-physics
+Project-URL: Bug Tracker, https://github.com/zfit/zfit-physics/issues
+Project-URL: Discussions, https://github.com/zfit/zfit-physics/discussions
+Project-URL: Changelog, https://github.com/zfit/zfit-physics/blob/main/CHANGELOG.rst
+License: BSD 3-Clause License
+        
+        Copyright (c) 2019, zfit
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        * Redistributions of source code must retain the above copyright notice, this
+          list of conditions and the following disclaimer.
+        
+        * Redistributions in binary form must reproduce the above copyright notice,
+          this list of conditions and the following disclaimer in the documentation
+          and/or other materials provided with the distribution.
+        
+        * Neither the name of the copyright holder nor the names of its
+          contributors may be used to endorse or promote products derived from
+          this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+License-File: LICENSE
+Keywords: TensorFlow, model, fitting, scalable, HEP, physics
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.9
+Requires-Dist: zfit>=0.20
+Provides-Extra: all
+Requires-Dist: ampform; extra == 'all'
+Requires-Dist: pyhf; extra == 'all'
+Requires-Dist: qrules; extra == 'all'
+Requires-Dist: tensorwaves[phsp]; extra == 'all'
+Requires-Dist: tfpwa>=0.2.2; extra == 'all'
+Provides-Extra: compwa
+Requires-Dist: ampform; extra == 'compwa'
+Requires-Dist: qrules; extra == 'compwa'
+Requires-Dist: tensorwaves[phsp]; extra == 'compwa'
+Provides-Extra: dev
+Requires-Dist: ampform; extra == 'dev'
+Requires-Dist: bumpversion>=0.5.3; extra == 'dev'
+Requires-Dist: contextlib-chdir; extra == 'dev'
+Requires-Dist: coverage>=4.5.1; extra == 'dev'
+Requires-Dist: flake8>=3.5.0; extra == 'dev'
+Requires-Dist: jupyter-sphinx; extra == 'dev'
+Requires-Dist: myst-nb; extra == 'dev'
+Requires-Dist: numba-stats; extra == 'dev'
+Requires-Dist: pip>=9.0.1; extra == 'dev'
+Requires-Dist: pre-commit; extra == 'dev'
+Requires-Dist: pydata-sphinx-theme>=0.9; extra == 'dev'
+Requires-Dist: pyhf; extra == 'dev'
+Requires-Dist: pytest; extra == 'dev'
+Requires-Dist: pytest-cov; extra == 'dev'
+Requires-Dist: pytest-rerunfailures; extra == 'dev'
+Requires-Dist: pytest-xdist; extra == 'dev'
+Requires-Dist: pyyaml; extra == 'dev'
+Requires-Dist: qrules; extra == 'dev'
+Requires-Dist: seed-intersphinx-mapping; extra == 'dev'
+Requires-Dist: setupext-janitor; extra == 'dev'
+Requires-Dist: sphinx-autodoc-typehints; extra == 'dev'
+Requires-Dist: sphinx-copybutton; extra == 'dev'
+Requires-Dist: sphinx-panels; extra == 'dev'
+Requires-Dist: sphinx-togglebutton; extra == 'dev'
+Requires-Dist: sphinx>=3.5.4; extra == 'dev'
+Requires-Dist: sphinxcontrib-applehelp<1.0.8; extra == 'dev'
+Requires-Dist: sphinxcontrib-images; extra == 'dev'
+Requires-Dist: sphinxcontrib-youtube<1.2.0,>=1.0.0; extra == 'dev'
+Requires-Dist: tensorwaves[phsp]; extra == 'dev'
+Requires-Dist: tfpwa>=0.2.2; extra == 'dev'
+Requires-Dist: tox>=2.9.1; extra == 'dev'
+Requires-Dist: twine>=1.10.0; extra == 'dev'
+Requires-Dist: watchdog>=0.8.3; extra == 'dev'
+Requires-Dist: wheel>=0.29.0; extra == 'dev'
+Provides-Extra: pyhf
+Requires-Dist: pyhf; extra == 'pyhf'
+Provides-Extra: test
+Requires-Dist: ampform; extra == 'test'
+Requires-Dist: contextlib-chdir; extra == 'test'
+Requires-Dist: pyhf; extra == 'test'
+Requires-Dist: pytest; extra == 'test'
+Requires-Dist: pytest-cov; extra == 'test'
+Requires-Dist: pytest-rerunfailures; extra == 'test'
+Requires-Dist: pytest-xdist; extra == 'test'
+Requires-Dist: qrules; extra == 'test'
+Requires-Dist: tensorwaves[phsp]; extra == 'test'
+Requires-Dist: tfpwa>=0.2.2; extra == 'test'
+Provides-Extra: tfpwa
+Requires-Dist: tfpwa>=0.2.2; extra == 'tfpwa'
+Description-Content-Type: text/x-rst
+
+************
+zfit physics
+************
+
+.. image:: https://scikit-hep.org/assets/images/Scikit--HEP-Affiliated-blue.svg
+   :target: https://scikit-hep.org
+
+.. image:: https://img.shields.io/pypi/v/zfit_physics.svg
+   :target: https://pypi.python.org/pypi/zfit_physics
+
+
+
+|zfit_logo|
+
+
+.. |zfit_logo| image:: docs/images/zfit-fin_400x168.png
+   :target: https://github.com/zfit/zfit
+   :alt: zfit logo
+
+Documentation
+ - `as part of zfit (zfit-physics part) <https://zfit.readthedocs.io/en/latest/user_api/zfit.pdf.html#physics-pdfs>`_
+ - `zfit-physics (only) <https://zfit-physics.readthedocs.io/en/latest/>`_
+
+
+Tools and models to extend `zfit <https://github.com/zfit/zfit>`_ with physics specific content.
+Feel free to add your models, tools, etc. to this package.
+
+
+The structure of this package is still in flow, so before opening any PR
+you may want to open an issue to discuss how your proposed functionality will fit into `zfit-physics`.
+
+
+What's new
+=============
+
+Check the `changelog <CHANGELOG.rst>`_ for recent changes.
+
+Installing
+==========
+
+
+zfit-physics is available on pip and conda-forge (and LCG and spack).
+Installation with pip has the newest stable version, and therefore recommended, while others may take weeks to months to update.
+If possible, use a conda or virtual environment and do:
+
+
+.. code-block:: console
+
+    $ pip install zfit-physics
+
+(add a -U to update to the newest version)
+
+Installation with conda-forge is also possible:
+
+.. code-block:: console
+
+    $ conda install -c conda-forge zfit-physics
+
+
+Contact
+=======
+
+You can contact us directly:
+ - via e-mail: zfit@physik.uzh.ch
+ - join our `Gitter channel <https://gitter.im/zfit/zfit>`_
+ - open an `issue on GitHub <https://github.com/zfit/zfit-physics/issues/new/choose>`_ or `join the discussions <https://github.com/zfit/zfit-physics/discussions>`_ there
