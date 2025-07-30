@@ -1,0 +1,75 @@
+Metadata-Version: 2.4
+Name: easier
+Version: 1.7.1
+Summary: Tools for analysis
+Home-page: https://github.com/robdmc/easier
+Author: Rob deCarvalho
+Author-email: unlisted@unlisted.net
+License: MIT
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Requires-Dist: click
+Provides-Extra: dev
+Requires-Dist: coverage; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Provides-Extra: all
+Requires-Dist: astropy; extra == "all"
+Requires-Dist: asyncio; extra == "all"
+Requires-Dist: bokeh; extra == "all"
+Requires-Dist: click; extra == "all"
+Requires-Dist: coverage; extra == "all"
+Requires-Dist: cryptography; extra == "all"
+Requires-Dist: cvxpy; extra == "all"
+Requires-Dist: daiquiri; extra == "all"
+Requires-Dist: dataset; extra == "all"
+Requires-Dist: datashader; extra == "all"
+Requires-Dist: django; extra == "all"
+Requires-Dist: duckdb; extra == "all"
+Requires-Dist: flake8; extra == "all"
+Requires-Dist: gatspy; extra == "all"
+Requires-Dist: google-cloud-aiplatform; extra == "all"
+Requires-Dist: google-cloud-bigquery; extra == "all"
+Requires-Dist: google-generativeai; extra == "all"
+Requires-Dist: gspread; extra == "all"
+Requires-Dist: holoviews; extra == "all"
+Requires-Dist: ibis-framework; extra == "all"
+Requires-Dist: ipympl; extra == "all"
+Requires-Dist: ipython; extra == "all"
+Requires-Dist: jinja2; extra == "all"
+Requires-Dist: matplotlib; extra == "all"
+Requires-Dist: numpy; extra == "all"
+Requires-Dist: pandas; extra == "all"
+Requires-Dist: pandas-gbq; extra == "all"
+Requires-Dist: pandashells; extra == "all"
+Requires-Dist: pandera; extra == "all"
+Requires-Dist: psycopg2-binary; extra == "all"
+Requires-Dist: pytest; extra == "all"
+Requires-Dist: pytest-cov; extra == "all"
+Requires-Dist: pytest-sugar; extra == "all"
+Requires-Dist: python-dateutil; extra == "all"
+Requires-Dist: requests; extra == "all"
+Requires-Dist: scikit-learn; extra == "all"
+Requires-Dist: scipy; extra == "all"
+Requires-Dist: simple-salesforce; extra == "all"
+Requires-Dist: sphinx; extra == "all"
+Requires-Dist: sphinx-rtd-theme; extra == "all"
+Requires-Dist: sqlparse; extra == "all"
+Requires-Dist: statsmodels; extra == "all"
+Requires-Dist: tqdm; extra == "all"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
+
+Tools for analysis
