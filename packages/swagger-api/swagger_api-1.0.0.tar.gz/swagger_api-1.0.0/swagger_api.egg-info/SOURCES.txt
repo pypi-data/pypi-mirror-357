@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+swagger_api/__init__.py
+swagger_api/swagger_api.py
+swagger_api.egg-info/PKG-INFO
+swagger_api.egg-info/SOURCES.txt
+swagger_api.egg-info/dependency_links.txt
+swagger_api.egg-info/requires.txt
+swagger_api.egg-info/top_level.txt

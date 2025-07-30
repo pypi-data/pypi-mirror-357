@@ -1,0 +1,156 @@
+# Swagger API MCP Server
+
+A Model Context Protocol (MCP) server that extracts API definitions from Swagger/OpenAPI JSON endpoints. This tool provides structured access to API paths and schemas from various internal HP services.
+
+## Features
+
+- 🔍 **API Discovery**: Browse available APIs through a curated list of base URLs
+- 📝 **Schema Extraction**: Extract comprehensive API definitions including paths and schemas
+- 🚀 **Fast Integration**: Easy integration with MCP-compatible clients
+
+## Installation
+
+```bash
+pip install swagger-api-mcp
+```
+
+## Usage
+
+### As an MCP Server
+
+Start the server:
+
+```bash
+python -m swagger_api.swagger_api
+```
+
+### Available Tools
+
+#### 1. `base_url_list`
+Lists available Swagger API endpoints with descriptions.
+
+**Returns:**
+- List of available APIs with their base URLs and descriptions
+- Includes DCC Notifications API, Device View API, and Supply Order API
+
+#### 2. `get_swagger_api_defs_from_json`
+Extracts API definitions from a Swagger JSON endpoint.
+
+**Parameters:**
+- `swagger_json_url`: URL to the swagger.json endpoint
+- `base_url`: Base URL for the API service
+
+**Returns:**
+- API paths and their definitions
+- Schema definitions for data models
+- Base URL for the service
+
+### Example Usage
+
+```python
+from swagger_api.swagger_api import mcp
+
+# Get list of available APIs
+apis = base_url_list()
+
+# Extract API definitions
+api_defs = await get_swagger_api_defs_from_json(
+    swagger_json_url="https://example.com/api-docs/swagger.json",
+    base_url="https://example.com"
+)
+```
+
+
+## Available APIs
+
+The server provides access to the following internal HP APIs:
+
+### DCC Notifications API
+- **Base URL**: `https://mscc-svc.api.dev-thor-ue1.hpip-internal.com/svc/dcc-notifications`
+- **Description**: Provides access to DCC notifications
+- **Swagger JSON**: Available at `/api-docs/swagger.json`
+
+### Device View API
+- **Base URL**: `https://dss-svc.api.dev-thor-ue1.hpip-internal.com/svc/device-view`
+- **Description**: Provides access to device view functionalities and device data
+- **Swagger JSON**: Available at `/api-docs/swagger.json`
+
+### Supply Order API
+- **Base URL**: `https://hpcorp-ob-test.default.api.hp.com/device-view-service-dev/svc/supply-order`
+- **Description**: Provides access to supply order functionalities
+- **Swagger JSON**: Available at `/api-docs/swagger.json`
+
+## Requirements
+
+- Python 3.7+
+- requests
+- mcp (Model Context Protocol)
+- playwright (for advanced web scraping capabilities)
+
+## Development
+
+### Setup
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd swagger_api
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Run the server:
+```bash
+python swagger_api/swagger_api.py
+```
+
+### Project Structure
+
+```
+swagger_api/
+├── __init__.py
+├── swagger_api.py      # Main MCP server implementation
+├── README.md           # This file
+└── requirements.txt    # Python dependencies
+```
+
+## Error Handling
+
+The server includes comprehensive error handling:
+
+- **Network Errors**: Handles connection issues.
+- **JSON Parsing**: Graceful handling of malformed JSON responses
+- **HTTP Status Codes**: Proper error reporting for failed requests
+- **SSL Verification**: Disabled for internal corporate environments
+
+## Security Considerations
+
+- SSL verification is disabled (`verify=False`) for internal corporate APIs
+- No authentication tokens are stored in the codebase
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+For support and questions, please contact the development team or create an issue in the repository.
+
+## Changelog
+
+### Version 1.0.0
+- Initial release
+- Support for DCC Notifications API
+- Support for Device View API
+- Support for Supply Order API
