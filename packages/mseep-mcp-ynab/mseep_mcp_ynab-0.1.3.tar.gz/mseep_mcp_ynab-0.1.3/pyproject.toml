@@ -1,0 +1,40 @@
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.black]
+line-length = 100
+target-version = [
+    "py312",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "src",
+]
+testpaths = [
+    "tests",
+]
+markers = [
+    "integration: marks tests as integration tests that require YNAB API access",
+    "asyncio: mark tests as async tests",
+]
+addopts = "-v -ra --strict-markers -m 'not integration'"
+
+[tool.hatch.build.targets]
+
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.3",
+    "pytest-cov>=6.0.0",
+    "black>=24.0.0",
+    "ruff>=0.9.4",
+    "mypy>=1.15.0",
+]
