@@ -1,0 +1,6 @@
+polars
+pandas
+rich
+
+[dev]
+pytest
