@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MeowthLogger"
+version = "2.5.2"
+description = "Colorised logger for python, using logging python lib"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Meowthpxnk", email = "meowthpxnk@gmail.com" }]
+
+requires-python = ">=3.7"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["colorama==0.4.6"]
+
+[project.urls]
+github = "https://github.com/meowthpxnk/MeowthLogger"
