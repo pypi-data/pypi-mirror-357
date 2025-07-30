@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: masumi
+Version: 0.1.36
+Summary: Masumi Payment Module for Cardano blockchain integration
+Home-page: https://github.com/masumi-network/masumi
+Author: Patrick Tobler
+Author-email: patrick@nmkr.io
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: pytest>=7.0.0
+Requires-Dist: pytest-asyncio>=0.18.0
+Requires-Dist: canonicaljson>=1.6.3
+
+UNKNOWN
+
