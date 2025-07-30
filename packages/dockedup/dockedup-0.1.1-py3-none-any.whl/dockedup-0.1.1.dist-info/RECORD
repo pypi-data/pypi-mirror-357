@@ -1,0 +1,8 @@
+dockedup/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dockedup/cli.py,sha256=IDJZ3QI7aGBsn8GQDej8TxdN61g5873m-j5onlOsBFk,8223
+dockedup/docker_monitor.py,sha256=F7Rs9sswgSr2DOjUNqX2V15IRMVrCE11HoyTJFnR-JM,4726
+dockedup/utils.py,sha256=-iYHmCdfRltyhnt5CDhPFsmUnDLm8kZGZcyhSs9iwZQ,4600
+dockedup-0.1.1.dist-info/METADATA,sha256=A7k2xl--4f4MankQDKuUujyK7AHUJdkjO_L9Trq1RjQ,4720
+dockedup-0.1.1.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+dockedup-0.1.1.dist-info/entry_points.txt,sha256=PBfayPy39qhpl8XBC6A4jKr9mR2UQfqTaAn0OxiFrLk,45
+dockedup-0.1.1.dist-info/RECORD,,
