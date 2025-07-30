@@ -1,0 +1,533 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>prs_commons.aws.s3_client &mdash; PRS Commons 0.2.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=dd2ddd4a" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=dd2ddd4a" />
+
+  
+      <script src="../../../_static/documentation_options.js?v=6ffd866b"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2e8b57" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            PRS Commons
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../odoo.html">Odoo RPC Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../storage.html">Storage Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aws.html">AWS S3 Client</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2e8b57" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PRS Commons</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">prs_commons.aws.s3_client</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for prs_commons.aws.s3_client</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;S3 Client module for AWS S3 storage.</span>
+
+<span class="sd">This module provides a thread-safe singleton S3 client that can be used across</span>
+<span class="sd">the application. It uses boto3 for AWS S3 operations and supports configuration</span>
+<span class="sd">via environment variables.</span>
+
+<span class="sd">Environment Variables:</span>
+<span class="sd">    REGION: AWS region name (e.g., &#39;us-east-1&#39;)</span>
+<span class="sd">    BUCKET_ACCESS_KEY_ID: AWS access key ID</span>
+<span class="sd">    BUCKET_SECRET_ACCESS_KEY: AWS secret access key</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">threading</span><span class="w"> </span><span class="kn">import</span> <span class="n">Lock</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">TypeVar</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">boto3</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">botocore.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">botocore.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClientError</span><span class="p">,</span> <span class="n">NoCredentialsError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing_extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">override</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">prs_commons.storage.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">StorageClient</span>
+
+<span class="c1"># Type aliases</span>
+<span class="n">S3Response</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+
+<span class="c1"># Type variables for generic class methods</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s2">&quot;S3Client&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set up logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="S3Client">
+<a class="viewcode-back" href="../../../aws.html#prs_commons.aws.s3_client.S3Client">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">S3Client</span><span class="p">(</span><span class="n">StorageClient</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Thread-safe singleton client for AWS S3 operations.</span>
+
+<span class="sd">    This client provides a simple interface to interact with AWS S3 using boto3.</span>
+<span class="sd">    It implements the singleton pattern to ensure only one instance exists.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_instance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;S3Client&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_lock</span><span class="p">:</span> <span class="n">Lock</span> <span class="o">=</span> <span class="n">Lock</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create or return the singleton instance of S3Client.&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">cls</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">S3Client</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+                <span class="bp">cls</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">_initialized</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instance</span>  <span class="c1"># type: ignore</span>
+
+<div class="viewcode-block" id="S3Client.__init__">
+<a class="viewcode-back" href="../../../aws.html#prs_commons.aws.s3_client.S3Client.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the S3 client with configuration from environment variables.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_initialized&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Initialize session and client</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_session</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span>
+            <span class="n">region_name</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;S3_AWS_REGION&quot;</span><span class="p">),</span>
+            <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;S3_AWS_ACCESS_KEY_ID&quot;</span><span class="p">),</span>
+            <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;S3_AWS_SECRET_ACCESS_KEY&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">BaseClient</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_initialized</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="nd">@override</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">client</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseClient</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the boto3 S3 client instance.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The boto3 S3 client instance.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            RuntimeError: If the S3 client cannot be initialized.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Failed to initialize S3 client&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span>
+
+<div class="viewcode-block" id="S3Client.upload_file">
+<a class="viewcode-back" href="../../../aws.html#prs_commons.aws.s3_client.S3Client.upload_file">[docs]</a>
+    <span class="nd">@override</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">upload_file</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">bucket</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S3Response</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Upload a file to an S3 bucket.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file_path: Path to the file to upload</span>
+<span class="sd">            bucket: Target S3 bucket name</span>
+<span class="sd">            key: S3 object key (path in the bucket)</span>
+<span class="sd">            **kwargs: Additional arguments to pass to boto3 upload_file</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            S3Response: Dictionary containing status and operation details</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ClientError: If the upload fails</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">upload_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="s2">&quot;bucket&quot;</span><span class="p">:</span> <span class="n">bucket</span><span class="p">,</span> <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="n">key</span><span class="p">}</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">ClientError</span><span class="p">,</span> <span class="n">NoCredentialsError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="s2">&quot;Failed to upload file </span><span class="si">%s</span><span class="s2"> to s3://</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">file_path</span><span class="p">,</span>
+                <span class="n">bucket</span><span class="p">,</span>
+                <span class="n">key</span><span class="p">,</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="k">raise</span></div>
+
+
+<div class="viewcode-block" id="S3Client.download_file">
+<a class="viewcode-back" href="../../../aws.html#prs_commons.aws.s3_client.S3Client.download_file">[docs]</a>
+    <span class="nd">@override</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">download_file</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">bucket</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download a file from an S3 bucket to the local filesystem.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            bucket: Source S3 bucket name</span>
+<span class="sd">            key: S3 object key (path in the bucket)</span>
+<span class="sd">            file_path: Local filesystem path where the file will be saved.</span>
+<span class="sd">                     Must include the target filename and extension.</span>
+<span class="sd">                     Example: &#39;/path/to/destination/filename.ext&#39;</span>
+<span class="sd">                     The parent directory must exist and be writable.</span>
+<span class="sd">            **kwargs: Additional arguments to pass to boto3 download_file</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if download was successful</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            FileNotFoundError: If the file doesn&#39;t exist in S3 or local path is invalid</span>
+<span class="sd">            PermissionError: If there are permission issues with S3 or local filesystem</span>
+<span class="sd">            botocore.exceptions.ClientError: For other S3-specific errors</span>
+<span class="sd">            IOError: If there are issues writing to the local filesystem</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; s3 = S3Client()</span>
+<span class="sd">            &gt;&gt;&gt; success = s3.download_file(</span>
+<span class="sd">            ...     bucket=&#39;my-bucket&#39;,</span>
+<span class="sd">            ...     key=&#39;folder/file.txt&#39;,</span>
+<span class="sd">            ...     file_path=&#39;/local/path/to/save/file.txt&#39;</span>
+<span class="sd">            ... )</span>
+<span class="sd">            &gt;&gt;&gt; if success:</span>
+<span class="sd">            ...     print(&quot;File downloaded successfully&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="n">ClientError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">error_code</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Code&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">error_code</span> <span class="o">==</span> <span class="s2">&quot;404&quot;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File not found: s3://</span><span class="si">{</span><span class="n">bucket</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+            <span class="k">if</span> <span class="n">error_code</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;403&quot;</span><span class="p">,</span> <span class="s2">&quot;AccessDenied&quot;</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="ne">PermissionError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Access denied to file: s3://</span><span class="si">{</span><span class="n">bucket</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+            <span class="k">raise</span>  <span class="c1"># Re-raise other ClientError instances</span></div>
+
+
+<div class="viewcode-block" id="S3Client.delete_object">
+<a class="viewcode-back" href="../../../aws.html#prs_commons.aws.s3_client.S3Client.delete_object">[docs]</a>
+    <span class="nd">@override</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">delete_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bucket</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S3Response</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Delete an object from an S3 bucket.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            bucket: S3 bucket name</span>
+<span class="sd">            key: S3 object key to delete</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            S3Response: Dictionary containing status and operation details</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">delete_object</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="n">key</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="n">response</span><span class="p">,</span>
+                <span class="s2">&quot;bucket&quot;</span><span class="p">:</span> <span class="n">bucket</span><span class="p">,</span>
+                <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="k">except</span> <span class="n">ClientError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
+                <span class="s2">&quot;bucket&quot;</span><span class="p">:</span> <span class="n">bucket</span><span class="p">,</span>
+                <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span>
+            <span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="S3Client.generate_presigned_url">
+<a class="viewcode-back" href="../../../aws.html#prs_commons.aws.s3_client.S3Client.generate_presigned_url">[docs]</a>
+    <span class="nd">@override</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_presigned_url</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">bucket</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">operation</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;get_object&quot;</span><span class="p">,</span>
+        <span class="n">expiration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3600</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate a pre-signed URL for an S3 object.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            bucket: S3 bucket name</span>
+<span class="sd">            key: S3 object key (path in the bucket)</span>
+<span class="sd">            operation: The S3 operation to allow with this URL.</span>
+<span class="sd">                     Common values: &#39;get_object&#39;, &#39;put_object&#39;, &#39;delete_object&#39;</span>
+<span class="sd">            expiration: Time in seconds until the URL expires (default: 1 hour)</span>
+<span class="sd">            **kwargs: Additional parameters to pass to the S3 operation</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Optional[str]: The pre-signed URL as a string,</span>
+<span class="sd">            or None if credentials are invalid</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            # Generate a URL to upload a file</span>
+<span class="sd">            &gt;&gt;&gt; upload_url = s3.generate_presigned_url(</span>
+<span class="sd">            ...     bucket=&#39;my-bucket&#39;,</span>
+<span class="sd">            ...     key=&#39;uploads/file.txt&#39;,</span>
+<span class="sd">            ...     operation=&#39;put_object&#39;,</span>
+<span class="sd">            ...     ContentType=&#39;text/plain&#39;</span>
+<span class="sd">            ... )</span>
+
+<span class="sd">            # Generate a URL to download a file</span>
+<span class="sd">            &gt;&gt;&gt; download_url = s3.generate_presigned_url(</span>
+<span class="sd">            ...     bucket=&#39;my-bucket&#39;,</span>
+<span class="sd">            ...     key=&#39;downloads/file.txt&#39;,</span>
+<span class="sd">            ...     operation=&#39;get_object&#39;,</span>
+<span class="sd">            ...     ResponseContentType=&#39;application/octet-stream&#39;</span>
+<span class="sd">            ... )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Bucket&quot;</span><span class="p">:</span> <span class="n">bucket</span><span class="p">,</span> <span class="s2">&quot;Key&quot;</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">}</span>
+
+        <span class="n">url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">generate_presigned_url</span><span class="p">(</span>
+            <span class="n">ClientMethod</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span> <span class="n">Params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">ExpiresIn</span><span class="o">=</span><span class="n">expiration</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">url</span></div>
+
+
+<div class="viewcode-block" id="S3Client.generate_upload_url">
+<a class="viewcode-back" href="../../../aws.html#prs_commons.aws.s3_client.S3Client.generate_upload_url">[docs]</a>
+    <span class="nd">@override</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_upload_url</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">bucket</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">expiration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3600</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate a pre-signed URL for uploading a file to S3.</span>
+
+<span class="sd">        This is a convenience wrapper around generate_presigned_url for uploads.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            bucket: S3 bucket name</span>
+<span class="sd">            key: S3 object key where the file will be stored</span>
+<span class="sd">            expiration: Time in seconds until the URL expires (default: 1 hour)</span>
+<span class="sd">            **kwargs: Additional parameters to pass to the S3 put_object operation</span>
+<span class="sd">                Common parameters:</span>
+<span class="sd">                - ContentType: The content type of the file (e.g., &#39;image/jpeg&#39;)</span>
+<span class="sd">                - ACL: Access control for the file (e.g., &#39;private&#39;, &#39;public-read&#39;)</span>
+<span class="sd">                - Metadata: Dictionary of metadata to store with the object</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Optional[str]: The pre-signed URL as a string,</span>
+<span class="sd">            or None if credentials are invalid</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; upload_url = s3.generate_upload_url(</span>
+<span class="sd">            ...     bucket=&#39;my-bucket&#39;,</span>
+<span class="sd">            ...     key=&#39;uploads/file.jpg&#39;,</span>
+<span class="sd">            ...     ContentType=&#39;image/jpeg&#39;,</span>
+<span class="sd">            ...     ACL=&#39;private&#39;,</span>
+<span class="sd">            ...     Metadata={</span>
+<span class="sd">            ...         &#39;custom&#39;: &#39;value&#39;</span>
+<span class="sd">            ...     }</span>
+<span class="sd">            ... )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Convert ContentType to proper case if provided</span>
+        <span class="k">if</span> <span class="s2">&quot;contenttype&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;ContentType&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;contenttype&quot;</span><span class="p">)</span>
+
+        <span class="c1"># # Ensure ContentType is set if not provided</span>
+        <span class="c1"># if &quot;ContentType&quot; not in kwargs:</span>
+        <span class="c1">#     # Try to determine content type from file extension</span>
+        <span class="c1">#     if &quot;.&quot; in key:</span>
+        <span class="c1">#         ext = key.split(&quot;.&quot;)[-1].lower()</span>
+        <span class="c1">#         if ext in {&quot;jpg&quot;, &quot;jpeg&quot;}:</span>
+        <span class="c1">#             kwargs[&quot;ContentType&quot;] = &quot;image/jpeg&quot;</span>
+        <span class="c1">#         elif ext == &quot;png&quot;:</span>
+        <span class="c1">#             kwargs[&quot;ContentType&quot;] = &quot;image/png&quot;</span>
+        <span class="c1">#         elif ext == &quot;pdf&quot;:</span>
+        <span class="c1">#             kwargs[&quot;ContentType&quot;] = &quot;application/pdf&quot;</span>
+        <span class="c1">#         elif ext == &quot;txt&quot;:</span>
+        <span class="c1">#             kwargs[&quot;ContentType&quot;] = &quot;text/plain&quot;</span>
+        <span class="c1">#     else:</span>
+        <span class="c1">#         # Default to binary data if type can&#39;t be determined</span>
+        <span class="c1">#         kwargs[&quot;ContentType&quot;] = &quot;application/octet-stream&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_presigned_url</span><span class="p">(</span>
+            <span class="n">bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span>
+            <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
+            <span class="n">operation</span><span class="o">=</span><span class="s2">&quot;put_object&quot;</span><span class="p">,</span>
+            <span class="n">expiration</span><span class="o">=</span><span class="n">expiration</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="S3Client.generate_download_url">
+<a class="viewcode-back" href="../../../aws.html#prs_commons.aws.s3_client.S3Client.generate_download_url">[docs]</a>
+    <span class="nd">@override</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_download_url</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">bucket</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">expiration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3600</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate a pre-signed URL for downloading a file from S3.</span>
+
+<span class="sd">        This is a convenience wrapper around generate_presigned_url for downloads.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            bucket: S3 bucket name</span>
+<span class="sd">            key: S3 object key of the file to download</span>
+<span class="sd">            expiration: Time in seconds until the URL expires (default: 1 hour)</span>
+<span class="sd">            **kwargs: Additional parameters to pass to the S3 get_object operation</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Optional[str]: The pre-signed URL as a string,</span>
+<span class="sd">            or None if credentials are invalid</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; download_url = s3.generate_download_url(</span>
+<span class="sd">            ...     bucket=&#39;my-bucket&#39;,</span>
+<span class="sd">            ...     key=&#39;downloads/file.txt&#39;,</span>
+<span class="sd">            ...     ResponseContentType=&#39;application/pdf&#39;,</span>
+<span class="sd">            ...     ResponseContentDisposition=&#39;attachment; filename=report.pdf&#39;</span>
+<span class="sd">            ... )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_presigned_url</span><span class="p">(</span>
+            <span class="n">bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span>
+            <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
+            <span class="n">operation</span><span class="o">=</span><span class="s2">&quot;get_object&quot;</span><span class="p">,</span>
+            <span class="n">expiration</span><span class="o">=</span><span class="n">expiration</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="S3Client.download_as_base64">
+<a class="viewcode-back" href="../../../aws.html#prs_commons.aws.s3_client.S3Client.download_as_base64">[docs]</a>
+    <span class="nd">@override</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">download_as_base64</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">bucket</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">check_exists</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download a file from S3 and return its contents as a base64-encoded string.</span>
+
+<span class="sd">        This method is useful when you need to work with the file contents</span>
+<span class="sd">        directly in memory without saving to disk, such as when sending files</span>
+<span class="sd">        in API responses or processing file contents in memory.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            bucket: Name of the S3 bucket</span>
+<span class="sd">            key: S3 object key (path in the bucket)</span>
+<span class="sd">            check_exists: If True, verify the file exists before downloading</span>
+<span class="sd">            **kwargs: Additional arguments to pass to boto3 download_fileobj</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Base64-encoded string of the file contents</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            FileNotFoundError: If the file doesn&#39;t exist</span>
+<span class="sd">            PermissionError: If there are permission issues</span>
+<span class="sd">            botocore.exceptions.ClientError: For S3-specific errors</span>
+<span class="sd">            Exception: For any other unexpected errors</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; # Download a file as base64</span>
+<span class="sd">            &gt;&gt;&gt; file_data = s3.download_as_base64(</span>
+<span class="sd">            ...     bucket=&#39;my-bucket&#39;,</span>
+<span class="sd">            ...     key=&#39;documents/report.pdf&#39;,</span>
+<span class="sd">            ... )</span>
+<span class="sd">            &gt;&gt;&gt; if file_data:</span>
+<span class="sd">            ...     # Use the base64 data (e.g., embed in HTML, send in API response)</span>
+<span class="sd">            ...     print(f&quot;File size: {len(file_data)} bytes&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">check_exists</span><span class="p">:</span>
+            <span class="c1"># Check if object exists first</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">head_object</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">ClientError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Code&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;404&quot;</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;File not found: s3://</span><span class="si">{</span><span class="n">bucket</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+                <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Code&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;403&quot;</span><span class="p">,</span> <span class="s2">&quot;AccessDenied&quot;</span><span class="p">]:</span>
+                    <span class="k">raise</span> <span class="ne">PermissionError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Access denied to file: s3://</span><span class="si">{</span><span class="n">bucket</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+                <span class="k">raise</span>  <span class="c1"># Re-raise other ClientError instances</span>
+
+        <span class="c1"># Download file to in-memory buffer</span>
+        <span class="n">buffer</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">download_fileobj</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">buffer</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">buffer</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Isha Foundation IT.
+      <span class="lastupdated">Last updated on 2025-06-24 15:59.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
