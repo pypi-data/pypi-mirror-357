@@ -1,0 +1,3 @@
+[console_scripts]
+human-interact=examples.human_interact:main
+
