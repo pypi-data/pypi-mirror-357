@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: jcon
+Version: 0.5.1
+Summary: Python package to move Windows desktop icons
+Author: Jett S
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
