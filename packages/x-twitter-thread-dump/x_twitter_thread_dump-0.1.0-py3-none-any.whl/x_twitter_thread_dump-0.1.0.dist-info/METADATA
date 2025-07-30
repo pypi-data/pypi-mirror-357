@@ -1,0 +1,60 @@
+Metadata-Version: 2.4
+Name: x-twitter-thread-dump
+Version: 0.1.0
+Summary: A tool to dump threads and media from X (formerly Twitter).
+License-File: LICENSE
+Requires-Python: >=3.13
+Requires-Dist: click>=8.2.1
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: jinja2>=3.1.6
+Requires-Dist: more-itertools>=10.7.0
+Requires-Dist: pillow>=11.2.1
+Requires-Dist: playwright>=1.52.0
+Requires-Dist: xclienttransaction>=1.0.0
+Provides-Extra: server
+Requires-Dist: aiorwlock>=1.5.0; extra == 'server'
+Requires-Dist: fastapi>=0.115.12; extra == 'server'
+Requires-Dist: logfire[fastapi,httpx,system-metrics]>=3.21.1; extra == 'server'
+Requires-Dist: pydantic-settings>=2.9.1; extra == 'server'
+Requires-Dist: pydantic>=2.9.1; extra == 'server'
+Requires-Dist: uvicorn>=0.34.2; extra == 'server'
+Description-Content-Type: text/markdown
+
+# X Twitter Thread Dump
+
+<p align="center">
+  <img src="docs/favicon.svg" alt="X Twitter Thread Dump Favicon" width="100"/>
+</p>
+
+X Twitter Thread Dump is a Python tool designed to capture and save Twitter threads as images. It offers both a command-line interface for quick captures and a web API for programmatic access.
+
+## Key Features
+
+*   **Thread Capturing:** Saves entire Twitter threads into image format.
+*   **Dual Interface:** Usable as a CLI tool or a web API.
+*   **Asynchronous Operations:** Built with async support for efficient handling of requests.
+
+## Overview
+
+The project allows users to easily convert Twitter threads into shareable images. The CLI is suitable for manual, on-demand captures, while the API allows integration into other services or automated workflows.
+
+For detailed installation and usage instructions, please refer to the project's documentation or use the help options provided by the CLI and API.
+
+```shell
+uv run to-image --tweet-url <tweet_url>
+```
+
+## Project Structure
+
+The codebase is organized into modules for handling browser interactions, image generation, API routing, and command-line parsing. Key components include:
+
+*   `x_twitter_thread_dump/`: Main package containing core logic.
+*   `x_twitter_thread_dump/_api/`: FastAPI application for the web API.
+
+## Contributing
+
+Contributions to the project are welcome. Please refer to standard open-source contribution practices.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
