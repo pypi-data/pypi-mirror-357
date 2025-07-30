@@ -1,0 +1,8 @@
+hashcache/__init__.py,sha256=wA0MnS_72OnZbd9To7Kl6sXGI2h_fQeW6tUVfJ0T1B4,32
+hashcache/hashcache.py,sha256=4DOotBjpskP7lLZnu9Qc9WwXgSaz_fD5q3vDACfWVR8,3086
+hashcache/pickle_substitute_handlers.py,sha256=RxsjatedGmnE2GVJXzzwbQF9QeJSHLDCkhbC0wPQiKo,2420
+hashcache/utils.py,sha256=0HMYXvESXdkGARxnocF96eI7tocVANd9PHBr_b4IwfI,328
+hashcache-0.0.1.dist-info/METADATA,sha256=KHlSOc60c2kK7UCGBdBPw_8oEiSEDlQpvUOsWFRNAr4,2643
+hashcache-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+hashcache-0.0.1.dist-info/top_level.txt,sha256=ugakRVdcDSY1-z9fGPhmb0qn2I1ILttd0hRErXQsLvg,10
+hashcache-0.0.1.dist-info/RECORD,,
