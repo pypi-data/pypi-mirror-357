@@ -1,0 +1,7 @@
+starlette_msgspec/__init__.py,sha256=s6NHR3rloYFZaOibCMgKFbxez1kLZy0JkSTB5FRJQaQ,157
+starlette_msgspec/router.py,sha256=nJYj-oQ7Z6WKpSnnJ5GF_1EbzYSYnNqMkDvKYHa9vgU,19168
+starlette_msgspec-0.2.0.dist-info/licenses/LICENSE,sha256=z-etQrfD3bh3LfZy8QAeZFfOXc756qqm8nF3nmfosVM,1056
+starlette_msgspec-0.2.0.dist-info/METADATA,sha256=9T_I42U3G80NPzUPsuN60gb2PGI6ilm5_opa_Ua-2L8,2144
+starlette_msgspec-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+starlette_msgspec-0.2.0.dist-info/top_level.txt,sha256=18BGgtpYSWaSSTsWYlRiju4zWeJjVbwrD4F7-Jswr9Y,18
+starlette_msgspec-0.2.0.dist-info/RECORD,,
