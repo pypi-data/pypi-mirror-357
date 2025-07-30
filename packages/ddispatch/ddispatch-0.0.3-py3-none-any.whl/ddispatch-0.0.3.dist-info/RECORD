@@ -1,0 +1,8 @@
+ddispatch/__init__.py,sha256=zgSiLxNmcONpv6EkkcsYItZvnw-YZ8cOji1aYZlWL9s,56
+ddispatch/_dispatch.py,sha256=O5FzlUz77_8RJW9amC6fOg-SD2NLIftP6S9Atdwnu1s,1941
+ddispatch/tests/test_dispatch.py,sha256=usuwr_OtOCW3M5vx3SCbEg-0PWewwyI7bFgftmBrPEU,1684
+ddispatch-0.0.3.dist-info/licenses/LICENSE,sha256=rNIQ-gFaEI30mk7gQqgs9c_ZMopVKMygYVg2czWKY2o,1079
+ddispatch-0.0.3.dist-info/METADATA,sha256=iY9o75e_JX9uHWNfmISaqbUYiUsiD8iCSfEyYAWeH_4,1862
+ddispatch-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ddispatch-0.0.3.dist-info/top_level.txt,sha256=aB_K2MY3SzjocBQyqJ8FiDqf11w9mvVBAy1XhtR6mlg,10
+ddispatch-0.0.3.dist-info/RECORD,,
