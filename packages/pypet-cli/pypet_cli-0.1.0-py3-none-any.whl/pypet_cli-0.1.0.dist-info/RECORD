@@ -1,0 +1,10 @@
+pypet/__init__.py,sha256=I_ITsN64W40Ld_HzX_qrRNbeqeM0z2Z-rjNxRTgvDzA,86
+pypet/cli.py,sha256=1JiBAulrLt_Eb6hb6nkqNotqEFKvVh3kW1Ie4H6J0QA,20384
+pypet/models.py,sha256=1_go-2iyFo_Wo1sRZGN0PzQ2gAN1QBw0VCe-WlJE0rw,4704
+pypet/storage.py,sha256=HDZ4mFbP8owztytbAfUX3R88jOU305mnfy9wg6nxvF0,5022
+pypet/sync.py,sha256=-3t2uLmYKoEJ0a_8fqlfMxaZTqKlp5leCVbcHWqjWa4,8886
+pypet_cli-0.1.0.dist-info/METADATA,sha256=mG1VtwwvoxncFadgRSTZvjSrGYmGTosBUXpqXH61HGw,7456
+pypet_cli-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+pypet_cli-0.1.0.dist-info/entry_points.txt,sha256=aBAGLkD5sNZad3fm_8JXrQJMTBfyHgIP4VIsnC9J8uU,41
+pypet_cli-0.1.0.dist-info/licenses/LICENSE,sha256=7PjMu-IAWpEKWpZEFYJpy3klulpkd6UsKFIrNFURhuY,1067
+pypet_cli-0.1.0.dist-info/RECORD,,
