@@ -1,0 +1,6 @@
+[console_scripts]
+tapm-bootstrap = tapm.instrumentation.bootstrap:run
+tapm-instrument = tapm.instrumentation.auto_instrumentation:run
+
+[opentelemetry_environment_variables]
+instrumentation = tapm.instrumentation.environment_variables
