@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/vs_score/__init__.py
+src/vs_score/feature_engineering.py
+src/vs_score/merge_clean.py
+src/vs_score/predict_api.py
+src/vs_score/train_model.py
+src/vs_score.egg-info/PKG-INFO
+src/vs_score.egg-info/SOURCES.txt
+src/vs_score.egg-info/dependency_links.txt
+src/vs_score.egg-info/top_level.txt
+tests/test_smoke.py
