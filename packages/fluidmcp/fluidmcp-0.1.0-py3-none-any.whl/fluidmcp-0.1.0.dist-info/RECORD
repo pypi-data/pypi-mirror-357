@@ -1,0 +1,15 @@
+fluidai_mcp/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fluidai_mcp/cli.py,sha256=2-qVgOiaEJ_SmYNdatuPGQYCme-ungjtGsutoPkTkCo,39619
+fluidai_mcp/services/__init__.py,sha256=9GsAXjUVahD1otvDNLbH9f0sh1cSSti8n1F63VCvtvE,218
+fluidai_mcp/services/env_manager.py,sha256=_r6lmSVi_2WAe8SuXGyHlGrVZhGRoda7V9dtbLU2OyA,13324
+fluidai_mcp/services/network_utils.py,sha256=opkT2G15-iNwNuPzlbRq2TG1qga2k1LFyv3-PDqNXkA,2425
+fluidai_mcp/services/package_installer.py,sha256=hTFUxg_vLHn4mGfzpUo-3Q8tsp5fg_w0lPYcL93FBvM,7445
+fluidai_mcp/services/package_launcher.py,sha256=KSyi-5Vny_gRCNlnRM6u-dZ36S8LIvMj4LeqpC7Mr8Q,11678
+fluidai_mcp/services/package_list.py,sha256=XprufzVHs_iDvW8wHv593EhhALXCbMOTLYD1b9d3a_g,837
+fluidai_mcp/services/s3_utils.py,sha256=VkVdBEWt3B7mOSf7m1ou1RnSsvydcsPpcgQzVEZCX7A,3211
+fluidmcp-0.1.0.dist-info/licenses/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+fluidmcp-0.1.0.dist-info/METADATA,sha256=hUx8x0K-ogtKmVEHcDQSYp7xHoWquaz4IywjF1ABJRI,11894
+fluidmcp-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fluidmcp-0.1.0.dist-info/entry_points.txt,sha256=2suUzz11Y9INKrvuo4Suvgf-KvHUaQDe6Aoa2FcGr7Y,113
+fluidmcp-0.1.0.dist-info/top_level.txt,sha256=R6yqKwcE1vtRDdZratPOlmSCDiE7-4MhAN8L4BgN7nU,12
+fluidmcp-0.1.0.dist-info/RECORD,,
