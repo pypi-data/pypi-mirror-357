@@ -1,0 +1,144 @@
+Metadata-Version: 2.4
+Name: dj-dispatch
+Version: 0.1.0
+Summary: A Django app implementing the transactional outbox pattern with CloudEvents support
+Project-URL: Homepage, https://github.com/mrb101/django_dispatch
+Project-URL: Repository, https://github.com/mrb101/django_dispatch
+Project-URL: Documentation, https://django_dispatch.readthedocs.io
+Project-URL: Bug Tracker, https://github.com/mrb101/django_dispatch/issues
+Author-email: "Bassel J. Hamadeh" <hamadeh.basel@gmail.com>
+Maintainer-email: "Bassel J. Hamadeh" <hamadeh.basel@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: dispatch,django,outbox
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+Classifier: Framework :: Django :: 5.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Distributed Computing
+Requires-Python: >=3.11
+Requires-Dist: django>=5.2.3
+Requires-Dist: redis>=6.2.0
+Provides-Extra: dev
+Requires-Dist: black>=25.1.0; extra == 'dev'
+Requires-Dist: pytest-django>=4.11.1; extra == 'dev'
+Requires-Dist: pytest>=8.4.1; extra == 'dev'
+Requires-Dist: ruff>=0.12.0; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: sphinx-autodoc-typehints>=1.22.0; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme>=1.2.0; extra == 'docs'
+Requires-Dist: sphinx>=6.0.0; extra == 'docs'
+Description-Content-Type: text/markdown
+
+# Django Outbox
+
+[![PyPI version](https://badge.fury.io/py/django-outbox.svg)](https://badge.fury.io/py/django-outbox)
+[![Python versions](https://img.shields.io/pypi/pyversions/django-outbox.svg)](https://pypi.org/project/django-outbox/)
+[![Django versions](https://img.shields.io/pypi/djversions/django-outbox.svg)](https://pypi.org/project/django-outbox/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/yourusername/django-outbox/workflows/CI/badge.svg)](https://github.com/yourusername/django-outbox/actions)
+[![Coverage](https://codecov.io/gh/yourusername/django-outbox/branch/main/graph/badge.svg)](https://codecov.io/gh/yourusername/django-outbox)
+
+A Django app that implements the transactional outbox pattern with CloudEvents support, enabling reliable event publishing in distributed systems.
+
+## Features
+
+- 🔄 **Transactional Outbox Pattern**: Ensures events are published reliably
+- ☁️ **CloudEvents Compatible**: Follows CloudEvents specification
+- 🔌 **Multiple Backends**: Redis Streams, Kafka, NATS support
+- 🔁 **Retry Logic**: Exponential backoff with configurable retries
+- 🔑 **Idempotency**: Prevents duplicate event processing
+- 📊 **Monitoring**: Built-in metrics and health checks
+- 🎯 **Event Handlers**: Local event processing framework
+- 🔧 **Admin Interface**: Django admin integration
+
+## Quick Start
+
+### Installation
+
+```bash
+# Using pip
+pip install django-dispatch
+
+# Using uv
+uv add django-dispatch
+```
+
+## Configuration
+Add to your Django settings:
+
+```python
+INSTALLED_APPS = [
+    # ... your other apps
+    'django_dispatch',
+]
+
+OUTBOX_PUBLISHERS = {
+    'default': {
+        'BACKEND': 'django_dispatch.backends.RedisStreamBackend',
+        'OPTIONS': {
+            'host': 'localhost',
+            'port': 6379,
+            'stream_name': 'events',
+        }
+    }
+}
+```
+
+## Usage
+```python
+from django_dispatch.publishers import publisher
+
+# Publish an event
+event = publisher.publish_event(
+    event_type='user.created',
+    source='user-service',
+    data={'user_id': 123, 'email': 'user@example.com'}
+)
+
+# Register event handler
+from django_dispatch.registry import event_registry
+
+@event_registry.register('user.created')
+def handle_user_created(event):
+    print(f"User created: {event.data}")
+```
+## Running the Worker
+
+```bash
+python manage.py outbox_worker
+```
+## Documentation
+Full documentation is available at https://django-dispatch.readthedocs.io/en/latest/.
+
+### Building and Serving Documentation Locally
+
+To build the documentation locally:
+
+```bash
+# Build the documentation
+make docs-build
+
+# Serve the documentation locally at http://localhost:8080
+make docs-serve
+```
+
+After running `make docs-serve`, you can access the documentation by opening http://localhost:8080 in your web browser.
+
+## Contributing
+Contributions are welcome! Please read our Contributing Guide for details.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
