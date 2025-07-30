@@ -1,0 +1,12 @@
+casPYan/__init__.py,sha256=cD3SBeJZuFAU_nvsYb72EGxYKxntCXjPMRuZDAU7Qxg,973
+casPYan/edge.py,sha256=Zfy9k2N9Fo8Km-FmeCJjJeZqOwOQazEE9OeeSKq9Gl4,765
+casPYan/feedforward.py,sha256=DX0HuKbOHs7yeihGJE3YbtS3RU0sa7YB4RT34ZJk3SE,1501
+casPYan/network.py,sha256=sApeQjGFLC6N7f63Un63DHCNDqap6--ngBcToFZFGZg,7814
+casPYan/node.py,sha256=5dKCkefwEQWjVAIY6-FOxIItnUOmxUj7b2qWE9kHByE,3039
+casPYan/processor.py,sha256=w8BMSxVayYA7V4fx-zU9Tw6T62lm-CSCLCQUVZF9buY,1990
+casPYan/util.py,sha256=vICg9ocYsuQJK3c3Ss65Dcxfcj3xZmrYhgXk0HEcazI,3527
+casPYan/ende/rate.py,sha256=VfrDxcyygyYe5CFkqax7L1r8z06zkOwUSZtqKQ1hmgo,1714
+caspyan-0.2.0.dist-info/METADATA,sha256=5TQU1CBOwTEMkHGlnNuYD_se_zXSIlItuaGwYHyumcw,491
+caspyan-0.2.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+caspyan-0.2.0.dist-info/top_level.txt,sha256=rrz_OPkooiSAaDMohKcMWeHcodfCkoFQD9wOTkis4Lw,8
+caspyan-0.2.0.dist-info/RECORD,,
