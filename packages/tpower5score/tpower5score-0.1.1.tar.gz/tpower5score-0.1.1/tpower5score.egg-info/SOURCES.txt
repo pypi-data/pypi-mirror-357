@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+tpower5score/__init__.py
+tpower5score/evaluator.py
+tpower5score/judges.py
+tpower5score/scoring.py
+tpower5score.egg-info/PKG-INFO
+tpower5score.egg-info/SOURCES.txt
+tpower5score.egg-info/dependency_links.txt
+tpower5score.egg-info/requires.txt
+tpower5score.egg-info/top_level.txt

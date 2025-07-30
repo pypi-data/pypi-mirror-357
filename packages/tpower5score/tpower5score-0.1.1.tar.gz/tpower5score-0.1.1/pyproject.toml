@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tpower5score"
+version = "0.1.1"
+description = "An automatic evaluation package for assessing the quality of LLM-generated multi-document topic sets."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Itamar Trainin", email = "itamar.trainin@mail.huji.ac.il"},
+    {name = "Omri Abend", email = "omri.abend@mail.huji.ac.il"}
+]
+dependencies = [
+    "numpy~=1.26.4",
+    "tqdm~=4.67.0",
+    "litellm~=1.73.0",
+    "scipy~=1.13.1"
+]
+
+[project.urls]
+Homepage = "https://github.com/itamartrainin/Tpower5Score"
