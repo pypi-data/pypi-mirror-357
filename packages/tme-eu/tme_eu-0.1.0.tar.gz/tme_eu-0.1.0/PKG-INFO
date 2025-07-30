@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: tme-eu
+Version: 0.1.0
+Summary: Api for TME.eu
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: httpx
+Requires-Dist: pydantic>=2
