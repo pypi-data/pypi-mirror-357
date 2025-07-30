@@ -1,0 +1,3 @@
+[console_scripts]
+sbcli-numa = simplyblock_cli.cli:main
+sbctl = simplyblock_cli.cli:main
