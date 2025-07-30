@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_mcp_server_milvus.egg-info/PKG-INFO
+mseep_mcp_server_milvus.egg-info/SOURCES.txt
+mseep_mcp_server_milvus.egg-info/dependency_links.txt
+mseep_mcp_server_milvus.egg-info/requires.txt
+mseep_mcp_server_milvus.egg-info/top_level.txt
