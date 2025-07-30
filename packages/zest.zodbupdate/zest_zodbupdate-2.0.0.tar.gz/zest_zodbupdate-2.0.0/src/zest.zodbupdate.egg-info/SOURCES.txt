@@ -1,0 +1,15 @@
+CHANGES.rst
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+src/zest.zodbupdate.egg-info/PKG-INFO
+src/zest.zodbupdate.egg-info/SOURCES.txt
+src/zest.zodbupdate.egg-info/dependency_links.txt
+src/zest.zodbupdate.egg-info/entry_points.txt
+src/zest.zodbupdate.egg-info/not-zip-safe
+src/zest.zodbupdate.egg-info/requires.txt
+src/zest.zodbupdate.egg-info/top_level.txt
+src/zest/zodbupdate/__init__.py
+src/zest/zodbupdate/renames.py
