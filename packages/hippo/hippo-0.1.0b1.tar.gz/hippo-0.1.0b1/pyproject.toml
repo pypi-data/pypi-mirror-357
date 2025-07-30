@@ -1,0 +1,17 @@
+[project]
+name = "hippo"
+version = "0.1.0.b1"
+description = "The versatile Python package designed to provide efficient and reliable tools for advanced tasks. It aims to streamline workflows by offering intuitive interface for handling complex operations and processes."
+authors = [
+    {name = "Alexey",email = "axbelenkov@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
