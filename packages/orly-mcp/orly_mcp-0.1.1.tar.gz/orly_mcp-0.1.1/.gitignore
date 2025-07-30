@@ -1,0 +1,8 @@
+# virtual environment
+.venv/
+
+# book image artifacts
+orly_generator/*.png
+
+# pycache
+__pycache__/
