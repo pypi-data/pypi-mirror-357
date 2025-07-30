@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "api-forge"
+version = "0.1.1"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Fernando Bryan Reza Campos", email = "fer.rezac@outlook.com" }
+]
+requires-python = ">=3.10"
+
+classifiers = [
+    "Development Status :: 7 - Inactive",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+    "Topic :: Software Development :: Code Generators",
+    "Typing :: Typed",
+]
+
+dependencies = [
+    "fastapi>=0.115.13",
+    "sqlalchemy>=2.0.41",
+    "psycopg2>=2.9.10",
+    "pydantic>=2.11.7",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/forge"]
+
+
+[dependency-groups]
+dev = [
+    "uvicorn>=0.34.3",
+]
