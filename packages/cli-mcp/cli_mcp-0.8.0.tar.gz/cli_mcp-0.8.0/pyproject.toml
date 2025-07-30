@@ -1,0 +1,22 @@
+[project]
+name = "cli-mcp"
+version = "0.8.0"
+description = "Minimal MCP client CLI"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "click",
+    "httpx",
+]
+
+[project.scripts]
+cli-mcp = "cli_mcp:main"
+
+[tool.setuptools.packages.find]
+include = ["cli_mcp*"]
+exclude = ["mcp_servers*"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
