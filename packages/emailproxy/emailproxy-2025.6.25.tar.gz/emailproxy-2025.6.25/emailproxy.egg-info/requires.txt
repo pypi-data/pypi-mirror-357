@@ -1,0 +1,23 @@
+cryptography>=2.2
+prompt_toolkit
+pyjwt>=2.4
+
+[:python_version >= "3.12"]
+pyasyncore
+
+[:sys_platform == "darwin"]
+pyoslog>=0.3.0
+
+[gui]
+packaging
+pillow
+timeago
+pystray>=0.19.4
+pywebview>=4.2.1
+
+[gui:python_version < "3.8"]
+importlib_metadata
+
+[gui:sys_platform == "darwin"]
+pyobjc-framework-Cocoa
+pyobjc-framework-SystemConfiguration
