@@ -1,0 +1,57 @@
+name: unittests
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "*"
+    branches:
+      - master
+      - develop
+      - "release/*"
+  pull_request:
+  release:
+    types:
+      - published
+
+defaults:
+  run:
+    # The login shell is necessary for the setup-micromamba setup
+    # to work in subsequent jobs.
+    # https://github.com/mamba-org/setup-micromamba#about-login-shells
+    shell: bash -e -l {0}
+
+jobs:
+  tests_graph:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 150
+    strategy:
+      max-parallel: 16
+      fail-fast: False
+      matrix:
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        python-version: [ "3.9", "3.12" ]
+        jit: [ "0", "1" ]
+    name: Tests on OS ${{ matrix.os }} with Python ${{ matrix.python-version }} and JIT ${{ matrix.jit }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mamba-org/setup-micromamba@v2
+        name: Set up Micromamba environment
+        with:
+          environment-name: test-env
+          create-args: >-  # install ROOT only on non-windows. ROOT > 6.30 fails currently, and 6.30 is not available for 3.12
+            python=${{ matrix.python-version }} pip uv ${{ matrix.os != 'windows-latest' && matrix.python-version !=  '3.12' && 'root=6.30' || '' }}
+      - name: Install Python dependencies
+        run: |
+          which python
+          python -V
+          uv pip install -e ".[dev]" zfit@git+https://github.com/zfit/zfit
+      - name: Test with pytest
+        run: |
+          ZFIT_DO_JIT=${{ matrix.jit }}
+          coverage run --source=. --omit=".tox/*" --branch -m pytest .
+          coverage report

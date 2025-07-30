@@ -1,0 +1,100 @@
+ci:
+  autoupdate_schedule: quarterly
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-yaml
+      - id: check-toml
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+      - id: detect-private-key
+      - id: fix-byte-order-marker
+      - id: check-ast
+
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 6.0.1
+    hooks:
+      - id: isort
+  - repo: local
+    hooks:
+      - id: doc arg replacer
+        name: docarg
+        entry: utils/api/replace_argdocs.py
+        language: python
+        always_run: true
+        additional_dependencies: [ pyyaml ]
+
+
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+      - id: python-use-type-annotations
+      - id: python-check-mock-methods
+      - id: python-no-eval
+      - id: rst-directive-colons
+
+
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.19.1
+    hooks:
+      - id: pyupgrade
+        args:
+          - --py39-plus
+  - repo: https://github.com/asottile/setup-cfg-fmt
+    rev: v2.8.0
+    hooks:
+      - id: setup-cfg-fmt
+        args:
+          - --max-py-version=3.12
+          - --include-version-classifiers
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.9.1
+    hooks:
+      - id: nbqa-isort
+        additional_dependencies:
+          - isort
+      - id: nbqa-pyupgrade
+        additional_dependencies:
+          - pyupgrade
+        args:
+          - --py39-plus
+
+  - repo: https://github.com/sondrelg/pep585-upgrade
+    rev: v1.0
+    hooks:
+      - id: upgrade-type-hints
+        args:
+          - --futures=true
+  - repo: https://github.com/MarcoGorelli/auto-walrus
+    rev: 0.3.4
+    hooks:
+      - id: auto-walrus
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: "v0.11.4"
+    hooks:
+      - id: ruff
+        types_or:
+          - python
+          - pyi
+          - jupyter
+        args:
+          - --fix
+          - --unsafe-fixes
+          - --show-fixes
+          - --line-length=120
+      - id: ruff-format
+        types_or:
+          - python
+          - pyi
+          - jupyter
