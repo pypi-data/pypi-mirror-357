@@ -1,0 +1,14 @@
+my3dengine/UI.py,sha256=WXrt-WsEgBsuXjGbRz919X9wrRCZHPKekUonLNcWRJs,2068
+my3dengine/__init__.py,sha256=amx_c4XujBjUBli7c40-Dm8DUO_WZDvZmte6pjwgzXQ,377
+my3dengine/camera.py,sha256=iyAcYYccse5_AvRCKv70kGwRBsIcXUPXGnUXOmnWxi0,3711
+my3dengine/core.py,sha256=FAjCIB8yi0ihhfdb2OXI3-9XnMlws3fnr5IucPW9_nc,3602
+my3dengine/key.py,sha256=HFP1g2cNdLX1T7QRf-O6BCPdh-ysbUy-cuwENWLwpbc,2255
+my3dengine/mesh.py,sha256=Bigbv6Hw1xpNJKc_BpEK7jL9gBM2v3m0xID9sPz17dI,19934
+my3dengine/sdl2.dll,sha256=SQ_QaYNPMIx-wWjwwp3o0g4bSRThTeaQQUh0qGlylvs,1576448
+my3dengine/shader.py,sha256=dYO92vyTP8KhN1i6yijG_qVS-iypNsm6Kvt9ttLbmkE,3420
+my3dengine/water.py,sha256=ORSPrdCIJcHiAzvzF4Tp4zoQ3OBghaCQ8XDemmviBrw,3029
+my3dengine-0.5.1.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+my3dengine-0.5.1.dist-info/METADATA,sha256=FUtd9G0nEuxCkBtigVTGlgxCe2l-tDvfgggnRr7Aau8,650
+my3dengine-0.5.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+my3dengine-0.5.1.dist-info/top_level.txt,sha256=LqNoOd0BiOMl-uQILkCdo4CAix15NfNAiHAgVEcWZXw,11
+my3dengine-0.5.1.dist-info/RECORD,,
