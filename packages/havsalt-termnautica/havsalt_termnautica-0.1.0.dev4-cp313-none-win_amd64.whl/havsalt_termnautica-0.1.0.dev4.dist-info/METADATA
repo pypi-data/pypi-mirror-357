@@ -1,0 +1,26 @@
+Metadata-Version: 2.3
+Name: havsalt-termnautica
+Version: 0.1.0.dev4
+Requires-Dist: charz[all] ==0.0.40
+Requires-Dist: pygame ~=2.6
+License-File: LICENSE.txt
+Summary: Underwater game made using `charz`
+Author-email: Havsalt <77575424+Havsalt@users.noreply.github.com>
+License: MIT
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# Termnautica
+
+Underwater game made using `charz`
+
+![Underwater world with fish](./images/fish.png)
+
+---
+
+![Underwater world with structure](./images/building.png)
+
+## License
+
+MIT
+
