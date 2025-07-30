@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_terminal_controller.egg-info/PKG-INFO
+mseep_terminal_controller.egg-info/SOURCES.txt
+mseep_terminal_controller.egg-info/dependency_links.txt
+mseep_terminal_controller.egg-info/requires.txt
+mseep_terminal_controller.egg-info/top_level.txt
