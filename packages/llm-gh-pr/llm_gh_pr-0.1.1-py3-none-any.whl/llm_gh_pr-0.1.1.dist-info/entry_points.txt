@@ -1,0 +1,2 @@
+[llm]
+gh-pr = llm_gh_pr
