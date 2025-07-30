@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run:*)",
+      "Bash(mkdir:*)",
+      "Bash(uv sync:*)",
+      "Bash(chmod:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(timeout 30 uv run pytest tests/test_settings.py -v)",
+      "Bash(rm:*)",
+      "Bash(git checkout:*)",
+      "Bash(git push:*)",
+      "Bash(python test:*)",
+      "Bash(evo:*)",
+      "Bash(uv pip:*)",
+      "Bash(claude --version)",
+      "Bash(git reset:*)"
+    ],
+    "deny": []
+  }
+}
