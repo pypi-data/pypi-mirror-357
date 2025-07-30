@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: cpp-diann
+Version: 0.1.0
+Summary: CPP DIANN Streamlit App
+Author-email: Patrick Garrett <pgarrett@scripps.edu>
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: streamlit~=1.46
+Requires-Dist: pandas~=2.1.2
+Requires-Dist: plotly~=5.18.0
+Requires-Dist: numpy~=1.26.1
+Requires-Dist: requests~=2.31.0
+Requires-Dist: fastaframes~=1.1.0
+Requires-Dist: peptacular~=2.5.0
+Requires-Dist: scipy~=1.11.4
+
+"# CPP_DIANN_Quant_Streamlit" 
