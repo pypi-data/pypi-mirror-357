@@ -1,0 +1,7 @@
+pip
+uv
+pydantic>=2.8.0
+python-dotenv==1.0.0
+pydantic-settings>=2.1.0
+mcp>=1.1.2
+eunomia-ai
