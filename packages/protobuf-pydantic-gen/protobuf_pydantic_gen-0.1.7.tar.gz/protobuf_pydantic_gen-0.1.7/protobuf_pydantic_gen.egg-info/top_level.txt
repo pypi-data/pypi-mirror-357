@@ -1,0 +1,2 @@
+grpc_fastapi_gateway
+protobuf_pydantic_gen
