@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: openspace_rvdata
+Version: 0.0.1
+Summary: Library for generating OpenSpace assets for RV ship trails.
+Maintainer-email: "Kristina V. Collins" <kvcollins@spacescience.org>
+License: MIT License
+        
+        Copyright (c) 2025 Kristina Collins
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: source, https://github.com/KCollins/openspace_rvdata
+Project-URL: documentation, https://openspace_rvdata.readthedocs.io/en/latest
+Project-URL: download, https://github.com/KCollins/openspace_rvdata/releases
+Keywords: OpenSpace,R2R,rvdata,research vessel,marine,cruise,lua,coordinates,observations,models,analysis,instruments,mapping,visualization,plotting,Antarctica
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Oceanography
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: datetime
+Requires-Dist: pandas
+Requires-Dist: plotly
+Requires-Dist: requests
+Provides-Extra: test
+Requires-Dist: coverage[toml]; extra == "test"
+Requires-Dist: pylint; extra == "test"
+Dynamic: license-file
