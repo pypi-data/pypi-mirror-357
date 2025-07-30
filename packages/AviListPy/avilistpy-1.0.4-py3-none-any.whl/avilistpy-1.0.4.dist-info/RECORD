@@ -1,0 +1,14 @@
+AviListPy/__init__.py,sha256=0gjYhMen-Uzx4q7KUJnk821SxjXUrxjRkw3EiO8Hkh4,689
+AviListPy/data/__init__.py,sha256=cezBuutS8jX128wmwyHna4KtAROAHnDMumtNQ3ZJnY4,290
+AviListPy/data/avilistdatabase.py,sha256=ouVVD5d7LmJG4wMYn7nc9c5gdaL4UPhEf1zsXtjaH_I,2536
+AviListPy/taxonomy/__init__.py,sha256=VuISHeXcZjyNaCXZpih7BeihHaGqqqhbajIg-SjuIkQ,252
+AviListPy/taxonomy/family.py,sha256=n30ejp5ygTbftvrkgLvwYJttIE2zO5UnDu2ivynqtp0,6944
+AviListPy/taxonomy/genus.py,sha256=3CAtHOlJfWlvw64PS4-f3xdXT8aMMecUFzGhZYwl-cI,6614
+AviListPy/taxonomy/order.py,sha256=ABTkfkR81ni-vTxVL8niblKWQ8m8yO9nLDIlIiSZmR8,7491
+AviListPy/taxonomy/species.py,sha256=7qS8MbDQ6PubswPDfTYuVHQ7nIhihZ_LxElSojnW49o,7552
+AviListPy/taxonomy/subspecies.py,sha256=2iOcwmxnfgkWiDyMbpSONHbMSjKOYVJMfqw8vPerOkQ,4946
+avilistpy-1.0.4.dist-info/licenses/LICENSE,sha256=9Ofzc7m5lpUDN-jUGkopOcLZC3cl6brz1QhKInF60yg,7169
+avilistpy-1.0.4.dist-info/METADATA,sha256=ys2MmGxh6SLn8VW2R3NiJLi0uGJxUEa_tDHW4IFwLb0,6651
+avilistpy-1.0.4.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+avilistpy-1.0.4.dist-info/top_level.txt,sha256=nJgz8vTT29DxEOEhLKIjgIlDZCAPSFPta4lmC4LTt-o,10
+avilistpy-1.0.4.dist-info/RECORD,,
