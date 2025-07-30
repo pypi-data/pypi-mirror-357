@@ -1,0 +1,12 @@
+precice_config_visualizer_gui-1.0.0.data/data/share/applications/org.precice.config_visualizer.desktop,sha256=4oSHuaEJpePsacsEmInfUOmpmhPricK7T3J3AX0-b7M,335
+precice_config_visualizer_gui-1.0.0.data/data/share/icons/hicolor/scalable/apps/org.precice.config_visualizer.svg,sha256=__sgaQ1cmk2hbv8g5LAxoX-bFhf1bsJXn9VcaBSdChE,5619
+precice_config_visualizer_gui-1.0.0.data/data/share/metainfo/org.precice.config_visualizer.metainfo.xml,sha256=-YoAgts1PyINKdYxvuBp1h3nNa8Igb28I7XSWBpyosQ,2703
+precice_config_visualizer_gui-1.0.0.dist-info/licenses/LICENSE,sha256=0RDbN6Yme7_lijOFiR3ru5adHeicnF_KWzFld7WOdAQ,1090
+preciceconfigvisualizer/gui/__init__.py,sha256=aupe1F_Db95hCsojY6XoC6UFTqb_0OL2UugbyK2QskA,22
+preciceconfigvisualizer/gui/gui.py,sha256=zioFyc8M9zbJZLmJz3T6pQ2YoPzOaMfE8R9KEWI9BoI,610
+preciceconfigvisualizer/gui/window.py,sha256=CvvS-Fk_5DVSDb5m-WtNpJQCBhpl-1oMzMIoQuh1FaU,14119
+precice_config_visualizer_gui-1.0.0.dist-info/METADATA,sha256=GUu5AuCTkjjYziUuFsblQZoBKaxas6hpv3AsnThy9pY,2964
+precice_config_visualizer_gui-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+precice_config_visualizer_gui-1.0.0.dist-info/entry_points.txt,sha256=zkHGH5OcqqC_elsW1DUWEjYcpsiVejk7ickqYyaMniA,79
+precice_config_visualizer_gui-1.0.0.dist-info/top_level.txt,sha256=GY6rt1X32Pl4GzX8rWuN9X4GfD9150WElYOZ2bi0JQw,24
+precice_config_visualizer_gui-1.0.0.dist-info/RECORD,,
