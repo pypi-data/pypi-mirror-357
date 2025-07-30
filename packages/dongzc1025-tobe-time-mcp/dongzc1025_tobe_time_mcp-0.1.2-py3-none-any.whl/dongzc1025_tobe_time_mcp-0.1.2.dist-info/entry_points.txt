@@ -1,0 +1,2 @@
+[console_scripts]
+dongzc1025-tobe-time-mcp = dongzc1025_tobe_time_mcp.server:main
