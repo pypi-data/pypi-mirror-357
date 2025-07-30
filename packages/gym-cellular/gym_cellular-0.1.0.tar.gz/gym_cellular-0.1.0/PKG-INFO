@@ -1,0 +1,16 @@
+Metadata-Version: 2.3
+Name: gym-cellular
+Version: 0.1.0
+Summary: Gymnasium-compatible cellular automata-based environments.
+License: MIT
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: gymnasium (>=1.1,<2.0)
+Requires-Dist: numpy (>=2.2.0,<3.0.0)
+Requires-Dist: pygame (>=2.6,<3.0)
+Description-Content-Type: text/markdown
+
+
