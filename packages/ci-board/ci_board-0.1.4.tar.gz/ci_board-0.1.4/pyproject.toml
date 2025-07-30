@@ -1,0 +1,15 @@
+[project]
+name = "ci_board"
+version = "0.1.4"
+authors = [
+    { name="StanleyUKN", email="stanley09537000@gmail.com" },
+]
+description = "A clipboard monitoring library for Windows"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+]
+dependencies = []
