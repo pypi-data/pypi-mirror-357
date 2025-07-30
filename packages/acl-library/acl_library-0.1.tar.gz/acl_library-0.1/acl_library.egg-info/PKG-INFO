@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: acl-library
+Version: 0.1
+Requires-Dist: Django>=4.0
+Requires-Dist: djangorestframework
+Requires-Dist: drf-yasg
+Dynamic: requires-dist
