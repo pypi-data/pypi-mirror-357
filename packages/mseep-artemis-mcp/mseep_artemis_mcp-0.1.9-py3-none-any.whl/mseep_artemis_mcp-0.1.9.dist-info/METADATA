@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: mseep-artemis-mcp
+Version: 0.1.9
+Summary: Artemis MCP Server to Connect with Artemis API and Create ART Formulas
+Home-page: 
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Keywords: mseep,artemis,mcp,crypto,stablecoins,digital finance
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+Requires-Dist: build>=1.2.2.post1
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: mcp[cli]>=1.3.0
+Requires-Dist: twine>=6.1.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Package managed by MseeP.ai
