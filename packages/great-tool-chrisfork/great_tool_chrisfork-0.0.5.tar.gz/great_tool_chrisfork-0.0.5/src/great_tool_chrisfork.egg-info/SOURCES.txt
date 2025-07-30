@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/great_tool/__init__.py
+src/great_tool/functions.py
+src/great_tool_chrisfork.egg-info/PKG-INFO
+src/great_tool_chrisfork.egg-info/SOURCES.txt
+src/great_tool_chrisfork.egg-info/dependency_links.txt
+src/great_tool_chrisfork.egg-info/top_level.txt
