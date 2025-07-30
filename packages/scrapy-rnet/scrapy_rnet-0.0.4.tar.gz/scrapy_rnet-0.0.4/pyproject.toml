@@ -1,0 +1,9 @@
+[project]
+name = "scrapy-rnet"
+version = "0.0.4"
+description = "Scrapy download handler that can impersonate browser TLS signatures"
+requires-python = ">=3.12"
+dependencies = [
+    "rnet>=2.1.0",
+    "scrapy>=2.12.0",
+]

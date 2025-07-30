@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: scrapy-rnet
+Version: 0.0.4
+Summary: Scrapy download handler that can impersonate browser TLS signatures
+Requires-Python: >=3.12
+Requires-Dist: rnet>=2.1.0
+Requires-Dist: scrapy>=2.12.0
