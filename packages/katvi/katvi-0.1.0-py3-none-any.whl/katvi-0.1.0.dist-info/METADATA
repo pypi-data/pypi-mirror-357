@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: katvi
+Version: 0.1.0
+Summary: GUI Toolkit
+Author: kjartan1
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Dynamic: author
+Dynamic: classifier
+Dynamic: summary
