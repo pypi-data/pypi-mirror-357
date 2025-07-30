@@ -1,0 +1,34 @@
+[project]
+name = "colas"
+version = "0.1.2"
+description = "Modern task queue framework"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Igor Prochazka", email = "igor.prochazka@gmail.com"}
+]
+requires-python = ">=3.13"
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "asyncio>=3.4.3",
+    "asyncpg>=0.30.0",
+    "msgpack>=1.1.1",
+]
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project.urls]
+Homepage = "https://github.com/projazzka/colas"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.0.0",
+    "freezegun>=1.5.2",
+    "build>=1.2.2.post1",
+    "twine>=6.1.0",
+    "testcontainers>=4.10.0",
+    "psycopg2-binary>=2.9.10",
+]

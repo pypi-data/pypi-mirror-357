@@ -1,0 +1,81 @@
+Metadata-Version: 2.4
+Name: colas
+Version: 0.1.2
+Summary: Modern task queue framework
+Project-URL: Homepage, https://github.com/projazzka/colas
+Author-email: Igor Prochazka <igor.prochazka@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 Igor Prochazka (@projazzka)
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Requires-Python: >=3.13
+Requires-Dist: aiosqlite>=0.21.0
+Requires-Dist: asyncio>=3.4.3
+Requires-Dist: asyncpg>=0.30.0
+Requires-Dist: msgpack>=1.1.1
+Description-Content-Type: text/markdown
+
+# Colas
+
+A modern, minimalist task queue framework.
+
+  - [x] fully async
+  - [x] supports database backends for queues
+  - [x] no crazy inventions for task discovery, logging or configuration
+
+Supported backends:
+  - Sqlite
+  - Postgres
+
+Author: Igor Prochazka (@projazzka)
+
+## Installation
+
+```
+pip install colas
+```
+
+## Usage
+
+```
+# tasks.py
+
+from colas import Colas
+
+app = Colas("sqlite://./colas.db")
+
+@app.task
+async def multiply(a: int, b: int) -> int:
+    return a * b
+
+
+if __name__ == "__main__":
+    app.run()  # starts the worker
+```
+
+On the client side simply call the registered tasks.
+```
+# main.py
+
+from tasks import multiply
+
+result = await multiply(2, 3)  # enqueues the tasks and waits for the response
+```
