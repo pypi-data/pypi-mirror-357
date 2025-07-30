@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: styledctk-widgets
+Version: 0.0.1
+Project-URL: Documentation, https://github.com/DigitalCreationsLibrary/styledctk_widgetse#readme
+Project-URL: Issues, https://github.com/DigitalCreationsLibrary/styledctk-widgets/issues
+Project-URL: Source, https://github.com/DigitalCreationsLibrary/styledctk-widgets
+Author-email: DigitalCreationsLibrary <aimosta.official@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Requires-Dist: click
+Requires-Dist: customtkinter>=5.2.2
+Requires-Dist: requests>=2.32.3
+Description-Content-Type: text/markdown
+
+# proj-template
+
+[![PyPI - Version](https://img.shields.io/pypi/v/styledctk-widgets.svg)](https://pypi.org/project/pstyledctk-widgets)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/styledctk-widgets.svg)](https://pypi.org/project/styledctk-widgets)
+
+-----
+
+## Table of Contents
+
+- [proj-template](#proj-template)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [License](#license)
+
+## Installation
+
+```console
+pip install styledctk-widgets
+```
+
+## License
+
+`styledctk-widgets` is distributed under the terms of the following  [License](License) license.
