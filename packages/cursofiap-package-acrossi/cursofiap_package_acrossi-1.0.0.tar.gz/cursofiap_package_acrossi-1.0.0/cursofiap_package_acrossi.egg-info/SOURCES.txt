@@ -1,0 +1,9 @@
+README.md
+setup.py
+cursoFiap/__init__.py
+cursoFiap/core.py
+cursofiap_package_acrossi.egg-info/PKG-INFO
+cursofiap_package_acrossi.egg-info/SOURCES.txt
+cursofiap_package_acrossi.egg-info/dependency_links.txt
+cursofiap_package_acrossi.egg-info/top_level.txt
+tests/test_core.py
