@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: ipython-quest
+Version: 0.1.1
+Summary: A Pythonny Quest - REPL hints and interactive games to help you get better at programming in Python
+Author-email: hobs <github@totalgood.com>
+Requires-Python: >=3.11
+Requires-Dist: ipython>=9.3.0
+Requires-Dist: jsonlines
+Requires-Dist: lxml>=5.4.0
+Requires-Dist: matplotlib>=3.10.3
+Requires-Dist: pandas>=2.3.0
+Requires-Dist: pyperclip>=1.9.0
+Requires-Dist: requests>=2.32.4
+Requires-Dist: scikit-learn>=1.7.0
+Requires-Dist: seaborn>=0.13.2
+Description-Content-Type: text/markdown
+
+# pythonny-quest

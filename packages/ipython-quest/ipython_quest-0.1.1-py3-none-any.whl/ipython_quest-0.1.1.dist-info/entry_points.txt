@@ -1,0 +1,8 @@
+[console_scripts]
+ipython-quest = pyquest:main
+ipython_quest = pyquest:main
+ipythonquest = pyquest:main
+pyquest = pyquest:main
+python-quest = pyquest:main
+python_quest = pyquest:main
+pythonquest = pyquest:main
