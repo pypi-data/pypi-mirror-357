@@ -1,0 +1,10 @@
+django_multitenant_saas-0.1.0.dist-info/licenses/LICENSE,sha256=q7KJbcPCqUAvkBuI1QNc8Kg9XPfBfnNkLN9WKwudO8U,11
+multitenant/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+multitenant/managers.py,sha256=PjEwuwe3t2lQBKaxBN3_tPhS4gh3bc31Kd9EaLjV4lg,357
+multitenant/middleware.py,sha256=2E0QsOAAHDX1Z_e9FG_OI7E2Tmn4Dpe0QBnr_8czas4,490
+multitenant/models.py,sha256=WYYSg1Iq6NuQvkGZh1-4kleW0iTbeovoK99JqblMKZk,612
+multitenant/utils.py,sha256=CF7v_NEaBbX3k2kHkAsVXyQrMkBZLT2YddaTHTzDA3k,199
+django_multitenant_saas-0.1.0.dist-info/METADATA,sha256=IcRmd79xOLHg5aEohScBElAfVhv7VQODFP5_MXBkdhQ,3593
+django_multitenant_saas-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+django_multitenant_saas-0.1.0.dist-info/top_level.txt,sha256=SnCHBIZR_J7sd2FDdUPlAZVM7QDwcs6vUv02fvTT9PY,12
+django_multitenant_saas-0.1.0.dist-info/RECORD,,
