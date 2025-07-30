@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: magic-center
+Version: 1.0.7
+Summary: 生成小学数学题
+Requires-Python: >=3.13
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: mcp[cli]>=1.9.4
+Requires-Dist: numpy
+Requires-Dist: requests>=2.32.4
+Requires-Dist: xlwt
