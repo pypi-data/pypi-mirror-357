@@ -1,0 +1,9 @@
+GMTHRASH.py
+GMTHRASH_cli.py
+README.md
+setup.py
+gmthrash.egg-info/PKG-INFO
+gmthrash.egg-info/SOURCES.txt
+gmthrash.egg-info/dependency_links.txt
+gmthrash.egg-info/requires.txt
+gmthrash.egg-info/top_level.txt
