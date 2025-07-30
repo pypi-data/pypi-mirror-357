@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: tigl_uid_generator
+Version: 0.2.2
+Summary: A TIGL UID_Generator Python package
+Author: T&I GLobal Ltd.
+License: MIT
+Requires-Python: >=3.8
