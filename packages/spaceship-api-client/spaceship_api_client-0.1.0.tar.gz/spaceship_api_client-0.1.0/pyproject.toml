@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "spaceship-api-client"
+version = "0.1.0"
+description = "API for spaceship"
+authors = ["Benjamin Wiessneth <b.wiessneth@gmail.com>"]
+readme = "README.rst"
+packages = [
+    { include = "spaceship_api" },
+]
+
+[tool.commitizen]
+version = "0.1.0"
+update_changelog_on_bump = true
+version_files = [
+    "pyproject.toml:^version",
+    "spaceship_api/__init__.py:__version__"
+]
+
+[tool.black]
+line-length = 120
+
+[tool.flake8]
+max-line-length = 120
+
+[tool.isort]
+profile = "black"
+
+[tool.poetry.scripts]
+spaceship-api-client = "spaceship_api.client:main"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^8.3.4"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+commitizen = "^3.27.0"
+isort = "^5.13.2"
+flake8 = "^7.1.0"
+flake8-pyproject = "^1.2.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[spaceship-api-client]
+dynamic = ["version"]
+
+[tool.pytest.ini_options]
+pythonpath = "spaceship_api"
