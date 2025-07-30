@@ -1,0 +1,14 @@
+fgclustering/__init__.py,sha256=priHCpTrw51OFrvPe5dLXqs1uu-VwYZ4pT71FbryXIE,1040
+fgclustering/_version.py,sha256=2thmcF9DS_Zp1zHI3N0kjBeMAuCP9mdDGnL0clqQpS8,511
+fgclustering/clustering.py,sha256=uFgkhGVK51KcyI_Unw5cogJd0oxCrfy1SEC7xLwMBtM,13185
+fgclustering/distance.py,sha256=HwGkLaW127-Ho44XxMfmAabAfcVbWsuu0KmbywOK9-s,14390
+fgclustering/forest_guided_clustering.py,sha256=pab7-p4X-PeMT65_22B8Qkrjmgp9jDOYTmWfNRBirrY,13155
+fgclustering/optimizer.py,sha256=jNq6pI043q1CyK2m9vX5OTXCg7sgSq_ypCpA-yT7hNE,15483
+fgclustering/plotting.py,sha256=TwG_UAYo_eWxV4i1oRLygMzgPUKpCOmVj7FRpkbVY5Q,21142
+fgclustering/statistics.py,sha256=I7nd-E7iqYyXQNU3pCprGxXkWpUWAG2v35-SFPV0m0Q,7538
+fgclustering/utils.py,sha256=Qe0GrbQ5zO65tRABeau78fs3lNKmngIqyULsohud1uU,6084
+fgclustering-2.0.0.dist-info/licenses/LICENSE,sha256=ju3qHMRX6WRS-65jNaQxmC9MpG8JsYhX6_QBiHNIxr0,1069
+fgclustering-2.0.0.dist-info/METADATA,sha256=8_kD9ObwIUMlO8wW2WCJedLFjhw7SoYkIXk1KZc_W5s,10813
+fgclustering-2.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+fgclustering-2.0.0.dist-info/top_level.txt,sha256=Lo3mlNXODK0uLsjqvbcQInw2QgqeL7snCstoHLkwUhQ,13
+fgclustering-2.0.0.dist-info/RECORD,,
