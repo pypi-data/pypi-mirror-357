@@ -1,0 +1,25 @@
+[project]
+name = "quda-core"
+version = "1.0.3"
+description = ""
+readme = "README.md"
+requires-python = ">=3.12"
+license="MIT"
+dependencies = [
+    "clickhouse-df>=0.1.5",
+    "dynaconf>=3.2.11",
+    "lark>=1.2.2",
+    "numpy>=2.3.1",
+    "polars>=1.31.0",
+    "sqlparse>=0.5.3",
+    "xcals>=0.0.4",
+    "ygo>=1.1.4",
+]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["quda", "quda.*"]
