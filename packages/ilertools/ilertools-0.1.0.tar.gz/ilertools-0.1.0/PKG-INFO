@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: ilertools
+Version: 0.1.0
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: sympy
+Requires-Dist: scipy
+Requires-Dist: numpy
+Dynamic: license-file
+Dynamic: requires-python
