@@ -1,0 +1,3 @@
+[console_scripts]
+mailpeek=mailpeek.cli:main
+

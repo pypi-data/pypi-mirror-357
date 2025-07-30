@@ -1,0 +1,8 @@
+mailpeek/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mailpeek/cli.py,sha256=gfjhVaEePwyVynL6rsiqMqL6HLvFgFJkMBqQXTGjDxE,1423
+mailpeek/imap_idle_listener.py,sha256=CdzwDqpMTBff_MsQpALIpuO503pf5oGkjItMoDw0mvA,3263
+mailpeek/reader.py,sha256=lU_5LTZ7mYM3MCHDJBW6aLq5SPp-W5y38uCNd-fPzq0,3640
+mailpeek-0.1.0.dist-info/METADATA,sha256=GhL3AkDoKkfk4Lxz6G7Y6Wszw6MjxeG8mR0HU_5e_a4,3743
+mailpeek-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+mailpeek-0.1.0.dist-info/entry_points.txt,sha256=IJHa-vgpX9vbv7HEZsSbFoJ6hPrfdPtAk3lujf6Talg,46
+mailpeek-0.1.0.dist-info/RECORD,,
