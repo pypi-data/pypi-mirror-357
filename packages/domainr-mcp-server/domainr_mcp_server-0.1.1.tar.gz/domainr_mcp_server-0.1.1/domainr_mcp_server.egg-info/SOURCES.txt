@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+domainr_mcp_server/__init__.py
+domainr_mcp_server/server.py
+domainr_mcp_server.egg-info/PKG-INFO
+domainr_mcp_server.egg-info/SOURCES.txt
+domainr_mcp_server.egg-info/dependency_links.txt
+domainr_mcp_server.egg-info/entry_points.txt
+domainr_mcp_server.egg-info/requires.txt
+domainr_mcp_server.egg-info/top_level.txt
+tests/test_client.py
+tests/test_server.py
