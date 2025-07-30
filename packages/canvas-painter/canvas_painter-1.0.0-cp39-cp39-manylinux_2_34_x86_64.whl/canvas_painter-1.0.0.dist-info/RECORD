@@ -1,0 +1,17 @@
+canvas.cpython-39-x86_64-linux-gnu.so,sha256=-5Ce8v-VMdWU1JWdE9hVtpQ5QluI9eSQduo2-E98dDU,3535248
+canvas_painter.libs/libXrandr-6b38dafb.so.2.2.0,sha256=-fnHrPRR5SDY25vRsNs_ovUZojycSILbTgq9y7y-Vas,55808
+canvas_painter.libs/libbrotlicommon-24c3c480.so.1.0.9,sha256=IXtI2bXhqOUGjKyl8_olvv0_ZXM2OtjY0x-lrpBelXo,140136
+canvas_painter.libs/libbrotlidec-11aaeb4b.so.1.0.9,sha256=SVDvVVKsO48qxWXkNlceiMfexvzwW3z9pSOeFTC4F5c,58152
+canvas_painter.libs/libbz2-0be7c010.so.1.0.8,sha256=b2iWdcA4HHZmbZbAOMLPbnPEuWarldh_JUvUcypsS_g,79072
+canvas_painter.libs/libfreetype-0048fb5d.so.6.17.4,sha256=aVNaqZdybvmAqKQXuXAFilTzkHbMWwE-RiJgXfk2w2I,829024
+canvas_painter.libs/libgraphite2-086003eb.so.3.2.1,sha256=DstJsDLltvolcgeoeFk8ipD9jjZbhaoprifVcUf4miE,137520
+canvas_painter.libs/libharfbuzz-84210e0a.so.0.20704.0,sha256=88lcDa4vaNYenLDxzaYM_wk470iF-38c3pd7Jtz5RAA,892664
+canvas_painter.libs/libpng16-1f98e46f.so.16.37.0,sha256=I35lXPBRj-VjNDmsw7ityRCreD4om98EQ8KKG7GoeSo,237008
+canvas_painter.libs/libsfml-graphics-d2d9005d.so.2.5.1,sha256=Ye95LtxO4dWELYyTHHOHzJ8H4x3DAYeimNqSD8lc_Ok,562600
+canvas_painter.libs/libsfml-system-82720c5c.so.2.5.1,sha256=qf4TwNKLDMD6fogcvuWgQ1HrxH40f5A-VCxURghxuUk,86056
+canvas_painter.libs/libsfml-window-9c0aa795.so.2.5.1,sha256=cBqFdCPw_5PSmJgNt3cATaKjiDjr4tEsL_hiRW_D7o4,239496
+canvas_painter.libs/libudev-85fb4bdd.so.1.7.5,sha256=oLp4gefBdtphcXG0GqnrAKpbhyb4WFPmkzzPNECKdys,205864
+canvas_painter-1.0.0.dist-info/METADATA,sha256=WwuRRj2DTZgpDmVGiapAckSFirbAea5MnAHNZSQjjFY,2532
+canvas_painter-1.0.0.dist-info/WHEEL,sha256=w83R8wm6SA7wYqzAFwOKMQdmvjdW-cKAMsBH_QZ50tc,111
+canvas_painter-1.0.0.dist-info/top_level.txt,sha256=fweQNOFm7PUtgsvsmHbk3IoVSww3JI8_oXNNTuq5ONU,7
+canvas_painter-1.0.0.dist-info/RECORD,,
