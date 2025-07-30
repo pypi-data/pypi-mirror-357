@@ -1,0 +1,9 @@
+collision_lib/__init__.py,sha256=9pzgT2lZ9JFVbZqQzKTlJIoYrGmXWVrqGMYShjJ_suo,120
+collision_lib/algorithms.py,sha256=BD5PwKqXDE_5OHpOCSUbPJYsk6Mxj7f6X1v8139hTuI,2975
+collision_lib/dispatch.py,sha256=rSMGfwwHOuzG7igpDJS06BY51KG6reqLMMSmt5Ch9yc,1789
+collision_lib/hitboxes.py,sha256=dQ8q9V-65ot_Wbz6EhNnli6O35u2AHVSjF23Boh98Bo,4612
+extended_hitboxes-0.1.1.dist-info/licenses/LICENSE,sha256=0nVK0u3bMZoiYp8e6BKZm5JEDyUoo5zjeX4vewbpMvc,1094
+extended_hitboxes-0.1.1.dist-info/METADATA,sha256=OAWZvfhL34s7JJ5Ix9EZVN-XftcEpcsWg8fRpsdbiZA,5324
+extended_hitboxes-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+extended_hitboxes-0.1.1.dist-info/top_level.txt,sha256=zjWzZ8mpJpb7SP9CWzAfZS9GnAHMcrhODGZgCjpvmfU,14
+extended_hitboxes-0.1.1.dist-info/RECORD,,
