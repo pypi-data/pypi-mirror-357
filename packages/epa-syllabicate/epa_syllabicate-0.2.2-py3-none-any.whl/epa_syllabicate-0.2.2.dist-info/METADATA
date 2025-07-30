@@ -1,0 +1,81 @@
+Metadata-Version: 2.4
+Name: epa_syllabicate
+Version: 0.2.2
+Summary: Automatic syllabification module for Spanish words
+Project-URL: Homepage, https://github.com/andalugeeks/epa-syllabicate
+Project-URL: Bug Tracker, https://github.com/andalugeeks/epa-syllabicate/issues
+Project-URL: Repository, https://github.com/andalugeeks/epa-syllabicate.git
+Author: EPA Team
+License-Expression: MIT
+License-File: LICENSE
+Keywords: linguistics,nlp,spanish,syllabification,text-processing
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Text Processing :: Linguistic
+Requires-Python: >=3.8
+Provides-Extra: dev
+Requires-Dist: black; extra == 'dev'
+Requires-Dist: commitizen>=3.0.0; extra == 'dev'
+Requires-Dist: ipdb; extra == 'dev'
+Requires-Dist: pytest-cov>=4.0.0; extra == 'dev'
+Requires-Dist: pytest>=7.0.0; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# EPA Syllabicate
+
+Módulo Python para la silabificación de palabras.
+
+## Uso
+
+```python
+from epa_syllabicate import syllabicate
+
+# Ejemplo de uso
+word = "ehemplo"
+silabes = syllabicate(word)
+print(silabas)  # ['e', 'hem', 'plo']
+```
+
+## Desarrollo
+
+### Instalación para desarrollo
+
+Para contribuir al proyecto, primero clona el repositorio y luego instala las dependencias de desarrollo:
+
+```bash
+git clone https://github.com/tu-usuario/epa-syllabicate.git
+cd epa-syllabicate
+python -m env .venv
+source .venv/bin/activate
+python -m pip install -e ".[dev]"
+```
+
+### Ejecución de tests
+
+Para ejecutar los tests:
+
+```bash
+# Ejecutar todos los tests
+pytest
+
+# Ejecutar tests con cobertura
+pytest --cov=epa_syllabicate
+```
+
+## Requisitos
+
+- Python >= 3.8
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia GPL v3 - ver el archivo [LICENSE](LICENSE) para más detalles. 
