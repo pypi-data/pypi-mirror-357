@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "system-diag": {
+      "command": "system-diag-mcp",
+      "args": [],
+      "env": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin"
+      }
+    }
+  }
+}
