@@ -1,0 +1,13 @@
+readmecraft/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+readmecraft/config.py,sha256=quX1wXLDv4hyOxojxCQLJbtgWhES2MnyZW960FN8SRg,2918
+readmecraft/core.py,sha256=GWwe6XNSvVUJpmYfHcnVis62I_93lLmAOV9Q4L2ovh0,8043
+readmecraft/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+readmecraft/utils/cli.py,sha256=Lxxgxf75iXmzpXSM1KYc9gO8aohpfCDEGha3zs6JFNc,732
+readmecraft/utils/file_handler.py,sha256=YYRaTCwpxqbwzrxa4A7glMVClWEkIyuqU0hS23wrTIo,2451
+readmecraft/utils/llm.py,sha256=KuC-4sr26XdyNNDLR9IcY38Fg2sLftoM-RNzXqfqgLE,942
+readmecraft/utils/logo_generator.py,sha256=kQ2kQtvEApx4_E8Ve87l4tt-D9QFBtkTr-EoEJRilho,3008
+readmecraft-0.1.1.dist-info/METADATA,sha256=HMhOmt6UY3LcqT_gEkz6VCMZtR7xTPbXrx6R0kJt8Lg,3082
+readmecraft-0.1.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+readmecraft-0.1.1.dist-info/entry_points.txt,sha256=F_6QpmRGsqr7bfNGKj1z35F0-Ye6YjRaMxbCUvaLJvg,59
+readmecraft-0.1.1.dist-info/top_level.txt,sha256=d5YR0G1YdVPopKmV6yUq8ABH9NDkYsq0nUtmok-DYbg,12
+readmecraft-0.1.1.dist-info/RECORD,,
