@@ -1,0 +1,2 @@
+[sentry.apps]
+auth_gitlab = auth_gitlab.apps.Config

@@ -1,0 +1,10 @@
+*.pyc
+*.eggs
+/dist
+/build
+.cache
+.ropeproject
+*.egg-info
+.vscode
+venv
+.idea
