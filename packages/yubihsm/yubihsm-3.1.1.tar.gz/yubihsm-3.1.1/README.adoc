@@ -1,0 +1,135 @@
+== python-yubihsm
+
+Python library and tests for the YubiHSM 2.
+
+The current version (3.0) supports Python 3.9 and later.
+
+Communicates with the YubiHSM 2 connector daemon, which must already be running.
+It can also communicate directly with the YubiHSM 2 via USB (requires libusb).
+
+=== License
+
+....
+Copyright 2023 Yubico AB
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+....
+
+=== Installation
+
+From PyPI:
+
+ $ pip install yubihsm[http,usb]
+
+From a source .tar.gz:
+
+ $ pip install yubihsm-<version>.tar.gz[http,usb]
+
+Omitting a tag from the brackets will install the library without support for
+that backend, and will avoid installing unneeded dependencies.
+
+=== Quick reference commands:
+[source,python]
+----
+from yubihsm import YubiHsm
+from yubihsm.defs import CAPABILITY, ALGORITHM
+from yubihsm.objects import AsymmetricKey
+from cryptography.hazmat.primitives import serialization
+
+# Connect to the YubiHSM via the connector using the default password:
+hsm = YubiHsm.connect('http://localhost:12345')
+session = hsm.create_session_derived(1, 'password')
+
+# Generate a private key on the YubiHSM for creating signatures:
+key = AsymmetricKey.generate(  # Generate a new key object in the YubiHSM.
+    session,                   # Secure YubiHsm session to use.
+    0,                         # Object ID, 0 to get one assigned.
+    'My key',                  # Label for the object.
+    1,                         # Domain(s) for the object.
+    CAPABILITY.SIGN_ECDSA,     # Capabilities for the object, can have multiple.
+    ALGORITHM.EC_P256          # Algorithm for the key.
+)
+
+# pub_key is a cryptography.io ec.PublicKey, see https://cryptography.io
+pub_key = key.get_public_key()
+
+# Write the public key to a file:
+with open('public_key.pem', 'wb') as f:
+    f.write(pub_key.public_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PublicFormat.SubjectPublicKeyInfo
+    ))
+
+# Sign some data:
+signature = key.sign_ecdsa(b'Hello world!')  # Create a signature.
+
+# Clean up:
+session.close()
+hsm.close()
+----
+
+=== Development
+This project uses https://docs.astral.sh/uv/[uv] for development.
+Follow the uv Getting Started guide to install and configure it.
+
+When `uv` is installed and configured you can set up the dev environment for this project by running the following command in the root directory of the repository:
+
+  $ uv sync --all-extras
+
+==== Pre-commit checks
+This project uses https://pre-commit.com to run several checks on the code
+prior to committing. To enable the hooks, run these commands in the root
+directory of the repository:
+
+  $ uv tool install pre-commit
+  $ pre-commit install
+
+Once the hooks are installed, they will run automatically on any changed files
+when committing. To run the hooks against all files in the repository, run:
+
+  $ pre-commit run --all-files
+
+==== Running tests
+Running the tests require a YubiHSM2 to run against, with the default
+authentication key enabled (as is the case after performing a factory reset).
+
+WARNING: The YubiHSM under test will be factory reset by the tests!
+
+ $ uv run pytest
+
+See pytest documentation for instructions on running a specific test.
+
+By default the tests will connect to a yubihsm-connector running with the
+default settings on http://localhost:12345. To change this, use the `--backend`
+argument, eg:
+
+ $ uv run pytest --backend "yhusb://"
+
+Access to the device requires proper permissions, so either use sudo or setup a
+udev rule. Sample udev configuration can be found
+link:https://developers.yubico.com/YubiHSM2/Component_Reference/yubihsm-connector/[here].
+
+==== Generating HTML documentation
+
+To build the HTML documentation, run:
+
+ $ uv run make -C docs/ html
+
+The resulting output will be in docs/_build/html/.
+
+==== Source releases for distribution
+Build a source release:
+
+ $ uv build
+
+The resulting .tar.gz and .whl will be created in `dist/`.
