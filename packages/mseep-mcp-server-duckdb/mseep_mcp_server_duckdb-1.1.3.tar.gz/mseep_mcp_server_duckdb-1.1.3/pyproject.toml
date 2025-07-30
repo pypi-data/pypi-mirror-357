@@ -1,0 +1,25 @@
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+]
+
+[tool.hatch.build.targets]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+]
