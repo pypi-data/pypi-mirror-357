@@ -1,0 +1,4 @@
+rpaframework>=30
+rpaframework-pdf>=8
+rpaframework-windows>=9
+rpaframework-recognition>=6
