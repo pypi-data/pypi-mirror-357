@@ -1,0 +1,50 @@
+[project]
+name = "gherkin-formatter"
+version = "0.1.0"
+description = "A command-line tool to format Gherkin .feature files."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "gherkin-official>=23.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+    "pre-commit",
+    "pyrefly",
+    "pytest",
+    "ruff",
+]
+
+[project.scripts]
+gherkin-formatter = "gherkin_formatter.formatter:main"
+
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pytest.ini_options]
+pythonpath = [".", "gherkin_formatter"]
+testpaths = ["tests"]
+
+[tool.pyrefly]
+python-version = "3.9.0"
+use-untyped-imports = false
+ignore-missing-source = false

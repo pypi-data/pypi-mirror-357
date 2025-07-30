@@ -1,0 +1,9 @@
+gherkin-official>=23.0.1
+
+[dev]
+black
+isort
+pre-commit
+pyrefly
+pytest
+ruff
