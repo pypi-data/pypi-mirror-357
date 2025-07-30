@@ -1,0 +1,11 @@
+araxia/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+araxia/core.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+araxia/evalluation.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+araxia/pipeline.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+araxia/preprocessing.py,sha256=sreHijSDJlVEXVfJkjjqnfRmHsyifyHKuLjm5fOR8wI,2033
+araxia/utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+araxia-0.1.0.dist-info/licenses/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+araxia-0.1.0.dist-info/METADATA,sha256=ZLu6zlvag63B8W9r6M2d4KZWeThae8DQX7BKfDY35Xg,3447
+araxia-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+araxia-0.1.0.dist-info/top_level.txt,sha256=1JODT347X2EykZc5tZrVisuxFlSkKlmtfDHl3TgvHtc,7
+araxia-0.1.0.dist-info/RECORD,,
