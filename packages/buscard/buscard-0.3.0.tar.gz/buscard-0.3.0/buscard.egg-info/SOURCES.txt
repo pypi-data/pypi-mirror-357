@@ -1,0 +1,8 @@
+MANIFEST.in
+README.md
+pyproject.toml
+buscard.egg-info/PKG-INFO
+buscard.egg-info/SOURCES.txt
+buscard.egg-info/dependency_links.txt
+buscard.egg-info/requires.txt
+buscard.egg-info/top_level.txt
