@@ -1,0 +1,50 @@
+[project]
+name = "streamlit-code-diff"
+version = "0.1.0"
+description = "A Streamlit component for code diff visualization using v-code-diff"
+readme = "README.md"
+authors = [{ name = "Everton Colling", email = "evertoncolling@gmail.com" }]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["streamlit", "code-diff", "diff", "visualization", "component"]
+requires-python = ">=3.8"
+dependencies = ["streamlit>=1.28.0"]
+
+[project.urls]
+Homepage = "https://github.com/evertoncolling/streamlit-code-diff"
+Repository = "https://github.com/evertoncolling/streamlit-code-diff"
+Issues = "https://github.com/evertoncolling/streamlit-code-diff/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = ["src/streamlit_code_diff/**/*"]
+exclude = [
+    "src/streamlit_code_diff/frontend/node_modules",
+    "src/streamlit_code_diff/frontend/src",
+    "src/streamlit_code_diff/frontend/public",
+    "src/streamlit_code_diff/frontend/package.json",
+    "src/streamlit_code_diff/frontend/package-lock.json",
+    "src/streamlit_code_diff/frontend/tsconfig.json",
+    "src/streamlit_code_diff/frontend/tsconfig.node.json",
+    "src/streamlit_code_diff/frontend/vite.config.ts",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/streamlit_code_diff"]
+
+[tool.uv]
+dev-dependencies = ["streamlit>=1.28.0"]
