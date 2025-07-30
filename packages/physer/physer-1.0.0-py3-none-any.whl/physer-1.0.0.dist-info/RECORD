@@ -1,0 +1,9 @@
+physer/__init__.py,sha256=USQcgjzmYD_dcWLEpnvdSEKhNXK1MK42NkyVHpKctKA,56
+physer/collider.py,sha256=hFWa4dkDxqwyajWPGeR6ijZmXWdwWLXTQ_TuBLopVio,1851
+physer/collision.py,sha256=H-XU-eAiFqsfcuLCZbNQN4kWBE1_Ko_Yt2n-EKvRreE,4563
+physer/world.py,sha256=oCDPUca5k5-nKTmPiU4unl6TvyHq7H02Ye33MI7xCok,1319
+physer-1.0.0.dist-info/licenses/LICENSE,sha256=7nizT6QE5klPA30ETHK8MEd2204FCVho5OID7wzbVmQ,1082
+physer-1.0.0.dist-info/METADATA,sha256=gm8ouMlqDXvo_4tiwRUpzyq2rqRMynH_vCMzem8CDK4,665
+physer-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+physer-1.0.0.dist-info/top_level.txt,sha256=Z1SVQ0kosf462tB2SlQiQOvHcIL-CnumQPq9oJ0y-cU,7
+physer-1.0.0.dist-info/RECORD,,
