@@ -1,0 +1,12 @@
+fastmcp>=2.8.1
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+aiofiles>=23.0.0
+pyyaml>=6.0.0
+pillow>=10.0.0
+aiosqlite>=0.19.0
+
+[dev]
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-mock>=3.10.0
