@@ -1,0 +1,5 @@
+[console_scripts]
+gradiv = gradiv.main:main_command
+
+[gradiv]
+gradiv = __init__

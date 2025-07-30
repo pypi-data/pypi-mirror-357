@@ -1,0 +1,14 @@
+gradiv/__init__.py,sha256=tzk9tTvL2qn4KnY_UZV4QC7QTWysPyikM-x9-60UyqM,140
+gradiv/_version.py,sha256=-LyU5F1uZDjn6Q8_Z6-_FJt_8RE4Kq9zcKdg1abSSps,511
+gradiv/algo.py,sha256=2uknC9tW4s1cYwfX1ZiyciJ8RbngwfVZjgyn45h0ajc,6733
+gradiv/functions.py,sha256=U4VlZb6aesYyMHVIXhrd-4TQFUXZaxFVJbf3MFKIH-I,2912
+gradiv/main.py,sha256=LkPiTkQMhTwSF2OejqfXGwfYxRF6NPesYeT1KeBNl7k,10835
+gradiv/pggraph.py,sha256=vy7pf3DA6A-UDDdWwAiCaIN3Q1sDObRrp-QZ4LzkNRw,14364
+gradiv/polymorphism.py,sha256=AJfdqACSOV6SzIoY8hhuCERbYWd0ZKYxQfirBf7Nalo,2207
+gradiv/tests.py,sha256=-B8ot3mcRRkryLkNmp0R4M2wpG1tvbMgrAXU6AXWZY8,593
+gradiv-0.1.0.dist-info/licenses/LICENSE,sha256=9ZsU1X5VpIih0K5FoesTgBJEJfh2bKyLx5JDJWMoRZU,35185
+gradiv-0.1.0.dist-info/METADATA,sha256=jBKBNRKeWjpNL9b8u9smM5nuURJh8exoBNtyGXURsSI,43233
+gradiv-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gradiv-0.1.0.dist-info/entry_points.txt,sha256=xPbng-XhFAvJzwf2L8vr9rWWx708n0kP4AbRVd85W4Y,80
+gradiv-0.1.0.dist-info/top_level.txt,sha256=27Ezvt1NYAAoAThICa62Eip9h35iKzaTmf0QYOXe8ao,7
+gradiv-0.1.0.dist-info/RECORD,,
