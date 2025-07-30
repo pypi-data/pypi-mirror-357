@@ -1,0 +1,2 @@
+[console_scripts]
+claude-monitor = src.claude_monitor:main
