@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: thingsboard-common
+Version: 0.1.0
+Summary: ThingsBoard common package
+Home-page: https://gitlab.com/things-board
+Author: HES-SO Valais, School of Engineering, Sion
+Author-email: thomas.sterren@hes-so.ch
+License-Expression: MIT
+Project-URL: Bug Tracker, https://gitlab.com/things-board/thingsboard-common/-/issues
+Project-URL: Source Code, https://gitlab.com/things-board/thingsboard-common
+Project-URL: Documentation, https://gitlab.com/things-board/thingsboard-common#thingsboard-common
+Keywords: ThingsBoard common library IoT cloud connector core utils
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Information Technology
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: configobj
+Requires-Dist: urllib3
+Requires-Dist: tb-mqtt-client
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: summary
+
+# ThingsBoard Common
+
+> Note: 
+> 
+> This is not an official project of the [
+ThingsBoard](https://thingsboard.io/) authors! Please refer to [ThingsBoard - Open-source IoT Platform](https://github.com/thingsboard) for official ThingsBoard projects!
+
+This project serves as a toolkit allowing other projects to use the same packages/modules as codebase.
+
+These projects are using the [ThingsBoard](https://thingsboard.io/) platform and extend it with additional functionality.
