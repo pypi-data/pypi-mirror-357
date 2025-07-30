@@ -1,0 +1,21 @@
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    ".",
+]
+testpaths = [
+    "optimized_memory_mcp_server/tests",
+]
+python_paths = [
+    ".venv/bin/python",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "optimized_memory_mcp_server",
+]
