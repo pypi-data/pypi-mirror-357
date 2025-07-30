@@ -1,0 +1,3 @@
+[console_scripts]
+ifc2xlsx = balajiwork.ifc2xlsx:ifc2xlsx_main
+slowprint = balajiwork.slowprint:slow_print
