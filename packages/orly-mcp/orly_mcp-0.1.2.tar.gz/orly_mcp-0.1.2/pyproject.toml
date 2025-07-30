@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "orly-mcp"
+version = "0.1.2"
+description = "An MCP server for the ORLY tool."
+authors = [
+    {name = "Chris Frewin", email = "hi@fullstackcraft.com"},
+]
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License", # Or your preferred license
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fastmcp",
+    "requests>=2.28.0",
+    "Pillow>=11",
+    "FontTools>=4.0.0",
+]
+
+[project.scripts]
+orly-mcp = "orly_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["orly_mcp", "orly_generator"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"fonts" = "fonts"
+"images" = "images"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/orly_mcp",
+    "/orly_generator", 
+    "/fonts",
+    "/images",
+    "/README.md",
+    "/LICENSE.txt",
+    "/pyproject.toml"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/princefishthrower/orly-mcp"
+"Bug Tracker" = "https://github.com/princefishthrower/orly-mcp/issues"
+"Repository" = "https://github.com/princefishthrower/orly-mcp"
+
+[dependency-groups]
+dev = [
+    "build>=1.2.2.post1",
+    "twine>=6.1.0",
+]
