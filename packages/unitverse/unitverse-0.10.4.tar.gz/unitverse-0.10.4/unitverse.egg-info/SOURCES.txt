@@ -1,0 +1,8 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+unitverse.egg-info/PKG-INFO
+unitverse.egg-info/SOURCES.txt
+unitverse.egg-info/dependency_links.txt
+unitverse.egg-info/top_level.txt
