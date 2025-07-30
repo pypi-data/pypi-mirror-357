@@ -1,0 +1,141 @@
+Metadata-Version: 2.4
+Name: infdate
+Version: 0.2.0
+Summary: Date object wrapper supporting infinity
+Project-URL: Homepage, https://gitlab.com/blackstream-x/infdate
+Project-URL: CI, https://gitlab.com/blackstream-x/infdate/-/pipelines
+Project-URL: Bug Tracker, https://gitlab.com/blackstream-x/infdate/-/issues
+Project-URL: Repository, https://gitlab.com/blackstream-x/infdate.git
+Author-email: Rainer Schwarzbach <rainer@blackstream.de>
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+# infdate
+
+_Python module for date calculations implementing a concept of infinity_
+
+## Module description
+
+Class hierarchy:
+
+    └── GenericDate
+        ├── InfinityDate
+        └── RealDate
+
+
+
+**InfinityDate** can represent either positive or negative infinity.
+The module-level constants **MIN** and **MAX** contain the two possible
+**InfinityDate** instance variations.
+
+**RealDate** instances represent real dates like the standard library’s
+**datetime.date** class, with mostly equal or similöar semantics.
+
+For any valid **RealDate** instance, the following is **True**:
+
+``` python
+infdate.MIN < infdate.RealDate(1, 1, 1) <= real_date_instance <= infdate.RealDate(9999, 12, 31) < infdate.MAX
+```
+
+The following factory methods from the **datetime.date** class
+are provided as module-level functions:
+
+*   **fromordinal()** (also accepting **-math.inf** or **math.inf**)
+*   **fromisoformat()**
+*   **fromisocalendar()**
+*   **today()**
+
+**fromtimestamp()** is still missing by mistake.
+
+Two additional factory functions are provided in the module:
+
+*   **from_datetime_object()** to create a **RealDate** instance from a
+    **datetime.date** or **datetime.datetime** instance
+
+*   **from_native_type()** to create an **InfinityDate** or **RealDate**
+    instance from a string, from **None**, **-math.inf** or **math.inf**.
+
+    This can come handy when dealing with API representations of dates,
+    eg. in GitLab’s [Personal Access Tokens API].
+
+Some notable difference from the **datetime.date** class:
+
+*   The **.toordinal()** method returns **float** instead of **int**
+
+*   The **resolution** attribute is **1.0** instead of **datetime.timedelta(days=1)**
+    but also represents exactly one day.
+
+*   Subtracting a date from an **InfinityDate** or **RealDate** always returns a float
+    (because **math.inf** is a float), not a **datetime.timedelta** instance.
+
+*   Likewise, you cannot add or subtract **datetime.timedelta** instances
+    from n **InfinityDate** or **RealDate**, only **loat** or **int**.
+
+
+## Example usage
+
+``` pycon
+>>> import infdate
+>>> today = infdate.today()
+>>> today
+RealDate(2025, 6, 25)
+>>> print(today)
+2025-06-25
+>>> print(f"US date notation {today:%m/%d/%y}")
+US date notation 06/25/25
+>>> today.ctime()
+'Wed Jun 25 00:00:00 2025'
+>>> today.isocalendar()
+datetime.IsoCalendarDate(year=2025, week=26, weekday=3)
+>>>
+>>> yesterday = today - 1
+>>> yesterday.ctime()
+'Tue Jun 24 00:00:00 2025'
+>>>
+>>> today - yesterday
+1.0
+>>> infdate.MIN
+InfinityDate(past_bound=True)
+>>> infdate.MAX
+InfinityDate(past_bound=False)
+>>> infdate.MAX - today
+inf
+>>> infdate.MAX - infdate.MIN
+inf
+```
+
+You can compare **InfinityDate**, **RealDate** and **datetime.date** instances,
+and subtract them from each other (although currently, `__rsub__` is not implemented yet,
+so subtracting an **InfinityDate** or **RealDate** from a **datetime.date**
+still gives a **TypeError**):
+
+    >>> from datetime import date
+    >>> stdlib_today = date.today()
+    >>> today == stdlib_today
+    True
+    >>> yesterday < stdlib_today
+    True
+    >>> yesterday - stdlib_today
+    -1.0
+    >>> stdlib_today - yesterday
+    Traceback (most recent call last):
+      File "<python-input-22>", line 1, in <module>
+        stdlib_today - yesterday
+        ~~~~~~~~~~~~~^~~~~~~~~~~
+    TypeError: unsupported operand type(s) for -: 'datetime.date' and 'RealDate'
+
+
+* * *
+[Personal Access Tokens API]: https://docs.gitlab.com/api/personal_access_tokens/
