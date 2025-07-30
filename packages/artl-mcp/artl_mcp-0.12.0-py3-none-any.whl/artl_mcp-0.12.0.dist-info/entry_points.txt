@@ -1,0 +1,2 @@
+[console_scripts]
+artl-mcp = artl_mcp.main:cli
