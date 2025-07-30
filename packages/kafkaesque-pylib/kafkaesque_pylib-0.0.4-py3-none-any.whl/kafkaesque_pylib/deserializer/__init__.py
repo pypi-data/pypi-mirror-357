@@ -1,0 +1,4 @@
+from kafkaesque_pylib.deserializer.deserializer import Deserializer
+from kafkaesque_pylib.deserializer.string_deserializer import StringDeserializer
+from kafkaesque_pylib.deserializer.avro_deserializer import AvroDeserializer
+from kafkaesque_pylib.deserializer.deserializer_resolver import DeserializerResolver
