@@ -1,0 +1,13 @@
+kinematics_library/__init__.py,sha256=bavkdPhPq7YsW_ciKC_8UT3RvZp4lEDk_EIBRH8G0ZE,175
+kinematics_library/_add_docs.py,sha256=t1z9LEFKe1De7fHBpxaU6PlCqcGtwLFP4INwUR7tT4c,20079
+kinematics_library/_helpers.py,sha256=l44dzQKn8wEGP28R402bNVGlKiDZmvu8ek0-n1XMEqU,3410
+kinematics_library/kinematics_library.pyi,sha256=aq_EgKWIExkK480RisYGh0XBkrAqdpdIpOoeO7RzHJw,16778
+kinematics_library/kinematics_library.so,sha256=9ar85-BJZiJTqtFAdJCXKZhjOfLoy6VfJY99TidQ5pI,98256
+kinematics_library/version.py,sha256=XxXhu8-QnuD9hA8Ah0WX5rgpt_DwOQmAwcK-FtpngyQ,22
+kinematics_library/transforms/__init__.py,sha256=gG4p2WBDn0RDs-V9L8ltFCd3mQvnayVyJAFMx4IWm_4,160
+kinematics_library/transforms/transforms.pyi,sha256=OgsYrp_t9HIUGsVo9H5mA9HzPwobr1CFmq_3pEMB_E0,9398
+kinematics_library/transforms/transforms.so,sha256=89lSPm3Mxz3rLQHjAM20DFy1imZn8Zr_4iAM8OSxMWU,96296
+kinematics_library-1.1.4.dist-info/METADATA,sha256=gBA9xl05LU00dHh5nq7MhoZAxNgYB0Mv3O1I44tGEDs,683
+kinematics_library-1.1.4.dist-info/WHEEL,sha256=dHc4GwSzJT22qNyFyqBn3LFy3kFwwKDcZ076BDPdtMM,224
+kinematics_library-1.1.4.dist-info/top_level.txt,sha256=WCpi03EKQMhdTyT3Yhy1Xc-uv_NcbSHvIyc4THNJ_fI,19
+kinematics_library-1.1.4.dist-info/RECORD,,
