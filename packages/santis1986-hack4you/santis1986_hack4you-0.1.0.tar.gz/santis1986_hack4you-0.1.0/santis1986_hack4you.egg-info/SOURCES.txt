@@ -1,0 +1,9 @@
+README.md
+setup.py
+hack4you/__init__.py
+hack4you/courses.py
+hack4you/utils.py
+santis1986_hack4you.egg-info/PKG-INFO
+santis1986_hack4you.egg-info/SOURCES.txt
+santis1986_hack4you.egg-info/dependency_links.txt
+santis1986_hack4you.egg-info/top_level.txt
