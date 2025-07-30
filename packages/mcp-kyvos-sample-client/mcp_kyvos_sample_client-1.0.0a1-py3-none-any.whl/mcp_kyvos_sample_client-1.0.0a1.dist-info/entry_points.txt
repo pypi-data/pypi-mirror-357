@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-kyvos-sample-client = mcp_kyvos_sample_client.client:cli_main
