@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-request = mcp_requests:main
