@@ -1,0 +1,9 @@
+uvicorn
+fastapi
+aiohttp
+aiocache
+pydantic
+user-agent
+cache-fastapi
+python-dotenv
+beautifulsoup4
