@@ -1,0 +1,14 @@
+[project]
+name = "crypto-trading-analyzer"
+version = "0.1.0"
+description = "MCP server for: Create an MCP for real-time cryptocurrency trading analysis that connects to WebSocket streams, perf..."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["fastmcp>=0.1.0", "python-dotenv"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]

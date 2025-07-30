@@ -1,0 +1,64 @@
+{
+  "original_request": "I want an MCP that manages todo lists. It should allow creating, reading, updating, and deleting todo items. Each todo should have a title, description, priority level, and completion status. The MCP should store todos in a JSON file and provide tools to list all todos, add new todos, mark todos as complete, and delete todos.",
+  "generated_at": "2025-06-25T14:10:09.690557",
+  "project_name": "todo-manager",
+  "analysis": {
+    "description": "MCP server for: I want an MCP that manages todo lists. It should allow creating, reading, updating, and deleting tod...",
+    "key_concepts": [
+      "task management",
+      "file processing",
+      "creation operations",
+      "deletion operations"
+    ],
+    "suggested_tools": [
+      {
+        "placeholder": "tool_one",
+        "description": "Primary tool - TODO: Implement based on requirements: I want an MCP that manages todo lists. It should allow creating, reading, updating, and deleting todo items. Each todo should have a title, description, priority level, and completion status. The MCP should store todos in a JSON file and provide tools to list all todos, add new todos, mark todos as complete, and delete todos.",
+        "suggested_names": [
+          "create_task",
+          "add_todo",
+          "new_task"
+        ]
+      },
+      {
+        "placeholder": "tool_two",
+        "description": "Secondary tool - TODO: Implement based on requirements: I want an MCP that manages todo lists. It should allow creating, reading, updating, and deleting todo items. Each todo should have a title, description, priority level, and completion status. The MCP should store todos in a JSON file and provide tools to list all todos, add new todos, mark todos as complete, and delete todos.",
+        "suggested_names": [
+          "list_items",
+          "search_data",
+          "query_items"
+        ]
+      },
+      {
+        "placeholder": "tool_three",
+        "description": "Additional tool - TODO: Implement or remove based on requirements: I want an MCP that manages todo lists. It should allow creating, reading, updating, and deleting todo items. Each todo should have a title, description, priority level, and completion status. The MCP should store todos in a JSON file and provide tools to list all todos, add new todos, mark todos as complete, and delete todos.",
+        "suggested_names": [
+          "update_item",
+          "process_data",
+          "modify_entry"
+        ]
+      }
+    ],
+    "suggested_resources": [
+      {
+        "uri": "data://items",
+        "description": "TODO: List of items - implement based on requirements"
+      },
+      {
+        "uri": "resource://config",
+        "description": "TODO: Configuration data - implement based on requirements"
+      },
+      {
+        "uri": "data://status",
+        "description": "TODO: Status information - implement or remove based on requirements"
+      }
+    ],
+    "potential_dependencies": []
+  },
+  "implementation_hints": {
+    "data_storage": "Consider using JSON files, SQLite, or external APIs",
+    "error_handling": "Use ToolError for all user-facing errors",
+    "testing": "Test with MCP Inspector and the provided test harness",
+    "security": "Validate all inputs, sanitize file paths, handle auth if needed"
+  }
+}
