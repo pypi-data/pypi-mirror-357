@@ -1,0 +1,8 @@
+README.md
+setup.py
+basiccalculator/__init__.py
+basiccalculator/main.py
+basiccalculator_tahasin.egg-info/PKG-INFO
+basiccalculator_tahasin.egg-info/SOURCES.txt
+basiccalculator_tahasin.egg-info/dependency_links.txt
+basiccalculator_tahasin.egg-info/top_level.txt
