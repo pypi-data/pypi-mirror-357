@@ -1,0 +1,3 @@
+[console_scripts]
+mcp-salesforce-lite=mcp_salesforce_lite.server:main
+

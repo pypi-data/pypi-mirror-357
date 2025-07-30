@@ -1,0 +1,12 @@
+mcp_salesforce_lite/__init__.py,sha256=Sak1W9e3S5RrXPLfxXizI2YVQefXnAx6GRrK191fJ0A,80
+mcp_salesforce_lite/client.py,sha256=KLfn1mxpAT18qFUBqc6Mx2IxCN3-5k2IfWUC3mPCLPo,10796
+mcp_salesforce_lite/server.py,sha256=8AsOUS_Cwj80-Vj-sfPSeVE6PwR9jUDuc6qSYLGpbxg,3688
+mcp_salesforce_lite/tools/__init__.py,sha256=xEnMbYr0MfRAHlu9N97MFHwO2_YmEDV0YepFAbeASwY,402
+mcp_salesforce_lite/tools/crud_tools.py,sha256=Huj-TkcdtLCgXD5U6EchMboE7w5vJ0clyxmf8m7Em2w,6788
+mcp_salesforce_lite/tools/metadata_tools.py,sha256=oT3JLwEDNp7BSuIMaJ4AHVOxcyDCca3WtTrQOuon4io,6534
+mcp_salesforce_lite/tools/query_tools.py,sha256=a70mzJ5bHCoMOQDofwFYvKWaYfzMziTjApj8HKNiiBg,6191
+mcp_salesforce_lite-0.1.0.dist-info/LICENSE,sha256=TOaRjZYWPJA3Q8hGjRPB9P_kL30usDNudP_uFhHLTFs,1061
+mcp_salesforce_lite-0.1.0.dist-info/METADATA,sha256=Cdi2nEZtcuD-7xM8hY1RQe2n3lxOBRaNffGzUJ5q88c,8003
+mcp_salesforce_lite-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+mcp_salesforce_lite-0.1.0.dist-info/entry_points.txt,sha256=7n55GvdNQppxjG0ms6QBkPXywD8ro1Iq8VGq_mjcjkY,71
+mcp_salesforce_lite-0.1.0.dist-info/RECORD,,
