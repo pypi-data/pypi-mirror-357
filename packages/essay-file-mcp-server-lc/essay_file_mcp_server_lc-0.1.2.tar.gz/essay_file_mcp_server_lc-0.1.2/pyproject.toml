@@ -1,0 +1,20 @@
+[project]
+name = "essay-file-mcp-server-lc"
+version = "0.1.2"
+description = "对文件进行操作的MCP服务"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli,httpx]>=1.9.0",
+    "pywin32>=310",
+]
+
+[project.scripts]
+essay-file-mcp-server-lc = "essay_file_mcp_server_lc:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[[tool.uv.index]]
+url = "https://mirrors.aliyun.com/pypi/simple/"

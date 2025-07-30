@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: essay-file-mcp-server-lc
+Version: 0.1.2
+Summary: 对文件进行操作的MCP服务
+Requires-Python: >=3.11
+Requires-Dist: mcp[cli,httpx]>=1.9.0
+Requires-Dist: pywin32>=310
