@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: StratAge
+Version: 1.1.0
+Summary: Bayesian age modeling of stratigraphy.
+Home-page: https://github.com/sarttiso/stratage
+Author: Adrian Tasistro-Hart
+Author-email: adrian@tasistro-hart.com
+License: GPL-3.0-only
+Project-URL: Documentation, https://adrian.tasistro-hart.com/stratage/index.html
+Project-URL: Source, https://github.com/sarttiso/stratage
+Project-URL: Changelog, https://adrian.tasistro-hart.com/stratage/changelog.html
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: importlib-metadata; python_version < "3.8"
+Requires-Dist: numba
+Requires-Dist: numpy
+Requires-Dist: pymc
+Requires-Dist: scipy
+Requires-Dist: tqdm
+Requires-Dist: matplotlib
+Requires-Dist: joblib
+Provides-Extra: testing
+Requires-Dist: setuptools; extra == "testing"
+Requires-Dist: pytest; extra == "testing"
+Requires-Dist: pytest-cov; extra == "testing"
+Dynamic: license-file
+
+<img src='https://github.com/sarttiso/stratage/raw/main/graphics/logo.png' alt="Logo for StratAge, featuring a stylized geological stratigraphy on the left with stacked layers in shades of brown and green, and a probabilistic age-depth envelope on the right, with probability distributions corresponding to geochronology overlain." width="200px">
+
+# StratAge
+
+StratAge presents a novel approach to age-depth modeling of geologic stratigraphy. By modeling the distribution of time *within* beds as sedimentation rates and *between* beds as hiatuses, StratAge can leverage the structure of stratigraphy to inform the distribution of time within it.
+
+StratAge uses Markov Chain Monte Carlo sampling to estimate posterior distributions of sedimentation rates and hiatus durations within a user-provided stratigraphy, given probabilistic geochronologic constraints. These model parameters can then be anchored in absolute time to yield a Bayesian age-depth model.
+
+## Installation
+
+StratAge can be installed from PyPI:
+
+```bash
+pip install stratage
+```
+
+## Usage
+
+The best way to get a feel for StratAge is to read through the [Toy Example](https://adrian.tasistro-hart.com/stratage/toy-example.html), which presents the basic functionality of StratAge on a synthetic stratigraphy.
+
+Full documentation can be found [here](https://adrian.tasistro-hart.com/stratage/), which also links to the [package API](https://adrian.tasistro-hart.com/stratage/api/modules.html).
