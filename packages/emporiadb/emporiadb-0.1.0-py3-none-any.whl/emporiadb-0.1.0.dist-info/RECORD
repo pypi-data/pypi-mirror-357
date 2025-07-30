@@ -1,0 +1,9 @@
+_utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+_utils/_http_client.py,sha256=4V4fLWLU3negxcaIBrbVsv5ZWu55G8l01ndQhaIMitQ,8303
+_utils/_video.py,sha256=MMy13dCuRBCKcDiXEULWKs8c4Uo8bZvKuQOL7_C8zmo,677
+emporiadb-0.1.0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+tests/test_import.py,sha256=6HxZ3X-c7nhJx_zGloFtteT1cGXYL_w5YKTaSZnfQJw,206
+emporiadb-0.1.0.dist-info/METADATA,sha256=XHt7_-YFAlE6lBN9TgIBcW48KE9IHAs_wlLK9JlH9rM,9155
+emporiadb-0.1.0.dist-info/WHEEL,sha256=DnLRTWE75wApRYVsjgc6wsVswC54sMSJhAEd4xhDpBk,91
+emporiadb-0.1.0.dist-info/top_level.txt,sha256=LpDejlRMT8eb_4CQ0x-nxLfuc8VFiGcrDzodudv3e0s,13
+emporiadb-0.1.0.dist-info/RECORD,,
