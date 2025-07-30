@@ -1,0 +1,9 @@
+[project]
+name = "amzconfig"
+version = "0.1.0"
+description = "An amazing config loader tool."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml>=6.0.2",
+]

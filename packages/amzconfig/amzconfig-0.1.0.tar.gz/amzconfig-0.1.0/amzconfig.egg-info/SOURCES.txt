@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+amzconfig/__init__.py
+amzconfig/config.py
+amzconfig.egg-info/PKG-INFO
+amzconfig.egg-info/SOURCES.txt
+amzconfig.egg-info/dependency_links.txt
+amzconfig.egg-info/requires.txt
+amzconfig.egg-info/top_level.txt
