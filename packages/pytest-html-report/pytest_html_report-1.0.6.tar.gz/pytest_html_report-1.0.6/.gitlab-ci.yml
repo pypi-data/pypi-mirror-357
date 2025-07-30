@@ -1,0 +1,49 @@
+image: python:3.9
+
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+
+before_script:
+  - python -m venv venv
+  - source venv/bin/activate
+  - pip install --upgrade pip
+  - pip install build twine
+
+test:
+  stage: test
+  script:
+    - pip install -e ".[dev]"
+    - pytest tests/
+  coverage: '/TOTAL.*\s+(\d+%)$/'
+  except:
+    - tags
+
+build:
+  stage: build
+  script:
+    - python -m build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+  only:
+    - main
+    - tags
+
+deploy_pypi:
+  stage: deploy
+  script:
+    - python -m twine upload dist/*
+  only:
+    - tags
+  when: manual
