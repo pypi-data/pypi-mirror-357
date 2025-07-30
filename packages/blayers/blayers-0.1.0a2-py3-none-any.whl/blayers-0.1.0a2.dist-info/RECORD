@@ -1,0 +1,14 @@
+blayers/__init__.py,sha256=tXuPQHUyQh-LKndHgVugxiBZsAe4UHTCIl9h1jNHEJ4,407
+blayers/infer.py,sha256=-Y-zK4SagsYu-DnqdAUEcU-VxWfMEbperDGLe7XCA_w,5107
+blayers/layers.py,sha256=5sjdimGPKEAcflOTD8kKKbbipthfnmxM9X_YpLE4bW8,15149
+blayers/links.py,sha256=7e4W4xgtHURot5kAROW42LhKI28BaAmdKtyuw2QHKsE,297
+blayers/utils.py,sha256=iDjHyKgrIQ5V7S9-VFFhOLJgUARlDPckr8JFKDynR8o,2173
+blayers-0.1.0a2.dist-info/licenses/LICENSE,sha256=eq-PST6JbLO4xxV0-WfIsEZp5lqIBwBCdLXcxJLhM0M,1069
+docs/conf.py,sha256=D67qhPWAW3p26Km9heCvcwoCJK8-Ff_MqB6SyV7C01E,1303
+tests/layers_test.py,sha256=Pbuykw1H6ahlklOaaqA1REovd0q0HZpc745yYXLHMb0,10508
+tests/loss_test.py,sha256=AL9IuTCSeJdO33ZsDau49R2OyEgB7EoQ9xuSDjrGLao,2987
+tests/utils_test.py,sha256=PcLd6x6ZUGcknMJ9W_rD0YAl_lXQR4CoHAWoh4sbWms,1228
+blayers-0.1.0a2.dist-info/METADATA,sha256=KvTOa_l_ZgLEcrnontQIg-wWMrtr1TUqP4A5Gs0p4GY,7065
+blayers-0.1.0a2.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+blayers-0.1.0a2.dist-info/top_level.txt,sha256=Lfg5FodNDLPiA2gairLcUqXwOniUENdVflPQEBPbgYA,19
+blayers-0.1.0a2.dist-info/RECORD,,
