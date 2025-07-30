@@ -1,0 +1,16 @@
+[build-system]
+requires = [
+  # setuptools<72.2.0 is required for pypy3.8 and pypy3.9:
+  #   https://github.com/pypa/cibuildwheel/issues/2015
+  "setuptools < 72.2; platform_python_implementation == 'PyPy'",
+  "setuptools ; platform_python_implementation != 'PyPy'",
+  "wheel",
+  # pybind11==2.9.2 is required for python 3.6 to produce correct result
+  "pybind11<2.10 ; python_version<'3.7'",
+  "pybind11 ; python_version>='3.7'",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.cibuildwheel]
+test-requires = ["pytest"]
+archs = ["aarch64", "armv7l", "i686", "x86_64"]
