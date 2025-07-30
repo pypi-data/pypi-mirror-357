@@ -1,0 +1,11 @@
+onpanda/__info__.py,sha256=HI_MhosoJ4Q1EhGWH5cNvl83ABCCFXDAN7nBlcospvI,569
+onpanda/__init__.py,sha256=8HPCMOewkNqBUdnHfNcV6zbn7zhNhf7GewaI8dmELSo,166
+onpanda/onpanda.py,sha256=UMuHZP2ReJXvBiMkBWmKfyRCaXpkyFDGg-AkrDz--ik,2104
+onpanda/panda_battle.py,sha256=W1M6YDfEOut3wd0DZkXDAomySZfXrQ4h-oJenuzDDM4,2587
+onpanda/parser.py,sha256=OSU0nrSvNNMSnQQMpFkxwwtNrewnam_cpxCbpMtAWVg,12599
+onpanda/server/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+onpanda/server/main.py,sha256=azfagaeYLzgNzeMxYPg6FhGRzRSqzmr_imj5OcFbZKc,462
+onpanda-0.0.5.dist-info/METADATA,sha256=__ZJYPhKZLfm_LIfM36bDSs1RUdeXGYNXnzoqWLVhiw,904
+onpanda-0.0.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+onpanda-0.0.5.dist-info/top_level.txt,sha256=M11e17CYvHhlOIPb0-2qhDNQoonhj8EdXeOo5OXcfLU,8
+onpanda-0.0.5.dist-info/RECORD,,
