@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/kiwi-pdf-chunker/__init__.py
+src/kiwi-pdf-chunker/box_processing.py
+src/kiwi-pdf-chunker/config.py
+src/kiwi-pdf-chunker/image_processing.py
+src/kiwi-pdf-chunker/main.py
+src/kiwi-pdf-chunker/models.py
+src/kiwi-pdf-chunker/pdf.py
+src/kiwi_pdf_chunker.egg-info/PKG-INFO
+src/kiwi_pdf_chunker.egg-info/SOURCES.txt
+src/kiwi_pdf_chunker.egg-info/dependency_links.txt
+src/kiwi_pdf_chunker.egg-info/requires.txt
+src/kiwi_pdf_chunker.egg-info/top_level.txt
