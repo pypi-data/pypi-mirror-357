@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: pytodcor
+Version: 0.1
+Summary: Python-based two-dimensional cross-correlation of astronomical spectra.
+Author: Scott W. Fleming
+Maintainer: Scott W. Fleming
+License-Expression: MIT
+Project-URL: Repository, https://github.com/scfleming/pytodcor
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: astropy
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: specutils
+Dynamic: license-file
+
+# pytodcor
+Python-based two-dimensional cross-correlation of astronomical spectra.
