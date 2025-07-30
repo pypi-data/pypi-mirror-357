@@ -1,0 +1,5 @@
+masumi.egg-info/PKG-INFO
+masumi.egg-info/SOURCES.txt
+masumi.egg-info/dependency_links.txt
+masumi.egg-info/requires.txt
+masumi.egg-info/top_level.txt
