@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brian2wasm"
+version = "0.0.1"
+description = "A WebAssembly backend for the Brian 2 simulator"
+readme = "README.md"
+requires-python = "==3.13"
+keywords = ["wasm", "brian"]
+dependencies = [
+    "brian2==2.9.0",
+    "setuptools",
+]
+
+[project.scripts]
+brian2wasm = "brian2wasm.__main__:main"
+
+[tool.setuptools.package-data]
+brian2wasm = ["emsdk_setup.sh", "emsdk_setup.bat"]
+
+[tool.pixi.dependencies]
+emsdk = "*"
+
+[tool.pixi.pypi-dependencies]
+brian2wasm = { git = "https://github.com/PalashChitnavis/brian2wasm", rev = "gsoc" }
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
+
+[tool.pixi.tasks]
+setup = "emsdk install latest && emsdk activate latest"
+
+[tool.pixi.target.unix.activation]
+scripts = ["./brian2wasm/emsdk_setup.sh"]
+
+[tool.pixi.target.win.activation]
+scripts = ["./brian2wasm/emsdk_setup.bat"]
