@@ -1,0 +1,119 @@
+Metadata-Version: 2.4
+Name: spirepy
+Version: 0.1.0
+Summary: A SPIRE wrapper and command-line tool for interacting with global microbiome data.
+Author-email: SPIREpy Development Team <luispedro@big-data-biology.org>
+Maintainer-email: Alexandre Areias Castro <alexandre@big-data-biology.org>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/areias03/SPIREpy
+Project-URL: Bug Reports, https://github.com/areias03/SPIREpy/issues
+Project-URL: Source, https://github.com/areias03/SPIREpy
+Keywords: bioinformatics,microbiology,metagenomics
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: English
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: polars
+Requires-Dist: pandas
+Requires-Dist: rich
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Dynamic: license-file
+
+# SPIREpy
+
+<!--toc:start-->
+- [SPIREpy](#spirepy)
+  - [Usage](#usage)
+  - [Documentation](#documentation)
+  - [Installation](#installation)
+  - [Credits](#credits)
+<!--toc:end-->
+
+SPIREpy is a Python package and command-line tool that allows users to interact
+with the [SPIRE](https://spire.embl.de/) database in a more convinient way.
+
+## Usage
+
+
+### Python package
+
+The Python package encapsulates the study and samples types from SPIRE into
+classes with properties that allow you to access and interact with their data.
+To load a study, we do:
+
+```{python}
+from spirepy import Study
+
+study = Study("Lloyd-Price_2019_HMP2IBD")
+```
+
+We can then obtain the list of samples that belong to this study.
+
+```{python}
+study.get_samples()  
+```
+
+The study's metadata:
+
+```{python}
+study.get_metadata()
+```
+
+Or even the assembled genomes:
+
+```{python}
+study.get_mags()
+```
+
+Likewise, many of these attributes and operations are parallel to samples
+(`Sample` class) as well. For the full documentation and how to interact with
+them, see [here](#documentation)
+
+### Command-line tool
+
+The command-line interface tool allows the interaction with data from SPIRE directly in the terminal. It possesses 2 main interfaces:
+
+- `view`
+- `download`
+
+These 2 sub-commands allows us to print tables and download data from both studies and samples. For more information on the available commands use:
+
+```{bash}
+spire --help
+```
+
+ To view a study's metadata we can use:
+
+```{bash}
+spire --study view metadata Lloyd-Price_2019_HMP2IBD
+```
+
+And to download the same table as a `.csv` file we can instead:
+
+```{bash}
+spire --study download metadata Lloyd-Price_2019_HMP2IBD -o study/
+``` 
+
+## Installation
+
+TODO: need to add to PyPI and conda first
+
+## Documentation
+
+TODO: need readthedocs
+
+## Credits
