@@ -1,0 +1,6 @@
+s3sql/cli.py,sha256=N331mXlt-OaGRWGZOCyk0nnx6N6jlrYkQE8BF2tXuAE,6322
+s3sql/test_cli.py,sha256=I4PgLIcGbEa7EpNruMqyxhWPXPw1OM_C5_V7yevaCic,2557
+s3sql-0.0.3.dist-info/entry_points.txt,sha256=gEjufbamCRHktW7UkgngGBZpArbSiNrnZ23YXF3j800,39
+s3sql-0.0.3.dist-info/METADATA,sha256=h-F0Pq9rT6P6j6GqMjiMEEXJFNmfswM9Q8a9-r2I8yY,11696
+s3sql-0.0.3.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+s3sql-0.0.3.dist-info/RECORD,,
