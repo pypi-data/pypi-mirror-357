@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: mc-postgres-db
+Version: 1.0.8
+Summary: Add your description here
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: alembic>=1.16.2
+Requires-Dist: psycopg2-binary>=2.9.10
+Requires-Dist: ruff>=0.12.0
+Requires-Dist: sqlalchemy>=2.0.41
