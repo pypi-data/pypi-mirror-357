@@ -1,0 +1,10 @@
+beatstarsdownloader/__init__.py,sha256=OORSzprvm9YzoJbFQEgf8h05u-KjKkgC8pbHlXEsLss,46
+beatstarsdownloader/__main__.py,sha256=1v_Ifjm0w-mcLpRavhtxmr2cNNMb0otIsEvzVBvRUUQ,5233
+beatstarsdownloader/beatstarsdownloader.py,sha256=xJNvUERhhn6KUU0KO8kSjGbrjYvhtgBP5npc9tymomA,10371
+beatstarsdownloader/config.py,sha256=NyQDzNAHEeUBPv9RC-9qxkKVegKYe9XeIgDj1cW6aSw,842
+beatstarsdownloader/url_helpers.py,sha256=rmJQiWK5-L36Lz8vfKyiC5tizdKYF9oWYPViusa7mGw,2930
+beatstarsdownloader-0.1.6.dist-info/LICENSE,sha256=bDbhFg2hqd0JbfEek8y2j7tj6PrvXp8IAWExSigYEk4,1044
+beatstarsdownloader-0.1.6.dist-info/METADATA,sha256=pIOTVcWIEPU2hMuZbIDkcWmPFzzdzD-61222G1vWR2A,5909
+beatstarsdownloader-0.1.6.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+beatstarsdownloader-0.1.6.dist-info/entry_points.txt,sha256=9dz5GonSdEssdhQD6fvIsvenFE_y3swta-spke0H5cE,72
+beatstarsdownloader-0.1.6.dist-info/RECORD,,
