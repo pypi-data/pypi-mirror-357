@@ -1,0 +1,46 @@
+# sage_setup: distribution = sagemath-categories
+r"""
+Finite dimensional coalgebras with basis
+"""
+
+
+# start delvewheel patch
+def _delvewheel_patch_1_10_1():
+    import os
+    if os.path.isdir(libs_dir := os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir, 'passagemath_categories.libs'))):
+        os.add_dll_directory(libs_dir)
+
+
+_delvewheel_patch_1_10_1()
+del _delvewheel_patch_1_10_1
+# end delvewheel patch
+
+#*****************************************************************************
+#  Copyright (C) 2008 Teresa Gomez-Diaz (CNRS) <Teresa.Gomez-Diaz@univ-mlv.fr>
+#                2011 Nicolas M. Thiery <nthiery at users.sf.net>
+#
+#  Distributed under the terms of the GNU General Public License (GPL)
+#                  http://www.gnu.org/licenses/
+#******************************************************************************
+
+
+def FiniteDimensionalCoalgebrasWithBasis(base_ring):
+    """
+    The category of finite dimensional coalgebras with a distinguished basis.
+
+    EXAMPLES::
+
+        sage: C = FiniteDimensionalCoalgebrasWithBasis(QQ); C
+        Category of finite dimensional coalgebras with basis over Rational Field
+        sage: sorted(C.super_categories(), key=str)
+        [Category of coalgebras with basis over Rational Field,
+         Category of finite dimensional vector spaces with basis over Rational Field]
+        sage: C is Coalgebras(QQ).WithBasis().FiniteDimensional()
+        True
+
+    TESTS::
+
+        sage: TestSuite(C).run()
+    """
+    from sage.categories.coalgebras_with_basis import CoalgebrasWithBasis
+    return CoalgebrasWithBasis(base_ring).FiniteDimensional()
