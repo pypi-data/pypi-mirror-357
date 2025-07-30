@@ -1,0 +1,9 @@
+README.md
+setup.py
+rewar/__init__.py
+rewar/main.py
+rewar.egg-info/PKG-INFO
+rewar.egg-info/SOURCES.txt
+rewar.egg-info/dependency_links.txt
+rewar.egg-info/requires.txt
+rewar.egg-info/top_level.txt

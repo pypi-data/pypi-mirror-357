@@ -1,0 +1,21 @@
+Metadata-Version: 2.2
+Name: rewar
+Version: 1.0.0
+Summary: A description of your Python file
+Home-page: https://github.com/ZeroDayDoom/hello
+Author: Ankit Rewar
+Author-email: ankitrewar001@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+Requires-Dist: pygame
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
+
+This is hello world program !!
