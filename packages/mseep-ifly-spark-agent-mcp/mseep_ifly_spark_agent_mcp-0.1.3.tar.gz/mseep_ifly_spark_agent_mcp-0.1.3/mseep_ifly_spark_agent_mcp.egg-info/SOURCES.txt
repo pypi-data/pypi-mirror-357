@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mcp_server/__init__.py
+mcp_server/__main__.py
+mcp_server/agent.py
+mcp_server/server.py
+mcp_server/test/__init__.py
+mcp_server/test/test_agent.py
+mseep_ifly_spark_agent_mcp.egg-info/PKG-INFO
+mseep_ifly_spark_agent_mcp.egg-info/SOURCES.txt
+mseep_ifly_spark_agent_mcp.egg-info/dependency_links.txt
+mseep_ifly_spark_agent_mcp.egg-info/requires.txt
+mseep_ifly_spark_agent_mcp.egg-info/top_level.txt
