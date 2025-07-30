@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+
+from thingsboard.endpoint.attribute import Attribute
+from thingsboard.endpoint.attribute.constraint import AttributeConstraint
+from thingsboard.endpoint.exception.modification_exception import ModificationException
+from thingsboard.endpoint.object import EndpointObject
+
+
+class RuntimeObject(EndpointObject):
+    def __init__(self):
+        super(RuntimeObject, self).__init__()
+
+    def get_object(self, name):
+        """Returns the object with the given name or null if no object with the given name is part of the object.
+        """
+        return self._internal.objects[name]
+
+    def add_object(self, name, cls_or_object):
+        """Adds an object (or an object of the given class) with the given name to the runtime object."""
+        if self._internal.is_node_registered_within_endpoint():
+            raise ModificationException('A RuntimeObject\'s structure can only be modified before' +
+                                        ' it is registered within the endpoint!')
+
+        # Check if parameter is a class
+        if not isinstance(cls_or_object, EndpointObject):
+            # Create an object of that class
+            cls = cls_or_object
+            obj = cls()  # Create an object of that class
+            self.add_object(name, obj)
+            return obj
+        else:
+            # We have an EndpointObject to add to the node
+            obj = cls_or_object
+            obj._internal.set_parent_object_container(self)
+            obj._internal.set_name(name)
+
+            # Add object to the objects container
+            assert name not in self._internal.objects, 'Object with given name already present!'
+            self._internal.objects[name] = obj
+
+    def get_attribute(self, name):
+        return self._internal.get_attributes()[name]
+
+    def add_attribute(self, name, atype, constraint=None, initial_value=None):
+        if self._internal.is_node_registered_within_endpoint():
+            raise ModificationException('A RuntimeObject\'s structure can only be modified before' +
+                                        ' it is registered within the endpoint!')
+
+        # Create endpoint attribute
+        attribute = Attribute()
+
+        attribute.set_parent(self)
+        attribute.set_name(name)
+        attribute.set_type(atype)
+
+        # Set attribute constraint
+        if constraint:
+            if isinstance(constraint, AttributeConstraint):
+                attribute.set_constraint(constraint)
+            else:
+                assert isinstance(constraint, str), 'Wrong type'
+                attribute.set_constraint(AttributeConstraint(constraint))
+        else:
+            attribute.set_constraint(AttributeConstraint('Invalid'))
+
+        if initial_value:
+            attribute.set_value(initial_value)
+
+        assert name not in self._internal._attributes, 'Attribute with given name already present!'
+        self._internal._attributes[name] = attribute
+
+        return attribute
+
+    def to_json(self, encoder):
+        """Pick out the attributes we want to store / publish.
+        """
+
+        # Noting to encode here. Delegate job further to
+        # internal object
+        return encoder.default(self._internal)
