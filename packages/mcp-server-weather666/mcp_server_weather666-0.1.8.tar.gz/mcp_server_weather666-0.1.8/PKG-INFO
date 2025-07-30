@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: mcp-server-weather666
+Version: 0.1.8
+Summary: 实现类weather功能的MCP工具
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: dotenv>=0.9.9
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: mcp>=1.9.4
+Requires-Dist: openai>=1.91.0

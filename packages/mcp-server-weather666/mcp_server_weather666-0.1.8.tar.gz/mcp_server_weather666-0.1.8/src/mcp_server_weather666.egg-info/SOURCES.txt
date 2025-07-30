@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/mcp_server_weather/__init__.py
+src/mcp_server_weather/__main__.py
+src/mcp_server_weather/server.py
+src/mcp_server_weather666.egg-info/PKG-INFO
+src/mcp_server_weather666.egg-info/SOURCES.txt
+src/mcp_server_weather666.egg-info/dependency_links.txt
+src/mcp_server_weather666.egg-info/entry_points.txt
+src/mcp_server_weather666.egg-info/requires.txt
+src/mcp_server_weather666.egg-info/top_level.txt

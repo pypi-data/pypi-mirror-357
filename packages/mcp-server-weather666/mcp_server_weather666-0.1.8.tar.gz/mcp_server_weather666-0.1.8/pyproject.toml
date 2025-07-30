@@ -1,0 +1,26 @@
+[build-system] 
+requires = ["setuptools>=61.0", "wheel"] 
+build-backend = "setuptools.build_meta" 
+[project]
+name = "mcp-server-weather666"
+version = "0.1.8"
+description = "实现类weather功能的MCP工具"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "dotenv>=0.9.9",
+    "httpx>=0.28.1",
+    "mcp>=1.9.4",
+    "openai>=1.91.0",
+]
+
+[tool.uv.workspace]
+members = [
+    "mcp-server-weather",
+]
+[project.scripts] 
+mcp-server-weather = "mcp_server_weather:main" 
+[tool.setuptools] 
+package-dir = {"" = "src"} 
+[tool.setuptools.packages.find] 
+where = ["src"]
