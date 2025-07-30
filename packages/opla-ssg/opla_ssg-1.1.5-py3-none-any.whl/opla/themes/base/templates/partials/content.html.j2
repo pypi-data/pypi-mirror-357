@@ -1,0 +1,10 @@
+    <div class="container">
+        {% for section in sections %}
+        <section id="{{ section.id }}">
+            <a href="#{{ section.id }}">
+                <h2 {{ macro.insert_class(section_h2_class) }}>{{ section.title }}</h2>
+            </a>
+            {{ section.content }}
+        </section>
+        {% endfor %}
+    </div>
