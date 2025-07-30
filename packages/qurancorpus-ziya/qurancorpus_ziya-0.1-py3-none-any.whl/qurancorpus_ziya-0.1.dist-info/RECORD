@@ -1,0 +1,10 @@
+qurancorpus/__init__.py,sha256=grVaHCcMf_cL64E9a2qHeqv3sNCy9NqwHt5wWPLS2CI,75
+qurancorpus/constants.py,sha256=s-JZbxAZ8svwxLOFmgoqkTwa7YoJq44WJMYmnO9GZYY,9894
+qurancorpus/corpus.py,sha256=nt7nW4spCFh4t95WhbV1tawk3jPJlVAipD3_2FJTr4g,10006
+qurancorpus/data/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+qurancorpus/data/quranic-corpus-morpology.xml,sha256=3MMEyDPi4lfj9aY_o71U336VZA-BXAW5v_Xj-YEgRHQ,7261305
+qurancorpus_ziya-0.1.dist-info/METADATA,sha256=7GFwb12H1LlHNj0oBkjNJlZ8IH2pmNGiL3eN20iEKe8,904
+qurancorpus_ziya-0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+qurancorpus_ziya-0.1.dist-info/top_level.txt,sha256=-Dr5x94-eM_C1y7X6UkrFjlYoqC1lsaHhAzShIj75x8,12
+qurancorpus_ziya-0.1.dist-info/zip-safe,sha256=frcCV1k9oG9oKj3dpUqdJg1PxRT2RSN_XKdLCPjaYaY,2
+qurancorpus_ziya-0.1.dist-info/RECORD,,
