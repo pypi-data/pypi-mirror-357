@@ -1,0 +1,13 @@
+conics/__about__.py,sha256=z8ifObtYdht_isL5VGkyNLqiqFZRI3djEIDkAGuF7C0,146
+conics/__init__.py,sha256=4pJQ9sjdTZqVPZ8V2x9Ui-IMAUQh2VNhzH_M75M1d7Q,1100
+conics/_conic.py,sha256=j_a20DBchb6bJca0qVF8mhbbtYIcoL_4NcvwfyUuXns,25507
+conics/_ellipse.py,sha256=gGH70zmwtdlefEYFX464_QvGdshAGmPNS3fUHAEtPSc,4635
+conics/_harker.py,sha256=HPj_pUEzjem726nJaqebrhVpOGoJz-8m0KWOUF5Mpg4,7492
+conics/_nievergelt.py,sha256=A7g702loU_J1r7DU4F6EQ4FaxTuZ-u3RpdKLQrQAq0Q,6395
+conics/_parabola.py,sha256=xWhd2yvDvByqk_-U-351V6_DqLSXA6GGIZqeDd7NWZo,6161
+conics/fitting.py,sha256=7Jy4LvWy7N5ZarNNXqkz7NMiGKWSSX7FsaCa0l_FHfc,3549
+conics/geometry.py,sha256=T9QRwY8kMZ83Ny2PDl6oBLfz5T-vntILSyUUq1ttXug,2468
+conics-0.1.0a2.dist-info/METADATA,sha256=8KTO1uMHqofFRJPI_pJvjolmia678-Rsi_p_qyYJnZU,2166
+conics-0.1.0a2.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+conics-0.1.0a2.dist-info/licenses/LICENSE,sha256=uaxS-UcOYq1K6ZUNGvmgltOMuZzYTZBX2hGol-zyyW4,11345
+conics-0.1.0a2.dist-info/RECORD,,
