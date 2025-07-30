@@ -1,0 +1,2 @@
+[console_scripts]
+generate-vscode-config = vscode_config_generator.cli:main
