@@ -1,0 +1,53 @@
+Metadata-Version: 2.4
+Name: ksd-metric
+Version: 0.2.0
+Summary: Kernel Stein Discrepancy
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: jax>=0.4.13
+Requires-Dist: jaxlib>=0.4.13
+Requires-Dist: jaxtyping>=0.2.19
+Requires-Dist: sphinx>=8.1.3
+Requires-Dist: sphinx-autobuild>=2024.10.3
+Requires-Dist: sphinx-autodoc-typehints>=3.0.1
+Requires-Dist: sphinx-rtd-theme>=3.0.2
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: sphinx_rtd_theme; extra == "docs"
+Requires-Dist: sphinx-autodoc-typehints; extra == "docs"
+Requires-Dist: sphinx-markdown-builder; extra == "docs"
+Dynamic: license-file
+
+<p align="center">
+  <img src="assets/logo.svg" alt="ksd-metric logo" width="300"/>
+</p>
+
+[![PyPI version](https://img.shields.io/pypi/v/ksd-metric.svg)](https://pypi.org/project/ksd-metric/)
+
+<p align="center">
+  A lightweight library for computing Kernel Stein Discrepancy (KSD) with JAX support
+</p>
+
+## Install
+
+### Pypi
+
+```{bash}
+pip install ksd-metric
+```
+
+### Build from Source
+
+```{bash}
+# Install uv first
+uv python install 3.10
+uv sync
+uv pip install .
+```
+
+## Examples
+
+[Quick Start](https://congyewang.github.io/ksd/examples/auto.html)
+
+[Customized Using Interface](https://congyewang.github.io/ksd/examples/custom.html)
