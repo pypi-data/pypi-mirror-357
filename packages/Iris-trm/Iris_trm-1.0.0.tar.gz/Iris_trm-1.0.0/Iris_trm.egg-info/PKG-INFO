@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: Iris-trm
+Version: 1.0.0
+Summary: Apenas alguns códigos para melhorar a interação com o terminal
+Home-page: UNKNOWN
+Author: Cha Verde
+Author-email: chaverde08@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+a
+
