@@ -1,0 +1,26 @@
+Metadata-Version: 2.2
+Name: lla_enu
+Version: 0.1.0
+Summary: 包含在经纬高坐标系和东北天坐标系下的各种距离和角度运算
+Home-page: https://github.com/yourusername/my_package
+Author: tjl
+Author-email: 631254665@qq.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+包含在经纬高坐标系和东北天坐标系下的各种距离和角度运算。
+仅适用于精度要求不高的场景。
+TODO:后续将加入欧拉角处理常用函数.。
