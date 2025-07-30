@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools==75.6.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "selnetime"
+version = "0.3.1"
+authors = [
+  { name="Mathieu Uhl", email="mathieu.uhl@cefe.cnrs.fr" },
+  { name="Paul Bunel", email="paul.bunel@inrae.fr" },
+  { name="Simon Boitard", email="simon.boitard@inrae.fr" },
+  { name="Miguel de Navascués", email="miguel.navascues@inrae.fr" },
+  { name="Bertrand Servin", email="bertrand.servin@inrae.fr" },
+]
+description = "Implementation of HMM to estimate selection and demography"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "numpy",
+  "numba>=0.39",
+  "sympy",
+  "scipy",
+  "pyyaml"
+]
+
+[project.urls]
+"Repository" = "https://forge.inrae.fr/simon.boitard/snt/"
+"Homepage" = "https://pypi.org/project/selnetime/"
+
+[project.scripts]
+snt = "selnetime.snt:main"
+ntwf = "selnetime.snt:main_wf"
+snt_sim_param = "selnetime.sim_cmd:snt_sim_param"
+snt_sim = "selnetime.sim_cmd:snt_sim"

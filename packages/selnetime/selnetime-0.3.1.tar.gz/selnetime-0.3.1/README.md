@@ -1,0 +1,149 @@
+# SelNeTime: Estimate demography and selection from genetic time series
+
+The `selnetime` python package implements methods for statistical
+analysis of genetic data collected for a same population at different times.
+This type of data is typically encountered in experimental evolution studies, cohorts of
+wild or domestic populations or ancient DNA studies.
+
+The statistical approaches implemented in `selnetime` are based on
+Hidden Markov Models (HMMs) of the evolution of allele frequencies of
+biallelic loci through time. The methods
+build on approximating this evolution using the "Beta with Spikes" distribution
+(a continuous Beta distribution with point masses at 0 and 1),
+which significantly improves computational efficiency compared to the standard Wright-Fisher model while offering better accuracy than other usual fully continuous approximations (*e.g.* Beta, Gaussian). For more details on the methods see [Paris et
+al. (2019)](https://doi.org/10.1534/g3.119.400778).
+
+## Table of Contents
+
+1. [Installing the Package](#installing-the-package)
+1. [Analysing a dataset](#analysing-a-dataset)
+1. [Simulating datasets](#simulating-datasets)
+
+## Installing the package
+
+The package is available on the python package index (https://pypi.org/project/selnetime). It can be installed with pip: `pip install selnetime`, possibly inside a python or conda environment
+
+For latest (under development) version:
+
+1. Clone the repository
+2. Create a conda environment using the selnetime_env.yml file *e.g.*
+   `mamba env create -f selnetime_env.yml`
+3. Install the package by typing `pip install .`
+
+## Analysing a dataset
+
+The `selnetime` package comes with a command line program to analyze a
+time series dataset: `snt`. The usage is simply:
+
+``` shell
+snt <prefix> -S
+```
+where `<prefix>` gives the prefix of input files. Two input files are expected,
+named `<prefix>.genobaypass` and `<prefix>.times`.
+
+The `genobaypass` file is in the format used by the BayPass software:
+one line per (biallelic) locus. On each row, successive pairs of
+counts give the number of alleles observed at a given sampling time. For example:
+
+```
+12 19 0 36 0 32 0 26 0 33
+6 3 0 3 5 0 11 0 4 0
+25 9 39 2 37 14 21 10 17 5
+```
+indicates at the first locus, for the first sampling time of the time series 12
+(resp. 19) copies of the first (resp. second) alleles were observed.
+
+the `times` file is a simple csv file indicating the times (in
+generations) at which the data were collected. For example:
+
+```
+11,27,45,58,70
+```
+
+will indicate 5 sampling times, corresponding to sampling at generations 11, 27 etc.
+
+The `snt` program will output two files:
+
+- `<prefix>.snt.N` with the results of the estimation of effective
+  population size: for each Ne considered by the program, the
+  corresponding loglikelihood is returned.
+- `<prefix>.snt.S` with the results of the estimation of selection  coefficients for each locus:
+  - loc : locus index
+  - mle : Maximum likelihood estimate of s
+  - pmean : posterior mean for s
+  - psd : posterior standard deviation for s
+  - lo : lower bound of the 95% credible interval for s
+  - hi : upper bound of the 95% credible interval for s
+  - lfsr: local false-sign rate, *i.e.* the posterior probability that the MLE is of the wrong sign
+
+Omitting the `-S` flag skips the estimation of selection, if the only focus of the analysis is the estimation of effective population size. In contrast, if effective population size is aleady known, one can provide it and focus on the estimation of selection using the command:
+
+``` shell
+snt <prefix> -S -N <value>
+```
+
+### Analyzing a dataset using the Wright-Fisher model
+
+If effective population size is expected to be small (i.e. a few hundreds or less), it is possible to analyze the data using the exact Wright-Fisher model (instead of the Beta with Spikes). This approach should provide (slightly) more accurate results but is not computationnaly feasible for large populations.
+
+For technical reasons, this analysis cannot be run using a single program. To estimate the effective population (if unknown), the command is:
+
+``` shell
+ntwf <prefix>
+```
+
+It produces a file named `<prefix>.snt.wf.N` that has the format as that for the standard `snt` analysis. To estimate selection, the command is then:
+
+``` shell
+snt <prefix> -S -N <value> -M WF
+```
+
+It produces a file named `<prefix>.snt.wf.S` that again has the format as that for the standard `snt` analysis.
+
+## Simulating datasets
+
+To evaluate the expected performance of `snt` under a specific sampling design (number and size of samples, time intervals between samples ...), it is generally useful to simulate genetic data and compare the estimations provided by the program with the known true values. For this purpose, we developed the `snt_sim`, which generates simulated allele trajectories under the Wright-Fisher model and outputs them in the BayPass format used by `snt`.
+
+This program is simply run by the command:
+
+``` shell
+snt_sim -yaml <prefix>.yaml
+
+```
+
+where the only input is a yaml file describing the parameters of the simulation. For example :
+
+```
+ID_simu: trajectory
+N: 100
+depth_vect: [10, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+h: 0.5
+s: 0.0
+sampling_time: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+seed: 3184375
+x0: 0.5
+nrep: 1000
+```
+
+where `N` is the effective population size, `s` the selection coefficient, `h` the dominance coefficient, and `seed` the random number used to initiate the seed for the simulations. Sampling times and sampling depths (number of alleles observed at each sampling time) are respectively described by the two vectors `sampling_time` and `depth_vect`. Finally, `x0` is the initial frequency of the refence allele at the first sampling time of the simulations; it takes either a fixed float value in (0,1) or can be drawn in an uniform distribution in (0,1) with string `uniform`.
+
+`snt_sim` outputs the two input files expected by the `snt` program, i.e. a `<prefix>.genobaypass` and `<prefix>.times` files.
+
+Note that the simulation program currently assumes fixed selection parameters `s` and `h` for all simulated trajectories. Simulating a genome with several loci characterized by different selection constraints (neutral and selected loci for instance) thus requires to run `snt_sim` independently with different input files and concatenate the obtained `.genobaypass` files.
+
+### Creating a yaml file
+
+The simulator also comes with a command line program allowing to easily generate the required yaml file. It can be run for instance by:
+
+``` shell
+snt_sim_param -times 1,10,20,30 -N 100 -S 0 -H 0.5 -x0 0.5 -depth 50,50,60,70 -nrep 100 -working_directory path/of/the/directory/
+```
+
+The `working_directory` option allows to specify the directory where to save the simulation files. By default the files will be saved in the current working directory. The other different options are as described in the previous section.
+
+## References
+
+- Cyriel Paris, Bertrand Servin, Simon Boitard, Inference of Selection
+  from Genetic Time Series Using Various Parametric Approximations to
+  the Wright-Fisher Model, G3 Genes|Genomes|Genetics, Volume 9, Issue
+  12, 1 December 2019, Pages 4073–4086
