@@ -1,0 +1,13 @@
+rasterix/__init__.py,sha256=iSC54A4b-7zgxtKV0CUok0O2-ApGtzVA-6hWG3a5AAA,283
+rasterix/_version.py,sha256=hJd92hgvVD0aLSzXDQZBYe_xFmMQly9wq_1h2CuGX_g,514
+rasterix/odc_compat.py,sha256=MxjctCH0zV6VSSQymatJreHYUnUo3qkB1oIKbOxEK4A,19099
+rasterix/raster_index.py,sha256=yCq08-BvgEWe5ZbtknkMsXqKkZVqGyw85Otcx3_atf4,26130
+rasterix/rioxarray_compat.py,sha256=o32UBkWBpNhmC35ar0Ozn2QszpWdPvdDDXif3Mq2ZKg,12428
+rasterix/rasterize/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rasterix/rasterize/exact.py,sha256=UPB9zXpj7ZgkDy-x4vcNwY3J8DTrOTkRcIBMkhPQ04s,10558
+rasterix/rasterize/rasterio.py,sha256=TdnDMGfsN3npP_LPEPXH2LV25AJEkmEuTOpke5GN8_8,12860
+rasterix/rasterize/utils.py,sha256=iIuyTdigpFnts_-bUfas6FMsgix5lMqMQTxQaEBlyXM,3521
+rasterix-0.1a3.dist-info/METADATA,sha256=05YXAANNx2f50SqN_bXO_N7gb1YR29S3GIMEmi1mEXQ,4262
+rasterix-0.1a3.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+rasterix-0.1a3.dist-info/licenses/LICENSE,sha256=QFnsASMx8_yBNbrS7GVOhJ5CglGsLMj83Rn61uWyMs8,10265
+rasterix-0.1a3.dist-info/RECORD,,
