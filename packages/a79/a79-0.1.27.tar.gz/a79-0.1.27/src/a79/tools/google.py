@@ -1,0 +1,33 @@
+<<<<<<< HEAD
+from ..client import A79Client
+from ..models.tools import DEFAULT
+from ..models.tools.google_models import SearchInput, SearchOutput
+=======
+from a79.client import A79Client
+from a79.models.tools import DEFAULT
+from a79.models.tools.google_models import SearchInput, SearchOutput
+>>>>>>> 0155b70e2 (Fix external a79 sdk imports)
+
+__all__ = ["SearchInput", "SearchOutput", "search"]
+
+
+def search(
+    *,
+    query: str,
+    num_results: int = DEFAULT,
+    num_pages: int = DEFAULT,
+    num_extracts: int = DEFAULT,
+    extraction_method: str = DEFAULT,
+) -> SearchOutput:
+    """
+    Perform a Google search and extract snippets, webpages, and summaries.
+    """
+    kwargs = locals()
+    kwargs = {k: v for k, v in kwargs.items() if v is not DEFAULT}
+    input_model = SearchInput.model_validate(kwargs)
+
+    client = A79Client()
+    output_model = client.execute_tool(
+        package="google", name="search", input=input_model.model_dump()
+    )
+    return SearchOutput.model_validate(output_model)
