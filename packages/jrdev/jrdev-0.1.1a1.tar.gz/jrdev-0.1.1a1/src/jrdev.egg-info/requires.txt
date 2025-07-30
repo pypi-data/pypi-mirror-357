@@ -1,0 +1,10 @@
+openai>=1.0.0
+python-dotenv
+pydantic>=2.0.0
+textual[syntax]>=0.40.0
+tiktoken
+pyperclip
+anthropic>=0.23.1
+
+[:platform_system == "Windows"]
+pyreadline3
