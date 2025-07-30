@@ -1,0 +1,3 @@
+[console_scripts]
+match = osmatching.__main__:main
+
