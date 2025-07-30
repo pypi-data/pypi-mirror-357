@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+exclude = ["data*", "pt-models*", ".vscode*", "dist*", "*.onnx"]
+
+[project]
+name = "scoreq"
+version = "1.0.0" 
+authors = [
+  { name="Alessandro Ragano", email="alessandroragano@gmail.com" },
+]
+description = "A Python package for advanced speech quality assessment using the SCOREQ model"
+readme = "README.md"
+# --- MODIFICATION ---
+# Revert Python requirement back to 3.9 as requested.
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+
+dependencies = [
+    # Pinning to the latest version compatible with Python 3.9
+    "onnxruntime == 1.16.3", 
+    # Forcing numpy<2.0 for compatibility with the older onnxruntime
+    "numpy < 2.0",
+    "torchaudio",
+    "tqdm",
+    "click >= 8.1.7",
+]
+
+# This section defines the optional dependency groups.
+[project.optional-dependencies]
+# `pip install scoreq[pytorch]` for developers/researchers
+pytorch = [
+    "torch",
+    "fairseq == 0.12.2",
+    "omegaconf == 2.0.6",
+    "antlr4-python3-runtime == 4.8",
+]
+# `pip install scoreq[gpu]` for users with NVIDIA GPUs
+gpu = [
+    # Pinning the GPU version as well
+    "onnxruntime-gpu == 1.16.3",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/alessandroragano/scoreq"
