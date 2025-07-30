@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: pyc37
+Version: 1.0.1
+Summary: Synchrophasor module represents implementation of IEEE C37.118.2 standard in Python.
+Home-page: https://github.com/ahmadkammonah/pyc37
+Download-URL: https://github.com/iicsys/pypmu/tarball/1.0.0-alpha
+Author: Ahmad Kammonah
+Author-email: contact@ahmadkammonah.com
+License: BSD-3
+Keywords: pyc37,pypmu,pdc,pmu,power-systems,ieeec37118
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: BSD License
+License-File: LICENSE.txt
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: summary
