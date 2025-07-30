@@ -1,0 +1,16 @@
+[console_scripts]
+pixel-patrol = pixel_patrol.cli:cli
+
+[pixel_patrol.widgets]
+data_type = pixel_patrol.report.widgets.metadata.data_type:DataTypeWidget
+dataframe = pixel_patrol.report.widgets.summary.dataframe:DataFrameWidget
+dataset_stats = pixel_patrol.report.widgets.dataset_stats.dataset_stats:DatasetStatsWidget
+dim_order = pixel_patrol.report.widgets.metadata.dim_order:DimOrderWidget
+dim_size = pixel_patrol.report.widgets.metadata.dim_size:DimSizeWidget
+embedding_projector = pixel_patrol.report.widgets.visualization.embedding_projector:EmbeddingProjectorWidget
+file_extension = pixel_patrol.report.widgets.file_stats.file_extension:FileExtensionWidget
+file_size = pixel_patrol.report.widgets.file_stats.file_size:FileSizeWidget
+file_timestamp = pixel_patrol.report.widgets.file_stats.file_timestamp:FileTimestampWidget
+image_mosaik = pixel_patrol.report.widgets.visualization.image_mosaik:ImageMosaikWidget
+image_quality = pixel_patrol.report.widgets.dataset_stats.image_quality:ImageQualityWidget
+summary = pixel_patrol.report.widgets.summary.summary:SummaryWidget
