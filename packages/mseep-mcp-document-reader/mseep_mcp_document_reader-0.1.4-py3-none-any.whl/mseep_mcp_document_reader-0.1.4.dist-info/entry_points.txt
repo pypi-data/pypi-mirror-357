@@ -1,0 +1,3 @@
+[console_scripts]
+mcp-document-reader=mcp_document_reader.server:run_server
+
