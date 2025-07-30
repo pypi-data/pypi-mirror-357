@@ -1,0 +1,29 @@
+⛓Use YAML classes in the validation of function schedule, transformation, schedule, location filters, raw table/DB, security category, space, and 3D (#1654)
+
+# Description
+
+The YAML classes we use for validation are already made. This PR
+connects them to the loader class such that they will be used in the cdf
+build command. In addition, I made a set of tests cases for each as well
+as updated the function that humanize the pydantic errors.
+
+
+
+## Changelog
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## cdf
+
+### Improved
+
+- In the cdf build command, Toolkit now gives improved warning messages
+if the syntax in the configuration file is incorrect for transformation
+schedule, function schedule, location filters, raw table, raw database,
+security category, data modeling space, and 3D.
+
+## templates
+
+No changes.
