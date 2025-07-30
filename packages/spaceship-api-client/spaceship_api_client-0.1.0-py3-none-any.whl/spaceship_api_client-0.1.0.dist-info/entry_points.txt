@@ -1,0 +1,3 @@
+[console_scripts]
+spaceship-api-client=spaceship_api.client:main
+
