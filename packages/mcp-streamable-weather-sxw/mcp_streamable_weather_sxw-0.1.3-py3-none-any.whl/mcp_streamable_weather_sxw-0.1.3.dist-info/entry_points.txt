@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-streamable-weather-sxw = mcp_weather_http_sxw:main
