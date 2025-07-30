@@ -1,0 +1,14 @@
+[project]
+name = "optimizable"
+version = "0.0.2"
+description = "Reserved placeholder for the 'optimizable' package. Real implementation coming soon."
+authors = [
+  { name="Mohamed Hamdy", email="m-hamdy-m@outlook.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.7"
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
