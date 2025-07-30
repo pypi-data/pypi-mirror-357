@@ -1,0 +1,35 @@
+# pyproject.toml for modelrepo
+[tool.poetry]
+name = "modelrepo" # The distribution name users will install (e.g., pip install modelrepo)
+version = "1.0.0"
+description = "Python package for interacting with databases using model repositories."
+authors = ["Noah Chalifour <chalifournoah@gmail.com>"]
+readme = "README.md"
+packages = [{include = "modelrepo", from = "src"}] # Poetry will find the 'modelrepo' directory and its contents
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sqlalchemy = "^2.0"
+pymongo = "^4.13"
+dependency-injector = "^4.48"
+mkdocstrings = { version = ">=0.18", extras = ["python"] }
+mkdocs-material = "^9.6"
+mkdocs-api-autonav = "^0.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+pytest-cov = "^6.2.1"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[tool.coverage.report]
+exclude_also = [
+    # Exclude abstract methods
+    "@(abc\\.)?abstractmethod",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
