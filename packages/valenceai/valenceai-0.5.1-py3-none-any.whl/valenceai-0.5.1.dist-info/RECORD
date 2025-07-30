@@ -1,0 +1,11 @@
+valenceai/__init__.py,sha256=paNI9D-2QLYxuCXgSIfSPzihIWEjQfI3Es9PpDnLfgE,62
+valenceai/client.py,sha256=su0bmaBZCrihpp6hPStOhRyIRpkPHWlnrzi7v46N5wQ,5725
+valenceai/config.py,sha256=RtGS2u1lPbH4IB4Qd4Aqle-da5vTCXFKG9b5NR5jdzQ,316
+valenceai/exceptions.py,sha256=Asbq74MznSSCYMbdMlfnaFqwaGzc54rTgrq3icAugho,152
+valenceai/logger.py,sha256=fPhC03dlkT7si4cp_zIjk6XP2MyLKaw3lyaNdrAD43A,234
+valenceai/long_audio.py,sha256=K2Tyrt7jlH6N53Q8WtYkkRPPA-0LeHXiH7zUkAGttAc,3315
+valenceai/short_audio.py,sha256=jUZl0y5zmDGeIq2UMgafgxDke39Zh12NuNS3LbIK03c,639
+valenceai-0.5.1.dist-info/METADATA,sha256=qknsZ2v9VnyteWV93z75wPEFsqDHpYB2G41LIYspnqw,8761
+valenceai-0.5.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+valenceai-0.5.1.dist-info/top_level.txt,sha256=eD8oQURWQ4Rnkc_nZaCgLeyOy5H6nyr_SJsOqt5nMig,10
+valenceai-0.5.1.dist-info/RECORD,,
