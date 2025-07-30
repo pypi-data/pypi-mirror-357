@@ -1,0 +1,78 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "ereach_douyin_mcp_server",
+    "pyproject.toml",
+    "README.md",
+    "LICENSE"
+]
+exclude = [
+    "**/venv/**",
+    "**/.venv/**",
+    "**/env/**",
+    "**/virtualenv*/**"
+]
+
+[tool.hatch.build.targets.wheel]
+packages=["ereach_douyin_mcp_server"]
+exclude = [
+    "**/venv/**",
+    "**/.venv/**",
+    "**/env/**",
+    "**/virtualenv*/**"
+]
+
+[project]
+name = "ereach-douyin-mcp-server"
+version = "0.0.12"
+description = "MCP server for downloading Douyin videos and extracting text"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "xin.zhu", email = "tony.zhu.cn@qq.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "mcp>=1.0.0",
+    "fastmcp",
+    "requests",
+    "ffmpeg-python",
+    "tqdm",
+    "PyExecJS",
+    "click",
+    "loguru",
+    "ujson",
+    "rookiepy",
+    "flask",
+    "flask-jwt-extended",
+    "flask_cors",
+    "dbutils",
+    "PyMySQL",
+    "redis",
+    "httpx[socks]",
+    "dotenv",
+]
+
+
+[project.urls]
+Homepage = "https://github.com/zhuxin2019/douyin-mcp-server.git"
+Repository = "https://github.com/zhuxin2019/douyin-mcp-server.git"
+Issues = "https://github.com/zhuxin2019/douyin-mcp-server.git/issues"
+
+[project.scripts]
+ereach_douyin_mcp_server = "ereach_douyin_mcp_server.mcp_server:main"
