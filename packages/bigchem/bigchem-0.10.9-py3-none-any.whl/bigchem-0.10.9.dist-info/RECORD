@@ -1,0 +1,12 @@
+bigchem/__init__.py,sha256=SgxsmUVb072H9EBdqELs0lOPbVbv8M8TUNgKTdPOF1U,422
+bigchem/algos.py,sha256=6lM3ropAIVYaMBH5H4DgORgyHkBU-lAlC8dOaSrNDhk,4111
+bigchem/app.py,sha256=RLN-h1LcDfmLF21AVfpTPDVwjPkZhM8N-TC97302V7w,1540
+bigchem/canvas.py,sha256=iSRKYV7y81I6P3E66QovgvhHerN74jdS6jz-GRDSQ4g,164
+bigchem/config.py,sha256=kjHTQHspUR4SjSjSWtrqGNR4N5Do6o2K0Sr-qHOokLo,2018
+bigchem/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bigchem/tasks.py,sha256=DLhgtNCdCwMWMbt88jl38CmqJZ6dUu6zDT0dBhkEOVg,6764
+bigchem/utils.py,sha256=aCdM2GExQ_a485MpkMWar13eFf4r0wo97c0mLtrrh0s,1483
+bigchem-0.10.9.dist-info/METADATA,sha256=BMSZh0Y82vQN-GG6fAmDqp-Cx1X8o_kcshsikz4ooTU,46509
+bigchem-0.10.9.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+bigchem-0.10.9.dist-info/licenses/LICENSE,sha256=2U6Q_LesW51Jy-va7TZUineBanmxGyBUvxMUTMbgbRk,1079
+bigchem-0.10.9.dist-info/RECORD,,
