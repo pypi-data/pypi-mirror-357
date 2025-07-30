@@ -1,0 +1,11 @@
+curl_parsers/__init__.py,sha256=xXcZV0rMxwBkW8Ucg2ayKmHW5C4qCYgxick54Z5_7jE,1987
+curl_parsers/cli.py,sha256=rUAErBoIsMdKAGZrSegUvzUkE4CHikzDbpHhOyUiH8M,1152
+curl_parsers/form_data_boundary.py,sha256=Z3sym11PATiutM_Ipkgxm8Ef2zBM_HmtbYEMkGgGkyY,4339
+curl_parsers/generator.py,sha256=nHxpt8ISxmks9zULld2M99kV8ZuH1Cp5vEHKMKMlNh0,4256
+curl_parsers/parser_curl.py,sha256=5TemHhqOz487pMLkkzfEX4_4s3UIYfBzEj01FmS-h6Y,6649
+curl_parsers-0.2.1.dist-info/licenses/LICENSE,sha256=T22WD14ELrZPCgFhdioUUzOzv-lU6fHrasfMAqfvWSM,1084
+curl_parsers-0.2.1.dist-info/METADATA,sha256=ydBX2D9Ht-xWnYb4diIx8gv9zEwzdnTrWzKi6Fg6PSs,1579
+curl_parsers-0.2.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+curl_parsers-0.2.1.dist-info/entry_points.txt,sha256=EOMV0nkIdu5abtJIrvk-Y5DUI8D6F2pxd2eWSFt3k84,52
+curl_parsers-0.2.1.dist-info/top_level.txt,sha256=9h3PWmDU2EStvlflTWGu0cVzOMoKjZS5jjQIq7AMVzI,13
+curl_parsers-0.2.1.dist-info/RECORD,,
