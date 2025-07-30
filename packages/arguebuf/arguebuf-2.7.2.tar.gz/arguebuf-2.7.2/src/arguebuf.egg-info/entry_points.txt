@@ -1,0 +1,2 @@
+[console_scripts]
+arguebuf = arguebuf.cli.app:cli

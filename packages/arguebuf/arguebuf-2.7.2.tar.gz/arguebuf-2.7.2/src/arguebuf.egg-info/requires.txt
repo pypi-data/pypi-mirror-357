@@ -1,0 +1,15 @@
+arg-services<2,>=1
+networkx<4,>=3
+pendulum<4,>=3
+graphviz<1,>=0.20
+lxml<6,>=5
+
+[all]
+arguebuf[cli,graphviz]
+
+[cli]
+typer<1,>=0.9
+deepl<2,>=1
+
+[graphviz]
+pygraphviz<2,>=1
