@@ -1,0 +1,11 @@
+wikipedia_mcp/__init__.py,sha256=UoIjxhYWm5VZ4yPNezHDlhKw8RPWjTRjTt7OreklY3A,874
+wikipedia_mcp/__main__.py,sha256=ubt6XyZvcHwdjCQ90B_U4MeP-3YJduz5GWUC9yOgkrg,27
+wikipedia_mcp/parser.py,sha256=ZzNI6-e4q4QStV9J-CpnZYf3b_kA4l41qWXBCygFc9g,409
+wikipedia_mcp/server.py,sha256=k7cLUT9lKjdJMxcuSr7AxQ11JaI5aiF9dWDhnpYouTc,3312
+wikipedia_mcp/types.py,sha256=Iohaq5Clg_HXAdYd9NuJn_zeUXhpqYntYZo2zCuzYNw,462
+wikipedia_mcp_server-1.0.0.dist-info/licenses/LICENSE,sha256=6LVkOXHguuwLY4WaZO0o9eGeaQeQUaMYUL_TNIXbpXM,1071
+wikipedia_mcp_server-1.0.0.dist-info/METADATA,sha256=6Bsqf_4ehq9fENGHgLZRtlGLO11VHfVXv-PnvFjciyw,2418
+wikipedia_mcp_server-1.0.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+wikipedia_mcp_server-1.0.0.dist-info/entry_points.txt,sha256=YC79rANvhhb8UbLCD197tVyq5fsVr_9yb88rZfum6lI,53
+wikipedia_mcp_server-1.0.0.dist-info/top_level.txt,sha256=1ub67a3G-5UJCdunwvkvJTmvS4j4ibsX3Dtm-y6ws8c,14
+wikipedia_mcp_server-1.0.0.dist-info/RECORD,,
