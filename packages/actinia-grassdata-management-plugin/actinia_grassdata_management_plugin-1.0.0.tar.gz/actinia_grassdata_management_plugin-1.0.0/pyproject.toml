@@ -1,0 +1,72 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "actinia-grassdata-management-plugin"
+version = "1.0.0"
+description = "An actinia-core plugin which adds vector- raster and STRDS enpoints to actinia-core"
+readme = "README.md"
+authors = [
+    { name = "Carmen Tawalika"},
+    { name = "Anika Weinmann"},
+    { name = "Guido Riembauer"},
+    { name = "Marc Jansen"},
+    { name = "Sören Gebbert"},
+    { name = "Markus Neteler"},
+    { name = "and more"}
+]
+license = "GPL-3.0-or-later"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.8"
+keywords = [
+    "processing",
+    "earth observation",
+    "cloud-based processing",
+    "rest api",
+    "gis",
+    "grass gis",
+    "osgeo",
+    "data management",
+]
+dependencies = [
+    "actinia-api>=3.7.0",
+    "actinia-core>=6.0.1",
+    "actinia-rest-lib>=1.0.0",
+    "actinia-processing-lib>=1.1.0",
+    "Flask>=3.0.0",
+    "pwgen",
+    "setuptools==80.9.0",
+    "werkzeug>=3.1.3",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+]
+
+[project.urls]
+Homepage = "https://github.com/mundialis/actinia-grassdata-management-plugin"
+Tutorial = "https://actinia-org.github.io/actinia-core"
+API_Docs = "https://redocly.github.io/redoc/?url=https://actinia.mundialis.de/latest/swagger.json"
+
+[tool.flake8]
+max-line-length = 79
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--cov actinia_grassdata_management_plugin --cov-report term-missing --verbose --tb=line -x -s"
+testpaths = [
+    "tests",
+]
+markers = [
+    "dev: test current in development",
+    "unittest: completely independent test",
+]
