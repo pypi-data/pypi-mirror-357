@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: IsoFier
+Version: 1.0
+Summary: Create ISO files from directories or single files
+Author: bowser-2077
+Requires-Python: >=3.0
+Requires-Dist: pycdlib
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

@@ -1,0 +1,8 @@
+setup.py
+IsoFier.egg-info/PKG-INFO
+IsoFier.egg-info/SOURCES.txt
+IsoFier.egg-info/dependency_links.txt
+IsoFier.egg-info/requires.txt
+IsoFier.egg-info/top_level.txt
+isofier/__init__.py
+isofier/iso.py
