@@ -1,0 +1,2 @@
+[console_scripts]
+opsbot = opsbot.cli:main

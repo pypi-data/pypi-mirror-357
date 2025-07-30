@@ -1,0 +1,13 @@
+opsbot/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+opsbot/api_client.py,sha256=6zSgDCRD5Hnlg-Ik1Dc-9xyOeahvahMed-qNr6GRTZQ,2143
+opsbot/chat_session.py,sha256=JSGUsnT4dmhjHATpYQ4Y_4DTezhbTuhufqgEsdieLVo,13690
+opsbot/cli.py,sha256=TYjtX-RhMBoEud-3NAHnd3uDgIHqW-xJAC3uon8Xcz0,4338
+opsbot/config.py,sha256=z53Wf4OXwu0n1bTna1GU6y2H28tU6SLd_vPeFDW6w7Q,5875
+opsbot/core.py,sha256=ZeYkkto-qcfeuK5p7ywuggv9lHtKGHUmjkoidrA2tdE,3218
+opsbot/file_handler.py,sha256=q3eFQCAqDj8IqYPgdyoBu-kVk3V4VZkA3eLpJHcyjbg,6641
+opsbot/prompts/default_code_prompt.txt,sha256=Pkx7swlMgzKS2ZvVVLCF5ZoSzCOUI2inE2a0XoXuqNw,6246
+opsx-1.0.1.dist-info/METADATA,sha256=o9-vrgfg7_DqEdz7LIVFPlf7xjHP6AUqALDucbCuQ8Y,2326
+opsx-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+opsx-1.0.1.dist-info/entry_points.txt,sha256=AaTFnOtdVTSU3Dn81ujHQfUoSYObXn4JGtcHKG0Yk8o,43
+opsx-1.0.1.dist-info/top_level.txt,sha256=BNaxA2zBLP9phaW49WccrDFjf3szjwwtr5FyFady58A,7
+opsx-1.0.1.dist-info/RECORD,,
