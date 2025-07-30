@@ -1,0 +1,2 @@
+[console_scripts]
+autoagents-deep-research = autoagents_deep_research:main
