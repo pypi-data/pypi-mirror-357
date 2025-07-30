@@ -1,0 +1,68 @@
+Metadata-Version: 2.4
+Name: pear-chat
+Version: 0.1.2
+Summary: P2P Terminal Chat - Decentralized chat application for local networks
+Author-email: Griffin Tarpenning <gtarpenning@gmail.com>
+Maintainer-email: Griffin Tarpenning <gtarpenning@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/gtarpenning/pear
+Project-URL: Documentation, https://github.com/gtarpenning/pear#readme
+Project-URL: Repository, https://github.com/gtarpenning/pear
+Project-URL: Bug Tracker, https://github.com/gtarpenning/pear/issues
+Keywords: p2p,chat,terminal,networking,decentralized
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Internet
+Classifier: Topic :: System :: Networking
+Classifier: Topic :: Terminals
+Classifier: Environment :: Console
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: rich>=12.0.0
+Requires-Dist: litellm>=1.0.0
+Provides-Extra: dev
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: flake8>=4.0.0; extra == "dev"
+Requires-Dist: pylint>=2.12.0; extra == "dev"
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: build>=0.8.0; extra == "dev"
+Requires-Dist: twine>=4.0.0; extra == "dev"
+
+# Pear Chat
+
+P2P terminal chat for local networks.
+
+<img width="1510" alt="image" src="https://github.com/user-attachments/assets/
+aa79773c-2e4c-435e-9fad-e0079dd168a6" />
+
+## Install
+
+```bash
+pip install pear-chat
+```
+
+## Usage
+
+```bash
+# Start a session
+pear start mysession
+
+# Join a session
+pear join mysession
+
+# List available sessions
+pear list
+
+# Set username for future sessions
+pear login myusername
+```
