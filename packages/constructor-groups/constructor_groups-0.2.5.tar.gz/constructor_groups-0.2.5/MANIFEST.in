@@ -1,0 +1,5 @@
+include constructor_groups/*
+recursive-include constructor_groups/user *
+recursive-include constructor_groups/session *
+recursive-include constructor_groups/attendee *
+recursive-include constructor_groups/report *
