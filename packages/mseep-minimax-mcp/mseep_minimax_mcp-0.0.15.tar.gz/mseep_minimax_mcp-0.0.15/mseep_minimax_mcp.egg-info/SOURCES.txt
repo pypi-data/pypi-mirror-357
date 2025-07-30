@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+minimax_mcp/__init__.py
+minimax_mcp/__main__.py
+minimax_mcp/client.py
+minimax_mcp/const.py
+minimax_mcp/exceptions.py
+minimax_mcp/server.py
+minimax_mcp/utils.py
+mseep_minimax_mcp.egg-info/PKG-INFO
+mseep_minimax_mcp.egg-info/SOURCES.txt
+mseep_minimax_mcp.egg-info/dependency_links.txt
+mseep_minimax_mcp.egg-info/requires.txt
+mseep_minimax_mcp.egg-info/top_level.txt
+tests/test_utils.py
