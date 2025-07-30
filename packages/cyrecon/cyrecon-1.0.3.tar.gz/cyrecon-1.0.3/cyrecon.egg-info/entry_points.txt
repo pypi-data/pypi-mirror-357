@@ -1,0 +1,2 @@
+[console_scripts]
+cyrecon = main:main_menu
