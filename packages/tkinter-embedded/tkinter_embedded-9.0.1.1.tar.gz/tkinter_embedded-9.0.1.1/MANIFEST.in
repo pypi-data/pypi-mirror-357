@@ -1,0 +1,2 @@
+recursively-include src/tk9inter/Tcl.framework
+recursively-include src/tk9inter/Tk.framework
