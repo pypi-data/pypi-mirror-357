@@ -1,0 +1,5 @@
+pandas>=2.3.0
+polars>=1.31.0
+quda>=1.0.0b0
+scikit-learn>=1.7.0
+xcals>=0.0.4
