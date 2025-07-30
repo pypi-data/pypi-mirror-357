@@ -1,0 +1,14 @@
+pandas
+numpy
+xarray
+seaborn
+tqdm
+PyYAML
+pyxlsb
+
+[notebooks]
+matplotlib
+biotrade
+
+[tests]
+pytest
