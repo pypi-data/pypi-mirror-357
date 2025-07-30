@@ -1,0 +1,457 @@
+# EVO Cloud Python SDK
+
+[![Python Version](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://python.org)
+[![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](https://github.com/your-org/evocloud-sdk)
+
+EVO Cloud Python SDK 是一个用于集成 EVO Cloud 支付服务的官方 Python 开发工具包。该 SDK 提供了简洁易用的 API 接口，支持 LinkPay 等多种支付方式。
+
+## 功能特性
+
+- 🚀 **简单易用**: 提供直观的 API 接口，快速集成支付功能
+- 🔐 **安全可靠**: 内置签名验证机制，支持 SHA256/MD5 等多种签名算法
+- 🔄 **自动重试**: 内置请求重试机制，提高接口调用成功率
+- 📝 **完整日志**: 详细的请求日志记录，便于调试和监控
+- 🌐 **多支付方式**: 支持 Alipay、WeChat Pay、Visa、UnionPay 等多种支付方式
+- 📱 **LinkPay**: 支持创建支付链接，适用于各种支付场景
+- 🔔 **Webhook 支持**: 完整的 Webhook 处理和验证机制
+
+## 安装
+
+```bash
+pip install evocloud-sdk
+```
+
+## 开发构建
+
+### 构建整个项目
+```bash
+python upload_to_pypi.py --build-only
+```
+
+### 仅构建 src 目录
+```bash
+python upload_to_pypi.py --src-only --build-only
+```
+
+### 上传到测试环境
+```bash
+python upload_to_pypi.py --test --src-only
+```
+
+### 清理构建文件
+```bash
+python upload_to_pypi.py --clean
+```
+
+## 快速开始
+
+### 基础配置
+
+```python
+from evocloud_sdk import EVOCloudClient
+
+
+# 初始化客户端
+client = EVOCloudClient(
+    base_url="https://online-uat.everonet.com",  # 测试环境
+    sid="your_system_id",                        # EVO Cloud 分配的系统ID
+    sign_key="your_sign_key",                    # EVO Cloud 分配的签名密钥
+    sign_type=SignType.SHA256,                   # 签名算法
+    timeout=60,                                  # 请求超时时间
+    max_retries=1                                # 最大重试次数
+)
+```
+
+### 创建 LinkPay 支付订单
+
+```python
+from datetime import datetime, timezone
+from common.utils import generate_order_id, format_amount
+
+# 生成唯一订单ID
+order_id = generate_order_id("PAY")
+
+# 创建支付订单
+order_data = {
+    "merchantOrderInfo": {
+        "merchantOrderID": order_id,
+        "merchantOrderTime": datetime.now(timezone.utc).isoformat(),
+        "enabledPaymentMethod": ["Alipay", "WeChat_Pay", "Visa"],
+        "orderType": "Single"
+    },
+    "transAmount": {
+        "currency": "USD",
+        "value": format_amount(100.50)  # "100.50"
+    },
+    "tradeInfo": {
+        "tradeType": "Payment",
+        "goodsInfo": {
+            "goodsName": "测试商品",
+            "goodsDescription": "这是一个测试商品"
+        }
+    }
+}
+
+try:
+    # 使用上下文管理器确保资源正确释放
+    with client:
+        response = client._make_request(
+            "POST", 
+            f"/g2/v0/payment/mer/{client.sid}/evo.e-commerce.linkpay",
+            data=order_data
+        )
+        
+        if response.get('result', {}).get('code') == "S0000":
+            payment_link = response['data']['paymentLink']
+            print(f"支付链接创建成功: {payment_link}")
+        else:
+            print(f"创建订单失败: {response.get('result', {}).get('message')}")
+            
+except Exception as e:
+    print(f"创建订单异常: {e}")
+```
+
+## API 文档
+
+### EVOCloudClient 客户端
+
+#### 初始化参数
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `base_url` | str | 是 | EVO Cloud API 基础URL |
+| `sid` | str | 是 | 系统ID |
+| `sign_key` | str | 是 | 签名密钥 |
+| `sign_type` | SignType | 否 | 签名算法，默认 SHA256 |
+| `timeout` | int | 否 | 请求超时时间，默认 60 秒 |
+| `max_retries` | int | 否 | 最大重试次数，默认 1 次 |
+
+#### 主要方法
+
+##### `_make_request(method: str, url_path: str, data: dict = None) -> dict`
+
+发送 API 请求到 EVO Cloud
+
+**参数:**
+- `method`: HTTP 方法 (GET, POST, PUT, DELETE)
+- `url_path`: API 端点路径
+- `data`: 请求数据字典
+
+**返回:**
+- API 响应数据字典
+
+**示例:**
+```python
+# 创建 LinkPay 订单
+response = client.linkpay._make_request(
+    "POST",
+    f"/g2/v0/payment/mer/{client.sid}/evo.e-commerce.linkpay",
+    data=order_data
+)
+
+# 查询订单状态
+response = client.linkpay._make_request(
+    "GET",
+    f"/g2/v0/payment/mer/{client.sid}/order/{order_id}"
+)
+```
+
+## 支持的支付方式
+
+根据 LinkPay API 规范，支持以下支付方式：
+
+- **电子钱包**: Alipay, WeChat_Pay
+- **信用卡**: Visa, Mastercard, American_Express
+- **借记卡**: UnionPay, Diners
+- **银行转账**: 各种本地银行支付方式
+- **其他**: 根据地区支持的本地支付方式
+
+## 环境配置
+
+### 测试环境 (UAT)
+```python
+base_url = "https://online-uat.everonet.com"
+```
+
+### 生产环境 (Production)
+```python
+base_url = "https://online.everonet.com"
+```
+
+## 错误处理
+
+SDK 提供了完整的异常处理机制：
+
+```python
+from common.exceptions import (
+    EVOCloudException, 
+    APIException, 
+    ValidationException, 
+    SignatureException
+)
+
+try:
+    response = client._make_request("POST", endpoint, data=order_data)
+    
+    # 检查 API 响应状态
+    result = response.get('result', {})
+    if result.get('code') != "S0000":
+        raise APIException(f"API Error: {result.get('message')}")
+        
+except ValidationException as e:
+    print(f"参数验证错误: {e}")
+except SignatureException as e:
+    print(f"签名验证错误: {e}")
+except APIException as e:
+    print(f"API调用错误: {e}")
+except EVOCloudException as e:
+    print(f"SDK错误: {e}")
+except Exception as e:
+    print(f"未知错误: {e}")
+```
+
+## 日志配置
+
+### 启用调试日志
+
+```python
+# 方法1: 使用客户端方法
+client.enable_debug_logging()
+
+# 方法2: 直接设置日志级别
+import logging
+client.set_log_level(logging.DEBUG)
+
+# 方法3: 使用工具函数配置
+from common.utils import configure_logging
+configure_logging(level=logging.DEBUG)
+```
+
+### 自定义日志格式
+
+```python
+import logging
+
+# 配置自定义日志格式
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('evocloud_sdk.log'),
+        logging.StreamHandler()
+    ]
+)
+```
+
+## 工具函数
+
+SDK 提供了一些实用的工具函数：
+
+```python
+from common.utils import (
+    generate_order_id,      # 生成订单ID
+    format_amount,          # 格式化金额
+    generate_trace_id,      # 生成追踪ID
+    validate_webhook_headers, # 验证Webhook头部
+    retry_on_failure,       # 重试装饰器
+    log_api_call           # API调用日志装饰器
+)
+
+# 生成唯一订单ID
+order_id = generate_order_id("PAY")  # "PAY_1703123456_abc12345"
+
+# 格式化金额（转换为字符串格式）
+amount_str = format_amount(100.50, decimals=2)  # "100.50"
+
+# 生成追踪ID
+trace_id = generate_trace_id()
+
+# 验证Webhook头部
+headers = {"Authorization": "...", "DateTime": "...", "MsgID": "...", "SignType": "..."}
+is_valid = validate_webhook_headers(headers)
+
+# 使用重试装饰器
+@retry_on_failure(max_retries=3, delay=1.0)
+def api_call():
+    return client._make_request("GET", "/some/endpoint")
+
+# 使用API调用日志装饰器
+@log_api_call
+def create_order(order_data):
+    return client._make_request("POST", "/create/order", data=order_data)
+```
+
+## 最佳实践
+
+### 1. 使用上下文管理器
+
+```python
+# 推荐：使用 with 语句确保资源正确释放
+with LinkpayClient(base_url, sid, sign_key) as client:
+    response = client._make_request("POST", endpoint, data=order_data)
+```
+
+### 2. 错误重试机制
+
+```python
+from common.utils import retry_on_failure
+
+@retry_on_failure(max_retries=3, delay=1.0, backoff_factor=2.0)
+def create_payment_order(order_data):
+    with LinkpayClient(base_url, sid, sign_key) as client:
+        return client._make_request(
+            "POST", 
+            f"/g2/v0/payment/mer/{client.sid}/evo.e-commerce.linkpay",
+            data=order_data
+        )
+```
+
+### 3. 订单ID 生成
+
+```python
+from common.utils import generate_order_id
+import time
+
+# 使用时间戳和随机数生成唯一订单ID
+order_id = generate_order_id("ORDER")
+
+# 或者自定义格式
+custom_order_id = f"SHOP_{int(time.time())}_{uuid.uuid4().hex[:8]}"
+```
+
+### 4. 金额处理
+
+```python
+from common.utils import format_amount
+
+# 确保金额格式正确
+amount = 99.99
+formatted_amount = format_amount(amount, decimals=2)  # "99.99"
+
+# 处理不同货币的小数位数
+usd_amount = format_amount(100.5, decimals=2)   # "100.50"
+jpy_amount = format_amount(1000, decimals=0)    # "1000"
+```
+
+## 开发指南
+
+### 项目结构
+
+```
+evocloud-sdk/
+├── common/              # 公共组件
+│   ├── __init__.py     # 模块导出
+│   ├── client.py       # 基础客户端
+│   ├── signature.py    # 签名处理
+│   ├── utils.py        # 工具函数
+│   └── exceptions.py   # 异常定义
+├── linkpay/            # LinkPay 模块
+│   ├── __init__.py     # 模块导出
+│   ├── client.py       # LinkPay 客户端
+│   └── model.py        # 数据模型
+├── merchant/           # 商户模块（预留）
+├── docs/               # 文档
+│   └── linkpayApiSwagger.json
+├── tests/              # 测试用例
+├── examples/           # 示例代码
+├── README.md           # 项目说明
+├── pyproject.toml      # 项目配置
+└── requirements.txt    # 依赖列表
+```
+
+### 贡献代码
+
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交更改 (`git commit -m 'Add some amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 创建 Pull Request
+
+### 运行测试
+
+```bash
+# 安装测试依赖
+pip install -e ".[test]"
+
+# 运行所有测试
+python -m pytest tests/
+
+# 运行特定测试
+python -m pytest tests/test_linkpay.py
+
+# 生成覆盖率报告
+python -m pytest --cov=evocloud_sdk tests/
+```
+
+### 代码规范
+
+项目遵循 PEP 8 代码规范，使用以下工具进行代码质量检查：
+
+```bash
+# 代码格式化
+black evocloud_sdk/
+
+# 代码检查
+flake8 evocloud_sdk/
+
+# 类型检查
+mypy evocloud_sdk/
+```
+
+## 常见问题 (FAQ)
+
+### Q: 如何处理签名验证失败？
+
+A: 检查以下几点：
+1. 确认 `sign_key` 是否正确
+2. 确认 `sign_type` 是否与服务端配置一致
+3. 检查系统时间是否准确
+4. 确认请求体内容没有被修改
+
+### Q: 支付链接多长时间有效？
+
+A: LinkPay 支付链接的有效期由 EVO Cloud 系统配置决定，通常为 30 分钟到 24 小时不等。
+
+### Q: 如何处理网络超时？
+
+A: 可以通过以下方式处理：
+```python
+# 增加超时时间
+client = LinkpayClient(base_url, sid, sign_key, timeout=120)
+
+# 增加重试次数
+client = LinkpayClient(base_url, sid, sign_key, max_retries=3)
+
+# 使用重试装饰器
+@retry_on_failure(max_retries=5, delay=2.0)
+def robust_api_call():
+    return client._make_request("POST", endpoint, data=data)
+```
+
+## 版本历史
+
+- **v0.1.0** (2024-01-01)
+  - 初始版本发布
+  - 支持 LinkPay 基础功能
+  - 完整的签名验证机制
+  - Webhook 处理支持
+  - 工具函数库
+
+## 许可证
+
+本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+
+## 支持与联系
+
+- 📧 邮箱: support@evocloud.com
+- 📖 文档: [EVO Cloud 开发者文档](https://docs.evocloud.com)
+- 🐛 问题反馈: [GitHub Issues](https://github.com/your-org/evocloud-sdk/issues)
+- 💬 技术交流: [开发者社区](https://community.evocloud.com)
+
+## 相关链接
+
+- [EVO Cloud 官网](https://www.evocloud.com)
+- [API 文档](https://docs.evocloud.com/api)
+- [开发者控制台](https://portal.evocloud.com)
+- [SDK 示例代码](https://github.com/your-org/evocloud-sdk-examples)
+- [Postman Collection](https://www.postman.com/evocloud/workspace/evocloud-api)
