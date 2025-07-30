@@ -1,0 +1,10 @@
+tree_sitter_systemverilog/__init__.py,sha256=FA7gd9rg0Hi4Q-9xTj3MIDbcA-ajxv1hEiImFC1U0io,1155
+tree_sitter_systemverilog/__init__.pyi,sha256=oixFm8lXsZZWYa5cRwj6brbqh37_fzN2rLE-dmX9_rA,247
+tree_sitter_systemverilog/_binding.pyd,sha256=y6pD7Q4jkuUgMvbxablo8m-iHsrnxdzc_z5tZc4m9Dc,19154944
+tree_sitter_systemverilog/binding.c,sha256=WXjqI_a96ViPICGYPNLyFjODGqePba9WXxJPh_WkRzA,850
+tree_sitter_systemverilog/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tree_sitter_systemverilog-0.1.1.dist-info/licenses/LICENSE,sha256=9M6qkec-Yj1rMIlaO2RODid3VKgciyhlW3XXqRE_GsQ,1080
+tree_sitter_systemverilog-0.1.1.dist-info/METADATA,sha256=OXbOfbCAkqMpHbjLADusOrNqrDtb7hbC8yxOIlHahTI,1952
+tree_sitter_systemverilog-0.1.1.dist-info/WHEEL,sha256=z40YWa8onIxyHkDOR5JKWJFzinWdOvHWfw2XhEx4gOY,100
+tree_sitter_systemverilog-0.1.1.dist-info/top_level.txt,sha256=vW9D8ADhna2ZGw6STvZM7i_IYEWlZqPcngQB79DtTY4,35
+tree_sitter_systemverilog-0.1.1.dist-info/RECORD,,
