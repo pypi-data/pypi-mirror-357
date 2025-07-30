@@ -1,0 +1,8 @@
+pyproject.toml
+anyapi_creator/__init__.py
+anyapi_creator/anyapi.py
+anyapi_creator.egg-info/PKG-INFO
+anyapi_creator.egg-info/SOURCES.txt
+anyapi_creator.egg-info/dependency_links.txt
+anyapi_creator.egg-info/requires.txt
+anyapi_creator.egg-info/top_level.txt
