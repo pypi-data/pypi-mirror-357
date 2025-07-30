@@ -1,0 +1,25 @@
+[NEAT-1122] 🐛 Inferred indices (#1243)
+
+# Description
+
+In the conversion of index from phycial model to DMS schema, I assumed
+in the original implementation that `Undefined` is a singleton and it
+turns out that is not the case.
+
+The following screenshot is from stopping the conversion of indices:
+
+![image](https://github.com/user-attachments/assets/fb16396d-2c06-4093-8fde-e80705ca4570)
+
+
+## Bump
+
+- [x] Patch
+- [ ] Minor
+- [ ] Skip
+
+## Changelog
+### Fixed
+
+- Neat no longer silently fails for `neat.to.cdf.data_model(...)` when
+indices does not specify `btree` or `inverted`. Note this bug was
+introduced in `0.123.0`
