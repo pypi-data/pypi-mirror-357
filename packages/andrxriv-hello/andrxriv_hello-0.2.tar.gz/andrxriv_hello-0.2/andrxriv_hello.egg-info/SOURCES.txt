@@ -1,0 +1,7 @@
+setup.py
+andrxriv_hello.egg-info/PKG-INFO
+andrxriv_hello.egg-info/SOURCES.txt
+andrxriv_hello.egg-info/dependency_links.txt
+andrxriv_hello.egg-info/top_level.txt
+src/__init__.py
+src/main.py
