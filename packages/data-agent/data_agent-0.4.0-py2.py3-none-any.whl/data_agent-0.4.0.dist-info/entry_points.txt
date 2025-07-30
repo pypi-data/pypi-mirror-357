@@ -1,0 +1,7 @@
+[console_scripts]
+da-broker = data_agent.broker.cli:run
+da-broker-svc = data_agent.broker.agent_main:run_event_loop
+data-agent = data_agent.local_cli:run
+
+[pyinstaller40]
+hook-dirs = data_agent.win32.hooks:get_hook_dirs
