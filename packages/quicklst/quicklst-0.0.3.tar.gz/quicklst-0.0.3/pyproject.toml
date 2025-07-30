@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quicklst"
+version = "0.0.3"
+authors = [
+    { name="Joschka Goes", email="jajo_11@outlook.com" },
+]
+description = "Read lst files produced by FAST ComTec's mpa system."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "setuptools",
+    "numpy",
+    "numba"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/jajo-11/quicklst"
+"Bug Tracker" = "https://github.com/jajo-11/quicklst/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+include-package-data = true
