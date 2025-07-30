@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: mseep-nebulagraph-mcp-server
+Version: 1.0.0
+Summary: A Model Context Protocol server providing tools to access NebulaGraph for usage by LLMs
+Home-page: 
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Keywords: mseep
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: mcp>=1.0.0
+Requires-Dist: nebula3-python>=3.8.0
+Requires-Dist: python-dotenv>=1.0.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Package managed by MseeP.ai
