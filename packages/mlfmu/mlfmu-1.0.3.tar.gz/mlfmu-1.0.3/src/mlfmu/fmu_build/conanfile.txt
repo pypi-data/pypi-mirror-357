@@ -1,0 +1,10 @@
+[requires]
+onnxruntime/1.18.1
+
+[options]
+*:shared=False
+onnx*:disable_static_registration=True
+
+[generators]
+CMakeDeps
+CMakeToolchain
