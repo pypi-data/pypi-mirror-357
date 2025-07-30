@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fc8f0ccf-e5a2-45b1-bb7f-c7a858e2ae53" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/easy_sm2_key.py" beforeDir="false" afterPath="$PROJECT_DIR$/easy_sm2_key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easy_sm2_key_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/easy_sm2_key_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easy_sm2_sign_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/easy_sm2_sign_test.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;bowenerchen&quot;
+  }
+}</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="easy_gmssl_wrapper" />
+                    <option name="lastUsedInstant" value="1735358874" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1735356399" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:bowenerchen/GmSSL-Python.git",
+    "accountId": "dc85d60a-3657-42ba-b714-666bc1144ea3"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2qe8LuFGiGG0s0X6tp2vbSpmrW6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for easy_random_data_test.MyTestCase.executor": "Run",
+    "Python tests.Python tests for easy_random_data_test.MyTestCase.test_random_data.executor": "Run",
+    "Python tests.Python tests for easy_sm2_key_test.SM2KeyCase.executor": "Run",
+    "Python tests.Python tests for easy_sm2_key_test.SM2KeyCase.test_decrypt_too_long_cipher.executor": "Run",
+    "Python tests.Python tests for easy_sm2_key_test.SM2KeyCase.test_digest_signature.executor": "Run",
+    "Python tests.Python tests for easy_sm2_key_test.SM2KeyCase.test_encrypt_too_long_plain.executor": "Run",
+    "Python tests.Python tests for easy_sm2_key_test.SM2KeyCase.test_has_no_private_key.executor": "Run",
+    "Python tests.Python tests for easy_sm2_key_test.SM2KeyCase.test_invalid_cipher_format.executor": "Run",
+    "Python tests.Python tests for easy_sm2_key_test.SM2KeyCase.test_invalid_cipher_mode.executor": "Run",
+    "Python tests.Python tests for easy_sm2_key_test.SM2KeyCase.test_key_export.executor": "Run",
+    "Python tests.Python tests for easy_sm2_key_test.SM2KeyCase.test_key_import.executor": "Run",
+    "Python tests.Python tests for easy_sm2_key_test.SM2KeyCase.test_new_sm2_key.executor": "Run",
+    "Python tests.Python tests for easy_sm2_key_test.SM2KeyCase.test_valid_encrypt_decrypt.executor": "Run",
+    "Python tests.Python tests for easy_sm2_sign_test.MyTestCase.executor": "Run",
+    "Python tests.Python tests for easy_sm2_sign_test.MyTestCase.test_sign_data.executor": "Run",
+    "Python tests.Python tests in easy_random_data_test.py.executor": "Run",
+    "Python tests.Python tests in easy_sm2_key_test.py.executor": "Run",
+    "Python tests.Python tests in easy_sm4_test.py.executor": "Run",
+    "Python.easy_sm2_key.executor": "Run",
+    "Python.random_data.executor": "Run",
+    "Python.sm2_cipher_mode.executor": "Run",
+    "Python.sm2_encryption_decryption.executor": "Run",
+    "Python.sm2_sign.executor": "Run",
+    "Python.sm3_hash_hmac.executor": "Run",
+    "Python.sm4_cbc.executor": "Run",
+    "Python.sm4_gcm.executor": "Run",
+    "Python.zuc.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "/Users/cyx/Library/Application Support/JetBrains/PyCharm2025.1/plugins/Shell Script/shellcheck",
+    "git-widget-placeholder": "easy__gmssl__wrapper",
+    "last_opened_file_path": "/Users/cyx/Documents/BoardStudy/Python3/easy_gmssl/easy_gmssl",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.splitter.proportion": "0.40563622",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python tests.Python tests for easy_random_data_test.MyTestCase">
+    <configuration name="easy_sm2_key" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="easy_gmssl" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/easy_sm2_key.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for easy_random_data_test.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="easy_gmssl" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;easy_random_data_test.MyTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for easy_sm2_key_test.SM2KeyCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="easy_gmssl" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;easy_sm2_key_test.SM2KeyCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for easy_sm2_sign_test.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="easy_gmssl" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;easy_sm2_sign_test.MyTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in easy_sm4_test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="easy_gmssl" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/easy_sm4_test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for easy_random_data_test.MyTestCase" />
+        <item itemvalue="Python tests.Python tests for easy_sm2_key_test.SM2KeyCase" />
+        <item itemvalue="Python tests.Python tests in easy_sm4_test.py" />
+        <item itemvalue="Python tests.Python tests for easy_sm2_sign_test.MyTestCase" />
+        <item itemvalue="Python.easy_sm2_key" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-880ecab49056-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.122" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fc8f0ccf-e5a2-45b1-bb7f-c7a858e2ae53" name="Changes" comment="" />
+      <created>1723091243016</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723091243016</updated>
+      <workItem from="1723091247946" duration="56000" />
+      <workItem from="1735011628372" duration="4010000" />
+      <workItem from="1735020397469" duration="2002000" />
+      <workItem from="1735355527967" duration="3569000" />
+      <workItem from="1750735536585" duration="977000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/easy_gmssl$sm2_sign.coverage" NAME="sm2_sign Coverage Results" MODIFIED="1735017249068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_easy_gmssl" />
+    <SUITE FILE_PATH="coverage/easy_gmssl$sm2_encryption_decryption.coverage" NAME="sm2_encryption_decryption Coverage Results" MODIFIED="1735011693138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_easy_gmssl" />
+    <SUITE FILE_PATH="coverage/easy_gmssl$sm4_gcm.coverage" NAME="sm4_gcm Coverage Results" MODIFIED="1735020052017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_easy_gmssl" />
+    <SUITE FILE_PATH="coverage/easy_gmssl$.coverage" NAME=" Coverage Results" MODIFIED="1750736478945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/easy_gmssl$zuc.coverage" NAME="zuc Coverage Results" MODIFIED="1735011727448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_easy_gmssl" />
+    <SUITE FILE_PATH="coverage/easy_gmssl$sm2_cipher_mode.coverage" NAME="sm2_cipher_mode Coverage Results" MODIFIED="1735022556181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_easy_gmssl" />
+    <SUITE FILE_PATH="coverage/easy_gmssl$sm4_cbc.coverage" NAME="sm4_cbc Coverage Results" MODIFIED="1735020027215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_easy_gmssl" />
+    <SUITE FILE_PATH="coverage/easy_gmssl$sm3_hash_hmac.coverage" NAME="sm3_hash_hmac Coverage Results" MODIFIED="1735017292579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_easy_gmssl" />
+    <SUITE FILE_PATH="coverage/easy_gmssl$easy_sm2_key.coverage" NAME="easy_sm2_key Coverage Results" MODIFIED="1750736244293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/easy_gmssl$random_data.coverage" NAME="random_data Coverage Results" MODIFIED="1735017324332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo_easy_gmssl" />
+  </component>
+</project>
