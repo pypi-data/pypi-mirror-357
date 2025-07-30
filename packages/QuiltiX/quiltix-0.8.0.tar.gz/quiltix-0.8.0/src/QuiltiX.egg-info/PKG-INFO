@@ -1,0 +1,506 @@
+Metadata-Version: 2.4
+Name: QuiltiX
+Version: 0.8.0
+Summary: MaterialX Graphical Node Editor
+Author-email: Manuel Köster <manuelkoestercg@gmail.com>, Richard Frangenberg <richard@prism-pipeline.com>
+License:                                  Apache License
+                                   Version 2.0, January 2004
+                                http://www.apache.org/licenses/
+        
+           TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+        
+           1. Definitions.
+        
+              "License" shall mean the terms and conditions for use, reproduction,
+              and distribution as defined by Sections 1 through 9 of this document.
+        
+              "Licensor" shall mean the copyright owner or entity authorized by
+              the copyright owner that is granting the License.
+        
+              "Legal Entity" shall mean the union of the acting entity and all
+              other entities that control, are controlled by, or are under common
+              control with that entity. For the purposes of this definition,
+              "control" means (i) the power, direct or indirect, to cause the
+              direction or management of such entity, whether by contract or
+              otherwise, or (ii) ownership of fifty percent (50%) or more of the
+              outstanding shares, or (iii) beneficial ownership of such entity.
+        
+              "You" (or "Your") shall mean an individual or Legal Entity
+              exercising permissions granted by this License.
+        
+              "Source" form shall mean the preferred form for making modifications,
+              including but not limited to software source code, documentation
+              source, and configuration files.
+        
+              "Object" form shall mean any form resulting from mechanical
+              transformation or translation of a Source form, including but
+              not limited to compiled object code, generated documentation,
+              and conversions to other media types.
+        
+              "Work" shall mean the work of authorship, whether in Source or
+              Object form, made available under the License, as indicated by a
+              copyright notice that is included in or attached to the work
+              (an example is provided in the Appendix below).
+        
+              "Derivative Works" shall mean any work, whether in Source or Object
+              form, that is based on (or derived from) the Work and for which the
+              editorial revisions, annotations, elaborations, or other modifications
+              represent, as a whole, an original work of authorship. For the purposes
+              of this License, Derivative Works shall not include works that remain
+              separable from, or merely link (or bind by name) to the interfaces of,
+              the Work and Derivative Works thereof.
+        
+              "Contribution" shall mean any work of authorship, including
+              the original version of the Work and any modifications or additions
+              to that Work or Derivative Works thereof, that is intentionally
+              submitted to Licensor for inclusion in the Work by the copyright owner
+              or by an individual or Legal Entity authorized to submit on behalf of
+              the copyright owner. For the purposes of this definition, "submitted"
+              means any form of electronic, verbal, or written communication sent
+              to the Licensor or its representatives, including but not limited to
+              communication on electronic mailing lists, source code control systems,
+              and issue tracking systems that are managed by, or on behalf of, the
+              Licensor for the purpose of discussing and improving the Work, but
+              excluding communication that is conspicuously marked or otherwise
+              designated in writing by the copyright owner as "Not a Contribution."
+        
+              "Contributor" shall mean Licensor and any individual or Legal Entity
+              on behalf of whom a Contribution has been received by Licensor and
+              subsequently incorporated within the Work.
+        
+           2. Grant of Copyright License. Subject to the terms and conditions of
+              this License, each Contributor hereby grants to You a perpetual,
+              worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+              copyright license to reproduce, prepare Derivative Works of,
+              publicly display, publicly perform, sublicense, and distribute the
+              Work and such Derivative Works in Source or Object form.
+        
+           3. Grant of Patent License. Subject to the terms and conditions of
+              this License, each Contributor hereby grants to You a perpetual,
+              worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+              (except as stated in this section) patent license to make, have made,
+              use, offer to sell, sell, import, and otherwise transfer the Work,
+              where such license applies only to those patent claims licensable
+              by such Contributor that are necessarily infringed by their
+              Contribution(s) alone or by combination of their Contribution(s)
+              with the Work to which such Contribution(s) was submitted. If You
+              institute patent litigation against any entity (including a
+              cross-claim or counterclaim in a lawsuit) alleging that the Work
+              or a Contribution incorporated within the Work constitutes direct
+              or contributory patent infringement, then any patent licenses
+              granted to You under this License for that Work shall terminate
+              as of the date such litigation is filed.
+        
+           4. Redistribution. You may reproduce and distribute copies of the
+              Work or Derivative Works thereof in any medium, with or without
+              modifications, and in Source or Object form, provided that You
+              meet the following conditions:
+        
+              (a) You must give any other recipients of the Work or
+                  Derivative Works a copy of this License; and
+        
+              (b) You must cause any modified files to carry prominent notices
+                  stating that You changed the files; and
+        
+              (c) You must retain, in the Source form of any Derivative Works
+                  that You distribute, all copyright, patent, trademark, and
+                  attribution notices from the Source form of the Work,
+                  excluding those notices that do not pertain to any part of
+                  the Derivative Works; and
+        
+              (d) If the Work includes a "NOTICE" text file as part of its
+                  distribution, then any Derivative Works that You distribute must
+                  include a readable copy of the attribution notices contained
+                  within such NOTICE file, excluding those notices that do not
+                  pertain to any part of the Derivative Works, in at least one
+                  of the following places: within a NOTICE text file distributed
+                  as part of the Derivative Works; within the Source form or
+                  documentation, if provided along with the Derivative Works; or,
+                  within a display generated by the Derivative Works, if and
+                  wherever such third-party notices normally appear. The contents
+                  of the NOTICE file are for informational purposes only and
+                  do not modify the License. You may add Your own attribution
+                  notices within Derivative Works that You distribute, alongside
+                  or as an addendum to the NOTICE text from the Work, provided
+                  that such additional attribution notices cannot be construed
+                  as modifying the License.
+        
+              You may add Your own copyright statement to Your modifications and
+              may provide additional or different license terms and conditions
+              for use, reproduction, or distribution of Your modifications, or
+              for any such Derivative Works as a whole, provided Your use,
+              reproduction, and distribution of the Work otherwise complies with
+              the conditions stated in this License.
+        
+           5. Submission of Contributions. Unless You explicitly state otherwise,
+              any Contribution intentionally submitted for inclusion in the Work
+              by You to the Licensor shall be under the terms and conditions of
+              this License, without any additional terms or conditions.
+              Notwithstanding the above, nothing herein shall supersede or modify
+              the terms of any separate license agreement you may have executed
+              with Licensor regarding such Contributions.
+        
+           6. Trademarks. This License does not grant permission to use the trade
+              names, trademarks, service marks, or product names of the Licensor,
+              except as required for reasonable and customary use in describing the
+              origin of the Work and reproducing the content of the NOTICE file.
+        
+           7. Disclaimer of Warranty. Unless required by applicable law or
+              agreed to in writing, Licensor provides the Work (and each
+              Contributor provides its Contributions) on an "AS IS" BASIS,
+              WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+              implied, including, without limitation, any warranties or conditions
+              of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+              PARTICULAR PURPOSE. You are solely responsible for determining the
+              appropriateness of using or redistributing the Work and assume any
+              risks associated with Your exercise of permissions under this License.
+        
+           8. Limitation of Liability. In no event and under no legal theory,
+              whether in tort (including negligence), contract, or otherwise,
+              unless required by applicable law (such as deliberate and grossly
+              negligent acts) or agreed to in writing, shall any Contributor be
+              liable to You for damages, including any direct, indirect, special,
+              incidental, or consequential damages of any character arising as a
+              result of this License or out of the use or inability to use the
+              Work (including but not limited to damages for loss of goodwill,
+              work stoppage, computer failure or malfunction, or any and all
+              other commercial damages or losses), even if such Contributor
+              has been advised of the possibility of such damages.
+        
+           9. Accepting Warranty or Additional Liability. While redistributing
+              the Work or Derivative Works thereof, You may choose to offer,
+              and charge a fee for, acceptance of support, warranty, indemnity,
+              or other liability obligations and/or rights consistent with this
+              License. However, in accepting such obligations, You may act only
+              on Your own behalf and on Your sole responsibility, not on behalf
+              of any other Contributor, and only if You agree to indemnify,
+              defend, and hold each Contributor harmless for any liability
+              incurred by, or claims asserted against, such Contributor by reason
+              of your accepting any such warranty or additional liability.
+        
+           END OF TERMS AND CONDITIONS
+        
+           APPENDIX: How to apply the Apache License to your work.
+        
+              To apply the Apache License to your work, attach the following
+              boilerplate notice, with the fields enclosed by brackets "[]"
+              replaced with your own identifying information. (Don't include
+              the brackets!)  The text should be enclosed in the appropriate
+              comment syntax for the file format. We also recommend that a
+              file or class name and description of purpose be included on the
+              same "printed page" as the copyright notice for easier
+              identification within third-party archives.
+        
+           Copyright [yyyy] [name of copyright owner]
+        
+           Licensed under the Apache License, Version 2.0 (the "License");
+           you may not use this file except in compliance with the License.
+           You may obtain a copy of the License at
+        
+               http://www.apache.org/licenses/LICENSE-2.0
+        
+           Unless required by applicable law or agreed to in writing, software
+           distributed under the License is distributed on an "AS IS" BASIS,
+           WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+           See the License for the specific language governing permissions and
+           limitations under the License.
+        
+Project-URL: Homepage, https://github.com/PrismPipeline/QuiltiX
+Project-URL: Bug Reports, https://github.com/PrismPipeline/QuiltiX/issues
+Project-URL: Source, https://github.com/PrismPipeline/QuiltiX
+Keywords: openusd,materialx
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: Topic :: Multimedia :: Graphics :: Editors
+Requires-Python: ~=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: NOTICE
+Requires-Dist: pluggy
+Requires-Dist: materialx~=1.39
+Requires-Dist: QtPy
+Requires-Dist: PySide6~=6.5.0
+Requires-Dist: PyOpenGL
+Requires-Dist: PyOpenGL_accelerate
+Requires-Dist: NodeGraphQt-QuiltiX-fork~=0.7
+Provides-Extra: dev
+Requires-Dist: black; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-qt; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Provides-Extra: plugins
+Requires-Dist: pygments; extra == "plugins"
+Requires-Dist: materialxjson; extra == "plugins"
+Provides-Extra: all
+Requires-Dist: QuiltiX[dev]; extra == "all"
+Requires-Dist: QuiltiX[plugins]; extra == "all"
+Dynamic: license-file
+
+<p align="center"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PrismPipeline/QuiltiX/main/media/quiltix-logo-full.svg" height="170">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PrismPipeline/QuiltiX/main/media/quiltix-logo-full-light-mode.svg" height="200">
+  <img alt="QuiltiX" src="https://raw.githubusercontent.com/PrismPipeline/QuiltiX/main/media/quiltix-logo-full-light-mode.svg">
+</picture></p>
+
+----  
+
+<div align="center">
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/PrismPipeline/QuiltiX/LICENSE)
+[![Version](https://img.shields.io/github/v/release/PrismPipeline/QuiltiX)](https://github.com/PrismPipeline/QuiltiX/releases/latest)
+</div>
+
+QuiltiX is a graphical node editor to edit, and author [MaterialX](https://materialx.org/) based materials of 3D assets. It includes a viewport based on [OpenUSD](https://www.openusd.org/release/index.html)'s [Hydra](https://openusd.org/release/glossary.html#hydra), which enables viewing your assets in any renderer supporting both Hydra & MaterialX.
+
+<img align="center" padding=5 src="https://raw.githubusercontent.com/PrismPipeline/QuiltiX/main/media/QuiltiX.png"> 
+
+## Table of Contents  <!-- omit from toc -->
+
+- [Requirements](#requirements)
+- [Installation](#installation)
+  - [From PyPi](#from-pypi)
+  - [From Zip](#from-zip)
+  - [From Source](#from-source)
+- [Running QuiltiX](#running-quiltix)
+  - [Running QuiltiX using hython](#running-quiltix-using-hython)
+- [QuiltiX Plugins](#quiltix-plugins)
+  - [Creating a QuiltiX plugin](#creating-a-quiltix-plugin)
+  - [QuiltiX Plugin hooks](#quiltix-plugin-hooks)
+- [Integrating with your environment](#integrating-with-your-environment)
+  - [Using your own compiled OpenUSD](#using-your-own-compiled-openusd)
+  - [Adding Hydra delegates](#adding-hydra-delegates)
+    - [Arnold](#arnold)
+    - [Karma](#karma)
+  - [Adding custom MaterialX Node definitions](#adding-custom-materialx-node-definitions)
+- [Platform support](#platform-support)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Requirements
+QuiltiX requires Python 3.11+ as well as compiled versions of USD and MaterialX.
+
+## Installation
+### From PyPi
+
+```shell
+pip install QuiltiX
+```
+
+If you additionally require pre-built binaries for MaterialX & USD we currently provide these for Windows.
+On Linux/Mac you need to provide your own binaries for now. Here are linked instructions for [MaterialX](https://github.com/AcademySoftwareFoundation/MaterialX/tree/main#quick-start-for-developers) & [OpenUSD](https://github.com/PixarAnimationStudios/OpenUSD/blob/release/BUILDING.md)
+```shell
+pip install QuiltiX
+pip install git+https://github.com/PrismPipeline/OpenUSD_build.git@25.05.01-win-mtlx-1.39.3
+```
+
+### From Zip
+For Windows a zip containing QuiltiX and all required dependencies can be downloaded from [here](https://prism-pipeline.com/quiltix/).  
+Just extract and execute the `QuiltiX.bat`
+
+### From Source
+1) Clone the repository
+
+```
+git clone https://github.com/PrismPipeline/QuiltiX.git
+cd QuiltiX
+```
+
+2) Install the dependencies
+
+This will install the base python dependencies, excluding any development dependencies, MaterialX & USD
+
+```
+pip install . 
+```
+
+<details>
+  <summary>Additional install options</summary>
+
+If you want want to contribute it is recommended to install QuiltiX in [development/editable mode](https://setuptools.pypa.io/en/latest/userguide/development_mode.html).  
+It is also recommended to also install QuiltiX's dev dependencies.
+```
+pip install -e .[dev]
+```
+
+For more information see [pyproject.toml](pyproject.toml)
+</details>
+
+
+## Running QuiltiX
+
+```
+python -m QuiltiX
+```
+
+Or if you installed QuiltiX via zip you can execute the `QuiltiX.bat` after extracting.
+
+### Running QuiltiX using hython
+
+QuiltiX can be run from `hython`, which is Houdini's python executable. This way you can use Houdini's built USD and MaterialX and don't have to worry about providing your own.  
+You will also be able to use Render delegates for Houdini like Karma. Read more in the [Karma](#karma) section.
+
+<details>
+  <summary>Hython instructions</summary>
+
+You will still need some additional libraries required by QuiltiX, so it is still necessary to install the dependencies mentioned in [Installation](#installation).  
+You can then execute QuiltiX while making sure that both QuiltiX and its python dependencies are in the `PYTHONPATH` environmenv variable:
+```shell
+cd QuiltiX_root
+set PYTHONPATH=%PYTHONPATH%;./src;/path/to/python/dependencies
+/path/to/hython.exe -c "from QuiltiX import quiltix;quiltix.launch()"
+```
+
+Or if you have a virtual environment
+```shell
+cd QuiltiX_root
+/path/to/venv/Scripts/activate
+set PYTHONPATH=%PYTHONPATH%;%VIRTUAL_ENV%/Lib/site-packages;./src
+/path/to/hython.exe -c "from QuiltiX import quiltix;quiltix.launch()"
+```
+> Note that currently both the Storm as well as HoudiniGL render delegates do not seem to work in QuiltiX when being launched from hython.
+</details>
+
+## QuiltiX Plugins
+
+QuiltiX supports adding Plugins via the environment variable `QUILTIX_PLUGIN_PATHS`. We are using [pluggy](https://pluggy.readthedocs.io/en/stable/) in the backend to load them.
+
+### Creating a QuiltiX plugin
+To create a QuiltiX plugin you need to create a `plugin.py` file. In this file you need implement one or multiple `hooks` that QuiltiX provides. Example:
+
+```python
+@qx_plugin.hookimpl
+def after_ui_init(editor: "quiltix.QuiltiXWindow"):
+    # I am printing the QuiltiXWindow
+    print(editor)
+```
+
+You also need to implement a `plugin_name` function returning the name of your plugin. Example:
+```python
+def plugin_name() -> str:
+    return "QuiltiXWindow printer"
+```
+
+If your plugin has the possibility to not be valid (due to missing dependencies or similar) you can implement a `is_valid` function returning `False` to avoid it loading entirely. Example:
+```python
+def is_valid() -> bool:
+    if 1==1:
+      return False
+    else:
+      return True
+  ```
+
+For further reference please take a look at the `sample_plugins` dir and the tests in `tests/test_plugins.py`
+
+### QuiltiX Plugin hooks
+These are the hooks that are currently supported, but there is no harm in adding more. If you would like to add hooks in other parts of QuiltiX to support your features, please open an Issue/PR. 
+The hook specifications live in `src/QuiltiX/qx_plugin.py`
+| hook | Purpose |
+|-|-|
+| before_ui_init | Building UI funcionality on top of the QuiltiX UI |
+| after_ui_init | Adjusting parts of the internals before the QuiltiX UI startup |
+| before_mx_import | Adjusting things like environment variables before MaterialX gets initialized |
+| after_mx_import | Adjusting MaterialX specific functionality right after it gets imported |
+| before_pxr_import | Adjusting things like environment variables before pxr (OpenUSD) gets initialized |
+| after_pxr_import | Adjusting pxr (OpenUSD) specific functionality right after it gets imported |
+
+
+## Integrating with your environment
+QuiltiX tries to rely as much as possible on pre-existing environment variables from MaterialX/USD to extend its systems.
+
+Overview over the most important Environment Variables:
+| Environment Variable | Purpose | Variable Type | Example |
+|-|-|-|-|
+| PXR_PLUGINPATH_NAME | Paths to Hydra delegate plugins | Paths | |
+| PXR_MTLX_STDLIB_SEARCH_PATHS | Paths to standard MaterialX node definition locations | Paths | |
+| PXR_MTLX_PLUGIN_SEARCH_PATHS | Paths to custom MaterialX node definition locations | Paths | |
+| HD_DEFAULT_RENDERER | Name of the default Hydra delegate for the viewport | String | GL |
+
+### Using your own compiled OpenUSD
+
+To be able to use your own version of OpenUSD for QuiltiX instead of relying on our [provided version](https://github.com/PrismPipeline/OpenUSD_build), you will need to provide some environment variables. Make sure that you append to them!  
+Essentially you need to add all `.dll`s to `PATH` and the `pxr` python library to `PYTHONPATH`.
+
+| Environment Variable | Path relative to compiled ${USD_ROOT} |
+|-|-|
+| PATH | ${USD_ROOT}/bin | 
+| PATH | ${USD_ROOT}/lib | 
+| PYTHONPATH | ${USD_ROOT}/lib/python |
+
+
+### Adding [Hydra delegates](https://openusd.org/release/glossary.html#hydra)
+> **_NOTE_**  
+> The Hydra renderer needs to support MaterialX for it to work in QuiltiX.  
+
+
+**_What is a Hdyra Delegate?_**  
+"Hydra Render Delegates are bridges between the Hydra viewport and a renderer. [...] The Hydra Render Delegate system allows the ability to switch out the backend renderer for the viewport data in Hydra. [...]"<sup>[[src]](https://learn.foundry.com/katana/dev-guide/Plugins/HydraRenderDelegates/Introduction.html#what-is-a-hydra-render-delegate)</sup>
+
+The [Storm Hydra Delegate](https://openusd.org/dev/api/hd_storm_page_front.html) by Pixar is both shipped with USD and enabled per default in QuiltiX. 
+
+> Adding additional Hydra delegates can, depending on the renderer, be a non-trivial task due to the need of matching USD (and potentially MaterialX) versions for the compiled binaries. Some renderers also need additional configuration for additional features like renderer specific procedurals or shaders.
+
+To register a Hydra renderer plugin the Hydra plugin directory of the renderer needs to be added to the `PXR_PLUGINPATH_NAME` environment variable. Generally renderers also need their binaries added to the `PATH` environment variable, but there might be additional variables for licensing or additional features.  
+
+Below is a non-exhaustive list of install instructions for Hydra renderers.
+
+#### Arnold
+
+To use Arnold in QuiltiX you need the following:
+* Arnold SDK
+* A compiled version of [arnold-usd](https://github.com/Autodesk/arnold-usd)
+
+
+<details>
+  <summary>Full Arnold install instructions</summary>
+
+Arnold SDK download instructions can be found [here](https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_download_arnold_html#download-arnold-sdk).
+To install arnold-usd one can build from source [here](https://github.com/Autodesk/arnold-usd).
+
+For Windows you can find a compiled version of `hdArnold` and the Arnold SDK [here](https://github.com/PrismPipeline/arnold-usd/releases/tag/v7.2.5.2) with [install instructions](https://github.com/PrismPipeline/arnold-usd/blob/0d97fa0af15600217036e32985ee0b7fe7a34051/README.md).  
+> This plugin can be used in USD applications, like QuiltiX, to add the Arnold Hydra delegate.
+> 
+> Download and extract the archive and then add the following paths to the environment:  
+> `Arnold/hdArnold/plugin` to `PXR_PLUGINPATH_NAME`  
+> `Arnold/Arnold-7.2.5.2-windows/bin` to `PATH`  
+
+</details>
+
+#### Karma
+To run Karma you need to execute QuiltiX from hython. See [here](#running-quiltix-using-hython) for more information.
+
+It is possible to use additional Hydra delegates, which are available in the Houdini environment.
+
+#### Changing the active Hydra delegate <!-- omit from toc -->
+The default Hydra delegate can be changed by setting the `HD_DEFAULT_RENDERER` environment variable to the preferred renderer.
+
+```shell
+set HD_DEFAULT_RENDERER="GL"
+```
+
+After opening QuiltiX the active Hydra delegate can be changed in the "View" -> "Set Renderer" menu.
+
+
+
+### Adding custom MaterialX Node definitions
+
+To add custom MaterialX node defintions they can be added by adding the location of the node definition files to the `PXR_MTLX_PLUGIN_SEARCH_PATHS` environment variable.
+
+## Platform support
+QuiltiX has been developed with all platforms in mind, but has been developed on Windows. If you see any issues on another platform please open up an issue.
+
+## Contributing
+
+We welcome contributions to the QuiltiX! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes.
+4. Submit a pull request.
+
+## License
+
+QuiltiX is licensed under the Apache License. See [LICENSE](LICENSE) for more information.

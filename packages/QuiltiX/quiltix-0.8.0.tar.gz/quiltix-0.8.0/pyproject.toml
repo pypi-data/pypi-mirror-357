@@ -1,0 +1,85 @@
+[project]
+name = "QuiltiX"
+version = "0.8.0"
+description = "MaterialX Graphical Node Editor"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = "~=3.11"
+keywords = ["openusd", "materialx"]
+
+authors = [
+    {name = "Manuel Köster", email = "manuelkoestercg@gmail.com" },
+    {name = "Richard Frangenberg", email = "richard@prism-pipeline.com" },
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows :: Windows 10",
+    "Topic :: Multimedia :: Graphics :: Editors",
+]
+
+dependencies = [
+    "pluggy",
+    "materialx~=1.39",
+    "QtPy",
+    "PySide6~=6.5.0",
+    "PyOpenGL",
+    "PyOpenGL_accelerate",
+    # "OpenUSD_build @ git+https://github.com/PrismPipeline/OpenUSD_build.git@24.03-win-mtlx-1.38.9"
+    "NodeGraphQt-QuiltiX-fork~=0.7",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+    "pytest",
+    "pytest-qt",
+    "pytest-cov",
+    # "MaterialX-stubs @ git+https://github.com/manuelkoester/MaterialX-stubs.git@7696cbb"
+]
+plugins = [
+    "pygments",
+    "materialxjson"
+]
+
+all = [
+    "QuiltiX[dev]",
+    "QuiltiX[plugins]",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/PrismPipeline/QuiltiX"
+"Bug Reports" = "https://github.com/PrismPipeline/QuiltiX/issues"
+"Source" = "https://github.com/PrismPipeline/QuiltiX"
+
+[project.gui-scripts]
+quiltix = "QuiltiX:quiltix"
+
+[build-system]
+requires = ["setuptools>=61.0.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "--cov=QuiltiX"
+testpaths = [
+    "tests",
+]
+log_cli=true
+log_level="DEBUG"
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
