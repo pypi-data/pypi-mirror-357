@@ -1,0 +1,2 @@
+[console_scripts]
+nanofinderparser = nanofinderparser.cli:app
