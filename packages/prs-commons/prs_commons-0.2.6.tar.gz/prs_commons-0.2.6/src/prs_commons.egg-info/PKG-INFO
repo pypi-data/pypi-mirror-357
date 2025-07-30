@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: prs-commons
+Version: 0.2.6
+Summary: Common utilities and shared code for PRS microservices
+Author-email: Isha Foundation IT <it@ishafoundation.org>
+Maintainer-email: Isha Foundation IT <it@ishafoundation.org>
+License: MIT
+Project-URL: Homepage, https://github.com/IshaFoundationIT/prs-facade-common
+Project-URL: Documentation, https://ishafoundationit.github.io/prs-facade-common/
+Project-URL: Repository, https://github.com/IshaFoundationIT/prs-facade-common
+Project-URL: Issues, https://github.com/IshaFoundationIT/prs-facade-common/issues
+Project-URL: Changelog, https://github.com/IshaFoundationIT/prs-facade-common/blob/main/CHANGELOG.md
+Keywords: odoo,rpc,utilities,microservices
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Python: >=3.11
+License-File: LICENSE
+Requires-Dist: odoorpc>=0.10.1
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: boto3>=1.28.0
+Requires-Dist: botocore>=1.31.0
+Requires-Dist: typing-extensions>=4.0.0
+Requires-Dist: aioboto3>=12.3.0
+Requires-Dist: aiohttp>=3.9.0
+Provides-Extra: dev
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: isort>=5.12.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.20.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: pytest-mock>=3.10.0; extra == "dev"
+Requires-Dist: types-requests>=2.31.0.1; extra == "dev"
+Requires-Dist: types-python-dateutil>=2.8.19.4; extra == "dev"
+Requires-Dist: twine>=4.0.0; extra == "dev"
+Requires-Dist: build>=0.10.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: pre-commit>=3.6.0; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx>=7.0.0; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=1.3.0; extra == "docs"
+Requires-Dist: myst-parser>=2.0.0; extra == "docs"
+Dynamic: license-file
