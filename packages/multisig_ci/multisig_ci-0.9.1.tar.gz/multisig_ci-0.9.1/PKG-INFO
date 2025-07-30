@@ -1,0 +1,17 @@
+Metadata-Version: 2.3
+Name: multisig_ci
+Version: 0.9.1
+Summary: Gnosis safe ci scripts.
+License: AGPLv3
+Author: kx9x
+Author-email: kx9x@protonmail.com
+Requires-Python: >=3.10,<3.11
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: brownie_safe (==0.9.1)
+Requires-Dist: eth-brownie (==1.20.7)
+Requires-Dist: psutil (>=5.8.0)
+Requires-Dist: requests (>=2.26.0)
+Requires-Dist: safe-eth-py (==6.0.0b30)
+Requires-Dist: tenacity (>=8.0.1)
