@@ -1,0 +1,12 @@
+aiohttp
+configparser
+future
+pandas>=2.0.0
+pipmaster
+pydantic
+python-dotenv
+pyuca
+setuptools
+tenacity
+tiktoken
+xlsxwriter>=3.1.0

@@ -1,0 +1,6 @@
+include requirements.txt
+include LICENSE
+
+exclude setup.py
+exclude setup.cfg
+exclude README.md
