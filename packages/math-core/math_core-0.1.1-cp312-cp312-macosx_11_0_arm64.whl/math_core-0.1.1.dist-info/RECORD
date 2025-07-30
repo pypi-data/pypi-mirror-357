@@ -1,0 +1,8 @@
+math_core-0.1.1.dist-info/METADATA,sha256=Zg9dHlU5XXVow464Vk-1eVuFp8odOXIZ64J1CfElhQU,7147
+math_core-0.1.1.dist-info/WHEEL,sha256=lKF1x2UaOHDUKmYwqYyNAuk2SmZm-X0V9mSA2tiAos4,104
+math_core-0.1.1.dist-info/licenses/LICENSE,sha256=RSLbORUByf3jVTs3epzsi90F64DdC7PfUdnkTD5Mjy8,1066
+math_core/__init__.py,sha256=oM72i89Wxb4v5OwTN-3piVRz5cL4R-gjIm5wSnf7wOM,199
+math_core/_math_core_rust.cpython-312-darwin.so,sha256=p8weWtRuGWc2HuY1h6T8hrzstkD2K60PGT1X_JvbaFw,621472
+math_core/_math_core_rust.pyi,sha256=cceMDuveINUPiXHMypEbOuvquBmO6uWDgTs_46KTo-g,1563
+math_core/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+math_core-0.1.1.dist-info/RECORD,,
