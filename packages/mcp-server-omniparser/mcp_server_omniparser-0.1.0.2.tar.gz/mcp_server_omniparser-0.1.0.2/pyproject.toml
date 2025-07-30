@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-server-omniparser"
+version = "0.1.0.2"
+description = "MCP Server for UI automation using Microsoft OmniParser model for screen parsing and element detection"
+authors = [
+    {name = "win10ogod", email = "jmes100010@gmail.com"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+keywords = ["mcp", "ui-automation", "omniparser", "computer-vision", "screen-parsing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: System :: Systems Administration",
+]
+
+dependencies = [
+    "mcp>=1.0.0",
+    "torch",
+    "torchvision", 
+    "transformers",
+    "ultralytics==8.3.70",
+    "opencv-python",
+    "pillow",
+    "numpy",
+    "pyautogui",
+    "screeninfo",
+    "easyocr",
+    "supervision==0.18.0",
+    "timm",
+    "einops==0.8.0",
+    "accelerate",
+    "pydantic>=2.0.0",
+    "asyncio",
+    "typing-extensions",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio", 
+    "black",
+    "isort",
+    "mypy",
+    "pre-commit",
+]
+
+[project.scripts]
+mcp-server-omniparser = "omniparser_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
