@@ -1,0 +1,8 @@
+quicklst/__init__.py,sha256=lp4erBzP80S8tNxPlSsatpfHwTHyqVyKxJbg4WrqEBM,23
+quicklst/distortion_map.npz,sha256=MPmwC_BNWOq0AygBAvAA0YmztHHMUYtE0WgxpCeGQmo,1214086
+quicklst/quicklst.py,sha256=tbyVlANEv2PAhWB4gtERWDHCTvLLB66z9L7PPbYmGrU,22730
+quicklst-0.0.3.dist-info/licenses/LICENSE,sha256=EX-2tHpzLNdcpp84fm9yhDTzvsH0HbJ2LTYSIZTBLeU,1069
+quicklst-0.0.3.dist-info/METADATA,sha256=X9sALVz3k4liMN0rVCmyvX70g61oD3RWKXBo54I521E,1046
+quicklst-0.0.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+quicklst-0.0.3.dist-info/top_level.txt,sha256=ilWYdzml1pKV0cUt_8gUqCtUWfI9jl36RdqZ2YeLRWg,9
+quicklst-0.0.3.dist-info/RECORD,,
