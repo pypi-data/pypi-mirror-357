@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+setup.py
+mseep_mcp_server_outlook_email.egg-info/PKG-INFO
+mseep_mcp_server_outlook_email.egg-info/SOURCES.txt
+mseep_mcp_server_outlook_email.egg-info/dependency_links.txt
+mseep_mcp_server_outlook_email.egg-info/requires.txt
+mseep_mcp_server_outlook_email.egg-info/top_level.txt
+src/EmailMetadata.py
+src/MongoDBHandler.py
+src/OutlookConnector.py
+src/SQLiteHandler.py
+src/__init__.py
+src/debug_utils.py
+src/mcp_server.py
+src/tools/__init__.py
+src/tools/embedding_processor.py
