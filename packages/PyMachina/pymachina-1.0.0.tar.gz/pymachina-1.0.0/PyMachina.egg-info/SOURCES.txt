@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+PyMachina/__init__.py
+PyMachina/core.py
+PyMachina.egg-info/PKG-INFO
+PyMachina.egg-info/SOURCES.txt
+PyMachina.egg-info/dependency_links.txt
+PyMachina.egg-info/not-zip-safe
+PyMachina.egg-info/requires.txt
+PyMachina.egg-info/top_level.txt
