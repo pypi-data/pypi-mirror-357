@@ -1,0 +1,34 @@
+stage: # set stage via CLI
+root: /fsx/xrtech/dryrun_tmp/dl3dv10k_wai # path of wai-formatted dataset
+data_split: 1K
+
+gpus: 0
+cpus: 10
+mem: 20
+scenes_per_job: 2
+conda_env: # pass the name of our conda environment
+nodelist: h100-ai-p5en48xlarge-[0-10]
+
+dry_run_filter: [0, 5] # for dry-run
+
+stages:
+  conversion:
+    script: conversion/dl3dv.py
+    config: conversion/dl3dv.yaml
+    scenes_per_job: 200 # fast
+  undistortion:
+    script: undistort.py
+    config: undistortion/default.yaml
+  mesh_render: null
+  metric3dv2:
+    script: run_metric3dv2.py
+    config: metric3dv2/default.yaml
+    gpus: 1
+  metric_alignment_colmap:
+    script: metric_alignemnt/metric_alignment_colmap.py
+    config: metric_alignment/colmap.yaml
+    gpus: 1
+  covisibility:
+    script: covisibility.py
+    config: covisibility/covisibility_pred_depth.yaml
+    gpus: 1

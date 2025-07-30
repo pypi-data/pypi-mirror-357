@@ -1,0 +1,17 @@
+root:  # needs to be set via argument: root=<wai_dataset_root_path>
+
+model_path: /xr_maps_research/code/Metric3D
+ckpt_path: /xr_maps_research/checkpoints/metric3dv2/metric_depth_vit_large_800k.pth
+out_path: metric3dv2/v0 # to enable some simple versioning
+
+scene_filters:
+  - exists: images
+  - exists: scene_meta.json
+  - process_state: [undistortion, finished]
+  - process_state_not: [metric3dv2, finished]
+
+frame_modalities: # what to load for each frame
+  - image
+
+batch_size: 4
+num_workers: 4

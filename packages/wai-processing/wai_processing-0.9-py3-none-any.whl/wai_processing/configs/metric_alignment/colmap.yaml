@@ -1,0 +1,8 @@
+root:  # needs to be set via argument: root=<wai_dataset_root_path>
+scene_filters:
+  - exists: colmap
+  - process_state: [metric3dv2, finished]
+  - process_state_not: [metric_alignment_colmap, finished] # can overwrite other metric alignments
+
+max_num_frames: 50 # maximum number of frames used to estimate metric scale
+device: cuda

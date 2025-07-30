@@ -1,0 +1,15 @@
+original_root: /datasets/dioptra_vlx_processed_landscape
+root: /fsx/xrtech/data/dioptra_vlx_processed_landscape
+colmap_root: null
+fail_on_missing_colmap: False
+dataset_name: dioptra
+version: 0.1
+overwrite: True
+
+additional_processing_states: [
+  [undistortion, finished],
+]
+
+scene_filters:
+ - ^(?!\.aws-datasync$).*  # Regex matching to avoid any scene names called .aws-datasync, there are some folders on the AWS cluster /datasets/ called .aws-datasync which seem to originate from the AWS S3 -> cluster copy
+ - process_state_not: [conversion, finished]

@@ -1,0 +1,13 @@
+root:  # needs to be set via argument: root=<wai_dataset_root_path>
+overwrite: True
+scene_filters:
+  - exists: scene_meta.json
+  - exists: rendered_mesh_faces
+  - process_state: [rendering, finished]
+  - process_state_not: [semantic_mapping, finished]
+
+invalid_face_id: -1
+
+supported_semantics_mapping_modalities : [majority_voting]
+semantics_mapping_modality: majority_voting
+

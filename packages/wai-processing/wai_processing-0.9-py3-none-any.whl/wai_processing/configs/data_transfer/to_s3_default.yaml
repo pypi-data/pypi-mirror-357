@@ -1,0 +1,20 @@
+root: # Needs to be set via argument: root=<wai_dataset_root_path>
+
+bucket_name: xri-mapsr-rl-research-1  # Name of the S3 bucket
+region_name: us-east-2  # Optional, AWS region where the S3 bucket is located
+s3_prefix: wai_datasets  # Root directory in the S3 bucket for storing wai datasets
+s3_wai_dataset_name:  # Optional, name of the wai dataset on S3; leave empty to use the same name as the local wai dataset
+
+max_concurrent_tasks: 100  # Maximum number of concurrent tasks
+
+# Frame/Scene modalities to transfer:
+#  - Use "all" to transfer all available frame/scene modalities
+#  - Use an empty list [] to skip transferring any frame/scene modalities
+#  - Provide a list of specific modality names (as a list of strings) to transfer only those frame/scene modalities
+frame_modalities_to_transfer: all
+scene_modalities_to_transfer: all
+
+scene_filters:
+  - ^(?!\.aws-datasync$).*  # Regex matching to avoid any scene names called .aws-datasync, there are some folders on the AWS cluster /datasets/ called .aws-datasync which seem to originate from the AWS S3 -> cluster copy
+  - exists: scene_meta.json
+  - process_state: [covisibility, finished]

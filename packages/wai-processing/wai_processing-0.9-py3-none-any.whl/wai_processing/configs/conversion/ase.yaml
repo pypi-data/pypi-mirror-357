@@ -1,0 +1,20 @@
+original_root: /datasets/AriaSyntheticDataset_filtered
+root: /fsx/xrtech/wai/ase
+
+original_root_scene_config_path: null # Original root directory of the scene_config.json files if different from `original_root`
+ase_semantic_class_names_path: /fsx/xrtech/raw_data/ASEv2/metadata/ase_semantic_class_names.txt  # List of semantic class names
+ase_calib_json_path: /fsx/xrtech/raw_data/ASEv2/metadata/ase_calib_json.json  # Sensors calibration
+
+dataset_name: ASEv2
+version: 0.1
+rotate_to_portrait: True
+overwrite: True
+sensor_names: ["camera-rgb", "camera-slam-left", "camera-slam-right"]
+
+additional_processing_states: [
+  [undistortion, finished],
+]
+
+scene_filters:
+ - ^(?!\.aws-datasync$).*  # Regex matching to avoid any scene names called .aws-datasync, there are some folders on the AWS cluster /datasets/ called .aws-datasync which seem to originate from the AWS S3 -> cluster copy
+ - process_state_not: [conversion, finished]

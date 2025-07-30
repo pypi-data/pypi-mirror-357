@@ -1,0 +1,18 @@
+## AWS
+original_root: /datasets/RealEstate10K/train
+root: /fsx/xrtech/data/re10k
+## RSC
+#original_root: /xr_maps_research/raw_datasets/re10k-720-shard/train/
+#root: root=/xr_maps_research/wai/RealEstate10K/
+
+dataset_name: RealEstate10K
+version: 0.1
+overwrite: True
+
+additional_processing_states: [
+  [undistortion, finished],
+]
+
+scene_filters:
+ - ^(?!\.aws-datasync$).*  # Regex matching to avoid any scene names called .aws-datasync, there are some folders on the AWS cluster /datasets/ called .aws-datasync which seem to originate from the AWS S3 -> cluster copy
+ - process_state_not: [conversion, finished]

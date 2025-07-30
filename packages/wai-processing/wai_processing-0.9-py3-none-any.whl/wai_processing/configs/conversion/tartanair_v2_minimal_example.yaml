@@ -1,0 +1,16 @@
+original_root: /home/duncanzauss/tartan_air_v2_example_single_scene
+root: /fsx/duncanzauss/tartanair_v2_wai
+
+dataset_name: tartanair_v2
+version: 0.1
+overwrite: True
+difficulties: ["Data_hard"]
+trajectory_ids: ["P003"]
+cam_ids: ["rcam_front"]
+additional_processing_states: [
+  [undistortion, finished],
+  [synth_gt_depth, finished]
+]
+
+# No filters for testing purposes
+scene_filters:

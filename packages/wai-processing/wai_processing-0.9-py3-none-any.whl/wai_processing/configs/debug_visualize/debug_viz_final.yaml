@@ -1,0 +1,36 @@
+# Final debug conf: after distortition and metric depth
+depth_name: "pred_depth"
+
+scene_filters:
+  - exists: images
+  - exists: scene_meta.json
+
+frame_modalities:
+  - image
+  - ${depth_name}
+  # - rendered_semantic_classes
+  # - rendered_semantic_instances
+
+# Visualization parameters
+root:
+scene_id:
+visualizer: "rerun"
+# TODO: Better way to choose samples to visualize
+n_samples: 22
+every_nth_sample: 1
+visualize_depth: False
+colorized_depth: False
+visualize_mesh: False
+visualize_semantics: False
+# TODO: depth_name is defined here and also in the yaml: get this from yaml or vice versa to have a single definition
+sub_sample_col_depth: 20
+max_viz_long_edge: 0
+global_pc_path:
+global_mesh_path: null
+max_global_points: 2000000
+max_col_points_per_view: 2000000
+
+# Rerun settings
+rr_session_name: "WAI generic rerun session"
+rr_address: "0.0.0.0:9081"
+rr_local_developement: False

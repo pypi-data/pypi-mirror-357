@@ -1,0 +1,30 @@
+stage: # set stage via CLI
+root: /fsx/xrtech/data/hyperscape # path of wai-formatted dataset
+
+gpus: 0
+cpus: 10
+mem: 20
+scenes_per_job: 20
+conda_env: # pass the name of our conda environment
+nodelist: h100-ai-p5en48xlarge-[0-5]
+
+stages:
+  conversion:
+    script: conversion/hyperscape.py
+    config: conversion/hyperscape.yaml
+  undistortion:
+    script: undistort.py
+    config: undistortion/hyperscape.yaml
+  mesh_render: null
+  metric3dv2:
+    script: run_metric3dv2.py
+    config: metric3dv2/default.yaml
+    gpus: 1
+  metric_alignment: null
+  covisibility:
+    script: covisibility.py
+    config: covisibility/covisibility_depth_iphone.yaml
+    gpus: 1
+  copy_to_s3:
+    script: run_copy_to_s3.py
+    config: data_transfer/to_s3_default.yaml

@@ -1,0 +1,2 @@
+[console_scripts]
+wai-externals = wai_processing.external.unified_externals:main

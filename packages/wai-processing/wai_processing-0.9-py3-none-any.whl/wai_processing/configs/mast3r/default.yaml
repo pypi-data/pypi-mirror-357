@@ -1,0 +1,38 @@
+root: # needs to be set via argument: root=<wai_dataset_root_path>
+
+model_path: third_party/mast3r/checkpoints/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric.pth
+retrieval_model_path: third_party/mast3r/checkpoints/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric_retrieval_trainingfree.pth
+source_code_path: third_party/mast3r # TODO: MOVE TO CENTRAL FOLDER
+out_path: mast3r/v0 # to enable some simple versioning
+device: cuda
+
+scene_filters:
+  - exists: images
+  - exists: scene_meta.json
+  - process_state: [undistortion, finished]
+  - process_state_not: [mast3r, finished]
+
+debug_mode: false
+save_correspondences: false
+overwrite: false
+
+# mast3r specific
+lr1: 0.07
+niter1: 300
+lr2: 0.01
+niter2: 300
+shared_intrinsics: true
+optim_level: "refine+depth"
+matching_conf_thr: 0
+min_conf_thr: 1.5
+silent: false
+
+## scene graph ablation
+scene_graph: "retrieval" # swin-1 (winsize), complete or retrieval
+filter_percentage: 0.5 # 0.25 for complete, 0.5 for retrieval
+max_size: 40 # 15 for complete, 40 for retrieval
+min_size: 7  # 7 for complete, 7 for retrieval
+### following default mast3r parameters for Retrieval: Num. key images and Retrieval: Num neighbors
+### check 4.1 and 5.1 of their paper: https://arxiv.org/pdf/2409.19152
+ret_nb_anchors: 12
+ret_knn: 6

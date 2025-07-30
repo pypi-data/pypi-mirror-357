@@ -1,0 +1,35 @@
+# Final debug conf: after distortition and metric depth
+
+scene_filters:
+  - exists: images_distorted
+  - exists: scene_meta_distorted.json
+
+frame_modalities:
+  - images_distorted
+
+# Visualization parameters
+root:
+scene_id:
+visualizer: "rerun"
+# TODO: Better way to choose samples to visualize
+n_samples: 10
+every_nth_sample: 5
+visualize_depth: False
+colorized_depth: False
+# TODO: depth_name is defined here and also in the yaml: get this from yaml or vice versa to have a single definition
+depth_name: "pred_depth"
+sub_sample_col_depth: 20
+max_viz_long_edge: 512
+global_pc_path: null
+global_mesh_path: null
+max_global_points: 100000
+max_col_points_per_view: 10000
+treat_any_camera_as_pinhole: True
+
+# Needed for fetching the scenes
+scene_meta_path: scene_meta_distorted.json
+
+# Rerun settings
+rr_session_name: "WAI generic rerun session"
+rr_address: "0.0.0.0:9081"
+rr_local_developement: False

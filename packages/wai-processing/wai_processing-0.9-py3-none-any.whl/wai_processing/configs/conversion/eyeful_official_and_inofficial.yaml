@@ -1,0 +1,12 @@
+original_root: /datasets/eyeful_tower_dataset_all
+root: /fsx/xrtech/data/eyeful_tower_official_and_inofficial
+dataset_name: eyeful_tower_dataset_official_and_inofficial
+target_width: 2736
+target_height: 4096
+target_extension: jpg
+version: 0.1
+overwrite: True
+
+scene_filters:
+ - ^(?!\.aws-datasync$).*  # Regex matching to avoid any scene names called .aws-datasync, there are some folders on the AWS cluster /datasets/ called .aws-datasync which seem to originate from the AWS S3 -> cluster copy
+ - process_state_not: [conversion, finished]

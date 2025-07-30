@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process State Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@5.1.1/css/bootstrap5-toggle.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .accordion-button {
+            background-color: #f1f1f1;
+            color: #333;
+            font-weight: 600;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #e7f1ff;
+            color: #0c63e4;
+        }
+        .table {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .table thead {
+            background-color: #4a6fdc;
+            color: white;
+        }
+        .error-message {
+            max-width: 500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .error-message:hover {
+            white-space: normal;
+            overflow: visible;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .dataset-chart {
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        #connection-status {
+            /* position: fixed; */
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        .checkbox label {
+            font-size: 12px; /* Match the font size */
+        }
+
+        .connected {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .disconnected {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .load-time {
+            font-size: 0.85em;
+            color: #666;
+            margin-left: 10px;
+        }
+        .updateMessage {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .loadingSpinner {
+            vertical-align: middle; /* Aligns the spinner vertically with the text */
+        }
+
+        .spinner-border {
+            margin-left: 13px !important; /* Add some space between the text and the spinner */
+        }
+
+        .refreshButton {
+            border: none !important;
+            border-radius: 50%; 
+        }
+
+        h1.d-inline-flex {
+            align-items: center; /* Ensure vertical alignment */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="mb-3 d-flex justify-content-end align-items-center flex-nowrap">
+        <div class="me-2 font-size=12"> auto-refresh  </div>
+        <div class="me-2">
+            <label>
+              <input id="autoRefreshButton" type="checkbox" data-toggle="toggle" data-size="mini" data-onstyle="success" data-offstyle="danger">
+            </label>
+        </div>
+        <div id="connection-status" class="connected">Connected</div>
+    </div>
+    
+    <div class="mb-3 d-flex align-items-center">
+        <!--  <label for="datasetDropdown" class="form-label"></label> -->
+        <div class="dropdown me-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="datasetDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                Select Datasets
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="datasetDropdown" id="datasetDropdownMenu">
+                <li><a class="dropdown-item"><input type="checkbox" value="all"> All Datasets</a></li>
+                <!-- Options will be populated dynamically -->
+        </div>
+        <button id="refreshButton" class="btn btn-outline-secondary rounded-circle p-1 refreshButton" title="Force refresh now !">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+            </svg>
+        </button>      
+    </div>
+    <div class="container-fluid">
+        <h1 class="d-inline-flex align-items-center">
+            Process State Dashboard
+            <span id="loadingSpinner" class="loadingSpinner spinner-border spinner-border-sm text-primary" role="status" style="display: none;">
+                <span class="visually-hidden">Loading...</span>
+            </span>
+        </h1>
+        <div id="updateMessage" class="mt-1 mb-2"></div>
+        <div class="row" id="charts-container">
+            <!-- Charts will be inserted here -->
+        </div>
+        <h2 class="mt-4 mb-3">Failed Scenes</h2>
+        <div class="accordion" id="failedScenesAccordion">
+            <!-- Failed scenes will be inserted here -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@5.1.1/js/bootstrap5-toggle.ecmas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const datasetDropdownMenu = document.getElementById('datasetDropdownMenu');
+            const chartsContainer = document.getElementById('charts-container');
+            const failedScenesAccordion = document.getElementById('failedScenesAccordion');
+            const connectionStatus = document.getElementById('connection-status');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const updateMessage = document.getElementById('updateMessage');
+            const refreshButton = document.getElementById('refreshButton');
+            const autoRefreshButton = document.getElementById('autoRefreshButton');
+            let lastSelectedDatasets = ['all']; // Default to 'all' initially
+            let intervalId; // Store the interval ID
+            let pageSize; 
+            let refreshInterval;
+            let autoRefreshEnabled = false;
+            // Set up WebSocket connection
+            const socket = new WebSocket('ws://localhost:5124/data');
+
+            socket.onopen = function(event) {
+                connectionStatus.className = 'connected';
+                connectionStatus.textContent = 'Connected';
+                // Send the initial selection
+                sendSelectedDatasets();
+            };
+
+            socket.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                console.log('Message from server ', data);
+                loadingSpinner.style.display = 'none';
+                // Update the UI with the received data
+                updateUI(data);
+                const currentTime = new Date().toLocaleString();
+                updateMessage.textContent = `Latest update: ${currentTime}`;
+            };
+
+            socket.onclose = function(event) {
+                connectionStatus.className = 'disconnected';
+                connectionStatus.textContent = 'Disconnected - Reconnecting...';
+            };
+
+            socket.onerror = function(error) {
+                console.error('WebSocket error: ', error);
+            };
+
+            // Fetch config from the backend
+            fetch('/config')
+            .then(response => response.json())
+            .then(data => {
+                const datasets = data.datasets;
+                refreshInterval = data.refresh_rate * 1000;  // Convert to ms
+                pageSize = data.page_size;
+                console.log('refresh rate is ', refreshInterval);
+                console.log('page size is ', pageSize);
+                // Populate dataset dropdown
+                datasets.forEach(dataset => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.className = 'dropdown-item';
+                    a.innerHTML = `<input type="checkbox" value="${dataset}"> ${dataset}`;
+                    li.appendChild(a);
+                    datasetDropdownMenu.appendChild(li);
+                });
+                const divider = document.createElement('li');
+                divider.className = 'dropdown-divider';
+                datasetDropdownMenu.appendChild(divider);
+
+                // Add the process button at the end
+                const processLi = document.createElement('li');
+                processLi.className = 'text-center';
+                const processBtn = document.createElement('button');
+                processBtn.className = 'dropdown-item';
+                processBtn.textContent = 'Process';
+                processLi.appendChild(processBtn);
+                datasetDropdownMenu.appendChild(processLi);  
+                            
+                // Now add event listener
+                processBtn.addEventListener('click', function () {
+                    sendSelectedDatasets();
+                    if (autoRefreshEnabled) {
+                        setRefreshInterval(); // Reset the interval when processing if auto-refresh is enabled
+                    }
+                    // Close the dropdown
+                    const dropdownToggle = document.getElementById('datasetDropdown');
+                    const bootstrapDropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
+                    bootstrapDropdown.hide();
+                });
+                            
+            })
+
+            refreshButton.addEventListener('click', function () {
+                sendSelectedDatasets();
+                if (autoRefreshEnabled) {
+                    setRefreshInterval(); // Reset the interval on manual refresh if auto-refresh is enabled
+                }
+            });
+
+            autoRefreshButton.addEventListener('click', function () {
+                autoRefreshEnabled = !autoRefreshEnabled;
+                console.log("autorefresh clicked ! now", autoRefreshEnabled)
+                if (autoRefreshEnabled) {
+                    autoRefreshButton.textContent = 'Disable Auto-Refresh';
+                    sendSelectedDatasets();
+                    setRefreshInterval();
+                } else {
+                    autoRefreshButton.textContent = 'Enable Auto-Refresh';
+                    clearInterval(intervalId);
+                }
+            });
+
+            function setRefreshInterval() {
+                if (intervalId && autoRefreshEnabled) {
+                    clearInterval(intervalId); // Clear any existing interval
+                }
+                if (autoRefreshEnabled) {
+                    intervalId = setInterval(sendSelectedDatasets, refreshInterval);
+                }
+            }
+
+            // Get the "All Datasets" checkbox
+            const allDatasetsCheckbox = datasetDropdownMenu.querySelector('input[value="all"]');
+
+            // Add an event listener to the "All Datasets" checkbox
+            allDatasetsCheckbox.addEventListener('click', function () {
+                // Get all other checkboxes in the dropdown menu
+                const otherCheckboxes = datasetDropdownMenu.querySelectorAll('input[type="checkbox"]:not([value="all"])');
+
+                // Toggle the state of all other checkboxes based on the state of the "All Datasets" checkbox
+                otherCheckboxes.forEach(function (checkbox) {
+                    checkbox.checked = allDatasetsCheckbox.checked;
+                });
+
+                // Update the selected datasets array
+                updateSelectedDatasets();
+            });
+
+            datasetDropdownMenu.addEventListener('click', function (event) {
+                if (event.target.tagName === 'INPUT') {
+                    updateSelectedDatasets();
+                }
+                if (event.target.tagName === 'INPUT' || event.target.tagName === 'A') {
+                    event.stopPropagation();
+                }
+            });
+
+            function updateSelectedDatasets() {
+                const checkboxes = datasetDropdownMenu.querySelectorAll('input[type="checkbox"]');
+                lastSelectedDatasets = Array.from(checkboxes)
+                    .filter(checkbox => checkbox.checked)
+                    .map(checkbox => checkbox.value);
+
+                // If some datasets are unchecked, uncheck the "All Datasets" checkbox
+                if (lastSelectedDatasets.length > 0 && lastSelectedDatasets.includes('all') && lastSelectedDatasets.length < checkboxes.length - 1) {
+                    allDatasetsCheckbox.checked = false;
+                    lastSelectedDatasets = lastSelectedDatasets.filter(dataset => dataset !== 'all');
+                }
+            }
+            
+            function sendSelectedDatasets() {
+                loadingSpinner.style.display = 'inline-block';
+                socket.send(JSON.stringify({ names: lastSelectedDatasets }));
+            }
+            
+            // start update
+            
+            function updateUI(data) {
+                // Update charts
+                chartsContainer.innerHTML = '';
+                data.dataset_figs_html.forEach(function (html) {
+                    const div = document.createElement('div');
+                    div.className = 'col-12 dataset-chart';
+                    div.innerHTML = html;
+
+                    // This ensures Plotly scripts are executed
+                    const scripts = div.querySelectorAll('script');
+                    scripts.forEach(oldScript => {
+                        const newScript = document.createElement('script');
+                        Array.from(oldScript.attributes).forEach(attr => {
+                            newScript.setAttribute(attr.name, attr.value);
+                        });
+                        newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                        oldScript.parentNode.replaceChild(newScript, oldScript);
+                    });
+
+                    chartsContainer.appendChild(div);
+                });
+
+                // Update failed scenes with pagination
+                failedScenesAccordion.innerHTML = '';
+                let index = 1;
+
+                for (const [dataset, scenes] of Object.entries(data.failed_scenes)) {
+                    const totalPages = Math.ceil(scenes.length / pageSize);
+                    let currentPage = 1;
+
+                    const accordionItem = document.createElement('div');
+                    accordionItem.className = 'accordion-item';
+
+                    const headingId = 'heading' + index;
+                    const collapseId = 'collapse' + index;
+
+                    // Get load time for this dataset
+                    const loadTime = data.load_times[dataset] ?
+                        `<span class="load-time">(loaded in ${data.load_times[dataset].toFixed(2)}s)</span>` : '';
+
+                    const totalFailedScenes = data.total_failed_scenes[dataset];
+
+                    accordionItem.innerHTML = `
+                        <h2 class="accordion-header" id="${headingId}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#${collapseId}" aria-expanded="false"
+                                aria-controls="${collapseId}">
+                                ${dataset} (${totalFailedScenes} failed scenes) ${loadTime}
+                            </button>
+                        </h2>
+                        <div id="${collapseId}" class="accordion-collapse collapse"
+                            aria-labelledby="${headingId}" data-bs-parent="#failedScenesAccordion">
+                            <div class="accordion-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Scene</th>
+                                                <th>Stage</th>
+                                                <th>Timestamp</th>
+                                                <th>Error Message</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="sceneTableBody${index}">
+                                            <!-- Scenes will be inserted here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="pagination-controls text-center mt-2">
+                                    <button class="btn btn-sm btn-outline-secondary" id="firstPage${index}" disabled>First</button>
+                                    <button class="btn btn-sm btn-outline-secondary" id="prevPage${index}" disabled>Previous</button>
+                                    <span id="pageNumbers${index}"></span>
+                                    <button class="btn btn-sm btn-outline-secondary" id="nextPage${index}">Next</button>
+                                    <button class="btn btn-sm btn-outline-secondary" id="lastPage${index}">Last</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    failedScenesAccordion.appendChild(accordionItem);
+
+                    const sceneTableBody = document.getElementById(`sceneTableBody${index}`);
+                    const firstPageButton = document.getElementById(`firstPage${index}`);
+                    const prevPageButton = document.getElementById(`prevPage${index}`);
+                    const nextPageButton = document.getElementById(`nextPage${index}`);
+                    const lastPageButton = document.getElementById(`lastPage${index}`);
+                    const pageNumbers = document.getElementById(`pageNumbers${index}`);
+
+                    function renderPage(page) {
+                        sceneTableBody.innerHTML = scenes.slice((page - 1) * pageSize, page * pageSize).map(scene => `
+                            <tr>
+                                <td>${scene.scene}</td>
+                                <td>${scene.stage}</td>
+                                <td>${scene.date}</td>
+                                <td class="error-message">${scene.message}</td>
+                            </tr>
+                        `).join('');
+
+                        updatePaginationControls(page);
+                    }
+
+                    function updatePaginationControls(page) {
+                        pageNumbers.innerHTML = '';
+
+                        const maxPageButtons = 5; // Maximum number of page buttons to display
+                        const half = Math.floor(maxPageButtons / 2);
+                        let startPage = Math.max(1, page - half);
+                        let endPage = Math.min(totalPages, page + half);
+
+                        // Adjust start and end pages if they exceed the total pages
+                        if (endPage - startPage + 1 < maxPageButtons) {
+                            if (startPage === 1) {
+                                endPage = Math.min(totalPages, startPage + maxPageButtons - 1);
+                            } else if (endPage === totalPages) {
+                                startPage = Math.max(1, endPage - maxPageButtons + 1);
+                            }
+                        }
+
+                        if (startPage > 1) {
+                            const ellipsis = document.createElement('span');
+                            ellipsis.textContent = '...';
+                            pageNumbers.appendChild(ellipsis);
+                        }
+
+                        for (let i = startPage; i <= endPage; i++) {
+                            const pageButton = document.createElement('button');
+                            pageButton.className = 'btn btn-sm btn-outline-secondary';
+                            pageButton.textContent = i;
+                            if (i === page) {
+                                pageButton.classList.add('active');
+                            }
+                            pageButton.addEventListener('click', () => {
+                                currentPage = i;
+                                renderPage(currentPage);
+                            });
+                            pageNumbers.appendChild(pageButton);
+                        }
+
+                        if (endPage < totalPages) {
+                            const ellipsis = document.createElement('span');
+                            ellipsis.textContent = '...';
+                            pageNumbers.appendChild(ellipsis);
+                        }
+
+                        firstPageButton.disabled = page === 1;
+                        prevPageButton.disabled = page === 1;
+                        nextPageButton.disabled = page === totalPages;
+                        lastPageButton.disabled = page === totalPages;
+                    }
+                    firstPageButton.addEventListener('click', () => {
+                        currentPage = 1;
+                        renderPage(currentPage);
+                    });
+
+                    prevPageButton.addEventListener('click', () => {
+                        if (currentPage > 1) {
+                            currentPage--;
+                            renderPage(currentPage);
+                        }
+                    });
+
+                    nextPageButton.addEventListener('click', () => {
+                        if (currentPage < totalPages) {
+                            currentPage++;
+                            renderPage(currentPage);
+                        }
+                    });
+
+                    lastPageButton.addEventListener('click', () => {
+                        currentPage = totalPages;
+                        renderPage(currentPage);
+                    });
+
+                    renderPage(currentPage);
+                    index++;
+                }
+
+                // If no failed scenes, hide the section
+                const failedScenesHeader = document.querySelector('h2.mt-4.mb-3');
+                if (Object.keys(data.failed_scenes).length === 0) {
+                    failedScenesHeader.style.display = 'none';
+                    failedScenesAccordion.style.display = 'none';
+                } else {
+                    failedScenesHeader.style.display = 'block';
+                    failedScenesAccordion.style.display = 'block';
+                }
+            }
+            // end update
+        });
+    </script>
+</body>
+</html>

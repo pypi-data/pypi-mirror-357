@@ -1,0 +1,16 @@
+root: # needs to be set via argument: root=<wai_dataset_root_path>
+
+model_path: /fsx/xrtech/checkpoints/Florence-2/large
+out_path: florence/v0
+device: cuda
+
+scene_filters:
+  - exists: images
+  - exists: scene_meta.json
+
+caption_mode: more_detailed_caption # supports caption, detailed_caption and more_detailed_caption modes.
+batch_size: 4
+max_new_tokens: 4096
+
+frame_modalities: # what to load for each frame
+  - image

@@ -1,0 +1,51 @@
+stage: # set stage via CLI
+## AWS
+root: /fsx/xrtech/data/re10k # path of wai-formatted dataset
+## RSC
+#root: root=/xr_maps_research/wai/RealEstate10K/
+
+gpus: 0
+cpus: 4
+mem: 10
+scenes_per_job: 1000
+conda_env: # pass the name of our conda environment
+nodelist: h100-ai-p5en48xlarge-[0-10]
+
+stages:
+  conversion:
+    script: conversion/re10k.py
+    config: conversion/re10k.yaml
+  undistortion: null  # images are already undistorted
+  mesh_render: null
+  metric3dv2:
+    script: run_metric3dv2.py
+    config: metric3dv2/default.yaml
+    gpus: 1
+    scenes_per_job: 500
+  colmap:
+    # Chunk this into multiple stages?
+    # Right now running all on CPU, but feature extraction and matching could run on GPU
+    script: run_colmap.py
+    config: colmap/default.yaml
+  metric_alignment_colmap:
+    script: metric_alignment/metric_alignment_colmap.py
+    config: metric_alignment/colmap.yaml
+    gpus: 1
+  # Run mast3r on all scenes that were not successfully aligned with Colmap
+  mast3r:
+    script: run_mast3r.py
+    config: mast3r/default.yaml
+    # in this second stage only run this on scenes where the metric alignment with Colmap did not work
+    additional_cli_params: ['+scene_filters={process_state_not: [metric_alignment, finished]}', "max_size=50", "min_size=30"]
+    gpus: 1
+  metric_alignment_mast3r:
+    script: metric_alignment/metric_alignment_mast3r.py
+    config: metric_alignment/mast3r.yaml
+    gpus: 1
+  covisibility:
+    script: covisibility.py
+    config: covisibility/covisibility_pred_depth.yaml
+    gpus: 1
+  copy_to_s3:
+    script: run_copy_to_s3.py
+    config: data_transfer/to_s3_default.yaml

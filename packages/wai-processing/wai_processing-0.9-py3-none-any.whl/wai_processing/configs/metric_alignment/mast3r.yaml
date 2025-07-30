@@ -1,0 +1,8 @@
+root:  # needs to be set via argument: root=<wai_dataset_root_path>
+scene_filters:
+  - exists: mast3r
+  - process_state: [mast3r, finished]
+  - process_state_not: [metric_alignment.*, finished] # skip already metric aligned scene
+
+device: cuda
+force_running_metric_alignment: true

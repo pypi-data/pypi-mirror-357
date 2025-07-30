@@ -1,0 +1,14 @@
+original_root: /datasets/tartan_air_v2
+root: /fsx/xrtech/data/tartanairv2
+
+dataset_name: tartanair_v2
+version: 0.1
+overwrite: True
+difficulties: ["Data_hard"]  # ["Data_easy", "Data_hard"], Data_easy corrupted files for some scenes
+additional_processing_states: [
+  [undistortion, finished],
+]
+
+scene_filters:
+ - ^(?!\.aws-datasync$).*  # Regex matching to avoid any scene names called .aws-datasync, there are some folders on the AWS cluster /datasets/ called .aws-datasync which seem to originate from the AWS S3 -> cluster copy
+ - process_state_not: [conversion, finished]

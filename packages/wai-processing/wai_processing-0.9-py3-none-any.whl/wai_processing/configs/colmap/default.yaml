@@ -1,0 +1,13 @@
+root:  # needs to be set via argument: root=<wai_dataset_root_path>
+max_size: 15
+min_size: null
+filter_percentage: 1
+
+scene_filters:
+  - exists: images
+  - exists: scene_meta.json
+  - process_state: [undistortion, finished]
+  - process_state_not: [colmap, finished]
+
+frame_modalities: # what to load for each frame
+  - image

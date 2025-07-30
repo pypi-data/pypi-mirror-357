@@ -1,0 +1,25 @@
+stage: # set stage via CLI
+# TODO: Add option to use $USER, instead of hard coded normanm or duncanzauss
+root: /fsx/xrtech/dryrun_tmp/xrooms  # path of wai-formatted dataset
+
+gpus: 0
+cpus: 10
+mem: 50 # Need lots of RAM because some source VRS files are huge, 15GB+
+scenes_per_job: 2 # 2 scenes per job for dry run to test edge cases -> 2 jobs with 2 scenes and 1 job with 1 scene
+conda_env: # pass the name of our conda environment
+nodelist: h100-ai-p5en48xlarge-[0-10]
+
+dry_run_filter: [0, 5] # for dry-run
+
+stages:
+  conversion:
+    script: conversion/xrooms.py
+    config: conversion/xrooms.yaml
+  undistortion: null
+  mesh_render: null
+  metric3dv2: null
+  metric_alignment: null
+  covisibility:
+    script: covisibility.py
+    config: covisibility/covisibility_gt_depth.yaml
+    gpus: 1
