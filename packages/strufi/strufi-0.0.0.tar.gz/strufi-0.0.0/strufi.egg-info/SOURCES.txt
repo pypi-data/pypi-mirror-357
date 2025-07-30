@@ -1,0 +1,5 @@
+pyproject.toml
+strufi.egg-info/PKG-INFO
+strufi.egg-info/SOURCES.txt
+strufi.egg-info/dependency_links.txt
+strufi.egg-info/top_level.txt

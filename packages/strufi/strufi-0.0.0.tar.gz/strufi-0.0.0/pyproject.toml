@@ -1,0 +1,14 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "strufi"
+version = "0.0.0"
+license = {text = "MIT License"}
+authors = [
+    {name = "entwanne", email = "antoine.rozo@getalma.eu"},
+]
