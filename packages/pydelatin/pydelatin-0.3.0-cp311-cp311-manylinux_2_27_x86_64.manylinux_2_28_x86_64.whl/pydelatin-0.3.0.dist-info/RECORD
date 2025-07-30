@@ -1,0 +1,10 @@
+_pydelatin.cpython-311-x86_64-linux-gnu.so,sha256=bdcqfOrGXsIbS6IZReYaYsdTZCA-AHXi6LOI2swj64E,463784
+pydelatin/__init__.py,sha256=aNX2E7EdmN1i5287p9L1RTEEx_mh204afaucnoCxze0,178
+pydelatin/delatin.py,sha256=qzQ6ttOQu7276bP7Tpsz-POCyl3yiEn9nEdSnzGU010,2703
+pydelatin/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pydelatin/util.py,sha256=2_MLA5yfOBM1CbN9195kIpK3WQlh79cMjys0PRuwNls,2643
+pydelatin-0.3.0.dist-info/METADATA,sha256=6soUYcO0phF9FkXYdnGNNj54RydA0_RkPhnnm6PgI6o,9091
+pydelatin-0.3.0.dist-info/WHEEL,sha256=3daP3VhxT_uXQ4g9qxjrsHJLh9a9x1Dc522TvcSo1E0,152
+pydelatin-0.3.0.dist-info/top_level.txt,sha256=IqYA-uufehdU9pHdj2P87jTGDW8dsH1x3WEVnpTbAYw,21
+pydelatin-0.3.0.dist-info/RECORD,,
+pydelatin-0.3.0.dist-info/licenses/LICENSE,sha256=nibXnqSIeJlpfnQR5MVbs8vUPl-FZQQeoZjiEko4vnY,1068
