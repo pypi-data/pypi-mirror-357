@@ -1,0 +1,318 @@
+# EvoCloud Agent Toolkit
+
+[![PyPI version](https://badge.fury.io/py/evocloud-agent-toolkit.svg)](https://badge.fury.io/py/evocloud-agent-toolkit)
+[![Python Support](https://img.shields.io/pypi/pyversions/evocloud-agent-toolkit.svg)](https://pypi.org/project/evocloud-agent-toolkit/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+EvoCloud Agent Toolkit 是一个综合的 Python SDK，专为将 EvoCloud 支付服务与 AI 代理和应用程序集成而设计。
+
+## 特性
+
+- 🤖 **LangChain 集成**: 为构建对话式支付体验提供结构化工具
+- 🔧 **MCP 支持**: 支持模型上下文协议（Model Context Protocol）
+- 💰 **完整的支付功能**: 支持订单创建、查询、退款等全流程操作
+- 🎯 **简单易用**: 统一的 SDK 接口，支持多种使用方式
+- 🔒 **安全可靠**: 内置签名验证和错误处理
+- 📦 **批量操作**: 支持批量创建和查询订单
+- 🛠️ **开发友好**: 完整的类型提示和文档
+
+## 安装
+
+```bash
+pip install evocloud-agent-toolkit
+```
+
+## 快速开始
+
+### MCP 服务器
+
+运行 MCP 服务器：
+
+```bash
+
+```
+
+### 基础使用
+
+```python
+from evocloud_agent_toolkit import EvoCloudSDK
+
+# 初始化 SDK
+sdk = EvoCloudSDK(
+    base_url="https://api.evocloud.com",
+    sign_key="your_sign_key",
+    sid="your_sid",
+    webhook_url="https://your-domain.com/webhook"  # 可选
+)
+
+# 生成订单号
+order_id = sdk.generate_order_id("PAYMENT")
+print(f"Generated order ID: {order_id}")
+
+# 创建支付订单
+order_result = sdk.create_linkpay_order(
+    merchant_order_id=order_id,
+    currency="USD",
+    amount="99.99",
+    goods_name="Premium Service",
+    goods_description="Monthly subscription",
+    return_url="https://your-domain.com/return"
+)
+
+if order_result["success"]:
+    print(f"Payment URL: {order_result['data']['link_url']}")
+else:
+    print(f"Order creation failed: {order_result['message']}")
+
+# 查询订单状态
+status_result = sdk.query_linkpay_order(order_id)
+print(f"Order status: {status_result}")
+```
+
+### 环境变量配置
+
+创建 `.env` 文件：
+
+```bash
+EVOCLOUD_BASE_URL=https://api.evocloud.com
+EVOCLOUD_SIGN_KEY=your_sign_key
+EVOCLOUD_SID=your_sid
+EVOCLOUD_WEBHOOK_URL=https://your-domain.com/webhook
+```
+
+然后可以简化 SDK 初始化：
+
+```python
+from evocloud_agent_toolkit import EvoCloudSDK
+
+# 自动从环境变量读取配置
+sdk = EvoCloudSDK()
+```
+
+### LangChain 集成
+
+```python
+from evocloud_agent_toolkit import EvoCloudSDK
+from langchain.agents import initialize_agent, AgentType
+from langchain.llms import OpenAI
+
+# 初始化 SDK
+sdk = EvoCloudSDK()
+
+# 获取 LangChain 工具
+tools = sdk.get_langchain_tools()
+
+# 创建 LangChain 代理
+llm = OpenAI(temperature=0)
+agent = initialize_agent(
+    tools, 
+    llm, 
+    agent=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION,
+    verbose=True
+)
+
+# 使用代理处理支付请求
+response = agent.run("Create a payment order for $50 USD for a premium subscription")
+print(response)
+```
+
+## 高级功能
+
+### 批量操作
+
+```python
+# 批量创建订单
+orders = [
+    {
+        "currency": "USD",
+        "amount": "29.99",
+        "goods_name": "Product A"
+    },
+    {
+        "currency": "USD", 
+        "amount": "49.99",
+        "goods_name": "Product B"
+    }
+]
+
+results = sdk.create_multiple_orders(orders)
+for result in results:
+    print(f"Order: {result}")
+
+# 批量查询订单
+order_ids = ["ORDER_123", "ORDER_456", "ORDER_789"]
+statuses = sdk.query_multiple_orders(order_ids)
+for status in statuses:
+    print(f"Status: {status}")
+```
+
+### 退款操作
+
+```python
+# 创建退款
+refund_result = sdk.create_linkpay_refund(
+    original_merchant_order_id="ORDER_123",
+    currency="USD",
+    refund_amount="29.99",
+    reason="CUSTOMER_REQUEST",
+    description="Customer requested refund"
+)
+
+if refund_result["success"]:
+    refund_id = refund_result["data"]["merchant_trans_id"]
+    print(f"Refund created: {refund_id}")
+    
+    # 查询退款状态
+    refund_status = sdk.query_linkpay_refund(refund_id)
+    print(f"Refund status: {refund_status}")
+```
+
+### 健康检查和配置
+
+```python
+# 获取当前配置
+config = sdk.get_config()
+print(f"SDK Configuration: {config}")
+
+# 执行健康检查
+health = sdk.health_check()
+if health["success"]:
+    print("SDK is healthy!")
+else:
+    print(f"Health check failed: {health['message']}")
+```
+
+## API 参考
+
+### EvoCloudSDK
+
+主要的 SDK 客户端类，提供所有支付功能的统一接口。
+
+#### 初始化参数
+
+- `base_url`: EvoCloud API 基础 URL
+- `sign_key`: 签名密钥
+- `sid`: 系统 ID
+- `sign_type`: 签名算法类型（默认: SHA256）
+- `timeout`: 请求超时时间（默认: 60 秒）
+- `max_retries`: 最大重试次数（默认: 0）
+- `webhook_url`: 默认回调地址（可选）
+- `auto_configure`: 是否自动从环境变量配置（默认: True）
+
+#### 主要方法
+
+##### 工具方法
+
+- `generate_order_id(prefix="LINKPAY")`: 生成唯一订单号
+- `get_current_time()`: 获取当前时间（ISO 格式）
+- `get_config()`: 获取当前配置
+- `health_check()`: 执行健康检查
+
+##### 支付操作
+
+- `create_linkpay_order(**kwargs)`: 创建 LinkPay 支付订单
+- `query_linkpay_order(merchant_order_id)`: 查询订单状态
+- `create_linkpay_refund(**kwargs)`: 创建退款
+- `query_linkpay_refund(merchant_trans_id)`: 查询退款状态
+
+##### 批量操作
+
+- `create_multiple_orders(orders)`: 批量创建订单
+- `query_multiple_orders(order_ids)`: 批量查询订单
+
+##### LangChain 集成
+
+- `get_langchain_toolkit()`: 获取 LangChain 工具包
+- `get_langchain_tools()`: 获取 LangChain 工具列表
+- `get_linkpay_tool()`: 获取 LinkPay 工具实例
+
+## 错误处理
+
+SDK 提供了完善的错误处理机制：
+
+```python
+try:
+    result = sdk.create_linkpay_order(
+        currency="USD",
+        amount="invalid_amount"  # 无效金额
+    )
+except ValueError as e:
+    print(f"参数错误: {e}")
+except Exception as e:
+    print(f"其他错误: {e}")
+
+# 也可以通过返回结果检查
+result = sdk.create_linkpay_order(currency="USD", amount="99.99")
+if not result["success"]:
+    print(f"操作失败: {result['message']}")
+    print(f"错误详情: {result['data']['error']}")
+```
+
+## 环境变量
+
+| 变量名 | 描述 | 必需 |
+|--------|------|------|
+| `EVOCLOUD_BASE_URL` | EvoCloud API 基础 URL | 是 |
+| `EVOCLOUD_SIGN_KEY` | 签名密钥 | 是 |
+| `EVOCLOUD_SID` | 系统 ID | 是 |
+| `EVOCLOUD_WEBHOOK_URL` | 默认回调地址 | 否 |
+
+## 开发
+
+### 安装开发依赖
+
+```bash
+pip install -e ".[dev]"
+```
+
+### 运行测试
+
+```bash
+pytest
+```
+
+### 代码格式化
+
+```bash
+black .
+isort .
+```
+
+### 类型检查
+
+```bash
+mypy evocloud_agent_toolkit
+```
+
+## 示例
+
+查看 `examples/` 目录中的完整示例：
+
+- `basic_usage.py`: 基础使用示例
+- `langchain_integration.py`: LangChain 集成示例
+- `batch_operations.py`: 批量操作示例
+- `error_handling.py`: 错误处理示例
+
+## 贡献
+
+欢迎提交 Pull Request 和 Issue！
+
+## 许可证
+
+MIT License. 详见 [LICENSE](LICENSE) 文件。
+
+## 支持
+
+- 📖 [文档](https://evocloud-agent-toolkit.readthedocs.io)
+- 🐛 [问题反馈](https://github.com/evocloud/evocloud-agent-toolkit/issues)
+- 💬 [讨论](https://github.com/evocloud/evocloud-agent-toolkit/discussions)
+
+## 更新日志
+
+### v0.1.0
+
+- ✨ 初始版本发布
+- 🤖 支持 LangChain 集成
+- 💰 完整的 LinkPay 支付功能
+- 📦 支持批量操作
+- 🛠️ 完善的开发工具链 
