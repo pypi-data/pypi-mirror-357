@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: smtp-py
+Version: 0.1.1
+Summary: Unofficial smtp.dev API written in Python
+Home-page: https://github.com/longstock/smtp-py
+Author: Long Nguyen
+Author-email: nguyenlongdev@proton.me
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: dotenv
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# smtp-py
+a package for smtp.dev
+coming soon!
