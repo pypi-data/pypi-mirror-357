@@ -1,0 +1,10 @@
+README.md
+setup.py
+brickproof-cli/__init__.py
+brickproof-cli/__main__.py
+brickproof_cli.egg-info/PKG-INFO
+brickproof_cli.egg-info/SOURCES.txt
+brickproof_cli.egg-info/dependency_links.txt
+brickproof_cli.egg-info/entry_points.txt
+brickproof_cli.egg-info/requires.txt
+brickproof_cli.egg-info/top_level.txt

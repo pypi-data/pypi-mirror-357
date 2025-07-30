@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: brickproof-cli
+Version: 0.0.1
+Summary: brickproof-cli
+Author: Jordan-M-Young
+Author-email: jordan.m.young0@gmail.com
+Keywords: python3,databricks,unit test,test,cidd
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Pytest
+Requires-Dist: tomlkit
+Requires-Dist: requests
+Requires-Dist: brickproof
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: summary
+
+The CLI extension of the brickproof testing library.
