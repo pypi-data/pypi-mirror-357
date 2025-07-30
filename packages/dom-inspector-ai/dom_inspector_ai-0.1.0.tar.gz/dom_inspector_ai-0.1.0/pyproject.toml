@@ -1,0 +1,19 @@
+### pyproject.toml
+[project]
+name = "dom-inspector-ai"
+version = "0.1.0"
+description = "Extract class/id and DOM paths with screenshot for AI agents"
+authors = [
+    {name = "Your Name", email = "yutotkg.1040@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "beautifulsoup4",
+    "selenium",
+    "requests"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

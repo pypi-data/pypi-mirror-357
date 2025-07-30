@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+dom_inspector_ai/__init__.py
+dom_inspector_ai/analyzer.py
+dom_inspector_ai/extractor.py
+dom_inspector_ai/screenshot.py
+dom_inspector_ai.egg-info/PKG-INFO
+dom_inspector_ai.egg-info/SOURCES.txt
+dom_inspector_ai.egg-info/dependency_links.txt
+dom_inspector_ai.egg-info/requires.txt
+dom_inspector_ai.egg-info/top_level.txt
