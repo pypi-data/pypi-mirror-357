@@ -1,0 +1,5 @@
+
+config is BundleConfig:
+    name: "Simulation"
+    version: "0.17.8"
+    dependencies: ["Physics==0.17.8"]
