@@ -1,0 +1,6 @@
+llama_index/vector_stores/db2/__init__.py,sha256=8KtTrIpCZ_3hZ2x3klHHhQT2qfw9bM4Gl5ISf_BwUIc,122
+llama_index/vector_stores/db2/base.py,sha256=O-gQDGbXaUcA8oW3xau7XDvEK5CFpi6N-JU6h1UwSHk,13793
+llama_index_vector_stores_db2-0.0.1.dist-info/METADATA,sha256=YixBpQ-WRibHhd_XRUhTJzIKo3hEyBXWglay6yW2jGs,1844
+llama_index_vector_stores_db2-0.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+llama_index_vector_stores_db2-0.0.1.dist-info/licenses/LICENSE,sha256=JPQLUZD9rKvCTdu192Nk0V5PAwklIg6jANii3UmTyMs,1065
+llama_index_vector_stores_db2-0.0.1.dist-info/RECORD,,
