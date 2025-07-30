@@ -1,0 +1,2 @@
+[console_scripts]
+cpp-diann = cpp_diann.run:run_app
