@@ -1,0 +1,2 @@
+[console_scripts]
+nnu-mcp-service = nnu-mcp-service:app
