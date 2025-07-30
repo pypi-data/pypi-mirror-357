@@ -1,0 +1,10 @@
+SimpleAgents/__init__.py,sha256=TVAxDIOWD2NKZZYMtX8KGH2FBocZwJF9K4UE6nYASFE,49
+SimpleAgents/agent.py,sha256=V9had912_VinKs62L0rd10lAMMNTGp07DqR48CMrEIw,7261
+SimpleAgents/long_memory.py,sha256=04-juvrYKNqTp5DEk4SiftRJzig58h9WaovnVb4dPZA,13687
+SimpleAgents/memory_manager.py,sha256=6rRIUg9FLaCAjjdHjoHry7dioVTtHvZ-KhSCrgq0oxo,9360
+SimpleAgents/short_memory.py,sha256=1NjUj1RaLdibCb2u5S6YupJ20GHAD4z9qDThoUZyI6E,12450
+openai_simple_agents-0.0.40.dist-info/licenses/LICENSE,sha256=vqkSQAxY1X1VDFIwZCyPxI26y4yiB4EvfKsloxUpxTM,1144
+openai_simple_agents-0.0.40.dist-info/METADATA,sha256=QAEvYQOM7gc__J8jrP0ucXKRX5Dp1ZGXKPwQ4IOAHx4,6123
+openai_simple_agents-0.0.40.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+openai_simple_agents-0.0.40.dist-info/top_level.txt,sha256=epDMxNVkA6KDLtJ5Dc5jWvC8Yq58pd2aK_kUU_0oJCc,13
+openai_simple_agents-0.0.40.dist-info/RECORD,,
