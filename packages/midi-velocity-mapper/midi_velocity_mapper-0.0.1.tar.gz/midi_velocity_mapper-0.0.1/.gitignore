@@ -1,0 +1,5 @@
+/config.toml
+/dist/
+**/__pycache__/
+/python-midi-velocity-mapper-*.tar.gz
+/python-midi-velocity-mapper-*/

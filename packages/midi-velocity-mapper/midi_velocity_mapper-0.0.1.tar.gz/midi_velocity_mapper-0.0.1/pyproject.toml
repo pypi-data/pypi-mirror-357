@@ -1,0 +1,69 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "midi-velocity-mapper"
+dynamic = ["version"]
+description = 'Translate MIDI note velocity data in real time'
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Patrick McCarty", email = "pnorcks@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "mido[ports-rtmidi]",
+  "rich",
+]
+
+[project.urls]
+Documentation = "https://github.com/phmccarty/midi-velocity-mapper#readme"
+Issues = "https://github.com/phmccarty/midi-velocity-mapper/issues"
+Source = "https://github.com/phmccarty/midi-velocity-mapper"
+
+[project.scripts]
+mvm = "midi_velocity_mapper.translate_velocities:main"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/midi_velocity_mapper"
+]
+
+[tool.hatch.version]
+path = "src/midi_velocity_mapper/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/midi_velocity_mapper tests}"
+
+[tool.coverage.run]
+source_pkgs = ["midi_velocity_mapper", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/midi_velocity_mapper/__about__.py",
+]
+
+[tool.coverage.paths]
+midi_velocity_mapper = ["src/midi_velocity_mapper", "*/midi-velocity-mapper/src/midi_velocity_mapper"]
+tests = ["tests", "*/midi-velocity-mapper/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
