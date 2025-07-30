@@ -1,0 +1,150 @@
+# @file pyproject.toml
+# 
+# @date Nov 08, 2024
+# @author Anton Rikus
+# @copyright \n
+#  This file is part of the program Serenity.\n\n
+#  Serenity is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU Lesser General Public License as
+#  published by the Free Software Foundation, either version 3 of
+#  the License, or (at your option) any later version.\n\n
+#  Serenity is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#  GNU Lesser General Public License for more details.\n\n
+#  You should have received a copy of the GNU Lesser General
+#  Public License along with Serenity.
+#  If not, see <http://www.gnu.org/licenses/>.\n
+
+[build-system]
+requires = ["scikit-build-core>=0.10", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "qcserenity"
+version = "1.6.3.post2"
+authors = [
+  { name="University of Muenster, Neugebauer Group", email="serenity@uni-muenster.de" }
+]
+description = "A quantum chemistry program focused on subsystems and embedding"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+  "Operating System :: POSIX",
+  "Operating System :: Unix",
+  "Topic :: Scientific/Engineering :: Chemistry",
+  "Topic :: Scientific/Engineering :: Physics",
+  "Intended Audience :: Science/Research",
+  "Development Status :: 5 - Production/Stable"
+]
+dependencies = ["numpy", "mkl == 2024.2"]
+
+[project.optional-dependencies]
+plotting = ["matplotlib"]
+heatmap = ["ase", "scipy"]
+visualization = ["py3Dmol", "ipywidgets"]
+all = [
+  "matplotlib",
+  "ase",
+  "scipy",
+  "py3Dmol",
+  "ipywidgets"
+]
+
+[project.urls]
+Homepage = "https://github.com/qcserenity/serenity"
+Issues = "https://github.com/qcserenity/serenity/issues"
+Repository = "https://github.com/qcserenity/serenity"
+
+[tool.scikit-build]
+messages.after-success = "{green}Wheel successfully built! Hooray!"
+messages.after-failure = """
+{bold.red}Sorry{normal}, build failed. Your platform is {platform.platform}. Better luck next time!
+"""
+build.verbose = true
+logging.level = "INFO"
+build-dir = "serenity-wheel/build"
+sdist.include = ["dev/templates/*"]
+wheel.exclude = ["bin/xc-info", "include/**", "lib/**", "lib64/*", "share/cmake/**", "share/libecpint/**", "share/libint/**"]
+wheel.license-files = ["LICENSE", "mkl/*", "eigen/COPYING.MPL2", "eigen/COPYING.LGPL", "libxc/*", "xcfun/*", "ecpint/*", "libint/*", "gtest/*", "laplace-minimax/*"]
+
+[tool.scikit-build.cmake.define]
+SERENITY_PYTHON_BINDINGS = true
+SERENITY_ENABLE_TESTS = false
+SERENITY_USAGE_FROM_SOURCE = false
+SERENITY_USE_LAPLACE_MINIMAX = true
+HDF5_ROOT="/usr/local/h5"
+BUILD_SHARED_LIBS = true
+MKL_ROOT = "/opt/intel/oneapi/mkl/2024.2"
+
+[tool.cibuildwheel]
+build-verbosity = 1
+# 3.7 is the minimum python version supported by scikit-build-core
+build = ["cp37-*", "cp38-*", "cp39-*", "cp310-*", "cp311-*", "cp312-*", "cp313-*"]
+# build = ["cp312-*"]
+manylinux-x86_64-image = "manylinux_2_28"
+
+[tool.cibuildwheel.linux]
+# install boost, hdf5, eigen and mkl, and get license files from dependencies
+# that are automatically downloaded during the cmake process
+# (tool.scikit-build.wheel.license-files seem to be evaluated before the build)
+before-all = """
+  yum install -y wget tar bzip2
+  wget https://sourceforge.net/projects/boost/files/boost/1.66.0/boost_1_66_0.tar.bz2
+  tar --bzip2 -xf boost_1_66_0.tar.bz2
+  cd boost_1_66_0
+  ./bootstrap.sh
+  ./b2 install -d0 --with-math --with-container
+  cd ..
+  wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.0/src/hdf5-1.12.0.tar.bz2
+  tar --bzip2 -xf hdf5-1.12.0.tar.bz2
+  cd hdf5-1.12.0
+  ./configure --prefix=/usr/local/h5 --enable-cxx --silent --enable-silent-rules
+  make -j 8
+  make install -j 8
+  cd ..
+  git clone https://gitlab.com/libeigen/eigen.git
+  cd eigen && git checkout 3.4.0 && cmake -S . -B build && cmake --build build --target install && cd ..
+  tee > /tmp/oneAPI.repo << EOF
+[oneAPI]
+name=Intel® oneAPI repository
+baseurl=https://yum.repos.intel.com/oneapi
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://yum.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+EOF
+  mv /tmp/oneAPI.repo /etc/yum.repos.d
+  yum install -y intel-oneapi-mkl-devel-2024.2
+  mkdir -p mkl ecpint eigen gtest laplace-minimax libint libxc xcfun
+  curl -o ecpint/CITATION https://raw.githubusercontent.com/robashaw/libecpint/refs/tags/v1.0.7/CITATION
+  curl -o ecpint/LICENSE https://raw.githubusercontent.com/robashaw/libecpint/refs/tags/v1.0.7/LICENSE
+  curl -o gtest/LICENSE https://raw.githubusercontent.com/google/googletest/refs/tags/v1.13.0/LICENSE
+  curl -o laplace-minimax/LICENSE https://raw.githubusercontent.com/bhelmichparis/laplace-minimax/55414f3f28b89ffa602ecb1f12e5645a998a2206/LICENSE
+  curl -o laplace-minimax/README.md https://raw.githubusercontent.com/bhelmichparis/laplace-minimax/55414f3f28b89ffa602ecb1f12e5645a998a2206/README.md
+  curl -o libint/LICENSE https://raw.githubusercontent.com/evaleev/libint/refs/tags/v2.7.0-beta.6/LICENSE
+  curl -o libxc/COPYING https://gitlab.com/libxc/libxc/-/raw/6.1.0/COPYING?ref_type=tags&inline=false
+  curl -o libxc/CITATION https://gitlab.com/libxc/libxc/-/raw/6.1.0/CITATION?ref_type=tags&inline=false
+  cp /opt/intel/oneapi/mkl/2024.2/share/doc/mkl/licensing/license.txt mkl/
+  curl -o xcfun/LICENSE.md https://raw.githubusercontent.com/qcserenity/xcfun/refs/heads/master/LICENSE.md
+"""
+archs = ["x86_64"]
+# set LD_LIBRARY_PATH for serenity, xcfun, hdf5 and mkl
+repair-wheel-command = """
+ls serenity-wheel/build/lib
+echo $SERENITY_USAGE_FROM_SOURCE
+export LD_LIBRARY_PATH=/usr/local/lib64:/project/serenity-wheel/build/lib64:/usr/local/h5/lib:/project/lib:/project/serenity-wheel/build/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2024.2/lib/intel64:$LD_LIBRARY_PATH
+auditwheel repair -w {dest_dir} {wheel}
+"""
+# only build CPython and not PyPy
+skip = ["*-musllinux_x86_64", "pp*"]
