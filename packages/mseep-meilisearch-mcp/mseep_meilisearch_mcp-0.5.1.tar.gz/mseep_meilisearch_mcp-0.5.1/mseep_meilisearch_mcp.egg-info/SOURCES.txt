@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_meilisearch_mcp.egg-info/PKG-INFO
+mseep_meilisearch_mcp.egg-info/SOURCES.txt
+mseep_meilisearch_mcp.egg-info/dependency_links.txt
+mseep_meilisearch_mcp.egg-info/requires.txt
+mseep_meilisearch_mcp.egg-info/top_level.txt
+tests/test_docker_integration.py
+tests/test_mcp_client.py
+tests/test_server.py
+tests/test_user_agent.py
