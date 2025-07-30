@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: icbc-captcha-recognizer
+Version: 0.1.1
+Summary: ICBC CAPTCHA recognizer with pretrained model
+Author: lk
+Author-email: 
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: torch >=2.6.0
+Requires-Dist: torchvision >0.21.0
+Requires-Dist: opencv-python >4.6.0.66
+Requires-Dist: numpy >=1.26.4
+

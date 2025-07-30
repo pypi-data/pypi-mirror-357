@@ -1,0 +1,12 @@
+{
+    "model_path": "./output/custom_captcha_model/model.pth",
+    "model_type": "LiteCNN",
+    "image_channel": 1,
+    "image_width": 80,
+    "image_height": 28,
+    "max_text_length": 4,
+    "charset_path": "./config/charsets.txt",
+    "use_gpu": false,
+    "device_id": 0,
+    "num_classes": 62
+}
