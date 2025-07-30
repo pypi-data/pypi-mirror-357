@@ -1,0 +1,9 @@
+setup.py
+game_object_detection/__init__.py
+game_object_detection/detector.py
+game_object_detection/trainer.py
+game_object_detection.egg-info/PKG-INFO
+game_object_detection.egg-info/SOURCES.txt
+game_object_detection.egg-info/dependency_links.txt
+game_object_detection.egg-info/requires.txt
+game_object_detection.egg-info/top_level.txt
