@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/PyG_graph_load.py
+src/PyG_node_interface.py
+src/__init__.py
+src/pyingraph.egg-info/PKG-INFO
+src/pyingraph.egg-info/SOURCES.txt
+src/pyingraph.egg-info/dependency_links.txt
+src/pyingraph.egg-info/requires.txt
+src/pyingraph.egg-info/top_level.txt
