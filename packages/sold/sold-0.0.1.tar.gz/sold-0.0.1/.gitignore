@@ -1,0 +1,5 @@
+.coverage
+.tox/
+dist/
+tests/__pycache__/
+.pypirc

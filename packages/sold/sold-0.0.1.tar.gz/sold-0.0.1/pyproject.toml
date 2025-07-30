@@ -1,0 +1,19 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "sold"
+author = "Vincent Knight"
+author-email = "knightva@cardiff.ac.uk"
+requires-python= ">=3.11"
+requires = [
+    "more-itertools >= 10.2.0",
+    "numpy >= 1.26.1",
+]
+description-file = "README.md"
+classifiers = [ "License :: OSI Approved :: MIT License",]
+
+
+[tool.flit.metadata.requires-extra]
+doc = ["sphinx", "sphinx-rtd-theme", "sphinx-togglebutton"]
