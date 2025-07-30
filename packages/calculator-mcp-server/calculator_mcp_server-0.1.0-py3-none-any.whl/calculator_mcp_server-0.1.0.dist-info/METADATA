@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: calculator-mcp-server
+Version: 0.1.0
+Summary: Calculator MCP Server
+Author-email: Wang Junjian <wang-junjian@qq.com>
+Project-URL: Homepage, https://github.com/wang-junjian/calculator-mcp-server
+Project-URL: Bug Tracker, https://github.com/wang-junjian/calculator-mcp-server/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: build>=1.2.2.post1
+Requires-Dist: fastmcp>=2.9.0
+Provides-Extra: dev
+Requires-Dist: build; extra == "dev"
+Requires-Dist: twine; extra == "dev"
