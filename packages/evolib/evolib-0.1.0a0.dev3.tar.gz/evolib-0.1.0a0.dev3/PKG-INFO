@@ -1,0 +1,144 @@
+Metadata-Version: 2.4
+Name: evolib
+Version: 0.1.0a0.dev3
+Summary: A modular framework for evolutionary strategies and neuroevolution.
+Author-email: EvoLib <evolib@dismail.de>
+License: MIT License
+        
+        Copyright (c) 2025 puck
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: numpy>=1.24
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: pandas>=2.3.0
+Provides-Extra: dev
+Requires-Dist: pygame; extra == "dev"
+Requires-Dist: pymunk; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: sphinx-rtd-theme; extra == "docs"
+Requires-Dist: myst-parser; extra == "docs"
+Dynamic: license-file
+
+# EvoLib – A Modular Toolkit for Evolutionary Computation
+
+
+<p align="center">
+  <img src="https://github.com/EvoLib/evolib/blob/main/assets/evolib_256.png" alt="EvoLib Logo" width="256"/>
+</p>
+
+
+**EvoLib** is a modular and extensible framework for implementing and analyzing evolutionary algorithms in Python.\
+It supports classical strategies such as (μ, λ) and (μ + λ) Evolution Strategies, Genetic Algorithms, and Neuroevolution – with a strong focus on clarity, modularity, and didactic value.
+
+---
+
+## 🚀 Features
+
+- Individual- and population-level adaptive mutation strategies
+- Modular selection methods: tournament, rank-based, roulette, SUS, truncation, Boltzmann
+- Multiple crossover operators: heuristic, arithmetic, differential, SBX, etc.
+- Configurable via YAML: clean separation of individual and population setups
+- Benchmark functions: Sphere, Rosenbrock, Rastrigin, Ackley, Griewank, etc.
+- Built-in loss functions (MSE, MAE, Huber, Cross-Entropy)
+- Plotting utilities for fitness trends, mutation tracking, diversity
+- Designed for extensibility: clean core/operator/utils split
+- Sphinx-based documentation (coming soon)
+
+---
+
+<p align="center">
+  <img src="./examples/04_function_approximation/02_frames_point/02_sine_point.gif" alt="Sample" width="512"/>
+</p>
+
+---
+
+## 📂 Directory Structure
+
+```
+evolib/
+├── core/           # Population, Individual
+├── operators/      # Crossover, mutation, selection, replacement
+├── utils/          # Losses, plotting, config loaders, benchmarks
+├── globals/        # Enums and constants
+├── config/         # YAML config files
+├── examples/       # Educational and benchmark scripts
+└── api.py          # Central access point (auto-generated)
+```
+
+---
+
+## 📦 Installation
+
+```bash
+pip install evolib
+```
+
+Requirements: Python 3.9+ and packages in `requirements.txt`.
+
+---
+
+## 🧪 Quickstart Example
+
+```python
+from evolib import Pop, Indiv, evolve_mu_lambda, mse_loss, sphere
+
+def fitness(indiv: Indiv) -> None:
+    indiv.fitness = mse_loss(0.0, sphere(indiv.para))
+
+pop = Pop(config_path="config/population.yaml")
+for _ in range(pop.max_generations):
+    evolve_mu_lambda(pop, fitness)
+    print(pop)
+```
+
+For full examples, see 📁[`examples/`](./examples/) – including plotting, adaptive mutation, and benchmarking.
+
+---
+
+## 📚 Use Cases
+
+- Evolutionary benchmark optimization
+- Parameter tuning
+- Algorithm comparisons
+- Teaching material for evolutionary computation
+- Neuroevolution
+
+---
+
+## 🪪 License
+
+This project is licensed under the [MIT License](./LICENSE.md).
+
+---
+
+## 🙏 Acknowledgments
+
+Inspired by classical evolutionary computation techniques and designed for clarity, modularity, and pedagogical use.
+
