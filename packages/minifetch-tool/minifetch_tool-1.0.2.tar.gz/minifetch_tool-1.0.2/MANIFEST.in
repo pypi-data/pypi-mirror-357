@@ -1,0 +1,3 @@
+include minifetch/ascii/*
+include minifetch/custom.txt
+include README.md
