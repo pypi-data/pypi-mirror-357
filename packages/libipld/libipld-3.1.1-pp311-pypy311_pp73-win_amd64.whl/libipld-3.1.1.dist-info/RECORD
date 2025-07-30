@@ -1,0 +1,7 @@
+libipld-3.1.1.dist-info/METADATA,sha256=haSgvcAqpMVlkVPKCjQgt3AciLvyQx4gkrt6IHp1uS0,4256
+libipld-3.1.1.dist-info/WHEEL,sha256=w5kaNUiq8uTZ_zJZCRzWN7vpKZ1YNf5ohVGbtAVJf4o,103
+libipld-3.1.1.dist-info/licenses/LICENSE,sha256=lbdJLFPnyIAYGzNS4yCvrJIztvI4FI5Zx5V1ZwH9oY0,1092
+libipld/__init__.py,sha256=DAod-xoNrEZ8iUEmPlNBK3pCROoZL0v7plOS2GbgoAs,400
+libipld/_libipld.pyi,sha256=He26syIZz_724I4kl7Y1YDubHPgFX57cRzfqslB2Yvg,2413
+libipld/_libipld.pypy311-pp73-win_amd64.pyd,sha256=d2L1sw49lByDg2sTlGwxG1olqzkd9SJjB8-sWkyCJTM,390144
+libipld-3.1.1.dist-info/RECORD,,
