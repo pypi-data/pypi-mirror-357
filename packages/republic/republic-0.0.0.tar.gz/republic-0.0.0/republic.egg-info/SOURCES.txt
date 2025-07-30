@@ -1,0 +1,7 @@
+README.md
+main.py
+pyproject.toml
+republic.egg-info/PKG-INFO
+republic.egg-info/SOURCES.txt
+republic.egg-info/dependency_links.txt
+republic.egg-info/top_level.txt
