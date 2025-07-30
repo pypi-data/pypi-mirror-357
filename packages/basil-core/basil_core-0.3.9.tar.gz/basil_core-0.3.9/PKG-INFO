@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: basil_core
+Version: 0.3.9
+Summary: basil_core for postprocessing and inference with core simulations
+Home-page: https://gitlab.com/xevra/basil-core
+Author: Vera Delfavero
+Author-email: xevra86@gmail.com
+Maintainer: Vera Delfavero
+Maintainer-email: xevra86@gmail.com
+License: MIT License
+Keywords: astronomy,information analysis,machine learning,physics
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Requires-Python: >=3.9
+Requires-Dist: h5py>=2.7.0
+Requires-Dist: numpy>=1.21.6
+Requires-Dist: matplotlib>=2.0.0
+Requires-Dist: scipy>=1.2.0
+Requires-Dist: six>=1.10.0
+Requires-Dist: fast_histogram>=0.10
+Requires-Dist: xev-data>=0.0.7
+Requires-Dist: astropy
+Requires-Dist: pathlib
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Long description goes here...
