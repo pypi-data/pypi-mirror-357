@@ -1,0 +1,15 @@
+mseep_serena-0.1.3.dist-info/licenses/LICENSE,sha256=FgF-UFYrsRIAb28y0XypieDlc7ARvWeQtkIBixwZWww,1066
+test/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+test/conftest.py,sha256=0mIuaYjgfrDp0lxrqXxkljdrVCNq9mR0U6RCAgUlVlk,3326
+test/serena/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+test/serena/test_edit_marker.py,sha256=HyWZlY-jpmKUNHChmK5djuu5RLgDtHzdRyE4BbQXJtA,468
+test/serena/test_make_tool_process_isolation.py,sha256=AESNldtyxvWApaXMEOtjXllJKLr-H5K8DxuW3kZkmcw,7626
+test/serena/test_mcp.py,sha256=SYNOJqFumqG1OG-uGwBdsi1bvKsLl8gGKqU1y7gjau0,9411
+test/serena/test_serena_agent.py,sha256=pIzPLdUEHCaectEcF-GYyehe3vXQAQRpn5UkwNcNLOw,11401
+test/serena/test_symbol.py,sha256=8RwJPGsXG-a7r2EnRzMf2aIm4XuwhH5aK5IAaDVw_4Y,10773
+test/serena/test_symbol_editing.py,sha256=ZIs_L-6pwNU8Yt0nsPdnQQh2LU38KNmMQq6eVBBHe0c,9890
+test/serena/test_text_utils.py,sha256=tqsCSNvjWvFR2Wv1gauvrKWoHj8ypC4c5By_6aVM3dc,21776
+mseep_serena-0.1.3.dist-info/METADATA,sha256=YhtHrDYnkDooSdBRGyQ2nuHiCKaoQkEgwIzv_7CIpO8,1278
+mseep_serena-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mseep_serena-0.1.3.dist-info/top_level.txt,sha256=8sobtsfpB9Btr-Roflefznazfk6Tt2BQItpS5szCb9I,5
+mseep_serena-0.1.3.dist-info/RECORD,,
