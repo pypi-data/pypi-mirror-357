@@ -1,0 +1,2 @@
+[console_scripts]
+eeggan = eeggan.__main__:main
