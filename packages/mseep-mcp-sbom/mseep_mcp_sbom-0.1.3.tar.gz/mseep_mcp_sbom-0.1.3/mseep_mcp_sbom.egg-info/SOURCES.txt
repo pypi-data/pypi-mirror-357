@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.py
+mseep_mcp_sbom.egg-info/PKG-INFO
+mseep_mcp_sbom.egg-info/SOURCES.txt
+mseep_mcp_sbom.egg-info/dependency_links.txt
+mseep_mcp_sbom.egg-info/requires.txt
+mseep_mcp_sbom.egg-info/top_level.txt
