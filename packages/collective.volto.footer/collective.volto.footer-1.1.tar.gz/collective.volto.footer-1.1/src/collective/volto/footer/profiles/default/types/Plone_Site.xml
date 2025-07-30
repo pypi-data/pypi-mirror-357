@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="Plone Site">
+  <property name="behaviors" purge="false">
+    <element value="collective.volto.footer.editable" />
+  </property>
+</object>
