@@ -1,0 +1,14 @@
+ukb/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ukb/__main__.py,sha256=MHKZ_ae3fSLGTLUUMOx15fWdeOnJSHhq-zslRP5F5Lc,79
+ukb/atlas.py,sha256=HUc_zIrE-wsGxtVkiS_LFKTVQZs6xtX3Jqg2Kym1UMg,5495
+ukb/cli.py,sha256=_oHbk4TET1lJt4tRYuLInWpemMl5m9yIxIr2M4CWDuM,2521
+ukb/clip.py,sha256=Np3nWA0jr7ohCBN4qNyzzIJVy4M7hmGA0l_ZqSa5sdY,8874
+ukb/connectivity.txt,sha256=vZhCGXAyuLLj3DtnayVht_iUgmOmxNb-zXsRIxTm6_k,167593
+ukb/mesh.py,sha256=oQyMVGI6Ksmc2qPxkmpv6GNBTDyibHJGTN-Rs-p1KYw,9475
+ukb/surface.py,sha256=-PtIaQOQ5Jdz1Bc9UJBdq3JbZAWRvEyd1_kyhCcPDtM,10136
+ukb_atlas-1.0.1.dist-info/licenses/LICENSE,sha256=lo5K2rJPZOSv6luutGHbzzi3IpXNaB9E2UWq60qvNx0,1111
+ukb_atlas-1.0.1.dist-info/METADATA,sha256=-LQ03yfdOZ21-dQRL2pDGsYPmlVa-BPFcNmpHP7FLOw,7146
+ukb_atlas-1.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+ukb_atlas-1.0.1.dist-info/entry_points.txt,sha256=MOE0HHvJZ5VWQVIgBNTkPPi8Ids1RMyyb8C0XCC0BFg,43
+ukb_atlas-1.0.1.dist-info/top_level.txt,sha256=SBB27nzUhC9xAI-z5YeUB8JFZFqbSwSambt6iZZpopo,4
+ukb_atlas-1.0.1.dist-info/RECORD,,

@@ -1,0 +1,2 @@
+[console_scripts]
+ukb-atlas = ukb.cli:main
