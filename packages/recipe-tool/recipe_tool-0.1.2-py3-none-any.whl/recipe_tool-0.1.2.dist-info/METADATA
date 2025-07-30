@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: recipe-tool
+Version: 0.1.2
+Summary: A tool for executing natural language recipe-like instructions
+Author: MADE:Explorations Team
+License-Expression: MIT
+Requires-Python: >=3.11
+Requires-Dist: recipe-executor
+Description-Content-Type: text/markdown
+
+# 🔧 Recipe Tool Core
+
+Recipe execution and creation from natural language. Combines Recipe Executor with Recipe Creator capabilities.
+
+See the [main README](../README.md) for complete setup and usage instructions.
