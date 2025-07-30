@@ -1,0 +1,67 @@
+Metadata-Version: 2.4
+Name: actinia-satellite-plugin
+Version: 0.3.0
+Summary: An actinia-core plugin which adds efficient satellite data handling to actinia-core
+Author: Soeren Gebbert, Carmen Tawalika, Markus Neteler, Lina Krisztian
+Project-URL: Homepage, https://github.com/mundialis/actinia-satellite-plugin
+Project-URL: Tutorial, https://mundialis.github.io/actinia_core
+Project-URL: API_Docs, https://redocly.github.io/redoc/?url=https://actinia.mundialis.de/latest/swagger.json
+Keywords: processing,earth observation,cloud-based processing,rest api,gis,grass gis,osgeo,satellite
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+License-File: AUTHORS.rst
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Dynamic: license-file
+
+# Actinia Satellite Plugin
+
+This actinia plugin is designed for efficient satellite data handling, especially Landsat and Sentinel-2 scenes.
+It implements endpoints for on-the-fly NDVI computation and time series import for Landsat and Sentinel-2
+scenes in the actinia database.
+
+Note:
+
+    Actinia[1] is an open source REST API for scalable, distributed, high performance
+    processing of geographical data that uses GRASS GIS for computational tasks.
+
+    The Actinia service consists of the *Actinia Core* that provides the basic but sophisticated processing service
+    and *Actinia plugins* that provide problem specific services like Sentinel-2 and Landsat NDVI computation,
+    spatio-temporal statistical analysis and many more.
+
+    [1] https://github.com/mundialis/actinia_core
+
+
+## Installation
+
+The actinia plugin must be installed in the same environment as actinia core.
+Actinia core must be configured to load the installed plugin. When the plugin is
+loaded and all plugin endpoints are available in actinia, the interface description
+of actinia will be extended with the endpoints of the plugins.
+
+    .. code-block:: bash
+
+        git clone https://github.com/mundialis/actinia_satellite_plugin.git
+
+        cd actinia_satellite_plugin
+        pip3 install .
+
+    ..
+
+After installation set the plugin name in the actinia core configuration
+and restart the actinia core server.
+
+
+## Testing locally
+
+```
+docker build -f docker/actinia-plugin-tests/Dockerfile -t actinia-plugin-test .
+docker run -v </path/to/actinia_satellite_plugin/tests>:/src/actinia_satellite_plugin/tests -it actinia-plugin-test:latest -i
+
+# run tests with
+make test
+```
