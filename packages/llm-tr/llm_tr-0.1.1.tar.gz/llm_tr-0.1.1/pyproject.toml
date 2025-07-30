@@ -1,0 +1,26 @@
+[project]
+name = "llm-tr"
+version = "0.1.1"
+description = "Use LLM to translate in your shell"
+readme = "README.md"
+authors = [{ name = "Martín Gaitán" }]
+license = { text = "Apache-2.0" }
+classifiers = ["License :: OSI Approved :: Apache Software License"]
+requires-python = ">=3.11"
+dependencies = ["llm"]
+
+[project.urls]
+Homepage = "https://github.com/mgaitan/llm-tr"
+Changelog = "https://github.com/mgaitan/llm-tr/releases"
+Issues = "https://github.com/mgaitan/llm-tr/issues"
+CI = "https://github.com/mgaitan/llm-tr/actions"
+
+[project.entry-points.llm]
+tr = "llm_tr"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[dependency-groups]
+dev = ["ipdb>=0.13.13", "ipython>=9.3.0", "pytest>=8.4.1", "ruff>=0.12.0"]
+pyclip = ["pyclip>=0.7.0"]
