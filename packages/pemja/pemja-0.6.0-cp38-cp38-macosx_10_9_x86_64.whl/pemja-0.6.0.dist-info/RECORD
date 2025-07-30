@@ -1,0 +1,11 @@
+pemja-0.6.0.dist-info/RECORD,,
+pemja-0.6.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+pemja-0.6.0.dist-info/WHEEL,sha256=Kx6RWhSVfL88-gHgRuuK5c46fDrxzStSDcWbfEAkrVo,108
+pemja-0.6.0.dist-info/top_level.txt,sha256=-gS0Zk1wg5UUeYxu1DtmmubSpDBAIF5h2-dzrFYOZCk,6
+pemja-0.6.0.dist-info/METADATA,sha256=ylb82hOAtcENDB8MVl22CZWiBueKrvkddPC9ZKNkJSI,4206
+pemja/version.py,sha256=ORj4xZWhvpniPI_trbwYdoQqfdOtvNQeFoNBPyI9Dpg,790
+pemja/redirect_stream.py,sha256=VDdmbdVscInrhWxS53JeRyKWpgpA_wt56KvWTRc30U0,1277
+pemja/pemja_core.cpython-38-darwin.so,sha256=NYMKg9uwvfejCxEF_2648hTGREKlOKRFwMJVphw0rDE,139488
+pemja/__init__.py,sha256=XLy6UfC3EJKoWs1UYOhwK6mWyiP30rgUKnWdmellg4I,826
+pemja/logger.py,sha256=y86n25LzVmXnsQ4cioFjLu85wiHMtHSgcgE2NOeH4v4,2255
+pemja/pemja_utils.cpython-38-darwin.so,sha256=2X1aOz6wIk6wudKROyUoeTSl2BIMyMS8ffVovG3FL1o,9136
