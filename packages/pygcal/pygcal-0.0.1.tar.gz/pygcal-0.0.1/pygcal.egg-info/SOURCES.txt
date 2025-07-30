@@ -1,0 +1,11 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+pygcal/__init__.py
+pygcal/static.py
+pygcal/values.py
+pygcal.egg-info/PKG-INFO
+pygcal.egg-info/SOURCES.txt
+pygcal.egg-info/dependency_links.txt
+pygcal.egg-info/top_level.txt
