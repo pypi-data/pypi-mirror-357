@@ -1,0 +1,8 @@
+payman_sdk/__init__.py,sha256=yLEyz-Yi3DmgQinb5cJb5tcfXh3nUhKQfSnsbGLEX6A,293
+payman_sdk/client.py,sha256=KewazXUBwGRZbQ_qrN6WETYGUUjy7sZDpK2z_UqM2s8,13242
+payman_sdk/types.py,sha256=VWGyqJoeQJ6Ox2pgbiuMsaWlRTopzI8ArlDVNYECwCU,7046
+payman_sdk/utils.py,sha256=voZ-zdFXXCkyEzeo61jrfchndjXGafguF0BqyJrROCw,2492
+paymanai_sdk-1.0.7.dist-info/LICENSE,sha256=tfQPTQcqsCl5tOzI61R1zmt6B6NZvSU-A-91qtiFWXw,1066
+paymanai_sdk-1.0.7.dist-info/METADATA,sha256=Hu6XJsO35VFu4zsORyOY2oirGzp2ZxuivxPScLy2sXE,10212
+paymanai_sdk-1.0.7.dist-info/WHEEL,sha256=Nq82e9rUAnEjt98J6MlVmMCZb-t9cYE2Ir1kpBmnWfs,88
+paymanai_sdk-1.0.7.dist-info/RECORD,,
