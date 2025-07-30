@@ -1,0 +1,50 @@
+Metadata-Version: 2.3
+Name: arcane-tasks
+Version: 0.7.1
+Summary: Override tasks client
+Author: Arcane
+Author-email: product@wearcane.com
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: arcane-core (>=1.6.0,<2.0.0)
+Requires-Dist: backoff (>=1.10.0)
+Requires-Dist: google-cloud-tasks (==2.14.0)
+Description-Content-Type: text/markdown
+
+# Arcane CloudTask
+
+This package is base on [google-cloud-cloudtasks](https://pypi.org/project/google-cloud-tasks/).
+
+## Get Started
+
+```sh
+pip install arcane-tasks
+
+## Example Usage
+
+```python
+from arcane import tasks
+
+# Import your configs
+from configure import Config
+
+tasks_client = tasks.Client(adscale_key=Config.KEY, project=Config.GCP_PROJECT)
+body = {
+    'attribute' : value
+}
+task_name = "My task"
+tasks_client.publish_task(
+    queue=<your-queue>,
+    url=<url-to-triger>,
+    body=body,
+    task_name=task_name
+)
+```
+
