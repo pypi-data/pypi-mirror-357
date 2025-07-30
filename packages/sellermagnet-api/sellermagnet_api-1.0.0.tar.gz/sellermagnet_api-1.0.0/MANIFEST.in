@@ -1,0 +1,3 @@
+include README.md
+include LICENSE
+recursive-include sellermagnet_api *.py

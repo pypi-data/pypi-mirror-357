@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: sellermagnet-api
+Version: 1.0.0
+Summary: A lightweight Python client for the SellerMagnet API to access Amazon product data.
+Author-email: SellerMagnetAPI <api@sellermagnet.com>
+License: MIT
+Project-URL: Homepage, https://sellermagnet-api.com
+Project-URL: Documentation, https://sellermagnet-api.com/docs
+Project-URL: Source, https://github.com/sellermagnet/sellermagnet-api
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests==2.32.4
+Requires-Dist: tenacity==9.1.2
+Dynamic: license-file
+
+README# SellerMagnet API Client
+
+A professional Python client for interacting with the [SellerMagnet API](https://sellermagnet-api.com), designed for enterprise-grade applications. This package provides a convenient interface to access Amazon product data, seller reviews, deals, marketplaces, and manage data pipelines.
+
+## Features
+
+- Comprehensive support for all SellerMagnet API endpoints, including Amazon product statistics, lookup, offers, and more.
+- Type hints and data classes for structured, type-safe responses.
+- Robust error handling for authentication, parameter validation, and API errors.
+- Retry mechanism for handling transient network issues.
+- Extensive documentation and example scripts for easy integration.
+- Aligned with the branding and functionality of [sellermagnet-api.com](https://sellermagnet-api.com).
+
+## Installation
+
+Install the package using pip:
+
+```bash
+pip install sellermagnet-api

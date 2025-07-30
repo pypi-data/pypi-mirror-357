@@ -1,0 +1,34 @@
+[project]
+name = "sellermagnet-api"
+version = "1.0.0"
+description = "A lightweight Python client for the SellerMagnet API to access Amazon product data."
+authors = [{name = "SellerMagnetAPI", email = "api@sellermagnet.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "requests==2.32.4",
+    "tenacity==9.1.2",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP",
+]
+
+[project.urls]
+Homepage = "https://sellermagnet-api.com"
+Documentation = "https://sellermagnet-api.com/docs"
+Source = "https://github.com/sellermagnet/sellermagnet-api"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
