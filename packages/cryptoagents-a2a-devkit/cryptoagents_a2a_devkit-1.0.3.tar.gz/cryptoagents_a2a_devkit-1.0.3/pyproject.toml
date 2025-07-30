@@ -1,0 +1,19 @@
+[project]
+name = "cryptoagents-a2a-devkit"
+version = "1.0.3"
+description = "cryptoagents a2a devkit"
+authors = [
+    {name = "Daniel-BVM", email = "daniel@bvm.network"},
+]
+dependencies = [
+    "httpx",
+]
+requires-python = ">=3.8"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cryptoagents_a2a_devkit"]  

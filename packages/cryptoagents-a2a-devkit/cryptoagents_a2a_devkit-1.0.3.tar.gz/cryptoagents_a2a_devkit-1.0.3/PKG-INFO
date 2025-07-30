@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: cryptoagents-a2a-devkit
+Version: 1.0.3
+Summary: cryptoagents a2a devkit
+Author-email: Daniel-BVM <daniel@bvm.network>
+License: MIT
+License-File: LICENSE
+Requires-Python: >=3.8
+Requires-Dist: httpx
