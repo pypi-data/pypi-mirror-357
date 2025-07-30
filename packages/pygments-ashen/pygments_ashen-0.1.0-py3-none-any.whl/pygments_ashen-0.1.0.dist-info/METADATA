@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: pygments-ashen
+Version: 0.1.0
+Summary: Pygments style for Ashen
+Project-URL: Repository, https://git.sr.ht/~ficd/ashen
+Author-email: Daniel Fichtinger <daniel@ficd.ca>
+License-File: LICENSE
+Requires-Python: >=3.12
+Requires-Dist: pygments>=2.19.2
+Description-Content-Type: text/markdown
+
+# Pygments Ashen
+
+This repository contains the Pygments style plugin for the
+[Ashen](https://sr.ht/~ficd/ashen) theme. Available as the `pygments-ashen`
+package for use in your Python projects, or with the Pygments CLI tool.
