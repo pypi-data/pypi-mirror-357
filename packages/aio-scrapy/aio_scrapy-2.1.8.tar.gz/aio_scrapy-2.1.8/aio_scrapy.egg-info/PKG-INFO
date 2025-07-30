@@ -1,0 +1,190 @@
+Metadata-Version: 2.2
+Name: aio-scrapy
+Version: 2.1.8
+Summary: A high-level Web Crawling and Web Scraping framework based on Asyncio
+Home-page: https://github.com/conlin-huang/aio-scrapy.git
+Author: conlin
+Author-email: 995018884@qq.com
+License: MIT
+Keywords: aio-scrapy,scrapy,aioscrapy,scrapy redis,asyncio,spider
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp
+Requires-Dist: ujson
+Requires-Dist: w3lib>=1.17.0
+Requires-Dist: parsel>=1.5.0
+Requires-Dist: PyDispatcher>=2.0.5
+Requires-Dist: zope.interface>=5.1.0
+Requires-Dist: redis>=4.3.1
+Requires-Dist: aiomultiprocess>=0.9.0
+Requires-Dist: loguru>=0.7.0
+Requires-Dist: anyio>=3.6.2
+Provides-Extra: all
+Requires-Dist: aiomysql>=0.1.1; extra == "all"
+Requires-Dist: httpx[http2]>=0.23.0; extra == "all"
+Requires-Dist: aio-pika>=8.1.1; extra == "all"
+Requires-Dist: cryptography; extra == "all"
+Requires-Dist: motor>=2.1.0; extra == "all"
+Requires-Dist: pyhttpx>=2.10.1; extra == "all"
+Requires-Dist: asyncpg>=0.27.0; extra == "all"
+Requires-Dist: XlsxWriter>=3.1.2; extra == "all"
+Requires-Dist: pillow>=9.4.0; extra == "all"
+Requires-Dist: requests>=2.28.2; extra == "all"
+Requires-Dist: curl_cffi; extra == "all"
+Provides-Extra: aiomysql
+Requires-Dist: aiomysql>=0.1.1; extra == "aiomysql"
+Requires-Dist: cryptography; extra == "aiomysql"
+Provides-Extra: httpx
+Requires-Dist: httpx[http2]>=0.23.0; extra == "httpx"
+Provides-Extra: aio-pika
+Requires-Dist: aio-pika>=8.1.1; extra == "aio-pika"
+Provides-Extra: mongo
+Requires-Dist: motor>=2.1.0; extra == "mongo"
+Provides-Extra: playwright
+Requires-Dist: playwright>=1.31.1; extra == "playwright"
+Provides-Extra: pyhttpx
+Requires-Dist: pyhttpx>=2.10.4; extra == "pyhttpx"
+Provides-Extra: curl-cffi
+Requires-Dist: curl_cffi>=0.6.1; extra == "curl-cffi"
+Provides-Extra: requests
+Requires-Dist: requests>=2.28.2; extra == "requests"
+Provides-Extra: pg
+Requires-Dist: asyncpg>=0.27.0; extra == "pg"
+Provides-Extra: execl
+Requires-Dist: XlsxWriter>=3.1.2; extra == "execl"
+Requires-Dist: pillow>=9.4.0; extra == "execl"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# AioScrapy
+
+AioScrapy是一个基于Python异步IO的强大网络爬虫框架。它的设计理念源自Scrapy，但完全基于异步IO实现，提供更高的性能和更灵活的配置选项。</br>
+AioScrapy is a powerful asynchronous web crawling framework built on Python's asyncio library. It is inspired by Scrapy but completely reimplemented with asynchronous IO, offering higher performance and more flexible configuration options.
+
+## 特性 | Features
+
+- **完全异步**：基于Python的asyncio库，实现高效的并发爬取
+- **多种下载处理程序**：支持多种HTTP客户端，包括aiohttp、httpx、requests、pyhttpx、curl_cffi、DrissionPage和playwright
+- **灵活的中间件系统**：轻松添加自定义功能和处理逻辑
+- **强大的数据处理管道**：支持多种数据库存储选项
+- **内置信号系统**：方便的事件处理机制
+- **丰富的配置选项**：高度可定制的爬虫行为
+- **分布式爬取**：支持使用Redis和RabbitMQ进行分布式爬取
+- **数据库集成**：内置支持Redis、MySQL、MongoDB、PostgreSQL和RabbitMQ
+
+
+- **Fully Asynchronous**: Built on Python's asyncio for efficient concurrent crawling
+- **Multiple Download Handlers**: Support for various HTTP clients including aiohttp, httpx, requests, pyhttpx, curl_cffi, DrissionPage and playwright
+- **Flexible Middleware System**: Easily add custom functionality and processing logic
+- **Powerful Data Processing Pipelines**: Support for various database storage options
+- **Built-in Signal System**: Convenient event handling mechanism
+- **Rich Configuration Options**: Highly customizable crawler behavior
+- **Distributed Crawling**: Support for distributed crawling using Redis and RabbitMQ
+- **Database Integration**: Built-in support for Redis, MySQL, MongoDB, PostgreSQL, and RabbitMQ
+
+## 安装 | Installation
+
+### 要求 | Requirements
+
+- Python 3.9+
+
+### 使用pip安装 | Install with pip
+
+```bash
+pip install aio-scrapy
+
+# Install the latest aio-scrapy
+# pip install git+https://github.com/ConlinH/aio-scrapy
+```
+
+### 开始 | Start
+```python
+from aioscrapy import Spider, logger
+
+
+class MyspiderSpider(Spider):
+    name = 'myspider'
+    custom_settings = {
+        "CLOSE_SPIDER_ON_IDLE": True
+    }
+    start_urls = ["https://quotes.toscrape.com"]
+
+    @staticmethod
+    async def process_request(request, spider):
+        """ request middleware """
+        pass
+
+    @staticmethod
+    async def process_response(request, response, spider):
+        """ response middleware """
+        return response
+
+    @staticmethod
+    async def process_exception(request, exception, spider):
+        """ exception middleware """
+        pass
+
+    async def parse(self, response):
+        for quote in response.css('div.quote'):
+            item = {
+                'author': quote.xpath('span/small/text()').get(),
+                'text': quote.css('span.text::text').get(),
+            }
+            yield item
+
+    async def process_item(self, item):
+        logger.info(item)
+
+
+if __name__ == '__main__':
+    MyspiderSpider.start()
+```
+
+## 文档 | Documentation
+
+## 文档目录 | Documentation Contents
+- [安装指南 | Installation Guide](docs/installation.md)
+- [快速入门 | Quick Start](docs/quickstart.md)
+- [核心概念 | Core Concepts](docs/concepts.md)
+- [爬虫指南 | Spider Guide](docs/spiders.md)
+- [下载器 | Downloaders](docs/downloaders.md)
+- [中间件 | Middlewares](docs/middlewares.md)
+- [管道 | Pipelines](docs/pipelines.md)
+- [队列 | Queues](docs/queues.md)
+- [请求过滤器 | Request Filters](docs/dupefilters.md)
+- [代理 | Proxy](docs/proxy.md)
+- [数据库连接 | Database Connections](docs/databases.md)
+- [分布式部署 | Distributed Deployment](docs/distributed.md)
+- [配置参考 | Settings Reference](docs/settings.md)
+- [API参考 | API Reference](docs/api.md)
+- [示例 | Example](example)
+
+## 许可证 | License
+
+本项目采用MIT许可证 - 详情请查看LICENSE文件。</br>
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+## 联系
+QQ: 995018884 </br>
+WeChat: h995018884
