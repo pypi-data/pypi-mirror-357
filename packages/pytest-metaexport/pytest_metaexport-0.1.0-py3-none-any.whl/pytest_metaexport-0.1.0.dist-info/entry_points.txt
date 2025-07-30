@@ -1,0 +1,2 @@
+[pytest11]
+metaexport = pytest_metaexport.pytest_metaexport
