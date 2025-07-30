@@ -1,0 +1,10 @@
+r00android_patch/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+r00android_patch/dbpatch.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+r00android_patch/efs/__init__.py,sha256=eLBrSAhYtxqNpkGseqZpZx6MLngPTVMLcJdlcFeIE3w,34
+r00android_patch/efs/manager_efs.py,sha256=tnMzB9EduyCxR8uRO8hJKv9mCjqsnSFLryfKMon7lhI,396
+r00android_patch/kernel/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+r00android_patch/prop/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+r00android_patch/prop/manager_prop.py,sha256=OPXPX-CfWDjkvWHnKO5bZ-CrL-84BnA1u0mjw379ljQ,11099
+r00android_patch-0.1.0.dist-info/METADATA,sha256=8dz_ILbPdrxfUlKbNuoIQQQNIGGufSX4ex9BiDg5Xl8,177
+r00android_patch-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+r00android_patch-0.1.0.dist-info/RECORD,,
