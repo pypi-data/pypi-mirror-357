@@ -1,0 +1,12 @@
+actinia-rest-lib
+colorlog>=4.2.1
+jsonmodels
+peewee
+playhouse
+psycopg2
+python-json-logger
+yoyo-migrations
+
+[test]
+pytest
+pytest-cov
