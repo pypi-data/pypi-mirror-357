@@ -1,0 +1,16 @@
+README.md
+setup.py
+method_flowchart/__init__.py
+method_flowchart/analyzer.py
+method_flowchart/cli.py
+method_flowchart/decorator.py
+method_flowchart/generator.py
+method_flowchart/utils.py
+method_flowchart.egg-info/PKG-INFO
+method_flowchart.egg-info/SOURCES.txt
+method_flowchart.egg-info/dependency_links.txt
+method_flowchart.egg-info/entry_points.txt
+method_flowchart.egg-info/top_level.txt
+tests/__init__.py
+tests/test.py
+tests/test_method_flowchart.py
