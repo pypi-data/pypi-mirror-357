@@ -1,0 +1,21 @@
+Metadata-Version: 2.3
+Name: mseep-jobspy-mcp-server
+Version: 0.1.3
+Summary: A server for scraping and matching jobs based on JobSpy
+Keywords: mcp,linkedin,job scraping
+Author: mseep
+Author-email: support@skydeck.ai
+Maintainer: mseep
+Maintainer-email: support@skydeck.ai
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: fastmcp (>=2.1.0)
+Requires-Dist: linkedin-api (>=2.3.1)
+Requires-Dist: nest_asyncio (>=1.5.8)
+Requires-Dist: python-dotenv (>=1.0.1)
+Requires-Dist: python-jobspy (>=1.1.79)
+Requires-Dist: requests (>=2.32.3)
+Requires-Dist: uvicorn (>=0.34.0)
+Project-URL: Homepage, https://github.com/happyhackerbird/jobspy-mcp-server
