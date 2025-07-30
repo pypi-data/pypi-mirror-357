@@ -1,0 +1,53 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="ArrayIndexZero" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="AssignType" enabled="false" level="WARNING" enabled_by_default="false">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="DuplicateClassDeclaration" enabled="true" level="ERROR" enabled_by_default="true">
+      <scope name="LibLua" level="ERROR" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="EmptyBody" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="GlobalNameCanbeLocal" enabled="false" level="WARNING" enabled_by_default="false">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="LanguageLevel" enabled="true" level="ERROR" enabled_by_default="true">
+      <scope name="LibLua" level="ERROR" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="LocalNameShadowed" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="LuaDeprecation" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="MatchFunctionSignature" enabled="false" level="WARNING" enabled_by_default="false">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="RemoveUnusedLocal" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="ReturnType" enabled="false" level="WARNING" enabled_by_default="false">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="SimplifyLocalAssignment" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="UndeclaredVariable" enabled="false" level="WARNING" enabled_by_default="false">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="UnreachableStatement" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="UnresolvedClass" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="UnresolvedSymbolInEmmyDoc" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="LibLua" level="WARNING" enabled="false" />
+    </inspection_tool>
+  </profile>
+</component>
