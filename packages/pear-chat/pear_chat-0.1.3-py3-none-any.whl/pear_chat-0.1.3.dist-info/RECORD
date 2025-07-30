@@ -1,0 +1,12 @@
+pear/__init__.py,sha256=7l_X0tFxqXOEU8ti3DEumwfc470Xpeg3Rf450_tyM_U,108
+pear/config.py,sha256=b0gy2kS7KC3EP7oafPS7PfcvpE4C5zUUCfgscfzIVUM,1843
+pear/llm_agent.py,sha256=-WKT2HSv9LQQv7K6ik26RrhFisnOli_F6NYqTVrThNU,5975
+pear/message_system.py,sha256=Xcq06Iuv654zXlOkYl6uEnKc1MkQ96OLymia3TyMEUo,6367
+pear/network_layer.py,sha256=JitGY6FIji_gOuODbqto_aYuDePTutw5IZorIA2kulE,22193
+pear/pear_cli.py,sha256=vCvHmiyqrWNOuZi0Zki3xKfxWCxJa9VtKrg70oHV5Fc,8793
+pear/simple_terminal_ui.py,sha256=E6DxJZE6rlk5txjrFMCYA3Hvx630L11xKV3zmgIXaEc,23072
+pear_chat-0.1.3.dist-info/METADATA,sha256=QqYzHR2UWjd3cJ1diSAFMrKHCed-BcuQecfT__Ujq-U,2120
+pear_chat-0.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+pear_chat-0.1.3.dist-info/entry_points.txt,sha256=C2d_Sh44rrHUt4-xOUtRcy9zZXuZZP2kjXluBoxNj9w,44
+pear_chat-0.1.3.dist-info/top_level.txt,sha256=EPsezWIICYxTMfJYWT1NUM6uNeyK59Fh77wu6iuhnTU,5
+pear_chat-0.1.3.dist-info/RECORD,,
