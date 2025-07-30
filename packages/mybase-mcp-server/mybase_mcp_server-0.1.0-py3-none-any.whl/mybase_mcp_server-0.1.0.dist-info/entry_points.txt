@@ -1,0 +1,2 @@
+[console_scripts]
+mybase-mcp-server = mybase_mcp_server:main
