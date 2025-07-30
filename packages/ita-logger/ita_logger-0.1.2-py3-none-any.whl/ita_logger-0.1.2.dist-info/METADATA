@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: ita-logger
+Version: 0.1.2
+Summary: Add your description here
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: dotenv>=0.9.9
+Requires-Dist: pyyaml>=6.0.2
+Dynamic: license-file
+
+# ita-logger
+---
+### Requires
+Python >= 3.12
+---
+### Installation
+```
+uv add ita_logger
+```
+---
+### Usage
+config.yaml
+```
+logging:
+  name: "core.general"
+  handlers: []
+  filepath: "logs/general.log"
+  console: True
+  loglevel: "logging.DEBUG"
+```
+python
+```
+from ita_logger import logger
+log = logger.Logger()
+...
+log.info("Hello from logger")
+```
