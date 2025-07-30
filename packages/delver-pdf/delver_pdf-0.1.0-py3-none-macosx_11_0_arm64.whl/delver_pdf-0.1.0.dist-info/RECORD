@@ -1,0 +1,6 @@
+delver_pdf-0.1.0.dist-info/METADATA,sha256=DjBZExKwHPb-J7cCYarbRcQf3A1bQaeNArTGUeSIOCs,8704
+delver_pdf-0.1.0.dist-info/WHEEL,sha256=xXrZFUZdUx5dZHQRUyNYMU2_RR2PioJ5KlyzYJq5nRk,101
+delver_pdf/__init__.py,sha256=PMa3PElBtQakWqzXc764xthdB19Eh7VAcYxMtdo-PmM,146
+delver_pdf/ffi.py,sha256=Rz7lnRmUZOHDwNZN4hb3nmBW7_6j2HoFKQk4Iy5txBY,251
+delver_pdf/libdelver_pdf.dylib,sha256=BAHFM0GZ0d_ngOsxLCZdY5B8et5ii6VY1vNf8XPknI4,16752
+delver_pdf-0.1.0.dist-info/RECORD,,
