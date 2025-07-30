@@ -1,0 +1,2 @@
+[console_scripts]
+gcpsight = gcpsight.main:cli

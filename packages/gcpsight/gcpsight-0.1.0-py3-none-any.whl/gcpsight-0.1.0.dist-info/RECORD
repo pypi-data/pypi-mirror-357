@@ -1,0 +1,11 @@
+gcpsight/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gcpsight/gcp_scanner.py,sha256=bFKJZ0rsbgfBjl3O8jQbsf8y05LFJRMewgAI7G8HAdo,14010
+gcpsight/gemini_processor.py,sha256=bW3MFnFbqLWHdFtezKn6BwHBvqYrmxbt2chep1oOZcg,2130
+gcpsight/main.py,sha256=8s_L6EA2PG3OXPZKVtMjz4wTGjMp4mzwBDO7iFRcf5Y,15174
+gcpsight/security_scorer.py,sha256=WosRpkiwXXo2xnro9_O0SClTOP5PRq-vnHYA38SiHPk,20641
+gcpsight-0.1.0.dist-info/licenses/LICENSE,sha256=f4fdsnjhm4mpkRpJS40vWfj9r7pfHc3u4j0sH8sgA8Q,1069
+gcpsight-0.1.0.dist-info/METADATA,sha256=WzuGe0Z56bZ85wQHhWk8fjsI1xJItOH1-B4K0xBH1jg,11995
+gcpsight-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+gcpsight-0.1.0.dist-info/entry_points.txt,sha256=0Iiv7Xq2neJY6s7ch7Ed78p3NWBQpOV_32BISXJQXlE,47
+gcpsight-0.1.0.dist-info/top_level.txt,sha256=oqJuYeCIXcec-e8MO-aIxCGJWSXI2-wFdoBbpgIFvJY,9
+gcpsight-0.1.0.dist-info/RECORD,,
