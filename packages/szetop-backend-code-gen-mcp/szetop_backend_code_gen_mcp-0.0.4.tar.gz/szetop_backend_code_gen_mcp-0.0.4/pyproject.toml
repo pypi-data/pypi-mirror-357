@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "szetop-backend-code-gen-mcp"
+version = "0.0.4"
+description = "易图后端代码生成MCP服务"
+readme = "README.md"
+authors = [{ name = "szetop" }]
+license = "GPL-3.0-or-later"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "mcp>=1.2.0",
+    "anthropic>=0.8.0",
+    "openai>=1.6.0",
+    "python-dotenv>=1.0.0",
+    "Pillow>=10.0.0",
+    "pytesseract>=0.3.13",
+    "httpx>=0.27.0",
+    "javalang>=0.13.0",
+    "requests>=2.32.4",
+    "cryptography>=45.0.4",
+    "json5>=0.12.0"
+]
+
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "ruff>=0.1.0",
+    "pyinstaller>=6.14.1"
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.package-data]
+"szetop_backend_code_gen_mcp" = ["**/*.txt", "**/*.md", "**/*.pem", "ignore"]
+
+[project.scripts]
+szetop-backend-code-gen-mcp = "szetop_backend_code_gen_mcp.server:main"
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"

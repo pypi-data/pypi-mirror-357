@@ -1,0 +1,101 @@
+
+已接收并正确处理上下文中的文件，在后面的对话中不允许再传入，一切皆以下面的提示词为准。
+# 任务：生成`项目信息管理查询`列表接口
+
+## 请求参数
+<request_params>
+- 项目名称 (模糊查询, String, 可选)
+- 行政区 (精确查询, Integer, 可选)
+- 项目类型 (精确查询, Integer, 可选)
+- 申请时间-开始日期 (Date, 可选, 格式：yyyy-MM-dd)
+- 申请时间-结束日期 (Date, 可选, 格式：yyyy-MM-dd)
+- 可租面积-最小值 (BigDecimal, 可选)
+- 可租面积-最大值 (BigDecimal, 可选)
+- 免租期-最小值 (Integer, 可选)
+- 免租期-最大值 (Integer, 可选)
+- 免租期后优惠租金-最小值 (BigDecimal, 可选)
+- 免租期后优惠租金-最大值 (BigDecimal, 可选)
+- 项目位置校准 (精确查询, Integer, 可选)
+- 排序字段 (排序字段类型枚举, 可选)
+- 排序类型 (升序、降序, 可选)
+</request_params>
+
+## 响应参数
+<response_fields>
+- 序号 (Integer)
+- 项目名称 (String)
+- 行政区 (String)
+- 项目类型 (String)
+- 总面积 (BigDecimal)
+- 可租面积 (BigDecimal)
+- 已锁定面积 (BigDecimal)
+- 已出租面积 (BigDecimal)
+- 免租期 (Integer)
+- 优惠租金 (BigDecimal)
+- 填报日期 (Date, 格式：yyyy-MM-dd)
+- 项目位置校准 (String)
+- 是否可查看（Boolean）
+- 是否可编辑（Boolean）
+- 是否可删除（Boolean）
+- 是否可校准（Boolean）
+</response_fields>
+
+## 涉及数据库表结构
+<table_structures>
+CREATE TABLE `gxrc_project_info` (
+  `id` BIGINT NOT NULL COMMENT '所属项目id',
+  `project_code` VARCHAR COMMENT '房屋编码',
+  `project_name` VARCHAR COMMENT '项目名称',
+  `project_address` VARCHAR COMMENT '详细地址',
+  `project_district_code` DOUBLE COMMENT '行政区划编码',
+  `project_district_name` VARCHAR COMMENT '行政区名称',
+  `area_link_man` VARCHAR COMMENT '所属区联系人',
+  `area_link_phone` VARCHAR COMMENT '所属区联系电话',
+  `project_type` INT COMMENT '项目类型：1孵化器；2众创空间；3其他',
+  `project_street` VARCHAR COMMENT '所属区及街道',
+  `free_period_type` INT COMMENT '免租期类型：1固定期；2范围',
+  `free_period_min` DOUBLE COMMENT '免租期_最小值',
+  `free_period_max` DOUBLE COMMENT '免租期_最大值（仅免租期类型为2时有用）',
+  `project_area` DOUBLE COMMENT '总建筑面积（㎡）',
+  `project_rent_type` INT COMMENT '优惠租金类型：1固定值；2范围',
+  `project_rent_min` DOUBLE COMMENT '优惠租金-最小值',
+  `project_rent_max` DOUBLE COMMENT '优惠租金-最大值（仅优惠租金类型为2时有用）',
+  `discount_policy` VARCHAR COMMENT '优惠政策',
+  `apply_require` VARCHAR COMMENT '申请条件',
+  `project_desc` VARCHAR COMMENT '项目介绍',
+  `main_road` VARCHAR COMMENT '主干道',
+  `subway_stattion` VARCHAR COMMENT '地铁站名',
+  `bus_stop_name` VARCHAR COMMENT '公交站名',
+  `project_lon` DECIMAL COMMENT '经度',
+  `project_lat` DECIMAL COMMENT '纬度',
+  `project_property_right` INT COMMENT '产权性质：1政务产权；2企业产权；99其他',
+  `status` INT COMMENT '项目状态：0.未发布，1.已发布；',
+  `is_deleted` INT COMMENT '是否已删除',
+  `create_time` DATE COMMENT '创建时间',
+  `create_user` BIGINT COMMENT '创建人id',
+  `update_time` DATE COMMENT '修改时间',
+  `update_user` BIGINT COMMENT '修改人id',
+  `create_dept` BIGINT COMMENT '创建人部门id',
+  `psf_types` VARCHAR COMMENT '配套设施（多个用”,“隔开）',
+  `is_calibration` INT COMMENT '项目位置是否已校准：1是/0否',
+  `is_space_config` INT COMMENT '室内空间是否配置：1是/0否',
+  `total_area` DOUBLE COMMENT '总面积',
+  `free_area` DOUBLE COMMENT '可出租面积',
+  `locked_area` DOUBLE COMMENT '已锁定面积',
+  `leased_area` DOUBLE COMMENT '已出租面积',
+  `house_types` VARCHAR COMMENT '项目所有的房源类型，以英文”,“分割',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='项目信息表';
+</table_structures>
+
+## 示例
+用户扩展表对象功能（UserExtendController、UserExtendService、UserExtendDTO、UserExtendVO、UserExtendMapper、UserExtendMapper.xml）
+
+## 代码生成流程，必须严格按照以下步骤依次执行，不允许跳过或合并任何步骤。
+1. 参照project_rules中的`请求参数对象（DTO）规范`，生成或更新DTO实体层代码。
+2. 参照project_rules中的`响应参数对象（VO）规范`，生成或更新VO实体层代码。
+3. 参照project_rules中的`数据访问层（Mapper）规范`，生成或更新mapper层代码。
+4. 参照project_rules中的规范，生成或更新对应mapper.xml代码。
+5. 参照project_rules中的`服务层接口（Service）规范`，生成或更新Service层接口代码。
+6. 参照project_rules中的`服务层实现类（ServiceImpl）规范`，生成或更新Service层实现代码。
+7. 参照project_rules中的`控制器（RestController）规范`，生成或更新Controller层代码。
