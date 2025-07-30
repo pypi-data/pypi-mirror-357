@@ -1,0 +1,54 @@
+{
+  "name": "EVO Development Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "TZ": "${localEnv:TZ:America/Los_Angeles}"
+    }
+  },
+  "runArgs": [
+    "--cap-add=NET_ADMIN",
+    "--cap-add=NET_RAW"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh"
+          }
+        }
+      }
+    }
+  },
+  "remoteUser": "node",
+  "mounts": [
+    "source=evo-bashhistory,target=/commandhistory,type=volume",
+    "source=evo-claude-config,target=/home/node/.claude,type=volume",
+    "source=evo-global-config,target=/home/node/.evo,type=volume",
+    "source=evo-uv-cache,target=/home/node/.cache/uv,type=volume"
+  ],
+  "remoteEnv": {
+    "CLAUDE_CONFIG_DIR": "/home/node/.claude",
+    "EVO_CONFIG_DIR": "/home/node/.evo",
+    "POWERLEVEL9K_DISABLE_GITSTATUS": "true"
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "sudo /usr/local/bin/init-firewall.sh",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    }
+  }
+}
