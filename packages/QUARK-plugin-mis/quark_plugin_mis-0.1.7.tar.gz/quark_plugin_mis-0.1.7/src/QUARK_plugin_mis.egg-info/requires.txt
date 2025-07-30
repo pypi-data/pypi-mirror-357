@@ -1,0 +1,3 @@
+dwave-networkx>=0.8.18
+pulser>=1.5.4
+quark-framework>=0.1.9
