@@ -1,0 +1,6 @@
+structuretoolkit[pyxtal]==0.0.32
+tqdm<5,>=4
+ase<4,>=3
+matplotlib<4,>=3
+numpy<3,>1
+pandas<3,>=2.2
