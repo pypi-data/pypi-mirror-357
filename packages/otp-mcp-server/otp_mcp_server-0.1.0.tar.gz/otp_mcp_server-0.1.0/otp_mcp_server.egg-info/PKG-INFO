@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: otp-mcp-server
+Version: 0.1.0
+Summary: MCP Server for OTP
+Author-email: Andrea Bonomi <andrea.bonomi@example.com>
+License-Expression: MIT
+Project-URL: GitHub, https://github.com/andreax79/otp-mcp
+Project-URL: Issues, https://github.com/andreax79/otp-mcp/issues
+Keywords: otp,mcp,totp,web-automation,ai-tools,mcp-server
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click
+Requires-Dist: fastmcp
+Requires-Dist: freakotp
+Requires-Dist: securid
+Provides-Extra: dev
+Requires-Dist: black; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-asyncio; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Dynamic: license-file
+
+# OTP-MCP
+
+Model Context Protocol (MCP) server that provides OTP (One-Time Password) generation
+
+A Model Context Protocol (MCP) server built with FastMCP
+that provides secure OTP (One-Time Password) generation.
+Supports TOTP (Time-based) and HOTP (HMAC-based) algorithms
+and multiple transport options including stdio, SSE, and HTTP Stream
+for seamless integration with AI assistants and applications.
