@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+fastyolo/__init__.py
+fastyolo/classifier.py
+fastyolo/core.py
+fastyolo/detector.py
+fastyolo/utils.py
+fastyolo.egg-info/PKG-INFO
+fastyolo.egg-info/SOURCES.txt
+fastyolo.egg-info/dependency_links.txt
+fastyolo.egg-info/requires.txt
+fastyolo.egg-info/top_level.txt
+tests/test_run.py
+tests/test_score.py

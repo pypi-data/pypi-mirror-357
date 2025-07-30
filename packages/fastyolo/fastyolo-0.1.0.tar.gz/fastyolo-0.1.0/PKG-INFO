@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: fastyolo
+Version: 0.1.0
+Summary: A FastAI-compatible wrapper for YOLO object detection
+Author: Kismet Lalli
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: fastai>=2.7
+Requires-Dist: ultralytics>=8.0
+Requires-Dist: opencv-python
+Dynamic: author
+Dynamic: classifier
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
