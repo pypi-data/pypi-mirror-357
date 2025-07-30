@@ -1,0 +1,44 @@
+{
+    "aarch64_compatibility": {
+        "description": "Identifies checks that are related to AArch64 platform compatibility."
+    },
+    "cloud": {
+        "description":
+            "Identifies checks that must be passed before an app can be [approved for Splunk Cloud](https://dev.splunk.com/enterprise/docs/releaseapps/appinspect/cloudvettingguidelines/vetappsandaddons)."
+    },
+    "future": {
+        "description":
+            "Identifies warning checks that are scheduled to become cloud vetting failures. See [What's new on the Splunk Developer Portal](https://dev.splunk.com/enterprise/docs/whatsnew#AppInspect-updates) and [Cloud Vetting Change Policy](https://dev.splunk.com/enterprise/docs/releaseapps/cloudvetting#Cloud-Vetting-Change-Policy).",
+    },
+    "manual": {
+        "description": "Identifies checks that might return a manual check result."
+    },
+    "packaging_standards": {
+        "description":
+            "Identifies checks that look for the minimum standards required to qualify a packages as a valid Splunk App."
+    },
+    "migration_victoria": {
+        "description":
+            "Identifies checks that are related to app migrations from on-prem and/or Self Managed In Cloud deployments to Splunk Cloud Platform."
+    },
+    "private_app": {
+        "description":
+            "Identifies checks that determine whether an app is compatible with the [Automated Private App Installation](https://docs.splunk.com/Documentation/SplunkCloud/latest/Admin/PrivateApps) flow."
+    },
+    "private_classic": {
+        "description":
+            "Identifies checks that are related to private apps installed in Splunk Cloud Platform on Classic Experience."
+    },
+    "private_victoria": {
+        "description":
+            "Identifies checks that are related to private apps installed in Splunk Cloud Platform on Victoria Experience."
+    },
+    "splunk_appinspect": {
+        "description":
+            "Identifies checks that must pass before an app will be certified in Splunkbase."
+    },
+    "ast": {
+        "description":
+            "Identifies checks that uses Python analyzer."
+    }
+}
