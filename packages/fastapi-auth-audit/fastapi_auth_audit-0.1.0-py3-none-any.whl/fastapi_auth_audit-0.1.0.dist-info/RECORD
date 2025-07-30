@@ -1,0 +1,10 @@
+fastapi_auth_audit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastapi_auth_audit/audit.py,sha256=Tp5mGJ-r_Z16v1g5gFSIL3HSogBbtE65UQH86gOHbQc,983
+fastapi_auth_audit/config.py,sha256=2lEjq2loHPe5myi0DbG4Ao-QPi_ogWoHSO0x9CmctlQ,224
+fastapi_auth_audit/database.py,sha256=B4-Q_ibOFqkGOdAvMUmWe8T8BakEhTDHUscnJLcRBx8,331
+fastapi_auth_audit/exceptions.py,sha256=TpfYz_htOtRyOzdUftbwhIyhHB-GwWoQOCyw7puRkQc,158
+fastapi_auth_audit/models.py,sha256=ZMHn58u-lhpjtt2aSf0dIvqCihr2z24NjE__r1oDlEY,597
+fastapi_auth_audit/permission.py,sha256=RDFuBGSCD6eoXLhAAsTRzzsSfWrN-fo0WZHKdr5cCGw,1793
+fastapi_auth_audit-0.1.0.dist-info/METADATA,sha256=FHX_zoATJ2KtVFj4ZxCdgI3ZyorKKEixd9PHu_to9AE,664
+fastapi_auth_audit-0.1.0.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+fastapi_auth_audit-0.1.0.dist-info/RECORD,,
