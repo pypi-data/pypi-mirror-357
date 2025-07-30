@@ -1,0 +1,17 @@
+setup.py
+captcha_recognizer/__init__.py
+captcha_recognizer/cli.py
+captcha_recognizer/config/charsets.txt
+captcha_recognizer/config/model_config.json
+captcha_recognizer/models/__init__.py
+captcha_recognizer/models/litecnn.py
+captcha_recognizer/models/litecnn_.py
+captcha_recognizer/output/custom_captcha_model/model.pth
+captcha_recognizer/utils/__init__.py
+captcha_recognizer/utils/recognizer.py
+icbc_captcha_recognizer.egg-info/PKG-INFO
+icbc_captcha_recognizer.egg-info/SOURCES.txt
+icbc_captcha_recognizer.egg-info/dependency_links.txt
+icbc_captcha_recognizer.egg-info/entry_points.txt
+icbc_captcha_recognizer.egg-info/requires.txt
+icbc_captcha_recognizer.egg-info/top_level.txt
