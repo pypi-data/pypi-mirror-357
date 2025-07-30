@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+cync.egg-info/PKG-INFO
+cync.egg-info/SOURCES.txt
+cync.egg-info/dependency_links.txt
+cync.egg-info/entry_points.txt
+cync.egg-info/top_level.txt

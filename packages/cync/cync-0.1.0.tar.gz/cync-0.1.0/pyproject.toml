@@ -1,0 +1,17 @@
+[project]
+name = "cync"
+version = "0.1.0"
+description = "Local file synchronization tool"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name="Zachary Shonk", email="shonkzachary@gmail.com" }
+]
+
+[project.scripts]
+cync = "cync:main"  # Maps to cync.py with a main() function
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
