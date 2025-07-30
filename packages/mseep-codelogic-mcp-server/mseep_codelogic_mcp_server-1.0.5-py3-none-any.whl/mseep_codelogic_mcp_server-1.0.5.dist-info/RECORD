@@ -1,0 +1,12 @@
+mseep_codelogic_mcp_server-1.0.5.dist-info/licenses/LICENSE,sha256=25xxJSY6vTn8ECjnbcCoQt-U9wkEJ7HdEE98i2L96zY,14847
+test/__init__.py,sha256=nwMcEO2FU6acSniWjwgVcSE9ueXOZxAlDsk0LTInNRE,336
+test/integration_test_all.py,sha256=D-vshFOlP-RVklL-6XAgRwPnv7FOlk5TtrzP21OcCUc,5029
+test/test_env.py,sha256=eeb3MuSI8go11TEi0uCRFgCwWi6fEgwiFL0z30vtTmk,3327
+test/test_fixtures.py,sha256=TcPHprcKLGa5y-pL2DteGwLbugQkT24aPDII2GB7e0g,1738
+test/unit_test_environment.py,sha256=URC-jQ4FATBnZx3qPpo-HFIk8CCQ3p0O0WbsX0TU7kU,713
+test/unit_test_handlers.py,sha256=zeOP1NveDQ8RtILtsUgmQmicvUvlteolMsTO15Scjeo,6499
+test/unit_test_utils.py,sha256=ukH235yC0zf4rvRrVXiffp6mkTXJbUXxswxScH3RM60,21399
+mseep_codelogic_mcp_server-1.0.5.dist-info/METADATA,sha256=QTlGpIhOd39unNVUKzmkD97_XF5ZwwZ__c018UW_HCw,1112
+mseep_codelogic_mcp_server-1.0.5.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+mseep_codelogic_mcp_server-1.0.5.dist-info/top_level.txt,sha256=8sobtsfpB9Btr-Roflefznazfk6Tt2BQItpS5szCb9I,5
+mseep_codelogic_mcp_server-1.0.5.dist-info/RECORD,,
