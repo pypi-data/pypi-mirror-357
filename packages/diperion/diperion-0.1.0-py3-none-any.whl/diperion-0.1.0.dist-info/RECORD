@@ -1,0 +1,14 @@
+diperion/__init__.py,sha256=sUCoxaSiJzypYTSe-YtVn77QziG_dNe765DmzccIkec,7400
+diperion/common/__init__.py,sha256=Z1wBzDYxN_l5PnTkasZwaK5efUAykYb3ft38lrNB_GY,484
+diperion/common/exceptions.py,sha256=tTbcxG-Eqjz5n523DAX3tyRPM0rJLsQKbsT1CTxQc90,2258
+diperion/semantic_engine/__init__.py,sha256=6cSh_HS1-pNJHkBIR6xgg43hsPWQUny_1FxfgjdeqJk,2203
+diperion/semantic_engine/agent_proxy.py,sha256=f53WcLFvkPeqPsO0ekdqkfCqQgzOQPHgKo0GqXDFWgA,26269
+diperion/semantic_engine/business_intelligence.py,sha256=KYno-JT0z8Genn-L-_BQZcKqFnSpOZuC94lUo5wY7c0,11084
+diperion/semantic_engine/client.py,sha256=j1vmxL1yJzWZnQRk5Bj18X_DQvTzSksaWR_OEAxoxPM,17872
+diperion/semantic_engine/config.py,sha256=fgEmz-cijTF7tljY8P_0ciaHk3BGiPSLnDa0xTO_9oQ,6072
+diperion/semantic_engine/models.py,sha256=5Sud0kFN61ETTUwC_dO3axLqaYNWO7TGiRZjxMj8RW8,6201
+diperion-0.1.0.dist-info/licenses/LICENSE,sha256=xRL3yyTOWFP8738Tn44FbKUyVnnKl1mCIL9qol2dJ6U,1070
+diperion-0.1.0.dist-info/METADATA,sha256=yTrXQAwdx1PDpvcNMqHRl0mPaq0dFvwdXF54p8DNaWA,12772
+diperion-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+diperion-0.1.0.dist-info/top_level.txt,sha256=XtsJo8D2BdAw_GaGpcYBn5gwccETW0NdHYnvFoo6M0o,9
+diperion-0.1.0.dist-info/RECORD,,
