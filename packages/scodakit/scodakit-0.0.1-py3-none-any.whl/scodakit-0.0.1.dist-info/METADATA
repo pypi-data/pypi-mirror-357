@@ -1,0 +1,60 @@
+Metadata-Version: 2.4
+Name: scodakit
+Version: 0.0.1
+Summary: ScodaKit: A scientific Python-based command line toolkit for S-coda seismic wave analysis and scattering parameters estimation
+Author-email: Marios Karagiorgas <karagiorgasmarios@gmail.com>
+Maintainer-email: Marios Karagiorgas <karagiorgasmarios@gmail.com>
+License-Expression: Apache-2.0
+Project-URL: Homepage, https://github.com/marioskaragiorgas/ScodaKit
+Project-URL: Documentation, https://github.com/marioskaragiorgas/ScodaKit#readme
+Project-URL: Issues, https://github.com/marioskaragiorgas/ScodaKit/issues
+Keywords: geophysics,seismology, S-coda waves,mean free path,coda attenuation factor,earthquake, seismic wave scattering
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: license.md
+Requires-Dist: numpy>=1.21
+Requires-Dist: scipy>=1.7
+Requires-Dist: obspy>=1.3
+Requires-Dist: pandas>=1.3
+Requires-Dist: matplotlib>=3.4
+Requires-Dist: scikit-learn>=1.0
+Requires-Dist: cartopy>=0.20
+Requires-Dist: geopandas>=0.9
+Requires-Dist: openpyxl>=3.0
+Requires-Dist: pyyaml>=5.4
+Dynamic: license-file
+
+# ScodaKit: A scientific Python-based command line toolkit for S-coda seismic wave analysis and scattering parameters estimation
+
+**ScodaKit** is an open-source command-line pipeline for estimating the **scattering parameters of S-coda waves** from seismic waveform data. It combines waveform downloading, manual seismic phase picking, catalog metadata merging, coda window extraction, energy decay analysis and visualization — all within a modular and extensible architecture.
+
+> Designed for researchers, seismologists, and geophysicists working on seismic attenuation, crustal scattering, or seismic coda-based energy models.
+
+---
+
+## 🛠️ Features
+
+This command-line pipeline allows you to:
+
+- 📡 Download waveform data from FDSN-compliant data centers (e.g., NOA, IRIS)
+- ⌛ Manual picking of **P and S seismic wave arrivals** using interactive seismic waveform viewers
+- 🗃️ Merge waveform arrival data with seismic event metadata
+- 🌍 Generate interactive or GIS-compatible **maps of events and stations**
+- 🧠 Extract **S-coda waveforms** from the seismic traces using signal to noise ratio (SNR) method
+- 📉 Analyze S-coda energy decay to estimate **mean free path (ℓ)** and **Coda attenuation factor (B)** using the Single Isotropic Scattering Model
+- 📊 Visualize full waveforms, spectrograms and coda windows 
+- 🧪 Modular stages via CLI for reproducible research
+
+---
+
+For more information please visit https://github.com/marioskaragiorgas/ScodaKit
+
+**Copyright:** Marios Karagiorgas <karagiorgasmarios@gmail.com>
+
+**license:** https://www.apache.org/licenses/LICENSE-2.0

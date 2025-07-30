@@ -1,0 +1,15 @@
+scodakit/__init__.py,sha256=S84egLAkxK_M4paqEBHRfxoQ181dA07YB1TK7PNZ-C4,316
+scodakit/download.py,sha256=GBX9UdGzinD0wl9vdRuJTfyv8EyXv1gHgi3k8jdoubc,14265
+scodakit/main.py,sha256=umGscNNKSaXRKj240mV8ATWFHH3L5fbvbsGcn33kCsE,16642
+scodakit/map_generator.py,sha256=4iZ5NfUR4pFL3Hmfm_jxsg6na75kUvX2ktcsFS5LQ-o,5489
+scodakit/merge_catalogue.py,sha256=qfBSyVVkh9IiVHYokdaXqFlWXakIjfyjc8yroSH7cm8,6011
+scodakit/picking.py,sha256=MM9MU6UN-QSD5EozKr7MRjMbcntXCnkX_XopMaa-DVg,5690
+scodakit/plots.py,sha256=PpGVHG1fTOjOxppfXrsEuz_nTNEZCr988hYPfUa5Cpo,5899
+scodakit/process.py,sha256=n4INpRwgeQEA4xC_4QGgQ_ORlemKvhx2p6vxrqalzJU,14647
+scodakit/utils.py,sha256=utJ13II40eQ0BGZyrC79Kbt8IHe6k4-49m5loLvbuws,4594
+scodakit-0.0.1.dist-info/licenses/license.md,sha256=NgI55Mh5a3jFN6zgLJU-KTdLvm8cCbhoYLcN7FJveS8,648
+scodakit-0.0.1.dist-info/METADATA,sha256=m0wFOToTX_D3_9HVLLqi5UcEg2H-k9MkdG-0Wiuyw4Q,3070
+scodakit-0.0.1.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+scodakit-0.0.1.dist-info/entry_points.txt,sha256=QHDjj_R-8Z4TRjdlN7K8EqnwEFc85wRFoFrkucuveTI,48
+scodakit-0.0.1.dist-info/top_level.txt,sha256=0EWH46kU1tdmyPu_gLPAk3GZr_mR-iv3ydS9kw49r84,9
+scodakit-0.0.1.dist-info/RECORD,,
