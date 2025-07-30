@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "safla": {
+      "command": "python3",
+      "args": [
+        "/workspaces/SAFLA/safla_mcp_enhanced.py"
+      ],
+      "env": {
+        "SAFLA_REMOTE_URL": "https://safla.fly.dev"
+      }
+    },
+    "supabase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--access-token",
+        "${env:SUPABASE_ACCESS_TOKEN}"
+      ],
+      "alwaysAllow": [
+        "list_tables",
+        "execute_sql",
+        "listTables",
+        "list_projects",
+        "list_organizations",
+        "get_organization",
+        "apply_migration",
+        "get_project",
+        "execute_query",
+        "generate_typescript_types",
+        "listProjects"
+      ]
+    }
+  }
+}
