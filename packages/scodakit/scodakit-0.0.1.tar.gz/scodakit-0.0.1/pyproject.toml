@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scodakit"
+dynamic = ["version"]
+description = "ScodaKit: A scientific Python-based command line toolkit for S-coda seismic wave analysis and scattering parameters estimation"
+readme = { file = "PyPI_readme.md", content-type = "text/markdown"}
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "obspy>=1.3",
+    "pandas>=1.3",
+    "matplotlib>=3.4",
+    "scikit-learn>=1.0",
+    "cartopy>=0.20",
+    "geopandas>=0.9",
+    "openpyxl>=3.0",
+    "pyyaml>=5.4"
+]
+
+license = "Apache-2.0"
+license-files = ["license.md"]
+authors = [
+    { name="Marios Karagiorgas", email="karagiorgasmarios@gmail.com" }
+]
+maintainers = [
+    { name="Marios Karagiorgas", email="karagiorgasmarios@gmail.com" }
+]
+keywords = [
+    "geophysics", "seismology", " S-coda waves", "mean free path", "coda attenuation factor", "earthquake", " seismic wave scattering"
+    ]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/marioskaragiorgas/ScodaKit"
+Documentation = "https://github.com/marioskaragiorgas/ScodaKit#readme"
+Issues = "https://github.com/marioskaragiorgas/ScodaKit/issues"
+
+[project.scripts]
+scodakit = "scodakit.main:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "scodakit.__version__" }
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests*", "examples*", "images*"]
