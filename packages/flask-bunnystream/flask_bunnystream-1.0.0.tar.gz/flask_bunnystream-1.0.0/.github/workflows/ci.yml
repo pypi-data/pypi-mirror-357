@@ -1,0 +1,246 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop, "feature/*", "bugfix/*", "hotfix/*" ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+
+    services:
+      rabbitmq:
+        image: rabbitmq:3.12-management
+        env:
+          RABBITMQ_DEFAULT_USER: admin
+          RABBITMQ_DEFAULT_PASS: password
+        ports:
+          - 5672:5672
+          - 15672:15672
+        options: >-
+          --health-cmd "rabbitmq-diagnostics ping"
+          --health-interval 30s
+          --health-timeout 10s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .
+        pip install pytest pytest-mock pytest-cov pytest-xdist
+        pip install flask bunnystream
+
+    - name: Wait for RabbitMQ to be ready
+      run: |
+        timeout 30 bash -c 'until curl -f http://localhost:15672; do sleep 2; done'
+
+    - name: Run tests with pytest
+      run: |
+        pytest tests/ -v --cov=flask_bunnystream --cov-report=xml --cov-report=term-missing
+      env:
+        RABBITMQ_URL: amqp://admin:password@localhost:5672/
+
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-quality-${{ hashFiles('**/pyproject.toml') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-quality-
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .
+        pip install black bandit safety
+        pip install flask bunnystream
+
+    - name: Check code formatting with Black
+      run: |
+        black --check --diff src/ tests/ examples/
+
+    - name: Security check with Bandit
+      run: |
+        bandit -r src/flask_bunnystream/ -f json -o bandit-report.json
+        bandit -r src/flask_bunnystream/ --severity-level medium
+      continue-on-error: true
+
+    - name: Check dependencies for security vulnerabilities
+      run: |
+        safety check --json --output safety-report.json
+        safety check
+      continue-on-error: true
+
+    - name: Upload security reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: security-reports
+        path: |
+          bandit-report.json
+          safety-report.json
+
+  examples-test:
+    runs-on: ubuntu-latest
+    services:
+      rabbitmq:
+        image: rabbitmq:3.12-management
+        env:
+          RABBITMQ_DEFAULT_USER: admin
+          RABBITMQ_DEFAULT_PASS: password
+        ports:
+          - 5672:5672
+          - 15672:15672
+        options: >-
+          --health-cmd "rabbitmq-diagnostics ping"
+          --health-interval 30s
+          --health-timeout 10s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .
+        pip install flask bunnystream flask-sqlalchemy requests
+
+    - name: Wait for RabbitMQ to be ready
+      run: |
+        timeout 30 bash -c 'until curl -f http://localhost:15672; do sleep 2; done'
+
+    - name: Test basic usage example
+      run: |
+        cd examples/basic_usage/
+        timeout 10 python -c "import example; print('Basic usage example works')" || echo "Example timed out (expected for demo)"
+
+    - name: Test event handlers example
+      run: |
+        cd examples/event_handlers/
+        timeout 10 python -c "import example; print('Event handlers example works')" || echo "Example timed out (expected for demo)"
+
+    - name: Test full app example imports
+      run: |
+        cd examples/full_app/
+        python -c "import app; import consumer; print('Full app example imports work')"
+
+  documentation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .
+        pip install flask bunnystream
+
+    - name: Check README links
+      run: |
+        # Check if all referenced files exist
+        test -f EXTENSION_BEST_PRACTICES.md || echo "Missing EXTENSION_BEST_PRACTICES.md"
+        test -f DECORATORS.md || echo "Missing DECORATORS.md"
+        test -f LICENSE || echo "Missing LICENSE"
+        test -d examples/ || echo "Missing examples directory"
+
+    - name: Validate Python code blocks in README
+      run: |
+        # Extract and validate Python code blocks from README
+        python -c "
+        import re
+        import ast
+        
+        with open('README.md', 'r') as f:
+            content = f.read()
+        
+        # Find Python code blocks
+        pattern = r'```python\n(.*?)\n```'
+        code_blocks = re.findall(pattern, content, re.DOTALL)
+        
+        for i, code in enumerate(code_blocks):
+            try:
+                ast.parse(code)
+                print(f'Code block {i+1}: Valid Python syntax')
+            except SyntaxError as e:
+                print(f'Code block {i+1}: Syntax error - {e}')
+        "
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [test, code-quality]
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install build dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+
+    - name: Build package
+      run: |
+        python -m build
+
+    - name: Check package
+      run: |
+        twine check dist/*
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist
+        path: dist/

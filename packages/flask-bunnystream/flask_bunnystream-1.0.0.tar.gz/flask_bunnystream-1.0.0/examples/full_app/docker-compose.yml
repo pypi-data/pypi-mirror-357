@@ -1,0 +1,99 @@
+version: '3.8'
+
+services:
+  # RabbitMQ Message Broker
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    container_name: flask_bunnystream_rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: password
+    ports:
+      - "5672:5672"    # AMQP port
+      - "15672:15672"  # Management UI port
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - flask_bunnystream_network
+
+  # PostgreSQL Database (optional, can use SQLite in development)
+  postgres:
+    image: postgres:15
+    container_name: flask_bunnystream_postgres
+    environment:
+      POSTGRES_DB: events_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - flask_bunnystream_network
+
+  # Flask Web Application
+  web:
+    build: .
+    container_name: flask_bunnystream_web
+    environment:
+      FLASK_ENV: development
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/events_db
+      BUNNYSTREAM_URL: amqp://admin:password@rabbitmq:5672/
+      BUNNYSTREAM_EXCHANGE: events_exchange
+      BUNNYSTREAM_QUEUE: events_queue
+    ports:
+      - "5000:5000"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - ../../src:/app/src  # Mount source for development
+    command: ["python", "app.py"]
+    networks:
+      - flask_bunnystream_network
+    restart: unless-stopped
+
+  # Event Consumer/Worker
+  consumer:
+    build: .
+    container_name: flask_bunnystream_consumer
+    environment:
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/events_db
+      BUNNYSTREAM_URL: amqp://admin:password@rabbitmq:5672/
+      BUNNYSTREAM_EXCHANGE: events_exchange
+      BUNNYSTREAM_QUEUE: events_queue
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      web:
+        condition: service_started
+    volumes:
+      - .:/app
+      - ../../src:/app/src  # Mount source for development
+    command: ["python", "consumer.py"]
+    networks:
+      - flask_bunnystream_network
+    restart: unless-stopped
+
+volumes:
+  rabbitmq_data:
+  postgres_data:
+
+networks:
+  flask_bunnystream_network:
+    driver: bridge

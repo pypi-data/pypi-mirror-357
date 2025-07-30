@@ -1,0 +1,23 @@
+# Development dependencies for flask-bunnystream
+# Install with: pip install -r requirements-dev.txt
+
+# Testing
+pytest>=6.0
+pytest-cov>=2.10,<6.0
+pytest-mock>=3.6,<4.0
+pytest-xdist>=2.0,<4.0
+
+# Code Quality
+black>=22.0
+bandit>=1.7.0
+safety>=2.0.0
+pre-commit>=2.20.0
+
+# Build tools
+build>=0.8.0
+twine>=4.0.0
+
+# Examples dependencies
+flask-sqlalchemy>=3.0.0
+sqlalchemy>=2.0.0
+requests>=2.25.0

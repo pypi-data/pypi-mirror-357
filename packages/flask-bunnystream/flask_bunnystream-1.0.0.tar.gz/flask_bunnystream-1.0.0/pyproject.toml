@@ -1,0 +1,116 @@
+[project]
+name = "flask-bunnystream"
+version = "1.0.0"
+description = "Flask extension for BunnyStream - Easy RabbitMQ integration with automatic connection management and event routing."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "GPL-3.0-or-later"
+authors = [
+    { name = "Marc Ford", email = "thenixninja@gmail.com" }
+]
+maintainers = [
+    { name = "Marc Ford", email = "thenixninja@gmail.com" }
+]
+keywords = ["rabbitmq", "messaging", "event-driven", "message-broker", "amqp", "flask", "bunnystream", "pika"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Framework :: Flask",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Networking",
+    "Topic :: Communications",
+]
+dependencies = [
+    "bunnystream>=1.0.5",
+    "Flask>=2.0.0",
+    "user-agents>=2.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/MarcFord/flask-bunnystream"
+"Bug Reports" = "https://github.com/MarcFord/flask-bunnystream/issues"
+"Source" = "https://github.com/MarcFord/flask-bunnystream"
+"Documentation" = "https://github.com/MarcFord/flask-bunnystream#readme"
+"Changelog" = "https://github.com/MarcFord/flask-bunnystream/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=6.0",
+    "pytest-cov>=2.10,<6.0",
+    "pytest-mock>=3.6,<4.0",
+    "pytest-xdist>=2.0,<4.0",
+]
+dev = [
+    "black>=22.0",
+    "bandit>=1.7.0",
+    "safety>=2.0.0",
+    "pre-commit>=2.20.0",
+]
+examples = [
+    "flask-sqlalchemy>=3.0.0",
+    "sqlalchemy>=2.0.0",
+    "requests>=2.25.0",
+]
+
+[build-system]
+requires = ["setuptools>=45.0", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
+# Version from Git tags
+fallback_version = "1.0.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "-v",
+]
+# Filter out deprecation warnings from external libraries
+filterwarnings = [
+    "ignore::pytest.PytestDeprecationWarning:pytest_cov.*",
+    "ignore::DeprecationWarning:pytest_cov.*",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "unit: marks tests as unit tests",
+    "integration: marks tests as integration tests",
+]
+
+[tool.coverage.run]
+omit = ["tests/*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \tests
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B101"]  # Skip assert_used test

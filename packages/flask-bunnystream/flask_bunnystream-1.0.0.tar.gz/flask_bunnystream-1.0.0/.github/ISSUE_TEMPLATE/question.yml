@@ -1,0 +1,54 @@
+name: Question
+description: Ask a question about flask-bunnystream
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your question! Please check the documentation and examples first:
+        - [Extension Best Practices](../../EXTENSION_BEST_PRACTICES.md)
+        - [Decorators Documentation](../../DECORATORS.md)
+        - [Examples](../../examples/)
+        
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What would you like to know?
+      placeholder: Please ask your question clearly and provide as much context as possible.
+    validations:
+      required: true
+      
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What are you trying to accomplish?
+      placeholder: Describe what you're building or trying to achieve.
+      
+  - type: textarea
+    id: attempted
+    attributes:
+      label: What have you tried?
+      description: What approaches have you already attempted?
+      placeholder: Describe what you've tried and what didn't work.
+      
+  - type: textarea
+    id: code
+    attributes:
+      label: Relevant Code
+      description: Share any relevant code (please format it properly)
+      render: python
+      
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Your environment details
+      placeholder: |
+        - flask-bunnystream version:
+        - Python version:
+        - Flask version:
+        - BunnyStream version:
+        - Operating System:
