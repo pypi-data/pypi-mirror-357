@@ -1,0 +1,16 @@
+anise-0.6.3.dist-info/METADATA,sha256=R7PEOkbOTeQ1dzNzD9TnV3W3zhaJKzZijFZQ9udk8fU,7899
+anise-0.6.3.dist-info/WHEEL,sha256=93OpEVBtP5d34LgYN8DX3VXPS5tUgt4wvwXYtSl7cmI,92
+anise/__init__.py,sha256=ZiXMu_8VlrzNlU6z5xXNQwWz2SKDF2j2mJdzCqVzP04,302
+anise/_anise.cp310-win32.pyd,sha256=pDtTEXysBK1LaBrreJY_qWvCVdxZg4LpHsLJC6OGzVk,7235584
+anise/anise.pyi,sha256=B2dynSJss84uzkITJ_jhNVrbdc6_pSDwGqjxSN6VB0M,25517
+anise/astro/__init__.py,sha256=N0fRE3gViUH80_TQmAU3OOtLrQ1ThwDAdCwbPnqHj8w,127
+anise/astro/constants.py,sha256=KNw0pLukvXkQhDwHJLn35X_o962hHtxgoh94sJ8zq-o,139
+anise/constants.py,sha256=KNw0pLukvXkQhDwHJLn35X_o962hHtxgoh94sJ8zq-o,139
+anise/constants.pyi,sha256=dg9SWx1pWr3js4FYrGuLNYU2DdFQuSFKdvwFL11e6Ek,2430
+anise/rotation.py,sha256=MEkI3k7gbt7Y1Rb7_ga9grLUZd6ISQ_ONoTVYEGe5FA,136
+anise/rotation.pyi,sha256=HfRzBAlJDsqqYzxqsDJoFE1MoofmUZVvyD87sBuJfAI,3238
+anise/time.py,sha256=pFIlS7Aqnh-Qkri9EDlK7AjLfEPNhUw3edJGyEhiAkM,124
+anise/time.pyi,sha256=gxPguCkBjinXkXR2rB1v0N0Y1SOz6hRIi9l2Gr_uVQ8,66983
+anise/utils.py,sha256=c25C2FDn6s1TXV0-A_f28rr1kxzczLiXH-nLD7NJY6k,127
+anise/utils.pyi,sha256=MIKdXrr0RMl6BnvpasAp4h8assJ77sn1931Ai9z7x1g,812
+anise-0.6.3.dist-info/RECORD,,
