@@ -1,0 +1,13 @@
+swiftgalaxy/__init__.py,sha256=wcN5POrE34oO6xvDYLXIBV6abnziUnh5c-6jbUY35J4,1004
+swiftgalaxy/__version__.py,sha256=x9EJ4UmjLRPFC96UKDVzOi-4SMsXnG4_OlgqmziIOCQ,83
+swiftgalaxy/demo_data.py,sha256=9r7YsYVFv0UKQo47W9MEmAq7DHSYVUPK_TVxSpURweA,130125
+swiftgalaxy/halo_catalogues.py,sha256=1ko_xwMrznLLLNgcoGZDWJ-ChEQM9-63efFfS9yi84w,91561
+swiftgalaxy/iterator.py,sha256=ZFux2BVyzkBXZL8KLLFtAGKpP19PShptnmlFl_8xtAw,34038
+swiftgalaxy/masks.py,sha256=B9AbyZSnPl2L-7U6P8TDC5qwjGMryw2h3IhXXuPz9Ig,3999
+swiftgalaxy/reader.py,sha256=LdH8nqt2cbz-YOzN5rhC7CWoVxY1zFN_pv7Aw6nb7Cg,94988
+swiftgalaxy/json/caesar_unit_registry.json,sha256=kURicpyBRim1UThQJTP5NZY8I9ePWG7rSPdM6qj1kjU,10209
+swiftgalaxy-2.1.3.dist-info/licenses/LICENSE.md,sha256=ixuiBLtpoK3iv89l7ylKkg9rs2GzF9ukPH7ynZYzK5s,35148
+swiftgalaxy-2.1.3.dist-info/METADATA,sha256=32NpC42GpMuvQ1p1OOOACMMDhIT35hXk_tt67f1kqDA,8359
+swiftgalaxy-2.1.3.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+swiftgalaxy-2.1.3.dist-info/top_level.txt,sha256=nzJ6F1logeFd_YEBwmQBOYNcG1BerxqGEnD38Cqih2c,12
+swiftgalaxy-2.1.3.dist-info/RECORD,,
