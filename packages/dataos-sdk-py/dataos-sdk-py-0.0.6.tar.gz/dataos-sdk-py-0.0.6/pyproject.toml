@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dataos-sdk-py"
+version = "0.0.6"
+description = "A description of the dataos-sdk-py package"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "Programming Language :: Python :: 3 License :: OSI Approved :: MIT License Operating System :: OS Independent" }
+authors = [
+    { name = "TMDC Labs", email = "labs@tmdc.io" }
+]
+dependencies = [
+    "requests>=2.32.3",
+    "pydantic>=2.9.2",
+    "uplink>=0.9.7"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+
