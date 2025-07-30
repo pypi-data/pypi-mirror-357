@@ -1,0 +1,141 @@
+name: Publish new release version
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      
+      - name: Set up Python
+        run: uv python install
+      
+      - name: Install dependencies
+        run: |
+          uv sync --all-groups --locked
+      
+      - name: Run tests
+        run: |
+          uv run pytest -v
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    environment: publish
+    permissions:
+      contents: write
+      id-token: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history for commit count
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      
+      - name: Set up Python
+        run: uv python install
+      
+      - name: Install dependencies
+        run: |
+          uv sync --all-groups --locked
+      
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          git_tag_gpgsign: true
+      
+      - name: Configure Git
+        run: |
+          git config user.name "${{ vars.SIGNED_COMMIT_USER }}"
+          git config user.email "${{ vars.SIGNED_COMMIT_EMAIL }}"
+          git config commit.gpgsign true
+          git config tag.gpgsign true
+      
+      - name: Build and tag release
+        run: |
+          # Get commit count
+          C=$(git rev-list --count HEAD)
+          
+          # Get current version
+          V=$(uv version --short)
+          
+          # Create version string and export
+          VERSION="${V}.${C}"
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+          
+          # Update version in pyproject.toml
+          UV_FROZEN=true uv version "${VERSION}"
+          
+          # Build the package
+          UV_FROZEN=true uv build
+          
+          # Create a new version tag and export name
+          TAG="magg/v${VERSION}"
+          echo "TAG=${TAG}" >> $GITHUB_ENV
+          TAG_MESSAGE="[Automatic] Release Version v${VERSION} from $(git rev-parse --short HEAD)"
+          git tag -s -m "${TAG_MESSAGE}" "${TAG}"
+          
+          # Update latest tag after getting changelog
+          LATEST_TAG="magg/latest"
+          
+          # Get changelog since last release with rich formatting
+          echo "CHANGELOG<<EOF" >> $GITHUB_ENV
+          git log ${LATEST_TAG}..${{ github.sha }} --pretty=format:'### [%s](%h)%n**Author: %an <%ae>**%n*Date: %ad*%n%n%b%n' | sed -e '/^### /!{/^$/!s/^/> /}' -e 's/^$/>/g' >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          
+          # Delete remote latest tag FIRST (before creating new one)
+          git push origin :refs/tags/${LATEST_TAG} || true
+          
+          # Now create the new latest tag locally
+          git tag -d ${LATEST_TAG} || true
+          git tag --no-sign ${LATEST_TAG}
+          
+          # Push the new latest tag to remote
+          git push origin --tags
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          name: 🧲 Magg Release v${{ env.VERSION }}
+          body: |
+            Automatically generated release triggered by commit ${{ github.sha }}
+
+            ## Changes
+            ```
+            ${{ env.CHANGELOG }}
+            ```
+
+            ## Installation
+            ```bash
+            uv add magg==${{ env.VERSION }}
+            ```
+          files: |
+            dist/*.tar.gz
+            dist/*.whl
+
+      - name: Publish to PyPI
+        if: success()
+        env:
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          uv publish --token $PYPI_TOKEN
