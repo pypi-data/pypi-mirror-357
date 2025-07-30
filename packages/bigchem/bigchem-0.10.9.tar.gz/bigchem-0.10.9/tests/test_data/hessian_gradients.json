@@ -1,0 +1,1372 @@
+[
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.005,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89134185918759,
+            "gradient": [
+                [
+                    0.0033879541653053314,
+                    0.02487074139509099,
+                    5.207751821137175e-07
+                ],
+                [
+                    0.020183486418306723,
+                    -0.01106405658583487,
+                    -3.2088603362573534e-07
+                ],
+                [
+                    -0.023571440353308354,
+                    -0.013806682940972315,
+                    -1.9988915217947354e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 2.2301008701324463
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        -0.005,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89134195345767,
+            "gradient": [
+                [
+                    -0.003388235054917486,
+                    0.024870791544020443,
+                    5.190412377864379e-07
+                ],
+                [
+                    0.02357159022469682,
+                    -0.013806821801042202,
+                    -3.0642962937887445e-07
+                ],
+                [
+                    -0.020183354902692158,
+                    -0.011063968957361198,
+                    -2.1261160631201734e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.023475170135498
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19260802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89122067737686,
+            "gradient": [
+                [
+                    -1.2715938155952388e-07,
+                    0.02696821487141665,
+                    4.996233767920962e-07
+                ],
+                [
+                    0.022846928449905574,
+                    -0.013484156583475682,
+                    -3.0184775163229317e-07
+                ],
+                [
+                    -0.02284679980302806,
+                    -0.013484058688072176,
+                    -1.9777562936477277e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0237488746643066
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.20260802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89146919823472,
+            "gradient": [
+                [
+                    -1.395131754760208e-07,
+                    0.022736248979286167,
+                    5.538938776252154e-07
+                ],
+                [
+                    0.020904405558622025,
+                    -0.011368178225774267,
+                    -3.3303725705639056e-07
+                ],
+                [
+                    -0.020904266286543904,
+                    -0.011368069797399544,
+                    -2.2085660717675958e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0159862041473389
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.005
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89135065231666,
+            "gradient": [
+                [
+                    -1.3189257057287666e-07,
+                    0.02484396498496777,
+                    -9.339119944379694e-05
+                ],
+                [
+                    0.021867096701836064,
+                    -0.012422035370508566,
+                    4.664233936895043e-05
+                ],
+                [
+                    -0.02186696377778774,
+                    -0.012421927694212104,
+                    4.674884982589162e-05
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0162899494171143
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        -0.005
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89135066702406,
+            "gradient": [
+                [
+                    -1.3894839490798762e-07,
+                    0.02484394540682555,
+                    9.44420978149737e-05
+                ],
+                [
+                    0.02186710076779469,
+                    -0.012422029459063066,
+                    -4.7276157660905665e-05
+                ],
+                [
+                    -0.02186696299075208,
+                    -0.012421916567742414,
+                    -4.716593322226547e-05
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.079634189605713
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43011006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89123623105394,
+            "gradient": [
+                [
+                    -0.001702544770992225,
+                    0.02583090447706321,
+                    5.137505924583788e-07
+                ],
+                [
+                    0.02377943223737547,
+                    -0.013606506866598062,
+                    -3.066127561402669e-07
+                ],
+                [
+                    -0.022076886028152887,
+                    -0.012224397405045967,
+                    -2.0713782177419052e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0260069370269775
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.4401100599999999,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89145509885712,
+            "gradient": [
+                [
+                    0.0016855705128787804,
+                    0.023888234310314893,
+                    5.260104420778871e-07
+                ],
+                [
+                    0.019977456715094405,
+                    -0.011263797472587267,
+                    -3.2044060672834437e-07
+                ],
+                [
+                    -0.021663026826773818,
+                    -0.012624435611057305,
+                    -2.0556981669779578e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0503900051116943
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.93198325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89140987362488,
+            "gradient": [
+                [
+                    0.0013637912923861067,
+                    0.023792758426204652,
+                    5.309591105279882e-07
+                ],
+                [
+                    0.02070484069963968,
+                    -0.011396850631756189,
+                    -3.2403907673498305e-07
+                ],
+                [
+                    -0.022068630426324815,
+                    -0.012395907464584854,
+                    -2.0692002337078643e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0177841186523438
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92198325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89128561212398,
+            "gradient": [
+                [
+                    -0.0013787977765327992,
+                    0.025908676900080363,
+                    5.224815101675077e-07
+                ],
+                [
+                    0.023047387759035087,
+                    -0.013455524846908984,
+                    -3.1144200439207493e-07
+                ],
+                [
+                    -0.021668589293574292,
+                    -0.012453151388055972,
+                    -2.110395026945638e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0139670372009277
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.005
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89135056978961,
+            "gradient": [
+                [
+                    2.8199479212108413e-06,
+                    0.024846987460482306,
+                    4.747944518820424e-05
+                ],
+                [
+                    0.0218662568076545,
+                    -0.012422291022089277,
+                    -5.825095007305802e-05
+                ],
+                [
+                    -0.021869077801805248,
+                    -0.012424694201566333,
+                    1.0771504116968177e-05
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0121488571166992
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        -0.005
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89135059371301,
+            "gradient": [
+                [
+                    2.840048463025971e-06,
+                    0.024846997958508088,
+                    -4.6423587053288006e-05
+                ],
+                [
+                    0.021866258522899418,
+                    -0.012422292190580025,
+                    5.761379929255378e-05
+                ],
+                [
+                    -0.021869100315821788,
+                    -0.012424705733099478,
+                    -1.1190214325124698e-05
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0125300884246826
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.4401100599999999,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89145501979583,
+            "gradient": [
+                [
+                    -0.001685801730808603,
+                    0.02388825459055388,
+                    5.371832521934725e-07
+                ],
+                [
+                    0.021663143142272523,
+                    -0.012624542479095668,
+                    -3.2140447268510643e-07
+                ],
+                [
+                    -0.019977341667345883,
+                    -0.011263712883818333,
+                    -2.1577877204211637e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0293779373168945
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43011006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89123621026984,
+            "gradient": [
+                [
+                    0.001702268585930032,
+                    0.02583090053054915,
+                    5.198462474549294e-07
+                ],
+                [
+                    0.022077033683421426,
+                    -0.012224498215894941,
+                    -3.1718937693722026e-07
+                ],
+                [
+                    -0.023779301820217286,
+                    -0.013606401375592714,
+                    -2.0265686214940294e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0118529796600342
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.93198325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.89140980314556,
+            "gradient": [
+                [
+                    -0.0013640371670140742,
+                    0.02379272204538524,
+                    5.3105290795741e-07
+                ],
+                [
+                    0.0220687606878964,
+                    -0.01239599011983672,
+                    -3.171347280865061e-07
+                ],
+                [
+                    -0.020704722559707456,
+                    -0.01139673136887906,
+                    -2.139181842146511e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.013197898864746
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92198325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.8912857505046,
+            "gradient": [
+                [
+                    0.0013785453315673106,
+                    0.025908696351707283,
+                    5.229963286863544e-07
+                ],
+                [
+                    0.02166871709046958,
+                    -0.012453264934141062,
+                    -3.188025263314034e-07
+                ],
+                [
+                    -0.023047263222214315,
+                    -0.013455431237788418,
+                    -2.041937810803021e-07
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.0158488750457764
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.005
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.8913504951701,
+            "gradient": [
+                [
+                    -3.1151447201418522e-06,
+                    0.02484699276748309,
+                    4.748971392121626e-05
+                ],
+                [
+                    0.021869238326544194,
+                    -0.012424812787348971,
+                    1.0656499445664826e-05
+                ],
+                [
+                    -0.021866122726520165,
+                    -0.012422179870903716,
+                    -5.814620941488953e-05
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.020975112915039
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "pbe0",
+                "basis": "3-21g"
+            },
+            "calctype": "gradient",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        -0.005
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -75.8913505647229,
+            "gradient": [
+                [
+                    -3.111869951136615e-06,
+                    0.024846998500683393,
+                    -4.642194602786471e-05
+                ],
+                [
+                    0.021869228837209237,
+                    -0.012424812948261615,
+                    -1.1300462636684269e-05
+                ],
+                [
+                    -0.021866116178351436,
+                    -0.0124221832030523,
+                    5.7722406453456464e-05
+                ]
+            ]
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 0.96209716796875
+        }
+    },
+    {
+        "input_data": {
+            "model": {
+                "method": "b3lyp",
+                "basis": "6-31g"
+            },
+            "calctype": "energy",
+            "structure": {
+                "symbols": [
+                    "O",
+                    "H",
+                    "H"
+                ],
+                "geometry": [
+                    [
+                        0.0,
+                        -0.19760802,
+                        0.0
+                    ],
+                    [
+                        -1.43511006,
+                        0.92698325,
+                        0.0
+                    ],
+                    [
+                        1.43511006,
+                        0.92698325,
+                        0.0
+                    ]
+                ],
+                "charge": 0,
+                "multiplicity": 1
+            }
+        },
+        "success": true,
+        "results": {
+            "extras": {
+                "extras": {
+                    "NOTE": "Results computed using QCEngine"
+                }
+            },
+            "calcinfo_natoms": 3,
+            "calcinfo_nmo": 13,
+            "calcinfo_nalpha": 10,
+            "calcinfo_nbeta": 0,
+            "energy": -76.38521615124822
+        },
+        "provenance": {
+            "extras": {
+                "NOTE": "Computed by QCEngine"
+            },
+            "program": "terachem_pbs",
+            "program_version": "1.9-2021.01-dev",
+            "wall_time": 1.024172067642212
+        }
+    }
+]

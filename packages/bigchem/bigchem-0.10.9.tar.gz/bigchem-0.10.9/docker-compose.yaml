@@ -1,0 +1,68 @@
+services:
+  broker:
+    image: rabbitmq:3.11-management-alpine
+    container_name: bigchem-broker
+    # Must specify hostname since data is stored based on hostname and we don't want a
+    # random, docker-assigned hostname with each new restart of the service. This would
+    # result in any past messages stored by the former container in the volume to be
+    # unseen by the new container.
+    # https://hub.docker.com/_/rabbitmq/ under "How to use this image"
+    hostname: rmq-host1
+    ports:
+      # Open rabbit to localhost for dev container access
+      - 5672:5672
+      - 15672:15672
+    # Only used when deployed in swarm mode
+    deploy:
+      placement:
+        constraints:
+          - "node.role==manager"
+    volumes:
+      - broker:/var/lib/rabbitmq
+
+  backend:
+    image: redis:7-alpine
+    container_name: bigchem-backend
+    ports:
+      # Open redis to localhost for dev container access
+      - 6379:6379
+    volumes:
+      - backend:/data
+    # Only used when deployed in swarm mode
+    deploy:
+      placement:
+        constraints:
+          - "node.role==manager"
+
+  worker:
+    build:
+      context: .
+      dockerfile: docker/worker.dockerfile
+    image: mtzgroup/bigchem-worker
+    container_name: bigchem-worker
+    depends_on:
+      - broker
+      - backend
+    # Uncomment to use .env file for environment variables
+    # env_file:
+    #   - .env
+    environment:
+      - bigchem_broker_url=amqp://broker
+      - bigchem_backend_url=redis://backend/0
+      # Set concurrency to modify number of worker processes on each node
+      # Set to 0 to default to the number of CPUs on your machine
+      # - bigchem_worker_concurrency=1
+    volumes:
+      # Mount in code so service just has to be restarted instead of rebuilt
+      # when code changes
+      - ./src/bigchem:/opt/src/bigchem
+      # Mount worker volume to /tmp for scratch space
+      - worker:/tmp
+    # Only used when deployed in swarm mode
+    deploy:
+      mode: global
+
+volumes:
+  broker:
+  backend:
+  worker:

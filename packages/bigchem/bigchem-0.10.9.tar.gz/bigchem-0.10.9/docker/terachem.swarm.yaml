@@ -1,0 +1,5 @@
+# More details: https://docs.docker.com/compose/gpu-support/
+
+services:
+  worker:
+    image: mtzgroup/bigchem-worker:latest-terachem

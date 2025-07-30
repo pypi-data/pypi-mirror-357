@@ -1,0 +1,89 @@
+# Docker stack specification for running BigChem on XStream
+# NOTE: depends on a single worker.env file alongside this .yaml file containing two
+# environment variables; fill these with the URLs of the broker and backend.
+# BIGCHEM_BROKER_URL=amqps://admin123:supersecret987@mq-connect.dev.mtzlab.com:5671 # pragma: allowlist secret
+# BIGCHEM_BACKEND_URL=rediss://:password123@redis.dev.mtzlab.com:6379/0?ssl_cert_reqs=CERT_NONE # pragma: allowlist secret
+
+# Using Service Templates:
+# https://docs.docker.com/engine/reference/commandline/service_create/#create-services-using-templates
+
+# Default images and setup for worker containers
+x-default-worker: &default-worker
+  image: mtzgroup/bigchem-worker:{$BIGCHEM_VERSION}
+  env_file: worker.env
+  environment:
+    - TERACHEM_PBS_HOST={{.Node.Hostname}}-terachem-{{.Task.Slot}}
+    - TERACHEM_FE_HOST={{.Node.Hostname}}-terachem-frontend
+  volumes:
+    # qcengine uses /tmp by default for scratch directory
+    - scratch:/tmp
+  networks:
+    - terachem-servers
+
+services:
+  # This Service is a hack to communicate with terachem on GPU 0 since I'm leveraing
+  # 1-indexed {{.Task.Slot}} for worker allocation below
+  xs7-worker-0:
+    <<: *default-worker
+    environment:
+      # Must redefine all `environment` values because redefinition of `environment`
+      # here overrides all values set in *default-worker, even if not defined twice
+      - TERACHEM_PBS_HOST={{.Node.Hostname}}-terachem-0
+      - TERACHEM_FE_HOST={{.Node.Hostname}}-terachem-frontend
+    deploy:
+      mode: global
+
+  xs7-0001:
+    <<: *default-worker
+    deploy:
+      replicas: 15
+      placement:
+        constraints:
+          - node.hostname==xs7-0001
+
+  xs7-0002:
+    <<: *default-worker
+    deploy:
+      replicas: 15
+      placement:
+        constraints:
+          - node.hostname==xs7-0002
+
+  xs7-0003:
+    <<: *default-worker
+    deploy:
+      replicas: 15
+      placement:
+        constraints:
+          - node.hostname==xs7-0003
+
+  xs7-0004:
+    <<: *default-worker
+    deploy:
+      replicas: 15
+      placement:
+        constraints:
+          - node.hostname==xs7-0004
+
+  xs7-0005:
+    <<: *default-worker
+    deploy:
+      replicas: 15
+      placement:
+        constraints:
+          - node.hostname==xs7-0005
+
+  xs7-0100:
+    <<: *default-worker
+    deploy:
+      replicas: 7
+      placement:
+        constraints:
+          - node.hostname==xs7-0100
+
+volumes:
+  scratch:
+
+networks:
+  terachem-servers:
+    external: true
