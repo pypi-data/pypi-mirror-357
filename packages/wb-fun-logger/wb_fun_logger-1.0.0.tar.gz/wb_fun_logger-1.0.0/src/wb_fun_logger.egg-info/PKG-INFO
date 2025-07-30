@@ -1,0 +1,36 @@
+Metadata-Version: 2.4
+Name: wb_fun_logger
+Version: 1.0.0
+Summary: A tool for logging function and send message to webhook robot.
+Author: Guan Xingjian
+Author-email: guanxj99@outlook.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: certifi
+Requires-Dist: charset-normalizer
+Requires-Dist: idna
+Requires-Dist: loguru
+Requires-Dist: python-dotenv
+Requires-Dist: PyYAML
+Requires-Dist: requests
+Requires-Dist: urllib3
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# FUNCTION LOGGER
+
