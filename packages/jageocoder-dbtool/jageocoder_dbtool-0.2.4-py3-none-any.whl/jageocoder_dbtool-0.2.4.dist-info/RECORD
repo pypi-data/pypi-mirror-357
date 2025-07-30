@@ -1,0 +1,13 @@
+jageocoder_dbtool/__init__.py,sha256=ef0DY2Dm17GOSnEigI-WtX_FcamM0sksToxH9anl0E0,267
+jageocoder_dbtool/__main__.py,sha256=jMX0I_OkhM3q0cuyfvnHufWiWlrmxB_1dLdFwprsCw4,6140
+jageocoder_dbtool/convertor.py,sha256=HspFNE-adwxdYtrbNOthoNsP9CGaVMEWy8eRM3r5mwQ,18856
+jageocoder_dbtool/customtypes.py,sha256=HDNWSJMtYKoGndXVdefXtt946U1W4nB9eSqscyQ6XDA,191
+jageocoder_dbtool/data/aliases.json,sha256=N1F-Xz3GaBn2H1p7uKzhkhKCQV8QVR0t76XD6wmFtXA,3
+jageocoder_dbtool/data_manager.py,sha256=AvgZNRH_ZCm21PvsiTY9OY-IOBQhmh6RG8t59_jGj6k,23151
+jageocoder_dbtool/metadata.py,sha256=xzLyeDMqe0B-voVzHH7vnkS6WgRFtOtDRdVvztqOrCc,2195
+jageocoder_dbtool/spatial.py,sha256=d6tu9Oj7CKdOVCT4HqOowHw2bELvypQBOJLGDlXJrMY,2471
+jageocoder_dbtool-0.2.4.dist-info/LICENSE,sha256=f6y_CJ8tDKhS4ka6FwerJ7OSqYk9kcqIYhJ2wRoD_J0,1330
+jageocoder_dbtool-0.2.4.dist-info/METADATA,sha256=eEFm6-kWlTNo2qo_7ngfgAVKeMRmMWcKBRSke7izTmg,10201
+jageocoder_dbtool-0.2.4.dist-info/WHEEL,sha256=b4K_helf-jlQoXBBETfwnf4B04YC67LOev0jo4fX5m8,88
+jageocoder_dbtool-0.2.4.dist-info/entry_points.txt,sha256=NHN79KAik1IXkzG55HsdoClNqWvlZhMu_hqJeFhz8Fo,58
+jageocoder_dbtool-0.2.4.dist-info/RECORD,,
