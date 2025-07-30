@@ -1,0 +1,17 @@
+checkedframe/__init__.py,sha256=0_lTpENm-Kv-WHqF0drw61DAvkCJHzuaN0fuv1811yQ,458
+checkedframe/_checks.py,sha256=llOkc-Vvv8BHX24O9Z1Kxtk3QQBH-OUC45J1zDofzjk,17006
+checkedframe/_core.py,sha256=dOgdNMXxb4xBouLbWWVPcgdOWr6Ru_ookJ6vh9Vs8I4,11915
+checkedframe/_dtypes.py,sha256=HwV2qpBwA6W1QGp96R0FybtedyF6YvY6QEA-pS6W0nc,30533
+checkedframe/exceptions.py,sha256=bfi5AWoykHJ1DxBp-9Z5C5-mxqZkIspZ9sPLiYtaSL4,2838
+checkedframe/modin.py,sha256=zPzHRIujtOEWDyw4VJqIc6r5IjaeuPzojrQDh23PvXo,130
+checkedframe/mypy.py,sha256=5R2BKppgBT_jiK4xJj2Ql7ViMOo_ywqXy74yKvQNR_s,1633
+checkedframe/narwhals.py,sha256=L-ngu5bA1yPg-i5Ato9DH43xGnNncLhR2vf_6v2kXxg,126
+checkedframe/pandas.py,sha256=43NY64U1TN44vuKB6ZsP-YfZXQfdpHb17n78k4cVh0Q,124
+checkedframe/polars.py,sha256=w9s628GN2443GwNCIXQNxP84aB9VzHPwwNS1VM7QtiY,124
+checkedframe/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+checkedframe/pyarrow.py,sha256=uxPeeO0fURMdA_XZV5HGYpjGldBhTgr61qgTo6zm7Rw,117
+checkedframe-0.0.7.dist-info/licenses/LICENSE,sha256=48j0mHXXwWwXmHaO7f6Is1QQmz52LlQDZddsMEMBxLo,1077
+checkedframe-0.0.7.dist-info/METADATA,sha256=sv_Wdyzu6fPcg_e9grwh5h_Ysmljl2moySc2xjwzOTE,9487
+checkedframe-0.0.7.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+checkedframe-0.0.7.dist-info/top_level.txt,sha256=zZQyfaRl1czKnkTS51u_sAILWm6GShPwInEkKxsRQrI,13
+checkedframe-0.0.7.dist-info/RECORD,,
