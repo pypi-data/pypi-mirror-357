@@ -1,0 +1,881 @@
+import React, { Component } from 'react';
+import MediaPlayer from './MediaPlayer';
+import PlaylistComponent from './PlaylistComponent';
+import HapticSettingsComponent from './HapticSettingsComponent';
+import HapticVisualizerComponent from './HapticVisualizerComponent';
+import managers from './Managers';
+
+/**
+ * FunPlayer - Composant principal orchestrant media + haptic + playlist
+ * ✅ REFACTORISÉ: API Managers unifiée - managers.buttplug, managers.funscript, managers.playlist
+ */
+class FunPlayer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'idle',
+      error: null,
+      isReady: false,
+      updateRate: 60,
+      isPlaying: false,
+      currentActuatorData: new Map(),
+      showVisualizer: true,
+      showDebug: false,
+      renderTrigger: 0
+    };
+    
+    this.mediaPlayerRef = React.createRef();
+    
+    // Haptic loop
+    this.hapticIntervalId = null;
+    this.expectedHapticTime = 0;
+    this.hapticTime = 0;
+    this.lastMediaTime = 0;
+    this.lastSyncTime = 0;
+    
+    // Event listener cleanup
+    this.managersListener = null;
+  }
+
+  componentDidMount() {
+    this.applyTheme();
+    this.initializeComponent();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.theme !== this.props.theme) {
+      this.applyTheme();
+    }
+    
+    // ✅ SYNCHRONISATION EXPLICITE: Seulement si la référence change
+    if (prevProps.playlist !== this.props.playlist) {
+      this.synchronizePlaylistWithManager();
+    }
+  }
+
+  synchronizePlaylistWithManager = async () => {
+    const { playlist } = this.props;
+    
+    console.log('🎮 FunPlayer: Synchronizing playlist with manager:', playlist?.length || 0, 'items');
+    
+    if (!playlist || playlist.length === 0) {
+      managers.playlist.reset();
+      this.setStatus('No playlist loaded');
+      return;
+    }
+
+    // ✅ SIMPLE: Juste synchroniser, une fois
+    try {
+      await managers.playlist.loadPlaylist(playlist);
+      // Les événements géreront le reste
+    } catch (error) {
+      console.error('FunPlayer: Failed to sync playlist:', error);
+      this.setError('Failed to sync playlist', error);
+    }
+  }
+
+  componentWillUnmount() {
+    this.stopHapticLoop();
+    if (this.managersListener) {
+      this.managersListener();
+    }
+  }
+
+  // ============================================================================
+  // ✅ MODIFIÉ: GESTION D'ÉVÉNEMENTS ÉTENDUE
+  // ============================================================================
+
+  handleManagerEvent = (event, data) => {
+    switch (event) {
+      case 'buttplug:connection':
+        this.setStatus(data.connected ? 'Connected to Intiface' : 'Disconnected from Intiface');
+        this._triggerRender();
+        break;
+        
+      case 'buttplug:device':
+        this.setStatus(data.device ? `Device selected: ${data.device.name}` : 'No device selected');
+        this._triggerRender();
+        break;
+        
+      case 'buttplug:error':
+        this.setError('Device error', data.error);
+        break;
+        
+      // ✅ Événements funscript
+      case 'funscript:load':
+        this.setStatus(`Funscript loaded: ${data.channels.length} channels, ${data.duration.toFixed(2)}s`);
+        this._triggerRender();
+        break;
+        
+      case 'funscript:channels':
+        this._triggerRender(); // Re-render pour mettre à jour les UI qui dépendent des canaux
+        break;
+        
+      case 'funscript:options':
+      case 'funscript:globalOffset':
+        // Pas besoin de re-render complet, juste noter dans les logs
+        break;
+
+      // ✅ Événements playlist
+      case 'playlist:loaded':
+        this.setStatus(`Playlist loaded: ${data.totalItems} items`);
+        this.setState({ isReady: false }); // Prêt pour sélection d'item
+        this._triggerRender();
+        break;
+        
+      case 'playlist:itemChanged':
+        this.setStatus(`Playing item ${data.index + 1}: ${data.item?.name || 'Untitled'}`);
+        this.setState({ isReady: false }); // Pas encore prêt, attendre loadFunscript
+        this._triggerRender();
+        
+        // ✅ Charger le funscript de l'item sélectionné
+        this._loadItemFunscript(data.item);
+        break;
+        
+      case 'playlist:playbackChanged':
+        // Synchroniser l'état de lecture local
+        this.setState({ isPlaying: data.isPlaying });
+        break;
+        
+      case 'playlist:error':
+        this.setError('Playlist error', data.error);
+        break;
+        
+      // ✅ Événements combinés
+      case 'managers:autoConnect':
+        if (data.success) {
+          this.setStatus(`Auto-connected to ${data.device.name} (${data.mapResult.mapped}/${data.mapResult.total} channels mapped)`);
+        } else {
+          this.setError('Auto-connect failed', data.error);
+        }
+        this._triggerRender();
+        break;
+        
+      case 'managers:autoMap':
+        this.setStatus(`Auto-mapped ${data.result.mapped}/${data.result.total} channels to ${data.mode} actuators`);
+        break;
+    }
+  }
+
+  // ✅ Helper pour trigger re-render
+  _triggerRender = () => {
+    this.setState(prevState => ({ 
+      renderTrigger: prevState.renderTrigger + 1 
+    }));
+  }
+
+  // ============================================================================
+  // INITIALIZATION - ✅ MODIFIÉ: API Managers unifiée
+  // ============================================================================
+
+  initializeComponent = () => {
+    try {
+      // Écouter les événements des managers
+      this.managersListener = managers.addListener(this.handleManagerEvent);
+      
+      this.setStatus('Component initialized');
+      
+      // Traitement initial de la playlist
+      if (this.props.playlist) {
+        this.handlePlaylistUpdate();
+      }
+      
+    } catch (error) {
+      console.error('FunPlayer: Initialization error:', error);
+      this.setError('Failed to initialize', error);
+    }
+  }
+
+  // ============================================================================
+  // PLAYLIST MANAGEMENT - ✅ MODIFIÉ: API Managers unifiée
+  // ============================================================================
+
+  handlePlaylistUpdate = async () => {
+    const { playlist } = this.props;
+    
+    console.log('🎮 FunPlayer.handlePlaylistUpdate called with:', playlist?.length, 'items');
+    
+    if (!playlist || playlist.length === 0) {
+      managers.playlist.reset();
+      this.setStatus('No playlist loaded');
+      this.setState({ isReady: true });
+      return;
+    }
+
+    this.setStatus(`Processing playlist...`);
+
+    try {
+      console.log('🎮 Calling PlaylistManager.loadPlaylist...');
+      await managers.playlist.loadPlaylist(playlist);
+      console.log('🎮 PlaylistManager loaded, items:', managers.playlist.getItems().length);
+      
+    } catch (error) {
+      console.error('FunPlayer: Failed to process playlist:', error);
+      this.setError('Failed to process playlist', error);
+    }
+  }
+
+  // ✅ Charge le funscript d'un item (appelé depuis handleManagerEvent)
+  _loadItemFunscript = async (item) => {
+    if (!item) {
+      this.setState({ isReady: true });
+      return;
+    }
+
+    this.stopHapticLoop();
+    
+    // ✅ MODIFIÉ: API Managers unifiée
+    if (managers.buttplug) {
+      try {
+        await managers.buttplug.stopAll();
+      } catch (error) {
+        console.warn('Failed to stop devices:', error);
+      }
+    }
+
+    try {
+      if (item.funscript) {
+        if (typeof item.funscript === 'object') {
+          await this.loadFunscriptData(item.funscript);
+        } else {
+          await this.loadFunscript(item.funscript);
+        }
+      } else {
+        // Reset funscript si pas de haptic
+        managers.funscript.reset();
+      }
+
+      this.setState({ isReady: true });
+      this.setStatus(`Ready: ${item.name || item.title || 'Untitled'}`);
+
+    } catch (error) {
+      this.setError(`Failed to load funscript for item`, error);
+    }
+  }
+
+  // ============================================================================
+  // FUNSCRIPT LOADING - ✅ MODIFIÉ: API Managers unifiée
+  // ============================================================================
+
+  loadFunscript = async (src) => {
+    try {
+      let data;
+      if (typeof src === 'string') {
+        if (src.startsWith('http') || src.startsWith('/')) {
+          // ✅ Fetch avec fallback proxy CORS
+          data = await this._fetchFunscriptWithFallback(src);
+        } else {
+          data = JSON.parse(src);
+        }
+      } else {
+        data = src;
+      }
+      
+      managers.funscript.load(data);
+      const mapResult = managers.autoMapChannels();
+      console.log(`Auto-mapped ${mapResult.mapped}/${mapResult.total} channels`);
+      
+    } catch (error) {
+      console.error('Failed to load funscript:', error);
+      throw error;
+    }
+  }
+
+  // ✅ Fetch avec fallback proxy
+  _fetchFunscriptWithFallback = async (url) => {
+    try {
+      // 1. Essai direct d'abord (plus rapide)
+      console.log('🔄 Loading funscript directly from:', url);
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      return await response.json();
+      
+    } catch (directError) {
+      console.warn('❌ Direct fetch failed, trying CORS proxy...', directError.message);
+      
+      try {
+        // 2. Fallback proxy CORS
+        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+        console.log('🔄 Loading funscript via proxy:', proxyUrl);
+        const response = await fetch(proxyUrl);
+        if (!response.ok) {
+          throw new Error(`Proxy HTTP ${response.status}: ${response.statusText}`);
+        }
+        return await response.json();
+        
+      } catch (proxyError) {
+        throw new Error(`Both direct and proxy loading failed. Direct: ${directError.message}, Proxy: ${proxyError.message}`);
+      }
+    }
+  }
+
+  loadFunscriptData = async (data) => {
+    try {
+      // ✅ MODIFIÉ: API Managers unifiée
+      managers.funscript.load(data);
+      
+      const mapResult = managers.autoMapChannels();
+      console.log(`Auto-mapped ${mapResult.mapped}/${mapResult.total} channels`);
+      
+    } catch (error) {
+      console.error('Failed to load funscript data:', error);
+      throw error;
+    }
+  }
+
+  // ============================================================================
+  // MEDIA PLAYER EVENTS - ✅ MODIFIÉ: API Managers unifiée
+  // ============================================================================
+
+  handleMediaLoadEnd = (data) => {
+    console.log('Media loaded:', data);
+    
+    const currentItem = managers.playlist.getCurrentItem();
+    if (currentItem && Math.abs((currentItem.duration || 0) - data.duration) > 1) {
+      console.log(`Correcting duration: ${currentItem.duration}s → ${data.duration}s`);
+      managers.playlist.updateCurrentItemDuration(data.duration);
+    }
+    
+    this.setState({ isReady: true }, () => {
+      this.setStatus(`Media ready (${data.duration?.toFixed(1)}s)`);
+      this.triggerResize();
+    });
+  }
+
+  handleMediaError = (error) => {
+    console.error('Media error:', error);
+    this.setError('Media loading failed', error);
+  }
+
+  handleMediaPlay = () => {
+    this.hapticTime = this.mediaPlayerRef.current?.getTime() || 0;
+    this.lastMediaTime = this.hapticTime;
+    this.lastSyncTime = performance.now();
+    
+    const currentTime = this.mediaPlayerRef.current?.getTime() || 0;
+    const duration = this.mediaPlayerRef.current?.getDuration() || 0;
+    
+    // ✅ MODIFIÉ: API Managers unifiée
+    managers.playlist.updatePlaybackState(true, currentTime, duration);
+    
+    if (this.hasFunscript()) {
+      this.startHapticLoop();
+      this.setStatus('Playing with haptics');
+    } else {
+      this.setStatus('Playing media');
+    }
+  }
+
+  handleMediaPause = async () => {
+    if (this.hasFunscript()) {
+      this.stopHapticLoop();
+      // ✅ MODIFIÉ: API Managers unifiée
+      if (managers.buttplug) {
+        try {
+          await managers.buttplug.stopAll();
+        } catch (error) {
+          console.warn('Failed to stop devices:', error);
+        }
+      }
+    }
+    
+    const currentTime = this.mediaPlayerRef.current?.getTime() || 0;
+    const duration = this.mediaPlayerRef.current?.getDuration() || 0;
+    
+    // ✅ MODIFIÉ: API Managers unifiée
+    managers.playlist.updatePlaybackState(false, currentTime, duration);
+    
+    this.setState({ currentActuatorData: new Map() });
+    this.setStatus('Paused');
+  }
+
+  handleMediaEnd = async () => {
+    if (this.hasFunscript()) {
+      this.stopHapticLoop();
+      // ✅ MODIFIÉ: API Managers unifiée
+      if (managers.buttplug) {
+        try {
+          await managers.buttplug.stopAll();
+        } catch (error) {
+          console.warn('Failed to stop devices:', error);
+        }
+      }
+    }
+    
+    // ✅ MODIFIÉ: API Managers unifiée
+    managers.playlist.updatePlaybackState(false, 0, 0);
+    
+    this.hapticTime = 0;
+    this.lastMediaTime = 0;
+    this.setState({ currentActuatorData: new Map() });
+    this.setStatus('Item ended');
+  }
+
+  handleMediaTimeUpdate = ({ currentTime }) => {
+    if (!this.hasFunscript() || !this.hapticIntervalId) {
+      return;
+    }
+    
+    const now = performance.now();
+    const timeSinceLastSync = (now - this.lastSyncTime) / 1000;
+    
+    const drift = Math.abs(currentTime - this.hapticTime);
+    const shouldResync = drift > 0.05 || timeSinceLastSync > 1.0;
+    
+    if (shouldResync) {
+      this.hapticTime = currentTime;
+      this.lastMediaTime = currentTime;
+      this.lastSyncTime = now;
+      
+      if (drift > 0.1) {
+        console.warn(`Haptic drift detected: ${(drift * 1000).toFixed(1)}ms, resyncing`);
+      }
+    }
+
+    // ✅ MODIFIÉ: API Managers unifiée - Synchronisation périodique (throttled)
+    //const duration = this.mediaPlayerRef.current?.getDuration() || 0;
+    //managers.playlist.updatePlaybackState(true, currentTime, duration);
+  }
+
+  // ============================================================================
+  // HAPTIC LOOP - ✅ MODIFIÉ: API Managers unifiée
+  // ============================================================================
+
+  processHapticFrame = async (timeDelta) => {
+    const mediaPlayer = this.mediaPlayerRef.current;
+    
+    // ✅ MODIFIÉ: API Managers unifiée
+    if (!mediaPlayer || !managers.funscript) return;
+    
+    this.hapticTime += timeDelta;
+    const currentTime = this.hapticTime;
+    
+    const mediaRefreshRate = this.getMediaRefreshRate(mediaPlayer);
+    const adjustedDuration = this.calculateLinearDuration(timeDelta, mediaRefreshRate);
+    
+    const actuatorCommands = managers.funscript.interpolateToActuators(currentTime);
+    const visualizerData = new Map();
+    
+    for (const [actuatorIndex, value] of Object.entries(actuatorCommands)) {
+      const index = parseInt(actuatorIndex);
+      
+      let actuatorType = 'linear';
+      
+      // ✅ MODIFIÉ: API Managers unifiée
+      if (managers.buttplug && managers.buttplug.getSelected()) {
+        actuatorType = managers.buttplug.getActuatorType(index) || 'linear';
+        await this.sendHapticCommand(actuatorType, value, adjustedDuration * 1000, index);
+      }
+      
+      visualizerData.set(index, {
+        value: value,
+        type: actuatorType
+      });
+    }
+    
+    this.setState({ currentActuatorData: visualizerData });
+  }
+
+  sendHapticCommand = async (type, value, duration, actuatorIndex) => {
+    // ✅ MODIFIÉ: API Managers unifiée
+    if (!managers.buttplug || !managers.buttplug.isConnected) return;
+
+    try {
+      switch (type) {
+        case 'vibrate':
+          await managers.buttplug.vibrate(value, actuatorIndex);
+          break;
+        case 'oscillate':
+          await managers.buttplug.oscillate(value, actuatorIndex);
+          break;
+        case 'linear':
+          await managers.buttplug.linear(value, duration, actuatorIndex);
+          break;
+        case 'rotate':
+          await managers.buttplug.rotate(value, actuatorIndex);
+          break;
+        default:
+          console.warn(`Unknown haptic command type: ${type}`);
+          break;
+      }
+    } catch (error) {
+      // Silent fail pour les commandes haptiques (évite spam console)
+    }
+  }
+
+  // ============================================================================
+  // UTILITY METHODS - ✅ MODIFIÉ: API Managers unifiée
+  // ============================================================================
+
+  hasFunscript = () => {
+    return managers.funscript && managers.funscript.getChannels().length > 0;
+  }
+
+  handleHapticSettingsChange = (channel, action, data) => {
+    switch (action) {
+      case 'autoMap':
+        this.setStatus(`Auto-mapped ${data.mapped}/${data.total} channels to ${data.mode}`);
+        break;
+      case 'globalOffset':
+        this.setStatus(`Global offset set to ${data}s`);
+        break;
+      case 'setOptions':
+        if (channel) {
+          this.setStatus(`Updated ${channel} settings`);
+        }
+        break;
+      default:
+        if (channel && action) {
+          this.setStatus(`Updated ${channel}: ${action}`);
+        }
+    }
+  }
+
+  // ============================================================================
+  // RENDER METHODS - ✅ MODIFIÉ: API Managers unifiée
+  // ============================================================================
+
+  renderDebugInfo() {
+    if (!this.state.showDebug) return null;
+    
+    // ✅ MODIFIÉ: API Managers unifiée
+    const funscriptInfo = managers.funscript?.getDebugInfo() || { loaded: false };
+    const buttplugStatus = managers.buttplug?.getStatus() || { isConnected: false };
+    const playlistInfo = managers.playlist.getPlaylistInfo();
+    const { updateRate, currentActuatorData } = this.state;
+    
+    const safeActuatorData = currentActuatorData || new Map();
+    
+    return (
+      <div className="fp-block fp-block-standalone debug-info">
+        <div className="fp-section debug-content">
+          
+          {/* ✅ MODIFIÉ: API Managers unifiée */}
+          {playlistInfo.totalItems > 0 && (
+            <div className="playlist-info fp-mb-sm">
+              <h4 className="fp-title">Playlist:</h4>
+              <p>Items: {playlistInfo.totalItems}</p>
+              <p>Current: {playlistInfo.currentIndex + 1}</p>
+              {playlistInfo.currentIndex >= 0 && (
+                <p>Title: {managers.playlist.getCurrentItem()?.name || 'Untitled'}</p>
+              )}
+              <p>Playing: {playlistInfo.isPlaying ? 'Yes' : 'No'}</p>
+              <p>Time: {playlistInfo.currentTime.toFixed(1)}s / {playlistInfo.duration.toFixed(1)}s</p>
+            </div>
+          )}
+          
+          {this.hasFunscript() && (
+            <div className="performance-info fp-mb-sm">
+              <h4 className="fp-title">Performance:</h4>
+              <p>Update Rate: {updateRate}Hz</p>
+              <p>Frame Time: {(1000/updateRate).toFixed(1)}ms</p>
+              <p>Active Actuators: {safeActuatorData.size}</p>
+            </div>
+          )}
+          
+          <div className="funscript-info fp-mb-sm">
+            <h4 className="fp-title">Funscript:</h4>
+            {funscriptInfo && funscriptInfo.loaded ? (
+              <>
+                <p>Channels: {funscriptInfo.channels ? Object.keys(funscriptInfo.channels).length : 0}</p>
+                <p>Duration: {typeof funscriptInfo.duration === 'number' ? funscriptInfo.duration.toFixed(2) : 0}s</p>
+                {funscriptInfo.globalOffset !== undefined && (
+                  <p>Global Offset: {funscriptInfo.globalOffset.toFixed(3)}s</p>
+                )}
+              </>
+            ) : (
+              <p>❌ No funscript loaded</p>
+            )}
+          </div>
+          
+          {this.hasFunscript() && buttplugStatus && (
+            <div className="device-info fp-mb-sm">
+              <h4 className="fp-title">Device:</h4>
+              <p>Connected: {buttplugStatus.isConnected ? 'Yes' : 'No'}</p>
+              <p>Device Count: {buttplugStatus.deviceCount || 0}</p>
+              {buttplugStatus.selectedDevice && (
+                <p>Selected: {buttplugStatus.selectedDevice.name}</p>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // ============================================================================
+  // AUTRES MÉTHODES INCHANGÉES
+  // ============================================================================
+
+  startHapticLoop = () => {
+    if (this.hapticIntervalId) return;
+    
+    this.expectedHapticTime = performance.now();
+    const targetInterval = 1000 / this.state.updateRate;
+    
+    const optimizedLoop = () => {
+      try {
+        const currentTime = performance.now();
+        const drift = currentTime - this.expectedHapticTime;
+        
+        const hapticDelta = targetInterval / 1000;
+        this.processHapticFrame(hapticDelta);
+        
+        this.expectedHapticTime += targetInterval;
+        const adjustedDelay = Math.max(0, targetInterval - drift);
+        
+        const currentTargetInterval = 1000 / this.state.updateRate;
+        if (currentTargetInterval !== targetInterval) {
+          this.expectedHapticTime = currentTime + currentTargetInterval;
+          this.hapticIntervalId = setTimeout(() => this.restartWithNewRate(), currentTargetInterval);
+        } else {
+          this.hapticIntervalId = setTimeout(optimizedLoop, adjustedDelay);
+        }
+        
+      } catch (error) {
+        console.error('Haptic loop error:', error);
+        this.hapticIntervalId = setTimeout(optimizedLoop, targetInterval);
+      }
+    };
+    
+    this.hapticIntervalId = setTimeout(optimizedLoop, targetInterval);
+  }
+
+  stopHapticLoop = () => {
+    if (this.hapticIntervalId) {
+      clearTimeout(this.hapticIntervalId);
+      this.hapticIntervalId = null;
+    }
+    this.expectedHapticTime = 0;
+    this.lastSyncTime = 0;
+  }
+
+  restartWithNewRate = () => {
+    const wasPlaying = this.hapticIntervalId !== null;
+    if (wasPlaying) {
+      this.stopHapticLoop();
+      this.startHapticLoop();
+    }
+  }
+
+  getMediaRefreshRate = (mediaPlayer) => {
+    const state = mediaPlayer.getState();
+    const mediaType = state.mediaType;
+    
+    switch (mediaType) {
+      case 'playlist':
+        const currentItem = mediaPlayer.getCurrentItem();
+        if (!currentItem || !currentItem.sources || currentItem.sources.length === 0) {
+          return this.state.updateRate;
+        }
+        const mimeType = currentItem.sources[0].type || '';
+        return mimeType.startsWith('audio/') ? this.state.updateRate : 30;
+      case 'media':
+        return 30;
+      default:
+        return this.state.updateRate;
+    }
+  }
+
+  calculateLinearDuration = (hapticDelta, mediaRefreshRate) => {
+    const mediaFrameDuration = 1 / mediaRefreshRate;
+    const safeDuration = Math.max(hapticDelta, mediaFrameDuration) * 1.2;
+    return Math.max(0.01, Math.min(0.1, safeDuration));
+  }
+
+  getUpdateRate = () => this.state.updateRate
+
+  handleUpdateRateChange = (newRate) => {
+    this.setState({ updateRate: newRate });
+    this.setStatus(`Update rate changed to ${newRate}Hz`);
+  }
+
+  triggerResize = () => this.props.onResize?.()
+
+  handleToggleVisualizer = () => {
+    this.setState({ showVisualizer: !this.state.showVisualizer }, () => {
+      this.triggerResize();
+    });
+  }
+
+  handleToggleDebug = () => {
+    this.setState({ showDebug: !this.state.showDebug }, () => {
+      this.triggerResize();
+    });
+  }
+
+  setStatus = (message) => this.setState({ status: message, error: null })
+  
+  setError = (message, error = null) => {
+    console.error(message, error);
+    this.setState({ 
+      status: message, 
+      error: error?.message || String(error) || null 
+    });
+  }
+
+  applyTheme = () => {
+    const { theme } = this.props;
+    if (!theme) return;
+
+    const element = document.querySelector('.fun-player') || 
+                   document.documentElement;
+
+    Object.entries(theme).forEach(([key, value]) => {
+      const cssVar = this.convertToCssVar(key);
+      element.style.setProperty(cssVar, value);
+    });
+
+    if (theme.base) {
+      element.setAttribute('data-theme', theme.base);
+    }
+  }
+
+  convertToCssVar = (key) => {
+    const mappings = {
+      'primaryColor': '--primary-color',
+      'backgroundColor': '--background-color',
+      'secondaryBackgroundColor': '--secondary-background-color', 
+      'textColor': '--text-color',
+      'borderColor': '--border-color',
+      'fontFamily': '--font-family',
+      'baseRadius': '--base-radius',
+      'spacing': '--spacing'
+    };
+    
+    return mappings[key] || `--${key.replace(/([A-Z])/g, '-$1').toLowerCase()}`;
+  }
+
+  renderHapticSettings() {
+    return (
+      <div className="fp-block fp-block-first haptic-settings-section">
+        <HapticSettingsComponent 
+          onUpdateRateChange={this.handleUpdateRateChange}
+          onGetUpdateRate={this.getUpdateRate}
+          onSettingsChange={this.handleHapticSettingsChange}
+          onStatusChange={this.setStatus}
+          onResize={this.triggerResize}
+        />
+      </div>
+    );
+  }
+
+  renderMediaPlayer() {
+    // ✅ MODIFIÉ: API Managers unifiée
+    const playlistItems = managers.playlist.getItems();
+    
+    return (
+      <div className="fp-block fp-block-middle media-section">
+        <MediaPlayer
+          ref={this.mediaPlayerRef}
+          onPlay={this.handleMediaPlay}
+          onPause={this.handleMediaPause}
+          onEnd={this.handleMediaEnd}
+          onTimeUpdate={this.handleMediaTimeUpdate}
+          onLoadEnd={this.handleMediaLoadEnd}
+          onError={this.handleMediaError}
+        />
+      </div>
+    );
+  }
+
+  renderHapticVisualizer() {
+    if (!this.state.showVisualizer) return null;
+    
+    const { isPlaying } = this.state;
+    
+    return (
+      <div className="fp-block fp-block-middle haptic-visualizer-section">
+        <HapticVisualizerComponent
+          getCurrentActuatorData={() => this.state.currentActuatorData}
+          isPlaying={isPlaying}
+          onResize={this.triggerResize}
+        />
+      </div>
+    );
+  }
+
+  renderStatusBar() {
+    const { status, error, isReady, showVisualizer, showDebug } = this.state;
+    
+    // ✅ MODIFIÉ: API Managers unifiée
+    const playlistInfo = managers.playlist.getPlaylistInfo();
+    
+    return (
+      <div className="fp-block fp-block-last status-bar-section">
+        <div className="fp-section-compact fp-layout-horizontal">
+          <div className="fp-layout-row">
+            <span className={`fp-status-dot ${isReady ? 'ready' : 'loading'}`}>
+              {isReady ? '✅' : '⏳'}
+            </span>
+            <span className="fp-label">
+              {error ? `❌ ${error}` : status}
+            </span>
+          </div>
+          
+          <div className="fp-layout-row fp-layout-compact">
+            <span className="fp-badge">
+              {this.state.updateRate}Hz
+            </span>
+            
+            {playlistInfo.totalItems > 1 && (
+              <span className="fp-unit">
+                {playlistInfo.currentIndex + 1}/{playlistInfo.totalItems}
+              </span>
+            )}
+            
+            {this.hasFunscript() && (
+              <span className="fp-unit">
+                {managers.funscript.getChannels().length} channels
+              </span>
+            )}
+            
+            <button 
+              className="fp-btn fp-btn-ghost fp-chevron"
+              onClick={this.handleToggleVisualizer}
+              title={showVisualizer ? "Hide Visualizer" : "Show Visualizer"}
+            >
+              {showVisualizer ? '📊' : '📈'}
+            </button>
+            
+            <button 
+              className="fp-btn fp-btn-ghost fp-chevron"
+              onClick={this.handleToggleDebug}
+              title={showDebug ? "Hide Debug" : "Show Debug"}
+            >
+              {showDebug ? '🐛' : '🔍'}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  render() {
+    // ✅ MODIFIÉ: API Managers unifiée
+    const playlistInfo = managers.playlist.getPlaylistInfo();
+    const playlistItems = managers.playlist.getItems();
+    
+    return (
+      <div className="fun-player">
+        
+        <div className="fp-main-column">
+          {this.renderHapticSettings()}
+          {this.renderMediaPlayer()}
+          {this.renderHapticVisualizer()}
+          {this.renderDebugInfo()}
+          {this.renderStatusBar()}
+        </div>
+        
+        {playlistItems.length > 1 && (
+          <PlaylistComponent/>
+        )}
+        
+      </div>
+    );
+  }
+}
+
+export default FunPlayer;
