@@ -1,0 +1,29 @@
+{
+    "long_string": "This is an example of a very long string",
+    "any_field": [
+        [
+            true,
+            false,
+            true
+        ],
+        [
+            false,
+            false,
+            false
+        ],
+        []
+    ],
+    "all_field": [
+        [
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            false
+        ],
+        []
+    ]
+}

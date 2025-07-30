@@ -1,0 +1,32 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:best-practices",
+        "helpers:pinGitHubActionDigestsToSemver",
+        "mergeConfidence:all-badges"
+    ],
+    "rebaseWhen": "never",
+    "lockFileMaintenance": {
+        "enabled": true,
+        "automerge": true
+    },
+    "pre-commit": {
+        "enabled": true
+    },
+    "packageRules": [
+        {
+            "matchDepTypes": [
+                "dev"
+            ],
+            "groupName": "Dev dependencies"
+        },
+        {
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "automerge": true,
+            "automergeType": "branch"
+        }
+    ]
+}
