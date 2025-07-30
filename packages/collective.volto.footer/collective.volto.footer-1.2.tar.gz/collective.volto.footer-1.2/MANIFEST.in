@@ -1,0 +1,16 @@
+include *.rst
+include *.txt
+recursive-include src *.zcml
+recursive-include src *.xml
+recursive-include src *.pt
+recursive-include src *.po
+recursive-include src *.pot
+recursive-include src *.gif
+recursive-include src *.png
+recursive-include src *.jpg
+recursive-include src *.css
+recursive-include src *.js
+graft docs
+exclude tox.ini
+exclude .gitlab-ci.yml
+global-exclude *.pyc

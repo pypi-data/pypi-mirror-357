@@ -1,0 +1,21 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="plone">
+
+    <include package="plone.behavior" file="meta.zcml"/>
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <plone:behavior
+        name="collective.volto.footer.editable"
+        title="Editable Footer"
+        description="This behavior provides backend support for the editable footer in Volto"
+        provides=".footer.IEditableFooter"
+        factory=".footer.EditableFooter"
+        marker=".footer.IEditableFooterMarker"
+        />
+
+</configure>
