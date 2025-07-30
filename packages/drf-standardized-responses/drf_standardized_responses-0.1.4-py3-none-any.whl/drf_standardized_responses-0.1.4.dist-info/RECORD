@@ -1,0 +1,10 @@
+drf_standardized_responses/__init__.py,sha256=FIj_9XwOhmC4uZKw7p_UYhBJTF2MS0Q3aK2FPpj8Ixk,429
+drf_standardized_responses/apps.py,sha256=mKQYUpy1Iwo7zWnuKru4_5tDmzsEYu6Cs_zQzamq6Bg,230
+drf_standardized_responses/exceptions.py,sha256=tYDvRLqu4YGffQTGEQitWh-rRMG8WB-SH7OhrMav8PM,2852
+drf_standardized_responses/pagination.py,sha256=WUr4WDNThuzLqJNTeSDpJRstSofZGw7ZG5AxQ5fjxV0,2236
+drf_standardized_responses/renderers.py,sha256=2vcZoTQvI5so-HrgwJEyTlakakOap8p-ykGKPDFaptQ,2963
+drf_standardized_responses/responses.py,sha256=GDrrz-irjm_uYL85xWHrarEUquCIyn1klx5Dv3oxBmI,2289
+drf_standardized_responses-0.1.4.dist-info/METADATA,sha256=GqUE92GozqDxllfUtaXcB-uboilhhTy6bff-R2NaWAI,6128
+drf_standardized_responses-0.1.4.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+drf_standardized_responses-0.1.4.dist-info/licenses/LICENSE,sha256=2CmUuQs3ZZKyyNOJuySprDWIUqKuKLwF8WHVLVyLZf8,1531
+drf_standardized_responses-0.1.4.dist-info/RECORD,,
