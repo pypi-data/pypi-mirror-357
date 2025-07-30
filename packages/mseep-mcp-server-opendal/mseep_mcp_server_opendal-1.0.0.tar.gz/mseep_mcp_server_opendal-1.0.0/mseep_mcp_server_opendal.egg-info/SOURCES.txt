@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mseep_mcp_server_opendal.egg-info/PKG-INFO
+mseep_mcp_server_opendal.egg-info/SOURCES.txt
+mseep_mcp_server_opendal.egg-info/dependency_links.txt
+mseep_mcp_server_opendal.egg-info/requires.txt
+mseep_mcp_server_opendal.egg-info/top_level.txt
+tests/test_integration_fs.py
