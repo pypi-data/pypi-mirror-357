@@ -1,0 +1,14 @@
+faker_maytok_food/__init__.py,sha256=pDvOJEWtJCI2nODEP_w1wNWvceh3SyZClw8AJWTkfSM,1428
+faker_maytok_food/dish_descriptions.py,sha256=2MjgpGmJG3rrU-gMR5Z49w1bqug0MDj-Sin9rYJvHmc,2630
+faker_maytok_food/dishes.py,sha256=uCQGcqhhFOtWbQqRVIjUQLd4OetARIbc4gM1789OaL4,2139
+faker_maytok_food/ethnic_categories.py,sha256=bnesr5eSOoDMgFCSKZsRjOiIS2TXffhHxiceRcBeqpI,2131
+faker_maytok_food/fruits.py,sha256=EZE5zV9BBEeJTl2LAXKQZAc3N2i9HnY9yYK3xqdTJMA,1255
+faker_maytok_food/ingredients.py,sha256=mP6WZYKJ5L_Gq15kBJYr6VnaScDuCkyoWnKE202L-PU,9182
+faker_maytok_food/measurements.py,sha256=V74wDc25iLSXK4uU3Nb96SVbmKh3N7VKjV42bvFRz9w,213
+faker_maytok_food/spices.py,sha256=pWzlW1CsOIetOD1_4_TD7Ey5BPr0LJFMIdzNuVTZGDM,4097
+faker_maytok_food/sushi.py,sha256=kFUInKQOHVzBjLgE3U5MotP6roaoCeAYelLh7Pm5BjY,788
+faker_maytok_food/vegetables.py,sha256=qfLvzC6kctQiSEdMCUpkarHEv01cGnToo6W8VIjovWM,1210
+faker_maytok_food-0.1.0.dist-info/LICENSE,sha256=Q2IHQv39Kuf_EVKq3lD3PTUMSUn7Z94F6ybKEwSgJjQ,1088
+faker_maytok_food-0.1.0.dist-info/METADATA,sha256=syxzvevVpivpoO261Uq7iSMKJR3tUGuAETyaYvkEyyU,2003
+faker_maytok_food-0.1.0.dist-info/WHEEL,sha256=fGIA9gx4Qxk2KDKeNJCbOEwSrmLtjWCwzBz351GyrPQ,88
+faker_maytok_food-0.1.0.dist-info/RECORD,,
