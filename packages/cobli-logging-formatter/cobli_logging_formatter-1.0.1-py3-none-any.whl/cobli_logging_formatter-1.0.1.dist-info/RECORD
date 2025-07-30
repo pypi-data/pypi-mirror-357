@@ -1,0 +1,7 @@
+cobli_logging/__init__.py,sha256=zsp7bTFb_h0BH8zQYdb38Sb1zCKsbzvs0M6YSJ2D3bQ,293
+cobli_logging/config.py,sha256=0PYQLhjE2_VEr0wJsLgmDcXEoARNvk2rBTjddyzZORY,3367
+cobli_logging/formatter.py,sha256=5K1jWNmmiSXy5NlyHlVRWbMXm85NYcr3-cAuxgiN3zw,4785
+cobli_logging_formatter-1.0.1.dist-info/METADATA,sha256=h4fTLqN8txP0ZSODiJ0CnUUsMwbx9UEZ9kT1HKUAGiM,5629
+cobli_logging_formatter-1.0.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+cobli_logging_formatter-1.0.1.dist-info/licenses/LICENSE,sha256=RAPsOeDWH6e_sDJg0x5jO7PBifmu0PzNDjqfIIv8EYw,1062
+cobli_logging_formatter-1.0.1.dist-info/RECORD,,
