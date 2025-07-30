@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+freemobile.egg-info/PKG-INFO
+freemobile.egg-info/SOURCES.txt
+freemobile.egg-info/dependency_links.txt
+freemobile.egg-info/entry_points.txt
+freemobile.egg-info/top_level.txt
+sms/__init__.py
+sms/__main__.py
+sms/cli.py
+sms/sms.py
