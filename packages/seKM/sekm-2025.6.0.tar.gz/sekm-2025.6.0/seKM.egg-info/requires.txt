@@ -1,0 +1,3 @@
+urllib3~=2.4.0
+bitflags~=1.1.3
+seCore~=2025.6.0
