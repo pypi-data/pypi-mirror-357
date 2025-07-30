@@ -1,0 +1,9 @@
+koi/__init__.py,sha256=J-j-u0itpEFT6irdmWmixQqYMadNl1X91TxUmoiLHMI,22
+koi/__main__.py,sha256=aDqbweMyW1pl-nS-hAuOxH6UFqKMz5A1CMzivRy9anA,1952
+koi/logger.py,sha256=6B9B_k-CxdS2BDQxUAcZKvRNO2mRiORqtsYNO7UTX2Y,1167
+koi/runner.py,sha256=B1Ls8h-zGdw9LW1WoiDmVtXnW4j6AoQJgfk5HRiPlt0,10552
+koi_fish-1.0.0.dist-info/METADATA,sha256=4fmK8d5Ku6p1tBzF-Q76KRk2F47a1kG2FoVe7WE82kY,3209
+koi_fish-1.0.0.dist-info/WHEEL,sha256=tSfRZzRHthuv7vxpI4aehrdN9scLjk-dCJkPLzkHxGg,90
+koi_fish-1.0.0.dist-info/entry_points.txt,sha256=xZ_vK1I9aXLINQHQf8SYAzskKBX-YISGY6Xtz9VmLMw,58
+koi_fish-1.0.0.dist-info/licenses/LICENSE,sha256=6adA7l0z7_fgXke6o3TSNxgR5tGD1Xqi0TR1YMDJ-xM,1071
+koi_fish-1.0.0.dist-info/RECORD,,
