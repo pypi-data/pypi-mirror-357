@@ -1,0 +1,10 @@
+mcp_streamablehttp_proxy/__init__.py,sha256=xYWK7tM4FliBevYPYuoAWhA2h-N044T2tBnFNmD2PyY,330
+mcp_streamablehttp_proxy/cli.py,sha256=g1St6rJM4SE6QOAZbQSri7pbNvx2kPo1ij_RLuzwwro,2613
+mcp_streamablehttp_proxy/proxy.py,sha256=HjM9CI_kAH9xvumbKPBi-7r0fiAmzhS0eJsyhgA-fxg,17713
+mcp_streamablehttp_proxy/py.typed,sha256=8ZJUsxZiuOy1oJeVhsTWQhTG_6pTVHVXk5hJL79ebTk,25
+mcp_streamablehttp_proxy/server.py,sha256=m0aYJ0OGW8E24QkqwBj7cmcEPa1b-4xj3r1WxWNEmI4,1056
+mcp_streamablehttp_proxy-0.1.0.dist-info/METADATA,sha256=flinrehpNtfxi1Tx6NkK4zQH8sAV1XEa1vvH8rnUMO4,8781
+mcp_streamablehttp_proxy-0.1.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+mcp_streamablehttp_proxy-0.1.0.dist-info/entry_points.txt,sha256=n2jU5bCF8s5KHrhnhMe2DfSfKoASFFTKrp5VExfcb_I,79
+mcp_streamablehttp_proxy-0.1.0.dist-info/licenses/LICENSE,sha256=tqKMKnevcc1fp_eEMSEsmQr8wKsIN-KezPzdnT6L1cw,11359
+mcp_streamablehttp_proxy-0.1.0.dist-info/RECORD,,

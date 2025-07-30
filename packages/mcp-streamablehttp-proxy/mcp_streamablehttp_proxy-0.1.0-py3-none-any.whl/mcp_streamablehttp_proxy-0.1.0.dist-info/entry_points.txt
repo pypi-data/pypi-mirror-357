@@ -1,0 +1,2 @@
+[console_scripts]
+mcp-streamablehttp-proxy = mcp_streamablehttp_proxy.cli:main
